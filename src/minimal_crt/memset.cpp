@@ -1,0 +1,11 @@
+/* stolen from gcc-7.2.0/libgcc/memXXX.c */
+#include <def.h>
+#include <cstring>
+
+void * memset (void *dest, int val, size_t len)
+{
+  unsigned char *ptr = reinterpret_cast<unsigned char *>(dest);
+  while (len-- > 0)
+	*ptr++ = val;
+  return dest;
+}

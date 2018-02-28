@@ -1,0 +1,55 @@
+#辅助性的目标
+# 对链接过程，添加脚本的依赖
+# 定义一个辅助源文件，该文件内容为空，但是当希望添加的依赖改变时，该文件必须能够迫使目标被更新
+aux-check-link-script.o:aux-check-link-script.cpp
+	$(TOOLCHAIN_CXX) -c -o $@ $<
+aux-check-link-script.cpp:../ld/link-$(TARGET_ARCH).ld
+	touch $@
+
+# 查看二进制对象文件
+dump-elf-binary:$(MASTERY_ELF_BINARY)
+	$(TOOLCHAIN_OBJDUMP) -D $<|less
+dump-binary:$(MASTERY_BINARY_BINARY)
+	$(TOOLCHAIN_OBJDUMP) -D -b binary -m aarch64 $< | less
+.PHONY:dump-elf-binary dump-binary
+
+.PHONY:show-in-explorer
+show-in-explorer:
+	/cygdrive/c/Windows/explorer . || exit 0
+
+# 使用cygstart避免等待
+.PHONY:open-cygwin
+open-cygwin:
+	/usr/bin/cygstart /usr/bin/mintty
+	
+.PHONY:debug-info
+debug-info:
+	@echo TOOLCHAIN_ROOT is $(TOOLCHAIN_ROOT)
+	echo TOOLCHAIN_PREFIX is $(TOOLCHAIN_PREFIX)
+	echo TOOLCHAIN_CXX is $(TOOLCHAIN_CXX)
+	echo TOOLCHAIN_OBJDUMP is $(TOOLCHAIN_OBJDUMP)
+	echo CONFIG_NAME is $(CONFIG_NAME)
+	echo PROJNAME is $(PROJNAME)
+	echo USER_DEFINED is $(USER_DEFINED)
+	echo PATH is "$(PATH)"
+	echo shell current dir is "$$(pwd)"
+	echo which is "$$(which -a which)"
+	echo less is "$$(which -a less)"
+	echo .VARIABLES are "$(.VARIABLES)"
+	echo SHELL is $(SHELL)
+	echo .SHELLFLAGS is $(.SHELLFLAGS)
+	echo MAKEFLAGS are "$(MAKEFLAGS)"
+	echo KERNEL_ADDRESS is "$(KERNEL_ADDRESS)"
+	echo TARGET_ARCH is "$(TARGET_ARCH)"
+	echo ENVS_PRESENT is "$(ENVS_PRESENT)"
+	echo LIBS is "$(LIBS)"
+	echo OBJS is "$(OBJS)"
+	echo USER_OBJS is "$(USER_OBJS)"
+	echo USER_CXX_FLAGS is "$(USER_CXX_FLAGS)"
+	echo USER_LINKER_FLAGS is "$(USER_LINKER_FLAGS)"
+	echo EXPORT_VARIABLES is "$(EXPORT_VARIABLES)"
+	echo EXPORT_CXX_MACROS is "$(EXPORT_CXX_MACROS)"
+	echo ARCH_IS_$(TARGET_ARCH) is "$(ARCH_IS_$(TARGET_ARCH))"
+	echo BUILD_BASE_SYSTEM is "$(BUILD_BASE_SYSTEM)"
+	echo BUILD_BASE_SYSTEM_IS_$(BUILD_BASE_SYSTEM) is "$(BUILD_BASE_SYSTEM_IS_$(BUILD_BASE_SYSTEM))"
+	echo CLEAN-ALL-LIST is "$(CLEAN-ALL-LIST)"

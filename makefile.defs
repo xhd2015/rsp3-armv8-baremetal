@@ -1,0 +1,18 @@
+#定义FORCE
+.PHONY:FORCE
+FORCE: ;
+
+# 如果是在外部使用Makefile，则应当使用导出的环境变量
+ifneq ($(ENVS_PRESENT),true)
+include makefile.eclipse.envs
+endif
+
+# 添加辅助依赖
+USER_OBJS += aux-check-link-script.o
+CLEAN-ALL-LIST += $(MASTERY_BINARY_BINARY) aux-check-link-script.o
+
+# 设置USER_CXX_FLAGS
+USER_CXX_FLAGS += -Wno-error=invalid-offsetof  -Wno-error=comment -fsigned-char -Wreorder -save-temps
+# 设置USER_LINKER_FLAGS
+USER_LINKER_FLAGS += $(foreach sym,$(EXPORT_LINKER_SYMBOLS),-Xlinker --defsym=$(sym)=$($(sym)))
+

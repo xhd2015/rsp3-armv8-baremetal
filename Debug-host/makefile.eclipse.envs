@@ -1,0 +1,6 @@
+##=======Automatically generated=========##
+# This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment
+# after this file included,ENVS_PRESENT will never be used.So no need to define it.
+# ENVS_PRESENT := true
+ARCH_IS_host := 
+ TOOLCHAIN_ROOT := D:\installed

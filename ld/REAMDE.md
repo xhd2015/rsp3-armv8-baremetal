@@ -1,0 +1,1 @@
+link-XXX.ld, XXX是TARGET_ARCH
