@@ -56,10 +56,10 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF867
+	.4byte	.LASF871
 	.byte	0x4
-	.4byte	.LASF868
-	.4byte	.LASF869
+	.4byte	.LASF872
+	.4byte	.LASF873
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -70,7 +70,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.byte	0
 	.4byte	0x116
 	.uleb128 0x3
-	.4byte	.LASF802
+	.4byte	.LASF806
 	.byte	0x4
 	.byte	0xfd
 	.uleb128 0x4
@@ -195,12 +195,12 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.4byte	0x2dd
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF801
+	.4byte	.LASF805
 	.byte	0x4
 	.byte	0xff
 	.4byte	0x132
 	.uleb128 0x7
-	.4byte	.LASF802
+	.4byte	.LASF806
 	.byte	0x4
 	.2byte	0x101
 	.uleb128 0x8
@@ -211,9 +211,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF803
+	.4byte	.LASF807
 	.uleb128 0xa
-	.4byte	.LASF809
+	.4byte	.LASF813
 	.byte	0x5
 	.byte	0xd8
 	.4byte	0x149
@@ -222,23 +222,23 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF804
+	.4byte	.LASF808
 	.uleb128 0xc
 	.byte	0x20
 	.byte	0x10
 	.byte	0x5
 	.2byte	0x1aa
-	.4byte	.LASF870
+	.4byte	.LASF874
 	.4byte	0x17b
 	.uleb128 0xd
-	.4byte	.LASF805
+	.4byte	.LASF809
 	.byte	0x5
 	.2byte	0x1ab
 	.4byte	0x17b
 	.byte	0x8
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF806
+	.4byte	.LASF810
 	.byte	0x5
 	.2byte	0x1ac
 	.4byte	0x182
@@ -248,39 +248,39 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF807
+	.4byte	.LASF811
 	.uleb128 0x9
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF808
+	.4byte	.LASF812
 	.uleb128 0xe
-	.4byte	.LASF871
+	.4byte	.LASF875
 	.byte	0x5
 	.2byte	0x1b5
 	.4byte	0x150
 	.byte	0x10
 	.uleb128 0xf
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.uleb128 0xa
-	.4byte	.LASF810
+	.4byte	.LASF814
 	.byte	0x6
 	.byte	0x22
 	.4byte	0x1a6
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF811
+	.4byte	.LASF815
 	.uleb128 0xa
-	.4byte	.LASF812
+	.4byte	.LASF816
 	.byte	0x6
 	.byte	0x25
 	.4byte	0x1b8
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF813
+	.4byte	.LASF817
 	.uleb128 0xa
-	.4byte	.LASF814
+	.4byte	.LASF818
 	.byte	0x6
 	.byte	0x28
 	.4byte	0x1ca
@@ -291,139 +291,139 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0xb
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0x6
 	.byte	0x2b
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF816
+	.4byte	.LASF820
 	.byte	0x6
 	.byte	0x2e
 	.4byte	0x1ec
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF817
+	.4byte	.LASF821
 	.uleb128 0xa
-	.4byte	.LASF818
+	.4byte	.LASF822
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x1fe
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF819
+	.4byte	.LASF823
 	.uleb128 0xa
-	.4byte	.LASF820
+	.4byte	.LASF824
 	.byte	0x6
 	.byte	0x34
 	.4byte	0x210
 	.uleb128 0x9
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF821
+	.4byte	.LASF825
 	.uleb128 0xa
-	.4byte	.LASF822
+	.4byte	.LASF826
 	.byte	0x6
 	.byte	0x37
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF823
+	.4byte	.LASF827
 	.byte	0x6
 	.byte	0x3c
 	.4byte	0x1a6
 	.uleb128 0xa
-	.4byte	.LASF824
+	.4byte	.LASF828
 	.byte	0x6
 	.byte	0x3d
 	.4byte	0x1b8
 	.uleb128 0xa
-	.4byte	.LASF825
+	.4byte	.LASF829
 	.byte	0x6
 	.byte	0x3e
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF826
+	.4byte	.LASF830
 	.byte	0x6
 	.byte	0x3f
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF827
+	.4byte	.LASF831
 	.byte	0x6
 	.byte	0x40
 	.4byte	0x1ec
 	.uleb128 0xa
-	.4byte	.LASF828
+	.4byte	.LASF832
 	.byte	0x6
 	.byte	0x41
 	.4byte	0x1fe
 	.uleb128 0xa
-	.4byte	.LASF829
+	.4byte	.LASF833
 	.byte	0x6
 	.byte	0x42
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF830
+	.4byte	.LASF834
 	.byte	0x6
 	.byte	0x43
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF831
+	.4byte	.LASF835
 	.byte	0x6
 	.byte	0x47
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF832
+	.4byte	.LASF836
 	.byte	0x6
 	.byte	0x48
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF833
+	.4byte	.LASF837
 	.byte	0x6
 	.byte	0x49
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF834
+	.4byte	.LASF838
 	.byte	0x6
 	.byte	0x4a
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF835
+	.4byte	.LASF839
 	.byte	0x6
 	.byte	0x4b
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF836
+	.4byte	.LASF840
 	.byte	0x6
 	.byte	0x4c
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF837
+	.4byte	.LASF841
 	.byte	0x6
 	.byte	0x4d
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF838
+	.4byte	.LASF842
 	.byte	0x6
 	.byte	0x4e
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF839
+	.4byte	.LASF843
 	.byte	0x6
 	.byte	0x53
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF840
+	.4byte	.LASF844
 	.byte	0x6
 	.byte	0x56
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF841
+	.4byte	.LASF845
 	.byte	0x6
 	.byte	0x5b
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF842
+	.4byte	.LASF846
 	.byte	0x6
 	.byte	0x5c
 	.4byte	0x149
@@ -439,16 +439,16 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF843
+	.4byte	.LASF847
 	.uleb128 0xb
 	.4byte	0x313
 	.uleb128 0x13
-	.4byte	.LASF844
+	.4byte	.LASF848
 	.byte	0x7
 	.byte	0x1c
 	.4byte	0x30e
 	.uleb128 0x14
-	.4byte	.LASF845
+	.4byte	.LASF849
 	.byte	0x7
 	.byte	0x1f
 	.4byte	0x144
@@ -461,12 +461,12 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.byte	0x40
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF846
+	.4byte	.LASF850
 	.byte	0x7
 	.byte	0x20
 	.4byte	0x336
 	.uleb128 0x15
-	.4byte	.LASF847
+	.4byte	.LASF851
 	.byte	0x7
 	.byte	0x22
 	.4byte	0x1d1
@@ -490,13 +490,13 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.4byte	0x1d1
 	.4byte	0x40000000
 	.uleb128 0x18
-	.4byte	.LASF873
+	.4byte	.LASF877
 	.byte	0x24
 	.byte	0x8
 	.byte	0x19
 	.4byte	0x4af
 	.uleb128 0x19
-	.4byte	.LASF874
+	.4byte	.LASF878
 	.byte	0x7
 	.byte	0x4
 	.4byte	0x210
@@ -505,121 +505,121 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.byte	0x1
 	.4byte	0x3c0
 	.uleb128 0x1a
-	.4byte	.LASF848
+	.4byte	.LASF852
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF849
+	.4byte	.LASF853
 	.byte	0x1
 	.uleb128 0x1a
-	.4byte	.LASF850
+	.4byte	.LASF854
 	.byte	0x2
 	.uleb128 0x1a
-	.4byte	.LASF851
+	.4byte	.LASF855
 	.byte	0x3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF852
+	.4byte	.LASF856
 	.byte	0x8
 	.byte	0x25
 	.4byte	0x4b4
 	.byte	0
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF853
+	.4byte	.LASF857
 	.byte	0x8
 	.byte	0x28
 	.4byte	0x4c4
 	.byte	0x3
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF854
+	.4byte	.LASF858
 	.byte	0x8
 	.byte	0x2b
 	.4byte	0x1f3
 	.byte	0xb
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF855
+	.4byte	.LASF859
 	.byte	0x8
 	.byte	0x2e
 	.4byte	0x1e1
 	.byte	0xd
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF856
+	.4byte	.LASF860
 	.byte	0x8
 	.byte	0x31
 	.4byte	0x1f3
 	.byte	0xe
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF857
+	.4byte	.LASF861
 	.byte	0x8
 	.byte	0x34
 	.4byte	0x1e1
 	.byte	0x10
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF858
+	.4byte	.LASF862
 	.byte	0x8
 	.byte	0x38
 	.4byte	0x1f3
 	.byte	0x11
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF859
+	.4byte	.LASF863
 	.byte	0x8
 	.byte	0x3c
 	.4byte	0x1f3
 	.byte	0x13
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF860
+	.4byte	.LASF864
 	.byte	0x8
 	.byte	0x40
 	.4byte	0x1e1
 	.byte	0x15
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF861
+	.4byte	.LASF865
 	.byte	0x8
 	.byte	0x44
 	.4byte	0x1f3
 	.byte	0x16
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF862
+	.4byte	.LASF866
 	.byte	0x8
 	.byte	0x47
 	.4byte	0x1f3
 	.byte	0x18
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF863
+	.4byte	.LASF867
 	.byte	0x8
 	.byte	0x4a
 	.4byte	0x1f3
 	.byte	0x1a
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF864
+	.4byte	.LASF868
 	.byte	0x8
 	.byte	0x4d
 	.4byte	0x205
 	.byte	0x1c
 	.byte	0x1
 	.uleb128 0x1b
-	.4byte	.LASF865
+	.4byte	.LASF869
 	.byte	0x8
 	.byte	0x51
 	.4byte	0x205
 	.byte	0x20
 	.byte	0x1
 	.uleb128 0x1c
-	.4byte	.LASF875
+	.4byte	.LASF879
 	.byte	0x8
 	.byte	0x53
-	.4byte	.LASF876
+	.4byte	.LASF880
 	.4byte	0x139
 	.byte	0x1
 	.4byte	0x48e
@@ -628,10 +628,10 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.4byte	0x4d4
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF877
+	.4byte	.LASF881
 	.byte	0x8
 	.byte	0x54
-	.4byte	.LASF878
+	.4byte	.LASF882
 	.4byte	0x395
 	.byte	0x1
 	.4byte	0x4a8
@@ -672,7 +672,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.4byte	0x504
 	.4byte	0x512
 	.uleb128 0x21
-	.4byte	.LASF866
+	.4byte	.LASF870
 	.4byte	0x4da
 	.4byte	.LLST1
 	.byte	0
@@ -687,7 +687,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.byte	0x9c
 	.4byte	0x533
 	.uleb128 0x21
-	.4byte	.LASF866
+	.4byte	.LASF870
 	.4byte	0x4da
 	.4byte	.LLST0
 	.byte	0
@@ -3713,7 +3713,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x102
 	.4byte	.LASF785
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.7c3aff63746d06c2b218490acda1ebb4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.5b434c3192a2024a12b2b93c0167ad44,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -3748,24 +3748,36 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.uleb128 0x2e
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x31
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x33
+	.uleb128 0x32
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x36
+	.uleb128 0x33
 	.4byte	.LASF799
 	.byte	0x5
-	.uleb128 0x37
+	.uleb128 0x34
 	.4byte	.LASF800
+	.byte	0x5
+	.uleb128 0x38
+	.4byte	.LASF801
+	.byte	0x5
+	.uleb128 0x39
+	.4byte	.LASF802
+	.byte	0x5
+	.uleb128 0x3c
+	.4byte	.LASF803
+	.byte	0x5
+	.uleb128 0x3d
+	.4byte	.LASF804
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
 .LASF102:
 	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF810:
+.LASF814:
 	.string	"int8_t"
 .LASF275:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
@@ -3777,7 +3789,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
 .LASF142:
 	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF809:
+.LASF813:
 	.string	"size_t"
 .LASF407:
 	.string	"PERIPHBASE 0x08000000"
@@ -3823,11 +3835,11 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"UINT64_MAX"
 .LASF309:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
-.LASF798:
+.LASF802:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF838:
+.LASF842:
 	.string	"uint_fast64_t"
-.LASF814:
+.LASF818:
 	.string	"int32_t"
 .LASF683:
 	.string	"INT64_MAX __INT64_MAX__"
@@ -3843,8 +3855,10 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
-.LASF869:
+.LASF873:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\chap003\\\\Debug-qemu_virt"
+.LASF797:
+	.string	"ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) \":\\n\\t\")"
 .LASF585:
 	.string	"_GLIBCXX11_USE_C99_STDLIB 1"
 .LASF317:
@@ -3909,7 +3923,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__ARM_NEON 1"
 .LASF588:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF828:
+.LASF832:
 	.string	"uint_least16_t"
 .LASF252:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
@@ -3919,7 +3933,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF139:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF831:
+.LASF835:
 	.string	"int_fast8_t"
 .LASF740:
 	.string	"UINTPTR_MAX"
@@ -3973,9 +3987,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__GXX_EXPERIMENTAL_CXX0X__ 1"
 .LASF260:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF837:
+.LASF841:
 	.string	"uint_fast32_t"
-.LASF848:
+.LASF852:
 	.string	"FAT12"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
@@ -3985,7 +3999,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF319:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF800:
+.LASF804:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF657:
 	.string	"NULL"
@@ -3995,13 +4009,13 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__SCHAR_WIDTH__ 8"
 .LASF167:
 	.string	"__INT_FAST16_WIDTH__ 32"
-.LASF849:
+.LASF853:
 	.string	"FAT16"
 .LASF782:
 	.string	"INTMAX_C"
 .LASF712:
 	.string	"INT_FAST8_MAX"
-.LASF845:
+.LASF849:
 	.string	"koutBufSize"
 .LASF405:
 	.string	"CONFIG_RAM_SIZE 0x40000000"
@@ -4009,7 +4023,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__AARCH64_CMODEL_SMALL__ 1"
 .LASF42:
 	.string	"__INTMAX_TYPE__ long int"
-.LASF862:
+.LASF866:
 	.string	"secPerTrk"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSHF 1"
@@ -4029,7 +4043,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
 .LASF59:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF803:
+.LASF807:
 	.string	"long int"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
@@ -4081,7 +4095,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR"
 .LASF226:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
-.LASF819:
+.LASF823:
 	.string	"short unsigned int"
 .LASF509:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
@@ -4111,13 +4125,13 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_NOEXCEPT noexcept"
 .LASF189:
 	.string	"__FLT_MAX_EXP__ 128"
-.LASF850:
+.LASF854:
 	.string	"FAT32"
 .LASF22:
 	.string	"__SIZEOF_LONG__ 8"
 .LASF569:
 	.string	"_GLIBCXX_HAVE_VFWSCANF 1"
-.LASF855:
+.LASF859:
 	.string	"secPerClus"
 .LASF26:
 	.string	"__SIZEOF_DOUBLE__ 8"
@@ -4139,7 +4153,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_CSTDINT 1"
 .LASF188:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF830:
+.LASF834:
 	.string	"uint_least64_t"
 .LASF422:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -4149,9 +4163,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
 .LASF593:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF811:
+.LASF815:
 	.string	"signed char"
-.LASF816:
+.LASF820:
 	.string	"uint8_t"
 .LASF745:
 	.string	"INTMAX_MIN (-INTMAX_MAX - 1)"
@@ -4223,6 +4237,8 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT64X_MIN_EXP__ (-16381)"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
+.LASF798:
+	.string	"ASM_DEFINE_GLOBAL_SYM(sym) __asm__(\".global \" __stringify(sym) \" \\n\\t;\" __stringify(sym) \":\\n\\t\")"
 .LASF533:
 	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF579:
@@ -4231,7 +4247,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT_HAS_INFINITY__ 1"
 .LASF416:
 	.string	"__need_wint_t"
-.LASF858:
+.LASF862:
 	.string	"rootEntCnt"
 .LASF141:
 	.string	"__UINT16_MAX__ 0xffff"
@@ -4263,7 +4279,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__STRICT_ANSI__ 1"
 .LASF608:
 	.string	"_GLIBCXX_USE_TMPNAM 1"
-.LASF860:
+.LASF864:
 	.string	"media"
 .LASF790:
 	.string	"INFO \"[INFO] \""
@@ -4281,7 +4297,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF763:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF843:
+.LASF847:
 	.string	"char"
 .LASF535:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
@@ -4297,19 +4313,19 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
 .LASF476:
 	.string	"_GLIBCXX_TXN_SAFE_DYN "
-.LASF877:
+.LASF881:
 	.string	"getFATType"
 .LASF21:
 	.string	"__SIZEOF_INT__ 4"
 .LASF530:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
-.LASF799:
+.LASF803:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF791:
 	.string	"WARNING \"[WARNING] \""
-.LASF853:
+.LASF857:
 	.string	"BS_OEMName"
-.LASF829:
+.LASF833:
 	.string	"uint_least32_t"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
@@ -4327,7 +4343,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF194:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF844:
+.LASF848:
 	.string	"EMPTY_STR"
 .LASF424:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
@@ -4341,13 +4357,13 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
-.LASF872:
+.LASF876:
 	.string	"decltype(nullptr)"
 .LASF147:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
 .LASF276:
 	.string	"__FLT128_MAX_EXP__ 16384"
-.LASF824:
+.LASF828:
 	.string	"int_least16_t"
 .LASF401:
 	.string	"CXX_MACROS_H__ "
@@ -4363,17 +4379,17 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
 .LASF480:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF868:
+.LASF872:
 	.string	"../src/filesystem/fat/FAT_FATBPB.cpp"
 .LASF51:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF851:
+.LASF855:
 	.string	"UNKNOWN"
 .LASF595:
 	.string	"_GLIBCXX_STDIO_EOF -1"
 .LASF456:
 	.string	"_GLIBCXX_END_NAMESPACE_ALGO _GLIBCXX_END_NAMESPACE_VERSION"
-.LASF864:
+.LASF868:
 	.string	"hiddSec"
 .LASF459:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL "
@@ -4443,7 +4459,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__need_NULL"
 .LASF429:
 	.string	"_GLIBCXX_USE_CONSTEXPR constexpr"
-.LASF878:
+.LASF882:
 	.string	"_ZNK7FAT_BPB10getFATTypeEv"
 .LASF428:
 	.string	"_GLIBCXX_CONSTEXPR constexpr"
@@ -4513,7 +4529,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__ARM_FEATURE_CRC32"
 .LASF470:
 	.string	"_GLIBCXX_OS_DEFINES 1"
-.LASF804:
+.LASF808:
 	.string	"long unsigned int"
 .LASF201:
 	.string	"__DBL_DIG__ 15"
@@ -4565,7 +4581,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__cpp_static_assert 200410"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF826:
+.LASF830:
 	.string	"int_least64_t"
 .LASF19:
 	.string	"_LP64 1"
@@ -4573,7 +4589,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"UINTMAX_MAX"
 .LASF306:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
-.LASF866:
+.LASF870:
 	.string	"this"
 .LASF425:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
@@ -4591,7 +4607,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF840:
+.LASF844:
 	.string	"uintptr_t"
 .LASF204:
 	.string	"__DBL_MAX_EXP__ 1024"
@@ -4669,7 +4685,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT32_HAS_INFINITY__ 1"
 .LASF113:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
-.LASF861:
+.LASF865:
 	.string	"FATSz16"
 .LASF670:
 	.string	"INT16_MAX"
@@ -4691,7 +4707,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_HAVE_SYS_TYPES_H 1"
 .LASF601:
 	.string	"_GLIBCXX_USE_C99_STDINT_TR1 1"
-.LASF856:
+.LASF860:
 	.string	"rsvdSecCnt"
 .LASF106:
 	.string	"__cpp_threadsafe_static_init 200806"
@@ -4709,9 +4725,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF674:
 	.string	"UINT16_MAX"
-.LASF825:
+.LASF829:
 	.string	"int_least32_t"
-.LASF852:
+.LASF856:
 	.string	"BS_jmpBoot"
 .LASF223:
 	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
@@ -4729,7 +4745,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__N(msgid) (msgid)"
 .LASF484:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF842:
+.LASF846:
 	.string	"uintmax_t"
 .LASF403:
 	.string	"UART_BASE 0x09000000"
@@ -4773,11 +4789,11 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__AARCH64_CMODEL_SMALL__"
 .LASF61:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF821:
+.LASF825:
 	.string	"unsigned int"
 .LASF633:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF871:
+.LASF875:
 	.string	"max_align_t"
 .LASF639:
 	.string	"_SIZET_ "
@@ -4791,7 +4807,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF442:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF839:
+.LASF843:
 	.string	"intptr_t"
 .LASF293:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -4843,7 +4859,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1"
 .LASF409:
 	.string	"INCLUDE_FILESYSTEM_FAT_BPB_H_ "
-.LASF875:
+.LASF879:
 	.string	"uni_getRootDirSecCount"
 .LASF623:
 	.string	"_PTRDIFF_T_DECLARED "
@@ -4855,7 +4871,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF654:
 	.string	"_GCC_WCHAR_T "
-.LASF832:
+.LASF836:
 	.string	"int_fast16_t"
 .LASF46:
 	.string	"__SIG_ATOMIC_TYPE__ int"
@@ -4881,19 +4897,19 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF198:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF806:
+.LASF810:
 	.string	"__max_align_ld"
-.LASF847:
+.LASF851:
 	.string	"UNIT_K"
 .LASF402:
 	.string	"KERNEL_ADDRESS 0"
-.LASF805:
+.LASF809:
 	.string	"__max_align_ll"
-.LASF859:
+.LASF863:
 	.string	"totSec16"
 .LASF138:
 	.string	"__INT32_MAX__ 0x7fffffff"
-.LASF817:
+.LASF821:
 	.string	"unsigned char"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
@@ -4907,7 +4923,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF94:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF801:
+.LASF805:
 	.string	"__gnu_cxx"
 .LASF787:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
@@ -4919,7 +4935,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_HAVE_TANF 1"
 .LASF767:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF827:
+.LASF831:
 	.string	"uint_least8_t"
 .LASF215:
 	.string	"__LDBL_MANT_DIG__ 113"
@@ -4927,7 +4943,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF823:
+.LASF827:
 	.string	"int_least8_t"
 .LASF626:
 	.string	"_SIZE_T "
@@ -4941,8 +4957,10 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF230:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF808:
+.LASF812:
 	.string	"long double"
+.LASF799:
+	.string	"ASM_ISB() __asm__ (\"isb \\n\\t\")"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
 .LASF517:
@@ -4989,7 +5007,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__cpp_decltype_auto 201304"
 .LASF423:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF797:
+.LASF801:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF227:
 	.string	"__LDBL_HAS_DENORM__ 1"
@@ -5007,7 +5025,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_NAMESPACE_CXX11"
 .LASF394:
 	.string	"__ARM_FEATURE_CRYPTO"
-.LASF865:
+.LASF869:
 	.string	"totSec32"
 .LASF602:
 	.string	"_GLIBCXX_USE_FCHMOD 1"
@@ -5033,9 +5051,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
 .LASF321:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF873:
+.LASF877:
 	.string	"FAT_BPB"
-.LASF846:
+.LASF850:
 	.string	"koutBuf"
 .LASF634:
 	.string	"_SIZE_T_DEFINED "
@@ -5043,7 +5061,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF706:
 	.string	"INT_LEAST64_MAX"
-.LASF818:
+.LASF822:
 	.string	"uint16_t"
 .LASF618:
 	.string	"__PTRDIFF_T "
@@ -5055,7 +5073,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__cpp_binary_literals 201304"
 .LASF772:
 	.string	"INT64_C"
-.LASF867:
+.LASF871:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8-a -mlittle-endian -mabi=lp64 -g3 -O0 -Og -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti -fsigned-char"
 .LASF60:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
@@ -5067,7 +5085,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT32X_DIG__ 15"
 .LASF176:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF834:
+.LASF838:
 	.string	"int_fast64_t"
 .LASF166:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
@@ -5095,7 +5113,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
 .LASF153:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF802:
+.LASF806:
 	.string	"__cxx11"
 .LASF210:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
@@ -5111,7 +5129,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION"
 .LASF380:
 	.string	"__ARM_FP 14"
-.LASF835:
+.LASF839:
 	.string	"uint_fast8_t"
 .LASF725:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
@@ -5133,7 +5151,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
 .LASF392:
 	.string	"_ILP32"
-.LASF854:
+.LASF858:
 	.string	"bytesPerSec"
 .LASF57:
 	.string	"__INT_LEAST32_TYPE__ int"
@@ -5195,7 +5213,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF89:
 	.string	"__cpp_rvalue_references 200610"
-.LASF833:
+.LASF837:
 	.string	"int_fast32_t"
 .LASF28:
 	.string	"__SIZEOF_SIZE_T__ 8"
@@ -5209,11 +5227,13 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF464:
 	.string	"__glibcxx_assert(_Condition) "
+.LASF800:
+	.string	"ASM_NOP() __asm__(\"nop \\n\\t\")"
 .LASF607:
 	.string	"_GLIBCXX_USE_SC_NPROCESSORS_ONLN 1"
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF813:
+.LASF817:
 	.string	"short int"
 .LASF612:
 	.string	"_STDDEF_H "
@@ -5227,11 +5247,11 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF238:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF822:
+.LASF826:
 	.string	"uint64_t"
 .LASF173:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
-.LASF863:
+.LASF867:
 	.string	"numHeads"
 .LASF704:
 	.string	"UINT_LEAST32_MAX"
@@ -5251,7 +5271,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__DBL_HAS_INFINITY__ 1"
 .LASF711:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
-.LASF812:
+.LASF816:
 	.string	"int16_t"
 .LASF705:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
@@ -5269,7 +5289,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"INT_LEAST32_MAX"
 .LASF25:
 	.string	"__SIZEOF_FLOAT__ 4"
-.LASF876:
+.LASF880:
 	.string	"_ZNK7FAT_BPB22uni_getRootDirSecCountEv"
 .LASF324:
 	.string	"__DEC64_MIN__ 1E-383DD"
@@ -5369,7 +5389,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
 .LASF638:
 	.string	"_GCC_SIZE_T "
-.LASF874:
+.LASF878:
 	.string	"FATType"
 .LASF716:
 	.string	"UINT_FAST8_MAX"
@@ -5383,9 +5403,9 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF656:
 	.string	"_BSD_WCHAR_T_"
-.LASF807:
+.LASF811:
 	.string	"long long int"
-.LASF820:
+.LASF824:
 	.string	"uint32_t"
 .LASF513:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
@@ -5397,11 +5417,11 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
 .LASF519:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
-.LASF857:
+.LASF861:
 	.string	"numFATs"
 .LASF224:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF836:
+.LASF840:
 	.string	"uint_fast16_t"
 .LASF68:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
@@ -5419,7 +5439,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_RELEASE 7"
 .LASF696:
 	.string	"INT_LEAST16_MIN"
-.LASF870:
+.LASF874:
 	.string	"11max_align_t"
 .LASF259:
 	.string	"__FLT64_DIG__ 15"
@@ -5461,7 +5481,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF815:
+.LASF819:
 	.string	"int64_t"
 .LASF496:
 	.string	"_GLIBCXX_HAVE_EIDRM 1"
@@ -5507,7 +5527,7 @@ _ZNK7FAT_BPB10getFATTypeEv:
 	.string	"UINT64_C(c) __UINT64_C(c)"
 .LASF751:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
-.LASF841:
+.LASF845:
 	.string	"intmax_t"
 .LASF200:
 	.string	"__DBL_MANT_DIG__ 53"

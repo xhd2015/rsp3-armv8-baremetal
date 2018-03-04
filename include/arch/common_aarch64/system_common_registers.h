@@ -1,4 +1,5 @@
 //##======Automatically generated==========##
+//##====../include/arch/common_aarch64/gen_register_class.py ../include/arch/common_aarch64/system_common_registers.py ../include/arch/common_aarch64/system_common_registers.h=========##
 #ifndef ___INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__
 #define ___INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__
 
@@ -142,9 +143,9 @@ SETUP_REG_STD_WRITE(NZCV)
 
 class RegPAN{
 public:
-        uint64_t		RES0_0:22;
-        uint64_t		PAN:1;
-        uint64_t		RES0_1:9;
+        uint32_t		RES0_0:22;
+        uint32_t		PAN:1;
+        uint32_t		RES0_1:9;
         AS_MACRO void dump()const
         {
             kout << "PAN : "
@@ -453,6 +454,41 @@ SETUP_REG_STD_WRITE(ID_AA64PFR0_EL1)
 
 
 
+class RegID_AA64MMFR1_EL1{
+public:
+        uint64_t		HAFDBS:4;
+        uint64_t		VMIDBits:4;
+        uint64_t		VH:4;
+        uint64_t		HPDS:4;
+        uint64_t		LO:4;
+        uint64_t		PAN:4;
+        uint64_t		SpecSEI:4;
+        uint64_t		XNX:4;
+        uint64_t		RES0:32;
+        AS_MACRO void dump()const
+        {
+            kout << "ID_AA64MMFR1_EL1 : "
+                <<"HAFDBS = "<< HAFDBS << ","
+                <<"VMIDBits = "<< VMIDBits << ","
+                <<"VH = "<< VH << ","
+                <<"HPDS = "<< HPDS << ","
+                <<"LO = "<< LO << ","
+                <<"PAN = "<< PAN << ","
+                <<"SpecSEI = "<< SpecSEI << ","
+                <<"XNX = "<< XNX << ","
+                <<"RES0 = "<< RES0
+                  << "\n";
+        }
+        AS_MACRO static RegID_AA64MMFR1_EL1 read();
+        AS_MACRO RegID_AA64MMFR1_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(ID_AA64MMFR1_EL1)
+SETUP_REG_STD_UPDATE_READ(ID_AA64MMFR1_EL1)
+SETUP_REG_STD_WRITE(ID_AA64MMFR1_EL1)
+
+
+
 class RegID_AA64MMFR0_EL1{
 public:
         uint64_t		PARange:4;
@@ -547,6 +583,52 @@ public:
 SETUP_REG_STD_READ(MPIDR_EL1)
 SETUP_REG_STD_UPDATE_READ(MPIDR_EL1)
 SETUP_REG_STD_WRITE(MPIDR_EL1)
+
+
+
+class RegTTBR0_EL1{
+public:
+        uint64_t		CnP:1;
+        uint64_t		BADDR:47;
+        uint64_t		ASID:16;
+        AS_MACRO void dump()const
+        {
+            kout << "TTBR0_EL1 : "
+                <<"CnP = "<< CnP << ","
+                <<"BADDR = "<< Hex(BADDR) << ","
+                <<"ASID = "<< ASID
+                  << "\n";
+        }
+        AS_MACRO static RegTTBR0_EL1 read();
+        AS_MACRO RegTTBR0_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(TTBR0_EL1)
+SETUP_REG_STD_UPDATE_READ(TTBR0_EL1)
+SETUP_REG_STD_WRITE(TTBR0_EL1)
+
+
+
+class RegTTBR1_EL1{
+public:
+        uint64_t		CnP:1;
+        uint64_t		BADDR:47;
+        uint64_t		ASID:16;
+        AS_MACRO void dump()const
+        {
+            kout << "TTBR1_EL1 : "
+                <<"CnP = "<< CnP << ","
+                <<"BADDR = "<< Hex(BADDR) << ","
+                <<"ASID = "<< ASID
+                  << "\n";
+        }
+        AS_MACRO static RegTTBR1_EL1 read();
+        AS_MACRO RegTTBR1_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(TTBR1_EL1)
+SETUP_REG_STD_UPDATE_READ(TTBR1_EL1)
+SETUP_REG_STD_WRITE(TTBR1_EL1)
 
 
 
@@ -722,6 +804,85 @@ public:
 SETUP_REG_STD_READ(MAIR_EL3)
 SETUP_REG_STD_UPDATE_READ(MAIR_EL3)
 SETUP_REG_STD_WRITE(MAIR_EL3)
+
+
+
+class RegSCTLR_EL1{
+public:
+        uint32_t		M:1;
+        uint32_t		A:1;
+        uint32_t		C:1;
+        uint32_t		SA:1;
+        uint32_t		SA0:1;
+        uint32_t		CP15BEN:1;
+        uint32_t		RES0_0:1;
+        uint32_t		ITD:1;
+        uint32_t		SED:1;
+        uint32_t		UMA:1;
+        uint32_t		RES0_1:1;
+        uint32_t		RES1_2:1;
+        uint32_t		I:1;
+        uint32_t		RES0_3:1;
+        uint32_t		DZE:1;
+        uint32_t		UCT:1;
+        uint32_t		nTWI:1;
+        uint32_t		RES0_4:1;
+        uint32_t		nTWE:1;
+        uint32_t		WXN:1;
+        uint32_t		RES1_5:1;
+        uint32_t		IESB:1;
+        uint32_t		RES1_6:1;
+        uint32_t		SPAN:1;
+        uint32_t		E0E:1;
+        uint32_t		EE:1;
+        uint32_t		UCI:1;
+        uint32_t		RES0_7:1;
+        uint32_t		nTLSMD:1;
+        uint32_t		LSMAOE:1;
+        uint32_t		RES0_8:2;
+        AS_MACRO void dump()const
+        {
+            kout << "SCTLR_EL1 : "
+                <<"M = "<< M << ","
+                <<"A = "<< A << ","
+                <<"C = "<< C << ","
+                <<"SA = "<< SA << ","
+                <<"SA0 = "<< SA0 << ","
+                <<"CP15BEN = "<< CP15BEN << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"ITD = "<< ITD << ","
+                <<"SED = "<< SED << ","
+                <<"UMA = "<< UMA << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"RES1_2 = "<< RES1_2 << ","
+                <<"I = "<< I << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"DZE = "<< DZE << ","
+                <<"UCT = "<< UCT << ","
+                <<"nTWI = "<< nTWI << ","
+                <<"RES0_4 = "<< RES0_4 << ","
+                <<"nTWE = "<< nTWE << ","
+                <<"WXN = "<< WXN << ","
+                <<"RES1_5 = "<< RES1_5 << ","
+                <<"IESB = "<< IESB << ","
+                <<"RES1_6 = "<< RES1_6 << ","
+                <<"SPAN = "<< SPAN << ","
+                <<"E0E = "<< E0E << ","
+                <<"EE = "<< EE << ","
+                <<"UCI = "<< UCI << ","
+                <<"RES0_7 = "<< RES0_7 << ","
+                <<"nTLSMD = "<< nTLSMD << ","
+                <<"LSMAOE = "<< LSMAOE << ","
+                <<"RES0_8 = "<< RES0_8
+                  << "\n";
+        }
+        AS_MACRO static RegSCTLR_EL1 read();
+        AS_MACRO RegSCTLR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SCTLR_EL1)
+SETUP_REG_STD_UPDATE_READ(SCTLR_EL1)
+SETUP_REG_STD_WRITE(SCTLR_EL1)
 
 
 

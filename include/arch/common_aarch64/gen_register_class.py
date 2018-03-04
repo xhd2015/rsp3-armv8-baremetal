@@ -18,6 +18,10 @@ if len(sys.argv)<3:
 #   HARD_CODED : same with STD
 #   ANY_MEM : no_update_read
 
+# attributes:
+#  applies -- each condition must be present, if it is condition listed else, use empty string: ""
+
+
 # load arg as module,name it as reg_list
 imp.load_source("reg_list","",open(sys.argv[1]))
 reg_list = sys.modules["reg_list"].reg_list
@@ -73,7 +77,7 @@ def genClassName(reg_name):
     return "Reg"+reg_name
 
 
-# applies when if( struct1.Fn==Valn && )..
+# applies when ( struct1.Fn==Valn && )..
 # {"reg_name":"XX","setup_type":"STD","fields":[[],[]],"applies":[["Fn==Valn"]],"scale_type":"uint64_t",no_read":true,"no_write":true}
 # return declaration(in header) and definition(in source file)
 def genClass(class_config):
@@ -162,6 +166,7 @@ def getMapFromList(givenList):
 
 def genAll(regList,filepath):
     res = "//##======Automatically generated==========##\n"
+    res += "//##====" + " ".join(sys.argv) +"=========##\n" 
     guard = genIncludeGuard(filepath)
     res += "#ifndef " + guard +"\n"
     res += "#define " + guard +"\n"

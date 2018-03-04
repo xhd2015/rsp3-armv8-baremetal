@@ -160,10 +160,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF870
+	.4byte	.LASF874
 	.byte	0x4
-	.4byte	.LASF871
-	.4byte	.LASF872
+	.4byte	.LASF875
+	.4byte	.LASF876
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -174,7 +174,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.byte	0
 	.4byte	0x116
 	.uleb128 0x3
-	.4byte	.LASF801
+	.4byte	.LASF805
 	.byte	0x4
 	.byte	0xfd
 	.uleb128 0x4
@@ -299,12 +299,12 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x2dd
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF800
+	.4byte	.LASF804
 	.byte	0x4
 	.byte	0xff
 	.4byte	0x132
 	.uleb128 0x7
-	.4byte	.LASF801
+	.4byte	.LASF805
 	.byte	0x4
 	.2byte	0x101
 	.uleb128 0x8
@@ -315,9 +315,9 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF802
+	.4byte	.LASF806
 	.uleb128 0xa
-	.4byte	.LASF808
+	.4byte	.LASF812
 	.byte	0x5
 	.byte	0xd8
 	.4byte	0x149
@@ -326,23 +326,23 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF803
+	.4byte	.LASF807
 	.uleb128 0xc
 	.byte	0x20
 	.byte	0x10
 	.byte	0x5
 	.2byte	0x1aa
-	.4byte	.LASF873
+	.4byte	.LASF877
 	.4byte	0x17b
 	.uleb128 0xd
-	.4byte	.LASF804
+	.4byte	.LASF808
 	.byte	0x5
 	.2byte	0x1ab
 	.4byte	0x17b
 	.byte	0x8
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF805
+	.4byte	.LASF809
 	.byte	0x5
 	.2byte	0x1ac
 	.4byte	0x182
@@ -352,39 +352,39 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF806
+	.4byte	.LASF810
 	.uleb128 0x9
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF807
+	.4byte	.LASF811
 	.uleb128 0xe
-	.4byte	.LASF874
+	.4byte	.LASF878
 	.byte	0x5
 	.2byte	0x1b5
 	.4byte	0x150
 	.byte	0x10
 	.uleb128 0xf
-	.4byte	.LASF875
+	.4byte	.LASF879
 	.uleb128 0xa
-	.4byte	.LASF809
+	.4byte	.LASF813
 	.byte	0x6
 	.byte	0x22
 	.4byte	0x1a6
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF810
+	.4byte	.LASF814
 	.uleb128 0xa
-	.4byte	.LASF811
+	.4byte	.LASF815
 	.byte	0x6
 	.byte	0x25
 	.4byte	0x1b8
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF812
+	.4byte	.LASF816
 	.uleb128 0xa
-	.4byte	.LASF813
+	.4byte	.LASF817
 	.byte	0x6
 	.byte	0x28
 	.4byte	0x1ca
@@ -395,139 +395,139 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0xb
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF814
+	.4byte	.LASF818
 	.byte	0x6
 	.byte	0x2b
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0x6
 	.byte	0x2e
 	.4byte	0x1ec
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF816
+	.4byte	.LASF820
 	.uleb128 0xa
-	.4byte	.LASF817
+	.4byte	.LASF821
 	.byte	0x6
 	.byte	0x31
 	.4byte	0x1fe
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF818
+	.4byte	.LASF822
 	.uleb128 0xa
-	.4byte	.LASF819
+	.4byte	.LASF823
 	.byte	0x6
 	.byte	0x34
 	.4byte	0x210
 	.uleb128 0x9
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF820
+	.4byte	.LASF824
 	.uleb128 0xa
-	.4byte	.LASF821
+	.4byte	.LASF825
 	.byte	0x6
 	.byte	0x37
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF822
+	.4byte	.LASF826
 	.byte	0x6
 	.byte	0x3c
 	.4byte	0x1a6
 	.uleb128 0xa
-	.4byte	.LASF823
+	.4byte	.LASF827
 	.byte	0x6
 	.byte	0x3d
 	.4byte	0x1b8
 	.uleb128 0xa
-	.4byte	.LASF824
+	.4byte	.LASF828
 	.byte	0x6
 	.byte	0x3e
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF825
+	.4byte	.LASF829
 	.byte	0x6
 	.byte	0x3f
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF826
+	.4byte	.LASF830
 	.byte	0x6
 	.byte	0x40
 	.4byte	0x1ec
 	.uleb128 0xa
-	.4byte	.LASF827
+	.4byte	.LASF831
 	.byte	0x6
 	.byte	0x41
 	.4byte	0x1fe
 	.uleb128 0xa
-	.4byte	.LASF828
+	.4byte	.LASF832
 	.byte	0x6
 	.byte	0x42
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF829
+	.4byte	.LASF833
 	.byte	0x6
 	.byte	0x43
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF830
+	.4byte	.LASF834
 	.byte	0x6
 	.byte	0x47
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF831
+	.4byte	.LASF835
 	.byte	0x6
 	.byte	0x48
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF832
+	.4byte	.LASF836
 	.byte	0x6
 	.byte	0x49
 	.4byte	0x1ca
 	.uleb128 0xa
-	.4byte	.LASF833
+	.4byte	.LASF837
 	.byte	0x6
 	.byte	0x4a
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF834
+	.4byte	.LASF838
 	.byte	0x6
 	.byte	0x4b
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF835
+	.4byte	.LASF839
 	.byte	0x6
 	.byte	0x4c
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF836
+	.4byte	.LASF840
 	.byte	0x6
 	.byte	0x4d
 	.4byte	0x210
 	.uleb128 0xa
-	.4byte	.LASF837
+	.4byte	.LASF841
 	.byte	0x6
 	.byte	0x4e
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF838
+	.4byte	.LASF842
 	.byte	0x6
 	.byte	0x53
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF839
+	.4byte	.LASF843
 	.byte	0x6
 	.byte	0x56
 	.4byte	0x149
 	.uleb128 0xa
-	.4byte	.LASF840
+	.4byte	.LASF844
 	.byte	0x6
 	.byte	0x5b
 	.4byte	0x132
 	.uleb128 0xa
-	.4byte	.LASF841
+	.4byte	.LASF845
 	.byte	0x6
 	.byte	0x5c
 	.4byte	0x149
@@ -543,16 +543,16 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF842
+	.4byte	.LASF846
 	.uleb128 0xb
 	.4byte	0x313
 	.uleb128 0x13
-	.4byte	.LASF843
+	.4byte	.LASF847
 	.byte	0x7
 	.byte	0x1c
 	.4byte	0x30e
 	.uleb128 0x14
-	.4byte	.LASF844
+	.4byte	.LASF848
 	.byte	0x7
 	.byte	0x1f
 	.4byte	0x144
@@ -565,12 +565,12 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.byte	0x40
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF845
+	.4byte	.LASF849
 	.byte	0x7
 	.byte	0x20
 	.4byte	0x336
 	.uleb128 0x15
-	.4byte	.LASF846
+	.4byte	.LASF850
 	.byte	0x7
 	.byte	0x22
 	.4byte	0x1d1
@@ -594,34 +594,34 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x1d1
 	.4byte	0x40000000
 	.uleb128 0x18
-	.4byte	.LASF850
+	.4byte	.LASF854
 	.byte	0x18
 	.byte	0x8
 	.byte	0xc
 	.4byte	0x4ed
 	.uleb128 0x19
-	.4byte	.LASF847
+	.4byte	.LASF851
 	.byte	0x8
 	.byte	0x1a
 	.4byte	0x4f2
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LASF848
+	.4byte	.LASF852
 	.byte	0x8
 	.byte	0x1b
 	.4byte	0x139
 	.byte	0x8
 	.uleb128 0x19
-	.4byte	.LASF849
+	.4byte	.LASF853
 	.byte	0x8
 	.byte	0x1c
 	.4byte	0x4fd
 	.byte	0x10
 	.uleb128 0x1a
-	.4byte	.LASF850
+	.4byte	.LASF854
 	.byte	0x8
 	.byte	0xe
-	.4byte	.LASF852
+	.4byte	.LASF856
 	.byte	0x1
 	.byte	0x1
 	.4byte	0x3ce
@@ -630,10 +630,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x4f2
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF850
+	.4byte	.LASF854
 	.byte	0x8
 	.byte	0xf
-	.4byte	.LASF855
+	.4byte	.LASF859
 	.byte	0x1
 	.4byte	0x3e8
 	.4byte	0x3fd
@@ -647,10 +647,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x4fd
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF851
+	.4byte	.LASF855
 	.byte	0x8
 	.byte	0x10
-	.4byte	.LASF853
+	.4byte	.LASF857
 	.4byte	0x4fd
 	.byte	0x1
 	.4byte	0x415
@@ -659,10 +659,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x504
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF854
+	.4byte	.LASF858
 	.byte	0x8
 	.byte	0x11
-	.4byte	.LASF856
+	.4byte	.LASF860
 	.byte	0x1
 	.4byte	0x42f
 	.4byte	0x43a
@@ -672,10 +672,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x4fd
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF857
+	.4byte	.LASF861
 	.byte	0x8
 	.byte	0x12
-	.4byte	.LASF858
+	.4byte	.LASF862
 	.4byte	0x504
 	.byte	0x1
 	.4byte	0x452
@@ -684,10 +684,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x504
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF857
+	.4byte	.LASF861
 	.byte	0x8
 	.byte	0x13
-	.4byte	.LASF859
+	.4byte	.LASF863
 	.4byte	0x4f2
 	.byte	0x1
 	.4byte	0x470
@@ -696,10 +696,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x4f2
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF860
+	.4byte	.LASF864
 	.byte	0x8
 	.byte	0x14
-	.4byte	.LASF861
+	.4byte	.LASF865
 	.byte	0x1
 	.4byte	0x48a
 	.4byte	0x495
@@ -709,10 +709,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x4f2
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF862
+	.4byte	.LASF866
 	.byte	0x8
 	.byte	0x15
-	.4byte	.LASF863
+	.4byte	.LASF867
 	.4byte	0x139
 	.byte	0x1
 	.4byte	0x4ad
@@ -721,10 +721,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x504
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF864
+	.4byte	.LASF868
 	.byte	0x8
 	.byte	0x16
-	.4byte	.LASF865
+	.4byte	.LASF869
 	.byte	0x1
 	.4byte	0x4c7
 	.4byte	0x4d2
@@ -734,10 +734,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x139
 	.byte	0
 	.uleb128 0x1f
-	.4byte	.LASF866
+	.4byte	.LASF870
 	.byte	0x8
 	.byte	0x17
-	.4byte	.LASF867
+	.4byte	.LASF871
 	.4byte	0x50f
 	.byte	0x1
 	.4byte	0x4e6
@@ -755,7 +755,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF868
+	.4byte	.LASF872
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0x4ed
@@ -775,7 +775,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x536
 	.4byte	0x544
 	.uleb128 0x23
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x50a
 	.4byte	.LLST4
 	.byte	0
@@ -791,12 +791,12 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x569
 	.4byte	0x582
 	.uleb128 0x24
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x4f8
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x25
-	.4byte	.LASF848
+	.4byte	.LASF852
 	.byte	0x1
 	.byte	0x2a
 	.4byte	0x139
@@ -815,7 +815,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x5a7
 	.4byte	0x5b5
 	.uleb128 0x23
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x50a
 	.4byte	.LLST3
 	.byte	0
@@ -831,12 +831,12 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x5da
 	.4byte	0x5f3
 	.uleb128 0x24
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x4f8
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x25
-	.4byte	.LASF847
+	.4byte	.LASF851
 	.byte	0x1
 	.byte	0x20
 	.4byte	0x4f2
@@ -855,7 +855,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x618
 	.4byte	0x626
 	.uleb128 0x23
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x4f8
 	.4byte	.LLST2
 	.byte	0
@@ -871,7 +871,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x64b
 	.4byte	0x659
 	.uleb128 0x23
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x50a
 	.4byte	.LLST1
 	.byte	0
@@ -886,12 +886,12 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x67d
 	.4byte	0x696
 	.uleb128 0x24
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x4f8
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x25
-	.4byte	.LASF849
+	.4byte	.LASF853
 	.byte	0x1
 	.byte	0x11
 	.4byte	0x4fd
@@ -910,7 +910,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x6bb
 	.4byte	0x6c9
 	.uleb128 0x23
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x50a
 	.4byte	.LLST0
 	.byte	0
@@ -922,27 +922,27 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.4byte	0x6d9
 	.4byte	0x704
 	.uleb128 0x28
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.4byte	0x4f8
 	.uleb128 0x29
-	.4byte	.LASF847
+	.4byte	.LASF851
 	.byte	0x1
 	.byte	0xb
 	.4byte	0x4f2
 	.uleb128 0x29
-	.4byte	.LASF848
+	.4byte	.LASF852
 	.byte	0x1
 	.byte	0xb
 	.4byte	0x139
 	.uleb128 0x29
-	.4byte	.LASF849
+	.4byte	.LASF853
 	.byte	0x1
 	.byte	0xb
 	.4byte	0x4fd
 	.byte	0
 	.uleb128 0x2a
 	.4byte	0x6c9
-	.4byte	.LASF876
+	.4byte	.LASF880
 	.4byte	0x727
 	.8byte	.LFB1
 	.8byte	.LFE1-.LFB1
@@ -4155,7 +4155,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x102
 	.4byte	.LASF784
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.7c3aff63746d06c2b218490acda1ebb4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.5b434c3192a2024a12b2b93c0167ad44,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -4190,24 +4190,36 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.uleb128 0x2e
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x31
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x33
+	.uleb128 0x32
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x36
+	.uleb128 0x33
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x37
+	.uleb128 0x34
 	.4byte	.LASF799
+	.byte	0x5
+	.uleb128 0x38
+	.4byte	.LASF800
+	.byte	0x5
+	.uleb128 0x39
+	.4byte	.LASF801
+	.byte	0x5
+	.uleb128 0x3c
+	.4byte	.LASF802
+	.byte	0x5
+	.uleb128 0x3d
+	.4byte	.LASF803
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
 .LASF102:
 	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF809:
+.LASF813:
 	.string	"int8_t"
 .LASF275:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
@@ -4219,7 +4231,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
 .LASF142:
 	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF808:
+.LASF812:
 	.string	"size_t"
 .LASF407:
 	.string	"PERIPHBASE 0x08000000"
@@ -4267,11 +4279,11 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"UINT64_MAX"
 .LASF309:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
-.LASF797:
+.LASF801:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF837:
+.LASF841:
 	.string	"uint_fast64_t"
-.LASF813:
+.LASF817:
 	.string	"int32_t"
 .LASF682:
 	.string	"INT64_MAX __INT64_MAX__"
@@ -4287,8 +4299,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
 .LASF408:
 	.string	"INCLUDE_MEMORYCHUNK_H_ "
-.LASF872:
+.LASF876:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\chap003\\\\Debug-qemu_virt"
+.LASF796:
+	.string	"ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) \":\\n\\t\")"
 .LASF584:
 	.string	"_GLIBCXX11_USE_C99_STDLIB 1"
 .LASF317:
@@ -4311,7 +4325,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT_HAS_DENORM__ 1"
 .LASF47:
 	.string	"__INT8_TYPE__ signed char"
-.LASF867:
+.LASF871:
 	.string	"_ZNK11MemoryChunk10getDataPtrEv"
 .LASF250:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
@@ -4357,7 +4371,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__ARM_NEON 1"
 .LASF587:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF827:
+.LASF831:
 	.string	"uint_least16_t"
 .LASF252:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
@@ -4367,13 +4381,13 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF139:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF830:
+.LASF834:
 	.string	"int_fast8_t"
 .LASF739:
 	.string	"UINTPTR_MAX"
 .LASF609:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF860:
+.LASF864:
 	.string	"setNext"
 .LASF411:
 	.string	"__need_wchar_t"
@@ -4385,7 +4399,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"UINT32_MAX __UINT32_MAX__"
 .LASF619:
 	.string	"_BSD_PTRDIFF_T_ "
-.LASF850:
+.LASF854:
 	.string	"MemoryChunk"
 .LASF242:
 	.string	"__FLT16_HAS_INFINITY__ 1"
@@ -4401,7 +4415,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
 .LASF503:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF828:
+.LASF832:
 	.string	"uint_least32_t"
 .LASF493:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
@@ -4423,7 +4437,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
 .LASF260:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF836:
+.LASF840:
 	.string	"uint_fast32_t"
 .LASF442:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
@@ -4431,7 +4445,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF319:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF799:
+.LASF803:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF656:
 	.string	"NULL"
@@ -4469,7 +4483,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
 .LASF59:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF802:
+.LASF806:
 	.string	"long int"
 .LASF530:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
@@ -4501,7 +4515,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__INT_LEAST8_TYPE__ signed char"
 .LASF439:
 	.string	"_GLIBCXX_NOEXCEPT_QUAL "
-.LASF857:
+.LASF861:
 	.string	"getNext"
 .LASF563:
 	.string	"_GLIBCXX_HAVE_TANHF 1"
@@ -4521,7 +4535,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR"
 .LASF226:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
-.LASF818:
+.LASF822:
 	.string	"short unsigned int"
 .LASF508:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
@@ -4575,11 +4589,11 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 .LASF661:
 	.string	"_GLIBCXX_CSTDINT 1"
-.LASF851:
+.LASF855:
 	.string	"isAllocated"
 .LASF188:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF829:
+.LASF833:
 	.string	"uint_least64_t"
 .LASF421:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -4589,9 +4603,9 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
 .LASF592:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF810:
+.LASF814:
 	.string	"signed char"
-.LASF815:
+.LASF819:
 	.string	"uint8_t"
 .LASF744:
 	.string	"INTMAX_MIN (-INTMAX_MAX - 1)"
@@ -4663,6 +4677,8 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT64X_MIN_EXP__ (-16381)"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
+.LASF797:
+	.string	"ASM_DEFINE_GLOBAL_SYM(sym) __asm__(\".global \" __stringify(sym) \" \\n\\t;\" __stringify(sym) \":\\n\\t\")"
 .LASF532:
 	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF578:
@@ -4715,7 +4731,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF762:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF842:
+.LASF846:
 	.string	"char"
 .LASF534:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
@@ -4735,7 +4751,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__SIZEOF_INT__ 4"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
-.LASF798:
+.LASF802:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF790:
 	.string	"WARNING \"[WARNING] \""
@@ -4757,7 +4773,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF194:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF843:
+.LASF847:
 	.string	"EMPTY_STR"
 .LASF423:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
@@ -4771,7 +4787,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF497:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
-.LASF875:
+.LASF879:
 	.string	"decltype(nullptr)"
 .LASF147:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
@@ -4779,7 +4795,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT128_MAX_EXP__ 16384"
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF823:
+.LASF827:
 	.string	"int_least16_t"
 .LASF401:
 	.string	"CXX_MACROS_H__ "
@@ -4797,7 +4813,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
 .LASF51:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF844:
+.LASF848:
 	.string	"koutBufSize"
 .LASF594:
 	.string	"_GLIBCXX_STDIO_EOF -1"
@@ -4857,13 +4873,13 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << \" failed.\\n\";}"
 .LASF679:
 	.string	"UINT32_MAX"
-.LASF859:
+.LASF863:
 	.string	"_ZN11MemoryChunk7getNextEv"
 .LASF149:
 	.string	"__INT_LEAST16_WIDTH__ 16"
 .LASF183:
 	.string	"__DEC_EVAL_METHOD__ 2"
-.LASF858:
+.LASF862:
 	.string	"_ZNK11MemoryChunk7getNextEv"
 .LASF467:
 	.string	"_GLIBCXX_END_EXTERN_C }"
@@ -4945,7 +4961,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__ARM_FEATURE_CRC32"
 .LASF469:
 	.string	"_GLIBCXX_OS_DEFINES 1"
-.LASF803:
+.LASF807:
 	.string	"long unsigned int"
 .LASF201:
 	.string	"__DBL_DIG__ 15"
@@ -4997,7 +5013,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__cpp_static_assert 200410"
 .LASF489:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF825:
+.LASF829:
 	.string	"int_least64_t"
 .LASF19:
 	.string	"_LP64 1"
@@ -5005,7 +5021,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"UINTMAX_MAX"
 .LASF306:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
-.LASF869:
+.LASF873:
 	.string	"this"
 .LASF424:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
@@ -5013,7 +5029,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT32_MANT_DIG__ 24"
 .LASF687:
 	.string	"INT_LEAST8_MAX"
-.LASF849:
+.LASF853:
 	.string	"allocated"
 .LASF658:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
@@ -5025,7 +5041,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF839:
+.LASF843:
 	.string	"uintptr_t"
 .LASF204:
 	.string	"__DBL_MAX_EXP__ 1024"
@@ -5047,7 +5063,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_HAVE_LOG10F 1"
 .LASF128:
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
-.LASF863:
+.LASF867:
 	.string	"_ZNK11MemoryChunk7getSizeEv"
 .LASF266:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
@@ -5071,7 +5087,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__INTMAX_WIDTH__ 64"
 .LASF416:
 	.string	"_GLIBCXX_CXX_CONFIG_H 1"
-.LASF864:
+.LASF868:
 	.string	"setSize"
 .LASF528:
 	.string	"_GLIBCXX_HAVE_LDEXPF 1"
@@ -5143,7 +5159,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF673:
 	.string	"UINT16_MAX"
-.LASF824:
+.LASF828:
 	.string	"int_least32_t"
 .LASF121:
 	.string	"__INT_WIDTH__ 32"
@@ -5161,7 +5177,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__N(msgid) (msgid)"
 .LASF483:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF841:
+.LASF845:
 	.string	"uintmax_t"
 .LASF403:
 	.string	"UART_BASE 0x09000000"
@@ -5199,17 +5215,17 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"INT32_C"
 .LASF672:
 	.string	"INT16_MIN (-INT16_MAX - 1)"
-.LASF862:
+.LASF866:
 	.string	"getSize"
 .LASF389:
 	.string	"__AARCH64_CMODEL_SMALL__"
 .LASF61:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF820:
+.LASF824:
 	.string	"unsigned int"
 .LASF632:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF874:
+.LASF878:
 	.string	"max_align_t"
 .LASF187:
 	.string	"__FLT_MIN_EXP__ (-125)"
@@ -5223,7 +5239,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF441:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF838:
+.LASF842:
 	.string	"intptr_t"
 .LASF293:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -5281,11 +5297,11 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF653:
 	.string	"_GCC_WCHAR_T "
-.LASF831:
+.LASF835:
 	.string	"int_fast16_t"
 .LASF46:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF866:
+.LASF870:
 	.string	"getDataPtr"
 .LASF686:
 	.string	"UINT64_MAX __UINT64_MAX__"
@@ -5309,17 +5325,17 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF198:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF805:
+.LASF809:
 	.string	"__max_align_ld"
-.LASF846:
+.LASF850:
 	.string	"UNIT_K"
 .LASF402:
 	.string	"KERNEL_ADDRESS 0"
-.LASF804:
+.LASF808:
 	.string	"__max_align_ll"
 .LASF138:
 	.string	"__INT32_MAX__ 0x7fffffff"
-.LASF816:
+.LASF820:
 	.string	"unsigned char"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
@@ -5333,7 +5349,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF94:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF800:
+.LASF804:
 	.string	"__gnu_cxx"
 .LASF786:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
@@ -5343,11 +5359,11 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DEC32_MANT_DIG__ 7"
 .LASF562:
 	.string	"_GLIBCXX_HAVE_TANF 1"
-.LASF868:
+.LASF872:
 	.string	"bool"
 .LASF766:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF826:
+.LASF830:
 	.string	"uint_least8_t"
 .LASF215:
 	.string	"__LDBL_MANT_DIG__ 113"
@@ -5355,13 +5371,13 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
 .LASF596:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF822:
+.LASF826:
 	.string	"int_least8_t"
 .LASF625:
 	.string	"_SIZE_T "
 .LASF650:
 	.string	"_WCHAR_T_H "
-.LASF847:
+.LASF851:
 	.string	"next"
 .LASF241:
 	.string	"__FLT16_HAS_DENORM__ 1"
@@ -5369,8 +5385,10 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF230:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF807:
+.LASF811:
 	.string	"long double"
+.LASF798:
+	.string	"ASM_ISB() __asm__ (\"isb \\n\\t\")"
 .LASF752:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
 .LASF516:
@@ -5413,7 +5431,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__cpp_decltype_auto 201304"
 .LASF422:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF796:
+.LASF800:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF645:
 	.string	"__WCHAR_T "
@@ -5443,7 +5461,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__cpp_ref_qualifiers 200710"
 .LASF709:
 	.string	"UINT_LEAST64_MAX"
-.LASF861:
+.LASF865:
 	.string	"_ZN11MemoryChunk7setNextEPS_"
 .LASF339:
 	.string	"__WCHAR_UNSIGNED__ 1"
@@ -5451,15 +5469,15 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__stringify(x) __stringify_1(x)"
 .LASF31:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
-.LASF848:
+.LASF852:
 	.string	"size"
 .LASF545:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
 .LASF321:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF856:
+.LASF860:
 	.string	"_ZN11MemoryChunk12setAllocatedEb"
-.LASF845:
+.LASF849:
 	.string	"koutBuf"
 .LASF633:
 	.string	"_SIZE_T_DEFINED "
@@ -5467,7 +5485,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF705:
 	.string	"INT_LEAST64_MAX"
-.LASF817:
+.LASF821:
 	.string	"uint16_t"
 .LASF617:
 	.string	"__PTRDIFF_T "
@@ -5477,11 +5495,11 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
 .LASF240:
 	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
-.LASF855:
+.LASF859:
 	.string	"_ZN11MemoryChunkC4EPS_mb"
 .LASF771:
 	.string	"INT64_C"
-.LASF870:
+.LASF874:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8-a -mlittle-endian -mabi=lp64 -g3 -O0 -Og -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti -fsigned-char"
 .LASF60:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
@@ -5493,7 +5511,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT32X_DIG__ 15"
 .LASF176:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF833:
+.LASF837:
 	.string	"int_fast64_t"
 .LASF166:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
@@ -5523,7 +5541,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
 .LASF153:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF801:
+.LASF805:
 	.string	"__cxx11"
 .LASF210:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
@@ -5539,9 +5557,9 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION"
 .LASF380:
 	.string	"__ARM_FP 14"
-.LASF834:
+.LASF838:
 	.string	"uint_fast8_t"
-.LASF876:
+.LASF880:
 	.string	"_ZN11MemoryChunkC2EPS_mb"
 .LASF652:
 	.string	"__INT_WCHAR_T_H "
@@ -5583,7 +5601,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_HAVE_S_ISREG 1"
 .LASF284:
 	.string	"__FLT128_HAS_INFINITY__ 1"
-.LASF871:
+.LASF875:
 	.string	"../src/MemoryChunk.cpp"
 .LASF174:
 	.string	"__UINT_FAST32_MAX__ 0xffffffffU"
@@ -5625,7 +5643,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF89:
 	.string	"__cpp_rvalue_references 200610"
-.LASF832:
+.LASF836:
 	.string	"int_fast32_t"
 .LASF28:
 	.string	"__SIZEOF_SIZE_T__ 8"
@@ -5635,15 +5653,17 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__AARCH64EL__ 1"
 .LASF267:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF852:
+.LASF856:
 	.string	"_ZN11MemoryChunkC4Ev"
 .LASF143:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF463:
 	.string	"__glibcxx_assert(_Condition) "
+.LASF799:
+	.string	"ASM_NOP() __asm__(\"nop \\n\\t\")"
 .LASF538:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF812:
+.LASF816:
 	.string	"short int"
 .LASF611:
 	.string	"_STDDEF_H "
@@ -5657,7 +5677,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF238:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF821:
+.LASF825:
 	.string	"uint64_t"
 .LASF173:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
@@ -5681,7 +5701,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DBL_HAS_INFINITY__ 1"
 .LASF710:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
-.LASF811:
+.LASF815:
 	.string	"int16_t"
 .LASF704:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
@@ -5777,7 +5797,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__DEC32_MIN_EXP__ (-94)"
 .LASF54:
 	.string	"__UINT64_TYPE__ long unsigned int"
-.LASF854:
+.LASF858:
 	.string	"setAllocated"
 .LASF169:
 	.string	"__INT_FAST32_WIDTH__ 32"
@@ -5815,9 +5835,9 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF655:
 	.string	"_BSD_WCHAR_T_"
-.LASF806:
+.LASF810:
 	.string	"long long int"
-.LASF819:
+.LASF823:
 	.string	"uint32_t"
 .LASF512:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
@@ -5831,7 +5851,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
 .LASF224:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF835:
+.LASF839:
 	.string	"uint_fast16_t"
 .LASF68:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
@@ -5851,7 +5871,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_RELEASE 7"
 .LASF695:
 	.string	"INT_LEAST16_MIN"
-.LASF873:
+.LASF877:
 	.string	"11max_align_t"
 .LASF259:
 	.string	"__FLT64_DIG__ 15"
@@ -5879,7 +5899,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__LDBL_MIN_EXP__ (-16381)"
 .LASF152:
 	.string	"__INT_LEAST32_WIDTH__ 32"
-.LASF865:
+.LASF869:
 	.string	"_ZN11MemoryChunk7setSizeEm"
 .LASF537:
 	.string	"_GLIBCXX_HAVE_MACHINE_ENDIAN_H 1"
@@ -5895,7 +5915,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
 .LASF517:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
-.LASF814:
+.LASF818:
 	.string	"int64_t"
 .LASF495:
 	.string	"_GLIBCXX_HAVE_EIDRM 1"
@@ -5913,7 +5933,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"__FLT32X_MANT_DIG__ 53"
 .LASF124:
 	.string	"__WCHAR_WIDTH__ 32"
-.LASF853:
+.LASF857:
 	.string	"_ZNK11MemoryChunk11isAllocatedEv"
 .LASF761:
 	.string	"WINT_MAX"
@@ -5945,7 +5965,7 @@ _ZNK11MemoryChunk10getDataPtrEv:
 	.string	"UINT64_C(c) __UINT64_C(c)"
 .LASF750:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
-.LASF840:
+.LASF844:
 	.string	"intmax_t"
 .LASF200:
 	.string	"__DBL_MANT_DIG__ 53"

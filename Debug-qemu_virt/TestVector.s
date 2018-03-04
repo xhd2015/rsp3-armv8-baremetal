@@ -1345,10 +1345,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF1019
+	.4byte	.LASF1023
 	.byte	0x4
-	.4byte	.LASF1020
-	.4byte	.LASF1021
+	.4byte	.LASF1024
+	.4byte	.LASF1025
 	.4byte	.Ldebug_ranges0+0x60
 	.8byte	0
 	.4byte	.Ldebug_line0
@@ -1359,7 +1359,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0
 	.4byte	0x20a
 	.uleb128 0x3
-	.4byte	.LASF820
+	.4byte	.LASF824
 	.byte	0x7
 	.byte	0xfd
 	.uleb128 0x4
@@ -1483,46 +1483,46 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x52
 	.4byte	0x3d1
 	.uleb128 0x6
-	.4byte	.LASF867
+	.4byte	.LASF871
 	.byte	0x10
 	.byte	0x4
 	.byte	0x2f
 	.4byte	0x1f9
 	.uleb128 0x7
-	.4byte	.LASF810
+	.4byte	.LASF814
 	.byte	0x4
 	.byte	0x36
 	.4byte	0xd57
 	.byte	0x1
 	.uleb128 0x8
-	.4byte	.LASF812
+	.4byte	.LASF816
 	.byte	0x4
 	.byte	0x3a
 	.4byte	0x11d
 	.byte	0
 	.uleb128 0x7
-	.4byte	.LASF811
+	.4byte	.LASF815
 	.byte	0x4
 	.byte	0x35
 	.4byte	0x1fe
 	.byte	0x1
 	.uleb128 0x8
-	.4byte	.LASF813
+	.4byte	.LASF817
 	.byte	0x4
 	.byte	0x3b
 	.4byte	0x135
 	.byte	0x8
 	.uleb128 0x7
-	.4byte	.LASF814
+	.4byte	.LASF818
 	.byte	0x4
 	.byte	0x37
 	.4byte	0xd57
 	.byte	0x1
 	.uleb128 0x9
-	.4byte	.LASF882
+	.4byte	.LASF886
 	.byte	0x4
 	.byte	0x3e
-	.4byte	.LASF976
+	.4byte	.LASF980
 	.4byte	0x16c
 	.4byte	0x17c
 	.uleb128 0xa
@@ -1533,10 +1533,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF882
+	.4byte	.LASF886
 	.byte	0x4
 	.byte	0x42
-	.4byte	.LASF883
+	.4byte	.LASF887
 	.byte	0x1
 	.4byte	0x190
 	.4byte	0x196
@@ -1544,10 +1544,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeb9
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0x4
 	.byte	0x47
-	.4byte	.LASF817
+	.4byte	.LASF821
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x1ae
@@ -1556,10 +1556,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xebf
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF816
+	.4byte	.LASF820
 	.byte	0x4
 	.byte	0x4b
-	.4byte	.LASF818
+	.4byte	.LASF822
 	.4byte	0x14d
 	.byte	0x1
 	.4byte	0x1cc
@@ -1571,7 +1571,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"end"
 	.byte	0x4
 	.byte	0x4f
-	.4byte	.LASF1022
+	.4byte	.LASF1026
 	.4byte	0x14d
 	.byte	0x1
 	.4byte	0x1ea
@@ -1586,18 +1586,18 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x10
 	.4byte	0x111
 	.uleb128 0x11
-	.4byte	.LASF821
+	.4byte	.LASF825
 	.byte	0x7
 	.byte	0xe7
 	.4byte	0x23d
 	.byte	0
 	.uleb128 0x12
-	.4byte	.LASF819
+	.4byte	.LASF823
 	.byte	0x7
 	.byte	0xff
 	.4byte	0x226
 	.uleb128 0x13
-	.4byte	.LASF820
+	.4byte	.LASF824
 	.byte	0x7
 	.2byte	0x101
 	.uleb128 0x14
@@ -1608,9 +1608,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF822
+	.4byte	.LASF826
 	.uleb128 0x11
-	.4byte	.LASF821
+	.4byte	.LASF825
 	.byte	0x8
 	.byte	0xd8
 	.4byte	0x23d
@@ -1619,23 +1619,23 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF823
+	.4byte	.LASF827
 	.uleb128 0x16
 	.byte	0x20
 	.byte	0x10
 	.byte	0x8
 	.2byte	0x1aa
-	.4byte	.LASF1023
+	.4byte	.LASF1027
 	.4byte	0x26f
 	.uleb128 0x17
-	.4byte	.LASF824
+	.4byte	.LASF828
 	.byte	0x8
 	.2byte	0x1ab
 	.4byte	0x26f
 	.byte	0x8
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF825
+	.4byte	.LASF829
 	.byte	0x8
 	.2byte	0x1ac
 	.4byte	0x276
@@ -1645,39 +1645,39 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF826
+	.4byte	.LASF830
 	.uleb128 0x15
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF827
+	.4byte	.LASF831
 	.uleb128 0x18
-	.4byte	.LASF828
+	.4byte	.LASF832
 	.byte	0x8
 	.2byte	0x1b5
 	.4byte	0x244
 	.byte	0x10
 	.uleb128 0x19
-	.4byte	.LASF1024
+	.4byte	.LASF1028
 	.uleb128 0x11
-	.4byte	.LASF829
+	.4byte	.LASF833
 	.byte	0x9
 	.byte	0x22
 	.4byte	0x29a
 	.uleb128 0x15
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF830
+	.4byte	.LASF834
 	.uleb128 0x11
-	.4byte	.LASF831
+	.4byte	.LASF835
 	.byte	0x9
 	.byte	0x25
 	.4byte	0x2ac
 	.uleb128 0x15
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF832
+	.4byte	.LASF836
 	.uleb128 0x11
-	.4byte	.LASF833
+	.4byte	.LASF837
 	.byte	0x9
 	.byte	0x28
 	.4byte	0x2be
@@ -1688,139 +1688,139 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x10
 	.4byte	0x2be
 	.uleb128 0x11
-	.4byte	.LASF834
+	.4byte	.LASF838
 	.byte	0x9
 	.byte	0x2b
 	.4byte	0x226
 	.uleb128 0x11
-	.4byte	.LASF835
+	.4byte	.LASF839
 	.byte	0x9
 	.byte	0x2e
 	.4byte	0x2e0
 	.uleb128 0x15
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF836
+	.4byte	.LASF840
 	.uleb128 0x11
-	.4byte	.LASF837
+	.4byte	.LASF841
 	.byte	0x9
 	.byte	0x31
 	.4byte	0x2f2
 	.uleb128 0x15
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF838
+	.4byte	.LASF842
 	.uleb128 0x11
-	.4byte	.LASF839
+	.4byte	.LASF843
 	.byte	0x9
 	.byte	0x34
 	.4byte	0x304
 	.uleb128 0x15
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF840
+	.4byte	.LASF844
 	.uleb128 0x11
-	.4byte	.LASF841
+	.4byte	.LASF845
 	.byte	0x9
 	.byte	0x37
 	.4byte	0x23d
 	.uleb128 0x11
-	.4byte	.LASF842
+	.4byte	.LASF846
 	.byte	0x9
 	.byte	0x3c
 	.4byte	0x29a
 	.uleb128 0x11
-	.4byte	.LASF843
+	.4byte	.LASF847
 	.byte	0x9
 	.byte	0x3d
 	.4byte	0x2ac
 	.uleb128 0x11
-	.4byte	.LASF844
+	.4byte	.LASF848
 	.byte	0x9
 	.byte	0x3e
 	.4byte	0x2be
 	.uleb128 0x11
-	.4byte	.LASF845
+	.4byte	.LASF849
 	.byte	0x9
 	.byte	0x3f
 	.4byte	0x226
 	.uleb128 0x11
-	.4byte	.LASF846
+	.4byte	.LASF850
 	.byte	0x9
 	.byte	0x40
 	.4byte	0x2e0
 	.uleb128 0x11
-	.4byte	.LASF847
+	.4byte	.LASF851
 	.byte	0x9
 	.byte	0x41
 	.4byte	0x2f2
 	.uleb128 0x11
-	.4byte	.LASF848
+	.4byte	.LASF852
 	.byte	0x9
 	.byte	0x42
 	.4byte	0x304
 	.uleb128 0x11
-	.4byte	.LASF849
+	.4byte	.LASF853
 	.byte	0x9
 	.byte	0x43
 	.4byte	0x23d
 	.uleb128 0x11
-	.4byte	.LASF850
+	.4byte	.LASF854
 	.byte	0x9
 	.byte	0x47
 	.4byte	0x2be
 	.uleb128 0x11
-	.4byte	.LASF851
+	.4byte	.LASF855
 	.byte	0x9
 	.byte	0x48
 	.4byte	0x2be
 	.uleb128 0x11
-	.4byte	.LASF852
+	.4byte	.LASF856
 	.byte	0x9
 	.byte	0x49
 	.4byte	0x2be
 	.uleb128 0x11
-	.4byte	.LASF853
+	.4byte	.LASF857
 	.byte	0x9
 	.byte	0x4a
 	.4byte	0x226
 	.uleb128 0x11
-	.4byte	.LASF854
+	.4byte	.LASF858
 	.byte	0x9
 	.byte	0x4b
 	.4byte	0x304
 	.uleb128 0x11
-	.4byte	.LASF855
+	.4byte	.LASF859
 	.byte	0x9
 	.byte	0x4c
 	.4byte	0x304
 	.uleb128 0x11
-	.4byte	.LASF856
+	.4byte	.LASF860
 	.byte	0x9
 	.byte	0x4d
 	.4byte	0x304
 	.uleb128 0x11
-	.4byte	.LASF857
+	.4byte	.LASF861
 	.byte	0x9
 	.byte	0x4e
 	.4byte	0x23d
 	.uleb128 0x11
-	.4byte	.LASF858
+	.4byte	.LASF862
 	.byte	0x9
 	.byte	0x53
 	.4byte	0x226
 	.uleb128 0x11
-	.4byte	.LASF859
+	.4byte	.LASF863
 	.byte	0x9
 	.byte	0x56
 	.4byte	0x23d
 	.uleb128 0x11
-	.4byte	.LASF860
+	.4byte	.LASF864
 	.byte	0x9
 	.byte	0x5b
 	.4byte	0x226
 	.uleb128 0x11
-	.4byte	.LASF861
+	.4byte	.LASF865
 	.byte	0x9
 	.byte	0x5c
 	.4byte	0x23d
@@ -1836,16 +1836,16 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF862
+	.4byte	.LASF866
 	.uleb128 0x10
 	.4byte	0x407
 	.uleb128 0x1d
-	.4byte	.LASF863
+	.4byte	.LASF867
 	.byte	0xa
 	.byte	0x1c
 	.4byte	0x402
 	.uleb128 0x1e
-	.4byte	.LASF864
+	.4byte	.LASF868
 	.byte	0xa
 	.byte	0x1f
 	.4byte	0x238
@@ -1858,12 +1858,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x40
 	.byte	0
 	.uleb128 0x1d
-	.4byte	.LASF865
+	.4byte	.LASF869
 	.byte	0xa
 	.byte	0x20
 	.4byte	0x42a
 	.uleb128 0x1f
-	.4byte	.LASF866
+	.4byte	.LASF870
 	.byte	0xa
 	.byte	0x22
 	.4byte	0x2c5
@@ -1887,16 +1887,16 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2c5
 	.4byte	0x40000000
 	.uleb128 0x6
-	.4byte	.LASF868
+	.4byte	.LASF872
 	.byte	0x1
 	.byte	0xb
 	.byte	0x14
 	.4byte	0x62f
 	.uleb128 0xd
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.byte	0xb
 	.byte	0x16
-	.4byte	.LASF870
+	.4byte	.LASF874
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0x4a1
@@ -1909,10 +1909,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF869
+	.4byte	.LASF873
 	.byte	0xb
 	.byte	0x17
-	.4byte	.LASF871
+	.4byte	.LASF875
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0x4c9
@@ -1923,10 +1923,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x635
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x18
-	.4byte	.LASF873
+	.4byte	.LASF877
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x4ec
@@ -1937,10 +1937,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x407
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1a
-	.4byte	.LASF874
+	.4byte	.LASF878
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x50f
@@ -1951,10 +1951,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2d5
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1b
-	.4byte	.LASF875
+	.4byte	.LASF879
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x532
@@ -1965,10 +1965,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2e7
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1c
-	.4byte	.LASF876
+	.4byte	.LASF880
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x555
@@ -1979,10 +1979,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2f9
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1d
-	.4byte	.LASF877
+	.4byte	.LASF881
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x578
@@ -1993,10 +1993,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2ac
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1e
-	.4byte	.LASF878
+	.4byte	.LASF882
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x59b
@@ -2007,10 +2007,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2be
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x1f
-	.4byte	.LASF879
+	.4byte	.LASF883
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x5be
@@ -2021,10 +2021,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x641
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x20
-	.4byte	.LASF880
+	.4byte	.LASF884
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x5e1
@@ -2035,10 +2035,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x635
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x21
-	.4byte	.LASF881
+	.4byte	.LASF885
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x604
@@ -2049,10 +2049,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF872
+	.4byte	.LASF876
 	.byte	0xb
 	.byte	0x22
-	.4byte	.LASF884
+	.4byte	.LASF888
 	.4byte	0x63b
 	.byte	0x1
 	.4byte	0x623
@@ -2074,43 +2074,43 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x8
 	.byte	0x4
-	.4byte	.LASF885
+	.4byte	.LASF889
 	.uleb128 0x25
 	.byte	0x8
 	.uleb128 0x1d
-	.4byte	.LASF886
+	.4byte	.LASF890
 	.byte	0xb
 	.byte	0x27
 	.4byte	0x47d
 	.uleb128 0x6
-	.4byte	.LASF887
+	.4byte	.LASF891
 	.byte	0x18
 	.byte	0xc
 	.byte	0xc
 	.4byte	0x7b9
 	.uleb128 0x8
-	.4byte	.LASF888
+	.4byte	.LASF892
 	.byte	0xc
 	.byte	0x1a
 	.4byte	0x7be
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0xc
 	.byte	0x1b
 	.4byte	0x22d
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF889
+	.4byte	.LASF893
 	.byte	0xc
 	.byte	0x1c
 	.4byte	0x7c4
 	.byte	0x10
 	.uleb128 0x26
-	.4byte	.LASF887
+	.4byte	.LASF891
 	.byte	0xc
 	.byte	0xe
-	.4byte	.LASF890
+	.4byte	.LASF894
 	.byte	0x1
 	.byte	0x1
 	.4byte	0x69a
@@ -2119,10 +2119,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7be
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF887
+	.4byte	.LASF891
 	.byte	0xc
 	.byte	0xf
-	.4byte	.LASF891
+	.4byte	.LASF895
 	.byte	0x1
 	.4byte	0x6b4
 	.4byte	0x6c9
@@ -2136,10 +2136,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7c4
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF892
+	.4byte	.LASF896
 	.byte	0xc
 	.byte	0x10
-	.4byte	.LASF893
+	.4byte	.LASF897
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0x6e1
@@ -2148,10 +2148,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7cb
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF894
+	.4byte	.LASF898
 	.byte	0xc
 	.byte	0x11
-	.4byte	.LASF895
+	.4byte	.LASF899
 	.byte	0x1
 	.4byte	0x6fb
 	.4byte	0x706
@@ -2161,10 +2161,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7c4
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF896
+	.4byte	.LASF900
 	.byte	0xc
 	.byte	0x12
-	.4byte	.LASF897
+	.4byte	.LASF901
 	.4byte	0x7cb
 	.byte	0x1
 	.4byte	0x71e
@@ -2173,10 +2173,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7cb
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF896
+	.4byte	.LASF900
 	.byte	0xc
 	.byte	0x13
-	.4byte	.LASF898
+	.4byte	.LASF902
 	.4byte	0x7be
 	.byte	0x1
 	.4byte	0x73c
@@ -2185,10 +2185,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7be
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF899
+	.4byte	.LASF903
 	.byte	0xc
 	.byte	0x14
-	.4byte	.LASF900
+	.4byte	.LASF904
 	.byte	0x1
 	.4byte	0x756
 	.4byte	0x761
@@ -2198,10 +2198,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7be
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF901
+	.4byte	.LASF905
 	.byte	0xc
 	.byte	0x15
-	.4byte	.LASF902
+	.4byte	.LASF906
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0x779
@@ -2210,10 +2210,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x7cb
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF903
+	.4byte	.LASF907
 	.byte	0xc
 	.byte	0x16
-	.4byte	.LASF904
+	.4byte	.LASF908
 	.byte	0x1
 	.4byte	0x793
 	.4byte	0x79e
@@ -2223,10 +2223,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF905
+	.4byte	.LASF909
 	.byte	0xc
 	.byte	0x17
-	.4byte	.LASF906
+	.4byte	.LASF910
 	.4byte	0x648
 	.byte	0x1
 	.4byte	0x7b2
@@ -2242,39 +2242,39 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF907
+	.4byte	.LASF911
 	.uleb128 0x23
 	.byte	0x8
 	.4byte	0x7b9
 	.uleb128 0x6
-	.4byte	.LASF908
+	.4byte	.LASF912
 	.byte	0x18
 	.byte	0x3
 	.byte	0x17
 	.4byte	0x966
 	.uleb128 0x8
-	.4byte	.LASF909
+	.4byte	.LASF913
 	.byte	0x3
 	.byte	0x47
 	.4byte	0x7be
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF910
+	.4byte	.LASF914
 	.byte	0x3
 	.byte	0x48
 	.4byte	0x635
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0x3
 	.byte	0x49
 	.4byte	0x238
 	.byte	0x10
 	.uleb128 0x27
-	.4byte	.LASF908
+	.4byte	.LASF912
 	.byte	0x3
 	.byte	0x1a
-	.4byte	.LASF911
+	.4byte	.LASF915
 	.byte	0x1
 	.4byte	0x815
 	.4byte	0x81b
@@ -2282,10 +2282,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x96b
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF908
+	.4byte	.LASF912
 	.byte	0x3
 	.byte	0x1e
-	.4byte	.LASF912
+	.4byte	.LASF916
 	.byte	0x1
 	.4byte	0x82f
 	.4byte	0x83f
@@ -2297,10 +2297,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF913
+	.4byte	.LASF917
 	.byte	0x3
 	.byte	0x20
-	.4byte	.LASF914
+	.4byte	.LASF918
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0x857
@@ -2311,10 +2311,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF915
+	.4byte	.LASF919
 	.byte	0x3
 	.byte	0x21
-	.4byte	.LASF916
+	.4byte	.LASF920
 	.4byte	0x648
 	.byte	0x1
 	.4byte	0x87a
@@ -2325,10 +2325,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF917
+	.4byte	.LASF921
 	.byte	0x3
 	.byte	0x2d
-	.4byte	.LASF918
+	.4byte	.LASF922
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0x89d
@@ -2341,10 +2341,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF919
+	.4byte	.LASF923
 	.byte	0x3
 	.byte	0x2e
-	.4byte	.LASF920
+	.4byte	.LASF924
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0x8c5
@@ -2357,10 +2357,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF921
+	.4byte	.LASF925
 	.byte	0x3
 	.byte	0x36
-	.4byte	.LASF922
+	.4byte	.LASF926
 	.4byte	0x648
 	.byte	0x1
 	.4byte	0x8ed
@@ -2373,10 +2373,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF923
+	.4byte	.LASF927
 	.byte	0x3
 	.byte	0x3f
-	.4byte	.LASF924
+	.4byte	.LASF928
 	.byte	0x1
 	.4byte	0x911
 	.4byte	0x91c
@@ -2386,10 +2386,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x648
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF925
+	.4byte	.LASF929
 	.byte	0x3
 	.byte	0x45
-	.4byte	.LASF926
+	.4byte	.LASF930
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0x934
@@ -2400,10 +2400,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x648
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF927
+	.4byte	.LASF931
 	.byte	0x3
 	.byte	0x51
-	.4byte	.LASF928
+	.4byte	.LASF932
 	.4byte	0xd17
 	.byte	0x1
 	.4byte	0x95a
@@ -2427,12 +2427,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x8
 	.4byte	0x966
 	.uleb128 0x1d
-	.4byte	.LASF929
+	.4byte	.LASF933
 	.byte	0x3
 	.byte	0x4d
 	.4byte	0x7d1
 	.uleb128 0x6
-	.4byte	.LASF930
+	.4byte	.LASF934
 	.byte	0x18
 	.byte	0xd
 	.byte	0x13
@@ -2446,32 +2446,32 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1
 	.4byte	0x9a8
 	.uleb128 0x29
-	.4byte	.LASF1025
+	.4byte	.LASF1029
 	.byte	0x8
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF931
+	.4byte	.LASF935
 	.byte	0xd
 	.byte	0x45
 	.4byte	0xd17
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF932
+	.4byte	.LASF936
 	.byte	0xd
 	.byte	0x46
 	.4byte	0x22d
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF815
+	.4byte	.LASF819
 	.byte	0xd
 	.byte	0x47
 	.4byte	0x22d
 	.byte	0x10
 	.uleb128 0xc
-	.4byte	.LASF933
+	.4byte	.LASF937
 	.byte	0x2
 	.byte	0xf
-	.4byte	.LASF934
+	.4byte	.LASF938
 	.byte	0x1
 	.4byte	0x9e0
 	.4byte	0x9eb
@@ -2481,10 +2481,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF933
+	.4byte	.LASF937
 	.byte	0x2
 	.byte	0x18
-	.4byte	.LASF935
+	.4byte	.LASF939
 	.byte	0x1
 	.4byte	0x9ff
 	.4byte	0xa0a
@@ -2494,10 +2494,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd28
 	.byte	0
 	.uleb128 0x2a
-	.4byte	.LASF937
+	.4byte	.LASF941
 	.byte	0xd
 	.byte	0x1b
-	.4byte	.LASF938
+	.4byte	.LASF942
 	.4byte	0xd2e
 	.byte	0x1
 	.4byte	0xa22
@@ -2508,10 +2508,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd28
 	.byte	0
 	.uleb128 0x27
-	.4byte	.LASF933
+	.4byte	.LASF937
 	.byte	0xd
 	.byte	0x1c
-	.4byte	.LASF936
+	.4byte	.LASF940
 	.byte	0x1
 	.4byte	0xa41
 	.4byte	0xa4c
@@ -2521,10 +2521,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd34
 	.byte	0
 	.uleb128 0x2a
-	.4byte	.LASF937
+	.4byte	.LASF941
 	.byte	0xd
 	.byte	0x1d
-	.4byte	.LASF939
+	.4byte	.LASF943
 	.4byte	0xd2e
 	.byte	0x1
 	.4byte	0xa64
@@ -2535,10 +2535,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd34
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF933
+	.4byte	.LASF937
 	.byte	0x2
 	.byte	0x20
-	.4byte	.LASF940
+	.4byte	.LASF944
 	.byte	0x1
 	.4byte	0xa83
 	.4byte	0xa8e
@@ -2548,10 +2548,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd3a
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF937
+	.4byte	.LASF941
 	.byte	0x2
 	.byte	0x29
-	.4byte	.LASF941
+	.4byte	.LASF945
 	.4byte	0xd2e
 	.byte	0x1
 	.4byte	0xaa6
@@ -2562,10 +2562,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd3a
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF942
+	.4byte	.LASF946
 	.byte	0x2
 	.byte	0x35
-	.4byte	.LASF943
+	.4byte	.LASF947
 	.byte	0x1
 	.4byte	0xac5
 	.4byte	0xad0
@@ -2575,10 +2575,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2be
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF944
+	.4byte	.LASF948
 	.byte	0x2
 	.byte	0x3f
-	.4byte	.LASF945
+	.4byte	.LASF949
 	.4byte	0xd40
 	.byte	0x1
 	.4byte	0xae8
@@ -2589,10 +2589,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF944
+	.4byte	.LASF948
 	.byte	0x2
 	.byte	0x44
-	.4byte	.LASF946
+	.4byte	.LASF950
 	.4byte	0xd51
 	.byte	0x1
 	.4byte	0xb0b
@@ -2603,10 +2603,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF947
+	.4byte	.LASF951
 	.byte	0x2
 	.byte	0x49
-	.4byte	.LASF948
+	.4byte	.LASF952
 	.4byte	0x2be
 	.byte	0x1
 	.4byte	0xb2e
@@ -2615,10 +2615,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd1d
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF949
+	.4byte	.LASF953
 	.byte	0x2
 	.byte	0x51
-	.4byte	.LASF950
+	.4byte	.LASF954
 	.byte	0x1
 	.4byte	0xb48
 	.4byte	0xb53
@@ -2628,10 +2628,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2be
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF951
+	.4byte	.LASF955
 	.byte	0x2
 	.byte	0x5b
-	.4byte	.LASF952
+	.4byte	.LASF956
 	.4byte	0xd17
 	.byte	0x1
 	.4byte	0xb6b
@@ -2640,10 +2640,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd1d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF951
+	.4byte	.LASF955
 	.byte	0x2
 	.byte	0x61
-	.4byte	.LASF953
+	.4byte	.LASF957
 	.4byte	0xd57
 	.byte	0x1
 	.4byte	0xb89
@@ -2652,10 +2652,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd46
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF901
+	.4byte	.LASF905
 	.byte	0x2
 	.byte	0x67
-	.4byte	.LASF954
+	.4byte	.LASF958
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0xba7
@@ -2664,10 +2664,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd46
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF955
+	.4byte	.LASF959
 	.byte	0x2
 	.byte	0x6d
-	.4byte	.LASF956
+	.4byte	.LASF960
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0xbc5
@@ -2676,10 +2676,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd46
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF957
+	.4byte	.LASF961
 	.byte	0x2
 	.byte	0x73
-	.4byte	.LASF958
+	.4byte	.LASF962
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xbe3
@@ -2688,10 +2688,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd46
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF959
+	.4byte	.LASF963
 	.byte	0x2
 	.byte	0x79
-	.4byte	.LASF960
+	.4byte	.LASF964
 	.byte	0x1
 	.4byte	0xbfd
 	.4byte	0xc03
@@ -2699,10 +2699,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd1d
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF961
+	.4byte	.LASF965
 	.byte	0x2
 	.byte	0x7f
-	.4byte	.LASF962
+	.4byte	.LASF966
 	.byte	0x1
 	.4byte	0xc17
 	.4byte	0xc22
@@ -2712,10 +2712,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF963
+	.4byte	.LASF967
 	.byte	0x2
 	.byte	0x8a
-	.4byte	.LASF964
+	.4byte	.LASF968
 	.4byte	0xd2e
 	.byte	0x1
 	.4byte	0xc3a
@@ -2728,10 +2728,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF965
+	.4byte	.LASF969
 	.byte	0x2
 	.byte	0x92
-	.4byte	.LASF966
+	.4byte	.LASF970
 	.4byte	0x22d
 	.byte	0x1
 	.4byte	0xc62
@@ -2744,10 +2744,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd40
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF967
+	.4byte	.LASF971
 	.byte	0x2
 	.byte	0x9e
-	.4byte	.LASF968
+	.4byte	.LASF972
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xc8a
@@ -2758,10 +2758,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0x2b
-	.4byte	.LASF969
+	.4byte	.LASF973
 	.byte	0x2
 	.byte	0xa7
-	.4byte	.LASF970
+	.4byte	.LASF974
 	.4byte	0x7c4
 	.4byte	0xcac
 	.4byte	0xcb7
@@ -2771,10 +2771,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0x2b
-	.4byte	.LASF971
+	.4byte	.LASF975
 	.byte	0x2
 	.byte	0xbb
-	.4byte	.LASF972
+	.4byte	.LASF976
 	.4byte	0x7c4
 	.4byte	0xcce
 	.4byte	0xcd4
@@ -2782,10 +2782,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd1d
 	.byte	0
 	.uleb128 0x2b
-	.4byte	.LASF973
+	.4byte	.LASF977
 	.byte	0x2
 	.byte	0xc3
-	.4byte	.LASF974
+	.4byte	.LASF978
 	.4byte	0x7c4
 	.4byte	0xceb
 	.4byte	0xcf1
@@ -2793,10 +2793,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xd1d
 	.byte	0
 	.uleb128 0x2c
-	.4byte	.LASF975
+	.4byte	.LASF979
 	.byte	0x2
 	.byte	0xd1
-	.4byte	.LASF977
+	.4byte	.LASF981
 	.4byte	0x22d
 	.4byte	0xd0a
 	.uleb128 0xb
@@ -2843,7 +2843,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x8
 	.4byte	0x2c5
 	.uleb128 0x6
-	.4byte	.LASF978
+	.4byte	.LASF982
 	.byte	0x18
 	.byte	0xe
 	.byte	0xc
@@ -2852,10 +2852,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x987
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF979
+	.4byte	.LASF983
 	.byte	0xe
 	.byte	0x10
-	.4byte	.LASF980
+	.4byte	.LASF984
 	.byte	0x1
 	.4byte	0xd83
 	.4byte	0xd89
@@ -2863,10 +2863,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF981
+	.4byte	.LASF985
 	.byte	0xe
 	.byte	0x11
-	.4byte	.LASF982
+	.4byte	.LASF986
 	.byte	0x1
 	.4byte	0xd9d
 	.4byte	0xda3
@@ -2874,10 +2874,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF983
+	.4byte	.LASF987
 	.byte	0xe
 	.byte	0x13
-	.4byte	.LASF984
+	.4byte	.LASF988
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xdbb
@@ -2886,10 +2886,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF985
+	.4byte	.LASF989
 	.byte	0xe
 	.byte	0x14
-	.4byte	.LASF986
+	.4byte	.LASF990
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xdd9
@@ -2898,10 +2898,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF987
+	.4byte	.LASF991
 	.byte	0xe
 	.byte	0x15
-	.4byte	.LASF988
+	.4byte	.LASF992
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xdf7
@@ -2910,10 +2910,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF989
+	.4byte	.LASF993
 	.byte	0xe
 	.byte	0x16
-	.4byte	.LASF990
+	.4byte	.LASF994
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xe15
@@ -2922,10 +2922,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF991
+	.4byte	.LASF995
 	.byte	0xe
 	.byte	0x17
-	.4byte	.LASF992
+	.4byte	.LASF996
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xe33
@@ -2934,10 +2934,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF993
+	.4byte	.LASF997
 	.byte	0xe
 	.byte	0x18
-	.4byte	.LASF994
+	.4byte	.LASF998
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xe51
@@ -2946,10 +2946,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF995
+	.4byte	.LASF999
 	.byte	0xe
 	.byte	0x19
-	.4byte	.LASF996
+	.4byte	.LASF1000
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xe6f
@@ -2958,10 +2958,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF997
+	.4byte	.LASF1001
 	.byte	0xe
 	.byte	0x1a
-	.4byte	.LASF998
+	.4byte	.LASF1002
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xe8d
@@ -2970,10 +2970,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xeae
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF999
+	.4byte	.LASF1003
 	.byte	0xe
 	.byte	0x1b
-	.4byte	.LASF1000
+	.4byte	.LASF1004
 	.4byte	0x7c4
 	.byte	0x1
 	.4byte	0xea7
@@ -3002,7 +3002,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x9c
 	.4byte	0xef5
 	.uleb128 0x30
-	.4byte	.LASF1001
+	.4byte	.LASF1005
 	.byte	0x2
 	.byte	0xd1
 	.4byte	0x22d
@@ -3021,7 +3021,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"T"
 	.4byte	0xd17
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0x971
 	.4byte	.LLST8
 	.uleb128 0x33
@@ -3056,7 +3056,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xf68
 	.4byte	0xf72
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xec5
 	.byte	0
 	.uleb128 0x36
@@ -3066,7 +3066,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xf84
 	.4byte	0xf8e
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xec5
 	.byte	0
 	.uleb128 0x36
@@ -3076,7 +3076,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xfa0
 	.4byte	0xfaa
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xec5
 	.byte	0
 	.uleb128 0x31
@@ -3089,11 +3089,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0xfcd
 	.4byte	0x100b
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST31
 	.uleb128 0x38
-	.4byte	.LASF1003
+	.4byte	.LASF1007
 	.byte	0x2
 	.byte	0xc7
 	.4byte	0x22d
@@ -3122,7 +3122,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x102e
 	.4byte	0x105d
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST19
 	.uleb128 0x39
@@ -3149,17 +3149,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1080
 	.4byte	0x1118
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST10
 	.uleb128 0x30
-	.4byte	.LASF932
+	.4byte	.LASF936
 	.byte	0x2
 	.byte	0xa7
 	.4byte	0x22d
 	.4byte	.LLST11
 	.uleb128 0x38
-	.4byte	.LASF1004
+	.4byte	.LASF1008
 	.byte	0x2
 	.byte	0xac
 	.4byte	0xd17
@@ -3223,7 +3223,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x113b
 	.4byte	0x119a
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST40
 	.uleb128 0x33
@@ -3270,7 +3270,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x11bd
 	.4byte	0x11d6
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST7
 	.uleb128 0x3d
@@ -3291,7 +3291,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x11f9
 	.4byte	0x1207
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd4c
 	.4byte	.LLST6
 	.byte	0
@@ -3305,7 +3305,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x122a
 	.4byte	0x127c
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST35
 	.uleb128 0x33
@@ -3342,7 +3342,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x128a
 	.4byte	0x12c4
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.uleb128 0x3f
 	.string	"il"
@@ -3356,19 +3356,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1b
 	.4byte	0xd40
 	.uleb128 0x42
-	.4byte	.LASF1005
+	.4byte	.LASF1009
 	.4byte	0xd28
 	.uleb128 0x42
-	.4byte	.LASF1006
+	.4byte	.LASF1010
 	.4byte	0x14d
 	.uleb128 0x42
-	.4byte	.LASF1007
+	.4byte	.LASF1011
 	.4byte	0x14d
 	.byte	0
 	.byte	0
 	.uleb128 0x43
 	.4byte	0x127c
-	.4byte	.LASF1009
+	.4byte	.LASF1013
 	.4byte	0x12eb
 	.8byte	.LFB54
 	.8byte	.LFE54-.LFB54
@@ -3478,7 +3478,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x140d
 	.4byte	0x142f
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST33
 	.uleb128 0x34
@@ -3502,7 +3502,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1452
 	.4byte	0x1481
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.4byte	.LLST20
 	.uleb128 0x33
@@ -3532,7 +3532,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x14a4
 	.4byte	0x14b2
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd4c
 	.4byte	.LLST5
 	.byte	0
@@ -3542,15 +3542,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x14c0
 	.4byte	0x14d3
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.uleb128 0x37
-	.4byte	.LASF1008
+	.4byte	.LASF1012
 	.4byte	0x2c5
 	.byte	0
 	.uleb128 0x43
 	.4byte	0x14b2
-	.4byte	.LASF1010
+	.4byte	.LASF1014
 	.4byte	0x14fa
 	.8byte	.LFB48
 	.8byte	.LFE48-.LFB48
@@ -3571,17 +3571,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x151f
 	.4byte	0x1534
 	.uleb128 0x37
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xd23
 	.uleb128 0x4c
-	.4byte	.LASF1011
+	.4byte	.LASF1015
 	.byte	0x2
 	.byte	0xf
 	.4byte	0x22d
 	.byte	0
 	.uleb128 0x43
 	.4byte	0x1511
-	.4byte	.LASF1012
+	.4byte	.LASF1016
 	.4byte	0x155b
 	.8byte	.LFB45
 	.8byte	.LFE45-.LFB45
@@ -3636,7 +3636,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x15cc
 	.4byte	0x15da
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST3
 	.byte	0
@@ -3652,7 +3652,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x15ff
 	.4byte	0x171b
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST44
 	.uleb128 0x4e
@@ -3664,7 +3664,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x91
 	.sleb128 -48
 	.uleb128 0x38
-	.4byte	.LASF1013
+	.4byte	.LASF1017
 	.byte	0x1
 	.byte	0x46
 	.4byte	0x22d
@@ -3815,7 +3815,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1740
 	.4byte	0x17ed
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST38
 	.uleb128 0x4e
@@ -3917,7 +3917,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1812
 	.4byte	0x1820
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST2
 	.byte	0
@@ -3933,7 +3933,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1845
 	.4byte	0x18a2
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST34
 	.uleb128 0x4e
@@ -3992,7 +3992,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x18c7
 	.4byte	0x18d5
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST1
 	.byte	0
@@ -4008,7 +4008,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x18fa
 	.4byte	0x1974
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST22
 	.uleb128 0x4e
@@ -4083,11 +4083,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1999
 	.4byte	0x1b60
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST16
 	.uleb128 0x52
-	.4byte	.LASF1014
+	.4byte	.LASF1018
 	.byte	0x1
 	.byte	0x1a
 	.4byte	0x987
@@ -4095,7 +4095,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x91
 	.sleb128 -24
 	.uleb128 0x52
-	.4byte	.LASF1015
+	.4byte	.LASF1019
 	.byte	0x1
 	.byte	0x1b
 	.4byte	0x987
@@ -4103,7 +4103,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x91
 	.sleb128 -48
 	.uleb128 0x52
-	.4byte	.LASF1016
+	.4byte	.LASF1020
 	.byte	0x1
 	.byte	0x1c
 	.4byte	0x987
@@ -4111,7 +4111,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x91
 	.sleb128 -72
 	.uleb128 0x52
-	.4byte	.LASF1017
+	.4byte	.LASF1021
 	.byte	0x1
 	.byte	0x1d
 	.4byte	0x987
@@ -4119,7 +4119,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x91
 	.sleb128 -96
 	.uleb128 0x52
-	.4byte	.LASF1018
+	.4byte	.LASF1022
 	.byte	0x1
 	.byte	0x1e
 	.4byte	0x987
@@ -4324,7 +4324,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1b85
 	.4byte	0x1b93
 	.uleb128 0x32
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.4byte	.LLST0
 	.byte	0
@@ -4340,7 +4340,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1bb8
 	.4byte	0x1bc4
 	.uleb128 0x53
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.uleb128 0x1
 	.byte	0x50
@@ -4356,7 +4356,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x9c
 	.4byte	0x1be5
 	.uleb128 0x53
-	.4byte	.LASF1002
+	.4byte	.LASF1006
 	.4byte	0xeb4
 	.uleb128 0x1
 	.byte	0x50
@@ -7753,21 +7753,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x4
 	.byte	0x5
 	.uleb128 0x1f
-	.4byte	.LASF801
+	.4byte	.LASF805
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
 	.uleb128 0xb
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF802
+	.4byte	.LASF806
 	.file 20 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h"
 	.byte	0x3
 	.uleb128 0x2b
 	.uleb128 0x14
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF803
+	.4byte	.LASF807
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0xb
@@ -7780,14 +7780,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x15
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF804
+	.4byte	.LASF808
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x51
 	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x8
-	.4byte	.LASF805
+	.4byte	.LASF809
 	.byte	0x3
 	.uleb128 0xa
 	.uleb128 0xd
@@ -7797,13 +7797,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x3
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF806
+	.4byte	.LASF810
 	.byte	0x3
 	.uleb128 0xc
 	.uleb128 0xc
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF807
+	.4byte	.LASF811
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
@@ -7811,10 +7811,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0x1f
-	.4byte	.LASF808
+	.4byte	.LASF812
 	.byte	0x6
 	.uleb128 0x22
-	.4byte	.LASF809
+	.4byte	.LASF813
 	.byte	0x4
 	.byte	0
 	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.fefa049488069cd6cd331047dff9d5a5,comdat
@@ -9002,7 +9002,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x102
 	.4byte	.LASF785
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.7c3aff63746d06c2b218490acda1ebb4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.5b434c3192a2024a12b2b93c0167ad44,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -9037,32 +9037,44 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x2e
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x31
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x33
+	.uleb128 0x32
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x36
+	.uleb128 0x33
 	.4byte	.LASF799
 	.byte	0x5
-	.uleb128 0x37
+	.uleb128 0x34
 	.4byte	.LASF800
+	.byte	0x5
+	.uleb128 0x38
+	.4byte	.LASF801
+	.byte	0x5
+	.uleb128 0x39
+	.4byte	.LASF802
+	.byte	0x5
+	.uleb128 0x3c
+	.4byte	.LASF803
+	.byte	0x5
+	.uleb128 0x3d
+	.4byte	.LASF804
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
 .LASF102:
 	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF850:
+.LASF854:
 	.string	"int_fast8_t"
-.LASF817:
+.LASF821:
 	.string	"_ZNKSt16initializer_listIiE4sizeEv"
-.LASF829:
+.LASF833:
 	.string	"int8_t"
 .LASF275:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
-.LASF936:
+.LASF940:
 	.string	"_ZN6VectorIiEC4ERKS0_"
 .LASF53:
 	.string	"__UINT32_TYPE__ unsigned int"
@@ -9070,11 +9082,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
 .LASF142:
 	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF821:
+.LASF825:
 	.string	"size_t"
 .LASF407:
 	.string	"PERIPHBASE 0x08000000"
-.LASF917:
+.LASF921:
 	.string	"tryIncrease"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
@@ -9094,7 +9106,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))"
 .LASF385:
 	.string	"__ARM_FEATURE_NUMERIC_MAXMIN 1"
-.LASF908:
+.LASF912:
 	.string	"MemoryManager"
 .LASF320:
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
@@ -9122,11 +9134,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
 .LASF651:
 	.string	"_WCHAR_T_H "
-.LASF798:
+.LASF802:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF857:
+.LASF861:
 	.string	"uint_fast64_t"
-.LASF833:
+.LASF837:
 	.string	"int32_t"
 .LASF683:
 	.string	"INT64_MAX __INT64_MAX__"
@@ -9140,8 +9152,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
-.LASF1021:
+.LASF1025:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\chap003\\\\Debug-qemu_virt"
+.LASF797:
+	.string	"ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) \":\\n\\t\")"
 .LASF585:
 	.string	"_GLIBCXX11_USE_C99_STDLIB 1"
 .LASF317:
@@ -9164,13 +9178,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT_HAS_DENORM__ 1"
 .LASF47:
 	.string	"__INT8_TYPE__ signed char"
-.LASF906:
+.LASF910:
 	.string	"_ZNK11MemoryChunk10getDataPtrEv"
 .LASF250:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
-.LASF984:
+.LASF988:
 	.string	"_ZN10TestVector19initializeCorrectlyEv"
-.LASF945:
+.LASF949:
 	.string	"_ZNK6VectorIiEixEm"
 .LASF306:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
@@ -9192,9 +9206,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INT16_TYPE__ short int"
 .LASF658:
 	.string	"NULL __null"
-.LASF919:
+.LASF923:
 	.string	"tryDecrease"
-.LASF813:
+.LASF817:
 	.string	"_M_len"
 .LASF570:
 	.string	"_GLIBCXX_HAVE_VSWSCANF 1"
@@ -9212,17 +9226,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DECIMAL_DIG__ 36"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
-.LASF1010:
+.LASF1014:
 	.string	"_ZN6VectorIiED2Ev"
-.LASF938:
+.LASF942:
 	.string	"_ZN6VectorIiEaSERKSt16initializer_listIiE"
 .LASF386:
 	.string	"__ARM_NEON 1"
-.LASF990:
+.LASF994:
 	.string	"_ZN10TestVector26capacityDecreasedCorrectlyEv"
 .LASF210:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
-.LASF847:
+.LASF851:
 	.string	"uint_least16_t"
 .LASF252:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
@@ -9230,29 +9244,29 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT32_MIN (-INT32_MAX - 1)"
 .LASF249:
 	.string	"__FLT32_MAX_10_EXP__ 38"
-.LASF924:
+.LASF928:
 	.string	"_ZN13MemoryManager10deallocateEPv"
 .LASF139:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF995:
+.LASF999:
 	.string	"eraseCorrectly"
 .LASF740:
 	.string	"UINTPTR_MAX"
 .LASF610:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF801:
+.LASF805:
 	.string	"_INITIALIZER_LIST "
-.LASF899:
+.LASF903:
 	.string	"setNext"
 .LASF412:
 	.string	"__need_wchar_t"
-.LASF974:
+.LASF978:
 	.string	"_ZN6VectorIiE24adjustCapacityForOneLessEv"
 .LASF650:
 	.string	"_WCHAR_T_DEFINED "
 .LASF540:
 	.string	"_GLIBCXX_HAVE_MBSTATE_T 1"
-.LASF1003:
+.LASF1007:
 	.string	"advisedCapacity"
 .LASF618:
 	.string	"__PTRDIFF_T "
@@ -9260,7 +9274,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT32_MAX __UINT32_MAX__"
 .LASF620:
 	.string	"_BSD_PTRDIFF_T_ "
-.LASF887:
+.LASF891:
 	.string	"MemoryChunk"
 .LASF242:
 	.string	"__FLT16_HAS_INFINITY__ 1"
@@ -9268,7 +9282,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64_MIN_10_EXP__ (-307)"
 .LASF640:
 	.string	"__size_t "
-.LASF930:
+.LASF934:
 	.string	"Vector<int>"
 .LASF171:
 	.string	"__INT_FAST64_WIDTH__ 64"
@@ -9276,15 +9290,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64_DECIMAL_DIG__ 17"
 .LASF707:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
-.LASF975:
+.LASF979:
 	.string	"getIncrementalSize"
 .LASF504:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF885:
+.LASF889:
 	.string	"double"
 .LASF494:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
-.LASF1025:
+.LASF1029:
 	.string	"MINIMAL_CAPACITY"
 .LASF203:
 	.string	"__DBL_MIN_10_EXP__ (-307)"
@@ -9302,7 +9316,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)"
 .LASF200:
 	.string	"__DBL_MANT_DIG__ 53"
-.LASF925:
+.LASF929:
 	.string	"getAllocatedLength"
 .LASF285:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
@@ -9312,9 +9326,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__WCHAR_T__ "
 .LASF260:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF976:
+.LASF980:
 	.string	"_ZNSt16initializer_listIiEC4EPKim"
-.LASF856:
+.LASF860:
 	.string	"uint_fast32_t"
 .LASF458:
 	.string	"_GLIBCXX_NAMESPACE_LDBL "
@@ -9322,11 +9336,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF319:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF800:
+.LASF804:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
-.LASF947:
+.LASF951:
 	.string	"popBack"
-.LASF989:
+.LASF993:
 	.string	"capacityDecreasedCorrectly"
 .LASF305:
 	.string	"__FLT64X_MAX_10_EXP__ 4932"
@@ -9346,7 +9360,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INTMAX_TYPE__ long int"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSHF 1"
-.LASF1001:
+.LASF1005:
 	.string	"curSize"
 .LASF572:
 	.string	"_GLIBCXX_HAVE_WCHAR_H 1"
@@ -9360,13 +9374,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT_FAST16_MAX __UINT_FAST16_MAX__"
 .LASF627:
 	.string	"_SYS_SIZE_T_H "
-.LASF986:
+.LASF990:
 	.string	"_ZN10TestVector22minimalCapacityEnsuredEv"
 .LASF59:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF956:
+.LASF960:
 	.string	"_ZNK6VectorIiE11getCapacityEv"
-.LASF822:
+.LASF826:
 	.string	"long int"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
@@ -9398,13 +9412,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INT_LEAST8_TYPE__ signed char"
 .LASF440:
 	.string	"_GLIBCXX_NOEXCEPT_QUAL "
-.LASF896:
+.LASF900:
 	.string	"getNext"
-.LASF967:
+.LASF971:
 	.string	"resize"
 .LASF355:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
-.LASF951:
+.LASF955:
 	.string	"getData"
 .LASF311:
 	.string	"__FLT64X_HAS_DENORM__ 1"
@@ -9450,7 +9464,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT_MAX_EXP__ 128"
 .LASF22:
 	.string	"__SIZEOF_LONG__ 8"
-.LASF968:
+.LASF972:
 	.string	"_ZN6VectorIiE6resizeEm"
 .LASF569:
 	.string	"_GLIBCXX_HAVE_VFWSCANF 1"
@@ -9464,23 +9478,23 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__LDBL_MAX_10_EXP__ 4932"
 .LASF421:
 	.string	"_GLIBCXX_CONST __attribute__ ((__const__))"
-.LASF928:
+.LASF932:
 	.string	"_ZN13MemoryManager10allocateAsIPiEET_m"
 .LASF9:
 	.string	"__LINARO_RELEASE__ 201711"
 .LASF503:
 	.string	"_GLIBCXX_HAVE_ENOTSUP 1"
-.LASF965:
+.LASF969:
 	.string	"insert"
 .LASF325:
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 .LASF662:
 	.string	"_GLIBCXX_CSTDINT 1"
-.LASF892:
+.LASF896:
 	.string	"isAllocated"
 .LASF188:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF849:
+.LASF853:
 	.string	"uint_least64_t"
 .LASF422:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -9490,11 +9504,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
 .LASF593:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF830:
+.LASF834:
 	.string	"signed char"
 .LASF523:
 	.string	"_GLIBCXX_HAVE_IEEEFP_H 1"
-.LASF835:
+.LASF839:
 	.string	"uint8_t"
 .LASF664:
 	.string	"INT8_MAX"
@@ -9532,7 +9546,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_POWF 1"
 .LASF676:
 	.string	"INT32_MAX"
-.LASF803:
+.LASF807:
 	.string	"INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ "
 .LASF512:
 	.string	"_GLIBCXX_HAVE_EXPF 1"
@@ -9552,7 +9566,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_BSD_SIZE_T_DEFINED_ "
 .LASF69:
 	.string	"__UINT_FAST32_TYPE__ unsigned int"
-.LASF836:
+.LASF840:
 	.string	"unsigned char"
 .LASF3:
 	.string	"__STDC_UTF_32__ 1"
@@ -9564,7 +9578,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_FLOORF 1"
 .LASF345:
 	.string	"__GCC_ATOMIC_CHAR_LOCK_FREE 2"
-.LASF950:
+.LASF954:
 	.string	"_ZN6VectorIiE8pushBackEi"
 .LASF330:
 	.string	"__DEC128_MAX_EXP__ 6145"
@@ -9574,15 +9588,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INT_FAST32_MAX__ 0x7fffffff"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
+.LASF798:
+	.string	"ASM_DEFINE_GLOBAL_SYM(sym) __asm__(\".global \" __stringify(sym) \" \\n\\t;\" __stringify(sym) \":\\n\\t\")"
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_TARNAME \"libstdc++\""
 .LASF416:
 	.string	"__need_wint_t"
-.LASF941:
+.LASF945:
 	.string	"_ZN6VectorIiEaSEOS0_"
 .LASF141:
 	.string	"__UINT16_MAX__ 0xffff"
-.LASF802:
+.LASF806:
 	.string	"INCLUDE_PRINTK_H_ "
 .LASF109:
 	.string	"__SHRT_MAX__ 0x7fff"
@@ -9606,7 +9622,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT_FAST32_MIN (-INT_FAST32_MAX - 1)"
 .LASF192:
 	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
-.LASF994:
+.LASF998:
 	.string	"_ZN10TestVector17pushBackCorrectlyEv"
 .LASF608:
 	.string	"_GLIBCXX_USE_TMPNAM 1"
@@ -9630,9 +9646,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF763:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF862:
+.LASF866:
 	.string	"char"
-.LASF960:
+.LASF964:
 	.string	"_ZN6VectorIiE5clearEv"
 .LASF341:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1"
@@ -9642,9 +9658,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
 .LASF66:
 	.string	"__INT_FAST64_TYPE__ long int"
-.LASF961:
+.LASF965:
 	.string	"erase"
-.LASF953:
+.LASF957:
 	.string	"_ZNK6VectorIiE7getDataEv"
 .LASF482:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
@@ -9656,15 +9672,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__SIZEOF_INT__ 4"
 .LASF530:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
-.LASF799:
+.LASF803:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF791:
 	.string	"WARNING \"[WARNING] \""
-.LASF848:
+.LASF852:
 	.string	"uint_least32_t"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
-.LASF932:
+.LASF936:
 	.string	"capacity"
 .LASF235:
 	.string	"__FLT16_MAX_10_EXP__ 4"
@@ -9680,7 +9696,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF194:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF863:
+.LASF867:
 	.string	"EMPTY_STR"
 .LASF424:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
@@ -9690,7 +9706,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DBL_HAS_DENORM__ 1"
 .LASF241:
 	.string	"__FLT16_HAS_DENORM__ 1"
-.LASF915:
+.LASF919:
 	.string	"allocate"
 .LASF84:
 	.string	"__cpp_range_based_for 200907"
@@ -9698,17 +9714,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
-.LASF1024:
+.LASF1028:
 	.string	"decltype(nullptr)"
 .LASF147:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
 .LASF276:
 	.string	"__FLT128_MAX_EXP__ 16384"
-.LASF948:
+.LASF952:
 	.string	"_ZN6VectorIiE7popBackEv"
-.LASF843:
+.LASF847:
 	.string	"int_least16_t"
-.LASF926:
+.LASF930:
 	.string	"_ZNK13MemoryManager18getAllocatedLengthEPv"
 .LASF401:
 	.string	"CXX_MACROS_H__ "
@@ -9716,7 +9732,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_SIZE_T_ "
 .LASF74:
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
-.LASF923:
+.LASF927:
 	.string	"deallocate"
 .LASF746:
 	.string	"UINTMAX_MAX"
@@ -9726,27 +9742,27 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_END_NAMESPACE_CXX11 }"
 .LASF460:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
-.LASF929:
+.LASF933:
 	.string	"mman"
 .LASF480:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF864:
+.LASF868:
 	.string	"koutBufSize"
 .LASF595:
 	.string	"_GLIBCXX_STDIO_EOF -1"
 .LASF349:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
-.LASF955:
+.LASF959:
 	.string	"getCapacity"
 .LASF653:
 	.string	"__INT_WCHAR_T_H "
-.LASF1009:
+.LASF1013:
 	.string	"_ZN6VectorIiEC2ERKSt16initializer_listIiE"
 .LASF459:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL "
 .LASF556:
 	.string	"_GLIBCXX_HAVE_STRTOF 1"
-.LASF963:
+.LASF967:
 	.string	"append"
 .LASF481:
 	.string	"_GLIBCXX_USE_C99_STDIO _GLIBCXX11_USE_C99_STDIO"
@@ -9754,9 +9770,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1"
 .LASF643:
 	.string	"_WCHAR_T "
-.LASF811:
+.LASF815:
 	.string	"size_type"
-.LASF937:
+.LASF941:
 	.string	"operator="
 .LASF399:
 	.string	"__ELF__ 1"
@@ -9768,7 +9784,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__LDBL_HAS_INFINITY__ 1"
 .LASF318:
 	.string	"__DEC32_MAX__ 9.999999E96DF"
-.LASF868:
+.LASF872:
 	.string	"Output"
 .LASF291:
 	.string	"__FLT32X_MAX_10_EXP__ 308"
@@ -9782,15 +9798,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__cpp_sized_deallocation 201309"
 .LASF668:
 	.string	"UINT8_MAX"
-.LASF964:
+.LASF968:
 	.string	"_ZN6VectorIiE6appendERKS0_m"
-.LASF809:
+.LASF813:
 	.string	"CMP_HELPER"
 .LASF463:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_END_NAMESPACE_CXX11"
-.LASF912:
+.LASF916:
 	.string	"_ZN13MemoryManagerC4EPvm"
-.LASF810:
+.LASF814:
 	.string	"iterator"
 .LASF571:
 	.string	"_GLIBCXX_HAVE_VWSCANF 1"
@@ -9804,7 +9820,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
 .LASF199:
 	.string	"__FP_FAST_FMAF 1"
-.LASF979:
+.LASF983:
 	.string	"setup"
 .LASF764:
 	.string	"WINT_MIN"
@@ -9814,11 +9830,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_PACKAGE_BUGREPORT \"\""
 .LASF149:
 	.string	"__INT_LEAST16_WIDTH__ 16"
-.LASF1004:
+.LASF1008:
 	.string	"newData"
 .LASF183:
 	.string	"__DEC_EVAL_METHOD__ 2"
-.LASF897:
+.LASF901:
 	.string	"_ZNK11MemoryChunk7getNextEv"
 .LASF468:
 	.string	"_GLIBCXX_END_EXTERN_C }"
@@ -9826,25 +9842,25 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDINT_H 1"
-.LASF886:
+.LASF890:
 	.string	"kout"
-.LASF959:
+.LASF963:
 	.string	"clear"
 .LASF684:
 	.string	"INT64_MIN"
 .LASF415:
 	.string	"__need_NULL"
-.LASF985:
+.LASF989:
 	.string	"minimalCapacityEnsured"
 .LASF429:
 	.string	"_GLIBCXX_USE_CONSTEXPR constexpr"
 .LASF428:
 	.string	"_GLIBCXX_CONSTEXPR constexpr"
-.LASF987:
+.LASF991:
 	.string	"capacityIncreasedCorrectly"
 .LASF336:
 	.string	"__USER_LABEL_PREFIX__ "
-.LASF807:
+.LASF811:
 	.string	"INCLUDE_MEMORYCHUNK_H_ "
 .LASF714:
 	.string	"INT_FAST8_MIN"
@@ -9854,7 +9870,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INT_LEAST32_MAX__ 0x7fffffff"
 .LASF58:
 	.string	"__INT_LEAST64_TYPE__ long int"
-.LASF884:
+.LASF888:
 	.string	"_ZN6OutputlsEPv"
 .LASF773:
 	.string	"INT64_C(c) __INT64_C(c)"
@@ -9872,7 +9888,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"DEF_H__ "
 .LASF377:
 	.string	"__ARM_BIG_ENDIAN"
-.LASF872:
+.LASF876:
 	.string	"operator<<"
 .LASF794:
 	.string	"TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))"
@@ -9886,7 +9902,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_MANGLE_SIZE_T m"
 .LASF406:
 	.string	"ARCH_IS_qemu_virt "
-.LASF977:
+.LASF981:
 	.string	"_ZN6VectorIiE18getIncrementalSizeEm"
 .LASF499:
 	.string	"_GLIBCXX_HAVE_ENOSPC 1"
@@ -9906,11 +9922,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_EXTERN_TEMPLATE 1"
 .LASF734:
 	.string	"UINT_FAST64_MAX"
-.LASF966:
+.LASF970:
 	.string	"_ZN6VectorIiE6insertEmRKi"
 .LASF470:
 	.string	"_GLIBCXX_OS_DEFINES 1"
-.LASF823:
+.LASF827:
 	.string	"long unsigned int"
 .LASF201:
 	.string	"__DBL_DIG__ 15"
@@ -9920,13 +9936,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_IEC_559_COMPLEX 2"
 .LASF5:
 	.string	"__GNUC__ 7"
-.LASF918:
+.LASF922:
 	.string	"_ZN13MemoryManager11tryIncreaseEPvm"
 .LASF52:
 	.string	"__UINT16_TYPE__ short unsigned int"
 .LASF240:
 	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
-.LASF971:
+.LASF975:
 	.string	"adjustCapacityForOneMore"
 .LASF303:
 	.string	"__FLT64X_MIN_10_EXP__ (-4931)"
@@ -9958,13 +9974,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__cpp_nsdmi 200809"
 .LASF575:
 	.string	"LT_OBJDIR \".libs/\""
-.LASF944:
+.LASF948:
 	.string	"operator[]"
 .LASF85:
 	.string	"__cpp_static_assert 200410"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF845:
+.LASF849:
 	.string	"int_least64_t"
 .LASF19:
 	.string	"_LP64 1"
@@ -9972,17 +9988,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF46:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF1002:
+.LASF1006:
 	.string	"this"
 .LASF425:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
-.LASF922:
+.LASF926:
 	.string	"_ZN13MemoryManager10reallocateEPvm"
 .LASF244:
 	.string	"__FLT32_MANT_DIG__ 24"
 .LASF688:
 	.string	"INT_LEAST8_MAX"
-.LASF889:
+.LASF893:
 	.string	"allocated"
 .LASF659:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
@@ -9996,7 +10012,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF859:
+.LASF863:
 	.string	"uintptr_t"
 .LASF204:
 	.string	"__DBL_MAX_EXP__ 1024"
@@ -10012,7 +10028,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__INT_FAST32_TYPE__ int"
 .LASF87:
 	.string	"__cpp_attributes 200809"
-.LASF1005:
+.LASF1009:
 	.string	"__for_range"
 .LASF17:
 	.string	"__OPTIMIZE__ 1"
@@ -10022,7 +10038,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_LOG10F 1"
 .LASF128:
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
-.LASF902:
+.LASF906:
 	.string	"_ZNK11MemoryChunk7getSizeEv"
 .LASF266:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
@@ -10034,21 +10050,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GXX_NULLPTR_T "
 .LASF1:
 	.string	"__cplusplus 201402L"
-.LASF921:
+.LASF925:
 	.string	"reallocate"
 .LASF233:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
 .LASF614:
 	.string	"_ANSI_STDDEF_H "
-.LASF943:
+.LASF947:
 	.string	"_ZN6VectorIiED4Ev"
 .LASF417:
 	.string	"_GLIBCXX_CXX_CONFIG_H 1"
-.LASF991:
+.LASF995:
 	.string	"popBackWhenEmptyNoException"
-.LASF903:
+.LASF907:
 	.string	"setSize"
-.LASF1020:
+.LASF1024:
 	.string	"../src/test/TestVector.cpp"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LDEXPF 1"
@@ -10072,7 +10088,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
 .LASF400:
 	.string	"ARCH_IS_host 1"
-.LASF935:
+.LASF939:
 	.string	"_ZN6VectorIiEC4ERKSt16initializer_listIiE"
 .LASF599:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_TR1 1"
@@ -10092,7 +10108,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__wchar_t__ "
 .LASF229:
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
-.LASF978:
+.LASF982:
 	.string	"TestVector"
 .LASF10:
 	.string	"__LINARO_SPIN__ 0"
@@ -10122,7 +10138,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF646:
 	.string	"__WCHAR_T "
-.LASF844:
+.LASF848:
 	.string	"int_least32_t"
 .LASF630:
 	.string	"__SIZE_T "
@@ -10140,7 +10156,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__SIZEOF_WCHAR_T__ 4"
 .LASF484:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF861:
+.LASF865:
 	.string	"uintmax_t"
 .LASF403:
 	.string	"UART_BASE 0x09000000"
@@ -10182,19 +10198,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT32_C"
 .LASF673:
 	.string	"INT16_MIN (-INT16_MAX - 1)"
-.LASF901:
+.LASF905:
 	.string	"getSize"
 .LASF389:
 	.string	"__AARCH64_CMODEL_SMALL__"
 .LASF502:
 	.string	"_GLIBCXX_HAVE_ENOTRECOVERABLE 1"
-.LASF840:
+.LASF844:
 	.string	"unsigned int"
 .LASF633:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF828:
+.LASF832:
 	.string	"max_align_t"
-.LASF1012:
+.LASF1016:
 	.string	"_ZN6VectorIiEC2Em"
 .LASF187:
 	.string	"__FLT_MIN_EXP__ (-125)"
@@ -10208,7 +10224,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF442:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF858:
+.LASF862:
 	.string	"intptr_t"
 .LASF293:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -10226,7 +10242,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_CEILF 1"
 .LASF61:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF988:
+.LASF992:
 	.string	"_ZN10TestVector26capacityIncreasedCorrectlyEv"
 .LASF108:
 	.string	"__SCHAR_MAX__ 0x7f"
@@ -10246,7 +10262,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__LDBL_DECIMAL_DIG__ 36"
 .LASF122:
 	.string	"__LONG_WIDTH__ 64"
-.LASF939:
+.LASF943:
 	.string	"_ZN6VectorIiEaSERKS0_"
 .LASF768:
 	.string	"INT16_C"
@@ -10254,7 +10270,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DEC64_MIN_EXP__ (-382)"
 .LASF232:
 	.string	"__FLT16_MIN_EXP__ (-13)"
-.LASF927:
+.LASF931:
 	.string	"allocateAs<int*>"
 .LASF179:
 	.string	"__GCC_IEC_559 2"
@@ -10266,27 +10282,27 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1"
 .LASF589:
 	.string	"_GLIBCXX98_USE_C99_STDLIB 1"
-.LASF981:
+.LASF985:
 	.string	"teardown"
 .LASF360:
 	.string	"__SIZEOF_PTRDIFF_T__ 8"
 .LASF369:
 	.string	"__ARM_FEATURE_IDIV 1"
-.LASF818:
+.LASF822:
 	.string	"_ZNKSt16initializer_listIiE5beginEv"
 .LASF35:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF51:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF851:
+.LASF855:
 	.string	"int_fast16_t"
-.LASF909:
+.LASF913:
 	.string	"headChunk"
-.LASF992:
+.LASF996:
 	.string	"_ZN10TestVector27popBackWhenEmptyNoExceptionEv"
-.LASF905:
+.LASF909:
 	.string	"getDataPtr"
-.LASF1011:
+.LASF1015:
 	.string	"initSize"
 .LASF88:
 	.string	"__cpp_rvalue_reference 200610"
@@ -10296,9 +10312,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DEC128_MANT_DIG__ 34"
 .LASF411:
 	.string	"_GLIBCXX_CSTDDEF 1"
-.LASF916:
+.LASF920:
 	.string	"_ZN13MemoryManager8allocateEm"
-.LASF980:
+.LASF984:
 	.string	"_ZN10TestVector5setupEv"
 .LASF785:
 	.string	"UINTMAX_C(c) __UINTMAX_C(c)"
@@ -10310,31 +10326,31 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF198:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF825:
+.LASF829:
 	.string	"__max_align_ld"
-.LASF866:
+.LASF870:
 	.string	"UNIT_K"
 .LASF402:
 	.string	"KERNEL_ADDRESS 0"
-.LASF824:
+.LASF828:
 	.string	"__max_align_ll"
 .LASF138:
 	.string	"__INT32_MAX__ 0x7fffffff"
-.LASF1014:
-	.string	"vec0"
-.LASF1015:
-	.string	"vec1"
-.LASF1016:
-	.string	"vec2"
-.LASF1017:
-	.string	"vec3"
 .LASF1018:
+	.string	"vec0"
+.LASF1019:
+	.string	"vec1"
+.LASF1020:
+	.string	"vec2"
+.LASF1021:
+	.string	"vec3"
+.LASF1022:
 	.string	"vec4"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
 .LASF623:
 	.string	"_PTRDIFF_T_DECLARED "
-.LASF1006:
+.LASF1010:
 	.string	"__for_begin"
 .LASF557:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -10346,67 +10362,69 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF94:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF819:
+.LASF823:
 	.string	"__gnu_cxx"
 .LASF787:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
-.LASF806:
+.LASF810:
 	.string	"INCLUDE_MEMORYMANAGER_H_ "
 .LASF195:
 	.string	"__FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F"
 .LASF314:
 	.string	"__DEC32_MANT_DIG__ 7"
-.LASF804:
+.LASF808:
 	.string	"INCLUDE_IO_SECTORREADER_H_ "
 .LASF563:
 	.string	"_GLIBCXX_HAVE_TANF 1"
-.LASF869:
+.LASF873:
 	.string	"print"
 .LASF671:
 	.string	"INT16_MAX __INT16_MAX__"
-.LASF907:
+.LASF911:
 	.string	"bool"
 .LASF767:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF846:
+.LASF850:
 	.string	"uint_least8_t"
 .LASF215:
 	.string	"__LDBL_MANT_DIG__ 113"
-.LASF962:
+.LASF966:
 	.string	"_ZN6VectorIiE5eraseEm"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF842:
+.LASF846:
 	.string	"int_least8_t"
 .LASF718:
 	.string	"INT_FAST16_MAX"
 .LASF626:
 	.string	"_SIZE_T "
-.LASF894:
+.LASF898:
 	.string	"setAllocated"
-.LASF870:
+.LASF874:
 	.string	"_ZN6Output5printEPKcm"
 .LASF395:
 	.string	"__ARM_FEATURE_QRDMX"
 .LASF338:
 	.string	"__STRICT_ANSI__ 1"
-.LASF860:
+.LASF864:
 	.string	"intmax_t"
 .LASF443:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
 .LASF230:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF827:
+.LASF831:
 	.string	"long double"
+.LASF799:
+	.string	"ASM_ISB() __asm__ (\"isb \\n\\t\")"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
-.LASF999:
+.LASF1003:
 	.string	"resizeCorrectly"
 .LASF517:
 	.string	"_GLIBCXX_HAVE_FMODF 1"
 .LASF698:
 	.string	"UINT_LEAST16_MAX"
-.LASF1000:
+.LASF1004:
 	.string	"_ZN10TestVector15resizeCorrectlyEv"
 .LASF313:
 	.string	"__FLT64X_HAS_QUIET_NAN__ 1"
@@ -10426,7 +10444,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DBL_MIN_EXP__ (-1021)"
 .LASF607:
 	.string	"_GLIBCXX_USE_SC_NPROCESSORS_ONLN 1"
-.LASF805:
+.LASF809:
 	.string	"INCLUDE_DATA_STRUCTURES_VECTOR_TEMPLATE_H_ "
 .LASF49:
 	.string	"__INT32_TYPE__ int"
@@ -10436,7 +10454,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2"
 .LASF302:
 	.string	"__FLT64X_MIN_EXP__ (-16381)"
-.LASF816:
+.LASF820:
 	.string	"begin"
 .LASF245:
 	.string	"__FLT32_DIG__ 6"
@@ -10454,13 +10472,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__cpp_decltype_auto 201304"
 .LASF423:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF797:
+.LASF801:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF227:
 	.string	"__LDBL_HAS_DENORM__ 1"
 .LASF342:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
-.LASF898:
+.LASF902:
 	.string	"_ZN11MemoryChunk7getNextEv"
 .LASF294:
 	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
@@ -10484,7 +10502,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ATOMIC_ACQUIRE 2"
 .LASF710:
 	.string	"UINT_LEAST64_MAX"
-.LASF900:
+.LASF904:
 	.string	"_ZN11MemoryChunk7setNextEPS_"
 .LASF339:
 	.string	"__WCHAR_UNSIGNED__ 1"
@@ -10492,7 +10510,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__stringify(x) __stringify_1(x)"
 .LASF31:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
-.LASF815:
+.LASF819:
 	.string	"size"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
@@ -10500,9 +10518,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_SQRTF 1"
 .LASF321:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF895:
+.LASF899:
 	.string	"_ZN11MemoryChunk12setAllocatedEb"
-.LASF865:
+.LASF869:
 	.string	"koutBuf"
 .LASF634:
 	.string	"_SIZE_T_DEFINED "
@@ -10510,21 +10528,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF706:
 	.string	"INT_LEAST64_MAX"
-.LASF837:
+.LASF841:
 	.string	"uint16_t"
 .LASF602:
 	.string	"_GLIBCXX_USE_FCHMOD 1"
 .LASF71:
 	.string	"__INTPTR_TYPE__ long int"
-.LASF911:
+.LASF915:
 	.string	"_ZN13MemoryManagerC4Ev"
 .LASF64:
 	.string	"__INT_FAST16_TYPE__ int"
-.LASF891:
+.LASF895:
 	.string	"_ZN11MemoryChunkC4EPS_mb"
 .LASF772:
 	.string	"INT64_C"
-.LASF1019:
+.LASF1023:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8-a -mlittle-endian -mabi=lp64 -g3 -O0 -Og -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti -fsigned-char"
 .LASF60:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
@@ -10538,15 +10556,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__AARCH64EB__"
 .LASF287:
 	.string	"__FLT32X_DIG__ 15"
-.LASF997:
+.LASF1001:
 	.string	"insertCorrectly"
-.LASF1013:
+.LASF1017:
 	.string	"oldSize"
 .LASF176:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF853:
+.LASF857:
 	.string	"int_fast64_t"
-.LASF934:
+.LASF938:
 	.string	"_ZN6VectorIiEC4Em"
 .LASF166:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
@@ -10554,7 +10572,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_RELEASE 7"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_RESOURCE_H 1"
-.LASF1007:
+.LASF1011:
 	.string	"__for_end"
 .LASF505:
 	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
@@ -10562,21 +10580,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT_EVAL_METHOD__"
 .LASF495:
 	.string	"_GLIBCXX_HAVE_ECHILD 1"
-.LASF954:
+.LASF958:
 	.string	"_ZNK6VectorIiE7getSizeEv"
 .LASF76:
 	.string	"__DEPRECATED 1"
-.LASF808:
+.LASF812:
 	.string	"CMP_HELPER(vecN,op) (vecN.getCapacity() op Vector<int>::MINIMAL_CAPACITY)"
 .LASF278:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
-.LASF914:
+.LASF918:
 	.string	"_ZN13MemoryManager18normalizeAllocSizeEm"
 .LASF374:
 	.string	"__ARM_ARCH 8"
 .LASF357:
 	.string	"__SIZEOF_INT128__ 16"
-.LASF952:
+.LASF956:
 	.string	"_ZN6VectorIiE7getDataEv"
 .LASF663:
 	.string	"_GCC_STDINT_H "
@@ -10588,7 +10606,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
 .LASF153:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF820:
+.LASF824:
 	.string	"__cxx11"
 .LASF632:
 	.string	"_BSD_SIZE_T_ "
@@ -10600,7 +10618,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT_LEAST16_MAX __UINT_LEAST16_MAX__"
 .LASF398:
 	.string	"__FLT_EVAL_METHOD_C99__ 0"
-.LASF913:
+.LASF917:
 	.string	"normalizeAllocSize"
 .LASF453:
 	.string	"_GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION"
@@ -10608,7 +10626,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FP 14"
 .LASF118:
 	.string	"__SIZE_MAX__ 0xffffffffffffffffUL"
-.LASF854:
+.LASF858:
 	.string	"uint_fast8_t"
 .LASF725:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
@@ -10632,13 +10650,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINT_LEAST64_TYPE__ long unsigned int"
 .LASF648:
 	.string	"_BSD_WCHAR_T_ "
-.LASF949:
+.LASF953:
 	.string	"pushBack"
-.LASF942:
+.LASF946:
 	.string	"~Vector"
 .LASF392:
 	.string	"_ILP32"
-.LASF883:
+.LASF887:
 	.string	"_ZNSt16initializer_listIiEC4Ev"
 .LASF57:
 	.string	"__INT_LEAST32_TYPE__ int"
@@ -10656,11 +10674,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_SINF 1"
 .LASF432:
 	.string	"_GLIBCXX17_INLINE "
-.LASF812:
+.LASF816:
 	.string	"_M_array"
 .LASF562:
 	.string	"_GLIBCXX_HAVE_S_ISREG 1"
-.LASF940:
+.LASF944:
 	.string	"_ZN6VectorIiEC4EOS0_"
 .LASF284:
 	.string	"__FLT128_HAS_INFINITY__ 1"
@@ -10692,7 +10710,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
 .LASF282:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
-.LASF933:
+.LASF937:
 	.string	"Vector"
 .LASF774:
 	.string	"UINT8_C"
@@ -10708,15 +10726,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF89:
 	.string	"__cpp_rvalue_references 200610"
-.LASF920:
+.LASF924:
 	.string	"_ZN13MemoryManager11tryDecreaseEPvm"
-.LASF852:
+.LASF856:
 	.string	"int_fast32_t"
 .LASF508:
 	.string	"_GLIBCXX_HAVE_ETIME 1"
 .LASF28:
 	.string	"__SIZEOF_SIZE_T__ 8"
-.LASF973:
+.LASF977:
 	.string	"adjustCapacityForOneLess"
 .LASF506:
 	.string	"_GLIBCXX_HAVE_EPERM 1"
@@ -10724,19 +10742,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__AARCH64EL__ 1"
 .LASF267:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF890:
+.LASF894:
 	.string	"_ZN11MemoryChunkC4Ev"
 .LASF143:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF588:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF983:
+.LASF987:
 	.string	"initializeCorrectly"
+.LASF800:
+	.string	"ASM_NOP() __asm__(\"nop \\n\\t\")"
 .LASF535:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF832:
+.LASF836:
 	.string	"short int"
 .LASF469:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
@@ -10748,7 +10768,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINT16_C(c) c"
 .LASF238:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF841:
+.LASF845:
 	.string	"uint64_t"
 .LASF173:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
@@ -10756,13 +10776,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_STD_A std"
 .LASF704:
 	.string	"UINT_LEAST32_MAX"
-.LASF814:
+.LASF818:
 	.string	"const_iterator"
 .LASF427:
 	.string	"_GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ (\"cxx11\")))"
 .LASF304:
 	.string	"__FLT64X_MAX_EXP__ 16384"
-.LASF972:
+.LASF976:
 	.string	"_ZN6VectorIiE24adjustCapacityForOneMoreEv"
 .LASF542:
 	.string	"_GLIBCXX_HAVE_MEMORY_H 1"
@@ -10774,9 +10794,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_FCHMODAT 1"
 .LASF212:
 	.string	"__DBL_HAS_INFINITY__ 1"
-.LASF867:
+.LASF871:
 	.string	"initializer_list<int>"
-.LASF831:
+.LASF835:
 	.string	"int16_t"
 .LASF705:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
@@ -10846,11 +10866,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ENOSTR 1"
 .LASF8:
 	.string	"__VERSION__ \"7.2.1 20171011\""
-.LASF996:
+.LASF1000:
 	.string	"_ZN10TestVector14eraseCorrectlyEv"
-.LASF969:
+.LASF973:
 	.string	"resizeCapacity"
-.LASF946:
+.LASF950:
 	.string	"_ZN6VectorIiEixEm"
 .LASF559:
 	.string	"_GLIBCXX_HAVE_SYS_STAT_H 1"
@@ -10894,7 +10914,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__PTRDIFF_TYPE__ long int"
 .LASF279:
 	.string	"__FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128"
-.LASF993:
+.LASF997:
 	.string	"pushBackCorrectly"
 .LASF737:
 	.string	"INTPTR_MAX __INTPTR_MAX__"
@@ -10920,9 +10940,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_BSD_WCHAR_T_"
 .LASF674:
 	.string	"UINT16_MAX"
-.LASF826:
+.LASF830:
 	.string	"long long int"
-.LASF839:
+.LASF843:
 	.string	"uint32_t"
 .LASF513:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
@@ -10936,11 +10956,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
 .LASF519:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
-.LASF998:
+.LASF1002:
 	.string	"_ZN10TestVector15insertCorrectlyEv"
 .LASF224:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF855:
+.LASF859:
 	.string	"uint_fast16_t"
 .LASF68:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
@@ -10948,7 +10968,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_STDLIB_H 1"
 .LASF525:
 	.string	"_GLIBCXX_HAVE_INT64_T_LONG 1"
-.LASF970:
+.LASF974:
 	.string	"_ZN6VectorIiE14resizeCapacityEm"
 .LASF793:
 	.string	"RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << \" failed.\\n\";}"
@@ -10962,7 +10982,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__WINT_MIN__ 0U"
 .LASF696:
 	.string	"INT_LEAST16_MIN"
-.LASF1023:
+.LASF1027:
 	.string	"11max_align_t"
 .LASF259:
 	.string	"__FLT64_DIG__ 15"
@@ -10972,15 +10992,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT_MIN__ 1.17549435082228750796873653722224568e-38F"
 .LASF146:
 	.string	"__INT_LEAST8_WIDTH__ 8"
-.LASF880:
+.LASF884:
 	.string	"_ZN6OutputlsEPKc"
 .LASF56:
 	.string	"__INT_LEAST16_TYPE__ short int"
-.LASF982:
+.LASF986:
 	.string	"_ZN10TestVector8teardownEv"
-.LASF958:
+.LASF962:
 	.string	"_ZNK6VectorIiE5emptyEv"
-.LASF838:
+.LASF842:
 	.string	"short unsigned int"
 .LASF690:
 	.string	"INT_LEAST8_MIN"
@@ -10992,13 +11012,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT_FAST16_MAX __INT_FAST16_MAX__"
 .LASF258:
 	.string	"__FLT64_MANT_DIG__ 53"
-.LASF910:
+.LASF914:
 	.string	"base"
 .LASF217:
 	.string	"__LDBL_MIN_EXP__ (-16381)"
 .LASF152:
 	.string	"__INT_LEAST32_WIDTH__ 32"
-.LASF904:
+.LASF908:
 	.string	"_ZN11MemoryChunk7setSizeEm"
 .LASF655:
 	.string	"_WCHAR_T_DECLARED "
@@ -11018,13 +11038,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_PACKAGE__GLIBCXX_VERSION \"version-unused\""
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF834:
+.LASF838:
 	.string	"int64_t"
 .LASF30:
 	.string	"__BIGGEST_ALIGNMENT__ 16"
 .LASF708:
 	.string	"INT_LEAST64_MIN"
-.LASF1008:
+.LASF1012:
 	.string	"__in_chrg"
 .LASF409:
 	.string	"INCLUDE_VECTOR_H_ "
@@ -11038,9 +11058,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT32X_MANT_DIG__ 53"
 .LASF124:
 	.string	"__WCHAR_WIDTH__ 32"
-.LASF957:
+.LASF961:
 	.string	"empty"
-.LASF893:
+.LASF897:
 	.string	"_ZNK11MemoryChunk11isAllocatedEv"
 .LASF762:
 	.string	"WINT_MAX"
@@ -11058,9 +11078,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ATOMIC_ACQ_REL 4"
 .LASF177:
 	.string	"__INTPTR_WIDTH__ 64"
-.LASF888:
+.LASF892:
 	.string	"next"
-.LASF931:
+.LASF935:
 	.string	"data"
 .LASF216:
 	.string	"__LDBL_DIG__ 33"
@@ -11068,31 +11088,31 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ISWBLANK 1"
 .LASF50:
 	.string	"__INT64_TYPE__ long int"
-.LASF882:
+.LASF886:
 	.string	"initializer_list"
-.LASF873:
+.LASF877:
 	.string	"_ZN6OutputlsEc"
-.LASF879:
+.LASF883:
 	.string	"_ZN6OutputlsEd"
 .LASF497:
 	.string	"_GLIBCXX_HAVE_ENODATA 1"
 .LASF781:
 	.string	"UINT64_C(c) __UINT64_C(c)"
-.LASF874:
-	.string	"_ZN6OutputlsEh"
 .LASF878:
+	.string	"_ZN6OutputlsEh"
+.LASF882:
 	.string	"_ZN6OutputlsEi"
-.LASF876:
+.LASF880:
 	.string	"_ZN6OutputlsEj"
-.LASF881:
+.LASF885:
 	.string	"_ZN6OutputlsEm"
-.LASF871:
+.LASF875:
 	.string	"_ZN6Output5printEPKc"
 .LASF687:
 	.string	"UINT64_MAX __UINT64_MAX__"
-.LASF877:
+.LASF881:
 	.string	"_ZN6OutputlsEs"
-.LASF875:
+.LASF879:
 	.string	"_ZN6OutputlsEt"
 .LASF638:
 	.string	"_GCC_SIZE_T "
@@ -11102,6 +11122,6 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
 .LASF686:
 	.string	"UINT64_MAX"
-.LASF1022:
+.LASF1026:
 	.string	"_ZNKSt16initializer_listIiE3endEv"
 	.ident	"GCC: (Linaro GCC 7.2-2017.11) 7.2.1 20171011"

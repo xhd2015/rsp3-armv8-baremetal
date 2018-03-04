@@ -16,6 +16,8 @@ qemu-loader:
 # if none of them is used,using EL1
 qemu-bios:
 	$(QEMU_AARCH64) -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial stdio  -bios $(MASTERY_BINARY_BINARY)
+qemu-bios-with-log:
+	$(QEMU_AARCH64) -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial stdio  -bios $(MASTERY_BINARY_BINARY) -d int,mmu -D qemu.txt
 qemu-pflash:
 	$(QEMU_AARCH64) -machine virt -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial stdio -drive file=$(MASTERY_BINARY_BINARY),if=pflash,format=raw
 qemu-bios-debug:
@@ -26,9 +28,10 @@ gdb-connect:
 	
 
 # regs := ICC_IGRPEN0_EL1
-	
-.PHONY:update-gicv3_registers update-timer_registers update-system_common_registers
-gicv3_registers.h timer_registers.h system_common_registers.h:
+.PHONY:update_all_registers
+ALL_REGISTERS := gicv3_registers.h timer_registers.h system_common_registers.h vmsa_descriptors.h
+update_all_registers: $(ALL_REGISTERS)
+$(ALL_REGISTERS):
 	@
 	target=$@
 	target=$${target/%.h/}

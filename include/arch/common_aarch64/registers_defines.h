@@ -29,7 +29,7 @@
 #define SYS_REG_GCC_REPR(op0,op1,crn,crm,op2) s##op0##_##op1##_##c##crn##_##c##crm##_##op2
 
 
-
+#define PAN_GCC_REPR SYS_REG_GCC_REPR(3,0,4,2,3)
 #define ICC_BPR0_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,8,3)
 #define ICC_BPR1_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,12,3)
 #define ICC_CTLR_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,12,4)
@@ -153,7 +153,7 @@ Reg##name Reg##name::read(void *p) \
 }\
 Reg##name Reg##name::read(size_t p)\
 {\
-	return *static_cast<Reg##name*>(p);\
+	return *reinterpret_cast<Reg##name*>(p);\
 }
 
 #define SETUP_REG_ANY_MEM_WRITE(name) \
@@ -163,7 +163,7 @@ void Reg##name::write(void *p)const \
 }\
 void Reg##name::write(size_t p)const\
 {\
-	*static_cast<Reg##name*>(p)=*this;\
+	*reinterpret_cast<Reg##name*>(p)=*this;\
 }
 
 // python 脚本

@@ -393,8 +393,7 @@
 # 1 "<built-in>"
 #define __ARM_FEATURE_NUMERIC_MAXMIN 1
 #define __ARM_NEON 1
-#undef __ARM_FEATURE_CRC32
-# 1 "<built-in>"
+#define __ARM_FEATURE_CRC32 1
 #undef __AARCH64_CMODEL_TINY__
 # 1 "<built-in>"
 #undef __AARCH64_CMODEL_SMALL__
@@ -408,8 +407,7 @@
 # 1 "<built-in>"
 #undef __ARM_FEATURE_CRYPTO
 # 1 "<built-in>"
-#undef __ARM_FEATURE_QRDMX
-# 1 "<built-in>"
+#define __ARM_FEATURE_QRDMX 1
 #undef __FLT_EVAL_METHOD__
 # 1 "<built-in>"
 #define __FLT_EVAL_METHOD__ 0
@@ -433,6 +431,7 @@
 # 1 "<command-line>" 2
 # 1 "../src/arch/qemu_virt/exceptions.cpp"
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/gicv3_registers.h" 1
+
 
 
 #define ___INCLUDE_ARCH_COMMON_AARCH64_GICV3_REGISTERS_H__ 
@@ -1575,6 +1574,12 @@ constexpr int GiB = UNIT_K * MiB;
 #define __stringify(x) __stringify_1(x)
 
 
+#define ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) ":\n\t")
+#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
+#define ASM_ISB() __asm__ ("isb \n\t")
+#define ASM_NOP() __asm__("nop \n\t")
+
+
 
 #define HEX32(a,b) 0x ##a ##b
 #define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
@@ -1880,7 +1885,7 @@ Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
 #define SYS_REG_GCC_REPR(op0,op1,crn,crm,op2) s ##op0 ##_ ##op1 ##_ ##c ##crn ##_ ##c ##crm ##_ ##op2
 
 
-
+#define PAN_GCC_REPR SYS_REG_GCC_REPR(3,0,4,2,3)
 #define ICC_BPR0_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,8,3)
 #define ICC_BPR1_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,12,3)
 #define ICC_CTLR_EL1_GCC_REPR SYS_REG_GCC_REPR(3,0,12,12,4)
@@ -1965,10 +1970,10 @@ Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
 
 
 
-#define SETUP_REG_ANY_MEM_READ(name) Reg ##name Reg ##name::read(void *p) { return *reinterpret_cast<Reg ##name*>(p);}Reg ##name Reg ##name::read(size_t p){ return *static_cast<Reg ##name*>(p);}
+#define SETUP_REG_ANY_MEM_READ(name) Reg ##name Reg ##name::read(void *p) { return *reinterpret_cast<Reg ##name*>(p);}Reg ##name Reg ##name::read(size_t p){ return *reinterpret_cast<Reg ##name*>(p);}
 # 159 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h"
-#define SETUP_REG_ANY_MEM_WRITE(name) void Reg ##name::write(void *p)const { *reinterpret_cast<Reg ##name*>(p)=*this; }void Reg ##name::write(size_t p)const{ *static_cast<Reg ##name*>(p)=*this;}
-# 6 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/gicv3_registers.h" 2
+#define SETUP_REG_ANY_MEM_WRITE(name) void Reg ##name::write(void *p)const { *reinterpret_cast<Reg ##name*>(p)=*this; }void Reg ##name::write(size_t p)const{ *reinterpret_cast<Reg ##name*>(p)=*this;}
+# 7 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/gicv3_registers.h" 2
 
 class RegGICD_CTLR{
 public:
@@ -4759,6 +4764,7 @@ void RegGICD_ISACTIVER31::write() const{ *reinterpret_cast<RegGICD_ISACTIVER31*>
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/system_common_registers.h" 1
 
 
+
 #define ___INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__ 
 
 
@@ -4901,9 +4907,9 @@ void RegNZCV::write() const { __asm__ __volatile__("msr " "NZCV" ",%0 \n\t"::"r"
 
 class RegPAN{
 public:
-        uint64_t RES0_0:22;
-        uint64_t PAN:1;
-        uint64_t RES0_1:9;
+        uint32_t RES0_0:22;
+        uint32_t PAN:1;
+        uint32_t RES0_1:9;
         __attribute__((always_inline)) inline void dump()const
         {
             kout << "PAN : "
@@ -5212,6 +5218,41 @@ void RegID_AA64PFR0_EL1::write() const { __asm__ __volatile__("msr " "ID_AA64PFR
 
 
 
+class RegID_AA64MMFR1_EL1{
+public:
+        uint64_t HAFDBS:4;
+        uint64_t VMIDBits:4;
+        uint64_t VH:4;
+        uint64_t HPDS:4;
+        uint64_t LO:4;
+        uint64_t PAN:4;
+        uint64_t SpecSEI:4;
+        uint64_t XNX:4;
+        uint64_t RES0:32;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "ID_AA64MMFR1_EL1 : "
+                <<"HAFDBS = "<< HAFDBS << ","
+                <<"VMIDBits = "<< VMIDBits << ","
+                <<"VH = "<< VH << ","
+                <<"HPDS = "<< HPDS << ","
+                <<"LO = "<< LO << ","
+                <<"PAN = "<< PAN << ","
+                <<"SpecSEI = "<< SpecSEI << ","
+                <<"XNX = "<< XNX << ","
+                <<"RES0 = "<< RES0
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegID_AA64MMFR1_EL1 read();
+        __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegID_AA64MMFR1_EL1 RegID_AA64MMFR1_EL1::read(){ RegID_AA64MMFR1_EL1 res;__asm__ __volatile__("mrs %0," "ID_AA64MMFR1_EL1" "\n\t":"=r"(res));return res;}
+RegID_AA64MMFR1_EL1 RegID_AA64MMFR1_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "ID_AA64MMFR1_EL1" "\n\t":"=r"(*this));return *this;}
+void RegID_AA64MMFR1_EL1::write() const { __asm__ __volatile__("msr " "ID_AA64MMFR1_EL1" ",%0 \n\t"::"r"(*this));}
+
+
+
 class RegID_AA64MMFR0_EL1{
 public:
         uint64_t PARange:4;
@@ -5306,6 +5347,52 @@ public:
 RegMPIDR_EL1 RegMPIDR_EL1::read(){ RegMPIDR_EL1 res;__asm__ __volatile__("mrs %0," "MPIDR_EL1" "\n\t":"=r"(res));return res;}
 RegMPIDR_EL1 RegMPIDR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "MPIDR_EL1" "\n\t":"=r"(*this));return *this;}
 void RegMPIDR_EL1::write() const { __asm__ __volatile__("msr " "MPIDR_EL1" ",%0 \n\t"::"r"(*this));}
+
+
+
+class RegTTBR0_EL1{
+public:
+        uint64_t CnP:1;
+        uint64_t BADDR:47;
+        uint64_t ASID:16;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "TTBR0_EL1 : "
+                <<"CnP = "<< CnP << ","
+                <<"BADDR = "<< Hex(BADDR) << ","
+                <<"ASID = "<< ASID
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegTTBR0_EL1 read();
+        __attribute__((always_inline)) inline RegTTBR0_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegTTBR0_EL1 RegTTBR0_EL1::read(){ RegTTBR0_EL1 res;__asm__ __volatile__("mrs %0," "TTBR0_EL1" "\n\t":"=r"(res));return res;}
+RegTTBR0_EL1 RegTTBR0_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "TTBR0_EL1" "\n\t":"=r"(*this));return *this;}
+void RegTTBR0_EL1::write() const { __asm__ __volatile__("msr " "TTBR0_EL1" ",%0 \n\t"::"r"(*this));}
+
+
+
+class RegTTBR1_EL1{
+public:
+        uint64_t CnP:1;
+        uint64_t BADDR:47;
+        uint64_t ASID:16;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "TTBR1_EL1 : "
+                <<"CnP = "<< CnP << ","
+                <<"BADDR = "<< Hex(BADDR) << ","
+                <<"ASID = "<< ASID
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegTTBR1_EL1 read();
+        __attribute__((always_inline)) inline RegTTBR1_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegTTBR1_EL1 RegTTBR1_EL1::read(){ RegTTBR1_EL1 res;__asm__ __volatile__("mrs %0," "TTBR1_EL1" "\n\t":"=r"(res));return res;}
+RegTTBR1_EL1 RegTTBR1_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "TTBR1_EL1" "\n\t":"=r"(*this));return *this;}
+void RegTTBR1_EL1::write() const { __asm__ __volatile__("msr " "TTBR1_EL1" ",%0 \n\t"::"r"(*this));}
 
 
 
@@ -5481,8 +5568,88 @@ public:
 RegMAIR_EL3 RegMAIR_EL3::read(){ RegMAIR_EL3 res;__asm__ __volatile__("mrs %0," "MAIR_EL3" "\n\t":"=r"(res));return res;}
 RegMAIR_EL3 RegMAIR_EL3::updateRead(){ __asm__ __volatile__("mrs %0," "MAIR_EL3" "\n\t":"=r"(*this));return *this;}
 void RegMAIR_EL3::write() const { __asm__ __volatile__("msr " "MAIR_EL3" ",%0 \n\t"::"r"(*this));}
+
+
+
+class RegSCTLR_EL1{
+public:
+        uint32_t M:1;
+        uint32_t A:1;
+        uint32_t C:1;
+        uint32_t SA:1;
+        uint32_t SA0:1;
+        uint32_t CP15BEN:1;
+        uint32_t RES0_0:1;
+        uint32_t ITD:1;
+        uint32_t SED:1;
+        uint32_t UMA:1;
+        uint32_t RES0_1:1;
+        uint32_t RES1_2:1;
+        uint32_t I:1;
+        uint32_t RES0_3:1;
+        uint32_t DZE:1;
+        uint32_t UCT:1;
+        uint32_t nTWI:1;
+        uint32_t RES0_4:1;
+        uint32_t nTWE:1;
+        uint32_t WXN:1;
+        uint32_t RES1_5:1;
+        uint32_t IESB:1;
+        uint32_t RES1_6:1;
+        uint32_t SPAN:1;
+        uint32_t E0E:1;
+        uint32_t EE:1;
+        uint32_t UCI:1;
+        uint32_t RES0_7:1;
+        uint32_t nTLSMD:1;
+        uint32_t LSMAOE:1;
+        uint32_t RES0_8:2;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "SCTLR_EL1 : "
+                <<"M = "<< M << ","
+                <<"A = "<< A << ","
+                <<"C = "<< C << ","
+                <<"SA = "<< SA << ","
+                <<"SA0 = "<< SA0 << ","
+                <<"CP15BEN = "<< CP15BEN << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"ITD = "<< ITD << ","
+                <<"SED = "<< SED << ","
+                <<"UMA = "<< UMA << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"RES1_2 = "<< RES1_2 << ","
+                <<"I = "<< I << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"DZE = "<< DZE << ","
+                <<"UCT = "<< UCT << ","
+                <<"nTWI = "<< nTWI << ","
+                <<"RES0_4 = "<< RES0_4 << ","
+                <<"nTWE = "<< nTWE << ","
+                <<"WXN = "<< WXN << ","
+                <<"RES1_5 = "<< RES1_5 << ","
+                <<"IESB = "<< IESB << ","
+                <<"RES1_6 = "<< RES1_6 << ","
+                <<"SPAN = "<< SPAN << ","
+                <<"E0E = "<< E0E << ","
+                <<"EE = "<< EE << ","
+                <<"UCI = "<< UCI << ","
+                <<"RES0_7 = "<< RES0_7 << ","
+                <<"nTLSMD = "<< nTLSMD << ","
+                <<"LSMAOE = "<< LSMAOE << ","
+                <<"RES0_8 = "<< RES0_8
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegSCTLR_EL1 read();
+        __attribute__((always_inline)) inline RegSCTLR_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegSCTLR_EL1 RegSCTLR_EL1::read(){ RegSCTLR_EL1 res;__asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(res));return res;}
+RegSCTLR_EL1 RegSCTLR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(*this));return *this;}
+void RegSCTLR_EL1::write() const { __asm__ __volatile__("msr " "SCTLR_EL1" ",%0 \n\t"::"r"(*this));}
 # 8 "../src/arch/qemu_virt/exceptions.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/timer_registers.h" 1
+
 
 
 #define ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__ 

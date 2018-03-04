@@ -14,6 +14,7 @@ SECTIONS{
 	.text : {
 		. = ALIGN(0x4);
 		*(.text.boot) /* PC对齐检查 */
+		*(.text.enmmu) /* 启用MMU的代码必须在低4KB以内 */
 		*(.text)
 		
 		. = ALIGN(0x800);   /* must ensure LOWER 11 bits are 0 */
@@ -34,13 +35,21 @@ SECTIONS{
 		*(.note.gnu.build-id)
 	 } > BIOS
 	
+	/* RAM 是不可加载的，因此必须使用NOLOAD方式 */
 	/* .data区存放不为零的全局变量,所以应当避免使用 */
-	.data : { 
+	.data (NOLOAD): { 
+		PROVIDE(_data = . );
 		*(.data)
+		. = ALIGN(0x1000); /* 4KB 对齐 */
+		PROVIDE(_end = .);
+		PROVIDE(L0Table = .); /* L0Table */
+		. = . + 0x1000;
+		PROVIDE(L1Table = .); /* L1Table */
+		. = . + 0x1000;
 	} > RAM
 	
 	/* .bss 未赋值的变量，比如未赋初值全局类对象，默认构造函数;或者初始化为0的变量 */
-	.bss : {
+	.bss (NOLOAD): {
 		. = ALIGN(0x4);
 		PROVIDE(__bss_start = .);
 		*(.bss)
@@ -58,6 +67,4 @@ SECTIONS{
 
 	/* 4K的栈 */
 	PROVIDE(__stack_top = CONFIG_RAM_START + 4K);
-	
-	
 }

@@ -1,4 +1,5 @@
 //##======Automatically generated==========##
+//##====../include/arch/common_aarch64/gen_register_class.py ../include/arch/common_aarch64/gicv3_registers.py ../include/arch/common_aarch64/gicv3_registers.h=========##
 #ifndef ___INCLUDE_ARCH_COMMON_AARCH64_GICV3_REGISTERS_H__
 #define ___INCLUDE_ARCH_COMMON_AARCH64_GICV3_REGISTERS_H__
 

@@ -6,21 +6,21 @@
 CPP_SRCS += \
 ../src/arch/qemu_virt/crt0.cpp \
 ../src/arch/qemu_virt/exceptions.cpp \
-../src/arch/qemu_virt/main_3.cpp \
+../src/arch/qemu_virt/main_virtual_memory.cpp \
 ../src/arch/qemu_virt/printk_impl.cpp \
 ../src/arch/qemu_virt/util.cpp 
 
 OBJS += \
 ./src/arch/qemu_virt/crt0.o \
 ./src/arch/qemu_virt/exceptions.o \
-./src/arch/qemu_virt/main_3.o \
+./src/arch/qemu_virt/main_virtual_memory.o \
 ./src/arch/qemu_virt/printk_impl.o \
 ./src/arch/qemu_virt/util.o 
 
 CPP_DEPS += \
 ./src/arch/qemu_virt/crt0.d \
 ./src/arch/qemu_virt/exceptions.d \
-./src/arch/qemu_virt/main_3.d \
+./src/arch/qemu_virt/main_virtual_memory.d \
 ./src/arch/qemu_virt/printk_impl.d \
 ./src/arch/qemu_virt/util.d 
 

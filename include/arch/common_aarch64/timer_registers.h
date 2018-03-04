@@ -1,4 +1,5 @@
 //##======Automatically generated==========##
+//##====../include/arch/common_aarch64/gen_register_class.py ../include/arch/common_aarch64/timer_registers.py ../include/arch/common_aarch64/timer_registers.h=========##
 #ifndef ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
 #define ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
 

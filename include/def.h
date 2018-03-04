@@ -45,6 +45,12 @@ constexpr int  GiB = UNIT_K * MiB;
 #define __stringify_1(x)	#x
 #define __stringify(x)		__stringify_1(x)
 
+// ASM instruction sym..
+#define ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) ":\n\t")
+#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
+#define ASM_ISB() __asm__ ("isb \n\t")
+#define ASM_NOP() __asm__("nop \n\t")
+
 
 // for readibility, 16 bits per letter
 #define HEX32(a,b) 0x##a##b
