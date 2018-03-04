@@ -4821,6 +4821,25 @@ void RegDAIF::write() const { __asm__ __volatile__("msr " "DAIF" ",%0 \n\t"::"r"
 
 
 
+class RegVBAR_EL1{
+public:
+        uint64_t Addr:64;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "VBAR_EL1 : "
+                <<"Addr = "<< Addr
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegVBAR_EL1 read();
+        __attribute__((always_inline)) inline RegVBAR_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegVBAR_EL1 RegVBAR_EL1::read(){ RegVBAR_EL1 res;__asm__ __volatile__("mrs %0," "VBAR_EL1" "\n\t":"=r"(res));return res;}
+RegVBAR_EL1 RegVBAR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "VBAR_EL1" "\n\t":"=r"(*this));return *this;}
+void RegVBAR_EL1::write() const { __asm__ __volatile__("msr " "VBAR_EL1" ",%0 \n\t"::"r"(*this));}
+
+
+
 class RegELR_EL1{
 public:
         uint64_t returnAddr:64;

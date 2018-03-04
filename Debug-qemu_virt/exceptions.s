@@ -26,7 +26,7 @@
 	.global	_Z34enterSynchronousEL1ExceptionHandlev
 	.type	_Z34enterSynchronousEL1ExceptionHandlev, %function
 _Z34enterSynchronousEL1ExceptionHandlev:
-.LFB690:
+.LFB694:
 	.file 1 "../src/arch/qemu_virt/exceptions.cpp"
 	.loc 1 74 0
 	.cfi_startproc
@@ -177,13 +177,13 @@ _Z34enterSynchronousEL1ExceptionHandlev:
 	// End of user assembly
 	ret
 	.cfi_endproc
-.LFE690:
+.LFE694:
 	.size	_Z34enterSynchronousEL1ExceptionHandlev, .-_Z34enterSynchronousEL1ExceptionHandlev
 	.align	2
 	.global	_Z26enterIRQEL1ExceptionHandlev
 	.type	_Z26enterIRQEL1ExceptionHandlev, %function
 _Z26enterIRQEL1ExceptionHandlev:
-.LFB691:
+.LFB695:
 	.loc 1 89 0
 	.cfi_startproc
 	.loc 1 90 0
@@ -328,13 +328,13 @@ _Z26enterIRQEL1ExceptionHandlev:
 	// End of user assembly
 	ret
 	.cfi_endproc
-.LFE691:
+.LFE695:
 	.size	_Z26enterIRQEL1ExceptionHandlev, .-_Z26enterIRQEL1ExceptionHandlev
 	.align	2
 	.global	_Z26enterFIQEL1ExceptionHandlev
 	.type	_Z26enterFIQEL1ExceptionHandlev, %function
 _Z26enterFIQEL1ExceptionHandlev:
-.LFB692:
+.LFB696:
 	.loc 1 99 0
 	.cfi_startproc
 	.loc 1 100 0
@@ -479,13 +479,13 @@ _Z26enterFIQEL1ExceptionHandlev:
 	// End of user assembly
 	ret
 	.cfi_endproc
-.LFE692:
+.LFE696:
 	.size	_Z26enterFIQEL1ExceptionHandlev, .-_Z26enterFIQEL1ExceptionHandlev
 	.align	2
 	.global	_Z29enterSErrorEL1ExceptionHandlev
 	.type	_Z29enterSErrorEL1ExceptionHandlev, %function
 _Z29enterSErrorEL1ExceptionHandlev:
-.LFB693:
+.LFB697:
 	.loc 1 110 0
 	.cfi_startproc
 	.loc 1 111 0
@@ -630,13 +630,13 @@ _Z29enterSErrorEL1ExceptionHandlev:
 	// End of user assembly
 	ret
 	.cfi_endproc
-.LFE693:
+.LFE697:
 	.size	_Z29enterSErrorEL1ExceptionHandlev, .-_Z29enterSErrorEL1ExceptionHandlev
 	.align	2
 	.global	FIQEL1Handle
 	.type	FIQEL1Handle, %function
 FIQEL1Handle:
-.LFB696:
+.LFB700:
 	.loc 1 212 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -48]!
@@ -796,13 +796,13 @@ FIQEL1Handle:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE696:
+.LFE700:
 	.size	FIQEL1Handle, .-FIQEL1Handle
 	.align	2
 	.global	SErrorEL1Handle
 	.type	SErrorEL1Handle, %function
 SErrorEL1Handle:
-.LFB697:
+.LFB701:
 	.loc 1 224 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -16]!
@@ -829,14 +829,14 @@ SErrorEL1Handle:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE697:
+.LFE701:
 	.size	SErrorEL1Handle, .-SErrorEL1Handle
 	.section	.text._ZN16IntegerFormatterILi16EEC2Em,"axG",@progbits,_ZN16IntegerFormatterILi16EEC5Em,comdat
 	.align	2
 	.weak	_ZN16IntegerFormatterILi16EEC2Em
 	.type	_ZN16IntegerFormatterILi16EEC2Em, %function
 _ZN16IntegerFormatterILi16EEC2Em:
-.LFB699:
+.LFB703:
 	.file 3 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/IntegerFormatter.h"
 	.loc 3 16 0
 	.cfi_startproc
@@ -847,7 +847,7 @@ _ZN16IntegerFormatterILi16EEC2Em:
 .LBE70:
 	ret
 	.cfi_endproc
-.LFE699:
+.LFE703:
 	.size	_ZN16IntegerFormatterILi16EEC2Em, .-_ZN16IntegerFormatterILi16EEC2Em
 	.weak	_ZN16IntegerFormatterILi16EEC1Em
 	.set	_ZN16IntegerFormatterILi16EEC1Em,_ZN16IntegerFormatterILi16EEC2Em
@@ -856,7 +856,7 @@ _ZN16IntegerFormatterILi16EEC2Em:
 	.weak	_ZNK16IntegerFormatterILi16EE6formatEv
 	.type	_ZNK16IntegerFormatterILi16EE6formatEv, %function
 _ZNK16IntegerFormatterILi16EE6formatEv:
-.LFB702:
+.LFB706:
 	.loc 3 24 0
 	.cfi_startproc
 .LVL28:
@@ -888,14 +888,14 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE702:
+.LFE706:
 	.size	_ZNK16IntegerFormatterILi16EE6formatEv, .-_ZNK16IntegerFormatterILi16EE6formatEv
 	.section	.text._ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE,"axG",@progbits,_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE,comdat
 	.align	2
 	.weak	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	.type	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE, %function
 _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
-.LFB701:
+.LFB705:
 	.loc 3 31 0
 	.cfi_startproc
 .LVL31:
@@ -928,14 +928,14 @@ _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE701:
+.LFE705:
 	.size	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE, .-_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	.text
 	.align	2
 	.global	IRQEL1Handle
 	.type	IRQEL1Handle, %function
 IRQEL1Handle:
-.LFB695:
+.LFB699:
 	.loc 1 161 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -112]!
@@ -1227,9 +1227,9 @@ IRQEL1Handle:
 .LBB97:
 .LBB98:
 	.file 4 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/system_common_registers.h"
-	.loc 4 414 0
+	.loc 4 433 0
 	// Start of user assembly
-// 414 "D:\Pool\eclipse-workspace_aarch64\chap003\include/arch/common_aarch64/system_common_registers.h" 1
+// 433 "D:\Pool\eclipse-workspace_aarch64\chap003\include/arch/common_aarch64/system_common_registers.h" 1
 	mrs x22,ISR_EL1
 	
 // 0 "" 2
@@ -1239,13 +1239,13 @@ IRQEL1Handle:
 .LBE97:
 .LBB99:
 .LBB100:
-	.loc 4 402 0
+	.loc 4 421 0
 	adrp	x1, .LC19
 	add	x1, x1, :lo12:.LC19
 	mov	x0, x19
 	bl	_ZN6OutputlsEPKc
 .LVL82:
-	.loc 4 403 0
+	.loc 4 422 0
 	mov	x1, x23
 	bl	_ZN6OutputlsEPKc
 .LVL83:
@@ -1255,7 +1255,7 @@ IRQEL1Handle:
 	mov	x1, x21
 	bl	_ZN6OutputlsEPKc
 .LVL85:
-	.loc 4 404 0
+	.loc 4 423 0
 	adrp	x1, .LC20
 	add	x1, x1, :lo12:.LC20
 	bl	_ZN6OutputlsEPKc
@@ -1266,7 +1266,7 @@ IRQEL1Handle:
 	mov	x1, x21
 	bl	_ZN6OutputlsEPKc
 .LVL88:
-	.loc 4 405 0
+	.loc 4 424 0
 	adrp	x1, .LC21
 	add	x1, x1, :lo12:.LC21
 	bl	_ZN6OutputlsEPKc
@@ -1277,7 +1277,7 @@ IRQEL1Handle:
 	mov	x1, x21
 	bl	_ZN6OutputlsEPKc
 .LVL91:
-	.loc 4 406 0
+	.loc 4 425 0
 	adrp	x1, .LC22
 	add	x1, x1, :lo12:.LC22
 	bl	_ZN6OutputlsEPKc
@@ -1288,7 +1288,7 @@ IRQEL1Handle:
 	mov	x1, x21
 	bl	_ZN6OutputlsEPKc
 .LVL94:
-	.loc 4 407 0
+	.loc 4 426 0
 	adrp	x1, .LC23
 	add	x1, x1, :lo12:.LC23
 	bl	_ZN6OutputlsEPKc
@@ -1296,7 +1296,7 @@ IRQEL1Handle:
 	lsr	w1, w22, 9
 	bl	_ZN6OutputlsEj
 .LVL96:
-	.loc 4 408 0
+	.loc 4 427 0
 	mov	x1, x20
 	bl	_ZN6OutputlsEPKc
 .LVL97:
@@ -1496,13 +1496,13 @@ IRQEL1Handle:
 	.loc 1 203 0
 	b	.L14
 	.cfi_endproc
-.LFE695:
+.LFE699:
 	.size	IRQEL1Handle, .-IRQEL1Handle
 	.align	2
 	.global	SynchronousEL1Handle
 	.type	SynchronousEL1Handle, %function
 SynchronousEL1Handle:
-.LFB694:
+.LFB698:
 	.loc 1 125 0
 	.cfi_startproc
 .LVL129:
@@ -1911,7 +1911,7 @@ SynchronousEL1Handle:
 .LVL187:
 	b	.L20
 	.cfi_endproc
-.LFE694:
+.LFE698:
 	.size	SynchronousEL1Handle, .-SynchronousEL1Handle
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align	3
@@ -3533,12 +3533,12 @@ SynchronousEL1Handle:
 	.4byte	.LASF1122
 	.byte	0x4
 	.byte	0x4
-	.2byte	0x189
+	.2byte	0x19c
 	.4byte	0xd1f
 	.uleb128 0x29
 	.4byte	.LASF1090
 	.byte	0x4
-	.2byte	0x18b
+	.2byte	0x19e
 	.4byte	0x201
 	.byte	0x4
 	.byte	0x6
@@ -3548,7 +3548,7 @@ SynchronousEL1Handle:
 	.uleb128 0x2e
 	.string	"F"
 	.byte	0x4
-	.2byte	0x18c
+	.2byte	0x19f
 	.4byte	0x201
 	.byte	0x4
 	.byte	0x1
@@ -3558,7 +3558,7 @@ SynchronousEL1Handle:
 	.uleb128 0x2e
 	.string	"I"
 	.byte	0x4
-	.2byte	0x18d
+	.2byte	0x1a0
 	.4byte	0x201
 	.byte	0x4
 	.byte	0x1
@@ -3568,7 +3568,7 @@ SynchronousEL1Handle:
 	.uleb128 0x2e
 	.string	"A"
 	.byte	0x4
-	.2byte	0x18e
+	.2byte	0x1a1
 	.4byte	0x201
 	.byte	0x4
 	.byte	0x1
@@ -3578,7 +3578,7 @@ SynchronousEL1Handle:
 	.uleb128 0x29
 	.4byte	.LASF1123
 	.byte	0x4
-	.2byte	0x18f
+	.2byte	0x1a2
 	.4byte	0x201
 	.byte	0x4
 	.byte	0x17
@@ -3588,7 +3588,7 @@ SynchronousEL1Handle:
 	.uleb128 0x2a
 	.4byte	.LASF1065
 	.byte	0x4
-	.2byte	0x190
+	.2byte	0x1a3
 	.4byte	.LASF1124
 	.byte	0x1
 	.4byte	0xcd1
@@ -3599,14 +3599,14 @@ SynchronousEL1Handle:
 	.uleb128 0x2b
 	.4byte	.LASF1071
 	.byte	0x4
-	.2byte	0x19a
+	.2byte	0x1ad
 	.4byte	.LASF1125
 	.4byte	0xc60
 	.byte	0x1
 	.uleb128 0x2c
 	.4byte	.LASF1067
 	.byte	0x4
-	.2byte	0x19b
+	.2byte	0x1ae
 	.4byte	.LASF1126
 	.4byte	0xc60
 	.byte	0x1
@@ -3618,7 +3618,7 @@ SynchronousEL1Handle:
 	.uleb128 0x2d
 	.4byte	.LASF1075
 	.byte	0x4
-	.2byte	0x19c
+	.2byte	0x1af
 	.4byte	.LASF1127
 	.byte	0x1
 	.4byte	0xd18
@@ -3803,8 +3803,8 @@ SynchronousEL1Handle:
 	.uleb128 0x2f
 	.4byte	0x5be
 	.4byte	0xeaa
-	.8byte	.LFB702
-	.8byte	.LFE702-.LFB702
+	.8byte	.LFB706
+	.8byte	.LFE706-.LFB706
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0xeaa
@@ -3841,8 +3841,8 @@ SynchronousEL1Handle:
 	.byte	0x1f
 	.4byte	.LASF1166
 	.4byte	0x543
-	.8byte	.LFB701
-	.8byte	.LFE701-.LFB701
+	.8byte	.LFB705
+	.8byte	.LFE705-.LFB705
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0xf55
@@ -3910,8 +3910,8 @@ SynchronousEL1Handle:
 	.4byte	0xf5b
 	.4byte	.LASF1167
 	.4byte	0xfa5
-	.8byte	.LFB699
-	.8byte	.LFE699-.LFB699
+	.8byte	.LFB703
+	.8byte	.LFE703-.LFB703
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0xfa5
@@ -3929,8 +3929,8 @@ SynchronousEL1Handle:
 	.4byte	.LASF1144
 	.byte	0x1
 	.byte	0xdf
-	.8byte	.LFB697
-	.8byte	.LFE697-.LFB697
+	.8byte	.LFB701
+	.8byte	.LFE701-.LFB701
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x100c
@@ -3960,8 +3960,8 @@ SynchronousEL1Handle:
 	.4byte	.LASF1145
 	.byte	0x1
 	.byte	0xd3
-	.8byte	.LFB696
-	.8byte	.LFE696-.LFB696
+	.8byte	.LFB700
+	.8byte	.LFE700-.LFB700
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x12e2
@@ -4241,8 +4241,8 @@ SynchronousEL1Handle:
 	.4byte	.LASF1146
 	.byte	0x1
 	.byte	0xa0
-	.8byte	.LFB695
-	.8byte	.LFE695-.LFB695
+	.8byte	.LFB699
+	.8byte	.LFE699-.LFB699
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x1d67
@@ -5338,8 +5338,8 @@ SynchronousEL1Handle:
 	.4byte	.LASF1148
 	.byte	0x1
 	.byte	0x7c
-	.8byte	.LFB694
-	.8byte	.LFE694-.LFB694
+	.8byte	.LFB698
+	.8byte	.LFE698-.LFB698
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x23b0
@@ -5973,8 +5973,8 @@ SynchronousEL1Handle:
 	.byte	0x1
 	.byte	0x6d
 	.4byte	.LASF1153
-	.8byte	.LFB693
-	.8byte	.LFE693-.LFB693
+	.8byte	.LFB697
+	.8byte	.LFE697-.LFB697
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x49
@@ -5982,8 +5982,8 @@ SynchronousEL1Handle:
 	.byte	0x1
 	.byte	0x62
 	.4byte	.LASF1154
-	.8byte	.LFB692
-	.8byte	.LFE692-.LFB692
+	.8byte	.LFB696
+	.8byte	.LFE696-.LFB696
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x49
@@ -5991,8 +5991,8 @@ SynchronousEL1Handle:
 	.byte	0x1
 	.byte	0x58
 	.4byte	.LASF1156
-	.8byte	.LFB691
-	.8byte	.LFE691-.LFB691
+	.8byte	.LFB695
+	.8byte	.LFE695-.LFB695
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x49
@@ -6000,8 +6000,8 @@ SynchronousEL1Handle:
 	.byte	0x1
 	.byte	0x49
 	.4byte	.LASF1158
-	.8byte	.LFB690
-	.8byte	.LFE690-.LFB690
+	.8byte	.LFB694
+	.8byte	.LFE694-.LFB694
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0x4a
@@ -6049,13 +6049,13 @@ SynchronousEL1Handle:
 	.byte	0
 	.uleb128 0x4d
 	.4byte	0xcd7
-	.2byte	0x19e
+	.2byte	0x1b1
 	.byte	0x3
 	.4byte	0x24aa
 	.uleb128 0x4e
 	.string	"res"
 	.byte	0x4
-	.2byte	0x19e
+	.2byte	0x1b1
 	.4byte	0xc60
 	.byte	0
 	.uleb128 0x4c
@@ -7418,7 +7418,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x50
 	.8byte	.LVL29
-	.8byte	.LFE702
+	.8byte	.LFE706
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -7436,7 +7436,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x63
 	.8byte	.LVL35
-	.8byte	.LFE701
+	.8byte	.LFE705
 	.2byte	0x1
 	.byte	0x50
 	.8byte	0
@@ -7447,7 +7447,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x51
 	.8byte	.LVL33-1
-	.8byte	.LFE701
+	.8byte	.LFE705
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -7457,7 +7457,7 @@ SynchronousEL1Handle:
 	.8byte	0
 .LLST0:
 	.8byte	.LVL21
-	.8byte	.LFE696
+	.8byte	.LFE700
 	.2byte	0x1
 	.byte	0x50
 	.8byte	0
@@ -7540,7 +7540,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x64
 	.8byte	.LVL127
-	.8byte	.LFE695
+	.8byte	.LFE699
 	.2byte	0x1
 	.byte	0x64
 	.8byte	0
@@ -7576,7 +7576,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x68
 	.8byte	.LVL113
-	.8byte	.LFE695
+	.8byte	.LFE699
 	.2byte	0x1
 	.byte	0x68
 	.8byte	0
@@ -7637,7 +7637,7 @@ SynchronousEL1Handle:
 	.byte	0x50
 	.byte	0x9f
 	.8byte	.LVL162
-	.8byte	.LFE694
+	.8byte	.LFE698
 	.2byte	0x1
 	.byte	0x68
 	.8byte	0
@@ -7674,7 +7674,7 @@ SynchronousEL1Handle:
 	.2byte	0x1
 	.byte	0x64
 	.8byte	.LVL184
-	.8byte	.LFE694
+	.8byte	.LFE698
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
@@ -7699,7 +7699,7 @@ SynchronousEL1Handle:
 	.byte	0x52
 	.byte	0x9f
 	.8byte	.LVL162
-	.8byte	.LFE694
+	.8byte	.LFE698
 	.2byte	0x1
 	.byte	0x67
 	.8byte	0
@@ -7721,7 +7721,7 @@ SynchronousEL1Handle:
 	.byte	0x53
 	.byte	0x9f
 	.8byte	.LVL162
-	.8byte	.LFE694
+	.8byte	.LFE698
 	.2byte	0x1
 	.byte	0x66
 	.8byte	0
@@ -7743,7 +7743,7 @@ SynchronousEL1Handle:
 	.byte	0x54
 	.byte	0x9f
 	.8byte	.LVL162
-	.8byte	.LFE694
+	.8byte	.LFE698
 	.2byte	0x1
 	.byte	0x65
 	.8byte	0
@@ -7758,24 +7758,24 @@ SynchronousEL1Handle:
 	.2byte	0
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
-	.8byte	.LFB699
-	.8byte	.LFE699-.LFB699
-	.8byte	.LFB702
-	.8byte	.LFE702-.LFB702
-	.8byte	.LFB701
-	.8byte	.LFE701-.LFB701
+	.8byte	.LFB703
+	.8byte	.LFE703-.LFB703
+	.8byte	.LFB706
+	.8byte	.LFE706-.LFB706
+	.8byte	.LFB705
+	.8byte	.LFE705-.LFB705
 	.8byte	0
 	.8byte	0
 	.section	.debug_ranges,"",@progbits
 .Ldebug_ranges0:
 	.8byte	.Ltext0
 	.8byte	.Letext0
-	.8byte	.LFB699
-	.8byte	.LFE699
-	.8byte	.LFB702
-	.8byte	.LFE702
-	.8byte	.LFB701
-	.8byte	.LFE701
+	.8byte	.LFB703
+	.8byte	.LFE703
+	.8byte	.LFB706
+	.8byte	.LFE706
+	.8byte	.LFB705
+	.8byte	.LFE705
 	.8byte	0
 	.8byte	0
 	.section	.debug_macro,"",@progbits

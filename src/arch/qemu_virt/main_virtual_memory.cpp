@@ -1,14 +1,10 @@
-
-
 #include <arch/common_aarch64/system_common_registers.h>
+// provide RegDescriptor4KBL0,RegDescriptor4KBL1..., see include/arch/common_aarch64/vmsa_descriptors.py for its raw definitions
 #include <arch/common_aarch64/vmsa_descriptors.h>
 
-extern char afterMMUSet[];
-extern char mainEnd[];
+// provided by linker script, must be placed in RAM, because they need to be writeable, typical setting is : L0Table spans 4KB,L1Table spans the successive 4KB,and L0Table must start at a 4KB boundary.
 extern RegDescriptor4KBL0 L0Table[];
 extern RegDescriptor4KBL1 L1Table[];
-
-//#define IA_INDEX_GET()
 
 // example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
 AS_MACRO uint64_t upperMaskBits(uint64_t i)
@@ -20,16 +16,7 @@ AS_MACRO uint64_t lowerMaskBits(uint64_t i)
 {
 	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
 }
-//AS_MACRO int getInitialLevel(int )
-//{
-//
-//}
-//AS_MACRO uint64_t getIndex(uint64_t)
-//{
-//
-//}
 
-__attribute__((section(".text.enmmu")))
 int main()
 {
 	// must be at EL1
@@ -42,9 +29,10 @@ int main()
 
 
 	// set exception vector of EL1
-	__asm__(
-			"ldr x0,=ExceptionVectorEL1 \n\t"
-			"msr vbar_el1,x0 \n\t");
+	extern char ExceptionVectorEL1[];
+	RegVBAR_EL1 vbar;
+	vbar.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);
+	vbar.write();
 
 	// determine PARange
 	auto aa64 = RegID_AA64MMFR0_EL1::read();
@@ -58,7 +46,7 @@ int main()
 	int paBitsMap[]=   {32,  36,  40,  42,  44,  48,  52};
 	int indexBitsMap[]={2,   6,   1,   3,   5,   9,   INT32_MAX};
 //	int levelsMap[]=   {3,   3,   4,   4,   4,   4,   INT32_MAX};
-//	int initLevelMap[]={1,   1,   0,   0,   0,   0,   INT32_MAX};
+	int initLevelMap[]={1,   1,   0,   0,   0,   0,   INT32_MAX};
 //	int tnszMap[]=     {32,  28,  24,  22,  20,  16,  INT32_MAX};
 	if(aa64.PARange >= arrsizeof(paBitsMap))
 	{
@@ -70,6 +58,12 @@ int main()
 	{
 		kout << INFO << "PARange is 52, we need to reduce it to 48\n";
 		--effPARange;
+	}
+
+	if(initLevelMap[effPARange] != 0)
+	{
+		kout << FATAL << "Initial level not at 0,which this program designed for specifically.";
+		return 1;
 	}
 
 
@@ -112,7 +106,9 @@ int main()
 
 	// make sure that this section is placed at the lowest 4KB, so that it can be successfully flatten mapped.That is, mainEnd <= 4KB
 	// because we just use L1 as block descriptor,so it allows more that 12 bits of flatten mapping, i.e. at least 12+9 = 21 bits
-	if(reinterpret_cast<size_t>(mainEnd) >= (1u << 21)) // overflow
+
+	extern char mainEnd[];
+	if( (reinterpret_cast<size_t>(mainEnd) >> 30) >= 1) // >1GB, overflows
 	{
 		kout << FATAL << "end of main overflows, meaning that it may not be flatten mapped.\n";
 		return 1;
@@ -260,12 +256,12 @@ int main()
 
 
 	RegPC pc{0};
+	extern char afterMMUSet[];
 	// set the upper tcr.T1SZ bits to 1,so TTBR1 is used
-	uint64_t upperBits = HEX64(ffff,ffff,ffff,ffff) >> (64 - tcr.T1SZ) << (64 - tcr.T1SZ);// 0xff000000..
-	uint64_t lowerBits = ~upperBits;
-	pc.PC = (lowerBits & reinterpret_cast<uint64_t>(afterMMUSet))|upperBits;
-	pc.write(); // just jump to next instruction, but TTBR0 is changed to TTBR1
+	pc.PC = reinterpret_cast<uint64_t>(afterMMUSet) | upperMaskBits(tcr.T1SZ);
+	pc.write(); // just jump to the next instruction, but TTBR0 is changed to TTBR1
 
+	// define a local symbol:afterMMUSet
 	ASM_DEFINE_LOCAL_SYM(afterMMUSet);
 	kout << INFO << "Successfully enabled MMU\n";
 	kout << INFO << "end main.";

@@ -430,8 +430,6 @@
 #define PERIPHBASE 0x08000000
 # 1 "<command-line>" 2
 # 1 "../src/arch/qemu_virt/main_virtual_memory.cpp"
-
-
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/system_common_registers.h" 1
 
 
@@ -2029,6 +2027,25 @@ void RegDAIF::write() const { __asm__ __volatile__("msr " "DAIF" ",%0 \n\t"::"r"
 
 
 
+class RegVBAR_EL1{
+public:
+        uint64_t Addr:64;
+        __attribute__((always_inline)) inline void dump()const
+        {
+            kout << "VBAR_EL1 : "
+                <<"Addr = "<< Addr
+                  << "\n";
+        }
+        __attribute__((always_inline)) inline static RegVBAR_EL1 read();
+        __attribute__((always_inline)) inline RegVBAR_EL1 updateRead();
+        __attribute__((always_inline)) inline void write()const;
+}__attribute__((packed));
+RegVBAR_EL1 RegVBAR_EL1::read(){ RegVBAR_EL1 res;__asm__ __volatile__("mrs %0," "VBAR_EL1" "\n\t":"=r"(res));return res;}
+RegVBAR_EL1 RegVBAR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "VBAR_EL1" "\n\t":"=r"(*this));return *this;}
+void RegVBAR_EL1::write() const { __asm__ __volatile__("msr " "VBAR_EL1" ",%0 \n\t"::"r"(*this));}
+
+
+
 class RegELR_EL1{
 public:
         uint64_t returnAddr:64;
@@ -2855,7 +2872,8 @@ public:
 RegSCTLR_EL1 RegSCTLR_EL1::read(){ RegSCTLR_EL1 res;__asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(res));return res;}
 RegSCTLR_EL1 RegSCTLR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(*this));return *this;}
 void RegSCTLR_EL1::write() const { __asm__ __volatile__("msr " "SCTLR_EL1" ",%0 \n\t"::"r"(*this));}
-# 4 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+# 2 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/vmsa_descriptors.h" 1
 
 
@@ -3121,14 +3139,11 @@ public:
 }__attribute__((packed));
 RegDescriptor4KBL3 RegDescriptor4KBL3::read(void *p) { return *reinterpret_cast<RegDescriptor4KBL3*>(p);}RegDescriptor4KBL3 RegDescriptor4KBL3::read(size_t p){ return *reinterpret_cast<RegDescriptor4KBL3*>(p);}
 void RegDescriptor4KBL3::write(void *p)const { *reinterpret_cast<RegDescriptor4KBL3*>(p)=*this; }void RegDescriptor4KBL3::write(size_t p)const{ *reinterpret_cast<RegDescriptor4KBL3*>(p)=*this;}
-# 5 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+# 4 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
 
-extern char afterMMUSet[];
-extern char mainEnd[];
+
 extern RegDescriptor4KBL0 L0Table[];
 extern RegDescriptor4KBL1 L1Table[];
-
-
 
 
 __attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
@@ -3140,8 +3155,7 @@ __attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
 {
  return 0xffffffffffffffff << (64-i) >> (64-i);
 }
-# 32 "../src/arch/qemu_virt/main_virtual_memory.cpp"
-__attribute__((section(".text.enmmu")))
+
 int main()
 {
 
@@ -3154,9 +3168,10 @@ int main()
 
 
 
- __asm__(
-   "ldr x0,=ExceptionVectorEL1 \n\t"
-   "msr vbar_el1,x0 \n\t");
+ extern char ExceptionVectorEL1[];
+ RegVBAR_EL1 vbar;
+ vbar.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);
+ vbar.write();
 
 
  auto aa64 = RegID_AA64MMFR0_EL1::read();
@@ -3170,7 +3185,7 @@ int main()
  int paBitsMap[]= {32, 36, 40, 42, 44, 48, 52};
  int indexBitsMap[]={2, 6, 1, 3, 5, 9, 0x7fffffff};
 
-
+ int initLevelMap[]={1, 1, 0, 0, 0, 0, 0x7fffffff};
 
  if(aa64.PARange >= (sizeof(paBitsMap)/sizeof(paBitsMap[0])))
  {
@@ -3182,6 +3197,12 @@ int main()
  {
   kout << "[INFO] " << "PARange is 52, we need to reduce it to 48\n";
   --effPARange;
+ }
+
+ if(initLevelMap[effPARange] != 0)
+ {
+  kout << "[FATAL] " << "Initial level not at 0,which this program designed for specifically.";
+  return 1;
  }
 
 
@@ -3201,15 +3222,16 @@ int main()
  tcr.EPD0 = tcr.EPD1 = 0;
 
  tcr.write();
-# 100 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 94 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  RegMAIR_EL1 mair{0};
  mair.Attr0 = 0x00;
  mair.Attr1 = 0xff;
  mair.Attr3 = 0x44;
 
  mair.write();
-# 115 "../src/arch/qemu_virt/main_virtual_memory.cpp"
- if(reinterpret_cast<size_t>(mainEnd) >= (1u << 21))
+# 110 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+ extern char mainEnd[];
+ if( (reinterpret_cast<size_t>(mainEnd) >> 30) >= 1)
  {
   kout << "[FATAL] " << "end of main overflows, meaning that it may not be flatten mapped.\n";
   return 1;
@@ -3232,7 +3254,7 @@ int main()
  descrL0.XNTable = 0 ;
  descrL0.Ignored_0=0;
  descrL0.Ignored_1=0;
-# 153 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 149 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  RegDescriptor4KBL1 & descrL1= L1Table[0];
  descrL1.S0.IsTable=0;
  descrL1.S0.NS=1;
@@ -3310,7 +3332,7 @@ int main()
 
   RegPAN::read().dump();
  }
-# 243 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 239 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  auto sctl = RegSCTLR_EL1::read();
  sctl.EE = 0;
  sctl.E0E = 0;
@@ -3331,11 +3353,11 @@ int main()
 
 
  RegPC pc{0};
+ extern char afterMMUSet[];
 
- uint64_t upperBits = 0xffffffffffffffff >> (64 - tcr.T1SZ) << (64 - tcr.T1SZ);
- uint64_t lowerBits = ~upperBits;
- pc.PC = (lowerBits & reinterpret_cast<uint64_t>(afterMMUSet))|upperBits;
+ pc.PC = reinterpret_cast<uint64_t>(afterMMUSet) | upperMaskBits(tcr.T1SZ);
  pc.write();
+
 
  __asm__("afterMMUSet" ":\n\t");
  kout << "[INFO] " << "Successfully enabled MMU\n";

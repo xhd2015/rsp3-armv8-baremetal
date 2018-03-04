@@ -57,6 +57,25 @@ SETUP_REG_STD_WRITE(DAIF)
 
 
 
+class RegVBAR_EL1{
+public:
+        uint64_t		Addr:64;
+        AS_MACRO void dump()const
+        {
+            kout << "VBAR_EL1 : "
+                <<"Addr = "<< Addr
+                  << "\n";
+        }
+        AS_MACRO static RegVBAR_EL1 read();
+        AS_MACRO RegVBAR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(VBAR_EL1)
+SETUP_REG_STD_UPDATE_READ(VBAR_EL1)
+SETUP_REG_STD_WRITE(VBAR_EL1)
+
+
+
 class RegELR_EL1{
 public:
         uint64_t		returnAddr:64;

@@ -29,6 +29,8 @@ reg_list=[
 #     ["SPSR_EL1",""]
     ["CurrentEL","uint32_t","STD",[["RES0_0",2,   "EL",2,   "RES0_1",28]]],     
     ["DAIF","uint32_t","STD",[["RES0_0",6,   "F",1,   "I",1,    "A",1   ,"D",1,   "RES0_1",22]]],
+    # Exception related
+    ["VBAR_EL1","uint64_t","STD",[["Addr",64]]],
     ["ELR_EL1","uint64_t","STD",[["returnAddr",64]]],
     ["ELR_EL2","uint64_t","STD",[["returnAddr",64]]],
     ["ELR_EL3","uint64_t","STD",[["returnAddr",64]]],
