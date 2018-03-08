@@ -14,4 +14,4 @@ $(MASTERY_BINARY_BINARY):$(MASTERY_ELF_BINARY)
 
 -include ../makefile.auxfiles
 -include ../makefile.auxtargets
-include ../makefile.$(TARGET_ARCH).targets
+-include ../makefile.$(TARGET_ARCH).targets

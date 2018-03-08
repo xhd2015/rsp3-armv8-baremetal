@@ -13,14 +13,15 @@ src/filesystem/fat/FAT32Debugger.o: \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_structures/Vector.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/StringRef.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/VectorRef.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_structures/VectorRef.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FAT32ExtBPB.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATLongNameEntry.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/IntegerFormatter.h \
- D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h \
- D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h
 
 D:\Pool\eclipse-workspace_aarch64\chap003\Debug-host\cxx_macros.h:
 
@@ -48,6 +49,10 @@ D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h:
 
+D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h:
+
+D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h:
+
 D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/StringRef.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/VectorRef.h:
@@ -61,5 +66,3 @@ D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATLongNameEntr
 D:\Pool\eclipse-workspace_aarch64\chap003\include/IntegerFormatter.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h:
-
-D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h:

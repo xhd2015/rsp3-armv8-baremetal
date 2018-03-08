@@ -10,6 +10,8 @@ src/filesystem/fat/FATDirEntryTable.o: \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_structures/Vector.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATDirEntry.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/String.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/StringRef.h \
@@ -23,8 +25,7 @@ src/filesystem/fat/FATDirEntryTable.o: \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/io/ByteReader.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATLongNameEntry.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/IntegerFormatter.h \
- D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h \
- D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h
 
 D:\Pool\eclipse-workspace_aarch64\chap003\Debug-host\cxx_macros.h:
 
@@ -45,6 +46,10 @@ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_
 D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h:
+
+D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h:
+
+D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATDirEntry.h:
 
@@ -73,5 +78,3 @@ D:\Pool\eclipse-workspace_aarch64\chap003\include/filesystem/fat/FATLongNameEntr
 D:\Pool\eclipse-workspace_aarch64\chap003\include/IntegerFormatter.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/IntegerFormatter.h:
-
-D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h:

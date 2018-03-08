@@ -13,6 +13,8 @@ src/filesystem/fat/FAT32ReadUtil.o: \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_structures/Vector.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h \
+ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/StringRef.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/VectorRef.h \
  D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_structures/VectorRef.h \
@@ -46,6 +48,10 @@ D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/data_
 D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryManager.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/MemoryChunk.h:
+
+D:\Pool\eclipse-workspace_aarch64\chap003\include/generic_util.h:
+
+D:\Pool\eclipse-workspace_aarch64\chap003\include/templates_implementation/MemoryManager.h:
 
 D:\Pool\eclipse-workspace_aarch64\chap003\include/data_structures/StringRef.h:
 

@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/MemoryChunk.cpp \
+../src/MemoryManager_aarch64.cpp \
 ../src/generic_util.cpp \
 ../src/printk.cpp 
 
 OBJS += \
 ./src/MemoryChunk.o \
+./src/MemoryManager_aarch64.o \
 ./src/generic_util.o \
 ./src/printk.o 
 
 CPP_DEPS += \
 ./src/MemoryChunk.d \
+./src/MemoryManager_aarch64.d \
 ./src/generic_util.d \
 ./src/printk.d 
 

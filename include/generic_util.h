@@ -41,6 +41,19 @@ const char *strOffset(const char *p,size_t offset);
 
 
 
+// example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
+AS_MACRO uint64_t upperMaskBits(uint64_t i)
+{
+	return HEX64(ffff,ffff,ffff,ffff) >> (64-i) << (64-i);
+}
+// example:lowerMaskBits(4) = 0x0000 0000 0000 000f
+AS_MACRO uint64_t lowerMaskBits(uint64_t i)
+{
+	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
+}
+
+
+
 
 
 #endif /* INCLUDE_GENERIC_UTIL_H_ */

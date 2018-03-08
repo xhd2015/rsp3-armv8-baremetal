@@ -16,6 +16,8 @@ SECTIONS{
 		*(.text.boot) /* PC对齐检查 */
 		/* *(.text.enmmu)  */  /* 启用MMU的代码必须在低1GB以内,这是为了flat map,但是通常是足够的 */
 		*(.text)
+		*(.text.*)
+
 		
 		. = ALIGN(0x800);   /* must ensure LOWER 11 bits are 0 */
 		*(.text.vector)
@@ -25,6 +27,10 @@ SECTIONS{
 		*(.preinit_array)
 		*(.init)
 		*(.init_array) 
+	} > BIOS
+	.got : {
+		*(.got)  /* -fPIC's section */
+		*(.got.*)
 	} > BIOS
 
 	/* .rodata.*,比如 */

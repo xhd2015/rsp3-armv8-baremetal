@@ -1,21 +1,15 @@
+
+#include <asm_instructions.h>
 #include <arch/common_aarch64/system_common_registers.h>
 // provide RegDescriptor4KBL0,RegDescriptor4KBL1..., see include/arch/common_aarch64/vmsa_descriptors.py for its raw definitions
 #include <arch/common_aarch64/vmsa_descriptors.h>
+#include <generic_util.h>
 
 // provided by linker script, must be placed in RAM, because they need to be writeable, typical setting is : L0Table spans 4KB,L1Table spans the successive 4KB,and L0Table must start at a 4KB boundary.
 extern RegDescriptor4KBL0 L0Table[];
 extern RegDescriptor4KBL1 L1Table[];
 
-// example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
-AS_MACRO uint64_t upperMaskBits(uint64_t i)
-{
-	return HEX64(ffff,ffff,ffff,ffff) >> (64-i) << (64-i);
-}
-// example:lowerMaskBits(4) = 0x0000 0000 0000 000f
-AS_MACRO uint64_t lowerMaskBits(uint64_t i)
-{
-	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
-}
+
 
 int main()
 {
@@ -255,19 +249,25 @@ int main()
 	kout << INFO << "Successfully set TTBR0\n";
 
 
+
 	RegPC pc{0};
 	extern char afterMMUSet[];
+	kout << INFO << "afterMMUSet = ";
+	kout << Hex(reinterpret_cast<uint64_t>(afterMMUSet))<<"\n";
+	kout << INFO << "mainEnd = " ;
+	kout << Hex(reinterpret_cast<uint64_t>(mainEnd))<<"\n";
+
 	// set the upper tcr.T1SZ bits to 1,so TTBR1 is used
 	pc.PC = reinterpret_cast<uint64_t>(afterMMUSet) | upperMaskBits(tcr.T1SZ);
 	pc.write(); // just jump to the next instruction, but TTBR0 is changed to TTBR1
 
 	// define a local symbol:afterMMUSet
-	ASM_DEFINE_LOCAL_SYM(afterMMUSet);
+	ASM_DEFINE_GLOBAL_SYM(afterMMUSet);//if local,3b38, wrong value
 	kout << INFO << "Successfully enabled MMU\n";
 	kout << INFO << "end main.";
 
 
-	ASM_DEFINE_LOCAL_SYM(mainEnd);
+	ASM_DEFINE_GLOBAL_SYM(mainEnd);
 
 	return 0;
 }
@@ -292,7 +292,6 @@ int main()
 001101(d) Permission fault, level 1
 001110(e) Permission fault, level 2
 001111(f) Permission fault, level 3
-
  */
 
 

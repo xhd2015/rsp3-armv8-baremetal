@@ -37,19 +37,11 @@ constexpr int  MiB = UNIT_K * KiB;
 constexpr int  GiB = UNIT_K * MiB;
 
 
-#define RUN_TEST(testCallable) if(!(testCallable())) \
-	{ kout << FATAL << #testCallable << " failed.\n";}
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 //#define __concate(x,y) x##y
 #define __stringify_1(x)	#x
 #define __stringify(x)		__stringify_1(x)
-
-// ASM instruction sym..
-#define ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) ":\n\t")
-#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
-#define ASM_ISB() __asm__ ("isb \n\t")
-#define ASM_NOP() __asm__("nop \n\t")
 
 
 // for readibility, 16 bits per letter

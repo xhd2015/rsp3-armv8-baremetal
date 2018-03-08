@@ -1,4 +1,15 @@
+# rsp3-armv8-baremetal
+基于`树莓派3`和`ARMv8-AArch64`架构，实现一个微型操作系统内核。
+# 测试该工程
+此工程基于`eclipse` (`version` >= `4.6.3`), 在编译时，你需要使用合适的`eclipse`版本，在`Windows`,`Linux`或者`MacOS`上，选择 `File` -> `Open Projects from File System` -> 点击`Directory`,选择该工程所在的目录，打开 -> `Finish` 即可
 
+整个工程共有3个配置，名称分别为：`Debug-host`,`Debug-qemu_virt`, `Debug-raspi3`
+
+这3个配置分别对应的开发环境是：基于宿主主机操作系统的开发（主要用于测试内存管理和其他架构无关的功能），基于QEMU的模拟的开发（用于测试虚拟内存、中断等），基于树莓派3的开发（用于综合验证）。
+
+每个配置有一个专门的生成文件夹，该文件夹名称与配置名称相同，编译时产生的所有文件均生成于此。
+
+工程配置了一些特殊的构建目标。参见工程的`Build Targets`。
 
 
 # 准则
@@ -8,6 +19,12 @@
 # Makefile
 如果更改了工程的配置，必须重新开启新的命令行，因为所有的eclipse环境都会被导出。
 
-# 模板工程
-# eclipse issues
-Linked Source与Configuration无关。# rsp3-armv8-baremetal
+
+# 其他参考
+工程进度总览参考 [Progress_Current.md](./Progress_Current.md)
+
+工程记录参考 [RECORDING_NOTE.md](./RECORDING_NOTE.md)
+
+# Copyright
+
+In Progress

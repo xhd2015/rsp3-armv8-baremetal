@@ -4,26 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/arch/host/MemoryManager_impl.cpp \
-../src/arch/host/SectorReader_impl.cpp \
 ../src/arch/host/global_variables_impl.cpp \
-../src/arch/host/main_impl.cpp \
+../src/arch/host/main_debug_mman.cpp \
 ../src/arch/host/printk_impl.cpp \
 ../src/arch/host/util_impl.cpp 
 
 OBJS += \
-./src/arch/host/MemoryManager_impl.o \
-./src/arch/host/SectorReader_impl.o \
 ./src/arch/host/global_variables_impl.o \
-./src/arch/host/main_impl.o \
+./src/arch/host/main_debug_mman.o \
 ./src/arch/host/printk_impl.o \
 ./src/arch/host/util_impl.o 
 
 CPP_DEPS += \
-./src/arch/host/MemoryManager_impl.d \
-./src/arch/host/SectorReader_impl.d \
 ./src/arch/host/global_variables_impl.d \
-./src/arch/host/main_impl.d \
+./src/arch/host/main_debug_mman.d \
 ./src/arch/host/printk_impl.d \
 ./src/arch/host/util_impl.d 
 

@@ -18,6 +18,8 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __pic__ 2
+#define __PIC__ 2
 #define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
@@ -430,16 +432,10 @@
 #define PERIPHBASE 0x08000000
 # 1 "<command-line>" 2
 # 1 "../src/arch/qemu_virt/main_virtual_memory.cpp"
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/system_common_registers.h" 1
 
-
-
-#define ___INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__ 
-
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h" 1
-# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h"
-#define INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_REGISTERS_BASE_H_ 
-
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/asm_instructions.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/asm_instructions.h"
+#define INCLUDE_ASM_INSTRUCTIONS_H_ 
 
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 1
 
@@ -1574,12 +1570,6 @@ constexpr int GiB = UNIT_K * MiB;
 #define __stringify(x) __stringify_1(x)
 
 
-#define ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) ":\n\t")
-#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
-#define ASM_ISB() __asm__ ("isb \n\t")
-#define ASM_NOP() __asm__("nop \n\t")
-
-
 
 #define HEX32(a,b) 0x ##a ##b
 #define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
@@ -1587,7 +1577,28 @@ constexpr int GiB = UNIT_K * MiB;
 
 #define BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d
 #define BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h
-# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/asm_instructions.h" 2
+
+
+#define ASM_DEFINE_LOCAL_SYM(sym) __asm__sym__ ##sym: __asm__ __volatile__(__stringify(sym) ":\n\t")
+#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__sym__ ##sym:__asm__ __volatile__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
+
+#define ASM_ISB() __asm__ __volatile__ ("isb \n\t")
+#define ASM_NOP() __asm__ __volatile__("nop \n\t")
+#define ASM_GOTO(sym) __asm__ __volatile__("b " __stringify(sym) " \n\t")
+# 3 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/system_common_registers.h" 1
+
+
+
+#define ___INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/registers_defines.h"
+#define INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_REGISTERS_BASE_H_ 
+
+
+
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h"
 #define INCLUDE_PRINTK_H_ 
@@ -2872,7 +2883,7 @@ public:
 RegSCTLR_EL1 RegSCTLR_EL1::read(){ RegSCTLR_EL1 res;__asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(res));return res;}
 RegSCTLR_EL1 RegSCTLR_EL1::updateRead(){ __asm__ __volatile__("mrs %0," "SCTLR_EL1" "\n\t":"=r"(*this));return *this;}
 void RegSCTLR_EL1::write() const { __asm__ __volatile__("msr " "SCTLR_EL1" ",%0 \n\t"::"r"(*this));}
-# 2 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+# 4 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
 
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/common_aarch64/vmsa_descriptors.h" 1
 
@@ -3139,7 +3150,7 @@ public:
 }__attribute__((packed));
 RegDescriptor4KBL3 RegDescriptor4KBL3::read(void *p) { return *reinterpret_cast<RegDescriptor4KBL3*>(p);}RegDescriptor4KBL3 RegDescriptor4KBL3::read(size_t p){ return *reinterpret_cast<RegDescriptor4KBL3*>(p);}
 void RegDescriptor4KBL3::write(void *p)const { *reinterpret_cast<RegDescriptor4KBL3*>(p)=*this; }void RegDescriptor4KBL3::write(size_t p)const{ *reinterpret_cast<RegDescriptor4KBL3*>(p)=*this;}
-# 4 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
+# 6 "../src/arch/qemu_virt/main_virtual_memory.cpp" 2
 
 
 extern RegDescriptor4KBL0 L0Table[];
@@ -3222,14 +3233,14 @@ int main()
  tcr.EPD0 = tcr.EPD1 = 0;
 
  tcr.write();
-# 94 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 96 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  RegMAIR_EL1 mair{0};
  mair.Attr0 = 0x00;
  mair.Attr1 = 0xff;
  mair.Attr3 = 0x44;
 
  mair.write();
-# 110 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 112 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  extern char mainEnd[];
  if( (reinterpret_cast<size_t>(mainEnd) >> 30) >= 1)
  {
@@ -3254,7 +3265,7 @@ int main()
  descrL0.XNTable = 0 ;
  descrL0.Ignored_0=0;
  descrL0.Ignored_1=0;
-# 149 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 151 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  RegDescriptor4KBL1 & descrL1= L1Table[0];
  descrL1.S0.IsTable=0;
  descrL1.S0.NS=1;
@@ -3306,7 +3317,7 @@ int main()
 
  ttbr0.write();
  ttbr1.write();
- __asm__ ("isb \n\t");
+ __asm__ __volatile__ ("isb \n\t");
 
 
 
@@ -3332,7 +3343,7 @@ int main()
 
   RegPAN::read().dump();
  }
-# 239 "../src/arch/qemu_virt/main_virtual_memory.cpp"
+# 241 "../src/arch/qemu_virt/main_virtual_memory.cpp"
  auto sctl = RegSCTLR_EL1::read();
  sctl.EE = 0;
  sctl.E0E = 0;
@@ -3345,26 +3356,32 @@ int main()
  sctl.M = 1;
  sctl.write();
 
- __asm__ ("isb \n\t");
+ __asm__ __volatile__ ("isb \n\t");
  sctl.updateRead();
  sctl.dump();
 
  kout << "[INFO] " << "Successfully set TTBR0\n";
 
 
+
  RegPC pc{0};
  extern char afterMMUSet[];
+ kout << "[INFO] " << "afterMMUSet = ";
+ kout << Hex(reinterpret_cast<uint64_t>(afterMMUSet))<<"\n";
+ kout << "[INFO] " << "mainEnd = " ;
+ kout << Hex(reinterpret_cast<uint64_t>(mainEnd))<<"\n";
+
 
  pc.PC = reinterpret_cast<uint64_t>(afterMMUSet) | upperMaskBits(tcr.T1SZ);
  pc.write();
 
 
- __asm__("afterMMUSet" ":\n\t");
+ __asm__sym__afterMMUSet:__asm__ __volatile__(".global " "afterMMUSet" " \n\t;" "afterMMUSet" ":\n\t");
  kout << "[INFO] " << "Successfully enabled MMU\n";
  kout << "[INFO] " << "end main.";
 
 
- __asm__("mainEnd" ":\n\t");
+ __asm__sym__mainEnd:__asm__ __volatile__(".global " "mainEnd" " \n\t;" "mainEnd" ":\n\t");
 
  return 0;
 }

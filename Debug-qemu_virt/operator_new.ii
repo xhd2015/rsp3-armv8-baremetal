@@ -18,6 +18,8 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __pic__ 2
+#define __PIC__ 2
 #define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
@@ -393,8 +395,7 @@
 # 1 "<built-in>"
 #define __ARM_FEATURE_NUMERIC_MAXMIN 1
 #define __ARM_NEON 1
-#undef __ARM_FEATURE_CRC32
-# 1 "<built-in>"
+#define __ARM_FEATURE_CRC32 1
 #undef __AARCH64_CMODEL_TINY__
 # 1 "<built-in>"
 #undef __AARCH64_CMODEL_SMALL__
@@ -408,8 +409,7 @@
 # 1 "<built-in>"
 #undef __ARM_FEATURE_CRYPTO
 # 1 "<built-in>"
-#undef __ARM_FEATURE_QRDMX
-# 1 "<built-in>"
+#define __ARM_FEATURE_QRDMX 1
 #undef __FLT_EVAL_METHOD__
 # 1 "<built-in>"
 #define __FLT_EVAL_METHOD__ 0
@@ -1570,12 +1570,6 @@ constexpr int GiB = UNIT_K * MiB;
 
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
-
-
-#define ASM_DEFINE_LOCAL_SYM(sym) __asm__(__stringify(sym) ":\n\t")
-#define ASM_DEFINE_GLOBAL_SYM(sym) __asm__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
-#define ASM_ISB() __asm__ ("isb \n\t")
-#define ASM_NOP() __asm__("nop \n\t")
 
 
 

@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/io/ByteReader.cpp 
+../src/io/ByteReader.cpp \
+../src/io/SectorReader_host.cpp 
 
 OBJS += \
-./src/io/ByteReader.o 
+./src/io/ByteReader.o \
+./src/io/SectorReader_host.o 
 
 CPP_DEPS += \
-./src/io/ByteReader.d 
+./src/io/ByteReader.d \
+./src/io/SectorReader_host.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

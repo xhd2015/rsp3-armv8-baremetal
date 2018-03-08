@@ -21,6 +21,9 @@ show-in-explorer:
 .PHONY:open-cygwin
 open-cygwin:
 	/usr/bin/cygstart /usr/bin/mintty
+.PHONY:open-vscode
+open-vscode:
+	/usr/bin/cygstart 'D:\installed\VSCode-win32-x64-1.19.1\Code.exe'
 	
 .PHONY:debug-info
 debug-info:
