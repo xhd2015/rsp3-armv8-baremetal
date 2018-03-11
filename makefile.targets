@@ -7,11 +7,12 @@ $(USER_CLEAN):clean
 	- $(RM)  $(CLEAN-ALL-LIST)
 
 # 定义生成的纯二进制文件,ELF和BINARY格式需要，否则ELF格式文件可能被当成中间文件而删除
-.PHONY:$(USER_ALL)
-$(USER_ALL):$(MASTERY_BINARY_BINARY) $(MASTERY_ELF_BINARY)
-$(MASTERY_BINARY_BINARY):$(MASTERY_ELF_BINARY)
-	$(TOOLCHAIN_OBJCOPY) -O binary $< $@
+# USER_ALL 已由单个生成文件代替
+#.PHONY:$(USER_ALL)
+#$(USER_ALL):$(MASTERY_GEN)
 
--include ../makefile.auxfiles
--include ../makefile.auxtargets
--include ../makefile.$(TARGET_ARCH).targets
+
+
+-include ../makefiles/makefile.$(TARGET_ARCH).targets
+-include ../makefiles/makefile.auxfiles
+-include ../makefiles/makefile.auxtargets

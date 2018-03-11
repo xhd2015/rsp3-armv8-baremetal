@@ -15,6 +15,7 @@ size_t printk(char ch);
 
 // we define it ourselves,we have our default implementation
 size_t printk(const char *s);
+// if n==0,then n is ignored
 size_t printk(const char *s,size_t n);
 
 class Output{
@@ -26,17 +27,16 @@ public:
 	Output & operator<<(uint8_t u);
 	Output & operator<<(uint16_t u);
 	Output & operator<<(uint32_t u);
+	Output & operator<<(bool i);
 	Output & operator<<(short i);
 	Output & operator<<(int i);
 	Output & operator<<(double d);
 	Output & operator<<(const char *s);
 	Output & operator<<(size_t i);
-	Output & operator<<(void *p);
+	Output & operator<<(const void *p);
+	Output & operator<<(const volatile void *p);
 };
 
-
-// 声明一些全局变量
-extern Output kout;
 
 
 // template

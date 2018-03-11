@@ -1,7 +1,7 @@
 
 #include <filesystem/fat/FAT32Debugger.h>
 #include <filesystem/fat/FAT32ReadUtil.h>
-#include <MemoryManager.h>
+#include <memory/MemoryManager.h>
 #include <printk.h>
 
 

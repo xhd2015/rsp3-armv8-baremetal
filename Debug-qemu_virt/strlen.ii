@@ -18,6 +18,8 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __pic__ 2
+#define __PIC__ 2
 #define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
@@ -393,8 +395,7 @@
 # 1 "<built-in>"
 #define __ARM_FEATURE_NUMERIC_MAXMIN 1
 #define __ARM_NEON 1
-#undef __ARM_FEATURE_CRC32
-# 1 "<built-in>"
+#define __ARM_FEATURE_CRC32 1
 #undef __AARCH64_CMODEL_TINY__
 # 1 "<built-in>"
 #undef __AARCH64_CMODEL_SMALL__
@@ -408,8 +409,7 @@
 # 1 "<built-in>"
 #undef __ARM_FEATURE_CRYPTO
 # 1 "<built-in>"
-#undef __ARM_FEATURE_QRDMX
-# 1 "<built-in>"
+#define __ARM_FEATURE_QRDMX 1
 #undef __FLT_EVAL_METHOD__
 # 1 "<built-in>"
 #define __FLT_EVAL_METHOD__ 0
@@ -424,6 +424,8 @@
 
 #define CXX_MACROS_H__ 
 
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
 #define KERNEL_ADDRESS 0
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000

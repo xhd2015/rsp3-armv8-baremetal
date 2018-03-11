@@ -10,7 +10,7 @@
 
 
 #include <def.h>
-#include <printk.h>
+#include <kernel.h>
 #include <IntegerFormatter.h>
 #include <arch/common_aarch64/gicv3_defines.h>
 
@@ -164,6 +164,26 @@ void Reg##name::write(void *p)const \
 void Reg##name::write(size_t p)const\
 {\
 	*reinterpret_cast<Reg##name*>(p)=*this;\
+}
+
+// 7. use load-store instructions,usually general registers, x0-x30
+#define SETUP_REG_LOAD_STORE_READ(name) \
+Reg##name Reg##name::read() \
+{ \
+	Reg##name res{0};\
+	__asm__ __volatile__("str " __stringify(name)",%0 \n\t"::"m"(res)); \
+	return res; \
+}
+#define SETUP_REG_LOAD_STORE_UPDATE_READ(name) \
+Reg##name Reg##name::updateRead() \
+{ \
+	__asm__ __volatile__("str " __stringify(name)",%0 \n\t"::"m"(*this)); \
+	return *this; \
+}
+#define SETUP_REG_LOAD_STORE_WRITE(name) \
+void Reg##name::write()const \
+{ \
+	__asm__ __volatile__("ldr " __stringify(name) ",%0 \n\t"::"m"(*this)); \
 }
 
 // python 脚本

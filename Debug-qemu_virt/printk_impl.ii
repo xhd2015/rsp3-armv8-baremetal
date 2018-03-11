@@ -1,4 +1,4 @@
-# 1 "../src/arch/qemu_virt/printk_impl.cpp"
+# 1 "../src/printk_impl.cpp"
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\Debug-qemu_virt//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -18,8 +18,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __pic__ 2
-#define __PIC__ 2
 #define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
@@ -424,6 +422,8 @@
 
 #define CXX_MACROS_H__ 
 
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
 #define KERNEL_ADDRESS 0
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
@@ -431,8 +431,8 @@
 #define ARCH_IS_qemu_virt 
 #define PERIPHBASE 0x08000000
 # 1 "<command-line>" 2
-# 1 "../src/arch/qemu_virt/printk_impl.cpp"
-# 9 "../src/arch/qemu_virt/printk_impl.cpp"
+# 1 "../src/printk_impl.cpp"
+# 9 "../src/printk_impl.cpp"
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h"
 #define INCLUDE_PRINTK_H_ 
@@ -1561,13 +1561,12 @@ constexpr int MiB = UNIT_K * KiB;
 constexpr int GiB = UNIT_K * MiB;
 
 
-#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << " failed.\n";}
-
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+
 
 
 
@@ -1584,6 +1583,7 @@ size_t printk(char ch);
 
 
 size_t printk(const char *s);
+
 size_t printk(const char *s,size_t n);
 
 class Output{
@@ -1595,17 +1595,16 @@ public:
  Output & operator<<(uint8_t u);
  Output & operator<<(uint16_t u);
  Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
  Output & operator<<(short i);
  Output & operator<<(int i);
  Output & operator<<(double d);
  Output & operator<<(const char *s);
  Output & operator<<(size_t i);
- Output & operator<<(void *p);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
 };
 
-
-
-extern Output kout;
 
 
 
@@ -1616,10 +1615,11 @@ extern Output kout;
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
 # 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h" 2
 # 44 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 2
-# 10 "../src/arch/qemu_virt/printk_impl.cpp" 2
-
+# 10 "../src/printk_impl.cpp" 2
+extern char uart_base[];
 size_t printk(char ch)
 {
- *reinterpret_cast<volatile unsigned int *>( 0x09000000 ) = ch;
+
+ uart_base[0]=ch;
  return 1;
 }

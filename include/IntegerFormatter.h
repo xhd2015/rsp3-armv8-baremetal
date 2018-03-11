@@ -16,7 +16,7 @@ template <int Base>
 class IntegerFormatter{
 public:
 	IntegerFormatter(size_t num);
-	IntegerFormatter(void *p);
+	IntegerFormatter(const void *p);
 	char *format()const;
 private:
 	size_t num;

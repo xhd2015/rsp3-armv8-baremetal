@@ -37,6 +37,11 @@ Output & Output::operator<<(uint32_t u)
 {
 	return *this << static_cast<size_t>(u);
 }
+
+Output & Output::operator<<(bool i)
+{
+	return *this << (i?"true":"false");
+}
 Output & Output::operator<<(short i)
 {
 	return *this << static_cast<size_t>(i);
@@ -59,11 +64,17 @@ Output & Output::operator<<(size_t i)
 	printk(IntegerFormatter<10>(i).format());
 	return *this;
 }
-Output & Output::operator<<(void *p)
+Output & Output::operator<<(const void *p)
 {
 	printk(IntegerFormatter<16>(p).format());
 	return *this;
 }
+
+Output & Output::operator<<(const volatile void *p)
+{
+	return *this << const_cast<const void*>(p);
+}
+
 
 Output & operator<<(Output &out,const StringRef& ref)
 {

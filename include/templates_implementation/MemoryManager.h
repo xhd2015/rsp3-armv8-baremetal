@@ -8,7 +8,7 @@
 #ifndef INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_
 #define INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_
 
-#include <MemoryManager.h>
+#include <memory/MemoryManager.h>
 
 //===templates
 template <class T>

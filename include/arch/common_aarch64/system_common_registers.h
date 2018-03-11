@@ -63,7 +63,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "VBAR_EL1 : "
-                <<"Addr = "<< Addr
+                <<"Addr = "<< Hex(Addr)
                   << "\n";
         }
         AS_MACRO static RegVBAR_EL1 read();
@@ -133,6 +133,392 @@ SETUP_REG_STD_WRITE(ELR_EL3)
 
 
 
+class RegESR_EL1{
+public:
+        uint32_t		ISS:25;
+        uint32_t		IL:1;
+        uint32_t		EC:6;
+        AS_MACRO void dump()const
+        {
+            kout << "ESR_EL1 : "
+                <<"ISS = "<< ISS << ","
+                <<"IL = "<< IL << ","
+                <<"EC = "<< EC
+                  << "\n";
+        }
+        AS_MACRO static RegESR_EL1 read();
+        AS_MACRO RegESR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(ESR_EL1)
+SETUP_REG_STD_UPDATE_READ(ESR_EL1)
+SETUP_REG_STD_WRITE(ESR_EL1)
+
+
+
+class RegESR_EL2{
+public:
+        uint32_t		ISS:25;
+        uint32_t		IL:1;
+        uint32_t		EC:6;
+        AS_MACRO void dump()const
+        {
+            kout << "ESR_EL2 : "
+                <<"ISS = "<< ISS << ","
+                <<"IL = "<< IL << ","
+                <<"EC = "<< EC
+                  << "\n";
+        }
+        AS_MACRO static RegESR_EL2 read();
+        AS_MACRO RegESR_EL2  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(ESR_EL2)
+SETUP_REG_STD_UPDATE_READ(ESR_EL2)
+SETUP_REG_STD_WRITE(ESR_EL2)
+
+
+
+class RegESR_EL3{
+public:
+        uint32_t		ISS:25;
+        uint32_t		IL:1;
+        uint32_t		EC:6;
+        AS_MACRO void dump()const
+        {
+            kout << "ESR_EL3 : "
+                <<"ISS = "<< ISS << ","
+                <<"IL = "<< IL << ","
+                <<"EC = "<< EC
+                  << "\n";
+        }
+        AS_MACRO static RegESR_EL3 read();
+        AS_MACRO RegESR_EL3  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(ESR_EL3)
+SETUP_REG_STD_UPDATE_READ(ESR_EL3)
+SETUP_REG_STD_WRITE(ESR_EL3)
+
+
+
+class RegFAR_EL1{
+public:
+        uint64_t		faultAddr:64;
+        AS_MACRO void dump()const
+        {
+            kout << "FAR_EL1 : "
+                <<"faultAddr = "<< faultAddr
+                  << "\n";
+        }
+        AS_MACRO static RegFAR_EL1 read();
+        AS_MACRO RegFAR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(FAR_EL1)
+SETUP_REG_STD_UPDATE_READ(FAR_EL1)
+SETUP_REG_STD_WRITE(FAR_EL1)
+
+
+
+class RegFAR_EL2{
+public:
+        uint64_t		faultAddr:64;
+        AS_MACRO void dump()const
+        {
+            kout << "FAR_EL2 : "
+                <<"faultAddr = "<< faultAddr
+                  << "\n";
+        }
+        AS_MACRO static RegFAR_EL2 read();
+        AS_MACRO RegFAR_EL2  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(FAR_EL2)
+SETUP_REG_STD_UPDATE_READ(FAR_EL2)
+SETUP_REG_STD_WRITE(FAR_EL2)
+
+
+
+class RegFAR_EL3{
+public:
+        uint64_t		faultAddr:64;
+        AS_MACRO void dump()const
+        {
+            kout << "FAR_EL3 : "
+                <<"faultAddr = "<< faultAddr
+                  << "\n";
+        }
+        AS_MACRO static RegFAR_EL3 read();
+        AS_MACRO RegFAR_EL3  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(FAR_EL3)
+SETUP_REG_STD_UPDATE_READ(FAR_EL3)
+SETUP_REG_STD_WRITE(FAR_EL3)
+
+
+
+class RegSPSR_EL1{
+public:
+        uint32_t		SPSel:1;
+        uint32_t		RES0_0:1;
+        uint32_t		EL:2;
+        uint32_t		ExeState:1;
+        uint32_t		RES0_1:1;
+        uint32_t		FIQMask:1;
+        uint32_t		IRQMask:1;
+        uint32_t		SErrorMask:1;
+        uint32_t		DebugMask:1;
+        uint32_t		RES0_2:10;
+        uint32_t		IL:1;
+        uint32_t		SoftwareStep:1;
+        uint32_t		PAN:1;
+        uint32_t		UAO:1;
+        uint32_t		RES0_3:4;
+        uint32_t		V:1;
+        uint32_t		C:1;
+        uint32_t		Z:1;
+        uint32_t		N:1;
+        AS_MACRO void dump()const
+        {
+            kout << "SPSR_EL1 : "
+                <<"SPSel = "<< SPSel << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"EL = "<< EL << ","
+                <<"ExeState = "<< ExeState << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"FIQMask = "<< FIQMask << ","
+                <<"IRQMask = "<< IRQMask << ","
+                <<"SErrorMask = "<< SErrorMask << ","
+                <<"DebugMask = "<< DebugMask << ","
+                <<"RES0_2 = "<< RES0_2 << ","
+                <<"IL = "<< IL << ","
+                <<"SoftwareStep = "<< SoftwareStep << ","
+                <<"PAN = "<< PAN << ","
+                <<"UAO = "<< UAO << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"V = "<< V << ","
+                <<"C = "<< C << ","
+                <<"Z = "<< Z << ","
+                <<"N = "<< N
+                  << "\n";
+        }
+        AS_MACRO static RegSPSR_EL1 read();
+        AS_MACRO RegSPSR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SPSR_EL1)
+SETUP_REG_STD_UPDATE_READ(SPSR_EL1)
+SETUP_REG_STD_WRITE(SPSR_EL1)
+
+
+
+class RegSPSR_EL2{
+public:
+        uint32_t		SPSel:1;
+        uint32_t		RES0_0:1;
+        uint32_t		EL:2;
+        uint32_t		ExeState:1;
+        uint32_t		RES0_1:1;
+        uint32_t		FIQMask:1;
+        uint32_t		IRQMask:1;
+        uint32_t		SErrorMask:1;
+        uint32_t		DebugMask:1;
+        uint32_t		RES0_2:10;
+        uint32_t		IL:1;
+        uint32_t		SoftwareStep:1;
+        uint32_t		PAN:1;
+        uint32_t		UAO:1;
+        uint32_t		RES0_3:4;
+        uint32_t		V:1;
+        uint32_t		C:1;
+        uint32_t		Z:1;
+        uint32_t		N:1;
+        AS_MACRO void dump()const
+        {
+            kout << "SPSR_EL2 : "
+                <<"SPSel = "<< SPSel << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"EL = "<< EL << ","
+                <<"ExeState = "<< ExeState << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"FIQMask = "<< FIQMask << ","
+                <<"IRQMask = "<< IRQMask << ","
+                <<"SErrorMask = "<< SErrorMask << ","
+                <<"DebugMask = "<< DebugMask << ","
+                <<"RES0_2 = "<< RES0_2 << ","
+                <<"IL = "<< IL << ","
+                <<"SoftwareStep = "<< SoftwareStep << ","
+                <<"PAN = "<< PAN << ","
+                <<"UAO = "<< UAO << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"V = "<< V << ","
+                <<"C = "<< C << ","
+                <<"Z = "<< Z << ","
+                <<"N = "<< N
+                  << "\n";
+        }
+        AS_MACRO static RegSPSR_EL2 read();
+        AS_MACRO RegSPSR_EL2  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SPSR_EL2)
+SETUP_REG_STD_UPDATE_READ(SPSR_EL2)
+SETUP_REG_STD_WRITE(SPSR_EL2)
+
+
+
+class RegSPSR_EL3{
+public:
+        uint32_t		SPSel:1;
+        uint32_t		RES0_0:1;
+        uint32_t		EL:2;
+        uint32_t		ExeState:1;
+        uint32_t		RES0_1:1;
+        uint32_t		FIQMask:1;
+        uint32_t		IRQMask:1;
+        uint32_t		SErrorMask:1;
+        uint32_t		DebugMask:1;
+        uint32_t		RES0_2:10;
+        uint32_t		IL:1;
+        uint32_t		SoftwareStep:1;
+        uint32_t		PAN:1;
+        uint32_t		UAO:1;
+        uint32_t		RES0_3:4;
+        uint32_t		V:1;
+        uint32_t		C:1;
+        uint32_t		Z:1;
+        uint32_t		N:1;
+        AS_MACRO void dump()const
+        {
+            kout << "SPSR_EL3 : "
+                <<"SPSel = "<< SPSel << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"EL = "<< EL << ","
+                <<"ExeState = "<< ExeState << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"FIQMask = "<< FIQMask << ","
+                <<"IRQMask = "<< IRQMask << ","
+                <<"SErrorMask = "<< SErrorMask << ","
+                <<"DebugMask = "<< DebugMask << ","
+                <<"RES0_2 = "<< RES0_2 << ","
+                <<"IL = "<< IL << ","
+                <<"SoftwareStep = "<< SoftwareStep << ","
+                <<"PAN = "<< PAN << ","
+                <<"UAO = "<< UAO << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"V = "<< V << ","
+                <<"C = "<< C << ","
+                <<"Z = "<< Z << ","
+                <<"N = "<< N
+                  << "\n";
+        }
+        AS_MACRO static RegSPSR_EL3 read();
+        AS_MACRO RegSPSR_EL3  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SPSR_EL3)
+SETUP_REG_STD_UPDATE_READ(SPSR_EL3)
+SETUP_REG_STD_WRITE(SPSR_EL3)
+
+
+
+class RegSP{
+public:
+        uint64_t		SP:64;
+        AS_MACRO void dump()const
+        {
+            kout << "SP : "
+                <<"SP = "<< SP
+                  << "\n";
+        }
+        AS_MACRO static RegSP read();
+        AS_MACRO RegSP  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SP)
+SETUP_REG_STD_UPDATE_READ(SP)
+SETUP_REG_STD_WRITE(SP)
+
+
+
+class RegSP_EL0{
+public:
+        uint64_t		SP:64;
+        AS_MACRO void dump()const
+        {
+            kout << "SP_EL0 : "
+                <<"SP = "<< SP
+                  << "\n";
+        }
+        AS_MACRO static RegSP_EL0 read();
+        AS_MACRO RegSP_EL0  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SP_EL0)
+SETUP_REG_STD_UPDATE_READ(SP_EL0)
+SETUP_REG_STD_WRITE(SP_EL0)
+
+
+
+class RegSP_EL1{
+public:
+        uint64_t		SP:64;
+        AS_MACRO void dump()const
+        {
+            kout << "SP_EL1 : "
+                <<"SP = "<< SP
+                  << "\n";
+        }
+        AS_MACRO static RegSP_EL1 read();
+        AS_MACRO RegSP_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SP_EL1)
+SETUP_REG_STD_UPDATE_READ(SP_EL1)
+SETUP_REG_STD_WRITE(SP_EL1)
+
+
+
+class RegSP_EL2{
+public:
+        uint64_t		SP:64;
+        AS_MACRO void dump()const
+        {
+            kout << "SP_EL2 : "
+                <<"SP = "<< SP
+                  << "\n";
+        }
+        AS_MACRO static RegSP_EL2 read();
+        AS_MACRO RegSP_EL2  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SP_EL2)
+SETUP_REG_STD_UPDATE_READ(SP_EL2)
+SETUP_REG_STD_WRITE(SP_EL2)
+
+
+
+class RegSP_EL3{
+public:
+        uint64_t		SP:64;
+        AS_MACRO void dump()const
+        {
+            kout << "SP_EL3 : "
+                <<"SP = "<< SP
+                  << "\n";
+        }
+        AS_MACRO static RegSP_EL3 read();
+        AS_MACRO RegSP_EL3  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(SP_EL3)
+SETUP_REG_STD_UPDATE_READ(SP_EL3)
+SETUP_REG_STD_WRITE(SP_EL3)
+
+
+
 class RegNZCV{
 public:
         uint64_t		RES0:28;
@@ -180,82 +566,6 @@ public:
 SETUP_REG_STD_READ(PAN)
 SETUP_REG_STD_UPDATE_READ(PAN)
 SETUP_REG_STD_WRITE(PAN)
-
-
-
-class RegSP_EL0{
-public:
-        uint64_t		Pointer:64;
-        AS_MACRO void dump()const
-        {
-            kout << "SP_EL0 : "
-                <<"Pointer = "<< Pointer
-                  << "\n";
-        }
-        AS_MACRO static RegSP_EL0 read();
-        AS_MACRO RegSP_EL0  updateRead();
-        AS_MACRO void write()const;
-}__attribute__((packed));
-SETUP_REG_STD_READ(SP_EL0)
-SETUP_REG_STD_UPDATE_READ(SP_EL0)
-SETUP_REG_STD_WRITE(SP_EL0)
-
-
-
-class RegSP_EL1{
-public:
-        uint64_t		Pointer:64;
-        AS_MACRO void dump()const
-        {
-            kout << "SP_EL1 : "
-                <<"Pointer = "<< Pointer
-                  << "\n";
-        }
-        AS_MACRO static RegSP_EL1 read();
-        AS_MACRO RegSP_EL1  updateRead();
-        AS_MACRO void write()const;
-}__attribute__((packed));
-SETUP_REG_STD_READ(SP_EL1)
-SETUP_REG_STD_UPDATE_READ(SP_EL1)
-SETUP_REG_STD_WRITE(SP_EL1)
-
-
-
-class RegSP_EL2{
-public:
-        uint64_t		Pointer:64;
-        AS_MACRO void dump()const
-        {
-            kout << "SP_EL2 : "
-                <<"Pointer = "<< Pointer
-                  << "\n";
-        }
-        AS_MACRO static RegSP_EL2 read();
-        AS_MACRO RegSP_EL2  updateRead();
-        AS_MACRO void write()const;
-}__attribute__((packed));
-SETUP_REG_STD_READ(SP_EL2)
-SETUP_REG_STD_UPDATE_READ(SP_EL2)
-SETUP_REG_STD_WRITE(SP_EL2)
-
-
-
-class RegSP_EL3{
-public:
-        uint64_t		Pointer:64;
-        AS_MACRO void dump()const
-        {
-            kout << "SP_EL3 : "
-                <<"Pointer = "<< Pointer
-                  << "\n";
-        }
-        AS_MACRO static RegSP_EL3 read();
-        AS_MACRO RegSP_EL3  updateRead();
-        AS_MACRO void write()const;
-}__attribute__((packed));
-SETUP_REG_STD_READ(SP_EL3)
-SETUP_REG_STD_UPDATE_READ(SP_EL3)
-SETUP_REG_STD_WRITE(SP_EL3)
 
 
 

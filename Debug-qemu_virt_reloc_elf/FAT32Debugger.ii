@@ -1,0 +1,3134 @@
+# 1 "../src/filesystem/fat/FAT32Debugger.cpp"
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\Debug-qemu_virt_reloc_elf//"
+# 1 "<built-in>"
+#define __STDC__ 1
+#define __cplusplus 201402L
+#define __STDC_UTF_16__ 1
+#define __STDC_UTF_32__ 1
+#define __STDC_HOSTED__ 0
+#define __GNUC__ 7
+#define __GNUC_MINOR__ 2
+#define __GNUC_PATCHLEVEL__ 1
+#define __VERSION__ "7.2.1 20171011"
+#define __LINARO_RELEASE__ 201711
+#define __LINARO_SPIN__ 0
+#define __ATOMIC_RELAXED 0
+#define __ATOMIC_SEQ_CST 5
+#define __ATOMIC_ACQUIRE 2
+#define __ATOMIC_RELEASE 3
+#define __ATOMIC_ACQ_REL 4
+#define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
+#define __FINITE_MATH_ONLY__ 0
+#define _LP64 1
+#define __LP64__ 1
+#define __SIZEOF_INT__ 4
+#define __SIZEOF_LONG__ 8
+#define __SIZEOF_LONG_LONG__ 8
+#define __SIZEOF_SHORT__ 2
+#define __SIZEOF_FLOAT__ 4
+#define __SIZEOF_DOUBLE__ 8
+#define __SIZEOF_LONG_DOUBLE__ 16
+#define __SIZEOF_SIZE_T__ 8
+#define __CHAR_BIT__ 8
+#define __BIGGEST_ALIGNMENT__ 16
+#define __ORDER_LITTLE_ENDIAN__ 1234
+#define __ORDER_BIG_ENDIAN__ 4321
+#define __ORDER_PDP_ENDIAN__ 3412
+#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
+#define __FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__
+#define __SIZEOF_POINTER__ 8
+#define __GNUG__ 7
+#define __SIZE_TYPE__ long unsigned int
+#define __PTRDIFF_TYPE__ long int
+#define __WCHAR_TYPE__ unsigned int
+#define __WINT_TYPE__ unsigned int
+#define __INTMAX_TYPE__ long int
+#define __UINTMAX_TYPE__ long unsigned int
+#define __CHAR16_TYPE__ short unsigned int
+#define __CHAR32_TYPE__ unsigned int
+#define __SIG_ATOMIC_TYPE__ int
+#define __INT8_TYPE__ signed char
+#define __INT16_TYPE__ short int
+#define __INT32_TYPE__ int
+#define __INT64_TYPE__ long int
+#define __UINT8_TYPE__ unsigned char
+#define __UINT16_TYPE__ short unsigned int
+#define __UINT32_TYPE__ unsigned int
+#define __UINT64_TYPE__ long unsigned int
+#define __INT_LEAST8_TYPE__ signed char
+#define __INT_LEAST16_TYPE__ short int
+#define __INT_LEAST32_TYPE__ int
+#define __INT_LEAST64_TYPE__ long int
+#define __UINT_LEAST8_TYPE__ unsigned char
+#define __UINT_LEAST16_TYPE__ short unsigned int
+#define __UINT_LEAST32_TYPE__ unsigned int
+#define __UINT_LEAST64_TYPE__ long unsigned int
+#define __INT_FAST8_TYPE__ int
+#define __INT_FAST16_TYPE__ int
+#define __INT_FAST32_TYPE__ int
+#define __INT_FAST64_TYPE__ long int
+#define __UINT_FAST8_TYPE__ unsigned int
+#define __UINT_FAST16_TYPE__ unsigned int
+#define __UINT_FAST32_TYPE__ unsigned int
+#define __UINT_FAST64_TYPE__ long unsigned int
+#define __INTPTR_TYPE__ long int
+#define __UINTPTR_TYPE__ long unsigned int
+#define __has_include(STR) __has_include__(STR)
+#define __has_include_next(STR) __has_include_next__(STR)
+#define __GXX_WEAK__ 1
+#define __DEPRECATED 1
+#define __GXX_EXPERIMENTAL_CXX0X__ 1
+#define __cpp_binary_literals 201304
+#define __cpp_unicode_characters 200704
+#define __cpp_raw_strings 200710
+#define __cpp_unicode_literals 200710
+#define __cpp_user_defined_literals 200809
+#define __cpp_lambdas 200907
+#define __cpp_range_based_for 200907
+#define __cpp_static_assert 200410
+#define __cpp_decltype 200707
+#define __cpp_attributes 200809
+#define __cpp_rvalue_reference 200610
+#define __cpp_rvalue_references 200610
+#define __cpp_variadic_templates 200704
+#define __cpp_initializer_lists 200806
+#define __cpp_delegating_constructors 200604
+#define __cpp_nsdmi 200809
+#define __cpp_inheriting_constructors 201511
+#define __cpp_ref_qualifiers 200710
+#define __cpp_alias_templates 200704
+#define __cpp_return_type_deduction 201304
+#define __cpp_init_captures 201304
+#define __cpp_generic_lambdas 201304
+#define __cpp_constexpr 201304
+#define __cpp_decltype_auto 201304
+#define __cpp_aggregate_nsdmi 201304
+#define __cpp_variable_templates 201304
+#define __cpp_digit_separators 201309
+#define __cpp_sized_deallocation 201309
+#define __cpp_threadsafe_static_init 200806
+#define __GXX_ABI_VERSION 1011
+#define __SCHAR_MAX__ 0x7f
+#define __SHRT_MAX__ 0x7fff
+#define __INT_MAX__ 0x7fffffff
+#define __LONG_MAX__ 0x7fffffffffffffffL
+#define __LONG_LONG_MAX__ 0x7fffffffffffffffLL
+#define __WCHAR_MAX__ 0xffffffffU
+#define __WCHAR_MIN__ 0U
+#define __WINT_MAX__ 0xffffffffU
+#define __WINT_MIN__ 0U
+#define __PTRDIFF_MAX__ 0x7fffffffffffffffL
+#define __SIZE_MAX__ 0xffffffffffffffffUL
+#define __SCHAR_WIDTH__ 8
+#define __SHRT_WIDTH__ 16
+#define __INT_WIDTH__ 32
+#define __LONG_WIDTH__ 64
+#define __LONG_LONG_WIDTH__ 64
+#define __WCHAR_WIDTH__ 32
+#define __WINT_WIDTH__ 32
+#define __PTRDIFF_WIDTH__ 64
+#define __SIZE_WIDTH__ 64
+#define __INTMAX_MAX__ 0x7fffffffffffffffL
+#define __INTMAX_C(c) c ## L
+#define __UINTMAX_MAX__ 0xffffffffffffffffUL
+#define __UINTMAX_C(c) c ## UL
+#define __INTMAX_WIDTH__ 64
+#define __SIG_ATOMIC_MAX__ 0x7fffffff
+#define __SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)
+#define __SIG_ATOMIC_WIDTH__ 32
+#define __INT8_MAX__ 0x7f
+#define __INT16_MAX__ 0x7fff
+#define __INT32_MAX__ 0x7fffffff
+#define __INT64_MAX__ 0x7fffffffffffffffL
+#define __UINT8_MAX__ 0xff
+#define __UINT16_MAX__ 0xffff
+#define __UINT32_MAX__ 0xffffffffU
+#define __UINT64_MAX__ 0xffffffffffffffffUL
+#define __INT_LEAST8_MAX__ 0x7f
+#define __INT8_C(c) c
+#define __INT_LEAST8_WIDTH__ 8
+#define __INT_LEAST16_MAX__ 0x7fff
+#define __INT16_C(c) c
+#define __INT_LEAST16_WIDTH__ 16
+#define __INT_LEAST32_MAX__ 0x7fffffff
+#define __INT32_C(c) c
+#define __INT_LEAST32_WIDTH__ 32
+#define __INT_LEAST64_MAX__ 0x7fffffffffffffffL
+#define __INT64_C(c) c ## L
+#define __INT_LEAST64_WIDTH__ 64
+#define __UINT_LEAST8_MAX__ 0xff
+#define __UINT8_C(c) c
+#define __UINT_LEAST16_MAX__ 0xffff
+#define __UINT16_C(c) c
+#define __UINT_LEAST32_MAX__ 0xffffffffU
+#define __UINT32_C(c) c ## U
+#define __UINT_LEAST64_MAX__ 0xffffffffffffffffUL
+#define __UINT64_C(c) c ## UL
+#define __INT_FAST8_MAX__ 0x7fffffff
+#define __INT_FAST8_WIDTH__ 32
+#define __INT_FAST16_MAX__ 0x7fffffff
+#define __INT_FAST16_WIDTH__ 32
+#define __INT_FAST32_MAX__ 0x7fffffff
+#define __INT_FAST32_WIDTH__ 32
+#define __INT_FAST64_MAX__ 0x7fffffffffffffffL
+#define __INT_FAST64_WIDTH__ 64
+#define __UINT_FAST8_MAX__ 0xffffffffU
+#define __UINT_FAST16_MAX__ 0xffffffffU
+#define __UINT_FAST32_MAX__ 0xffffffffU
+#define __UINT_FAST64_MAX__ 0xffffffffffffffffUL
+#define __INTPTR_MAX__ 0x7fffffffffffffffL
+#define __INTPTR_WIDTH__ 64
+#define __UINTPTR_MAX__ 0xffffffffffffffffUL
+#define __GCC_IEC_559 2
+#define __GCC_IEC_559_COMPLEX 2
+#define __FLT_EVAL_METHOD__ 0
+#define __FLT_EVAL_METHOD_TS_18661_3__ 0
+#define __DEC_EVAL_METHOD__ 2
+#define __FLT_RADIX__ 2
+#define __FLT_MANT_DIG__ 24
+#define __FLT_DIG__ 6
+#define __FLT_MIN_EXP__ (-125)
+#define __FLT_MIN_10_EXP__ (-37)
+#define __FLT_MAX_EXP__ 128
+#define __FLT_MAX_10_EXP__ 38
+#define __FLT_DECIMAL_DIG__ 9
+#define __FLT_MAX__ 3.40282346638528859811704183484516925e+38F
+#define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F
+#define __FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F
+#define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F
+#define __FLT_HAS_DENORM__ 1
+#define __FLT_HAS_INFINITY__ 1
+#define __FLT_HAS_QUIET_NAN__ 1
+#define __FP_FAST_FMAF 1
+#define __DBL_MANT_DIG__ 53
+#define __DBL_DIG__ 15
+#define __DBL_MIN_EXP__ (-1021)
+#define __DBL_MIN_10_EXP__ (-307)
+#define __DBL_MAX_EXP__ 1024
+#define __DBL_MAX_10_EXP__ 308
+#define __DBL_DECIMAL_DIG__ 17
+#define __DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)
+#define __DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)
+#define __DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)
+#define __DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)
+#define __DBL_HAS_DENORM__ 1
+#define __DBL_HAS_INFINITY__ 1
+#define __DBL_HAS_QUIET_NAN__ 1
+#define __FP_FAST_FMA 1
+#define __LDBL_MANT_DIG__ 113
+#define __LDBL_DIG__ 33
+#define __LDBL_MIN_EXP__ (-16381)
+#define __LDBL_MIN_10_EXP__ (-4931)
+#define __LDBL_MAX_EXP__ 16384
+#define __LDBL_MAX_10_EXP__ 4932
+#define __DECIMAL_DIG__ 36
+#define __LDBL_DECIMAL_DIG__ 36
+#define __LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L
+#define __LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L
+#define __LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L
+#define __LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L
+#define __LDBL_HAS_DENORM__ 1
+#define __LDBL_HAS_INFINITY__ 1
+#define __LDBL_HAS_QUIET_NAN__ 1
+#define __FLT16_MANT_DIG__ 11
+#define __FLT16_DIG__ 3
+#define __FLT16_MIN_EXP__ (-13)
+#define __FLT16_MIN_10_EXP__ (-4)
+#define __FLT16_MAX_EXP__ 16
+#define __FLT16_MAX_10_EXP__ 4
+#define __FLT16_DECIMAL_DIG__ 5
+#define __FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16
+#define __FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16
+#define __FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16
+#define __FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16
+#define __FLT16_HAS_DENORM__ 1
+#define __FLT16_HAS_INFINITY__ 1
+#define __FLT16_HAS_QUIET_NAN__ 1
+#define __FLT32_MANT_DIG__ 24
+#define __FLT32_DIG__ 6
+#define __FLT32_MIN_EXP__ (-125)
+#define __FLT32_MIN_10_EXP__ (-37)
+#define __FLT32_MAX_EXP__ 128
+#define __FLT32_MAX_10_EXP__ 38
+#define __FLT32_DECIMAL_DIG__ 9
+#define __FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32
+#define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32
+#define __FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32
+#define __FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32
+#define __FLT32_HAS_DENORM__ 1
+#define __FLT32_HAS_INFINITY__ 1
+#define __FLT32_HAS_QUIET_NAN__ 1
+#define __FLT64_MANT_DIG__ 53
+#define __FLT64_DIG__ 15
+#define __FLT64_MIN_EXP__ (-1021)
+#define __FLT64_MIN_10_EXP__ (-307)
+#define __FLT64_MAX_EXP__ 1024
+#define __FLT64_MAX_10_EXP__ 308
+#define __FLT64_DECIMAL_DIG__ 17
+#define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64
+#define __FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64
+#define __FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64
+#define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
+#define __FLT64_HAS_DENORM__ 1
+#define __FLT64_HAS_INFINITY__ 1
+#define __FLT64_HAS_QUIET_NAN__ 1
+#define __FLT128_MANT_DIG__ 113
+#define __FLT128_DIG__ 33
+#define __FLT128_MIN_EXP__ (-16381)
+#define __FLT128_MIN_10_EXP__ (-4931)
+#define __FLT128_MAX_EXP__ 16384
+#define __FLT128_MAX_10_EXP__ 4932
+#define __FLT128_DECIMAL_DIG__ 36
+#define __FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128
+#define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128
+#define __FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128
+#define __FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128
+#define __FLT128_HAS_DENORM__ 1
+#define __FLT128_HAS_INFINITY__ 1
+#define __FLT128_HAS_QUIET_NAN__ 1
+#define __FLT32X_MANT_DIG__ 53
+#define __FLT32X_DIG__ 15
+#define __FLT32X_MIN_EXP__ (-1021)
+#define __FLT32X_MIN_10_EXP__ (-307)
+#define __FLT32X_MAX_EXP__ 1024
+#define __FLT32X_MAX_10_EXP__ 308
+#define __FLT32X_DECIMAL_DIG__ 17
+#define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x
+#define __FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x
+#define __FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x
+#define __FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x
+#define __FLT32X_HAS_DENORM__ 1
+#define __FLT32X_HAS_INFINITY__ 1
+#define __FLT32X_HAS_QUIET_NAN__ 1
+#define __FLT64X_MANT_DIG__ 113
+#define __FLT64X_DIG__ 33
+#define __FLT64X_MIN_EXP__ (-16381)
+#define __FLT64X_MIN_10_EXP__ (-4931)
+#define __FLT64X_MAX_EXP__ 16384
+#define __FLT64X_MAX_10_EXP__ 4932
+#define __FLT64X_DECIMAL_DIG__ 36
+#define __FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x
+#define __FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x
+#define __FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x
+#define __FLT64X_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F64x
+#define __FLT64X_HAS_DENORM__ 1
+#define __FLT64X_HAS_INFINITY__ 1
+#define __FLT64X_HAS_QUIET_NAN__ 1
+#define __DEC32_MANT_DIG__ 7
+#define __DEC32_MIN_EXP__ (-94)
+#define __DEC32_MAX_EXP__ 97
+#define __DEC32_MIN__ 1E-95DF
+#define __DEC32_MAX__ 9.999999E96DF
+#define __DEC32_EPSILON__ 1E-6DF
+#define __DEC32_SUBNORMAL_MIN__ 0.000001E-95DF
+#define __DEC64_MANT_DIG__ 16
+#define __DEC64_MIN_EXP__ (-382)
+#define __DEC64_MAX_EXP__ 385
+#define __DEC64_MIN__ 1E-383DD
+#define __DEC64_MAX__ 9.999999999999999E384DD
+#define __DEC64_EPSILON__ 1E-15DD
+#define __DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD
+#define __DEC128_MANT_DIG__ 34
+#define __DEC128_MIN_EXP__ (-6142)
+#define __DEC128_MAX_EXP__ 6145
+#define __DEC128_MIN__ 1E-6143DL
+#define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
+#define __DEC128_EPSILON__ 1E-33DL
+#define __DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL
+#define __REGISTER_PREFIX__ 
+#define __USER_LABEL_PREFIX__ 
+#define __GNUC_STDC_INLINE__ 1
+#define __STRICT_ANSI__ 1
+#define __WCHAR_UNSIGNED__ 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1
+#define __GCC_ATOMIC_BOOL_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
+#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
+#define __GCC_ATOMIC_SHORT_LOCK_FREE 2
+#define __GCC_ATOMIC_INT_LOCK_FREE 2
+#define __GCC_ATOMIC_LONG_LOCK_FREE 2
+#define __GCC_ATOMIC_LLONG_LOCK_FREE 2
+#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1
+#define __GCC_ATOMIC_POINTER_LOCK_FREE 2
+#define __GCC_HAVE_DWARF2_CFI_ASM 1
+#define __PRAGMA_REDEFINE_EXTNAME 1
+#define __SIZEOF_INT128__ 16
+#define __SIZEOF_WCHAR_T__ 4
+#define __SIZEOF_WINT_T__ 4
+#define __SIZEOF_PTRDIFF_T__ 8
+#define __aarch64__ 1
+#define __ARM_64BIT_STATE 1
+#define __ARM_ARCH_ISA_A64 1
+#define __ARM_ALIGN_MAX_PWR 28
+#define __ARM_ALIGN_MAX_STACK_PWR 16
+#define __ARM_ARCH_8A 1
+#define __ARM_ARCH_PROFILE 65
+#define __ARM_FEATURE_CLZ 1
+#define __ARM_FEATURE_IDIV 1
+#define __ARM_FEATURE_UNALIGNED 1
+#define __ARM_PCS_AAPCS64 1
+#define __ARM_SIZEOF_WCHAR_T 4
+#undef __ARM_FP_FAST
+# 1 "<built-in>"
+#define __ARM_ARCH 8
+#define __ARM_SIZEOF_MINIMAL_ENUM 4
+#undef __AARCH64EB__
+# 1 "<built-in>"
+#undef __ARM_BIG_ENDIAN
+# 1 "<built-in>"
+#define __AARCH64EL__ 1
+#define __ARM_FEATURE_FMA 1
+#define __ARM_FP 14
+#define __ARM_FP16_FORMAT_IEEE 1
+#define __ARM_FP16_ARGS 1
+#undef __ARM_FEATURE_FP16_SCALAR_ARITHMETIC
+# 1 "<built-in>"
+#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC
+# 1 "<built-in>"
+#define __ARM_FEATURE_NUMERIC_MAXMIN 1
+#define __ARM_NEON 1
+#define __ARM_FEATURE_CRC32 1
+#undef __AARCH64_CMODEL_TINY__
+# 1 "<built-in>"
+#undef __AARCH64_CMODEL_SMALL__
+# 1 "<built-in>"
+#undef __AARCH64_CMODEL_LARGE__
+# 1 "<built-in>"
+#define __AARCH64_CMODEL_SMALL__ 1
+#undef _ILP32
+# 1 "<built-in>"
+#undef __ILP32__
+# 1 "<built-in>"
+#undef __ARM_FEATURE_CRYPTO
+# 1 "<built-in>"
+#define __ARM_FEATURE_QRDMX 1
+#undef __FLT_EVAL_METHOD__
+# 1 "<built-in>"
+#define __FLT_EVAL_METHOD__ 0
+#undef __FLT_EVAL_METHOD_C99__
+# 1 "<built-in>"
+#define __FLT_EVAL_METHOD_C99__ 0
+#define __ELF__ 1
+# 1 "<command-line>"
+#define ARCH_IS_host 1
+# 1 "./cxx_macros.h" 1
+
+
+#define CXX_MACROS_H__ 
+
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
+#define KERNEL_ADDRESS 0
+#define UART_BASE 0x09000000
+#define CONFIG_RAM_START 0x40000000
+#define CONFIG_RAM_SIZE 0x40000000
+#define ARCH_IS_qemu_virt_reloc_elf 
+#define PERIPHBASE 0x08000000
+# 1 "<command-line>" 2
+# 1 "../src/filesystem/fat/FAT32Debugger.cpp"
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h" 1
+# 10 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h"
+#define INCLUDE_FS_FAT32_INFO_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h"
+#define INCLUDE_FILESYSTEM_FAT_BPB_H_ 
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 1
+
+
+#define DEF_H__ 
+
+
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 1 3
+# 40 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 3
+#define _GLIBCXX_CSTDDEF 1
+
+       
+# 43 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 3
+
+#undef __need_wchar_t
+#undef __need_ptrdiff_t
+#undef __need_size_t
+#undef __need_NULL
+#undef __need_wint_t
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_CXX_CONFIG_H 1
+
+
+#define _GLIBCXX_RELEASE 7
+
+
+#define __GLIBCXX__ 20171011
+# 46 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_PURE __attribute__ ((__pure__))
+
+
+
+#define _GLIBCXX_CONST __attribute__ ((__const__))
+
+
+
+#define _GLIBCXX_NORETURN __attribute__ ((__noreturn__))
+# 67 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1
+
+
+#define _GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))
+# 81 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_DEPRECATED 1
+
+
+
+#define _GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))
+
+
+
+
+
+
+#define _GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ ("cxx11")))
+# 101 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_CONSTEXPR constexpr
+#define _GLIBCXX_USE_CONSTEXPR constexpr
+# 111 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX14_CONSTEXPR constexpr
+# 121 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX17_CONSTEXPR 
+
+
+
+
+
+
+
+#define _GLIBCXX17_INLINE 
+
+
+
+
+
+
+#define _GLIBCXX_NOEXCEPT noexcept
+#define _GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)
+#define _GLIBCXX_USE_NOEXCEPT noexcept
+#define _GLIBCXX_THROW(_EXC) 
+# 149 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT
+
+
+
+
+
+
+#define _GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())
+
+
+
+
+
+
+
+#define _GLIBCXX_NOEXCEPT_PARM 
+#define _GLIBCXX_NOEXCEPT_QUAL 
+# 178 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_EXTERN_TEMPLATE 1
+# 229 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+
+# 229 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+
+#define _GLIBCXX_USE_DUAL_ABI 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_CXX11_ABI 1
+
+
+
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+#define _GLIBCXX_NAMESPACE_CXX11 __cxx11::
+#define _GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {
+#define _GLIBCXX_END_NAMESPACE_CXX11 }
+#define _GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11
+# 272 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_INLINE_VERSION 0
+# 330 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_BEGIN_NAMESPACE_VERSION 
+#define _GLIBCXX_END_NAMESPACE_VERSION 
+# 403 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STD_C std
+#define _GLIBCXX_BEGIN_NAMESPACE_CONTAINER _GLIBCXX_BEGIN_NAMESPACE_VERSION
+#define _GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION
+# 415 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STD_A std
+#define _GLIBCXX_BEGIN_NAMESPACE_ALGO _GLIBCXX_BEGIN_NAMESPACE_VERSION
+#define _GLIBCXX_END_NAMESPACE_ALGO _GLIBCXX_END_NAMESPACE_VERSION
+
+
+
+
+#undef _GLIBCXX_LONG_DOUBLE_COMPAT
+# 434 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_NAMESPACE_LDBL 
+#define _GLIBCXX_BEGIN_NAMESPACE_LDBL 
+#define _GLIBCXX_END_NAMESPACE_LDBL 
+
+
+#define _GLIBCXX_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_NAMESPACE_CXX11
+#define _GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11
+#define _GLIBCXX_END_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_END_NAMESPACE_CXX11
+# 487 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define __glibcxx_assert(_Condition) 
+# 512 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_SYNCHRONIZATION_HAPPENS_BEFORE(A) 
+
+
+#define _GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) 
+
+
+
+#define _GLIBCXX_BEGIN_EXTERN_C extern "C" {
+#define _GLIBCXX_END_EXTERN_C }
+
+#define _GLIBCXX_USE_ALLOCATOR_NEW 1
+# 533 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\os_defines.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\os_defines.h" 3
+#define _GLIBCXX_OS_DEFINES 1
+# 534 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 2 3
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\cpu_defines.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\cpu_defines.h" 3
+#define _GLIBCXX_CPU_DEFINES 1
+# 537 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 2 3
+
+
+
+
+#define _GLIBCXX_PSEUDO_VISIBILITY(V) 
+
+
+
+
+
+
+#define _GLIBCXX_WEAK_DEFINITION 
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_WEAK_REF __GXX_WEAK__
+# 569 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_TXN_SAFE 
+#define _GLIBCXX_TXN_SAFE_DYN 
+# 588 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_FAST_MATH 0
+
+
+
+
+
+
+#define __N(msgid) (msgid)
+
+
+#undef min
+#undef max
+
+
+
+
+
+#define _GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH
+
+
+#define _GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX
+
+
+#define _GLIBCXX_USE_C99_STDIO _GLIBCXX11_USE_C99_STDIO
+
+
+#define _GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB
+
+
+#define _GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR
+# 642 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ACOSF 1
+# 651 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ASINF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_AS_SYMVER_DIRECTIVE 1
+
+
+#define _GLIBCXX_HAVE_ATAN2F 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_ATANF 1
+# 678 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_CEILF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_COMPLEX_H 1
+
+
+#define _GLIBCXX_HAVE_COSF 1
+
+
+#define _GLIBCXX_HAVE_COSHF 1
+# 705 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_EBADMSG 1
+
+
+#define _GLIBCXX_HAVE_ECANCELED 1
+
+
+#define _GLIBCXX_HAVE_ECHILD 1
+
+
+#define _GLIBCXX_HAVE_EIDRM 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_ENODATA 1
+
+
+#define _GLIBCXX_HAVE_ENOLINK 1
+
+
+#define _GLIBCXX_HAVE_ENOSPC 1
+
+
+#define _GLIBCXX_HAVE_ENOSR 1
+
+
+#define _GLIBCXX_HAVE_ENOSTR 1
+
+
+#define _GLIBCXX_HAVE_ENOTRECOVERABLE 1
+
+
+#define _GLIBCXX_HAVE_ENOTSUP 1
+
+
+#define _GLIBCXX_HAVE_EOVERFLOW 1
+
+
+#define _GLIBCXX_HAVE_EOWNERDEAD 1
+
+
+#define _GLIBCXX_HAVE_EPERM 1
+
+
+#define _GLIBCXX_HAVE_EPROTO 1
+
+
+#define _GLIBCXX_HAVE_ETIME 1
+
+
+#define _GLIBCXX_HAVE_ETIMEDOUT 1
+
+
+#define _GLIBCXX_HAVE_ETXTBSY 1
+
+
+#define _GLIBCXX_HAVE_EWOULDBLOCK 1
+# 771 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_EXPF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FABSF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FCNTL_H 1
+# 798 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_FLOAT_H 1
+
+
+#define _GLIBCXX_HAVE_FLOORF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FMODF 1
+# 819 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_FREXPF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_GETIPINFO 1
+
+
+#define _GLIBCXX_HAVE_GETS 1
+
+
+#define _GLIBCXX_HAVE_HYPOT 1
+# 840 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ICONV 1
+
+
+#define _GLIBCXX_HAVE_IEEEFP_H 1
+
+
+#define _GLIBCXX_HAVE_INT64_T 1
+
+
+#define _GLIBCXX_HAVE_INT64_T_LONG 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_INTTYPES_H 1
+# 876 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ISWBLANK 1
+
+
+#define _GLIBCXX_HAVE_LC_MESSAGES 1
+
+
+#define _GLIBCXX_HAVE_LDEXPF 1
+# 891 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_LIMIT_AS 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_DATA 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_FSIZE 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_RSS 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_VMEM 0
+
+
+
+
+
+#define _GLIBCXX_HAVE_LOCALE_H 1
+
+
+#define _GLIBCXX_HAVE_LOG10F 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_LOGF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_MACHINE_ENDIAN_H 1
+
+
+#define _GLIBCXX_HAVE_MACHINE_PARAM_H 1
+
+
+#define _GLIBCXX_HAVE_MBSTATE_T 1
+
+
+#define _GLIBCXX_HAVE_MEMALIGN 1
+
+
+#define _GLIBCXX_HAVE_MEMORY_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_MODFF 1
+# 963 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_POWF 1
+# 987 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SINF 1
+
+
+#define _GLIBCXX_HAVE_SINHF 1
+# 999 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SLEEP 1
+
+
+#define _GLIBCXX_HAVE_SQRTF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_STDALIGN_H 1
+
+
+#define _GLIBCXX_HAVE_STDBOOL_H 1
+
+
+#define _GLIBCXX_HAVE_STDINT_H 1
+
+
+#define _GLIBCXX_HAVE_STDLIB_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_STRERROR_R 1
+
+
+#define _GLIBCXX_HAVE_STRINGS_H 1
+
+
+#define _GLIBCXX_HAVE_STRING_H 1
+
+
+#define _GLIBCXX_HAVE_STRTOF 1
+# 1063 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SYS_PARAM_H 1
+
+
+#define _GLIBCXX_HAVE_SYS_RESOURCE_H 1
+# 1078 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SYS_STAT_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_SYS_TIME_H 1
+
+
+#define _GLIBCXX_HAVE_SYS_TYPES_H 1
+# 1096 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_S_ISREG 1
+
+
+#define _GLIBCXX_HAVE_TANF 1
+
+
+#define _GLIBCXX_HAVE_TANHF 1
+# 1111 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_TGMATH_H 1
+# 1120 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_UNISTD_H 1
+
+
+#define _GLIBCXX_HAVE_USLEEP 1
+
+
+#define _GLIBCXX_HAVE_UTIME_H 1
+
+
+#define _GLIBCXX_HAVE_VFWSCANF 1
+
+
+#define _GLIBCXX_HAVE_VSWSCANF 1
+
+
+#define _GLIBCXX_HAVE_VWSCANF 1
+
+
+#define _GLIBCXX_HAVE_WCHAR_H 1
+
+
+#define _GLIBCXX_HAVE_WCSTOF 1
+
+
+#define _GLIBCXX_HAVE_WCTYPE_H 1
+# 1352 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define LT_OBJDIR ".libs/"
+
+
+
+
+
+#define _GLIBCXX_PACKAGE_BUGREPORT ""
+
+
+#define _GLIBCXX_PACKAGE_NAME "package-unused"
+
+
+#define _GLIBCXX_PACKAGE_STRING "package-unused version-unused"
+
+
+#define _GLIBCXX_PACKAGE_TARNAME "libstdc++"
+
+
+#define _GLIBCXX_PACKAGE_URL ""
+
+
+#define _GLIBCXX_PACKAGE__GLIBCXX_VERSION "version-unused"
+# 1391 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define STDC_HEADERS 1
+# 1403 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX11_USE_C99_MATH 1
+
+
+
+#define _GLIBCXX11_USE_C99_STDIO 1
+
+
+
+#define _GLIBCXX11_USE_C99_STDLIB 1
+
+
+
+#define _GLIBCXX11_USE_C99_WCHAR 1
+# 1424 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX98_USE_C99_MATH 1
+
+
+
+#define _GLIBCXX98_USE_C99_STDIO 1
+
+
+
+#define _GLIBCXX98_USE_C99_STDLIB 1
+
+
+
+#define _GLIBCXX98_USE_C99_WCHAR 1
+
+
+#define _GLIBCXX_ATOMIC_BUILTINS 1
+
+
+
+
+
+
+#define _GLIBCXX_FULLY_DYNAMIC_STRING 0
+
+
+
+
+
+#define _GLIBCXX_HOSTED 1
+
+
+
+
+#define _GLIBCXX_MANGLE_SIZE_T m
+# 1472 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STDIO_EOF -1
+
+
+#define _GLIBCXX_STDIO_SEEK_CUR 1
+
+
+#define _GLIBCXX_STDIO_SEEK_END 2
+# 1510 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_C99_CTYPE_TR1 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_C99_INTTYPES_TR1 1
+
+
+
+#define _GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_C99_STDINT_TR1 1
+# 1547 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_FCHMOD 1
+
+
+#define _GLIBCXX_USE_FCHMODAT 1
+
+
+
+
+
+#define _GLIBCXX_USE_GETTIMEOFDAY 1
+
+
+
+
+
+#define _GLIBCXX_USE_INT128 1
+
+
+
+
+
+#define _GLIBCXX_USE_LONG_LONG 1
+# 1593 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_SC_NPROCESSORS_ONLN 1
+# 1608 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_TMPNAM 1
+
+
+
+
+
+
+#define _GLIBCXX_USE_WCHAR_T 1
+
+
+#define _GLIBCXX_VERBOSE 1
+
+
+
+
+
+#define _GTHREAD_USE_MUTEX_TIMEDLOCK 1
+# 50 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 1 3 4
+# 39 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define _STDDEF_H 
+#define _STDDEF_H_ 
+
+#define _ANSI_STDDEF_H 
+# 137 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define _PTRDIFF_T 
+#define _T_PTRDIFF_ 
+#define _T_PTRDIFF 
+#define __PTRDIFF_T 
+#define _PTRDIFF_T_ 
+#define _BSD_PTRDIFF_T_ 
+#define ___int_ptrdiff_t_h 
+#define _GCC_PTRDIFF_T 
+#define _PTRDIFF_T_DECLARED 
+
+
+
+typedef long int ptrdiff_t;
+# 161 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 187 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define __size_t__ 
+#define __SIZE_T__ 
+#define _SIZE_T 
+#define _SYS_SIZE_T_H 
+#define _T_SIZE_ 
+#define _T_SIZE 
+#define __SIZE_T 
+#define _SIZE_T_ 
+#define _BSD_SIZE_T_ 
+#define _SIZE_T_DEFINED_ 
+#define _SIZE_T_DEFINED 
+#define _BSD_SIZE_T_DEFINED_ 
+#define _SIZE_T_DECLARED 
+#define ___int_size_t_h 
+#define _GCC_SIZE_T 
+#define _SIZET_ 
+
+
+
+
+
+
+
+#define __size_t 
+
+
+
+
+
+typedef long unsigned int size_t;
+# 238 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_size_t
+# 267 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define __wchar_t__ 
+#define __WCHAR_T__ 
+#define _WCHAR_T 
+#define _T_WCHAR_ 
+#define _T_WCHAR 
+#define __WCHAR_T 
+#define _WCHAR_T_ 
+#define _BSD_WCHAR_T_ 
+#define _WCHAR_T_DEFINED_ 
+#define _WCHAR_T_DEFINED 
+#define _WCHAR_T_H 
+#define ___int_wchar_t_h 
+#define __INT_WCHAR_T_H 
+#define _GCC_WCHAR_T 
+#define _WCHAR_T_DECLARED 
+# 294 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef _BSD_WCHAR_T_
+# 347 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_wchar_t
+# 401 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef NULL
+
+#define NULL __null
+# 412 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+
+
+
+
+#define _GCC_MAX_ALIGN_T 
+
+
+
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+#define _GXX_NULLPTR_T 
+  typedef decltype(nullptr) nullptr_t;
+# 51 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 2
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 1 3
+# 30 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+#define _GLIBCXX_CSTDINT 1
+
+       
+# 33 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+# 41 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 1 3 4
+# 11 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 3 4
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint-gcc.h" 1 3 4
+# 29 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint-gcc.h" 3 4
+#define _GCC_STDINT_H 
+
+
+
+
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef int int_fast16_t;
+typedef int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+
+
+
+
+
+
+
+#undef INT8_MAX
+#define INT8_MAX __INT8_MAX__
+#undef INT8_MIN
+#define INT8_MIN (-INT8_MAX - 1)
+
+
+#undef UINT8_MAX
+#define UINT8_MAX __UINT8_MAX__
+
+
+#undef INT16_MAX
+#define INT16_MAX __INT16_MAX__
+#undef INT16_MIN
+#define INT16_MIN (-INT16_MAX - 1)
+
+
+#undef UINT16_MAX
+#define UINT16_MAX __UINT16_MAX__
+
+
+#undef INT32_MAX
+#define INT32_MAX __INT32_MAX__
+#undef INT32_MIN
+#define INT32_MIN (-INT32_MAX - 1)
+
+
+#undef UINT32_MAX
+#define UINT32_MAX __UINT32_MAX__
+
+
+#undef INT64_MAX
+#define INT64_MAX __INT64_MAX__
+#undef INT64_MIN
+#define INT64_MIN (-INT64_MAX - 1)
+
+
+#undef UINT64_MAX
+#define UINT64_MAX __UINT64_MAX__
+
+
+#undef INT_LEAST8_MAX
+#define INT_LEAST8_MAX __INT_LEAST8_MAX__
+#undef INT_LEAST8_MIN
+#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
+#undef UINT_LEAST8_MAX
+#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
+#undef INT_LEAST16_MAX
+#define INT_LEAST16_MAX __INT_LEAST16_MAX__
+#undef INT_LEAST16_MIN
+#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
+#undef UINT_LEAST16_MAX
+#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
+#undef INT_LEAST32_MAX
+#define INT_LEAST32_MAX __INT_LEAST32_MAX__
+#undef INT_LEAST32_MIN
+#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
+#undef UINT_LEAST32_MAX
+#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
+#undef INT_LEAST64_MAX
+#define INT_LEAST64_MAX __INT_LEAST64_MAX__
+#undef INT_LEAST64_MIN
+#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
+#undef UINT_LEAST64_MAX
+#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
+
+#undef INT_FAST8_MAX
+#define INT_FAST8_MAX __INT_FAST8_MAX__
+#undef INT_FAST8_MIN
+#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
+#undef UINT_FAST8_MAX
+#define UINT_FAST8_MAX __UINT_FAST8_MAX__
+#undef INT_FAST16_MAX
+#define INT_FAST16_MAX __INT_FAST16_MAX__
+#undef INT_FAST16_MIN
+#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
+#undef UINT_FAST16_MAX
+#define UINT_FAST16_MAX __UINT_FAST16_MAX__
+#undef INT_FAST32_MAX
+#define INT_FAST32_MAX __INT_FAST32_MAX__
+#undef INT_FAST32_MIN
+#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
+#undef UINT_FAST32_MAX
+#define UINT_FAST32_MAX __UINT_FAST32_MAX__
+#undef INT_FAST64_MAX
+#define INT_FAST64_MAX __INT_FAST64_MAX__
+#undef INT_FAST64_MIN
+#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
+#undef UINT_FAST64_MAX
+#define UINT_FAST64_MAX __UINT_FAST64_MAX__
+
+
+#undef INTPTR_MAX
+#define INTPTR_MAX __INTPTR_MAX__
+#undef INTPTR_MIN
+#define INTPTR_MIN (-INTPTR_MAX - 1)
+
+
+#undef UINTPTR_MAX
+#define UINTPTR_MAX __UINTPTR_MAX__
+
+
+#undef INTMAX_MAX
+#define INTMAX_MAX __INTMAX_MAX__
+#undef INTMAX_MIN
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+#undef UINTMAX_MAX
+#define UINTMAX_MAX __UINTMAX_MAX__
+
+
+
+#undef PTRDIFF_MAX
+#define PTRDIFF_MAX __PTRDIFF_MAX__
+#undef PTRDIFF_MIN
+#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
+
+#undef SIG_ATOMIC_MAX
+#define SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__
+#undef SIG_ATOMIC_MIN
+#define SIG_ATOMIC_MIN __SIG_ATOMIC_MIN__
+
+#undef SIZE_MAX
+#define SIZE_MAX __SIZE_MAX__
+
+#undef WCHAR_MAX
+#define WCHAR_MAX __WCHAR_MAX__
+#undef WCHAR_MIN
+#define WCHAR_MIN __WCHAR_MIN__
+
+#undef WINT_MAX
+#define WINT_MAX __WINT_MAX__
+#undef WINT_MIN
+#define WINT_MIN __WINT_MIN__
+
+
+
+
+
+
+
+#undef INT8_C
+#define INT8_C(c) __INT8_C(c)
+#undef INT16_C
+#define INT16_C(c) __INT16_C(c)
+#undef INT32_C
+#define INT32_C(c) __INT32_C(c)
+#undef INT64_C
+#define INT64_C(c) __INT64_C(c)
+#undef UINT8_C
+#define UINT8_C(c) __UINT8_C(c)
+#undef UINT16_C
+#define UINT16_C(c) __UINT16_C(c)
+#undef UINT32_C
+#define UINT32_C(c) __UINT32_C(c)
+#undef UINT64_C
+#define UINT64_C(c) __UINT64_C(c)
+#undef INTMAX_C
+#define INTMAX_C(c) __INTMAX_C(c)
+#undef UINTMAX_C
+#define UINTMAX_C(c) __UINTMAX_C(c)
+# 12 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 2 3 4
+
+#define _GCC_WRAP_STDINT_H 
+# 42 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 10 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 2
+
+#define AS_MACRO __attribute__((always_inline)) inline
+#define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
+#define NULL_CHAR '\0'
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h"
+#define INFO "[INFO] "
+#define WARNING "[WARNING] "
+#define FATAL "[FATAL] "
+
+
+
+
+# 28 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h"
+extern const char EMPTY_STR[1];
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+
+
+#define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
+
+
+#define __stringify_1(x) #x
+#define __stringify(x) __stringify_1(x)
+
+
+
+
+#define HEX32(a,b) 0x ##a ##b
+#define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
+
+
+#define BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d
+#define BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h
+# 11 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h" 2
+# 25 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h"
+class FAT_BPB{
+public:
+ enum FATType{
+  FAT12,FAT16,FAT32,UNKNOWN
+ };
+
+ enum {SEC_PRESENT = 0, SEC_COPY = 6 };
+
+
+
+
+
+ uint8_t BS_jmpBoot[3];
+
+
+ char BS_OEMName[8];
+
+
+ uint16_t bytesPerSec;
+
+
+ uint8_t secPerClus;
+
+
+ uint16_t rsvdSecCnt;
+
+
+ uint8_t numFATs;
+
+
+
+ uint16_t rootEntCnt;
+
+
+
+ uint16_t totSec16;
+
+
+
+ uint8_t media;
+
+
+
+ uint16_t FATSz16;
+
+
+ uint16_t secPerTrk;
+
+
+ uint16_t numHeads;
+
+
+ uint32_t hiddSec;
+
+
+
+ uint32_t totSec32;
+
+ size_t uni_getRootDirSecCount()const;
+ FAT_BPB::FATType getFATType()const;
+
+}__attribute__((packed));
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATDirEntry.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATDirEntry.h"
+#define INCLUDE_FILESYSTEM_FAT_FATDIRENTRY_H_ 
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/String.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/String.h"
+#define INCLUDE_DATA_STRUCTURES_STRING_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 1
+# 10 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h"
+#define INCLUDE_VECTOR_H_ 
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list" 3
+#define _INITIALIZER_LIST 
+
+       
+# 34 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list" 3
+
+
+
+
+
+#pragma GCC visibility push(default)
+
+
+
+
+# 43 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list" 3
+namespace std
+{
+
+  template<class _E>
+    class initializer_list
+    {
+    public:
+      typedef _E value_type;
+      typedef const _E& reference;
+      typedef const _E& const_reference;
+      typedef size_t size_type;
+      typedef const _E* iterator;
+      typedef const _E* const_iterator;
+
+    private:
+      iterator _M_array;
+      size_type _M_len;
+
+
+      constexpr initializer_list(const_iterator __a, size_type __l)
+      : _M_array(__a), _M_len(__l) { }
+
+    public:
+      constexpr initializer_list() noexcept
+      : _M_array(0), _M_len(0) { }
+
+
+      constexpr size_type
+      size() const noexcept { return _M_len; }
+
+
+      constexpr const_iterator
+      begin() const noexcept { return _M_array; }
+
+
+      constexpr const_iterator
+      end() const noexcept { return begin() + size(); }
+    };
+
+
+
+
+
+
+  template<class _Tp>
+    constexpr const _Tp*
+    begin(initializer_list<_Tp> __ils) noexcept
+    { return __ils.begin(); }
+
+
+
+
+
+
+  template<class _Tp>
+    constexpr const _Tp*
+    end(initializer_list<_Tp> __ils) noexcept
+    { return __ils.end(); }
+}
+
+#pragma GCC visibility pop
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h"
+#define INCLUDE_PRINTK_H_ 
+
+
+
+
+
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+};
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h" 2
+# 44 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 2
+# 15 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/io/SectorReader.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/io/SectorReader.h"
+#define INCLUDE_IO_SECTORREADER_H_ 
+
+
+
+class SectorReader{
+public:
+ size_t read(size_t secIndex,void *dst,size_t maxNumSec);
+ size_t write(size_t secIndex,const void *src,size_t maxNumSec);
+};
+# 16 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 2
+
+
+template <class T>
+class Vector{
+public:
+ enum { MINIMAL_CAPACITY = 8};
+ using ValueType = T;
+ using SizeType = size_t;
+
+ Vector(size_t initSize=0);
+ Vector(const std::initializer_list<T> &il);
+ Vector<T> & operator=(const std::initializer_list<T> &il)=delete;
+ Vector(const Vector<T> & vec)=delete;
+ Vector<T> & operator=(const Vector<T> & vec)=delete;
+ Vector(Vector<T> && vec);
+ Vector<T>& operator=(Vector<T> && vec);
+ ~Vector();
+
+ const T& operator[](size_t i)const;
+ T &operator[](size_t i);
+
+
+
+
+ T popBack();
+ void pushBack(T t);
+ T *getData();
+ const T* getData()const;
+ size_t getSize()const;
+ size_t getCapacity()const;
+ bool empty()const;
+ void clear();
+ void erase(size_t i);
+ Vector<T>& append(const Vector<T> &vec,size_t len=0xffffffffffffffffUL);
+
+
+
+
+ size_t insert(size_t i,const T & t);
+
+
+
+
+ bool resize(size_t newSize);
+
+private:
+ bool resizeCapacity(size_t capacity);
+ bool adjustCapacityForOneMore();
+
+ bool adjustCapacityForOneLess();
+
+ static size_t getIncrementalSize(size_t curSize);
+private:
+ T *data;
+ size_t capacity;
+ size_t size;
+};
+
+
+template <class T>
+Output & operator<<(Output &out,const Vector<T> & vec);
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/Vector.h" 1
+
+
+
+
+
+
+
+#define INCLUDE_DATA_STRUCTURES_VECTOR_TEMPLATE_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 1
+# 11 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/Vector.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h"
+#define INCLUDE_KERNEL_H_ 
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+#define INCLUDE_MEMORYMANAGER_H_ 
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+#define INCLUDE_MEMORYCHUNK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h"
+#define INCLUDE_GENERIC_UTIL_H_ 
+
+
+
+
+void delayCPU(size_t i);
+void delayCPU(size_t i,size_t j);
+void haltCPU();
+
+
+
+
+
+extern const char digitsMap[];
+
+
+
+size_t itob(size_t i,char *dst,size_t size);
+size_t itod(size_t i,char *dst,size_t size);
+size_t itox(size_t i,char *dst,size_t size);
+
+size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+
+
+
+
+
+void reverse(char *str,size_t size);
+
+
+
+const char *strOffset(const char *p,size_t offset);
+
+
+
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+}
+
+
+__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 2
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+class MemoryChunk{
+public:
+
+ enum { ValidBits = 6, IsEndBits=1,AllocatedBits=1,SizeBits=38,NextBaseBits=18};
+ enum { MaxSinlgeMoveBytes = (1 << ValidBits) };
+ MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd);
+ bool isAllocated() const;
+ void setAllocated(bool allocated);
+ bool isEnd() const;
+ void setEnd(bool end);
+ const MemoryChunk* getNext()const;
+ MemoryChunk* getNext();
+ size_t getSize() const;
+ void setSize(size_t size);
+ void* getDataPtr();
+ const void * getDataPtr()const;
+ void* getDataEnd();
+ const void * getDataEnd()const;
+ uint64_t getNextBaseFromEnd() const;
+ void setNextBaseFromEnd(uint64_t nextBaseFromEnd);
+ uint64_t getNextValidChunkOffset() const;
+ void setNextValidChunkOffset(uint64_t nextValidChunkOffset );
+# 54 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+ MemoryChunk* moveAhead(size_t moveSize);
+
+ size_t moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const;
+
+ bool split(size_t splitSize);
+
+
+
+ void mergeTrailingsUnallocated();
+
+
+private:
+ uint64_t nextValidChunkOffset :ValidBits;
+ uint64_t endMark :IsEndBits;
+ uint64_t allocated :AllocatedBits;
+ uint64_t size :SizeBits;
+ uint64_t nextBaseFromEnd :NextBaseBits;
+}__attribute__((packed));
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 2
+# 25 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+class MemoryManager{
+public:
+ enum { CHUNK_SIZE = sizeof(MemoryChunk), MINIMAL_ALLOC_SIZE = sizeof(size_t), MINIMAL_ALIGNMENT = sizeof(size_t) };
+ MemoryManager()=delete;
+
+
+
+ MemoryManager(void *base,size_t size,bool initChunks=true);
+public:
+
+ size_t normalizeAllocSize(size_t n);
+
+
+ void* allocate(size_t n);
+
+
+ void* allocate(size_t n,size_t alignment);
+ template <class T>
+ T allocateAs(size_t n);
+ template <class T>
+ T allocateAs(size_t n,size_t alignment);
+# 55 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+ bool tryIncrease(void *origin,size_t incSize);
+ bool tryDecrease(void *origin,size_t decSize);
+# 65 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+ void* reallocate(void *origin,size_t newSize,size_t oldSize = 0xffffffffffffffffUL);
+
+ template <class T>
+ T reallocateAs(void *origin,size_t newSize,size_t oldSize = 0xffffffffffffffffUL);
+
+
+
+
+
+ void deallocate(void *p);
+
+
+
+
+
+ size_t getAllocatedLength(void *origin)const;
+
+
+private:
+ MemoryChunk *headChunk;
+ const char *base;
+ const size_t size;
+};
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h" 2
+
+
+template <class T>
+T MemoryManager::allocateAs(size_t n)
+{
+ return reinterpret_cast<T>(this->allocate(n));
+}
+template <class T>
+T MemoryManager::allocateAs(size_t n,size_t alignment)
+{
+ return reinterpret_cast<T>(this->allocate(n,alignment));
+}
+
+template <class T>
+T MemoryManager::reallocateAs(void *origin,size_t newSize,size_t oldSize)
+{
+ return reinterpret_cast<T>(reallocate(origin, newSize,oldSize));
+}
+# 90 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 2
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h" 2
+
+
+extern Output kout;
+
+
+extern MemoryManager mman;
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/Vector.h" 2
+
+
+template <class T>
+Vector<T>::Vector(size_t initSize)
+ :data(nullptr),capacity(0),size(0)
+ {
+ if(resizeCapacity(initSize <= MINIMAL_CAPACITY ? MINIMAL_CAPACITY : initSize))
+ {
+  size = initSize;
+ }
+ }
+template <class T>
+Vector<T>::Vector(const std::initializer_list<T> &il)
+ :Vector()
+{
+ for(auto & i : il)
+  pushBack(i);
+}
+
+template <class T>
+Vector<T>::Vector(Vector<T> && vec)
+ :data(vec.data),capacity(vec.capacity),size(vec.size)
+{
+ vec.data = nullptr;
+ vec.capacity = 0;
+ vec.size = 0;
+}
+
+template <class T>
+Vector<T>& Vector<T>::operator=(Vector<T> && vec)
+{
+ data=vec.data;
+ capacity=vec.capacity;
+ size = vec.size;
+ vec.data = nullptr;
+ vec.capacity = 0;
+ vec.size = 0;
+ return *this;
+}
+
+template <class T>
+Vector<T>::~Vector()
+{
+ if(data!=nullptr)
+ {
+  mman.deallocate(data);
+  data=nullptr;
+ }
+}
+
+template <class T>
+const T& Vector<T>::operator[](size_t i)const
+{
+ return data[i];
+}
+template <class T>
+T &Vector<T>::operator[](size_t i)
+{
+ return data[i];
+}
+template <class T>
+T Vector<T>::popBack()
+{
+ if(adjustCapacityForOneLess())
+  if(size>0)
+   return data[--size];
+ return data[0];
+}
+template <class T>
+void Vector<T>::pushBack(T t)
+{
+ if(adjustCapacityForOneMore())
+ {
+  ++size;
+  data[size-1]=t;
+ }
+}
+
+template <class T>
+T *Vector<T>::getData()
+{
+ return data;
+}
+
+template <class T>
+const T* Vector<T>::getData()const
+{
+ return data;
+}
+
+template <class T>
+size_t Vector<T>::getSize()const
+{
+ return size;
+}
+
+template <class T>
+size_t Vector<T>::getCapacity()const
+{
+ return capacity;
+}
+
+template <class T>
+bool Vector<T>::empty()const
+{
+ return size==0;
+}
+
+template <class T>
+void Vector<T>::clear()
+{
+ size = 0;
+ resize(MINIMAL_CAPACITY);
+}
+template <class T>
+void Vector<T>::erase(size_t i)
+{
+ if(i<size && adjustCapacityForOneLess())
+ {
+  --size;
+  for(size_t j=i;j!=size;++j)
+   data[j]=data[j+1];
+ }
+}
+
+template <class T>
+Vector<T>& Vector<T>::append(const Vector<T> &vec,size_t len)
+{
+ if(len > vec.getSize() )len=vec.getSize();
+ for(size_t i=0;i!=vec.getSize();++i)
+  pushBack(vec[i]);
+ return *this;
+}
+template <class T>
+size_t Vector<T>::insert(size_t i,const T & t)
+{
+ if(i > size || !adjustCapacityForOneLess())
+  return 0xffffffffffffffffUL;
+ ++size;
+ for(size_t j = size-1;j!=i;--j)
+  data[j] = data[j-1];
+ data[i]=t;
+ return i;
+}
+
+template <class T>
+bool Vector<T>::resize(size_t newSize)
+{
+ size_t desiredCapacity = (newSize < MINIMAL_CAPACITY?MINIMAL_CAPACITY:newSize);
+ if(resizeCapacity(desiredCapacity))
+  size=newSize;
+ return (size==newSize && capacity==desiredCapacity);
+}
+
+template <class T>
+bool Vector<T>::resizeCapacity(size_t capacity)
+{
+ if(this->capacity == capacity)
+  return true;
+ mman.reallocate(data, capacity * sizeof(T));
+ T *newData = mman.allocateAs<T*>(capacity * sizeof(T));
+ if(!newData)
+  return false;
+
+ for(size_t i=0;i!=size;++i)
+  newData[i]=data[i];
+ mman.deallocate(data);
+
+
+ data = newData;
+ this->capacity = capacity;
+ return true;
+}
+
+template <class T>
+bool Vector<T>::adjustCapacityForOneMore()
+{
+ if(size+1 > capacity)
+  return resizeCapacity(getIncrementalSize(capacity));
+ return true;
+}
+
+template <class T>
+bool Vector<T>::adjustCapacityForOneLess()
+{
+
+
+ size_t advisedCapacity = (size==0?MINIMAL_CAPACITY : getIncrementalSize(size-1) );
+ if(advisedCapacity < MINIMAL_CAPACITY)
+  advisedCapacity=MINIMAL_CAPACITY;
+ if(advisedCapacity < capacity)
+  return resizeCapacity(advisedCapacity);
+ return true;
+
+}
+
+template <class T>
+size_t Vector<T>::getIncrementalSize(size_t curSize)
+{
+ return (curSize * 3 / 2);
+}
+
+template <class T>
+Output & operator<<(Output &out,const Vector<T> & vec)
+{
+ for(size_t i=0;i!=vec.getSize();++i)
+  out << vec[i];
+ return out;
+}
+# 82 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/Vector.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/String.h" 2
+
+
+class String
+ :public Vector<char>
+{
+public:
+ using Vector<char>::append;
+
+
+ String(size_t initSize=0);
+ String(String &&s);
+
+ String(const char *s);
+ String &operator=(const char *s);
+ String & append(const char* s,size_t len=0xffffffffffffffffUL);
+};
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATDirEntry.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/StringRef.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/StringRef.h"
+#define INCLUDE_DATA_STRUCTURES_STRINGREF_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/VectorRef.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/VectorRef.h"
+#define INCLUDE_DATA_STRUCTURES_VECTORREF_H_ 
+
+
+
+
+
+template <class T>
+class VectorRef{
+public:
+ VectorRef()=delete;
+ VectorRef(const T *data,size_t len);
+ VectorRef(const Vector<T> vec,size_t len=0xffffffffffffffffUL,size_t offset=0);
+ const T * getData()const;
+ size_t getSize()const;
+ void setData(const T * data);
+ void setSize(size_t size);
+ const T& operator[](size_t i)const;
+
+private:
+ const T *data;
+ size_t size;
+};
+
+template <class T>
+Output & operator<<(Output & out,const VectorRef<T> &ref);
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/VectorRef.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/VectorRef.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_DATA_STRUCTURES_VECTORREF_H_ 
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/VectorRef.h" 1
+# 11 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/data_structures/VectorRef.h" 2
+
+
+
+template <class T>
+VectorRef<T>::VectorRef(const T *data,size_t len)
+ :data(data),size(len){}
+
+template <class T>
+VectorRef<T>::VectorRef(const Vector<T> vec,size_t len,size_t offset)
+ :data(vec.getData() + offset),size(len==0xffffffffffffffffUL?vec.getSize():len) {}
+
+template <class T>
+const T * VectorRef<T>::getData()const
+{
+ return data;
+}
+
+template <class T>
+size_t VectorRef<T>::getSize()const
+{
+ return size;
+}
+
+
+template <class T>
+void VectorRef<T>::setData(const T * data)
+{
+ this->data = data;
+}
+template <class T>
+void VectorRef<T>::setSize(size_t size)
+{
+ this->size = size;
+}
+
+template <class T>
+const T& VectorRef<T>::operator[](size_t i)const
+{
+ return data[i];
+}
+
+
+
+template <class T>
+Output & operator<<(Output & out,const VectorRef<T> &ref)
+{
+ for(size_t i=0;i!=ref.getSize();++i)
+  out << ref[i];
+ return out;
+}
+# 36 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/VectorRef.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/data_structures/StringRef.h" 2
+
+
+
+
+class StringRef
+ :public VectorRef<char>
+{
+public:
+ StringRef(const void *nullTermStr);
+ StringRef(const void *p,size_t len);
+ StringRef(const String &s);
+};
+
+Output & operator<<(Output & out,const StringRef ref);
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATDirEntry.h" 2
+
+class FATDirEntry{
+public:
+ enum : char { ATTR_MASK = 0x3f };
+ enum : char { ATTR_READ_ONLY=0x01,ATTR_HIDDEN=0x02,ATTR_SYSTEM=0x04,
+  ATTR_VOLUME_ID = 0x08,
+  ATTR_DIRECTORY = 0x10,
+  ATTR_ARCHIVE = 0x20,
+  ATTR_LONG_NAME = (ATTR_READ_ONLY | ATTR_HIDDEN | ATTR_SYSTEM | ATTR_VOLUME_ID)
+ };
+ char name[11];
+ uint8_t attr;
+ uint8_t NTRes;
+ uint8_t crtTimeTenth;
+ uint16_t crtTime;
+ uint16_t crtDate;
+ uint16_t lstAccData;
+ uint16_t fstClusHI;
+ uint16_t wrtTime;
+ uint16_t wrtDate;
+ uint16_t fstClusLO;
+ uint32_t fileSize;
+
+ static uint8_t chksum(char *shortName);
+ bool uni_isLongNameEntry()const;
+ bool isVolumeID()const;
+
+
+ bool shortNameEquals(const StringRef &mainPart,const StringRef &extPart)const;
+
+ uint32_t getFirstClusIndex()const;
+
+
+
+
+
+
+ String getLongName()const;
+ String getShortName()const;
+
+private:
+ static bool trailingSpaceNameEquals(const StringRef & hasSpaceStr,size_t hasSpaceStrLen,const StringRef & nullTermStr);
+ static size_t findFirstNonSpace(const char *s,size_t len);
+ static size_t findLastNonSpace(const char *s,size_t len);
+} __attribute__((packed));
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32ExtBPB.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32ExtBPB.h"
+#define INCLUDE_FILESYSTEM_FAT_FAT32EXTBPB_H_ 
+
+
+
+
+
+
+
+class FAT32ExtBPB
+ :public FAT_BPB
+{
+public:
+ enum { BIT_MASK = 0x0FFFFFFF ,ENTRY_SIZE = 32 };
+
+
+ uint32_t FATSz32;
+
+
+
+
+
+ uint16_t extFlags;
+
+
+ uint16_t FSVer;
+
+
+
+ uint32_t rootClus;
+
+
+
+ uint16_t FSInfo;
+
+
+ uint16_t bkBootSe;
+
+
+
+ uint8_t reserved[12];
+
+
+
+ uint8_t BS_DrvNum;
+
+
+
+ uint8_t BS_Reserved1;
+
+
+
+ uint8_t BS_BootSig;
+ uint32_t BS_VolID;
+ char BS_VolLab[11];
+
+
+
+ char BS_FilSysType[8];
+
+
+ uint8_t undefined[420];
+
+
+ uint16_t Signature_word;
+
+ size_t uni_getFatSize()const;
+
+ size_t uni_getTotalSecCount()const;
+
+ size_t uni_getDataRegionSectorCount()const;
+
+ size_t uni_getClustersCount()const;
+
+
+ size_t getClusterEntryOffset(size_t fatNo,size_t n)const;
+ size_t getClusterFirstSector(size_t n)const;
+
+ size_t getRootDirFirstSector()const;
+
+ FAT_BPB::FATType uni_determineFATType()const;
+ FAT_BPB::FATType getFATType()const;
+ uint32_t calculateFATSz32(size_t diskSize)const;
+
+ size_t getClusterByteSize()const;
+}__attribute__((packed));
+# 15 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATLongNameEntry.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FATLongNameEntry.h"
+#define INCLUDE_FILESYSTEM_FAT_FATLONGNAMEENTRY_H_ 
+
+
+
+
+
+
+class FATLongNameEntry{
+public:
+ uint8_t ord;
+ char name1[10];
+ uint8_t attr;
+ uint8_t type;
+ uint8_t chksum;
+ char name2[12];
+ uint16_t fstClusLO;
+ char name3[4];
+
+ static constexpr size_t getNameRequiredCapacity(){ return (sizeof(name1)+sizeof(name2)+sizeof(name3))/2 + 1; }
+
+ String getAsAsciiName(bool skipHeadingSpace=true)const;
+ bool uni_isLongNameEntry()const;
+ const FATLongNameEntry *getLastAppearEntry()const;
+ const FATDirEntry *getOwnerDirectoryEntry()const;
+ FATLongNameEntry *getLastAppearEntry();
+ FATDirEntry *getOwnerDirectoryEntry();
+
+ bool nameEqulasAsciiName(const StringRef &asciiNullTermStr,bool allowAsciiStrMore)const;
+ bool nameEqulasAsciiNameUpto(const FATLongNameEntry *lastCmpEntr,const StringRef &asciiNullTermStr,bool allowAsciiStrMore)const;
+ static constexpr size_t getNameBytesCount(){ return sizeof(name1) + sizeof(name2) + sizeof(name3); }
+
+
+private:
+ size_t lookupFirstNullChar()const;
+
+
+
+
+ static bool unicodeNameMatchesAsciiName(const char *unicodeName,size_t unicodeNameBytesLen,const StringRef & asciiNullTermStr,bool allowAsciiStrMore);
+ static char unicodeCharToAsciiChar(const void *p);
+}__attribute__((packed));
+# 16 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT32Debugger.h" 2
+
+
+
+
+
+
+class Fat32Dubugger{
+public:
+ static void dumpBPBTypeInformation();
+ static void dumpBPB(FAT_BPB *bpb);
+ static void dumpExtBPB32(FAT32ExtBPB *bpb);
+ static void dumpDirectoryEntry(FATDirEntry dentry);
+ static void dumpDirNames(FATDirEntry dentry);
+ static void dumpDirNames(FATDirEntry *dentry,size_t count);
+};
+# 2 "../src/filesystem/fat/FAT32Debugger.cpp" 2
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/IntegerFormatter.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/IntegerFormatter.h"
+#define INCLUDE_INTEGERINTEGERFORMATTER_H_ 
+
+
+
+
+
+template <int Base>
+class IntegerFormatter{
+public:
+ IntegerFormatter(size_t num);
+ IntegerFormatter(const void *p);
+ char *format()const;
+private:
+ size_t num;
+};
+
+
+using Hex=IntegerFormatter<16>;
+using Dec=IntegerFormatter<10>;
+using Bin=IntegerFormatter<2>;
+
+template <int Base>
+Output & operator<<(Output & out,const IntegerFormatter<Base> &hf);
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/IntegerFormatter.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/IntegerFormatter.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_INTEGERFORMATTER_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/IntegerFormatter.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/IntegerFormatter.h" 2
+
+
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(size_t num)
+ :num(num){}
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(const void *p)
+ :num(reinterpret_cast<size_t>(p)){}
+
+template <int Base>
+char *IntegerFormatter<Base>::format()const
+{
+ itos(num, Base, koutBuf, koutBufSize);
+ return koutBuf;
+}
+
+template <int Base>
+Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
+{
+ out << hf.format();
+ return out;
+}
+# 36 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/IntegerFormatter.h" 2
+# 7 "../src/filesystem/fat/FAT32Debugger.cpp" 2
+
+
+void Fat32Dubugger::dumpBPBTypeInformation()
+{
+ kout << "sizeof(BPB) = " << sizeof(FAT_BPB) << "\n";
+ kout << "sizeof(ExtBPB32) = " << sizeof(FAT32ExtBPB) << "\n";
+ kout << "offsetof(ExtBPB32,BS_jmpBoot) = " << 
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              BS_jmpBoot
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 13 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_OEMName) = " << 
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              BS_OEMName
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 14 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,bytesPerSec) = " << 
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                               __builtin_offsetof (
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                               FAT32ExtBPB
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                               , 
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                               bytesPerSec
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                               ) 
+# 15 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                                 << "\n" ;
+ kout << "offsetof(ExtBPB32,secPerClus) = " << 
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              secPerClus
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 16 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,rsvdSecCnt) = " << 
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              rsvdSecCnt
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 17 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,numFATs) = " << 
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           __builtin_offsetof (
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FAT32ExtBPB
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           , 
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           numFATs
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           ) 
+# 18 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                         << "\n" ;
+ kout << "offsetof(ExtBPB32,rootEntCnt) = " << 
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              rootEntCnt
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 19 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,totSec16) = " << 
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            totSec16
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 20 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,media) = " << 
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         __builtin_offsetof (
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                         FAT32ExtBPB
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         , 
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                         media
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         ) 
+# 21 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                     << "\n" ;
+ kout << "offsetof(ExtBPB32,FATSz16) = " << 
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           __builtin_offsetof (
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FAT32ExtBPB
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           , 
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FATSz16
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           ) 
+# 22 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                         << "\n" ;
+ kout << "offsetof(ExtBPB32,secPerTrk) = " << 
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             __builtin_offsetof (
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             FAT32ExtBPB
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             , 
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             secPerTrk
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             ) 
+# 23 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                             << "\n" ;
+ kout << "offsetof(ExtBPB32,numHeads) = " << 
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            numHeads
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 24 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,hiddSec) = " << 
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           __builtin_offsetof (
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FAT32ExtBPB
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           , 
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           hiddSec
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           ) 
+# 25 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                         << "\n" ;
+ kout << "offsetof(ExtBPB32,totSec32) = " << 
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            totSec32
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 26 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,FATSz32) = " << 
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           __builtin_offsetof (
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FAT32ExtBPB
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           , 
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                           FATSz32
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                           ) 
+# 27 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                         << "\n" ;
+ kout << "offsetof(ExtBPB32,extFlags) = " << 
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            extFlags
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 28 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,FSVer) = " << 
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         __builtin_offsetof (
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                         FAT32ExtBPB
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         , 
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                         FSVer
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                         ) 
+# 29 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                     << "\n" ;
+ kout << "offsetof(ExtBPB32,rootClus) = " << 
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            rootClus
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 30 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,FSInfo) = " << 
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                          __builtin_offsetof (
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                          FAT32ExtBPB
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                          , 
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                          FSInfo
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                          ) 
+# 31 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                       << "\n" ;
+ kout << "offsetof(ExtBPB32,bkBootSe) = " << 
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            bkBootSe
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 32 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,reserved) = " << 
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            reserved
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 33 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_DrvNum) = " << 
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             __builtin_offsetof (
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             FAT32ExtBPB
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             , 
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             BS_DrvNum
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             ) 
+# 34 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                             << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_Reserved1) = " << 
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                __builtin_offsetof (
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                FAT32ExtBPB
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                , 
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                BS_Reserved1
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                ) 
+# 35 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                                   << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_BootSig) = " << 
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              __builtin_offsetof (
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              FAT32ExtBPB
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              , 
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                              BS_BootSig
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                              ) 
+# 36 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                               << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_VolID) = " << 
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            __builtin_offsetof (
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            FAT32ExtBPB
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            , 
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                            BS_VolID
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                            ) 
+# 37 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                           << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_VolLab) = " << 
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             __builtin_offsetof (
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             FAT32ExtBPB
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             , 
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             BS_VolLab
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             ) 
+# 38 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                             << "\n" ;
+ kout << "offsetof(ExtBPB32,BS_FilSysType) = " << 
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                 __builtin_offsetof (
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                 FAT32ExtBPB
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                 , 
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                 BS_FilSysType
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                 ) 
+# 39 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                                     << "\n" ;
+ kout << "offsetof(ExtBPB32,undefined) = " << 
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             __builtin_offsetof (
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             FAT32ExtBPB
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             , 
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                             undefined
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                             ) 
+# 40 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                             << "\n" ;
+ kout << "offsetof(ExtBPB32,Signature_word) = " << 
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                  __builtin_offsetof (
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                  FAT32ExtBPB
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                  , 
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                  Signature_word
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp" 3 4
+                                                  ) 
+# 41 "../src/filesystem/fat/FAT32Debugger.cpp"
+                                                                                       << "\n" ;
+
+}
+void Fat32Dubugger::dumpBPB(FAT_BPB *bpb)
+{
+ kout << "bpb->bytesPerSec = " << bpb->bytesPerSec << "\n";
+ kout << "bpb->secPerClus = " << bpb->secPerClus << "\n";
+ kout << "bpb->rsvdSecCnt = " << bpb->rsvdSecCnt << "\n";
+ kout << "bpb->numFATs = " << bpb->numFATs << "\n";
+ kout << "bpb->rootEntCnt = " << bpb->rootEntCnt << "\n";
+ kout << "bpb->totSec16 = " << bpb->totSec16 << "\n";
+ kout << "bpb->media = " << bpb->media << "\n";
+ kout << "bpb->FATSz16 = " << bpb->FATSz16 << "\n";
+ kout << "bpb->secPerTrk = " << bpb->secPerTrk << "\n";
+ kout << "bpb->numHeads = " << bpb->numHeads << "\n";
+ kout << "bpb->hiddSec = " << bpb->hiddSec << "\n";
+ kout << "bpb->totSec32 = " << bpb->totSec32 << "\n";
+}
+
+void Fat32Dubugger::dumpExtBPB32(FAT32ExtBPB *bpb)
+{
+ dumpBPB(bpb);
+ kout << "bpb->FATSz32 = " << bpb->FATSz32 << "\n";
+ kout << "bpb->extFlags = " << bpb->extFlags << "\n";
+ kout << "bpb->FSVer = " << bpb->FSVer << "\n";
+ kout << "bpb->rootClus = " << bpb->rootClus << "\n";
+ kout << "bpb->FSInfo = " << bpb->FSInfo << "\n";
+ kout << "bpb->bkBootSe = " << bpb->bkBootSe << "\n";
+ kout << "bpb->reserved = " << bpb->reserved << "\n";
+ kout << "bpb->BS_DrvNum = " << bpb->BS_DrvNum << "\n";
+ kout << "bpb->BS_Reserved1 = " << bpb->BS_Reserved1 << "\n";
+ kout << "bpb->BS_BootSig = " << bpb->BS_BootSig << "\n";
+ kout << "bpb->BS_VolID = " << bpb->BS_VolID << "\n";
+ kout << "bpb->BS_VolLab = " << bpb->BS_VolLab << "\n";
+ kout << "bpb->BS_FilSysType = " << bpb->BS_FilSysType << "\n";
+ kout << "bpb->undefined = " << bpb->undefined << "\n";
+ kout << "bpb->Signature_word = " << bpb->Signature_word << "\n";
+
+}
+
+void Fat32Dubugger::dumpDirectoryEntry(FATDirEntry dentry)
+{
+ if( dentry.uni_isLongNameEntry())
+ {
+  FATLongNameEntry lentry = *reinterpret_cast<FATLongNameEntry*>(&dentry);
+  kout << "lentry.ord = " << Hex(lentry.ord) << "\n";
+  kout << "lentry.name1 = " << StringRef(lentry.name1,sizeof(lentry.name1)) << "\n";
+  kout << "lentry.attr = " << Hex(lentry.attr) << "\n";
+  kout << "lentry.type = " << Hex(lentry.type) << "\n";
+  kout << "lentry.chksum = " << Hex(lentry.chksum) << "\n";
+  kout << "lentry.name2 = " << StringRef(lentry.name2,sizeof(lentry.name2))<< "\n";
+  kout << "lentry.fstClusLO = " << Hex(lentry.fstClusLO) << "\n";
+  kout << "lentry.name3 = " << StringRef(lentry.name3,sizeof(lentry.name3))<< "\n";
+ }else{
+  kout << "dentry.name = " << StringRef(dentry.name,11) << "\n";
+  kout << "dentry.attr = " << Hex(dentry.attr) << "\n";
+  kout << "dentry.NTRes = " << Hex(dentry.NTRes) << "\n";
+  kout << "dentry.crtTimeTenth = " << dentry.crtTimeTenth << "\n";
+  kout << "dentry.crtTime = " << dentry.crtTime << "\n";
+  kout << "dentry.crtDate = " << dentry.crtDate << "\n";
+  kout << "dentry.lstAccData = " << dentry.lstAccData << "\n";
+  kout << "dentry.fstClusHI = " << Hex(dentry.fstClusHI) << "\n";
+  kout << "dentry.wrtTime = " << dentry.wrtTime << "\n";
+  kout << "dentry.wrtDate = " << dentry.wrtDate << "\n";
+  kout << "dentry.fstClusLO = " << Hex(dentry.fstClusLO) << "\n";
+  kout << "dentry.fileSize = " << Hex(dentry.fileSize) << "\n";
+ }
+}
+
+void Fat32Dubugger::dumpDirNames(FATDirEntry dentry)
+{
+ if( dentry.uni_isLongNameEntry())
+ {
+  FATLongNameEntry lentry = *reinterpret_cast<FATLongNameEntry*>(&dentry);
+  kout << "lentry.name = " << lentry.getAsAsciiName() << "\n";
+ }else{
+  kout << "dentry.name = " << StringRef(dentry.name,sizeof(dentry.name)) << "\n";
+ }
+}
+
+void Fat32Dubugger::dumpDirNames(FATDirEntry *dentry,size_t count)
+{
+ for(size_t i=0;i!=count;++i)
+  dumpDirNames(dentry[i]);
+}

@@ -1,0 +1,5264 @@
+# 1 "../src/memory/MemoryChunk.cpp"
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\Debug-qemu_virt_reloc_elf//"
+# 1 "<built-in>"
+#define __STDC__ 1
+#define __cplusplus 201402L
+#define __STDC_UTF_16__ 1
+#define __STDC_UTF_32__ 1
+#define __STDC_HOSTED__ 0
+#define __GNUC__ 7
+#define __GNUC_MINOR__ 2
+#define __GNUC_PATCHLEVEL__ 1
+#define __VERSION__ "7.2.1 20171011"
+#define __LINARO_RELEASE__ 201711
+#define __LINARO_SPIN__ 0
+#define __ATOMIC_RELAXED 0
+#define __ATOMIC_SEQ_CST 5
+#define __ATOMIC_ACQUIRE 2
+#define __ATOMIC_RELEASE 3
+#define __ATOMIC_ACQ_REL 4
+#define __ATOMIC_CONSUME 1
+#define __pic__ 2
+#define __PIC__ 2
+#define __OPTIMIZE__ 1
+#define __FINITE_MATH_ONLY__ 0
+#define _LP64 1
+#define __LP64__ 1
+#define __SIZEOF_INT__ 4
+#define __SIZEOF_LONG__ 8
+#define __SIZEOF_LONG_LONG__ 8
+#define __SIZEOF_SHORT__ 2
+#define __SIZEOF_FLOAT__ 4
+#define __SIZEOF_DOUBLE__ 8
+#define __SIZEOF_LONG_DOUBLE__ 16
+#define __SIZEOF_SIZE_T__ 8
+#define __CHAR_BIT__ 8
+#define __BIGGEST_ALIGNMENT__ 16
+#define __ORDER_LITTLE_ENDIAN__ 1234
+#define __ORDER_BIG_ENDIAN__ 4321
+#define __ORDER_PDP_ENDIAN__ 3412
+#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
+#define __FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__
+#define __SIZEOF_POINTER__ 8
+#define __GNUG__ 7
+#define __SIZE_TYPE__ long unsigned int
+#define __PTRDIFF_TYPE__ long int
+#define __WCHAR_TYPE__ unsigned int
+#define __WINT_TYPE__ unsigned int
+#define __INTMAX_TYPE__ long int
+#define __UINTMAX_TYPE__ long unsigned int
+#define __CHAR16_TYPE__ short unsigned int
+#define __CHAR32_TYPE__ unsigned int
+#define __SIG_ATOMIC_TYPE__ int
+#define __INT8_TYPE__ signed char
+#define __INT16_TYPE__ short int
+#define __INT32_TYPE__ int
+#define __INT64_TYPE__ long int
+#define __UINT8_TYPE__ unsigned char
+#define __UINT16_TYPE__ short unsigned int
+#define __UINT32_TYPE__ unsigned int
+#define __UINT64_TYPE__ long unsigned int
+#define __INT_LEAST8_TYPE__ signed char
+#define __INT_LEAST16_TYPE__ short int
+#define __INT_LEAST32_TYPE__ int
+#define __INT_LEAST64_TYPE__ long int
+#define __UINT_LEAST8_TYPE__ unsigned char
+#define __UINT_LEAST16_TYPE__ short unsigned int
+#define __UINT_LEAST32_TYPE__ unsigned int
+#define __UINT_LEAST64_TYPE__ long unsigned int
+#define __INT_FAST8_TYPE__ int
+#define __INT_FAST16_TYPE__ int
+#define __INT_FAST32_TYPE__ int
+#define __INT_FAST64_TYPE__ long int
+#define __UINT_FAST8_TYPE__ unsigned int
+#define __UINT_FAST16_TYPE__ unsigned int
+#define __UINT_FAST32_TYPE__ unsigned int
+#define __UINT_FAST64_TYPE__ long unsigned int
+#define __INTPTR_TYPE__ long int
+#define __UINTPTR_TYPE__ long unsigned int
+#define __has_include(STR) __has_include__(STR)
+#define __has_include_next(STR) __has_include_next__(STR)
+#define __GXX_WEAK__ 1
+#define __DEPRECATED 1
+#define __GXX_EXPERIMENTAL_CXX0X__ 1
+#define __cpp_binary_literals 201304
+#define __cpp_unicode_characters 200704
+#define __cpp_raw_strings 200710
+#define __cpp_unicode_literals 200710
+#define __cpp_user_defined_literals 200809
+#define __cpp_lambdas 200907
+#define __cpp_range_based_for 200907
+#define __cpp_static_assert 200410
+#define __cpp_decltype 200707
+#define __cpp_attributes 200809
+#define __cpp_rvalue_reference 200610
+#define __cpp_rvalue_references 200610
+#define __cpp_variadic_templates 200704
+#define __cpp_initializer_lists 200806
+#define __cpp_delegating_constructors 200604
+#define __cpp_nsdmi 200809
+#define __cpp_inheriting_constructors 201511
+#define __cpp_ref_qualifiers 200710
+#define __cpp_alias_templates 200704
+#define __cpp_return_type_deduction 201304
+#define __cpp_init_captures 201304
+#define __cpp_generic_lambdas 201304
+#define __cpp_constexpr 201304
+#define __cpp_decltype_auto 201304
+#define __cpp_aggregate_nsdmi 201304
+#define __cpp_variable_templates 201304
+#define __cpp_digit_separators 201309
+#define __cpp_sized_deallocation 201309
+#define __cpp_threadsafe_static_init 200806
+#define __GXX_ABI_VERSION 1011
+#define __SCHAR_MAX__ 0x7f
+#define __SHRT_MAX__ 0x7fff
+#define __INT_MAX__ 0x7fffffff
+#define __LONG_MAX__ 0x7fffffffffffffffL
+#define __LONG_LONG_MAX__ 0x7fffffffffffffffLL
+#define __WCHAR_MAX__ 0xffffffffU
+#define __WCHAR_MIN__ 0U
+#define __WINT_MAX__ 0xffffffffU
+#define __WINT_MIN__ 0U
+#define __PTRDIFF_MAX__ 0x7fffffffffffffffL
+#define __SIZE_MAX__ 0xffffffffffffffffUL
+#define __SCHAR_WIDTH__ 8
+#define __SHRT_WIDTH__ 16
+#define __INT_WIDTH__ 32
+#define __LONG_WIDTH__ 64
+#define __LONG_LONG_WIDTH__ 64
+#define __WCHAR_WIDTH__ 32
+#define __WINT_WIDTH__ 32
+#define __PTRDIFF_WIDTH__ 64
+#define __SIZE_WIDTH__ 64
+#define __INTMAX_MAX__ 0x7fffffffffffffffL
+#define __INTMAX_C(c) c ## L
+#define __UINTMAX_MAX__ 0xffffffffffffffffUL
+#define __UINTMAX_C(c) c ## UL
+#define __INTMAX_WIDTH__ 64
+#define __SIG_ATOMIC_MAX__ 0x7fffffff
+#define __SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)
+#define __SIG_ATOMIC_WIDTH__ 32
+#define __INT8_MAX__ 0x7f
+#define __INT16_MAX__ 0x7fff
+#define __INT32_MAX__ 0x7fffffff
+#define __INT64_MAX__ 0x7fffffffffffffffL
+#define __UINT8_MAX__ 0xff
+#define __UINT16_MAX__ 0xffff
+#define __UINT32_MAX__ 0xffffffffU
+#define __UINT64_MAX__ 0xffffffffffffffffUL
+#define __INT_LEAST8_MAX__ 0x7f
+#define __INT8_C(c) c
+#define __INT_LEAST8_WIDTH__ 8
+#define __INT_LEAST16_MAX__ 0x7fff
+#define __INT16_C(c) c
+#define __INT_LEAST16_WIDTH__ 16
+#define __INT_LEAST32_MAX__ 0x7fffffff
+#define __INT32_C(c) c
+#define __INT_LEAST32_WIDTH__ 32
+#define __INT_LEAST64_MAX__ 0x7fffffffffffffffL
+#define __INT64_C(c) c ## L
+#define __INT_LEAST64_WIDTH__ 64
+#define __UINT_LEAST8_MAX__ 0xff
+#define __UINT8_C(c) c
+#define __UINT_LEAST16_MAX__ 0xffff
+#define __UINT16_C(c) c
+#define __UINT_LEAST32_MAX__ 0xffffffffU
+#define __UINT32_C(c) c ## U
+#define __UINT_LEAST64_MAX__ 0xffffffffffffffffUL
+#define __UINT64_C(c) c ## UL
+#define __INT_FAST8_MAX__ 0x7fffffff
+#define __INT_FAST8_WIDTH__ 32
+#define __INT_FAST16_MAX__ 0x7fffffff
+#define __INT_FAST16_WIDTH__ 32
+#define __INT_FAST32_MAX__ 0x7fffffff
+#define __INT_FAST32_WIDTH__ 32
+#define __INT_FAST64_MAX__ 0x7fffffffffffffffL
+#define __INT_FAST64_WIDTH__ 64
+#define __UINT_FAST8_MAX__ 0xffffffffU
+#define __UINT_FAST16_MAX__ 0xffffffffU
+#define __UINT_FAST32_MAX__ 0xffffffffU
+#define __UINT_FAST64_MAX__ 0xffffffffffffffffUL
+#define __INTPTR_MAX__ 0x7fffffffffffffffL
+#define __INTPTR_WIDTH__ 64
+#define __UINTPTR_MAX__ 0xffffffffffffffffUL
+#define __GCC_IEC_559 2
+#define __GCC_IEC_559_COMPLEX 2
+#define __FLT_EVAL_METHOD__ 0
+#define __FLT_EVAL_METHOD_TS_18661_3__ 0
+#define __DEC_EVAL_METHOD__ 2
+#define __FLT_RADIX__ 2
+#define __FLT_MANT_DIG__ 24
+#define __FLT_DIG__ 6
+#define __FLT_MIN_EXP__ (-125)
+#define __FLT_MIN_10_EXP__ (-37)
+#define __FLT_MAX_EXP__ 128
+#define __FLT_MAX_10_EXP__ 38
+#define __FLT_DECIMAL_DIG__ 9
+#define __FLT_MAX__ 3.40282346638528859811704183484516925e+38F
+#define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F
+#define __FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F
+#define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F
+#define __FLT_HAS_DENORM__ 1
+#define __FLT_HAS_INFINITY__ 1
+#define __FLT_HAS_QUIET_NAN__ 1
+#define __FP_FAST_FMAF 1
+#define __DBL_MANT_DIG__ 53
+#define __DBL_DIG__ 15
+#define __DBL_MIN_EXP__ (-1021)
+#define __DBL_MIN_10_EXP__ (-307)
+#define __DBL_MAX_EXP__ 1024
+#define __DBL_MAX_10_EXP__ 308
+#define __DBL_DECIMAL_DIG__ 17
+#define __DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)
+#define __DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)
+#define __DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)
+#define __DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)
+#define __DBL_HAS_DENORM__ 1
+#define __DBL_HAS_INFINITY__ 1
+#define __DBL_HAS_QUIET_NAN__ 1
+#define __FP_FAST_FMA 1
+#define __LDBL_MANT_DIG__ 113
+#define __LDBL_DIG__ 33
+#define __LDBL_MIN_EXP__ (-16381)
+#define __LDBL_MIN_10_EXP__ (-4931)
+#define __LDBL_MAX_EXP__ 16384
+#define __LDBL_MAX_10_EXP__ 4932
+#define __DECIMAL_DIG__ 36
+#define __LDBL_DECIMAL_DIG__ 36
+#define __LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L
+#define __LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L
+#define __LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L
+#define __LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L
+#define __LDBL_HAS_DENORM__ 1
+#define __LDBL_HAS_INFINITY__ 1
+#define __LDBL_HAS_QUIET_NAN__ 1
+#define __FLT16_MANT_DIG__ 11
+#define __FLT16_DIG__ 3
+#define __FLT16_MIN_EXP__ (-13)
+#define __FLT16_MIN_10_EXP__ (-4)
+#define __FLT16_MAX_EXP__ 16
+#define __FLT16_MAX_10_EXP__ 4
+#define __FLT16_DECIMAL_DIG__ 5
+#define __FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16
+#define __FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16
+#define __FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16
+#define __FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16
+#define __FLT16_HAS_DENORM__ 1
+#define __FLT16_HAS_INFINITY__ 1
+#define __FLT16_HAS_QUIET_NAN__ 1
+#define __FLT32_MANT_DIG__ 24
+#define __FLT32_DIG__ 6
+#define __FLT32_MIN_EXP__ (-125)
+#define __FLT32_MIN_10_EXP__ (-37)
+#define __FLT32_MAX_EXP__ 128
+#define __FLT32_MAX_10_EXP__ 38
+#define __FLT32_DECIMAL_DIG__ 9
+#define __FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32
+#define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32
+#define __FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32
+#define __FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32
+#define __FLT32_HAS_DENORM__ 1
+#define __FLT32_HAS_INFINITY__ 1
+#define __FLT32_HAS_QUIET_NAN__ 1
+#define __FLT64_MANT_DIG__ 53
+#define __FLT64_DIG__ 15
+#define __FLT64_MIN_EXP__ (-1021)
+#define __FLT64_MIN_10_EXP__ (-307)
+#define __FLT64_MAX_EXP__ 1024
+#define __FLT64_MAX_10_EXP__ 308
+#define __FLT64_DECIMAL_DIG__ 17
+#define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64
+#define __FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64
+#define __FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64
+#define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
+#define __FLT64_HAS_DENORM__ 1
+#define __FLT64_HAS_INFINITY__ 1
+#define __FLT64_HAS_QUIET_NAN__ 1
+#define __FLT128_MANT_DIG__ 113
+#define __FLT128_DIG__ 33
+#define __FLT128_MIN_EXP__ (-16381)
+#define __FLT128_MIN_10_EXP__ (-4931)
+#define __FLT128_MAX_EXP__ 16384
+#define __FLT128_MAX_10_EXP__ 4932
+#define __FLT128_DECIMAL_DIG__ 36
+#define __FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128
+#define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128
+#define __FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128
+#define __FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128
+#define __FLT128_HAS_DENORM__ 1
+#define __FLT128_HAS_INFINITY__ 1
+#define __FLT128_HAS_QUIET_NAN__ 1
+#define __FLT32X_MANT_DIG__ 53
+#define __FLT32X_DIG__ 15
+#define __FLT32X_MIN_EXP__ (-1021)
+#define __FLT32X_MIN_10_EXP__ (-307)
+#define __FLT32X_MAX_EXP__ 1024
+#define __FLT32X_MAX_10_EXP__ 308
+#define __FLT32X_DECIMAL_DIG__ 17
+#define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x
+#define __FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x
+#define __FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x
+#define __FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x
+#define __FLT32X_HAS_DENORM__ 1
+#define __FLT32X_HAS_INFINITY__ 1
+#define __FLT32X_HAS_QUIET_NAN__ 1
+#define __FLT64X_MANT_DIG__ 113
+#define __FLT64X_DIG__ 33
+#define __FLT64X_MIN_EXP__ (-16381)
+#define __FLT64X_MIN_10_EXP__ (-4931)
+#define __FLT64X_MAX_EXP__ 16384
+#define __FLT64X_MAX_10_EXP__ 4932
+#define __FLT64X_DECIMAL_DIG__ 36
+#define __FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x
+#define __FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x
+#define __FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x
+#define __FLT64X_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F64x
+#define __FLT64X_HAS_DENORM__ 1
+#define __FLT64X_HAS_INFINITY__ 1
+#define __FLT64X_HAS_QUIET_NAN__ 1
+#define __DEC32_MANT_DIG__ 7
+#define __DEC32_MIN_EXP__ (-94)
+#define __DEC32_MAX_EXP__ 97
+#define __DEC32_MIN__ 1E-95DF
+#define __DEC32_MAX__ 9.999999E96DF
+#define __DEC32_EPSILON__ 1E-6DF
+#define __DEC32_SUBNORMAL_MIN__ 0.000001E-95DF
+#define __DEC64_MANT_DIG__ 16
+#define __DEC64_MIN_EXP__ (-382)
+#define __DEC64_MAX_EXP__ 385
+#define __DEC64_MIN__ 1E-383DD
+#define __DEC64_MAX__ 9.999999999999999E384DD
+#define __DEC64_EPSILON__ 1E-15DD
+#define __DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD
+#define __DEC128_MANT_DIG__ 34
+#define __DEC128_MIN_EXP__ (-6142)
+#define __DEC128_MAX_EXP__ 6145
+#define __DEC128_MIN__ 1E-6143DL
+#define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
+#define __DEC128_EPSILON__ 1E-33DL
+#define __DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL
+#define __REGISTER_PREFIX__ 
+#define __USER_LABEL_PREFIX__ 
+#define __GNUC_STDC_INLINE__ 1
+#define __STRICT_ANSI__ 1
+#define __WCHAR_UNSIGNED__ 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1
+#define __GCC_ATOMIC_BOOL_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
+#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
+#define __GCC_ATOMIC_SHORT_LOCK_FREE 2
+#define __GCC_ATOMIC_INT_LOCK_FREE 2
+#define __GCC_ATOMIC_LONG_LOCK_FREE 2
+#define __GCC_ATOMIC_LLONG_LOCK_FREE 2
+#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1
+#define __GCC_ATOMIC_POINTER_LOCK_FREE 2
+#define __GCC_HAVE_DWARF2_CFI_ASM 1
+#define __PRAGMA_REDEFINE_EXTNAME 1
+#define __SIZEOF_INT128__ 16
+#define __SIZEOF_WCHAR_T__ 4
+#define __SIZEOF_WINT_T__ 4
+#define __SIZEOF_PTRDIFF_T__ 8
+#define __aarch64__ 1
+#define __ARM_64BIT_STATE 1
+#define __ARM_ARCH_ISA_A64 1
+#define __ARM_ALIGN_MAX_PWR 28
+#define __ARM_ALIGN_MAX_STACK_PWR 16
+#define __ARM_ARCH_8A 1
+#define __ARM_ARCH_PROFILE 65
+#define __ARM_FEATURE_CLZ 1
+#define __ARM_FEATURE_IDIV 1
+#define __ARM_FEATURE_UNALIGNED 1
+#define __ARM_PCS_AAPCS64 1
+#define __ARM_SIZEOF_WCHAR_T 4
+#undef __ARM_FP_FAST
+# 1 "<built-in>"
+#define __ARM_ARCH 8
+#define __ARM_SIZEOF_MINIMAL_ENUM 4
+#undef __AARCH64EB__
+# 1 "<built-in>"
+#undef __ARM_BIG_ENDIAN
+# 1 "<built-in>"
+#define __AARCH64EL__ 1
+#define __ARM_FEATURE_FMA 1
+#define __ARM_FP 14
+#define __ARM_FP16_FORMAT_IEEE 1
+#define __ARM_FP16_ARGS 1
+#undef __ARM_FEATURE_FP16_SCALAR_ARITHMETIC
+# 1 "<built-in>"
+#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC
+# 1 "<built-in>"
+#define __ARM_FEATURE_NUMERIC_MAXMIN 1
+#define __ARM_NEON 1
+#undef __ARM_FEATURE_CRC32
+# 1 "<built-in>"
+#undef __AARCH64_CMODEL_TINY__
+# 1 "<built-in>"
+#undef __AARCH64_CMODEL_SMALL__
+# 1 "<built-in>"
+#undef __AARCH64_CMODEL_LARGE__
+# 1 "<built-in>"
+#define __AARCH64_CMODEL_SMALL__ 1
+#undef _ILP32
+# 1 "<built-in>"
+#undef __ILP32__
+# 1 "<built-in>"
+#undef __ARM_FEATURE_CRYPTO
+# 1 "<built-in>"
+#undef __ARM_FEATURE_QRDMX
+# 1 "<built-in>"
+#undef __FLT_EVAL_METHOD__
+# 1 "<built-in>"
+#define __FLT_EVAL_METHOD__ 0
+#undef __FLT_EVAL_METHOD_C99__
+# 1 "<built-in>"
+#define __FLT_EVAL_METHOD_C99__ 0
+#define __ELF__ 1
+# 1 "<command-line>"
+#define ARCH_IS_host 1
+# 1 "./cxx_macros.h" 1
+
+
+#define CXX_MACROS_H__ 
+
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
+#define KERNEL_ADDRESS 0
+#define UART_BASE 0x09000000
+#define CONFIG_RAM_START 0x40000000
+#define CONFIG_RAM_SIZE 0x40000000
+#define ARCH_IS_qemu_virt_reloc_elf 
+#define PERIPHBASE 0x08000000
+# 1 "<command-line>" 2
+# 1 "../src/memory/MemoryChunk.cpp"
+
+
+
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+#define INCLUDE_MEMORYCHUNK_H_ 
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 1
+
+
+#define DEF_H__ 
+
+
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 1 3
+# 40 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 3
+#define _GLIBCXX_CSTDDEF 1
+
+       
+# 43 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 3
+
+#undef __need_wchar_t
+#undef __need_ptrdiff_t
+#undef __need_size_t
+#undef __need_NULL
+#undef __need_wint_t
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_CXX_CONFIG_H 1
+
+
+#define _GLIBCXX_RELEASE 7
+
+
+#define __GLIBCXX__ 20171011
+# 46 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_PURE __attribute__ ((__pure__))
+
+
+
+#define _GLIBCXX_CONST __attribute__ ((__const__))
+
+
+
+#define _GLIBCXX_NORETURN __attribute__ ((__noreturn__))
+# 67 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1
+
+
+#define _GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))
+# 81 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_DEPRECATED 1
+
+
+
+#define _GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))
+
+
+
+
+
+
+#define _GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ ("cxx11")))
+# 101 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_CONSTEXPR constexpr
+#define _GLIBCXX_USE_CONSTEXPR constexpr
+# 111 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX14_CONSTEXPR constexpr
+# 121 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX17_CONSTEXPR 
+
+
+
+
+
+
+
+#define _GLIBCXX17_INLINE 
+
+
+
+
+
+
+#define _GLIBCXX_NOEXCEPT noexcept
+#define _GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)
+#define _GLIBCXX_USE_NOEXCEPT noexcept
+#define _GLIBCXX_THROW(_EXC) 
+# 149 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT
+
+
+
+
+
+
+#define _GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())
+
+
+
+
+
+
+
+#define _GLIBCXX_NOEXCEPT_PARM 
+#define _GLIBCXX_NOEXCEPT_QUAL 
+# 178 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_EXTERN_TEMPLATE 1
+# 229 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+
+# 229 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+
+#define _GLIBCXX_USE_DUAL_ABI 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_CXX11_ABI 1
+
+
+
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+#define _GLIBCXX_NAMESPACE_CXX11 __cxx11::
+#define _GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {
+#define _GLIBCXX_END_NAMESPACE_CXX11 }
+#define _GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11
+# 272 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_INLINE_VERSION 0
+# 330 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_BEGIN_NAMESPACE_VERSION 
+#define _GLIBCXX_END_NAMESPACE_VERSION 
+# 403 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STD_C std
+#define _GLIBCXX_BEGIN_NAMESPACE_CONTAINER _GLIBCXX_BEGIN_NAMESPACE_VERSION
+#define _GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION
+# 415 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STD_A std
+#define _GLIBCXX_BEGIN_NAMESPACE_ALGO _GLIBCXX_BEGIN_NAMESPACE_VERSION
+#define _GLIBCXX_END_NAMESPACE_ALGO _GLIBCXX_END_NAMESPACE_VERSION
+
+
+
+
+#undef _GLIBCXX_LONG_DOUBLE_COMPAT
+# 434 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_NAMESPACE_LDBL 
+#define _GLIBCXX_BEGIN_NAMESPACE_LDBL 
+#define _GLIBCXX_END_NAMESPACE_LDBL 
+
+
+#define _GLIBCXX_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_NAMESPACE_CXX11
+#define _GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11
+#define _GLIBCXX_END_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_END_NAMESPACE_CXX11
+# 487 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define __glibcxx_assert(_Condition) 
+# 512 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_SYNCHRONIZATION_HAPPENS_BEFORE(A) 
+
+
+#define _GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) 
+
+
+
+#define _GLIBCXX_BEGIN_EXTERN_C extern "C" {
+#define _GLIBCXX_END_EXTERN_C }
+
+#define _GLIBCXX_USE_ALLOCATOR_NEW 1
+# 533 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\os_defines.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\os_defines.h" 3
+#define _GLIBCXX_OS_DEFINES 1
+# 534 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 2 3
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\cpu_defines.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\cpu_defines.h" 3
+#define _GLIBCXX_CPU_DEFINES 1
+# 537 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 2 3
+
+
+
+
+#define _GLIBCXX_PSEUDO_VISIBILITY(V) 
+
+
+
+
+
+
+#define _GLIBCXX_WEAK_DEFINITION 
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_WEAK_REF __GXX_WEAK__
+# 569 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_TXN_SAFE 
+#define _GLIBCXX_TXN_SAFE_DYN 
+# 588 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_FAST_MATH 0
+
+
+
+
+
+
+#define __N(msgid) (msgid)
+
+
+#undef min
+#undef max
+
+
+
+
+
+#define _GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH
+
+
+#define _GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX
+
+
+#define _GLIBCXX_USE_C99_STDIO _GLIBCXX11_USE_C99_STDIO
+
+
+#define _GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB
+
+
+#define _GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR
+# 642 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ACOSF 1
+# 651 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ASINF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_AS_SYMVER_DIRECTIVE 1
+
+
+#define _GLIBCXX_HAVE_ATAN2F 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_ATANF 1
+# 678 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_CEILF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_COMPLEX_H 1
+
+
+#define _GLIBCXX_HAVE_COSF 1
+
+
+#define _GLIBCXX_HAVE_COSHF 1
+# 705 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_EBADMSG 1
+
+
+#define _GLIBCXX_HAVE_ECANCELED 1
+
+
+#define _GLIBCXX_HAVE_ECHILD 1
+
+
+#define _GLIBCXX_HAVE_EIDRM 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_ENODATA 1
+
+
+#define _GLIBCXX_HAVE_ENOLINK 1
+
+
+#define _GLIBCXX_HAVE_ENOSPC 1
+
+
+#define _GLIBCXX_HAVE_ENOSR 1
+
+
+#define _GLIBCXX_HAVE_ENOSTR 1
+
+
+#define _GLIBCXX_HAVE_ENOTRECOVERABLE 1
+
+
+#define _GLIBCXX_HAVE_ENOTSUP 1
+
+
+#define _GLIBCXX_HAVE_EOVERFLOW 1
+
+
+#define _GLIBCXX_HAVE_EOWNERDEAD 1
+
+
+#define _GLIBCXX_HAVE_EPERM 1
+
+
+#define _GLIBCXX_HAVE_EPROTO 1
+
+
+#define _GLIBCXX_HAVE_ETIME 1
+
+
+#define _GLIBCXX_HAVE_ETIMEDOUT 1
+
+
+#define _GLIBCXX_HAVE_ETXTBSY 1
+
+
+#define _GLIBCXX_HAVE_EWOULDBLOCK 1
+# 771 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_EXPF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FABSF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FCNTL_H 1
+# 798 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_FLOAT_H 1
+
+
+#define _GLIBCXX_HAVE_FLOORF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_FMODF 1
+# 819 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_FREXPF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_GETIPINFO 1
+
+
+#define _GLIBCXX_HAVE_GETS 1
+
+
+#define _GLIBCXX_HAVE_HYPOT 1
+# 840 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ICONV 1
+
+
+#define _GLIBCXX_HAVE_IEEEFP_H 1
+
+
+#define _GLIBCXX_HAVE_INT64_T 1
+
+
+#define _GLIBCXX_HAVE_INT64_T_LONG 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_INTTYPES_H 1
+# 876 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_ISWBLANK 1
+
+
+#define _GLIBCXX_HAVE_LC_MESSAGES 1
+
+
+#define _GLIBCXX_HAVE_LDEXPF 1
+# 891 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_LIMIT_AS 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_DATA 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_FSIZE 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_RSS 0
+
+
+#define _GLIBCXX_HAVE_LIMIT_VMEM 0
+
+
+
+
+
+#define _GLIBCXX_HAVE_LOCALE_H 1
+
+
+#define _GLIBCXX_HAVE_LOG10F 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_LOGF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_MACHINE_ENDIAN_H 1
+
+
+#define _GLIBCXX_HAVE_MACHINE_PARAM_H 1
+
+
+#define _GLIBCXX_HAVE_MBSTATE_T 1
+
+
+#define _GLIBCXX_HAVE_MEMALIGN 1
+
+
+#define _GLIBCXX_HAVE_MEMORY_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_MODFF 1
+# 963 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_POWF 1
+# 987 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SINF 1
+
+
+#define _GLIBCXX_HAVE_SINHF 1
+# 999 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SLEEP 1
+
+
+#define _GLIBCXX_HAVE_SQRTF 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_STDALIGN_H 1
+
+
+#define _GLIBCXX_HAVE_STDBOOL_H 1
+
+
+#define _GLIBCXX_HAVE_STDINT_H 1
+
+
+#define _GLIBCXX_HAVE_STDLIB_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_STRERROR_R 1
+
+
+#define _GLIBCXX_HAVE_STRINGS_H 1
+
+
+#define _GLIBCXX_HAVE_STRING_H 1
+
+
+#define _GLIBCXX_HAVE_STRTOF 1
+# 1063 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SYS_PARAM_H 1
+
+
+#define _GLIBCXX_HAVE_SYS_RESOURCE_H 1
+# 1078 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_SYS_STAT_H 1
+
+
+
+
+
+#define _GLIBCXX_HAVE_SYS_TIME_H 1
+
+
+#define _GLIBCXX_HAVE_SYS_TYPES_H 1
+# 1096 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_S_ISREG 1
+
+
+#define _GLIBCXX_HAVE_TANF 1
+
+
+#define _GLIBCXX_HAVE_TANHF 1
+# 1111 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_TGMATH_H 1
+# 1120 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_HAVE_UNISTD_H 1
+
+
+#define _GLIBCXX_HAVE_USLEEP 1
+
+
+#define _GLIBCXX_HAVE_UTIME_H 1
+
+
+#define _GLIBCXX_HAVE_VFWSCANF 1
+
+
+#define _GLIBCXX_HAVE_VSWSCANF 1
+
+
+#define _GLIBCXX_HAVE_VWSCANF 1
+
+
+#define _GLIBCXX_HAVE_WCHAR_H 1
+
+
+#define _GLIBCXX_HAVE_WCSTOF 1
+
+
+#define _GLIBCXX_HAVE_WCTYPE_H 1
+# 1352 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define LT_OBJDIR ".libs/"
+
+
+
+
+
+#define _GLIBCXX_PACKAGE_BUGREPORT ""
+
+
+#define _GLIBCXX_PACKAGE_NAME "package-unused"
+
+
+#define _GLIBCXX_PACKAGE_STRING "package-unused version-unused"
+
+
+#define _GLIBCXX_PACKAGE_TARNAME "libstdc++"
+
+
+#define _GLIBCXX_PACKAGE_URL ""
+
+
+#define _GLIBCXX_PACKAGE__GLIBCXX_VERSION "version-unused"
+# 1391 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define STDC_HEADERS 1
+# 1403 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX11_USE_C99_MATH 1
+
+
+
+#define _GLIBCXX11_USE_C99_STDIO 1
+
+
+
+#define _GLIBCXX11_USE_C99_STDLIB 1
+
+
+
+#define _GLIBCXX11_USE_C99_WCHAR 1
+# 1424 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX98_USE_C99_MATH 1
+
+
+
+#define _GLIBCXX98_USE_C99_STDIO 1
+
+
+
+#define _GLIBCXX98_USE_C99_STDLIB 1
+
+
+
+#define _GLIBCXX98_USE_C99_WCHAR 1
+
+
+#define _GLIBCXX_ATOMIC_BUILTINS 1
+
+
+
+
+
+
+#define _GLIBCXX_FULLY_DYNAMIC_STRING 0
+
+
+
+
+
+#define _GLIBCXX_HOSTED 1
+
+
+
+
+#define _GLIBCXX_MANGLE_SIZE_T m
+# 1472 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_STDIO_EOF -1
+
+
+#define _GLIBCXX_STDIO_SEEK_CUR 1
+
+
+#define _GLIBCXX_STDIO_SEEK_END 2
+# 1510 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_C99_CTYPE_TR1 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_C99_INTTYPES_TR1 1
+
+
+
+#define _GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1
+
+
+
+
+
+
+
+#define _GLIBCXX_USE_C99_STDINT_TR1 1
+# 1547 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_FCHMOD 1
+
+
+#define _GLIBCXX_USE_FCHMODAT 1
+
+
+
+
+
+#define _GLIBCXX_USE_GETTIMEOFDAY 1
+
+
+
+
+
+#define _GLIBCXX_USE_INT128 1
+
+
+
+
+
+#define _GLIBCXX_USE_LONG_LONG 1
+# 1593 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_SC_NPROCESSORS_ONLN 1
+# 1608 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\aarch64-elf\\bits\\c++config.h" 3
+#define _GLIBCXX_USE_TMPNAM 1
+
+
+
+
+
+
+#define _GLIBCXX_USE_WCHAR_T 1
+
+
+#define _GLIBCXX_VERBOSE 1
+
+
+
+
+
+#define _GTHREAD_USE_MUTEX_TIMEDLOCK 1
+# 50 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 1 3 4
+# 39 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define _STDDEF_H 
+#define _STDDEF_H_ 
+
+#define _ANSI_STDDEF_H 
+# 137 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define _PTRDIFF_T 
+#define _T_PTRDIFF_ 
+#define _T_PTRDIFF 
+#define __PTRDIFF_T 
+#define _PTRDIFF_T_ 
+#define _BSD_PTRDIFF_T_ 
+#define ___int_ptrdiff_t_h 
+#define _GCC_PTRDIFF_T 
+#define _PTRDIFF_T_DECLARED 
+
+
+
+typedef long int ptrdiff_t;
+# 161 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 187 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define __size_t__ 
+#define __SIZE_T__ 
+#define _SIZE_T 
+#define _SYS_SIZE_T_H 
+#define _T_SIZE_ 
+#define _T_SIZE 
+#define __SIZE_T 
+#define _SIZE_T_ 
+#define _BSD_SIZE_T_ 
+#define _SIZE_T_DEFINED_ 
+#define _SIZE_T_DEFINED 
+#define _BSD_SIZE_T_DEFINED_ 
+#define _SIZE_T_DECLARED 
+#define ___int_size_t_h 
+#define _GCC_SIZE_T 
+#define _SIZET_ 
+
+
+
+
+
+
+
+#define __size_t 
+
+
+
+
+
+typedef long unsigned int size_t;
+# 238 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_size_t
+# 267 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#define __wchar_t__ 
+#define __WCHAR_T__ 
+#define _WCHAR_T 
+#define _T_WCHAR_ 
+#define _T_WCHAR 
+#define __WCHAR_T 
+#define _WCHAR_T_ 
+#define _BSD_WCHAR_T_ 
+#define _WCHAR_T_DEFINED_ 
+#define _WCHAR_T_DEFINED 
+#define _WCHAR_T_H 
+#define ___int_wchar_t_h 
+#define __INT_WCHAR_T_H 
+#define _GCC_WCHAR_T 
+#define _WCHAR_T_DECLARED 
+# 294 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef _BSD_WCHAR_T_
+# 347 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_wchar_t
+# 401 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef NULL
+
+#define NULL __null
+# 412 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+
+
+
+
+#define _GCC_MAX_ALIGN_T 
+
+
+
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+#define _GXX_NULLPTR_T 
+  typedef decltype(nullptr) nullptr_t;
+# 51 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 2
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 1 3
+# 30 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+#define _GLIBCXX_CSTDINT 1
+
+       
+# 33 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+# 41 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 1 3 4
+# 11 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 3 4
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint-gcc.h" 1 3 4
+# 29 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint-gcc.h" 3 4
+#define _GCC_STDINT_H 
+
+
+
+
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef int int_fast16_t;
+typedef int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+
+
+
+
+
+
+
+#undef INT8_MAX
+#define INT8_MAX __INT8_MAX__
+#undef INT8_MIN
+#define INT8_MIN (-INT8_MAX - 1)
+
+
+#undef UINT8_MAX
+#define UINT8_MAX __UINT8_MAX__
+
+
+#undef INT16_MAX
+#define INT16_MAX __INT16_MAX__
+#undef INT16_MIN
+#define INT16_MIN (-INT16_MAX - 1)
+
+
+#undef UINT16_MAX
+#define UINT16_MAX __UINT16_MAX__
+
+
+#undef INT32_MAX
+#define INT32_MAX __INT32_MAX__
+#undef INT32_MIN
+#define INT32_MIN (-INT32_MAX - 1)
+
+
+#undef UINT32_MAX
+#define UINT32_MAX __UINT32_MAX__
+
+
+#undef INT64_MAX
+#define INT64_MAX __INT64_MAX__
+#undef INT64_MIN
+#define INT64_MIN (-INT64_MAX - 1)
+
+
+#undef UINT64_MAX
+#define UINT64_MAX __UINT64_MAX__
+
+
+#undef INT_LEAST8_MAX
+#define INT_LEAST8_MAX __INT_LEAST8_MAX__
+#undef INT_LEAST8_MIN
+#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
+#undef UINT_LEAST8_MAX
+#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
+#undef INT_LEAST16_MAX
+#define INT_LEAST16_MAX __INT_LEAST16_MAX__
+#undef INT_LEAST16_MIN
+#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
+#undef UINT_LEAST16_MAX
+#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
+#undef INT_LEAST32_MAX
+#define INT_LEAST32_MAX __INT_LEAST32_MAX__
+#undef INT_LEAST32_MIN
+#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
+#undef UINT_LEAST32_MAX
+#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
+#undef INT_LEAST64_MAX
+#define INT_LEAST64_MAX __INT_LEAST64_MAX__
+#undef INT_LEAST64_MIN
+#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
+#undef UINT_LEAST64_MAX
+#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
+
+#undef INT_FAST8_MAX
+#define INT_FAST8_MAX __INT_FAST8_MAX__
+#undef INT_FAST8_MIN
+#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
+#undef UINT_FAST8_MAX
+#define UINT_FAST8_MAX __UINT_FAST8_MAX__
+#undef INT_FAST16_MAX
+#define INT_FAST16_MAX __INT_FAST16_MAX__
+#undef INT_FAST16_MIN
+#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
+#undef UINT_FAST16_MAX
+#define UINT_FAST16_MAX __UINT_FAST16_MAX__
+#undef INT_FAST32_MAX
+#define INT_FAST32_MAX __INT_FAST32_MAX__
+#undef INT_FAST32_MIN
+#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
+#undef UINT_FAST32_MAX
+#define UINT_FAST32_MAX __UINT_FAST32_MAX__
+#undef INT_FAST64_MAX
+#define INT_FAST64_MAX __INT_FAST64_MAX__
+#undef INT_FAST64_MIN
+#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
+#undef UINT_FAST64_MAX
+#define UINT_FAST64_MAX __UINT_FAST64_MAX__
+
+
+#undef INTPTR_MAX
+#define INTPTR_MAX __INTPTR_MAX__
+#undef INTPTR_MIN
+#define INTPTR_MIN (-INTPTR_MAX - 1)
+
+
+#undef UINTPTR_MAX
+#define UINTPTR_MAX __UINTPTR_MAX__
+
+
+#undef INTMAX_MAX
+#define INTMAX_MAX __INTMAX_MAX__
+#undef INTMAX_MIN
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+#undef UINTMAX_MAX
+#define UINTMAX_MAX __UINTMAX_MAX__
+
+
+
+#undef PTRDIFF_MAX
+#define PTRDIFF_MAX __PTRDIFF_MAX__
+#undef PTRDIFF_MIN
+#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
+
+#undef SIG_ATOMIC_MAX
+#define SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__
+#undef SIG_ATOMIC_MIN
+#define SIG_ATOMIC_MIN __SIG_ATOMIC_MIN__
+
+#undef SIZE_MAX
+#define SIZE_MAX __SIZE_MAX__
+
+#undef WCHAR_MAX
+#define WCHAR_MAX __WCHAR_MAX__
+#undef WCHAR_MIN
+#define WCHAR_MIN __WCHAR_MIN__
+
+#undef WINT_MAX
+#define WINT_MAX __WINT_MAX__
+#undef WINT_MIN
+#define WINT_MIN __WINT_MIN__
+
+
+
+
+
+
+
+#undef INT8_C
+#define INT8_C(c) __INT8_C(c)
+#undef INT16_C
+#define INT16_C(c) __INT16_C(c)
+#undef INT32_C
+#define INT32_C(c) __INT32_C(c)
+#undef INT64_C
+#define INT64_C(c) __INT64_C(c)
+#undef UINT8_C
+#define UINT8_C(c) __UINT8_C(c)
+#undef UINT16_C
+#define UINT16_C(c) __UINT16_C(c)
+#undef UINT32_C
+#define UINT32_C(c) __UINT32_C(c)
+#undef UINT64_C
+#define UINT64_C(c) __UINT64_C(c)
+#undef INTMAX_C
+#define INTMAX_C(c) __INTMAX_C(c)
+#undef UINTMAX_C
+#define UINTMAX_C(c) __UINTMAX_C(c)
+# 12 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stdint.h" 2 3 4
+
+#define _GCC_WRAP_STDINT_H 
+# 42 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 10 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h" 2
+
+#define AS_MACRO __attribute__((always_inline)) inline
+#define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
+#define NULL_CHAR '\0'
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h"
+#define INFO "[INFO] "
+#define WARNING "[WARNING] "
+#define FATAL "[FATAL] "
+
+
+
+
+# 28 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/def.h"
+extern const char EMPTY_STR[1];
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+
+
+#define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
+
+
+#define __stringify_1(x) #x
+#define __stringify(x) __stringify_1(x)
+
+
+
+
+#define HEX32(a,b) 0x ##a ##b
+#define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
+
+
+#define BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d
+#define BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h
+# 11 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h"
+#define INCLUDE_GENERIC_UTIL_H_ 
+
+
+
+
+void delayCPU(size_t i);
+void delayCPU(size_t i,size_t j);
+void haltCPU();
+
+
+
+
+
+extern const char digitsMap[];
+
+
+
+size_t itob(size_t i,char *dst,size_t size);
+size_t itod(size_t i,char *dst,size_t size);
+size_t itox(size_t i,char *dst,size_t size);
+
+size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+
+
+
+
+
+void reverse(char *str,size_t size);
+
+
+
+const char *strOffset(const char *p,size_t offset);
+
+
+
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+}
+
+
+__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 2
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+class MemoryChunk{
+public:
+
+ enum { ValidBits = 6, IsEndBits=1,AllocatedBits=1,SizeBits=38,NextBaseBits=18};
+ enum { MaxSinlgeMoveBytes = (1 << ValidBits) };
+ MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd);
+ bool isAllocated() const;
+ void setAllocated(bool allocated);
+ bool isEnd() const;
+ void setEnd(bool end);
+ const MemoryChunk* getNext()const;
+ MemoryChunk* getNext();
+ size_t getSize() const;
+ void setSize(size_t size);
+ void* getDataPtr();
+ const void * getDataPtr()const;
+ void* getDataEnd();
+ const void * getDataEnd()const;
+ uint64_t getNextBaseFromEnd() const;
+ void setNextBaseFromEnd(uint64_t nextBaseFromEnd);
+ uint64_t getNextValidChunkOffset() const;
+ void setNextValidChunkOffset(uint64_t nextValidChunkOffset );
+# 54 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+ MemoryChunk* moveAhead(size_t moveSize);
+
+ size_t moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const;
+
+ bool split(size_t splitSize);
+
+
+
+ void mergeTrailingsUnallocated();
+
+
+private:
+ uint64_t nextValidChunkOffset :ValidBits;
+ uint64_t endMark :IsEndBits;
+ uint64_t allocated :AllocatedBits;
+ uint64_t size :SizeBits;
+ uint64_t nextBaseFromEnd :NextBaseBits;
+}__attribute__((packed));
+# 9 "../src/memory/MemoryChunk.cpp" 2
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 1 3
+# 35 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 3
+#define _NEW 
+
+       
+# 38 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 3
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 3
+#define __EXCEPTION__ 
+
+       
+# 34 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 3
+
+#pragma GCC visibility push(default)
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception.h" 1 3
+# 32 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception.h" 3
+#define __EXCEPTION_H 1
+
+       
+# 35 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception.h" 3
+
+#pragma GCC visibility push(default)
+
+
+
+
+# 40 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception.h" 3
+extern "C++" {
+
+namespace std
+{
+# 60 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception.h" 3
+  class exception
+  {
+  public:
+    exception() noexcept { }
+    virtual ~exception() noexcept;
+
+
+
+    virtual const char*
+    what() const noexcept;
+  };
+
+}
+
+}
+
+#pragma GCC visibility pop
+# 39 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 2 3
+
+extern "C++" {
+
+namespace std
+{
+
+
+  class bad_exception : public exception
+  {
+  public:
+    bad_exception() noexcept { }
+
+
+
+    virtual ~bad_exception() noexcept;
+
+
+    virtual const char*
+    what() const noexcept;
+  };
+
+
+  typedef void (*terminate_handler) ();
+
+
+  typedef void (*unexpected_handler) ();
+
+
+  terminate_handler set_terminate(terminate_handler) noexcept;
+
+
+
+  terminate_handler get_terminate() noexcept;
+
+
+
+
+  void terminate() noexcept __attribute__ ((__noreturn__));
+
+
+  unexpected_handler set_unexpected(unexpected_handler) noexcept;
+
+
+
+  unexpected_handler get_unexpected() noexcept;
+
+
+
+
+  void unexpected() __attribute__ ((__noreturn__));
+# 101 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 3
+  bool uncaught_exception() noexcept __attribute__ ((__pure__));
+# 110 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 3
+}
+
+namespace __gnu_cxx
+{
+
+# 132 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 3
+  void __verbose_terminate_handler();
+
+
+}
+
+}
+
+#pragma GCC visibility pop
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 1 3
+# 32 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 3
+#define _EXCEPTION_PTR_H 
+
+#pragma GCC visibility push(default)
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_defines.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_defines.h" 3
+#define _EXCEPTION_DEFINES_H 1
+
+
+
+#define __try if (true)
+#define __catch(X) if (false)
+#define __throw_exception_again 
+# 38 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\cxxabi_init_exception.h" 1 3
+# 32 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\cxxabi_init_exception.h" 3
+#define _CXXABI_INIT_EXCEPTION_H 1
+
+       
+# 35 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\cxxabi_init_exception.h" 3
+
+#pragma GCC visibility push(default)
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\lib\\gcc\\aarch64-elf\\7.2.1\\include\\stddef.h" 1 3 4
+# 39 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\cxxabi_init_exception.h" 2 3
+
+
+
+#define _GLIBCXX_CDTOR_CALLABI 
+#define _GLIBCXX_HAVE_CDTOR_CALLABI 0
+
+
+
+
+
+
+namespace std
+{
+  class type_info;
+}
+
+namespace __cxxabiv1
+{
+  struct __cxa_refcounted_exception;
+
+  extern "C"
+    {
+
+      void*
+      __cxa_allocate_exception(size_t) noexcept;
+
+
+      __cxa_refcounted_exception*
+      __cxa_init_primary_exception(void *object, std::type_info *tinfo,
+                void ( *dest) (void *)) noexcept;
+
+    }
+}
+
+
+
+#pragma GCC visibility pop
+# 39 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 1 3
+# 30 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 3
+#define _TYPEINFO 
+
+       
+# 33 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 3
+
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\hash_bytes.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\hash_bytes.h" 3
+#define _HASH_BYTES_H 1
+
+       
+# 34 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\hash_bytes.h" 3
+
+
+
+namespace std
+{
+
+
+
+
+
+
+
+  size_t
+  _Hash_bytes(const void* __ptr, size_t __len, size_t __seed);
+
+
+
+
+
+  size_t
+  _Fnv_hash_bytes(const void* __ptr, size_t __len, size_t __seed);
+
+
+}
+# 37 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 2 3
+
+
+#pragma GCC visibility push(default)
+
+extern "C++" {
+
+namespace __cxxabiv1
+{
+  class __class_type_info;
+}
+# 68 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 3
+#define __GXX_MERGED_TYPEINFO_NAMES 0
+
+
+
+
+
+
+
+#define __GXX_TYPEINFO_EQUALITY_INLINE 1
+
+
+
+namespace std
+{
+
+
+
+
+
+
+  class type_info
+  {
+  public:
+
+
+
+
+    virtual ~type_info();
+
+
+
+    const char* name() const noexcept
+    { return __name[0] == '*' ? __name + 1 : __name; }
+# 115 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 3
+    bool before(const type_info& __arg) const noexcept
+    { return (__name[0] == '*' && __arg.__name[0] == '*')
+ ? __name < __arg.__name
+ : __builtin_strcmp (__name, __arg.__name) < 0; }
+
+    bool operator==(const type_info& __arg) const noexcept
+    {
+      return ((__name == __arg.__name)
+       || (__name[0] != '*' &&
+    __builtin_strcmp (__name, __arg.__name) == 0));
+    }
+# 136 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\typeinfo" 3
+    bool operator!=(const type_info& __arg) const noexcept
+    { return !operator==(__arg); }
+
+
+    size_t hash_code() const noexcept
+    {
+
+      return _Hash_bytes(name(), __builtin_strlen(name()),
+    static_cast<size_t>(0xc70f6907UL));
+
+
+
+    }
+
+
+
+    virtual bool __is_pointer_p() const;
+
+
+    virtual bool __is_function_p() const;
+
+
+
+
+
+
+
+    virtual bool __do_catch(const type_info *__thr_type, void **__thr_obj,
+       unsigned __outer) const;
+
+
+    virtual bool __do_upcast(const __cxxabiv1::__class_type_info *__target,
+        void **__obj_ptr) const;
+
+  protected:
+    const char *__name;
+
+    explicit type_info(const char *__n): __name(__n) { }
+
+  private:
+
+    type_info& operator=(const type_info&);
+    type_info(const type_info&);
+  };
+
+
+
+
+
+
+
+  class bad_cast : public exception
+  {
+  public:
+    bad_cast() noexcept { }
+
+
+
+    virtual ~bad_cast() noexcept;
+
+
+    virtual const char* what() const noexcept;
+  };
+
+
+
+
+
+  class bad_typeid : public exception
+  {
+  public:
+    bad_typeid () noexcept { }
+
+
+
+    virtual ~bad_typeid() noexcept;
+
+
+    virtual const char* what() const noexcept;
+  };
+}
+
+}
+
+#pragma GCC visibility pop
+# 40 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 1 3
+# 41 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 2 3
+
+extern "C++" {
+
+namespace std
+{
+  class type_info;
+
+
+
+
+
+  namespace __exception_ptr
+  {
+    class exception_ptr;
+  }
+
+  using __exception_ptr::exception_ptr;
+
+
+
+
+
+  exception_ptr current_exception() noexcept;
+
+  template<typename _Ex>
+  exception_ptr make_exception_ptr(_Ex) noexcept;
+
+
+  void rethrow_exception(exception_ptr) __attribute__ ((__noreturn__));
+
+  namespace __exception_ptr
+  {
+    using std::rethrow_exception;
+
+
+
+
+
+    class exception_ptr
+    {
+      void* _M_exception_object;
+
+      explicit exception_ptr(void* __e) noexcept;
+
+      void _M_addref() noexcept;
+      void _M_release() noexcept;
+
+      void *_M_get() const noexcept __attribute__ ((__pure__));
+
+      friend exception_ptr std::current_exception() noexcept;
+      friend void std::rethrow_exception(exception_ptr);
+      template<typename _Ex>
+      friend exception_ptr std::make_exception_ptr(_Ex) noexcept;
+
+    public:
+      exception_ptr() noexcept;
+
+      exception_ptr(const exception_ptr&) noexcept;
+
+
+      exception_ptr(nullptr_t) noexcept
+      : _M_exception_object(0)
+      { }
+
+      exception_ptr(exception_ptr&& __o) noexcept
+      : _M_exception_object(__o._M_exception_object)
+      { __o._M_exception_object = 0; }
+# 117 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 3
+      exception_ptr&
+      operator=(const exception_ptr&) noexcept;
+
+
+      exception_ptr&
+      operator=(exception_ptr&& __o) noexcept
+      {
+        exception_ptr(static_cast<exception_ptr&&>(__o)).swap(*this);
+        return *this;
+      }
+
+
+      ~exception_ptr() noexcept;
+
+      void
+      swap(exception_ptr&) noexcept;
+# 144 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 3
+      explicit operator bool() const
+      { return _M_exception_object; }
+
+
+      friend bool
+      operator==(const exception_ptr&, const exception_ptr&)
+ noexcept __attribute__ ((__pure__));
+
+      const class std::type_info*
+      __cxa_exception_type() const noexcept
+ __attribute__ ((__pure__));
+    };
+
+    bool
+    operator==(const exception_ptr&, const exception_ptr&)
+      noexcept __attribute__ ((__pure__));
+
+    bool
+    operator!=(const exception_ptr&, const exception_ptr&)
+      noexcept __attribute__ ((__pure__));
+
+    inline void
+    swap(exception_ptr& __lhs, exception_ptr& __rhs)
+    { __lhs.swap(__rhs); }
+
+    template<typename _Ex>
+      inline void
+      __dest_thunk(void* __x)
+      { static_cast<_Ex*>(__x)->~_Ex(); }
+
+  }
+
+
+  template<typename _Ex>
+    exception_ptr
+    make_exception_ptr(_Ex __ex) noexcept
+    {
+# 200 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\exception_ptr.h" 3
+      return exception_ptr();
+
+    }
+
+
+
+
+
+  template<typename _Ex>
+    exception_ptr
+    copy_exception(_Ex __ex) noexcept __attribute__ ((__deprecated__));
+
+  template<typename _Ex>
+    exception_ptr
+    copy_exception(_Ex __ex) noexcept
+    { return std::make_exception_ptr<_Ex>(__ex); }
+
+
+}
+
+}
+
+#pragma GCC visibility pop
+# 143 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 2 3
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\nested_exception.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\nested_exception.h" 3
+#define _GLIBCXX_NESTED_EXCEPTION_H 1
+
+#pragma GCC visibility push(default)
+
+
+
+
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 3
+#define _MOVE_H 1
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\concept_check.h" 1 3
+# 31 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\concept_check.h" 3
+#define _CONCEPT_CHECK_H 1
+
+       
+# 34 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\concept_check.h" 3
+# 48 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\concept_check.h" 3
+#define __glibcxx_function_requires(...) 
+#define __glibcxx_class_requires(_a,_b) 
+#define __glibcxx_class_requires2(_a,_b,_c) 
+#define __glibcxx_class_requires3(_a,_b,_c,_d) 
+#define __glibcxx_class_requires4(_a,_b,_c,_d,_e) 
+# 35 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 2 3
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+
+
+
+
+
+  template<typename _Tp>
+    inline constexpr _Tp*
+    __addressof(_Tp& __r) noexcept
+    { return __builtin_addressof(__r); }
+
+
+}
+
+
+# 1 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 1 3
+# 30 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+#define _GLIBCXX_TYPE_TRAITS 1
+
+       
+# 33 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+# 42 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+namespace std
+{
+  typedef short unsigned int uint_least16_t;
+  typedef unsigned int uint_least32_t;
+}
+
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+# 68 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp, _Tp __v>
+    struct integral_constant
+    {
+      static constexpr _Tp value = __v;
+      typedef _Tp value_type;
+      typedef integral_constant<_Tp, __v> type;
+      constexpr operator value_type() const { return value; }
+
+
+#define __cpp_lib_integral_constant_callable 201304
+
+      constexpr value_type operator()() const { return value; }
+
+    };
+
+  template<typename _Tp, _Tp __v>
+    constexpr _Tp integral_constant<_Tp, __v>::value;
+
+
+  typedef integral_constant<bool, true> true_type;
+
+
+  typedef integral_constant<bool, false> false_type;
+
+  template<bool __v>
+    using __bool_constant = integral_constant<bool, __v>;
+# 103 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<bool, typename, typename>
+    struct conditional;
+
+  template<typename...>
+    struct __or_;
+
+  template<>
+    struct __or_<>
+    : public false_type
+    { };
+
+  template<typename _B1>
+    struct __or_<_B1>
+    : public _B1
+    { };
+
+  template<typename _B1, typename _B2>
+    struct __or_<_B1, _B2>
+    : public conditional<_B1::value, _B1, _B2>::type
+    { };
+
+  template<typename _B1, typename _B2, typename _B3, typename... _Bn>
+    struct __or_<_B1, _B2, _B3, _Bn...>
+    : public conditional<_B1::value, _B1, __or_<_B2, _B3, _Bn...>>::type
+    { };
+
+  template<typename...>
+    struct __and_;
+
+  template<>
+    struct __and_<>
+    : public true_type
+    { };
+
+  template<typename _B1>
+    struct __and_<_B1>
+    : public _B1
+    { };
+
+  template<typename _B1, typename _B2>
+    struct __and_<_B1, _B2>
+    : public conditional<_B1::value, _B2, _B1>::type
+    { };
+
+  template<typename _B1, typename _B2, typename _B3, typename... _Bn>
+    struct __and_<_B1, _B2, _B3, _Bn...>
+    : public conditional<_B1::value, __and_<_B2, _B3, _Bn...>, _B1>::type
+    { };
+
+  template<typename _Pp>
+    struct __not_
+    : public integral_constant<bool, !_Pp::value>
+    { };
+# 195 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp>
+    struct __success_type
+    { typedef _Tp type; };
+
+  struct __failure_type
+  { };
+
+
+
+  template<typename>
+    struct remove_cv;
+
+  template<typename>
+    struct __is_void_helper
+    : public false_type { };
+
+  template<>
+    struct __is_void_helper<void>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_void
+    : public __is_void_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+  template<typename>
+    struct __is_integral_helper
+    : public false_type { };
+
+  template<>
+    struct __is_integral_helper<bool>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<char>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<signed char>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<unsigned char>
+    : public true_type { };
+
+
+  template<>
+    struct __is_integral_helper<wchar_t>
+    : public true_type { };
+
+
+  template<>
+    struct __is_integral_helper<char16_t>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<char32_t>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<short>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<unsigned short>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<int>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<unsigned int>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<long>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<unsigned long>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<long long>
+    : public true_type { };
+
+  template<>
+    struct __is_integral_helper<unsigned long long>
+    : public true_type { };
+# 327 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp>
+    struct is_integral
+    : public __is_integral_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+  template<typename>
+    struct __is_floating_point_helper
+    : public false_type { };
+
+  template<>
+    struct __is_floating_point_helper<float>
+    : public true_type { };
+
+  template<>
+    struct __is_floating_point_helper<double>
+    : public true_type { };
+
+  template<>
+    struct __is_floating_point_helper<long double>
+    : public true_type { };
+# 355 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp>
+    struct is_floating_point
+    : public __is_floating_point_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+
+  template<typename>
+    struct is_array
+    : public false_type { };
+
+  template<typename _Tp, std::size_t _Size>
+    struct is_array<_Tp[_Size]>
+    : public true_type { };
+
+  template<typename _Tp>
+    struct is_array<_Tp[]>
+    : public true_type { };
+
+  template<typename>
+    struct __is_pointer_helper
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_pointer_helper<_Tp*>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_pointer
+    : public __is_pointer_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+
+  template<typename>
+    struct is_lvalue_reference
+    : public false_type { };
+
+  template<typename _Tp>
+    struct is_lvalue_reference<_Tp&>
+    : public true_type { };
+
+
+  template<typename>
+    struct is_rvalue_reference
+    : public false_type { };
+
+  template<typename _Tp>
+    struct is_rvalue_reference<_Tp&&>
+    : public true_type { };
+
+  template<typename>
+    struct is_function;
+
+  template<typename>
+    struct __is_member_object_pointer_helper
+    : public false_type { };
+
+  template<typename _Tp, typename _Cp>
+    struct __is_member_object_pointer_helper<_Tp _Cp::*>
+    : public integral_constant<bool, !is_function<_Tp>::value> { };
+
+
+  template<typename _Tp>
+    struct is_member_object_pointer
+    : public __is_member_object_pointer_helper<
+    typename remove_cv<_Tp>::type>::type
+    { };
+
+  template<typename>
+    struct __is_member_function_pointer_helper
+    : public false_type { };
+
+  template<typename _Tp, typename _Cp>
+    struct __is_member_function_pointer_helper<_Tp _Cp::*>
+    : public integral_constant<bool, is_function<_Tp>::value> { };
+
+
+  template<typename _Tp>
+    struct is_member_function_pointer
+    : public __is_member_function_pointer_helper<
+    typename remove_cv<_Tp>::type>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_enum
+    : public integral_constant<bool, __is_enum(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_union
+    : public integral_constant<bool, __is_union(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_class
+    : public integral_constant<bool, __is_class(_Tp)>
+    { };
+
+
+  template<typename>
+    struct is_function
+    : public false_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) volatile >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) volatile & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) volatile && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) volatile >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) volatile & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) volatile && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const volatile >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const volatile & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes...) const volatile && >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const volatile >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const volatile & >
+    : public true_type { };
+
+  template<typename _Res, typename... _ArgTypes >
+    struct is_function<_Res(_ArgTypes......) const volatile && >
+    : public true_type { };
+
+#define __cpp_lib_is_null_pointer 201309
+
+  template<typename>
+    struct __is_null_pointer_helper
+    : public false_type { };
+
+  template<>
+    struct __is_null_pointer_helper<std::nullptr_t>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_null_pointer
+    : public __is_null_pointer_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+
+  template<typename _Tp>
+    struct __is_nullptr_t
+    : public is_null_pointer<_Tp>
+    { };
+
+
+
+
+  template<typename _Tp>
+    struct is_reference
+    : public __or_<is_lvalue_reference<_Tp>,
+                   is_rvalue_reference<_Tp>>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_arithmetic
+    : public __or_<is_integral<_Tp>, is_floating_point<_Tp>>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_fundamental
+    : public __or_<is_arithmetic<_Tp>, is_void<_Tp>,
+     is_null_pointer<_Tp>>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_object
+    : public __not_<__or_<is_function<_Tp>, is_reference<_Tp>,
+                          is_void<_Tp>>>::type
+    { };
+
+  template<typename>
+    struct is_member_pointer;
+
+
+  template<typename _Tp>
+    struct is_scalar
+    : public __or_<is_arithmetic<_Tp>, is_enum<_Tp>, is_pointer<_Tp>,
+                   is_member_pointer<_Tp>, is_null_pointer<_Tp>>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_compound
+    : public integral_constant<bool, !is_fundamental<_Tp>::value> { };
+
+  template<typename _Tp>
+    struct __is_member_pointer_helper
+    : public false_type { };
+
+  template<typename _Tp, typename _Cp>
+    struct __is_member_pointer_helper<_Tp _Cp::*>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_member_pointer
+    : public __is_member_pointer_helper<typename remove_cv<_Tp>::type>::type
+    { };
+
+
+
+  template<typename _Tp>
+    struct __is_referenceable
+    : public __or_<is_object<_Tp>, is_reference<_Tp>>::type
+    { };
+
+  template<typename _Res, typename... _Args >
+    struct __is_referenceable<_Res(_Args...) >
+    : public true_type
+    { };
+
+  template<typename _Res, typename... _Args >
+    struct __is_referenceable<_Res(_Args......) >
+    : public true_type
+    { };
+
+
+
+
+  template<typename>
+    struct is_const
+    : public false_type { };
+
+  template<typename _Tp>
+    struct is_const<_Tp const>
+    : public true_type { };
+
+
+  template<typename>
+    struct is_volatile
+    : public false_type { };
+
+  template<typename _Tp>
+    struct is_volatile<_Tp volatile>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_trivial
+    : public integral_constant<bool, __is_trivial(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_copyable
+    : public integral_constant<bool, __is_trivially_copyable(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_standard_layout
+    : public integral_constant<bool, __is_standard_layout(_Tp)>
+    { };
+
+
+
+  template<typename _Tp>
+    struct is_pod
+    : public integral_constant<bool, __is_pod(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_literal_type
+    : public integral_constant<bool, __is_literal_type(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_empty
+    : public integral_constant<bool, __is_empty(_Tp)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_polymorphic
+    : public integral_constant<bool, __is_polymorphic(_Tp)>
+    { };
+
+
+#define __cpp_lib_is_final 201402L
+
+  template<typename _Tp>
+    struct is_final
+    : public integral_constant<bool, __is_final(_Tp)>
+    { };
+
+
+
+  template<typename _Tp>
+    struct is_abstract
+    : public integral_constant<bool, __is_abstract(_Tp)>
+    { };
+
+  template<typename _Tp,
+    bool = is_arithmetic<_Tp>::value>
+    struct __is_signed_helper
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_signed_helper<_Tp, true>
+    : public integral_constant<bool, _Tp(-1) < _Tp(0)>
+    { };
+
+
+  template<typename _Tp>
+    struct is_signed
+    : public __is_signed_helper<_Tp>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_unsigned
+    : public __and_<is_arithmetic<_Tp>, __not_<is_signed<_Tp>>>
+    { };
+
+
+
+
+  template<typename>
+    struct add_rvalue_reference;
+
+
+
+
+
+  template<typename _Tp>
+    typename add_rvalue_reference<_Tp>::type declval() noexcept;
+
+  template<typename, unsigned = 0>
+    struct extent;
+
+  template<typename>
+    struct remove_all_extents;
+
+  template<typename _Tp>
+    struct __is_array_known_bounds
+    : public integral_constant<bool, (extent<_Tp>::value > 0)>
+    { };
+
+  template<typename _Tp>
+    struct __is_array_unknown_bounds
+    : public __and_<is_array<_Tp>, __not_<extent<_Tp>>>
+    { };
+
+
+
+
+
+
+  struct __do_is_destructible_impl
+  {
+    template<typename _Tp, typename = decltype(declval<_Tp&>().~_Tp())>
+      static true_type __test(int);
+
+    template<typename>
+      static false_type __test(...);
+  };
+
+  template<typename _Tp>
+    struct __is_destructible_impl
+    : public __do_is_destructible_impl
+    {
+      typedef decltype(__test<_Tp>(0)) type;
+    };
+
+  template<typename _Tp,
+           bool = __or_<is_void<_Tp>,
+                        __is_array_unknown_bounds<_Tp>,
+                        is_function<_Tp>>::value,
+           bool = __or_<is_reference<_Tp>, is_scalar<_Tp>>::value>
+    struct __is_destructible_safe;
+
+  template<typename _Tp>
+    struct __is_destructible_safe<_Tp, false, false>
+    : public __is_destructible_impl<typename
+               remove_all_extents<_Tp>::type>::type
+    { };
+
+  template<typename _Tp>
+    struct __is_destructible_safe<_Tp, true, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_destructible_safe<_Tp, false, true>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_destructible
+    : public __is_destructible_safe<_Tp>::type
+    { };
+
+
+
+
+
+  struct __do_is_nt_destructible_impl
+  {
+    template<typename _Tp>
+      static integral_constant<bool, noexcept(declval<_Tp&>().~_Tp())>
+        __test(int);
+
+    template<typename>
+      static false_type __test(...);
+  };
+
+  template<typename _Tp>
+    struct __is_nt_destructible_impl
+    : public __do_is_nt_destructible_impl
+    {
+      typedef decltype(__test<_Tp>(0)) type;
+    };
+
+  template<typename _Tp,
+           bool = __or_<is_void<_Tp>,
+                        __is_array_unknown_bounds<_Tp>,
+                        is_function<_Tp>>::value,
+           bool = __or_<is_reference<_Tp>, is_scalar<_Tp>>::value>
+    struct __is_nt_destructible_safe;
+
+  template<typename _Tp>
+    struct __is_nt_destructible_safe<_Tp, false, false>
+    : public __is_nt_destructible_impl<typename
+               remove_all_extents<_Tp>::type>::type
+    { };
+
+  template<typename _Tp>
+    struct __is_nt_destructible_safe<_Tp, true, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_nt_destructible_safe<_Tp, false, true>
+    : public true_type { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_destructible
+    : public __is_nt_destructible_safe<_Tp>::type
+    { };
+
+  struct __do_is_default_constructible_impl
+  {
+    template<typename _Tp, typename = decltype(_Tp())>
+      static true_type __test(int);
+
+    template<typename>
+      static false_type __test(...);
+  };
+
+  template<typename _Tp>
+    struct __is_default_constructible_impl
+    : public __do_is_default_constructible_impl
+    {
+      typedef decltype(__test<_Tp>(0)) type;
+    };
+
+  template<typename _Tp>
+    struct __is_default_constructible_atom
+    : public __and_<__not_<is_void<_Tp>>,
+                    __is_default_constructible_impl<_Tp>>
+    { };
+
+  template<typename _Tp, bool = is_array<_Tp>::value>
+    struct __is_default_constructible_safe;
+
+
+
+
+
+
+  template<typename _Tp>
+    struct __is_default_constructible_safe<_Tp, true>
+    : public __and_<__is_array_known_bounds<_Tp>,
+      __is_default_constructible_atom<typename
+                      remove_all_extents<_Tp>::type>>
+    { };
+
+  template<typename _Tp>
+    struct __is_default_constructible_safe<_Tp, false>
+    : public __is_default_constructible_atom<_Tp>::type
+    { };
+
+
+  template<typename _Tp>
+    struct is_default_constructible
+    : public __is_default_constructible_safe<_Tp>::type
+    { };
+# 939 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  struct __do_is_static_castable_impl
+  {
+    template<typename _From, typename _To, typename
+             = decltype(static_cast<_To>(declval<_From>()))>
+      static true_type __test(int);
+
+    template<typename, typename>
+      static false_type __test(...);
+  };
+
+  template<typename _From, typename _To>
+    struct __is_static_castable_impl
+    : public __do_is_static_castable_impl
+    {
+      typedef decltype(__test<_From, _To>(0)) type;
+    };
+
+  template<typename _From, typename _To>
+    struct __is_static_castable_safe
+    : public __is_static_castable_impl<_From, _To>::type
+    { };
+
+
+  template<typename _From, typename _To>
+    struct __is_static_castable
+    : public integral_constant<bool, (__is_static_castable_safe<
+          _From, _To>::value)>
+    { };
+
+
+
+
+
+
+  struct __do_is_direct_constructible_impl
+  {
+    template<typename _Tp, typename _Arg, typename
+      = decltype(::new _Tp(declval<_Arg>()))>
+      static true_type __test(int);
+
+    template<typename, typename>
+      static false_type __test(...);
+  };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_direct_constructible_impl
+    : public __do_is_direct_constructible_impl
+    {
+      typedef decltype(__test<_Tp, _Arg>(0)) type;
+    };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_direct_constructible_new_safe
+    : public __and_<is_destructible<_Tp>,
+                    __is_direct_constructible_impl<_Tp, _Arg>>
+    { };
+
+  template<typename, typename>
+    struct is_same;
+
+  template<typename, typename>
+    struct is_base_of;
+
+  template<typename>
+    struct remove_reference;
+
+  template<typename _From, typename _To, bool
+           = __not_<__or_<is_void<_From>,
+                          is_function<_From>>>::value>
+    struct __is_base_to_derived_ref;
+
+  template<typename _Tp, typename... _Args>
+    struct is_constructible;
+
+
+
+  template<typename _From, typename _To>
+    struct __is_base_to_derived_ref<_From, _To, true>
+    {
+      typedef typename remove_cv<typename remove_reference<_From
+        >::type>::type __src_t;
+      typedef typename remove_cv<typename remove_reference<_To
+        >::type>::type __dst_t;
+      typedef __and_<__not_<is_same<__src_t, __dst_t>>,
+       is_base_of<__src_t, __dst_t>,
+       __not_<is_constructible<__dst_t, _From>>> type;
+      static constexpr bool value = type::value;
+    };
+
+  template<typename _From, typename _To>
+    struct __is_base_to_derived_ref<_From, _To, false>
+    : public false_type
+    { };
+
+  template<typename _From, typename _To, bool
+           = __and_<is_lvalue_reference<_From>,
+                    is_rvalue_reference<_To>>::value>
+    struct __is_lvalue_to_rvalue_ref;
+
+
+
+  template<typename _From, typename _To>
+    struct __is_lvalue_to_rvalue_ref<_From, _To, true>
+    {
+      typedef typename remove_cv<typename remove_reference<
+        _From>::type>::type __src_t;
+      typedef typename remove_cv<typename remove_reference<
+        _To>::type>::type __dst_t;
+      typedef __and_<__not_<is_function<__src_t>>,
+        __or_<is_same<__src_t, __dst_t>,
+      is_base_of<__dst_t, __src_t>>> type;
+      static constexpr bool value = type::value;
+    };
+
+  template<typename _From, typename _To>
+    struct __is_lvalue_to_rvalue_ref<_From, _To, false>
+    : public false_type
+    { };
+
+
+
+
+
+
+
+  template<typename _Tp, typename _Arg>
+    struct __is_direct_constructible_ref_cast
+    : public __and_<__is_static_castable<_Arg, _Tp>,
+                    __not_<__or_<__is_base_to_derived_ref<_Arg, _Tp>,
+                                 __is_lvalue_to_rvalue_ref<_Arg, _Tp>
+                   >>>
+    { };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_direct_constructible_new
+    : public conditional<is_reference<_Tp>::value,
+    __is_direct_constructible_ref_cast<_Tp, _Arg>,
+    __is_direct_constructible_new_safe<_Tp, _Arg>
+    >::type
+    { };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_direct_constructible
+    : public __is_direct_constructible_new<_Tp, _Arg>::type
+    { };
+
+
+
+
+
+
+  struct __do_is_nary_constructible_impl
+  {
+    template<typename _Tp, typename... _Args, typename
+             = decltype(_Tp(declval<_Args>()...))>
+      static true_type __test(int);
+
+    template<typename, typename...>
+      static false_type __test(...);
+  };
+
+  template<typename _Tp, typename... _Args>
+    struct __is_nary_constructible_impl
+    : public __do_is_nary_constructible_impl
+    {
+      typedef decltype(__test<_Tp, _Args...>(0)) type;
+    };
+
+  template<typename _Tp, typename... _Args>
+    struct __is_nary_constructible
+    : public __is_nary_constructible_impl<_Tp, _Args...>::type
+    {
+      static_assert(sizeof...(_Args) > 1,
+                    "Only useful for > 1 arguments");
+    };
+
+  template<typename _Tp, typename... _Args>
+    struct __is_constructible_impl
+    : public __is_nary_constructible<_Tp, _Args...>
+    { };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_constructible_impl<_Tp, _Arg>
+    : public __is_direct_constructible<_Tp, _Arg>
+    { };
+
+  template<typename _Tp>
+    struct __is_constructible_impl<_Tp>
+    : public is_default_constructible<_Tp>
+    { };
+
+
+  template<typename _Tp, typename... _Args>
+    struct is_constructible
+    : public __is_constructible_impl<_Tp, _Args...>::type
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_copy_constructible_impl;
+
+  template<typename _Tp>
+    struct __is_copy_constructible_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_copy_constructible_impl<_Tp, true>
+    : public is_constructible<_Tp, const _Tp&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_copy_constructible
+    : public __is_copy_constructible_impl<_Tp>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_move_constructible_impl;
+
+  template<typename _Tp>
+    struct __is_move_constructible_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_move_constructible_impl<_Tp, true>
+    : public is_constructible<_Tp, _Tp&&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_move_constructible
+    : public __is_move_constructible_impl<_Tp>
+    { };
+
+  template<typename _Tp>
+    struct __is_nt_default_constructible_atom
+    : public integral_constant<bool, noexcept(_Tp())>
+    { };
+
+  template<typename _Tp, bool = is_array<_Tp>::value>
+    struct __is_nt_default_constructible_impl;
+
+  template<typename _Tp>
+    struct __is_nt_default_constructible_impl<_Tp, true>
+    : public __and_<__is_array_known_bounds<_Tp>,
+      __is_nt_default_constructible_atom<typename
+                      remove_all_extents<_Tp>::type>>
+    { };
+
+  template<typename _Tp>
+    struct __is_nt_default_constructible_impl<_Tp, false>
+    : public __is_nt_default_constructible_atom<_Tp>
+    { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_default_constructible
+    : public __and_<is_default_constructible<_Tp>,
+                    __is_nt_default_constructible_impl<_Tp>>
+    { };
+
+  template<typename _Tp, typename... _Args>
+    struct __is_nt_constructible_impl
+    : public integral_constant<bool, noexcept(_Tp(declval<_Args>()...))>
+    { };
+
+  template<typename _Tp, typename _Arg>
+    struct __is_nt_constructible_impl<_Tp, _Arg>
+    : public integral_constant<bool,
+                               noexcept(static_cast<_Tp>(declval<_Arg>()))>
+    { };
+
+  template<typename _Tp>
+    struct __is_nt_constructible_impl<_Tp>
+    : public is_nothrow_default_constructible<_Tp>
+    { };
+
+
+  template<typename _Tp, typename... _Args>
+    struct is_nothrow_constructible
+    : public __and_<is_constructible<_Tp, _Args...>,
+      __is_nt_constructible_impl<_Tp, _Args...>>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_nothrow_copy_constructible_impl;
+
+  template<typename _Tp>
+    struct __is_nothrow_copy_constructible_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_nothrow_copy_constructible_impl<_Tp, true>
+    : public is_nothrow_constructible<_Tp, const _Tp&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_copy_constructible
+    : public __is_nothrow_copy_constructible_impl<_Tp>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_nothrow_move_constructible_impl;
+
+  template<typename _Tp>
+    struct __is_nothrow_move_constructible_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_nothrow_move_constructible_impl<_Tp, true>
+    : public is_nothrow_constructible<_Tp, _Tp&&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_move_constructible
+    : public __is_nothrow_move_constructible_impl<_Tp>
+    { };
+
+  template<typename _Tp, typename _Up>
+    class __is_assignable_helper
+    {
+      template<typename _Tp1, typename _Up1,
+        typename = decltype(declval<_Tp1>() = declval<_Up1>())>
+ static true_type
+ __test(int);
+
+      template<typename, typename>
+ static false_type
+ __test(...);
+
+    public:
+      typedef decltype(__test<_Tp, _Up>(0)) type;
+    };
+
+
+  template<typename _Tp, typename _Up>
+    struct is_assignable
+      : public __is_assignable_helper<_Tp, _Up>::type
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_copy_assignable_impl;
+
+  template<typename _Tp>
+    struct __is_copy_assignable_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_copy_assignable_impl<_Tp, true>
+    : public is_assignable<_Tp&, const _Tp&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_copy_assignable
+    : public __is_copy_assignable_impl<_Tp>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_move_assignable_impl;
+
+  template<typename _Tp>
+    struct __is_move_assignable_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_move_assignable_impl<_Tp, true>
+    : public is_assignable<_Tp&, _Tp&&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_move_assignable
+    : public __is_move_assignable_impl<_Tp>
+    { };
+
+  template<typename _Tp, typename _Up>
+    struct __is_nt_assignable_impl
+    : public integral_constant<bool, noexcept(declval<_Tp>() = declval<_Up>())>
+    { };
+
+
+  template<typename _Tp, typename _Up>
+    struct is_nothrow_assignable
+    : public __and_<is_assignable<_Tp, _Up>,
+      __is_nt_assignable_impl<_Tp, _Up>>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_nt_copy_assignable_impl;
+
+  template<typename _Tp>
+    struct __is_nt_copy_assignable_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_nt_copy_assignable_impl<_Tp, true>
+    : public is_nothrow_assignable<_Tp&, const _Tp&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_copy_assignable
+    : public __is_nt_copy_assignable_impl<_Tp>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __is_nt_move_assignable_impl;
+
+  template<typename _Tp>
+    struct __is_nt_move_assignable_impl<_Tp, false>
+    : public false_type { };
+
+  template<typename _Tp>
+    struct __is_nt_move_assignable_impl<_Tp, true>
+    : public is_nothrow_assignable<_Tp&, _Tp&&>
+    { };
+
+
+  template<typename _Tp>
+    struct is_nothrow_move_assignable
+    : public __is_nt_move_assignable_impl<_Tp>
+    { };
+
+
+  template<typename _Tp, typename... _Args>
+    struct is_trivially_constructible
+    : public __and_<is_constructible<_Tp, _Args...>, integral_constant<bool,
+   __is_trivially_constructible(_Tp, _Args...)>>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_default_constructible
+    : public is_trivially_constructible<_Tp>::type
+    { };
+
+  struct __do_is_implicitly_default_constructible_impl
+  {
+    template <typename _Tp>
+    static void __helper(const _Tp&);
+
+    template <typename _Tp>
+    static true_type __test(const _Tp&,
+                            decltype(__helper<const _Tp&>({}))* = 0);
+
+    static false_type __test(...);
+  };
+
+  template<typename _Tp>
+    struct __is_implicitly_default_constructible_impl
+      : public __do_is_implicitly_default_constructible_impl
+  {
+    typedef decltype(__test(declval<_Tp>())) type;
+  };
+
+  template<typename _Tp>
+    struct __is_implicitly_default_constructible_safe
+      : public __is_implicitly_default_constructible_impl<_Tp>::type
+  { };
+
+  template <typename _Tp>
+    struct __is_implicitly_default_constructible
+      : public __and_<is_default_constructible<_Tp>,
+                      __is_implicitly_default_constructible_safe<_Tp>>
+  { };
+
+
+  template<typename _Tp>
+    struct is_trivially_copy_constructible
+    : public __and_<is_copy_constructible<_Tp>,
+      integral_constant<bool,
+   __is_trivially_constructible(_Tp, const _Tp&)>>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_move_constructible
+    : public __and_<is_move_constructible<_Tp>,
+      integral_constant<bool,
+   __is_trivially_constructible(_Tp, _Tp&&)>>
+    { };
+
+
+  template<typename _Tp, typename _Up>
+    struct is_trivially_assignable
+    : public __and_<is_assignable<_Tp, _Up>,
+      integral_constant<bool,
+   __is_trivially_assignable(_Tp, _Up)>>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_copy_assignable
+    : public __and_<is_copy_assignable<_Tp>,
+      integral_constant<bool,
+   __is_trivially_assignable(_Tp&, const _Tp&)>>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_move_assignable
+    : public __and_<is_move_assignable<_Tp>,
+      integral_constant<bool,
+   __is_trivially_assignable(_Tp&, _Tp&&)>>
+    { };
+
+
+  template<typename _Tp>
+    struct is_trivially_destructible
+    : public __and_<is_destructible<_Tp>, integral_constant<bool,
+         __has_trivial_destructor(_Tp)>>
+    { };
+
+
+
+  template<typename _Tp>
+    struct has_virtual_destructor
+    : public integral_constant<bool, __has_virtual_destructor(_Tp)>
+    { };
+
+
+
+
+
+  template<typename _Tp>
+    struct alignment_of
+    : public integral_constant<std::size_t, __alignof__(_Tp)> { };
+
+
+  template<typename>
+    struct rank
+    : public integral_constant<std::size_t, 0> { };
+
+  template<typename _Tp, std::size_t _Size>
+    struct rank<_Tp[_Size]>
+    : public integral_constant<std::size_t, 1 + rank<_Tp>::value> { };
+
+  template<typename _Tp>
+    struct rank<_Tp[]>
+    : public integral_constant<std::size_t, 1 + rank<_Tp>::value> { };
+
+
+  template<typename, unsigned _Uint>
+    struct extent
+    : public integral_constant<std::size_t, 0> { };
+
+  template<typename _Tp, unsigned _Uint, std::size_t _Size>
+    struct extent<_Tp[_Size], _Uint>
+    : public integral_constant<std::size_t,
+          _Uint == 0 ? _Size : extent<_Tp,
+          _Uint - 1>::value>
+    { };
+
+  template<typename _Tp, unsigned _Uint>
+    struct extent<_Tp[], _Uint>
+    : public integral_constant<std::size_t,
+          _Uint == 0 ? 0 : extent<_Tp,
+             _Uint - 1>::value>
+    { };
+
+
+
+
+
+  template<typename, typename>
+    struct is_same
+    : public false_type { };
+
+  template<typename _Tp>
+    struct is_same<_Tp, _Tp>
+    : public true_type { };
+
+
+  template<typename _Base, typename _Derived>
+    struct is_base_of
+    : public integral_constant<bool, __is_base_of(_Base, _Derived)>
+    { };
+
+  template<typename _From, typename _To,
+           bool = __or_<is_void<_From>, is_function<_To>,
+                        is_array<_To>>::value>
+    struct __is_convertible_helper
+    { typedef typename is_void<_To>::type type; };
+
+  template<typename _From, typename _To>
+    class __is_convertible_helper<_From, _To, false>
+    {
+       template<typename _To1>
+ static void __test_aux(_To1);
+
+      template<typename _From1, typename _To1,
+        typename = decltype(__test_aux<_To1>(std::declval<_From1>()))>
+ static true_type
+ __test(int);
+
+      template<typename, typename>
+ static false_type
+ __test(...);
+
+    public:
+      typedef decltype(__test<_From, _To>(0)) type;
+    };
+
+
+
+  template<typename _From, typename _To>
+    struct is_convertible
+    : public __is_convertible_helper<_From, _To>::type
+    { };
+
+
+
+
+
+  template<typename _Tp>
+    struct remove_const
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct remove_const<_Tp const>
+    { typedef _Tp type; };
+
+
+  template<typename _Tp>
+    struct remove_volatile
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct remove_volatile<_Tp volatile>
+    { typedef _Tp type; };
+
+
+  template<typename _Tp>
+    struct remove_cv
+    {
+      typedef typename
+      remove_const<typename remove_volatile<_Tp>::type>::type type;
+    };
+
+
+  template<typename _Tp>
+    struct add_const
+    { typedef _Tp const type; };
+
+
+  template<typename _Tp>
+    struct add_volatile
+    { typedef _Tp volatile type; };
+
+
+  template<typename _Tp>
+    struct add_cv
+    {
+      typedef typename
+      add_const<typename add_volatile<_Tp>::type>::type type;
+    };
+
+
+
+#define __cpp_lib_transformation_trait_aliases 201304
+
+
+  template<typename _Tp>
+    using remove_const_t = typename remove_const<_Tp>::type;
+
+
+  template<typename _Tp>
+    using remove_volatile_t = typename remove_volatile<_Tp>::type;
+
+
+  template<typename _Tp>
+    using remove_cv_t = typename remove_cv<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_const_t = typename add_const<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_volatile_t = typename add_volatile<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_cv_t = typename add_cv<_Tp>::type;
+
+
+
+
+
+  template<typename _Tp>
+    struct remove_reference
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct remove_reference<_Tp&>
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct remove_reference<_Tp&&>
+    { typedef _Tp type; };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __add_lvalue_reference_helper
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct __add_lvalue_reference_helper<_Tp, true>
+    { typedef _Tp& type; };
+
+
+  template<typename _Tp>
+    struct add_lvalue_reference
+    : public __add_lvalue_reference_helper<_Tp>
+    { };
+
+  template<typename _Tp, bool = __is_referenceable<_Tp>::value>
+    struct __add_rvalue_reference_helper
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct __add_rvalue_reference_helper<_Tp, true>
+    { typedef _Tp&& type; };
+
+
+  template<typename _Tp>
+    struct add_rvalue_reference
+    : public __add_rvalue_reference_helper<_Tp>
+    { };
+
+
+
+  template<typename _Tp>
+    using remove_reference_t = typename remove_reference<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_lvalue_reference_t = typename add_lvalue_reference<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_rvalue_reference_t = typename add_rvalue_reference<_Tp>::type;
+
+
+
+
+
+  template<typename _Unqualified, bool _IsConst, bool _IsVol>
+    struct __cv_selector;
+
+  template<typename _Unqualified>
+    struct __cv_selector<_Unqualified, false, false>
+    { typedef _Unqualified __type; };
+
+  template<typename _Unqualified>
+    struct __cv_selector<_Unqualified, false, true>
+    { typedef volatile _Unqualified __type; };
+
+  template<typename _Unqualified>
+    struct __cv_selector<_Unqualified, true, false>
+    { typedef const _Unqualified __type; };
+
+  template<typename _Unqualified>
+    struct __cv_selector<_Unqualified, true, true>
+    { typedef const volatile _Unqualified __type; };
+
+  template<typename _Qualified, typename _Unqualified,
+    bool _IsConst = is_const<_Qualified>::value,
+    bool _IsVol = is_volatile<_Qualified>::value>
+    class __match_cv_qualifiers
+    {
+      typedef __cv_selector<_Unqualified, _IsConst, _IsVol> __match;
+
+    public:
+      typedef typename __match::__type __type;
+    };
+
+
+  template<typename _Tp>
+    struct __make_unsigned
+    { typedef _Tp __type; };
+
+  template<>
+    struct __make_unsigned<char>
+    { typedef unsigned char __type; };
+
+  template<>
+    struct __make_unsigned<signed char>
+    { typedef unsigned char __type; };
+
+  template<>
+    struct __make_unsigned<short>
+    { typedef unsigned short __type; };
+
+  template<>
+    struct __make_unsigned<int>
+    { typedef unsigned int __type; };
+
+  template<>
+    struct __make_unsigned<long>
+    { typedef unsigned long __type; };
+
+  template<>
+    struct __make_unsigned<long long>
+    { typedef unsigned long long __type; };
+# 1774 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp,
+    bool _IsInt = is_integral<_Tp>::value,
+    bool _IsEnum = is_enum<_Tp>::value>
+    class __make_unsigned_selector;
+
+  template<typename _Tp>
+    class __make_unsigned_selector<_Tp, true, false>
+    {
+      typedef __make_unsigned<typename remove_cv<_Tp>::type> __unsignedt;
+      typedef typename __unsignedt::__type __unsigned_type;
+      typedef __match_cv_qualifiers<_Tp, __unsigned_type> __cv_unsigned;
+
+    public:
+      typedef typename __cv_unsigned::__type __type;
+    };
+
+  template<typename _Tp>
+    class __make_unsigned_selector<_Tp, false, true>
+    {
+
+      typedef unsigned char __smallest;
+      static const bool __b0 = sizeof(_Tp) <= sizeof(__smallest);
+      static const bool __b1 = sizeof(_Tp) <= sizeof(unsigned short);
+      static const bool __b2 = sizeof(_Tp) <= sizeof(unsigned int);
+      static const bool __b3 = sizeof(_Tp) <= sizeof(unsigned long);
+      typedef conditional<__b3, unsigned long, unsigned long long> __cond3;
+      typedef typename __cond3::type __cond3_type;
+      typedef conditional<__b2, unsigned int, __cond3_type> __cond2;
+      typedef typename __cond2::type __cond2_type;
+      typedef conditional<__b1, unsigned short, __cond2_type> __cond1;
+      typedef typename __cond1::type __cond1_type;
+
+      typedef typename conditional<__b0, __smallest, __cond1_type>::type
+ __unsigned_type;
+      typedef __match_cv_qualifiers<_Tp, __unsigned_type> __cv_unsigned;
+
+    public:
+      typedef typename __cv_unsigned::__type __type;
+    };
+
+
+
+
+
+  template<typename _Tp>
+    struct make_unsigned
+    { typedef typename __make_unsigned_selector<_Tp>::__type type; };
+
+
+  template<>
+    struct make_unsigned<bool>;
+
+
+
+  template<typename _Tp>
+    struct __make_signed
+    { typedef _Tp __type; };
+
+  template<>
+    struct __make_signed<char>
+    { typedef signed char __type; };
+
+  template<>
+    struct __make_signed<unsigned char>
+    { typedef signed char __type; };
+
+  template<>
+    struct __make_signed<unsigned short>
+    { typedef signed short __type; };
+
+  template<>
+    struct __make_signed<unsigned int>
+    { typedef signed int __type; };
+
+  template<>
+    struct __make_signed<unsigned long>
+    { typedef signed long __type; };
+
+  template<>
+    struct __make_signed<unsigned long long>
+    { typedef signed long long __type; };
+
+
+  template<>
+    struct __make_signed<wchar_t> : __make_signed<unsigned int>
+    { };
+
+
+
+  template<>
+    struct __make_signed<char16_t> : __make_signed<uint_least16_t>
+    { };
+  template<>
+    struct __make_signed<char32_t> : __make_signed<uint_least32_t>
+    { };
+# 1893 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Tp,
+    bool _IsInt = is_integral<_Tp>::value,
+    bool _IsEnum = is_enum<_Tp>::value>
+    class __make_signed_selector;
+
+  template<typename _Tp>
+    class __make_signed_selector<_Tp, true, false>
+    {
+      typedef __make_signed<typename remove_cv<_Tp>::type> __signedt;
+      typedef typename __signedt::__type __signed_type;
+      typedef __match_cv_qualifiers<_Tp, __signed_type> __cv_signed;
+
+    public:
+      typedef typename __cv_signed::__type __type;
+    };
+
+  template<typename _Tp>
+    class __make_signed_selector<_Tp, false, true>
+    {
+      typedef typename __make_unsigned_selector<_Tp>::__type __unsigned_type;
+
+    public:
+      typedef typename __make_signed_selector<__unsigned_type>::__type __type;
+    };
+
+
+
+
+
+  template<typename _Tp>
+    struct make_signed
+    { typedef typename __make_signed_selector<_Tp>::__type type; };
+
+
+  template<>
+    struct make_signed<bool>;
+
+
+
+  template<typename _Tp>
+    using make_signed_t = typename make_signed<_Tp>::type;
+
+
+  template<typename _Tp>
+    using make_unsigned_t = typename make_unsigned<_Tp>::type;
+
+
+
+
+
+  template<typename _Tp>
+    struct remove_extent
+    { typedef _Tp type; };
+
+  template<typename _Tp, std::size_t _Size>
+    struct remove_extent<_Tp[_Size]>
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct remove_extent<_Tp[]>
+    { typedef _Tp type; };
+
+
+  template<typename _Tp>
+    struct remove_all_extents
+    { typedef _Tp type; };
+
+  template<typename _Tp, std::size_t _Size>
+    struct remove_all_extents<_Tp[_Size]>
+    { typedef typename remove_all_extents<_Tp>::type type; };
+
+  template<typename _Tp>
+    struct remove_all_extents<_Tp[]>
+    { typedef typename remove_all_extents<_Tp>::type type; };
+
+
+
+  template<typename _Tp>
+    using remove_extent_t = typename remove_extent<_Tp>::type;
+
+
+  template<typename _Tp>
+    using remove_all_extents_t = typename remove_all_extents<_Tp>::type;
+
+
+
+
+  template<typename _Tp, typename>
+    struct __remove_pointer_helper
+    { typedef _Tp type; };
+
+  template<typename _Tp, typename _Up>
+    struct __remove_pointer_helper<_Tp, _Up*>
+    { typedef _Up type; };
+
+
+  template<typename _Tp>
+    struct remove_pointer
+    : public __remove_pointer_helper<_Tp, typename remove_cv<_Tp>::type>
+    { };
+
+
+  template<typename _Tp, bool = __or_<__is_referenceable<_Tp>,
+          is_void<_Tp>>::value>
+    struct __add_pointer_helper
+    { typedef _Tp type; };
+
+  template<typename _Tp>
+    struct __add_pointer_helper<_Tp, true>
+    { typedef typename remove_reference<_Tp>::type* type; };
+
+  template<typename _Tp>
+    struct add_pointer
+    : public __add_pointer_helper<_Tp>
+    { };
+
+
+
+  template<typename _Tp>
+    using remove_pointer_t = typename remove_pointer<_Tp>::type;
+
+
+  template<typename _Tp>
+    using add_pointer_t = typename add_pointer<_Tp>::type;
+
+
+  template<std::size_t _Len>
+    struct __aligned_storage_msa
+    {
+      union __type
+      {
+ unsigned char __data[_Len];
+ struct __attribute__((__aligned__)) { } __align;
+      };
+    };
+# 2039 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<std::size_t _Len, std::size_t _Align =
+    __alignof__(typename __aligned_storage_msa<_Len>::__type)>
+    struct aligned_storage
+    {
+      union type
+      {
+ unsigned char __data[_Len];
+ struct __attribute__((__aligned__((_Align)))) { } __align;
+      };
+    };
+
+  template <typename... _Types>
+    struct __strictest_alignment
+    {
+      static const size_t _S_alignment = 0;
+      static const size_t _S_size = 0;
+    };
+
+  template <typename _Tp, typename... _Types>
+    struct __strictest_alignment<_Tp, _Types...>
+    {
+      static const size_t _S_alignment =
+        alignof(_Tp) > __strictest_alignment<_Types...>::_S_alignment
+ ? alignof(_Tp) : __strictest_alignment<_Types...>::_S_alignment;
+      static const size_t _S_size =
+        sizeof(_Tp) > __strictest_alignment<_Types...>::_S_size
+ ? sizeof(_Tp) : __strictest_alignment<_Types...>::_S_size;
+    };
+# 2078 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template <size_t _Len, typename... _Types>
+    struct aligned_union
+    {
+    private:
+      static_assert(sizeof...(_Types) != 0, "At least one type is required");
+
+      using __strictest = __strictest_alignment<_Types...>;
+      static const size_t _S_len = _Len > __strictest::_S_size
+ ? _Len : __strictest::_S_size;
+    public:
+
+      static const size_t alignment_value = __strictest::_S_alignment;
+
+      typedef typename aligned_storage<_S_len, alignment_value>::type type;
+    };
+
+  template <size_t _Len, typename... _Types>
+    const size_t aligned_union<_Len, _Types...>::alignment_value;
+
+
+
+  template<typename _Up,
+    bool _IsArray = is_array<_Up>::value,
+    bool _IsFunction = is_function<_Up>::value>
+    struct __decay_selector;
+
+
+  template<typename _Up>
+    struct __decay_selector<_Up, false, false>
+    { typedef typename remove_cv<_Up>::type __type; };
+
+  template<typename _Up>
+    struct __decay_selector<_Up, true, false>
+    { typedef typename remove_extent<_Up>::type* __type; };
+
+  template<typename _Up>
+    struct __decay_selector<_Up, false, true>
+    { typedef typename add_pointer<_Up>::type __type; };
+
+
+  template<typename _Tp>
+    class decay
+    {
+      typedef typename remove_reference<_Tp>::type __remove_type;
+
+    public:
+      typedef typename __decay_selector<__remove_type>::__type type;
+    };
+
+  template<typename _Tp>
+    class reference_wrapper;
+
+
+  template<typename _Tp>
+    struct __strip_reference_wrapper
+    {
+      typedef _Tp __type;
+    };
+
+  template<typename _Tp>
+    struct __strip_reference_wrapper<reference_wrapper<_Tp> >
+    {
+      typedef _Tp& __type;
+    };
+
+  template<typename _Tp>
+    struct __decay_and_strip
+    {
+      typedef typename __strip_reference_wrapper<
+ typename decay<_Tp>::type>::__type __type;
+    };
+
+
+
+
+  template<bool, typename _Tp = void>
+    struct enable_if
+    { };
+
+
+  template<typename _Tp>
+    struct enable_if<true, _Tp>
+    { typedef _Tp type; };
+
+  template<typename... _Cond>
+    using _Require = typename enable_if<__and_<_Cond...>::value>::type;
+
+
+
+  template<bool _Cond, typename _Iftrue, typename _Iffalse>
+    struct conditional
+    { typedef _Iftrue type; };
+
+
+  template<typename _Iftrue, typename _Iffalse>
+    struct conditional<false, _Iftrue, _Iffalse>
+    { typedef _Iffalse type; };
+
+
+  template<typename... _Tp>
+    struct common_type;
+
+
+
+  struct __do_common_type_impl
+  {
+    template<typename _Tp, typename _Up>
+      static __success_type<typename decay<decltype
+       (true ? std::declval<_Tp>()
+        : std::declval<_Up>())>::type> _S_test(int);
+
+    template<typename, typename>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _Tp, typename _Up>
+    struct __common_type_impl
+    : private __do_common_type_impl
+    {
+      typedef decltype(_S_test<_Tp, _Up>(0)) type;
+    };
+
+  struct __do_member_type_wrapper
+  {
+    template<typename _Tp>
+      static __success_type<typename _Tp::type> _S_test(int);
+
+    template<typename>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _Tp>
+    struct __member_type_wrapper
+    : private __do_member_type_wrapper
+    {
+      typedef decltype(_S_test<_Tp>(0)) type;
+    };
+
+  template<typename _CTp, typename... _Args>
+    struct __expanded_common_type_wrapper
+    {
+      typedef common_type<typename _CTp::type, _Args...> type;
+    };
+
+  template<typename... _Args>
+    struct __expanded_common_type_wrapper<__failure_type, _Args...>
+    { typedef __failure_type type; };
+
+  template<typename _Tp>
+    struct common_type<_Tp>
+    { typedef typename decay<_Tp>::type type; };
+
+  template<typename _Tp, typename _Up>
+    struct common_type<_Tp, _Up>
+    : public __common_type_impl<_Tp, _Up>::type
+    { };
+
+  template<typename _Tp, typename _Up, typename... _Vp>
+    struct common_type<_Tp, _Up, _Vp...>
+    : public __expanded_common_type_wrapper<typename __member_type_wrapper<
+               common_type<_Tp, _Up>>::type, _Vp...>::type
+    { };
+
+
+  template<typename _Tp>
+    struct underlying_type
+    {
+      typedef __underlying_type(_Tp) type;
+    };
+
+  template<typename _Tp>
+    struct __declval_protector
+    {
+      static const bool __stop = false;
+      static typename add_rvalue_reference<_Tp>::type __delegate();
+    };
+
+  template<typename _Tp>
+    inline typename add_rvalue_reference<_Tp>::type
+    declval() noexcept
+    {
+      static_assert(__declval_protector<_Tp>::__stop,
+      "declval() must not be used!");
+      return __declval_protector<_Tp>::__delegate();
+    }
+
+
+  template<typename _Signature>
+    class result_of;
+
+
+
+#define __cpp_lib_result_of_sfinae 201210
+
+  struct __invoke_memfun_ref { };
+  struct __invoke_memfun_deref { };
+  struct __invoke_memobj_ref { };
+  struct __invoke_memobj_deref { };
+  struct __invoke_other { };
+
+
+  template<typename _Tp, typename _Tag>
+    struct __result_of_success : __success_type<_Tp>
+    { using __invoke_type = _Tag; };
+
+
+  struct __result_of_memfun_ref_impl
+  {
+    template<typename _Fp, typename _Tp1, typename... _Args>
+      static __result_of_success<decltype(
+      (std::declval<_Tp1>().*std::declval<_Fp>())(std::declval<_Args>()...)
+      ), __invoke_memfun_ref> _S_test(int);
+
+    template<typename...>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _MemPtr, typename _Arg, typename... _Args>
+    struct __result_of_memfun_ref
+    : private __result_of_memfun_ref_impl
+    {
+      typedef decltype(_S_test<_MemPtr, _Arg, _Args...>(0)) type;
+    };
+
+
+  struct __result_of_memfun_deref_impl
+  {
+    template<typename _Fp, typename _Tp1, typename... _Args>
+      static __result_of_success<decltype(
+      ((*std::declval<_Tp1>()).*std::declval<_Fp>())(std::declval<_Args>()...)
+      ), __invoke_memfun_deref> _S_test(int);
+
+    template<typename...>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _MemPtr, typename _Arg, typename... _Args>
+    struct __result_of_memfun_deref
+    : private __result_of_memfun_deref_impl
+    {
+      typedef decltype(_S_test<_MemPtr, _Arg, _Args...>(0)) type;
+    };
+
+
+  struct __result_of_memobj_ref_impl
+  {
+    template<typename _Fp, typename _Tp1>
+      static __result_of_success<decltype(
+      std::declval<_Tp1>().*std::declval<_Fp>()
+      ), __invoke_memobj_ref> _S_test(int);
+
+    template<typename, typename>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _MemPtr, typename _Arg>
+    struct __result_of_memobj_ref
+    : private __result_of_memobj_ref_impl
+    {
+      typedef decltype(_S_test<_MemPtr, _Arg>(0)) type;
+    };
+
+
+  struct __result_of_memobj_deref_impl
+  {
+    template<typename _Fp, typename _Tp1>
+      static __result_of_success<decltype(
+      (*std::declval<_Tp1>()).*std::declval<_Fp>()
+      ), __invoke_memobj_deref> _S_test(int);
+
+    template<typename, typename>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _MemPtr, typename _Arg>
+    struct __result_of_memobj_deref
+    : private __result_of_memobj_deref_impl
+    {
+      typedef decltype(_S_test<_MemPtr, _Arg>(0)) type;
+    };
+
+  template<typename _MemPtr, typename _Arg>
+    struct __result_of_memobj;
+
+  template<typename _Res, typename _Class, typename _Arg>
+    struct __result_of_memobj<_Res _Class::*, _Arg>
+    {
+      typedef typename remove_cv<typename remove_reference<
+        _Arg>::type>::type _Argval;
+      typedef _Res _Class::* _MemPtr;
+      typedef typename conditional<__or_<is_same<_Argval, _Class>,
+        is_base_of<_Class, _Argval>>::value,
+        __result_of_memobj_ref<_MemPtr, _Arg>,
+        __result_of_memobj_deref<_MemPtr, _Arg>
+      >::type::type type;
+    };
+
+  template<typename _MemPtr, typename _Arg, typename... _Args>
+    struct __result_of_memfun;
+
+  template<typename _Res, typename _Class, typename _Arg, typename... _Args>
+    struct __result_of_memfun<_Res _Class::*, _Arg, _Args...>
+    {
+      typedef typename remove_cv<typename remove_reference<
+        _Arg>::type>::type _Argval;
+      typedef _Res _Class::* _MemPtr;
+      typedef typename conditional<__or_<is_same<_Argval, _Class>,
+        is_base_of<_Class, _Argval>>::value,
+        __result_of_memfun_ref<_MemPtr, _Arg, _Args...>,
+        __result_of_memfun_deref<_MemPtr, _Arg, _Args...>
+      >::type::type type;
+    };
+
+
+
+
+
+
+  template<typename _Tp, typename _Up = typename decay<_Tp>::type>
+    struct __inv_unwrap
+    {
+      using type = _Tp;
+    };
+
+  template<typename _Tp, typename _Up>
+    struct __inv_unwrap<_Tp, reference_wrapper<_Up>>
+    {
+      using type = _Up&;
+    };
+
+  template<bool, bool, typename _Functor, typename... _ArgTypes>
+    struct __result_of_impl
+    {
+      typedef __failure_type type;
+    };
+
+  template<typename _MemPtr, typename _Arg>
+    struct __result_of_impl<true, false, _MemPtr, _Arg>
+    : public __result_of_memobj<typename decay<_MemPtr>::type,
+    typename __inv_unwrap<_Arg>::type>
+    { };
+
+  template<typename _MemPtr, typename _Arg, typename... _Args>
+    struct __result_of_impl<false, true, _MemPtr, _Arg, _Args...>
+    : public __result_of_memfun<typename decay<_MemPtr>::type,
+    typename __inv_unwrap<_Arg>::type, _Args...>
+    { };
+
+
+  struct __result_of_other_impl
+  {
+    template<typename _Fn, typename... _Args>
+      static __result_of_success<decltype(
+      std::declval<_Fn>()(std::declval<_Args>()...)
+      ), __invoke_other> _S_test(int);
+
+    template<typename...>
+      static __failure_type _S_test(...);
+  };
+
+  template<typename _Functor, typename... _ArgTypes>
+    struct __result_of_impl<false, false, _Functor, _ArgTypes...>
+    : private __result_of_other_impl
+    {
+      typedef decltype(_S_test<_Functor, _ArgTypes...>(0)) type;
+    };
+
+
+  template<typename _Functor, typename... _ArgTypes>
+    struct __invoke_result
+    : public __result_of_impl<
+        is_member_object_pointer<
+          typename remove_reference<_Functor>::type
+        >::value,
+        is_member_function_pointer<
+          typename remove_reference<_Functor>::type
+        >::value,
+ _Functor, _ArgTypes...
+      >::type
+    { };
+
+  template<typename _Functor, typename... _ArgTypes>
+    struct result_of<_Functor(_ArgTypes...)>
+    : public __invoke_result<_Functor, _ArgTypes...>
+    { };
+
+
+
+  template<size_t _Len, size_t _Align =
+     __alignof__(typename __aligned_storage_msa<_Len>::__type)>
+    using aligned_storage_t = typename aligned_storage<_Len, _Align>::type;
+
+  template <size_t _Len, typename... _Types>
+    using aligned_union_t = typename aligned_union<_Len, _Types...>::type;
+
+
+  template<typename _Tp>
+    using decay_t = typename decay<_Tp>::type;
+
+
+  template<bool _Cond, typename _Tp = void>
+    using enable_if_t = typename enable_if<_Cond, _Tp>::type;
+
+
+  template<bool _Cond, typename _Iftrue, typename _Iffalse>
+    using conditional_t = typename conditional<_Cond, _Iftrue, _Iffalse>::type;
+
+
+  template<typename... _Tp>
+    using common_type_t = typename common_type<_Tp...>::type;
+
+
+  template<typename _Tp>
+    using underlying_type_t = typename underlying_type<_Tp>::type;
+
+
+  template<typename _Tp>
+    using result_of_t = typename result_of<_Tp>::type;
+
+
+  template<typename...> using __void_t = void;
+# 2507 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Default, typename _AlwaysVoid,
+    template<typename...> class _Op, typename... _Args>
+    struct __detector
+    {
+      using value_t = false_type;
+      using type = _Default;
+    };
+
+
+  template<typename _Default, template<typename...> class _Op,
+     typename... _Args>
+    struct __detector<_Default, __void_t<_Op<_Args...>>, _Op, _Args...>
+    {
+      using value_t = true_type;
+      using type = _Op<_Args...>;
+    };
+
+
+  template<typename _Default, template<typename...> class _Op,
+    typename... _Args>
+    using __detected_or = __detector<_Default, void, _Op, _Args...>;
+
+
+  template<typename _Default, template<typename...> class _Op,
+    typename... _Args>
+    using __detected_or_t
+      = typename __detected_or<_Default, _Op, _Args...>::type;
+
+
+
+
+
+
+
+#define _GLIBCXX_HAS_NESTED_TYPE(_NTYPE) template<typename _Tp, typename = __void_t<>> struct __has_ ##_NTYPE : false_type { }; template<typename _Tp> struct __has_ ##_NTYPE<_Tp, __void_t<typename _Tp::_NTYPE>> : true_type { };
+# 2551 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template <typename _Tp>
+    struct __is_swappable;
+
+  template <typename _Tp>
+    struct __is_nothrow_swappable;
+
+  template<typename... _Elements>
+    class tuple;
+
+  template<typename>
+    struct __is_tuple_like_impl : false_type
+    { };
+
+  template<typename... _Tps>
+    struct __is_tuple_like_impl<tuple<_Tps...>> : true_type
+    { };
+
+
+  template<typename _Tp>
+    struct __is_tuple_like
+    : public __is_tuple_like_impl<typename remove_cv<
+      typename remove_reference<_Tp>::type>::type>::type
+    { };
+
+  template<typename _Tp>
+    inline
+    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+         is_move_constructible<_Tp>,
+         is_move_assignable<_Tp>>::value>::type
+    swap(_Tp&, _Tp&)
+    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+             is_nothrow_move_assignable<_Tp>>::value);
+
+  template<typename _Tp, size_t _Nm>
+    inline
+    typename enable_if<__is_swappable<_Tp>::value>::type
+    swap(_Tp (&__a)[_Nm], _Tp (&__b)[_Nm])
+    noexcept(__is_nothrow_swappable<_Tp>::value);
+
+  namespace __swappable_details {
+    using std::swap;
+
+    struct __do_is_swappable_impl
+    {
+      template<typename _Tp, typename
+               = decltype(swap(std::declval<_Tp&>(), std::declval<_Tp&>()))>
+        static true_type __test(int);
+
+      template<typename>
+        static false_type __test(...);
+    };
+
+    struct __do_is_nothrow_swappable_impl
+    {
+      template<typename _Tp>
+        static __bool_constant<
+          noexcept(swap(std::declval<_Tp&>(), std::declval<_Tp&>()))
+        > __test(int);
+
+      template<typename>
+        static false_type __test(...);
+    };
+
+  }
+
+  template<typename _Tp>
+    struct __is_swappable_impl
+    : public __swappable_details::__do_is_swappable_impl
+    {
+      typedef decltype(__test<_Tp>(0)) type;
+    };
+
+  template<typename _Tp>
+    struct __is_nothrow_swappable_impl
+    : public __swappable_details::__do_is_nothrow_swappable_impl
+    {
+      typedef decltype(__test<_Tp>(0)) type;
+    };
+
+  template<typename _Tp>
+    struct __is_swappable
+    : public __is_swappable_impl<_Tp>::type
+    { };
+
+  template<typename _Tp>
+    struct __is_nothrow_swappable
+    : public __is_nothrow_swappable_impl<_Tp>::type
+    { };
+# 2756 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+  template<typename _Result, typename _Ret, typename = void>
+    struct __is_invocable_impl : false_type { };
+
+  template<typename _Result, typename _Ret>
+    struct __is_invocable_impl<_Result, _Ret, __void_t<typename _Result::type>>
+    : is_convertible<typename _Result::type, _Ret>::type
+    { };
+
+  template<typename _Result>
+    struct __is_invocable_impl<_Result, void, __void_t<typename _Result::type>>
+    : true_type
+    { };
+
+  template<typename _Fn, typename... _ArgTypes>
+    struct __is_invocable
+    : __is_invocable_impl<__invoke_result<_Fn, _ArgTypes...>, void>::type
+    { };
+
+  template<typename _Fn, typename _Tp, typename... _Args>
+    constexpr bool __call_is_nt(__invoke_memfun_ref)
+    {
+      using _Up = typename __inv_unwrap<_Tp>::type;
+      return noexcept((std::declval<_Up>().*std::declval<_Fn>())(
+     std::declval<_Args>()...));
+    }
+
+  template<typename _Fn, typename _Tp, typename... _Args>
+    constexpr bool __call_is_nt(__invoke_memfun_deref)
+    {
+      return noexcept(((*std::declval<_Tp>()).*std::declval<_Fn>())(
+     std::declval<_Args>()...));
+    }
+
+  template<typename _Fn, typename _Tp>
+    constexpr bool __call_is_nt(__invoke_memobj_ref)
+    {
+      using _Up = typename __inv_unwrap<_Tp>::type;
+      return noexcept(std::declval<_Up>().*std::declval<_Fn>());
+    }
+
+  template<typename _Fn, typename _Tp>
+    constexpr bool __call_is_nt(__invoke_memobj_deref)
+    {
+      return noexcept((*std::declval<_Tp>()).*std::declval<_Fn>());
+    }
+
+  template<typename _Fn, typename... _Args>
+    constexpr bool __call_is_nt(__invoke_other)
+    {
+      return noexcept(std::declval<_Fn>()(std::declval<_Args>()...));
+    }
+
+  template<typename _Result, typename _Fn, typename... _Args>
+    struct __call_is_nothrow
+    : __bool_constant<
+ std::__call_is_nt<_Fn, _Args...>(typename _Result::__invoke_type{})
+      >
+    { };
+
+  template<typename _Fn, typename... _Args>
+    using __call_is_nothrow_
+      = __call_is_nothrow<__invoke_result<_Fn, _Args...>, _Fn, _Args...>;
+
+
+  template<typename _Fn, typename... _Args>
+    struct __is_nothrow_invocable
+    : __and_<__is_invocable<_Fn, _Args...>,
+             __call_is_nothrow_<_Fn, _Args...>>::type
+    { };
+
+  struct __nonesuch {
+    __nonesuch() = delete;
+    ~__nonesuch() = delete;
+    __nonesuch(__nonesuch const&) = delete;
+    void operator=(__nonesuch const&) = delete;
+  };
+# 3112 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\type_traits" 3
+
+}
+# 55 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 2 3
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+# 71 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 3
+  template<typename _Tp>
+    constexpr _Tp&&
+    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    { return static_cast<_Tp&&>(__t); }
+
+
+
+
+
+
+
+  template<typename _Tp>
+    constexpr _Tp&&
+    forward(typename std::remove_reference<_Tp>::type&& __t) noexcept
+    {
+      static_assert(!std::is_lvalue_reference<_Tp>::value, "template argument"
+      " substituting _Tp is an lvalue reference type");
+      return static_cast<_Tp&&>(__t);
+    }
+
+
+
+
+
+
+  template<typename _Tp>
+    constexpr typename std::remove_reference<_Tp>::type&&
+    move(_Tp&& __t) noexcept
+    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+
+
+  template<typename _Tp>
+    struct __move_if_noexcept_cond
+    : public __and_<__not_<is_nothrow_move_constructible<_Tp>>,
+                    is_copy_constructible<_Tp>>::type { };
+# 115 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 3
+  template<typename _Tp>
+    constexpr typename
+    conditional<__move_if_noexcept_cond<_Tp>::value, const _Tp&, _Tp&&>::type
+    move_if_noexcept(_Tp& __x) noexcept
+    { return std::move(__x); }
+# 135 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 3
+  template<typename _Tp>
+    inline _Tp*
+    addressof(_Tp& __r) noexcept
+    { return std::__addressof(__r); }
+
+
+
+  template<typename _Tp>
+    const _Tp* addressof(const _Tp&&) = delete;
+
+
+  template <typename _Tp, typename _Up = _Tp>
+    inline _Tp
+    __exchange(_Tp& __obj, _Up&& __new_val)
+    {
+      _Tp __old_val = std::move(__obj);
+      __obj = std::forward<_Up>(__new_val);
+      return __old_val;
+    }
+
+
+
+}
+
+#define _GLIBCXX_MOVE(__val) std::move(__val)
+#define _GLIBCXX_FORWARD(_Tp,__val) std::forward<_Tp>(__val)
+
+
+
+
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+# 181 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\move.h" 3
+  template<typename _Tp>
+    inline
+
+    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+         is_move_constructible<_Tp>,
+         is_move_assignable<_Tp>>::value>::type
+    swap(_Tp& __a, _Tp& __b)
+    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+             is_nothrow_move_assignable<_Tp>>::value)
+
+
+
+
+    {
+
+     
+
+      _Tp __tmp = std::move(__a);
+      __a = std::move(__b);
+      __b = std::move(__tmp);
+    }
+
+
+
+
+  template<typename _Tp, size_t _Nm>
+    inline
+
+    typename enable_if<__is_swappable<_Tp>::value>::type
+    swap(_Tp (&__a)[_Nm], _Tp (&__b)[_Nm])
+    noexcept(__is_nothrow_swappable<_Tp>::value)
+
+
+
+
+    {
+      for (size_t __n = 0; __n < _Nm; ++__n)
+ swap(__a[__n], __b[__n]);
+    }
+
+
+
+}
+# 41 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\bits\\nested_exception.h" 2 3
+
+extern "C++" {
+
+namespace std
+{
+
+
+
+
+
+
+  class nested_exception
+  {
+    exception_ptr _M_ptr;
+
+  public:
+    nested_exception() noexcept : _M_ptr(current_exception()) { }
+
+    nested_exception(const nested_exception&) noexcept = default;
+
+    nested_exception& operator=(const nested_exception&) noexcept = default;
+
+    virtual ~nested_exception() noexcept;
+
+    [[noreturn]]
+    void
+    rethrow_nested() const
+    {
+      if (_M_ptr)
+ rethrow_exception(_M_ptr);
+      std::terminate();
+    }
+
+    exception_ptr
+    nested_ptr() const noexcept
+    { return _M_ptr; }
+  };
+
+  template<typename _Except>
+    struct _Nested_exception : public _Except, public nested_exception
+    {
+      explicit _Nested_exception(const _Except& __ex)
+      : _Except(__ex)
+      { }
+
+      explicit _Nested_exception(_Except&& __ex)
+      : _Except(static_cast<_Except&&>(__ex))
+      { }
+    };
+
+
+
+
+  template<typename _Tp>
+    inline void
+    __throw_with_nested_impl(_Tp&& __t, true_type)
+    {
+      using _Up = typename remove_reference<_Tp>::type;
+      throw _Nested_exception<_Up>{std::forward<_Tp>(__t)};
+    }
+
+  template<typename _Tp>
+    inline void
+    __throw_with_nested_impl(_Tp&& __t, false_type)
+    { throw std::forward<_Tp>(__t); }
+
+
+
+  template<typename _Tp>
+    [[noreturn]]
+    inline void
+    throw_with_nested(_Tp&& __t)
+    {
+      using _Up = typename decay<_Tp>::type;
+      using _CopyConstructible
+ = __and_<is_copy_constructible<_Up>, is_move_constructible<_Up>>;
+      static_assert(_CopyConstructible::value,
+   "throw_with_nested argument must be CopyConstructible");
+      using __nest = __and_<is_class<_Up>, __bool_constant<!__is_final(_Up)>,
+       __not_<is_base_of<nested_exception, _Up>>>;
+      std::__throw_with_nested_impl(std::forward<_Tp>(__t), __nest{});
+    }
+
+
+  template<typename _Tp>
+    using __rethrow_if_nested_cond = typename enable_if<
+      __and_<is_polymorphic<_Tp>,
+      __or_<__not_<is_base_of<nested_exception, _Tp>>,
+     is_convertible<_Tp*, nested_exception*>>>::value
+    >::type;
+
+
+  template<typename _Ex>
+    inline __rethrow_if_nested_cond<_Ex>
+    __rethrow_if_nested_impl(const _Ex* __ptr)
+    {
+      if (auto __ne_ptr = dynamic_cast<const nested_exception*>(__ptr))
+ __ne_ptr->rethrow_nested();
+    }
+
+
+  inline void
+  __rethrow_if_nested_impl(const void*)
+  { }
+
+
+  template<typename _Ex>
+    inline void
+    rethrow_if_nested(const _Ex& __ex)
+    { std::__rethrow_if_nested_impl(std::__addressof(__ex)); }
+
+
+}
+
+}
+
+
+
+#pragma GCC visibility pop
+# 144 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\exception" 2 3
+# 41 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 2 3
+
+#pragma GCC visibility push(default)
+
+extern "C++" {
+
+namespace std
+{
+
+
+
+
+
+
+  class bad_alloc : public exception
+  {
+  public:
+    bad_alloc() throw() { }
+
+
+
+    virtual ~bad_alloc() throw();
+
+
+    virtual const char* what() const throw();
+  };
+
+
+  class bad_array_new_length : public bad_alloc
+  {
+  public:
+    bad_array_new_length() throw() { };
+
+
+
+    virtual ~bad_array_new_length() throw();
+
+
+    virtual const char* what() const throw();
+  };
+
+
+
+
+
+
+  struct nothrow_t
+  {
+
+    explicit nothrow_t() = default;
+
+  };
+
+  extern const nothrow_t nothrow;
+
+
+
+  typedef void (*new_handler)();
+
+
+
+  new_handler set_new_handler(new_handler) throw();
+
+
+
+  new_handler get_new_handler() noexcept;
+
+}
+# 120 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 3
+void* operator new(std::size_t)
+  __attribute__((__externally_visible__));
+void* operator new[](std::size_t)
+  __attribute__((__externally_visible__));
+void operator delete(void*) noexcept
+  __attribute__((__externally_visible__));
+void operator delete[](void*) noexcept
+  __attribute__((__externally_visible__));
+
+void operator delete(void*, std::size_t) noexcept
+  __attribute__((__externally_visible__));
+void operator delete[](void*, std::size_t) noexcept
+  __attribute__((__externally_visible__));
+
+void* operator new(std::size_t, const std::nothrow_t&) noexcept
+  __attribute__((__externally_visible__));
+void* operator new[](std::size_t, const std::nothrow_t&) noexcept
+  __attribute__((__externally_visible__));
+void operator delete(void*, const std::nothrow_t&) noexcept
+  __attribute__((__externally_visible__));
+void operator delete[](void*, const std::nothrow_t&) noexcept
+  __attribute__((__externally_visible__));
+# 168 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 3
+inline void* operator new(std::size_t, void* __p) noexcept
+{ return __p; }
+inline void* operator new[](std::size_t, void* __p) noexcept
+{ return __p; }
+
+
+inline void operator delete (void*, void*) noexcept { }
+inline void operator delete[](void*, void*) noexcept { }
+
+}
+# 216 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\new" 3
+#pragma GCC visibility pop
+# 10 "../src/memory/MemoryChunk.cpp" 2
+
+
+
+# 12 "../src/memory/MemoryChunk.cpp"
+MemoryChunk::MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd)
+ : nextValidChunkOffset(nextValidChunkOffset),endMark(endMark?1:0),allocated(allocated?1:0),size(size),nextBaseFromEnd(nextBaseFromEnd){}
+bool MemoryChunk::isAllocated() const {
+ return allocated==1;
+}
+
+void MemoryChunk::setAllocated(bool allocated)
+{
+ this->allocated = allocated?1:0;
+}
+bool MemoryChunk::isEnd() const
+{
+ return this->endMark==1;
+}
+void MemoryChunk::setEnd(bool end)
+{
+ this->endMark = (end?1:0);
+}
+const MemoryChunk* MemoryChunk::getNext() const
+{
+ if(this->isEnd())
+  return nullptr;
+ const MemoryChunk *next=reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(this->getDataEnd()) + this->nextBaseFromEnd);
+ while(!next->isEnd() && next->nextValidChunkOffset!=0)
+  next = reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(next) + next->nextValidChunkOffset);
+ return next;
+}
+MemoryChunk* MemoryChunk::getNext()
+{
+ return const_cast<MemoryChunk*>(reinterpret_cast<const MemoryChunk*>(this)->getNext());
+}
+
+
+size_t MemoryChunk::getSize() const
+{
+ return size;
+}
+
+void MemoryChunk::setSize(size_t size)
+{
+ this->size = size;
+}
+void* MemoryChunk::getDataPtr()
+{
+ return const_cast<void*>(reinterpret_cast<const MemoryChunk*>(this)->getDataPtr());
+}
+const void * MemoryChunk::getDataPtr()const
+{
+ return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk);
+}
+void* MemoryChunk::getDataEnd()
+{
+ return const_cast<void*>(reinterpret_cast<const MemoryChunk*>(this)->getDataEnd());
+}
+const void * MemoryChunk::getDataEnd()const
+{
+ return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk)+this->getSize();
+}
+
+
+
+uint64_t MemoryChunk::getNextBaseFromEnd() const
+{
+ return nextBaseFromEnd;
+}
+void MemoryChunk::setNextBaseFromEnd(uint64_t nextBaseFromEnd)
+{
+ this->nextBaseFromEnd = nextBaseFromEnd;
+}
+
+uint64_t MemoryChunk::getNextValidChunkOffset() const {
+ return nextValidChunkOffset;
+}
+
+void MemoryChunk::setNextValidChunkOffset(uint64_t nextValidChunkOffset )
+{
+ this->nextValidChunkOffset = nextValidChunkOffset;
+}
+
+MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
+{
+ if(this->allocated || moveSize >= this->size)
+  return nullptr;
+ if(moveSize==0)
+  return this;
+ MemoryChunk * nextChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this) + moveSize);
+
+ if(moveSize >= sizeof(MemoryChunk))
+  *nextChunk=*this;
+ else{
+  MemoryChunk temp=*this;
+  *nextChunk = temp;
+ }
+ nextChunk->size -= moveSize;
+
+
+ if(moveSize >= sizeof(MemoryChunk)+1)
+ {
+
+  this->nextBaseFromEnd=0;
+  this->size = moveSize - sizeof(MemoryChunk);
+ }else{
+  this->nextValidChunkOffset = moveSize;
+ }
+ return nextChunk;
+}
+size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const
+{
+ if(allocSize > this->size)
+  return 0xffffffffffffffffUL;
+ size_t mod=reinterpret_cast<uint64_t>(this->getDataPtr()) % alignment;
+ if(mod!=0)
+ {
+  if(alignment - mod + allocSize > this->size)
+   return 0xffffffffffffffffUL;
+  else
+   return alignment - mod;
+ }else
+  return 0;
+}
+bool MemoryChunk::split(size_t splitSize)
+{
+ if(this->isEnd() || this->isAllocated() || splitSize > this->getSize() || splitSize==0)
+  return false;
+ size_t leftSize = this->getSize() - splitSize;
+ MemoryChunk * nextChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this->getDataPtr())+splitSize);
+ if(leftSize >= sizeof(MemoryChunk) + 1)
+ {
+  new (nextChunk) MemoryChunk(leftSize - sizeof(MemoryChunk),this->isAllocated(),0,false,this->getNextBaseFromEnd());
+
+  this->size = splitSize;
+  this->nextBaseFromEnd=0;
+ }else{
+  this->nextValidChunkOffset = leftSize;
+ }
+ return true;
+}
+
+void MemoryChunk::mergeTrailingsUnallocated()
+{
+ if(this->isAllocated() || this->nextBaseFromEnd !=0 || this->isEnd())
+  return;
+ size_t collectedSize = 0;
+ MemoryChunk * freeChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this)+sizeof(MemoryChunk) + this->size);
+ MemoryChunk * lastChunk = nullptr;
+ while(true)
+ {
+  size_t addingSize=freeChunk->nextValidChunkOffset;
+  if(addingSize==0)
+  {
+   if(!freeChunk->isEnd() && !freeChunk->isAllocated() && freeChunk->nextBaseFromEnd==0)
+    addingSize = freeChunk->size + sizeof(MemoryChunk);
+   else
+    break;
+  }
+  collectedSize += addingSize;
+  lastChunk = freeChunk;
+  freeChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(freeChunk) + addingSize);
+ }
+
+ this->size+=collectedSize;
+ this->nextBaseFromEnd = lastChunk->nextBaseFromEnd;
+}

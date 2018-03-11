@@ -8,7 +8,7 @@
 #define INCLUDE_DATA_STRUCTURES_VECTOR_TEMPLATE_H_
 #include <def.h>
 #include <data_structures/Vector.h>
-#include <MemoryManager.h>
+#include <kernel.h>
 #include <printk.h>
 
 template <class T>

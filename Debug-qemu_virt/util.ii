@@ -424,6 +424,8 @@
 
 #define CXX_MACROS_H__ 
 
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
 #define KERNEL_ADDRESS 0
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
@@ -1563,13 +1565,12 @@ constexpr int MiB = UNIT_K * KiB;
 constexpr int GiB = UNIT_K * MiB;
 
 
-#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << " failed.\n";}
-
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+
 
 
 
@@ -1614,6 +1615,35 @@ void reverse(char *str,size_t size);
 
 
 const char *strOffset(const char *p,size_t offset);
+
+
+
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+}
+
+
+__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
 # 10 "../src/arch/qemu_virt/util.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/qemu-virt/util.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/arch/qemu-virt/util.h"

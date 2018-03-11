@@ -11,11 +11,14 @@ RM := rm -rf
 -include src/test/subdir.mk
 -include src/minimal_crt/subdir.mk
 -include src/minimal_cpprt/subdir.mk
+-include src/memory/subdir.mk
 -include src/io/subdir.mk
 -include src/filesystem/fat/subdir.mk
 -include src/default_impl/subdir.mk
 -include src/data_structures/subdir.mk
 -include src/arch/qemu_virt/subdir.mk
+-include src/arch/common_aarch64/mmu/subdir.mk
+-include src/arch/common_aarch64/exception/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk

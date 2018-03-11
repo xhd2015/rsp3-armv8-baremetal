@@ -6,9 +6,9 @@
  */
 
 
-#include <MemoryManager.h>
-#include <mem_config.h>
-#include <printk.h>
+#include <memory/MemoryManager.h>
+#include <memory/mem_config.h>
+#include <kernel.h>
 #include <IntegerFormatter.h>
 #include <test/test_base.h>
 #include <test/TestMemoryManager.h>

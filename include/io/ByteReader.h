@@ -9,7 +9,7 @@
 #define INCLUDE_BYTEREADER_H_
 
 #include <io/SectorReader.h>
-#include <MemoryManager.h>
+#include <memory/MemoryManager.h>
 #include <data_structures/Vector.h>
 #include <data_structures/VectorRef.h>
 #include <utility>

@@ -27,26 +27,41 @@ reg_list=[
 # bits (5) M // Mode field [AArch32 only]
 # )
 #     ["SPSR_EL1",""]
+    # PSTATE fields
     ["CurrentEL","uint32_t","STD",[["RES0_0",2,   "EL",2,   "RES0_1",28]]],     
     ["DAIF","uint32_t","STD",[["RES0_0",6,   "F",1,   "I",1,    "A",1   ,"D",1,   "RES0_1",22]]],
     # Exception related
-    ["VBAR_EL1","uint64_t","STD",[["Addr",64]]],
+    ["VBAR_EL1","uint64_t","STD",[["Addr,Hex",64]]],
     ["ELR_EL1","uint64_t","STD",[["returnAddr",64]]],
     ["ELR_EL2","uint64_t","STD",[["returnAddr",64]]],
-    ["ELR_EL3","uint64_t","STD",[["returnAddr",64]]],
+    ["ELR_EL3","uint64_t","STD",[["returnAddr",64]]],    
+    ["ESR_EL1","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
+    ["ESR_EL2","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
+    ["ESR_EL3","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
+    ["FAR_EL1","uint64_t","STD",[["faultAddr",64]]],
+    ["FAR_EL2","uint64_t","STD",[["faultAddr",64]]],
+    ["FAR_EL3","uint64_t","STD",[["faultAddr",64]]],
+    # ELSPMode,e.g. M[3:0], 0b0000=EL0t, 0b0100=EL1t, 0b0101=EL1h
+    # ExeState is execution state, in AARCH64, it is RES0
+    # 当EL=0时, SPSel只能是0
+    ["SPSR_EL1","uint32_t","STD",[["SPSel",1,   "RES0_0",1,   "EL",2,   "ExeState",1,   "RES0_1",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0_2",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0_3",4,   "V",1,   "C",1,   "Z",1,   "N",1]]],
+    ["SPSR_EL2","uint32_t","STD",[["SPSel",1,   "RES0_0",1,   "EL",2,   "ExeState",1,   "RES0_1",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0_2",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0_3",4,   "V",1,   "C",1,   "Z",1,   "N",1]]],
+    ["SPSR_EL3","uint32_t","STD",[["SPSel",1,   "RES0_0",1,   "EL",2,   "ExeState",1,   "RES0_1",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0_2",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0_3",4,   "V",1,   "C",1,   "Z",1,   "N",1]]],
+    ["SP","uint64_t","STD",[["SP",64]]],
+    ["SP_EL0","uint64_t","STD",[["SP",64]]],
+    ["SP_EL1","uint64_t","STD",[["SP",64]]],
+    ["SP_EL2","uint64_t","STD",[["SP",64]]],
+    ["SP_EL3","uint64_t","STD",[["SP",64]]],
+    
+    
     ["NZCV","uint64_t","STD",[["RES0",28,   "V",1,   "C",1,    "Z",1,    "N",1]]],
     # PAN may not be implemented,it is not standard
     ## NOTE: only available on armv8.1-a and later architectures, so when using g++, option '-march=armv8.2-a' must be present'
     ["PAN","uint32_t","STD",[["RES0_0",22,   "PAN",1,   "RES0_1",9]]],
-    ["SP_EL0","uint64_t","STD",[["Pointer",64]]],
-    ["SP_EL1","uint64_t","STD",[["Pointer",64]]],
-    ["SP_EL2","uint64_t","STD",[["Pointer",64]]],
-    ["SP_EL3","uint64_t","STD",[["Pointer",64]]],
     ["SPSel","uint32_t","STD",[["SP",1,   "RES0",31]]],
     # influence LDRR/STRR，=1 as LDR/STR
     ["UAO","uint64_t","STD",[["RES0_0",23,   "UAO",1,   "RES0_1",8]]],
     
-   
     
     ["PC","uint64_t","PC",[["PC,Hex",64]]],
     ["TCR_EL1","uint64_t","STD",[["T0SZ",6,   "RES0_0",1,   "EPD0",1,   "IRGN0",2,   "ORGN0",2,   "SH0",2,   "TG0",2,   "T1SZ",6,   "A1",1,   "EPD1",1,   "IRGN1",2,   "ORGN1",2,   "SH1",2,   "TG1",2,   "IPS",3,   "RES0_1",1,   "AS",1,    "TBI0",1,   "TBI1",1,    "HA",1,   "HD",1,   "HPD0",1,   "HPD1",1,   "HWU059",1,   "HWU060",1,   "HWU061",1,    "HWU062",1,    "HWU159",1,   "HWU160",1,   "HWU161",1,   "HWU162",1,  "RES0_2",2,   "NFD0",1,   "NFD1",1,   "RES0_3",9]]],

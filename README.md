@@ -21,9 +21,9 @@
 
 
 # 其他参考
-工程进度总览参考 [Progress_Current.md](./Progress_Current.md)
+工程进度总览参考 [Progress_Current.md](misc/Progress_Current.md)
 
-工程记录参考 [RECORDING_NOTE.md](./RECORDING_NOTE.md)
+工程记录参考 [RECORDING_NOTE.md](misc/RECORDING_NOTE.md)
 
 # Copyright
 

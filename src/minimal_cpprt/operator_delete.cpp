@@ -6,7 +6,7 @@
  */
 #include <def.h>
 #include <new>
-#include <MemoryManager.h>
+#include <kernel.h>
 
 void operator delete(void *p,size_t n)
 {

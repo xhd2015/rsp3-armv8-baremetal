@@ -219,14 +219,15 @@ SETUP_REG_ANY_MEM_WRITE(Descriptor4KBL2)
 class RegDescriptor4KBL3{
 public:
         uint64_t		Valid:1;
-        uint64_t		nReserved:1;
+        uint64_t		RES1_0:1;
+        uint64_t		AttrIndex:3;
         uint64_t		NS:1;
         uint64_t		AP:2;
         uint64_t		SH:2;
         uint64_t		AF:1;
         uint64_t		nG:1;
         uint64_t		OutputAddr:36;
-        uint64_t		RES0:3;
+        uint64_t		RES0_1:3;
         uint64_t		DBM:1;
         uint64_t		Contiguous:1;
         uint64_t		PXN:1;
@@ -238,14 +239,15 @@ public:
         {
             kout << "Descriptor4KBL3 : "
                 <<"Valid = "<< Valid << ","
-                <<"nReserved = "<< nReserved << ","
+                <<"RES1_0 = "<< RES1_0 << ","
+                <<"AttrIndex = "<< AttrIndex << ","
                 <<"NS = "<< NS << ","
                 <<"AP = "<< AP << ","
                 <<"SH = "<< SH << ","
                 <<"AF = "<< AF << ","
                 <<"nG = "<< nG << ","
                 <<"OutputAddr = "<< Hex(OutputAddr) << ","
-                <<"RES0 = "<< RES0 << ","
+                <<"RES0_1 = "<< RES0_1 << ","
                 <<"DBM = "<< DBM << ","
                 <<"Contiguous = "<< Contiguous << ","
                 <<"PXN = "<< PXN << ","

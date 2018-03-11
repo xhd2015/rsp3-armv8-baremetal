@@ -44,6 +44,7 @@ constexpr int  GiB = UNIT_K * MiB;
 #define __stringify(x)		__stringify_1(x)
 
 
+
 // for readibility, 16 bits per letter
 #define HEX32(a,b) 0x##a##b
 #define HEX64(a,b,c,d) 0x##a##b##c##d

@@ -1,4 +1,4 @@
-	.arch armv8-a
+	.arch armv8.2-a+crc
 	.file	"__throw_bad_function_call.cpp"
 	.text
 .Ltext0:
@@ -25,10 +25,10 @@ _ZSt25__throw_bad_function_callv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF408
+	.4byte	.LASF412
 	.byte	0x4
-	.4byte	.LASF409
-	.4byte	.LASF410
+	.4byte	.LASF413
+	.4byte	.LASF414
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -39,10 +39,10 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0
 	.4byte	0x48
 	.uleb128 0x3
-	.4byte	.LASF411
+	.4byte	.LASF415
 	.byte	0x1
 	.byte	0xb
-	.4byte	.LASF412
+	.4byte	.LASF416
 	.byte	0
 	.uleb128 0x4
 	.4byte	0x3c
@@ -1259,71 +1259,71 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0x5
 	.uleb128 0x175
 	.4byte	.LASF372
-	.byte	0x6
+	.byte	0x5
 	.uleb128 0x176
 	.4byte	.LASF373
 	.byte	0x5
-	.uleb128 0x1
+	.uleb128 0x177
 	.4byte	.LASF374
+	.byte	0x6
+	.uleb128 0x178
+	.4byte	.LASF375
+	.byte	0x5
+	.uleb128 0x1
+	.4byte	.LASF376
 	.byte	0x5
 	.uleb128 0x2
-	.4byte	.LASF375
+	.4byte	.LASF377
 	.byte	0x6
 	.uleb128 0x3
-	.4byte	.LASF376
+	.4byte	.LASF378
 	.byte	0x6
 	.uleb128 0x1
-	.4byte	.LASF377
-	.byte	0x5
-	.uleb128 0x1
-	.4byte	.LASF378
-	.byte	0x5
-	.uleb128 0x2
 	.4byte	.LASF379
 	.byte	0x5
-	.uleb128 0x3
+	.uleb128 0x1
 	.4byte	.LASF380
 	.byte	0x5
-	.uleb128 0x4
+	.uleb128 0x2
 	.4byte	.LASF381
 	.byte	0x5
-	.uleb128 0x5
+	.uleb128 0x3
 	.4byte	.LASF382
+	.byte	0x5
+	.uleb128 0x4
+	.4byte	.LASF383
+	.byte	0x5
+	.uleb128 0x5
+	.4byte	.LASF384
 	.byte	0x6
 	.uleb128 0x6
-	.4byte	.LASF383
+	.4byte	.LASF385
 	.byte	0x6
 	.uleb128 0x1
-	.4byte	.LASF384
+	.4byte	.LASF386
 	.byte	0x5
 	.uleb128 0x1
-	.4byte	.LASF385
+	.4byte	.LASF387
 	.byte	0x5
 	.uleb128 0x2
-	.4byte	.LASF386
-	.byte	0x6
-	.uleb128 0x3
-	.4byte	.LASF387
-	.byte	0x6
-	.uleb128 0x1
 	.4byte	.LASF388
-	.byte	0x6
-	.uleb128 0x1
+	.byte	0x5
+	.uleb128 0x3
 	.4byte	.LASF389
 	.byte	0x6
-	.uleb128 0x1
+	.uleb128 0x4
 	.4byte	.LASF390
-	.byte	0x5
+	.byte	0x6
 	.uleb128 0x1
 	.4byte	.LASF391
 	.byte	0x6
-	.uleb128 0x2
+	.uleb128 0x1
 	.4byte	.LASF392
-	.byte	0x6
+	.byte	0x5
 	.uleb128 0x1
 	.4byte	.LASF393
 	.byte	0x6
-	.uleb128 0x1
+	.uleb128 0x2
 	.4byte	.LASF394
 	.byte	0x6
 	.uleb128 0x1
@@ -1333,19 +1333,25 @@ _ZSt25__throw_bad_function_callv:
 	.4byte	.LASF396
 	.byte	0x5
 	.uleb128 0x1
-	.4byte	.LASF181
+	.4byte	.LASF397
 	.byte	0x6
 	.uleb128 0x2
-	.4byte	.LASF397
-	.byte	0x5
-	.uleb128 0x1
 	.4byte	.LASF398
 	.byte	0x5
+	.uleb128 0x1
+	.4byte	.LASF183
+	.byte	0x6
 	.uleb128 0x2
 	.4byte	.LASF399
 	.byte	0x5
 	.uleb128 0x1
 	.4byte	.LASF400
+	.byte	0x5
+	.uleb128 0x2
+	.4byte	.LASF401
+	.byte	0x5
+	.uleb128 0x1
+	.4byte	.LASF402
 	.file 3 "./cxx_macros.h"
 	.byte	0x3
 	.uleb128 0x2
@@ -1355,859 +1361,873 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.fefa049488069cd6cd331047dff9d5a5,comdat
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.5b97504b9ce7da9db9704f4f0416a0a4,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
 	.uleb128 0x3
-	.4byte	.LASF401
-	.byte	0x5
-	.uleb128 0x5
-	.4byte	.LASF402
-	.byte	0x5
-	.uleb128 0x6
 	.4byte	.LASF403
 	.byte	0x5
-	.uleb128 0x7
+	.uleb128 0x5
 	.4byte	.LASF404
 	.byte	0x5
-	.uleb128 0x8
+	.uleb128 0x6
 	.4byte	.LASF405
 	.byte	0x5
-	.uleb128 0x9
+	.uleb128 0x7
 	.4byte	.LASF406
 	.byte	0x5
-	.uleb128 0xa
+	.uleb128 0x8
 	.4byte	.LASF407
+	.byte	0x5
+	.uleb128 0x9
+	.4byte	.LASF408
+	.byte	0x5
+	.uleb128 0xa
+	.4byte	.LASF409
+	.byte	0x5
+	.uleb128 0xb
+	.4byte	.LASF410
+	.byte	0x5
+	.uleb128 0xc
+	.4byte	.LASF411
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
-.LASF392:
+.LASF394:
 	.string	"_ILP32"
-.LASF207:
+.LASF209:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
-.LASF271:
+.LASF273:
 	.string	"__FLT64_HAS_QUIET_NAN__ 1"
-.LASF327:
+.LASF329:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
-.LASF233:
+.LASF235:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
-.LASF256:
+.LASF258:
 	.string	"__FLT32_HAS_INFINITY__ 1"
-.LASF262:
+.LASF264:
 	.string	"__FLT64_MAX_EXP__ 1024"
-.LASF310:
+.LASF312:
 	.string	"__FLT64X_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F64x"
-.LASF290:
+.LASF292:
 	.string	"__FLT32X_MAX_EXP__ 1024"
-.LASF167:
+.LASF169:
 	.string	"__INT_FAST16_WIDTH__ 32"
-.LASF353:
+.LASF355:
 	.string	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1"
-.LASF309:
+.LASF311:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
-.LASF326:
+.LASF328:
 	.string	"__DEC64_EPSILON__ 1E-15DD"
-.LASF176:
+.LASF178:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF244:
+.LASF246:
 	.string	"__FLT32_MANT_DIG__ 24"
-.LASF343:
+.LASF345:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1"
-.LASF215:
+.LASF217:
 	.string	"__LDBL_MANT_DIG__ 113"
 .LASF1:
 	.string	"__cplusplus 201402L"
-.LASF292:
+.LASF294:
 	.string	"__FLT32X_DECIMAL_DIG__ 17"
-.LASF92:
+.LASF94:
 	.string	"__cpp_delegating_constructors 200604"
-.LASF202:
+.LASF204:
 	.string	"__DBL_MIN_EXP__ (-1021)"
-.LASF170:
-	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffL"
-.LASF74:
+.LASF76:
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
-.LASF372:
+.LASF374:
 	.string	"__ARM_SIZEOF_WCHAR_T 4"
-.LASF293:
+.LASF295:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
-.LASF359:
+.LASF361:
 	.string	"__SIZEOF_WINT_T__ 4"
-.LASF97:
+.LASF99:
 	.string	"__cpp_return_type_deduction 201304"
-.LASF378:
+.LASF380:
 	.string	"__AARCH64EL__ 1"
 .LASF6:
 	.string	"__GNUC_MINOR__ 2"
-.LASF221:
+.LASF223:
 	.string	"__DECIMAL_DIG__ 36"
-.LASF143:
+.LASF145:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
-.LASF87:
+.LASF89:
 	.string	"__cpp_attributes 200809"
-.LASF266:
+.LASF268:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
-.LASF123:
+.LASF125:
 	.string	"__LONG_LONG_WIDTH__ 64"
-.LASF195:
+.LASF197:
 	.string	"__FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F"
-.LASF44:
+.LASF46:
 	.string	"__CHAR16_TYPE__ short unsigned int"
-.LASF28:
+.LASF30:
 	.string	"__SIZEOF_SIZE_T__ 8"
-.LASF391:
+.LASF393:
 	.string	"__AARCH64_CMODEL_SMALL__ 1"
-.LASF164:
+.LASF166:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
-.LASF32:
+.LASF34:
 	.string	"__ORDER_BIG_ENDIAN__ 4321"
 .LASF5:
 	.string	"__GNUC__ 7"
-.LASF163:
+.LASF165:
 	.string	"__UINT64_C(c) c ## UL"
-.LASF157:
+.LASF159:
 	.string	"__UINT8_C(c) c"
-.LASF200:
+.LASF202:
 	.string	"__DBL_MANT_DIG__ 53"
-.LASF384:
+.LASF386:
 	.string	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC"
-.LASF251:
+.LASF253:
 	.string	"__FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32"
-.LASF110:
+.LASF112:
 	.string	"__INT_MAX__ 0x7fffffff"
 .LASF14:
 	.string	"__ATOMIC_RELEASE 3"
-.LASF231:
+.LASF233:
 	.string	"__FLT16_DIG__ 3"
-.LASF48:
+.LASF50:
 	.string	"__INT16_TYPE__ short int"
-.LASF395:
-	.string	"__ARM_FEATURE_QRDMX"
-.LASF319:
+.LASF321:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF17:
+.LASF19:
 	.string	"__OPTIMIZE__ 1"
-.LASF304:
+.LASF306:
 	.string	"__FLT64X_MAX_EXP__ 16384"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
-.LASF24:
+.LASF26:
 	.string	"__SIZEOF_SHORT__ 2"
-.LASF96:
+.LASF98:
 	.string	"__cpp_alias_templates 200704"
-.LASF54:
+.LASF56:
 	.string	"__UINT64_TYPE__ long unsigned int"
-.LASF55:
+.LASF57:
 	.string	"__INT_LEAST8_TYPE__ signed char"
-.LASF61:
+.LASF63:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF402:
+.LASF406:
 	.string	"KERNEL_ADDRESS 0"
-.LASF34:
+.LASF36:
 	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
-.LASF224:
-	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF247:
-	.string	"__FLT32_MIN_10_EXP__ (-37)"
-.LASF58:
-	.string	"__INT_LEAST64_TYPE__ long int"
-.LASF374:
-	.string	"__ARM_ARCH 8"
-.LASF86:
-	.string	"__cpp_decltype 200707"
-.LASF108:
-	.string	"__SCHAR_MAX__ 0x7f"
 .LASF226:
+	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
+.LASF249:
+	.string	"__FLT32_MIN_10_EXP__ (-37)"
+.LASF60:
+	.string	"__INT_LEAST64_TYPE__ long int"
+.LASF3:
+	.string	"__STDC_UTF_32__ 1"
+.LASF88:
+	.string	"__cpp_decltype 200707"
+.LASF110:
+	.string	"__SCHAR_MAX__ 0x7f"
+.LASF228:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
-.LASF259:
+.LASF261:
 	.string	"__FLT64_DIG__ 15"
 .LASF11:
 	.string	"__ATOMIC_RELAXED 0"
-.LASF85:
+.LASF87:
 	.string	"__cpp_static_assert 200410"
-.LASF214:
-	.string	"__FP_FAST_FMA 1"
-.LASF394:
-	.string	"__ARM_FEATURE_CRYPTO"
-.LASF401:
-	.string	"CXX_MACROS_H__ "
-.LASF80:
-	.string	"__cpp_raw_strings 200710"
-.LASF357:
-	.string	"__SIZEOF_INT128__ 16"
-.LASF285:
-	.string	"__FLT128_HAS_QUIET_NAN__ 1"
-.LASF279:
-	.string	"__FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128"
-.LASF57:
-	.string	"__INT_LEAST32_TYPE__ int"
-.LASF149:
-	.string	"__INT_LEAST16_WIDTH__ 16"
-.LASF396:
-	.string	"__FLT_EVAL_METHOD__"
-.LASF187:
-	.string	"__FLT_MIN_EXP__ (-125)"
-.LASF255:
-	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF388:
-	.string	"__AARCH64_CMODEL_TINY__"
-.LASF340:
-	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
-.LASF302:
-	.string	"__FLT64X_MIN_EXP__ (-16381)"
-.LASF367:
-	.string	"__ARM_ARCH_PROFILE 65"
-.LASF186:
-	.string	"__FLT_DIG__ 6"
-.LASF166:
-	.string	"__INT_FAST16_MAX__ 0x7fffffff"
-.LASF230:
-	.string	"__FLT16_MANT_DIG__ 11"
-.LASF375:
-	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
-.LASF178:
-	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
-.LASF179:
-	.string	"__GCC_IEC_559 2"
-.LASF274:
-	.string	"__FLT128_MIN_EXP__ (-16381)"
-.LASF105:
-	.string	"__cpp_sized_deallocation 201309"
-.LASF257:
-	.string	"__FLT32_HAS_QUIET_NAN__ 1"
-.LASF158:
-	.string	"__UINT_LEAST16_MAX__ 0xffff"
-.LASF175:
-	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
 .LASF216:
-	.string	"__LDBL_DIG__ 33"
-.LASF156:
-	.string	"__UINT_LEAST8_MAX__ 0xff"
-.LASF329:
-	.string	"__DEC128_MIN_EXP__ (-6142)"
-.LASF136:
-	.string	"__INT8_MAX__ 0x7f"
-.LASF333:
-	.string	"__DEC128_EPSILON__ 1E-33DL"
-.LASF398:
-	.string	"__FLT_EVAL_METHOD_C99__ 0"
-.LASF276:
-	.string	"__FLT128_MAX_EXP__ 16384"
-.LASF184:
-	.string	"__FLT_RADIX__ 2"
-.LASF300:
-	.string	"__FLT64X_MANT_DIG__ 113"
-.LASF104:
-	.string	"__cpp_digit_separators 201309"
-.LASF27:
-	.string	"__SIZEOF_LONG_DOUBLE__ 16"
-.LASF213:
-	.string	"__DBL_HAS_QUIET_NAN__ 1"
-.LASF63:
-	.string	"__INT_FAST8_TYPE__ int"
-.LASF270:
-	.string	"__FLT64_HAS_INFINITY__ 1"
-.LASF381:
-	.string	"__ARM_FP16_FORMAT_IEEE 1"
-.LASF219:
-	.string	"__LDBL_MAX_EXP__ 16384"
-.LASF42:
-	.string	"__INTMAX_TYPE__ long int"
-.LASF102:
-	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF71:
-	.string	"__INTPTR_TYPE__ long int"
-.LASF325:
-	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
-.LASF89:
-	.string	"__cpp_rvalue_references 200610"
-.LASF114:
-	.string	"__WCHAR_MIN__ 0U"
-.LASF155:
-	.string	"__INT_LEAST64_WIDTH__ 64"
-.LASF305:
-	.string	"__FLT64X_MAX_10_EXP__ 4932"
-.LASF272:
-	.string	"__FLT128_MANT_DIG__ 113"
-.LASF31:
-	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
-.LASF360:
-	.string	"__SIZEOF_PTRDIFF_T__ 8"
-.LASF328:
-	.string	"__DEC128_MANT_DIG__ 34"
-.LASF370:
-	.string	"__ARM_FEATURE_UNALIGNED 1"
-.LASF49:
-	.string	"__INT32_TYPE__ int"
-.LASF301:
-	.string	"__FLT64X_DIG__ 33"
-.LASF311:
-	.string	"__FLT64X_HAS_DENORM__ 1"
-.LASF362:
-	.string	"__ARM_64BIT_STATE 1"
-.LASF95:
-	.string	"__cpp_ref_qualifiers 200710"
-.LASF240:
-	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
-.LASF339:
-	.string	"__WCHAR_UNSIGNED__ 1"
-.LASF75:
-	.string	"__GXX_WEAK__ 1"
-.LASF405:
-	.string	"CONFIG_RAM_SIZE 0x40000000"
-.LASF303:
-	.string	"__FLT64X_MIN_10_EXP__ (-4931)"
-.LASF133:
-	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
-.LASF172:
-	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
-.LASF366:
-	.string	"__ARM_ARCH_8A 1"
-.LASF277:
-	.string	"__FLT128_MAX_10_EXP__ 4932"
-.LASF280:
-	.string	"__FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128"
-.LASF261:
-	.string	"__FLT64_MIN_10_EXP__ (-307)"
-.LASF93:
-	.string	"__cpp_nsdmi 200809"
-.LASF64:
-	.string	"__INT_FAST16_TYPE__ int"
-.LASF232:
-	.string	"__FLT16_MIN_EXP__ (-13)"
-.LASF250:
-	.string	"__FLT32_DECIMAL_DIG__ 9"
-.LASF273:
-	.string	"__FLT128_DIG__ 33"
-.LASF52:
-	.string	"__UINT16_TYPE__ short unsigned int"
-.LASF223:
-	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
-.LASF124:
-	.string	"__WCHAR_WIDTH__ 32"
-.LASF345:
-	.string	"__GCC_ATOMIC_CHAR_LOCK_FREE 2"
-.LASF368:
-	.string	"__ARM_FEATURE_CLZ 1"
-.LASF112:
-	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
-.LASF364:
-	.string	"__ARM_ALIGN_MAX_PWR 28"
-.LASF60:
-	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
-.LASF103:
-	.string	"__cpp_variable_templates 201304"
-.LASF225:
-	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
-.LASF295:
-	.string	"__FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x"
-.LASF234:
-	.string	"__FLT16_MAX_EXP__ 16"
-.LASF90:
-	.string	"__cpp_variadic_templates 200704"
-.LASF128:
-	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
-.LASF264:
-	.string	"__FLT64_DECIMAL_DIG__ 17"
-.LASF342:
-	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
-.LASF246:
-	.string	"__FLT32_MIN_EXP__ (-125)"
-.LASF38:
-	.string	"__SIZE_TYPE__ long unsigned int"
-.LASF173:
-	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
-.LASF68:
-	.string	"__UINT_FAST16_TYPE__ unsigned int"
-.LASF192:
-	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
-.LASF82:
-	.string	"__cpp_user_defined_literals 200809"
-.LASF203:
-	.string	"__DBL_MIN_10_EXP__ (-307)"
-.LASF107:
-	.string	"__GXX_ABI_VERSION 1011"
-.LASF284:
-	.string	"__FLT128_HAS_INFINITY__ 1"
-.LASF106:
-	.string	"__cpp_threadsafe_static_init 200806"
-.LASF245:
-	.string	"__FLT32_DIG__ 6"
-.LASF269:
-	.string	"__FLT64_HAS_DENORM__ 1"
-.LASF181:
-	.string	"__FLT_EVAL_METHOD__ 0"
-.LASF297:
-	.string	"__FLT32X_HAS_DENORM__ 1"
-.LASF129:
-	.string	"__INTMAX_C(c) c ## L"
-.LASF67:
-	.string	"__UINT_FAST8_TYPE__ unsigned int"
-.LASF322:
-	.string	"__DEC64_MIN_EXP__ (-382)"
-.LASF382:
-	.string	"__ARM_FP16_ARGS 1"
-.LASF412:
-	.string	"_ZSt25__throw_bad_function_callv"
-.LASF153:
-	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF146:
-	.string	"__INT_LEAST8_WIDTH__ 8"
-.LASF140:
-	.string	"__UINT8_MAX__ 0xff"
-.LASF141:
-	.string	"__UINT16_MAX__ 0xffff"
-.LASF209:
-	.string	"__DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)"
-.LASF66:
-	.string	"__INT_FAST64_TYPE__ long int"
-.LASF238:
-	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF142:
-	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF132:
-	.string	"__INTMAX_WIDTH__ 64"
-.LASF318:
-	.string	"__DEC32_MAX__ 9.999999E96DF"
-.LASF117:
-	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
-.LASF56:
-	.string	"__INT_LEAST16_TYPE__ short int"
-.LASF248:
-	.string	"__FLT32_MAX_EXP__ 128"
-.LASF407:
-	.string	"PERIPHBASE 0x08000000"
-.LASF201:
-	.string	"__DBL_DIG__ 15"
-.LASF346:
-	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF144:
-	.string	"__INT_LEAST8_MAX__ 0x7f"
-.LASF20:
-	.string	"__LP64__ 1"
-.LASF351:
-	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
-.LASF287:
-	.string	"__FLT32X_DIG__ 15"
+	.string	"__FP_FAST_FMA 1"
+.LASF396:
+	.string	"__ARM_FEATURE_CRYPTO"
 .LASF403:
-	.string	"UART_BASE 0x09000000"
-.LASF286:
-	.string	"__FLT32X_MANT_DIG__ 53"
-.LASF37:
-	.string	"__GNUG__ 7"
-.LASF19:
-	.string	"_LP64 1"
-.LASF29:
-	.string	"__CHAR_BIT__ 8"
-.LASF380:
-	.string	"__ARM_FP 14"
-.LASF344:
-	.string	"__GCC_ATOMIC_BOOL_LOCK_FREE 2"
-.LASF18:
-	.string	"__FINITE_MATH_ONLY__ 0"
-.LASF40:
-	.string	"__WCHAR_TYPE__ unsigned int"
-.LASF91:
-	.string	"__cpp_initializer_lists 200806"
-.LASF265:
-	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
-.LASF162:
-	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
-.LASF404:
-	.string	"CONFIG_RAM_START 0x40000000"
-.LASF307:
-	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
-.LASF294:
-	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
-.LASF72:
-	.string	"__UINTPTR_TYPE__ long unsigned int"
-.LASF148:
-	.string	"__INT16_C(c) c"
-.LASF147:
-	.string	"__INT_LEAST16_MAX__ 0x7fff"
-.LASF25:
-	.string	"__SIZEOF_FLOAT__ 4"
-.LASF320:
-	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
+	.string	"CXX_MACROS_H__ "
+.LASF82:
+	.string	"__cpp_raw_strings 200710"
+.LASF359:
+	.string	"__SIZEOF_INT128__ 16"
+.LASF397:
+	.string	"__ARM_FEATURE_QRDMX 1"
+.LASF287:
+	.string	"__FLT128_HAS_QUIET_NAN__ 1"
+.LASF281:
+	.string	"__FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128"
+.LASF59:
+	.string	"__INT_LEAST32_TYPE__ int"
+.LASF151:
+	.string	"__INT_LEAST16_WIDTH__ 16"
+.LASF398:
+	.string	"__FLT_EVAL_METHOD__"
+.LASF189:
+	.string	"__FLT_MIN_EXP__ (-125)"
+.LASF257:
+	.string	"__FLT32_HAS_DENORM__ 1"
+.LASF390:
+	.string	"__AARCH64_CMODEL_TINY__"
+.LASF342:
+	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
+.LASF304:
+	.string	"__FLT64X_MIN_EXP__ (-16381)"
+.LASF369:
+	.string	"__ARM_ARCH_PROFILE 65"
+.LASF188:
+	.string	"__FLT_DIG__ 6"
 .LASF168:
-	.string	"__INT_FAST32_MAX__ 0x7fffffff"
+	.string	"__INT_FAST16_MAX__ 0x7fffffff"
+.LASF232:
+	.string	"__FLT16_MANT_DIG__ 11"
+.LASF377:
+	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
+.LASF180:
+	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
+.LASF181:
+	.string	"__GCC_IEC_559 2"
+.LASF276:
+	.string	"__FLT128_MIN_EXP__ (-16381)"
+.LASF107:
+	.string	"__cpp_sized_deallocation 201309"
+.LASF259:
+	.string	"__FLT32_HAS_QUIET_NAN__ 1"
+.LASF160:
+	.string	"__UINT_LEAST16_MAX__ 0xffff"
+.LASF177:
+	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
+.LASF218:
+	.string	"__LDBL_DIG__ 33"
+.LASF158:
+	.string	"__UINT_LEAST8_MAX__ 0xff"
+.LASF331:
+	.string	"__DEC128_MIN_EXP__ (-6142)"
+.LASF138:
+	.string	"__INT8_MAX__ 0x7f"
+.LASF335:
+	.string	"__DEC128_EPSILON__ 1E-33DL"
+.LASF400:
+	.string	"__FLT_EVAL_METHOD_C99__ 0"
+.LASF278:
+	.string	"__FLT128_MAX_EXP__ 16384"
+.LASF186:
+	.string	"__FLT_RADIX__ 2"
+.LASF302:
+	.string	"__FLT64X_MANT_DIG__ 113"
+.LASF106:
+	.string	"__cpp_digit_separators 201309"
+.LASF29:
+	.string	"__SIZEOF_LONG_DOUBLE__ 16"
+.LASF215:
+	.string	"__DBL_HAS_QUIET_NAN__ 1"
+.LASF65:
+	.string	"__INT_FAST8_TYPE__ int"
+.LASF272:
+	.string	"__FLT64_HAS_INFINITY__ 1"
+.LASF383:
+	.string	"__ARM_FP16_FORMAT_IEEE 1"
+.LASF221:
+	.string	"__LDBL_MAX_EXP__ 16384"
+.LASF44:
+	.string	"__INTMAX_TYPE__ long int"
+.LASF104:
+	.string	"__cpp_aggregate_nsdmi 201304"
+.LASF73:
+	.string	"__INTPTR_TYPE__ long int"
+.LASF327:
+	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
+.LASF91:
+	.string	"__cpp_rvalue_references 200610"
+.LASF116:
+	.string	"__WCHAR_MIN__ 0U"
+.LASF157:
+	.string	"__INT_LEAST64_WIDTH__ 64"
+.LASF307:
+	.string	"__FLT64X_MAX_10_EXP__ 4932"
+.LASF274:
+	.string	"__FLT128_MANT_DIG__ 113"
+.LASF33:
+	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
+.LASF362:
+	.string	"__SIZEOF_PTRDIFF_T__ 8"
+.LASF330:
+	.string	"__DEC128_MANT_DIG__ 34"
+.LASF372:
+	.string	"__ARM_FEATURE_UNALIGNED 1"
+.LASF51:
+	.string	"__INT32_TYPE__ int"
+.LASF376:
+	.string	"__ARM_ARCH 8"
+.LASF303:
+	.string	"__FLT64X_DIG__ 33"
 .LASF313:
-	.string	"__FLT64X_HAS_QUIET_NAN__ 1"
-.LASF197:
-	.string	"__FLT_HAS_INFINITY__ 1"
+	.string	"__FLT64X_HAS_DENORM__ 1"
+.LASF364:
+	.string	"__ARM_64BIT_STATE 1"
+.LASF97:
+	.string	"__cpp_ref_qualifiers 200710"
 .LASF242:
+	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
+.LASF341:
+	.string	"__WCHAR_UNSIGNED__ 1"
+.LASF77:
+	.string	"__GXX_WEAK__ 1"
+.LASF409:
+	.string	"CONFIG_RAM_SIZE 0x40000000"
+.LASF305:
+	.string	"__FLT64X_MIN_10_EXP__ (-4931)"
+.LASF135:
+	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
+.LASF174:
+	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
+.LASF368:
+	.string	"__ARM_ARCH_8A 1"
+.LASF279:
+	.string	"__FLT128_MAX_10_EXP__ 4932"
+.LASF282:
+	.string	"__FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128"
+.LASF263:
+	.string	"__FLT64_MIN_10_EXP__ (-307)"
+.LASF95:
+	.string	"__cpp_nsdmi 200809"
+.LASF66:
+	.string	"__INT_FAST16_TYPE__ int"
+.LASF234:
+	.string	"__FLT16_MIN_EXP__ (-13)"
+.LASF252:
+	.string	"__FLT32_DECIMAL_DIG__ 9"
+.LASF275:
+	.string	"__FLT128_DIG__ 33"
+.LASF54:
+	.string	"__UINT16_TYPE__ short unsigned int"
+.LASF225:
+	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
+.LASF126:
+	.string	"__WCHAR_WIDTH__ 32"
+.LASF347:
+	.string	"__GCC_ATOMIC_CHAR_LOCK_FREE 2"
+.LASF32:
+	.string	"__BIGGEST_ALIGNMENT__ 16"
+.LASF370:
+	.string	"__ARM_FEATURE_CLZ 1"
+.LASF114:
+	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
+.LASF366:
+	.string	"__ARM_ALIGN_MAX_PWR 28"
+.LASF62:
+	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
+.LASF105:
+	.string	"__cpp_variable_templates 201304"
+.LASF227:
+	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
+.LASF113:
+	.string	"__LONG_MAX__ 0x7fffffffffffffffL"
+.LASF297:
+	.string	"__FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x"
+.LASF236:
+	.string	"__FLT16_MAX_EXP__ 16"
+.LASF85:
+	.string	"__cpp_lambdas 200907"
+.LASF130:
+	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
+.LASF266:
+	.string	"__FLT64_DECIMAL_DIG__ 17"
+.LASF344:
+	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
+.LASF248:
+	.string	"__FLT32_MIN_EXP__ (-125)"
+.LASF40:
+	.string	"__SIZE_TYPE__ long unsigned int"
+.LASF175:
+	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
+.LASF70:
+	.string	"__UINT_FAST16_TYPE__ unsigned int"
+.LASF194:
+	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
+.LASF84:
+	.string	"__cpp_user_defined_literals 200809"
+.LASF205:
+	.string	"__DBL_MIN_10_EXP__ (-307)"
+.LASF109:
+	.string	"__GXX_ABI_VERSION 1011"
+.LASF286:
+	.string	"__FLT128_HAS_INFINITY__ 1"
+.LASF108:
+	.string	"__cpp_threadsafe_static_init 200806"
+.LASF247:
+	.string	"__FLT32_DIG__ 6"
+.LASF271:
+	.string	"__FLT64_HAS_DENORM__ 1"
+.LASF183:
+	.string	"__FLT_EVAL_METHOD__ 0"
+.LASF299:
+	.string	"__FLT32X_HAS_DENORM__ 1"
+.LASF412:
+	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -Og -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti -fsigned-char -fPIC"
+.LASF131:
+	.string	"__INTMAX_C(c) c ## L"
+.LASF69:
+	.string	"__UINT_FAST8_TYPE__ unsigned int"
+.LASF324:
+	.string	"__DEC64_MIN_EXP__ (-382)"
+.LASF384:
+	.string	"__ARM_FP16_ARGS 1"
+.LASF416:
+	.string	"_ZSt25__throw_bad_function_callv"
+.LASF155:
+	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
+.LASF148:
+	.string	"__INT_LEAST8_WIDTH__ 8"
+.LASF142:
+	.string	"__UINT8_MAX__ 0xff"
+.LASF143:
+	.string	"__UINT16_MAX__ 0xffff"
+.LASF211:
+	.string	"__DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)"
+.LASF68:
+	.string	"__INT_FAST64_TYPE__ long int"
+.LASF240:
+	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
+.LASF144:
+	.string	"__UINT32_MAX__ 0xffffffffU"
+.LASF134:
+	.string	"__INTMAX_WIDTH__ 64"
+.LASF320:
+	.string	"__DEC32_MAX__ 9.999999E96DF"
+.LASF119:
+	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
+.LASF58:
+	.string	"__INT_LEAST16_TYPE__ short int"
+.LASF250:
+	.string	"__FLT32_MAX_EXP__ 128"
+.LASF411:
+	.string	"PERIPHBASE 0x08000000"
+.LASF203:
+	.string	"__DBL_DIG__ 15"
+.LASF348:
+	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
+.LASF146:
+	.string	"__INT_LEAST8_MAX__ 0x7f"
+.LASF22:
+	.string	"__LP64__ 1"
+.LASF353:
+	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
+.LASF289:
+	.string	"__FLT32X_DIG__ 15"
+.LASF407:
+	.string	"UART_BASE 0x09000000"
+.LASF288:
+	.string	"__FLT32X_MANT_DIG__ 53"
+.LASF39:
+	.string	"__GNUG__ 7"
+.LASF21:
+	.string	"_LP64 1"
+.LASF31:
+	.string	"__CHAR_BIT__ 8"
+.LASF382:
+	.string	"__ARM_FP 14"
+.LASF346:
+	.string	"__GCC_ATOMIC_BOOL_LOCK_FREE 2"
+.LASF20:
+	.string	"__FINITE_MATH_ONLY__ 0"
+.LASF42:
+	.string	"__WCHAR_TYPE__ unsigned int"
+.LASF93:
+	.string	"__cpp_initializer_lists 200806"
+.LASF267:
+	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
+.LASF164:
+	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
+.LASF408:
+	.string	"CONFIG_RAM_START 0x40000000"
+.LASF309:
+	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
+.LASF296:
+	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
+.LASF74:
+	.string	"__UINTPTR_TYPE__ long unsigned int"
+.LASF150:
+	.string	"__INT16_C(c) c"
+.LASF149:
+	.string	"__INT_LEAST16_MAX__ 0x7fff"
+.LASF27:
+	.string	"__SIZEOF_FLOAT__ 4"
+.LASF322:
+	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
+.LASF170:
+	.string	"__INT_FAST32_MAX__ 0x7fffffff"
+.LASF315:
+	.string	"__FLT64X_HAS_QUIET_NAN__ 1"
+.LASF199:
+	.string	"__FLT_HAS_INFINITY__ 1"
+.LASF244:
 	.string	"__FLT16_HAS_INFINITY__ 1"
 .LASF0:
 	.string	"__STDC__ 1"
-.LASF204:
+.LASF206:
 	.string	"__DBL_MAX_EXP__ 1024"
-.LASF100:
+.LASF102:
 	.string	"__cpp_constexpr 201304"
 .LASF16:
 	.string	"__ATOMIC_CONSUME 1"
-.LASF169:
+.LASF171:
 	.string	"__INT_FAST32_WIDTH__ 32"
-.LASF79:
+.LASF81:
 	.string	"__cpp_unicode_characters 200704"
-.LASF41:
+.LASF43:
 	.string	"__WINT_TYPE__ unsigned int"
-.LASF190:
+.LASF192:
 	.string	"__FLT_MAX_10_EXP__ 38"
-.LASF137:
+.LASF139:
 	.string	"__INT16_MAX__ 0x7fff"
-.LASF101:
+.LASF103:
 	.string	"__cpp_decltype_auto 201304"
-.LASF119:
+.LASF121:
 	.string	"__SCHAR_WIDTH__ 8"
-.LASF161:
+.LASF163:
 	.string	"__UINT32_C(c) c ## U"
-.LASF373:
+.LASF375:
 	.string	"__ARM_FP_FAST"
-.LASF26:
+.LASF28:
 	.string	"__SIZEOF_DOUBLE__ 8"
 .LASF7:
 	.string	"__GNUC_PATCHLEVEL__ 1"
-.LASF363:
+.LASF365:
 	.string	"__ARM_ARCH_ISA_A64 1"
-.LASF236:
+.LASF238:
 	.string	"__FLT16_DECIMAL_DIG__ 5"
-.LASF116:
+.LASF118:
 	.string	"__WINT_MIN__ 0U"
-.LASF411:
+.LASF415:
 	.string	"__throw_bad_function_call"
 .LASF2:
 	.string	"__STDC_UTF_16__ 1"
-.LASF406:
+.LASF410:
 	.string	"ARCH_IS_qemu_virt "
-.LASF228:
+.LASF230:
 	.string	"__LDBL_HAS_INFINITY__ 1"
-.LASF409:
+.LASF413:
 	.string	"../src/minimal_cpprt/__throw_bad_function_call.cpp"
-.LASF180:
+.LASF182:
 	.string	"__GCC_IEC_559_COMPLEX 2"
-.LASF358:
+.LASF360:
 	.string	"__SIZEOF_WCHAR_T__ 4"
-.LASF275:
+.LASF277:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
-.LASF35:
+.LASF37:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
-.LASF341:
+.LASF343:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1"
-.LASF314:
+.LASF316:
 	.string	"__DEC32_MANT_DIG__ 7"
-.LASF399:
+.LASF401:
 	.string	"__ELF__ 1"
-.LASF254:
+.LASF256:
 	.string	"__FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32"
-.LASF77:
+.LASF79:
 	.string	"__GXX_EXPERIMENTAL_CXX0X__ 1"
-.LASF134:
+.LASF136:
 	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
-.LASF138:
+.LASF140:
 	.string	"__INT32_MAX__ 0x7fffffff"
+.LASF389:
+	.string	"__ARM_FEATURE_CRC32 1"
 .LASF13:
 	.string	"__ATOMIC_ACQUIRE 2"
-.LASF159:
+.LASF161:
 	.string	"__UINT16_C(c) c"
-.LASF139:
+.LASF141:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF306:
+.LASF308:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
-.LASF81:
+.LASF83:
 	.string	"__cpp_unicode_literals 200710"
-.LASF43:
+.LASF45:
 	.string	"__UINTMAX_TYPE__ long unsigned int"
-.LASF241:
+.LASF243:
 	.string	"__FLT16_HAS_DENORM__ 1"
 .LASF9:
 	.string	"__LINARO_RELEASE__ 201711"
-.LASF330:
+.LASF332:
 	.string	"__DEC128_MAX_EXP__ 6145"
-.LASF194:
+.LASF196:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF135:
+.LASF137:
 	.string	"__SIG_ATOMIC_WIDTH__ 32"
-.LASF99:
+.LASF101:
 	.string	"__cpp_generic_lambdas 201304"
-.LASF109:
-	.string	"__SHRT_MAX__ 0x7fff"
-.LASF348:
-	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
-.LASF33:
-	.string	"__ORDER_PDP_ENDIAN__ 3412"
-.LASF393:
-	.string	"__ILP32__"
-.LASF191:
-	.string	"__FLT_DECIMAL_DIG__ 9"
-.LASF263:
-	.string	"__FLT64_MAX_10_EXP__ 308"
-.LASF217:
-	.string	"__LDBL_MIN_EXP__ (-16381)"
-.LASF125:
-	.string	"__WINT_WIDTH__ 32"
-.LASF377:
-	.string	"__ARM_BIG_ENDIAN"
-.LASF308:
-	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
-.LASF21:
-	.string	"__SIZEOF_INT__ 4"
-.LASF253:
-	.string	"__FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32"
 .LASF111:
-	.string	"__LONG_MAX__ 0x7fffffffffffffffL"
-.LASF323:
+	.string	"__SHRT_MAX__ 0x7fff"
+.LASF350:
+	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
+.LASF35:
+	.string	"__ORDER_PDP_ENDIAN__ 3412"
+.LASF395:
+	.string	"__ILP32__"
+.LASF193:
+	.string	"__FLT_DECIMAL_DIG__ 9"
+.LASF265:
+	.string	"__FLT64_MAX_10_EXP__ 308"
+.LASF219:
+	.string	"__LDBL_MIN_EXP__ (-16381)"
+.LASF127:
+	.string	"__WINT_WIDTH__ 32"
+.LASF379:
+	.string	"__ARM_BIG_ENDIAN"
+.LASF310:
+	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
+.LASF23:
+	.string	"__SIZEOF_INT__ 4"
+.LASF255:
+	.string	"__FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32"
+.LASF172:
+	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffL"
+.LASF325:
 	.string	"__DEC64_MAX_EXP__ 385"
-.LASF410:
+.LASF414:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\chap003\\\\Debug-qemu_virt"
-.LASF289:
+.LASF291:
 	.string	"__FLT32X_MIN_10_EXP__ (-307)"
-.LASF69:
+.LASF71:
 	.string	"__UINT_FAST32_TYPE__ unsigned int"
-.LASF369:
+.LASF371:
 	.string	"__ARM_FEATURE_IDIV 1"
-.LASF131:
+.LASF133:
 	.string	"__UINTMAX_C(c) c ## UL"
-.LASF45:
+.LASF47:
 	.string	"__CHAR32_TYPE__ unsigned int"
-.LASF312:
+.LASF314:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
-.LASF331:
+.LASF333:
 	.string	"__DEC128_MIN__ 1E-6143DL"
-.LASF288:
+.LASF290:
 	.string	"__FLT32X_MIN_EXP__ (-1021)"
-.LASF22:
+.LASF24:
 	.string	"__SIZEOF_LONG__ 8"
-.LASF177:
+.LASF179:
 	.string	"__INTPTR_WIDTH__ 64"
 .LASF8:
 	.string	"__VERSION__ \"7.2.1 20171011\""
-.LASF151:
+.LASF153:
 	.string	"__INT32_C(c) c"
-.LASF229:
+.LASF231:
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
-.LASF47:
+.LASF49:
 	.string	"__INT8_TYPE__ signed char"
-.LASF115:
+.LASF117:
 	.string	"__WINT_MAX__ 0xffffffffU"
-.LASF389:
+.LASF391:
 	.string	"__AARCH64_CMODEL_SMALL__"
-.LASF53:
+.LASF55:
 	.string	"__UINT32_TYPE__ unsigned int"
-.LASF317:
+.LASF319:
 	.string	"__DEC32_MIN__ 1E-95DF"
-.LASF174:
+.LASF176:
 	.string	"__UINT_FAST32_MAX__ 0xffffffffU"
-.LASF383:
+.LASF385:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
-.LASF281:
+.LASF283:
 	.string	"__FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128"
-.LASF113:
+.LASF115:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
-.LASF208:
+.LASF210:
 	.string	"__DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)"
-.LASF23:
+.LASF25:
 	.string	"__SIZEOF_LONG_LONG__ 8"
-.LASF239:
+.LASF241:
 	.string	"__FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16"
-.LASF51:
+.LASF53:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF120:
+.LASF122:
 	.string	"__SHRT_WIDTH__ 16"
-.LASF400:
+.LASF340:
+	.string	"__STRICT_ANSI__ 1"
+.LASF402:
 	.string	"ARCH_IS_host 1"
-.LASF83:
-	.string	"__cpp_lambdas 200907"
-.LASF145:
+.LASF147:
 	.string	"__INT8_C(c) c"
-.LASF36:
+.LASF38:
 	.string	"__SIZEOF_POINTER__ 8"
-.LASF267:
+.LASF269:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF199:
+.LASF201:
 	.string	"__FP_FAST_FMAF 1"
-.LASF185:
+.LASF187:
 	.string	"__FLT_MANT_DIG__ 24"
-.LASF361:
+.LASF363:
 	.string	"__aarch64__ 1"
-.LASF121:
+.LASF123:
 	.string	"__INT_WIDTH__ 32"
-.LASF278:
+.LASF280:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
-.LASF354:
+.LASF356:
 	.string	"__GCC_ATOMIC_POINTER_LOCK_FREE 2"
-.LASF386:
+.LASF388:
 	.string	"__ARM_NEON 1"
-.LASF78:
+.LASF80:
 	.string	"__cpp_binary_literals 201304"
-.LASF336:
+.LASF338:
 	.string	"__USER_LABEL_PREFIX__ "
-.LASF347:
+.LASF349:
 	.string	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2"
-.LASF76:
+.LASF78:
 	.string	"__DEPRECATED 1"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
-.LASF397:
+.LASF399:
 	.string	"__FLT_EVAL_METHOD_C99__"
-.LASF127:
+.LASF129:
 	.string	"__SIZE_WIDTH__ 64"
-.LASF73:
+.LASF404:
+	.string	"USER_SPACE_START 524288"
+.LASF75:
 	.string	"__has_include(STR) __has_include__(STR)"
-.LASF84:
+.LASF86:
 	.string	"__cpp_range_based_for 200907"
-.LASF243:
+.LASF245:
 	.string	"__FLT16_HAS_QUIET_NAN__ 1"
-.LASF296:
+.LASF298:
 	.string	"__FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x"
-.LASF122:
+.LASF124:
 	.string	"__LONG_WIDTH__ 64"
-.LASF376:
+.LASF378:
 	.string	"__AARCH64EB__"
-.LASF352:
+.LASF354:
 	.string	"__GCC_ATOMIC_LLONG_LOCK_FREE 2"
-.LASF189:
+.LASF191:
 	.string	"__FLT_MAX_EXP__ 128"
 .LASF15:
 	.string	"__ATOMIC_ACQ_REL 4"
-.LASF315:
+.LASF317:
 	.string	"__DEC32_MIN_EXP__ (-94)"
-.LASF316:
+.LASF318:
 	.string	"__DEC32_MAX_EXP__ 97"
-.LASF408:
-	.string	"GNU C++14 7.2.1 20171011 -march=armv8-a -mlittle-endian -mabi=lp64 -g3 -O0 -Og -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti -fsigned-char"
-.LASF50:
+.LASF52:
 	.string	"__INT64_TYPE__ long int"
-.LASF193:
+.LASF195:
 	.string	"__FLT_MIN__ 1.17549435082228750796873653722224568e-38F"
-.LASF183:
+.LASF185:
 	.string	"__DEC_EVAL_METHOD__ 2"
-.LASF222:
+.LASF224:
 	.string	"__LDBL_DECIMAL_DIG__ 36"
-.LASF88:
+.LASF90:
 	.string	"__cpp_rvalue_reference 200610"
-.LASF152:
+.LASF154:
 	.string	"__INT_LEAST32_WIDTH__ 32"
-.LASF59:
+.LASF61:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF130:
+.LASF132:
 	.string	"__UINTMAX_MAX__ 0xffffffffffffffffUL"
-.LASF218:
+.LASF220:
 	.string	"__LDBL_MIN_10_EXP__ (-4931)"
-.LASF62:
+.LASF18:
+	.string	"__PIC__ 2"
+.LASF64:
 	.string	"__UINT_LEAST64_TYPE__ long unsigned int"
-.LASF385:
+.LASF387:
 	.string	"__ARM_FEATURE_NUMERIC_MAXMIN 1"
-.LASF118:
+.LASF120:
 	.string	"__SIZE_MAX__ 0xffffffffffffffffUL"
 .LASF10:
 	.string	"__LINARO_SPIN__ 0"
-.LASF365:
+.LASF367:
 	.string	"__ARM_ALIGN_MAX_STACK_PWR 16"
-.LASF349:
+.LASF351:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
-.LASF94:
+.LASF96:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF188:
+.LASF190:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF260:
+.LASF262:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF182:
+.LASF184:
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
-.LASF212:
+.LASF214:
 	.string	"__DBL_HAS_INFINITY__ 1"
-.LASF154:
+.LASF156:
 	.string	"__INT64_C(c) c ## L"
-.LASF355:
+.LASF357:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
-.LASF65:
+.LASF67:
 	.string	"__INT_FAST32_TYPE__ int"
-.LASF371:
+.LASF373:
 	.string	"__ARM_PCS_AAPCS64 1"
-.LASF198:
+.LASF200:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF39:
+.LASF41:
 	.string	"__PTRDIFF_TYPE__ long int"
-.LASF334:
+.LASF336:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
-.LASF298:
-	.string	"__FLT32X_HAS_INFINITY__ 1"
-.LASF299:
+.LASF301:
 	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
-.LASF205:
+.LASF207:
 	.string	"__DBL_MAX_10_EXP__ 308"
-.LASF350:
+.LASF352:
 	.string	"__GCC_ATOMIC_INT_LOCK_FREE 2"
-.LASF337:
+.LASF17:
+	.string	"__pic__ 2"
+.LASF339:
 	.string	"__GNUC_STDC_INLINE__ 1"
-.LASF30:
-	.string	"__BIGGEST_ALIGNMENT__ 16"
-.LASF282:
+.LASF300:
+	.string	"__FLT32X_HAS_INFINITY__ 1"
+.LASF284:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
-.LASF165:
+.LASF167:
 	.string	"__INT_FAST8_WIDTH__ 32"
-.LASF390:
+.LASF392:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF98:
+.LASF100:
 	.string	"__cpp_init_captures 201304"
-.LASF332:
+.LASF334:
 	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
-.LASF335:
+.LASF337:
 	.string	"__REGISTER_PREFIX__ "
-.LASF237:
+.LASF405:
+	.string	"USER_SPACE_SIZE 20480"
+.LASF239:
 	.string	"__FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16"
-.LASF338:
-	.string	"__STRICT_ANSI__ 1"
-.LASF160:
+.LASF92:
+	.string	"__cpp_variadic_templates 200704"
+.LASF162:
 	.string	"__UINT_LEAST32_MAX__ 0xffffffffU"
-.LASF291:
+.LASF293:
 	.string	"__FLT32X_MAX_10_EXP__ 308"
-.LASF211:
+.LASF213:
 	.string	"__DBL_HAS_DENORM__ 1"
-.LASF235:
+.LASF237:
 	.string	"__FLT16_MAX_10_EXP__ 4"
-.LASF268:
+.LASF270:
 	.string	"__FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64"
-.LASF210:
+.LASF212:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
-.LASF387:
-	.string	"__ARM_FEATURE_CRC32"
-.LASF249:
+.LASF251:
 	.string	"__FLT32_MAX_10_EXP__ 38"
-.LASF3:
-	.string	"__STDC_UTF_32__ 1"
-.LASF126:
+.LASF128:
 	.string	"__PTRDIFF_WIDTH__ 64"
-.LASF150:
+.LASF152:
 	.string	"__INT_LEAST32_MAX__ 0x7fffffff"
-.LASF70:
+.LASF72:
 	.string	"__UINT_FAST64_TYPE__ long unsigned int"
-.LASF220:
+.LASF222:
 	.string	"__LDBL_MAX_10_EXP__ 4932"
-.LASF324:
+.LASF326:
 	.string	"__DEC64_MIN__ 1E-383DD"
-.LASF252:
+.LASF254:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
-.LASF356:
+.LASF358:
 	.string	"__PRAGMA_REDEFINE_EXTNAME 1"
-.LASF46:
+.LASF48:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF283:
+.LASF285:
 	.string	"__FLT128_HAS_DENORM__ 1"
-.LASF379:
+.LASF381:
 	.string	"__ARM_FEATURE_FMA 1"
-.LASF227:
+.LASF229:
 	.string	"__LDBL_HAS_DENORM__ 1"
-.LASF258:
+.LASF260:
 	.string	"__FLT64_MANT_DIG__ 53"
-.LASF321:
+.LASF323:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF196:
+.LASF198:
 	.string	"__FLT_HAS_DENORM__ 1"
-.LASF171:
+.LASF173:
 	.string	"__INT_FAST64_WIDTH__ 64"
-.LASF206:
+.LASF208:
 	.string	"__DBL_DECIMAL_DIG__ 17"
 	.ident	"GCC: (Linaro GCC 7.2-2017.11) 7.2.1 20171011"

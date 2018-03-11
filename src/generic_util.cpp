@@ -8,7 +8,7 @@
 #include <generic_util.h>
 #include <cstring>
 
-const char digitsMap[]={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+extern const char digitsMap[]={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
 
 
 size_t itob(size_t i,char *dst,size_t size)

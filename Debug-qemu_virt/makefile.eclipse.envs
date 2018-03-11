@@ -2,12 +2,15 @@
 # This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment
 # after this file included,ENVS_PRESENT will never be used.So no need to define it.
 # ENVS_PRESENT := true
-AARCH64_TOOLCHAIN_ROOT := 
+USER_SPACE_START := 524288
+ USER_SPACE_SIZE := 20480
+ AARCH64_TOOLCHAIN_ROOT := 
  PATH := /cygdrive/d/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin:/usr/bin
  KERNEL_ADDRESS := 0
  TARGET_ARCH := qemu_virt
- MASTERY_ELF_BINARY := chap003-qemu_virt
- MASTERY_BINARY_BINARY := kernel.chap003-qemu_virt.img
+ MASTERY_GEN := chap003-qemu_virt.bin
+ MASTERY_ELF := chap003-qemu_virt
+ MASTERY_BINARY := chap003-qemu_virt.bin
  TOOLCHAIN_PREFIX := aarch64-elf-
  TOOLCHAIN_CC := aarch64-elf-gcc
  TOOLCHAIN_CXX := aarch64-elf-g++

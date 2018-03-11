@@ -2,7 +2,9 @@
 #ifndef CXX_MACROS_H__
 #define CXX_MACROS_H__
 
-#define KERNEL_ADDRESS    0
+#define USER_SPACE_START    524288
+ #define USER_SPACE_SIZE    20480
+ #define KERNEL_ADDRESS    0
  #define UART_BASE    0x09000000
  #define CONFIG_RAM_START    0x40000000
  #define CONFIG_RAM_SIZE    0x40000000

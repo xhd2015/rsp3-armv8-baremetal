@@ -51,6 +51,22 @@ AS_MACRO uint64_t lowerMaskBits(uint64_t i)
 {
 	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
 }
+AS_MACRO uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+	// clear lowerBound and then clear upperBound
+	return HEX64(ffff,ffff,ffff,ffff) >> lowerBound << (64 - upperBound - 1 + lowerBound);
+}
+
+// no check, set bits[lowerBound,upperBound]=v, others keep unchanged
+AS_MACRO void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+{
+	// clear middle, and validate v, shift v to proper position, concate i,v together
+	i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+AS_MACRO uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+	return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
 
 
 

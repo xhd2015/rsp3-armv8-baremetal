@@ -1,0 +1,47 @@
+QEMU_ROOT := /cygdrive/d/installed/qemu-x86_64
+QEMU_AARCH64 := $(QEMU_ROOT)/qemu-system-aarch64
+GDB_ROOT := /cygdrive/d/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin
+GDB_AARCH64 := $(GDB_ROOT)/aarch64-elf-gdb.exe
+PYTHON3 := /usr/bin/python3
+
+
+.PHONY:qemu-kernel qemu-loader qemu-bios qemu-pflash qemu-bios-debug gdb-connect
+qemu-kernel:
+	$(QEMU_AARCH64) -machine virt -cpu cortex-a53  -smp 1 -m 1024M  -nographic -serial stdio -kernel $(MASTERY_ELF)
+qemu-loader:
+	$(QEMU_AARCH64) -machine virt -cpu cortex-a53 -smp 1 -m  1024M -nographic -serial stdio -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0,force-raw=on
+	
+# if only using secure=on,then EL=3
+# if only using virtualization=on, EL=2
+# if none of them is used,using EL1
+qemu-bios:
+	$(QEMU_AARCH64) -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial stdio  -bios $(MASTERY_BINARY) -d int,mmu -D qemu_log.txt
+qemu-pflash:
+	$(QEMU_AARCH64) -machine virt -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial stdio -drive file=$(MASTERY_BINARY),if=pflash,format=raw
+qemu-bios-debug:
+	$(QEMU_AARCH64) -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial stdio -bios $(MASTERY_BINARY) -S -s -d int,mmu -D qemu_log.txt
+
+gdb-connect:
+	$(GDB_AARCH64) -iex 'set disassembly-next-line on' -iex 'file $(MASTERY_ELF)' -iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
+	
+.PHONY:qemu_log
+qemu_log:
+	less qemu_log.txt
+
+
+
+.PHONY:update_all_registers
+ALL_REGISTERS := gicv3_registers.h timer_registers.h system_common_registers.h vmsa_descriptors.h general_registers.h
+update_all_registers: $(ALL_REGISTERS)
+$(ALL_REGISTERS):
+	@
+	target=$@
+	target=$${target/%.h/}
+	include=../include/arch/common_aarch64
+	$(PYTHON3) $${include}/gen_register_class.py $${include}/$${target}.py $${include}/$${target}.h
+
+# 如果文件不存在，就会略过其检查，bug？
+userSpaceBin = ../Debug-user_space/chap003-user_space.bin
+$(MASTERY_BINARY):$(MASTERY_ELF) $(userSpaceBin)
+	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
+	dd if=$(userSpaceBin) of=$@ seek=$(USER_SPACE_START) bs=1c count=$(USER_SPACE_SIZE)

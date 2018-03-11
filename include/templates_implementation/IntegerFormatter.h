@@ -17,7 +17,7 @@ IntegerFormatter<Base>::IntegerFormatter(size_t num)
 	:num(num){}
 
 template <int Base>
-IntegerFormatter<Base>::IntegerFormatter(void *p)
+IntegerFormatter<Base>::IntegerFormatter(const void *p)
 	:num(reinterpret_cast<size_t>(p)){}
 
 template <int Base>

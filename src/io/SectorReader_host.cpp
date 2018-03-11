@@ -8,7 +8,7 @@
 #include <def.h>
 #include <arch/host/SectorReaderHelper.h>
 #include <io/SectorReader.h>
-#include <MemoryManager.h>
+#include <kernel.h>
 
 SectorReaderHelper::~SectorReaderHelper()
 {

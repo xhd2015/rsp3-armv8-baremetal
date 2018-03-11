@@ -18,8 +18,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __pic__ 2
-#define __PIC__ 2
 #define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
@@ -424,6 +422,8 @@
 
 #define CXX_MACROS_H__ 
 
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
 #define KERNEL_ADDRESS 0
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
@@ -433,6 +433,10 @@
 # 1 "<command-line>" 2
 # 1 "../src/test/testFAT32SizeIsSecSize.cpp"
 # 11 "../src/test/testFAT32SizeIsSecSize.cpp"
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h"
+#define INCLUDE_KERNEL_H_ 
+
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h"
 #define INCLUDE_PRINTK_H_ 
@@ -1561,13 +1565,12 @@ constexpr int MiB = UNIT_K * KiB;
 constexpr int GiB = UNIT_K * MiB;
 
 
-#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << " failed.\n";}
-
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+
 
 
 
@@ -1584,6 +1587,7 @@ size_t printk(char ch);
 
 
 size_t printk(const char *s);
+
 size_t printk(const char *s,size_t n);
 
 class Output{
@@ -1595,17 +1599,16 @@ public:
  Output & operator<<(uint8_t u);
  Output & operator<<(uint16_t u);
  Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
  Output & operator<<(short i);
  Output & operator<<(int i);
  Output & operator<<(double d);
  Output & operator<<(const char *s);
  Output & operator<<(size_t i);
- Output & operator<<(void *p);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
 };
 
-
-
-extern Output kout;
 
 
 
@@ -1616,6 +1619,205 @@ extern Output kout;
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 1
 # 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/printk.h" 2
 # 44 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/printk.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+#define INCLUDE_MEMORYMANAGER_H_ 
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+#define INCLUDE_MEMORYCHUNK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/generic_util.h"
+#define INCLUDE_GENERIC_UTIL_H_ 
+
+
+
+
+void delayCPU(size_t i);
+void delayCPU(size_t i,size_t j);
+void haltCPU();
+
+
+
+
+
+extern const char digitsMap[];
+
+
+
+size_t itob(size_t i,char *dst,size_t size);
+size_t itod(size_t i,char *dst,size_t size);
+size_t itox(size_t i,char *dst,size_t size);
+
+size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+
+
+
+
+
+void reverse(char *str,size_t size);
+
+
+
+const char *strOffset(const char *p,size_t offset);
+
+
+
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+}
+
+
+__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h" 2
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+class MemoryChunk{
+public:
+
+ enum { ValidBits = 6, IsEndBits=1,AllocatedBits=1,SizeBits=38,NextBaseBits=18};
+ enum { MaxSinlgeMoveBytes = (1 << ValidBits) };
+ MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd);
+ bool isAllocated() const;
+ void setAllocated(bool allocated);
+ bool isEnd() const;
+ void setEnd(bool end);
+ const MemoryChunk* getNext()const;
+ MemoryChunk* getNext();
+ size_t getSize() const;
+ void setSize(size_t size);
+ void* getDataPtr();
+ const void * getDataPtr()const;
+ void* getDataEnd();
+ const void * getDataEnd()const;
+ uint64_t getNextBaseFromEnd() const;
+ void setNextBaseFromEnd(uint64_t nextBaseFromEnd);
+ uint64_t getNextValidChunkOffset() const;
+ void setNextValidChunkOffset(uint64_t nextValidChunkOffset );
+# 54 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryChunk.h"
+ MemoryChunk* moveAhead(size_t moveSize);
+
+ size_t moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const;
+
+ bool split(size_t splitSize);
+
+
+
+ void mergeTrailingsUnallocated();
+
+
+private:
+ uint64_t nextValidChunkOffset :ValidBits;
+ uint64_t endMark :IsEndBits;
+ uint64_t allocated :AllocatedBits;
+ uint64_t size :SizeBits;
+ uint64_t nextBaseFromEnd :NextBaseBits;
+}__attribute__((packed));
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 2
+# 25 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+class MemoryManager{
+public:
+ enum { CHUNK_SIZE = sizeof(MemoryChunk), MINIMAL_ALLOC_SIZE = sizeof(size_t), MINIMAL_ALIGNMENT = sizeof(size_t) };
+ MemoryManager()=delete;
+
+
+
+ MemoryManager(void *base,size_t size,bool initChunks=true);
+public:
+
+ size_t normalizeAllocSize(size_t n);
+
+
+ void* allocate(size_t n);
+
+
+ void* allocate(size_t n,size_t alignment);
+ template <class T>
+ T allocateAs(size_t n);
+ template <class T>
+ T allocateAs(size_t n,size_t alignment);
+# 55 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+ bool tryIncrease(void *origin,size_t incSize);
+ bool tryDecrease(void *origin,size_t decSize);
+# 65 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h"
+ void* reallocate(void *origin,size_t newSize,size_t oldSize = 0xffffffffffffffffUL);
+
+ template <class T>
+ T reallocateAs(void *origin,size_t newSize,size_t oldSize = 0xffffffffffffffffUL);
+
+
+
+
+
+ void deallocate(void *p);
+
+
+
+
+
+ size_t getAllocatedLength(void *origin)const;
+
+
+private:
+ MemoryChunk *headChunk;
+ const char *base;
+ const size_t size;
+};
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/templates_implementation/MemoryManager.h" 2
+
+
+template <class T>
+T MemoryManager::allocateAs(size_t n)
+{
+ return reinterpret_cast<T>(this->allocate(n));
+}
+template <class T>
+T MemoryManager::allocateAs(size_t n,size_t alignment)
+{
+ return reinterpret_cast<T>(this->allocate(n,alignment));
+}
+
+template <class T>
+T MemoryManager::reallocateAs(void *origin,size_t newSize,size_t oldSize)
+{
+ return reinterpret_cast<T>(reallocate(origin, newSize,oldSize));
+}
+# 90 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/memory/MemoryManager.h" 2
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/kernel.h" 2
+
+
+extern Output kout;
+
+
+extern MemoryManager mman;
 # 12 "../src/test/testFAT32SizeIsSecSize.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/test/test_base.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/test/test_base.h"
@@ -1624,12 +1826,9 @@ extern Output kout;
 
 
 
-
-
-
-bool testMemoryManager();
-
-bool testFAT32SizeIsSecSize();
+#define EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << "!="<<value<<",the real value is " << expr << "\n"; }while(false);}
+# 26 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/test/test_base.h"
+#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << " [TEST] `"<< #testCallable << "` failed.\n";}
 # 13 "../src/test/testFAT32SizeIsSecSize.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\chap003\\include/filesystem/fat/FAT_BPB.h"

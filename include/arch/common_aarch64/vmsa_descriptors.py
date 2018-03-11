@@ -22,6 +22,6 @@ reg_list=[
    "applies",["S0.IsTable==0",""]
   ],
   # if nReserved=0,then it is reserved, and cannot be considered a descriptor
-    ["Descriptor4KBL3","uint64_t","ANY_MEM",[["Valid",1,   "nReserved",1,   "NS",1,   "AP",2,   "SH",2,   "AF",1,   "nG",1,  "OutputAddr,Hex",36,   "RES0",3,   "DBM",1,   "Contiguous",1,   "PXN",1,   "UXN",1,   "Reserved",4,    "PBHA",4,   "Ignored",1]]],
+    ["Descriptor4KBL3","uint64_t","ANY_MEM",[["Valid",1,   "RES1_0",1, "AttrIndex",3,   "NS",1,   "AP",2,   "SH",2,   "AF",1,   "nG",1,  "OutputAddr,Hex",36,   "RES0_1",3,   "DBM",1,   "Contiguous",1,   "PXN",1,   "UXN",1,   "Reserved",4,    "PBHA",4,   "Ignored",1]]],
     
 ]

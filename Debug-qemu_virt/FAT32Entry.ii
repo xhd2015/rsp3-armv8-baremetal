@@ -424,6 +424,8 @@
 
 #define CXX_MACROS_H__ 
 
+#define USER_SPACE_START 524288
+#define USER_SPACE_SIZE 20480
 #define KERNEL_ADDRESS 0
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
@@ -1560,13 +1562,12 @@ constexpr int MiB = UNIT_K * KiB;
 constexpr int GiB = UNIT_K * MiB;
 
 
-#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << #testCallable << " failed.\n";}
-
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+
 
 
 

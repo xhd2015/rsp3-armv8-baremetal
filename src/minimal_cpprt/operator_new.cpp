@@ -7,7 +7,7 @@
 
 #include <def.h>
 #include <new>
-#include <MemoryManager.h>
+#include <kernel.h>
 
 void* operator new(size_t n)
 {

@@ -6,15 +6,15 @@
  */
 
 #include <def.h>
-#include <MemoryManager.h>
+#include <kernel.h>
 #include <global_variables.h>
-#include <mem_config.h>
-#include <printk.h>
+#include <memory/mem_config.h>
 #include <new>
 
 
-char koutBuf[koutBufSize];
-const char EMPTY_STR[]={0};
+
+char koutBuf[koutBufSize]={0};
+extern const char EMPTY_STR[]={0};
 Output kout;
 //const char * INFO = "[INFO] ";
 //const char * WARNING = "[WARNING] ";
