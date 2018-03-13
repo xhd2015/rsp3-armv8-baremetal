@@ -1,0 +1,12 @@
+# ONESHELL对于生成文件而言是重要的
+.ONESHELL:
+
+#重新定义clean
+.PHONY:$(USER_CLEAN)
+$(USER_CLEAN):clean
+	- $(RM)  $(CLEAN-ALL-LIST)
+
+
+-include  $(ROOT_PROJECT)/makefiles/makefile.$(TARGET_ARCH).targets
+-include  $(ROOT_PROJECT)/makefiles/makefile.auxfiles
+-include  $(ROOT_PROJECT)/makefiles/makefile.auxtargets

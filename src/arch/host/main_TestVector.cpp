@@ -9,6 +9,7 @@
 #include <def.h>
 #include <printk.h>
 #include <test/TestVector.h>
+#include <test/test_base.h>
 
 int main()
 {

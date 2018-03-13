@@ -10,14 +10,6 @@
 #include <generic_util.h>
 
 
-/*
- * VirtualAddress.cpp
- *
- *  Created on: Mar 9, 2018
- *      Author: 13774
- */
-
-
 #include <arch/common_aarch64/mmu/VirtualAddress.h>
 
 VirtualAddress::VirtualAddress(uint8_t addrLen)

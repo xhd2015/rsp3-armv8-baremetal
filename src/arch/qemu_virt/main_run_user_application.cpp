@@ -29,7 +29,6 @@ int enableMMU();
 int main();
 
 
-
 //class EL1VARecord{
 //public:
 //};
@@ -68,8 +67,7 @@ int main()
 	RegPC pc;
 	pc.PC = reinterpret_cast<uint64_t>(mainStart) | ttbr1Mask;
 	pc.write();
-	ASM_DEFINE_GLOBAL_SYM(mainStart);
-
+	ASM_DEFINE_LOCAL_SYM(mainStart);
 
 	VirtualAddress pcVa(0,40);
 	pcVa.ttbrSel(0);

@@ -1,7 +1,7 @@
 //##======Automatically generated==========##
-//##====../include/arch/common_aarch64/gen_register_class.py ../include/arch/common_aarch64/timer_registers.py ../include/arch/common_aarch64/timer_registers.h=========##
-#ifndef ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
-#define ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
+//##====../../../include/arch/common_aarch64/gen_register_class.py ../../../include/arch/common_aarch64/timer_registers.py ../../../include/arch/common_aarch64/timer_registers.h=========##
+#ifndef _________INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
+#define _________INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
 
 #include <arch/common_aarch64/registers_defines.h>
 
@@ -212,4 +212,4 @@ SETUP_REG_STD_WRITE(CNTV_CTL_EL0)
 
 
 
-#endif // ___INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__
+#endif // _________INCLUDE_ARCH_COMMON_AARCH64_TIMER_REGISTERS_H__

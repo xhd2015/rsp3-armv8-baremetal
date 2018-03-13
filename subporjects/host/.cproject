@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.Cygwin_PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${MASTERY_ELF}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="in user space, not kernel space" id="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.base.502897496" name="Cygwin GCC" superClass="cdt.managedbuild.toolchain.gnu.cygwin.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.Cygwin_PE" id="cdt.managedbuild.target.gnu.platform.cygwin.base.340651344" name="Debug Platform" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.cygwin.base"/>
+							<builder buildPath="${workspace_loc:/raspiOS_host}/Debug" id="cdt.managedbuild.target.gnu.builder.cygwin.base.1883605976" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.base.1604739697" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.503886716" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.867507287" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.470720823" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base">
+								<option id="gnu.cpp.compiler.option.include.paths.637605295" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.2103567766" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.cpp.compiler.option.include.files.1990411649" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles">
+									<listOptionValue builtIn="false" value="cxx_macros.h"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1408281919" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.566294940" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.2010942308" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.668791590" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++14" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.warnings.pedantic.1228560807" name="Pedantic (-pedantic)" superClass="gnu.cpp.compiler.option.warnings.pedantic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.warnings.pedantic.error.289703033" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.cpp.compiler.option.warnings.pedantic.error" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.warnings.wconversion.884228554" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.cpp.compiler.option.warnings.wconversion" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.other.other.881004228" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti $(USER_CXX_FLAGS)" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.optimization.flags.2101375940" superClass="gnu.cpp.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-Og" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.660027067" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.1181150154" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.441865346" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.634453120" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1255887371" superClass="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.base.1291768909" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base.207565382" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1955325152" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/memory/MemoryManager_host.cpp|src/minimal_crt|src/minimal_cpprt|src/arch/host/util_impl.cpp|src/arch/host/template_init2.cpp|src/arch/host/template_init1.cpp|src/arch/host/main_TestVector.cpp|src/arch/host/main_fat_test.cpp|src/arch/host/global_variables_impl.cpp|src/arch/qemu_virt|src/arch/common_aarch64|src/main.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/user_space|src/MemoryManager_host.cpp|misc|Debug-qemu_virt_reloc_elf|src/printk_qemu_virt.cpp|Debug-qemu_virt|Debug-host|src/arch/qemu_virt/main_test_svc.cpp|src/arch/qemu_virt/main_into_EL0.cpp|src/arch/qemu_virt/main_test_stp.cpp|src/io/SectorReader_host.cpp|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/minimal_crt/stolen_from_libgcc|src/arch/raspi3|Debug-aarch64|src/arch/aarch64|include/arch/aarch64|src/arch/qemu-virt/main.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="template.cdt.managedbuild.target.gnu.cross.exe.137033169" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug-qemu_virt">
+			<resource resourceType="PROJECT" workspacePath="/chap002"/>
+		</configuration>
+		<configuration configurationName="Debug-raspi3"/>
+		<configuration configurationName="Debug-qemu_virt_reloc_elf">
+			<resource resourceType="PROJECT" workspacePath="/chap003"/>
+		</configuration>
+		<configuration configurationName="Debug-user_image_echo"/>
+		<configuration configurationName="Debug-user_space"/>
+		<configuration configurationName="Debug-aarch64">
+			<resource resourceType="PROJECT" workspacePath="/chap002"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/chap001"/>
+			<resource resourceType="PROJECT" workspacePath="/template"/>
+		</configuration>
+		<configuration configurationName="Debug-host"/>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/template"/>
+		</configuration>
+		<configuration configurationName="Debug-user-image-echo">
+			<resource resourceType="PROJECT" workspacePath="/chap003"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="debug-info" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>D:/installed/cygwin/bin/make</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>debug-info</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="${USER_ALL}" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>${USER_ALL}</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="${USER_CLEAN}" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>${USER_CLEAN}</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="show-in-explorer" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>D:/installed/cygwin/bin/make</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>show-in-explorer</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="open-cygwin" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>open-cygwin</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="update-all-config-related-files" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>update-all-config-related-files</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="update_all_registers" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>update_all_registers</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="open-vscode" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${MAKE_BIN}</buildCommand>
+				<buildArguments>-j4</buildArguments>
+				<buildTarget>open-vscode</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1063996584;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1063996584.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1134593296;cdt.managedbuild.tool.gnu.cpp.compiler.input.32802577">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.834896178;cdt.managedbuild.config.gnu.cross.exe.release.834896178.;cdt.managedbuild.tool.gnu.cross.c.compiler.300591643;cdt.managedbuild.tool.gnu.c.compiler.input.757681793">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.837269542;cdt.managedbuild.tool.gnu.cpp.compiler.input.163315400">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.782492911;cdt.managedbuild.config.gnu.cross.exe.debug.782492911.;cdt.managedbuild.tool.gnu.cross.c.compiler.2086432376;cdt.managedbuild.tool.gnu.c.compiler.input.1592735498">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1777215398;cdt.managedbuild.config.gnu.cross.exe.debug.1777215398.;cdt.managedbuild.tool.gnu.cross.c.compiler.1931796960;cdt.managedbuild.tool.gnu.c.compiler.input.1890480457">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1373114603;cdt.managedbuild.tool.gnu.cpp.compiler.input.829365569">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1063996584;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1063996584.;cdt.managedbuild.tool.gnu.cross.c.compiler.79118691;cdt.managedbuild.tool.gnu.c.compiler.input.1909658659">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.;cdt.managedbuild.tool.gnu.cross.c.compiler.960244437;cdt.managedbuild.tool.gnu.c.compiler.input.1828293678">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.834896178;cdt.managedbuild.config.gnu.cross.exe.release.834896178.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.223962985;cdt.managedbuild.tool.gnu.cpp.compiler.input.1449259997">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877.;cdt.managedbuild.tool.gnu.cross.c.compiler.1845692515;cdt.managedbuild.tool.gnu.c.compiler.input.2106900100">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.;cdt.managedbuild.tool.gnu.cross.c.compiler.1947194767;cdt.managedbuild.tool.gnu.c.compiler.input.2087909477">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.90288552;cdt.managedbuild.tool.gnu.cpp.compiler.input.2059631054">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.1181150154;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1255887371">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693;cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.470720823;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.660027067">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1777215398;cdt.managedbuild.config.gnu.cross.exe.debug.1777215398.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1454152495;cdt.managedbuild.tool.gnu.cpp.compiler.input.1129074804">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.782492911;cdt.managedbuild.config.gnu.cross.exe.debug.782492911.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.432938065;cdt.managedbuild.tool.gnu.cpp.compiler.input.1983485648">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>

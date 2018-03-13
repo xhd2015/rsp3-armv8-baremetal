@@ -346,6 +346,9 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/PERIPHBASE/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/PERIPHBASE/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/PERIPHBASE/value=0x08000000
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/ROOT_PROJECT/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/ROOT_PROJECT/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/ROOT_PROJECT/value=.
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/TARGET_ARCH/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/TARGET_ARCH/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051/TARGET_ARCH/value=qemu_virt
@@ -497,6 +500,11 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794/USER_C
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794/USER_CLEAN/value=user-clean
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794/append=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794/appendContributed=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/value=overview
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/appendContributed=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.782492911/AARCH64_TOOLCHAIN_ROOT/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.782492911/AARCH64_TOOLCHAIN_ROOT/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.782492911/AARCH64_TOOLCHAIN_ROOT/value=D\:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf

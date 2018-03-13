@@ -1,3 +1,28 @@
+# 2018年3月13日13:39:20
+eclipse workspace工作记录：
+添加cygwin-win的路径映射
+设置host编译器和调试器
+设置c++的编译选项： Miscellaneous一项中，other flags中的-c是原有的
+
+一个潜在的可能： host下的调试不能使用run to line, 可能与编译选项有关， 尝试去掉-Og试试
+# 2018年3月12日22:59:08
+更新了工程的组织方式，不再使用Configuration来区分各个子工程
+采用Configuration的方式不能够解决依赖问题
+现在采用 overview+subporjects的架构
+后面的工作： 删除旧式的工程，增加eclipse workspace的注释， 对新的开发架构进行说明，完成之前的子工程的移植工作。【完成】
+# 2018年3月12日15:38:17
+更新了eclipse workspace
+workspace的组成： .metedata文件构成了eclipse workspace的配置
+workspace的配置：设置
+
+本工程使用的workspace设置：
+explorer
+
+python interpreter的路径设置
+输入设置
+gdb路径
+
+
 # 2018年3月11日20:04:52
 产生绝对地址的情况：
 ```c++

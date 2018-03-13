@@ -1,7 +1,0 @@
-##======Automatically generated==========##
-kernel=kernel..img
-kernel_address=0
-arm_64bit=1
-disable_commandline_tags=1
-enable_uart=1
-##=====THE END======##

@@ -1,8 +1,8 @@
 
 
 # this is for rasp berry pi
-.PHONY:update-config.$(MASTERY_ELF_BINARY).txt
-update-config.$(MASTERY_ELF_BINARY).txt:
+.PHONY:update-config.$(MASTERY_ELF).txt
+update-config.$(MASTERY_ELF).txt:
     (echo '##======Automatically generated==========##'
     echo 'kernel=$(MASTERY_BINARY_BINARY)'
     echo 'kernel_address=$(KERNEL_ADDRESS)'
@@ -10,6 +10,6 @@ update-config.$(MASTERY_ELF_BINARY).txt:
     echo 'disable_commandline_tags=1'
     echo 'enable_uart=1'
     echo '##=====THE END======##'
-    ) > config.$(MASTERY_ELF_BINARY).txt
+    ) > config.$(MASTERY_ELF).txt
     
-AUX_FILES += update-config.$(MASTERY_ELF_BINARY).txt
+AUX_FILES += update-config.$(MASTERY_ELF).txt

@@ -3,7 +3,7 @@
 # 定义一个辅助源文件，该文件内容为空，但是当希望添加的依赖改变时，该文件必须能够迫使目标被更新
 aux-check-link-script.o:aux-check-link-script.cpp
 	$(TOOLCHAIN_CXX) -c -o $@ $<
-aux-check-link-script.cpp:../ld/link-$(TARGET_ARCH).ld
+aux-check-link-script.cpp: $(ROOT_PROJECT)/../ld/link-$(TARGET_ARCH).ld
 	touch $@
 
 # 查看二进制对象文件
@@ -11,7 +11,7 @@ dump-elf:$(MASTERY_ELF)
 	$(TOOLCHAIN_OBJDUMP) -D $<|less
 dump-binary:$(MASTERY_BINARY)
 	$(TOOLCHAIN_OBJDUMP) -D -b binary -m aarch64 $< | less
-.PHONY:dump-elf-binary dump-binary
+.PHONY: dump-elf-binary dump-binary
 
 .PHONY:show-in-explorer
 show-in-explorer:

@@ -6,10 +6,11 @@
  */
 
 #include <iostream>
-#include <MemoryChunk.h>
-#include <MemoryManager.h>
+#include <memory/MemoryChunk.h>
+#include <memory/MemoryManager.h>
 #include <test/TestMemoryManager.h>
 #include <printk.h>
+#include <kernel.h>
 
 using namespace std;
 int main()

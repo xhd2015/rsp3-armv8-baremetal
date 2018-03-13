@@ -1,0 +1,19 @@
+##=======Automatically generated=========##
+# This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment
+# after this file included,ENVS_PRESENT will never be used.So no need to define it.
+# ENVS_PRESENT := true
+PATH := /usr/bin:/usr/bin
+ TARGET_ARCH := host
+ MASTERY_ELF := host.elf
+ MASTERY_BINARY := host.bin
+ TOOLCHAIN_PREFIX := 
+ TOOLCHAIN_CC := gcc
+ TOOLCHAIN_CXX := g++
+ TOOLCHAIN_LD := ld
+ TOOLCHAIN_OBJCOPY := objcopy
+ TOOLCHAIN_OBJDUMP := objdump
+ USER_ALL := host.elf
+ USER_CLEAN := user-clean
+ BUILD_BASE_SYSTEM := cygwin
+ BUILD_BASE_SYSTEM_IS_cygwin := 
+

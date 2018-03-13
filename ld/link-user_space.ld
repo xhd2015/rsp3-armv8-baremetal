@@ -1,6 +1,8 @@
+
 MEMORY
 {
     ROM (rx) : ORIGIN = 0x0,  LENGTH = 20K
+    RAM (rwx) : ORIGIN = 20K, LENGTH = 512
 }
 
 SECTIONS{

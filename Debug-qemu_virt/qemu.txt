@@ -1,7 +1,0 @@
-Exception return from AArch64 EL1 to AArch64 EL1 PC 0xffffff0040003070
-Taking exception 2 [SVC]
-...from EL1 to EL1
-...with ESR 0x15/0x56000000
-...with ELR 0xffffff004000308c
-...to EL1 PC 0xffffff0000006200 PSTATE 0x3c5
-Exception return from AArch64 EL1 to AArch64 EL1 PC 0xffffff004000308c
