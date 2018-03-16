@@ -9,7 +9,7 @@
 #define INCLUDE_VECTORDELIM_H_
 
 #include <data_structures/Vector.h>
-#include <printk.h>
+#include "io/printk.h"
 
 template <class T>
 class VectorDelim{

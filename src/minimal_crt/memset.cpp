@@ -6,6 +6,6 @@ void * memset (void *dest, int val, size_t len)
 {
   unsigned char *ptr = reinterpret_cast<unsigned char *>(dest);
   while (len-- > 0)
-	*ptr++ = val;
+	*ptr++ = static_cast<char>(val);
   return dest;
 }

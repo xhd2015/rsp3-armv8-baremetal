@@ -24,7 +24,7 @@
 #define FATAL "[FATAL] "
 
 
-// 用于表示空字符串的全局唯一常量
+// 用于表示空字符串的全局唯一常量，至少占用一个字节
 extern const char EMPTY_STR[1];
 
 // 声明用于kout的缓冲区

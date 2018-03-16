@@ -6,7 +6,9 @@
  */
 
 #include <def.h>
-#include <kernel.h>
+#include <memory/MemoryManager.h>
+#include <io/Output.h>
+
 #include <global_variables.h>
 #include <memory/mem_config.h>
 #include <new>

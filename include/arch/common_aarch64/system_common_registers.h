@@ -82,7 +82,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ELR_EL1 : "
-                <<"returnAddr = "<< returnAddr
+                <<"returnAddr = "<< Hex(returnAddr)
                   << "\n";
         }
         AS_MACRO static RegELR_EL1 read();
@@ -101,7 +101,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ELR_EL2 : "
-                <<"returnAddr = "<< returnAddr
+                <<"returnAddr = "<< Hex(returnAddr)
                   << "\n";
         }
         AS_MACRO static RegELR_EL2 read();
@@ -120,7 +120,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ELR_EL3 : "
-                <<"returnAddr = "<< returnAddr
+                <<"returnAddr = "<< Hex(returnAddr)
                   << "\n";
         }
         AS_MACRO static RegELR_EL3 read();
@@ -141,9 +141,9 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ESR_EL1 : "
-                <<"ISS = "<< ISS << ","
+                <<"ISS = "<< Hex(ISS) << ","
                 <<"IL = "<< IL << ","
-                <<"EC = "<< EC
+                <<"EC = "<< Hex(EC)
                   << "\n";
         }
         AS_MACRO static RegESR_EL1 read();
@@ -164,9 +164,9 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ESR_EL2 : "
-                <<"ISS = "<< ISS << ","
+                <<"ISS = "<< Hex(ISS) << ","
                 <<"IL = "<< IL << ","
-                <<"EC = "<< EC
+                <<"EC = "<< Hex(EC)
                   << "\n";
         }
         AS_MACRO static RegESR_EL2 read();
@@ -187,9 +187,9 @@ public:
         AS_MACRO void dump()const
         {
             kout << "ESR_EL3 : "
-                <<"ISS = "<< ISS << ","
+                <<"ISS = "<< Hex(ISS) << ","
                 <<"IL = "<< IL << ","
-                <<"EC = "<< EC
+                <<"EC = "<< Hex(EC)
                   << "\n";
         }
         AS_MACRO static RegESR_EL3 read();
@@ -208,7 +208,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "FAR_EL1 : "
-                <<"faultAddr = "<< faultAddr
+                <<"faultAddr = "<< Hex(faultAddr)
                   << "\n";
         }
         AS_MACRO static RegFAR_EL1 read();
@@ -227,7 +227,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "FAR_EL2 : "
-                <<"faultAddr = "<< faultAddr
+                <<"faultAddr = "<< Hex(faultAddr)
                   << "\n";
         }
         AS_MACRO static RegFAR_EL2 read();
@@ -246,7 +246,7 @@ public:
         AS_MACRO void dump()const
         {
             kout << "FAR_EL3 : "
-                <<"faultAddr = "<< faultAddr
+                <<"faultAddr = "<< Hex(faultAddr)
                   << "\n";
         }
         AS_MACRO static RegFAR_EL3 read();

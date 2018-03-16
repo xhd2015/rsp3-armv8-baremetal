@@ -9,7 +9,7 @@
 #define INCLUDE_DATA_STRUCTURES_STRING_H_
 
 #include <data_structures/Vector.h>
-#include <printk.h>
+#include "../io/printk.h"
 
 class String
 	:public Vector<char>

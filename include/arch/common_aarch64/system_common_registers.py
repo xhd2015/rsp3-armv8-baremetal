@@ -32,15 +32,15 @@ reg_list=[
     ["DAIF","uint32_t","STD",[["RES0_0",6,   "F",1,   "I",1,    "A",1   ,"D",1,   "RES0_1",22]]],
     # Exception related
     ["VBAR_EL1","uint64_t","STD",[["Addr,Hex",64]]],
-    ["ELR_EL1","uint64_t","STD",[["returnAddr",64]]],
-    ["ELR_EL2","uint64_t","STD",[["returnAddr",64]]],
-    ["ELR_EL3","uint64_t","STD",[["returnAddr",64]]],    
-    ["ESR_EL1","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
-    ["ESR_EL2","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
-    ["ESR_EL3","uint32_t","STD",[["ISS",25,   "IL",1,   "EC",6]]],
-    ["FAR_EL1","uint64_t","STD",[["faultAddr",64]]],
-    ["FAR_EL2","uint64_t","STD",[["faultAddr",64]]],
-    ["FAR_EL3","uint64_t","STD",[["faultAddr",64]]],
+    ["ELR_EL1","uint64_t","STD",[["returnAddr,Hex",64]]],
+    ["ELR_EL2","uint64_t","STD",[["returnAddr,Hex",64]]],
+    ["ELR_EL3","uint64_t","STD",[["returnAddr,Hex",64]]],    
+    ["ESR_EL1","uint32_t","STD",[["ISS,Hex",25,   "IL",1,   "EC,Hex",6]]],
+    ["ESR_EL2","uint32_t","STD",[["ISS,Hex",25,   "IL",1,   "EC,Hex",6]]],
+    ["ESR_EL3","uint32_t","STD",[["ISS,Hex",25,   "IL",1,   "EC,Hex",6]]],
+    ["FAR_EL1","uint64_t","STD",[["faultAddr,Hex",64]]],
+    ["FAR_EL2","uint64_t","STD",[["faultAddr,Hex",64]]],
+    ["FAR_EL3","uint64_t","STD",[["faultAddr,Hex",64]]],
     # ELSPMode,e.g. M[3:0], 0b0000=EL0t, 0b0100=EL1t, 0b0101=EL1h
     # ExeState is execution state, in AARCH64, it is RES0
     # 当EL=0时, SPSel只能是0

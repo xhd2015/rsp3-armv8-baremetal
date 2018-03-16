@@ -5,13 +5,12 @@
 #include <arch/common_aarch64/gicv3_registers.h>
 
 #include <def.h>
-#include <printk.h>
 #include <IntegerFormatter.h>
 #include <arch/common_aarch64/gicv3_registers.h>
 #include <arch/common_aarch64/system_common_registers.h>
 #include <arch/common_aarch64/timer_registers.h>
 #include <asm_instructions.h>
-#include <kernel.h>
+#include <io/Output.h>
 
 __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -155,10 +154,21 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 	uint32_t fromEL = RegSPSR_EL1::read().EL;
 	kout << INFO << "From EL = " << fromEL << "\n";
 
-
+	auto far = RegFAR_EL1::read();
+	auto elr = RegELR_EL1::read();
+	auto spsr = RegSPSR_EL1::read();
 	auto esr = RegESR_EL1::read();
 	esr.dump();
-	if(esr.EC == ExceptionClass::SVC_AA64)
+	elr.dump();
+	far.dump();
+	spsr.dump();
+	if(esr.EC == ExceptionClass::UNDEF_INST)
+	{
+		kout << INFO << "Undefined instruction\n";
+		kout << INFO << "not processing it\n";
+		asm_wfe_loop();
+	}
+	else if(esr.EC == ExceptionClass::SVC_AA64)
 	{
 		uint16_t svcNumber = lowerMaskBits(16)&esr.ISS;
 		kout << INFO << "svc targeting number : " << svcNumber<< "\n";
@@ -169,9 +179,6 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 			auto printkChars = kout.print(str, len);
 			savedRegisters[0] = printkChars; // savedResult
 		}
-	}else if(esr.EC == ExceptionClass::UNDEF_INST){
-		kout << FATAL << "cannot process it\n";
-		asm_wfe_loop();
 	}else if(esr.EC == ExceptionClass::INSTR_ABORT_LOWER_EL){
 		kout << "Instruction Abort \n";
 		uint64_t ifsc=getBits(esr.ISS,0,5);
@@ -186,8 +193,23 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 		kout << "not processing it\n";
 		asm_wfe_loop();
 	}else if(esr.EC == ExceptionClass::DATA_ABORT_LOWER_EL){
-		kout << "Data Abort\n";
-		kout << "not processing it\n";
+		kout << INFO << "Data Abort\n";
+		kout << INFO << "not processing it\n";
+		asm_wfe_loop();
+	}else if(esr.EC == ExceptionClass::PC_ALIGNMENT_FAULT){
+		kout << INFO << "PC alignment fault\n";
+		kout << INFO << "not processing it\n";
+		asm_wfe_loop();
+	}else if(esr.EC == ExceptionClass::SP_ALIGNMENT_FAULT){
+		kout << INFO << "SP alignment fault\n";
+		kout << INFO << "not processing it \n";
+		asm_wfe_loop();
+	}else if(esr.EC == ExceptionClass::SERROR_INTERRUPT){
+		kout << INFO << "SError interrupt\n";
+		kout << INFO << "not processing it\n";
+		asm_wfe_loop();
+	}else{
+		kout << INFO << "Currently unhandled exception\n";
 		asm_wfe_loop();
 	}
 }

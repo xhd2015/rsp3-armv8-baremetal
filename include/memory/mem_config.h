@@ -12,7 +12,7 @@ constexpr size_t RASPI_GPU_RAM=64*MiB;
 constexpr char * const RAM_START = reinterpret_cast<char*>(0x0);
 constexpr size_t RAM_SIZE =RASPI_WHOLE_RAM - RASPI_GPU_RAM;
 
-#elif defined(ARCH_IS_qemu_virt)||defined(ARCH_IS_qemu_virt_reloc_elf)
+#elif defined(ARCH_IS_qemu_virt)
 #define RAM_START reinterpret_cast<char *>(CONFIG_RAM_START)
 #define RAM_SIZE static_cast<size_t>(1*GiB)
 #elif defined(ARCH_IS_host)

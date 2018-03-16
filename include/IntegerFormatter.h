@@ -9,7 +9,7 @@
 #define INCLUDE_INTEGERINTEGERFORMATTER_H_
 
 #include <def.h>
-#include <printk.h>
+#include <io/Output.h>
 
 
 template <int Base>

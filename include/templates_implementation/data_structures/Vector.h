@@ -8,8 +8,8 @@
 #define INCLUDE_DATA_STRUCTURES_VECTOR_TEMPLATE_H_
 #include <def.h>
 #include <data_structures/Vector.h>
-#include <kernel.h>
-#include <printk.h>
+#include <memory/MemoryManager.h>
+#include <io/Output.h>
 
 template <class T>
 Vector<T>::Vector(size_t initSize)

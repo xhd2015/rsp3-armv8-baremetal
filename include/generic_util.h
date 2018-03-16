@@ -29,6 +29,10 @@ size_t itox(size_t i,char *dst,size_t size);
 
 size_t itos(size_t i,unsigned int base,char *dst,size_t size);
 
+// alignPrevious : 0是所有对齐的起点,0也是对齐的终点，会发生循环，即达到最大值附近后增加到0
+uint64_t alignNext(uint64_t d,uint64_t alignment);
+uint64_t alignPrevious(uint64_t d,uint64_t alignment);
+
 
 // string部分
 
@@ -41,6 +45,9 @@ const char *strOffset(const char *p,size_t offset);
 
 
 
+
+
+//==MACROS
 // example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
 AS_MACRO uint64_t upperMaskBits(uint64_t i)
 {

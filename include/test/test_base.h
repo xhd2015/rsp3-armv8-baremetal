@@ -9,7 +9,7 @@
 #define INCLUDE_TEST_TEST_BASE_H_
 
 #include <def.h>
-#include <printk.h>
+#include "../io/printk.h"
 
 #define EXPECT_EXPR_EQUAL(expr,value) \
 	{do{ \

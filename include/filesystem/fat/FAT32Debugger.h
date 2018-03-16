@@ -13,7 +13,7 @@
 #include <filesystem/fat/FATDirEntry.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <filesystem/fat/FATLongNameEntry.h>
-#include <printk.h>
+#include "../../io/printk.h"
 
 
 /**

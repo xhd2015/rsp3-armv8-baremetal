@@ -8,8 +8,8 @@
 
 #include <data_structures/String.h>
 #include <data_structures/StringRef.h>
-#include <printk.h>
 #include <cstring>
+#include "../../include/io/printk.h"
 
 
 StringRef::StringRef(const void *nullTermStr)

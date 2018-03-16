@@ -11,8 +11,8 @@
 
 #include <def.h>
 #include <initializer_list>
-#include <printk.h>
 #include <io/SectorReader.h>
+#include <io/Output.h>
 
 
 template <class T>

@@ -7,9 +7,9 @@
  *      Author: 13774
  */
 
-#include <printk.h>
 #include <generic_util.h>
 #include <test/test_base.h>
+#include "../include/io/printk.h"
 
 int main()
 {

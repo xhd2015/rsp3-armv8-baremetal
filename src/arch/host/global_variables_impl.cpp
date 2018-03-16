@@ -7,9 +7,9 @@
 
 #include <MemoryManager.h>
 #include <global_variables.h>
-#include <printk.h>
 #include <mem_config.h>
 #include <arch/host/SectorReaderHelper.h>
+#include "../../../include/io/printk.h"
 
 char koutBuf[koutBufSize];
 Output kout;

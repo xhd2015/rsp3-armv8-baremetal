@@ -10,7 +10,7 @@
 
 #include <data_structures/VectorRef.h>
 #include <data_structures/String.h>
-#include <printk.h>
+#include "../io/printk.h"
 
 // ref of str
 class StringRef

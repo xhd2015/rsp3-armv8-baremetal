@@ -86,6 +86,10 @@ private:
 	const size_t	size;
 };
 
+
+// 定义一个全局的内存管理器
+extern MemoryManager mman;
+
 #include <templates_implementation/MemoryManager.h>
 
 

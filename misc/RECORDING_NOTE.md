@@ -1,3 +1,62 @@
+# 2018年3月16日09:48:25
+修复了一个调试相关的问题：在EL0下不能查看0x0处的代码，需要修改页表的AP属性为0b11
+
+定义了一个新的调试用户空间代码的方法：通过调试user_space.elf即可。（注意，不能将.debug_*分区丢弃）
+
+【bugfix】修复了flush的typo：bufferSize -> buffer
+
+【unkown bug】：仍然不知道为什么在有的情况下elf文件的代码和binary文件的代码不对应，但是解决方法就是clean+build(==rebuild)
+
+定义一系列的note标签，将来可通过字符串处理将这些标签提取出来。目前的标签包括bugfix, commit,todo,unkown bug,commit point
+
+【commit point】 通过简单的适配，重用了内核空间的内存管理类和输出类，并进行了简单的测试（参见当前commit下的[user_main_hello_kernel.cpp](src/arch/user_space/user_main_hello_kernel.cpp)。用户空间的功能逐步完善。
+# 2018年3月16日00:01:41
+目前正在测试如何在user_space下重用Output的代码。
+# 2018年3月15日23:00:55
+修复了一个typo:  文件夹名称 subporjects->subprojects
++教程： 引入overview工程之后，选择subprojects的子工程，选择import as project即可
++Indexer设置： 选择不要索引排除在外的文件
+
+发现了一个bug：bin文件和elf文件的代码位置不匹配。【尚未发现原因】
+
+UPDATE:
+
+将kernel.h中的类相关变量（包括使用的static型变量）还原到其原始的类文件中。
+
+将printk.h拆分为printk.h和Output.h两个文件
+
+增加overview工程的交叉编译属性，Enviornment增加下面几项：
+```c++
+TOOLCHAIN_CXX = ${TOOLCHIAN_ROOT}\${TOOLCHAIN_PREFIX}g++
+TOOLCHAIN_PREFIX = aarch64-elf-
+TOOLCHAIN_ROOT = D:\installed\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\bin
+```
+`Path & Symbols`增加`include`的引入
+
+`Toolchain Editor`改写`cross settings`
+
+将printk拆分，分出Output类
+# 2018年3月13日15:05:14
+关于用户态内存分配，使用一个可扩展的MemoryManager。起始地址位于4KB边界，大小总是按照4KB的倍数。对于这些4KB的页，
+4KB页面意味着两方面的事情：1.内核分配的页面总是4KB对齐的    2.转换表映射时也将这些页面映射到4KB边界。
+
+两个在用户空间连续的页面在内核空间并不连续，如果某次申请的内存跨越了多个连续的页面，这样的内存在回收时
+
+为了找出哪些页面是空闲的，可以被回收给操作系统，需要记录这样的碎片。
+
+在申请内存页面时，尝试将多个连续的内存页放到满足条件的碎片之中。
+
+用户态的RAM地址空间必定是可以连续的。
+
+一个类，标记虚拟化内存的页面是否可用
+
+A A A A B B A A A A END
+
+1.用于小内存的分配  // 32字节及以下的空间总是分成多个8字节进行分配
+2.中型内存的分配    // 32字节以上的空间
+3.大型内存的分配    // 超过4KB的，向上取整为多个
+
+
 # 2018年3月13日13:39:20
 eclipse workspace工作记录：
 添加cygwin-win的路径映射

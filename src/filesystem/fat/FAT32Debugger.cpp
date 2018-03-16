@@ -1,9 +1,9 @@
 #include <filesystem/fat/FAT32Debugger.h>
 
 
-#include <printk.h>
 #include <memory/MemoryManager.h>
 #include <IntegerFormatter.h>
+#include "../../../include/io/printk.h"
 
 
 void Fat32Dubugger::dumpBPBTypeInformation()

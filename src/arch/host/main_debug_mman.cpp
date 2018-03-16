@@ -9,8 +9,8 @@
 #include <memory/MemoryChunk.h>
 #include <memory/MemoryManager.h>
 #include <test/TestMemoryManager.h>
-#include <printk.h>
 #include <kernel.h>
+#include "../../../include/io/printk.h"
 
 using namespace std;
 int main()

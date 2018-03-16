@@ -8,7 +8,7 @@
 #ifndef INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_
 #define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_
 
-#include <printk.h>
+#include <io/printk.h>
 
 
 

@@ -8,7 +8,7 @@
 
 #include <arch/qemu-virt/gpio.h>
 #include <def.h>
-#include <printk.h>
+#include "../../../include/io/printk.h"
 
 
 #define MMIO_BASE 0x08000000

@@ -10,7 +10,7 @@
 
 #include <def.h>
 #include <data_structures/Vector.h>
-#include <printk.h>
+#include "../io/printk.h"
 
 template <class T>
 class VectorRef{

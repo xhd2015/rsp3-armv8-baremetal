@@ -10,7 +10,7 @@
 
 #include <IntegerFormatter.h>
 #include <generic_util.h>
-#include <printk.h>
+#include <io/Output.h>
 
 template <int Base>
 IntegerFormatter<Base>::IntegerFormatter(size_t num)

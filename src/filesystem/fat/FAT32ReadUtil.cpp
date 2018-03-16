@@ -2,7 +2,7 @@
 #include <filesystem/fat/FAT32Debugger.h>
 #include <filesystem/fat/FAT32ReadUtil.h>
 #include <memory/MemoryManager.h>
-#include <printk.h>
+#include "../../../include/io/printk.h"
 
 
 size_t FAT32ReadUtil::findByShortName(const FATDirEntry *content,size_t itemCount,const char * mainPart,const char *extPart)

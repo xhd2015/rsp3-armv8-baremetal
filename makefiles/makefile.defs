@@ -9,10 +9,11 @@ endif
 
 # 添加辅助依赖, 注意,USER_OBJS 只能在此进行修改，其他地方修改不会产生效果
 USER_OBJS += aux-check-link-script.o aux-check-link-script.o
-CLEAN-ALL-LIST += $(MASTERY_BINARY) aux-check-link-script.o
+CLEAN-ALL-LIST += aux-check-link-script.o
 
 # 设置USER_CXX_FLAGS
-USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -O0 -Og -g3 -pedantic -pedantic-errors -Wall -Werror -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti
+# DEPRECATED: -Wconversion
+USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti
 ifeq ($(TARGET_ARCH),qemu_virt)
     USER_CXX_FLAGS += -march=armv8.2-a
 endif

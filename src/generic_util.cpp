@@ -47,6 +47,16 @@ size_t itos(size_t i,unsigned int base,char *dst,size_t size)
 	return index;
 }
 
+uint64_t alignNext(uint64_t d,uint64_t alignment)
+{
+	auto left=d%alignment;//
+	return left?(d + alignment - left):d;
+}
+uint64_t alignPrevious(uint64_t d,uint64_t alignment)
+{
+	auto left=d%alignment;
+	return left?(d - left):d;
+}
 void reverse(char *str,size_t size)
 {
 	if(size > 1)

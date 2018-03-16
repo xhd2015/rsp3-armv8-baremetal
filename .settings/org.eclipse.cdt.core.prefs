@@ -503,6 +503,15 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794/append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TARGET_ARCH/value=overview
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_CXX/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_CXX/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_CXX/value=${TOOLCHIAN_ROOT}/${TOOLCHAIN_PREFIX}g++
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_PREFIX/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_PREFIX/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_PREFIX/value=aarch64-elf-
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_ROOT/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_ROOT/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/TOOLCHAIN_ROOT/value=D\:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\bin
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/append=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.645666212/appendContributed=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.782492911/AARCH64_TOOLCHAIN_ROOT/delimiter=;

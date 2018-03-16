@@ -7,9 +7,9 @@
 
 
 #include <def.h>
-#include <printk.h>
 #include <test/TestVector.h>
 #include <test/test_base.h>
+#include "../../../include/io/printk.h"
 
 int main()
 {

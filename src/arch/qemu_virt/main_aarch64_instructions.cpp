@@ -1,10 +1,10 @@
 
 #include <def.h>
-#include <printk.h>
 #include <IntegerFormatter.h>
 #include <arch/common_aarch64/timer_registers.h>
 #include <arch/common_aarch64/system_common_registers.h>
 #include <arch/common_aarch64/gicv3_registers.h>
+#include "../../../include/io/printk.h"
 
 
 
