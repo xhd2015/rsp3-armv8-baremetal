@@ -27,7 +27,7 @@ void flush()
 {
 	if(curSize > 0)
 	{
-		svc_call(SvcFunc::puts, reinterpret_cast<uint64_t>(buffer),curSize);
+		svc_call<SvcFunc::puts>( reinterpret_cast<uint64_t>(buffer),curSize);
 		curSize = 0;
 	}
 }

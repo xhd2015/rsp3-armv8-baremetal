@@ -1,3 +1,93 @@
+# 2018年3月17日18:21:45
+【commit point】 修正了svc_call的定义，现在它使用模板参数。新增了Process类的定义，参见 [Process.h](../include/schedule/Process.h), [main_run_process.cpp](../src/arch/common_aarch64/qemu_virt/main_run_process.cpp)
+# 2018年3月17日17:35:04
+【acknowledged】 如果一个函数中含有内联汇编，且内联汇编声明输入列表中有一个立即数，该立即数来自参数，则能否编译出相应的代码？
+
+以svc指令及其调用为例：
+```c++
+uint64_t svc_call(int func,uint64_t arg0,uint64_t arg1)
+{
+	uint64_t res=0;
+	FORCE_CODE_COHERENT_WITH_VIEW();
+	__asm__ __volatile__("mov x0, %2 \n\t"
+						"mov  x1, %3  \n\t"
+						"svc %1 \n\t"
+						"str x0,%0 \n\t"
+						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1):"x0","x1");
+	return res;
+}
+#define FUNC_PUTS 0
+int main()
+{
+	svc_call(FUNC_PUTS,"Hello SVC\n");
+	return 0;
+}
+```
+上面的函数试图通过通过函数svc_call来产生一个系统调用。然而编译会产生asm操作数限制符不匹配的问题。
+
+其原因在于， 从svc_call的角度来看, func是一个变量而不是常量（立即数），因此 "i"(func)是不可能成立的。
+
+然而通过设置适合的编译器编译参数，可以实现其正确调用，但是不能避免错误的调用。解决方案就是内联函数和优化选项。
+
+为svc_call增加声明
+```c++
+inline __attribute__((always_inline)) uint64_t svc_call(int func,uint64_t arg0,uint64_t arg1);
+... // 原来的代码
+```
+
+并且选定编译选项 `-O1`(已经测试)， 或者仅仅指定调用者的优化级别：
+```c++
+__attribute__((optimize("O1")))
+int main()
+{
+	...
+}
+```
+能够生成正确编译。
+
+然而我们已经说了这种方式实际上是非常不准确的，其不可靠性在于需要依赖优化选项，当`-O0`时提示错误。而且，如果一个调用是
+```c++
+int main()
+{
+	int a=ramdom();
+	svc_call(a,...); // 使用变量而不是立即数
+}
+```
+则立即产生错误，这种代码无论如何不能编译通过。
+
+我们给出的解决方案是利用模板参数，因为模板参数允许常量，改写svc_call函数如下:
+```c++
+template <int func>
+uint64_t svc_call(uint64_t arg0,uint64_t arg1)
+{
+	uint64_t res=0;
+	FORCE_CODE_COHERENT_WITH_VIEW();
+	__asm__ __volatile__("mov x0, %2 \n\t"
+						"mov  x1, %3  \n\t"
+						"svc %1 \n\t"
+						"str x0,%0 \n\t"
+						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1):"x0","x1");
+	return res;
+}
+#define FUNC_PUTS 0
+int main()
+{
+	svc_call<FUNC_PUTS>("Hello SVC\n");
+	return 0;
+}
+```
+该方案不仅不依赖于优化选项，也能够避免错误的调用。
+
+
+
+# 2018年3月17日10:08:03
+我们确定了一个原则，就是在何时才在头文件中声明一个全局变量， 那就是当系统中确实只需要一个时。
+
+这条原则的简写就是：全局且唯一。
+
+根据这条原则， MemoryManager, Output, PidManager都将只有一个。
+# 2018年3月17日09:39:00
+【acknowledged】 在使用调试器时，其他工程的调试配置可能被用于当前的工程，从而产生错误。因为eclipse在调试时尝试在一个不存在的源文件处设置断点，或者在一个非法的地址处设置断点，从而导致调试器发出错误。 解决方法就是清除所有的断点。
 # 2018年3月16日09:48:25
 修复了一个调试相关的问题：在EL0下不能查看0x0处的代码，需要修改页表的AP属性为0b11
 
@@ -7,9 +97,9 @@
 
 【unkown bug】：仍然不知道为什么在有的情况下elf文件的代码和binary文件的代码不对应，但是解决方法就是clean+build(==rebuild)
 
-定义一系列的note标签，将来可通过字符串处理将这些标签提取出来。目前的标签包括bugfix, commit,todo,unkown bug,commit point
+定义一系列的note标签，将来可通过字符串处理将这些标签提取出来。目前的标签包括bugfix, commit,todo,unkown bug,commit point, acknowledged
 
-【commit point】 通过简单的适配，重用了内核空间的内存管理类和输出类，并进行了简单的测试（参见当前commit下的[user_main_hello_kernel.cpp](src/arch/user_space/user_main_hello_kernel.cpp)。用户空间的功能逐步完善。
+【commit point】 通过简单的适配，重用了内核空间的内存管理类和输出类，并进行了简单的测试（参见当前commit下的[user_main_hello_kernel.cpp](../src/arch/user_space/user_main_hello_kernel.cpp))。用户空间的功能逐步完善。
 # 2018年3月16日00:01:41
 目前正在测试如何在user_space下重用Output的代码。
 # 2018年3月15日23:00:55

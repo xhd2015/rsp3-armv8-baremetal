@@ -23,6 +23,8 @@
 # 配置交叉编译工具链
 ## Windows
 
+# 风格
+
 
 
 # 准则
@@ -36,6 +38,8 @@
 工程进度总览参考 [Progress_Current.md](misc/Progress_Current.md)
 
 工程记录参考 [RECORDING_NOTE.md](misc/RECORDING_NOTE.md)
+
+子工程的结构和配置，参考 [subprojects/README.md](subprojects/README.md)
 
 # Copyright
 

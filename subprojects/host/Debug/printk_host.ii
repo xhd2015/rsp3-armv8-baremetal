@@ -1,5 +1,5 @@
-# 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp"
-# 1 "/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subporjects/host/Debug//"
+# 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_host.cpp"
+# 1 "/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subprojects/host/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __cplusplus 201402L
@@ -18,7 +18,6 @@
 #define __ATOMIC_CONSUME 1
 #define __pic__ 1
 #define __PIC__ 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
 #define __LP64__ 1
@@ -230,6 +229,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __WCHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
@@ -294,7 +294,7 @@
 
 #define ARCH_IS_host 
 # 1 "<command-line>" 2
-# 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp"
+# 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_host.cpp"
 
 
 
@@ -302,30 +302,13 @@
 
 
 
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/printk.h" 1
-# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/printk.h"
-#define INCLUDE_PRINTK_H_ 
-
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h" 1
-
-
-#define DEF_H__ 
-
-
-
-
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 1 3
-# 40 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 3
-#define _GLIBCXX_CSTDDEF 1
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 1 3
+# 34 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 3
+#define _GLIBCXX_IOSTREAM 1
 
        
-# 43 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 3
+# 37 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 3
 
-#undef __need_wchar_t
-#undef __need_ptrdiff_t
-#undef __need_size_t
-#undef __need_NULL
-#undef __need_wint_t
 # 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h" 1 3
 # 31 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/c++config.h" 3
 #define _GLIBCXX_CXX_CONFIG_H 1
@@ -1239,497 +1222,7 @@ namespace std
 
 
 #define _GTHREAD_USE_MUTEX_TIMEDLOCK 0
-# 50 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 2 3
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 1 3 4
-# 39 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#define _STDDEF_H 
-#define _STDDEF_H_ 
-
-#define _ANSI_STDDEF_H 
-# 137 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#define _PTRDIFF_T 
-#define _T_PTRDIFF_ 
-#define _T_PTRDIFF 
-#define __PTRDIFF_T 
-#define _PTRDIFF_T_ 
-#define _BSD_PTRDIFF_T_ 
-#define ___int_ptrdiff_t_h 
-#define _GCC_PTRDIFF_T 
-#define _PTRDIFF_T_DECLARED 
-
-
-
-typedef long int ptrdiff_t;
-# 161 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 187 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#define __size_t__ 
-#define __SIZE_T__ 
-#define _SIZE_T 
-#define _SYS_SIZE_T_H 
-#define _T_SIZE_ 
-#define _T_SIZE 
-#define __SIZE_T 
-#define _SIZE_T_ 
-#define _BSD_SIZE_T_ 
-#define _SIZE_T_DEFINED_ 
-#define _SIZE_T_DEFINED 
-#define _BSD_SIZE_T_DEFINED_ 
-#define _SIZE_T_DECLARED 
-#define ___int_size_t_h 
-#define _GCC_SIZE_T 
-#define _SIZET_ 
-
-
-
-
-
-
-
-#define __size_t 
-
-
-
-
-
-typedef long unsigned int size_t;
-# 238 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef __need_size_t
-# 267 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#define __wchar_t__ 
-#define __WCHAR_T__ 
-#define _WCHAR_T 
-#define _T_WCHAR_ 
-#define _T_WCHAR 
-#define __WCHAR_T 
-#define _WCHAR_T_ 
-#define _BSD_WCHAR_T_ 
-#define _WCHAR_T_DEFINED_ 
-#define _WCHAR_T_DEFINED 
-#define _WCHAR_T_H 
-#define ___int_wchar_t_h 
-#define __INT_WCHAR_T_H 
-#define _GCC_WCHAR_T 
-#define _WCHAR_T_DECLARED 
-# 294 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef _BSD_WCHAR_T_
-# 347 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef __need_wchar_t
-# 401 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef NULL
-
-#define NULL __null
-# 412 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-
-
-
-
-#define _GCC_MAX_ALIGN_T 
-
-
-
-typedef struct {
-  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
-  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
-} max_align_t;
-
-
-
-
-
-#define _GXX_NULLPTR_T 
-  typedef decltype(nullptr) nullptr_t;
-# 51 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 2 3
-
-
-namespace std
-{
-
-  using ::max_align_t;
-}
-# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h" 2
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 1 3
-# 30 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
-#define _GLIBCXX_CSTDINT 1
-
-       
-# 33 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
-# 41 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 1 3 4
-# 11 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint-gcc.h" 1 3 4
-# 29 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint-gcc.h" 3 4
-#define _GCC_STDINT_H 
-
-
-
-
-typedef signed char int8_t;
-
-
-typedef short int int16_t;
-
-
-typedef int int32_t;
-
-
-typedef long int int64_t;
-
-
-typedef unsigned char uint8_t;
-
-
-typedef short unsigned int uint16_t;
-
-
-typedef unsigned int uint32_t;
-
-
-typedef long unsigned int uint64_t;
-
-
-
-
-typedef signed char int_least8_t;
-typedef short int int_least16_t;
-typedef int int_least32_t;
-typedef long int int_least64_t;
-typedef unsigned char uint_least8_t;
-typedef short unsigned int uint_least16_t;
-typedef unsigned int uint_least32_t;
-typedef long unsigned int uint_least64_t;
-
-
-
-typedef signed char int_fast8_t;
-typedef long int int_fast16_t;
-typedef long int int_fast32_t;
-typedef long int int_fast64_t;
-typedef unsigned char uint_fast8_t;
-typedef long unsigned int uint_fast16_t;
-typedef long unsigned int uint_fast32_t;
-typedef long unsigned int uint_fast64_t;
-
-
-
-
-typedef long int intptr_t;
-
-
-typedef long unsigned int uintptr_t;
-
-
-
-
-typedef long int intmax_t;
-typedef long unsigned int uintmax_t;
-
-
-
-
-
-
-
-#undef INT8_MAX
-#define INT8_MAX __INT8_MAX__
-#undef INT8_MIN
-#define INT8_MIN (-INT8_MAX - 1)
-
-
-#undef UINT8_MAX
-#define UINT8_MAX __UINT8_MAX__
-
-
-#undef INT16_MAX
-#define INT16_MAX __INT16_MAX__
-#undef INT16_MIN
-#define INT16_MIN (-INT16_MAX - 1)
-
-
-#undef UINT16_MAX
-#define UINT16_MAX __UINT16_MAX__
-
-
-#undef INT32_MAX
-#define INT32_MAX __INT32_MAX__
-#undef INT32_MIN
-#define INT32_MIN (-INT32_MAX - 1)
-
-
-#undef UINT32_MAX
-#define UINT32_MAX __UINT32_MAX__
-
-
-#undef INT64_MAX
-#define INT64_MAX __INT64_MAX__
-#undef INT64_MIN
-#define INT64_MIN (-INT64_MAX - 1)
-
-
-#undef UINT64_MAX
-#define UINT64_MAX __UINT64_MAX__
-
-
-#undef INT_LEAST8_MAX
-#define INT_LEAST8_MAX __INT_LEAST8_MAX__
-#undef INT_LEAST8_MIN
-#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
-#undef UINT_LEAST8_MAX
-#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
-#undef INT_LEAST16_MAX
-#define INT_LEAST16_MAX __INT_LEAST16_MAX__
-#undef INT_LEAST16_MIN
-#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
-#undef UINT_LEAST16_MAX
-#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
-#undef INT_LEAST32_MAX
-#define INT_LEAST32_MAX __INT_LEAST32_MAX__
-#undef INT_LEAST32_MIN
-#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
-#undef UINT_LEAST32_MAX
-#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
-#undef INT_LEAST64_MAX
-#define INT_LEAST64_MAX __INT_LEAST64_MAX__
-#undef INT_LEAST64_MIN
-#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
-#undef UINT_LEAST64_MAX
-#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
-
-#undef INT_FAST8_MAX
-#define INT_FAST8_MAX __INT_FAST8_MAX__
-#undef INT_FAST8_MIN
-#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
-#undef UINT_FAST8_MAX
-#define UINT_FAST8_MAX __UINT_FAST8_MAX__
-#undef INT_FAST16_MAX
-#define INT_FAST16_MAX __INT_FAST16_MAX__
-#undef INT_FAST16_MIN
-#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
-#undef UINT_FAST16_MAX
-#define UINT_FAST16_MAX __UINT_FAST16_MAX__
-#undef INT_FAST32_MAX
-#define INT_FAST32_MAX __INT_FAST32_MAX__
-#undef INT_FAST32_MIN
-#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
-#undef UINT_FAST32_MAX
-#define UINT_FAST32_MAX __UINT_FAST32_MAX__
-#undef INT_FAST64_MAX
-#define INT_FAST64_MAX __INT_FAST64_MAX__
-#undef INT_FAST64_MIN
-#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
-#undef UINT_FAST64_MAX
-#define UINT_FAST64_MAX __UINT_FAST64_MAX__
-
-
-#undef INTPTR_MAX
-#define INTPTR_MAX __INTPTR_MAX__
-#undef INTPTR_MIN
-#define INTPTR_MIN (-INTPTR_MAX - 1)
-
-
-#undef UINTPTR_MAX
-#define UINTPTR_MAX __UINTPTR_MAX__
-
-
-#undef INTMAX_MAX
-#define INTMAX_MAX __INTMAX_MAX__
-#undef INTMAX_MIN
-#define INTMAX_MIN (-INTMAX_MAX - 1)
-#undef UINTMAX_MAX
-#define UINTMAX_MAX __UINTMAX_MAX__
-
-
-
-#undef PTRDIFF_MAX
-#define PTRDIFF_MAX __PTRDIFF_MAX__
-#undef PTRDIFF_MIN
-#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
-
-#undef SIG_ATOMIC_MAX
-#define SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__
-#undef SIG_ATOMIC_MIN
-#define SIG_ATOMIC_MIN __SIG_ATOMIC_MIN__
-
-#undef SIZE_MAX
-#define SIZE_MAX __SIZE_MAX__
-
-#undef WCHAR_MAX
-#define WCHAR_MAX __WCHAR_MAX__
-#undef WCHAR_MIN
-#define WCHAR_MIN __WCHAR_MIN__
-
-#undef WINT_MAX
-#define WINT_MAX __WINT_MAX__
-#undef WINT_MIN
-#define WINT_MIN __WINT_MIN__
-
-
-
-
-
-
-
-#undef INT8_C
-#define INT8_C(c) __INT8_C(c)
-#undef INT16_C
-#define INT16_C(c) __INT16_C(c)
-#undef INT32_C
-#define INT32_C(c) __INT32_C(c)
-#undef INT64_C
-#define INT64_C(c) __INT64_C(c)
-#undef UINT8_C
-#define UINT8_C(c) __UINT8_C(c)
-#undef UINT16_C
-#define UINT16_C(c) __UINT16_C(c)
-#undef UINT32_C
-#define UINT32_C(c) __UINT32_C(c)
-#undef UINT64_C
-#define UINT64_C(c) __UINT64_C(c)
-#undef INTMAX_C
-#define INTMAX_C(c) __INTMAX_C(c)
-#undef UINTMAX_C
-#define UINTMAX_C(c) __UINTMAX_C(c)
-# 12 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 2 3 4
-
-#define _GCC_WRAP_STDINT_H 
-# 42 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 2 3
-
-
-
-
-namespace std
-{
-  using ::int8_t;
-  using ::int16_t;
-  using ::int32_t;
-  using ::int64_t;
-
-  using ::int_fast8_t;
-  using ::int_fast16_t;
-  using ::int_fast32_t;
-  using ::int_fast64_t;
-
-  using ::int_least8_t;
-  using ::int_least16_t;
-  using ::int_least32_t;
-  using ::int_least64_t;
-
-  using ::intmax_t;
-  using ::intptr_t;
-
-  using ::uint8_t;
-  using ::uint16_t;
-  using ::uint32_t;
-  using ::uint64_t;
-
-  using ::uint_fast8_t;
-  using ::uint_fast16_t;
-  using ::uint_fast32_t;
-  using ::uint_fast64_t;
-
-  using ::uint_least8_t;
-  using ::uint_least16_t;
-  using ::uint_least32_t;
-  using ::uint_least64_t;
-
-  using ::uintmax_t;
-  using ::uintptr_t;
-}
-# 10 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h" 2
-
-#define AS_MACRO __attribute__((always_inline)) inline
-#define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
-#define NULL_CHAR '\0'
-# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
-#define INFO "[INFO] "
-#define WARNING "[WARNING] "
-#define FATAL "[FATAL] "
-
-
-
-
-# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
-extern const char EMPTY_STR[1];
-
-
-constexpr size_t koutBufSize = 65;
-extern char koutBuf[koutBufSize];
-
-constexpr int UNIT_K=1024;
-constexpr int KiB = UNIT_K;
-constexpr int MiB = UNIT_K * KiB;
-constexpr int GiB = UNIT_K * MiB;
-
-
-#define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
-
-
-#define __stringify_1(x) #x
-#define __stringify(x) __stringify_1(x)
-
-
-
-
-#define HEX32(a,b) 0x ##a ##b
-#define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
-
-
-#define BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d
-#define BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h
-# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/printk.h" 2
-
-
-size_t printk(char ch);
-
-
-size_t printk(const char *s);
-
-size_t printk(const char *s,size_t n);
-
-class Output{
-public:
- size_t print(const char *s,size_t len);
- size_t print(const char *s);
- Output & operator<<(char ch);
-
- Output & operator<<(uint8_t u);
- Output & operator<<(uint16_t u);
- Output & operator<<(uint32_t u);
- Output & operator<<(bool i);
- Output & operator<<(short i);
- Output & operator<<(int i);
- Output & operator<<(double d);
- Output & operator<<(const char *s);
- Output & operator<<(size_t i);
- Output & operator<<(const void *p);
- Output & operator<<(const volatile void *p);
-};
-
-
-
-
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 1
-# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
-#define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ 
-
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/printk.h" 1
-# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 2
-# 44 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/printk.h" 2
-# 9 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp" 2
-# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 1 3
-# 34 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 3
-#define _GLIBCXX_IOSTREAM 1
-
-       
-# 37 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 3
-
-
+# 39 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/iostream" 2 3
 # 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ostream" 1 3
 # 34 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ostream" 3
 #define _GLIBCXX_OSTREAM 1
@@ -1769,8 +1262,6 @@ public:
 
 
 
-
-# 50 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/memoryfwd.h" 3
 namespace std
 {
 
@@ -2215,6 +1706,110 @@ extern "C" {
 
 
 # 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 1 3 4
+# 39 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#define _STDDEF_H 
+#define _STDDEF_H_ 
+
+#define _ANSI_STDDEF_H 
+# 137 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#define _PTRDIFF_T 
+#define _T_PTRDIFF_ 
+#define _T_PTRDIFF 
+#define __PTRDIFF_T 
+#define _PTRDIFF_T_ 
+#define _BSD_PTRDIFF_T_ 
+#define ___int_ptrdiff_t_h 
+#define _GCC_PTRDIFF_T 
+#define _PTRDIFF_T_DECLARED 
+
+
+
+typedef long int ptrdiff_t;
+# 161 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 187 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#define __size_t__ 
+#define __SIZE_T__ 
+#define _SIZE_T 
+#define _SYS_SIZE_T_H 
+#define _T_SIZE_ 
+#define _T_SIZE 
+#define __SIZE_T 
+#define _SIZE_T_ 
+#define _BSD_SIZE_T_ 
+#define _SIZE_T_DEFINED_ 
+#define _SIZE_T_DEFINED 
+#define _BSD_SIZE_T_DEFINED_ 
+#define _SIZE_T_DECLARED 
+#define ___int_size_t_h 
+#define _GCC_SIZE_T 
+#define _SIZET_ 
+
+
+
+
+
+
+
+#define __size_t 
+
+
+
+
+
+typedef long unsigned int size_t;
+# 238 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef __need_size_t
+# 267 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#define __wchar_t__ 
+#define __WCHAR_T__ 
+#define _WCHAR_T 
+#define _T_WCHAR_ 
+#define _T_WCHAR 
+#define __WCHAR_T 
+#define _WCHAR_T_ 
+#define _BSD_WCHAR_T_ 
+#define _WCHAR_T_DEFINED_ 
+#define _WCHAR_T_DEFINED 
+#define _WCHAR_T_H 
+#define ___int_wchar_t_h 
+#define __INT_WCHAR_T_H 
+#define _GCC_WCHAR_T 
+#define _WCHAR_T_DECLARED 
+# 294 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef _BSD_WCHAR_T_
+# 347 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef __need_wchar_t
+# 401 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef NULL
+
+#define NULL __null
+# 412 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 3 4
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+
+
+
+
+#define _GCC_MAX_ALIGN_T 
+
+
+
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+} max_align_t;
+
+
+
+
+
+#define _GXX_NULLPTR_T 
+  typedef decltype(nullptr) nullptr_t;
 # 15 "/usr/include/sys/reent.h" 2 3 4
 # 1 "/usr/include/sys/_types.h" 1 3 4
 # 20 "/usr/include/sys/_types.h" 3 4
@@ -3337,6 +2932,14 @@ typedef __builtin_va_list __gnuc_va_list;
 # 23 "/usr/include/wchar.h" 2 3 4
 # 41 "/usr/include/wchar.h" 3 4
 #define WEOF ((wint_t)-1)
+
+
+
+
+
+#define WCHAR_MIN __WCHAR_MIN__
+# 58 "/usr/include/wchar.h" 3 4
+#define WCHAR_MAX __WCHAR_MAX__
 # 70 "/usr/include/wchar.h" 3 4
 extern "C" {
 # 82 "/usr/include/wchar.h" 3 4
@@ -11192,7 +10795,294 @@ namespace std
 
 
 
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 1 3
+# 30 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
+#define _GLIBCXX_CSTDINT 1
 
+       
+# 33 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
+# 41 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 3
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 1 3 4
+# 11 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint-gcc.h" 1 3 4
+# 29 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint-gcc.h" 3 4
+#define _GCC_STDINT_H 
+
+
+
+
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef signed char int_fast8_t;
+typedef long int int_fast16_t;
+typedef long int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned char uint_fast8_t;
+typedef long unsigned int uint_fast16_t;
+typedef long unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+
+
+
+
+
+
+
+#undef INT8_MAX
+#define INT8_MAX __INT8_MAX__
+#undef INT8_MIN
+#define INT8_MIN (-INT8_MAX - 1)
+
+
+#undef UINT8_MAX
+#define UINT8_MAX __UINT8_MAX__
+
+
+#undef INT16_MAX
+#define INT16_MAX __INT16_MAX__
+#undef INT16_MIN
+#define INT16_MIN (-INT16_MAX - 1)
+
+
+#undef UINT16_MAX
+#define UINT16_MAX __UINT16_MAX__
+
+
+#undef INT32_MAX
+#define INT32_MAX __INT32_MAX__
+#undef INT32_MIN
+#define INT32_MIN (-INT32_MAX - 1)
+
+
+#undef UINT32_MAX
+#define UINT32_MAX __UINT32_MAX__
+
+
+#undef INT64_MAX
+#define INT64_MAX __INT64_MAX__
+#undef INT64_MIN
+#define INT64_MIN (-INT64_MAX - 1)
+
+
+#undef UINT64_MAX
+#define UINT64_MAX __UINT64_MAX__
+
+
+#undef INT_LEAST8_MAX
+#define INT_LEAST8_MAX __INT_LEAST8_MAX__
+#undef INT_LEAST8_MIN
+#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
+#undef UINT_LEAST8_MAX
+#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
+#undef INT_LEAST16_MAX
+#define INT_LEAST16_MAX __INT_LEAST16_MAX__
+#undef INT_LEAST16_MIN
+#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
+#undef UINT_LEAST16_MAX
+#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
+#undef INT_LEAST32_MAX
+#define INT_LEAST32_MAX __INT_LEAST32_MAX__
+#undef INT_LEAST32_MIN
+#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
+#undef UINT_LEAST32_MAX
+#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
+#undef INT_LEAST64_MAX
+#define INT_LEAST64_MAX __INT_LEAST64_MAX__
+#undef INT_LEAST64_MIN
+#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
+#undef UINT_LEAST64_MAX
+#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
+
+#undef INT_FAST8_MAX
+#define INT_FAST8_MAX __INT_FAST8_MAX__
+#undef INT_FAST8_MIN
+#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
+#undef UINT_FAST8_MAX
+#define UINT_FAST8_MAX __UINT_FAST8_MAX__
+#undef INT_FAST16_MAX
+#define INT_FAST16_MAX __INT_FAST16_MAX__
+#undef INT_FAST16_MIN
+#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
+#undef UINT_FAST16_MAX
+#define UINT_FAST16_MAX __UINT_FAST16_MAX__
+#undef INT_FAST32_MAX
+#define INT_FAST32_MAX __INT_FAST32_MAX__
+#undef INT_FAST32_MIN
+#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
+#undef UINT_FAST32_MAX
+#define UINT_FAST32_MAX __UINT_FAST32_MAX__
+#undef INT_FAST64_MAX
+#define INT_FAST64_MAX __INT_FAST64_MAX__
+#undef INT_FAST64_MIN
+#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
+#undef UINT_FAST64_MAX
+#define UINT_FAST64_MAX __UINT_FAST64_MAX__
+
+
+#undef INTPTR_MAX
+#define INTPTR_MAX __INTPTR_MAX__
+#undef INTPTR_MIN
+#define INTPTR_MIN (-INTPTR_MAX - 1)
+
+
+#undef UINTPTR_MAX
+#define UINTPTR_MAX __UINTPTR_MAX__
+
+
+#undef INTMAX_MAX
+#define INTMAX_MAX __INTMAX_MAX__
+#undef INTMAX_MIN
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+#undef UINTMAX_MAX
+#define UINTMAX_MAX __UINTMAX_MAX__
+
+
+
+#undef PTRDIFF_MAX
+#define PTRDIFF_MAX __PTRDIFF_MAX__
+#undef PTRDIFF_MIN
+#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
+
+#undef SIG_ATOMIC_MAX
+#define SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__
+#undef SIG_ATOMIC_MIN
+#define SIG_ATOMIC_MIN __SIG_ATOMIC_MIN__
+
+#undef SIZE_MAX
+#define SIZE_MAX __SIZE_MAX__
+
+#undef WCHAR_MAX
+#define WCHAR_MAX __WCHAR_MAX__
+#undef WCHAR_MIN
+#define WCHAR_MIN __WCHAR_MIN__
+
+#undef WINT_MAX
+#define WINT_MAX __WINT_MAX__
+#undef WINT_MIN
+#define WINT_MIN __WINT_MIN__
+
+
+
+
+
+
+
+#undef INT8_C
+#define INT8_C(c) __INT8_C(c)
+#undef INT16_C
+#define INT16_C(c) __INT16_C(c)
+#undef INT32_C
+#define INT32_C(c) __INT32_C(c)
+#undef INT64_C
+#define INT64_C(c) __INT64_C(c)
+#undef UINT8_C
+#define UINT8_C(c) __UINT8_C(c)
+#undef UINT16_C
+#define UINT16_C(c) __UINT16_C(c)
+#undef UINT32_C
+#define UINT32_C(c) __UINT32_C(c)
+#undef UINT64_C
+#define UINT64_C(c) __UINT64_C(c)
+#undef INTMAX_C
+#define INTMAX_C(c) __INTMAX_C(c)
+#undef UINTMAX_C
+#define UINTMAX_C(c) __UINTMAX_C(c)
+# 12 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h" 2 3 4
+
+#define _GCC_WRAP_STDINT_H 
+# 42 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 421 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/char_traits.h" 2 3
 
 namespace std
 {
@@ -29154,7 +29044,7 @@ namespace std
 
 
 }
-# 10 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp" 2
+# 9 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_host.cpp" 2
 
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/StringRef.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/StringRef.h"
@@ -29164,11 +29054,81 @@ namespace std
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/VectorRef.h"
 #define INCLUDE_DATA_STRUCTURES_VECTORREF_H_ 
 
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h" 1
 
+
+#define DEF_H__ 
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 1 3
+# 40 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 3
+#define _GLIBCXX_CSTDDEF 1
+
+       
+# 43 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 3
+
+#undef __need_wchar_t
+#undef __need_ptrdiff_t
+#undef __need_size_t
+#undef __need_NULL
+#undef __need_wint_t
+
+# 1 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h" 1 3 4
+# 51 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h" 2
+
+
+#define AS_MACRO __attribute__((always_inline)) inline
+#define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
+#define NULL_CHAR '\0'
+
+
+#define INFO "[INFO] "
+#define WARNING "[WARNING] "
+#define FATAL "[FATAL] "
+
+
+
+
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+extern const char EMPTY_STR[1];
+
+
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+
+
+#define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
+
+
+#define __stringify_1(x) #x
+#define __stringify(x) __stringify_1(x)
+
+
+
+
+#define HEX32(a,b) 0x ##a ##b
+#define HEX64(a,b,c,d) 0x ##a ##b ##c ##d
+
+
+#define BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d
+#define BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/VectorRef.h" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h" 1
 # 10 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h"
 #define INCLUDE_VECTOR_H_ 
-
 
 
 
@@ -29178,13 +29138,71 @@ namespace std
 
 
 
-
-# 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/SectorReader.h"
 class SectorReader{
 public:
  size_t read(size_t secIndex,void *dst,size_t maxNumSec);
  size_t write(size_t secIndex,const void *src,size_t maxNumSec);
 };
+# 15 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h"
+#define INCLUDE_IO_OUTPUT_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+#define INCLUDE_IO_PRINTK_H_ 
+
+
+
+
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 2
+# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
 # 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h" 2
 
 
@@ -29263,11 +29281,6 @@ Output & operator<<(Output &out,const Vector<T> & vec);
 
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h" 1
 # 11 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/data_structures/Vector.h" 2
-# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/kernel.h" 1
-# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/kernel.h"
-#define INCLUDE_KERNEL_H_ 
-
-
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryManager.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryManager.h"
 #define INCLUDE_MEMORYMANAGER_H_ 
@@ -29334,11 +29347,12 @@ __attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
 __attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
 {
 
- return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
 }
 
 
-__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
 {
 
  i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
@@ -29346,6 +29360,15 @@ __attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBo
 __attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
  return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBit(Type & i,uint8_t index,ValueType v)
+{
+ setBits(i,index,index,v);
+}
+__attribute__((always_inline)) inline uint64_t getBit(uint64_t i,uint8_t index)
+{
+ return getBits(i,index,index);
 }
 # 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryChunk.h" 2
 # 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryChunk.h"
@@ -29441,6 +29464,10 @@ private:
  const size_t size;
 };
 
+
+
+extern MemoryManager mman;
+
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h"
 #define INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_ 
@@ -29465,14 +29492,7 @@ T MemoryManager::reallocateAs(void *origin,size_t newSize,size_t oldSize)
 {
  return reinterpret_cast<T>(reallocate(origin, newSize,oldSize));
 }
-# 90 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryManager.h" 2
-# 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/kernel.h" 2
-
-
-extern Output kout;
-
-
-extern MemoryManager mman;
+# 94 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryManager.h" 2
 # 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/data_structures/Vector.h" 2
 
 
@@ -29685,7 +29705,8 @@ Output & operator<<(Output &out,const Vector<T> & vec)
 }
 # 82 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/Vector.h" 2
 # 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/VectorRef.h" 2
-
+# 1 "/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/VectorRef.h" 2
 
 template <class T>
 class VectorRef{
@@ -29799,7 +29820,7 @@ public:
 };
 
 Output & operator<<(Output & out,const StringRef ref);
-# 12 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp" 2
+# 11 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_host.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/IntegerFormatter.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/IntegerFormatter.h"
 #define INCLUDE_INTEGERINTEGERFORMATTER_H_ 
@@ -29859,7 +29880,8 @@ Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
  return out;
 }
 # 36 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/IntegerFormatter.h" 2
-# 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/printk_host.cpp" 2
+# 12 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_host.cpp" 2
+
 
 static bool isGood(char ch)
 {
@@ -29879,4 +29901,9 @@ size_t printk(char ch)
   std::cout << "\\x"<< str[0] << str[1];
  }
  return 1;
+}
+
+void flush()
+{
+ std::cout << std::flush;
 }

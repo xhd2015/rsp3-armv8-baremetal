@@ -3,6 +3,45 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
+	.section	.rodata
+	.align	2
+	.type	_ZL6UNIT_K, %object
+	.size	_ZL6UNIT_K, 4
+_ZL6UNIT_K:
+	.word	1024
+	.align	2
+	.type	_ZL3KiB, %object
+	.size	_ZL3KiB, 4
+_ZL3KiB:
+	.word	1024
+	.align	2
+	.type	_ZL3MiB, %object
+	.size	_ZL3MiB, 4
+_ZL3MiB:
+	.word	1048576
+	.align	2
+	.type	_ZL3GiB, %object
+	.size	_ZL3GiB, 4
+_ZL3GiB:
+	.word	1073741824
+	.align	3
+	.type	_ZL11koutBufSize, %object
+	.size	_ZL11koutBufSize, 8
+_ZL11koutBufSize:
+	.xword	65
+	.align	3
+.LC0:
+	.string	"sizeof(BPB) = "
+	.align	3
+.LC1:
+	.string	", sizeof(Ext32BPB)="
+	.align	3
+.LC2:
+	.string	"\n"
+	.align	3
+.LC3:
+	.string	"&bpb = "
+	.text
 	.align	2
 	.global	_Z22testFAT32SizeIsSecSizev
 	.type	_Z22testFAT32SizeIsSecSizev, %function
@@ -11,79 +50,64 @@ _Z22testFAT32SizeIsSecSizev:
 	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/testFAT32SizeIsSecSize.cpp"
 	.loc 1 20 0
 	.cfi_startproc
-	sub	sp, sp, #544
-	.cfi_def_cfa_offset 544
+	sub	sp, sp, #528
+	.cfi_def_cfa_offset 528
 	stp	x29, x30, [sp]
-	.cfi_offset 29, -544
-	.cfi_offset 30, -536
+	.cfi_offset 29, -528
+	.cfi_offset 30, -520
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	.cfi_offset 19, -528
-	.cfi_offset 20, -520
 	.loc 1 22 0
-	adrp	x20, kout
-	add	x20, x20, :lo12:kout
-	adrp	x1, .LC0
-	add	x1, x1, :lo12:.LC0
-	mov	x0, x20
+	adrp	x0, .LC0
+	add	x1, x0, :lo12:.LC0
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
 	bl	_ZN6OutputlsEPKc
-.LVL0:
 	mov	x1, 36
 	bl	_ZN6OutputlsEm
-.LVL1:
-	adrp	x1, .LC1
-	add	x1, x1, :lo12:.LC1
+	mov	x2, x0
+	adrp	x0, .LC1
+	add	x0, x0, :lo12:.LC1
+	mov	x1, x0
+	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-.LVL2:
 	mov	x1, 512
 	bl	_ZN6OutputlsEm
-.LVL3:
-	adrp	x19, .LC2
-	add	x19, x19, :lo12:.LC2
-	mov	x1, x19
+	mov	x2, x0
+	adrp	x0, .LC2
+	add	x0, x0, :lo12:.LC2
+	mov	x1, x0
+	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-.LVL4:
 	.loc 1 24 0
-	adrp	x1, .LC3
-	add	x1, x1, :lo12:.LC3
-	mov	x0, x20
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
 	bl	_ZN6OutputlsEPKc
-.LVL5:
-	add	x1, x29, 32
+	mov	x2, x0
+	add	x0, x29, 16
+	mov	x1, x0
+	mov	x0, x2
 	bl	_ZN6OutputlsEPKv
-.LVL6:
-	mov	x1, x19
+	mov	x2, x0
+	adrp	x0, .LC2
+	add	x0, x0, :lo12:.LC2
+	mov	x1, x0
+	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-.LVL7:
-	.loc 1 69 0
+	.loc 1 68 0
 	mov	w0, 1
-	ldp	x19, x20, [sp, 16]
+	.loc 1 69 0
 	ldp	x29, x30, [sp]
-	add	sp, sp, 544
+	add	sp, sp, 528
 	.cfi_restore 29
 	.cfi_restore 30
-	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
 .LFE0:
 	.size	_Z22testFAT32SizeIsSecSizev, .-_Z22testFAT32SizeIsSecSizev
-	.section	.rodata.str1.8,"aMS",@progbits,1
-	.align	3
-.LC0:
-	.string	"sizeof(BPB) = "
-	.zero	1
-.LC1:
-	.string	", sizeof(Ext32BPB)="
-	.zero	4
-.LC2:
-	.string	"\n"
-	.zero	6
-.LC3:
-	.string	"&bpb = "
-	.text
 .Letext0:
 	.file 2 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstddef"
 	.file 3 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\cstdint"
@@ -97,7 +121,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.file 11 "<built-in>"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0xaa9
+	.4byte	0x9f0
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
@@ -491,305 +515,315 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.4byte	.LASF851
 	.byte	0x7
-	.byte	0x1c
+	.byte	0x16
 	.4byte	0x30e
 	.uleb128 0x14
 	.4byte	.LASF852
 	.byte	0x7
-	.byte	0x1f
+	.byte	0x1a
+	.4byte	0x1d1
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL6UNIT_K
+	.uleb128 0x15
+	.string	"KiB"
+	.byte	0x7
+	.byte	0x1b
+	.4byte	0x1d1
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3KiB
+	.uleb128 0x15
+	.string	"MiB"
+	.byte	0x7
+	.byte	0x1c
+	.4byte	0x1d1
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3MiB
+	.uleb128 0x15
+	.string	"GiB"
+	.byte	0x7
+	.byte	0x1d
+	.4byte	0x1d1
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3GiB
+	.uleb128 0x16
+	.4byte	.LASF874
+	.byte	0x1
+	.byte	0x8
+	.byte	0xd
+	.4byte	0x594
+	.uleb128 0x17
+	.4byte	.LASF853
+	.byte	0x8
+	.byte	0xf
+	.4byte	.LASF854
+	.4byte	0x139
+	.byte	0x1
+	.4byte	0x3a2
+	.4byte	0x3b2
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x59a
+	.uleb128 0x19
+	.4byte	0x139
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF853
+	.byte	0x8
+	.byte	0x10
+	.4byte	.LASF855
+	.4byte	0x139
+	.byte	0x1
+	.4byte	0x3ca
+	.4byte	0x3d5
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x59a
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x11
+	.4byte	.LASF857
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x3ed
+	.4byte	0x3f8
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x313
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x13
+	.4byte	.LASF858
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x410
+	.4byte	0x41b
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x1e1
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x14
+	.4byte	.LASF859
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x433
+	.4byte	0x43e
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x1f3
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x15
+	.4byte	.LASF860
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x456
+	.4byte	0x461
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x205
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x16
+	.4byte	.LASF861
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x479
+	.4byte	0x484
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x5a6
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x17
+	.4byte	.LASF862
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x49c
+	.4byte	0x4a7
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x1b8
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x18
+	.4byte	.LASF863
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x4bf
+	.4byte	0x4ca
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x1ca
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x19
+	.4byte	.LASF864
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x4e2
+	.4byte	0x4ed
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x5ad
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x1a
+	.4byte	.LASF865
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x505
+	.4byte	0x510
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x59a
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x1b
+	.4byte	.LASF866
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x528
+	.4byte	0x533
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x139
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x1c
+	.4byte	.LASF867
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x54b
+	.4byte	0x556
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x5b4
+	.byte	0
+	.uleb128 0x17
+	.4byte	.LASF856
+	.byte	0x8
+	.byte	0x1d
+	.4byte	.LASF868
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x56e
+	.4byte	0x579
+	.uleb128 0x18
+	.4byte	0x594
+	.uleb128 0x19
+	.4byte	0x5bb
+	.byte	0
+	.uleb128 0x1a
+	.4byte	.LASF896
+	.byte	0x8
+	.byte	0x1e
+	.4byte	.LASF898
+	.4byte	0x5a0
+	.byte	0x1
+	.4byte	0x58d
+	.uleb128 0x18
+	.4byte	0x594
+	.byte	0
+	.byte	0
+	.uleb128 0x1b
+	.byte	0x8
+	.4byte	0x37e
+	.uleb128 0x1b
+	.byte	0x8
+	.4byte	0x31a
+	.uleb128 0x1c
+	.byte	0x8
+	.4byte	0x37e
+	.uleb128 0x9
+	.byte	0x1
+	.byte	0x2
+	.4byte	.LASF869
+	.uleb128 0x9
+	.byte	0x8
+	.byte	0x4
+	.4byte	.LASF870
+	.uleb128 0x1b
+	.byte	0x8
+	.4byte	0x5ba
+	.uleb128 0x1d
+	.uleb128 0x1b
+	.byte	0x8
+	.4byte	0x5c2
+	.uleb128 0x1e
+	.uleb128 0xb
+	.4byte	0x5c1
+	.uleb128 0x13
+	.4byte	.LASF871
+	.byte	0x8
+	.byte	0x22
+	.4byte	0x37e
+	.uleb128 0x14
+	.4byte	.LASF872
+	.byte	0x8
+	.byte	0x25
 	.4byte	0x144
-	.byte	0x41
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL11koutBufSize
 	.uleb128 0x11
 	.4byte	0x313
-	.4byte	0x346
+	.4byte	0x5f7
 	.uleb128 0x12
 	.4byte	0x149
 	.byte	0x40
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF853
-	.byte	0x7
-	.byte	0x20
-	.4byte	0x336
-	.uleb128 0x15
-	.4byte	.LASF854
-	.byte	0x7
-	.byte	0x22
-	.4byte	0x1d1
-	.2byte	0x400
-	.uleb128 0x16
-	.string	"KiB"
-	.byte	0x7
-	.byte	0x23
-	.4byte	0x1d1
-	.2byte	0x400
-	.uleb128 0x17
-	.string	"MiB"
-	.byte	0x7
-	.byte	0x24
-	.4byte	0x1d1
-	.4byte	0x100000
-	.uleb128 0x17
-	.string	"GiB"
-	.byte	0x7
-	.byte	0x25
-	.4byte	0x1d1
-	.4byte	0x40000000
-	.uleb128 0x18
-	.4byte	.LASF874
-	.byte	0x1
-	.byte	0x8
-	.byte	0xd
-	.4byte	0x59f
-	.uleb128 0x19
-	.4byte	.LASF855
-	.byte	0x8
-	.byte	0xf
-	.4byte	.LASF856
-	.4byte	0x139
-	.byte	0x1
-	.4byte	0x3ad
-	.4byte	0x3bd
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5a5
-	.uleb128 0x1b
-	.4byte	0x139
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF855
-	.byte	0x8
-	.byte	0x10
-	.4byte	.LASF857
-	.4byte	0x139
-	.byte	0x1
-	.4byte	0x3d5
-	.4byte	0x3e0
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5a5
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x11
-	.4byte	.LASF859
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x3f8
-	.4byte	0x403
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x313
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x13
-	.4byte	.LASF860
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x41b
-	.4byte	0x426
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x1e1
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x14
-	.4byte	.LASF861
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x43e
-	.4byte	0x449
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x1f3
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x15
-	.4byte	.LASF862
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x461
-	.4byte	0x46c
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x205
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x16
-	.4byte	.LASF863
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x484
-	.4byte	0x48f
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5b1
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x17
-	.4byte	.LASF864
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x4a7
-	.4byte	0x4b2
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x1b8
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x18
-	.4byte	.LASF865
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x4ca
-	.4byte	0x4d5
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x1ca
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x19
-	.4byte	.LASF866
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x4ed
-	.4byte	0x4f8
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5b8
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x1a
-	.4byte	.LASF867
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x510
-	.4byte	0x51b
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5a5
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x1b
-	.4byte	.LASF868
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x533
-	.4byte	0x53e
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x139
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x1c
-	.4byte	.LASF869
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x556
-	.4byte	0x561
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5bf
-	.byte	0
-	.uleb128 0x19
-	.4byte	.LASF858
-	.byte	0x8
-	.byte	0x1d
-	.4byte	.LASF870
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x579
-	.4byte	0x584
-	.uleb128 0x1a
-	.4byte	0x59f
-	.uleb128 0x1b
-	.4byte	0x5c6
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF896
-	.byte	0x8
-	.byte	0x1e
-	.4byte	.LASF898
-	.4byte	0x5ab
-	.byte	0x1
-	.4byte	0x598
-	.uleb128 0x1a
-	.4byte	0x59f
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.byte	0x8
-	.4byte	0x389
-	.uleb128 0x1d
-	.byte	0x8
-	.4byte	0x31a
-	.uleb128 0x1e
-	.byte	0x8
-	.4byte	0x389
-	.uleb128 0x9
-	.byte	0x1
-	.byte	0x2
-	.4byte	.LASF871
-	.uleb128 0x9
-	.byte	0x8
-	.byte	0x4
-	.4byte	.LASF872
-	.uleb128 0x1d
-	.byte	0x8
-	.4byte	0x5c5
-	.uleb128 0x1f
-	.uleb128 0x1d
-	.byte	0x8
-	.4byte	0x5cd
-	.uleb128 0x20
-	.uleb128 0xb
-	.4byte	0x5cc
-	.uleb128 0x13
 	.4byte	.LASF873
 	.byte	0x8
-	.byte	0x22
-	.4byte	0x389
-	.uleb128 0x18
+	.byte	0x26
+	.4byte	0x5e7
+	.uleb128 0x16
 	.4byte	.LASF875
 	.byte	0x24
 	.byte	0x9
 	.byte	0x19
-	.4byte	0x703
-	.uleb128 0x21
+	.4byte	0x728
+	.uleb128 0x1f
 	.4byte	.LASF945
 	.byte	0x7
 	.byte	0x4
@@ -797,559 +831,460 @@ _Z22testFAT32SizeIsSecSizev:
 	.byte	0x9
 	.byte	0x1b
 	.byte	0x1
-	.4byte	0x614
-	.uleb128 0x22
+	.4byte	0x639
+	.uleb128 0x20
 	.4byte	.LASF876
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x20
 	.4byte	.LASF877
 	.byte	0x1
-	.uleb128 0x22
+	.uleb128 0x20
 	.4byte	.LASF878
 	.byte	0x2
-	.uleb128 0x22
+	.uleb128 0x20
 	.4byte	.LASF879
 	.byte	0x3
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF880
 	.byte	0x9
 	.byte	0x25
-	.4byte	0x708
+	.4byte	0x72d
 	.byte	0
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF881
 	.byte	0x9
 	.byte	0x28
-	.4byte	0x718
+	.4byte	0x73d
 	.byte	0x3
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF882
 	.byte	0x9
 	.byte	0x2b
 	.4byte	0x1f3
 	.byte	0xb
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF883
 	.byte	0x9
 	.byte	0x2e
 	.4byte	0x1e1
 	.byte	0xd
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF884
 	.byte	0x9
 	.byte	0x31
 	.4byte	0x1f3
 	.byte	0xe
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF885
 	.byte	0x9
 	.byte	0x34
 	.4byte	0x1e1
 	.byte	0x10
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF886
 	.byte	0x9
 	.byte	0x38
 	.4byte	0x1f3
 	.byte	0x11
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF887
 	.byte	0x9
 	.byte	0x3c
 	.4byte	0x1f3
 	.byte	0x13
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF888
 	.byte	0x9
 	.byte	0x40
 	.4byte	0x1e1
 	.byte	0x15
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF889
 	.byte	0x9
 	.byte	0x44
 	.4byte	0x1f3
 	.byte	0x16
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF890
 	.byte	0x9
 	.byte	0x47
 	.4byte	0x1f3
 	.byte	0x18
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF891
 	.byte	0x9
 	.byte	0x4a
 	.4byte	0x1f3
 	.byte	0x1a
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF892
 	.byte	0x9
 	.byte	0x4d
 	.4byte	0x205
 	.byte	0x1c
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF893
 	.byte	0x9
 	.byte	0x51
 	.4byte	0x205
 	.byte	0x20
 	.byte	0x1
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF894
 	.byte	0x9
 	.byte	0x53
 	.4byte	.LASF895
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x6e2
-	.4byte	0x6e8
-	.uleb128 0x1a
-	.4byte	0x728
+	.4byte	0x707
+	.4byte	0x70d
+	.uleb128 0x18
+	.4byte	0x74d
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LASF897
 	.byte	0x9
 	.byte	0x54
 	.4byte	.LASF899
-	.4byte	0x5e9
+	.4byte	0x60e
 	.byte	0x1
-	.4byte	0x6fc
-	.uleb128 0x1a
-	.4byte	0x728
+	.4byte	0x721
+	.uleb128 0x18
+	.4byte	0x74d
 	.byte	0
 	.byte	0
 	.uleb128 0xb
-	.4byte	0x5dd
+	.4byte	0x602
 	.uleb128 0x11
 	.4byte	0x1e1
-	.4byte	0x718
+	.4byte	0x73d
 	.uleb128 0x12
 	.4byte	0x149
 	.byte	0x2
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x313
-	.4byte	0x728
+	.4byte	0x74d
 	.uleb128 0x12
 	.4byte	0x149
 	.byte	0x7
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.byte	0x8
-	.4byte	0x703
-	.uleb128 0x24
+	.4byte	0x728
+	.uleb128 0x22
 	.4byte	.LASF900
 	.2byte	0x200
 	.byte	0xa
 	.byte	0x11
-	.4byte	0x961
-	.uleb128 0x25
-	.4byte	0x5dd
+	.4byte	0x986
+	.uleb128 0x23
+	.4byte	0x602
 	.byte	0
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF901
 	.byte	0xa
 	.byte	0x18
 	.4byte	0x205
 	.byte	0x24
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF902
 	.byte	0xa
 	.byte	0x1e
 	.4byte	0x1f3
 	.byte	0x28
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF903
 	.byte	0xa
 	.byte	0x21
 	.4byte	0x1f3
 	.byte	0x2a
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF904
 	.byte	0xa
 	.byte	0x25
 	.4byte	0x205
 	.byte	0x2c
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF905
 	.byte	0xa
 	.byte	0x29
 	.4byte	0x1f3
 	.byte	0x30
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF906
 	.byte	0xa
 	.byte	0x2c
 	.4byte	0x1f3
 	.byte	0x32
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF907
 	.byte	0xa
 	.byte	0x30
-	.4byte	0x966
+	.4byte	0x98b
 	.byte	0x34
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF908
 	.byte	0xa
 	.byte	0x34
 	.4byte	0x1e1
 	.byte	0x40
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF909
 	.byte	0xa
 	.byte	0x38
 	.4byte	0x1e1
 	.byte	0x41
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF910
 	.byte	0xa
 	.byte	0x3c
 	.4byte	0x1e1
 	.byte	0x42
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF911
 	.byte	0xa
 	.byte	0x3d
 	.4byte	0x205
 	.byte	0x43
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF912
 	.byte	0xa
 	.byte	0x3e
-	.4byte	0x976
+	.4byte	0x99b
 	.byte	0x47
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF913
 	.byte	0xa
 	.byte	0x42
-	.4byte	0x718
+	.4byte	0x73d
 	.byte	0x52
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x21
 	.4byte	.LASF914
 	.byte	0xa
 	.byte	0x45
-	.4byte	0x986
+	.4byte	0x9ab
 	.byte	0x5a
 	.byte	0x1
-	.uleb128 0x26
+	.uleb128 0x24
 	.4byte	.LASF915
 	.byte	0xa
 	.byte	0x48
 	.4byte	0x1f3
 	.2byte	0x1fe
 	.byte	0x1
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF916
 	.byte	0xa
 	.byte	0x4a
 	.4byte	.LASF917
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x81e
-	.4byte	0x824
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x843
+	.4byte	0x849
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF918
 	.byte	0xa
 	.byte	0x4c
 	.4byte	.LASF919
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x83c
-	.4byte	0x842
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x861
+	.4byte	0x867
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF920
 	.byte	0xa
 	.byte	0x4e
 	.4byte	.LASF921
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x85a
-	.4byte	0x860
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x87f
+	.4byte	0x885
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF922
 	.byte	0xa
 	.byte	0x50
 	.4byte	.LASF923
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x878
-	.4byte	0x87e
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x89d
+	.4byte	0x8a3
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF924
 	.byte	0xa
 	.byte	0x53
 	.4byte	.LASF925
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x896
-	.4byte	0x8a6
-	.uleb128 0x1a
-	.4byte	0x997
-	.uleb128 0x1b
+	.4byte	0x8bb
+	.4byte	0x8cb
+	.uleb128 0x18
+	.4byte	0x9bc
+	.uleb128 0x19
 	.4byte	0x139
-	.uleb128 0x1b
+	.uleb128 0x19
 	.4byte	0x139
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF926
 	.byte	0xa
 	.byte	0x54
 	.4byte	.LASF927
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x8be
-	.4byte	0x8c9
-	.uleb128 0x1a
-	.4byte	0x997
-	.uleb128 0x1b
+	.4byte	0x8e3
+	.4byte	0x8ee
+	.uleb128 0x18
+	.4byte	0x9bc
+	.uleb128 0x19
 	.4byte	0x139
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF928
 	.byte	0xa
 	.byte	0x56
 	.4byte	.LASF929
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x8e1
-	.4byte	0x8e7
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x906
+	.4byte	0x90c
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF930
 	.byte	0xa
 	.byte	0x58
 	.4byte	.LASF931
-	.4byte	0x5e9
+	.4byte	0x60e
 	.byte	0x1
-	.4byte	0x8ff
-	.4byte	0x905
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x924
+	.4byte	0x92a
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF897
 	.byte	0xa
 	.byte	0x59
 	.4byte	.LASF932
-	.4byte	0x5e9
+	.4byte	0x60e
 	.byte	0x1
-	.4byte	0x91d
-	.4byte	0x923
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x942
+	.4byte	0x948
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.4byte	.LASF933
 	.byte	0xa
 	.byte	0x5a
 	.4byte	.LASF934
 	.4byte	0x205
 	.byte	0x1
-	.4byte	0x93b
-	.4byte	0x946
-	.uleb128 0x1a
-	.4byte	0x997
-	.uleb128 0x1b
+	.4byte	0x960
+	.4byte	0x96b
+	.uleb128 0x18
+	.4byte	0x9bc
+	.uleb128 0x19
 	.4byte	0x139
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.4byte	.LASF935
 	.byte	0xa
 	.byte	0x5c
 	.4byte	.LASF936
 	.4byte	0x139
 	.byte	0x1
-	.4byte	0x95a
-	.uleb128 0x1a
-	.4byte	0x997
+	.4byte	0x97f
+	.uleb128 0x18
+	.4byte	0x9bc
 	.byte	0
 	.byte	0
 	.uleb128 0xb
-	.4byte	0x72e
+	.4byte	0x753
 	.uleb128 0x11
 	.4byte	0x1e1
-	.4byte	0x976
+	.4byte	0x99b
 	.uleb128 0x12
 	.4byte	0x149
 	.byte	0xb
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x313
-	.4byte	0x986
+	.4byte	0x9ab
 	.uleb128 0x12
 	.4byte	0x149
 	.byte	0xa
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x1e1
-	.4byte	0x997
-	.uleb128 0x27
+	.4byte	0x9bc
+	.uleb128 0x25
 	.4byte	0x149
 	.2byte	0x1a3
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.byte	0x8
-	.4byte	0x961
-	.uleb128 0x28
+	.4byte	0x986
+	.uleb128 0x26
 	.4byte	.LASF937
 	.byte	0x1
 	.byte	0x13
 	.4byte	.LASF938
-	.4byte	0x5b1
+	.4byte	0x5a6
 	.8byte	.LFB0
 	.8byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x29
+	.uleb128 0x27
 	.string	"bpb"
 	.byte	0x1
 	.byte	0x17
-	.4byte	0x72e
+	.4byte	0x753
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -512
-	.uleb128 0x2a
-	.8byte	.LVL0
-	.4byte	0x4f8
-	.4byte	0x9f2
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x84
-	.sleb128 0
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x9
-	.byte	0x3
-	.8byte	.LC0
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL1
-	.4byte	0x51b
-	.4byte	0xa0a
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x24
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL2
-	.4byte	0x4f8
-	.4byte	0xa29
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x9
-	.byte	0x3
-	.8byte	.LC1
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL3
-	.4byte	0x51b
-	.4byte	0xa42
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x3
-	.byte	0xa
-	.2byte	0x200
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL4
-	.4byte	0x4f8
-	.4byte	0xa5a
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x83
-	.sleb128 0
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL5
-	.4byte	0x4f8
-	.4byte	0xa7f
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x84
-	.sleb128 0
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x9
-	.byte	0x3
-	.8byte	.LC3
-	.byte	0
-	.uleb128 0x2a
-	.8byte	.LVL6
-	.4byte	0x53e
-	.4byte	0xa97
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 48
-	.byte	0
-	.uleb128 0x2c
-	.8byte	.LVL7
-	.4byte	0x4f8
-	.uleb128 0x2b
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x83
-	.sleb128 0
-	.byte	0
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
@@ -1602,15 +1537,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.uleb128 0x6c
 	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0xb
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x15
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -1619,45 +1554,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.uleb128 0x6c
 	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x5
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x16
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x6c
-	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x17
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x6c
-	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x18
 	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x3
@@ -1672,7 +1573,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1697,7 +1598,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x18
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
@@ -1706,14 +1607,14 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x19
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1736,7 +1637,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -1745,7 +1646,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x1c
 	.uleb128 0x10
 	.byte	0
 	.uleb128 0xb
@@ -1754,17 +1655,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x1d
 	.uleb128 0x26
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1e
 	.uleb128 0x35
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1f
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x3
@@ -1785,7 +1686,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x20
 	.uleb128 0x28
 	.byte	0
 	.uleb128 0x3
@@ -1794,7 +1695,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x21
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1811,7 +1712,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x24
+	.uleb128 0x22
 	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x3
@@ -1826,7 +1727,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x23
 	.uleb128 0x1c
 	.byte	0
 	.uleb128 0x49
@@ -1837,7 +1738,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x26
+	.uleb128 0x24
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1854,7 +1755,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x27
+	.uleb128 0x25
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -1863,7 +1764,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x5
 	.byte	0
 	.byte	0
-	.uleb128 0x28
+	.uleb128 0x26
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1884,11 +1785,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x7
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1901,35 +1802,6 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x2b
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x2111
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x2c
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.byte	0
@@ -3146,7 +3018,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.4byte	.LASF396
 	.byte	0x5
 	.uleb128 0x1
-	.4byte	.LASF181
+	.4byte	.LASF180
 	.byte	0x6
 	.uleb128 0x2
 	.4byte	.LASF397
@@ -4481,7 +4353,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0x102
 	.4byte	.LASF786
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.e17df413196b0eebbda743b47de3eded,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.9164d992df6aeb5d0f792d7be665cc61,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -4495,34 +4367,34 @@ _Z22testFAT32SizeIsSecSizev:
 	.uleb128 0xd
 	.4byte	.LASF790
 	.byte	0x5
-	.uleb128 0x16
+	.uleb128 0x10
 	.4byte	.LASF791
 	.byte	0x5
-	.uleb128 0x17
+	.uleb128 0x11
 	.4byte	.LASF792
 	.byte	0x5
-	.uleb128 0x18
+	.uleb128 0x12
 	.4byte	.LASF793
 	.byte	0x5
-	.uleb128 0x28
+	.uleb128 0x20
 	.4byte	.LASF794
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x23
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x2c
+	.uleb128 0x24
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x31
+	.uleb128 0x29
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x2a
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x35
+	.uleb128 0x2d
 	.4byte	.LASF799
 	.byte	0x5
-	.uleb128 0x36
+	.uleb128 0x2e
 	.4byte	.LASF800
 	.byte	0
 	.section	.debug_macro,"G",@progbits,wm4.test_base.h.14.8f9d7b95abc343d4cc0ce46f1cde119d,comdat
@@ -4539,21 +4411,21 @@ _Z22testFAT32SizeIsSecSizev:
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
-.LASF102:
+.LASF101:
 	.string	"__cpp_aggregate_nsdmi 201304"
 .LASF565:
 	.string	"_GLIBCXX_HAVE_TANHF 1"
 .LASF817:
 	.string	"int8_t"
-.LASF275:
+.LASF274:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
-.LASF333:
+.LASF332:
 	.string	"__DEC128_EPSILON__ 1E-33DL"
 .LASF409:
 	.string	"INCLUDE_IO_OUTPUT_H_ "
 .LASF348:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
-.LASF142:
+.LASF141:
 	.string	"__UINT32_MAX__ 0xffffffffU"
 .LASF816:
 	.string	"size_t"
@@ -4569,17 +4441,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINT16_MAX __UINT16_MAX__"
 .LASF527:
 	.string	"_GLIBCXX_HAVE_INTTYPES_H 1"
-.LASF127:
+.LASF126:
 	.string	"__SIZE_WIDTH__ 64"
-.LASF332:
+.LASF331:
 	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
-.LASF20:
+.LASF19:
 	.string	"__LP64__ 1"
 .LASF427:
 	.string	"_GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))"
 .LASF385:
 	.string	"__ARM_FEATURE_NUMERIC_MAXMIN 1"
-.LASF320:
+.LASF319:
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_SQRTF 1"
@@ -4595,11 +4467,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_MEMALIGN 1"
 .LASF473:
 	.string	"_GLIBCXX_PSEUDO_VISIBILITY(V) "
-.LASF301:
+.LASF300:
 	.string	"__FLT64X_DIG__ 33"
 .LASF687:
 	.string	"UINT64_MAX"
-.LASF309:
+.LASF308:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
 .LASF798:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
@@ -4611,41 +4483,41 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT64_MAX __INT64_MAX__"
 .LASF745:
 	.string	"INTMAX_MIN"
-.LASF23:
+.LASF22:
 	.string	"__SIZEOF_LONG_LONG__ 8"
-.LASF205:
+.LASF204:
 	.string	"__DBL_MAX_10_EXP__ 308"
 .LASF448:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
 .LASF928:
 	.string	"getRootDirFirstSector"
-.LASF317:
+.LASF316:
 	.string	"__DEC32_MIN__ 1E-95DF"
-.LASF132:
+.LASF131:
 	.string	"__INTMAX_WIDTH__ 64"
-.LASF209:
+.LASF208:
 	.string	"__DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)"
 .LASF915:
 	.string	"Signature_word"
 .LASF802:
 	.string	"INCLUDE_TEST_TEST_BASE_H_ "
-.LASF33:
+.LASF32:
 	.string	"__ORDER_PDP_ENDIAN__ 3412"
 .LASF762:
 	.string	"WCHAR_MIN __WCHAR_MIN__"
-.LASF323:
+.LASF322:
 	.string	"__DEC64_MAX_EXP__ 385"
 .LASF476:
 	.string	"_GLIBCXX_TXN_SAFE "
-.LASF214:
+.LASF213:
 	.string	"__FP_FAST_FMA 1"
-.LASF196:
+.LASF195:
 	.string	"__FLT_HAS_DENORM__ 1"
-.LASF47:
+.LASF46:
 	.string	"__INT8_TYPE__ signed char"
-.LASF250:
+.LASF249:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
-.LASF306:
+.LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
 .LASF533:
 	.string	"_GLIBCXX_HAVE_LIMIT_FSIZE 0"
@@ -4653,29 +4525,29 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINTPTR_MAX __UINTPTR_MAX__"
 .LASF2:
 	.string	"__STDC_UTF_16__ 1"
-.LASF38:
+.LASF37:
 	.string	"__SIZE_TYPE__ long unsigned int"
 .LASF686:
 	.string	"INT64_MIN (-INT64_MAX - 1)"
 .LASF402:
 	.string	"USER_SPACE_SIZE 20480"
-.LASF96:
+.LASF95:
 	.string	"__cpp_alias_templates 200704"
-.LASF157:
+.LASF156:
 	.string	"__UINT8_C(c) c"
-.LASF48:
+.LASF47:
 	.string	"__INT16_TYPE__ short int"
 .LASF659:
 	.string	"NULL __null"
-.LASF285:
+.LASF284:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
 .LASF571:
 	.string	"_GLIBCXX_HAVE_VSWSCANF 1"
 .LASF794:
 	.string	"TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))"
-.LASF103:
+.LASF102:
 	.string	"__cpp_variable_templates 201304"
-.LASF307:
+.LASF306:
 	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
@@ -4683,11 +4555,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT_FAST64_MAX __INT_FAST64_MAX__"
 .LASF340:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
-.LASF221:
+.LASF220:
 	.string	"__DECIMAL_DIG__ 36"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
-.LASF870:
+.LASF868:
 	.string	"_ZN6OutputlsEPVKv"
 .LASF386:
 	.string	"__ARM_NEON 1"
@@ -4695,13 +4567,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
 .LASF835:
 	.string	"uint_least16_t"
-.LASF252:
+.LASF251:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
 .LASF680:
 	.string	"INT32_MIN (-INT32_MAX - 1)"
-.LASF249:
+.LASF248:
 	.string	"__FLT32_MAX_10_EXP__ 38"
-.LASF139:
+.LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
 .LASF838:
 	.string	"int_fast8_t"
@@ -4713,7 +4585,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
 .LASF413:
 	.string	"__need_wchar_t"
-.LASF246:
+.LASF245:
 	.string	"__FLT32_MIN_EXP__ (-125)"
 .LASF541:
 	.string	"_GLIBCXX_HAVE_MBSTATE_T 1"
@@ -4723,21 +4595,21 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_BSD_PTRDIFF_T_ "
 .LASF927:
 	.string	"_ZNK11FAT32ExtBPB21getClusterFirstSectorEm"
-.LASF242:
+.LASF241:
 	.string	"__FLT16_HAS_INFINITY__ 1"
-.LASF261:
+.LASF260:
 	.string	"__FLT64_MIN_10_EXP__ (-307)"
 .LASF641:
 	.string	"__size_t "
-.LASF171:
+.LASF170:
 	.string	"__INT_FAST64_WIDTH__ 64"
-.LASF264:
+.LASF263:
 	.string	"__FLT64_DECIMAL_DIG__ 17"
 .LASF708:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
 .LASF505:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF872:
+.LASF870:
 	.string	"double"
 .LASF495:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
@@ -4747,23 +4619,23 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
 .LASF780:
 	.string	"UINT32_C(c) __UINT32_C(c)"
-.LASF32:
+.LASF31:
 	.string	"__ORDER_BIG_ENDIAN__ 4321"
 .LASF453:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CONTAINER _GLIBCXX_BEGIN_NAMESPACE_VERSION"
 .LASF931:
 	.string	"_ZNK11FAT32ExtBPB20uni_determineFATTypeEv"
-.LASF331:
+.LASF330:
 	.string	"__DEC128_MIN__ 1E-6143DL"
 .LASF381:
 	.string	"__ARM_FP16_FORMAT_IEEE 1"
-.LASF200:
+.LASF199:
 	.string	"__DBL_MANT_DIG__ 53"
 .LASF470:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
 .LASF643:
 	.string	"__WCHAR_T__ "
-.LASF260:
+.LASF259:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
 .LASF844:
 	.string	"uint_fast32_t"
@@ -4771,21 +4643,19 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"FAT12"
 .LASF444:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
-.LASF172:
+.LASF171:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
-.LASF319:
+.LASF318:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
 .LASF800:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF658:
 	.string	"NULL"
-.LASF939:
-	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O1 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
-.LASF305:
+.LASF304:
 	.string	"__FLT64X_MAX_10_EXP__ 4932"
-.LASF119:
+.LASF118:
 	.string	"__SCHAR_WIDTH__ 8"
-.LASF167:
+.LASF166:
 	.string	"__INT_FAST16_WIDTH__ 32"
 .LASF877:
 	.string	"FAT16"
@@ -4799,7 +4669,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << \" [TEST] `\"<< #testCallable << \"` failed.\\n\";}"
 .LASF391:
 	.string	"__AARCH64_CMODEL_SMALL__ 1"
-.LASF42:
+.LASF41:
 	.string	"__INTMAX_TYPE__ long int"
 .LASF890:
 	.string	"secPerTrk"
@@ -4811,15 +4681,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_T_WCHAR "
 .LASF760:
 	.string	"WCHAR_MAX __WCHAR_MAX__"
-.LASF298:
+.LASF297:
 	.string	"__FLT32X_HAS_INFINITY__ 1"
 .LASF724:
 	.string	"UINT_FAST16_MAX __UINT_FAST16_MAX__"
 .LASF628:
 	.string	"_SYS_SIZE_T_H "
-.LASF282:
+.LASF281:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
-.LASF59:
+.LASF58:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 .LASF810:
 	.string	"long int"
@@ -4829,17 +4699,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"SIZE_MAX __SIZE_MAX__"
 .LASF508:
 	.string	"_GLIBCXX_HAVE_EPROTO 1"
-.LASF292:
+.LASF291:
 	.string	"__FLT32X_DECIMAL_DIG__ 17"
-.LASF299:
+.LASF298:
 	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
-.LASF329:
+.LASF328:
 	.string	"__DEC128_MIN_EXP__ (-6142)"
-.LASF63:
+.LASF62:
 	.string	"__INT_FAST8_TYPE__ int"
 .LASF625:
 	.string	"__size_t__ "
-.LASF274:
+.LASF273:
 	.string	"__FLT128_MIN_EXP__ (-16381)"
 .LASF930:
 	.string	"uni_determineFATType"
@@ -4847,23 +4717,23 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__need_ptrdiff_t"
 .LASF776:
 	.string	"UINT8_C(c) __UINT8_C(c)"
-.LASF55:
+.LASF54:
 	.string	"__INT_LEAST8_TYPE__ signed char"
 .LASF441:
 	.string	"_GLIBCXX_NOEXCEPT_QUAL "
-.LASF36:
+.LASF35:
 	.string	"__SIZEOF_POINTER__ 8"
 .LASF586:
 	.string	"_GLIBCXX11_USE_C99_STDLIB 1"
 .LASF451:
 	.string	"_GLIBCXX_END_NAMESPACE_VERSION "
-.LASF311:
+.LASF310:
 	.string	"__FLT64X_HAS_DENORM__ 1"
 .LASF921:
 	.string	"_ZNK11FAT32ExtBPB28uni_getDataRegionSectorCountEv"
-.LASF151:
+.LASF150:
 	.string	"__INT32_C(c) c"
-.LASF248:
+.LASF247:
 	.string	"__FLT32_MAX_EXP__ 128"
 .LASF694:
 	.string	"UINT_LEAST8_MAX __UINT_LEAST8_MAX__"
@@ -4871,7 +4741,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"PTRDIFF_MAX __PTRDIFF_MAX__"
 .LASF484:
 	.string	"_GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR"
-.LASF226:
+.LASF225:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
 .LASF510:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
@@ -4879,7 +4749,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_ATOMIC_BUILTINS 1"
 .LASF718:
 	.string	"UINT_FAST8_MAX __UINT_FAST8_MAX__"
-.LASF289:
+.LASF288:
 	.string	"__FLT32X_MIN_10_EXP__ (-307)"
 .LASF637:
 	.string	"_SIZE_T_DECLARED "
@@ -4891,29 +4761,29 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC"
 .LASF431:
 	.string	"_GLIBCXX14_CONSTEXPR constexpr"
-.LASF175:
+.LASF174:
 	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
-.LASF37:
+.LASF36:
 	.string	"__GNUG__ 7"
 .LASF458:
 	.string	"_GLIBCXX_LONG_DOUBLE_COMPAT"
 .LASF434:
 	.string	"_GLIBCXX_NOEXCEPT noexcept"
-.LASF189:
+.LASF188:
 	.string	"__FLT_MAX_EXP__ 128"
 .LASF878:
 	.string	"FAT32"
-.LASF22:
+.LASF21:
 	.string	"__SIZEOF_LONG__ 8"
 .LASF570:
 	.string	"_GLIBCXX_HAVE_VFWSCANF 1"
 .LASF883:
 	.string	"secPerClus"
-.LASF26:
+.LASF25:
 	.string	"__SIZEOF_DOUBLE__ 8"
-.LASF83:
+.LASF82:
 	.string	"__cpp_lambdas 200907"
-.LASF220:
+.LASF219:
 	.string	"__LDBL_MAX_10_EXP__ 4932"
 .LASF422:
 	.string	"_GLIBCXX_CONST __attribute__ ((__const__))"
@@ -4921,19 +4791,19 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__LINARO_RELEASE__ 201711"
 .LASF504:
 	.string	"_GLIBCXX_HAVE_ENOTSUP 1"
-.LASF268:
+.LASF267:
 	.string	"__FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64"
-.LASF325:
+.LASF324:
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 .LASF663:
 	.string	"_GLIBCXX_CSTDINT 1"
-.LASF188:
+.LASF187:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
 .LASF837:
 	.string	"uint_least64_t"
 .LASF423:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
-.LASF191:
+.LASF190:
 	.string	"__FLT_DECIMAL_DIG__ 9"
 .LASF463:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
@@ -4949,9 +4819,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"BS_DrvNum"
 .LASF379:
 	.string	"__ARM_FEATURE_FMA 1"
-.LASF254:
+.LASF253:
 	.string	"__FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32"
-.LASF337:
+.LASF336:
 	.string	"__GNUC_STDC_INLINE__ 1"
 .LASF793:
 	.string	"FATAL \"[FATAL] \""
@@ -4961,19 +4831,19 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_ENOSR 1"
 .LASF585:
 	.string	"_GLIBCXX11_USE_C99_STDIO 1"
-.LASF100:
+.LASF99:
 	.string	"__cpp_constexpr 201304"
 .LASF751:
 	.string	"PTRDIFF_MIN"
-.LASF126:
+.LASF125:
 	.string	"__PTRDIFF_WIDTH__ 64"
-.LASF158:
+.LASF157:
 	.string	"__UINT_LEAST16_MAX__ 0xffff"
 .LASF449:
 	.string	"_GLIBCXX_INLINE_VERSION 0"
 .LASF540:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF99:
+.LASF98:
 	.string	"__cpp_generic_lambdas 201304"
 .LASF545:
 	.string	"_GLIBCXX_HAVE_POWF 1"
@@ -4983,17 +4853,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_EXPF 1"
 .LASF405:
 	.string	"CONFIG_RAM_START 0x40000000"
-.LASF263:
+.LASF262:
 	.string	"__FLT64_MAX_10_EXP__ 308"
 .LASF511:
 	.string	"_GLIBCXX_HAVE_ETXTBSY 1"
 .LASF432:
 	.string	"_GLIBCXX17_CONSTEXPR "
-.LASF104:
+.LASF103:
 	.string	"__cpp_digit_separators 201309"
 .LASF636:
 	.string	"_BSD_SIZE_T_DEFINED_ "
-.LASF69:
+.LASF68:
 	.string	"__UINT_FAST32_TYPE__ unsigned int"
 .LASF824:
 	.string	"unsigned char"
@@ -5001,7 +4871,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__STDC_UTF_32__ 1"
 .LASF420:
 	.string	"__GLIBCXX__ 20171011"
-.LASF253:
+.LASF252:
 	.string	"__FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32"
 .LASF517:
 	.string	"_GLIBCXX_HAVE_FLOORF 1"
@@ -5009,13 +4879,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__GCC_ATOMIC_CHAR_LOCK_FREE 2"
 .LASF918:
 	.string	"uni_getTotalSecCount"
-.LASF330:
+.LASF329:
 	.string	"__DEC128_MAX_EXP__ 6145"
 .LASF702:
 	.string	"INT_LEAST32_MAX __INT_LEAST32_MAX__"
-.LASF179:
+.LASF178:
 	.string	"__GCC_IEC_559 2"
-.LASF302:
+.LASF301:
 	.string	"__FLT64X_MIN_EXP__ (-16381)"
 .LASF580:
 	.string	"_GLIBCXX_PACKAGE_TARNAME \"libstdc++\""
@@ -5023,23 +4893,23 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__need_wint_t"
 .LASF886:
 	.string	"rootEntCnt"
-.LASF141:
+.LASF140:
 	.string	"__UINT16_MAX__ 0xffff"
-.LASF109:
+.LASF108:
 	.string	"__SHRT_MAX__ 0x7fff"
 .LASF925:
 	.string	"_ZNK11FAT32ExtBPB21getClusterEntryOffsetEmm"
-.LASF161:
+.LASF160:
 	.string	"__UINT32_C(c) c ## U"
 .LASF721:
 	.string	"INT_FAST16_MIN"
-.LASF129:
+.LASF128:
 	.string	"__INTMAX_C(c) c ## L"
-.LASF219:
+.LASF218:
 	.string	"__LDBL_MAX_EXP__ 16384"
-.LASF24:
+.LASF23:
 	.string	"__SIZEOF_SHORT__ 2"
-.LASF154:
+.LASF153:
 	.string	"__INT64_C(c) c ## L"
 .LASF912:
 	.string	"BS_VolLab"
@@ -5055,15 +4925,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INFO \"[INFO] \""
 .LASF398:
 	.string	"__FLT_EVAL_METHOD_C99__ 0"
-.LASF131:
+.LASF130:
 	.string	"__UINTMAX_C(c) c ## UL"
 .LASF561:
 	.string	"_GLIBCXX_HAVE_SYS_TIME_H 1"
-.LASF280:
+.LASF279:
 	.string	"__FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128"
 .LASF356:
 	.string	"__PRAGMA_REDEFINE_EXTNAME 1"
-.LASF40:
+.LASF39:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF764:
 	.string	"WINT_MAX __WINT_MAX__"
@@ -5073,11 +4943,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
 .LASF544:
 	.string	"_GLIBCXX_HAVE_MODFF 1"
-.LASF90:
+.LASF89:
 	.string	"__cpp_variadic_templates 200704"
 .LASF725:
 	.string	"INT_FAST32_MAX"
-.LASF66:
+.LASF65:
 	.string	"__INT_FAST64_TYPE__ long int"
 .LASF483:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
@@ -5085,7 +4955,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_TXN_SAFE_DYN "
 .LASF897:
 	.string	"getFATType"
-.LASF21:
+.LASF20:
 	.string	"__SIZEOF_INT__ 4"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
@@ -5101,7 +4971,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
 .LASF421:
 	.string	"_GLIBCXX_PURE __attribute__ ((__pure__))"
-.LASF235:
+.LASF234:
 	.string	"__FLT16_MAX_10_EXP__ 4"
 .LASF733:
 	.string	"INT_FAST64_MIN"
@@ -5109,29 +4979,29 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GCC_WRAP_STDINT_H "
 .LASF512:
 	.string	"_GLIBCXX_HAVE_EWOULDBLOCK 1"
-.LASF140:
+.LASF139:
 	.string	"__UINT8_MAX__ 0xff"
-.LASF194:
+.LASF193:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
 .LASF851:
 	.string	"EMPTY_STR"
 .LASF425:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
-.LASF211:
+.LASF210:
 	.string	"__DBL_HAS_DENORM__ 1"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_CUR 1"
-.LASF84:
+.LASF83:
 	.string	"__cpp_range_based_for 200907"
-.LASF107:
+.LASF106:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF499:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
 .LASF944:
 	.string	"decltype(nullptr)"
-.LASF147:
+.LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
-.LASF276:
+.LASF275:
 	.string	"__FLT128_MAX_EXP__ 16384"
 .LASF469:
 	.string	"_GLIBCXX_END_EXTERN_C }"
@@ -5141,7 +5011,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"CXX_MACROS_H__ "
 .LASF349:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
-.LASF74:
+.LASF73:
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
 .LASF747:
 	.string	"UINTMAX_MAX"
@@ -5153,7 +5023,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
 .LASF481:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF852:
+.LASF872:
 	.string	"koutBufSize"
 .LASF596:
 	.string	"_GLIBCXX_STDIO_EOF -1"
@@ -5175,17 +5045,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_PACKAGE__GLIBCXX_VERSION \"version-unused\""
 .LASF573:
 	.string	"_GLIBCXX_HAVE_WCHAR_H 1"
-.LASF257:
+.LASF256:
 	.string	"__FLT32_HAS_QUIET_NAN__ 1"
 .LASF640:
 	.string	"_SIZET_ "
-.LASF228:
+.LASF227:
 	.string	"__LDBL_HAS_INFINITY__ 1"
-.LASF318:
+.LASF317:
 	.string	"__DEC32_MAX__ 9.999999E96DF"
 .LASF524:
 	.string	"_GLIBCXX_HAVE_IEEEFP_H 1"
-.LASF291:
+.LASF290:
 	.string	"__FLT32X_MAX_10_EXP__ 308"
 .LASF538:
 	.string	"_GLIBCXX_HAVE_LOGF 1"
@@ -5193,7 +5063,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__ARM_ALIGN_MAX_STACK_PWR 16"
 .LASF478:
 	.string	"_GLIBCXX_FAST_MATH 0"
-.LASF105:
+.LASF104:
 	.string	"__cpp_sized_deallocation 201309"
 .LASF669:
 	.string	"UINT8_MAX"
@@ -5203,37 +5073,37 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_END_NAMESPACE_CXX11"
 .LASF748:
 	.string	"UINTMAX_MAX __UINTMAX_MAX__"
-.LASF134:
+.LASF133:
 	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
 .LASF572:
 	.string	"_GLIBCXX_HAVE_VWSCANF 1"
-.LASF156:
+.LASF155:
 	.string	"__UINT_LEAST8_MAX__ 0xff"
-.LASF86:
+.LASF85:
 	.string	"__cpp_decltype 200707"
 .LASF521:
 	.string	"_GLIBCXX_HAVE_GETS 1"
-.LASF312:
+.LASF311:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
-.LASF199:
+.LASF198:
 	.string	"__FP_FAST_FMAF 1"
 .LASF765:
 	.string	"WINT_MIN"
 .LASF681:
 	.string	"UINT32_MAX"
-.LASF149:
+.LASF148:
 	.string	"__INT_LEAST16_WIDTH__ 16"
 .LASF739:
 	.string	"INTPTR_MIN"
-.LASF183:
+.LASF182:
 	.string	"__DEC_EVAL_METHOD__ 2"
-.LASF95:
+.LASF94:
 	.string	"__cpp_ref_qualifiers 200710"
-.LASF327:
+.LASF326:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 .LASF552:
 	.string	"_GLIBCXX_HAVE_STDINT_H 1"
-.LASF873:
+.LASF871:
 	.string	"kout"
 .LASF631:
 	.string	"__SIZE_T "
@@ -5245,21 +5115,21 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_ZNK7FAT_BPB10getFATTypeEv"
 .LASF429:
 	.string	"_GLIBCXX_CONSTEXPR constexpr"
-.LASF336:
+.LASF335:
 	.string	"__USER_LABEL_PREFIX__ "
 .LASF715:
 	.string	"INT_FAST8_MIN"
 .LASF714:
 	.string	"INT_FAST8_MAX __INT_FAST8_MAX__"
-.LASF150:
+.LASF149:
 	.string	"__INT_LEAST32_MAX__ 0x7fffffff"
-.LASF58:
+.LASF57:
 	.string	"__INT_LEAST64_TYPE__ long int"
 .LASF459:
 	.string	"_GLIBCXX_NAMESPACE_LDBL "
 .LASF774:
 	.string	"INT64_C(c) __INT64_C(c)"
-.LASF144:
+.LASF143:
 	.string	"__INT_LEAST8_MAX__ 0x7f"
 .LASF354:
 	.string	"__GCC_ATOMIC_POINTER_LOCK_FREE 2"
@@ -5271,13 +5141,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"DEF_H__ "
 .LASF377:
 	.string	"__ARM_BIG_ENDIAN"
-.LASF858:
+.LASF856:
 	.string	"operator<<"
 .LASF913:
 	.string	"BS_FilSysType"
 .LASF372:
 	.string	"__ARM_SIZEOF_WCHAR_T 4"
-.LASF290:
+.LASF289:
 	.string	"__FLT32X_MAX_EXP__ 1024"
 .LASF486:
 	.string	"_GLIBCXX_HAVE_ASINF 1"
@@ -5297,17 +5167,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"rootClus"
 .LASF789:
 	.string	"arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))"
-.LASF155:
+.LASF154:
 	.string	"__INT_LEAST64_WIDTH__ 64"
-.LASF197:
+.LASF196:
 	.string	"__FLT_HAS_INFINITY__ 1"
-.LASF136:
+.LASF135:
 	.string	"__INT8_MAX__ 0x7f"
 .LASF442:
 	.string	"_GLIBCXX_EXTERN_TEMPLATE 1"
 .LASF735:
 	.string	"UINT_FAST64_MAX"
-.LASF64:
+.LASF63:
 	.string	"__INT_FAST16_TYPE__ int"
 .LASF355:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
@@ -5317,37 +5187,37 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"long unsigned int"
 .LASF902:
 	.string	"extFlags"
-.LASF201:
+.LASF200:
 	.string	"__DBL_DIG__ 15"
 .LASF559:
 	.string	"_GLIBCXX_HAVE_SYS_RESOURCE_H 1"
-.LASF296:
+.LASF295:
 	.string	"__FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x"
-.LASF180:
+.LASF179:
 	.string	"__GCC_IEC_559_COMPLEX 2"
 .LASF5:
 	.string	"__GNUC__ 7"
-.LASF52:
+.LASF51:
 	.string	"__UINT16_TYPE__ short unsigned int"
-.LASF222:
+.LASF221:
 	.string	"__LDBL_DECIMAL_DIG__ 36"
-.LASF168:
+.LASF167:
 	.string	"__INT_FAST32_MAX__ 0x7fffffff"
-.LASF303:
+.LASF302:
 	.string	"__FLT64X_MIN_10_EXP__ (-4931)"
-.LASF80:
+.LASF79:
 	.string	"__cpp_raw_strings 200710"
-.LASF316:
+.LASF315:
 	.string	"__DEC32_MAX_EXP__ 97"
 .LASF727:
 	.string	"INT_FAST32_MIN"
 .LASF629:
 	.string	"_T_SIZE_ "
-.LASF182:
+.LASF181:
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 .LASF361:
 	.string	"__aarch64__ 1"
-.LASF225:
+.LASF224:
 	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
 .LASF437:
 	.string	"_GLIBCXX_THROW(_EXC) "
@@ -5355,33 +5225,33 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINT_FAST16_MAX"
 .LASF757:
 	.string	"SIZE_MAX"
-.LASF67:
+.LASF66:
 	.string	"__UINT_FAST8_TYPE__ unsigned int"
-.LASF239:
+.LASF238:
 	.string	"__FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16"
-.LASF93:
+.LASF92:
 	.string	"__cpp_nsdmi 200809"
 .LASF576:
 	.string	"LT_OBJDIR \".libs/\""
 .LASF937:
 	.string	"testFAT32SizeIsSecSize"
-.LASF85:
+.LASF84:
 	.string	"__cpp_static_assert 200410"
 .LASF491:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
 .LASF833:
 	.string	"int_least64_t"
-.LASF19:
+.LASF18:
 	.string	"_LP64 1"
 .LASF934:
 	.string	"_ZNK11FAT32ExtBPB16calculateFATSz32Em"
 .LASF480:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
-.LASF278:
+.LASF277:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
 .LASF426:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
-.LASF244:
+.LASF243:
 	.string	"__FLT32_MANT_DIG__ 24"
 .LASF689:
 	.string	"INT_LEAST8_MAX"
@@ -5389,41 +5259,39 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
 .LASF666:
 	.string	"INT8_MAX __INT8_MAX__"
-.LASF300:
+.LASF299:
 	.string	"__FLT64X_MANT_DIG__ 113"
-.LASF207:
+.LASF206:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF314:
+.LASF313:
 	.string	"__DEC32_MANT_DIG__ 7"
 .LASF847:
 	.string	"uintptr_t"
-.LASF204:
+.LASF203:
 	.string	"__DBL_MAX_EXP__ 1024"
 .LASF14:
 	.string	"__ATOMIC_RELEASE 3"
-.LASF297:
+.LASF296:
 	.string	"__FLT32X_HAS_DENORM__ 1"
-.LASF185:
+.LASF184:
 	.string	"__FLT_MANT_DIG__ 24"
 .LASF606:
 	.string	"_GLIBCXX_USE_INT128 1"
-.LASF65:
+.LASF64:
 	.string	"__INT_FAST32_TYPE__ int"
-.LASF87:
+.LASF86:
 	.string	"__cpp_attributes 200809"
 .LASF622:
 	.string	"___int_ptrdiff_t_h "
-.LASF17:
-	.string	"__OPTIMIZE__ 1"
 .LASF537:
 	.string	"_GLIBCXX_HAVE_LOG10F 1"
-.LASF128:
+.LASF127:
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
-.LASF266:
+.LASF265:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
-.LASF18:
+.LASF17:
 	.string	"__FINITE_MATH_ONLY__ 0"
 .LASF617:
 	.string	"_T_PTRDIFF_ "
@@ -5431,13 +5299,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GXX_NULLPTR_T "
 .LASF1:
 	.string	"__cplusplus 201402L"
-.LASF130:
+.LASF129:
 	.string	"__UINTMAX_MAX__ 0xffffffffffffffffUL"
-.LASF233:
+.LASF232:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
 .LASF905:
 	.string	"FSInfo"
-.LASF116:
+.LASF115:
 	.string	"__WINT_MIN__ 0U"
 .LASF615:
 	.string	"_ANSI_STDDEF_H "
@@ -5459,9 +5327,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT32_MAX __INT32_MAX__"
 .LASF522:
 	.string	"_GLIBCXX_HAVE_HYPOT 1"
-.LASF114:
+.LASF113:
 	.string	"__WCHAR_MIN__ 0U"
-.LASF236:
+.LASF235:
 	.string	"__FLT16_DECIMAL_DIG__ 5"
 .LASF351:
 	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
@@ -5473,11 +5341,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"FAT_BPB"
 .LASF600:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_TR1 1"
-.LASF184:
+.LASF183:
 	.string	"__FLT_RADIX__ 2"
-.LASF256:
+.LASF255:
 	.string	"__FLT32_HAS_INFINITY__ 1"
-.LASF113:
+.LASF112:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
 .LASF889:
 	.string	"FATSz16"
@@ -5485,17 +5353,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT16_MAX"
 .LASF737:
 	.string	"INTPTR_MAX"
-.LASF45:
+.LASF44:
 	.string	"__CHAR32_TYPE__ unsigned int"
 .LASF344:
 	.string	"__GCC_ATOMIC_BOOL_LOCK_FREE 2"
 .LASF642:
 	.string	"__wchar_t__ "
-.LASF229:
+.LASF228:
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
 .LASF10:
 	.string	"__LINARO_SPIN__ 0"
-.LASF123:
+.LASF122:
 	.string	"__LONG_LONG_WIDTH__ 64"
 .LASF616:
 	.string	"_PTRDIFF_T "
@@ -5505,7 +5373,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_USE_C99_STDINT_TR1 1"
 .LASF884:
 	.string	"rsvdSecCnt"
-.LASF106:
+.LASF105:
 	.string	"__cpp_threadsafe_static_init 200806"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LC_MESSAGES 1"
@@ -5521,7 +5389,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_ZNK11FAT32ExtBPB18getClusterByteSizeEv"
 .LASF744:
 	.string	"INTMAX_MAX __INTMAX_MAX__"
-.LASF262:
+.LASF261:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF341:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1"
@@ -5529,15 +5397,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"int_least32_t"
 .LASF880:
 	.string	"BS_jmpBoot"
-.LASF223:
+.LASF222:
 	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
-.LASF43:
+.LASF42:
 	.string	"__UINTMAX_TYPE__ long unsigned int"
-.LASF125:
+.LASF124:
 	.string	"__WINT_WIDTH__ 32"
-.LASF29:
+.LASF28:
 	.string	"__CHAR_BIT__ 8"
-.LASF231:
+.LASF230:
 	.string	"__FLT16_DIG__ 3"
 .LASF358:
 	.string	"__SIZEOF_WCHAR_T__ 4"
@@ -5551,17 +5419,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UART_BASE 0x09000000"
 .LASF683:
 	.string	"INT64_MAX"
-.LASF234:
+.LASF233:
 	.string	"__FLT16_MAX_EXP__ 16"
-.LASF92:
+.LASF91:
 	.string	"__cpp_delegating_constructors 200604"
-.LASF77:
+.LASF76:
 	.string	"__GXX_EXPERIMENTAL_CXX0X__ 1"
 .LASF456:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_ALGO _GLIBCXX_BEGIN_NAMESPACE_VERSION"
 .LASF610:
 	.string	"_GLIBCXX_USE_WCHAR_T 1"
-.LASF34:
+.LASF33:
 	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF679:
 	.string	"INT32_MIN"
@@ -5571,7 +5439,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INTPTR_MIN (-INTPTR_MAX - 1)"
 .LASF736:
 	.string	"UINT_FAST64_MAX __UINT_FAST64_MAX__"
-.LASF72:
+.LASF71:
 	.string	"__UINTPTR_TYPE__ long unsigned int"
 .LASF388:
 	.string	"__AARCH64_CMODEL_TINY__"
@@ -5579,7 +5447,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
 .LASF790:
 	.string	"NULL_CHAR '\\0'"
-.LASF41:
+.LASF40:
 	.string	"__WINT_TYPE__ unsigned int"
 .LASF771:
 	.string	"INT32_C"
@@ -5597,9 +5465,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"max_align_t"
 .LASF901:
 	.string	"FATSz32"
-.LASF187:
+.LASF186:
 	.string	"__FLT_MIN_EXP__ (-125)"
-.LASF271:
+.LASF270:
 	.string	"__FLT64_HAS_QUIET_NAN__ 1"
 .LASF584:
 	.string	"_GLIBCXX11_USE_C99_MATH 1"
@@ -5611,33 +5479,33 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
 .LASF846:
 	.string	"intptr_t"
-.LASF293:
+.LASF292:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
-.LASF269:
+.LASF268:
 	.string	"__FLT64_HAS_DENORM__ 1"
-.LASF186:
+.LASF185:
 	.string	"__FLT_DIG__ 6"
 .LASF435:
 	.string	"_GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)"
 .LASF690:
 	.string	"INT_LEAST8_MAX __INT_LEAST8_MAX__"
-.LASF181:
+.LASF180:
 	.string	"__FLT_EVAL_METHOD__ 0"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_CEILF 1"
-.LASF61:
+.LASF60:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF192:
+.LASF191:
 	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
-.LASF108:
+.LASF107:
 	.string	"__SCHAR_MAX__ 0x7f"
 .LASF703:
 	.string	"INT_LEAST32_MIN"
-.LASF165:
+.LASF164:
 	.string	"__INT_FAST8_WIDTH__ 32"
-.LASF91:
+.LASF90:
 	.string	"__cpp_initializer_lists 200806"
-.LASF281:
+.LASF280:
 	.string	"__FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128"
 .LASF450:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_VERSION "
@@ -5645,15 +5513,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_ATAN2F 1"
 .LASF618:
 	.string	"_T_PTRDIFF "
-.LASF122:
+.LASF121:
 	.string	"__LONG_WIDTH__ 64"
 .LASF769:
 	.string	"INT16_C"
-.LASF322:
+.LASF321:
 	.string	"__DEC64_MIN_EXP__ (-382)"
-.LASF232:
+.LASF231:
 	.string	"__FLT16_MIN_EXP__ (-13)"
-.LASF118:
+.LASF117:
 	.string	"__SIZE_MAX__ 0xffffffffffffffffUL"
 .LASF692:
 	.string	"INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)"
@@ -5673,25 +5541,25 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__SIZEOF_PTRDIFF_T__ 8"
 .LASF369:
 	.string	"__ARM_FEATURE_IDIV 1"
-.LASF35:
+.LASF34:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF828:
 	.string	"unsigned int"
 .LASF746:
 	.string	"INTMAX_MIN (-INTMAX_MAX - 1)"
-.LASF51:
+.LASF50:
 	.string	"__UINT8_TYPE__ unsigned char"
 .LASF839:
 	.string	"int_fast16_t"
-.LASF46:
+.LASF45:
 	.string	"__SIG_ATOMIC_TYPE__ int"
 .LASF688:
 	.string	"UINT64_MAX __UINT64_MAX__"
-.LASF88:
+.LASF87:
 	.string	"__cpp_rvalue_reference 200610"
-.LASF120:
+.LASF119:
 	.string	"__SHRT_WIDTH__ 16"
-.LASF328:
+.LASF327:
 	.string	"__DEC128_MANT_DIG__ 34"
 .LASF412:
 	.string	"_GLIBCXX_CSTDDEF 1"
@@ -5699,15 +5567,15 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_PTRDIFF_T_DECLARED "
 .LASF786:
 	.string	"UINTMAX_C(c) __UINTMAX_C(c)"
-.LASF277:
+.LASF276:
 	.string	"__FLT128_MAX_10_EXP__ 4932"
 .LASF525:
 	.string	"_GLIBCXX_HAVE_INT64_T 1"
-.LASF288:
+.LASF287:
 	.string	"__FLT32X_MIN_EXP__ (-1021)"
 .LASF698:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
-.LASF198:
+.LASF197:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
 .LASF813:
 	.string	"__max_align_ld"
@@ -5719,29 +5587,31 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__max_align_ll"
 .LASF887:
 	.string	"totSec16"
-.LASF138:
+.LASF137:
 	.string	"__INT32_MAX__ 0x7fffffff"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
 .LASF806:
 	.string	"INCLUDE_FILESYSTEM_FAT_FAT32EXTBPB_H_ "
+.LASF939:
+	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
-.LASF247:
+.LASF246:
 	.string	"__FLT32_MIN_10_EXP__ (-37)"
 .LASF638:
 	.string	"___int_size_t_h "
 .LASF467:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
-.LASF94:
+.LASF93:
 	.string	"__cpp_inheriting_constructors 201511"
 .LASF808:
 	.string	"__gnu_cxx"
 .LASF788:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
-.LASF854:
+.LASF852:
 	.string	"UNIT_K"
-.LASF195:
+.LASF194:
 	.string	"__FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F"
 .LASF487:
 	.string	"_GLIBCXX_HAVE_AS_SYMVER_DIRECTIVE 1"
@@ -5749,11 +5619,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"bkBootSe"
 .LASF564:
 	.string	"_GLIBCXX_HAVE_TANF 1"
-.LASF855:
+.LASF853:
 	.string	"print"
 .LASF672:
 	.string	"INT16_MAX __INT16_MAX__"
-.LASF871:
+.LASF869:
 	.string	"bool"
 .LASF768:
 	.string	"INT8_C(c) __INT8_C(c)"
@@ -5761,7 +5631,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << \"!=\"<<value<<\",the real value is \" << expr << \"\\n\"; }while(false);}"
 .LASF834:
 	.string	"uint_least8_t"
-.LASF215:
+.LASF214:
 	.string	"__LDBL_MANT_DIG__ 113"
 .LASF555:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
@@ -5773,19 +5643,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT_FAST16_MAX"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDBOOL_H 1"
-.LASF603:
-	.string	"_GLIBCXX_USE_FCHMOD 1"
 .LASF627:
 	.string	"_SIZE_T "
 .LASF652:
 	.string	"_WCHAR_T_H "
-.LASF856:
+.LASF854:
 	.string	"_ZN6Output5printEPKcm"
-.LASF241:
+.LASF240:
 	.string	"__FLT16_HAS_DENORM__ 1"
 .LASF848:
 	.string	"intmax_t"
-.LASF230:
+.LASF229:
 	.string	"__FLT16_MANT_DIG__ 11"
 .LASF815:
 	.string	"long double"
@@ -5797,31 +5665,33 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_FMODF 1"
 .LASF699:
 	.string	"UINT_LEAST16_MAX"
+.LASF455:
+	.string	"_GLIBCXX_STD_A std"
 .LASF395:
 	.string	"__ARM_FEATURE_QRDMX 1"
-.LASF313:
+.LASF312:
 	.string	"__FLT64X_HAS_QUIET_NAN__ 1"
-.LASF273:
+.LASF272:
 	.string	"__FLT128_DIG__ 33"
-.LASF145:
+.LASF144:
 	.string	"__INT8_C(c) c"
-.LASF251:
+.LASF250:
 	.string	"__FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32"
 .LASF614:
 	.string	"_STDDEF_H_ "
 .LASF710:
 	.string	"INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)"
-.LASF310:
+.LASF309:
 	.string	"__FLT64X_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F64x"
-.LASF202:
+.LASF201:
 	.string	"__DBL_MIN_EXP__ (-1021)"
 .LASF608:
 	.string	"_GLIBCXX_USE_SC_NPROCESSORS_ONLN 1"
 .LASF916:
 	.string	"uni_getFatSize"
-.LASF170:
+.LASF169:
 	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffL"
-.LASF49:
+.LASF48:
 	.string	"__INT32_TYPE__ int"
 .LASF668:
 	.string	"INT8_MIN (-INT8_MAX - 1)"
@@ -5829,7 +5699,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2"
 .LASF935:
 	.string	"getClusterByteSize"
-.LASF245:
+.LASF244:
 	.string	"__FLT32_DIG__ 6"
 .LASF695:
 	.string	"INT_LEAST16_MAX"
@@ -5837,7 +5707,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT"
 .LASF777:
 	.string	"UINT16_C"
-.LASF101:
+.LASF100:
 	.string	"__cpp_decltype_auto 201304"
 .LASF424:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
@@ -5845,13 +5715,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF647:
 	.string	"__WCHAR_T "
-.LASF227:
+.LASF226:
 	.string	"__LDBL_HAS_DENORM__ 1"
 .LASF342:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
 .LASF910:
 	.string	"BS_BootSig"
-.LASF294:
+.LASF293:
 	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
 .LASF440:
 	.string	"_GLIBCXX_NOEXCEPT_PARM "
@@ -5869,29 +5739,29 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_FULLY_DYNAMIC_STRING 0"
 .LASF583:
 	.string	"STDC_HEADERS 1"
-.LASF70:
+.LASF69:
 	.string	"__UINT_FAST64_TYPE__ long unsigned int"
-.LASF284:
+.LASF283:
 	.string	"__FLT128_HAS_INFINITY__ 1"
 .LASF711:
 	.string	"UINT_LEAST64_MAX"
-.LASF121:
+.LASF120:
 	.string	"__INT_WIDTH__ 32"
 .LASF339:
 	.string	"__WCHAR_UNSIGNED__ 1"
 .LASF796:
 	.string	"__stringify(x) __stringify_1(x)"
-.LASF31:
+.LASF30:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
 .LASF547:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
-.LASF321:
+.LASF320:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF853:
+.LASF873:
 	.string	"koutBuf"
 .LASF635:
 	.string	"_SIZE_T_DEFINED "
-.LASF115:
+.LASF114:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF707:
 	.string	"INT_LEAST64_MAX"
@@ -5899,49 +5769,49 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"uint16_t"
 .LASF619:
 	.string	"__PTRDIFF_T "
-.LASF71:
+.LASF70:
 	.string	"__INTPTR_TYPE__ long int"
-.LASF240:
+.LASF239:
 	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
 .LASF752:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
-.LASF78:
+.LASF77:
 	.string	"__cpp_binary_literals 201304"
 .LASF773:
 	.string	"INT64_C"
-.LASF60:
+.LASF59:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
 .LASF675:
 	.string	"UINT16_MAX"
 .LASF630:
 	.string	"_T_SIZE "
-.LASF44:
+.LASF43:
 	.string	"__CHAR16_TYPE__ short unsigned int"
 .LASF376:
 	.string	"__AARCH64EB__"
-.LASF287:
+.LASF286:
 	.string	"__FLT32X_DIG__ 15"
-.LASF176:
+.LASF175:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
 .LASF841:
 	.string	"int_fast64_t"
-.LASF166:
+.LASF165:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
 .LASF919:
 	.string	"_ZNK11FAT32ExtBPB20uni_getTotalSecCountEv"
-.LASF506:
-	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
+.LASF603:
+	.string	"_GLIBCXX_USE_FCHMOD 1"
 .LASF396:
 	.string	"__FLT_EVAL_METHOD__"
 .LASF496:
 	.string	"_GLIBCXX_HAVE_ECHILD 1"
 .LASF667:
 	.string	"INT8_MIN"
-.LASF76:
+.LASF75:
 	.string	"__DEPRECATED 1"
 .LASF896:
 	.string	"flush"
-.LASF82:
+.LASF81:
 	.string	"__cpp_user_defined_literals 200809"
 .LASF357:
 	.string	"__SIZEOF_INT128__ 16"
@@ -5953,13 +5823,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GCC_STDINT_H "
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_STRING \"package-unused version-unused\""
-.LASF133:
+.LASF132:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
-.LASF153:
+.LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
 .LASF809:
 	.string	"__cxx11"
-.LASF210:
+.LASF209:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
 .LASF633:
 	.string	"_BSD_SIZE_T_ "
@@ -5979,7 +5849,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"uint_fast8_t"
 .LASF726:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
-.LASF163:
+.LASF162:
 	.string	"__UINT64_C(c) c ## UL"
 .LASF891:
 	.string	"numHeads"
@@ -5989,17 +5859,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_WEAK_DEFINITION "
 .LASF399:
 	.string	"__ELF__ 1"
-.LASF81:
+.LASF80:
 	.string	"__cpp_unicode_literals 200710"
 .LASF655:
 	.string	"_GCC_WCHAR_T "
 .LASF366:
 	.string	"__ARM_ARCH_8A 1"
-.LASF62:
+.LASF61:
 	.string	"__UINT_LEAST64_TYPE__ long unsigned int"
 .LASF649:
 	.string	"_BSD_WCHAR_T_ "
-.LASF308:
+.LASF307:
 	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
 .LASF923:
 	.string	"_ZNK11FAT32ExtBPB20uni_getClustersCountEv"
@@ -6007,9 +5877,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_ILP32"
 .LASF882:
 	.string	"bytesPerSec"
-.LASF57:
+.LASF56:
 	.string	"__INT_LEAST32_TYPE__ int"
-.LASF190:
+.LASF189:
 	.string	"__FLT_MAX_10_EXP__ 38"
 .LASF6:
 	.string	"__GNUC_MINOR__ 2"
@@ -6017,7 +5887,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__ARM_64BIT_STATE 1"
 .LASF626:
 	.string	"__SIZE_T__ "
-.LASF218:
+.LASF217:
 	.string	"__LDBL_MIN_10_EXP__ (-4931)"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SINF 1"
@@ -6027,9 +5897,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__GCC_ATOMIC_INT_LOCK_FREE 2"
 .LASF563:
 	.string	"_GLIBCXX_HAVE_S_ISREG 1"
-.LASF295:
+.LASF294:
 	.string	"__FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x"
-.LASF174:
+.LASF173:
 	.string	"__UINT_FAST32_MAX__ 0xffffffffU"
 .LASF743:
 	.string	"INTMAX_MAX"
@@ -6037,11 +5907,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GCC_MAX_ALIGN_T "
 .LASF383:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
-.LASF213:
+.LASF212:
 	.string	"__DBL_HAS_QUIET_NAN__ 1"
 .LASF393:
 	.string	"__ILP32__"
-.LASF270:
+.LASF269:
 	.string	"__FLT64_HAS_INFINITY__ 1"
 .LASF516:
 	.string	"_GLIBCXX_HAVE_FLOAT_H 1"
@@ -6055,31 +5925,31 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT64_MIN"
 .LASF775:
 	.string	"UINT8_C"
-.LASF208:
+.LASF207:
 	.string	"__DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)"
 .LASF734:
 	.string	"INT_FAST64_MIN (-INT_FAST64_MAX - 1)"
 .LASF673:
 	.string	"INT16_MIN"
-.LASF335:
-	.string	"__REGISTER_PREFIX__ "
 .LASF334:
+	.string	"__REGISTER_PREFIX__ "
+.LASF333:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
-.LASF89:
+.LASF88:
 	.string	"__cpp_rvalue_references 200610"
 .LASF840:
 	.string	"int_fast32_t"
 .LASF509:
 	.string	"_GLIBCXX_HAVE_ETIME 1"
-.LASF28:
+.LASF27:
 	.string	"__SIZEOF_SIZE_T__ 8"
 .LASF507:
 	.string	"_GLIBCXX_HAVE_EPERM 1"
 .LASF378:
 	.string	"__AARCH64EL__ 1"
-.LASF267:
+.LASF266:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF143:
+.LASF142:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF465:
 	.string	"__glibcxx_assert(_Condition) "
@@ -6097,21 +5967,21 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINT_FAST32_MAX"
 .LASF577:
 	.string	"_GLIBCXX_PACKAGE_BUGREPORT \"\""
-.LASF159:
+.LASF158:
 	.string	"__UINT16_C(c) c"
-.LASF238:
+.LASF237:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
 .LASF829:
 	.string	"uint64_t"
-.LASF173:
+.LASF172:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
-.LASF455:
-	.string	"_GLIBCXX_STD_A std"
+.LASF337:
+	.string	"__NO_INLINE__ 1"
 .LASF705:
 	.string	"UINT_LEAST32_MAX"
 .LASF428:
 	.string	"_GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ (\"cxx11\")))"
-.LASF304:
+.LASF303:
 	.string	"__FLT64X_MAX_EXP__ 16384"
 .LASF543:
 	.string	"_GLIBCXX_HAVE_MEMORY_H 1"
@@ -6121,7 +5991,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GCC_PTRDIFF_T "
 .LASF604:
 	.string	"_GLIBCXX_USE_FCHMODAT 1"
-.LASF212:
+.LASF211:
 	.string	"__DBL_HAS_INFINITY__ 1"
 .LASF932:
 	.string	"_ZNK11FAT32ExtBPB10getFATTypeEv"
@@ -6129,7 +5999,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"int16_t"
 .LASF706:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
-.LASF258:
+.LASF257:
 	.string	"__FLT64_MANT_DIG__ 53"
 .LASF581:
 	.string	"_GLIBCXX_PACKAGE_URL \"\""
@@ -6141,17 +6011,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT8_C"
 .LASF701:
 	.string	"INT_LEAST32_MAX"
-.LASF25:
+.LASF24:
 	.string	"__SIZEOF_FLOAT__ 4"
 .LASF895:
 	.string	"_ZNK7FAT_BPB22uni_getRootDirSecCountEv"
-.LASF324:
+.LASF323:
 	.string	"__DEC64_MIN__ 1E-383DD"
-.LASF97:
+.LASF96:
 	.string	"__cpp_return_type_deduction 201304"
 .LASF578:
 	.string	"_GLIBCXX_PACKAGE_NAME \"package-unused\""
-.LASF206:
+.LASF205:
 	.string	"__DBL_DECIMAL_DIG__ 17"
 .LASF605:
 	.string	"_GLIBCXX_USE_GETTIMEOFDAY 1"
@@ -6169,7 +6039,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__ARM_FP_FAST"
 .LASF494:
 	.string	"_GLIBCXX_HAVE_EBADMSG 1"
-.LASF137:
+.LASF136:
 	.string	"__INT16_MAX__ 0x7fff"
 .LASF371:
 	.string	"__ARM_PCS_AAPCS64 1"
@@ -6183,13 +6053,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"getClusterEntryOffset"
 .LASF691:
 	.string	"INT_LEAST8_MIN"
-.LASF272:
+.LASF271:
 	.string	"__FLT128_MANT_DIG__ 113"
-.LASF75:
+.LASF74:
 	.string	"__GXX_WEAK__ 1"
 .LASF693:
 	.string	"UINT_LEAST8_MAX"
-.LASF135:
+.LASF134:
 	.string	"__SIG_ATOMIC_WIDTH__ 32"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX"
@@ -6199,7 +6069,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_ENOSTR 1"
 .LASF8:
 	.string	"__VERSION__ \"7.2.1 20171011\""
-.LASF79:
+.LASF78:
 	.string	"__cpp_unicode_characters 200704"
 .LASF560:
 	.string	"_GLIBCXX_HAVE_SYS_STAT_H 1"
@@ -6211,19 +6081,19 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {"
 .LASF607:
 	.string	"_GLIBCXX_USE_LONG_LONG 1"
-.LASF73:
+.LASF72:
 	.string	"__has_include(STR) __has_include__(STR)"
 .LASF650:
 	.string	"_WCHAR_T_DEFINED_ "
-.LASF164:
+.LASF163:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
-.LASF255:
+.LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF315:
+.LASF314:
 	.string	"__DEC32_MIN_EXP__ (-94)"
-.LASF54:
+.LASF53:
 	.string	"__UINT64_TYPE__ long unsigned int"
-.LASF169:
+.LASF168:
 	.string	"__INT_FAST32_WIDTH__ 32"
 .LASF653:
 	.string	"___int_wchar_t_h "
@@ -6231,29 +6101,31 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_USE_C99_CTYPE_TR1 1"
 .LASF554:
 	.string	"_GLIBCXX_HAVE_STRERROR_R 1"
-.LASF27:
+.LASF26:
 	.string	"__SIZEOF_LONG_DOUBLE__ 16"
-.LASF98:
+.LASF97:
 	.string	"__cpp_init_captures 201304"
-.LASF39:
+.LASF38:
 	.string	"__PTRDIFF_TYPE__ long int"
-.LASF279:
+.LASF278:
 	.string	"__FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128"
 .LASF738:
 	.string	"INTPTR_MAX __INTPTR_MAX__"
 .LASF920:
 	.string	"uni_getDataRegionSectorCount"
-.LASF265:
+.LASF264:
 	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
-.LASF283:
+.LASF282:
 	.string	"__FLT128_HAS_DENORM__ 1"
 .LASF945:
 	.string	"FATType"
 .LASF717:
 	.string	"UINT_FAST8_MAX"
-.LASF237:
+.LASF236:
 	.string	"__FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16"
-.LASF111:
+.LASF506:
+	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
+.LASF110:
 	.string	"__LONG_MAX__ 0x7fffffffffffffffL"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSF 1"
@@ -6269,9 +6141,9 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
 .LASF569:
 	.string	"_GLIBCXX_HAVE_UTIME_H 1"
-.LASF117:
+.LASF116:
 	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
-.LASF178:
+.LASF177:
 	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
 .LASF520:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
@@ -6279,11 +6151,11 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_ZNK11FAT32ExtBPB21getRootDirFirstSectorEv"
 .LASF885:
 	.string	"numFATs"
-.LASF224:
+.LASF223:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
 .LASF843:
 	.string	"uint_fast16_t"
-.LASF68:
+.LASF67:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
 .LASF553:
 	.string	"_GLIBCXX_HAVE_STDLIB_H 1"
@@ -6295,7 +6167,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_USE_WEAK_REF __GXX_WEAK__"
 .LASF781:
 	.string	"UINT64_C"
-.LASF112:
+.LASF111:
 	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
 .LASF907:
 	.string	"reserved"
@@ -6305,17 +6177,17 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"INT_LEAST16_MIN"
 .LASF942:
 	.string	"11max_align_t"
-.LASF259:
+.LASF258:
 	.string	"__FLT64_DIG__ 15"
-.LASF326:
+.LASF325:
 	.string	"__DEC64_EPSILON__ 1E-15DD"
-.LASF193:
+.LASF192:
 	.string	"__FLT_MIN__ 1.17549435082228750796873653722224568e-38F"
-.LASF146:
+.LASF145:
 	.string	"__INT_LEAST8_WIDTH__ 8"
-.LASF867:
+.LASF865:
 	.string	"_ZN6OutputlsEPKc"
-.LASF56:
+.LASF55:
 	.string	"__INT_LEAST16_TYPE__ short int"
 .LASF826:
 	.string	"short unsigned int"
@@ -6325,19 +6197,19 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"UINTMAX_C"
 .LASF720:
 	.string	"INT_FAST16_MAX __INT_FAST16_MAX__"
-.LASF869:
+.LASF867:
 	.string	"_ZN6OutputlsEPKv"
-.LASF217:
+.LASF216:
 	.string	"__LDBL_MIN_EXP__ (-16381)"
-.LASF152:
+.LASF151:
 	.string	"__INT_LEAST32_WIDTH__ 32"
-.LASF53:
+.LASF52:
 	.string	"__UINT32_TYPE__ unsigned int"
 .LASF656:
 	.string	"_WCHAR_T_DECLARED "
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_ENDIAN_H 1"
-.LASF160:
+.LASF159:
 	.string	"__UINT_LEAST32_MAX__ 0xffffffffU"
 .LASF556:
 	.string	"_GLIBCXX_HAVE_STRING_H 1"
@@ -6353,7 +6225,7 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"__AARCH64_CMODEL_LARGE__"
 .LASF900:
 	.string	"FAT32ExtBPB"
-.LASF30:
+.LASF29:
 	.string	"__BIGGEST_ALIGNMENT__ 16"
 .LASF709:
 	.string	"INT_LEAST64_MIN"
@@ -6365,13 +6237,13 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"_GLIBCXX_HAVE_USLEEP 1"
 .LASF612:
 	.string	"_GTHREAD_USE_MUTEX_TIMEDLOCK 1"
-.LASF286:
+.LASF285:
 	.string	"__FLT32X_MANT_DIG__ 53"
-.LASF124:
+.LASF123:
 	.string	"__WCHAR_WIDTH__ 32"
 .LASF763:
 	.string	"WINT_MAX"
-.LASF148:
+.LASF147:
 	.string	"__INT16_C(c) c"
 .LASF909:
 	.string	"BS_Reserved1"
@@ -6381,53 +6253,53 @@ _Z22testFAT32SizeIsSecSizev:
 	.string	"calculateFATSz32"
 .LASF587:
 	.string	"_GLIBCXX11_USE_C99_WCHAR 1"
-.LASF243:
+.LASF242:
 	.string	"__FLT16_HAS_QUIET_NAN__ 1"
 .LASF15:
 	.string	"__ATOMIC_ACQ_REL 4"
-.LASF177:
+.LASF176:
 	.string	"__INTPTR_WIDTH__ 64"
-.LASF203:
+.LASF202:
 	.string	"__DBL_MIN_10_EXP__ (-307)"
 .LASF914:
 	.string	"undefined"
-.LASF216:
+.LASF215:
 	.string	"__LDBL_DIG__ 33"
 .LASF528:
 	.string	"_GLIBCXX_HAVE_ISWBLANK 1"
-.LASF50:
+.LASF49:
 	.string	"__INT64_TYPE__ long int"
-.LASF863:
+.LASF861:
 	.string	"_ZN6OutputlsEb"
-.LASF859:
+.LASF857:
 	.string	"_ZN6OutputlsEc"
-.LASF866:
+.LASF864:
 	.string	"_ZN6OutputlsEd"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENODATA 1"
 .LASF782:
 	.string	"UINT64_C(c) __UINT64_C(c)"
-.LASF860:
+.LASF858:
 	.string	"_ZN6OutputlsEh"
-.LASF865:
+.LASF863:
 	.string	"_ZN6OutputlsEi"
-.LASF862:
+.LASF860:
 	.string	"_ZN6OutputlsEj"
 .LASF938:
 	.string	"_Z22testFAT32SizeIsSecSizev"
-.LASF868:
+.LASF866:
 	.string	"_ZN6OutputlsEm"
-.LASF857:
+.LASF855:
 	.string	"_ZN6Output5printEPKc"
-.LASF864:
+.LASF862:
 	.string	"_ZN6OutputlsEs"
-.LASF861:
+.LASF859:
 	.string	"_ZN6OutputlsEt"
 .LASF639:
 	.string	"_GCC_SIZE_T "
-.LASF110:
+.LASF109:
 	.string	"__INT_MAX__ 0x7fffffff"
-.LASF162:
+.LASF161:
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
 .LASF779:
 	.string	"UINT32_C"

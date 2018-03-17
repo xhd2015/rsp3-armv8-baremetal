@@ -27,12 +27,12 @@ src/arch/common_aarch64/exception \
 src/arch/common_aarch64/mmu \
 src/arch/qemu_virt \
 src/data_structures \
-src/default_impl \
 src/filesystem/fat \
 src \
 src/io \
 src/memory \
 src/minimal_cpprt \
 src/minimal_crt \
+src/schedule \
 src/test \
 

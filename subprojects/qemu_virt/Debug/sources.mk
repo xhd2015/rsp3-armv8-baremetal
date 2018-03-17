@@ -33,5 +33,6 @@ src/io \
 src/memory \
 src/minimal_cpprt \
 src/minimal_crt \
+src/schedule \
 src/test \
 

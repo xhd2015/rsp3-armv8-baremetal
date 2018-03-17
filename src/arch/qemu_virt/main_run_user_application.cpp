@@ -7,9 +7,9 @@
 #include <memory/MemoryManager.h>
 #include <io/Output.h>
 #include <arch/common_aarch64/mmu/VirtualAddress.h>
+#include <schedule/Process.h>
 #include <cstring>
 #include <new>
-#include <schedule/Progress.h>
 
 // 本程序测试了在启用虚拟内存的情况下，从EL1进入EL0，然后调用svc #0之后打印"Hello Kernel"这个字符串。
 //  首先启用MMU
@@ -76,7 +76,7 @@ int main()
 	spVa.index(0,0);
 	spVa.index(1,0);
 	spVa.index(2,0);
-	spVa.index(3,Progress::STACK_L3_INDEX + Progress::STACK_L3_ENTRY_NUM);
+	spVa.index(3,Process::STACK_L3_INDEX + Process::STACK_L3_ENTRY_NUM);
 
 	// 设置SP_EL0
 	RegSP_EL0 spEL0 {0};
@@ -94,7 +94,7 @@ int main()
 	// 复制代码到RAM，读取其元信息
 	// 复制代码到代码区域（包括rodata)，其他变量到RAM区域
 //	size_t  psCodeSize = 0;
-//	ProgressImageHeader & header;
+//	ProcessImageHeader & header;
 	void* codePtr = mman.allocate(USER_SPACE_SIZE,0x1000);
 	if(!codePtr)
 	{
@@ -126,9 +126,9 @@ int main()
 	RegDescriptor4KBL2 *psL2Table = mman.allocateAs<RegDescriptor4KBL2*>(0x1000, 0x1000);
 	RegDescriptor4KBL3 *psL3Table = mman.allocateAs<RegDescriptor4KBL3*>(0x1000, 0x1000);
 
-	void * ramBase = mman.allocate(Progress::PAGE_SIZE * Progress::HEAP_L3_ENTRY_NUM,Progress::PAGE_SIZE);
+	void * ramBase = mman.allocate(Process::PAGE_SIZE * Process::HEAP_L3_ENTRY_NUM,Process::PAGE_SIZE);
 	(void)ramBase; // avoid warnings
-	void * spBase=mman.allocate(Progress::PAGE_SIZE * Progress::STACK_L3_ENTRY_NUM, Progress::PAGE_SIZE);
+	void * spBase=mman.allocate(Process::PAGE_SIZE * Process::STACK_L3_ENTRY_NUM, Process::PAGE_SIZE);
 	if(psL0Table==nullptr || psL1Table==nullptr || psL2Table == nullptr || psL3Table==nullptr || spBase==nullptr || ramBase==nullptr)
 	{
 		kout << FATAL << "a level of page table can not be allocated\n";
@@ -187,31 +187,31 @@ int main()
 		psL3Table[i].OutputAddr = ( (static_cast<uint64_t>(phyaddr.S0.PA51_48) << (48-12))|phyaddr.S0.PA47_12 )+i;
 	}
 	auto spPhAddr = asm_at(reinterpret_cast<uint64_t>(spBase));
-	for(size_t i=0;i<Progress::STACK_L3_ENTRY_NUM;++i)
+	for(size_t i=0;i<Process::STACK_L3_ENTRY_NUM;++i)
 	{
-		psL3Table[Progress::STACK_L3_INDEX+i] = {0};
-		psL3Table[Progress::STACK_L3_INDEX+i].RES1_0 = 1;
-		psL3Table[Progress::STACK_L3_INDEX+i].AF = 1;
-		psL3Table[Progress::STACK_L3_INDEX+i].Valid = 1;
-		psL3Table[Progress::STACK_L3_INDEX+i].nG = 1;
-		psL3Table[Progress::STACK_L3_INDEX+i].NS = 1;
-		psL3Table[Progress::STACK_L3_INDEX+i].Contiguous=0;
-		psL3Table[Progress::STACK_L3_INDEX+i].AP=0b01;//RW, EL0
-		psL3Table[Progress::STACK_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(spPhAddr.S0.PA51_48) << (48-12))|(spPhAddr.S0.PA47_12)) + i;
+		psL3Table[Process::STACK_L3_INDEX+i] = {0};
+		psL3Table[Process::STACK_L3_INDEX+i].RES1_0 = 1;
+		psL3Table[Process::STACK_L3_INDEX+i].AF = 1;
+		psL3Table[Process::STACK_L3_INDEX+i].Valid = 1;
+		psL3Table[Process::STACK_L3_INDEX+i].nG = 1;
+		psL3Table[Process::STACK_L3_INDEX+i].NS = 1;
+		psL3Table[Process::STACK_L3_INDEX+i].Contiguous=0;
+		psL3Table[Process::STACK_L3_INDEX+i].AP=0b01;//RW, EL0
+		psL3Table[Process::STACK_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(spPhAddr.S0.PA51_48) << (48-12))|(spPhAddr.S0.PA47_12)) + i;
 
 	}
 	auto ramPhAddr=asm_at(reinterpret_cast<uint64_t>(ramBase));
-	for(size_t i=0;i!=Progress::HEAP_L3_ENTRY_NUM;++i)
+	for(size_t i=0;i!=Process::HEAP_L3_ENTRY_NUM;++i)
 	{
-		psL3Table[Progress::HEAP_L3_INDEX + i]={0};
-		psL3Table[Progress::HEAP_L3_INDEX+i].RES1_0 = 1;
-		psL3Table[Progress::HEAP_L3_INDEX+i].AF = 1;
-		psL3Table[Progress::HEAP_L3_INDEX+i].Valid = 1;
-		psL3Table[Progress::HEAP_L3_INDEX+i].nG = 1;
-		psL3Table[Progress::HEAP_L3_INDEX+i].NS = 1;
-		psL3Table[Progress::HEAP_L3_INDEX+i].Contiguous=0;
-		psL3Table[Progress::HEAP_L3_INDEX+i].AP=0b01;//RW, EL0
-		psL3Table[Progress::HEAP_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(ramPhAddr.S0.PA51_48) << (48-12))|(ramPhAddr.S0.PA47_12)) + i;
+		psL3Table[Process::HEAP_L3_INDEX + i]={0};
+		psL3Table[Process::HEAP_L3_INDEX+i].RES1_0 = 1;
+		psL3Table[Process::HEAP_L3_INDEX+i].AF = 1;
+		psL3Table[Process::HEAP_L3_INDEX+i].Valid = 1;
+		psL3Table[Process::HEAP_L3_INDEX+i].nG = 1;
+		psL3Table[Process::HEAP_L3_INDEX+i].NS = 1;
+		psL3Table[Process::HEAP_L3_INDEX+i].Contiguous=0;
+		psL3Table[Process::HEAP_L3_INDEX+i].AP=0b01;//RW, EL0
+		psL3Table[Process::HEAP_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(ramPhAddr.S0.PA51_48) << (48-12))|(ramPhAddr.S0.PA47_12)) + i;
 	}
 
 
@@ -223,7 +223,7 @@ int main()
 	kout << "spVa = " << spVa.addr() << "\n";
 
 //	VirtualAddress ramBaseVa(0,40);
-//	ramBaseVa.index(3,Progress::HEAP_L3_INDEX);
+//	ramBaseVa.index(3,Process::HEAP_L3_INDEX);
 
 	// 进入EL0
 	RegELR_EL1 elr;

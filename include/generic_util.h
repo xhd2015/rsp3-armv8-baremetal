@@ -61,11 +61,12 @@ AS_MACRO uint64_t lowerMaskBits(uint64_t i)
 AS_MACRO uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
 {
 	// clear lowerBound and then clear upperBound
-	return HEX64(ffff,ffff,ffff,ffff) >> lowerBound << (64 - upperBound - 1 + lowerBound);
+	return HEX64(ffff,ffff,ffff,ffff) >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
 }
 
 // no check, set bits[lowerBound,upperBound]=v, others keep unchanged
-AS_MACRO void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+template <class Type,class ValueType>
+AS_MACRO void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
 {
 	// clear middle, and validate v, shift v to proper position, concate i,v together
 	i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
@@ -74,6 +75,16 @@ AS_MACRO uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
 	return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
 }
+template <class Type,class ValueType>
+AS_MACRO void     setBit(Type & i,uint8_t index,ValueType v)
+{
+	setBits(i,index,index,v);
+}
+AS_MACRO uint64_t getBit(uint64_t i,uint8_t index)
+{
+	return getBits(i,index,index);
+}
+
 
 
 

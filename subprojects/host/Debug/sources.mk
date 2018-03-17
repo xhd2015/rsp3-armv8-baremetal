@@ -25,10 +25,10 @@ C_DEPS :=
 SUBDIRS := \
 src/arch/host \
 src/data_structures \
-src/default_impl \
 src/filesystem/fat \
 src \
 src/io \
 src/memory \
+src/schedule \
 src/test \
 

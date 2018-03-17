@@ -8,9 +8,8 @@
 #include <def.h>
 #include <kernel.h>
 #include <arch/common_aarch64/mmu/VirtualAddress.h>
-#include <schedule/KernelArgument.h>
 #include <memory/MemoryManager.h>
-#include <schedule/Progress.h>
+#include <schedule/Process.h>
 #include <io/Output.h>
 #include <new>
 

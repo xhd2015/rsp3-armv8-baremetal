@@ -27,7 +27,7 @@
 								<option id="gnu.cpp.compiler.option.include.paths.637605295" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.2103567766" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.2103567766" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
 								<option id="gnu.cpp.compiler.option.include.files.1990411649" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles">
 									<listOptionValue builtIn="false" value="cxx_macros.h"/>
 								</option>
@@ -37,9 +37,10 @@
 								<option id="gnu.cpp.compiler.option.dialect.flags.668791590" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++14" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.warnings.pedantic.1228560807" name="Pedantic (-pedantic)" superClass="gnu.cpp.compiler.option.warnings.pedantic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="gnu.cpp.compiler.option.warnings.pedantic.error.289703033" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.cpp.compiler.option.warnings.pedantic.error" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="gnu.cpp.compiler.option.warnings.wconversion.884228554" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.cpp.compiler.option.warnings.wconversion" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="gnu.cpp.compiler.option.other.other.881004228" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti $(USER_CXX_FLAGS)" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.optimization.flags.2101375940" superClass="gnu.cpp.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-Og" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.warnings.wconversion.884228554" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.cpp.compiler.option.warnings.wconversion" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.other.other.881004228" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c $(USER_CXX_FLAGS)" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.optimization.flags.2101375940" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.warnings.toerrors.142398252" name="Warnings as errors (-Werror)" superClass="gnu.cpp.compiler.option.warnings.toerrors" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.660027067" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.1181150154" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base">
@@ -49,6 +50,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.base.1291768909" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base.207565382" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base">
+								<option id="gnu.cpp.link.option.flags.1807795350" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="$(USER_LINKER_FLAGS)" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1955325152" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -57,7 +59,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/memory/MemoryManager_host.cpp|src/minimal_crt|src/minimal_cpprt|src/arch/host/util_impl.cpp|src/arch/host/template_init2.cpp|src/arch/host/template_init1.cpp|src/arch/host/main_TestVector.cpp|src/arch/host/main_fat_test.cpp|src/arch/host/global_variables_impl.cpp|src/arch/qemu_virt|src/arch/common_aarch64|src/main.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/user_space|src/MemoryManager_host.cpp|misc|Debug-qemu_virt_reloc_elf|src/printk_qemu_virt.cpp|Debug-qemu_virt|Debug-host|src/arch/qemu_virt/main_test_svc.cpp|src/arch/qemu_virt/main_into_EL0.cpp|src/arch/qemu_virt/main_test_stp.cpp|src/io/SectorReader_host.cpp|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/minimal_crt/stolen_from_libgcc|src/arch/raspi3|Debug-aarch64|src/arch/aarch64|include/arch/aarch64|src/arch/qemu-virt/main.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="src/io/printk_user_space.cpp|src/io/printk_qemu_virt.cpp|src/arch/host/main_debug_mman.cpp|src/main_raspi3.cpp|src/memory/MemoryManager_host.cpp|src/minimal_crt|src/minimal_cpprt|src/arch/host/util_impl.cpp|src/arch/host/template_init2.cpp|src/arch/host/template_init1.cpp|src/arch/host/main_TestVector.cpp|src/arch/host/main_fat_test.cpp|src/arch/host/global_variables_impl.cpp|src/arch/qemu_virt|src/arch/common_aarch64|src/main.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/user_space|src/MemoryManager_host.cpp|misc|Debug-qemu_virt_reloc_elf|src/printk_qemu_virt.cpp|Debug-qemu_virt|Debug-host|src/arch/qemu_virt/main_test_svc.cpp|src/arch/qemu_virt/main_into_EL0.cpp|src/arch/qemu_virt/main_test_stp.cpp|src/io/SectorReader_host.cpp|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/minimal_crt/stolen_from_libgcc|src/arch/raspi3|Debug-aarch64|src/arch/aarch64|include/arch/aarch64|src/arch/qemu-virt/main.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

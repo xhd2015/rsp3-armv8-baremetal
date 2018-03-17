@@ -18,7 +18,8 @@ src/arch/qemu_virt/main_run_user_application.o: \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryChunk.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/mmu/VirtualAddress.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/Progress.h
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/Progress.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/LinkedList.h
 
 cxx_macros.h:
 
@@ -57,3 +58,5 @@ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementat
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/mmu/VirtualAddress.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/Progress.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/LinkedList.h:

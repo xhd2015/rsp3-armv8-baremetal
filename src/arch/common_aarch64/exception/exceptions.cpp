@@ -1,9 +1,5 @@
 #include <arch/common_aarch64/exception/exceptions.h>
-
-#include <arch/common_aarch64/exception/exceptions.h>
-
 #include <arch/common_aarch64/gicv3_registers.h>
-
 #include <def.h>
 #include <IntegerFormatter.h>
 #include <arch/common_aarch64/gicv3_registers.h>
@@ -11,6 +7,8 @@
 #include <arch/common_aarch64/timer_registers.h>
 #include <asm_instructions.h>
 #include <io/Output.h>
+#include <arch/common_aarch64/exception/svc_call.h>
+#include <schedule/PidManager.h>
 
 __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -168,6 +166,7 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 		kout << INFO << "not processing it\n";
 		asm_wfe_loop();
 	}
+
 	else if(esr.EC == ExceptionClass::SVC_AA64)
 	{
 		uint16_t svcNumber = lowerMaskBits(16)&esr.ISS;
@@ -178,6 +177,17 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 			auto len = reinterpret_cast<size_t>(savedRegisters[1]);
 			auto printkChars = kout.print(str, len);
 			savedRegisters[0] = printkChars; // savedResult
+		}else if(svcNumber == SvcFunc::killProcess){
+			kout << "killing Process \n";
+			// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
+			PidType pid = static_cast<PidType>(savedRegisters[0]);
+			int     status = *reinterpret_cast<int*>(savedRegisters+1);
+			(void)status;
+			if(pid == CURRENT_PID)
+			{
+
+			}
+			asm_wfe_loop();
 		}
 	}else if(esr.EC == ExceptionClass::INSTR_ABORT_LOWER_EL){
 		kout << "Instruction Abort \n";

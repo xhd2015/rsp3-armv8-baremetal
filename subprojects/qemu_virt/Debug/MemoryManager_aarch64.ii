@@ -18,7 +18,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
 #define __LP64__ 1
@@ -339,6 +338,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __WCHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
@@ -1546,7 +1546,8 @@ namespace std
 #define AS_MACRO __attribute__((always_inline)) inline
 #define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
 #define NULL_CHAR '\0'
-# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+
+
 #define INFO "[INFO] "
 #define WARNING "[WARNING] "
 #define FATAL "[FATAL] "
@@ -1554,12 +1555,10 @@ namespace std
 
 
 
-# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
 extern const char EMPTY_STR[1];
 
 
-constexpr size_t koutBufSize = 65;
-extern char koutBuf[koutBufSize];
 
 constexpr int UNIT_K=1024;
 constexpr int KiB = UNIT_K;
@@ -1644,11 +1643,12 @@ __attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
 __attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
 {
 
- return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound);
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
 }
 
 
-__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
 {
 
  i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
@@ -1656,6 +1656,15 @@ __attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBo
 __attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
  return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBit(Type & i,uint8_t index,ValueType v)
+{
+ setBits(i,index,index,v);
+}
+__attribute__((always_inline)) inline uint64_t getBit(uint64_t i,uint8_t index)
+{
+ return getBits(i,index,index);
 }
 # 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryChunk.h" 2
 # 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryChunk.h"
@@ -19192,11 +19201,72 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 63 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\algorithm" 2 3
 # 12 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h"
+#define INCLUDE_IO_OUTPUT_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+#define INCLUDE_IO_PRINTK_H_ 
 
 
-# 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp"
+
+
+
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 2
+# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+# 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp" 2
+
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
- :headChunk(reinterpret_cast<MemoryChunk*>(base)),
+ :
+ headChunk(reinterpret_cast<MemoryChunk*>(base)),
   base(reinterpret_cast<const char*>(base)),
   size(size)
 {
@@ -19206,6 +19276,7 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
   reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true);
  }
 }
+
 size_t MemoryManager::normalizeAllocSize(size_t n)
 {
  if(n < MINIMAL_ALLOC_SIZE)

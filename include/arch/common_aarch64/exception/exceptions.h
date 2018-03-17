@@ -23,11 +23,6 @@ enum  ExceptionClass{
 	SMC_AA64 = 0b010111,
 };
 
-// prototype:
-//  size_t    puts(const char *, size_t n=0)
-//  void*     allocateBlock(size_t size,size_t alignment) // 一般用于分配较大的空间，如4KB的页
-enum SvcFunc{ puts, allocateBlock};
-
 
 
 #endif /* INCLUDE_ARCH_COMMON_AARCH64_EXCEPTION_EXCEPTIONS_H_ */

@@ -9,11 +9,12 @@ src/io/ByteReader.o: \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/generic_util.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/Vector.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/printk.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/Output.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/printk.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/printk.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/Vector.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/kernel.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/VectorRef.h \
+ /cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/VectorRef.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/io/ByteReader.h
 
@@ -35,15 +36,17 @@ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementat
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/Vector.h:
 
-D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/printk.h:
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/Output.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/printk.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/printk.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/Vector.h:
 
-D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/kernel.h:
-
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/VectorRef.h:
+
+/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/VectorRef.h:
 

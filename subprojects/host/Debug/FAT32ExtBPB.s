@@ -2,6 +2,20 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
+	.section .rdata,"dr"
+	.align 4
+_ZL6UNIT_K:
+	.long	1024
+	.align 4
+_ZL3KiB:
+	.long	1024
+	.align 4
+_ZL3MiB:
+	.long	1048576
+	.align 4
+_ZL3GiB:
+	.long	1073741824
+	.text
 	.align 2
 	.globl	_ZNK11FAT32ExtBPB14uni_getFatSizeEv
 	.def	_ZNK11FAT32ExtBPB14uni_getFatSizeEv;	.scl	2;	.type	32;	.endef
@@ -11,19 +25,35 @@ _ZNK11FAT32ExtBPB14uni_getFatSizeEv:
 	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FAT32ExtBPB.cpp"
 	.loc 1 11 0
 	.cfi_startproc
-.LVL0:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
 	.loc 1 12 0
-	movzwl	22(%rcx), %eax
+	movq	16(%rbp), %rax
+	movzwl	22(%rax), %eax
 	testw	%ax, %ax
-	je	.L4
-	.loc 1 12 0 is_stmt 0 discriminator 2
+	jne	.L2
+	.loc 1 12 0 is_stmt 0 discriminator 1
+	movq	16(%rbp), %rax
+	movl	36(%rax), %eax
+	movl	%eax, %eax
+	jmp	.L4
+.L2:
+	.loc 1 12 0 discriminator 2
+	movq	16(%rbp), %rax
+	movzwl	22(%rax), %eax
 	movzwl	%ax, %eax
-	.loc 1 13 0 is_stmt 1 discriminator 2
-	ret
 .L4:
-	.loc 1 12 0 discriminator 1
-	movl	36(%rcx), %eax
+	.loc 1 13 0 is_stmt 1 discriminator 5
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE0:
@@ -36,19 +66,35 @@ _ZNK11FAT32ExtBPB20uni_getTotalSecCountEv:
 .LFB1:
 	.loc 1 16 0
 	.cfi_startproc
-.LVL1:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
 	.loc 1 17 0
-	movzwl	19(%rcx), %eax
+	movq	16(%rbp), %rax
+	movzwl	19(%rax), %eax
 	testw	%ax, %ax
-	je	.L8
-	.loc 1 17 0 is_stmt 0 discriminator 2
+	jne	.L6
+	.loc 1 17 0 is_stmt 0 discriminator 1
+	movq	16(%rbp), %rax
+	movl	32(%rax), %eax
+	movl	%eax, %eax
+	jmp	.L8
+.L6:
+	.loc 1 17 0 discriminator 2
+	movq	16(%rbp), %rax
+	movzwl	19(%rax), %eax
 	movzwl	%ax, %eax
-	.loc 1 18 0 is_stmt 1 discriminator 2
-	ret
 .L8:
-	.loc 1 17 0 discriminator 1
-	movl	32(%rcx), %eax
+	.loc 1 18 0 is_stmt 1 discriminator 5
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE1:
@@ -61,7 +107,6 @@ _ZNK11FAT32ExtBPB28uni_getDataRegionSectorCountEv:
 .LFB2:
 	.loc 1 22 0
 	.cfi_startproc
-.LVL2:
 	pushq	%rbp
 	.seh_pushreg	%rbp
 	.cfi_def_cfa_offset 16
@@ -81,41 +126,42 @@ _ZNK11FAT32ExtBPB28uni_getDataRegionSectorCountEv:
 	subq	$40, %rsp
 	.seh_stackalloc	40
 	.cfi_def_cfa_offset 80
+	leaq	128(%rsp), %rbp
+	.seh_setframe	%rbp, 128
+	.cfi_def_cfa 6, -48
 	.seh_endprologue
-	movq	%rcx, %rdi
+	movq	%rcx, -48(%rbp)
 	.loc 1 23 0
+	movq	-48(%rbp), %rcx
 	call	_ZNK11FAT32ExtBPB20uni_getTotalSecCountEv
-.LVL3:
-	movq	%rax, %rbp
-	movzwl	14(%rdi), %esi
-	movzbl	16(%rdi), %ebx
-	movq	%rdi, %rcx
+	movq	%rax, %rdi
+	movq	-48(%rbp), %rax
+	movzwl	14(%rax), %eax
+	movzwl	%ax, %ebx
+	movq	-48(%rbp), %rax
+	movzbl	16(%rax), %eax
+	movzbl	%al, %esi
+	movq	-48(%rbp), %rcx
 	call	_ZNK11FAT32ExtBPB14uni_getFatSizeEv
-.LVL4:
-	imulq	%rax, %rbx
-	addq	%rsi, %rbx
-	movq	%rdi, %rcx
-	call	_ZNK7FAT_BPB22uni_getRootDirSecCountEv
-.LVL5:
+	imulq	%rsi, %rax
 	addq	%rax, %rbx
-	movq	%rbp, %rax
-	subq	%rbx, %rax
+	movq	-48(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNK7FAT_BPB22uni_getRootDirSecCountEv
+	addq	%rbx, %rax
+	subq	%rax, %rdi
+	movq	%rdi, %rax
 	.loc 1 24 0
 	addq	$40, %rsp
-	.cfi_def_cfa_offset 40
 	popq	%rbx
 	.cfi_restore 3
-	.cfi_def_cfa_offset 32
 	popq	%rsi
 	.cfi_restore 4
-	.cfi_def_cfa_offset 24
 	popq	%rdi
 	.cfi_restore 5
-	.cfi_def_cfa_offset 16
-.LVL6:
 	popq	%rbp
 	.cfi_restore 6
-	.cfi_def_cfa_offset 8
+	.cfi_def_cfa 7, -8
 	ret
 	.cfi_endproc
 .LFE2:
@@ -128,29 +174,32 @@ _ZNK11FAT32ExtBPB20uni_getClustersCountEv:
 .LFB3:
 	.loc 1 28 0
 	.cfi_startproc
-.LVL7:
-	pushq	%rbx
-	.seh_pushreg	%rbx
+	pushq	%rbp
+	.seh_pushreg	%rbp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	subq	$32, %rsp
 	.seh_stackalloc	32
-	.cfi_def_cfa_offset 48
 	.seh_endprologue
-	movq	%rcx, %rbx
+	movq	%rcx, 16(%rbp)
 	.loc 1 29 0
+	movq	16(%rbp), %rcx
 	call	_ZNK11FAT32ExtBPB28uni_getDataRegionSectorCountEv
-.LVL8:
-	movzbl	13(%rbx), %ecx
+	movq	%rax, %rcx
+	movq	16(%rbp), %rax
+	movzbl	13(%rax), %eax
+	movzbl	%al, %r8d
+	movq	%rcx, %rax
 	movl	$0, %edx
-	divq	%rcx
+	divq	%r8
 	.loc 1 30 0
 	addq	$32, %rsp
-	.cfi_def_cfa_offset 16
-	popq	%rbx
-	.cfi_restore 3
-	.cfi_def_cfa_offset 8
-.LVL9:
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE3:
@@ -163,23 +212,43 @@ _ZNK11FAT32ExtBPB21getClusterEntryOffsetEmm:
 .LFB4:
 	.loc 1 32 0
 	.cfi_startproc
-.LVL10:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	%rdx, 24(%rbp)
+	movq	%r8, 32(%rbp)
 	.loc 1 33 0
-	movzwl	14(%rcx), %eax
-	movzwl	11(%rcx), %r9d
-	movzwl	%r9w, %r10d
-	imull	%r10d, %eax
-	cltq
-	movl	36(%rcx), %ecx
-.LVL11:
-	imulq	%rcx, %rdx
-.LVL12:
-	movzwl	%r9w, %r9d
-	imulq	%r9, %rdx
-	leaq	(%rdx,%r8,4), %rdx
+	movq	16(%rbp), %rax
+	movzwl	14(%rax), %eax
+	movzwl	%ax, %edx
+	movq	16(%rbp), %rax
+	movzwl	11(%rax), %eax
+	movzwl	%ax, %eax
+	imull	%edx, %eax
+	movslq	%eax, %rdx
+	movq	32(%rbp), %rax
+	leaq	0(,%rax,4), %r8
+	movq	16(%rbp), %rax
+	movl	36(%rax), %eax
+	movl	%eax, %eax
+	imulq	24(%rbp), %rax
+	movq	%rax, %rcx
+	movq	16(%rbp), %rax
+	movzwl	11(%rax), %eax
+	movzwl	%ax, %eax
+	imulq	%rcx, %rax
+	addq	%r8, %rax
 	addq	%rdx, %rax
 	.loc 1 34 0
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE4:
@@ -192,29 +261,47 @@ _ZNK11FAT32ExtBPB21getClusterFirstSectorEm:
 .LFB5:
 	.loc 1 37 0
 	.cfi_startproc
-.LVL13:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	%rdx, 24(%rbp)
 	.loc 1 40 0
-	cmpq	$1, %rdx
-	jbe	.L14
-	.loc 1 43 0
-	movzwl	14(%rcx), %r8d
-	movzbl	16(%rcx), %eax
-	imull	36(%rcx), %eax
-	leal	(%r8,%rax), %eax
-	subq	$2, %rdx
-.LVL14:
-	movzbl	13(%rcx), %ecx
-.LVL15:
-	imulq	%rcx, %rdx
-.LVL16:
-	addq	%rdx, %rax
-	ret
-.LVL17:
-.L14:
+	cmpq	$1, 24(%rbp)
+	ja	.L16
 	.loc 1 41 0
 	movl	$0, %eax
+	jmp	.L17
+.L16:
+	.loc 1 43 0
+	movq	16(%rbp), %rax
+	movzwl	14(%rax), %eax
+	movzwl	%ax, %edx
+	movq	16(%rbp), %rax
+	movzbl	16(%rax), %eax
+	movzbl	%al, %ecx
+	movq	16(%rbp), %rax
+	movl	36(%rax), %eax
+	imull	%ecx, %eax
+	addl	%edx, %eax
+	movl	%eax, %ecx
+	movq	24(%rbp), %rax
+	leaq	-2(%rax), %rdx
+	movq	16(%rbp), %rax
+	movzbl	13(%rax), %eax
+	movzbl	%al, %eax
+	imulq	%rdx, %rax
+	addq	%rcx, %rax
+.L17:
 	.loc 1 44 0
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE5:
@@ -227,18 +314,29 @@ _ZNK11FAT32ExtBPB21getRootDirFirstSectorEv:
 .LFB6:
 	.loc 1 47 0
 	.cfi_startproc
-.LVL18:
-	subq	$40, %rsp
-	.seh_stackalloc	40
-	.cfi_def_cfa_offset 48
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	.seh_stackalloc	32
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
 	.loc 1 48 0
-	movl	44(%rcx), %edx
+	movq	16(%rbp), %rax
+	movl	44(%rax), %eax
+	movl	%eax, %eax
+	movq	%rax, %rdx
+	movq	16(%rbp), %rcx
 	call	_ZNK11FAT32ExtBPB21getClusterFirstSectorEm
-.LVL19:
 	.loc 1 49 0
-	addq	$40, %rsp
-	.cfi_def_cfa_offset 8
+	addq	$32, %rsp
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE6:
@@ -251,42 +349,44 @@ _ZNK11FAT32ExtBPB20uni_determineFATTypeEv:
 .LFB7:
 	.loc 1 52 0
 	.cfi_startproc
-.LVL20:
-	subq	$40, %rsp
-	.seh_stackalloc	40
-	.cfi_def_cfa_offset 48
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
+	subq	$48, %rsp
+	.seh_stackalloc	48
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
 	.loc 1 53 0
+	movq	16(%rbp), %rcx
 	call	_ZNK11FAT32ExtBPB20uni_getClustersCountEv
-.LVL21:
+	movq	%rax, -8(%rbp)
 	.loc 1 54 0
-	cmpq	$4084, %rax
-	jbe	.L18
-	.loc 1 56 0
-	cmpq	$65524, %rax
-	jbe	.L20
-	.loc 1 59 0
-	movl	$2, %eax
-.LVL22:
-.L16:
-	.loc 1 60 0
-	addq	$40, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 8
-	ret
-.LVL23:
-.L20:
-	.cfi_restore_state
-	.loc 1 57 0
-	movl	$1, %eax
-.LVL24:
-	jmp	.L16
-.LVL25:
-.L18:
+	cmpq	$4084, -8(%rbp)
+	ja	.L21
 	.loc 1 55 0
 	movl	$0, %eax
-.LVL26:
-	jmp	.L16
+	jmp	.L22
+.L21:
+	.loc 1 56 0
+	cmpq	$65524, -8(%rbp)
+	ja	.L23
+	.loc 1 57 0
+	movl	$1, %eax
+	jmp	.L22
+.L23:
+	.loc 1 59 0
+	movl	$2, %eax
+.L22:
+	.loc 1 60 0
+	addq	$48, %rsp
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
+	ret
 	.cfi_endproc
 .LFE7:
 	.seh_endproc
@@ -298,10 +398,21 @@ _ZNK11FAT32ExtBPB10getFATTypeEv:
 .LFB8:
 	.loc 1 62 0
 	.cfi_startproc
-.LVL27:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
-	.loc 1 64 0
+	movq	%rcx, 16(%rbp)
+	.loc 1 63 0
 	movl	$2, %eax
+	.loc 1 64 0
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE8:
@@ -314,27 +425,54 @@ _ZNK11FAT32ExtBPB16calculateFATSz32Em:
 .LFB9:
 	.loc 1 66 0
 	.cfi_startproc
-.LVL28:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	.seh_stackalloc	16
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	%rdx, 24(%rbp)
 	.loc 1 67 0
-	movzwl	14(%rcx), %eax
+	movq	16(%rbp), %rax
+	movzwl	14(%rax), %eax
+	movzwl	%ax, %eax
+	movq	24(%rbp), %rdx
 	subq	%rax, %rdx
-.LVL29:
+	movq	%rdx, %rax
+	movq	%rax, -8(%rbp)
 	.loc 1 68 0
-	movzbl	13(%rcx), %eax
+	movq	16(%rbp), %rax
+	movzbl	13(%rax), %eax
+	movzbl	%al, %eax
 	sall	$8, %eax
-	movzbl	16(%rcx), %ecx
-.LVL30:
-	addl	%eax, %ecx
-	sarl	%ecx
-	movslq	%ecx, %rcx
-.LVL31:
+	movl	%eax, %edx
+	movq	16(%rbp), %rax
+	movzbl	16(%rax), %eax
+	movzbl	%al, %eax
+	addl	%edx, %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%edx, %eax
+	sarl	%eax
+	cltq
+	movq	%rax, -16(%rbp)
 	.loc 1 69 0
-	leaq	-1(%rdx,%rcx), %rax
+	movq	-16(%rbp), %rdx
+	movq	-8(%rbp), %rax
+	addq	%rdx, %rax
+	subq	$1, %rax
 	movl	$0, %edx
-.LVL32:
-	divq	%rcx
+	divq	-16(%rbp)
 	.loc 1 70 0
+	addq	$16, %rsp
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE9:
@@ -347,14 +485,28 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 .LFB10:
 	.loc 1 73 0
 	.cfi_startproc
-.LVL33:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
 	.seh_endprologue
+	movq	%rcx, 16(%rbp)
 	.loc 1 74 0
-	movzwl	11(%rcx), %eax
-	movzbl	13(%rcx), %edx
+	movq	16(%rbp), %rax
+	movzwl	11(%rax), %eax
+	movzwl	%ax, %edx
+	movq	16(%rbp), %rax
+	movzbl	13(%rax), %eax
+	movzbl	%al, %eax
 	imull	%edx, %eax
 	cltq
 	.loc 1 75 0
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
 .LFE10:
@@ -370,15 +522,15 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.file 9 "<built-in>"
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x108e
+	.long	0xfa6
 	.word	0x4
 	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.ascii "GNU C++14 6.4.0 -mtune=generic -march=x86-64 -g3 -g3 -O0 -Og -O0 -Og -pedantic-errors -pedantic-errors -std=c++14 -fmessage-length=0 -fmax-errors=20 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti\0"
+	.ascii "GNU C++14 6.4.0 -mtune=generic -march=x86-64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti\0"
 	.byte	0x4
 	.ascii "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FAT32ExtBPB.cpp\0"
-	.ascii "/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subporjects/host/Debug\0"
+	.ascii "/cygdrive/d/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subprojects/host/Debug\0"
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
 	.secrel32	.Ldebug_line0
@@ -391,30 +543,28 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "size_t\0"
 	.byte	0x2
 	.byte	0xd8
-	.long	0x1dc
-	.uleb128 0x4
-	.long	0x1c9
+	.long	0x193
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
 	.ascii "long unsigned int\0"
-	.uleb128 0x5
+	.uleb128 0x4
 	.byte	0x20
 	.byte	0x2
 	.word	0x1aa
 	.ascii "11max_align_t\0"
-	.long	0x239
-	.uleb128 0x6
+	.long	0x1f0
+	.uleb128 0x5
 	.ascii "__max_align_ll\0"
 	.byte	0x2
 	.word	0x1ab
-	.long	0x239
+	.long	0x1f0
 	.byte	0
-	.uleb128 0x6
+	.uleb128 0x5
 	.ascii "__max_align_ld\0"
 	.byte	0x2
 	.word	0x1ac
-	.long	0x24a
+	.long	0x201
 	.byte	0x10
 	.byte	0
 	.uleb128 0x2
@@ -425,140 +575,140 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.byte	0x10
 	.byte	0x4
 	.ascii "long double\0"
-	.uleb128 0x7
+	.uleb128 0x6
 	.ascii "max_align_t\0"
 	.byte	0x2
 	.word	0x1ad
-	.long	0x1f1
-	.uleb128 0x8
+	.long	0x1a8
+	.uleb128 0x7
 	.ascii "decltype(nullptr)\0"
-	.uleb128 0x9
+	.uleb128 0x8
 	.ascii "std\0"
 	.byte	0x9
 	.byte	0
-	.long	0x357
-	.uleb128 0xa
+	.long	0x30e
+	.uleb128 0x9
 	.byte	0x3
 	.byte	0x38
-	.long	0x259
-	.uleb128 0xa
+	.long	0x210
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x30
-	.long	0x357
-	.uleb128 0xa
+	.long	0x30e
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x31
-	.long	0x374
-	.uleb128 0xa
+	.long	0x32b
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x32
-	.long	0x390
-	.uleb128 0xa
+	.long	0x347
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x33
-	.long	0x3ab
-	.uleb128 0xa
+	.long	0x362
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x35
-	.long	0x4da
-	.uleb128 0xa
+	.long	0x491
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x36
-	.long	0x4ed
-	.uleb128 0xa
+	.long	0x4a4
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x37
-	.long	0x501
-	.uleb128 0xa
+	.long	0x4b8
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x38
-	.long	0x515
-	.uleb128 0xa
+	.long	0x4cc
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x3a
-	.long	0x430
-	.uleb128 0xa
+	.long	0x3e7
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x3b
-	.long	0x444
-	.uleb128 0xa
+	.long	0x3fb
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x3c
-	.long	0x459
-	.uleb128 0xa
+	.long	0x410
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x3d
-	.long	0x46e
-	.uleb128 0xa
+	.long	0x425
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x3f
-	.long	0x59d
-	.uleb128 0xa
+	.long	0x554
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x40
-	.long	0x57c
-	.uleb128 0xa
+	.long	0x533
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x42
-	.long	0x3ba
-	.uleb128 0xa
+	.long	0x371
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x43
-	.long	0x3da
-	.uleb128 0xa
+	.long	0x391
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x44
-	.long	0x400
-	.uleb128 0xa
+	.long	0x3b7
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x45
-	.long	0x420
-	.uleb128 0xa
+	.long	0x3d7
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x47
-	.long	0x529
-	.uleb128 0xa
+	.long	0x4e0
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x48
-	.long	0x53d
-	.uleb128 0xa
+	.long	0x4f4
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x49
-	.long	0x552
-	.uleb128 0xa
+	.long	0x509
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4a
-	.long	0x567
-	.uleb128 0xa
+	.long	0x51e
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4c
-	.long	0x483
-	.uleb128 0xa
+	.long	0x43a
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4d
-	.long	0x498
-	.uleb128 0xa
+	.long	0x44f
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4e
-	.long	0x4ae
-	.uleb128 0xa
+	.long	0x465
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x4f
-	.long	0x4c4
-	.uleb128 0xa
+	.long	0x47b
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x51
-	.long	0x5ad
-	.uleb128 0xa
+	.long	0x564
+	.uleb128 0x9
 	.byte	0x4
 	.byte	0x52
-	.long	0x58c
+	.long	0x543
 	.byte	0
 	.uleb128 0x3
 	.ascii "int8_t\0"
 	.byte	0x5
 	.byte	0x22
-	.long	0x365
+	.long	0x31c
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
@@ -567,7 +717,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "int16_t\0"
 	.byte	0x5
 	.byte	0x25
-	.long	0x383
+	.long	0x33a
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x5
@@ -576,23 +726,23 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "int32_t\0"
 	.byte	0x5
 	.byte	0x28
-	.long	0x39f
+	.long	0x356
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
 	.ascii "int\0"
-	.uleb128 0x4
-	.long	0x39f
+	.uleb128 0xa
+	.long	0x356
 	.uleb128 0x3
 	.ascii "int64_t\0"
 	.byte	0x5
 	.byte	0x2b
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "uint8_t\0"
 	.byte	0x5
 	.byte	0x2e
-	.long	0x3c9
+	.long	0x380
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
@@ -601,7 +751,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "uint16_t\0"
 	.byte	0x5
 	.byte	0x31
-	.long	0x3ea
+	.long	0x3a1
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
@@ -610,7 +760,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "uint32_t\0"
 	.byte	0x5
 	.byte	0x34
-	.long	0x410
+	.long	0x3c7
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
@@ -619,116 +769,116 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "uint64_t\0"
 	.byte	0x5
 	.byte	0x37
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "int_least8_t\0"
 	.byte	0x5
 	.byte	0x3c
-	.long	0x365
+	.long	0x31c
 	.uleb128 0x3
 	.ascii "int_least16_t\0"
 	.byte	0x5
 	.byte	0x3d
-	.long	0x383
+	.long	0x33a
 	.uleb128 0x3
 	.ascii "int_least32_t\0"
 	.byte	0x5
 	.byte	0x3e
-	.long	0x39f
+	.long	0x356
 	.uleb128 0x3
 	.ascii "int_least64_t\0"
 	.byte	0x5
 	.byte	0x3f
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "uint_least8_t\0"
 	.byte	0x5
 	.byte	0x40
-	.long	0x3c9
+	.long	0x380
 	.uleb128 0x3
 	.ascii "uint_least16_t\0"
 	.byte	0x5
 	.byte	0x41
-	.long	0x3ea
+	.long	0x3a1
 	.uleb128 0x3
 	.ascii "uint_least32_t\0"
 	.byte	0x5
 	.byte	0x42
-	.long	0x410
+	.long	0x3c7
 	.uleb128 0x3
 	.ascii "uint_least64_t\0"
 	.byte	0x5
 	.byte	0x43
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "int_fast8_t\0"
 	.byte	0x5
 	.byte	0x47
-	.long	0x365
+	.long	0x31c
 	.uleb128 0x3
 	.ascii "int_fast16_t\0"
 	.byte	0x5
 	.byte	0x48
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "int_fast32_t\0"
 	.byte	0x5
 	.byte	0x49
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "int_fast64_t\0"
 	.byte	0x5
 	.byte	0x4a
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "uint_fast8_t\0"
 	.byte	0x5
 	.byte	0x4b
-	.long	0x3c9
+	.long	0x380
 	.uleb128 0x3
 	.ascii "uint_fast16_t\0"
 	.byte	0x5
 	.byte	0x4c
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "uint_fast32_t\0"
 	.byte	0x5
 	.byte	0x4d
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "uint_fast64_t\0"
 	.byte	0x5
 	.byte	0x4e
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "intptr_t\0"
 	.byte	0x5
 	.byte	0x53
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "uintptr_t\0"
 	.byte	0x5
 	.byte	0x56
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0x3
 	.ascii "intmax_t\0"
 	.byte	0x5
 	.byte	0x5b
-	.long	0x1bd
+	.long	0x179
 	.uleb128 0x3
 	.ascii "uintmax_t\0"
 	.byte	0x5
 	.byte	0x5c
-	.long	0x1dc
+	.long	0x193
 	.uleb128 0xb
-	.long	0x5e7
-	.long	0x5ce
+	.long	0x59e
+	.long	0x585
 	.uleb128 0xc
-	.long	0x5d3
+	.long	0x58a
 	.byte	0
 	.byte	0
-	.uleb128 0x4
-	.long	0x5be
+	.uleb128 0xa
+	.long	0x575
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
@@ -737,792 +887,748 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.byte	0x1
 	.byte	0x6
 	.ascii "char\0"
-	.uleb128 0x4
-	.long	0x5df
+	.uleb128 0xa
+	.long	0x596
 	.uleb128 0xd
 	.ascii "EMPTY_STR\0"
 	.byte	0x6
-	.byte	0x1c
-	.long	0x5ce
+	.byte	0x16
+	.long	0x585
 	.uleb128 0xe
-	.ascii "koutBufSize\0"
-	.byte	0x6
-	.byte	0x1f
-	.long	0x1d7
-	.byte	0x41
-	.uleb128 0xb
-	.long	0x5df
-	.long	0x621
-	.uleb128 0xc
-	.long	0x5d3
-	.byte	0x40
-	.byte	0
-	.uleb128 0xd
-	.ascii "koutBuf\0"
-	.byte	0x6
-	.byte	0x20
-	.long	0x611
-	.uleb128 0xf
 	.ascii "UNIT_K\0"
 	.byte	0x6
-	.byte	0x22
-	.long	0x3a6
-	.word	0x400
-	.uleb128 0xf
+	.byte	0x1a
+	.long	0x35d
+	.uleb128 0x9
+	.byte	0x3
+	.quad	_ZL6UNIT_K
+	.uleb128 0xe
 	.ascii "KiB\0"
 	.byte	0x6
-	.byte	0x23
-	.long	0x3a6
-	.word	0x400
-	.uleb128 0x10
+	.byte	0x1b
+	.long	0x35d
+	.uleb128 0x9
+	.byte	0x3
+	.quad	_ZL3KiB
+	.uleb128 0xe
 	.ascii "MiB\0"
 	.byte	0x6
-	.byte	0x24
-	.long	0x3a6
-	.long	0x100000
-	.uleb128 0x10
+	.byte	0x1c
+	.long	0x35d
+	.uleb128 0x9
+	.byte	0x3
+	.quad	_ZL3MiB
+	.uleb128 0xe
 	.ascii "GiB\0"
 	.byte	0x6
-	.byte	0x25
-	.long	0x3a6
-	.long	0x40000000
-	.uleb128 0x11
+	.byte	0x1d
+	.long	0x35d
+	.uleb128 0x9
+	.byte	0x3
+	.quad	_ZL3GiB
+	.uleb128 0xf
 	.ascii "FAT_BPB\0"
 	.byte	0x24
 	.byte	0x7
 	.byte	0x19
-	.long	0x83d
-	.uleb128 0x12
+	.long	0x7dd
+	.uleb128 0x10
 	.ascii "FATType\0"
 	.byte	0x4
-	.long	0x410
+	.long	0x3c7
 	.byte	0x7
 	.byte	0x1b
 	.byte	0x1
-	.long	0x6b3
-	.uleb128 0x13
+	.long	0x653
+	.uleb128 0x11
 	.ascii "FAT12\0"
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x11
 	.ascii "FAT16\0"
 	.byte	0x1
-	.uleb128 0x13
+	.uleb128 0x11
 	.ascii "FAT32\0"
 	.byte	0x2
-	.uleb128 0x13
+	.uleb128 0x11
 	.ascii "UNKNOWN\0"
 	.byte	0x3
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_jmpBoot\0"
 	.byte	0x7
 	.byte	0x25
-	.long	0x842
+	.long	0x7e2
 	.byte	0
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_OEMName\0"
 	.byte	0x7
 	.byte	0x28
-	.long	0x852
+	.long	0x7f2
 	.byte	0x3
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "bytesPerSec\0"
 	.byte	0x7
 	.byte	0x2b
-	.long	0x3da
+	.long	0x391
 	.byte	0xb
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "secPerClus\0"
 	.byte	0x7
 	.byte	0x2e
-	.long	0x3ba
+	.long	0x371
 	.byte	0xd
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "rsvdSecCnt\0"
 	.byte	0x7
 	.byte	0x31
-	.long	0x3da
+	.long	0x391
 	.byte	0xe
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "numFATs\0"
 	.byte	0x7
 	.byte	0x34
-	.long	0x3ba
+	.long	0x371
 	.byte	0x10
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "rootEntCnt\0"
 	.byte	0x7
 	.byte	0x38
-	.long	0x3da
+	.long	0x391
 	.byte	0x11
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "totSec16\0"
 	.byte	0x7
 	.byte	0x3c
-	.long	0x3da
+	.long	0x391
 	.byte	0x13
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "media\0"
 	.byte	0x7
 	.byte	0x40
-	.long	0x3ba
+	.long	0x371
 	.byte	0x15
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "FATSz16\0"
 	.byte	0x7
 	.byte	0x44
-	.long	0x3da
+	.long	0x391
 	.byte	0x16
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "secPerTrk\0"
 	.byte	0x7
 	.byte	0x47
-	.long	0x3da
+	.long	0x391
 	.byte	0x18
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "numHeads\0"
 	.byte	0x7
 	.byte	0x4a
-	.long	0x3da
+	.long	0x391
 	.byte	0x1a
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "hiddSec\0"
 	.byte	0x7
 	.byte	0x4d
-	.long	0x400
+	.long	0x3b7
 	.byte	0x1c
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "totSec32\0"
 	.byte	0x7
 	.byte	0x51
-	.long	0x400
+	.long	0x3b7
 	.byte	0x20
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_getRootDirSecCount\0"
 	.byte	0x7
 	.byte	0x53
 	.ascii "_ZNK7FAT_BPB22uni_getRootDirSecCountEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0x805
-	.long	0x80b
-	.uleb128 0x16
-	.long	0x862
+	.long	0x7a5
+	.long	0x7ab
+	.uleb128 0x14
+	.long	0x802
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x15
 	.secrel32	.LASF0
 	.byte	0x7
 	.byte	0x54
 	.ascii "_ZNK7FAT_BPB10getFATTypeEv\0"
-	.long	0x67b
+	.long	0x61b
 	.byte	0x1
-	.long	0x836
-	.uleb128 0x16
-	.long	0x862
+	.long	0x7d6
+	.uleb128 0x14
+	.long	0x802
 	.byte	0
 	.byte	0
-	.uleb128 0x4
-	.long	0x66b
+	.uleb128 0xa
+	.long	0x60b
 	.uleb128 0xb
-	.long	0x3ba
-	.long	0x852
+	.long	0x371
+	.long	0x7f2
 	.uleb128 0xc
-	.long	0x5d3
+	.long	0x58a
 	.byte	0x2
 	.byte	0
 	.uleb128 0xb
-	.long	0x5df
-	.long	0x862
+	.long	0x596
+	.long	0x802
 	.uleb128 0xc
-	.long	0x5d3
+	.long	0x58a
 	.byte	0x7
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x16
 	.byte	0x8
-	.long	0x83d
-	.uleb128 0x19
+	.long	0x7dd
+	.uleb128 0x17
 	.ascii "FAT32ExtBPB\0"
 	.word	0x200
 	.byte	0x8
 	.byte	0x11
-	.long	0xd3d
-	.uleb128 0x1a
-	.long	0x66b
+	.long	0xcdd
+	.uleb128 0x18
+	.long	0x60b
 	.byte	0
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "FATSz32\0"
 	.byte	0x8
 	.byte	0x18
-	.long	0x400
+	.long	0x3b7
 	.byte	0x24
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "extFlags\0"
 	.byte	0x8
 	.byte	0x1e
-	.long	0x3da
+	.long	0x391
 	.byte	0x28
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "FSVer\0"
 	.byte	0x8
 	.byte	0x21
-	.long	0x3da
+	.long	0x391
 	.byte	0x2a
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "rootClus\0"
 	.byte	0x8
 	.byte	0x25
-	.long	0x400
+	.long	0x3b7
 	.byte	0x2c
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "FSInfo\0"
 	.byte	0x8
 	.byte	0x29
-	.long	0x3da
+	.long	0x391
 	.byte	0x30
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "bkBootSe\0"
 	.byte	0x8
 	.byte	0x2c
-	.long	0x3da
+	.long	0x391
 	.byte	0x32
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "reserved\0"
 	.byte	0x8
 	.byte	0x30
-	.long	0xd42
+	.long	0xce2
 	.byte	0x34
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_DrvNum\0"
 	.byte	0x8
 	.byte	0x34
-	.long	0x3ba
+	.long	0x371
 	.byte	0x40
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_Reserved1\0"
 	.byte	0x8
 	.byte	0x38
-	.long	0x3ba
+	.long	0x371
 	.byte	0x41
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_BootSig\0"
 	.byte	0x8
 	.byte	0x3c
-	.long	0x3ba
+	.long	0x371
 	.byte	0x42
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_VolID\0"
 	.byte	0x8
 	.byte	0x3d
-	.long	0x400
+	.long	0x3b7
 	.byte	0x43
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_VolLab\0"
 	.byte	0x8
 	.byte	0x3e
-	.long	0xd52
+	.long	0xcf2
 	.byte	0x47
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "BS_FilSysType\0"
 	.byte	0x8
 	.byte	0x42
-	.long	0x852
+	.long	0x7f2
 	.byte	0x52
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x12
 	.ascii "undefined\0"
 	.byte	0x8
 	.byte	0x45
-	.long	0xd62
+	.long	0xd02
 	.byte	0x5a
 	.byte	0x1
-	.uleb128 0x1b
+	.uleb128 0x19
 	.ascii "Signature_word\0"
 	.byte	0x8
 	.byte	0x48
-	.long	0x3da
+	.long	0x391
 	.word	0x1fe
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_getFatSize\0"
 	.byte	0x8
 	.byte	0x4a
 	.ascii "_ZNK11FAT32ExtBPB14uni_getFatSizeEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0x9e4
-	.long	0x9ea
-	.uleb128 0x16
-	.long	0xd73
+	.long	0x984
+	.long	0x98a
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_getTotalSecCount\0"
 	.byte	0x8
 	.byte	0x4c
 	.ascii "_ZNK11FAT32ExtBPB20uni_getTotalSecCountEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xa39
-	.long	0xa3f
-	.uleb128 0x16
-	.long	0xd73
+	.long	0x9d9
+	.long	0x9df
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_getDataRegionSectorCount\0"
 	.byte	0x8
 	.byte	0x4e
 	.ascii "_ZNK11FAT32ExtBPB28uni_getDataRegionSectorCountEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xa9e
-	.long	0xaa4
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xa3e
+	.long	0xa44
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_getClustersCount\0"
 	.byte	0x8
 	.byte	0x50
 	.ascii "_ZNK11FAT32ExtBPB20uni_getClustersCountEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xaf3
-	.long	0xaf9
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xa93
+	.long	0xa99
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "getClusterEntryOffset\0"
 	.byte	0x8
 	.byte	0x53
 	.ascii "_ZNK11FAT32ExtBPB21getClusterEntryOffsetEmm\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xb4b
-	.long	0xb5b
-	.uleb128 0x16
-	.long	0xd73
-	.uleb128 0x1c
-	.long	0x1c9
-	.uleb128 0x1c
-	.long	0x1c9
+	.long	0xaeb
+	.long	0xafb
+	.uleb128 0x14
+	.long	0xd13
+	.uleb128 0x1a
+	.long	0x185
+	.uleb128 0x1a
+	.long	0x185
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "getClusterFirstSector\0"
 	.byte	0x8
 	.byte	0x54
 	.ascii "_ZNK11FAT32ExtBPB21getClusterFirstSectorEm\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xbac
-	.long	0xbb7
-	.uleb128 0x16
-	.long	0xd73
-	.uleb128 0x1c
-	.long	0x1c9
+	.long	0xb4c
+	.long	0xb57
+	.uleb128 0x14
+	.long	0xd13
+	.uleb128 0x1a
+	.long	0x185
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "getRootDirFirstSector\0"
 	.byte	0x8
 	.byte	0x56
 	.ascii "_ZNK11FAT32ExtBPB21getRootDirFirstSectorEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xc08
-	.long	0xc0e
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xba8
+	.long	0xbae
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "uni_determineFATType\0"
 	.byte	0x8
 	.byte	0x58
 	.ascii "_ZNK11FAT32ExtBPB20uni_determineFATTypeEv\0"
-	.long	0x67b
+	.long	0x61b
 	.byte	0x1
-	.long	0xc5d
-	.long	0xc63
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xbfd
+	.long	0xc03
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.secrel32	.LASF0
 	.byte	0x8
 	.byte	0x59
 	.ascii "_ZNK11FAT32ExtBPB10getFATTypeEv\0"
-	.long	0x67b
+	.long	0x61b
 	.byte	0x1
-	.long	0xc97
-	.long	0xc9d
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xc37
+	.long	0xc3d
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.ascii "calculateFATSz32\0"
 	.byte	0x8
 	.byte	0x5a
 	.ascii "_ZNK11FAT32ExtBPB16calculateFATSz32Em\0"
-	.long	0x400
+	.long	0x3b7
 	.byte	0x1
-	.long	0xce4
-	.long	0xcef
-	.uleb128 0x16
-	.long	0xd73
-	.uleb128 0x1c
-	.long	0x1c9
+	.long	0xc84
+	.long	0xc8f
+	.uleb128 0x14
+	.long	0xd13
+	.uleb128 0x1a
+	.long	0x185
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x1c
 	.ascii "getClusterByteSize\0"
 	.byte	0x8
 	.byte	0x5c
 	.ascii "_ZNK11FAT32ExtBPB18getClusterByteSizeEv\0"
-	.long	0x1c9
+	.long	0x185
 	.byte	0x1
-	.long	0xd36
-	.uleb128 0x16
-	.long	0xd73
+	.long	0xcd6
+	.uleb128 0x14
+	.long	0xd13
 	.byte	0
 	.byte	0
-	.uleb128 0x4
-	.long	0x868
+	.uleb128 0xa
+	.long	0x808
 	.uleb128 0xb
-	.long	0x3ba
-	.long	0xd52
+	.long	0x371
+	.long	0xcf2
 	.uleb128 0xc
-	.long	0x5d3
+	.long	0x58a
 	.byte	0xb
 	.byte	0
 	.uleb128 0xb
-	.long	0x5df
-	.long	0xd62
+	.long	0x596
+	.long	0xd02
 	.uleb128 0xc
-	.long	0x5d3
+	.long	0x58a
 	.byte	0xa
 	.byte	0
 	.uleb128 0xb
-	.long	0x3ba
-	.long	0xd73
-	.uleb128 0x1f
-	.long	0x5d3
+	.long	0x371
+	.long	0xd13
+	.uleb128 0x1d
+	.long	0x58a
 	.word	0x1a3
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x16
 	.byte	0x8
-	.long	0xd3d
-	.uleb128 0x4
-	.long	0xd73
-	.uleb128 0x20
-	.long	0xcef
+	.long	0xcdd
+	.uleb128 0xa
+	.long	0xd13
+	.uleb128 0x1e
+	.long	0xc8f
 	.byte	0x1
 	.byte	0x48
-	.long	0xda3
+	.long	0xd43
 	.quad	.LFB10
 	.quad	.LFE10-.LFB10
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xda3
-	.long	0xdaf
-	.uleb128 0x21
+	.long	0xd43
+	.long	0xd50
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
 	.byte	0
-	.uleb128 0x20
-	.long	0xc9d
+	.uleb128 0x1e
+	.long	0xc3d
 	.byte	0x1
 	.byte	0x41
-	.long	0xdd4
+	.long	0xd75
 	.quad	.LFB9
 	.quad	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xdd4
-	.long	0xe14
-	.uleb128 0x22
+	.long	0xd75
+	.long	0xdb3
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST9
-	.uleb128 0x23
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x20
 	.ascii "diskSize\0"
 	.byte	0x1
 	.byte	0x41
-	.long	0x1c9
-	.secrel32	.LLST10
-	.uleb128 0x24
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 8
+	.uleb128 0xe
 	.ascii "tmp1\0"
 	.byte	0x1
 	.byte	0x43
-	.long	0x1c9
-	.secrel32	.LLST11
-	.uleb128 0x25
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0xe
 	.ascii "tmp2\0"
 	.byte	0x1
 	.byte	0x44
-	.long	0x1c9
-	.uleb128 0x1
-	.byte	0x52
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
 	.byte	0
-	.uleb128 0x20
-	.long	0xc63
+	.uleb128 0x1e
+	.long	0xc03
 	.byte	0x1
 	.byte	0x3d
-	.long	0xe39
+	.long	0xdd8
 	.quad	.LFB8
 	.quad	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xe39
-	.long	0xe45
-	.uleb128 0x21
+	.long	0xdd8
+	.long	0xde5
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
 	.byte	0
-	.uleb128 0x20
-	.long	0xc0e
+	.uleb128 0x21
+	.long	0xbae
 	.byte	0x1
 	.byte	0x33
-	.long	0xe6a
+	.long	0xe0a
 	.quad	.LFB7
 	.quad	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xe6a
-	.long	0xe9e
-	.uleb128 0x22
+	.long	0xe0a
+	.long	0xe27
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST7
-	.uleb128 0x24
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0xe
 	.ascii "count\0"
 	.byte	0x1
 	.byte	0x35
-	.long	0x1c9
-	.secrel32	.LLST8
-	.uleb128 0x26
-	.quad	.LVL21
-	.long	0xf75
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x3
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
 	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.long	0xbb7
+	.uleb128 0x21
+	.long	0xb57
 	.byte	0x1
 	.byte	0x2e
-	.long	0xec3
+	.long	0xe4c
 	.quad	.LFB6
 	.quad	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xec3
-	.long	0xee6
-	.uleb128 0x22
+	.long	0xe4c
+	.long	0xe59
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST6
-	.uleb128 0x26
-	.quad	.LVL19
-	.long	0xee6
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x3
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
 	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.long	0xb5b
+	.uleb128 0x1e
+	.long	0xafb
 	.byte	0x1
 	.byte	0x24
-	.long	0xf0b
+	.long	0xe7e
 	.quad	.LFB5
 	.quad	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xf0b
-	.long	0xf26
-	.uleb128 0x22
+	.long	0xe7e
+	.long	0xe97
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST4
-	.uleb128 0x23
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x20
 	.ascii "n\0"
 	.byte	0x1
 	.byte	0x24
-	.long	0x1c9
-	.secrel32	.LLST5
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 8
 	.byte	0
-	.uleb128 0x20
-	.long	0xaf9
+	.uleb128 0x1e
+	.long	0xa99
 	.byte	0x1
 	.byte	0x1f
-	.long	0xf4b
+	.long	0xebc
 	.quad	.LFB4
 	.quad	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xf4b
-	.long	0xf75
-	.uleb128 0x22
+	.long	0xebc
+	.long	0xee5
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST2
-	.uleb128 0x23
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x20
 	.ascii "fatNo\0"
 	.byte	0x1
 	.byte	0x1f
-	.long	0x1c9
-	.secrel32	.LLST3
-	.uleb128 0x28
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 8
+	.uleb128 0x20
 	.ascii "n\0"
 	.byte	0x1
 	.byte	0x1f
-	.long	0x1c9
-	.uleb128 0x1
-	.byte	0x58
+	.long	0x185
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 16
 	.byte	0
-	.uleb128 0x20
-	.long	0xaa4
+	.uleb128 0x21
+	.long	0xa44
 	.byte	0x1
 	.byte	0x1b
-	.long	0xf9a
+	.long	0xf0a
 	.quad	.LFB3
 	.quad	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xf9a
-	.long	0xfbc
-	.uleb128 0x22
+	.long	0xf0a
+	.long	0xf17
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST1
-	.uleb128 0x26
-	.quad	.LVL8
-	.long	0xfbc
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
 	.uleb128 0x2
-	.byte	0x73
+	.byte	0x91
 	.sleb128 0
 	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.long	0xa3f
+	.uleb128 0x21
+	.long	0x9df
 	.byte	0x1
 	.byte	0x15
-	.long	0xfe1
+	.long	0xf3c
 	.quad	.LFB2
 	.quad	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0xfe1
-	.long	0x1033
-	.uleb128 0x22
+	.long	0xf3c
+	.long	0xf49
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.secrel32	.LLST0
-	.uleb128 0x29
-	.quad	.LVL3
-	.long	0x1033
-	.long	0x1006
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
 	.uleb128 0x2
-	.byte	0x75
+	.byte	0x91
 	.sleb128 0
 	.byte	0
-	.uleb128 0x29
-	.quad	.LVL4
-	.long	0x1064
-	.long	0x101e
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x2
-	.byte	0x75
-	.sleb128 0
-	.byte	0
-	.uleb128 0x26
-	.quad	.LVL5
-	.long	0x7b7
-	.uleb128 0x27
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x2
-	.byte	0x75
-	.sleb128 0
-	.byte	0
-	.byte	0
-	.uleb128 0x20
-	.long	0x9ea
+	.uleb128 0x1e
+	.long	0x98a
 	.byte	0x1
 	.byte	0xf
-	.long	0x1058
+	.long	0xf6e
 	.quad	.LFB1
 	.quad	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1058
-	.long	0x1064
-	.uleb128 0x21
+	.long	0xf6e
+	.long	0xf7b
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
 	.byte	0
-	.uleb128 0x2a
-	.long	0x9a1
+	.uleb128 0x22
+	.long	0x941
 	.byte	0x1
 	.byte	0xa
-	.long	0x1085
+	.long	0xf9c
 	.quad	.LFB0
 	.quad	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1085
-	.uleb128 0x21
+	.long	0xf9c
+	.uleb128 0x1f
 	.secrel32	.LASF1
-	.long	0xd79
-	.uleb128 0x1
-	.byte	0x52
+	.long	0xd19
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"dr"
@@ -1573,13 +1679,6 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.byte	0
 	.byte	0
 	.uleb128 0x4
-	.uleb128 0x26
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x5
 	.uleb128 0x13
 	.byte	0x1
 	.uleb128 0xb
@@ -1594,7 +1693,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x6
+	.uleb128 0x5
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1609,7 +1708,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x7
+	.uleb128 0x6
 	.uleb128 0x16
 	.byte	0
 	.uleb128 0x3
@@ -1622,14 +1721,14 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x8
+	.uleb128 0x7
 	.uleb128 0x3b
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x8
 	.uleb128 0x39
 	.byte	0x1
 	.uleb128 0x3
@@ -1642,7 +1741,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0x9
 	.uleb128 0x8
 	.byte	0
 	.uleb128 0x3a
@@ -1650,6 +1749,13 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x3b
 	.uleb128 0xb
 	.uleb128 0x18
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0xa
+	.uleb128 0x26
+	.byte	0
+	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
@@ -1699,41 +1805,11 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0xf
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x10
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x11
 	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x3
@@ -1748,7 +1824,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x10
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x3
@@ -1767,7 +1843,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x11
 	.uleb128 0x28
 	.byte	0
 	.uleb128 0x3
@@ -1776,7 +1852,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x12
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1791,6 +1867,40 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.uleb128 0x32
 	.uleb128 0xb
+	.byte	0
+	.byte	0
+	.uleb128 0x13
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x6e
+	.uleb128 0x8
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x32
+	.uleb128 0xb
+	.uleb128 0x3c
+	.uleb128 0x19
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x14
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x34
+	.uleb128 0x19
 	.byte	0
 	.byte	0
 	.uleb128 0x15
@@ -1799,40 +1909,6 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x3f
 	.uleb128 0x19
 	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x6e
-	.uleb128 0x8
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x32
-	.uleb128 0xb
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x16
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x34
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x17
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
@@ -1850,7 +1926,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x16
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -1859,7 +1935,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x17
 	.uleb128 0x2
 	.byte	0x1
 	.uleb128 0x3
@@ -1874,7 +1950,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x18
 	.uleb128 0x1c
 	.byte	0
 	.uleb128 0x49
@@ -1885,7 +1961,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
+	.uleb128 0x19
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1902,14 +1978,14 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x1c
+	.uleb128 0x1a
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1934,7 +2010,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x1c
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1957,7 +2033,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x1d
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -1966,7 +2042,7 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x5
 	.byte	0
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x1e
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -1989,124 +2065,62 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x34
+	.uleb128 0x19
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x21
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x49
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
 	.uleb128 0x13
-	.uleb128 0x34
-	.uleb128 0x19
-	.uleb128 0x2
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
 	.uleb128 0x18
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x22
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x34
-	.uleb128 0x19
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x23
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x24
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x25
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x26
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x27
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x2111
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x28
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x29
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -2130,210 +2144,6 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_loc,"dr"
-.Ldebug_loc0:
-.LLST9:
-	.quad	.LVL28-.Ltext0
-	.quad	.LVL30-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL30-.Ltext0
-	.quad	.LFE9-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST10:
-	.quad	.LVL28-.Ltext0
-	.quad	.LVL29-.Ltext0
-	.word	0x1
-	.byte	0x51
-	.quad	.LVL29-.Ltext0
-	.quad	.LFE9-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST11:
-	.quad	.LVL29-.Ltext0
-	.quad	.LVL32-.Ltext0
-	.word	0x1
-	.byte	0x51
-	.quad	.LVL32-.Ltext0
-	.quad	.LFE9-.Ltext0
-	.word	0x10
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x23
-	.uleb128 0xe
-	.byte	0x94
-	.byte	0x2
-	.byte	0xa
-	.word	0xffff
-	.byte	0x1a
-	.byte	0x1c
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST7:
-	.quad	.LVL20-.Ltext0
-	.quad	.LVL21-1-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL21-1-.Ltext0
-	.quad	.LFE7-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST8:
-	.quad	.LVL21-.Ltext0
-	.quad	.LVL22-.Ltext0
-	.word	0x1
-	.byte	0x50
-	.quad	.LVL23-.Ltext0
-	.quad	.LVL24-.Ltext0
-	.word	0x1
-	.byte	0x50
-	.quad	.LVL25-.Ltext0
-	.quad	.LVL26-.Ltext0
-	.word	0x1
-	.byte	0x50
-	.quad	0
-	.quad	0
-.LLST6:
-	.quad	.LVL18-.Ltext0
-	.quad	.LVL19-1-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL19-1-.Ltext0
-	.quad	.LFE6-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST4:
-	.quad	.LVL13-.Ltext0
-	.quad	.LVL15-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL15-.Ltext0
-	.quad	.LVL17-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	.LVL17-.Ltext0
-	.quad	.LFE5-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	0
-	.quad	0
-.LLST5:
-	.quad	.LVL13-.Ltext0
-	.quad	.LVL14-.Ltext0
-	.word	0x1
-	.byte	0x51
-	.quad	.LVL14-.Ltext0
-	.quad	.LVL16-.Ltext0
-	.word	0x3
-	.byte	0x71
-	.sleb128 2
-	.byte	0x9f
-	.quad	.LVL16-.Ltext0
-	.quad	.LVL17-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.quad	.LVL17-.Ltext0
-	.quad	.LFE5-.Ltext0
-	.word	0x1
-	.byte	0x51
-	.quad	0
-	.quad	0
-.LLST2:
-	.quad	.LVL10-.Ltext0
-	.quad	.LVL11-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL11-.Ltext0
-	.quad	.LFE4-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST3:
-	.quad	.LVL10-.Ltext0
-	.quad	.LVL12-.Ltext0
-	.word	0x1
-	.byte	0x51
-	.quad	.LVL12-.Ltext0
-	.quad	.LFE4-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST1:
-	.quad	.LVL7-.Ltext0
-	.quad	.LVL8-1-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL8-1-.Ltext0
-	.quad	.LVL9-.Ltext0
-	.word	0x1
-	.byte	0x53
-	.quad	.LVL9-.Ltext0
-	.quad	.LFE3-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
-.LLST0:
-	.quad	.LVL2-.Ltext0
-	.quad	.LVL3-1-.Ltext0
-	.word	0x1
-	.byte	0x52
-	.quad	.LVL3-1-.Ltext0
-	.quad	.LVL6-.Ltext0
-	.word	0x1
-	.byte	0x55
-	.quad	.LVL6-.Ltext0
-	.quad	.LFE2-.Ltext0
-	.word	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.quad	0
-	.quad	0
 	.section	.debug_aranges,"dr"
 	.long	0x2c
 	.word	0x2
@@ -2407,640 +2217,640 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.ascii "__PIC__ 1\0"
 	.byte	0x1
 	.uleb128 0x12
-	.ascii "__OPTIMIZE__ 1\0"
-	.byte	0x1
-	.uleb128 0x13
 	.ascii "__FINITE_MATH_ONLY__ 0\0"
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x13
 	.ascii "_LP64 1\0"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x14
 	.ascii "__LP64__ 1\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x15
 	.ascii "__SIZEOF_INT__ 4\0"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x16
 	.ascii "__SIZEOF_LONG__ 8\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x17
 	.ascii "__SIZEOF_LONG_LONG__ 8\0"
 	.byte	0x1
-	.uleb128 0x19
+	.uleb128 0x18
 	.ascii "__SIZEOF_SHORT__ 2\0"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x19
 	.ascii "__SIZEOF_FLOAT__ 4\0"
 	.byte	0x1
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.ascii "__SIZEOF_DOUBLE__ 8\0"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.ascii "__SIZEOF_LONG_DOUBLE__ 16\0"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.ascii "__SIZEOF_SIZE_T__ 8\0"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1d
 	.ascii "__CHAR_BIT__ 8\0"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x1e
 	.ascii "__BIGGEST_ALIGNMENT__ 16\0"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x1f
 	.ascii "__ORDER_LITTLE_ENDIAN__ 1234\0"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x20
 	.ascii "__ORDER_BIG_ENDIAN__ 4321\0"
 	.byte	0x1
-	.uleb128 0x22
+	.uleb128 0x21
 	.ascii "__ORDER_PDP_ENDIAN__ 3412\0"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x22
 	.ascii "__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x23
 	.ascii "__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\0"
 	.byte	0x1
-	.uleb128 0x25
+	.uleb128 0x24
 	.ascii "__SIZEOF_POINTER__ 8\0"
 	.byte	0x1
-	.uleb128 0x26
+	.uleb128 0x25
 	.ascii "__GNUG__ 6\0"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x26
 	.ascii "__SIZE_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x27
 	.ascii "__PTRDIFF_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x28
 	.ascii "__WCHAR_TYPE__ short unsigned int\0"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x29
 	.ascii "__WINT_TYPE__ unsigned int\0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x2a
 	.ascii "__INTMAX_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x2b
 	.ascii "__UINTMAX_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x2d
+	.uleb128 0x2c
 	.ascii "__CHAR16_TYPE__ short unsigned int\0"
 	.byte	0x1
-	.uleb128 0x2e
+	.uleb128 0x2d
 	.ascii "__CHAR32_TYPE__ unsigned int\0"
 	.byte	0x1
-	.uleb128 0x2f
+	.uleb128 0x2e
 	.ascii "__SIG_ATOMIC_TYPE__ int\0"
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x2f
 	.ascii "__INT8_TYPE__ signed char\0"
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x30
 	.ascii "__INT16_TYPE__ short int\0"
 	.byte	0x1
-	.uleb128 0x32
+	.uleb128 0x31
 	.ascii "__INT32_TYPE__ int\0"
 	.byte	0x1
-	.uleb128 0x33
+	.uleb128 0x32
 	.ascii "__INT64_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x34
+	.uleb128 0x33
 	.ascii "__UINT8_TYPE__ unsigned char\0"
 	.byte	0x1
-	.uleb128 0x35
+	.uleb128 0x34
 	.ascii "__UINT16_TYPE__ short unsigned int\0"
 	.byte	0x1
-	.uleb128 0x36
+	.uleb128 0x35
 	.ascii "__UINT32_TYPE__ unsigned int\0"
 	.byte	0x1
-	.uleb128 0x37
+	.uleb128 0x36
 	.ascii "__UINT64_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x38
+	.uleb128 0x37
 	.ascii "__INT_LEAST8_TYPE__ signed char\0"
 	.byte	0x1
-	.uleb128 0x39
+	.uleb128 0x38
 	.ascii "__INT_LEAST16_TYPE__ short int\0"
 	.byte	0x1
-	.uleb128 0x3a
+	.uleb128 0x39
 	.ascii "__INT_LEAST32_TYPE__ int\0"
 	.byte	0x1
-	.uleb128 0x3b
+	.uleb128 0x3a
 	.ascii "__INT_LEAST64_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x3c
+	.uleb128 0x3b
 	.ascii "__UINT_LEAST8_TYPE__ unsigned char\0"
 	.byte	0x1
-	.uleb128 0x3d
+	.uleb128 0x3c
 	.ascii "__UINT_LEAST16_TYPE__ short unsigned int\0"
 	.byte	0x1
-	.uleb128 0x3e
+	.uleb128 0x3d
 	.ascii "__UINT_LEAST32_TYPE__ unsigned int\0"
 	.byte	0x1
-	.uleb128 0x3f
+	.uleb128 0x3e
 	.ascii "__UINT_LEAST64_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x40
+	.uleb128 0x3f
 	.ascii "__INT_FAST8_TYPE__ signed char\0"
 	.byte	0x1
-	.uleb128 0x41
+	.uleb128 0x40
 	.ascii "__INT_FAST16_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x42
+	.uleb128 0x41
 	.ascii "__INT_FAST32_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x43
+	.uleb128 0x42
 	.ascii "__INT_FAST64_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x44
+	.uleb128 0x43
 	.ascii "__UINT_FAST8_TYPE__ unsigned char\0"
 	.byte	0x1
-	.uleb128 0x45
+	.uleb128 0x44
 	.ascii "__UINT_FAST16_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x46
+	.uleb128 0x45
 	.ascii "__UINT_FAST32_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x47
+	.uleb128 0x46
 	.ascii "__UINT_FAST64_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x48
+	.uleb128 0x47
 	.ascii "__INTPTR_TYPE__ long int\0"
 	.byte	0x1
-	.uleb128 0x49
+	.uleb128 0x48
 	.ascii "__UINTPTR_TYPE__ long unsigned int\0"
 	.byte	0x1
-	.uleb128 0x4a
+	.uleb128 0x49
 	.ascii "__has_include(STR) __has_include__(STR)\0"
 	.byte	0x1
-	.uleb128 0x4b
+	.uleb128 0x4a
 	.ascii "__has_include_next(STR) __has_include_next__(STR)\0"
 	.byte	0x1
-	.uleb128 0x4c
+	.uleb128 0x4b
 	.ascii "__GXX_WEAK__ 1\0"
 	.byte	0x1
-	.uleb128 0x4d
+	.uleb128 0x4c
 	.ascii "__DEPRECATED 1\0"
 	.byte	0x1
-	.uleb128 0x4e
+	.uleb128 0x4d
 	.ascii "__GXX_EXPERIMENTAL_CXX0X__ 1\0"
 	.byte	0x1
-	.uleb128 0x4f
+	.uleb128 0x4e
 	.ascii "__cpp_binary_literals 201304\0"
 	.byte	0x1
-	.uleb128 0x50
+	.uleb128 0x4f
 	.ascii "__cpp_unicode_characters 200704\0"
 	.byte	0x1
-	.uleb128 0x51
+	.uleb128 0x50
 	.ascii "__cpp_raw_strings 200710\0"
 	.byte	0x1
-	.uleb128 0x52
+	.uleb128 0x51
 	.ascii "__cpp_unicode_literals 200710\0"
 	.byte	0x1
-	.uleb128 0x53
+	.uleb128 0x52
 	.ascii "__cpp_user_defined_literals 200809\0"
 	.byte	0x1
-	.uleb128 0x54
+	.uleb128 0x53
 	.ascii "__cpp_lambdas 200907\0"
 	.byte	0x1
-	.uleb128 0x55
+	.uleb128 0x54
 	.ascii "__cpp_range_based_for 200907\0"
 	.byte	0x1
-	.uleb128 0x56
+	.uleb128 0x55
 	.ascii "__cpp_static_assert 200410\0"
 	.byte	0x1
-	.uleb128 0x57
+	.uleb128 0x56
 	.ascii "__cpp_decltype 200707\0"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x57
 	.ascii "__cpp_attributes 200809\0"
 	.byte	0x1
-	.uleb128 0x59
+	.uleb128 0x58
 	.ascii "__cpp_rvalue_reference 200610\0"
 	.byte	0x1
-	.uleb128 0x5a
+	.uleb128 0x59
 	.ascii "__cpp_rvalue_references 200610\0"
 	.byte	0x1
-	.uleb128 0x5b
+	.uleb128 0x5a
 	.ascii "__cpp_variadic_templates 200704\0"
 	.byte	0x1
-	.uleb128 0x5c
+	.uleb128 0x5b
 	.ascii "__cpp_initializer_lists 200806\0"
 	.byte	0x1
-	.uleb128 0x5d
+	.uleb128 0x5c
 	.ascii "__cpp_delegating_constructors 200604\0"
 	.byte	0x1
-	.uleb128 0x5e
+	.uleb128 0x5d
 	.ascii "__cpp_nsdmi 200809\0"
 	.byte	0x1
-	.uleb128 0x5f
+	.uleb128 0x5e
 	.ascii "__cpp_inheriting_constructors 200802\0"
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x5f
 	.ascii "__cpp_ref_qualifiers 200710\0"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x60
 	.ascii "__cpp_alias_templates 200704\0"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x61
 	.ascii "__cpp_return_type_deduction 201304\0"
 	.byte	0x1
-	.uleb128 0x63
+	.uleb128 0x62
 	.ascii "__cpp_init_captures 201304\0"
 	.byte	0x1
-	.uleb128 0x64
+	.uleb128 0x63
 	.ascii "__cpp_generic_lambdas 201304\0"
 	.byte	0x1
-	.uleb128 0x65
+	.uleb128 0x64
 	.ascii "__cpp_constexpr 201304\0"
 	.byte	0x1
-	.uleb128 0x66
+	.uleb128 0x65
 	.ascii "__cpp_decltype_auto 201304\0"
 	.byte	0x1
-	.uleb128 0x67
+	.uleb128 0x66
 	.ascii "__cpp_aggregate_nsdmi 201304\0"
 	.byte	0x1
-	.uleb128 0x68
+	.uleb128 0x67
 	.ascii "__cpp_variable_templates 201304\0"
 	.byte	0x1
-	.uleb128 0x69
+	.uleb128 0x68
 	.ascii "__cpp_digit_separators 201309\0"
 	.byte	0x1
-	.uleb128 0x6a
+	.uleb128 0x69
 	.ascii "__cpp_sized_deallocation 201309\0"
 	.byte	0x1
-	.uleb128 0x6b
+	.uleb128 0x6a
 	.ascii "__GXX_ABI_VERSION 1010\0"
 	.byte	0x1
-	.uleb128 0x6c
+	.uleb128 0x6b
 	.ascii "__SCHAR_MAX__ 0x7f\0"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x6c
 	.ascii "__SHRT_MAX__ 0x7fff\0"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x6d
 	.ascii "__INT_MAX__ 0x7fffffff\0"
 	.byte	0x1
-	.uleb128 0x6f
+	.uleb128 0x6e
 	.ascii "__LONG_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x70
+	.uleb128 0x6f
 	.ascii "__LONG_LONG_MAX__ 0x7fffffffffffffffLL\0"
 	.byte	0x1
-	.uleb128 0x71
+	.uleb128 0x70
 	.ascii "__WCHAR_MAX__ 0xffff\0"
 	.byte	0x1
-	.uleb128 0x72
+	.uleb128 0x71
 	.ascii "__WCHAR_MIN__ 0\0"
 	.byte	0x1
-	.uleb128 0x73
+	.uleb128 0x72
 	.ascii "__WINT_MAX__ 0xffffffffU\0"
 	.byte	0x1
-	.uleb128 0x74
+	.uleb128 0x73
 	.ascii "__WINT_MIN__ 0U\0"
 	.byte	0x1
-	.uleb128 0x75
+	.uleb128 0x74
 	.ascii "__PTRDIFF_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x76
+	.uleb128 0x75
 	.ascii "__SIZE_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x77
+	.uleb128 0x76
 	.ascii "__INTMAX_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x78
+	.uleb128 0x77
 	.ascii "__INTMAX_C(c) c ## L\0"
 	.byte	0x1
-	.uleb128 0x79
+	.uleb128 0x78
 	.ascii "__UINTMAX_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x7a
+	.uleb128 0x79
 	.ascii "__UINTMAX_C(c) c ## UL\0"
 	.byte	0x1
-	.uleb128 0x7b
+	.uleb128 0x7a
 	.ascii "__SIG_ATOMIC_MAX__ 0x7fffffff\0"
 	.byte	0x1
-	.uleb128 0x7c
+	.uleb128 0x7b
 	.ascii "__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\0"
 	.byte	0x1
-	.uleb128 0x7d
+	.uleb128 0x7c
 	.ascii "__INT8_MAX__ 0x7f\0"
 	.byte	0x1
-	.uleb128 0x7e
+	.uleb128 0x7d
 	.ascii "__INT16_MAX__ 0x7fff\0"
 	.byte	0x1
-	.uleb128 0x7f
+	.uleb128 0x7e
 	.ascii "__INT32_MAX__ 0x7fffffff\0"
 	.byte	0x1
-	.uleb128 0x80
+	.uleb128 0x7f
 	.ascii "__INT64_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x81
+	.uleb128 0x80
 	.ascii "__UINT8_MAX__ 0xff\0"
 	.byte	0x1
-	.uleb128 0x82
+	.uleb128 0x81
 	.ascii "__UINT16_MAX__ 0xffff\0"
 	.byte	0x1
-	.uleb128 0x83
+	.uleb128 0x82
 	.ascii "__UINT32_MAX__ 0xffffffffU\0"
 	.byte	0x1
-	.uleb128 0x84
+	.uleb128 0x83
 	.ascii "__UINT64_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x85
+	.uleb128 0x84
 	.ascii "__INT_LEAST8_MAX__ 0x7f\0"
 	.byte	0x1
-	.uleb128 0x86
+	.uleb128 0x85
 	.ascii "__INT8_C(c) c\0"
 	.byte	0x1
-	.uleb128 0x87
+	.uleb128 0x86
 	.ascii "__INT_LEAST16_MAX__ 0x7fff\0"
 	.byte	0x1
-	.uleb128 0x88
+	.uleb128 0x87
 	.ascii "__INT16_C(c) c\0"
 	.byte	0x1
-	.uleb128 0x89
+	.uleb128 0x88
 	.ascii "__INT_LEAST32_MAX__ 0x7fffffff\0"
 	.byte	0x1
-	.uleb128 0x8a
+	.uleb128 0x89
 	.ascii "__INT32_C(c) c\0"
 	.byte	0x1
-	.uleb128 0x8b
+	.uleb128 0x8a
 	.ascii "__INT_LEAST64_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x8c
+	.uleb128 0x8b
 	.ascii "__INT64_C(c) c ## L\0"
 	.byte	0x1
-	.uleb128 0x8d
+	.uleb128 0x8c
 	.ascii "__UINT_LEAST8_MAX__ 0xff\0"
 	.byte	0x1
-	.uleb128 0x8e
+	.uleb128 0x8d
 	.ascii "__UINT8_C(c) c\0"
 	.byte	0x1
-	.uleb128 0x8f
+	.uleb128 0x8e
 	.ascii "__UINT_LEAST16_MAX__ 0xffff\0"
 	.byte	0x1
-	.uleb128 0x90
+	.uleb128 0x8f
 	.ascii "__UINT16_C(c) c\0"
 	.byte	0x1
-	.uleb128 0x91
+	.uleb128 0x90
 	.ascii "__UINT_LEAST32_MAX__ 0xffffffffU\0"
 	.byte	0x1
-	.uleb128 0x92
+	.uleb128 0x91
 	.ascii "__UINT32_C(c) c ## U\0"
 	.byte	0x1
-	.uleb128 0x93
+	.uleb128 0x92
 	.ascii "__UINT_LEAST64_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x94
+	.uleb128 0x93
 	.ascii "__UINT64_C(c) c ## UL\0"
 	.byte	0x1
-	.uleb128 0x95
+	.uleb128 0x94
 	.ascii "__INT_FAST8_MAX__ 0x7f\0"
 	.byte	0x1
-	.uleb128 0x96
+	.uleb128 0x95
 	.ascii "__INT_FAST16_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x97
+	.uleb128 0x96
 	.ascii "__INT_FAST32_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x98
+	.uleb128 0x97
 	.ascii "__INT_FAST64_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x99
+	.uleb128 0x98
 	.ascii "__UINT_FAST8_MAX__ 0xff\0"
 	.byte	0x1
-	.uleb128 0x9a
+	.uleb128 0x99
 	.ascii "__UINT_FAST16_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x9b
+	.uleb128 0x9a
 	.ascii "__UINT_FAST32_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x9c
+	.uleb128 0x9b
 	.ascii "__UINT_FAST64_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x9d
+	.uleb128 0x9c
 	.ascii "__INTPTR_MAX__ 0x7fffffffffffffffL\0"
 	.byte	0x1
-	.uleb128 0x9e
+	.uleb128 0x9d
 	.ascii "__UINTPTR_MAX__ 0xffffffffffffffffUL\0"
 	.byte	0x1
-	.uleb128 0x9f
+	.uleb128 0x9e
 	.ascii "__GCC_IEC_559 2\0"
 	.byte	0x1
-	.uleb128 0xa0
+	.uleb128 0x9f
 	.ascii "__GCC_IEC_559_COMPLEX 2\0"
 	.byte	0x1
-	.uleb128 0xa1
+	.uleb128 0xa0
 	.ascii "__FLT_EVAL_METHOD__ 0\0"
 	.byte	0x1
-	.uleb128 0xa2
+	.uleb128 0xa1
 	.ascii "__DEC_EVAL_METHOD__ 2\0"
 	.byte	0x1
-	.uleb128 0xa3
+	.uleb128 0xa2
 	.ascii "__FLT_RADIX__ 2\0"
 	.byte	0x1
-	.uleb128 0xa4
+	.uleb128 0xa3
 	.ascii "__FLT_MANT_DIG__ 24\0"
 	.byte	0x1
-	.uleb128 0xa5
+	.uleb128 0xa4
 	.ascii "__FLT_DIG__ 6\0"
 	.byte	0x1
-	.uleb128 0xa6
+	.uleb128 0xa5
 	.ascii "__FLT_MIN_EXP__ (-125)\0"
 	.byte	0x1
-	.uleb128 0xa7
+	.uleb128 0xa6
 	.ascii "__FLT_MIN_10_EXP__ (-37)\0"
 	.byte	0x1
-	.uleb128 0xa8
+	.uleb128 0xa7
 	.ascii "__FLT_MAX_EXP__ 128\0"
 	.byte	0x1
-	.uleb128 0xa9
+	.uleb128 0xa8
 	.ascii "__FLT_MAX_10_EXP__ 38\0"
 	.byte	0x1
-	.uleb128 0xaa
+	.uleb128 0xa9
 	.ascii "__FLT_DECIMAL_DIG__ 9\0"
 	.byte	0x1
-	.uleb128 0xab
+	.uleb128 0xaa
 	.ascii "__FLT_MAX__ 3.40282346638528859812e+38F\0"
 	.byte	0x1
-	.uleb128 0xac
+	.uleb128 0xab
 	.ascii "__FLT_MIN__ 1.17549435082228750797e-38F\0"
 	.byte	0x1
-	.uleb128 0xad
+	.uleb128 0xac
 	.ascii "__FLT_EPSILON__ 1.19209289550781250000e-7F\0"
 	.byte	0x1
-	.uleb128 0xae
+	.uleb128 0xad
 	.ascii "__FLT_DENORM_MIN__ 1.40129846432481707092e-45F\0"
 	.byte	0x1
-	.uleb128 0xaf
+	.uleb128 0xae
 	.ascii "__FLT_HAS_DENORM__ 1\0"
 	.byte	0x1
-	.uleb128 0xb0
+	.uleb128 0xaf
 	.ascii "__FLT_HAS_INFINITY__ 1\0"
 	.byte	0x1
-	.uleb128 0xb1
+	.uleb128 0xb0
 	.ascii "__FLT_HAS_QUIET_NAN__ 1\0"
 	.byte	0x1
-	.uleb128 0xb2
+	.uleb128 0xb1
 	.ascii "__DBL_MANT_DIG__ 53\0"
 	.byte	0x1
-	.uleb128 0xb3
+	.uleb128 0xb2
 	.ascii "__DBL_DIG__ 15\0"
 	.byte	0x1
-	.uleb128 0xb4
+	.uleb128 0xb3
 	.ascii "__DBL_MIN_EXP__ (-1021)\0"
 	.byte	0x1
-	.uleb128 0xb5
+	.uleb128 0xb4
 	.ascii "__DBL_MIN_10_EXP__ (-307)\0"
 	.byte	0x1
-	.uleb128 0xb6
+	.uleb128 0xb5
 	.ascii "__DBL_MAX_EXP__ 1024\0"
 	.byte	0x1
-	.uleb128 0xb7
+	.uleb128 0xb6
 	.ascii "__DBL_MAX_10_EXP__ 308\0"
 	.byte	0x1
-	.uleb128 0xb8
+	.uleb128 0xb7
 	.ascii "__DBL_DECIMAL_DIG__ 17\0"
 	.byte	0x1
-	.uleb128 0xb9
+	.uleb128 0xb8
 	.ascii "__DBL_MAX__ double(1.79769313486231570815e+308L)\0"
 	.byte	0x1
-	.uleb128 0xba
+	.uleb128 0xb9
 	.ascii "__DBL_MIN__ double(2.22507385850720138309e-308L)\0"
 	.byte	0x1
-	.uleb128 0xbb
+	.uleb128 0xba
 	.ascii "__DBL_EPSILON__ double(2.22044604925031308085e-16L)\0"
 	.byte	0x1
-	.uleb128 0xbc
+	.uleb128 0xbb
 	.ascii "__DBL_DENORM_MIN__ double(4.94065645841246544177e-324L)\0"
 	.byte	0x1
-	.uleb128 0xbd
+	.uleb128 0xbc
 	.ascii "__DBL_HAS_DENORM__ 1\0"
 	.byte	0x1
-	.uleb128 0xbe
+	.uleb128 0xbd
 	.ascii "__DBL_HAS_INFINITY__ 1\0"
 	.byte	0x1
-	.uleb128 0xbf
+	.uleb128 0xbe
 	.ascii "__DBL_HAS_QUIET_NAN__ 1\0"
 	.byte	0x1
-	.uleb128 0xc0
+	.uleb128 0xbf
 	.ascii "__LDBL_MANT_DIG__ 64\0"
 	.byte	0x1
-	.uleb128 0xc1
+	.uleb128 0xc0
 	.ascii "__LDBL_DIG__ 18\0"
 	.byte	0x1
-	.uleb128 0xc2
+	.uleb128 0xc1
 	.ascii "__LDBL_MIN_EXP__ (-16381)\0"
 	.byte	0x1
-	.uleb128 0xc3
+	.uleb128 0xc2
 	.ascii "__LDBL_MIN_10_EXP__ (-4931)\0"
 	.byte	0x1
-	.uleb128 0xc4
+	.uleb128 0xc3
 	.ascii "__LDBL_MAX_EXP__ 16384\0"
 	.byte	0x1
-	.uleb128 0xc5
+	.uleb128 0xc4
 	.ascii "__LDBL_MAX_10_EXP__ 4932\0"
 	.byte	0x1
-	.uleb128 0xc6
+	.uleb128 0xc5
 	.ascii "__DECIMAL_DIG__ 21\0"
 	.byte	0x1
-	.uleb128 0xc7
+	.uleb128 0xc6
 	.ascii "__LDBL_MAX__ 1.18973149535723176502e+4932L\0"
 	.byte	0x1
-	.uleb128 0xc8
+	.uleb128 0xc7
 	.ascii "__LDBL_MIN__ 3.36210314311209350626e-4932L\0"
 	.byte	0x1
-	.uleb128 0xc9
+	.uleb128 0xc8
 	.ascii "__LDBL_EPSILON__ 1.08420217248550443401e-19L\0"
 	.byte	0x1
-	.uleb128 0xca
+	.uleb128 0xc9
 	.ascii "__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L\0"
 	.byte	0x1
-	.uleb128 0xcb
+	.uleb128 0xca
 	.ascii "__LDBL_HAS_DENORM__ 1\0"
 	.byte	0x1
-	.uleb128 0xcc
+	.uleb128 0xcb
 	.ascii "__LDBL_HAS_INFINITY__ 1\0"
 	.byte	0x1
-	.uleb128 0xcd
+	.uleb128 0xcc
 	.ascii "__LDBL_HAS_QUIET_NAN__ 1\0"
 	.byte	0x1
-	.uleb128 0xce
+	.uleb128 0xcd
 	.ascii "__DEC32_MANT_DIG__ 7\0"
 	.byte	0x1
-	.uleb128 0xcf
+	.uleb128 0xce
 	.ascii "__DEC32_MIN_EXP__ (-94)\0"
 	.byte	0x1
-	.uleb128 0xd0
+	.uleb128 0xcf
 	.ascii "__DEC32_MAX_EXP__ 97\0"
 	.byte	0x1
-	.uleb128 0xd1
+	.uleb128 0xd0
 	.ascii "__DEC32_MIN__ 1E-95DF\0"
 	.byte	0x1
-	.uleb128 0xd2
+	.uleb128 0xd1
 	.ascii "__DEC32_MAX__ 9.999999E96DF\0"
 	.byte	0x1
-	.uleb128 0xd3
+	.uleb128 0xd2
 	.ascii "__DEC32_EPSILON__ 1E-6DF\0"
 	.byte	0x1
-	.uleb128 0xd4
+	.uleb128 0xd3
 	.ascii "__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\0"
 	.byte	0x1
-	.uleb128 0xd5
+	.uleb128 0xd4
 	.ascii "__DEC64_MANT_DIG__ 16\0"
 	.byte	0x1
-	.uleb128 0xd6
+	.uleb128 0xd5
 	.ascii "__DEC64_MIN_EXP__ (-382)\0"
 	.byte	0x1
-	.uleb128 0xd7
+	.uleb128 0xd6
 	.ascii "__DEC64_MAX_EXP__ 385\0"
 	.byte	0x1
-	.uleb128 0xd8
+	.uleb128 0xd7
 	.ascii "__DEC64_MIN__ 1E-383DD\0"
 	.byte	0x1
-	.uleb128 0xd9
+	.uleb128 0xd8
 	.ascii "__DEC64_MAX__ 9.999999999999999E384DD\0"
 	.byte	0x1
-	.uleb128 0xda
+	.uleb128 0xd9
 	.ascii "__DEC64_EPSILON__ 1E-15DD\0"
 	.byte	0x1
-	.uleb128 0xdb
+	.uleb128 0xda
 	.ascii "__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\0"
 	.byte	0x1
-	.uleb128 0xdc
+	.uleb128 0xdb
 	.ascii "__DEC128_MANT_DIG__ 34\0"
 	.byte	0x1
-	.uleb128 0xdd
+	.uleb128 0xdc
 	.ascii "__DEC128_MIN_EXP__ (-6142)\0"
 	.byte	0x1
-	.uleb128 0xde
+	.uleb128 0xdd
 	.ascii "__DEC128_MAX_EXP__ 6145\0"
 	.byte	0x1
-	.uleb128 0xdf
+	.uleb128 0xde
 	.ascii "__DEC128_MIN__ 1E-6143DL\0"
 	.byte	0x1
-	.uleb128 0xe0
+	.uleb128 0xdf
 	.ascii "__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL\0"
 	.byte	0x1
-	.uleb128 0xe1
+	.uleb128 0xe0
 	.ascii "__DEC128_EPSILON__ 1E-33DL\0"
 	.byte	0x1
-	.uleb128 0xe2
+	.uleb128 0xe1
 	.ascii "__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL\0"
 	.byte	0x1
-	.uleb128 0xe3
+	.uleb128 0xe2
 	.ascii "__REGISTER_PREFIX__ \0"
 	.byte	0x1
-	.uleb128 0xe4
+	.uleb128 0xe3
 	.ascii "__USER_LABEL_PREFIX__ \0"
 	.byte	0x1
-	.uleb128 0xe5
+	.uleb128 0xe4
 	.ascii "__GNUC_STDC_INLINE__ 1\0"
+	.byte	0x1
+	.uleb128 0xe5
+	.ascii "__NO_INLINE__ 1\0"
 	.byte	0x1
 	.uleb128 0xe6
 	.ascii "__STRICT_ANSI__ 1\0"
@@ -4643,34 +4453,34 @@ _ZNK11FAT32ExtBPB18getClusterByteSizeEv:
 	.uleb128 0xd
 	.ascii "NULL_CHAR '\\0'\0"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x10
 	.ascii "INFO \"[INFO] \"\0"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x11
 	.ascii "WARNING \"[WARNING] \"\0"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x12
 	.ascii "FATAL \"[FATAL] \"\0"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x20
 	.ascii "TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))\0"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x23
 	.ascii "__stringify_1(x) #x\0"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x24
 	.ascii "__stringify(x) __stringify_1(x)\0"
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x29
 	.ascii "HEX32(a,b) 0x ##a ##b\0"
 	.byte	0x1
-	.uleb128 0x32
+	.uleb128 0x2a
 	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
 	.byte	0x1
-	.uleb128 0x35
+	.uleb128 0x2d
 	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
 	.byte	0x1
-	.uleb128 0x36
+	.uleb128 0x2e
 	.ascii "BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h\0"
 	.byte	0x4
 	.byte	0x4

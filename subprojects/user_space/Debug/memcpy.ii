@@ -18,7 +18,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define _LP64 1
 #define __LP64__ 1
@@ -339,6 +338,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __WCHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
@@ -393,8 +393,7 @@
 # 1 "<built-in>"
 #define __ARM_FEATURE_NUMERIC_MAXMIN 1
 #define __ARM_NEON 1
-#undef __ARM_FEATURE_CRC32
-# 1 "<built-in>"
+#define __ARM_FEATURE_CRC32 1
 #undef __AARCH64_CMODEL_TINY__
 # 1 "<built-in>"
 #undef __AARCH64_CMODEL_SMALL__
@@ -408,8 +407,7 @@
 # 1 "<built-in>"
 #undef __ARM_FEATURE_CRYPTO
 # 1 "<built-in>"
-#undef __ARM_FEATURE_QRDMX
-# 1 "<built-in>"
+#define __ARM_FEATURE_QRDMX 1
 #undef __FLT_EVAL_METHOD__
 # 1 "<built-in>"
 #define __FLT_EVAL_METHOD__ 0
@@ -1529,7 +1527,8 @@ namespace std
 #define AS_MACRO __attribute__((always_inline)) inline
 #define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
 #define NULL_CHAR '\0'
-# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+
+
 #define INFO "[INFO] "
 #define WARNING "[WARNING] "
 #define FATAL "[FATAL] "
@@ -1537,12 +1536,10 @@ namespace std
 
 
 
-# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
 extern const char EMPTY_STR[1];
 
 
-constexpr size_t koutBufSize = 65;
-extern char koutBuf[koutBufSize];
 
 constexpr int UNIT_K=1024;
 constexpr int KiB = UNIT_K;

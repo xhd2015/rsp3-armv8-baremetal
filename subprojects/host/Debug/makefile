@@ -9,10 +9,10 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/test/subdir.mk
+-include src/schedule/subdir.mk
 -include src/memory/subdir.mk
 -include src/io/subdir.mk
 -include src/filesystem/fat/subdir.mk
--include src/default_impl/subdir.mk
 -include src/data_structures/subdir.mk
 -include src/arch/host/subdir.mk
 -include src/subdir.mk
@@ -51,7 +51,7 @@ all: host.elf
 host.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cygwin C++ Linker'
-	g++  -o "host.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ $(USER_LINKER_FLAGS) -o "host.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

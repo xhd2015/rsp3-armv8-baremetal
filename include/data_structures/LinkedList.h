@@ -9,6 +9,13 @@
 #define INCLUDE_DATA_STRUCTURES_LINKEDLIST_H_
 
 
+template <class T>
+class LinkedList{
+public:
+
+private:
+
+};
 
 
 

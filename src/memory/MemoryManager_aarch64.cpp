@@ -9,9 +9,11 @@
 #include <new>
 #include <cstring>
 #include <algorithm>
+#include <io/Output.h>
 
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
-	:headChunk(reinterpret_cast<MemoryChunk*>(base)),// set headChunk
+	:
+	headChunk(reinterpret_cast<MemoryChunk*>(base)),// set headChunk
 	 base(reinterpret_cast<const char*>(base)),
 	 size(size)
 {
@@ -21,6 +23,7 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 		reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true); // end
 	}
 }
+
 size_t MemoryManager::normalizeAllocSize(size_t n)
 {
 	if(n < MINIMAL_ALLOC_SIZE)

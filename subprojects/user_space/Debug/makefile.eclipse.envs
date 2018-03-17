@@ -2,8 +2,7 @@
 # This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment
 # after this file included,ENVS_PRESENT will never be used.So no need to define it.
 # ENVS_PRESENT := true
-AARCH64_TOOLCHAIN_ROOT := 
- PATH := /cygdrive/d/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin:/usr/bin
+PATH := /cygdrive/d/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin:/usr/bin
  TARGET_ARCH := user_space
  MASTERY_ELF := user_space.elf
  MASTERY_BINARY := user_space.bin

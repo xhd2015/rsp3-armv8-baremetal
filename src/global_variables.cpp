@@ -8,26 +8,16 @@
 #include <def.h>
 #include <memory/MemoryManager.h>
 #include <io/Output.h>
-
-#include <global_variables.h>
 #include <memory/mem_config.h>
 #include <new>
+#include <schedule/PidManager.h>
 
 
 
 char koutBuf[koutBufSize]={0};
 extern const char EMPTY_STR[]={0};
 Output kout;
-//const char * INFO = "[INFO] ";
-//const char * WARNING = "[WARNING] ";
-//const char * FATAL = "[FATAL] ";
 
 MemoryManager mman{RAM_START,RAM_SIZE};
+PidManager pidManager;
 
-#ifndef TARGET_DO_NOT_NEED_VARIABLE_INIT
-void globalVariablesInit()
-{
-	new (&mman) MemoryManager(RAM_START,RAM_SIZE);
-	new (&kout) Output();
-}
-#endif

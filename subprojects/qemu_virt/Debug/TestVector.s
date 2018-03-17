@@ -3,1114 +3,1412 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
+	.section	.rodata
+	.align	2
+	.type	_ZL6UNIT_K, %object
+	.size	_ZL6UNIT_K, 4
+_ZL6UNIT_K:
+	.word	1024
+	.align	2
+	.type	_ZL3KiB, %object
+	.size	_ZL3KiB, 4
+_ZL3KiB:
+	.word	1024
+	.align	2
+	.type	_ZL3MiB, %object
+	.size	_ZL3MiB, 4
+_ZL3MiB:
+	.word	1048576
+	.align	2
+	.type	_ZL3GiB, %object
+	.size	_ZL3GiB, 4
+_ZL3GiB:
+	.word	1073741824
+	.align	3
+	.type	_ZL11koutBufSize, %object
+	.size	_ZL11koutBufSize, 8
+_ZL11koutBufSize:
+	.xword	65
+	.text
 	.align	2
 	.global	_ZN10TestVector5setupEv
 	.type	_ZN10TestVector5setupEv, %function
 _ZN10TestVector5setupEv:
-.LFB39:
+.LFB41:
 	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestVector.cpp"
 	.loc 1 12 0
 	.cfi_startproc
-.LVL0:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
 	.loc 1 14 0
+	nop
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE39:
+.LFE41:
 	.size	_ZN10TestVector5setupEv, .-_ZN10TestVector5setupEv
 	.align	2
 	.global	_ZN10TestVector8teardownEv
 	.type	_ZN10TestVector8teardownEv, %function
 _ZN10TestVector8teardownEv:
-.LFB40:
+.LFB42:
 	.loc 1 16 0
 	.cfi_startproc
-.LVL1:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
 	.loc 1 18 0
+	nop
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE40:
+.LFE42:
 	.size	_ZN10TestVector8teardownEv, .-_ZN10TestVector8teardownEv
 	.align	2
 	.global	_ZN10TestVector19initializeCorrectlyEv
 	.type	_ZN10TestVector19initializeCorrectlyEv, %function
 _ZN10TestVector19initializeCorrectlyEv:
-.LFB41:
+.LFB43:
 	.loc 1 21 0
 	.cfi_startproc
-.LVL2:
-	.loc 1 23 0
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 1 22 0
 	mov	w0, 1
-.LVL3:
+	.loc 1 23 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE41:
+.LFE43:
 	.size	_ZN10TestVector19initializeCorrectlyEv, .-_ZN10TestVector19initializeCorrectlyEv
+	.align	2
+	.global	_ZN10TestVector22minimalCapacityEnsuredEv
+	.type	_ZN10TestVector22minimalCapacityEnsuredEv, %function
+_ZN10TestVector22minimalCapacityEnsuredEv:
+.LFB44:
+	.loc 1 25 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -176]!
+	.cfi_def_cfa_offset 176
+	.cfi_offset 29, -176
+	.cfi_offset 30, -168
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -160
+	str	x0, [x29, 40]
+	.loc 1 26 0
+	add	x0, x29, 144
+	mov	x1, 0
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 27 0
+	add	x0, x29, 120
+	mov	x1, 0
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 28 0
+	add	x0, x29, 96
+	mov	x1, 7
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 29 0
+	add	x0, x29, 72
+	mov	x1, 8
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 30 0
+	add	x0, x29, 48
+	mov	x1, 9
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 32 0
+	add	x0, x29, 144
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 8
+	cset	w0, eq
+	and	w19, w0, 255
+	add	x0, x29, 120
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 8
+	cset	w0, eq
+	and	w0, w0, 255
+	and	w0, w19, w0
+	and	w0, w0, 255
+	mov	w19, w0
+	add	x0, x29, 96
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 8
+	cset	w0, eq
+	and	w0, w0, 255
+	and	w19, w19, w0
+	add	x0, x29, 72
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 8
+	cset	w0, eq
+	and	w0, w0, 255
+	and	w19, w19, w0
+	add	x0, x29, 48
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 8
+	cset	w0, hi
+	and	w0, w0, 255
+	and	w0, w19, w0
+	cmp	w0, 0
+	cset	w0, ne
+	strb	w0, [x29, 175]
+	.loc 1 33 0
+	ldrb	w19, [x29, 175]
+	.loc 1 30 0
+	add	x0, x29, 48
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 29 0
+	add	x0, x29, 72
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 28 0
+	add	x0, x29, 96
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 27 0
+	add	x0, x29, 120
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 26 0
+	add	x0, x29, 144
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 33 0
+	mov	w0, w19
+	.loc 1 35 0
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 176
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE44:
+	.size	_ZN10TestVector22minimalCapacityEnsuredEv, .-_ZN10TestVector22minimalCapacityEnsuredEv
+	.align	2
+	.global	_ZN10TestVector26capacityIncreasedCorrectlyEv
+	.type	_ZN10TestVector26capacityIncreasedCorrectlyEv, %function
+_ZN10TestVector26capacityIncreasedCorrectlyEv:
+.LFB45:
+	.loc 1 37 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -80]!
+	.cfi_def_cfa_offset 80
+	.cfi_offset 29, -80
+	.cfi_offset 30, -72
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -64
+	str	x0, [x29, 40]
+	.loc 1 38 0
+	add	x0, x29, 56
+	mov	x1, 8
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 39 0
+	add	x0, x29, 56
+	mov	w1, 10
+	bl	_ZN6VectorIiE8pushBackEi
+	.loc 1 40 0
+	add	x0, x29, 56
+	bl	_ZNK6VectorIiE11getCapacityEv
+	cmp	x0, 12
+	cset	w0, eq
+	and	w19, w0, 255
+	.loc 1 38 0
+	add	x0, x29, 56
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 40 0
+	mov	w0, w19
+	.loc 1 41 0
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 80
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE45:
+	.size	_ZN10TestVector26capacityIncreasedCorrectlyEv, .-_ZN10TestVector26capacityIncreasedCorrectlyEv
 	.align	2
 	.global	_ZN10TestVector26capacityDecreasedCorrectlyEv
 	.type	_ZN10TestVector26capacityDecreasedCorrectlyEv, %function
 _ZN10TestVector26capacityDecreasedCorrectlyEv:
-.LFB44:
+.LFB46:
 	.loc 1 43 0
 	.cfi_startproc
-.LVL4:
-	.loc 1 45 0
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 1 44 0
 	mov	w0, 1
-.LVL5:
+	.loc 1 45 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE44:
+.LFE46:
 	.size	_ZN10TestVector26capacityDecreasedCorrectlyEv, .-_ZN10TestVector26capacityDecreasedCorrectlyEv
+	.align	2
+	.global	_ZN10TestVector27popBackWhenEmptyNoExceptionEv
+	.type	_ZN10TestVector27popBackWhenEmptyNoExceptionEv, %function
+_ZN10TestVector27popBackWhenEmptyNoExceptionEv:
+.LFB47:
+	.loc 1 47 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -80]!
+	.cfi_def_cfa_offset 80
+	.cfi_offset 29, -80
+	.cfi_offset 30, -72
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -64
+	str	x0, [x29, 40]
+	.loc 1 48 0
+	add	x0, x29, 56
+	mov	x1, 0
+	bl	_ZN6VectorIiEC1Em
+	.loc 1 49 0
+	add	x0, x29, 56
+	bl	_ZN6VectorIiE7popBackEv
+	.loc 1 51 0
+	mov	w19, 1
+	.loc 1 48 0
+	add	x0, x29, 56
+	bl	_ZN6VectorIiED1Ev
+	.loc 1 51 0
+	mov	w0, w19
+	.loc 1 52 0
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 80
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE47:
+	.size	_ZN10TestVector27popBackWhenEmptyNoExceptionEv, .-_ZN10TestVector27popBackWhenEmptyNoExceptionEv
 	.align	2
 	.global	_ZN10TestVector17pushBackCorrectlyEv
 	.type	_ZN10TestVector17pushBackCorrectlyEv, %function
 _ZN10TestVector17pushBackCorrectlyEv:
-.LFB46:
+.LFB48:
 	.loc 1 54 0
 	.cfi_startproc
-.LVL6:
-	.loc 1 56 0
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 1 55 0
 	mov	w0, 1
-.LVL7:
+	.loc 1 56 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE46:
+.LFE48:
 	.size	_ZN10TestVector17pushBackCorrectlyEv, .-_ZN10TestVector17pushBackCorrectlyEv
+	.align	2
+	.global	_ZN10TestVector14eraseCorrectlyEv
+	.type	_ZN10TestVector14eraseCorrectlyEv, %function
+_ZN10TestVector14eraseCorrectlyEv:
+.LFB49:
+	.loc 1 58 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -96]!
+	.cfi_def_cfa_offset 96
+	.cfi_offset 29, -96
+	.cfi_offset 30, -88
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -80
+	str	x0, [x29, 40]
+	.loc 1 59 0
+	adrp	x0, ._5
+	add	x0, x0, :lo12:._5
+	str	x0, [x29, 72]
+	mov	x0, 9
+	str	x0, [x29, 80]
+	add	x1, x29, 72
+	add	x0, x29, 48
+	bl	_ZN6VectorIiEC1ERKSt16initializer_listIiE
+	.loc 1 60 0
+	add	x0, x29, 48
+	mov	x1, 4
+	bl	_ZN6VectorIiE5eraseEm
+.LBB2:
+	.loc 1 61 0
+	str	xzr, [x29, 88]
+.L19:
+	.loc 1 61 0 is_stmt 0 discriminator 1
+	add	x0, x29, 48
+	bl	_ZNK6VectorIiE7getSizeEv
+	mov	x1, x0
+	ldr	x0, [x29, 88]
+	cmp	x0, x1
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L16
+	.loc 1 62 0 is_stmt 1
+	add	x0, x29, 48
+	ldr	x1, [x29, 88]
+	bl	_ZN6VectorIiEixEm
+	ldr	w0, [x0]
+	sxtw	x0, w0
+	ldr	x1, [x29, 88]
+	cmp	x1, x0
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L17
+	.loc 1 63 0
+	mov	w19, 0
+	b	.L18
+.L17:
+	.loc 1 61 0 discriminator 2
+	ldr	x0, [x29, 88]
+	add	x0, x0, 1
+	str	x0, [x29, 88]
+	b	.L19
+.L16:
+.LBE2:
+	.loc 1 64 0
+	mov	w19, 1
+.L18:
+	.loc 1 59 0
+	add	x0, x29, 48
+	bl	_ZN6VectorIiED1Ev
+	mov	w0, w19
+	.loc 1 66 0
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 96
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE49:
+	.size	_ZN10TestVector14eraseCorrectlyEv, .-_ZN10TestVector14eraseCorrectlyEv
+	.align	2
+	.global	_ZN10TestVector15insertCorrectlyEv
+	.type	_ZN10TestVector15insertCorrectlyEv, %function
+_ZN10TestVector15insertCorrectlyEv:
+.LFB50:
+	.loc 1 68 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -112]!
+	.cfi_def_cfa_offset 112
+	.cfi_offset 29, -112
+	.cfi_offset 30, -104
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -96
+	str	x0, [x29, 40]
+	.loc 1 69 0
+	adrp	x0, ._6
+	add	x0, x0, :lo12:._6
+	str	x0, [x29, 72]
+	mov	x0, 7
+	str	x0, [x29, 80]
+	add	x1, x29, 72
+	add	x0, x29, 48
+	bl	_ZN6VectorIiEC1ERKSt16initializer_listIiE
+	.loc 1 70 0
+	add	x0, x29, 48
+	bl	_ZNK6VectorIiE7getSizeEv
+	str	x0, [x29, 96]
+	.loc 1 71 0
+	ldr	x0, [x29, 96]
+	add	x1, x0, 1
+	str	wzr, [x29, 88]
+	add	x2, x29, 88
+	add	x0, x29, 48
+	bl	_ZN6VectorIiE6insertEmRKi
+	.loc 1 72 0
+	add	x0, x29, 48
+	bl	_ZNK6VectorIiE7getSizeEv
+	mov	x1, x0
+	ldr	x0, [x29, 96]
+	cmp	x0, x1
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L22
+	.loc 1 73 0
+	mov	w19, 0
+	b	.L23
+.L22:
+	.loc 1 75 0
+	mov	w0, 4
+	str	w0, [x29, 92]
+	add	x1, x29, 92
+	add	x0, x29, 48
+	mov	x2, x1
+	mov	x1, 4
+	bl	_ZN6VectorIiE6insertEmRKi
+.LBB3:
+	.loc 1 76 0
+	str	xzr, [x29, 104]
+.L26:
+	.loc 1 76 0 is_stmt 0 discriminator 1
+	add	x0, x29, 48
+	bl	_ZNK6VectorIiE7getSizeEv
+	mov	x1, x0
+	ldr	x0, [x29, 104]
+	cmp	x0, x1
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L24
+	.loc 1 77 0 is_stmt 1
+	add	x0, x29, 48
+	ldr	x1, [x29, 104]
+	bl	_ZN6VectorIiEixEm
+	ldr	w0, [x0]
+	sxtw	x0, w0
+	ldr	x1, [x29, 104]
+	cmp	x1, x0
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L25
+	.loc 1 78 0
+	mov	w19, 0
+	b	.L23
+.L25:
+	.loc 1 76 0 discriminator 2
+	ldr	x0, [x29, 104]
+	add	x0, x0, 1
+	str	x0, [x29, 104]
+	b	.L26
+.L24:
+.LBE3:
+	.loc 1 79 0
+	mov	w19, 1
+.L23:
+	.loc 1 69 0
+	add	x0, x29, 48
+	bl	_ZN6VectorIiED1Ev
+	mov	w0, w19
+	.loc 1 80 0
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 112
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE50:
+	.size	_ZN10TestVector15insertCorrectlyEv, .-_ZN10TestVector15insertCorrectlyEv
 	.align	2
 	.global	_ZN10TestVector15resizeCorrectlyEv
 	.type	_ZN10TestVector15resizeCorrectlyEv, %function
 _ZN10TestVector15resizeCorrectlyEv:
-.LFB49:
+.LFB51:
 	.loc 1 82 0
 	.cfi_startproc
-.LVL8:
-	.loc 1 84 0
-	mov	w0, 1
-.LVL9:
-	ret
-	.cfi_endproc
-.LFE49:
-	.size	_ZN10TestVector15resizeCorrectlyEv, .-_ZN10TestVector15resizeCorrectlyEv
-	.section	.text._ZN6VectorIiED2Ev,"axG",@progbits,_ZN6VectorIiED5Ev,comdat
-	.align	2
-	.weak	_ZN6VectorIiED2Ev
-	.type	_ZN6VectorIiED2Ev, %function
-_ZN6VectorIiED2Ev:
-.LFB54:
-	.file 2 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/data_structures/Vector.h"
-	.loc 2 53 0
-	.cfi_startproc
-.LVL10:
-.LBB16:
-	.loc 2 55 0
-	ldr	x1, [x0]
-	cbz	x1, .L10
-.LBE16:
-	.loc 2 53 0
-	stp	x29, x30, [sp, -16]!
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 29, -16
-	.cfi_offset 30, -8
-	add	x29, sp, 0
-	.cfi_def_cfa_register 29
-.LBB17:
-	.loc 2 57 0
-	adrp	x0, mman
-.LVL11:
-	add	x0, x0, :lo12:mman
-	bl	_ZN13MemoryManager10deallocateEPv
-.LVL12:
-.LBE17:
-	.loc 2 60 0
-	ldp	x29, x30, [sp], 16
-	.cfi_restore 30
-	.cfi_restore 29
-	.cfi_def_cfa 31, 0
-	ret
-.LVL13:
-.L10:
+	str	x0, [sp, 8]
+	.loc 1 83 0
+	mov	w0, 1
+	.loc 1 84 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE54:
-	.size	_ZN6VectorIiED2Ev, .-_ZN6VectorIiED2Ev
-	.weak	_ZN6VectorIiED1Ev
-	.set	_ZN6VectorIiED1Ev,_ZN6VectorIiED2Ev
-	.section	.text._ZN6VectorIiE14resizeCapacityEm,"axG",@progbits,_ZN6VectorIiE14resizeCapacityEm,comdat
-	.align	2
-	.weak	_ZN6VectorIiE14resizeCapacityEm
-	.type	_ZN6VectorIiE14resizeCapacityEm, %function
-_ZN6VectorIiE14resizeCapacityEm:
-.LFB66:
-	.loc 2 167 0
-	.cfi_startproc
-.LVL14:
-	.loc 2 169 0
-	ldr	x2, [x0, 8]
-	cmp	x2, x1
-	beq	.L17
-	.loc 2 167 0
-	stp	x29, x30, [sp, -48]!
-	.cfi_def_cfa_offset 48
-	.cfi_offset 29, -48
-	.cfi_offset 30, -40
-	add	x29, sp, 0
-	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	stp	x21, x22, [sp, 32]
-	.cfi_offset 19, -32
-	.cfi_offset 20, -24
-	.cfi_offset 21, -16
-	.cfi_offset 22, -8
-	mov	x21, x1
-	mov	x19, x0
-	.loc 2 171 0
-	lsl	x22, x1, 2
-	adrp	x20, mman
-	add	x20, x20, :lo12:mman
-	mov	x3, -1
-	mov	x2, x22
-	ldr	x1, [x0]
-.LVL15:
-	mov	x0, x20
-.LVL16:
-	bl	_ZN13MemoryManager10reallocateEPvmm
-.LVL17:
-.LBB21:
-.LBB22:
-	.file 3 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h"
-	.loc 3 17 0
-	mov	x1, x22
-	mov	x0, x20
-	bl	_ZN13MemoryManager8allocateEm
-.LVL18:
-	mov	x20, x0
-.LVL19:
-.LBE22:
-.LBE21:
-	.loc 2 174 0
-	mov	w0, 0
-	.loc 2 173 0
-	cbz	x20, .L14
-.LVL20:
-.LBB23:
-	.loc 2 176 0
-	ldr	x0, [x19, 16]
-	cbz	x0, .L15
-	mov	x2, 0
-.LVL21:
-.L16:
-	.loc 2 177 0 discriminator 2
-	ldr	x0, [x19]
-	ldr	w0, [x0, x2, lsl 2]
-	str	w0, [x20, x2, lsl 2]
-	.loc 2 176 0 discriminator 2
-	add	x2, x2, 1
-.LVL22:
-	ldr	x0, [x19, 16]
-	cmp	x0, x2
-	bne	.L16
-.LVL23:
-.L15:
-.LBE23:
-	.loc 2 178 0
-	ldr	x1, [x19]
-	adrp	x0, mman
-	add	x0, x0, :lo12:mman
-	bl	_ZN13MemoryManager10deallocateEPv
-.LVL24:
-	.loc 2 181 0
-	str	x20, [x19]
-	.loc 2 182 0
-	str	x21, [x19, 8]
-	.loc 2 183 0
-	mov	w0, 1
-.L14:
-	.loc 2 184 0
-	ldp	x19, x20, [sp, 16]
-.LVL25:
-	ldp	x21, x22, [sp, 32]
-.LVL26:
-	ldp	x29, x30, [sp], 48
-	.cfi_restore 30
-	.cfi_restore 29
-	.cfi_restore 21
-	.cfi_restore 22
-	.cfi_restore 19
-	.cfi_restore 20
-	.cfi_def_cfa 31, 0
-	ret
-.LVL27:
-.L17:
-	.loc 2 170 0
-	mov	w0, 1
-.LVL28:
-	.loc 2 184 0
-	ret
-	.cfi_endproc
-.LFE66:
-	.size	_ZN6VectorIiE14resizeCapacityEm, .-_ZN6VectorIiE14resizeCapacityEm
+.LFE51:
+	.size	_ZN10TestVector15resizeCorrectlyEv, .-_ZN10TestVector15resizeCorrectlyEv
 	.section	.text._ZN6VectorIiEC2Em,"axG",@progbits,_ZN6VectorIiEC5Em,comdat
 	.align	2
 	.weak	_ZN6VectorIiEC2Em
 	.type	_ZN6VectorIiEC2Em, %function
 _ZN6VectorIiEC2Em:
-.LFB51:
+.LFB53:
+	.file 2 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/data_structures/Vector.h"
 	.loc 2 15 0
 	.cfi_startproc
-.LVL29:
 	stp	x29, x30, [sp, -32]!
 	.cfi_def_cfa_offset 32
 	.cfi_offset 29, -32
 	.cfi_offset 30, -24
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	.cfi_offset 19, -16
-	.cfi_offset 20, -8
-	mov	x19, x0
-	mov	x20, x1
-.LBB24:
+	str	x0, [x29, 24]
+	str	x1, [x29, 16]
+.LBB4:
 	.loc 2 16 0
+	ldr	x0, [x29, 24]
 	str	xzr, [x0]
+	ldr	x0, [x29, 24]
 	str	xzr, [x0, 8]
+	ldr	x0, [x29, 24]
 	str	xzr, [x0, 16]
 	.loc 2 18 0
-	cmp	x1, 8
-	mov	x1, 8
-.LVL30:
-	csel	x1, x20, x1, cs
+	ldr	x2, [x29, 16]
+	ldr	x1, [x29, 16]
+	mov	x0, 8
+	cmp	x2, 8
+	csel	x0, x1, x0, cs
+	mov	x1, x0
+	ldr	x0, [x29, 24]
 	bl	_ZN6VectorIiE14resizeCapacityEm
-.LVL31:
-	tst	w0, 255
-	beq	.L24
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L32
 	.loc 2 20 0
-	str	x20, [x19, 16]
-.L24:
-.LBE24:
+	ldr	x0, [x29, 24]
+	ldr	x1, [x29, 16]
+	str	x1, [x0, 16]
+.L32:
+.LBE4:
 	.loc 2 22 0
-	ldp	x19, x20, [sp, 16]
-.LVL32:
+	nop
 	ldp	x29, x30, [sp], 32
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE51:
+.LFE53:
 	.size	_ZN6VectorIiEC2Em, .-_ZN6VectorIiEC2Em
 	.weak	_ZN6VectorIiEC1Em
 	.set	_ZN6VectorIiEC1Em,_ZN6VectorIiEC2Em
-	.text
+	.section	.text._ZN6VectorIiED2Ev,"axG",@progbits,_ZN6VectorIiED5Ev,comdat
 	.align	2
-	.global	_ZN10TestVector22minimalCapacityEnsuredEv
-	.type	_ZN10TestVector22minimalCapacityEnsuredEv, %function
-_ZN10TestVector22minimalCapacityEnsuredEv:
-.LFB42:
-	.loc 1 25 0
+	.weak	_ZN6VectorIiED2Ev
+	.type	_ZN6VectorIiED2Ev, %function
+_ZN6VectorIiED2Ev:
+.LFB56:
+	.loc 2 53 0
 	.cfi_startproc
-.LVL33:
-	stp	x29, x30, [sp, -160]!
-	.cfi_def_cfa_offset 160
-	.cfi_offset 29, -160
-	.cfi_offset 30, -152
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	str	x19, [sp, 16]
-	.cfi_offset 19, -144
-	.loc 1 26 0
-	mov	x1, 0
-	add	x0, x29, 136
-.LVL34:
-	bl	_ZN6VectorIiEC1Em
-.LVL35:
-	.loc 1 27 0
-	mov	x1, 0
-	add	x0, x29, 112
-	bl	_ZN6VectorIiEC1Em
-.LVL36:
-	.loc 1 28 0
-	mov	x1, 7
-	add	x0, x29, 88
-	bl	_ZN6VectorIiEC1Em
-.LVL37:
-	.loc 1 29 0
-	mov	x1, 8
-	add	x0, x29, 64
-	bl	_ZN6VectorIiEC1Em
-.LVL38:
-	.loc 1 30 0
-	mov	x1, 9
-	add	x0, x29, 40
-	bl	_ZN6VectorIiEC1Em
-.LVL39:
-	ldr	x0, [x29, 144]
-	cmp	x0, 8
-	ldr	x0, [x29, 120]
-	ccmp	x0, 8, 0, eq
-	cset	w19, eq
-	ldr	x0, [x29, 96]
-	cmp	x0, 8
-	ldr	x0, [x29, 72]
-	ccmp	x0, 8, 0, eq
-	csel	w0, w19, wzr, eq
-	.loc 1 32 0
-	ldr	x1, [x29, 48]
-	cmp	x1, 8
-	cset	w19, hi
-	and	w19, w19, w0
-.LVL40:
-	.loc 1 30 0
-	add	x0, x29, 40
-	bl	_ZN6VectorIiED1Ev
-.LVL41:
-	.loc 1 29 0
-	add	x0, x29, 64
-	bl	_ZN6VectorIiED1Ev
-.LVL42:
-	.loc 1 28 0
-	add	x0, x29, 88
-	bl	_ZN6VectorIiED1Ev
-.LVL43:
-	.loc 1 27 0
-	add	x0, x29, 112
-	bl	_ZN6VectorIiED1Ev
-.LVL44:
-	.loc 1 26 0
-	add	x0, x29, 136
-	bl	_ZN6VectorIiED1Ev
-.LVL45:
-	.loc 1 35 0
-	mov	w0, w19
-	ldr	x19, [sp, 16]
-.LVL46:
-	ldp	x29, x30, [sp], 160
+	str	x0, [x29, 24]
+.LBB5:
+	.loc 2 55 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0]
+	cmp	x0, 0
+	beq	.L35
+	.loc 2 57 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	adrp	x0, mman
+	add	x0, x0, :lo12:mman
+	bl	_ZN13MemoryManager10deallocateEPv
+	.loc 2 58 0
+	ldr	x0, [x29, 24]
+	str	xzr, [x0]
+.L35:
+.LBE5:
+	.loc 2 60 0
+	nop
+	ldp	x29, x30, [sp], 32
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 19
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE42:
-	.size	_ZN10TestVector22minimalCapacityEnsuredEv, .-_ZN10TestVector22minimalCapacityEnsuredEv
+.LFE56:
+	.size	_ZN6VectorIiED2Ev, .-_ZN6VectorIiED2Ev
+	.weak	_ZN6VectorIiED1Ev
+	.set	_ZN6VectorIiED1Ev,_ZN6VectorIiED2Ev
+	.section	.text._ZNK6VectorIiE11getCapacityEv,"axG",@progbits,_ZNK6VectorIiE11getCapacityEv,comdat
+	.align	2
+	.weak	_ZNK6VectorIiE11getCapacityEv
+	.type	_ZNK6VectorIiE11getCapacityEv, %function
+_ZNK6VectorIiE11getCapacityEv:
+.LFB58:
+	.loc 2 109 0
+	.cfi_startproc
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 2 111 0
+	ldr	x0, [sp, 8]
+	ldr	x0, [x0, 8]
+	.loc 2 112 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE58:
+	.size	_ZNK6VectorIiE11getCapacityEv, .-_ZNK6VectorIiE11getCapacityEv
 	.section	.text._ZN6VectorIiE8pushBackEi,"axG",@progbits,_ZN6VectorIiE8pushBackEi,comdat
 	.align	2
 	.weak	_ZN6VectorIiE8pushBackEi
 	.type	_ZN6VectorIiE8pushBackEi, %function
 _ZN6VectorIiE8pushBackEi:
-.LFB57:
+.LFB59:
 	.loc 2 81 0
 	.cfi_startproc
-.LVL47:
 	stp	x29, x30, [sp, -32]!
 	.cfi_def_cfa_offset 32
 	.cfi_offset 29, -32
 	.cfi_offset 30, -24
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	.cfi_offset 19, -16
-	.cfi_offset 20, -8
-	mov	x19, x0
-	mov	w20, w1
-.LVL48:
-.LBB39:
-.LBB40:
-	.loc 2 189 0
-	ldr	x1, [x0, 8]
-.LVL49:
-	ldr	x0, [x0, 16]
-.LVL50:
-	add	x0, x0, 1
-	cmp	x0, x1
-	bhi	.L33
-.LVL51:
-.L30:
-.LBE40:
-.LBE39:
+	str	x0, [x29, 24]
+	str	w1, [x29, 20]
+	.loc 2 83 0
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE24adjustCapacityForOneMoreEv
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L40
 	.loc 2 85 0
-	ldr	x0, [x19, 16]
-	add	x0, x0, 1
-	str	x0, [x19, 16]
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	add	x1, x0, 1
+	ldr	x0, [x29, 24]
+	str	x1, [x0, 16]
 	.loc 2 86 0
-	ldr	x1, [x19]
-	add	x0, x1, x0, lsl 2
-	str	w20, [x0, -4]
-.L29:
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	lsl	x0, x0, 2
+	sub	x0, x0, #4
+	add	x0, x1, x0
+	ldr	w1, [x29, 20]
+	str	w1, [x0]
+.L40:
 	.loc 2 88 0
-	ldp	x19, x20, [sp, 16]
-.LVL52:
+	nop
 	ldp	x29, x30, [sp], 32
-	.cfi_remember_state
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
-.LVL53:
-.L33:
-	.cfi_restore_state
-.LBB44:
-.LBB43:
-.LBB41:
-.LBB42:
-	.loc 2 211 0
-	add	x1, x1, x1, lsl 1
-.LBE42:
-.LBE41:
-	.loc 2 190 0
-	lsr	x1, x1, 1
-	mov	x0, x19
-	bl	_ZN6VectorIiE14resizeCapacityEm
-.LVL54:
-.LBE43:
-.LBE44:
-	.loc 2 83 0
-	tst	w0, 255
-	beq	.L29
-	b	.L30
 	.cfi_endproc
-.LFE57:
+.LFE59:
 	.size	_ZN6VectorIiE8pushBackEi, .-_ZN6VectorIiE8pushBackEi
-	.text
+	.section	.text._ZN6VectorIiE7popBackEv,"axG",@progbits,_ZN6VectorIiE7popBackEv,comdat
 	.align	2
-	.global	_ZN10TestVector26capacityIncreasedCorrectlyEv
-	.type	_ZN10TestVector26capacityIncreasedCorrectlyEv, %function
-_ZN10TestVector26capacityIncreasedCorrectlyEv:
-.LFB43:
-	.loc 1 37 0
+	.weak	_ZN6VectorIiE7popBackEv
+	.type	_ZN6VectorIiE7popBackEv, %function
+_ZN6VectorIiE7popBackEv:
+.LFB60:
+	.loc 2 73 0
 	.cfi_startproc
-.LVL55:
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x0, [x29, 24]
+	.loc 2 75 0
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L42
+	.loc 2 76 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	cmp	x0, 0
+	beq	.L42
+	.loc 2 77 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	sub	x2, x0, #1
+	ldr	x0, [x29, 24]
+	str	x2, [x0, 16]
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	lsl	x0, x0, 2
+	add	x0, x1, x0
+	ldr	w0, [x0]
+	b	.L43
+.L42:
+	.loc 2 78 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0]
+	ldr	w0, [x0]
+.L43:
+	.loc 2 79 0
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE60:
+	.size	_ZN6VectorIiE7popBackEv, .-_ZN6VectorIiE7popBackEv
+	.section	.text._ZN6VectorIiEC2ERKSt16initializer_listIiE,"axG",@progbits,_ZN6VectorIiEC5ERKSt16initializer_listIiE,comdat
+	.align	2
+	.weak	_ZN6VectorIiEC2ERKSt16initializer_listIiE
+	.type	_ZN6VectorIiEC2ERKSt16initializer_listIiE, %function
+_ZN6VectorIiEC2ERKSt16initializer_listIiE:
+.LFB62:
+	.loc 2 24 0
+	.cfi_startproc
 	stp	x29, x30, [sp, -64]!
 	.cfi_def_cfa_offset 64
 	.cfi_offset 29, -64
 	.cfi_offset 30, -56
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	str	x19, [sp, 16]
-	.cfi_offset 19, -48
-	.loc 1 38 0
-	mov	x1, 8
-	add	x0, x29, 40
-.LVL56:
+	str	x0, [x29, 24]
+	str	x1, [x29, 16]
+.LBB6:
+	.loc 2 25 0
+	mov	x1, 0
+	ldr	x0, [x29, 24]
 	bl	_ZN6VectorIiEC1Em
-.LVL57:
-	.loc 1 39 0
-	mov	w1, 10
-	add	x0, x29, 40
-	bl	_ZN6VectorIiE8pushBackEi
-.LVL58:
-	.loc 1 40 0
+.LBB7:
+.LBB8:
+	.loc 2 27 0
+	ldr	x0, [x29, 16]
+	str	x0, [x29, 48]
 	ldr	x0, [x29, 48]
-	cmp	x0, 12
-	cset	w19, eq
-	.loc 1 38 0
-	add	x0, x29, 40
-	bl	_ZN6VectorIiED1Ev
-.LVL59:
-	.loc 1 41 0
-	mov	w0, w19
-	ldr	x19, [sp, 16]
+	bl	_ZNKSt16initializer_listIiE5beginEv
+	str	x0, [x29, 56]
+	ldr	x0, [x29, 48]
+	bl	_ZNKSt16initializer_listIiE3endEv
+	str	x0, [x29, 40]
+.L46:
+	.loc 2 27 0 is_stmt 0 discriminator 3
+	ldr	x1, [x29, 56]
+	ldr	x0, [x29, 40]
+	cmp	x1, x0
+	beq	.L47
+	.loc 2 27 0 discriminator 2
+	ldr	x0, [x29, 56]
+	str	x0, [x29, 32]
+	.loc 2 28 0 is_stmt 1 discriminator 2
+	ldr	x0, [x29, 32]
+	ldr	w0, [x0]
+	mov	w1, w0
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE8pushBackEi
+	.loc 2 27 0 discriminator 2
+	ldr	x0, [x29, 56]
+	add	x0, x0, 4
+	str	x0, [x29, 56]
+	b	.L46
+.L47:
+.LBE8:
+.LBE7:
+.LBE6:
+	.loc 2 29 0
+	nop
 	ldp	x29, x30, [sp], 64
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 19
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE43:
-	.size	_ZN10TestVector26capacityIncreasedCorrectlyEv, .-_ZN10TestVector26capacityIncreasedCorrectlyEv
-	.section	.text._ZN6VectorIiEC2ERKSt16initializer_listIiE,"axG",@progbits,_ZN6VectorIiEC5ERKSt16initializer_listIiE,comdat
+.LFE62:
+	.size	_ZN6VectorIiEC2ERKSt16initializer_listIiE, .-_ZN6VectorIiEC2ERKSt16initializer_listIiE
+	.weak	_ZN6VectorIiEC1ERKSt16initializer_listIiE
+	.set	_ZN6VectorIiEC1ERKSt16initializer_listIiE,_ZN6VectorIiEC2ERKSt16initializer_listIiE
+	.section	.text._ZN6VectorIiE5eraseEm,"axG",@progbits,_ZN6VectorIiE5eraseEm,comdat
 	.align	2
-	.weak	_ZN6VectorIiEC2ERKSt16initializer_listIiE
-	.type	_ZN6VectorIiEC2ERKSt16initializer_listIiE, %function
-_ZN6VectorIiEC2ERKSt16initializer_listIiE:
-.LFB60:
-	.loc 2 24 0
+	.weak	_ZN6VectorIiE5eraseEm
+	.type	_ZN6VectorIiE5eraseEm, %function
+_ZN6VectorIiE5eraseEm:
+.LFB64:
+	.loc 2 127 0
 	.cfi_startproc
-.LVL60:
 	stp	x29, x30, [sp, -48]!
 	.cfi_def_cfa_offset 48
 	.cfi_offset 29, -48
 	.cfi_offset 30, -40
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	str	x21, [sp, 32]
-	.cfi_offset 19, -32
-	.cfi_offset 20, -24
-	.cfi_offset 21, -16
-	mov	x21, x0
-	mov	x20, x1
-.LBB47:
-	.loc 2 25 0
-	mov	x1, 0
-.LVL61:
-	bl	_ZN6VectorIiEC1Em
-.LVL62:
-.LBB48:
-.LBB49:
-.LBB50:
-	.file 4 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list"
-	.loc 4 75 0
-	ldr	x19, [x20]
-.LVL63:
-.LBE50:
-.LBE49:
-.LBB51:
-.LBB52:
-	.loc 4 79 0
-	ldr	x20, [x20, 8]
-.LVL64:
-	add	x20, x19, x20, lsl 2
-.LVL65:
-.LBE52:
-.LBE51:
-	.loc 2 27 0
-	cmp	x20, x19
-	beq	.L36
-.LVL66:
-.L38:
-	.loc 2 28 0 discriminator 2
-	ldr	w1, [x19], 4
-.LVL67:
-	mov	x0, x21
-	bl	_ZN6VectorIiE8pushBackEi
-.LVL68:
-	.loc 2 27 0 discriminator 2
-	cmp	x20, x19
-	bne	.L38
-.LVL69:
-.L36:
-.LBE48:
-.LBE47:
-	.loc 2 29 0
-	ldp	x19, x20, [sp, 16]
-	ldr	x21, [sp, 32]
-.LVL70:
+	str	x0, [x29, 24]
+	str	x1, [x29, 16]
+.LBB9:
+	.loc 2 129 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	ldr	x1, [x29, 16]
+	cmp	x1, x0
+	bcs	.L49
+	.loc 2 129 0 is_stmt 0 discriminator 1
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L49
+	.loc 2 129 0 discriminator 3
+	mov	w0, 1
+	b	.L50
+.L49:
+	.loc 2 129 0 discriminator 4
+	mov	w0, 0
+.L50:
+	.loc 2 129 0 discriminator 6
+	cmp	w0, 0
+	beq	.L54
+.LBB10:
+	.loc 2 131 0 is_stmt 1
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	sub	x1, x0, #1
+	ldr	x0, [x29, 24]
+	str	x1, [x0, 16]
+.LBB11:
+	.loc 2 132 0
+	ldr	x0, [x29, 16]
+	str	x0, [x29, 40]
+.L53:
+	.loc 2 132 0 is_stmt 0 discriminator 3
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	ldr	x1, [x29, 40]
+	cmp	x1, x0
+	beq	.L54
+	.loc 2 133 0 is_stmt 1 discriminator 2
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 40]
+	add	x0, x0, 1
+	lsl	x0, x0, 2
+	add	x1, x1, x0
+	ldr	x0, [x29, 24]
+	ldr	x2, [x0]
+	ldr	x0, [x29, 40]
+	lsl	x0, x0, 2
+	add	x0, x2, x0
+	ldr	w1, [x1]
+	str	w1, [x0]
+	.loc 2 132 0 discriminator 2
+	ldr	x0, [x29, 40]
+	add	x0, x0, 1
+	str	x0, [x29, 40]
+	b	.L53
+.L54:
+.LBE11:
+.LBE10:
+.LBE9:
+	.loc 2 135 0
+	nop
 	ldp	x29, x30, [sp], 48
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 21
-	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE60:
-	.size	_ZN6VectorIiEC2ERKSt16initializer_listIiE, .-_ZN6VectorIiEC2ERKSt16initializer_listIiE
-	.weak	_ZN6VectorIiEC1ERKSt16initializer_listIiE
-	.set	_ZN6VectorIiEC1ERKSt16initializer_listIiE,_ZN6VectorIiEC2ERKSt16initializer_listIiE
-	.section	.text._ZN6VectorIiE24adjustCapacityForOneLessEv,"axG",@progbits,_ZN6VectorIiE24adjustCapacityForOneLessEv,comdat
+.LFE64:
+	.size	_ZN6VectorIiE5eraseEm, .-_ZN6VectorIiE5eraseEm
+	.section	.text._ZNK6VectorIiE7getSizeEv,"axG",@progbits,_ZNK6VectorIiE7getSizeEv,comdat
 	.align	2
-	.weak	_ZN6VectorIiE24adjustCapacityForOneLessEv
-	.type	_ZN6VectorIiE24adjustCapacityForOneLessEv, %function
-_ZN6VectorIiE24adjustCapacityForOneLessEv:
-.LFB68:
-	.loc 2 195 0
+	.weak	_ZNK6VectorIiE7getSizeEv
+	.type	_ZNK6VectorIiE7getSizeEv, %function
+_ZNK6VectorIiE7getSizeEv:
+.LFB65:
+	.loc 2 103 0
 	.cfi_startproc
-.LVL71:
-	.loc 2 199 0
-	ldr	x2, [x0, 16]
-	mov	x1, 8
-	cbz	x2, .L42
-	.loc 2 199 0 is_stmt 0 discriminator 1
-	sub	x2, x2, #1
-.LBB55:
-.LBB56:
-	.loc 2 211 0 is_stmt 1 discriminator 1
-	add	x2, x2, x2, lsl 1
-	lsr	x1, x2, 1
-	cmp	x1, 8
-	mov	x2, 8
-	csel	x1, x1, x2, cs
-.L42:
-.LVL72:
-.LBE56:
-.LBE55:
-	.loc 2 202 0
-	ldr	x3, [x0, 8]
-	.loc 2 204 0
-	mov	w2, 1
-	.loc 2 202 0
-	cmp	x3, x1
-	bhi	.L50
-	.loc 2 206 0
-	mov	w0, w2
-.LVL73:
-	ret
-.LVL74:
-.L50:
-	.loc 2 195 0
-	stp	x29, x30, [sp, -16]!
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 16
-	.cfi_offset 29, -16
-	.cfi_offset 30, -8
+	str	x0, [sp, 8]
+	.loc 2 105 0
+	ldr	x0, [sp, 8]
+	ldr	x0, [x0, 16]
+	.loc 2 106 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE65:
+	.size	_ZNK6VectorIiE7getSizeEv, .-_ZNK6VectorIiE7getSizeEv
+	.section	.text._ZN6VectorIiEixEm,"axG",@progbits,_ZN6VectorIiEixEm,comdat
+	.align	2
+	.weak	_ZN6VectorIiEixEm
+	.type	_ZN6VectorIiEixEm, %function
+_ZN6VectorIiEixEm:
+.LFB66:
+	.loc 2 68 0
+	.cfi_startproc
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	str	x1, [sp]
+	.loc 2 70 0
+	ldr	x0, [sp, 8]
+	ldr	x1, [x0]
+	ldr	x0, [sp]
+	lsl	x0, x0, 2
+	add	x0, x1, x0
+	.loc 2 71 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE66:
+	.size	_ZN6VectorIiEixEm, .-_ZN6VectorIiEixEm
+	.section	.text._ZN6VectorIiE6insertEmRKi,"axG",@progbits,_ZN6VectorIiE6insertEmRKi,comdat
+	.align	2
+	.weak	_ZN6VectorIiE6insertEmRKi
+	.type	_ZN6VectorIiE6insertEmRKi, %function
+_ZN6VectorIiE6insertEmRKi:
+.LFB67:
+	.loc 2 146 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -64]!
+	.cfi_def_cfa_offset 64
+	.cfi_offset 29, -64
+	.cfi_offset 30, -56
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	.loc 2 203 0
-	bl	_ZN6VectorIiE14resizeCapacityEm
-.LVL75:
-	and	w2, w0, 255
-	.loc 2 206 0
-	mov	w0, w2
-	ldp	x29, x30, [sp], 16
+	str	x0, [x29, 40]
+	str	x1, [x29, 32]
+	str	x2, [x29, 24]
+	.loc 2 148 0
+	ldr	x0, [x29, 40]
+	ldr	x0, [x0, 16]
+	ldr	x1, [x29, 32]
+	cmp	x1, x0
+	bhi	.L60
+	.loc 2 148 0 is_stmt 0 discriminator 2
+	ldr	x0, [x29, 40]
+	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L61
+.L60:
+	.loc 2 148 0 discriminator 3
+	mov	w0, 1
+	b	.L62
+.L61:
+	.loc 2 148 0 discriminator 4
+	mov	w0, 0
+.L62:
+	.loc 2 148 0 discriminator 6
+	cmp	w0, 0
+	beq	.L63
+	.loc 2 149 0 is_stmt 1
+	mov	x0, -1
+	b	.L64
+.L63:
+	.loc 2 150 0
+	ldr	x0, [x29, 40]
+	ldr	x0, [x0, 16]
+	add	x1, x0, 1
+	ldr	x0, [x29, 40]
+	str	x1, [x0, 16]
+.LBB12:
+	.loc 2 151 0
+	ldr	x0, [x29, 40]
+	ldr	x0, [x0, 16]
+	sub	x0, x0, #1
+	str	x0, [x29, 56]
+.L66:
+	.loc 2 151 0 is_stmt 0 discriminator 3
+	ldr	x1, [x29, 56]
+	ldr	x0, [x29, 32]
+	cmp	x1, x0
+	beq	.L65
+	.loc 2 152 0 is_stmt 1 discriminator 2
+	ldr	x0, [x29, 40]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 56]
+	lsl	x0, x0, 2
+	sub	x0, x0, #4
+	add	x1, x1, x0
+	ldr	x0, [x29, 40]
+	ldr	x2, [x0]
+	ldr	x0, [x29, 56]
+	lsl	x0, x0, 2
+	add	x0, x2, x0
+	ldr	w1, [x1]
+	str	w1, [x0]
+	.loc 2 151 0 discriminator 2
+	ldr	x0, [x29, 56]
+	sub	x0, x0, #1
+	str	x0, [x29, 56]
+	b	.L66
+.L65:
+.LBE12:
+	.loc 2 153 0
+	ldr	x0, [x29, 40]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 32]
+	lsl	x0, x0, 2
+	add	x0, x1, x0
+	ldr	x1, [x29, 24]
+	ldr	w1, [x1]
+	str	w1, [x0]
+	.loc 2 154 0
+	ldr	x0, [x29, 32]
+.L64:
+	.loc 2 155 0
+	ldp	x29, x30, [sp], 64
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE67:
+	.size	_ZN6VectorIiE6insertEmRKi, .-_ZN6VectorIiE6insertEmRKi
+	.section	.text._ZN6VectorIiE14resizeCapacityEm,"axG",@progbits,_ZN6VectorIiE14resizeCapacityEm,comdat
+	.align	2
+	.weak	_ZN6VectorIiE14resizeCapacityEm
+	.type	_ZN6VectorIiE14resizeCapacityEm, %function
+_ZN6VectorIiE14resizeCapacityEm:
+.LFB68:
+	.loc 2 167 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -48]!
+	.cfi_def_cfa_offset 48
+	.cfi_offset 29, -48
+	.cfi_offset 30, -40
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x0, [x29, 24]
+	str	x1, [x29, 16]
+	.loc 2 169 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 8]
+	ldr	x1, [x29, 16]
+	cmp	x1, x0
+	bne	.L68
+	.loc 2 170 0
+	mov	w0, 1
+	b	.L69
+.L68:
+	.loc 2 171 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 16]
+	lsl	x2, x0, 2
+	adrp	x0, mman
+	add	x0, x0, :lo12:mman
+	mov	x3, -1
+	bl	_ZN13MemoryManager10reallocateEPvmm
+	.loc 2 172 0
+	ldr	x0, [x29, 16]
+	lsl	x1, x0, 2
+	adrp	x0, mman
+	add	x0, x0, :lo12:mman
+	bl	_ZN13MemoryManager10allocateAsIPiEET_m
+	str	x0, [x29, 32]
+	.loc 2 173 0
+	ldr	x0, [x29, 32]
+	cmp	x0, 0
+	bne	.L70
+	.loc 2 174 0
+	mov	w0, 0
+	b	.L69
+.L70:
+.LBB13:
+	.loc 2 176 0
+	str	xzr, [x29, 40]
+.L72:
+	.loc 2 176 0 is_stmt 0 discriminator 3
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	ldr	x1, [x29, 40]
+	cmp	x1, x0
+	beq	.L71
+	.loc 2 177 0 is_stmt 1 discriminator 2
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	ldr	x0, [x29, 40]
+	lsl	x0, x0, 2
+	add	x1, x1, x0
+	ldr	x0, [x29, 40]
+	lsl	x0, x0, 2
+	ldr	x2, [x29, 32]
+	add	x0, x2, x0
+	ldr	w1, [x1]
+	str	w1, [x0]
+	.loc 2 176 0 discriminator 2
+	ldr	x0, [x29, 40]
+	add	x0, x0, 1
+	str	x0, [x29, 40]
+	b	.L72
+.L71:
+.LBE13:
+	.loc 2 178 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x0]
+	adrp	x0, mman
+	add	x0, x0, :lo12:mman
+	bl	_ZN13MemoryManager10deallocateEPv
+	.loc 2 181 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x29, 32]
+	str	x1, [x0]
+	.loc 2 182 0
+	ldr	x0, [x29, 24]
+	ldr	x1, [x29, 16]
+	str	x1, [x0, 8]
+	.loc 2 183 0
+	mov	w0, 1
+.L69:
+	.loc 2 184 0
+	ldp	x29, x30, [sp], 48
 	.cfi_restore 30
 	.cfi_restore 29
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
 .LFE68:
-	.size	_ZN6VectorIiE24adjustCapacityForOneLessEv, .-_ZN6VectorIiE24adjustCapacityForOneLessEv
-	.text
+	.size	_ZN6VectorIiE14resizeCapacityEm, .-_ZN6VectorIiE14resizeCapacityEm
+	.section	.text._ZN6VectorIiE24adjustCapacityForOneMoreEv,"axG",@progbits,_ZN6VectorIiE24adjustCapacityForOneMoreEv,comdat
 	.align	2
-	.global	_ZN10TestVector27popBackWhenEmptyNoExceptionEv
-	.type	_ZN10TestVector27popBackWhenEmptyNoExceptionEv, %function
-_ZN10TestVector27popBackWhenEmptyNoExceptionEv:
-.LFB45:
-	.loc 1 47 0
+	.weak	_ZN6VectorIiE24adjustCapacityForOneMoreEv
+	.type	_ZN6VectorIiE24adjustCapacityForOneMoreEv, %function
+_ZN6VectorIiE24adjustCapacityForOneMoreEv:
+.LFB69:
+	.loc 2 187 0
 	.cfi_startproc
-.LVL76:
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x0, [x29, 24]
+	.loc 2 189 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	add	x1, x0, 1
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 8]
+	cmp	x1, x0
+	bls	.L74
+	.loc 2 190 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 8]
+	bl	_ZN6VectorIiE18getIncrementalSizeEm
+	mov	x1, x0
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE14resizeCapacityEm
+	and	w0, w0, 255
+	b	.L75
+.L74:
+	.loc 2 191 0
+	mov	w0, 1
+.L75:
+	.loc 2 192 0
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE69:
+	.size	_ZN6VectorIiE24adjustCapacityForOneMoreEv, .-_ZN6VectorIiE24adjustCapacityForOneMoreEv
+	.section	.text._ZN6VectorIiE24adjustCapacityForOneLessEv,"axG",@progbits,_ZN6VectorIiE24adjustCapacityForOneLessEv,comdat
+	.align	2
+	.weak	_ZN6VectorIiE24adjustCapacityForOneLessEv
+	.type	_ZN6VectorIiE24adjustCapacityForOneLessEv, %function
+_ZN6VectorIiE24adjustCapacityForOneLessEv:
+.LFB70:
+	.loc 2 195 0
+	.cfi_startproc
 	stp	x29, x30, [sp, -48]!
 	.cfi_def_cfa_offset 48
 	.cfi_offset 29, -48
 	.cfi_offset 30, -40
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	.loc 1 48 0
-	mov	x1, 0
-	add	x0, x29, 24
-.LVL77:
-	bl	_ZN6VectorIiEC1Em
-.LVL78:
-.LBB59:
-.LBB60:
-	.loc 2 75 0
-	add	x0, x29, 24
-.LVL79:
-	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
-.LVL80:
-	tst	w0, 255
-	beq	.L52
-	.loc 2 76 0
+	str	x0, [x29, 24]
+	.loc 2 199 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	cmp	x0, 0
+	beq	.L77
+	.loc 2 199 0 is_stmt 0 discriminator 1
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 16]
+	sub	x0, x0, #1
+	bl	_ZN6VectorIiE18getIncrementalSizeEm
+	b	.L78
+.L77:
+	.loc 2 199 0 discriminator 2
+	mov	x0, 8
+.L78:
+	.loc 2 199 0 discriminator 4
+	str	x0, [x29, 40]
+	.loc 2 200 0 is_stmt 1 discriminator 4
 	ldr	x0, [x29, 40]
-	cbnz	x0, .L54
-.L52:
-.LVL81:
-.LBE60:
-.LBE59:
-	.loc 1 48 0
-	add	x0, x29, 24
-	bl	_ZN6VectorIiED1Ev
-.LVL82:
-	.loc 1 52 0
+	cmp	x0, 7
+	bhi	.L79
+	.loc 2 201 0
+	mov	x0, 8
+	str	x0, [x29, 40]
+.L79:
+	.loc 2 202 0
+	ldr	x0, [x29, 24]
+	ldr	x0, [x0, 8]
+	ldr	x1, [x29, 40]
+	cmp	x1, x0
+	bcs	.L80
+	.loc 2 203 0
+	ldr	x1, [x29, 40]
+	ldr	x0, [x29, 24]
+	bl	_ZN6VectorIiE14resizeCapacityEm
+	and	w0, w0, 255
+	b	.L81
+.L80:
+	.loc 2 204 0
 	mov	w0, 1
+.L81:
+	.loc 2 206 0
 	ldp	x29, x30, [sp], 48
-	.cfi_remember_state
 	.cfi_restore 30
 	.cfi_restore 29
 	.cfi_def_cfa 31, 0
 	ret
-.LVL83:
-.L54:
-	.cfi_restore_state
-.LBB62:
-.LBB61:
-	.loc 2 77 0
-	sub	x0, x0, #1
-	str	x0, [x29, 40]
-	b	.L52
-.LBE61:
-.LBE62:
 	.cfi_endproc
-.LFE45:
-	.size	_ZN10TestVector27popBackWhenEmptyNoExceptionEv, .-_ZN10TestVector27popBackWhenEmptyNoExceptionEv
+.LFE70:
+	.size	_ZN6VectorIiE24adjustCapacityForOneLessEv, .-_ZN6VectorIiE24adjustCapacityForOneLessEv
+	.section	.text._ZNKSt16initializer_listIiE5beginEv,"axG",@progbits,_ZNKSt16initializer_listIiE5beginEv,comdat
 	.align	2
-	.global	_ZN10TestVector14eraseCorrectlyEv
-	.type	_ZN10TestVector14eraseCorrectlyEv, %function
-_ZN10TestVector14eraseCorrectlyEv:
-.LFB47:
-	.loc 1 58 0
+	.weak	_ZNKSt16initializer_listIiE5beginEv
+	.type	_ZNKSt16initializer_listIiE5beginEv, %function
+_ZNKSt16initializer_listIiE5beginEv:
+.LFB71:
+	.file 3 "d:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\aarch64-elf\\include\\c++\\7.2.1\\initializer_list"
+	.loc 3 75 0
 	.cfi_startproc
-.LVL84:
-	stp	x29, x30, [sp, -80]!
-	.cfi_def_cfa_offset 80
-	.cfi_offset 29, -80
-	.cfi_offset 30, -72
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 3 75 0
+	ldr	x0, [sp, 8]
+	ldr	x0, [x0]
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE71:
+	.size	_ZNKSt16initializer_listIiE5beginEv, .-_ZNKSt16initializer_listIiE5beginEv
+	.section	.text._ZNKSt16initializer_listIiE3endEv,"axG",@progbits,_ZNKSt16initializer_listIiE3endEv,comdat
+	.align	2
+	.weak	_ZNKSt16initializer_listIiE3endEv
+	.type	_ZNKSt16initializer_listIiE3endEv, %function
+_ZNKSt16initializer_listIiE3endEv:
+.LFB72:
+	.loc 3 79 0
+	.cfi_startproc
+	stp	x29, x30, [sp, -48]!
+	.cfi_def_cfa_offset 48
+	.cfi_offset 29, -48
+	.cfi_offset 30, -40
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x19, [sp, 16]
-	.cfi_offset 19, -64
-	.loc 1 59 0
-	adrp	x0, .LANCHOR0
-.LVL85:
-	add	x0, x0, :lo12:.LANCHOR0
-	str	x0, [x29, 64]
-	mov	x0, 9
-	str	x0, [x29, 72]
-	add	x1, x29, 64
-	add	x0, x29, 40
-	bl	_ZN6VectorIiEC1ERKSt16initializer_listIiE
-.LVL86:
-.LBB73:
-.LBB74:
-	.loc 2 129 0
-	ldr	x0, [x29, 56]
-	cmp	x0, 4
-	bhi	.L56
-.L59:
-.LVL87:
-.LBE74:
-.LBE73:
-.LBB78:
-.LBB79:
-.LBB80:
-	.loc 2 105 0 discriminator 1
-	ldr	x2, [x29, 56]
-.LVL88:
-.LBE80:
-.LBE79:
-.LBE78:
-	.loc 1 64 0 discriminator 1
-	mov	w19, 1
-.LBB83:
-	.loc 1 61 0 discriminator 1
-	cbz	x2, .L58
-.LVL89:
-.L57:
-.LBB81:
-.LBB82:
-	.loc 2 70 0
-	ldr	x3, [x29, 40]
-.LVL90:
-.LBE82:
-.LBE81:
-	.loc 1 62 0
-	ldr	w0, [x3]
-	cbnz	w0, .L63
-	mov	x0, 0
-.LVL91:
-.L61:
-	.loc 1 61 0 discriminator 2
-	add	x0, x0, 1
-.LVL92:
-	cmp	x0, x2
-	beq	.L66
-	.loc 1 62 0
-	ldrsw	x1, [x3, x0, lsl 2]
-	cmp	x1, x0
-	beq	.L61
-	.loc 1 63 0
-	mov	w19, 0
-	b	.L58
-.LVL93:
-.L56:
-.LBE83:
-.LBB84:
-.LBB77:
-	.loc 2 129 0
-	add	x0, x29, 40
-.LVL94:
-	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
-.LVL95:
-	tst	w0, 255
-	beq	.L59
-.LBB75:
-	.loc 2 131 0
-	ldr	x2, [x29, 56]
-	sub	x2, x2, #1
-	str	x2, [x29, 56]
-.LVL96:
-.LBB76:
-	.loc 2 132 0
-	cmp	x2, 4
-	beq	.L57
-	mov	x1, 16
-	mov	x0, 4
-.LVL97:
-.L60:
-	.loc 2 133 0
-	ldr	x2, [x29, 40]
-	add	x0, x0, 1
-.LVL98:
-	ldr	w3, [x2, x0, lsl 2]
-	str	w3, [x2, x1]
-.LVL99:
-	add	x1, x1, 4
-	.loc 2 132 0
-	ldr	x2, [x29, 56]
-	cmp	x2, x0
-	bne	.L60
-	b	.L59
-.LVL100:
-.L66:
-.LBE76:
-.LBE75:
-.LBE77:
-.LBE84:
-	.loc 1 64 0
-	mov	w19, 1
-.LVL101:
-.L58:
-	.loc 1 59 0
-	add	x0, x29, 40
-.LVL102:
-	bl	_ZN6VectorIiED1Ev
-.LVL103:
-	.loc 1 66 0
-	mov	w0, w19
-	ldr	x19, [sp, 16]
-	ldp	x29, x30, [sp], 80
-	.cfi_remember_state
-	.cfi_restore 30
-	.cfi_restore 29
-	.cfi_restore 19
-	.cfi_def_cfa 31, 0
-.LVL104:
-	ret
-.LVL105:
-.L63:
-	.cfi_restore_state
-.LBB85:
-	.loc 1 63 0
-	mov	w19, 0
-	b	.L58
-.LBE85:
-	.cfi_endproc
-.LFE47:
-	.size	_ZN10TestVector14eraseCorrectlyEv, .-_ZN10TestVector14eraseCorrectlyEv
-	.section	.text._ZN6VectorIiE6insertEmRKi,"axG",@progbits,_ZN6VectorIiE6insertEmRKi,comdat
-	.align	2
-	.weak	_ZN6VectorIiE6insertEmRKi
-	.type	_ZN6VectorIiE6insertEmRKi, %function
-_ZN6VectorIiE6insertEmRKi:
-.LFB65:
-	.loc 2 146 0
-	.cfi_startproc
-.LVL106:
-	.loc 2 148 0
-	ldr	x3, [x0, 16]
-	cmp	x3, x1
-	bcc	.L71
-	.loc 2 146 0 discriminator 2
-	stp	x29, x30, [sp, -48]!
-	.cfi_def_cfa_offset 48
-	.cfi_offset 29, -48
-	.cfi_offset 30, -40
-	add	x29, sp, 0
-	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	str	x21, [sp, 32]
 	.cfi_offset 19, -32
-	.cfi_offset 20, -24
-	.cfi_offset 21, -16
-	mov	x21, x2
-	mov	x20, x1
+	str	x0, [x29, 40]
+	.loc 3 79 0
+	ldr	x0, [x29, 40]
+	bl	_ZNKSt16initializer_listIiE5beginEv
 	mov	x19, x0
-	.loc 2 148 0 discriminator 2
-	bl	_ZN6VectorIiE24adjustCapacityForOneLessEv
-.LVL107:
-	.loc 2 149 0 discriminator 2
-	mov	x1, -1
-	.loc 2 148 0 discriminator 2
-	tst	w0, 255
-	beq	.L67
-	.loc 2 150 0
-	ldr	x5, [x19, 16]
-	add	x0, x5, 1
-	str	x0, [x19, 16]
-.LVL108:
-.LBB86:
-	.loc 2 151 0
-	cmp	x5, x20
-	beq	.L69
-	lsl	x4, x5, 2
-	sub	x4, x4, #4
-.L70:
-	.loc 2 152 0 discriminator 2
-	ldr	x3, [x19]
-	ldr	w0, [x3, x4]
-	add	x3, x3, x4
-	str	w0, [x3, 4]
-	.loc 2 151 0 discriminator 2
-	sub	x5, x5, #1
-.LVL109:
-	sub	x4, x4, #4
-	cmp	x20, x5
-	bne	.L70
-.L69:
-.LBE86:
-	.loc 2 153 0
-	ldr	w1, [x21]
-	ldr	x0, [x19]
-	str	w1, [x0, x20, lsl 2]
-	.loc 2 154 0
-	mov	x1, x20
-.LVL110:
-.L67:
-	.loc 2 155 0
-	mov	x0, x1
-	ldp	x19, x20, [sp, 16]
-.LVL111:
-	ldr	x21, [sp, 32]
-.LVL112:
+	ldr	x0, [x29, 40]
+	bl	_ZNKSt16initializer_listIiE4sizeEv
+	lsl	x0, x0, 2
+	add	x0, x19, x0
+	ldr	x19, [sp, 16]
 	ldp	x29, x30, [sp], 48
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 21
 	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
-.LVL113:
-.L71:
-	.loc 2 149 0
-	mov	x1, -1
-.LVL114:
-	.loc 2 155 0
-	mov	x0, x1
-.LVL115:
-	ret
 	.cfi_endproc
-.LFE65:
-	.size	_ZN6VectorIiE6insertEmRKi, .-_ZN6VectorIiE6insertEmRKi
-	.text
+.LFE72:
+	.size	_ZNKSt16initializer_listIiE3endEv, .-_ZNKSt16initializer_listIiE3endEv
+	.section	.text._ZN13MemoryManager10allocateAsIPiEET_m,"axG",@progbits,_ZN13MemoryManager10allocateAsIPiEET_m,comdat
 	.align	2
-	.global	_ZN10TestVector15insertCorrectlyEv
-	.type	_ZN10TestVector15insertCorrectlyEv, %function
-_ZN10TestVector15insertCorrectlyEv:
-.LFB48:
-	.loc 1 68 0
+	.weak	_ZN13MemoryManager10allocateAsIPiEET_m
+	.type	_ZN13MemoryManager10allocateAsIPiEET_m, %function
+_ZN13MemoryManager10allocateAsIPiEET_m:
+.LFB73:
+	.file 4 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h"
+	.loc 4 15 0
 	.cfi_startproc
-.LVL116:
-	stp	x29, x30, [sp, -80]!
-	.cfi_def_cfa_offset 80
-	.cfi_offset 29, -80
-	.cfi_offset 30, -72
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	stp	x19, x20, [sp, 16]
-	.cfi_offset 19, -64
-	.cfi_offset 20, -56
-	.loc 1 69 0
-	adrp	x0, .LANCHOR0
-.LVL117:
-	add	x0, x0, :lo12:.LANCHOR0
-	add	x0, x0, 40
-	str	x0, [x29, 56]
-	mov	x0, 7
-	str	x0, [x29, 64]
-	add	x1, x29, 56
-	add	x0, x29, 32
-	bl	_ZN6VectorIiEC1ERKSt16initializer_listIiE
-.LVL118:
-.LBB96:
-.LBB97:
-	.loc 2 105 0
-	ldr	x19, [x29, 48]
-.LVL119:
-.LBE97:
-.LBE96:
-	.loc 1 71 0
-	add	x2, x29, 80
-	str	wzr, [x2, -8]!
-	add	x1, x19, 1
-	add	x0, x29, 32
-	bl	_ZN6VectorIiE6insertEmRKi
-.LVL120:
-	.loc 1 73 0
-	mov	w20, 0
-	.loc 1 72 0
-	ldr	x0, [x29, 48]
-	cmp	x0, x19
-	beq	.L87
-.L79:
-	.loc 1 69 0
-	add	x0, x29, 32
-	bl	_ZN6VectorIiED1Ev
-.LVL121:
-	.loc 1 80 0
-	mov	w0, w20
-	ldp	x19, x20, [sp, 16]
-	ldp	x29, x30, [sp], 80
-	.cfi_remember_state
+	str	x0, [x29, 24]
+	str	x1, [x29, 16]
+	.loc 4 17 0
+	ldr	x1, [x29, 16]
+	ldr	x0, [x29, 24]
+	bl	_ZN13MemoryManager8allocateEm
+	.loc 4 18 0
+	ldp	x29, x30, [sp], 32
 	.cfi_restore 30
 	.cfi_restore 29
-	.cfi_restore 19
-	.cfi_restore 20
 	.cfi_def_cfa 31, 0
 	ret
-.L87:
-	.cfi_restore_state
-	.loc 1 75 0
-	add	x2, x29, 80
-	mov	w0, 4
-	str	w0, [x2, -4]!
-	mov	x1, 4
-	add	x0, x29, 32
-	bl	_ZN6VectorIiE6insertEmRKi
-.LVL122:
-.LBB98:
-.LBB99:
-.LBB100:
-	.loc 2 105 0
-	ldr	x2, [x29, 48]
-.LVL123:
-.LBE100:
-.LBE99:
-	.loc 1 76 0
-	cbz	x2, .L83
-.LVL124:
-.LBB101:
-.LBB102:
-	.loc 2 70 0
-	ldr	x3, [x29, 32]
-.LVL125:
-.LBE102:
-.LBE101:
-	.loc 1 77 0
-	ldr	w0, [x3]
-	cbnz	w0, .L84
-	.loc 1 76 0
-	mov	x0, 0
-.LVL126:
-.L80:
-	.loc 1 76 0 is_stmt 0 discriminator 2
-	add	x0, x0, 1
-.LVL127:
-	cmp	x0, x2
-	beq	.L88
-	.loc 1 77 0 is_stmt 1
-	ldrsw	x1, [x3, x0, lsl 2]
-	cmp	x1, x0
-	beq	.L80
-	.loc 1 78 0
-	mov	w20, 0
-	b	.L79
-.L88:
-.LBE98:
-	.loc 1 79 0
-	mov	w20, 1
-.LBB103:
-	b	.L79
-.LVL128:
-.L83:
-.LBE103:
-	mov	w20, 1
-	b	.L79
-.L84:
-.LBB104:
-	.loc 1 78 0
-	mov	w20, 0
-	b	.L79
-.LBE104:
 	.cfi_endproc
-.LFE48:
-	.size	_ZN10TestVector15insertCorrectlyEv, .-_ZN10TestVector15insertCorrectlyEv
+.LFE73:
+	.size	_ZN13MemoryManager10allocateAsIPiEET_m, .-_ZN13MemoryManager10allocateAsIPiEET_m
+	.section	.text._ZN6VectorIiE18getIncrementalSizeEm,"axG",@progbits,_ZN6VectorIiE18getIncrementalSizeEm,comdat
+	.align	2
+	.weak	_ZN6VectorIiE18getIncrementalSizeEm
+	.type	_ZN6VectorIiE18getIncrementalSizeEm, %function
+_ZN6VectorIiE18getIncrementalSizeEm:
+.LFB74:
+	.loc 2 209 0
+	.cfi_startproc
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 2 211 0
+	ldr	x1, [sp, 8]
+	mov	x0, x1
+	lsl	x0, x0, 1
+	add	x0, x0, x1
+	lsr	x0, x0, 1
+	.loc 2 212 0
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE74:
+	.size	_ZN6VectorIiE18getIncrementalSizeEm, .-_ZN6VectorIiE18getIncrementalSizeEm
+	.section	.text._ZNKSt16initializer_listIiE4sizeEv,"axG",@progbits,_ZNKSt16initializer_listIiE4sizeEv,comdat
+	.align	2
+	.weak	_ZNKSt16initializer_listIiE4sizeEv
+	.type	_ZNKSt16initializer_listIiE4sizeEv, %function
+_ZNKSt16initializer_listIiE4sizeEv:
+.LFB75:
+	.loc 3 71 0
+	.cfi_startproc
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 16
+	str	x0, [sp, 8]
+	.loc 3 71 0
+	ldr	x0, [sp, 8]
+	ldr	x0, [x0, 8]
+	add	sp, sp, 16
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE75:
+	.size	_ZNKSt16initializer_listIiE4sizeEv, .-_ZNKSt16initializer_listIiE4sizeEv
 	.section	.rodata
 	.align	3
-	.set	.LANCHOR0,. + 0
 	.type	._5, %object
 	.size	._5, 36
 ._5:
@@ -1123,7 +1421,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.word	5
 	.word	6
 	.word	7
-	.zero	4
+	.align	3
 	.type	._6, %object
 	.size	._6, 28
 ._6:
@@ -1151,7 +1449,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.file 17 "<built-in>"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x1d55
+	.4byte	0x1955
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
@@ -1160,7 +1458,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x4
 	.4byte	.LASF1052
 	.4byte	.LASF1053
-	.4byte	.Ldebug_ranges0+0x110
+	.4byte	.Ldebug_ranges0+0
 	.8byte	0
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
@@ -1294,69 +1592,69 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x52
 	.4byte	0x3d1
 	.uleb128 0x6
-	.4byte	.LASF870
+	.4byte	.LASF868
 	.byte	0x10
-	.byte	0x4
+	.byte	0x3
 	.byte	0x2f
 	.4byte	0x1f9
 	.uleb128 0x7
 	.4byte	.LASF813
-	.byte	0x4
+	.byte	0x3
 	.byte	0x36
-	.4byte	0xfa6
+	.4byte	0xfcb
 	.byte	0x1
 	.uleb128 0x8
 	.4byte	.LASF815
-	.byte	0x4
+	.byte	0x3
 	.byte	0x3a
 	.4byte	0x11d
 	.byte	0
 	.uleb128 0x7
 	.4byte	.LASF814
-	.byte	0x4
+	.byte	0x3
 	.byte	0x35
 	.4byte	0x1fe
 	.byte	0x1
 	.uleb128 0x8
 	.4byte	.LASF816
-	.byte	0x4
+	.byte	0x3
 	.byte	0x3b
 	.4byte	0x135
 	.byte	0x8
 	.uleb128 0x7
 	.4byte	.LASF817
-	.byte	0x4
+	.byte	0x3
 	.byte	0x37
-	.4byte	0xfa6
+	.4byte	0xfcb
 	.byte	0x1
 	.uleb128 0x9
-	.4byte	.LASF888
-	.byte	0x4
+	.4byte	.LASF886
+	.byte	0x3
 	.byte	0x3e
 	.4byte	.LASF938
 	.4byte	0x16c
 	.4byte	0x17c
 	.uleb128 0xa
-	.4byte	0x1108
+	.4byte	0x112d
 	.uleb128 0xb
 	.4byte	0x14d
 	.uleb128 0xb
 	.4byte	0x135
 	.byte	0
 	.uleb128 0xc
-	.4byte	.LASF888
-	.byte	0x4
+	.4byte	.LASF886
+	.byte	0x3
 	.byte	0x42
-	.4byte	.LASF890
+	.4byte	.LASF888
 	.byte	0x1
 	.4byte	0x190
 	.4byte	0x196
 	.uleb128 0xa
-	.4byte	0x1108
+	.4byte	0x112d
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF818
-	.byte	0x4
+	.byte	0x3
 	.byte	0x47
 	.4byte	.LASF820
 	.4byte	0x135
@@ -1364,11 +1662,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1ae
 	.4byte	0x1b4
 	.uleb128 0xa
-	.4byte	0x110e
+	.4byte	0x1133
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF819
-	.byte	0x4
+	.byte	0x3
 	.byte	0x4b
 	.4byte	.LASF821
 	.4byte	0x14d
@@ -1376,11 +1674,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1cc
 	.4byte	0x1d2
 	.uleb128 0xa
-	.4byte	0x110e
+	.4byte	0x1133
 	.byte	0
 	.uleb128 0xe
 	.string	"end"
-	.byte	0x4
+	.byte	0x3
 	.byte	0x4f
 	.4byte	.LASF1054
 	.4byte	0x14d
@@ -1388,7 +1686,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x1ea
 	.4byte	0x1f0
 	.uleb128 0xa
-	.4byte	0x110e
+	.4byte	0x1133
 	.byte	0
 	.uleb128 0xf
 	.string	"_E"
@@ -1653,317 +1951,327 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x1d
 	.4byte	.LASF866
 	.byte	0xa
-	.byte	0x1c
+	.byte	0x16
 	.4byte	0x402
 	.uleb128 0x1e
 	.4byte	.LASF867
 	.byte	0xa
-	.byte	0x1f
+	.byte	0x1a
+	.4byte	0x2c5
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL6UNIT_K
+	.uleb128 0x1f
+	.string	"KiB"
+	.byte	0xa
+	.byte	0x1b
+	.4byte	0x2c5
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3KiB
+	.uleb128 0x1f
+	.string	"MiB"
+	.byte	0xa
+	.byte	0x1c
+	.4byte	0x2c5
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3MiB
+	.uleb128 0x1f
+	.string	"GiB"
+	.byte	0xa
+	.byte	0x1d
+	.4byte	0x2c5
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL3GiB
+	.uleb128 0x20
+	.byte	0x8
+	.uleb128 0x21
+	.byte	0x8
+	.4byte	0x47a
+	.uleb128 0x22
+	.uleb128 0x6
+	.4byte	.LASF869
+	.byte	0x1
+	.byte	0xb
+	.byte	0xd
+	.4byte	0x691
+	.uleb128 0xd
+	.4byte	.LASF870
+	.byte	0xb
+	.byte	0xf
+	.4byte	.LASF871
+	.4byte	0x22d
+	.byte	0x1
+	.4byte	0x49f
+	.4byte	0x4af
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x697
+	.uleb128 0xb
+	.4byte	0x22d
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF870
+	.byte	0xb
+	.byte	0x10
+	.4byte	.LASF872
+	.4byte	0x22d
+	.byte	0x1
+	.4byte	0x4c7
+	.4byte	0x4d2
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x697
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x11
+	.4byte	.LASF874
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x4ea
+	.4byte	0x4f5
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x407
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x13
+	.4byte	.LASF875
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x50d
+	.4byte	0x518
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x2d5
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x14
+	.4byte	.LASF876
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x530
+	.4byte	0x53b
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x2e7
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x15
+	.4byte	.LASF877
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x553
+	.4byte	0x55e
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x2f9
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x16
+	.4byte	.LASF878
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x576
+	.4byte	0x581
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x6a3
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x17
+	.4byte	.LASF879
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x599
+	.4byte	0x5a4
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x2ac
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x18
+	.4byte	.LASF880
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x5bc
+	.4byte	0x5c7
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x2be
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x19
+	.4byte	.LASF881
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x5df
+	.4byte	0x5ea
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x6aa
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x1a
+	.4byte	.LASF882
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x602
+	.4byte	0x60d
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x697
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x1b
+	.4byte	.LASF883
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x625
+	.4byte	0x630
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x22d
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x1c
+	.4byte	.LASF884
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x648
+	.4byte	0x653
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x474
+	.byte	0
+	.uleb128 0xd
+	.4byte	.LASF873
+	.byte	0xb
+	.byte	0x1d
+	.4byte	.LASF885
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x66b
+	.4byte	0x676
+	.uleb128 0xa
+	.4byte	0x691
+	.uleb128 0xb
+	.4byte	0x6b1
+	.byte	0
+	.uleb128 0x23
+	.4byte	.LASF887
+	.byte	0xb
+	.byte	0x1e
+	.4byte	.LASF889
+	.4byte	0x69d
+	.byte	0x1
+	.4byte	0x68a
+	.uleb128 0xa
+	.4byte	0x691
+	.byte	0
+	.byte	0
+	.uleb128 0x21
+	.byte	0x8
+	.4byte	0x47b
+	.uleb128 0x21
+	.byte	0x8
+	.4byte	0x40e
+	.uleb128 0x24
+	.byte	0x8
+	.4byte	0x47b
+	.uleb128 0x15
+	.byte	0x1
+	.byte	0x2
+	.4byte	.LASF890
+	.uleb128 0x15
+	.byte	0x8
+	.byte	0x4
+	.4byte	.LASF891
+	.uleb128 0x21
+	.byte	0x8
+	.4byte	0x6b8
+	.uleb128 0x25
+	.uleb128 0x10
+	.4byte	0x6b7
+	.uleb128 0x1d
+	.4byte	.LASF892
+	.byte	0xb
+	.byte	0x22
+	.4byte	0x47b
+	.uleb128 0x1e
+	.4byte	.LASF893
+	.byte	0xb
+	.byte	0x25
 	.4byte	0x238
-	.byte	0x41
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL11koutBufSize
 	.uleb128 0x1b
 	.4byte	0x407
-	.4byte	0x43a
+	.4byte	0x6ed
 	.uleb128 0x1c
 	.4byte	0x23d
 	.byte	0x40
 	.byte	0
 	.uleb128 0x1d
-	.4byte	.LASF868
-	.byte	0xa
-	.byte	0x20
-	.4byte	0x42a
-	.uleb128 0x1f
-	.4byte	.LASF869
-	.byte	0xa
-	.byte	0x22
-	.4byte	0x2c5
-	.2byte	0x400
-	.uleb128 0x20
-	.string	"KiB"
-	.byte	0xa
-	.byte	0x23
-	.4byte	0x2c5
-	.2byte	0x400
-	.uleb128 0x21
-	.string	"MiB"
-	.byte	0xa
-	.byte	0x24
-	.4byte	0x2c5
-	.4byte	0x100000
-	.uleb128 0x21
-	.string	"GiB"
-	.byte	0xa
-	.byte	0x25
-	.4byte	0x2c5
-	.4byte	0x40000000
-	.uleb128 0x22
-	.byte	0x8
-	.uleb128 0x23
-	.byte	0x8
-	.4byte	0x485
-	.uleb128 0x24
-	.uleb128 0x6
-	.4byte	.LASF871
-	.byte	0x1
-	.byte	0xb
-	.byte	0xd
-	.4byte	0x69c
-	.uleb128 0xd
-	.4byte	.LASF872
-	.byte	0xb
-	.byte	0xf
-	.4byte	.LASF873
-	.4byte	0x22d
-	.byte	0x1
-	.4byte	0x4aa
-	.4byte	0x4ba
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6a2
-	.uleb128 0xb
-	.4byte	0x22d
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF872
-	.byte	0xb
-	.byte	0x10
-	.4byte	.LASF874
-	.4byte	0x22d
-	.byte	0x1
-	.4byte	0x4d2
-	.4byte	0x4dd
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6a2
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x11
-	.4byte	.LASF876
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x4f5
-	.4byte	0x500
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x407
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x13
-	.4byte	.LASF877
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x518
-	.4byte	0x523
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x2d5
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x14
-	.4byte	.LASF878
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x53b
-	.4byte	0x546
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x2e7
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x15
-	.4byte	.LASF879
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x55e
-	.4byte	0x569
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x2f9
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x16
-	.4byte	.LASF880
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x581
-	.4byte	0x58c
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6ae
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x17
-	.4byte	.LASF881
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x5a4
-	.4byte	0x5af
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x2ac
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x18
-	.4byte	.LASF882
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x5c7
-	.4byte	0x5d2
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x2be
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x19
-	.4byte	.LASF883
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x5ea
-	.4byte	0x5f5
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6b5
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x1a
-	.4byte	.LASF884
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x60d
-	.4byte	0x618
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6a2
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x1b
-	.4byte	.LASF885
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x630
-	.4byte	0x63b
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x22d
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x1c
-	.4byte	.LASF886
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x653
-	.4byte	0x65e
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x47f
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF875
-	.byte	0xb
-	.byte	0x1d
-	.4byte	.LASF887
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x676
-	.4byte	0x681
-	.uleb128 0xa
-	.4byte	0x69c
-	.uleb128 0xb
-	.4byte	0x6bc
-	.byte	0
-	.uleb128 0x25
-	.4byte	.LASF889
-	.byte	0xb
-	.byte	0x1e
-	.4byte	.LASF891
-	.4byte	0x6a8
-	.byte	0x1
-	.4byte	0x695
-	.uleb128 0xa
-	.4byte	0x69c
-	.byte	0
-	.byte	0
-	.uleb128 0x23
-	.byte	0x8
-	.4byte	0x486
-	.uleb128 0x23
-	.byte	0x8
-	.4byte	0x40e
-	.uleb128 0x26
-	.byte	0x8
-	.4byte	0x486
-	.uleb128 0x15
-	.byte	0x1
-	.byte	0x2
-	.4byte	.LASF892
-	.uleb128 0x15
-	.byte	0x8
-	.byte	0x4
-	.4byte	.LASF893
-	.uleb128 0x23
-	.byte	0x8
-	.4byte	0x6c3
-	.uleb128 0x27
-	.uleb128 0x10
-	.4byte	0x6c2
-	.uleb128 0x1d
 	.4byte	.LASF894
 	.byte	0xb
-	.byte	0x22
-	.4byte	0x486
+	.byte	0x26
+	.4byte	0x6dd
 	.uleb128 0x1b
 	.4byte	0x40e
-	.4byte	0x6de
-	.uleb128 0x28
+	.4byte	0x703
+	.uleb128 0x26
 	.byte	0
 	.uleb128 0x1d
 	.4byte	.LASF895
 	.byte	0xc
 	.byte	0x16
-	.4byte	0x6d3
+	.4byte	0x6f8
 	.uleb128 0x6
 	.4byte	.LASF896
 	.byte	0x8
 	.byte	0xd
 	.byte	0x16
-	.4byte	0x9dd
-	.uleb128 0x29
+	.4byte	0xa02
+	.uleb128 0x27
 	.4byte	.LASF897
 	.byte	0xd
 	.byte	0x42
@@ -1972,7 +2280,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x6
 	.byte	0x3a
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF898
 	.byte	0xd
 	.byte	0x43
@@ -1981,7 +2289,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1
 	.byte	0x39
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF899
 	.byte	0xd
 	.byte	0x44
@@ -1990,7 +2298,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1
 	.byte	0x38
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF818
 	.byte	0xd
 	.byte	0x45
@@ -1999,7 +2307,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x26
 	.byte	0x12
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF900
 	.byte	0xd
 	.byte	0x46
@@ -2014,18 +2322,18 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1b
 	.4byte	.LASF901
 	.byte	0x1
-	.4byte	0x754
-	.4byte	0x773
+	.4byte	0x779
+	.4byte	0x798
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2034,12 +2342,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xd
 	.byte	0x1c
 	.4byte	.LASF903
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x78b
-	.4byte	0x791
+	.4byte	0x7b0
+	.4byte	0x7b6
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF904
@@ -2047,24 +2355,24 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1d
 	.4byte	.LASF905
 	.byte	0x1
-	.4byte	0x7a5
-	.4byte	0x7b0
+	.4byte	0x7ca
+	.4byte	0x7d5
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF906
 	.byte	0xd
 	.byte	0x1e
 	.4byte	.LASF907
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x7c8
-	.4byte	0x7ce
+	.4byte	0x7ed
+	.4byte	0x7f3
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF908
@@ -2072,36 +2380,36 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x1f
 	.4byte	.LASF909
 	.byte	0x1
-	.4byte	0x7e2
-	.4byte	0x7ed
+	.4byte	0x807
+	.4byte	0x812
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF910
 	.byte	0xd
 	.byte	0x20
 	.4byte	.LASF911
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0x1
-	.4byte	0x805
-	.4byte	0x80b
+	.4byte	0x82a
+	.4byte	0x830
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF910
 	.byte	0xd
 	.byte	0x21
 	.4byte	.LASF912
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0x1
-	.4byte	0x823
-	.4byte	0x829
+	.4byte	0x848
+	.4byte	0x84e
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF913
@@ -2110,10 +2418,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF914
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0x841
-	.4byte	0x847
+	.4byte	0x866
+	.4byte	0x86c
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF915
@@ -2121,10 +2429,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x23
 	.4byte	.LASF916
 	.byte	0x1
-	.4byte	0x85b
-	.4byte	0x866
+	.4byte	0x880
+	.4byte	0x88b
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2133,48 +2441,48 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xd
 	.byte	0x24
 	.4byte	.LASF918
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0x1
-	.4byte	0x87e
-	.4byte	0x884
+	.4byte	0x8a3
+	.4byte	0x8a9
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF917
 	.byte	0xd
 	.byte	0x25
 	.4byte	.LASF919
-	.4byte	0x47f
+	.4byte	0x474
 	.byte	0x1
-	.4byte	0x89c
-	.4byte	0x8a2
+	.4byte	0x8c1
+	.4byte	0x8c7
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF920
 	.byte	0xd
 	.byte	0x26
 	.4byte	.LASF921
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0x1
-	.4byte	0x8ba
-	.4byte	0x8c0
+	.4byte	0x8df
+	.4byte	0x8e5
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF920
 	.byte	0xd
 	.byte	0x27
 	.4byte	.LASF922
-	.4byte	0x47f
+	.4byte	0x474
 	.byte	0x1
-	.4byte	0x8d8
-	.4byte	0x8de
+	.4byte	0x8fd
+	.4byte	0x903
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF923
@@ -2183,10 +2491,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF924
 	.4byte	0x30b
 	.byte	0x1
-	.4byte	0x8f6
-	.4byte	0x8fc
+	.4byte	0x91b
+	.4byte	0x921
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF925
@@ -2194,10 +2502,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x29
 	.4byte	.LASF926
 	.byte	0x1
-	.4byte	0x910
-	.4byte	0x91b
+	.4byte	0x935
+	.4byte	0x940
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x30b
 	.byte	0
@@ -2208,10 +2516,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF928
 	.4byte	0x30b
 	.byte	0x1
-	.4byte	0x933
-	.4byte	0x939
+	.4byte	0x958
+	.4byte	0x95e
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF929
@@ -2219,10 +2527,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x2b
 	.4byte	.LASF930
 	.byte	0x1
-	.4byte	0x94d
-	.4byte	0x958
+	.4byte	0x972
+	.4byte	0x97d
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x30b
 	.byte	0
@@ -2231,12 +2539,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xd
 	.byte	0x36
 	.4byte	.LASF932
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0x1
-	.4byte	0x970
-	.4byte	0x97b
+	.4byte	0x995
+	.4byte	0x9a0
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2247,10 +2555,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF934
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0x993
-	.4byte	0x9a3
+	.4byte	0x9b8
+	.4byte	0x9c8
 	.uleb128 0xa
-	.4byte	0x9e8
+	.4byte	0xa0d
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
@@ -2261,51 +2569,51 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xd
 	.byte	0x3a
 	.4byte	.LASF936
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x9bb
-	.4byte	0x9c6
+	.4byte	0x9e0
+	.4byte	0x9eb
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x28
 	.4byte	.LASF937
 	.byte	0xd
 	.byte	0x3e
 	.4byte	.LASF939
 	.byte	0x1
-	.4byte	0x9d6
+	.4byte	0x9fb
 	.uleb128 0xa
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0
 	.byte	0
 	.uleb128 0x10
-	.4byte	0x6e9
-	.uleb128 0x23
+	.4byte	0x70e
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0x6e9
-	.uleb128 0x23
+	.4byte	0x70e
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0x9dd
+	.4byte	0xa02
 	.uleb128 0x6
 	.4byte	.LASF940
 	.byte	0x18
 	.byte	0xe
 	.byte	0x19
-	.4byte	0xbb5
+	.4byte	0xbda
 	.uleb128 0x8
 	.4byte	.LASF941
 	.byte	0xe
 	.byte	0x54
-	.4byte	0x9e2
+	.4byte	0xa07
 	.byte	0
 	.uleb128 0x8
 	.4byte	.LASF942
 	.byte	0xe
 	.byte	0x55
-	.4byte	0x6a2
+	.4byte	0x697
 	.byte	0x8
 	.uleb128 0x8
 	.4byte	.LASF818
@@ -2313,16 +2621,16 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x56
 	.4byte	0x238
 	.byte	0x10
-	.uleb128 0x2b
+	.uleb128 0x29
 	.4byte	.LASF940
 	.byte	0xe
 	.byte	0x1c
 	.4byte	.LASF943
 	.byte	0x1
-	.4byte	0xa32
-	.4byte	0xa38
+	.4byte	0xa57
+	.4byte	0xa5d
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF940
@@ -2330,16 +2638,16 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x20
 	.4byte	.LASF944
 	.byte	0x1
-	.4byte	0xa4c
-	.4byte	0xa61
+	.4byte	0xa71
+	.4byte	0xa86
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF945
@@ -2348,10 +2656,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF946
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0xa79
-	.4byte	0xa84
+	.4byte	0xa9e
+	.4byte	0xaa9
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2360,12 +2668,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xe
 	.byte	0x26
 	.4byte	.LASF948
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0x1
-	.4byte	0xa9c
-	.4byte	0xaa7
+	.4byte	0xac1
+	.4byte	0xacc
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2374,12 +2682,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xe
 	.byte	0x29
 	.4byte	.LASF949
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0x1
-	.4byte	0xabf
-	.4byte	0xacf
+	.4byte	0xae4
+	.4byte	0xaf4
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
@@ -2390,14 +2698,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xe
 	.byte	0x37
 	.4byte	.LASF951
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0xae7
-	.4byte	0xaf7
+	.4byte	0xb0c
+	.4byte	0xb1c
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2406,14 +2714,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xe
 	.byte	0x38
 	.4byte	.LASF953
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0xb0f
-	.4byte	0xb1f
+	.4byte	0xb34
+	.4byte	0xb44
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2422,14 +2730,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xe
 	.byte	0x41
 	.4byte	.LASF955
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0x1
-	.4byte	0xb37
-	.4byte	0xb4c
+	.4byte	0xb5c
+	.4byte	0xb71
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
@@ -2441,12 +2749,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x4a
 	.4byte	.LASF957
 	.byte	0x1
-	.4byte	0xb60
-	.4byte	0xb6b
+	.4byte	0xb85
+	.4byte	0xb90
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF958
@@ -2455,60 +2763,60 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF959
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0xb83
-	.4byte	0xb8e
+	.4byte	0xba8
+	.4byte	0xbb3
 	.uleb128 0xa
-	.4byte	0xbc5
+	.4byte	0xbea
 	.uleb128 0xb
-	.4byte	0x47d
+	.4byte	0x472
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x23
 	.4byte	.LASF960
-	.byte	0x3
+	.byte	0x4
 	.byte	0xf
 	.4byte	.LASF961
-	.4byte	0xf66
+	.4byte	0xf8b
 	.byte	0x1
-	.4byte	0xba9
+	.4byte	0xbce
 	.uleb128 0xf
 	.string	"T"
-	.4byte	0xf66
+	.4byte	0xf8b
 	.uleb128 0xa
-	.4byte	0xbba
+	.4byte	0xbdf
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
 	.byte	0
 	.uleb128 0x10
-	.4byte	0x9ee
-	.uleb128 0x23
+	.4byte	0xa13
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0x9ee
+	.4byte	0xa13
 	.uleb128 0x10
-	.4byte	0xbba
-	.uleb128 0x23
+	.4byte	0xbdf
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0xbb5
+	.4byte	0xbda
 	.uleb128 0x1d
 	.4byte	.LASF962
 	.byte	0xe
 	.byte	0x5b
-	.4byte	0x9ee
+	.4byte	0xa13
 	.uleb128 0x6
 	.4byte	.LASF963
 	.byte	0x18
 	.byte	0xf
 	.byte	0x13
-	.4byte	0xf61
-	.uleb128 0x2c
+	.4byte	0xf86
+	.uleb128 0x2a
 	.byte	0x7
 	.byte	0x4
 	.4byte	0x304
 	.byte	0xf
 	.byte	0x15
 	.byte	0x1
-	.4byte	0xbf7
-	.uleb128 0x2d
+	.4byte	0xc1c
+	.uleb128 0x2b
 	.4byte	.LASF1057
 	.byte	0x8
 	.byte	0
@@ -2516,7 +2824,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF964
 	.byte	0xf
 	.byte	0x45
-	.4byte	0xf66
+	.4byte	0xf8b
 	.byte	0
 	.uleb128 0x8
 	.4byte	.LASF965
@@ -2536,10 +2844,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0xf
 	.4byte	.LASF967
 	.byte	0x1
-	.4byte	0xc2f
-	.4byte	0xc3a
+	.4byte	0xc54
+	.4byte	0xc5f
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2549,53 +2857,53 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x18
 	.4byte	.LASF968
 	.byte	0x1
-	.4byte	0xc4e
-	.4byte	0xc59
+	.4byte	0xc73
+	.4byte	0xc7e
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf77
+	.4byte	0xf9c
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2c
 	.4byte	.LASF970
 	.byte	0xf
 	.byte	0x1b
 	.4byte	.LASF971
-	.4byte	0xf7d
+	.4byte	0xfa2
 	.byte	0x1
-	.4byte	0xc71
-	.4byte	0xc7c
+	.4byte	0xc96
+	.4byte	0xca1
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf77
+	.4byte	0xf9c
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x29
 	.4byte	.LASF966
 	.byte	0xf
 	.byte	0x1c
 	.4byte	.LASF969
 	.byte	0x1
-	.4byte	0xc90
-	.4byte	0xc9b
+	.4byte	0xcb5
+	.4byte	0xcc0
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf83
+	.4byte	0xfa8
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2c
 	.4byte	.LASF970
 	.byte	0xf
 	.byte	0x1d
 	.4byte	.LASF972
-	.4byte	0xf7d
+	.4byte	0xfa2
 	.byte	0x1
-	.4byte	0xcb3
-	.4byte	0xcbe
+	.4byte	0xcd8
+	.4byte	0xce3
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf83
+	.4byte	0xfa8
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF966
@@ -2603,26 +2911,26 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x20
 	.4byte	.LASF973
 	.byte	0x1
-	.4byte	0xcd2
-	.4byte	0xcdd
+	.4byte	0xcf7
+	.4byte	0xd02
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf89
+	.4byte	0xfae
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF970
 	.byte	0x2
 	.byte	0x29
 	.4byte	.LASF974
-	.4byte	0xf7d
+	.4byte	0xfa2
 	.byte	0x1
-	.4byte	0xcf5
-	.4byte	0xd00
+	.4byte	0xd1a
+	.4byte	0xd25
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf89
+	.4byte	0xfae
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF975
@@ -2630,10 +2938,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x35
 	.4byte	.LASF976
 	.byte	0x1
-	.4byte	0xd14
-	.4byte	0xd1f
+	.4byte	0xd39
+	.4byte	0xd44
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xa
 	.4byte	0x2be
 	.byte	0
@@ -2642,12 +2950,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x2
 	.byte	0x3f
 	.4byte	.LASF978
-	.4byte	0xf8f
+	.4byte	0xfb4
 	.byte	0x1
-	.4byte	0xd37
-	.4byte	0xd42
+	.4byte	0xd5c
+	.4byte	0xd67
 	.uleb128 0xa
-	.4byte	0xf95
+	.4byte	0xfba
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2656,12 +2964,12 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x2
 	.byte	0x44
 	.4byte	.LASF979
-	.4byte	0xfa0
+	.4byte	0xfc5
 	.byte	0x1
-	.4byte	0xd5a
-	.4byte	0xd65
+	.4byte	0xd7f
+	.4byte	0xd8a
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2672,10 +2980,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF981
 	.4byte	0x2be
 	.byte	0x1
-	.4byte	0xd7d
-	.4byte	0xd83
+	.4byte	0xda2
+	.4byte	0xda8
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF982
@@ -2683,10 +2991,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x51
 	.4byte	.LASF983
 	.byte	0x1
-	.4byte	0xd97
-	.4byte	0xda2
+	.4byte	0xdbc
+	.4byte	0xdc7
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x2be
 	.byte	0
@@ -2695,24 +3003,24 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x2
 	.byte	0x5b
 	.4byte	.LASF985
-	.4byte	0xf66
+	.4byte	0xf8b
 	.byte	0x1
-	.4byte	0xdba
-	.4byte	0xdc0
+	.4byte	0xddf
+	.4byte	0xde5
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF984
 	.byte	0x2
 	.byte	0x61
 	.4byte	.LASF986
-	.4byte	0xfa6
+	.4byte	0xfcb
 	.byte	0x1
-	.4byte	0xdd8
-	.4byte	0xdde
+	.4byte	0xdfd
+	.4byte	0xe03
 	.uleb128 0xa
-	.4byte	0xf95
+	.4byte	0xfba
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF913
@@ -2721,10 +3029,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF987
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0xdf6
-	.4byte	0xdfc
+	.4byte	0xe1b
+	.4byte	0xe21
 	.uleb128 0xa
-	.4byte	0xf95
+	.4byte	0xfba
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF988
@@ -2733,22 +3041,22 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF989
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0xe14
-	.4byte	0xe1a
+	.4byte	0xe39
+	.4byte	0xe3f
 	.uleb128 0xa
-	.4byte	0xf95
+	.4byte	0xfba
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF990
 	.byte	0x2
 	.byte	0x73
 	.4byte	.LASF991
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0xe32
-	.4byte	0xe38
+	.4byte	0xe57
+	.4byte	0xe5d
 	.uleb128 0xa
-	.4byte	0xf95
+	.4byte	0xfba
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF992
@@ -2756,10 +3064,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x79
 	.4byte	.LASF993
 	.byte	0x1
-	.4byte	0xe4c
-	.4byte	0xe52
+	.4byte	0xe71
+	.4byte	0xe77
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF994
@@ -2767,10 +3075,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x7f
 	.4byte	.LASF995
 	.byte	0x1
-	.4byte	0xe66
-	.4byte	0xe71
+	.4byte	0xe8b
+	.4byte	0xe96
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2779,14 +3087,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x2
 	.byte	0x8a
 	.4byte	.LASF997
-	.4byte	0xf7d
+	.4byte	0xfa2
 	.byte	0x1
-	.4byte	0xe89
-	.4byte	0xe99
+	.4byte	0xeae
+	.4byte	0xebe
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
-	.4byte	0xf83
+	.4byte	0xfa8
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2797,71 +3105,71 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF999
 	.4byte	0x22d
 	.byte	0x1
-	.4byte	0xeb1
-	.4byte	0xec1
+	.4byte	0xed6
+	.4byte	0xee6
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.uleb128 0xb
-	.4byte	0xf8f
+	.4byte	0xfb4
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1000
 	.byte	0x2
 	.byte	0x9e
 	.4byte	.LASF1001
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0xed9
-	.4byte	0xee4
+	.4byte	0xefe
+	.4byte	0xf09
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x2d
 	.4byte	.LASF1002
 	.byte	0x2
 	.byte	0xa7
 	.4byte	.LASF1003
-	.4byte	0x6ae
-	.4byte	0xefb
-	.4byte	0xf06
+	.4byte	0x6a3
+	.4byte	0xf20
+	.4byte	0xf2b
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x2d
 	.4byte	.LASF1004
 	.byte	0x2
 	.byte	0xbb
 	.4byte	.LASF1005
-	.4byte	0x6ae
-	.4byte	0xf1d
-	.4byte	0xf23
+	.4byte	0x6a3
+	.4byte	0xf42
+	.4byte	0xf48
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x2d
 	.4byte	.LASF1006
 	.byte	0x2
 	.byte	0xc3
 	.4byte	.LASF1007
-	.4byte	0x6ae
-	.4byte	0xf3a
-	.4byte	0xf40
+	.4byte	0x6a3
+	.4byte	0xf5f
+	.4byte	0xf65
 	.uleb128 0xa
-	.4byte	0xf6c
+	.4byte	0xf91
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x2e
 	.4byte	.LASF1008
 	.byte	0x2
 	.byte	0xd1
 	.4byte	.LASF1009
 	.4byte	0x22d
-	.4byte	0xf59
+	.4byte	0xf7e
 	.uleb128 0xb
 	.4byte	0x22d
 	.byte	0
@@ -2870,39 +3178,39 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	0x2be
 	.byte	0
 	.uleb128 0x10
-	.4byte	0xbd6
-	.uleb128 0x23
+	.4byte	0xbfb
+	.uleb128 0x21
 	.byte	0x8
 	.4byte	0x2be
-	.uleb128 0x23
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0xbd6
+	.4byte	0xbfb
 	.uleb128 0x10
-	.4byte	0xf6c
-	.uleb128 0x26
+	.4byte	0xf91
+	.uleb128 0x24
 	.byte	0x8
 	.4byte	0x1f9
-	.uleb128 0x26
+	.uleb128 0x24
 	.byte	0x8
-	.4byte	0xbd6
-	.uleb128 0x26
+	.4byte	0xbfb
+	.uleb128 0x24
 	.byte	0x8
-	.4byte	0xf61
-	.uleb128 0x31
+	.4byte	0xf86
+	.uleb128 0x2f
 	.byte	0x8
-	.4byte	0xbd6
-	.uleb128 0x26
+	.4byte	0xbfb
+	.uleb128 0x24
 	.byte	0x8
 	.4byte	0x2c5
-	.uleb128 0x23
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0xf61
+	.4byte	0xf86
 	.uleb128 0x10
-	.4byte	0xf95
-	.uleb128 0x26
+	.4byte	0xfba
+	.uleb128 0x24
 	.byte	0x8
 	.4byte	0x2be
-	.uleb128 0x23
+	.uleb128 0x21
 	.byte	0x8
 	.4byte	0x2c5
 	.uleb128 0x6
@@ -2910,9 +3218,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x18
 	.byte	0x10
 	.byte	0xc
-	.4byte	0x10fd
-	.uleb128 0x32
-	.4byte	0xbd6
+	.4byte	0x1122
+	.uleb128 0x30
+	.4byte	0xbfb
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF1011
@@ -2920,10 +3228,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x10
 	.4byte	.LASF1012
 	.byte	0x1
-	.4byte	0xfd2
-	.4byte	0xfd8
+	.4byte	0xff7
+	.4byte	0xffd
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xc
 	.4byte	.LASF1013
@@ -2931,1377 +3239,942 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x11
 	.4byte	.LASF1014
 	.byte	0x1
-	.4byte	0xfec
-	.4byte	0xff2
+	.4byte	0x1011
+	.4byte	0x1017
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1015
 	.byte	0x10
 	.byte	0x13
 	.4byte	.LASF1016
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x100a
-	.4byte	0x1010
+	.4byte	0x102f
+	.4byte	0x1035
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1017
 	.byte	0x10
 	.byte	0x14
 	.4byte	.LASF1018
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x1028
-	.4byte	0x102e
+	.4byte	0x104d
+	.4byte	0x1053
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1019
 	.byte	0x10
 	.byte	0x15
 	.4byte	.LASF1020
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x1046
-	.4byte	0x104c
+	.4byte	0x106b
+	.4byte	0x1071
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1021
 	.byte	0x10
 	.byte	0x16
 	.4byte	.LASF1022
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x1064
-	.4byte	0x106a
+	.4byte	0x1089
+	.4byte	0x108f
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1023
 	.byte	0x10
 	.byte	0x17
 	.4byte	.LASF1024
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x1082
-	.4byte	0x1088
+	.4byte	0x10a7
+	.4byte	0x10ad
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1025
 	.byte	0x10
 	.byte	0x18
 	.4byte	.LASF1026
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x10a0
-	.4byte	0x10a6
+	.4byte	0x10c5
+	.4byte	0x10cb
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1027
 	.byte	0x10
 	.byte	0x19
 	.4byte	.LASF1028
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x10be
-	.4byte	0x10c4
+	.4byte	0x10e3
+	.4byte	0x10e9
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.uleb128 0xd
 	.4byte	.LASF1029
 	.byte	0x10
 	.byte	0x1a
 	.4byte	.LASF1030
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x10dc
-	.4byte	0x10e2
+	.4byte	0x1101
+	.4byte	0x1107
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x23
 	.4byte	.LASF1031
 	.byte	0x10
 	.byte	0x1b
 	.4byte	.LASF1032
-	.4byte	0x6ae
+	.4byte	0x6a3
 	.byte	0x1
-	.4byte	0x10f6
+	.4byte	0x111b
 	.uleb128 0xa
-	.4byte	0x10fd
+	.4byte	0x1122
 	.byte	0
 	.byte	0
-	.uleb128 0x23
+	.uleb128 0x21
 	.byte	0x8
-	.4byte	0xfac
+	.4byte	0xfd1
 	.uleb128 0x10
-	.4byte	0x10fd
-	.uleb128 0x23
+	.4byte	0x1122
+	.uleb128 0x21
 	.byte	0x8
 	.4byte	0x111
-	.uleb128 0x23
+	.uleb128 0x21
 	.byte	0x8
 	.4byte	0x1f9
 	.uleb128 0x10
-	.4byte	0x110e
-	.uleb128 0x33
-	.4byte	0xf40
-	.byte	0x1
-	.4byte	0x112f
-	.uleb128 0x34
+	.4byte	0x1133
+	.uleb128 0x31
+	.4byte	0x196
+	.4byte	0x1161
+	.8byte	.LFB75
+	.8byte	.LFE75-.LFB75
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1161
+	.4byte	0x116e
+	.uleb128 0x32
 	.4byte	.LASF1033
+	.4byte	0x1139
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x33
+	.4byte	0xf65
+	.8byte	.LFB74
+	.8byte	.LFE74-.LFB74
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1198
+	.uleb128 0x34
+	.4byte	.LASF1034
 	.byte	0x2
 	.byte	0xd1
 	.4byte	0x22d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.uleb128 0x35
-	.4byte	0xb8e
-	.4byte	0x1148
-	.byte	0x1
-	.4byte	0x1148
-	.4byte	0x115b
+	.4byte	0xbb3
+	.4byte	0x11c2
+	.8byte	.LFB73
+	.8byte	.LFE73-.LFB73
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x11c2
+	.4byte	0x11db
 	.uleb128 0xf
 	.string	"T"
-	.4byte	0xf66
+	.4byte	0xf8b
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xbe5
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xbc0
-	.uleb128 0x37
 	.string	"n"
-	.byte	0x3
+	.byte	0x4
 	.byte	0xf
 	.4byte	0x22d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.uleb128 0x35
 	.4byte	0x1d2
-	.4byte	0x116d
-	.byte	0x3
-	.4byte	0x116d
-	.4byte	0x1177
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0x1114
-	.byte	0
-	.uleb128 0x35
-	.4byte	0x196
-	.4byte	0x1189
-	.byte	0x3
-	.4byte	0x1189
-	.4byte	0x1193
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0x1114
-	.byte	0
-	.uleb128 0x35
-	.4byte	0x1b4
-	.4byte	0x11a5
-	.byte	0x3
-	.4byte	0x11a5
-	.4byte	0x11af
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0x1114
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xf23
-	.4byte	0x11d2
-	.8byte	.LFB68
-	.8byte	.LFE68-.LFB68
+	.4byte	0x11fe
+	.8byte	.LFB72
+	.8byte	.LFE72-.LFB72
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x11d2
-	.4byte	0x121d
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.4byte	.LLST24
-	.uleb128 0x3a
+	.4byte	0x11fe
+	.4byte	0x120b
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1139
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x31
+	.4byte	0x1b4
+	.4byte	0x122e
+	.8byte	.LFB71
+	.8byte	.LFE71-.LFB71
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x122e
+	.4byte	0x123b
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1139
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x35
+	.4byte	0xf48
+	.4byte	0x125e
+	.8byte	.LFB70
+	.8byte	.LFE70-.LFB70
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x125e
+	.4byte	0x1279
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x37
 	.4byte	.LASF1035
 	.byte	0x2
 	.byte	0xc7
 	.4byte	0x22d
-	.4byte	.LLST25
-	.uleb128 0x3b
-	.4byte	0x1119
-	.8byte	.LBB55
-	.8byte	.LBE55-.LBB55
-	.byte	0x2
-	.byte	0xc7
-	.4byte	0x120f
-	.uleb128 0x3c
-	.4byte	0x1123
-	.byte	0
-	.uleb128 0x3d
-	.8byte	.LVL75
-	.4byte	0x1239
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.uleb128 0x35
-	.4byte	0xf06
-	.4byte	0x122f
-	.byte	0x1
-	.4byte	0x122f
-	.4byte	0x1239
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xee4
-	.4byte	0x125c
-	.8byte	.LFB66
-	.8byte	.LFE66-.LFB66
+	.4byte	0xf2b
+	.4byte	0x129c
+	.8byte	.LFB69
+	.8byte	.LFE69-.LFB69
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x125c
-	.4byte	0x131c
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.4byte	.LLST5
-	.uleb128 0x3e
+	.4byte	0x129c
+	.4byte	0x12a9
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x35
+	.4byte	0xf09
+	.4byte	0x12cc
+	.8byte	.LFB68
+	.8byte	.LFE68-.LFB68
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x12cc
+	.4byte	0x1313
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x34
 	.4byte	.LASF965
 	.byte	0x2
 	.byte	0xa7
 	.4byte	0x22d
-	.4byte	.LLST6
-	.uleb128 0x3f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x37
 	.4byte	.LASF1036
 	.byte	0x2
 	.byte	0xac
-	.4byte	0xf66
-	.uleb128 0x40
-	.8byte	.LBB23
-	.8byte	.LBE23-.LBB23
-	.4byte	0x12a6
-	.uleb128 0x41
+	.4byte	0xf8b
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x38
+	.8byte	.LBB13
+	.8byte	.LBE13-.LBB13
+	.uleb128 0x39
 	.string	"i"
 	.byte	0x2
 	.byte	0xb0
 	.4byte	0x22d
-	.4byte	.LLST8
-	.byte	0
-	.uleb128 0x3b
-	.4byte	0x112f
-	.8byte	.LBB21
-	.8byte	.LBE21-.LBB21
-	.byte	0x2
-	.byte	0xac
-	.4byte	0x12ea
-	.uleb128 0x42
-	.4byte	0x1151
-	.4byte	.LLST7
-	.uleb128 0x3c
-	.4byte	0x1148
-	.uleb128 0x43
-	.8byte	.LVL18
-	.4byte	0xa84
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
 	.uleb128 0x2
-	.byte	0x84
-	.sleb128 0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x86
-	.sleb128 0
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.byte	0
-	.uleb128 0x45
-	.8byte	.LVL17
-	.4byte	0xb1f
-	.4byte	0x130e
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x84
-	.sleb128 0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x2
-	.byte	0x86
-	.sleb128 0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x53
-	.uleb128 0x2
-	.byte	0x9
-	.byte	0xff
-	.byte	0
-	.uleb128 0x3d
-	.8byte	.LVL24
-	.4byte	0xb4c
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe99
-	.4byte	0x133f
-	.8byte	.LFB65
-	.8byte	.LFE65-.LFB65
+	.uleb128 0x35
+	.4byte	0xebe
+	.4byte	0x1336
+	.8byte	.LFB67
+	.8byte	.LFE67-.LFB67
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x133f
-	.4byte	0x139e
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.4byte	.LLST35
-	.uleb128 0x46
+	.4byte	0x1336
+	.4byte	0x1379
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x36
 	.string	"i"
 	.byte	0x2
 	.byte	0x92
 	.4byte	0x22d
-	.4byte	.LLST36
-	.uleb128 0x46
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x36
 	.string	"t"
 	.byte	0x2
 	.byte	0x92
-	.4byte	0xf8f
-	.4byte	.LLST37
-	.uleb128 0x40
-	.8byte	.LBB86
-	.8byte	.LBE86-.LBB86
-	.4byte	0x1389
-	.uleb128 0x41
+	.4byte	0xfb4
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -40
+	.uleb128 0x38
+	.8byte	.LBB12
+	.8byte	.LBE12-.LBB12
+	.uleb128 0x39
 	.string	"j"
 	.byte	0x2
 	.byte	0x97
 	.4byte	0x22d
-	.4byte	.LLST38
-	.byte	0
-	.uleb128 0x43
-	.8byte	.LVL107
-	.4byte	0x11af
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
 	.uleb128 0x2
-	.byte	0x83
-	.sleb128 0
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.byte	0
-	.uleb128 0x35
-	.4byte	0xd42
-	.4byte	0x13b0
-	.byte	0x1
-	.4byte	0x13b0
-	.4byte	0x13c3
+	.uleb128 0x31
+	.4byte	0xd67
+	.4byte	0x139c
+	.8byte	.LFB66
+	.8byte	.LFE66-.LFB66
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x139c
+	.4byte	0x13b5
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.uleb128 0x37
 	.string	"i"
 	.byte	0x2
 	.byte	0x44
 	.4byte	0x22d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.byte	0
+	.uleb128 0x31
+	.4byte	0xe03
+	.4byte	0x13d8
+	.8byte	.LFB65
+	.8byte	.LFE65-.LFB65
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x13d8
+	.4byte	0x13e5
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xfc0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.uleb128 0x35
-	.4byte	0xdde
-	.4byte	0x13d5
-	.byte	0x1
-	.4byte	0x13d5
-	.4byte	0x13df
+	.4byte	0xe77
+	.4byte	0x1408
+	.8byte	.LFB64
+	.8byte	.LFE64-.LFB64
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1408
+	.4byte	0x143f
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
 	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf9b
-	.byte	0
-	.uleb128 0x35
-	.4byte	0xe52
-	.4byte	0x13f1
-	.byte	0x1
-	.4byte	0x13f1
-	.4byte	0x140f
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.uleb128 0x37
 	.string	"i"
 	.byte	0x2
 	.byte	0x7f
 	.4byte	0x22d
-	.uleb128 0x47
-	.uleb128 0x48
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x38
+	.8byte	.LBB11
+	.8byte	.LBE11-.LBB11
+	.uleb128 0x39
 	.string	"j"
 	.byte	0x2
 	.byte	0x84
 	.4byte	0x22d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.byte	0
-	.uleb128 0x49
-	.4byte	0xc3a
+	.uleb128 0x3a
+	.4byte	0xc5f
 	.byte	0
-	.4byte	0x141d
-	.4byte	0x1457
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.uleb128 0x37
+	.4byte	0x144d
+	.4byte	0x1487
+	.uleb128 0x3b
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x3c
 	.string	"il"
 	.byte	0x2
 	.byte	0x18
-	.4byte	0xf77
-	.uleb128 0x47
-	.uleb128 0x48
+	.4byte	0xf9c
+	.uleb128 0x3d
+	.uleb128 0x3e
 	.string	"i"
 	.byte	0x2
 	.byte	0x1b
-	.4byte	0xf8f
-	.uleb128 0x4a
+	.4byte	0xfb4
+	.uleb128 0x3f
 	.4byte	.LASF1037
-	.4byte	0xf77
-	.uleb128 0x4a
+	.4byte	0xf9c
+	.uleb128 0x3f
 	.4byte	.LASF1038
 	.4byte	0x14d
-	.uleb128 0x4a
+	.uleb128 0x3f
 	.4byte	.LASF1039
 	.4byte	0x14d
 	.byte	0
 	.byte	0
-	.uleb128 0x4b
-	.4byte	0x140f
+	.uleb128 0x40
+	.4byte	0x143f
 	.4byte	.LASF1041
-	.4byte	0x147e
+	.4byte	0x14ae
+	.8byte	.LFB62
+	.8byte	.LFE62-.LFB62
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x14ae
+	.4byte	0x1513
+	.uleb128 0x41
+	.4byte	0x144d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -40
+	.uleb128 0x41
+	.4byte	0x1456
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.uleb128 0x42
+	.4byte	0x1460
+	.4byte	0x14dc
+	.uleb128 0x43
+	.4byte	0x1461
+	.uleb128 0x43
+	.4byte	0x146a
+	.uleb128 0x43
+	.4byte	0x1473
+	.uleb128 0x43
+	.4byte	0x147c
+	.byte	0
+	.uleb128 0x44
+	.4byte	0x1460
+	.8byte	.LBB8
+	.8byte	.LBE8-.LBB8
+	.uleb128 0x45
+	.4byte	0x1461
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x45
+	.4byte	0x146a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x45
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x45
+	.4byte	0x147c
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.byte	0
+	.byte	0
+	.uleb128 0x35
+	.4byte	0xd8a
+	.4byte	0x1536
 	.8byte	.LFB60
 	.8byte	.LFE60-.LFB60
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x147e
-	.4byte	0x155c
-	.uleb128 0x42
-	.4byte	0x141d
-	.4byte	.LLST17
-	.uleb128 0x42
-	.4byte	0x1426
-	.4byte	.LLST18
-	.uleb128 0x4c
-	.4byte	0x1430
-	.4byte	0x14ae
-	.uleb128 0x4d
-	.4byte	0x1431
-	.uleb128 0x4d
-	.4byte	0x143a
-	.uleb128 0x4d
-	.4byte	0x1443
-	.uleb128 0x4d
-	.4byte	0x144c
-	.byte	0
-	.uleb128 0x4e
-	.4byte	0x1430
-	.8byte	.LBB48
-	.8byte	.LBE48-.LBB48
-	.4byte	0x1546
-	.uleb128 0x4f
-	.4byte	0x1431
-	.4byte	.LLST19
-	.uleb128 0x4f
-	.4byte	0x143a
-	.4byte	.LLST20
-	.uleb128 0x4f
-	.4byte	0x1443
-	.4byte	.LLST21
-	.uleb128 0x4d
-	.4byte	0x144c
-	.uleb128 0x3b
-	.4byte	0x1193
-	.8byte	.LBB49
-	.8byte	.LBE49-.LBB49
-	.byte	0x2
-	.byte	0x1b
-	.4byte	0x150c
-	.uleb128 0x42
-	.4byte	0x11a5
-	.4byte	.LLST22
-	.byte	0
-	.uleb128 0x3b
-	.4byte	0x115b
-	.8byte	.LBB51
-	.8byte	.LBE51-.LBB51
-	.byte	0x2
-	.byte	0x1b
-	.4byte	0x1531
-	.uleb128 0x42
-	.4byte	0x116d
-	.4byte	.LLST23
-	.byte	0
-	.uleb128 0x43
-	.8byte	.LVL68
-	.4byte	0x1578
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
+	.4byte	0x1536
+	.4byte	0x1543
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
 	.uleb128 0x2
-	.byte	0x85
-	.sleb128 0
-	.byte	0
-	.byte	0
-	.uleb128 0x50
-	.8byte	.LVL62
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x85
-	.sleb128 0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x30
-	.byte	0
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.uleb128 0x35
-	.4byte	0xd65
-	.4byte	0x156e
-	.byte	0x1
-	.4byte	0x156e
-	.4byte	0x1578
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xd83
-	.4byte	0x159b
-	.8byte	.LFB57
-	.8byte	.LFE57-.LFB57
+	.4byte	0xda8
+	.4byte	0x1566
+	.8byte	.LFB59
+	.8byte	.LFE59-.LFB59
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x159b
-	.4byte	0x1608
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.4byte	.LLST13
-	.uleb128 0x46
+	.4byte	0x1566
+	.4byte	0x157f
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x36
 	.string	"t"
 	.byte	0x2
 	.byte	0x51
 	.4byte	0x2be
-	.4byte	.LLST14
-	.uleb128 0x51
-	.4byte	0x121d
-	.8byte	.LBB39
-	.4byte	.Ldebug_ranges0+0
-	.byte	0x2
-	.byte	0x53
-	.uleb128 0x42
-	.4byte	0x122f
-	.4byte	.LLST15
-	.uleb128 0x3b
-	.4byte	0x1119
-	.8byte	.LBB41
-	.8byte	.LBE41-.LBB41
-	.byte	0x2
-	.byte	0xbe
-	.4byte	0x15f2
-	.uleb128 0x3c
-	.4byte	0x1123
-	.byte	0
-	.uleb128 0x43
-	.8byte	.LVL54
-	.4byte	0x1239
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
 	.uleb128 0x2
-	.byte	0x83
-	.sleb128 0
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
+	.uleb128 0x31
+	.4byte	0xe21
+	.4byte	0x15a2
+	.8byte	.LFB58
+	.8byte	.LFE58-.LFB58
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x15a2
+	.4byte	0x15af
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0xfc0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
+	.uleb128 0x3a
+	.4byte	0xd25
 	.byte	0
-	.uleb128 0x35
-	.4byte	0xdfc
-	.4byte	0x161a
-	.byte	0x1
-	.4byte	0x161a
-	.4byte	0x1624
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf9b
-	.byte	0
-	.uleb128 0x49
-	.4byte	0xd00
-	.byte	0
-	.4byte	0x1632
-	.4byte	0x1645
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.uleb128 0x36
+	.4byte	0x15bd
+	.4byte	0x15d0
+	.uleb128 0x3b
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x3b
 	.4byte	.LASF1040
 	.4byte	0x2c5
 	.byte	0
-	.uleb128 0x4b
-	.4byte	0x1624
+	.uleb128 0x40
+	.4byte	0x15af
 	.4byte	.LASF1042
-	.4byte	0x166c
-	.8byte	.LFB54
-	.8byte	.LFE54-.LFB54
+	.4byte	0x15f7
+	.8byte	.LFB56
+	.8byte	.LFE56-.LFB56
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x166c
-	.4byte	0x1683
-	.uleb128 0x42
-	.4byte	0x1632
-	.4byte	.LLST4
-	.uleb128 0x3d
-	.8byte	.LVL12
-	.4byte	0xb4c
+	.4byte	0x15f7
+	.4byte	0x1600
+	.uleb128 0x41
+	.4byte	0x15bd
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
-	.uleb128 0x49
-	.4byte	0xc1b
+	.uleb128 0x3a
+	.4byte	0xc40
 	.byte	0
-	.4byte	0x1691
-	.4byte	0x16a6
-	.uleb128 0x36
-	.4byte	.LASF1034
-	.4byte	0xf72
-	.uleb128 0x34
+	.4byte	0x160e
+	.4byte	0x1623
+	.uleb128 0x3b
+	.4byte	.LASF1033
+	.4byte	0xf97
+	.uleb128 0x46
 	.4byte	.LASF1043
 	.byte	0x2
 	.byte	0xf
 	.4byte	0x22d
 	.byte	0
-	.uleb128 0x4b
-	.4byte	0x1683
+	.uleb128 0x40
+	.4byte	0x1600
 	.4byte	.LASF1044
-	.4byte	0x16cd
+	.4byte	0x164a
+	.8byte	.LFB53
+	.8byte	.LFE53-.LFB53
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x164a
+	.4byte	0x165b
+	.uleb128 0x41
+	.4byte	0x160e
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x41
+	.4byte	0x1617
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.byte	0
+	.uleb128 0x47
+	.4byte	0x1107
+	.byte	0x1
+	.byte	0x51
+	.4byte	0x1680
 	.8byte	.LFB51
 	.8byte	.LFE51-.LFB51
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x16cd
-	.4byte	0x1719
-	.uleb128 0x42
-	.4byte	0x1691
-	.4byte	.LLST9
-	.uleb128 0x42
-	.4byte	0x169a
-	.4byte	.LLST10
-	.uleb128 0x43
-	.8byte	.LVL31
-	.4byte	0x1239
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
+	.4byte	0x1680
+	.4byte	0x168d
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
 	.uleb128 0x2
-	.byte	0x83
-	.sleb128 0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x21
-	.byte	0x84
-	.sleb128 0
-	.byte	0x38
-	.byte	0x84
-	.sleb128 0
-	.byte	0x23
-	.uleb128 0x8000000000000000
-	.byte	0x11
-	.sleb128 -9223372036854775800
-	.byte	0x2a
-	.byte	0x28
-	.2byte	0x1
-	.byte	0x16
-	.byte	0x13
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x10e2
-	.byte	0x1
-	.byte	0x51
-	.4byte	0x173e
-	.8byte	.LFB49
-	.8byte	.LFE49-.LFB49
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x173e
-	.4byte	0x174c
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST3
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x10c4
+	.uleb128 0x48
+	.4byte	0x10e9
 	.byte	0x1
 	.byte	0x43
-	.4byte	0x1771
-	.8byte	.LFB48
-	.8byte	.LFE48-.LFB48
+	.4byte	0x16b2
+	.8byte	.LFB50
+	.8byte	.LFE50-.LFB50
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1771
-	.4byte	0x189b
+	.4byte	0x16b2
+	.4byte	0x16fa
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -72
 	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST39
-	.uleb128 0x53
 	.string	"vec"
 	.byte	0x1
 	.byte	0x45
-	.4byte	0xbd6
+	.4byte	0xbfb
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -48
-	.uleb128 0x3f
+	.sleb128 -64
+	.uleb128 0x37
 	.4byte	.LASF1045
 	.byte	0x1
 	.byte	0x46
 	.4byte	0x22d
-	.uleb128 0x54
-	.4byte	.Ldebug_ranges0+0xd0
-	.4byte	0x17fd
-	.uleb128 0x41
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x38
+	.8byte	.LBB3
+	.8byte	.LBE3-.LBB3
+	.uleb128 0x39
 	.string	"i"
 	.byte	0x1
 	.byte	0x4c
 	.4byte	0x22d
-	.4byte	.LLST41
-	.uleb128 0x3b
-	.4byte	0x13c3
-	.8byte	.LBB99
-	.8byte	.LBE99-.LBB99
-	.byte	0x1
-	.byte	0x4c
-	.4byte	0x17d2
-	.uleb128 0x42
-	.4byte	0x13d5
-	.4byte	.LLST42
-	.byte	0
-	.uleb128 0x55
-	.4byte	0x139e
-	.8byte	.LBB101
-	.8byte	.LBE101-.LBB101
-	.byte	0x1
-	.byte	0x4d
-	.uleb128 0x42
-	.4byte	0x13b9
-	.4byte	.LLST43
-	.uleb128 0x42
-	.4byte	0x13b0
-	.4byte	.LLST44
-	.byte	0
-	.byte	0
-	.uleb128 0x3b
-	.4byte	0x13c3
-	.8byte	.LBB96
-	.8byte	.LBE96-.LBB96
-	.byte	0x1
-	.byte	0x46
-	.4byte	0x1822
-	.uleb128 0x42
-	.4byte	0x13d5
-	.4byte	.LLST40
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL118
-	.4byte	0x183d
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
 	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 48
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 72
-	.byte	0
-	.uleb128 0x45
-	.8byte	.LVL120
-	.4byte	0x131c
-	.4byte	0x1864
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 48
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x2
-	.byte	0x83
-	.sleb128 1
-	.uleb128 0x57
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 88
-	.uleb128 0x1
-	.byte	0x30
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL121
-	.4byte	0x1878
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 48
-	.byte	0
-	.uleb128 0x43
-	.8byte	.LVL122
-	.4byte	0x131c
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 48
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x34
-	.uleb128 0x57
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 92
-	.uleb128 0x1
-	.byte	0x34
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.byte	0
-	.uleb128 0x52
-	.4byte	0x10a6
+	.uleb128 0x48
+	.4byte	0x10cb
 	.byte	0x1
 	.byte	0x39
-	.4byte	0x18c0
+	.4byte	0x171f
+	.8byte	.LFB49
+	.8byte	.LFE49-.LFB49
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x171f
+	.4byte	0x1758
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -56
+	.uleb128 0x39
+	.string	"vec"
+	.byte	0x1
+	.byte	0x3b
+	.4byte	0xbfb
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.uleb128 0x38
+	.8byte	.LBB2
+	.8byte	.LBE2-.LBB2
+	.uleb128 0x39
+	.string	"i"
+	.byte	0x1
+	.byte	0x3d
+	.4byte	0x22d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.byte	0
+	.uleb128 0x47
+	.4byte	0x10ad
+	.byte	0x1
+	.byte	0x35
+	.4byte	0x177d
+	.8byte	.LFB48
+	.8byte	.LFE48-.LFB48
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x177d
+	.4byte	0x178a
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x48
+	.4byte	0x108f
+	.byte	0x1
+	.byte	0x2e
+	.4byte	0x17af
 	.8byte	.LFB47
 	.8byte	.LFE47-.LFB47
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x18c0
-	.4byte	0x19cb
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST28
-	.uleb128 0x53
-	.string	"vec"
-	.byte	0x1
-	.byte	0x3b
-	.4byte	0xbd6
+	.4byte	0x17af
+	.4byte	0x17ca
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
-	.uleb128 0x54
-	.4byte	.Ldebug_ranges0+0x90
-	.4byte	0x1941
-	.uleb128 0x41
-	.string	"i"
+	.uleb128 0x39
+	.string	"vec"
 	.byte	0x1
-	.byte	0x3d
-	.4byte	0x22d
-	.4byte	.LLST31
-	.uleb128 0x3b
-	.4byte	0x13c3
-	.8byte	.LBB79
-	.8byte	.LBE79-.LBB79
-	.byte	0x1
-	.byte	0x3d
-	.4byte	0x1916
-	.uleb128 0x42
-	.4byte	0x13d5
-	.4byte	.LLST32
-	.byte	0
-	.uleb128 0x55
-	.4byte	0x139e
-	.8byte	.LBB81
-	.8byte	.LBE81-.LBB81
-	.byte	0x1
-	.byte	0x3e
-	.uleb128 0x42
-	.4byte	0x13b9
-	.4byte	.LLST33
-	.uleb128 0x42
-	.4byte	0x13b0
-	.4byte	.LLST34
-	.byte	0
-	.byte	0
-	.uleb128 0x58
-	.4byte	0x13df
-	.8byte	.LBB73
-	.4byte	.Ldebug_ranges0+0x60
-	.byte	0x1
-	.byte	0x3c
-	.4byte	0x199f
-	.uleb128 0x59
-	.4byte	0x13fa
-	.byte	0x4
-	.uleb128 0x42
-	.4byte	0x13f1
-	.4byte	.LLST29
-	.uleb128 0x4e
-	.4byte	0x1403
-	.8byte	.LBB76
-	.8byte	.LBE76-.LBB76
-	.4byte	0x198a
-	.uleb128 0x4f
-	.4byte	0x1404
-	.4byte	.LLST30
-	.byte	0
-	.uleb128 0x43
-	.8byte	.LVL95
-	.4byte	0x11af
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
+	.byte	0x30
+	.4byte	0xbfb
 	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
+	.byte	0x91
+	.sleb128 -24
 	.byte	0
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL86
-	.4byte	0x19ba
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 80
-	.byte	0
-	.uleb128 0x50
-	.8byte	.LVL103
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.byte	0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x1088
+	.uleb128 0x47
+	.4byte	0x1071
 	.byte	0x1
-	.byte	0x35
-	.4byte	0x19f0
+	.byte	0x2a
+	.4byte	0x17ef
 	.8byte	.LFB46
 	.8byte	.LFE46-.LFB46
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x19f0
-	.4byte	0x19fe
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST2
+	.4byte	0x17ef
+	.4byte	0x17fc
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
-	.uleb128 0x52
-	.4byte	0x106a
+	.uleb128 0x48
+	.4byte	0x1053
 	.byte	0x1
-	.byte	0x2e
-	.4byte	0x1a23
+	.byte	0x24
+	.4byte	0x1821
 	.8byte	.LFB45
 	.8byte	.LFE45-.LFB45
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1a23
-	.4byte	0x1a9d
+	.4byte	0x1821
+	.4byte	0x183c
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -40
 	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST26
-	.uleb128 0x53
 	.string	"vec"
 	.byte	0x1
-	.byte	0x30
-	.4byte	0xbd6
+	.byte	0x26
+	.4byte	0xbfb
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x58
-	.4byte	0x155c
-	.8byte	.LBB59
-	.4byte	.Ldebug_ranges0+0x30
+	.byte	0
+	.uleb128 0x48
+	.4byte	0x1035
 	.byte	0x1
-	.byte	0x31
-	.4byte	0x1a73
-	.uleb128 0x42
-	.4byte	0x156e
-	.4byte	.LLST27
-	.uleb128 0x43
-	.8byte	.LVL80
-	.4byte	0x11af
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 24
-	.byte	0
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL78
-	.4byte	0x1a8c
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 24
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x30
-	.byte	0
-	.uleb128 0x50
-	.8byte	.LVL82
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 24
-	.byte	0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x104c
-	.byte	0x1
-	.byte	0x2a
-	.4byte	0x1ac2
+	.byte	0x18
+	.4byte	0x1861
 	.8byte	.LFB44
 	.8byte	.LFE44-.LFB44
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1ac2
-	.4byte	0x1ad0
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST1
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x102e
+	.4byte	0x1861
+	.4byte	0x18c6
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -136
+	.uleb128 0x37
+	.4byte	.LASF1046
 	.byte	0x1
-	.byte	0x24
-	.4byte	0x1af5
+	.byte	0x1a
+	.4byte	0xbfb
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x37
+	.4byte	.LASF1047
+	.byte	0x1
+	.byte	0x1b
+	.4byte	0xbfb
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -56
+	.uleb128 0x37
+	.4byte	.LASF1048
+	.byte	0x1
+	.byte	0x1c
+	.4byte	0xbfb
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -80
+	.uleb128 0x37
+	.4byte	.LASF1049
+	.byte	0x1
+	.byte	0x1d
+	.4byte	0xbfb
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -104
+	.uleb128 0x37
+	.4byte	.LASF1050
+	.byte	0x1
+	.byte	0x1e
+	.4byte	0xbfb
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -128
+	.uleb128 0x39
+	.string	"res"
+	.byte	0x1
+	.byte	0x20
+	.4byte	0x6a3
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -1
+	.byte	0
+	.uleb128 0x47
+	.4byte	0x1017
+	.byte	0x1
+	.byte	0x14
+	.4byte	0x18eb
 	.8byte	.LFB43
 	.8byte	.LFE43-.LFB43
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1af5
-	.4byte	0x1b57
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST16
-	.uleb128 0x53
-	.string	"vec"
-	.byte	0x1
-	.byte	0x26
-	.4byte	0xbd6
+	.4byte	0x18eb
+	.4byte	0x18f8
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x56
-	.8byte	.LVL57
-	.4byte	0x1b29
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x38
+	.sleb128 -8
 	.byte	0
-	.uleb128 0x45
-	.8byte	.LVL58
-	.4byte	0x1578
-	.4byte	0x1b46
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x3a
-	.byte	0
-	.uleb128 0x50
-	.8byte	.LVL59
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.byte	0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0x1010
+	.uleb128 0x47
+	.4byte	0xffd
 	.byte	0x1
-	.byte	0x18
-	.4byte	0x1b7c
+	.byte	0xf
+	.4byte	0x191d
 	.8byte	.LFB42
 	.8byte	.LFE42-.LFB42
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1b7c
-	.4byte	0x1cc7
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST11
-	.uleb128 0x5a
-	.4byte	.LASF1046
-	.byte	0x1
-	.byte	0x1a
-	.4byte	0xbd6
+	.4byte	0x191d
+	.4byte	0x192a
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x5a
-	.4byte	.LASF1047
+	.sleb128 -8
+	.byte	0
+	.uleb128 0x49
+	.4byte	0xfe3
 	.byte	0x1
-	.byte	0x1b
-	.4byte	0xbd6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -48
-	.uleb128 0x5a
-	.4byte	.LASF1048
-	.byte	0x1
-	.byte	0x1c
-	.4byte	0xbd6
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -72
-	.uleb128 0x5a
-	.4byte	.LASF1049
-	.byte	0x1
-	.byte	0x1d
-	.4byte	0xbd6
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -96
-	.uleb128 0x5a
-	.4byte	.LASF1050
-	.byte	0x1
-	.byte	0x1e
-	.4byte	0xbd6
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -120
-	.uleb128 0x41
-	.string	"res"
-	.byte	0x1
-	.byte	0x20
-	.4byte	0x6ae
-	.4byte	.LLST12
-	.uleb128 0x56
-	.8byte	.LVL35
-	.4byte	0x1bfb
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 152
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x30
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL36
-	.4byte	0x1c15
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 128
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x30
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL37
-	.4byte	0x1c2f
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 104
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x37
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL38
-	.4byte	0x1c49
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 80
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x38
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL39
-	.4byte	0x1c62
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1
-	.byte	0x39
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL41
-	.4byte	0x1c76
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x8f
-	.sleb128 56
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL42
-	.4byte	0x1c8b
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 80
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL43
-	.4byte	0x1ca0
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 104
-	.byte	0
-	.uleb128 0x56
-	.8byte	.LVL44
-	.4byte	0x1cb5
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 128
-	.byte	0
-	.uleb128 0x50
-	.8byte	.LVL45
-	.uleb128 0x44
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x3
-	.byte	0x8f
-	.sleb128 152
-	.byte	0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0xff2
-	.byte	0x1
-	.byte	0x14
-	.4byte	0x1cec
+	.byte	0xb
+	.4byte	0x194b
 	.8byte	.LFB41
 	.8byte	.LFE41-.LFB41
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1cec
-	.4byte	0x1cfa
-	.uleb128 0x39
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.4byte	.LLST0
-	.byte	0
-	.uleb128 0x52
-	.4byte	0xfd8
-	.byte	0x1
-	.byte	0xf
-	.4byte	0x1d1f
-	.8byte	.LFB40
-	.8byte	.LFE40-.LFB40
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1d1f
-	.4byte	0x1d2b
-	.uleb128 0x5b
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0
-	.uleb128 0x5c
-	.4byte	0xfbe
-	.byte	0x1
-	.byte	0xb
-	.4byte	0x1d4c
-	.8byte	.LFB39
-	.8byte	.LFE39-.LFB39
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1d4c
-	.uleb128 0x5b
-	.4byte	.LASF1034
-	.4byte	0x1103
-	.uleb128 0x1
-	.byte	0x50
+	.4byte	0x194b
+	.uleb128 0x32
+	.4byte	.LASF1033
+	.4byte	0x1128
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
@@ -4718,15 +4591,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.uleb128 0x6c
 	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0xb
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x1f
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -4735,66 +4608,32 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.uleb128 0x6c
 	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x5
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x20
-	.uleb128 0x34
+	.uleb128 0xf
 	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
 	.uleb128 0xb
-	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x6c
-	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x5
 	.byte	0
 	.byte	0
 	.uleb128 0x21
-	.uleb128 0x34
+	.uleb128 0xf
 	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
 	.uleb128 0xb
-	.uleb128 0x3b
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x6c
-	.uleb128 0x19
-	.uleb128 0x1c
-	.uleb128 0x6
 	.byte	0
 	.byte	0
 	.uleb128 0x22
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x23
-	.uleb128 0xf
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x24
 	.uleb128 0x26
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x25
+	.uleb128 0x23
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4817,7 +4656,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x26
+	.uleb128 0x24
 	.uleb128 0x10
 	.byte	0
 	.uleb128 0xb
@@ -4826,17 +4665,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x27
+	.uleb128 0x25
 	.uleb128 0x35
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x28
+	.uleb128 0x26
 	.uleb128 0x21
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x27
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -4857,7 +4696,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x28
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4878,7 +4717,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x29
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4903,7 +4742,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x2a
 	.uleb128 0x4
 	.byte	0x1
 	.uleb128 0x3e
@@ -4922,7 +4761,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2b
 	.uleb128 0x28
 	.byte	0
 	.uleb128 0x3
@@ -4931,7 +4770,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2c
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4958,7 +4797,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x2d
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4981,7 +4820,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x2e
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -5002,7 +4841,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x2f
 	.uleb128 0x42
 	.byte	0
 	.uleb128 0xb
@@ -5011,7 +4850,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x32
+	.uleb128 0x30
 	.uleb128 0x1c
 	.byte	0
 	.uleb128 0x49
@@ -5020,13 +4859,53 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
+	.uleb128 0x31
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
+	.uleb128 0x13
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x2117
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x32
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x34
+	.uleb128 0x19
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
 	.uleb128 0x33
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
 	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -5042,6 +4921,8 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x35
@@ -5051,10 +4932,16 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.uleb128 0x64
 	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
 	.uleb128 0x64
 	.uleb128 0x13
+	.uleb128 0x2116
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -5063,148 +4950,42 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x34
-	.uleb128 0x19
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x37
-	.uleb128 0x5
+	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0x8
+	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x38
-	.uleb128 0x2e
+	.uleb128 0xb
 	.byte	0x1
-	.uleb128 0x47
-	.uleb128 0x13
-	.uleb128 0x64
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x7
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x39
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x34
-	.uleb128 0x19
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x3a
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x3b
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3c
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3d
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3e
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x40
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x41
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -5216,81 +4997,10 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x42
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x43
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x44
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x2111
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x45
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x46
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
 	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x47
-	.uleb128 0xb
-	.byte	0x1
-	.byte	0
-	.byte	0
-	.uleb128 0x48
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x49
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5303,7 +5013,49 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x3b
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x34
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x3c
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x3d
+	.uleb128 0xb
+	.byte	0x1
+	.byte	0
+	.byte	0
+	.uleb128 0x3e
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x3f
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -5314,7 +5066,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x4b
+	.uleb128 0x40
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -5331,13 +5083,22 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x18
 	.uleb128 0x64
 	.uleb128 0x13
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x41
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x31
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x42
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x31
@@ -5346,14 +5107,14 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4d
+	.uleb128 0x43
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4e
+	.uleb128 0x44
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x31
@@ -5362,42 +5123,31 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x7
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4f
+	.uleb128 0x45
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x17
+	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x50
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
+	.uleb128 0x46
+	.uleb128 0x5
 	.byte	0
-	.byte	0
-	.uleb128 0x51
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x52
+	.uleb128 0x47
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5422,120 +5172,32 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x53
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
+	.uleb128 0x48
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
+	.uleb128 0x13
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x54
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x55
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x64
 	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x7
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x56
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x57
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
+	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2111
-	.uleb128 0x18
-	.uleb128 0x2112
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x58
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x64
 	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x59
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x5a
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x5b
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x34
+	.uleb128 0x2116
 	.uleb128 0x19
-	.uleb128 0x2
-	.uleb128 0x18
+	.uleb128 0x1
+	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5c
+	.uleb128 0x49
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5559,739 +5221,8 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_loc,"",@progbits
-.Ldebug_loc0:
-.LLST24:
-	.8byte	.LVL71
-	.8byte	.LVL73
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL73
-	.8byte	.LVL74
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	.LVL74
-	.8byte	.LVL75-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL75-1
-	.8byte	.LFE68
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST25:
-	.8byte	.LVL72
-	.8byte	.LVL75-1
-	.2byte	0x1
-	.byte	0x51
-	.8byte	0
-	.8byte	0
-.LLST5:
-	.8byte	.LVL14
-	.8byte	.LVL16
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL16
-	.8byte	.LVL25
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL25
-	.8byte	.LVL27
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	.LVL27
-	.8byte	.LVL28
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL28
-	.8byte	.LFE66
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST6:
-	.8byte	.LVL14
-	.8byte	.LVL15
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL15
-	.8byte	.LVL26
-	.2byte	0x1
-	.byte	0x65
-	.8byte	.LVL26
-	.8byte	.LVL27
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	.LVL27
-	.8byte	.LFE66
-	.2byte	0x1
-	.byte	0x51
-	.8byte	0
-	.8byte	0
-.LLST8:
-	.8byte	.LVL20
-	.8byte	.LVL21
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	.LVL21
-	.8byte	.LVL23
-	.2byte	0x1
-	.byte	0x52
-	.8byte	0
-	.8byte	0
-.LLST7:
-	.8byte	.LVL17
-	.8byte	.LVL19
-	.2byte	0x1
-	.byte	0x66
-	.8byte	0
-	.8byte	0
-.LLST35:
-	.8byte	.LVL106
-	.8byte	.LVL107-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL107-1
-	.8byte	.LVL111
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL111
-	.8byte	.LVL113
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	.LVL113
-	.8byte	.LVL115
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL115
-	.8byte	.LFE65
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST36:
-	.8byte	.LVL106
-	.8byte	.LVL107-1
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL107-1
-	.8byte	.LVL111
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL111
-	.8byte	.LVL113
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	.LVL113
-	.8byte	.LVL114
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL114
-	.8byte	.LFE65
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST37:
-	.8byte	.LVL106
-	.8byte	.LVL107-1
-	.2byte	0x1
-	.byte	0x52
-	.8byte	.LVL107-1
-	.8byte	.LVL112
-	.2byte	0x1
-	.byte	0x65
-	.8byte	.LVL112
-	.8byte	.LVL113
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.8byte	.LVL113
-	.8byte	.LFE65
-	.2byte	0x1
-	.byte	0x52
-	.8byte	0
-	.8byte	0
-.LLST38:
-	.8byte	.LVL108
-	.8byte	.LVL110
-	.2byte	0x1
-	.byte	0x55
-	.8byte	0
-	.8byte	0
-.LLST17:
-	.8byte	.LVL60
-	.8byte	.LVL62-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL62-1
-	.8byte	.LVL70
-	.2byte	0x1
-	.byte	0x65
-	.8byte	.LVL70
-	.8byte	.LFE60
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST18:
-	.8byte	.LVL60
-	.8byte	.LVL61
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL61
-	.8byte	.LVL64
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL64
-	.8byte	.LFE60
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST19:
-	.8byte	.LVL66
-	.8byte	.LVL67
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL67
-	.8byte	.LVL69
-	.2byte	0x3
-	.byte	0x83
-	.sleb128 -4
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST20:
-	.8byte	.LVL62
-	.8byte	.LVL64
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL64
-	.8byte	.LFE60
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST21:
-	.8byte	.LVL65
-	.8byte	.LVL67
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL67
-	.8byte	.LVL68
-	.2byte	0x3
-	.byte	0x83
-	.sleb128 -4
-	.byte	0x9f
-	.8byte	.LVL68
-	.8byte	.LVL69
-	.2byte	0x3
-	.byte	0x83
-	.sleb128 4
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST22:
-	.8byte	.LVL62
-	.8byte	.LVL63
-	.2byte	0x1
-	.byte	0x64
-	.8byte	0
-	.8byte	0
-.LLST23:
-	.8byte	.LVL63
-	.8byte	.LVL64
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL64
-	.8byte	.LVL65
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST13:
-	.8byte	.LVL47
-	.8byte	.LVL50
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL50
-	.8byte	.LVL52
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL52
-	.8byte	.LVL53
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	.LVL53
-	.8byte	.LFE57
-	.2byte	0x1
-	.byte	0x63
-	.8byte	0
-	.8byte	0
-.LLST14:
-	.8byte	.LVL47
-	.8byte	.LVL49
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL49
-	.8byte	.LVL52
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL52
-	.8byte	.LVL53
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	.LVL53
-	.8byte	.LFE57
-	.2byte	0x1
-	.byte	0x64
-	.8byte	0
-	.8byte	0
-.LLST15:
-	.8byte	.LVL48
-	.8byte	.LVL50
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL50
-	.8byte	.LVL51
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL53
-	.8byte	.LVL54
-	.2byte	0x1
-	.byte	0x63
-	.8byte	0
-	.8byte	0
-.LLST4:
-	.8byte	.LVL10
-	.8byte	.LVL11
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL11
-	.8byte	.LVL13
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	.LVL13
-	.8byte	.LFE54
-	.2byte	0x1
-	.byte	0x50
-	.8byte	0
-	.8byte	0
-.LLST9:
-	.8byte	.LVL29
-	.8byte	.LVL31-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL31-1
-	.8byte	.LVL32
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL32
-	.8byte	.LFE51
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST10:
-	.8byte	.LVL29
-	.8byte	.LVL30
-	.2byte	0x1
-	.byte	0x51
-	.8byte	.LVL30
-	.8byte	.LVL32
-	.2byte	0x1
-	.byte	0x64
-	.8byte	.LVL32
-	.8byte	.LFE51
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST3:
-	.8byte	.LVL8
-	.8byte	.LVL9
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL9
-	.8byte	.LFE49
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST39:
-	.8byte	.LVL116
-	.8byte	.LVL117
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL117
-	.8byte	.LFE48
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST41:
-	.8byte	.LVL122
-	.8byte	.LVL126
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	.LVL126
-	.8byte	.LVL128
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL128
-	.8byte	.LFE48
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST42:
-	.8byte	.LVL122
-	.8byte	.LVL123
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 48
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST43:
-	.8byte	.LVL124
-	.8byte	.LVL125
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST44:
-	.8byte	.LVL124
-	.8byte	.LVL125
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 48
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST40:
-	.8byte	.LVL118
-	.8byte	.LVL119
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 48
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST28:
-	.8byte	.LVL84
-	.8byte	.LVL85
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL85
-	.8byte	.LFE47
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST31:
-	.8byte	.LVL87
-	.8byte	.LVL91
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	.LVL91
-	.8byte	.LVL93
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL100
-	.8byte	.LVL101
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL105
-	.8byte	.LFE47
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST32:
-	.8byte	.LVL87
-	.8byte	.LVL88
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST33:
-	.8byte	.LVL89
-	.8byte	.LVL90
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST34:
-	.8byte	.LVL89
-	.8byte	.LVL90
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST29:
-	.8byte	.LVL86
-	.8byte	.LVL94
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	.LVL94
-	.8byte	.LVL95-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL95-1
-	.8byte	.LVL102
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	.LVL102
-	.8byte	.LVL103-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL103-1
-	.8byte	.LVL104
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	.LVL104
-	.8byte	.LVL105
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 -24
-	.byte	0x9f
-	.8byte	.LVL105
-	.8byte	.LFE47
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 56
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST30:
-	.8byte	.LVL96
-	.8byte	.LVL97
-	.2byte	0x2
-	.byte	0x34
-	.byte	0x9f
-	.8byte	.LVL97
-	.8byte	.LVL98
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL98
-	.8byte	.LVL99
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 -1
-	.byte	0x9f
-	.8byte	.LVL99
-	.8byte	.LVL100
-	.2byte	0x1
-	.byte	0x50
-	.8byte	0
-	.8byte	0
-.LLST2:
-	.8byte	.LVL6
-	.8byte	.LVL7
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL7
-	.8byte	.LFE46
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST26:
-	.8byte	.LVL76
-	.8byte	.LVL77
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL77
-	.8byte	.LFE45
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST27:
-	.8byte	.LVL78
-	.8byte	.LVL79
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 24
-	.byte	0x9f
-	.8byte	.LVL79
-	.8byte	.LVL80-1
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL80-1
-	.8byte	.LVL81
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 24
-	.byte	0x9f
-	.8byte	.LVL83
-	.8byte	.LFE45
-	.2byte	0x3
-	.byte	0x8f
-	.sleb128 24
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST1:
-	.8byte	.LVL4
-	.8byte	.LVL5
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL5
-	.8byte	.LFE44
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST16:
-	.8byte	.LVL55
-	.8byte	.LVL56
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL56
-	.8byte	.LFE43
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST11:
-	.8byte	.LVL33
-	.8byte	.LVL34
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL34
-	.8byte	.LFE42
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
-.LLST12:
-	.8byte	.LVL40
-	.8byte	.LVL46
-	.2byte	0x1
-	.byte	0x63
-	.8byte	.LVL46
-	.8byte	.LFE42
-	.2byte	0x1
-	.byte	0x50
-	.8byte	0
-	.8byte	0
-.LLST0:
-	.8byte	.LVL2
-	.8byte	.LVL3
-	.2byte	0x1
-	.byte	0x50
-	.8byte	.LVL3
-	.8byte	.LFE41
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.8byte	0
-	.8byte	0
 	.section	.debug_aranges,"",@progbits
-	.4byte	0x9c
+	.4byte	0x14c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x8
@@ -6300,74 +5231,84 @@ _ZN10TestVector15insertCorrectlyEv:
 	.2byte	0
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
-	.8byte	.LFB54
-	.8byte	.LFE54-.LFB54
-	.8byte	.LFB66
-	.8byte	.LFE66-.LFB66
-	.8byte	.LFB51
-	.8byte	.LFE51-.LFB51
-	.8byte	.LFB57
-	.8byte	.LFE57-.LFB57
+	.8byte	.LFB53
+	.8byte	.LFE53-.LFB53
+	.8byte	.LFB56
+	.8byte	.LFE56-.LFB56
+	.8byte	.LFB58
+	.8byte	.LFE58-.LFB58
+	.8byte	.LFB59
+	.8byte	.LFE59-.LFB59
 	.8byte	.LFB60
 	.8byte	.LFE60-.LFB60
-	.8byte	.LFB68
-	.8byte	.LFE68-.LFB68
+	.8byte	.LFB62
+	.8byte	.LFE62-.LFB62
+	.8byte	.LFB64
+	.8byte	.LFE64-.LFB64
 	.8byte	.LFB65
 	.8byte	.LFE65-.LFB65
+	.8byte	.LFB66
+	.8byte	.LFE66-.LFB66
+	.8byte	.LFB67
+	.8byte	.LFE67-.LFB67
+	.8byte	.LFB68
+	.8byte	.LFE68-.LFB68
+	.8byte	.LFB69
+	.8byte	.LFE69-.LFB69
+	.8byte	.LFB70
+	.8byte	.LFE70-.LFB70
+	.8byte	.LFB71
+	.8byte	.LFE71-.LFB71
+	.8byte	.LFB72
+	.8byte	.LFE72-.LFB72
+	.8byte	.LFB73
+	.8byte	.LFE73-.LFB73
+	.8byte	.LFB74
+	.8byte	.LFE74-.LFB74
+	.8byte	.LFB75
+	.8byte	.LFE75-.LFB75
 	.8byte	0
 	.8byte	0
 	.section	.debug_ranges,"",@progbits
 .Ldebug_ranges0:
-	.8byte	.LBB39
-	.8byte	.LBE39
-	.8byte	.LBB44
-	.8byte	.LBE44
-	.8byte	0
-	.8byte	0
-	.8byte	.LBB59
-	.8byte	.LBE59
-	.8byte	.LBB62
-	.8byte	.LBE62
-	.8byte	0
-	.8byte	0
-	.8byte	.LBB73
-	.8byte	.LBE73
-	.8byte	.LBB84
-	.8byte	.LBE84
-	.8byte	0
-	.8byte	0
-	.8byte	.LBB78
-	.8byte	.LBE78
-	.8byte	.LBB83
-	.8byte	.LBE83
-	.8byte	.LBB85
-	.8byte	.LBE85
-	.8byte	0
-	.8byte	0
-	.8byte	.LBB98
-	.8byte	.LBE98
-	.8byte	.LBB103
-	.8byte	.LBE103
-	.8byte	.LBB104
-	.8byte	.LBE104
-	.8byte	0
-	.8byte	0
 	.8byte	.Ltext0
 	.8byte	.Letext0
-	.8byte	.LFB54
-	.8byte	.LFE54
-	.8byte	.LFB66
-	.8byte	.LFE66
-	.8byte	.LFB51
-	.8byte	.LFE51
-	.8byte	.LFB57
-	.8byte	.LFE57
+	.8byte	.LFB53
+	.8byte	.LFE53
+	.8byte	.LFB56
+	.8byte	.LFE56
+	.8byte	.LFB58
+	.8byte	.LFE58
+	.8byte	.LFB59
+	.8byte	.LFE59
 	.8byte	.LFB60
 	.8byte	.LFE60
-	.8byte	.LFB68
-	.8byte	.LFE68
+	.8byte	.LFB62
+	.8byte	.LFE62
+	.8byte	.LFB64
+	.8byte	.LFE64
 	.8byte	.LFB65
 	.8byte	.LFE65
+	.8byte	.LFB66
+	.8byte	.LFE66
+	.8byte	.LFB67
+	.8byte	.LFE67
+	.8byte	.LFB68
+	.8byte	.LFE68
+	.8byte	.LFB69
+	.8byte	.LFE69
+	.8byte	.LFB70
+	.8byte	.LFE70
+	.8byte	.LFB71
+	.8byte	.LFE71
+	.8byte	.LFB72
+	.8byte	.LFE72
+	.8byte	.LFB73
+	.8byte	.LFE73
+	.8byte	.LFB74
+	.8byte	.LFE74
+	.8byte	.LFB75
+	.8byte	.LFE75
 	.8byte	0
 	.8byte	0
 	.section	.debug_macro,"",@progbits
@@ -7571,7 +6512,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.4byte	.LASF396
 	.byte	0x5
 	.uleb128 0x1
-	.4byte	.LASF181
+	.4byte	.LASF180
 	.byte	0x6
 	.uleb128 0x2
 	.4byte	.LASF397
@@ -7668,7 +6609,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x4
+	.uleb128 0x3
 	.byte	0x5
 	.uleb128 0x1f
 	.4byte	.LASF801
@@ -7740,7 +6681,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5d
-	.uleb128 0x3
+	.uleb128 0x4
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF810
@@ -8952,7 +7893,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0x102
 	.4byte	.LASF786
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.e17df413196b0eebbda743b47de3eded,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.9164d992df6aeb5d0f792d7be665cc61,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -8966,40 +7907,40 @@ _ZN10TestVector15insertCorrectlyEv:
 	.uleb128 0xd
 	.4byte	.LASF790
 	.byte	0x5
-	.uleb128 0x16
+	.uleb128 0x10
 	.4byte	.LASF791
 	.byte	0x5
-	.uleb128 0x17
+	.uleb128 0x11
 	.4byte	.LASF792
 	.byte	0x5
-	.uleb128 0x18
+	.uleb128 0x12
 	.4byte	.LASF793
 	.byte	0x5
-	.uleb128 0x28
+	.uleb128 0x20
 	.4byte	.LASF794
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x23
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x2c
+	.uleb128 0x24
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x31
+	.uleb128 0x29
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x2a
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x35
+	.uleb128 0x2d
 	.4byte	.LASF799
 	.byte	0x5
-	.uleb128 0x36
+	.uleb128 0x2e
 	.4byte	.LASF800
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
-.LASF102:
+.LASF101:
 	.string	"__cpp_aggregate_nsdmi 201304"
 .LASF853:
 	.string	"int_fast8_t"
@@ -9007,15 +7948,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZNKSt16initializer_listIiE4sizeEv"
 .LASF832:
 	.string	"int8_t"
-.LASF275:
+.LASF274:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
 .LASF969:
 	.string	"_ZN6VectorIiEC4ERKS0_"
-.LASF53:
+.LASF52:
 	.string	"__UINT32_TYPE__ unsigned int"
 .LASF348:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
-.LASF142:
+.LASF141:
 	.string	"__UINT32_MAX__ 0xffffffffU"
 .LASF824:
 	.string	"size_t"
@@ -9027,19 +7968,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"tryIncrease"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
-.LASF888:
+.LASF886:
 	.string	"initializer_list"
 .LASF515:
 	.string	"_GLIBCXX_HAVE_FCNTL_H 1"
 .LASF527:
 	.string	"_GLIBCXX_HAVE_INTTYPES_H 1"
-.LASF127:
+.LASF126:
 	.string	"__SIZE_WIDTH__ 64"
-.LASF332:
+.LASF331:
 	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
 .LASF907:
 	.string	"_ZNK11MemoryChunk5isEndEv"
-.LASF20:
+.LASF19:
 	.string	"__LP64__ 1"
 .LASF427:
 	.string	"_GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))"
@@ -9047,9 +7988,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FEATURE_NUMERIC_MAXMIN 1"
 .LASF940:
 	.string	"MemoryManager"
-.LASF320:
+.LASF319:
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
-.LASF288:
+.LASF287:
 	.string	"__FLT32X_MIN_EXP__ (-1021)"
 .LASF766:
 	.string	"WINT_MIN __WINT_MIN__"
@@ -9063,11 +8004,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_MEMALIGN 1"
 .LASF473:
 	.string	"_GLIBCXX_PSEUDO_VISIBILITY(V) "
-.LASF301:
+.LASF300:
 	.string	"__FLT64X_DIG__ 33"
 .LASF622:
 	.string	"___int_ptrdiff_t_h "
-.LASF309:
+.LASF308:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
 .LASF652:
 	.string	"_WCHAR_T_H "
@@ -9081,49 +8022,49 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT64_MAX __INT64_MAX__"
 .LASF745:
 	.string	"INTMAX_MIN"
-.LASF23:
+.LASF22:
 	.string	"__SIZEOF_LONG_LONG__ 8"
-.LASF205:
+.LASF204:
 	.string	"__DBL_MAX_10_EXP__ 308"
 .LASF448:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
-.LASF258:
+.LASF257:
 	.string	"__FLT64_MANT_DIG__ 53"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
 .LASF586:
 	.string	"_GLIBCXX11_USE_C99_STDLIB 1"
-.LASF317:
+.LASF316:
 	.string	"__DEC32_MIN__ 1E-95DF"
-.LASF170:
+.LASF169:
 	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffL"
-.LASF209:
+.LASF208:
 	.string	"__DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)"
 .LASF925:
 	.string	"setNextBaseFromEnd"
 .LASF762:
 	.string	"WCHAR_MIN __WCHAR_MIN__"
-.LASF323:
+.LASF322:
 	.string	"__DEC64_MAX_EXP__ 385"
 .LASF476:
 	.string	"_GLIBCXX_TXN_SAFE "
-.LASF214:
+.LASF213:
 	.string	"__FP_FAST_FMA 1"
-.LASF196:
+.LASF195:
 	.string	"__FLT_HAS_DENORM__ 1"
-.LASF47:
+.LASF46:
 	.string	"__INT8_TYPE__ signed char"
 .LASF919:
 	.string	"_ZNK11MemoryChunk10getDataPtrEv"
 .LASF508:
 	.string	"_GLIBCXX_HAVE_EPROTO 1"
-.LASF250:
+.LASF249:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
 .LASF1016:
 	.string	"_ZN10TestVector19initializeCorrectlyEv"
 .LASF978:
 	.string	"_ZNK6VectorIiEixEm"
-.LASF306:
+.LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
 .LASF533:
 	.string	"_GLIBCXX_HAVE_LIMIT_FSIZE 0"
@@ -9131,17 +8072,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINTPTR_MAX __UINTPTR_MAX__"
 .LASF2:
 	.string	"__STDC_UTF_16__ 1"
-.LASF237:
+.LASF236:
 	.string	"__FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16"
 .LASF686:
 	.string	"INT64_MIN (-INT64_MAX - 1)"
 .LASF402:
 	.string	"USER_SPACE_SIZE 20480"
-.LASF96:
+.LASF95:
 	.string	"__cpp_alias_templates 200704"
-.LASF157:
+.LASF156:
 	.string	"__UINT8_C(c) c"
-.LASF48:
+.LASF47:
 	.string	"__INT16_TYPE__ short int"
 .LASF659:
 	.string	"NULL __null"
@@ -9151,19 +8092,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_M_len"
 .LASF571:
 	.string	"_GLIBCXX_HAVE_VSWSCANF 1"
-.LASF79:
+.LASF78:
 	.string	"__cpp_unicode_characters 200704"
-.LASF307:
+.LASF306:
 	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
 .LASF732:
 	.string	"INT_FAST64_MAX __INT_FAST64_MAX__"
 .LASF340:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
-.LASF221:
+.LASF220:
 	.string	"__DECIMAL_DIG__ 36"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
-.LASF887:
+.LASF885:
 	.string	"_ZN6OutputlsEPVKv"
 .LASF1042:
 	.string	"_ZN6VectorIiED2Ev"
@@ -9173,19 +8114,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_NEON 1"
 .LASF1022:
 	.string	"_ZN10TestVector26capacityDecreasedCorrectlyEv"
-.LASF210:
+.LASF209:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
 .LASF850:
 	.string	"uint_least16_t"
-.LASF252:
+.LASF251:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
 .LASF680:
 	.string	"INT32_MIN (-INT32_MAX - 1)"
-.LASF249:
+.LASF248:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF957:
 	.string	"_ZN13MemoryManager10deallocateEPv"
-.LASF139:
+.LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
 .LASF1027:
 	.string	"eraseCorrectly"
@@ -9213,11 +8154,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_BSD_PTRDIFF_T_ "
 .LASF896:
 	.string	"MemoryChunk"
-.LASF242:
+.LASF241:
 	.string	"__FLT16_HAS_INFINITY__ 1"
 .LASF639:
 	.string	"_GCC_SIZE_T "
-.LASF261:
+.LASF260:
 	.string	"__FLT64_MIN_10_EXP__ (-307)"
 .LASF641:
 	.string	"__size_t "
@@ -9225,7 +8166,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"Vector<int>"
 .LASF928:
 	.string	"_ZNK11MemoryChunk23getNextValidChunkOffsetEv"
-.LASF264:
+.LASF263:
 	.string	"__FLT64_DECIMAL_DIG__ 17"
 .LASF708:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
@@ -9233,7 +8174,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"getIncrementalSize"
 .LASF505:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF893:
+.LASF891:
 	.string	"double"
 .LASF495:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
@@ -9243,29 +8184,29 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN6VectorIiE5clearEv"
 .LASF780:
 	.string	"UINT32_C(c) __UINT32_C(c)"
-.LASF32:
+.LASF31:
 	.string	"__ORDER_BIG_ENDIAN__ 4321"
 .LASF453:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CONTAINER _GLIBCXX_BEGIN_NAMESPACE_VERSION"
-.LASF331:
+.LASF330:
 	.string	"__DEC128_MIN__ 1E-6143DL"
-.LASF779:
-	.string	"UINT32_C"
+.LASF337:
+	.string	"__NO_INLINE__ 1"
 .LASF704:
 	.string	"INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)"
-.LASF200:
+.LASF199:
 	.string	"__DBL_MANT_DIG__ 53"
-.LASF38:
+.LASF37:
 	.string	"__SIZE_TYPE__ long unsigned int"
 .LASF958:
 	.string	"getAllocatedLength"
-.LASF285:
+.LASF284:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
-.LASF77:
+.LASF76:
 	.string	"__GXX_EXPERIMENTAL_CXX0X__ 1"
 .LASF643:
 	.string	"__WCHAR_T__ "
-.LASF260:
+.LASF259:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
 .LASF938:
 	.string	"_ZNSt16initializer_listIiEC4EPKim"
@@ -9273,9 +8214,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"uint_fast32_t"
 .LASF459:
 	.string	"_GLIBCXX_NAMESPACE_LDBL "
-.LASF172:
+.LASF171:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
-.LASF319:
+.LASF318:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
 .LASF800:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
@@ -9283,13 +8224,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"popBack"
 .LASF1021:
 	.string	"capacityDecreasedCorrectly"
-.LASF1051:
-	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O1 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
-.LASF305:
+.LASF304:
 	.string	"__FLT64X_MAX_10_EXP__ 4932"
-.LASF119:
+.LASF118:
 	.string	"__SCHAR_WIDTH__ 8"
-.LASF167:
+.LASF166:
 	.string	"__INT_FAST16_WIDTH__ 32"
 .LASF783:
 	.string	"INTMAX_C"
@@ -9299,13 +8238,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT_FAST8_MAX"
 .LASF406:
 	.string	"CONFIG_RAM_SIZE 0x40000000"
-.LASF173:
+.LASF172:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
-.LASF42:
+.LASF41:
 	.string	"__INTMAX_TYPE__ long int"
 .LASF493:
 	.string	"_GLIBCXX_HAVE_COSHF 1"
-.LASF1033:
+.LASF1034:
 	.string	"curSize"
 .LASF573:
 	.string	"_GLIBCXX_HAVE_WCHAR_H 1"
@@ -9313,9 +8252,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_SIZE_T_ "
 .LASF646:
 	.string	"_T_WCHAR "
-.LASF134:
+.LASF133:
 	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
-.LASF298:
+.LASF297:
 	.string	"__FLT32X_HAS_INFINITY__ 1"
 .LASF522:
 	.string	"_GLIBCXX_HAVE_HYPOT 1"
@@ -9323,7 +8262,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_SYS_SIZE_T_H "
 .LASF1018:
 	.string	"_ZN10TestVector22minimalCapacityEnsuredEv"
-.LASF59:
+.LASF58:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 .LASF989:
 	.string	"_ZNK6VectorIiE11getCapacityEv"
@@ -9335,29 +8274,29 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
 .LASF758:
 	.string	"SIZE_MAX __SIZE_MAX__"
-.LASF103:
+.LASF102:
 	.string	"__cpp_variable_templates 201304"
-.LASF292:
+.LASF291:
 	.string	"__FLT32X_DECIMAL_DIG__ 17"
 .LASF778:
 	.string	"UINT16_C(c) __UINT16_C(c)"
-.LASF299:
+.LASF298:
 	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
-.LASF329:
+.LASF328:
 	.string	"__DEC128_MIN_EXP__ (-6142)"
-.LASF63:
+.LASF62:
 	.string	"__INT_FAST8_TYPE__ int"
 .LASF625:
 	.string	"__size_t__ "
-.LASF274:
+.LASF273:
 	.string	"__FLT128_MIN_EXP__ (-16381)"
-.LASF70:
+.LASF69:
 	.string	"__UINT_FAST64_TYPE__ long unsigned int"
 .LASF414:
 	.string	"__need_ptrdiff_t"
 .LASF776:
 	.string	"UINT8_C(c) __UINT8_C(c)"
-.LASF55:
+.LASF54:
 	.string	"__INT_LEAST8_TYPE__ signed char"
 .LASF441:
 	.string	"_GLIBCXX_NOEXCEPT_QUAL "
@@ -9367,13 +8306,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"resize"
 .LASF984:
 	.string	"getData"
-.LASF311:
+.LASF310:
 	.string	"__FLT64X_HAS_DENORM__ 1"
 .LASF933:
 	.string	"moveOffsetOfAllocSuchAlignedSpace"
-.LASF151:
+.LASF150:
 	.string	"__INT32_C(c) c"
-.LASF248:
+.LASF247:
 	.string	"__FLT32_MAX_EXP__ 128"
 .LASF694:
 	.string	"UINT_LEAST8_MAX __UINT_LEAST8_MAX__"
@@ -9381,7 +8320,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"PTRDIFF_MAX __PTRDIFF_MAX__"
 .LASF484:
 	.string	"_GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR"
-.LASF226:
+.LASF225:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
 .LASF510:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
@@ -9389,9 +8328,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_ATOMIC_BUILTINS 1"
 .LASF718:
 	.string	"UINT_FAST8_MAX __UINT_FAST8_MAX__"
-.LASF289:
+.LASF288:
 	.string	"__FLT32X_MIN_10_EXP__ (-307)"
-.LASF268:
+.LASF267:
 	.string	"__FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64"
 .LASF920:
 	.string	"getDataEnd"
@@ -9401,17 +8340,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FEATURE_FP16_VECTOR_ARITHMETIC"
 .LASF431:
 	.string	"_GLIBCXX14_CONSTEXPR constexpr"
-.LASF175:
+.LASF174:
 	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
-.LASF37:
+.LASF36:
 	.string	"__GNUG__ 7"
 .LASF458:
 	.string	"_GLIBCXX_LONG_DOUBLE_COMPAT"
 .LASF434:
 	.string	"_GLIBCXX_NOEXCEPT noexcept"
-.LASF189:
+.LASF188:
 	.string	"__FLT_MAX_EXP__ 128"
-.LASF22:
+.LASF21:
 	.string	"__SIZEOF_LONG__ 8"
 .LASF1001:
 	.string	"_ZN6VectorIiE6resizeEm"
@@ -9419,11 +8358,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_VFWSCANF 1"
 .LASF489:
 	.string	"_GLIBCXX_HAVE_ATANF 1"
-.LASF26:
+.LASF25:
 	.string	"__SIZEOF_DOUBLE__ 8"
 .LASF451:
 	.string	"_GLIBCXX_END_NAMESPACE_VERSION "
-.LASF220:
+.LASF219:
 	.string	"__LDBL_MAX_10_EXP__ 4932"
 .LASF422:
 	.string	"_GLIBCXX_CONST __attribute__ ((__const__))"
@@ -9435,7 +8374,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ENOTSUP 1"
 .LASF998:
 	.string	"insert"
-.LASF325:
+.LASF324:
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 .LASF663:
 	.string	"_GLIBCXX_CSTDINT 1"
@@ -9443,13 +8382,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_SYS_TIME_H 1"
 .LASF902:
 	.string	"isAllocated"
-.LASF188:
+.LASF187:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
 .LASF852:
 	.string	"uint_least64_t"
 .LASF423:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
-.LASF191:
+.LASF190:
 	.string	"__FLT_DECIMAL_DIG__ 9"
 .LASF463:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
@@ -9467,9 +8406,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INTMAX_MIN (-INTMAX_MAX - 1)"
 .LASF772:
 	.string	"INT32_C(c) __INT32_C(c)"
-.LASF254:
+.LASF253:
 	.string	"__FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32"
-.LASF337:
+.LASF336:
 	.string	"__GNUC_STDC_INLINE__ 1"
 .LASF793:
 	.string	"FATAL \"[FATAL] \""
@@ -9479,17 +8418,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ENOSR 1"
 .LASF7:
 	.string	"__GNUC_PATCHLEVEL__ 1"
-.LASF100:
+.LASF99:
 	.string	"__cpp_constexpr 201304"
 .LASF751:
 	.string	"PTRDIFF_MIN"
-.LASF246:
+.LASF245:
 	.string	"__FLT32_MIN_EXP__ (-125)"
-.LASF158:
+.LASF157:
 	.string	"__UINT_LEAST16_MAX__ 0xffff"
 .LASF449:
 	.string	"_GLIBCXX_INLINE_VERSION 0"
-.LASF99:
+.LASF98:
 	.string	"__cpp_generic_lambdas 201304"
 .LASF545:
 	.string	"_GLIBCXX_HAVE_POWF 1"
@@ -9497,23 +8436,23 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT32_MAX"
 .LASF805:
 	.string	"INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ "
-.LASF296:
+.LASF295:
 	.string	"__FLT32X_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F32x"
 .LASF405:
 	.string	"CONFIG_RAM_START 0x40000000"
-.LASF263:
+.LASF262:
 	.string	"__FLT64_MAX_10_EXP__ 308"
 .LASF511:
 	.string	"_GLIBCXX_HAVE_ETXTBSY 1"
-.LASF154:
+.LASF153:
 	.string	"__INT64_C(c) c ## L"
 .LASF575:
 	.string	"_GLIBCXX_HAVE_WCTYPE_H 1"
-.LASF104:
+.LASF103:
 	.string	"__cpp_digit_separators 201309"
 .LASF636:
 	.string	"_BSD_SIZE_T_DEFINED_ "
-.LASF69:
+.LASF68:
 	.string	"__UINT_FAST32_TYPE__ unsigned int"
 .LASF839:
 	.string	"unsigned char"
@@ -9521,7 +8460,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__STDC_UTF_32__ 1"
 .LASF420:
 	.string	"__GLIBCXX__ 20171011"
-.LASF253:
+.LASF252:
 	.string	"__FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32"
 .LASF517:
 	.string	"_GLIBCXX_HAVE_FLOORF 1"
@@ -9529,13 +8468,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__GCC_ATOMIC_CHAR_LOCK_FREE 2"
 .LASF983:
 	.string	"_ZN6VectorIiE8pushBackEi"
-.LASF330:
+.LASF329:
 	.string	"__DEC128_MAX_EXP__ 6145"
-.LASF203:
+.LASF202:
 	.string	"__DBL_MIN_10_EXP__ (-307)"
 .LASF702:
 	.string	"INT_LEAST32_MAX __INT_LEAST32_MAX__"
-.LASF168:
+.LASF167:
 	.string	"__INT_FAST32_MAX__ 0x7fffffff"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
@@ -9547,29 +8486,29 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__need_wint_t"
 .LASF974:
 	.string	"_ZN6VectorIiEaSEOS0_"
-.LASF141:
+.LASF140:
 	.string	"__UINT16_MAX__ 0xffff"
-.LASF109:
+.LASF108:
 	.string	"__SHRT_MAX__ 0x7fff"
-.LASF161:
+.LASF160:
 	.string	"__UINT32_C(c) c ## U"
 .LASF749:
 	.string	"PTRDIFF_MAX"
 .LASF721:
 	.string	"INT_FAST16_MIN"
-.LASF129:
+.LASF128:
 	.string	"__INTMAX_C(c) c ## L"
-.LASF219:
+.LASF218:
 	.string	"__LDBL_MAX_EXP__ 16384"
-.LASF24:
+.LASF23:
 	.string	"__SIZEOF_SHORT__ 2"
 .LASF544:
 	.string	"_GLIBCXX_HAVE_MODFF 1"
-.LASF155:
+.LASF154:
 	.string	"__INT_LEAST64_WIDTH__ 64"
 .LASF728:
 	.string	"INT_FAST32_MIN (-INT_FAST32_MAX - 1)"
-.LASF192:
+.LASF191:
 	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
 .LASF1026:
 	.string	"_ZN10TestVector17pushBackCorrectlyEv"
@@ -9583,17 +8522,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INFO \"[INFO] \""
 .LASF398:
 	.string	"__FLT_EVAL_METHOD_C99__ 0"
-.LASF83:
+.LASF82:
 	.string	"__cpp_lambdas 200907"
-.LASF131:
+.LASF130:
 	.string	"__UINTMAX_C(c) c ## UL"
-.LASF113:
+.LASF112:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
-.LASF280:
+.LASF279:
 	.string	"__FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128"
 .LASF356:
 	.string	"__PRAGMA_REDEFINE_EXTNAME 1"
-.LASF40:
+.LASF39:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF764:
 	.string	"WINT_MAX __WINT_MAX__"
@@ -9603,11 +8542,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
 .LASF341:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1"
-.LASF90:
+.LASF89:
 	.string	"__cpp_variadic_templates 200704"
 .LASF725:
 	.string	"INT_FAST32_MAX"
-.LASF66:
+.LASF65:
 	.string	"__INT_FAST64_TYPE__ long int"
 .LASF994:
 	.string	"erase"
@@ -9617,7 +8556,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
 .LASF477:
 	.string	"_GLIBCXX_TXN_SAFE_DYN "
-.LASF21:
+.LASF20:
 	.string	"__SIZEOF_INT__ 4"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
@@ -9631,7 +8570,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
 .LASF965:
 	.string	"capacity"
-.LASF235:
+.LASF234:
 	.string	"__FLT16_MAX_10_EXP__ 4"
 .LASF733:
 	.string	"INT_FAST64_MIN"
@@ -9643,35 +8582,35 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
 .LASF512:
 	.string	"_GLIBCXX_HAVE_EWOULDBLOCK 1"
-.LASF140:
+.LASF139:
 	.string	"__UINT8_MAX__ 0xff"
-.LASF194:
+.LASF193:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
 .LASF866:
 	.string	"EMPTY_STR"
 .LASF900:
 	.string	"nextBaseFromEnd"
-.LASF126:
+.LASF125:
 	.string	"__PTRDIFF_WIDTH__ 64"
-.LASF211:
+.LASF210:
 	.string	"__DBL_HAS_DENORM__ 1"
-.LASF278:
+.LASF277:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
-.LASF241:
+.LASF240:
 	.string	"__FLT16_HAS_DENORM__ 1"
 .LASF947:
 	.string	"allocate"
-.LASF84:
+.LASF83:
 	.string	"__cpp_range_based_for 200907"
-.LASF107:
+.LASF106:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF499:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
 .LASF1056:
 	.string	"decltype(nullptr)"
-.LASF147:
+.LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
-.LASF276:
+.LASF275:
 	.string	"__FLT128_MAX_EXP__ 16384"
 .LASF846:
 	.string	"int_least16_t"
@@ -9681,7 +8620,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"CXX_MACROS_H__ "
 .LASF349:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
-.LASF74:
+.LASF73:
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
 .LASF956:
 	.string	"deallocate"
@@ -9697,7 +8636,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"mman"
 .LASF481:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF867:
+.LASF779:
+	.string	"UINT32_C"
+.LASF893:
 	.string	"koutBufSize"
 .LASF596:
 	.string	"_GLIBCXX_STDIO_EOF -1"
@@ -9727,19 +8668,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"operator="
 .LASF399:
 	.string	"__ELF__ 1"
-.LASF149:
+.LASF148:
 	.string	"__INT_LEAST16_WIDTH__ 16"
-.LASF257:
+.LASF256:
 	.string	"__FLT32_HAS_QUIET_NAN__ 1"
 .LASF640:
 	.string	"_SIZET_ "
-.LASF228:
+.LASF227:
 	.string	"__LDBL_HAS_INFINITY__ 1"
-.LASF318:
+.LASF317:
 	.string	"__DEC32_MAX__ 9.999999E96DF"
-.LASF871:
+.LASF869:
 	.string	"Output"
-.LASF291:
+.LASF290:
 	.string	"__FLT32X_MAX_10_EXP__ 308"
 .LASF538:
 	.string	"_GLIBCXX_HAVE_LOGF 1"
@@ -9763,15 +8704,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"iterator"
 .LASF572:
 	.string	"_GLIBCXX_HAVE_VWSCANF 1"
-.LASF156:
+.LASF155:
 	.string	"__UINT_LEAST8_MAX__ 0xff"
-.LASF86:
+.LASF85:
 	.string	"__cpp_decltype 200707"
 .LASF521:
 	.string	"_GLIBCXX_HAVE_GETS 1"
-.LASF312:
+.LASF311:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
-.LASF199:
+.LASF198:
 	.string	"__FP_FAST_FMAF 1"
 .LASF1011:
 	.string	"setup"
@@ -9785,17 +8726,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN11MemoryChunkC4Embmbm"
 .LASF1036:
 	.string	"newData"
-.LASF183:
+.LASF182:
 	.string	"__DEC_EVAL_METHOD__ 2"
 .LASF911:
 	.string	"_ZNK11MemoryChunk7getNextEv"
 .LASF469:
 	.string	"_GLIBCXX_END_EXTERN_C }"
-.LASF327:
+.LASF326:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 .LASF552:
 	.string	"_GLIBCXX_HAVE_STDINT_H 1"
-.LASF894:
+.LASF892:
 	.string	"kout"
 .LASF992:
 	.string	"clear"
@@ -9811,17 +8752,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_CONSTEXPR constexpr"
 .LASF1019:
 	.string	"capacityIncreasedCorrectly"
-.LASF336:
+.LASF335:
 	.string	"__USER_LABEL_PREFIX__ "
 .LASF715:
 	.string	"INT_FAST8_MIN"
 .LASF714:
 	.string	"INT_FAST8_MAX __INT_FAST8_MAX__"
-.LASF58:
+.LASF57:
 	.string	"__INT_LEAST64_TYPE__ long int"
 .LASF774:
 	.string	"INT64_C(c) __INT64_C(c)"
-.LASF144:
+.LASF143:
 	.string	"__INT_LEAST8_MAX__ 0x7f"
 .LASF354:
 	.string	"__GCC_ATOMIC_POINTER_LOCK_FREE 2"
@@ -9833,13 +8774,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"DEF_H__ "
 .LASF377:
 	.string	"__ARM_BIG_ENDIAN"
-.LASF875:
+.LASF873:
 	.string	"operator<<"
 .LASF794:
 	.string	"TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))"
 .LASF372:
 	.string	"__ARM_SIZEOF_WCHAR_T 4"
-.LASF290:
+.LASF289:
 	.string	"__FLT32X_MAX_EXP__ 1024"
 .LASF486:
 	.string	"_GLIBCXX_HAVE_ASINF 1"
@@ -9847,7 +8788,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_MANGLE_SIZE_T m"
 .LASF981:
 	.string	"_ZN6VectorIiE7popBackEv"
-.LASF304:
+.LASF303:
 	.string	"__FLT64X_MAX_EXP__ 16384"
 .LASF1009:
 	.string	"_ZN6VectorIiE18getIncrementalSizeEm"
@@ -9859,13 +8800,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))"
 .LASF936:
 	.string	"_ZN11MemoryChunk5splitEm"
-.LASF197:
+.LASF196:
 	.string	"__FLT_HAS_INFINITY__ 1"
 .LASF513:
 	.string	"_GLIBCXX_HAVE_EXPF 1"
-.LASF36:
+.LASF35:
 	.string	"__SIZEOF_POINTER__ 8"
-.LASF136:
+.LASF135:
 	.string	"__INT8_MAX__ 0x7f"
 .LASF442:
 	.string	"_GLIBCXX_EXTERN_TEMPLATE 1"
@@ -9877,39 +8818,39 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_OS_DEFINES 1"
 .LASF826:
 	.string	"long unsigned int"
-.LASF201:
+.LASF200:
 	.string	"__DBL_DIG__ 15"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDBOOL_H 1"
-.LASF180:
+.LASF179:
 	.string	"__GCC_IEC_559_COMPLEX 2"
 .LASF5:
 	.string	"__GNUC__ 7"
 .LASF951:
 	.string	"_ZN13MemoryManager11tryIncreaseEPvm"
-.LASF52:
+.LASF51:
 	.string	"__UINT16_TYPE__ short unsigned int"
-.LASF240:
+.LASF239:
 	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
-.LASF222:
+.LASF221:
 	.string	"__LDBL_DECIMAL_DIG__ 36"
-.LASF303:
+.LASF302:
 	.string	"__FLT64X_MIN_10_EXP__ (-4931)"
-.LASF80:
+.LASF79:
 	.string	"__cpp_raw_strings 200710"
-.LASF316:
+.LASF315:
 	.string	"__DEC32_MAX_EXP__ 97"
 .LASF921:
 	.string	"_ZN11MemoryChunk10getDataEndEv"
 .LASF629:
 	.string	"_T_SIZE_ "
-.LASF182:
+.LASF181:
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 .LASF361:
 	.string	"__aarch64__ 1"
 .LASF955:
 	.string	"_ZN13MemoryManager10reallocateEPvmm"
-.LASF225:
+.LASF224:
 	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
 .LASF437:
 	.string	"_GLIBCXX_THROW(_EXC) "
@@ -9917,33 +8858,33 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT_FAST16_MAX"
 .LASF757:
 	.string	"SIZE_MAX"
-.LASF67:
+.LASF66:
 	.string	"__UINT_FAST8_TYPE__ unsigned int"
-.LASF239:
+.LASF238:
 	.string	"__FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16"
-.LASF93:
+.LASF92:
 	.string	"__cpp_nsdmi 200809"
 .LASF576:
 	.string	"LT_OBJDIR \".libs/\""
 .LASF977:
 	.string	"operator[]"
-.LASF85:
+.LASF84:
 	.string	"__cpp_static_assert 200410"
 .LASF491:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
 .LASF848:
 	.string	"int_least64_t"
-.LASF19:
+.LASF18:
 	.string	"_LP64 1"
 .LASF480:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
-.LASF46:
+.LASF45:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF1034:
+.LASF1033:
 	.string	"this"
 .LASF426:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
-.LASF244:
+.LASF243:
 	.string	"__FLT32_MANT_DIG__ 24"
 .LASF689:
 	.string	"INT_LEAST8_MAX"
@@ -9951,53 +8892,53 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"allocated"
 .LASF660:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
-.LASF333:
+.LASF332:
 	.string	"__DEC128_EPSILON__ 1E-33DL"
 .LASF666:
 	.string	"INT8_MAX __INT8_MAX__"
-.LASF300:
+.LASF299:
 	.string	"__FLT64X_MANT_DIG__ 113"
-.LASF207:
+.LASF206:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
 .LASF503:
 	.string	"_GLIBCXX_HAVE_ENOTRECOVERABLE 1"
-.LASF314:
+.LASF313:
 	.string	"__DEC32_MANT_DIG__ 7"
 .LASF862:
 	.string	"uintptr_t"
-.LASF204:
+.LASF203:
 	.string	"__DBL_MAX_EXP__ 1024"
 .LASF14:
 	.string	"__ATOMIC_RELEASE 3"
-.LASF297:
+.LASF296:
 	.string	"__FLT32X_HAS_DENORM__ 1"
-.LASF185:
+.LASF184:
 	.string	"__FLT_MANT_DIG__ 24"
 .LASF606:
 	.string	"_GLIBCXX_USE_INT128 1"
-.LASF65:
+.LASF64:
 	.string	"__INT_FAST32_TYPE__ int"
-.LASF87:
+.LASF86:
 	.string	"__cpp_attributes 200809"
 .LASF1037:
 	.string	"__for_range"
-.LASF17:
-	.string	"__OPTIMIZE__ 1"
+.LASF568:
+	.string	"_GLIBCXX_HAVE_USLEEP 1"
 .LASF350:
 	.string	"__GCC_ATOMIC_INT_LOCK_FREE 2"
 .LASF537:
 	.string	"_GLIBCXX_HAVE_LOG10F 1"
-.LASF128:
+.LASF127:
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
 .LASF914:
 	.string	"_ZNK11MemoryChunk7getSizeEv"
 .LASF605:
 	.string	"_GLIBCXX_USE_GETTIMEOFDAY 1"
-.LASF266:
+.LASF265:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
-.LASF18:
+.LASF17:
 	.string	"__FINITE_MATH_ONLY__ 0"
 .LASF617:
 	.string	"_T_PTRDIFF_ "
@@ -10007,9 +8948,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__cplusplus 201402L"
 .LASF954:
 	.string	"reallocate"
-.LASF130:
+.LASF129:
 	.string	"__UINTMAX_MAX__ 0xffffffffffffffffUL"
-.LASF233:
+.LASF232:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
 .LASF939:
 	.string	"_ZN11MemoryChunk25mergeTrailingsUnallocatedEv"
@@ -10035,11 +8976,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_T_WCHAR_ "
 .LASF678:
 	.string	"INT32_MAX __INT32_MAX__"
-.LASF150:
+.LASF149:
 	.string	"__INT_LEAST32_MAX__ 0x7fffffff"
-.LASF114:
+.LASF113:
 	.string	"__WCHAR_MIN__ 0U"
-.LASF236:
+.LASF235:
 	.string	"__FLT16_DECIMAL_DIG__ 5"
 .LASF351:
 	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
@@ -10051,7 +8992,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_TR1 1"
 .LASF909:
 	.string	"_ZN11MemoryChunk6setEndEb"
-.LASF184:
+.LASF183:
 	.string	"__FLT_RADIX__ 2"
 .LASF829:
 	.string	"long long int"
@@ -10063,17 +9004,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT16_MAX"
 .LASF737:
 	.string	"INTPTR_MAX"
-.LASF45:
+.LASF44:
 	.string	"__CHAR32_TYPE__ unsigned int"
 .LASF642:
 	.string	"__wchar_t__ "
-.LASF229:
+.LASF228:
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
 .LASF1010:
 	.string	"TestVector"
 .LASF10:
 	.string	"__LINARO_SPIN__ 0"
-.LASF123:
+.LASF122:
 	.string	"__LONG_LONG_WIDTH__ 64"
 .LASF616:
 	.string	"_PTRDIFF_T "
@@ -10081,7 +9022,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_SYS_TYPES_H 1"
 .LASF602:
 	.string	"_GLIBCXX_USE_C99_STDINT_TR1 1"
-.LASF106:
+.LASF105:
 	.string	"__cpp_threadsafe_static_init 200806"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LC_MESSAGES 1"
@@ -10095,7 +9036,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_STD_C std"
 .LASF744:
 	.string	"INTMAX_MAX __INTMAX_MAX__"
-.LASF262:
+.LASF261:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF647:
 	.string	"__WCHAR_T "
@@ -10103,15 +9044,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"int_least32_t"
 .LASF631:
 	.string	"__SIZE_T "
-.LASF121:
+.LASF120:
 	.string	"__INT_WIDTH__ 32"
-.LASF223:
+.LASF222:
 	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
-.LASF43:
+.LASF42:
 	.string	"__UINTMAX_TYPE__ long unsigned int"
-.LASF125:
+.LASF124:
 	.string	"__WINT_WIDTH__ 32"
-.LASF29:
+.LASF28:
 	.string	"__CHAR_BIT__ 8"
 .LASF358:
 	.string	"__SIZEOF_WCHAR_T__ 4"
@@ -10125,9 +9066,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UART_BASE 0x09000000"
 .LASF683:
 	.string	"INT64_MAX"
-.LASF234:
+.LASF233:
 	.string	"__FLT16_MAX_EXP__ 16"
-.LASF92:
+.LASF91:
 	.string	"__cpp_delegating_constructors 200604"
 .LASF446:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {"
@@ -10135,7 +9076,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_ALGO _GLIBCXX_BEGIN_NAMESPACE_VERSION"
 .LASF610:
 	.string	"_GLIBCXX_USE_WCHAR_T 1"
-.LASF34:
+.LASF33:
 	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF679:
 	.string	"INT32_MIN"
@@ -10145,7 +9086,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"endMark"
 .LASF736:
 	.string	"UINT_FAST64_MAX __UINT_FAST64_MAX__"
-.LASF72:
+.LASF71:
 	.string	"__UINTPTR_TYPE__ long unsigned int"
 .LASF388:
 	.string	"__AARCH64_CMODEL_TINY__"
@@ -10153,7 +9094,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
 .LASF790:
 	.string	"NULL_CHAR '\\0'"
-.LASF41:
+.LASF40:
 	.string	"__WINT_TYPE__ unsigned int"
 .LASF771:
 	.string	"INT32_C"
@@ -10165,7 +9106,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__AARCH64_CMODEL_SMALL__"
 .LASF1004:
 	.string	"adjustCapacityForOneMore"
-.LASF61:
+.LASF60:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
 .LASF843:
 	.string	"unsigned int"
@@ -10175,9 +9116,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"max_align_t"
 .LASF1044:
 	.string	"_ZN6VectorIiEC2Em"
-.LASF187:
+.LASF186:
 	.string	"__FLT_MIN_EXP__ (-125)"
-.LASF271:
+.LASF270:
 	.string	"__FLT64_HAS_QUIET_NAN__ 1"
 .LASF584:
 	.string	"_GLIBCXX11_USE_C99_MATH 1"
@@ -10189,11 +9130,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
 .LASF861:
 	.string	"intptr_t"
-.LASF293:
+.LASF292:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
-.LASF269:
+.LASF268:
 	.string	"__FLT64_HAS_DENORM__ 1"
-.LASF186:
+.LASF185:
 	.string	"__FLT_DIG__ 6"
 .LASF435:
 	.string	"_GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)"
@@ -10201,21 +9142,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN11MemoryChunk10getDataPtrEv"
 .LASF690:
 	.string	"INT_LEAST8_MAX __INT_LEAST8_MAX__"
-.LASF181:
+.LASF180:
 	.string	"__FLT_EVAL_METHOD__ 0"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_CEILF 1"
 .LASF1020:
 	.string	"_ZN10TestVector26capacityIncreasedCorrectlyEv"
-.LASF108:
+.LASF107:
 	.string	"__SCHAR_MAX__ 0x7f"
 .LASF703:
 	.string	"INT_LEAST32_MIN"
-.LASF165:
+.LASF164:
 	.string	"__INT_FAST8_WIDTH__ 32"
-.LASF91:
+.LASF90:
 	.string	"__cpp_initializer_lists 200806"
-.LASF281:
+.LASF280:
 	.string	"__FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128"
 .LASF450:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_VERSION "
@@ -10223,19 +9164,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ATAN2F 1"
 .LASF618:
 	.string	"_T_PTRDIFF "
-.LASF122:
+.LASF121:
 	.string	"__LONG_WIDTH__ 64"
 .LASF972:
 	.string	"_ZN6VectorIiEaSERKS0_"
 .LASF769:
 	.string	"INT16_C"
-.LASF322:
+.LASF321:
 	.string	"__DEC64_MIN_EXP__ (-382)"
-.LASF232:
+.LASF231:
 	.string	"__FLT16_MIN_EXP__ (-13)"
 .LASF960:
 	.string	"allocateAs<int*>"
-.LASF179:
+.LASF178:
 	.string	"__GCC_IEC_559 2"
 .LASF692:
 	.string	"INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)"
@@ -10253,9 +9194,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FEATURE_IDIV 1"
 .LASF821:
 	.string	"_ZNKSt16initializer_listIiE5beginEv"
-.LASF35:
+.LASF34:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
-.LASF51:
+.LASF50:
 	.string	"__UINT8_TYPE__ unsigned char"
 .LASF854:
 	.string	"int_fast16_t"
@@ -10269,13 +9210,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"getDataPtr"
 .LASF1043:
 	.string	"initSize"
-.LASF88:
+.LASF87:
 	.string	"__cpp_rvalue_reference 200610"
-.LASF120:
+.LASF119:
 	.string	"__SHRT_WIDTH__ 16"
-.LASF33:
+.LASF32:
 	.string	"__ORDER_PDP_ENDIAN__ 3412"
-.LASF328:
+.LASF327:
 	.string	"__DEC128_MANT_DIG__ 34"
 .LASF412:
 	.string	"_GLIBCXX_CSTDDEF 1"
@@ -10283,23 +9224,23 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN10TestVector5setupEv"
 .LASF786:
 	.string	"UINTMAX_C(c) __UINTMAX_C(c)"
-.LASF277:
+.LASF276:
 	.string	"__FLT128_MAX_10_EXP__ 4932"
 .LASF525:
 	.string	"_GLIBCXX_HAVE_INT64_T 1"
 .LASF698:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
-.LASF198:
+.LASF197:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
 .LASF828:
 	.string	"__max_align_ld"
-.LASF869:
+.LASF867:
 	.string	"UNIT_K"
 .LASF403:
 	.string	"KERNEL_ADDRESS 0"
 .LASF827:
 	.string	"__max_align_ll"
-.LASF138:
+.LASF137:
 	.string	"__INT32_MAX__ 0x7fffffff"
 .LASF1046:
 	.string	"vec0"
@@ -10317,15 +9258,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_PTRDIFF_T_DECLARED "
 .LASF1038:
 	.string	"__for_begin"
+.LASF1051:
+	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
-.LASF247:
+.LASF246:
 	.string	"__FLT32_MIN_10_EXP__ (-37)"
 .LASF638:
 	.string	"___int_size_t_h "
 .LASF467:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
-.LASF94:
+.LASF93:
 	.string	"__cpp_inheriting_constructors 201511"
 .LASF822:
 	.string	"__gnu_cxx"
@@ -10333,7 +9276,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
 .LASF807:
 	.string	"INCLUDE_MEMORYMANAGER_H_ "
-.LASF195:
+.LASF194:
 	.string	"__FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F"
 .LASF487:
 	.string	"_GLIBCXX_HAVE_AS_SYMVER_DIRECTIVE 1"
@@ -10341,17 +9284,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INCLUDE_IO_SECTORREADER_H_ "
 .LASF564:
 	.string	"_GLIBCXX_HAVE_TANF 1"
-.LASF872:
+.LASF870:
 	.string	"print"
 .LASF672:
 	.string	"INT16_MAX __INT16_MAX__"
-.LASF892:
+.LASF890:
 	.string	"bool"
 .LASF768:
 	.string	"INT8_C(c) __INT8_C(c)"
 .LASF849:
 	.string	"uint_least8_t"
-.LASF215:
+.LASF214:
 	.string	"__LDBL_MANT_DIG__ 113"
 .LASF995:
 	.string	"_ZN6VectorIiE5eraseEm"
@@ -10361,13 +9304,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
 .LASF845:
 	.string	"int_least8_t"
-.LASF105:
+.LASF104:
 	.string	"__cpp_sized_deallocation 201309"
 .LASF627:
 	.string	"_SIZE_T "
 .LASF904:
 	.string	"setAllocated"
-.LASF873:
+.LASF871:
 	.string	"_ZN6Output5printEPKcm"
 .LASF338:
 	.string	"__STRICT_ANSI__ 1"
@@ -10375,7 +9318,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"intmax_t"
 .LASF444:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
-.LASF230:
+.LASF229:
 	.string	"__FLT16_MANT_DIG__ 11"
 .LASF830:
 	.string	"long double"
@@ -10391,37 +9334,37 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN10TestVector15resizeCorrectlyEv"
 .LASF395:
 	.string	"__ARM_FEATURE_QRDMX 1"
-.LASF313:
+.LASF312:
 	.string	"__FLT64X_HAS_QUIET_NAN__ 1"
-.LASF273:
+.LASF272:
 	.string	"__FLT128_DIG__ 33"
-.LASF145:
+.LASF144:
 	.string	"__INT8_C(c) c"
-.LASF251:
+.LASF250:
 	.string	"__FLT32_MAX__ 3.40282346638528859811704183484516925e+38F32"
 .LASF614:
 	.string	"_STDDEF_H_ "
 .LASF710:
 	.string	"INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)"
-.LASF310:
+.LASF309:
 	.string	"__FLT64X_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F64x"
-.LASF202:
+.LASF201:
 	.string	"__DBL_MIN_EXP__ (-1021)"
 .LASF608:
 	.string	"_GLIBCXX_USE_SC_NPROCESSORS_ONLN 1"
 .LASF806:
 	.string	"INCLUDE_DATA_STRUCTURES_VECTOR_TEMPLATE_H_ "
-.LASF49:
+.LASF48:
 	.string	"__INT32_TYPE__ int"
 .LASF668:
 	.string	"INT8_MIN (-INT8_MAX - 1)"
 .LASF347:
 	.string	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2"
-.LASF302:
+.LASF301:
 	.string	"__FLT64X_MIN_EXP__ (-16381)"
 .LASF819:
 	.string	"begin"
-.LASF245:
+.LASF244:
 	.string	"__FLT32_DIG__ 6"
 .LASF472:
 	.string	"_GLIBCXX_CPU_DEFINES 1"
@@ -10433,19 +9376,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"UINT16_C"
 .LASF409:
 	.string	"INCLUDE_TEST_TESTVECTOR_H_ "
-.LASF101:
+.LASF100:
 	.string	"__cpp_decltype_auto 201304"
 .LASF424:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
 .LASF797:
 	.string	"HEX32(a,b) 0x ##a ##b"
-.LASF227:
+.LASF226:
 	.string	"__LDBL_HAS_DENORM__ 1"
 .LASF342:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
 .LASF912:
 	.string	"_ZN11MemoryChunk7getNextEv"
-.LASF294:
+.LASF293:
 	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
 .LASF440:
 	.string	"_GLIBCXX_NOEXCEPT_PARM "
@@ -10461,7 +9404,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"STDC_HEADERS 1"
 .LASF944:
 	.string	"_ZN13MemoryManagerC4EPvmb"
-.LASF95:
+.LASF94:
 	.string	"__cpp_ref_qualifiers 200710"
 .LASF676:
 	.string	"UINT16_MAX __UINT16_MAX__"
@@ -10469,13 +9412,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ATOMIC_ACQUIRE 2"
 .LASF711:
 	.string	"UINT_LEAST64_MAX"
-.LASF50:
+.LASF49:
 	.string	"__INT64_TYPE__ long int"
 .LASF339:
 	.string	"__WCHAR_UNSIGNED__ 1"
 .LASF796:
 	.string	"__stringify(x) __stringify_1(x)"
-.LASF31:
+.LASF30:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
 .LASF818:
 	.string	"size"
@@ -10483,15 +9426,15 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_SQRTF 1"
-.LASF321:
+.LASF320:
 	.string	"__DEC64_MANT_DIG__ 16"
 .LASF905:
 	.string	"_ZN11MemoryChunk12setAllocatedEb"
-.LASF868:
+.LASF894:
 	.string	"koutBuf"
 .LASF635:
 	.string	"_SIZE_T_DEFINED "
-.LASF115:
+.LASF114:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF707:
 	.string	"INT_LEAST64_MAX"
@@ -10499,29 +9442,27 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"uint16_t"
 .LASF603:
 	.string	"_GLIBCXX_USE_FCHMOD 1"
-.LASF71:
+.LASF70:
 	.string	"__INTPTR_TYPE__ long int"
 .LASF943:
 	.string	"_ZN13MemoryManagerC4Ev"
-.LASF64:
+.LASF63:
 	.string	"__INT_FAST16_TYPE__ int"
 .LASF752:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
-.LASF78:
+.LASF77:
 	.string	"__cpp_binary_literals 201304"
 .LASF773:
 	.string	"INT64_C"
-.LASF60:
+.LASF59:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
 .LASF667:
 	.string	"INT8_MIN"
 .LASF630:
 	.string	"_T_SIZE "
-.LASF44:
+.LASF43:
 	.string	"__CHAR16_TYPE__ short unsigned int"
-.LASF568:
-	.string	"_GLIBCXX_HAVE_USLEEP 1"
-.LASF287:
+.LASF286:
 	.string	"__FLT32X_DIG__ 15"
 .LASF1029:
 	.string	"insertCorrectly"
@@ -10529,13 +9470,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"oldSize"
 .LASF949:
 	.string	"_ZN13MemoryManager8allocateEmm"
-.LASF176:
+.LASF175:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
 .LASF376:
 	.string	"__AARCH64EB__"
 .LASF967:
 	.string	"_ZN6VectorIiEC4Em"
-.LASF166:
+.LASF165:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
 .LASF419:
 	.string	"_GLIBCXX_RELEASE 7"
@@ -10551,11 +9492,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_ECHILD 1"
 .LASF987:
 	.string	"_ZNK6VectorIiE7getSizeEv"
-.LASF76:
+.LASF75:
 	.string	"__DEPRECATED 1"
 .LASF811:
 	.string	"CMP_HELPER(vecN,op) (vecN.getCapacity() op Vector<int>::MINIMAL_CAPACITY)"
-.LASF889:
+.LASF887:
 	.string	"flush"
 .LASF946:
 	.string	"_ZN13MemoryManager18normalizeAllocSizeEm"
@@ -10569,9 +9510,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GCC_STDINT_H "
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_STRING \"package-unused version-unused\""
-.LASF133:
+.LASF132:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
-.LASF153:
+.LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
 .LASF823:
 	.string	"__cxx11"
@@ -10591,13 +9532,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"USER_SPACE_START 524288"
 .LASF380:
 	.string	"__ARM_FP 14"
-.LASF118:
+.LASF117:
 	.string	"__SIZE_MAX__ 0xffffffffffffffffUL"
 .LASF857:
 	.string	"uint_fast8_t"
 .LASF726:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
-.LASF163:
+.LASF162:
 	.string	"__UINT64_C(c) c ## UL"
 .LASF934:
 	.string	"_ZNK11MemoryChunk33moveOffsetOfAllocSuchAlignedSpaceEmm"
@@ -10611,7 +9552,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INTPTR_MIN"
 .LASF613:
 	.string	"_STDDEF_H "
-.LASF81:
+.LASF80:
 	.string	"__cpp_unicode_literals 200710"
 .LASF655:
 	.string	"_GCC_WCHAR_T "
@@ -10619,7 +9560,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_ARCH_8A 1"
 .LASF803:
 	.string	"INCLUDE_IO_OUTPUT_H_ "
-.LASF62:
+.LASF61:
 	.string	"__UINT_LEAST64_TYPE__ long unsigned int"
 .LASF649:
 	.string	"_BSD_WCHAR_T_ "
@@ -10629,13 +9570,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"~Vector"
 .LASF392:
 	.string	"_ILP32"
-.LASF890:
+.LASF888:
 	.string	"_ZNSt16initializer_listIiEC4Ev"
-.LASF57:
+.LASF56:
 	.string	"__INT_LEAST32_TYPE__ int"
 .LASF740:
 	.string	"INTPTR_MIN (-INTPTR_MAX - 1)"
-.LASF190:
+.LASF189:
 	.string	"__FLT_MAX_10_EXP__ 38"
 .LASF6:
 	.string	"__GNUC_MINOR__ 2"
@@ -10643,7 +9584,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_64BIT_STATE 1"
 .LASF626:
 	.string	"__SIZE_T__ "
-.LASF218:
+.LASF217:
 	.string	"__LDBL_MIN_10_EXP__ (-4931)"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SINF 1"
@@ -10655,11 +9596,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_S_ISREG 1"
 .LASF973:
 	.string	"_ZN6VectorIiEC4EOS0_"
-.LASF284:
+.LASF283:
 	.string	"__FLT128_HAS_INFINITY__ 1"
-.LASF295:
+.LASF294:
 	.string	"__FLT32X_EPSILON__ 2.22044604925031308084726333618164062e-16F32x"
-.LASF174:
+.LASF173:
 	.string	"__UINT_FAST32_MAX__ 0xffffffffU"
 .LASF743:
 	.string	"INTMAX_MAX"
@@ -10669,11 +9610,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF730:
 	.string	"UINT_FAST32_MAX __UINT_FAST32_MAX__"
-.LASF213:
+.LASF212:
 	.string	"__DBL_HAS_QUIET_NAN__ 1"
 .LASF393:
 	.string	"__ILP32__"
-.LASF270:
+.LASF269:
 	.string	"__FLT64_HAS_INFINITY__ 1"
 .LASF516:
 	.string	"_GLIBCXX_HAVE_FLOAT_H 1"
@@ -10683,25 +9624,25 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX98_USE_C99_MATH 1"
 .LASF724:
 	.string	"UINT_FAST16_MAX __UINT_FAST16_MAX__"
-.LASF308:
+.LASF307:
 	.string	"__FLT64X_MIN__ 3.36210314311209350626267781732175260e-4932F64x"
-.LASF282:
+.LASF281:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
 .LASF966:
 	.string	"Vector"
 .LASF775:
 	.string	"UINT8_C"
-.LASF208:
+.LASF207:
 	.string	"__DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)"
 .LASF734:
 	.string	"INT_FAST64_MIN (-INT_FAST64_MAX - 1)"
 .LASF673:
 	.string	"INT16_MIN"
-.LASF335:
-	.string	"__REGISTER_PREFIX__ "
 .LASF334:
+	.string	"__REGISTER_PREFIX__ "
+.LASF333:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
-.LASF89:
+.LASF88:
 	.string	"__cpp_rvalue_references 200610"
 .LASF953:
 	.string	"_ZN13MemoryManager11tryDecreaseEPvm"
@@ -10709,7 +9650,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"int_fast32_t"
 .LASF509:
 	.string	"_GLIBCXX_HAVE_ETIME 1"
-.LASF28:
+.LASF27:
 	.string	"__SIZEOF_SIZE_T__ 8"
 .LASF1006:
 	.string	"adjustCapacityForOneLess"
@@ -10717,9 +9658,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_EPERM 1"
 .LASF378:
 	.string	"__AARCH64EL__ 1"
-.LASF267:
+.LASF266:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF143:
+.LASF142:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF465:
 	.string	"__glibcxx_assert(_Condition) "
@@ -10737,11 +9678,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
 .LASF729:
 	.string	"UINT_FAST32_MAX"
-.LASF117:
+.LASF116:
 	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
-.LASF159:
+.LASF158:
 	.string	"__UINT16_C(c) c"
-.LASF238:
+.LASF237:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
 .LASF844:
 	.string	"uint64_t"
@@ -10767,9 +9708,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GCC_PTRDIFF_T "
 .LASF604:
 	.string	"_GLIBCXX_USE_FCHMODAT 1"
-.LASF212:
+.LASF211:
 	.string	"__DBL_HAS_INFINITY__ 1"
-.LASF870:
+.LASF868:
 	.string	"initializer_list<int>"
 .LASF834:
 	.string	"int16_t"
@@ -10785,19 +9726,19 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INT8_C"
 .LASF701:
 	.string	"INT_LEAST32_MAX"
-.LASF25:
+.LASF24:
 	.string	"__SIZEOF_FLOAT__ 4"
-.LASF324:
+.LASF323:
 	.string	"__DEC64_MIN__ 1E-383DD"
-.LASF97:
+.LASF96:
 	.string	"__cpp_return_type_deduction 201304"
 .LASF578:
 	.string	"_GLIBCXX_PACKAGE_NAME \"package-unused\""
-.LASF206:
+.LASF205:
 	.string	"__DBL_DECIMAL_DIG__ 17"
-.LASF891:
+.LASF889:
 	.string	"_ZN6Output5flushEv"
-.LASF82:
+.LASF81:
 	.string	"__cpp_user_defined_literals 200809"
 .LASF620:
 	.string	"_PTRDIFF_T_ "
@@ -10811,7 +9752,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__ARM_FP_FAST"
 .LASF494:
 	.string	"_GLIBCXX_HAVE_EBADMSG 1"
-.LASF137:
+.LASF136:
 	.string	"__INT16_MAX__ 0x7fff"
 .LASF371:
 	.string	"__ARM_PCS_AAPCS64 1"
@@ -10823,13 +9764,13 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_BEGIN_EXTERN_C extern \"C\" {"
 .LASF591:
 	.string	"_GLIBCXX98_USE_C99_WCHAR 1"
-.LASF272:
+.LASF271:
 	.string	"__FLT128_MANT_DIG__ 113"
-.LASF75:
+.LASF74:
 	.string	"__GXX_WEAK__ 1"
 .LASF693:
 	.string	"UINT_LEAST8_MAX"
-.LASF135:
+.LASF134:
 	.string	"__SIG_ATOMIC_WIDTH__ 32"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX"
@@ -10863,21 +9804,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"getNextValidChunkOffset"
 .LASF607:
 	.string	"_GLIBCXX_USE_LONG_LONG 1"
-.LASF73:
+.LASF72:
 	.string	"__has_include(STR) __has_include__(STR)"
 .LASF650:
 	.string	"_WCHAR_T_DEFINED_ "
-.LASF164:
+.LASF163:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
-.LASF255:
+.LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
 .LASF937:
 	.string	"mergeTrailingsUnallocated"
-.LASF315:
+.LASF314:
 	.string	"__DEC32_MIN_EXP__ (-94)"
-.LASF54:
+.LASF53:
 	.string	"__UINT64_TYPE__ long unsigned int"
-.LASF169:
+.LASF168:
 	.string	"__INT_FAST32_WIDTH__ 32"
 .LASF653:
 	.string	"___int_wchar_t_h "
@@ -10885,17 +9826,17 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_C99_CTYPE_TR1 1"
 .LASF554:
 	.string	"_GLIBCXX_HAVE_STRERROR_R 1"
-.LASF27:
+.LASF26:
 	.string	"__SIZEOF_LONG_DOUBLE__ 16"
-.LASF98:
+.LASF97:
 	.string	"__cpp_init_captures 201304"
 .LASF637:
 	.string	"_SIZE_T_DECLARED "
 .LASF924:
 	.string	"_ZNK11MemoryChunk18getNextBaseFromEndEv"
-.LASF39:
+.LASF38:
 	.string	"__PTRDIFF_TYPE__ long int"
-.LASF279:
+.LASF278:
 	.string	"__FLT128_MAX__ 1.18973149535723176508575932662800702e+4932F128"
 .LASF1025:
 	.string	"pushBackCorrectly"
@@ -10903,9 +9844,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"INTPTR_MAX __INTPTR_MAX__"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_CUR 1"
-.LASF265:
+.LASF264:
 	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
-.LASF283:
+.LASF282:
 	.string	"__FLT128_HAS_DENORM__ 1"
 .LASF381:
 	.string	"__ARM_FP16_FORMAT_IEEE 1"
@@ -10913,7 +9854,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZN11MemoryChunk23setNextValidChunkOffsetEm"
 .LASF717:
 	.string	"UINT_FAST8_MAX"
-.LASF111:
+.LASF110:
 	.string	"__LONG_MAX__ 0x7fffffffffffffffL"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSF 1"
@@ -10931,21 +9872,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
 .LASF569:
 	.string	"_GLIBCXX_HAVE_UTIME_H 1"
-.LASF132:
+.LASF131:
 	.string	"__INTMAX_WIDTH__ 64"
-.LASF231:
+.LASF230:
 	.string	"__FLT16_DIG__ 3"
-.LASF178:
+.LASF177:
 	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
 .LASF948:
 	.string	"_ZN13MemoryManager8allocateEm"
 .LASF1030:
 	.string	"_ZN10TestVector15insertCorrectlyEv"
-.LASF224:
+.LASF223:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
 .LASF858:
 	.string	"uint_fast16_t"
-.LASF68:
+.LASF67:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
 .LASF553:
 	.string	"_GLIBCXX_HAVE_STDLIB_H 1"
@@ -10957,25 +9898,25 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_GLIBCXX_USE_WEAK_REF __GXX_WEAK__"
 .LASF781:
 	.string	"UINT64_C"
-.LASF112:
+.LASF111:
 	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
-.LASF116:
+.LASF115:
 	.string	"__WINT_MIN__ 0U"
 .LASF697:
 	.string	"INT_LEAST16_MIN"
 .LASF1055:
 	.string	"11max_align_t"
-.LASF259:
+.LASF258:
 	.string	"__FLT64_DIG__ 15"
-.LASF326:
+.LASF325:
 	.string	"__DEC64_EPSILON__ 1E-15DD"
-.LASF193:
+.LASF192:
 	.string	"__FLT_MIN__ 1.17549435082228750796873653722224568e-38F"
-.LASF146:
+.LASF145:
 	.string	"__INT_LEAST8_WIDTH__ 8"
-.LASF884:
+.LASF882:
 	.string	"_ZN6OutputlsEPKc"
-.LASF56:
+.LASF55:
 	.string	"__INT_LEAST16_TYPE__ short int"
 .LASF1014:
 	.string	"_ZN10TestVector8teardownEv"
@@ -10985,21 +9926,21 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"short unsigned int"
 .LASF691:
 	.string	"INT_LEAST8_MIN"
-.LASF256:
+.LASF255:
 	.string	"__FLT32_HAS_INFINITY__ 1"
 .LASF785:
 	.string	"UINTMAX_C"
 .LASF720:
 	.string	"INT_FAST16_MAX __INT_FAST16_MAX__"
-.LASF886:
+.LASF884:
 	.string	"_ZN6OutputlsEPKv"
 .LASF520:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
 .LASF942:
 	.string	"base"
-.LASF217:
+.LASF216:
 	.string	"__LDBL_MIN_EXP__ (-16381)"
-.LASF152:
+.LASF151:
 	.string	"__INT_LEAST32_WIDTH__ 32"
 .LASF856:
 	.string	"int_fast64_t"
@@ -11009,7 +9950,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_WCHAR_T_DECLARED "
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_ENDIAN_H 1"
-.LASF160:
+.LASF159:
 	.string	"__UINT_LEAST32_MAX__ 0xffffffffU"
 .LASF556:
 	.string	"_GLIBCXX_HAVE_STRING_H 1"
@@ -11027,7 +9968,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"int64_t"
 .LASF906:
 	.string	"isEnd"
-.LASF30:
+.LASF29:
 	.string	"__BIGGEST_ALIGNMENT__ 16"
 .LASF391:
 	.string	"__AARCH64_CMODEL_SMALL__ 1"
@@ -11041,9 +9982,9 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"__FLT_EVAL_METHOD_C99__"
 .LASF612:
 	.string	"_GTHREAD_USE_MUTEX_TIMEDLOCK 1"
-.LASF286:
+.LASF285:
 	.string	"__FLT32X_MANT_DIG__ 53"
-.LASF124:
+.LASF123:
 	.string	"__WCHAR_WIDTH__ 32"
 .LASF990:
 	.string	"empty"
@@ -11051,7 +9992,7 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"_ZNK11MemoryChunk11isAllocatedEv"
 .LASF763:
 	.string	"WINT_MAX"
-.LASF148:
+.LASF147:
 	.string	"__INT16_C(c) c"
 .LASF722:
 	.string	"INT_FAST16_MIN (-INT_FAST16_MAX - 1)"
@@ -11059,11 +10000,11 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"WCHAR_MAX __WCHAR_MAX__"
 .LASF587:
 	.string	"_GLIBCXX11_USE_C99_WCHAR 1"
-.LASF243:
+.LASF242:
 	.string	"__FLT16_HAS_QUIET_NAN__ 1"
 .LASF15:
 	.string	"__ATOMIC_ACQ_REL 4"
-.LASF177:
+.LASF176:
 	.string	"__INTPTR_WIDTH__ 64"
 .LASF926:
 	.string	"_ZN11MemoryChunk18setNextBaseFromEndEm"
@@ -11073,41 +10014,41 @@ _ZN10TestVector15insertCorrectlyEv:
 	.string	"data"
 .LASF526:
 	.string	"_GLIBCXX_HAVE_INT64_T_LONG 1"
-.LASF216:
+.LASF215:
 	.string	"__LDBL_DIG__ 33"
 .LASF528:
 	.string	"_GLIBCXX_HAVE_ISWBLANK 1"
-.LASF880:
+.LASF878:
 	.string	"_ZN6OutputlsEb"
-.LASF876:
+.LASF874:
 	.string	"_ZN6OutputlsEc"
-.LASF883:
+.LASF881:
 	.string	"_ZN6OutputlsEd"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENODATA 1"
 .LASF782:
 	.string	"UINT64_C(c) __UINT64_C(c)"
-.LASF877:
+.LASF875:
 	.string	"_ZN6OutputlsEh"
-.LASF882:
+.LASF880:
 	.string	"_ZN6OutputlsEi"
-.LASF879:
+.LASF877:
 	.string	"_ZN6OutputlsEj"
-.LASF885:
+.LASF883:
 	.string	"_ZN6OutputlsEm"
-.LASF874:
+.LASF872:
 	.string	"_ZN6Output5printEPKc"
 .LASF688:
 	.string	"UINT64_MAX __UINT64_MAX__"
-.LASF881:
+.LASF879:
 	.string	"_ZN6OutputlsEs"
-.LASF878:
+.LASF876:
 	.string	"_ZN6OutputlsEt"
-.LASF171:
+.LASF170:
 	.string	"__INT_FAST64_WIDTH__ 64"
-.LASF110:
+.LASF109:
 	.string	"__INT_MAX__ 0x7fffffff"
-.LASF162:
+.LASF161:
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
 .LASF428:
 	.string	"_GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ (\"cxx11\")))"

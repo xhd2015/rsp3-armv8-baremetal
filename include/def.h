@@ -13,12 +13,6 @@
 #define NULL_CHAR '\0'
 
 // for print information
-//extern const char * INFO;
-//extern const char * WARNING;
-//extern const char * FATAL;
-//constexpr const char * INFO = "[INFO] ";
-//constexpr const char * WARNING = "[WARNING] ";
-//constexpr const char * FATAL = "[FATAL] ";
 #define INFO "[INFO] "
 #define WARNING "[WARNING] "
 #define FATAL "[FATAL] "
@@ -27,10 +21,8 @@
 // 用于表示空字符串的全局唯一常量，至少占用一个字节
 extern const char EMPTY_STR[1];
 
-// 声明用于kout的缓冲区
-constexpr size_t koutBufSize = 65; // for max 64-bits,a NULL_CHAR
-extern char koutBuf[koutBufSize];
 
+// 定义大小的单位
 constexpr int 	UNIT_K=1024;
 constexpr int  KiB = UNIT_K;
 constexpr int  MiB = UNIT_K * KiB;

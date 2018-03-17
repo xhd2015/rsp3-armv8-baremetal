@@ -245,9 +245,6 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MAKE_BIN/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MAKE_BIN/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MAKE_BIN/value=D\:\\installed\\cygwin\\bin\\make
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_BINARY/delimiter=;
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_BINARY/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_BINARY/value=${TARGET_ARCH}.bin
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_ELF/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_ELF/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/MASTERY_ELF/value=${TARGET_ARCH}.elf

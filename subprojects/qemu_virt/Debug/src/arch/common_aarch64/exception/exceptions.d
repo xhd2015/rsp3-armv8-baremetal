@@ -15,7 +15,12 @@ src/arch/common_aarch64/exception/exceptions.o: \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/generic_util.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/gicv3_defines.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/gicv3_registers.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/timer_registers.h
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/timer_registers.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/exception/svc_call.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/PidManager.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryManager.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryChunk.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h
 
 cxx_macros.h:
 
@@ -48,3 +53,13 @@ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/g
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/gicv3_registers.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/timer_registers.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/exception/svc_call.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/PidManager.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryManager.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryChunk.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h:

@@ -10,16 +10,31 @@
 #include <arch/common_aarch64/exception/exceptions.h>
 #include <asm_instructions.h>
 
-// AS_MACRO is needed, as `func` must be utilized to immediate operand
-AS_MACRO uint64_t svc_call(SvcFunc func);
-AS_MACRO uint64_t svc_call(SvcFunc func,uint64_t arg0);
-AS_MACRO uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1);
-AS_MACRO uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1,uint64_t arg2);
-AS_MACRO uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3);
+
+enum SvcFunc{
+	                           // prototype:
+	puts,                      //  size_t    puts(const char *, size_t n=0)
+	allocateBlock,             //  void*     allocateBlock(size_t size,size_t alignment)         // 一般用于分配较大的空间，如4KB的页
+	killProcess,               //  void      killProcess(PidType pid, int exitStatus)            // kill进程, pid的取值有特殊含义
+};
+
+// ==forward declarations:svc_call
+//template 用于提供立即数
+template <SvcFunc func>
+AS_MACRO uint64_t svc_call();
+template <SvcFunc func>
+AS_MACRO uint64_t svc_call(uint64_t arg0);
+template <SvcFunc func>
+AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1);
+template <SvcFunc func>
+AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2);
+template <SvcFunc func>
+AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3);
 
 
 // ===definitions
-uint64_t svc_call(SvcFunc func)
+template <SvcFunc func>
+uint64_t svc_call()
 {
 	uint64_t res=0;
 	FORCE_CODE_COHERENT_WITH_VIEW();
@@ -29,7 +44,8 @@ uint64_t svc_call(SvcFunc func)
 						:"=m"(res):"i"(func):"x0");
 	return res;
 }
-uint64_t svc_call(SvcFunc func,uint64_t arg0)
+template <SvcFunc func>
+uint64_t svc_call(uint64_t arg0)
 {
 	uint64_t res=0;
 	FORCE_CODE_COHERENT_WITH_VIEW();
@@ -39,7 +55,8 @@ uint64_t svc_call(SvcFunc func,uint64_t arg0)
 						:"=m"(res):"i"(func),"r"(arg0):"x0");
 	return res;
 }
-uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1)
+template <SvcFunc func>
+uint64_t svc_call(uint64_t arg0,uint64_t arg1)
 {
 	uint64_t res=0;
 	FORCE_CODE_COHERENT_WITH_VIEW();
@@ -50,7 +67,8 @@ uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1)
 						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1):"x0","x1");
 	return res;
 }
-uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1,uint64_t arg2)
+template <SvcFunc func>
+uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2)
 {
 	uint64_t res=0;
 	FORCE_CODE_COHERENT_WITH_VIEW();
@@ -62,7 +80,8 @@ uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1,uint64_t arg2)
 						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1),"r"(arg2):"x0","x1","x2");
 	return res;
 }
-uint64_t svc_call(SvcFunc func,uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3)
+template <SvcFunc func>
+uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3)
 {
 	uint64_t res=0;
 	FORCE_CODE_COHERENT_WITH_VIEW();

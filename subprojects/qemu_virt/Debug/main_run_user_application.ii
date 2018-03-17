@@ -1540,7 +1540,8 @@ namespace std
 #define AS_MACRO __attribute__((always_inline)) inline
 #define arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))
 #define NULL_CHAR '\0'
-# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+
+
 #define INFO "[INFO] "
 #define WARNING "[WARNING] "
 #define FATAL "[FATAL] "
@@ -1548,12 +1549,10 @@ namespace std
 
 
 
-# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
+# 22 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/def.h"
 extern const char EMPTY_STR[1];
 
 
-constexpr size_t koutBufSize = 65;
-extern char koutBuf[koutBufSize];
 
 constexpr int UNIT_K=1024;
 constexpr int KiB = UNIT_K;
@@ -1653,6 +1652,10 @@ public:
 
 
 extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
 # 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/IntegerFormatter.h" 2
 
 
@@ -1743,7 +1746,8 @@ __attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBoun
 }
 
 
-__attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
+template <class type>
+__attribute__((always_inline)) inline void setBits(type & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
 {
 
  i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
@@ -1751,6 +1755,15 @@ __attribute__((always_inline)) inline void setBits(uint64_t & i, uint8_t lowerBo
 __attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
  return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+template <class type>
+__attribute__((always_inline)) inline void setBit(type & i,uint8_t index,type v)
+{
+ setBits(i,index,index,v);
+}
+__attribute__((always_inline)) inline uint64_t getBit(uint64_t i,uint8_t index)
+{
+ return getBits(i,index,index);
 }
 # 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/IntegerFormatter.h" 2
 
@@ -8586,18 +8599,54 @@ inline void operator delete[](void*, void*) noexcept { }
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/Progress.h"
 #define INCLUDE_SCHEDULE_PROGRESS_H_ 
 
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/LinkedList.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/LinkedList.h"
+#define INCLUDE_DATA_STRUCTURES_LINKEDLIST_H_ 
 
 
 
-# 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/Progress.h"
-class Progress{
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/LinkedList.h"
+template <class T>
+class LinkedList{
 public:
- enum Config{PAGE_SIZE = 4*1024,
-  KERN_ARG_NUM = 4 * sizeof(uint64_t),
-  STACK_L3_INDEX=508, STACK_L3_ENTRY_NUM=2,HEAP_L3_INDEX = 510,HEAP_L3_ENTRY_NUM = 2 };
 
 private:
+
 };
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/Progress.h" 2
+
+
+
+class Progress{
+public:
+ enum Config{
+  PAGE_SIZE = 4*KiB,
+  KERN_ARG_NUM = 4 * sizeof(uint64_t),
+  STACK_L3_INDEX=508, STACK_L3_ENTRY_NUM=2,
+  HEAP_L3_INDEX = 510,HEAP_L3_ENTRY_NUM = 2
+ };
+ enum Status{
+  CREATED,
+  READY,
+  RUNNING,
+  BLOCKED,
+  STOPPED
+ };
+
+
+ static uint32_t allocatePid()const;
+ static void deallocatePid(uint32_t pid)const;
+private:
+ static
+
+private:
+ uint32_t _pid;
+ uint32_t _priority;
+ Status _status;
+ Progress * _parent;
+};
+
+extern LinkedList<Progress> progressList;
 # 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_run_user_application.cpp" 2
 # 30 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_run_user_application.cpp"
 int enableMMU();

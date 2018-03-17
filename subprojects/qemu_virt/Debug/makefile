@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/test/subdir.mk
+-include src/schedule/subdir.mk
 -include src/minimal_crt/subdir.mk
 -include src/minimal_cpprt/subdir.mk
 -include src/memory/subdir.mk

@@ -10,6 +10,7 @@
 #include <data_structures/StringRef.h>
 #include <IntegerFormatter.h>
 #include <io/printk.h>
+#include <iostream>
 static bool isGood(char ch)
 {
 	if(ch=='\0')
@@ -28,6 +29,11 @@ size_t printk(char ch)
 		std::cout << "\\x"<< str[0] << str[1];
 	}
 	return 1;
+}
+
+void flush()
+{
+	std::cout << std::flush;
 }
 
 

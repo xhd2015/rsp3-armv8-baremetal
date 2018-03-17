@@ -9,8 +9,8 @@ src/global_variables.o: \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/Output.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/printk.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/printk.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/global_variables.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/mem_config.h
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/mem_config.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/PidManager.h
 
 cxx_macros.h:
 
@@ -30,6 +30,6 @@ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/io/printk.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/printk.h:
 
-D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/global_variables.h:
-
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/mem_config.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/PidManager.h:

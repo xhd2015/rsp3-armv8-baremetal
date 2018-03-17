@@ -9,12 +9,12 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/test/subdir.mk
+-include src/schedule/subdir.mk
 -include src/minimal_crt/subdir.mk
 -include src/minimal_cpprt/subdir.mk
 -include src/memory/subdir.mk
 -include src/io/subdir.mk
 -include src/filesystem/fat/subdir.mk
--include src/default_impl/subdir.mk
 -include src/data_structures/subdir.mk
 -include src/arch/qemu_virt/subdir.mk
 -include src/arch/common_aarch64/mmu/subdir.mk
@@ -49,26 +49,22 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: qemu_virt.elf
-
-dependents:
-	-cd D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subporjects/user_space/Debug && $(MAKE) clean all
+all: raspi3.elf
 
 # Tool invocations
-qemu_virt.elf: $(OBJS) $(USER_OBJS) D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subporjects/user_space/Debug/user_space.elf
+raspi3.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	aarch64-elf-g++ $(USER_LINKER_FLAGS) -o "qemu_virt.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	aarch64-elf-g++ $(USER_LINKER_FLAGS) -o "raspi3.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(C_DEPS)$(CPP_DEPS) qemu_virt.elf
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(C_DEPS)$(CPP_DEPS) raspi3.elf
 	-@echo ' '
 
 .PHONY: all clean dependents
 .SECONDARY:
-D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/subporjects/user_space/Debug/user_space.elf:
 
 -include ../makefile.targets

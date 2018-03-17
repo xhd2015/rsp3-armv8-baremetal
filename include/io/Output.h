@@ -33,5 +33,9 @@ public:
 // 定义一个全局的字符串打印变量
 extern Output kout;
 
+// 声明用于kout的缓冲区
+constexpr size_t koutBufSize = 65; // for max 64-bits,a NULL_CHAR
+extern char koutBuf[koutBufSize];
+
 
 #endif /* INCLUDE_IO_OUTPUT_H_ */
