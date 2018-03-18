@@ -421,6 +421,8 @@
 
 
 #define CXX_MACROS_H__ 
+
+#define TARGET_ARCH_IS_user_space 
 # 32 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/operator_delete.cpp"
 
@@ -1555,8 +1557,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 
@@ -5186,7 +5193,12 @@ T MemoryManager::reallocateAs(void *origin,size_t newSize,size_t oldSize)
 # 94 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/MemoryManager.h" 2
 # 10 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/operator_delete.cpp" 2
 
-void operator delete(void *p,size_t n)
+void operator delete(void *p)
+{
+ mman.deallocate(p);
+}
+
+void operator delete(void *p,size_t size)
 {
  mman.deallocate(p);
 }

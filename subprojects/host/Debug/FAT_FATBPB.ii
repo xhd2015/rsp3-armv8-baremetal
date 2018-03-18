@@ -292,7 +292,7 @@
 
 #define CXX_MACROS_H__ 
 
-#define ARCH_IS_host 
+#define TARGET_ARCH_IS_host 
 # 1 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FAT_FATBPB.cpp"
 # 9 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FAT_FATBPB.cpp"
@@ -1664,8 +1664,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 

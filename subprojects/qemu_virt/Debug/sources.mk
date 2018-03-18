@@ -23,6 +23,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+include/programming \
 src/arch/common_aarch64/exception \
 src/arch/common_aarch64/mmu \
 src/arch/qemu_virt \

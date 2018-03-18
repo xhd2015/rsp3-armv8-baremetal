@@ -43,16 +43,17 @@ $(ALL_REGISTERS):
 # 通过dd将用户程序嵌入到内核镜像中
 userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
 # 注意,MASTERY_RELOC必须在MASTERY_ELF之前
-$(MASTERY_BINARY):clean_bin $(MASTERY_RELOC) $(MASTERY_ELF) $(userSpaceBin)
+$(MASTERY_BINARY):FORCE
+	$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
+	$(MAKE) $(MASTERY_RELOC)
+	$(MAKE) $(MASTERY_ELF)
+	while [ ! -f $(MASTERY_ELF) ] ;do sleep 1;done
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
 	dd if=$(userSpaceBin) of=$@ seek=$(USER_SPACE_START) bs=1c count=$(USER_SPACE_SIZE)
-.PHONY:clean_bin
-clean_bin:
-	$(RM) $(MASTERY_BINARY) $(MASTERY_ELF)
+
 
 $(MASTERY_RELOC):
 	# 改变IMAGE_BASE的值，然后编译生成即可
-	$(RM) $(MASTERY_ELF) $@
 	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 dump-reloc:

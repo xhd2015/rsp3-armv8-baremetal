@@ -31,9 +31,14 @@ constexpr int  GiB = UNIT_K * MiB;
 
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
+
+// for programming
 //#define __concate(x,y) x##y
 #define __stringify_1(x)	#x
 #define __stringify(x)		__stringify_1(x)
+#define CALL_CONST_EQUIV(var, method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 

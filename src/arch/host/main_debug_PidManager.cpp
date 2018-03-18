@@ -10,18 +10,16 @@
 #include <memory/MemoryManager.h>
 #include <test/test_base.h>
 #include <test/TestPidManager.h>
+#include <test/TestDoublyLinkedList.h>
+#include <test/TestMemoryManager.h>
 #include <io/Output.h>
 
 using namespace std;
 int main()
 {
-	kout << INFO << "Run test of PidManager\n";
-	TestPidManager test;
-	RUN_TEST(test.clearAllKeepsInvalidAllocated);
-	RUN_TEST(test.allocateInvalidPidAlwaysFailed);
-	RUN_TEST(test.allocateReturnContinousPids);
-	RUN_TEST(test.deallocatePidSuccessfully);
-	kout << INFO << "All test ended\n";
+	TestDoublyLinkedList::run();
+	TestMemoryManager::run();
+	TestPidManager::run();
 
 	return 0;
 }

@@ -84,7 +84,7 @@ SECTIONS{
 	
 
 	/* 4K的栈 */
-	PROVIDE(__stack_top = CONFIG_RAM_START + 4K);
+	PROVIDE(__stack_top = CONFIG_RAM_START + 4K + IMAGE_BASE);
 	
 	PROVIDE( uart_base = UART_BASE + IMAGE_BASE );
 }

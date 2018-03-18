@@ -421,6 +421,8 @@
 
 
 #define CXX_MACROS_H__ 
+
+#define TARGET_ARCH_IS_user_space 
 # 32 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space/exit.cpp"
 
@@ -1561,8 +1563,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 
@@ -3341,15 +3348,38 @@ enum ExceptionClass{
  HVC_AA64 = 0b010110,
  SMC_AA64 = 0b010111,
 };
+
+#define SAVE_REGS_ASM_INSTR "stp x29,x30,[sp,#-16]! \n\t" "stp x27,x28,[sp,#-16]! \n\t" "stp x25,x26,[sp,#-16]! \n\t" "stp x23,x24,[sp,#-16]! \n\t" "stp x21,x22,[sp,#-16]! \n\t" "stp x19,x20,[sp,#-16]! \n\t" "stp x17,x18,[sp,#-16]! \n\t" "stp x15,x16,[sp,#-16]! \n\t" "stp x13,x14,[sp,#-16]! \n\t" "stp x11,x12,[sp,#-16]! \n\t" "stp x9,x10,[sp,#-16]! \n\t" "stp x7,x8,[sp,#-16]! \n\t" "stp x5,x6,[sp,#-16]! \n\t" "stp x3,x4,[sp,#-16]! \n\t" "stp x1,x2,[sp,#-16]! \n\t" "str x0,[sp,#-8]! \n\t"
+# 45 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/arch/common_aarch64/exception/exceptions.h"
+#define RESTORE_REGS_ASM_INSTR_X0_X28(base) "ldr x0,[" __stringify(base) "],#8 \n\t" "ldp x1,x2,[" __stringify(base) "],#16 \n\t" "ldp x3,x4,[" __stringify(base) "],#16 \n\t" "ldp x5,x6,[" __stringify(base) "],#16 \n\t" "ldp x7,x8,[" __stringify(base) "],#16 \n\t" "ldp x9,x10,[" __stringify(base) "],#16 \n\t" "ldp x11,x12,[" __stringify(base) "],#16 \n\t" "ldp x13,x14,[" __stringify(base) "],#16 \n\t" "ldp x15,x16,[" __stringify(base) "],#16 \n\t" "ldp x17,x18,[" __stringify(base) "],#16 \n\t" "ldp x19,x20,[" __stringify(base) "],#16 \n\t" "ldp x21,x22,[" __stringify(base) "],#16 \n\t" "ldp x23,x24,[" __stringify(base) "],#16 \n\t" "ldp x25,x26,[" __stringify(base) "],#16 \n\t" "ldp x27,x28,[" __stringify(base) "],#16 \n\t"
+# 62 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/arch/common_aarch64/exception/exceptions.h"
+#define RESTORE_REGS_ASM_INSTR RESTORE_REGS_ASM_INSTR_X0_X28(sp) "ldp x29,x30,[sp],#16 \n\t"
+
+
+
+
+#define RESTORE_REGS_ASM_INSTR_X30_BASE RESTORE_REGS_ASM_INSTR_X0_X28(x30) "ldp x29,x30,[x30]\n\t"
+
+
+
+
+
+
+#define SAVE_REGS() __asm__ __volatile__( SAVE_REGS_ASM_INSTR )
+
+
+
+#define RESTORE_REGS() __asm__ __volatile__( RESTORE_REGS_ASM_INSTR )
 # 11 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/arch/common_aarch64/exception/svc_call.h" 2
 
 
 
+enum class SvcFunc{
 
-
-
-
-enum SvcFunc{ puts, allocateBlock,killProcess};
+ puts,
+ allocateBlock,
+ killProcess,
+};
 
 
 
@@ -5005,7 +5035,7 @@ private:
 extern PidManager pidManager;
 # 9 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space/exit.cpp" 2
 
-void exit(int i)
+void destroy(int i)
 {
  svc_call<SvcFunc::killProcess>(CURRENT_PID,i);
 }

@@ -148,10 +148,10 @@ _Z4initv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF854
-	.byte	0x4
 	.4byte	.LASF855
+	.byte	0x4
 	.4byte	.LASF856
+	.4byte	.LASF857
 	.4byte	.Ldebug_ranges0+0
 	.8byte	0
 	.4byte	.Ldebug_line0
@@ -162,7 +162,7 @@ _Z4initv:
 	.byte	0
 	.4byte	0x112
 	.uleb128 0x3
-	.4byte	.LASF801
+	.4byte	.LASF802
 	.byte	0x5
 	.byte	0xfd
 	.uleb128 0x4
@@ -287,12 +287,12 @@ _Z4initv:
 	.4byte	0x2c9
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF800
+	.4byte	.LASF801
 	.byte	0x5
 	.byte	0xff
 	.4byte	0x12e
 	.uleb128 0x7
-	.4byte	.LASF801
+	.4byte	.LASF802
 	.byte	0x5
 	.2byte	0x101
 	.uleb128 0x8
@@ -303,27 +303,27 @@ _Z4initv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF802
+	.4byte	.LASF803
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF803
+	.4byte	.LASF804
 	.uleb128 0xa
 	.byte	0x20
 	.byte	0x10
 	.byte	0x6
 	.2byte	0x1aa
-	.4byte	.LASF857
+	.4byte	.LASF858
 	.4byte	0x167
 	.uleb128 0xb
-	.4byte	.LASF804
+	.4byte	.LASF805
 	.byte	0x6
 	.2byte	0x1ab
 	.4byte	0x167
 	.byte	0x8
 	.byte	0
 	.uleb128 0xb
-	.4byte	.LASF805
+	.4byte	.LASF806
 	.byte	0x6
 	.2byte	0x1ac
 	.4byte	0x16e
@@ -333,39 +333,39 @@ _Z4initv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF806
+	.4byte	.LASF807
 	.uleb128 0x9
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF807
+	.4byte	.LASF808
 	.uleb128 0xc
-	.4byte	.LASF858
+	.4byte	.LASF859
 	.byte	0x6
 	.2byte	0x1b5
 	.4byte	0x13c
 	.byte	0x10
 	.uleb128 0xd
-	.4byte	.LASF859
+	.4byte	.LASF860
 	.uleb128 0xe
-	.4byte	.LASF809
+	.4byte	.LASF810
 	.byte	0x7
 	.byte	0x22
 	.4byte	0x192
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF808
+	.4byte	.LASF809
 	.uleb128 0xe
-	.4byte	.LASF810
+	.4byte	.LASF811
 	.byte	0x7
 	.byte	0x25
 	.4byte	0x1a4
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF811
-	.uleb128 0xe
 	.4byte	.LASF812
+	.uleb128 0xe
+	.4byte	.LASF813
 	.byte	0x7
 	.byte	0x28
 	.4byte	0x1b6
@@ -376,139 +376,139 @@ _Z4initv:
 	.uleb128 0x10
 	.4byte	0x1b6
 	.uleb128 0xe
-	.4byte	.LASF813
+	.4byte	.LASF814
 	.byte	0x7
 	.byte	0x2b
 	.4byte	0x12e
 	.uleb128 0xe
-	.4byte	.LASF814
+	.4byte	.LASF815
 	.byte	0x7
 	.byte	0x2e
 	.4byte	0x1d8
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF815
-	.uleb128 0xe
 	.4byte	.LASF816
+	.uleb128 0xe
+	.4byte	.LASF817
 	.byte	0x7
 	.byte	0x31
 	.4byte	0x1ea
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF817
-	.uleb128 0xe
 	.4byte	.LASF818
+	.uleb128 0xe
+	.4byte	.LASF819
 	.byte	0x7
 	.byte	0x34
 	.4byte	0x1fc
 	.uleb128 0x9
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF819
-	.uleb128 0xe
 	.4byte	.LASF820
+	.uleb128 0xe
+	.4byte	.LASF821
 	.byte	0x7
 	.byte	0x37
 	.4byte	0x135
 	.uleb128 0xe
-	.4byte	.LASF821
+	.4byte	.LASF822
 	.byte	0x7
 	.byte	0x3c
 	.4byte	0x192
 	.uleb128 0xe
-	.4byte	.LASF822
+	.4byte	.LASF823
 	.byte	0x7
 	.byte	0x3d
 	.4byte	0x1a4
 	.uleb128 0xe
-	.4byte	.LASF823
+	.4byte	.LASF824
 	.byte	0x7
 	.byte	0x3e
 	.4byte	0x1b6
 	.uleb128 0xe
-	.4byte	.LASF824
+	.4byte	.LASF825
 	.byte	0x7
 	.byte	0x3f
 	.4byte	0x12e
 	.uleb128 0xe
-	.4byte	.LASF825
+	.4byte	.LASF826
 	.byte	0x7
 	.byte	0x40
 	.4byte	0x1d8
 	.uleb128 0xe
-	.4byte	.LASF826
+	.4byte	.LASF827
 	.byte	0x7
 	.byte	0x41
 	.4byte	0x1ea
 	.uleb128 0xe
-	.4byte	.LASF827
+	.4byte	.LASF828
 	.byte	0x7
 	.byte	0x42
 	.4byte	0x1fc
 	.uleb128 0xe
-	.4byte	.LASF828
+	.4byte	.LASF829
 	.byte	0x7
 	.byte	0x43
 	.4byte	0x135
 	.uleb128 0xe
-	.4byte	.LASF829
+	.4byte	.LASF830
 	.byte	0x7
 	.byte	0x47
 	.4byte	0x1b6
 	.uleb128 0xe
-	.4byte	.LASF830
+	.4byte	.LASF831
 	.byte	0x7
 	.byte	0x48
 	.4byte	0x1b6
 	.uleb128 0xe
-	.4byte	.LASF831
+	.4byte	.LASF832
 	.byte	0x7
 	.byte	0x49
 	.4byte	0x1b6
 	.uleb128 0xe
-	.4byte	.LASF832
+	.4byte	.LASF833
 	.byte	0x7
 	.byte	0x4a
 	.4byte	0x12e
 	.uleb128 0xe
-	.4byte	.LASF833
+	.4byte	.LASF834
 	.byte	0x7
 	.byte	0x4b
 	.4byte	0x1fc
 	.uleb128 0xe
-	.4byte	.LASF834
+	.4byte	.LASF835
 	.byte	0x7
 	.byte	0x4c
 	.4byte	0x1fc
 	.uleb128 0xe
-	.4byte	.LASF835
+	.4byte	.LASF836
 	.byte	0x7
 	.byte	0x4d
 	.4byte	0x1fc
 	.uleb128 0xe
-	.4byte	.LASF836
+	.4byte	.LASF837
 	.byte	0x7
 	.byte	0x4e
 	.4byte	0x135
 	.uleb128 0xe
-	.4byte	.LASF837
+	.4byte	.LASF838
 	.byte	0x7
 	.byte	0x53
 	.4byte	0x12e
 	.uleb128 0xe
-	.4byte	.LASF838
+	.4byte	.LASF839
 	.byte	0x7
 	.byte	0x56
 	.4byte	0x135
 	.uleb128 0xe
-	.4byte	.LASF839
+	.4byte	.LASF840
 	.byte	0x7
 	.byte	0x5b
 	.4byte	0x12e
 	.uleb128 0xe
-	.4byte	.LASF840
+	.4byte	.LASF841
 	.byte	0x7
 	.byte	0x5c
 	.4byte	0x135
@@ -524,16 +524,16 @@ _Z4initv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF841
+	.4byte	.LASF842
 	.uleb128 0x10
 	.4byte	0x2ff
 	.uleb128 0x13
-	.4byte	.LASF842
+	.4byte	.LASF843
 	.byte	0x8
 	.byte	0x16
 	.4byte	0x2fa
 	.uleb128 0x14
-	.4byte	.LASF843
+	.4byte	.LASF844
 	.byte	0x8
 	.byte	0x1a
 	.4byte	0x1bd
@@ -565,10 +565,10 @@ _Z4initv:
 	.byte	0x3
 	.8byte	_ZL3GiB
 	.uleb128 0x16
-	.4byte	.LASF860
+	.4byte	.LASF861
 	.byte	0x1
 	.byte	0x3d
-	.4byte	.LASF861
+	.4byte	.LASF862
 	.8byte	.LFB5
 	.8byte	.LFE5-.LFB5
 	.uleb128 0x1
@@ -606,34 +606,34 @@ _Z4initv:
 	.byte	0x48
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF844
-	.byte	0x1
-	.byte	0x27
-	.4byte	.LASF846
-	.byte	0x3
-	.uleb128 0x18
 	.4byte	.LASF845
 	.byte	0x1
-	.byte	0x20
+	.byte	0x27
 	.4byte	.LASF847
 	.byte	0x3
 	.uleb128 0x18
+	.4byte	.LASF846
+	.byte	0x1
+	.byte	0x20
 	.4byte	.LASF848
+	.byte	0x3
+	.uleb128 0x18
+	.4byte	.LASF849
 	.byte	0x1
 	.byte	0x13
-	.4byte	.LASF849
+	.4byte	.LASF850
 	.byte	0x3
 	.uleb128 0x18
-	.4byte	.LASF850
+	.4byte	.LASF851
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF851
+	.4byte	.LASF852
 	.byte	0x3
 	.uleb128 0x18
-	.4byte	.LASF852
+	.4byte	.LASF853
 	.byte	0x2
 	.byte	0xd
-	.4byte	.LASF853
+	.4byte	.LASF854
 	.byte	0x3
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
@@ -2272,11 +2272,11 @@ _Z4initv:
 	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF799
+	.4byte	.LASF800
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.5b97504b9ce7da9db9704f4f0416a0a4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.4a922712cbeaaf772b737cbe13a2d62a,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -3467,7 +3467,7 @@ _Z4initv:
 	.uleb128 0x102
 	.4byte	.LASF784
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.9164d992df6aeb5d0f792d7be665cc61,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.16c29793d9edd3df16b327cc5422ae5c,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -3493,30 +3493,33 @@ _Z4initv:
 	.uleb128 0x20
 	.4byte	.LASF792
 	.byte	0x5
-	.uleb128 0x23
+	.uleb128 0x25
 	.4byte	.LASF793
 	.byte	0x5
-	.uleb128 0x24
+	.uleb128 0x26
 	.4byte	.LASF794
 	.byte	0x5
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x2a
+	.uleb128 0x2e
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x2d
+	.uleb128 0x2f
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x2e
+	.uleb128 0x32
 	.4byte	.LASF798
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF799
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
 .LASF101:
 	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF809:
+.LASF810:
 	.string	"int8_t"
 .LASF274:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
@@ -3572,11 +3575,11 @@ _Z4initv:
 	.string	"__FLT64X_DIG__ 33"
 .LASF308:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
-.LASF796:
+.LASF797:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF836:
+.LASF837:
 	.string	"uint_fast64_t"
-.LASF812:
+.LASF813:
 	.string	"int32_t"
 .LASF682:
 	.string	"INT64_MAX __INT64_MAX__"
@@ -3654,7 +3657,7 @@ _Z4initv:
 	.string	"__ARM_NEON 1"
 .LASF587:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF826:
+.LASF827:
 	.string	"uint_least16_t"
 .LASF251:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
@@ -3664,13 +3667,13 @@ _Z4initv:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF829:
+.LASF830:
 	.string	"int_fast8_t"
 .LASF739:
 	.string	"UINTPTR_MAX"
 .LASF609:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF856:
+.LASF857:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
 .LASF411:
 	.string	"__need_wchar_t"
@@ -3696,7 +3699,7 @@ _Z4initv:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
 .LASF503:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF851:
+.LASF852:
 	.string	"_Z13haltSlaveCPUsv"
 .LASF493:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
@@ -3720,7 +3723,7 @@ _Z4initv:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
 .LASF259:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF835:
+.LASF836:
 	.string	"uint_fast32_t"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
@@ -3730,7 +3733,7 @@ _Z4initv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF318:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF798:
+.LASF799:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF656:
 	.string	"NULL"
@@ -3768,9 +3771,9 @@ _Z4initv:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
 .LASF58:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF861:
+.LASF862:
 	.string	"_Z4initv"
-.LASF802:
+.LASF803:
 	.string	"long int"
 .LASF667:
 	.string	"UINT8_MAX"
@@ -3820,7 +3823,7 @@ _Z4initv:
 	.string	"_GLIBCXX_USE_C99_WCHAR _GLIBCXX11_USE_C99_WCHAR"
 .LASF225:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
-.LASF817:
+.LASF818:
 	.string	"short unsigned int"
 .LASF508:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
@@ -3874,11 +3877,11 @@ _Z4initv:
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 .LASF685:
 	.string	"UINT64_MAX"
-.LASF848:
+.LASF849:
 	.string	"initQemuUART"
 .LASF187:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF828:
+.LASF829:
 	.string	"uint_least64_t"
 .LASF421:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -3888,9 +3891,9 @@ _Z4initv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
 .LASF592:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF808:
+.LASF809:
 	.string	"signed char"
-.LASF814:
+.LASF815:
 	.string	"uint8_t"
 .LASF744:
 	.string	"INTMAX_MIN (-INTMAX_MAX - 1)"
@@ -4012,7 +4015,7 @@ _Z4initv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF762:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF841:
+.LASF842:
 	.string	"char"
 .LASF534:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
@@ -4032,11 +4035,11 @@ _Z4initv:
 	.string	"__SIZEOF_INT__ 4"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
-.LASF797:
+.LASF798:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF790:
 	.string	"WARNING \"[WARNING] \""
-.LASF827:
+.LASF828:
 	.string	"uint_least32_t"
 .LASF548:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
@@ -4054,13 +4057,13 @@ _Z4initv:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF193:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF842:
+.LASF843:
 	.string	"EMPTY_STR"
 .LASF423:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
 .LASF210:
 	.string	"__DBL_HAS_DENORM__ 1"
-.LASF844:
+.LASF845:
 	.string	"setupUnintializedToZero"
 .LASF595:
 	.string	"_GLIBCXX_STDIO_SEEK_CUR 1"
@@ -4072,7 +4075,7 @@ _Z4initv:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
 .LASF349:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
-.LASF859:
+.LASF860:
 	.string	"decltype(nullptr)"
 .LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
@@ -4080,7 +4083,7 @@ _Z4initv:
 	.string	"__FLT128_MAX_EXP__ 16384"
 .LASF467:
 	.string	"_GLIBCXX_END_EXTERN_C }"
-.LASF822:
+.LASF823:
 	.string	"int_least16_t"
 .LASF400:
 	.string	"CXX_MACROS_H__ "
@@ -4100,7 +4103,7 @@ _Z4initv:
 	.string	"__UINT8_TYPE__ unsigned char"
 .LASF553:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
-.LASF847:
+.LASF848:
 	.string	"_Z13setupStackTopv"
 .LASF455:
 	.string	"_GLIBCXX_END_NAMESPACE_ALGO _GLIBCXX_END_NAMESPACE_VERSION"
@@ -4238,7 +4241,7 @@ _Z4initv:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
 .LASF469:
 	.string	"_GLIBCXX_OS_DEFINES 1"
-.LASF803:
+.LASF804:
 	.string	"long unsigned int"
 .LASF200:
 	.string	"__DBL_DIG__ 15"
@@ -4270,7 +4273,7 @@ _Z4initv:
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 .LASF361:
 	.string	"__aarch64__ 1"
-.LASF849:
+.LASF850:
 	.string	"_Z12initQemuUARTv"
 .LASF224:
 	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
@@ -4292,7 +4295,7 @@ _Z4initv:
 	.string	"__cpp_static_assert 200410"
 .LASF489:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF824:
+.LASF825:
 	.string	"int_least64_t"
 .LASF18:
 	.string	"_LP64 1"
@@ -4308,7 +4311,7 @@ _Z4initv:
 	.string	"INT_LEAST8_MAX"
 .LASF658:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
-.LASF846:
+.LASF847:
 	.string	"_Z23setupUnintializedToZerov"
 .LASF664:
 	.string	"INT8_MAX __INT8_MAX__"
@@ -4318,7 +4321,7 @@ _Z4initv:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF838:
+.LASF839:
 	.string	"uintptr_t"
 .LASF203:
 	.string	"__DBL_MAX_EXP__ 1024"
@@ -4346,7 +4349,7 @@ _Z4initv:
 	.string	"__FINITE_MATH_ONLY__ 0"
 .LASF615:
 	.string	"_T_PTRDIFF_ "
-.LASF845:
+.LASF846:
 	.string	"setupStackTop"
 .LASF660:
 	.string	"_GXX_NULLPTR_T "
@@ -4430,7 +4433,7 @@ _Z4initv:
 	.string	"_GLIBCXX_NAMESPACE_CXX11 __cxx11::"
 .LASF352:
 	.string	"__GCC_ATOMIC_LLONG_LOCK_FREE 2"
-.LASF799:
+.LASF800:
 	.string	"INCLUDE_ARCH_QEMU_VIRT_UTIL_H_ "
 .LASF450:
 	.string	"_GLIBCXX_STD_C std"
@@ -4440,7 +4443,7 @@ _Z4initv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF673:
 	.string	"UINT16_MAX"
-.LASF823:
+.LASF824:
 	.string	"int_least32_t"
 .LASF222:
 	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
@@ -4454,11 +4457,11 @@ _Z4initv:
 	.string	"__SIZEOF_WCHAR_T__ 4"
 .LASF477:
 	.string	"__N(msgid) (msgid)"
-.LASF860:
+.LASF861:
 	.string	"init"
 .LASF483:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF840:
+.LASF841:
 	.string	"uintmax_t"
 .LASF404:
 	.string	"UART_BASE 0x09000000"
@@ -4502,13 +4505,13 @@ _Z4initv:
 	.string	"__AARCH64_CMODEL_SMALL__"
 .LASF60:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF819:
+.LASF820:
 	.string	"unsigned int"
 .LASF632:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF852:
+.LASF853:
 	.string	"CPUWaitForEvent"
-.LASF858:
+.LASF859:
 	.string	"max_align_t"
 .LASF186:
 	.string	"__FLT_MIN_EXP__ (-125)"
@@ -4522,7 +4525,7 @@ _Z4initv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF441:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF837:
+.LASF838:
 	.string	"intptr_t"
 .LASF292:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -4580,7 +4583,7 @@ _Z4initv:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF653:
 	.string	"_GCC_WCHAR_T "
-.LASF830:
+.LASF831:
 	.string	"int_fast16_t"
 .LASF45:
 	.string	"__SIG_ATOMIC_TYPE__ int"
@@ -4606,21 +4609,21 @@ _Z4initv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF197:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF805:
+.LASF806:
 	.string	"__max_align_ld"
-.LASF843:
+.LASF844:
 	.string	"UNIT_K"
 .LASF403:
 	.string	"KERNEL_ADDRESS 0"
-.LASF804:
+.LASF805:
 	.string	"__max_align_ll"
 .LASF137:
 	.string	"__INT32_MAX__ 0x7fffffff"
-.LASF815:
+.LASF816:
 	.string	"unsigned char"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
-.LASF854:
+.LASF855:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF556:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -4630,7 +4633,7 @@ _Z4initv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF93:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF800:
+.LASF801:
 	.string	"__gnu_cxx"
 .LASF786:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
@@ -4642,13 +4645,13 @@ _Z4initv:
 	.string	"_GLIBCXX_HAVE_TANF 1"
 .LASF766:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF825:
+.LASF826:
 	.string	"uint_least8_t"
 .LASF214:
 	.string	"__LDBL_MANT_DIG__ 113"
 .LASF596:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF821:
+.LASF822:
 	.string	"int_least8_t"
 .LASF625:
 	.string	"_SIZE_T "
@@ -4662,7 +4665,7 @@ _Z4initv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF229:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF807:
+.LASF808:
 	.string	"long double"
 .LASF752:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
@@ -4704,13 +4707,13 @@ _Z4initv:
 	.string	"_GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT"
 .LASF775:
 	.string	"UINT16_C"
-.LASF853:
+.LASF854:
 	.string	"_Z15CPUWaitForEventv"
 .LASF100:
 	.string	"__cpp_decltype_auto 201304"
 .LASF422:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF795:
+.LASF796:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF226:
 	.string	"__LDBL_HAS_DENORM__ 1"
@@ -4746,7 +4749,7 @@ _Z4initv:
 	.string	"__WCHAR_UNSIGNED__ 1"
 .LASF794:
 	.string	"__stringify(x) __stringify_1(x)"
-.LASF855:
+.LASF856:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/crt0.cpp"
 .LASF30:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
@@ -4762,7 +4765,7 @@ _Z4initv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF705:
 	.string	"INT_LEAST64_MAX"
-.LASF816:
+.LASF817:
 	.string	"uint16_t"
 .LASF617:
 	.string	"__PTRDIFF_T "
@@ -4788,7 +4791,7 @@ _Z4initv:
 	.string	"__FLT32X_DIG__ 15"
 .LASF175:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF832:
+.LASF833:
 	.string	"int_fast64_t"
 .LASF165:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
@@ -4818,7 +4821,7 @@ _Z4initv:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
 .LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF801:
+.LASF802:
 	.string	"__cxx11"
 .LASF209:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"
@@ -4836,7 +4839,7 @@ _Z4initv:
 	.string	"USER_SPACE_START 524288"
 .LASF380:
 	.string	"__ARM_FP 14"
-.LASF833:
+.LASF834:
 	.string	"uint_fast8_t"
 .LASF724:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
@@ -4844,7 +4847,7 @@ _Z4initv:
 	.string	"__UINT64_C(c) c ## UL"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SLEEP 1"
-.LASF850:
+.LASF851:
 	.string	"haltSlaveCPUs"
 .LASF671:
 	.string	"INT16_MIN"
@@ -4916,7 +4919,7 @@ _Z4initv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF88:
 	.string	"__cpp_rvalue_references 200610"
-.LASF831:
+.LASF832:
 	.string	"int_fast32_t"
 .LASF27:
 	.string	"__SIZEOF_SIZE_T__ 8"
@@ -4932,7 +4935,7 @@ _Z4initv:
 	.string	"__glibcxx_assert(_Condition) "
 .LASF538:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF811:
+.LASF812:
 	.string	"short int"
 .LASF611:
 	.string	"_STDDEF_H "
@@ -4946,7 +4949,7 @@ _Z4initv:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF237:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF820:
+.LASF821:
 	.string	"uint64_t"
 .LASF172:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
@@ -4970,7 +4973,7 @@ _Z4initv:
 	.string	"__DBL_HAS_INFINITY__ 1"
 .LASF710:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
-.LASF810:
+.LASF811:
 	.string	"int16_t"
 .LASF704:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
@@ -4978,8 +4981,6 @@ _Z4initv:
 	.string	"_GLIBCXX_HAVE_ETIME 1"
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_URL \"\""
-.LASF407:
-	.string	"ARCH_IS_qemu_virt "
 .LASF7:
 	.string	"__GNUC_PATCHLEVEL__ 1"
 .LASF765:
@@ -5062,6 +5063,8 @@ _Z4initv:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
 .LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
+.LASF407:
+	.string	"TARGET_ARCH_IS_qemu_virt "
 .LASF314:
 	.string	"__DEC32_MIN_EXP__ (-94)"
 .LASF53:
@@ -5102,9 +5105,9 @@ _Z4initv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF655:
 	.string	"_BSD_WCHAR_T_"
-.LASF806:
+.LASF807:
 	.string	"long long int"
-.LASF818:
+.LASF819:
 	.string	"uint32_t"
 .LASF512:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
@@ -5118,7 +5121,7 @@ _Z4initv:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
 .LASF223:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF834:
+.LASF835:
 	.string	"uint_fast16_t"
 .LASF67:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
@@ -5136,7 +5139,7 @@ _Z4initv:
 	.string	"_GLIBCXX_RELEASE 7"
 .LASF695:
 	.string	"INT_LEAST16_MIN"
-.LASF857:
+.LASF858:
 	.string	"11max_align_t"
 .LASF258:
 	.string	"__FLT64_DIG__ 15"
@@ -5176,7 +5179,7 @@ _Z4initv:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
 .LASF517:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
-.LASF813:
+.LASF814:
 	.string	"int64_t"
 .LASF495:
 	.string	"_GLIBCXX_HAVE_EIDRM 1"
@@ -5210,6 +5213,8 @@ _Z4initv:
 	.string	"__INTPTR_WIDTH__ 64"
 .LASF648:
 	.string	"_WCHAR_T_DEFINED_ "
+.LASF795:
+	.string	"CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)"
 .LASF215:
 	.string	"__LDBL_DIG__ 33"
 .LASF526:
@@ -5222,7 +5227,7 @@ _Z4initv:
 	.string	"UINT64_C(c) __UINT64_C(c)"
 .LASF750:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
-.LASF839:
+.LASF840:
 	.string	"intmax_t"
 .LASF199:
 	.string	"__DBL_MANT_DIG__ 53"

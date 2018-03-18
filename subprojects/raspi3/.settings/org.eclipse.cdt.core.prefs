@@ -212,9 +212,6 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877/USER_SPACE_START/value=524288
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877/append=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1070311877/appendContributed=true
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ARCH_IS_${TARGET_ARCH}/delimiter=;
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ARCH_IS_${TARGET_ARCH}/operation=append
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ARCH_IS_${TARGET_ARCH}/value=1
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM/value=cygwin
@@ -235,7 +232,7 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ENVS_PRESENT/value=true
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_CXX_MACROS/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_CXX_MACROS/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_CXX_MACROS/value=KERNEL_ADDRESS UART_BASE RAM_START
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_CXX_MACROS/value=KERNEL_ADDRESS UART_BASE RAM_START TARGET_ARCH_IS_${TARGET_ARCH}
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_LINKER_SYMBOLS/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_LINKER_SYMBOLS/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/EXPORT_LINKER_SYMBOLS/value=UART_BASE
@@ -272,6 +269,9 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/value=raspi3
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH_IS_${TARGET_ARCH}/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH_IS_${TARGET_ARCH}/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH_IS_${TARGET_ARCH}/value=1
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_CC/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_CC/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_CC/value=${TOOLCHIAN_ROOT}\\${TOOLCHAIN_PREFIX}gcc

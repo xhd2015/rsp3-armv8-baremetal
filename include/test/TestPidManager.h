@@ -13,6 +13,7 @@
 
 class TestPidManager{
 public:
+	static void run();
 	bool clearAllKeepsInvalidAllocated();
 	bool allocateReturnContinousPids();
 	bool allocateInvalidPidAlwaysFailed();

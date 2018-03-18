@@ -1,30 +1,24 @@
-Exception return from AArch64 EL1 to AArch64 EL0 PC 0x0
+Exception return from AArch64 EL1 to AArch64 EL0 PC 0x1000
 Taking exception 2 [SVC]
 ...from EL0 to EL1
 ...with ESR 0x15/0x56000000
-...with ELR 0x18a0
-...to EL1 PC 0xffffff000000d400 PSTATE 0x3c5
-Exception return from AArch64 EL1 to AArch64 EL0 PC 0x18a0
+...with ELR 0x290c
+...to EL1 PC 0xffffff000000ec00 PSTATE 0x3c5
+Exception return from AArch64 EL1 to AArch64 EL0 PC 0x290c
 Taking exception 2 [SVC]
 ...from EL0 to EL1
 ...with ESR 0x15/0x56000000
-...with ELR 0x18cc
-...to EL1 PC 0xffffff000000d400 PSTATE 0x3c5
-Exception return from AArch64 EL1 to AArch64 EL0 PC 0x18cc
+...with ELR 0x27fc
+...to EL1 PC 0xffffff000000ec00 PSTATE 0x3c5
+Exception return from AArch64 EL1 to AArch64 EL0 PC 0x27fc
 Taking exception 2 [SVC]
 ...from EL0 to EL1
 ...with ESR 0x15/0x56000000
-...with ELR 0x17b8
-...to EL1 PC 0xffffff000000d400 PSTATE 0x3c5
-Exception return from AArch64 EL1 to AArch64 EL0 PC 0x17b8
-Taking exception 2 [SVC]
-...from EL0 to EL1
-...with ESR 0x15/0x56000000
-...with ELR 0x17b8
-...to EL1 PC 0xffffff000000d400 PSTATE 0x3c5
-Exception return from AArch64 EL1 to AArch64 EL0 PC 0x17b8
+...with ELR 0x27fc
+...to EL1 PC 0xffffff000000ec00 PSTATE 0x3c5
+Exception return from AArch64 EL1 to AArch64 EL0 PC 0x27fc
 Taking exception 2 [SVC]
 ...from EL0 to EL1
 ...with ESR 0x15/0x56000002
-...with ELR 0x1804
-...to EL1 PC 0xffffff000000d400 PSTATE 0x3c5
+...with ELR 0x2848
+...to EL1 PC 0xffffff000000ec00 PSTATE 0x3c5

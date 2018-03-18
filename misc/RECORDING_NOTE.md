@@ -1,3 +1,83 @@
+# 2018年3月19日00:54:59
+【commit point】测试了DoublyLinkedList, 完善了ProcessManager,进程现在可被调度。
+# 2018年3月19日00:49:21
+【acknowledged】 在EL1下执行`msr sp_el1,x0`产生异常。根据armv8的文档,sp_el1仅能在EL2,EL3访问。然而当SPSel=1时，通过sp也能访问。
+```c++
+	__asm__ __volatile__(
+		"cbz %1, 1f \n\t" // if savedSpEL1==nullptr, branch
+		"msr  sp_el1,  %1 \n\t" // else set sp=savedSpEL1
+		"1: \n\t"
+		"mov  x30, %0 \n\t"
+		RESTORE_REGS_ASM_INSTR_X30_BASE
+		"eret \n\t"
+		::"r"(_registers),"r"(savedSpEL1)
+		:"sp"
+	);
+```
+
+# 2018年3月18日19:45:19
+修改了ARCH_IS_{TARGET_ARCH}为 TARGET_ARCH_IS_{TARGET_ARCH}
+
+【bug】 观察到ProcessManager的list被非预期性地改变，可能内存分配仍然存在错误。调试方法：内存观察。 【bugfix】 是由于EL1的栈指针没有正确设置。因为在还原寄存器时，使用了sp作为基址寄存器，sp指向了_registers变量地址。  目前采用x30作为基址寄存器，完美解决了这个问题。
+
+# 2018年3月18日17:51:28
+【bug】 DoublyLinkedList错误：_head,_tail没有保持不变式约束。
+# 2018年3月18日16:27:49
+【acknowledged】 声明下面的函数会导致所在的源文件无法编译成对象文件。
+```c++
+// 如果不注释下面这一行，该文件可能无法编译
+extern "C" void __static_initialization_and_destruction_0(int,int);
+```
+
+# 2018年3月18日14:29:08
+完成了DoublyLinkedNode,DoublyLinkedNode, ForwardList,ForwardNode的定义，但是尚未测试。
+
+它们可以用作通用的数据结构。
+
+【acknowledged】 当定义了__dso_handle, __cxa_atexit之后， 定义extern void exit(int errCode)会出现编译错误。
+# 2018年3月18日12:34:11
+【acknowledged】在未定义`__cxa_atexit`和`__dso_handle`的情况下，编译出现下面的错误，这两个函数在`__static_initialization_and_destruction_0(int, int)`中引用
+```c++
+./src/global_variables.o: In function `__static_initialization_and_destruction_0(int, int)':
+D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/global_variables.cpp:24: undefined reference to `__dso_handle'
+D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/global_variables.cpp:24: undefined reference to `__dso_handle'
+D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/global_variables.cpp:24: undefined reference to `__cxa_atexit'
+d:/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.2.1/../../../../aarch64-elf/bin/ld.exe: qemu_virt.elf: hidden symbol `__dso_handle' isn't defined
+d:/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.2.1/../../../../aarch64-elf/bin/ld.exe: final link failed: Bad value
+collect2.exe: error: ld returned 1 exit status
+```
+【todo】 查阅文档，弄清楚上面函数的声明和定义，以及它们的作用。
+# 2018年3月18日11:48:44
+【acknowledged】 
+```c++
+template<class T>
+inline const ForwardNode* ForwardNode<T>::next() const
+{
+	return _next;
+}
+```
+产生编译错误，  在返回参数中不能够省略参数列表。
+
+# 2018年3月18日10:03:32
+operator new和new operator
+前者即 operator new的形式，后者即 new 或者::new的形式
+
+new 调用 operator new, operator new 只负责分配空间。
+
+::new 调用对应的 ::operator new
+# 2018年3月18日09:57:57
+【acknowledged】 现在我们将讨论一点，哪些情况下声明和定义必须被放在一起、将声明和定义捆绑在一起有什么缺点以及如何克服这种缺陷？
+
+1.在声明template和内联函数时，其实现必须也可见
+
+2.声明和定义捆绑将会导致声明无法重用，比如头文件<new>定义了new的声明和实现，这样我们根本无法在其他地方重新实现。
+
+3.多数情况下这种缺陷并不引起问题，解决方法是将实现文分离出来，然后声明文件引入，这种方式减小了耦合性。
+
+# 2018年3月17日23:54:48
+【todo】 完善ForwardNode的分配函数，编写ForwardList的测试，完善基于对象的分配（new操作符）
+【todo】 完成ProcessManager::scheduleNextProcess(), Process:saveContext(), Process::restoreContext()
+【todo】 查看c语言处理异常的方式
 # 2018年3月17日18:21:45
 【commit point】 修正了svc_call的定义，现在它使用模板参数。新增了Process类的定义，参见 [Process.h](../include/schedule/Process.h), [main_run_process.cpp](../src/arch/common_aarch64/qemu_virt/main_run_process.cpp)
 # 2018年3月17日17:35:04

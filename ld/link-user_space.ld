@@ -1,12 +1,12 @@
 
 MEMORY
 {
-    ROM (rx) : ORIGIN = 0x0,  LENGTH = 20K
+    ROM (rx) : ORIGIN = 4K,  LENGTH = 20K
     RAM (rwx) : ORIGIN = RAM_START , LENGTH = RAM_SIZE
 }
 
 SECTIONS{
-    .text :{
+    .text 4K: AT(0){
         *(.text.init)
         *(.text)
         *(.text.*)

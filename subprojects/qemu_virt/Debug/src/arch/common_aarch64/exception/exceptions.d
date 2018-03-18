@@ -20,7 +20,21 @@ src/arch/common_aarch64/exception/exceptions.o: \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/PidManager.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryManager.h \
  D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryChunk.h \
- D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/ProcessManager.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/DoublyLinkedList.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/DoublyLinkedNode.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/programming/ReturnTypeSelector.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/programming/define_members.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/DoublyLinkedNode.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/DoublyLinkedList.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/Process.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/ForwardList.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/ForwardNode.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/ForwardNode.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/ForwardList.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/vmsa_descriptors.h \
+ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/schedule/ProcessManager.h
 
 cxx_macros.h:
 
@@ -63,3 +77,31 @@ D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryManager.
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/memory/MemoryChunk.h:
 
 D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/MemoryManager.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/ProcessManager.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/DoublyLinkedList.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/DoublyLinkedNode.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/programming/ReturnTypeSelector.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/programming/define_members.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/DoublyLinkedNode.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/DoublyLinkedList.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/schedule/Process.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/ForwardList.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/data_structures/ForwardNode.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/ForwardNode.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/data_structures/ForwardList.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/arch/common_aarch64/vmsa_descriptors.h:
+
+D:\Pool\eclipse-workspace_aarch64\newspace\raspiOS\include/templates_implementation/schedule/ProcessManager.h:

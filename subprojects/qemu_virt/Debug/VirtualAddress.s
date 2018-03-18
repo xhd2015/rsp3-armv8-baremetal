@@ -1017,10 +1017,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF908
-	.byte	0x4
 	.4byte	.LASF909
+	.byte	0x4
 	.4byte	.LASF910
+	.4byte	.LASF911
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1031,7 +1031,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0
 	.4byte	0x116
 	.uleb128 0x3
-	.4byte	.LASF802
+	.4byte	.LASF803
 	.byte	0x5
 	.byte	0xfd
 	.uleb128 0x4
@@ -1156,12 +1156,12 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x2cd
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF801
+	.4byte	.LASF802
 	.byte	0x5
 	.byte	0xff
 	.4byte	0x132
 	.uleb128 0x7
-	.4byte	.LASF802
+	.4byte	.LASF803
 	.byte	0x5
 	.2byte	0x101
 	.uleb128 0x8
@@ -1172,27 +1172,27 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF803
+	.4byte	.LASF804
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF804
+	.4byte	.LASF805
 	.uleb128 0xa
 	.byte	0x20
 	.byte	0x10
 	.byte	0x6
 	.2byte	0x1aa
-	.4byte	.LASF911
+	.4byte	.LASF912
 	.4byte	0x16b
 	.uleb128 0xb
-	.4byte	.LASF805
+	.4byte	.LASF806
 	.byte	0x6
 	.2byte	0x1ab
 	.4byte	0x16b
 	.byte	0x8
 	.byte	0
 	.uleb128 0xb
-	.4byte	.LASF806
+	.4byte	.LASF807
 	.byte	0x6
 	.2byte	0x1ac
 	.4byte	0x172
@@ -1202,39 +1202,39 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF807
+	.4byte	.LASF808
 	.uleb128 0x9
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF808
+	.4byte	.LASF809
 	.uleb128 0xc
-	.4byte	.LASF912
+	.4byte	.LASF913
 	.byte	0x6
 	.2byte	0x1b5
 	.4byte	0x140
 	.byte	0x10
 	.uleb128 0xd
-	.4byte	.LASF913
+	.4byte	.LASF914
 	.uleb128 0xe
-	.4byte	.LASF810
+	.4byte	.LASF811
 	.byte	0x7
 	.byte	0x22
 	.4byte	0x196
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF809
+	.4byte	.LASF810
 	.uleb128 0xe
-	.4byte	.LASF811
+	.4byte	.LASF812
 	.byte	0x7
 	.byte	0x25
 	.4byte	0x1a8
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF812
-	.uleb128 0xe
 	.4byte	.LASF813
+	.uleb128 0xe
+	.4byte	.LASF814
 	.byte	0x7
 	.byte	0x28
 	.4byte	0x1ba
@@ -1245,139 +1245,139 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x10
 	.4byte	0x1ba
 	.uleb128 0xe
-	.4byte	.LASF814
+	.4byte	.LASF815
 	.byte	0x7
 	.byte	0x2b
 	.4byte	0x132
 	.uleb128 0xe
-	.4byte	.LASF815
+	.4byte	.LASF816
 	.byte	0x7
 	.byte	0x2e
 	.4byte	0x1dc
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF816
-	.uleb128 0xe
 	.4byte	.LASF817
+	.uleb128 0xe
+	.4byte	.LASF818
 	.byte	0x7
 	.byte	0x31
 	.4byte	0x1ee
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF818
-	.uleb128 0xe
 	.4byte	.LASF819
+	.uleb128 0xe
+	.4byte	.LASF820
 	.byte	0x7
 	.byte	0x34
 	.4byte	0x200
 	.uleb128 0x9
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF820
-	.uleb128 0xe
 	.4byte	.LASF821
+	.uleb128 0xe
+	.4byte	.LASF822
 	.byte	0x7
 	.byte	0x37
 	.4byte	0x139
 	.uleb128 0xe
-	.4byte	.LASF822
+	.4byte	.LASF823
 	.byte	0x7
 	.byte	0x3c
 	.4byte	0x196
 	.uleb128 0xe
-	.4byte	.LASF823
+	.4byte	.LASF824
 	.byte	0x7
 	.byte	0x3d
 	.4byte	0x1a8
 	.uleb128 0xe
-	.4byte	.LASF824
+	.4byte	.LASF825
 	.byte	0x7
 	.byte	0x3e
 	.4byte	0x1ba
 	.uleb128 0xe
-	.4byte	.LASF825
+	.4byte	.LASF826
 	.byte	0x7
 	.byte	0x3f
 	.4byte	0x132
 	.uleb128 0xe
-	.4byte	.LASF826
+	.4byte	.LASF827
 	.byte	0x7
 	.byte	0x40
 	.4byte	0x1dc
 	.uleb128 0xe
-	.4byte	.LASF827
+	.4byte	.LASF828
 	.byte	0x7
 	.byte	0x41
 	.4byte	0x1ee
 	.uleb128 0xe
-	.4byte	.LASF828
+	.4byte	.LASF829
 	.byte	0x7
 	.byte	0x42
 	.4byte	0x200
 	.uleb128 0xe
-	.4byte	.LASF829
+	.4byte	.LASF830
 	.byte	0x7
 	.byte	0x43
 	.4byte	0x139
 	.uleb128 0xe
-	.4byte	.LASF830
+	.4byte	.LASF831
 	.byte	0x7
 	.byte	0x47
 	.4byte	0x1ba
 	.uleb128 0xe
-	.4byte	.LASF831
+	.4byte	.LASF832
 	.byte	0x7
 	.byte	0x48
 	.4byte	0x1ba
 	.uleb128 0xe
-	.4byte	.LASF832
+	.4byte	.LASF833
 	.byte	0x7
 	.byte	0x49
 	.4byte	0x1ba
 	.uleb128 0xe
-	.4byte	.LASF833
+	.4byte	.LASF834
 	.byte	0x7
 	.byte	0x4a
 	.4byte	0x132
 	.uleb128 0xe
-	.4byte	.LASF834
+	.4byte	.LASF835
 	.byte	0x7
 	.byte	0x4b
 	.4byte	0x200
 	.uleb128 0xe
-	.4byte	.LASF835
+	.4byte	.LASF836
 	.byte	0x7
 	.byte	0x4c
 	.4byte	0x200
 	.uleb128 0xe
-	.4byte	.LASF836
+	.4byte	.LASF837
 	.byte	0x7
 	.byte	0x4d
 	.4byte	0x200
 	.uleb128 0xe
-	.4byte	.LASF837
+	.4byte	.LASF838
 	.byte	0x7
 	.byte	0x4e
 	.4byte	0x139
 	.uleb128 0xe
-	.4byte	.LASF838
+	.4byte	.LASF839
 	.byte	0x7
 	.byte	0x53
 	.4byte	0x132
 	.uleb128 0xe
-	.4byte	.LASF839
+	.4byte	.LASF840
 	.byte	0x7
 	.byte	0x56
 	.4byte	0x139
 	.uleb128 0xe
-	.4byte	.LASF840
+	.4byte	.LASF841
 	.byte	0x7
 	.byte	0x5b
 	.4byte	0x132
 	.uleb128 0xe
-	.4byte	.LASF841
+	.4byte	.LASF842
 	.byte	0x7
 	.byte	0x5c
 	.4byte	0x139
@@ -1393,16 +1393,16 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF842
+	.4byte	.LASF843
 	.uleb128 0x10
 	.4byte	0x303
 	.uleb128 0x13
-	.4byte	.LASF843
+	.4byte	.LASF844
 	.byte	0x8
 	.byte	0x16
 	.4byte	0x2fe
 	.uleb128 0x14
-	.4byte	.LASF844
+	.4byte	.LASF845
 	.byte	0x8
 	.byte	0x1a
 	.4byte	0x1c1
@@ -1434,20 +1434,20 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x3
 	.8byte	_ZL3GiB
 	.uleb128 0x16
-	.4byte	.LASF855
+	.4byte	.LASF856
 	.byte	0x10
 	.byte	0x9
 	.byte	0x10
 	.4byte	0x66e
 	.uleb128 0x17
-	.4byte	.LASF914
+	.4byte	.LASF915
 	.byte	0x8
 	.byte	0x9
 	.byte	0x12
 	.byte	0x1
 	.4byte	0x3e2
 	.uleb128 0x18
-	.4byte	.LASF845
+	.4byte	.LASF846
 	.byte	0x9
 	.byte	0x13
 	.4byte	0x207
@@ -1456,7 +1456,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x34
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF846
+	.4byte	.LASF847
 	.byte	0x9
 	.byte	0x14
 	.4byte	0x207
@@ -1465,7 +1465,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x2b
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF847
+	.4byte	.LASF848
 	.byte	0x9
 	.byte	0x15
 	.4byte	0x207
@@ -1474,7 +1474,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x22
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF848
+	.4byte	.LASF849
 	.byte	0x9
 	.byte	0x16
 	.4byte	0x207
@@ -1483,7 +1483,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x19
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF849
+	.4byte	.LASF850
 	.byte	0x9
 	.byte	0x17
 	.4byte	0x207
@@ -1492,7 +1492,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x10
 	.byte	0
 	.uleb128 0x18
-	.4byte	.LASF850
+	.4byte	.LASF851
 	.byte	0x9
 	.byte	0x18
 	.4byte	0x207
@@ -1507,12 +1507,12 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x40
 	.4byte	0x401
 	.uleb128 0x1a
-	.4byte	.LASF851
+	.4byte	.LASF852
 	.byte	0x9
 	.byte	0x41
 	.4byte	0x207
 	.uleb128 0x1a
-	.4byte	.LASF852
+	.4byte	.LASF853
 	.byte	0x9
 	.byte	0x42
 	.4byte	0x37a
@@ -1521,22 +1521,22 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x3e2
 	.byte	0
 	.uleb128 0x1c
-	.4byte	.LASF853
+	.4byte	.LASF854
 	.byte	0x9
 	.byte	0x44
 	.4byte	0x1d1
 	.byte	0x8
 	.uleb128 0x1c
-	.4byte	.LASF854
+	.4byte	.LASF855
 	.byte	0x9
 	.byte	0x45
 	.4byte	0x673
 	.byte	0x9
 	.uleb128 0x1d
-	.4byte	.LASF855
+	.4byte	.LASF856
 	.byte	0x9
 	.byte	0x1b
-	.4byte	.LASF856
+	.4byte	.LASF857
 	.byte	0x1
 	.4byte	0x433
 	.4byte	0x43e
@@ -1546,10 +1546,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x1d
-	.4byte	.LASF855
+	.4byte	.LASF856
 	.byte	0x9
 	.byte	0x1c
-	.4byte	.LASF857
+	.4byte	.LASF858
 	.byte	0x1
 	.4byte	0x452
 	.4byte	0x462
@@ -1561,10 +1561,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF858
+	.4byte	.LASF859
 	.byte	0x9
 	.byte	0x1f
-	.4byte	.LASF859
+	.4byte	.LASF860
 	.4byte	0x685
 	.byte	0x1
 	.4byte	0x47a
@@ -1577,10 +1577,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1f5
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF858
+	.4byte	.LASF859
 	.byte	0x9
 	.byte	0x22
-	.4byte	.LASF860
+	.4byte	.LASF861
 	.4byte	0x1f5
 	.byte	0x1
 	.4byte	0x4a2
@@ -1591,10 +1591,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF845
+	.4byte	.LASF846
 	.byte	0x9
 	.byte	0x25
-	.4byte	.LASF861
+	.4byte	.LASF862
 	.4byte	0x685
 	.byte	0x1
 	.4byte	0x4c5
@@ -1605,10 +1605,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x207
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF845
+	.4byte	.LASF846
 	.byte	0x9
 	.byte	0x26
-	.4byte	.LASF862
+	.4byte	.LASF863
 	.4byte	0x207
 	.byte	0x1
 	.4byte	0x4e8
@@ -1617,10 +1617,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF863
+	.4byte	.LASF864
 	.byte	0x9
 	.byte	0x28
-	.4byte	.LASF864
+	.4byte	.LASF865
 	.4byte	0x685
 	.byte	0x1
 	.4byte	0x506
@@ -1631,10 +1631,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF863
+	.4byte	.LASF864
 	.byte	0x9
 	.byte	0x29
-	.4byte	.LASF865
+	.4byte	.LASF866
 	.4byte	0x1d1
 	.byte	0x1
 	.4byte	0x529
@@ -1643,10 +1643,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF866
+	.4byte	.LASF867
 	.byte	0x9
 	.byte	0x2b
-	.4byte	.LASF867
+	.4byte	.LASF868
 	.4byte	0x685
 	.byte	0x1
 	.4byte	0x547
@@ -1657,10 +1657,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x207
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF866
+	.4byte	.LASF867
 	.byte	0x9
 	.byte	0x2c
-	.4byte	.LASF868
+	.4byte	.LASF869
 	.4byte	0x207
 	.byte	0x1
 	.4byte	0x56a
@@ -1669,10 +1669,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF869
+	.4byte	.LASF870
 	.byte	0x9
 	.byte	0x2f
-	.4byte	.LASF870
+	.4byte	.LASF871
 	.4byte	0x685
 	.byte	0x1
 	.4byte	0x588
@@ -1683,10 +1683,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1ba
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF869
+	.4byte	.LASF870
 	.byte	0x9
 	.byte	0x30
-	.4byte	.LASF871
+	.4byte	.LASF872
 	.4byte	0x1ba
 	.byte	0x1
 	.4byte	0x5ab
@@ -1695,10 +1695,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF872
+	.4byte	.LASF873
 	.byte	0x9
 	.byte	0x32
-	.4byte	.LASF873
+	.4byte	.LASF874
 	.4byte	0x673
 	.byte	0x1
 	.4byte	0x5c9
@@ -1707,10 +1707,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF874
+	.4byte	.LASF875
 	.byte	0x9
 	.byte	0x33
-	.4byte	.LASF875
+	.4byte	.LASF876
 	.4byte	0x1d1
 	.byte	0x1
 	.4byte	0x5e7
@@ -1719,10 +1719,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x68b
 	.byte	0
 	.uleb128 0x20
-	.4byte	.LASF876
+	.4byte	.LASF877
 	.byte	0x9
 	.byte	0x34
-	.4byte	.LASF877
+	.4byte	.LASF878
 	.4byte	0x673
 	.byte	0x1
 	.4byte	0x605
@@ -1733,10 +1733,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x21
-	.4byte	.LASF878
+	.4byte	.LASF879
 	.byte	0x9
 	.byte	0x38
-	.4byte	.LASF879
+	.4byte	.LASF880
 	.4byte	0x1d1
 	.4byte	0x627
 	.4byte	0x632
@@ -1746,10 +1746,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x21
-	.4byte	.LASF880
+	.4byte	.LASF881
 	.byte	0x9
 	.byte	0x39
-	.4byte	.LASF881
+	.4byte	.LASF882
 	.4byte	0x1d1
 	.4byte	0x649
 	.4byte	0x654
@@ -1759,10 +1759,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x22
-	.4byte	.LASF900
+	.4byte	.LASF901
 	.byte	0x9
 	.byte	0x3b
-	.4byte	.LASF902
+	.4byte	.LASF903
 	.4byte	0x207
 	.4byte	0x667
 	.uleb128 0x1e
@@ -1774,7 +1774,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF882
+	.4byte	.LASF883
 	.uleb128 0x23
 	.byte	0x8
 	.4byte	0x36e
@@ -1794,22 +1794,22 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x25
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF883
+	.4byte	.LASF884
 	.byte	0x2
 	.byte	0x16
 	.4byte	0x696
 	.uleb128 0x26
-	.4byte	.LASF888
+	.4byte	.LASF889
 	.byte	0x2
 	.byte	0x45
-	.4byte	.LASF890
+	.4byte	.LASF891
 	.byte	0x3
 	.4byte	0x6f7
 	.uleb128 0x27
-	.4byte	.LASF884
+	.4byte	.LASF885
 	.4byte	0x139
 	.uleb128 0x27
-	.4byte	.LASF885
+	.4byte	.LASF886
 	.4byte	0x1ba
 	.uleb128 0x28
 	.string	"i"
@@ -1817,12 +1817,12 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x45
 	.4byte	0x6f7
 	.uleb128 0x29
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
 	.uleb128 0x29
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
@@ -1836,17 +1836,17 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x8
 	.4byte	0x139
 	.uleb128 0x26
-	.4byte	.LASF889
+	.4byte	.LASF890
 	.byte	0x2
 	.byte	0x45
-	.4byte	.LASF891
+	.4byte	.LASF892
 	.byte	0x3
 	.4byte	0x748
 	.uleb128 0x27
-	.4byte	.LASF884
+	.4byte	.LASF885
 	.4byte	0x139
 	.uleb128 0x27
-	.4byte	.LASF885
+	.4byte	.LASF886
 	.4byte	0x139
 	.uleb128 0x28
 	.string	"i"
@@ -1854,12 +1854,12 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x45
 	.4byte	0x6f7
 	.uleb128 0x29
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
 	.uleb128 0x29
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
@@ -1870,17 +1870,17 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x139
 	.byte	0
 	.uleb128 0x26
-	.4byte	.LASF892
+	.4byte	.LASF893
 	.byte	0x2
 	.byte	0x45
-	.4byte	.LASF893
+	.4byte	.LASF894
 	.byte	0x3
 	.4byte	0x793
 	.uleb128 0x27
-	.4byte	.LASF884
+	.4byte	.LASF885
 	.4byte	0x139
 	.uleb128 0x27
-	.4byte	.LASF885
+	.4byte	.LASF886
 	.4byte	0x200
 	.uleb128 0x28
 	.string	"i"
@@ -1888,12 +1888,12 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x45
 	.4byte	0x6f7
 	.uleb128 0x29
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
 	.uleb128 0x29
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x2
 	.byte	0x45
 	.4byte	0x1d1
@@ -1915,7 +1915,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x7b8
 	.4byte	0x7c5
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -1933,13 +1933,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x7ea
 	.4byte	0x805
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.uleb128 0x2c
-	.4byte	.LASF895
+	.4byte	.LASF896
 	.byte	0x1
 	.byte	0x80
 	.4byte	0x1d1
@@ -1959,13 +1959,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x82a
 	.4byte	0x845
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.uleb128 0x2c
-	.4byte	.LASF895
+	.4byte	.LASF896
 	.byte	0x1
 	.byte	0x7b
 	.4byte	0x1d1
@@ -1985,7 +1985,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x86a
 	.4byte	0x885
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2011,7 +2011,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x8aa
 	.4byte	0x8e4
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2049,7 +2049,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0x909
 	.4byte	0xa33
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x3
 	.byte	0x91
@@ -2190,7 +2190,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xa58
 	.4byte	0xa65
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2208,7 +2208,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xa8a
 	.4byte	0xa97
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2226,13 +2226,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xabc
 	.4byte	0xad7
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.uleb128 0x2c
-	.4byte	.LASF866
+	.4byte	.LASF867
 	.byte	0x1
 	.byte	0x4d
 	.4byte	0x207
@@ -2252,7 +2252,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xafc
 	.4byte	0xb09
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2270,7 +2270,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xb2e
 	.4byte	0xb49
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x2
 	.byte	0x91
@@ -2296,7 +2296,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xb6e
 	.4byte	0xbcb
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
@@ -2348,7 +2348,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xbf0
 	.4byte	0xc8f
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x2
 	.byte	0x91
@@ -2431,13 +2431,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xcb4
 	.4byte	0xd49
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x691
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.uleb128 0x2c
-	.4byte	.LASF895
+	.4byte	.LASF896
 	.byte	0x1
 	.byte	0x2a
 	.4byte	0x1d1
@@ -2445,7 +2445,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -41
 	.uleb128 0x33
-	.4byte	.LASF896
+	.4byte	.LASF897
 	.byte	0x1
 	.byte	0x2c
 	.4byte	0x1dc
@@ -2453,7 +2453,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -2
 	.uleb128 0x33
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x1
 	.byte	0x2f
 	.4byte	0x1d1
@@ -2461,7 +2461,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -3
 	.uleb128 0x33
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x1
 	.byte	0x30
 	.4byte	0x1d1
@@ -2515,13 +2515,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xd6e
 	.4byte	0xe45
 	.uleb128 0x2b
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -56
 	.uleb128 0x2c
-	.4byte	.LASF895
+	.4byte	.LASF896
 	.byte	0x1
 	.byte	0x19
 	.4byte	0x1d1
@@ -2537,7 +2537,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -64
 	.uleb128 0x33
-	.4byte	.LASF896
+	.4byte	.LASF897
 	.byte	0x1
 	.byte	0x1b
 	.4byte	0x1dc
@@ -2545,7 +2545,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -2
 	.uleb128 0x33
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x1
 	.byte	0x1e
 	.4byte	0x1d1
@@ -2553,7 +2553,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x91
 	.sleb128 -3
 	.uleb128 0x33
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x1
 	.byte	0x1f
 	.4byte	0x1d1
@@ -2626,22 +2626,22 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xe55
 	.4byte	0xe75
 	.uleb128 0x35
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x29
-	.4byte	.LASF897
+	.4byte	.LASF898
 	.byte	0x1
 	.byte	0x14
 	.4byte	0x207
 	.uleb128 0x29
-	.4byte	.LASF863
+	.4byte	.LASF864
 	.byte	0x1
 	.byte	0x14
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x36
 	.4byte	0xe45
-	.4byte	.LASF898
+	.4byte	.LASF899
 	.4byte	0xe9c
 	.8byte	.LFB11
 	.8byte	.LFE11-.LFB11
@@ -2673,17 +2673,17 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.4byte	0xec5
 	.4byte	0xeda
 	.uleb128 0x35
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x680
 	.uleb128 0x29
-	.4byte	.LASF863
+	.4byte	.LASF864
 	.byte	0x1
 	.byte	0xf
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x36
 	.4byte	0xeb5
-	.4byte	.LASF899
+	.4byte	.LASF900
 	.4byte	0xf01
 	.8byte	.LFB8
 	.8byte	.LFE8-.LFB8
@@ -2703,10 +2703,10 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.sleb128 -9
 	.byte	0
 	.uleb128 0x37
-	.4byte	.LASF901
+	.4byte	.LASF902
 	.byte	0x2
 	.byte	0x4a
-	.4byte	.LASF903
+	.4byte	.LASF904
 	.4byte	0x207
 	.byte	0x3
 	.4byte	0xf46
@@ -2716,40 +2716,40 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.byte	0x4a
 	.4byte	0x207
 	.uleb128 0x29
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.byte	0x2
 	.byte	0x4a
 	.4byte	0x1d1
 	.uleb128 0x29
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0x2
 	.byte	0x4a
 	.4byte	0x1d1
 	.byte	0
 	.uleb128 0x37
-	.4byte	.LASF904
+	.4byte	.LASF905
 	.byte	0x2
 	.byte	0x3d
-	.4byte	.LASF905
+	.4byte	.LASF906
 	.4byte	0x207
 	.byte	0x3
 	.4byte	0xf71
-	.uleb128 0x29
-	.4byte	.LASF886
-	.byte	0x2
-	.byte	0x3d
-	.4byte	0x207
 	.uleb128 0x29
 	.4byte	.LASF887
 	.byte	0x2
 	.byte	0x3d
 	.4byte	0x207
+	.uleb128 0x29
+	.4byte	.LASF888
+	.byte	0x2
+	.byte	0x3d
+	.4byte	0x207
 	.byte	0
 	.uleb128 0x38
-	.4byte	.LASF906
+	.4byte	.LASF907
 	.byte	0x2
 	.byte	0x39
-	.4byte	.LASF907
+	.4byte	.LASF908
 	.4byte	0x207
 	.byte	0x3
 	.uleb128 0x28
@@ -4882,11 +4882,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF800
+	.4byte	.LASF801
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.5b97504b9ce7da9db9704f4f0416a0a4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.4a922712cbeaaf772b737cbe13a2d62a,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -6077,7 +6077,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x102
 	.4byte	.LASF785
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.9164d992df6aeb5d0f792d7be665cc61,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.16c29793d9edd3df16b327cc5422ae5c,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -6103,30 +6103,33 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.uleb128 0x20
 	.4byte	.LASF793
 	.byte	0x5
-	.uleb128 0x23
+	.uleb128 0x25
 	.4byte	.LASF794
 	.byte	0x5
-	.uleb128 0x24
+	.uleb128 0x26
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x2a
+	.uleb128 0x2e
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x2d
+	.uleb128 0x2f
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x2e
+	.uleb128 0x32
 	.4byte	.LASF799
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF800
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
 .LASF101:
 	.string	"__cpp_aggregate_nsdmi 201304"
-.LASF810:
+.LASF811:
 	.string	"int8_t"
 .LASF274:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
@@ -6138,11 +6141,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
 .LASF141:
 	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF888:
+.LASF889:
 	.string	"setBits<long unsigned int, int>"
 .LASF408:
 	.string	"PERIPHBASE 0x08000000"
-.LASF880:
+.LASF881:
 	.string	"minimalLevelLength"
 .LASF277:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
@@ -6166,7 +6169,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
 .LASF548:
 	.string	"_GLIBCXX_HAVE_SQRTF 1"
-.LASF881:
+.LASF882:
 	.string	"_ZNK14VirtualAddress18minimalLevelLengthEh"
 .LASF730:
 	.string	"INT_FAST64_MAX"
@@ -6186,11 +6189,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"UINT64_MAX"
 .LASF308:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
-.LASF797:
+.LASF798:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF837:
+.LASF838:
 	.string	"uint_fast64_t"
-.LASF813:
+.LASF814:
 	.string	"int32_t"
 .LASF683:
 	.string	"INT64_MAX __INT64_MAX__"
@@ -6226,9 +6229,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FP_FAST_FMA 1"
 .LASF195:
 	.string	"__FLT_HAS_DENORM__ 1"
-.LASF811:
+.LASF812:
 	.string	"int16_t"
-.LASF798:
+.LASF799:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF249:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
@@ -6252,9 +6255,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINT8_C(c) c"
 .LASF47:
 	.string	"__INT16_TYPE__ short int"
-.LASF874:
+.LASF875:
 	.string	"initialLevel"
-.LASF854:
+.LASF855:
 	.string	"_hasTag"
 .LASF570:
 	.string	"_GLIBCXX_HAVE_VSWSCANF 1"
@@ -6276,7 +6279,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__ARM_NEON 1"
 .LASF588:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF827:
+.LASF828:
 	.string	"uint_least16_t"
 .LASF251:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
@@ -6286,13 +6289,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF830:
+.LASF831:
 	.string	"int_fast8_t"
 .LASF740:
 	.string	"UINTPTR_MAX"
 .LASF610:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF910:
+.LASF911:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
 .LASF412:
 	.string	"__need_wchar_t"
@@ -6310,7 +6313,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__WCHAR_WIDTH__ 32"
 .LASF260:
 	.string	"__FLT64_MIN_10_EXP__ (-307)"
-.LASF897:
+.LASF898:
 	.string	"vaddr"
 .LASF640:
 	.string	"__size_t "
@@ -6328,9 +6331,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_T_SIZE "
 .LASF779:
 	.string	"UINT32_C(c) __UINT32_C(c)"
-.LASF856:
+.LASF857:
 	.string	"_ZN14VirtualAddressC4Eh"
-.LASF850:
+.LASF851:
 	.string	"upperBits"
 .LASF330:
 	.string	"__DEC128_MIN__ 1E-6143DL"
@@ -6344,7 +6347,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__WCHAR_T__ "
 .LASF259:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF836:
+.LASF837:
 	.string	"uint_fast32_t"
 .LASF443:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
@@ -6352,7 +6355,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF318:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF799:
+.LASF800:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF657:
 	.string	"NULL"
@@ -6372,7 +6375,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__AARCH64_CMODEL_SMALL__ 1"
 .LASF41:
 	.string	"__INTMAX_TYPE__ long int"
-.LASF861:
+.LASF862:
 	.string	"_ZN14VirtualAddress6offsetEm"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSHF 1"
@@ -6392,7 +6395,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
 .LASF58:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
-.LASF803:
+.LASF804:
 	.string	"long int"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
@@ -6408,7 +6411,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DEC128_MIN_EXP__ (-6142)"
 .LASF62:
 	.string	"__INT_FAST8_TYPE__ int"
-.LASF868:
+.LASF869:
 	.string	"_ZNK14VirtualAddress4addrEv"
 .LASF624:
 	.string	"__size_t__ "
@@ -6464,7 +6467,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX14_CONSTEXPR constexpr"
 .LASF174:
 	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
-.LASF903:
+.LASF904:
 	.string	"_Z7getBitsmhh"
 .LASF457:
 	.string	"_GLIBCXX_LONG_DOUBLE_COMPAT"
@@ -6500,7 +6503,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_CSTDINT 1"
 .LASF187:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF829:
+.LASF830:
 	.string	"uint_least64_t"
 .LASF422:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -6510,9 +6513,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL_OR_CXX11 _GLIBCXX_BEGIN_NAMESPACE_CXX11"
 .LASF593:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF809:
+.LASF810:
 	.string	"signed char"
-.LASF815:
+.LASF816:
 	.string	"uint8_t"
 .LASF664:
 	.string	"INT8_MAX"
@@ -6542,7 +6545,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINT_LEAST16_MAX__ 0xffff"
 .LASF448:
 	.string	"_GLIBCXX_INLINE_VERSION 0"
-.LASF906:
+.LASF907:
 	.string	"lowerMaskBits"
 .LASF98:
 	.string	"__cpp_generic_lambdas 201304"
@@ -6554,7 +6557,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"CONFIG_RAM_START 0x40000000"
 .LASF262:
 	.string	"__FLT64_MAX_10_EXP__ 308"
-.LASF846:
+.LASF847:
 	.string	"index0"
 .LASF510:
 	.string	"_GLIBCXX_HAVE_ETXTBSY 1"
@@ -6612,7 +6615,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__SIZEOF_SHORT__ 2"
 .LASF543:
 	.string	"_GLIBCXX_HAVE_MODFF 1"
-.LASF907:
+.LASF908:
 	.string	"_Z13lowerMaskBitsm"
 .LASF153:
 	.string	"__INT64_C(c) c ## L"
@@ -6628,7 +6631,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INFO \"[INFO] \""
 .LASF554:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
-.LASF878:
+.LASF879:
 	.string	"rightShiftBits"
 .LASF130:
 	.string	"__UINTMAX_C(c) c ## UL"
@@ -6642,7 +6645,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF763:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF842:
+.LASF843:
 	.string	"char"
 .LASF535:
 	.string	"_GLIBCXX_HAVE_LOCALE_H 1"
@@ -6654,7 +6657,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)"
 .LASF65:
 	.string	"__INT_FAST64_TYPE__ long int"
-.LASF886:
+.LASF887:
 	.string	"lowerBound"
 .LASF482:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
@@ -6664,11 +6667,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__SIZEOF_INT__ 4"
 .LASF530:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
-.LASF877:
+.LASF878:
 	.string	"_ZNK14VirtualAddress8hasLevelEh"
 .LASF791:
 	.string	"WARNING \"[WARNING] \""
-.LASF828:
+.LASF829:
 	.string	"uint_least32_t"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
@@ -6686,7 +6689,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF193:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF843:
+.LASF844:
 	.string	"EMPTY_STR"
 .LASF424:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
@@ -6700,17 +6703,17 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__GXX_ABI_VERSION 1011"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
-.LASF913:
+.LASF914:
 	.string	"decltype(nullptr)"
 .LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
 .LASF275:
 	.string	"__FLT128_MAX_EXP__ 16384"
-.LASF889:
+.LASF890:
 	.string	"setBits<long unsigned int, long unsigned int>"
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF823:
+.LASF824:
 	.string	"int_least16_t"
 .LASF400:
 	.string	"CXX_MACROS_H__ "
@@ -6744,13 +6747,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_PACKAGE__GLIBCXX_VERSION \"version-unused\""
 .LASF399:
 	.string	"__ELF__ 1"
-.LASF851:
+.LASF852:
 	.string	"_addr"
 .LASF256:
 	.string	"__FLT32_HAS_QUIET_NAN__ 1"
 .LASF639:
 	.string	"_SIZET_ "
-.LASF876:
+.LASF877:
 	.string	"hasLevel"
 .LASF317:
 	.string	"__DEC32_MAX__ 9.999999E96DF"
@@ -6804,7 +6807,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDINT_H 1"
-.LASF859:
+.LASF860:
 	.string	"_ZN14VirtualAddress5indexEhj"
 .LASF415:
 	.string	"__need_NULL"
@@ -6860,7 +6863,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT_FAST8_MIN (-INT_FAST8_MAX - 1)"
 .LASF788:
 	.string	"arrsizeof(arr) (sizeof(arr)/sizeof(arr[0]))"
-.LASF909:
+.LASF910:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/common_aarch64/mmu/VirtualAddress.cpp"
 .LASF154:
 	.string	"__INT_LEAST64_WIDTH__ 64"
@@ -6878,7 +6881,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
 .LASF470:
 	.string	"_GLIBCXX_OS_DEFINES 1"
-.LASF804:
+.LASF805:
 	.string	"long unsigned int"
 .LASF200:
 	.string	"__DBL_DIG__ 15"
@@ -6890,7 +6893,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__GNUC__ 7"
 .LASF51:
 	.string	"__UINT16_TYPE__ short unsigned int"
-.LASF905:
+.LASF906:
 	.string	"_Z14middleMaskBitsmm"
 .LASF167:
 	.string	"__INT_FAST32_MAX__ 0x7fffffff"
@@ -6922,13 +6925,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT16_EPSILON__ 9.76562500000000000000000000000000000e-4F16"
 .LASF92:
 	.string	"__cpp_nsdmi 200809"
-.LASF904:
+.LASF905:
 	.string	"middleMaskBits"
 .LASF84:
 	.string	"__cpp_static_assert 200410"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF825:
+.LASF826:
 	.string	"int_least64_t"
 .LASF18:
 	.string	"_LP64 1"
@@ -6936,7 +6939,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"UINTMAX_MAX"
 .LASF45:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF894:
+.LASF895:
 	.string	"this"
 .LASF425:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
@@ -6946,7 +6949,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT_LEAST8_MAX"
 .LASF659:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
-.LASF895:
+.LASF896:
 	.string	"which"
 .LASF665:
 	.string	"INT8_MAX __INT8_MAX__"
@@ -6954,13 +6957,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT64X_MANT_DIG__ 113"
 .LASF206:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
-.LASF849:
+.LASF850:
 	.string	"index3"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF839:
+.LASF840:
 	.string	"uintptr_t"
-.LASF914:
+.LASF915:
 	.string	"SegmentedAddress"
 .LASF14:
 	.string	"__ATOMIC_RELEASE 3"
@@ -7010,7 +7013,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__stringify_1(x) #x"
 .LASF282:
 	.string	"__FLT128_HAS_DENORM__ 1"
-.LASF857:
+.LASF858:
 	.string	"_ZN14VirtualAddressC4Emh"
 .LASF644:
 	.string	"_T_WCHAR_ "
@@ -7020,7 +7023,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_HYPOT 1"
 .LASF113:
 	.string	"__WCHAR_MIN__ 0U"
-.LASF860:
+.LASF861:
 	.string	"_ZNK14VirtualAddress5indexEh"
 .LASF351:
 	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
@@ -7030,7 +7033,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__ARM_ARCH 8"
 .LASF631:
 	.string	"_SIZE_T_ "
-.LASF864:
+.LASF865:
 	.string	"_ZN14VirtualAddress7addrLenEh"
 .LASF599:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_TR1 1"
@@ -7072,6 +7075,8 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_NAMESPACE_CXX11 __cxx11::"
 .LASF352:
 	.string	"__GCC_ATOMIC_LLONG_LOCK_FREE 2"
+.LASF658:
+	.string	"NULL __null"
 .LASF451:
 	.string	"_GLIBCXX_STD_C std"
 .LASF743:
@@ -7080,7 +7085,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF646:
 	.string	"__WCHAR_T "
-.LASF824:
+.LASF825:
 	.string	"int_least32_t"
 .LASF222:
 	.string	"__LDBL_MAX__ 1.18973149535723176508575932662800702e+4932L"
@@ -7088,9 +7093,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINTMAX_TYPE__ long unsigned int"
 .LASF124:
 	.string	"__WINT_WIDTH__ 32"
-.LASF885:
+.LASF886:
 	.string	"ValueType"
-.LASF862:
+.LASF863:
 	.string	"_ZNK14VirtualAddress6offsetEv"
 .LASF28:
 	.string	"__CHAR_BIT__ 8"
@@ -7100,7 +7105,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__N(msgid) (msgid)"
 .LASF484:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF841:
+.LASF842:
 	.string	"uintmax_t"
 .LASF404:
 	.string	"UART_BASE 0x09000000"
@@ -7108,7 +7113,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT64_MAX"
 .LASF233:
 	.string	"__FLT16_MAX_EXP__ 16"
-.LASF892:
+.LASF893:
 	.string	"setBits<long unsigned int, unsigned int>"
 .LASF91:
 	.string	"__cpp_delegating_constructors 200604"
@@ -7134,13 +7139,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__AARCH64_CMODEL_TINY__"
 .LASF614:
 	.string	"_ANSI_STDDEF_H "
-.LASF863:
+.LASF864:
 	.string	"addrLen"
 .LASF789:
 	.string	"NULL_CHAR '\\0'"
 .LASF40:
 	.string	"__WINT_TYPE__ unsigned int"
-.LASF866:
+.LASF867:
 	.string	"addr"
 .LASF770:
 	.string	"INT32_C"
@@ -7152,13 +7157,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__LDBL_HAS_INFINITY__ 1"
 .LASF60:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF820:
+.LASF821:
 	.string	"unsigned int"
 .LASF633:
 	.string	"_SIZE_T_DEFINED_ "
 .LASF36:
 	.string	"__GNUG__ 7"
-.LASF912:
+.LASF913:
 	.string	"max_align_t"
 .LASF186:
 	.string	"__FLT_MIN_EXP__ (-125)"
@@ -7172,9 +7177,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF442:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF838:
+.LASF839:
 	.string	"intptr_t"
-.LASF865:
+.LASF866:
 	.string	"_ZNK14VirtualAddress7addrLenEv"
 .LASF292:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -7184,7 +7189,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT_DIG__ 6"
 .LASF434:
 	.string	"_GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)"
-.LASF852:
+.LASF853:
 	.string	"_segAddr"
 .LASF689:
 	.string	"INT_LEAST8_MAX __INT_LEAST8_MAX__"
@@ -7216,7 +7221,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT16_C"
 .LASF321:
 	.string	"__DEC64_MIN_EXP__ (-382)"
-.LASF893:
+.LASF894:
 	.string	"_Z7setBitsImjEvRT_hhT0_"
 .LASF117:
 	.string	"__SIZE_MAX__ 0xffffffffffffffffUL"
@@ -7236,9 +7241,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF50:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF831:
+.LASF832:
 	.string	"int_fast16_t"
-.LASF873:
+.LASF874:
 	.string	"_ZNK14VirtualAddress5validEv"
 .LASF687:
 	.string	"UINT64_MAX __UINT64_MAX__"
@@ -7250,9 +7255,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DEC128_MANT_DIG__ 34"
 .LASF411:
 	.string	"_GLIBCXX_CSTDDEF 1"
-.LASF884:
+.LASF885:
 	.string	"Type"
-.LASF845:
+.LASF846:
 	.string	"offset"
 .LASF785:
 	.string	"UINTMAX_C(c) __UINTMAX_C(c)"
@@ -7266,23 +7271,23 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF197:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF806:
+.LASF807:
 	.string	"__max_align_ld"
-.LASF844:
+.LASF845:
 	.string	"UNIT_K"
 .LASF403:
 	.string	"KERNEL_ADDRESS 0"
-.LASF805:
+.LASF806:
 	.string	"__max_align_ll"
 .LASF137:
 	.string	"__INT32_MAX__ 0x7fffffff"
-.LASF816:
+.LASF817:
 	.string	"unsigned char"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
 .LASF46:
 	.string	"__INT8_TYPE__ signed char"
-.LASF908:
+.LASF909:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF557:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -7292,7 +7297,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF93:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF801:
+.LASF802:
 	.string	"__gnu_cxx"
 .LASF787:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
@@ -7304,17 +7309,17 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_TANF 1"
 .LASF671:
 	.string	"INT16_MAX __INT16_MAX__"
-.LASF882:
+.LASF883:
 	.string	"bool"
 .LASF767:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF826:
+.LASF827:
 	.string	"uint_least8_t"
 .LASF214:
 	.string	"__LDBL_MANT_DIG__ 113"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF822:
+.LASF823:
 	.string	"int_least8_t"
 .LASF626:
 	.string	"_SIZE_T "
@@ -7324,7 +7329,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF229:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF808:
+.LASF809:
 	.string	"long double"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
@@ -7376,7 +7381,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__cpp_decltype_auto 201304"
 .LASF423:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF796:
+.LASF797:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF226:
 	.string	"__LDBL_HAS_DENORM__ 1"
@@ -7416,7 +7421,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
-.LASF871:
+.LASF872:
 	.string	"_ZNK14VirtualAddress7ttbrSelEv"
 .LASF320:
 	.string	"__DEC64_MANT_DIG__ 16"
@@ -7432,13 +7437,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF706:
 	.string	"INT_LEAST64_MAX"
-.LASF817:
+.LASF818:
 	.string	"uint16_t"
 .LASF618:
 	.string	"__PTRDIFF_T "
 .LASF70:
 	.string	"__INTPTR_TYPE__ long int"
-.LASF899:
+.LASF900:
 	.string	"_ZN14VirtualAddressC2Eh"
 .LASF469:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
@@ -7448,7 +7453,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__cpp_binary_literals 201304"
 .LASF772:
 	.string	"INT64_C"
-.LASF869:
+.LASF870:
 	.string	"ttbrSel"
 .LASF59:
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
@@ -7462,7 +7467,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__FLT32X_DIG__ 15"
 .LASF175:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
-.LASF833:
+.LASF834:
 	.string	"int_fast64_t"
 .LASF165:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
@@ -7480,7 +7485,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT8_MIN"
 .LASF75:
 	.string	"__DEPRECATED 1"
-.LASF875:
+.LASF876:
 	.string	"_ZNK14VirtualAddress12initialLevelEv"
 .LASF81:
 	.string	"__cpp_user_defined_literals 200809"
@@ -7492,13 +7497,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GCC_STDINT_H "
 .LASF116:
 	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
-.LASF896:
+.LASF897:
 	.string	"initLevel"
 .LASF678:
 	.string	"INT32_MIN"
 .LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF802:
+.LASF803:
 	.string	"__cxx11"
 .LASF578:
 	.string	"_GLIBCXX_PACKAGE_STRING \"package-unused version-unused\""
@@ -7520,7 +7525,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__ARM_FP 14"
 .LASF460:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
-.LASF834:
+.LASF835:
 	.string	"uint_fast8_t"
 .LASF725:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
@@ -7548,7 +7553,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_ILP32"
 .LASF56:
 	.string	"__INT_LEAST32_TYPE__ int"
-.LASF887:
+.LASF888:
 	.string	"upperBound"
 .LASF6:
 	.string	"__GNUC_MINOR__ 2"
@@ -7564,7 +7569,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX17_INLINE "
 .LASF350:
 	.string	"__GCC_ATOMIC_INT_LOCK_FREE 2"
-.LASF901:
+.LASF902:
 	.string	"getBits"
 .LASF283:
 	.string	"__FLT128_HAS_INFINITY__ 1"
@@ -7578,9 +7583,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GCC_MAX_ALIGN_T "
 .LASF502:
 	.string	"_GLIBCXX_HAVE_ENOTRECOVERABLE 1"
-.LASF847:
-	.string	"index1"
 .LASF848:
+	.string	"index1"
+.LASF849:
 	.string	"index2"
 .LASF212:
 	.string	"__DBL_HAS_QUIET_NAN__ 1"
@@ -7614,7 +7619,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF88:
 	.string	"__cpp_rvalue_references 200610"
-.LASF832:
+.LASF833:
 	.string	"int_fast32_t"
 .LASF27:
 	.string	"__SIZEOF_SIZE_T__ 8"
@@ -7628,11 +7633,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
 .LASF464:
 	.string	"__glibcxx_assert(_Condition) "
-.LASF800:
+.LASF801:
 	.string	"INCLUDE_GENERIC_UTIL_H_ "
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF812:
+.LASF813:
 	.string	"short int"
 .LASF612:
 	.string	"_STDDEF_H "
@@ -7646,7 +7651,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF237:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF821:
+.LASF822:
 	.string	"uint64_t"
 .LASF172:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
@@ -7678,8 +7683,6 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_ETIME 1"
 .LASF580:
 	.string	"_GLIBCXX_PACKAGE_URL \"\""
-.LASF407:
-	.string	"ARCH_IS_qemu_virt "
 .LASF7:
 	.string	"__GNUC_PATCHLEVEL__ 1"
 .LASF766:
@@ -7698,7 +7701,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__DBL_DECIMAL_DIG__ 17"
 .LASF604:
 	.string	"_GLIBCXX_USE_GETTIMEOFDAY 1"
-.LASF858:
+.LASF859:
 	.string	"index"
 .LASF619:
 	.string	"_PTRDIFF_T_ "
@@ -7710,7 +7713,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_WCHAR_T_DEFINED "
 .LASF771:
 	.string	"INT32_C(c) __INT32_C(c)"
-.LASF891:
+.LASF892:
 	.string	"_Z7setBitsImmEvRT_hhT0_"
 .LASF373:
 	.string	"__ARM_FP_FAST"
@@ -7746,9 +7749,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_ENOSTR 1"
 .LASF8:
 	.string	"__VERSION__ \"7.2.1 20171011\""
-.LASF872:
+.LASF873:
 	.string	"valid"
-.LASF883:
+.LASF884:
 	.string	"digitsMap"
 .LASF559:
 	.string	"_GLIBCXX_HAVE_SYS_STAT_H 1"
@@ -7770,8 +7773,8 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
 .LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF658:
-	.string	"NULL __null"
+.LASF407:
+	.string	"TARGET_ARCH_IS_qemu_virt "
 .LASF314:
 	.string	"__DEC32_MIN_EXP__ (-94)"
 .LASF53:
@@ -7786,7 +7789,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_STRERROR_R 1"
 .LASF26:
 	.string	"__SIZEOF_LONG_DOUBLE__ 16"
-.LASF867:
+.LASF868:
 	.string	"_ZN14VirtualAddress4addrEm"
 .LASF38:
 	.string	"__PTRDIFF_TYPE__ long int"
@@ -7798,7 +7801,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GCC_SIZE_T "
 .LASF381:
 	.string	"__ARM_FP16_FORMAT_IEEE 1"
-.LASF855:
+.LASF856:
 	.string	"VirtualAddress"
 .LASF716:
 	.string	"UINT_FAST8_MAX"
@@ -7812,9 +7815,9 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF656:
 	.string	"_BSD_WCHAR_T_"
-.LASF807:
+.LASF808:
 	.string	"long long int"
-.LASF819:
+.LASF820:
 	.string	"uint32_t"
 .LASF513:
 	.string	"_GLIBCXX_HAVE_FABSF 1"
@@ -7826,11 +7829,11 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__UINTPTR_MAX__ 0xffffffffffffffffUL"
 .LASF519:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
-.LASF890:
+.LASF891:
 	.string	"_Z7setBitsImiEvRT_hhT0_"
 .LASF223:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF835:
+.LASF836:
 	.string	"uint_fast16_t"
 .LASF67:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
@@ -7840,7 +7843,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_INT64_T_LONG 1"
 .LASF474:
 	.string	"_GLIBCXX_USE_WEAK_REF __GXX_WEAK__"
-.LASF853:
+.LASF854:
 	.string	"_addrLen"
 .LASF111:
 	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
@@ -7848,7 +7851,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__WINT_MIN__ 0U"
 .LASF696:
 	.string	"INT_LEAST16_MIN"
-.LASF911:
+.LASF912:
 	.string	"11max_align_t"
 .LASF258:
 	.string	"__FLT64_DIG__ 15"
@@ -7860,7 +7863,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__INT_LEAST8_WIDTH__ 8"
 .LASF55:
 	.string	"__INT_LEAST16_TYPE__ short int"
-.LASF818:
+.LASF819:
 	.string	"short unsigned int"
 .LASF533:
 	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
@@ -7870,7 +7873,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"INT_FAST16_MAX __INT_FAST16_MAX__"
 .LASF257:
 	.string	"__FLT64_MANT_DIG__ 53"
-.LASF870:
+.LASF871:
 	.string	"_ZN14VirtualAddress7ttbrSelEi"
 .LASF151:
 	.string	"__INT_LEAST32_WIDTH__ 32"
@@ -7890,13 +7893,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
 .LASF518:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
-.LASF814:
+.LASF815:
 	.string	"int64_t"
 .LASF29:
 	.string	"__BIGGEST_ALIGNMENT__ 16"
 .LASF708:
 	.string	"INT_LEAST64_MIN"
-.LASF902:
+.LASF903:
 	.string	"_ZNK14VirtualAddress14levelIndexMaskEv"
 .LASF748:
 	.string	"PTRDIFF_MAX"
@@ -7906,7 +7909,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GTHREAD_USE_MUTEX_TIMEDLOCK 1"
 .LASF285:
 	.string	"__FLT32X_MANT_DIG__ 53"
-.LASF898:
+.LASF899:
 	.string	"_ZN14VirtualAddressC2Emh"
 .LASF240:
 	.string	"__FLT16_HAS_DENORM__ 1"
@@ -7926,6 +7929,8 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__INTPTR_WIDTH__ 64"
 .LASF202:
 	.string	"__DBL_MIN_10_EXP__ (-307)"
+.LASF796:
+	.string	"CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)"
 .LASF215:
 	.string	"__LDBL_DIG__ 33"
 .LASF527:
@@ -7936,13 +7941,13 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"_GLIBCXX_HAVE_ENODATA 1"
 .LASF781:
 	.string	"UINT64_C(c) __UINT64_C(c)"
-.LASF840:
+.LASF841:
 	.string	"intmax_t"
 .LASF199:
 	.string	"__DBL_MANT_DIG__ 53"
 .LASF387:
 	.string	"__ARM_FEATURE_CRC32 1"
-.LASF879:
+.LASF880:
 	.string	"_ZNK14VirtualAddress14rightShiftBitsEh"
 .LASF718:
 	.string	"INT_FAST16_MAX"
@@ -7950,7 +7955,7 @@ _ZNK14VirtualAddress14levelIndexMaskEv:
 	.string	"__INT_MAX__ 0x7fffffff"
 .LASF161:
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
-.LASF900:
+.LASF901:
 	.string	"levelIndexMask"
 .LASF778:
 	.string	"UINT32_C"

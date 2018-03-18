@@ -12,6 +12,16 @@
 |名称|                含义|  通常值|   配置该变量的工程  |
 |-  |  -                | -     | -              |
 |TARGET_ARCH|   构建的目标架构或目标场景 | 与工程名称相同| *|
+|TARGET_ARCH_IS_${TARGET_ARCH}| 用于在C++中判断当前的构建目标 | TARGET_ARCH_IS_host, TARGET_ARCH_IS_qemu_virt等|
+|BUILD_BASE_SYSTEM| 当前构建系统，即编译器等所使用的基本系统 | 主要分为cygwin, linux/unix两系|
+|BUILD_BASE_SYSTEM_IS_${BUILD_BASE_SYSTEM}| 用于判断当前编译系统的类型| BUILD_BASE_SYSTEM_IS_cygwin||
+|ENVS_PRESENT| 配置的环境变量是自动导出的还是需要从配置文件中读取,该变量主要用于当在非eclipse环境下编译时，从文件中读取配置的变量。这些变量都是从eclipse环境中导出的|true或false||
+|ROOT_PROJECT|指向`overview`工程的根目录|../../..|*|
+|MAKE_BIN|  make的路径 |||
+|MASTERY_ELF|  定义工程编译生成的主要elf目标||
+|MASTERY_BIN|  定义工程生成的主要二进制文件(如果有)||
+|PATH|     意义同环境变量中的PATH，定义工具的搜索路径||
+
 |EXPORT\_CXX_MACROS| 需要从配置的环境变量中导出到C++的宏| 一个变量名列表，以空格分隔| *|
 |EXPORT\_LINKER_FLAGS|需要从配置的环境变量中导出到链接脚本的符号|同EXPORT_CXX_MACROS|*|
 |EXPORT_VARIABLES| 需要从eclipse配置的环境变量中导出到其他构建系统的环境变量|同EXPORT_CXX_MACROS| *|
@@ -21,7 +31,8 @@
 |TOOLCHAIN\_CC    |C交叉编译器的路径| ${TOOLCHAIN_ROOT}/${TOOLCHAIN_PREFIX}gcc|
 |TOOLCHAIN_LD    |链接器的路径
 |KERNEL_ADDRESS  |内核被加载的起始地址|0,0x8000| raspi3,qemu_virt|
-|
+|USER_ALL |  `all`目标|${MASTERY_ELF},或者${MASTERY_BINARY}||
+|USER_CLEAN| `clean`目标| user_clean|
 
 # 多数工程都定义的Build Targets
 |名称|                  含义|  操作系统 |   前提| 

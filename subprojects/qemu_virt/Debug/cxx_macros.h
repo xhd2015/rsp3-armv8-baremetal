@@ -8,7 +8,7 @@
  #define UART_BASE    0x09000000
  #define CONFIG_RAM_START    0x40000000
  #define CONFIG_RAM_SIZE    0x40000000
- #define ARCH_IS_qemu_virt    
+ #define TARGET_ARCH_IS_qemu_virt    
  #define PERIPHBASE    0x08000000
 
 #endif // CXX_MACROS_H__

@@ -13,7 +13,20 @@
 #include <test/test_base.h>
 #include <test/TestMemoryManager.h>
 
+void TestMemoryManager::run()
+{
+	kout << INFO << "start TestMemoryManager\n";
+	TestMemoryManager tmm;
+	RUN_TEST(tmm.memoryChunkMergeCorrectly);
+	RUN_TEST(tmm.allocateCorrectly);
+	RUN_TEST(tmm.nextChunkCorrectly);
+	RUN_TEST(tmm.deallocateCorrectly);
+	RUN_TEST(tmm.reallocateInPlaceCollectCorrectly);
+	RUN_TEST(tmm.reallocateOutOfPlaceMoveCorrectly);
+	RUN_TEST(tmm.reallocateSmallerCorrectly);
 
+	kout << INFO << "end TestMemoryManager\n";
+}
 
 bool TestMemoryManager::memoryChunkMergeCorrectly()
 {

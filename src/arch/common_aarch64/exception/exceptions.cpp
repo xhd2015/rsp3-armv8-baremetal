@@ -9,6 +9,7 @@
 #include <io/Output.h>
 #include <arch/common_aarch64/exception/svc_call.h>
 #include <schedule/PidManager.h>
+#include <schedule/ProcessManager.h>
 
 __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -53,42 +54,6 @@ __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems
 		// 为最后一项预留128字节的空间
 		". =. + 0x80 \n\t"
 		);
-// 从高地址到低地址依次是 x0,x1,x2,....x29,x30,  x30通常也称为LR寄存器
-#define SAVE_REGS() \
-	__asm__ __volatile__("stp x29,x30,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x27,x28,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x25,x26,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x23,x24,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x21,x22,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x19,x20,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x17,x18,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x15,x16,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x13,x14,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x11,x12,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x9,x10,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x7,x8,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x5,x6,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x3,x4,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("stp x1,x2,[sp,#-16]! \n\t"); \
-	__asm__ __volatile__("str x0,[sp,#-8]! \n\t")
-#define RESTORE_REGS() \
-	__asm__ __volatile__("ldr x0,[sp],#8 \n\t"); \
-	__asm__ __volatile__("ldp x1,x2,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x3,x4,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x5,x6,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x7,x8,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x9,x10,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x11,x12,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x13,x14,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x15,x16,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x17,x18,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x19,x20,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x21,x22,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x23,x24,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x25,x26,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x27,x28,[sp],#16 \n\t"); \
-	__asm__ __volatile__("ldp x29,x30,[sp],#16 \n\t");
-
 
 // on entering, we must use svc or other ExceptionGeneration instructions,on leaving,we must use eret, no magics
 void enterSynchronousEL1ExceptionHandle()
@@ -171,13 +136,13 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 	{
 		uint16_t svcNumber = lowerMaskBits(16)&esr.ISS;
 		kout << INFO << "svc targeting number : " << svcNumber<< "\n";
-		if(svcNumber== SvcFunc::puts) //  需要参数，参数保存在哪里？保存在栈上
+		if(svcNumber == static_cast<decltype(svcNumber)>(SvcFunc::puts)) //  需要参数，参数保存在哪里？保存在栈上
 		{
 			auto str = reinterpret_cast<const char*>(savedRegisters[0]);
 			auto len = reinterpret_cast<size_t>(savedRegisters[1]);
 			auto printkChars = kout.print(str, len);
 			savedRegisters[0] = printkChars; // savedResult
-		}else if(svcNumber == SvcFunc::killProcess){
+		}else if(svcNumber == static_cast<decltype(svcNumber)>(SvcFunc::killProcess)){
 			kout << "killing Process \n";
 			// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
 			PidType pid = static_cast<PidType>(savedRegisters[0]);
@@ -185,7 +150,8 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 			(void)status;
 			if(pid == CURRENT_PID)
 			{
-
+				processManager.killProcess(processManager.currentRunningProcess());
+				processManager.scheduleNextProcess();
 			}
 			asm_wfe_loop();
 		}
@@ -203,8 +169,12 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 		kout << "not processing it\n";
 		asm_wfe_loop();
 	}else if(esr.EC == ExceptionClass::DATA_ABORT_LOWER_EL){
-		kout << INFO << "Data Abort\n";
+		kout << INFO << "Data Abort from lower EL\n";
 		kout << INFO << "not processing it\n";
+		asm_wfe_loop();
+	}else if(esr.EC == ExceptionClass::DATA_ABORT_SAME_EL){
+		kout << INFO << "Data Abort at same EL\n";
+		kout << INFO << "not processing \n";
 		asm_wfe_loop();
 	}else if(esr.EC == ExceptionClass::PC_ALIGNMENT_FAULT){
 		kout << INFO << "PC alignment fault\n";

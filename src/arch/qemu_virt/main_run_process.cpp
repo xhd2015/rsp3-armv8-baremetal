@@ -11,6 +11,9 @@
 #include <cstring>
 #include <new>
 #include <arch/common_aarch64/exception/svc_call.h>
+#include <schedule/ProcessManager.h>
+
+extern char __stack_top[];
 
 // 本程序测试了初始化一个Process结构，然后执行这个进程。
 int enableMMU();
@@ -45,15 +48,10 @@ int main()
 
 	// 重新初始化pidManager
 	new (&pidManager) PidManager();
+	new (&processManager) ProcessManager();
 
 	// 建立一个进程
-	Process *process = mman.allocateAs<Process*>(sizeof(Process));
-	if(process==nullptr)
-	{
-		kout << "cannot allocate space for process\n";
-		return 1;
-	}
-	int initState = process->init(
+	auto processLink = processManager.createNewProcess(
 			64 - tcr.T0SZ, // virtual address length in bits
 			nullptr,  // parent
 			10, // Priority
@@ -61,27 +59,28 @@ int main()
 			Process::PAGE_SIZE * Process::HEAP_L3_ENTRY_NUM, // Heap Size
 			Process::PAGE_SIZE * Process::STACK_L3_ENTRY_NUM  // Stack Size
 			);
-	if(initState!=0)
+	Process & process = processLink->data<true>();
+	if(processLink==nullptr ||
+			process.status()==Process::CREATED_INCOMPLETE)
 	{
-		kout << "init process failed\n";
+		kout << FATAL << "create process failed\n";
 		return 1;
 	}
 
 	// 复制代码到分配给进程的代码段空间
-	void* codePtr =  process->getCodeBase();
+	void* codePtr =  process.codeBase();
 	const void *userSpaceStart = reinterpret_cast<const void*>(USER_SPACE_START | ttbr1Mask);
 	std::memcpy(codePtr, userSpaceStart, USER_SPACE_SIZE);
 
-	kout << "====code is \n";
-	kout.print(reinterpret_cast<const char*>(codePtr),200);
-	kout << "\n";
+	process.registers()[30] = process.ELR().returnAddr;
 
 	// 使用任务调度切换到下一个进程
-	process->getSpEL0().write();
-	process->getTTBR0().write();
-	process->getELR().write();
-	process->getSPSR().write();
-	asm_eret();
+	processManager.changeProcessStatus(processLink, Process::RUNNING);
+
+
+	void *spEL1=reinterpret_cast<void*>(reinterpret_cast<uint64_t>(__stack_top)|ttbr1Mask);
+	process.restoreContextAndExecute(spEL1);
+
 	return 0;
 }
 

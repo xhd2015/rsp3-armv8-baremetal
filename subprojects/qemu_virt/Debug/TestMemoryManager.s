@@ -31,196 +31,59 @@ _ZL11koutBufSize:
 	.xword	65
 	.align	3
 .LC1:
-	.string	"[FATAL] "
+	.string	"[INFO] "
 	.align	3
 .LC2:
-	.string	"baseChunk->getSize()"
+	.string	"start TestMemoryManager\n"
 	.align	3
 .LC3:
-	.string	"!="
+	.string	"[FATAL] "
 	.align	3
 .LC4:
-	.string	",the real value is "
+	.string	" [TEST] `"
 	.align	3
 .LC5:
-	.string	"\n"
+	.string	"tmm.memoryChunkMergeCorrectly"
+	.align	3
+.LC6:
+	.string	"` failed.\n"
+	.align	3
+.LC7:
+	.string	"tmm.allocateCorrectly"
+	.align	3
+.LC8:
+	.string	"tmm.nextChunkCorrectly"
+	.align	3
+.LC9:
+	.string	"tmm.deallocateCorrectly"
+	.align	3
+.LC10:
+	.string	"tmm.reallocateInPlaceCollectCorrectly"
+	.align	3
+.LC11:
+	.string	"tmm.reallocateOutOfPlaceMoveCorrectly"
+	.align	3
+.LC12:
+	.string	"tmm.reallocateSmallerCorrectly"
+	.align	3
+.LC13:
+	.string	"end TestMemoryManager\n"
 	.text
 	.align	2
-	.global	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
-	.type	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv, %function
-_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
+	.global	_ZN17TestMemoryManager3runEv
+	.type	_ZN17TestMemoryManager3runEv, %function
+_ZN17TestMemoryManager3runEv:
 .LFB14:
 	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
-	.loc 1 19 0
+	.loc 1 17 0
 	.cfi_startproc
-	sub	sp, sp, #1184
-	.cfi_def_cfa_offset 1184
-	stp	x29, x30, [sp]
-	.cfi_offset 29, -1184
-	.cfi_offset 30, -1176
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
-	str	x19, [sp, 16]
-	.cfi_offset 19, -1168
-	str	x0, [x29, 40]
-	.loc 1 21 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	adrp	x1, .LC0
-	add	x1, x1, :lo12:.LC0
-	ld1	{v0.16b - v1.16b}, [x1]
-	st1	{v0.16b - v1.16b}, [x0]
-	.loc 1 23 0
-	add	x0, x29, 88
-	str	x0, [x29, 1168]
-	.loc 1 24 0
-	mov	w1, 0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 25 0
-	mov	x1, 0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 26 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0]
-	mov	x1, x0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk7setSizeEm
-	.loc 1 27 0
-	mov	x1, 0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 28 0
-	mov	w1, 0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 29 0
-	ldr	x0, [x29, 1168]
-	bl	_ZNK11MemoryChunk7getSizeEv
-	mov	x19, x0
-	ldr	x0, [x29, 1168]
-	bl	_ZNK11MemoryChunk18getNextBaseFromEndEv
-	add	x0, x19, x0
-	add	x0, x0, 8
-	add	x1, x29, 88
-	add	x0, x1, x0
-	str	x0, [x29, 1160]
-	.loc 1 30 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0, 8]
-	mov	x1, x0
-	ldr	x0, [x29, 1160]
-	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 32 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0, 8]
-	ldr	x1, [x29, 1160]
-	add	x0, x1, x0
-	str	x0, [x29, 1152]
-	.loc 1 33 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0, 16]
-	mov	x1, x0
-	ldr	x0, [x29, 1152]
-	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 35 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0, 16]
-	ldr	x1, [x29, 1152]
-	add	x0, x1, x0
-	str	x0, [x29, 1144]
-	.loc 1 36 0
-	mov	x1, 0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 37 0
-	mov	w1, 0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 38 0
-	mov	x1, 0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 39 0
-	sub	x0, x29, #856
-	add	x0, x0, 912
-	ldr	x0, [x0, 24]
-	mov	x1, x0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk7setSizeEm
-	.loc 1 40 0
-	mov	w1, 0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 42 0
-	ldr	x0, [x29, 1144]
-	bl	_ZN11MemoryChunk10getDataEndEv
-	str	x0, [x29, 1136]
-	.loc 1 43 0
-	mov	x1, 0
-	ldr	x0, [x29, 1136]
-	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 44 0
-	mov	w1, 1
-	ldr	x0, [x29, 1136]
-	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 46 0
-	str	xzr, [x29, 48]
-.LBB2:
-	.loc 1 47 0
-	add	x0, x29, 56
-	str	x0, [x29, 1128]
-	ldr	x0, [x29, 1128]
-	str	x0, [x29, 1176]
-	ldr	x0, [x29, 1128]
-	add	x0, x0, 32
-	str	x0, [x29, 1120]
-.L3:
-	.loc 1 47 0 is_stmt 0 discriminator 3
-	ldr	x1, [x29, 1176]
-	ldr	x0, [x29, 1120]
-	cmp	x1, x0
-	beq	.L2
-	.loc 1 47 0 discriminator 2
-	ldr	x0, [x29, 1176]
-	ldr	x0, [x0]
-	str	x0, [x29, 1112]
-	.loc 1 48 0 is_stmt 1 discriminator 2
-	ldr	x1, [x29, 48]
-	ldr	x0, [x29, 1112]
-	add	x0, x1, x0
-	str	x0, [x29, 48]
-	.loc 1 47 0 discriminator 2
-	ldr	x0, [x29, 1176]
-	add	x0, x0, 8
-	str	x0, [x29, 1176]
-	b	.L3
-.L2:
-.LBE2:
-	.loc 1 49 0
-	ldr	x0, [x29, 48]
-	add	x0, x0, 8
-	str	x0, [x29, 48]
-	.loc 1 51 0
-	ldr	x0, [x29, 1168]
-	bl	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv
-	.loc 1 52 0
-	ldr	x0, [x29, 1168]
-	bl	_ZNK11MemoryChunk7getSizeEv
-	mov	x1, x0
-	ldr	x0, [x29, 48]
-	cmp	x1, x0
-	cset	w0, ne
-	and	w0, w0, 255
-	cmp	w0, 0
-	beq	.L4
-	.loc 1 52 0 is_stmt 0 discriminator 1
+	.loc 1 18 0
 	adrp	x0, .LC1
 	add	x1, x0, :lo12:.LC1
 	adrp	x0, kout
@@ -232,9 +95,462 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-	mov	x2, x0
+	.loc 1 20 0
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L2
+	.loc 1 20 0 is_stmt 0 discriminator 1
 	adrp	x0, .LC3
-	add	x0, x0, :lo12:.LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC5
+	add	x0, x0, :lo12:.LC5
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L2:
+	.loc 1 21 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager17allocateCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L3
+	.loc 1 21 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC7
+	add	x0, x0, :lo12:.LC7
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L3:
+	.loc 1 22 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager18nextChunkCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L4
+	.loc 1 22 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC8
+	add	x0, x0, :lo12:.LC8
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L4:
+	.loc 1 23 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager19deallocateCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L5
+	.loc 1 23 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC9
+	add	x0, x0, :lo12:.LC9
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L5:
+	.loc 1 24 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L6
+	.loc 1 24 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC10
+	add	x0, x0, :lo12:.LC10
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L6:
+	.loc 1 25 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L7
+	.loc 1 25 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC11
+	add	x0, x0, :lo12:.LC11
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L7:
+	.loc 1 26 0 is_stmt 1
+	add	x0, x29, 24
+	bl	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L8
+	.loc 1 26 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC4
+	add	x0, x0, :lo12:.LC4
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC12
+	add	x0, x0, :lo12:.LC12
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC6
+	add	x0, x0, :lo12:.LC6
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+.L8:
+	.loc 1 28 0 is_stmt 1
+	adrp	x0, .LC1
+	add	x1, x0, :lo12:.LC1
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC13
+	add	x0, x0, :lo12:.LC13
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	.loc 1 29 0
+	nop
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE14:
+	.size	_ZN17TestMemoryManager3runEv, .-_ZN17TestMemoryManager3runEv
+	.section	.rodata
+	.align	3
+.LC14:
+	.string	"baseChunk->getSize()"
+	.align	3
+.LC15:
+	.string	"!="
+	.align	3
+.LC16:
+	.string	",the real value is "
+	.align	3
+.LC17:
+	.string	"\n"
+	.text
+	.align	2
+	.global	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
+	.type	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv, %function
+_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
+.LFB15:
+	.loc 1 32 0
+	.cfi_startproc
+	sub	sp, sp, #1184
+	.cfi_def_cfa_offset 1184
+	stp	x29, x30, [sp]
+	.cfi_offset 29, -1184
+	.cfi_offset 30, -1176
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x19, [sp, 16]
+	.cfi_offset 19, -1168
+	str	x0, [x29, 40]
+	.loc 1 34 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	adrp	x1, .LC0
+	add	x1, x1, :lo12:.LC0
+	ld1	{v0.16b - v1.16b}, [x1]
+	st1	{v0.16b - v1.16b}, [x0]
+	.loc 1 36 0
+	add	x0, x29, 88
+	str	x0, [x29, 1168]
+	.loc 1 37 0
+	mov	w1, 0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk12setAllocatedEb
+	.loc 1 38 0
+	mov	x1, 0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
+	.loc 1 39 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0]
+	mov	x1, x0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk7setSizeEm
+	.loc 1 40 0
+	mov	x1, 0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
+	.loc 1 41 0
+	mov	w1, 0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk6setEndEb
+	.loc 1 42 0
+	ldr	x0, [x29, 1168]
+	bl	_ZNK11MemoryChunk7getSizeEv
+	mov	x19, x0
+	ldr	x0, [x29, 1168]
+	bl	_ZNK11MemoryChunk18getNextBaseFromEndEv
+	add	x0, x19, x0
+	add	x0, x0, 8
+	add	x1, x29, 88
+	add	x0, x1, x0
+	str	x0, [x29, 1160]
+	.loc 1 43 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0, 8]
+	mov	x1, x0
+	ldr	x0, [x29, 1160]
+	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
+	.loc 1 45 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0, 8]
+	ldr	x1, [x29, 1160]
+	add	x0, x1, x0
+	str	x0, [x29, 1152]
+	.loc 1 46 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0, 16]
+	mov	x1, x0
+	ldr	x0, [x29, 1152]
+	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
+	.loc 1 48 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0, 16]
+	ldr	x1, [x29, 1152]
+	add	x0, x1, x0
+	str	x0, [x29, 1144]
+	.loc 1 49 0
+	mov	x1, 0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
+	.loc 1 50 0
+	mov	w1, 0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk12setAllocatedEb
+	.loc 1 51 0
+	mov	x1, 0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
+	.loc 1 52 0
+	sub	x0, x29, #856
+	add	x0, x0, 912
+	ldr	x0, [x0, 24]
+	mov	x1, x0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk7setSizeEm
+	.loc 1 53 0
+	mov	w1, 0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk6setEndEb
+	.loc 1 55 0
+	ldr	x0, [x29, 1144]
+	bl	_ZN11MemoryChunk10getDataEndEv
+	str	x0, [x29, 1136]
+	.loc 1 56 0
+	mov	x1, 0
+	ldr	x0, [x29, 1136]
+	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
+	.loc 1 57 0
+	mov	w1, 1
+	ldr	x0, [x29, 1136]
+	bl	_ZN11MemoryChunk6setEndEb
+	.loc 1 59 0
+	str	xzr, [x29, 48]
+.LBB2:
+	.loc 1 60 0
+	add	x0, x29, 56
+	str	x0, [x29, 1128]
+	ldr	x0, [x29, 1128]
+	str	x0, [x29, 1176]
+	ldr	x0, [x29, 1128]
+	add	x0, x0, 32
+	str	x0, [x29, 1120]
+.L11:
+	.loc 1 60 0 is_stmt 0 discriminator 3
+	ldr	x1, [x29, 1176]
+	ldr	x0, [x29, 1120]
+	cmp	x1, x0
+	beq	.L10
+	.loc 1 60 0 discriminator 2
+	ldr	x0, [x29, 1176]
+	ldr	x0, [x0]
+	str	x0, [x29, 1112]
+	.loc 1 61 0 is_stmt 1 discriminator 2
+	ldr	x1, [x29, 48]
+	ldr	x0, [x29, 1112]
+	add	x0, x1, x0
+	str	x0, [x29, 48]
+	.loc 1 60 0 discriminator 2
+	ldr	x0, [x29, 1176]
+	add	x0, x0, 8
+	str	x0, [x29, 1176]
+	b	.L11
+.L10:
+.LBE2:
+	.loc 1 62 0
+	ldr	x0, [x29, 48]
+	add	x0, x0, 8
+	str	x0, [x29, 48]
+	.loc 1 64 0
+	ldr	x0, [x29, 1168]
+	bl	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv
+	.loc 1 65 0
+	ldr	x0, [x29, 1168]
+	bl	_ZNK11MemoryChunk7getSizeEv
+	mov	x1, x0
+	ldr	x0, [x29, 48]
+	cmp	x1, x0
+	cset	w0, ne
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L12
+	.loc 1 65 0 is_stmt 0 discriminator 1
+	adrp	x0, .LC3
+	add	x1, x0, :lo12:.LC3
+	adrp	x0, kout
+	add	x0, x0, :lo12:kout
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC14
+	add	x0, x0, :lo12:.LC14
+	mov	x1, x0
+	mov	x0, x2
+	bl	_ZN6OutputlsEPKc
+	mov	x2, x0
+	adrp	x0, .LC15
+	add	x0, x0, :lo12:.LC15
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -244,8 +560,8 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	mov	x0, x2
 	bl	_ZN6OutputlsEm
 	mov	x2, x0
-	adrp	x0, .LC4
-	add	x0, x0, :lo12:.LC4
+	adrp	x0, .LC16
+	add	x0, x0, :lo12:.LC16
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -256,13 +572,13 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	mov	x0, x19
 	bl	_ZN6OutputlsEm
 	mov	x2, x0
-	adrp	x0, .LC5
-	add	x0, x0, :lo12:.LC5
+	adrp	x0, .LC17
+	add	x0, x0, :lo12:.LC17
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-.L4:
-	.loc 1 54 0 is_stmt 1
+.L12:
+	.loc 1 67 0 is_stmt 1
 	ldr	x0, [x29, 1168]
 	bl	_ZNK11MemoryChunk7getSizeEv
 	mov	x1, x0
@@ -270,7 +586,7 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	cmp	x1, x0
 	cset	w0, eq
 	and	w0, w0, 255
-	.loc 1 55 0
+	.loc 1 68 0
 	ldr	x19, [sp, 16]
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1184
@@ -280,7 +596,7 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE14:
+.LFE15:
 	.size	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv, .-_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
 	.section	.rodata
 	.align	3
@@ -294,8 +610,8 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.global	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv
 	.type	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv, %function
 _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
-.LFB15:
-	.loc 1 58 0
+.LFB16:
+	.loc 1 71 0
 	.cfi_startproc
 	sub	sp, sp, #1120
 	.cfi_def_cfa_offset 1120
@@ -305,52 +621,52 @@ _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x0, [x29, 24]
-	.loc 1 62 0
+	.loc 1 75 0
 	add	x0, x29, 80
 	str	x0, [x29, 1112]
-	.loc 1 63 0
+	.loc 1 76 0
 	mov	x1, 1015
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk7setSizeEm
-	.loc 1 64 0
+	.loc 1 77 0
 	mov	x1, 0
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 65 0
+	.loc 1 78 0
 	mov	x1, 0
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 66 0
+	.loc 1 79 0
 	mov	w1, 0
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 67 0
+	.loc 1 80 0
 	mov	w1, 0
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 69 0
+	.loc 1 82 0
 	ldr	x0, [x29, 1112]
 	bl	_ZN11MemoryChunk10getDataEndEv
 	str	x0, [x29, 1104]
-	.loc 1 70 0
+	.loc 1 83 0
 	mov	w1, 1
 	ldr	x0, [x29, 1104]
 	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 72 0
+	.loc 1 85 0
 	add	x1, x29, 80
 	add	x0, x29, 56
 	mov	w3, 0
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 73 0
+	.loc 1 86 0
 	add	x1, x29, 80
 	add	x0, x29, 32
 	mov	w3, 1
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 75 0
+	.loc 1 88 0
 	mov	w0, 1
-	.loc 1 76 0
+	.loc 1 89 0
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1120
 	.cfi_restore 29
@@ -358,19 +674,19 @@ _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE15:
+.LFE16:
 	.size	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv, .-_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv
 	.section	.rodata
 	.align	3
-.LC6:
+.LC18:
 	.string	","
 	.text
 	.align	2
 	.global	_ZN17TestMemoryManager17allocateCorrectlyEv
 	.type	_ZN17TestMemoryManager17allocateCorrectlyEv, %function
 _ZN17TestMemoryManager17allocateCorrectlyEv:
-.LFB16:
-	.loc 1 79 0
+.LFB17:
+	.loc 1 92 0
 	.cfi_startproc
 	sub	sp, sp, #1200
 	.cfi_def_cfa_offset 1200
@@ -382,69 +698,69 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	str	x19, [sp, 16]
 	.cfi_offset 19, -1184
 	str	x0, [x29, 40]
-	.loc 1 82 0
+	.loc 1 95 0
 	add	x0, x29, 80
 	str	x0, [x29, 1192]
-	.loc 1 83 0
+	.loc 1 96 0
 	mov	x1, 1015
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk7setSizeEm
-	.loc 1 84 0
+	.loc 1 97 0
 	mov	x1, 0
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 85 0
+	.loc 1 98 0
 	mov	x1, 0
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 86 0
+	.loc 1 99 0
 	mov	w1, 0
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 87 0
+	.loc 1 100 0
 	mov	w1, 0
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 89 0
+	.loc 1 102 0
 	ldr	x0, [x29, 1192]
 	bl	_ZN11MemoryChunk10getDataEndEv
 	str	x0, [x29, 1184]
-	.loc 1 90 0
+	.loc 1 103 0
 	mov	w1, 1
 	ldr	x0, [x29, 1184]
 	bl	_ZN11MemoryChunk6setEndEb
-	.loc 1 92 0
+	.loc 1 105 0
 	add	x1, x29, 80
 	add	x0, x29, 56
 	mov	w3, 0
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 94 0
+	.loc 1 107 0
 	add	x0, x29, 56
 	mov	x1, 500
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1176]
-	.loc 1 95 0
+	.loc 1 108 0
 	add	x0, x29, 56
 	mov	x1, 100
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1168]
-	.loc 1 96 0
+	.loc 1 109 0
 	add	x0, x29, 56
 	mov	x1, 30
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1160]
-	.loc 1 97 0
+	.loc 1 110 0
 	add	x0, x29, 56
 	mov	x1, 400
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1152]
-	.loc 1 98 0
+	.loc 1 111 0
 	add	x0, x29, 56
 	mov	x1, 1000
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1144]
-	.loc 1 99 0
+	.loc 1 112 0
 	ldr	x1, [x29, 1176]
 	add	x0, x29, 1104
 	bl	_ZN16IntegerFormatterILi16EEC1Em
@@ -453,9 +769,9 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	add	x0, x0, :lo12:kout
 	bl	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	mov	x2, x0
-	.loc 1 100 0
-	adrp	x0, .LC6
-	add	x0, x0, :lo12:.LC6
+	.loc 1 113 0
+	adrp	x0, .LC18
+	add	x0, x0, :lo12:.LC18
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -468,9 +784,9 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	mov	x0, x19
 	bl	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	mov	x2, x0
-	.loc 1 101 0
-	adrp	x0, .LC6
-	add	x0, x0, :lo12:.LC6
+	.loc 1 114 0
+	adrp	x0, .LC18
+	add	x0, x0, :lo12:.LC18
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -483,9 +799,9 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	mov	x0, x19
 	bl	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	mov	x2, x0
-	.loc 1 102 0
-	adrp	x0, .LC6
-	add	x0, x0, :lo12:.LC6
+	.loc 1 115 0
+	adrp	x0, .LC18
+	add	x0, x0, :lo12:.LC18
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -498,9 +814,9 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	mov	x0, x19
 	bl	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	mov	x2, x0
-	.loc 1 103 0
-	adrp	x0, .LC6
-	add	x0, x0, :lo12:.LC6
+	.loc 1 116 0
+	adrp	x0, .LC18
+	add	x0, x0, :lo12:.LC18
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
@@ -513,27 +829,27 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	mov	x0, x19
 	bl	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	mov	x2, x0
-	adrp	x0, .LC5
-	add	x0, x0, :lo12:.LC5
+	adrp	x0, .LC17
+	add	x0, x0, :lo12:.LC17
 	mov	x1, x0
 	mov	x0, x2
 	bl	_ZN6OutputlsEPKc
-	.loc 1 105 0
+	.loc 1 118 0
 	ldr	x0, [x29, 1152]
 	cmp	x0, 0
-	bne	.L9
-	.loc 1 105 0 is_stmt 0 discriminator 1
+	bne	.L17
+	.loc 1 118 0 is_stmt 0 discriminator 1
 	ldr	x0, [x29, 1144]
 	cmp	x0, 0
-	bne	.L9
-	.loc 1 105 0 discriminator 3
+	bne	.L17
+	.loc 1 118 0 discriminator 3
 	mov	w0, 1
-	b	.L10
-.L9:
-	.loc 1 105 0 discriminator 4
+	b	.L18
+.L17:
+	.loc 1 118 0 discriminator 4
 	mov	w0, 0
-.L10:
-	.loc 1 106 0 is_stmt 1 discriminator 6
+.L18:
+	.loc 1 119 0 is_stmt 1 discriminator 6
 	ldr	x19, [sp, 16]
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1200
@@ -543,14 +859,14 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE16:
+.LFE17:
 	.size	_ZN17TestMemoryManager17allocateCorrectlyEv, .-_ZN17TestMemoryManager17allocateCorrectlyEv
 	.align	2
 	.global	_ZN17TestMemoryManager19deallocateCorrectlyEv
 	.type	_ZN17TestMemoryManager19deallocateCorrectlyEv, %function
 _ZN17TestMemoryManager19deallocateCorrectlyEv:
-.LFB17:
-	.loc 1 108 0
+.LFB18:
+	.loc 1 121 0
 	.cfi_startproc
 	sub	sp, sp, #1104
 	.cfi_def_cfa_offset 1104
@@ -560,46 +876,46 @@ _ZN17TestMemoryManager19deallocateCorrectlyEv:
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x0, [x29, 24]
-	.loc 1 110 0
+	.loc 1 123 0
 	add	x1, x29, 56
 	add	x0, x29, 32
 	mov	w3, 1
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 111 0
+	.loc 1 124 0
 	add	x0, x29, 32
 	mov	x1, 100
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1096]
-	.loc 1 112 0
+	.loc 1 125 0
 	ldr	x0, [x29, 1096]
 	sub	x0, x0, #8
 	str	x0, [x29, 1088]
-	.loc 1 113 0
+	.loc 1 126 0
 	ldr	x0, [x29, 1088]
 	bl	_ZNK11MemoryChunk11isAllocatedEv
 	and	w0, w0, 255
 	cmp	w0, 0
-	beq	.L13
-	.loc 1 113 0 is_stmt 0 discriminator 1
+	beq	.L21
+	.loc 1 126 0 is_stmt 0 discriminator 1
 	ldr	x0, [x29, 1088]
 	bl	_ZNK11MemoryChunk7getSizeEv
 	cmp	x0, 100
-	bne	.L13
-	.loc 1 113 0 discriminator 3
+	bne	.L21
+	.loc 1 126 0 discriminator 3
 	mov	w0, 1
-	b	.L14
-.L13:
-	.loc 1 113 0 discriminator 4
+	b	.L22
+.L21:
+	.loc 1 126 0 discriminator 4
 	mov	w0, 0
-.L14:
-	.loc 1 113 0 discriminator 6
+.L22:
+	.loc 1 126 0 discriminator 6
 	strb	w0, [x29, 1087]
-	.loc 1 114 0 is_stmt 1 discriminator 6
+	.loc 1 127 0 is_stmt 1 discriminator 6
 	add	x0, x29, 32
 	ldr	x1, [x29, 1096]
 	bl	_ZN13MemoryManager10deallocateEPv
-	.loc 1 116 0 discriminator 6
+	.loc 1 129 0 discriminator 6
 	ldr	x0, [x29, 1088]
 	bl	_ZNK11MemoryChunk11isAllocatedEv
 	and	w0, w0, 255
@@ -610,9 +926,9 @@ _ZN17TestMemoryManager19deallocateCorrectlyEv:
 	cmp	w0, 0
 	cset	w0, ne
 	strb	w0, [x29, 1087]
-	.loc 1 117 0 discriminator 6
+	.loc 1 130 0 discriminator 6
 	ldrb	w0, [x29, 1087]
-	.loc 1 119 0 discriminator 6
+	.loc 1 132 0 discriminator 6
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1104
 	.cfi_restore 29
@@ -620,14 +936,14 @@ _ZN17TestMemoryManager19deallocateCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE17:
+.LFE18:
 	.size	_ZN17TestMemoryManager19deallocateCorrectlyEv, .-_ZN17TestMemoryManager19deallocateCorrectlyEv
 	.align	2
 	.global	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
 	.type	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv, %function
 _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
-.LFB18:
-	.loc 1 123 0
+.LFB19:
+	.loc 1 136 0
 	.cfi_startproc
 	sub	sp, sp, #1104
 	.cfi_def_cfa_offset 1104
@@ -637,46 +953,46 @@ _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x0, [x29, 24]
-	.loc 1 125 0
+	.loc 1 138 0
 	add	x1, x29, 56
 	add	x0, x29, 32
 	mov	w3, 1
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 126 0
+	.loc 1 139 0
 	add	x0, x29, 32
 	mov	x1, 100
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1096]
-	.loc 1 127 0
+	.loc 1 140 0
 	ldr	x0, [x29, 1096]
 	sub	x0, x0, #8
 	str	x0, [x29, 1088]
-	.loc 1 130 0
+	.loc 1 143 0
 	add	x0, x29, 32
 	mov	x3, -1
 	mov	x2, 80
 	ldr	x1, [x29, 1096]
 	bl	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	str	x0, [x29, 1080]
-	.loc 1 131 0
+	.loc 1 144 0
 	ldr	x1, [x29, 1080]
 	ldr	x0, [x29, 1096]
 	cmp	x1, x0
-	bne	.L17
-	.loc 1 131 0 is_stmt 0 discriminator 1
+	bne	.L25
+	.loc 1 144 0 is_stmt 0 discriminator 1
 	ldr	x0, [x29, 1088]
 	bl	_ZNK11MemoryChunk7getSizeEv
 	cmp	x0, 80
-	bne	.L17
-	.loc 1 131 0 discriminator 3
+	bne	.L25
+	.loc 1 144 0 discriminator 3
 	mov	w0, 1
-	b	.L18
-.L17:
-	.loc 1 131 0 discriminator 4
+	b	.L26
+.L25:
+	.loc 1 144 0 discriminator 4
 	mov	w0, 0
-.L18:
-	.loc 1 132 0 is_stmt 1 discriminator 6
+.L26:
+	.loc 1 145 0 is_stmt 1 discriminator 6
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1104
 	.cfi_restore 29
@@ -684,14 +1000,14 @@ _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE18:
+.LFE19:
 	.size	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv, .-_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
 	.align	2
 	.global	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
 	.type	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv, %function
 _ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv:
-.LFB19:
-	.loc 1 134 0
+.LFB20:
+	.loc 1 147 0
 	.cfi_startproc
 	sub	sp, sp, #1120
 	.cfi_def_cfa_offset 1120
@@ -701,148 +1017,54 @@ _ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv:
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x0, [x29, 24]
-	.loc 1 136 0
+	.loc 1 149 0
 	add	x1, x29, 64
 	add	x0, x29, 40
 	mov	w3, 1
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 137 0
+	.loc 1 150 0
 	add	x0, x29, 40
 	mov	x1, 100
 	bl	_ZN13MemoryManager10allocateAsIPcEET_m
 	str	x0, [x29, 1112]
-	.loc 1 138 0
+	.loc 1 151 0
 	ldr	x0, [x29, 1112]
 	sub	x0, x0, #8
 	str	x0, [x29, 1104]
-	.loc 1 139 0
+	.loc 1 152 0
 	ldr	x0, [x29, 1112]
 	add	x0, x0, 100
 	str	x0, [x29, 1096]
-	.loc 1 140 0
+	.loc 1 153 0
 	mov	x1, 100
 	ldr	x0, [x29, 1096]
 	bl	_ZN11MemoryChunk9moveAheadEm
-	.loc 1 143 0
+	.loc 1 156 0
 	add	x0, x29, 40
 	mov	x3, -1
 	mov	x2, 200
 	ldr	x1, [x29, 1112]
 	bl	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	str	x0, [x29, 1088]
-	.loc 1 145 0
+	.loc 1 158 0
 	ldr	x1, [x29, 1088]
 	ldr	x0, [x29, 1112]
 	cmp	x1, x0
-	bne	.L21
-	.loc 1 145 0 is_stmt 0 discriminator 1
+	bne	.L29
+	.loc 1 158 0 is_stmt 0 discriminator 1
 	ldr	x0, [x29, 1104]
 	bl	_ZNK11MemoryChunk7getSizeEv
 	cmp	x0, 200
-	bne	.L21
-	.loc 1 145 0 discriminator 3
+	bne	.L29
+	.loc 1 158 0 discriminator 3
 	mov	w0, 1
-	b	.L22
-.L21:
-	.loc 1 145 0 discriminator 4
+	b	.L30
+.L29:
+	.loc 1 158 0 discriminator 4
 	mov	w0, 0
-.L22:
-	.loc 1 146 0 is_stmt 1 discriminator 6
-	ldp	x29, x30, [sp]
-	add	sp, sp, 1120
-	.cfi_restore 29
-	.cfi_restore 30
-	.cfi_def_cfa 31, 0
-	ret
-	.cfi_endproc
-.LFE19:
-	.size	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv, .-_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
-	.align	2
-	.global	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
-	.type	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv, %function
-_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
-.LFB20:
-	.loc 1 149 0
-	.cfi_startproc
-	sub	sp, sp, #1120
-	.cfi_def_cfa_offset 1120
-	stp	x29, x30, [sp]
-	.cfi_offset 29, -1120
-	.cfi_offset 30, -1112
-	add	x29, sp, 0
-	.cfi_def_cfa_register 29
-	str	x0, [x29, 24]
-	.loc 1 151 0
-	add	x1, x29, 64
-	add	x0, x29, 40
-	mov	w3, 1
-	mov	x2, 1024
-	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 152 0
-	add	x0, x29, 40
-	mov	x1, 100
-	bl	_ZN13MemoryManager10allocateAsIPcEET_m
-	str	x0, [x29, 1112]
-	.loc 1 153 0
-	ldr	x0, [x29, 1112]
-	sub	x0, x0, #8
-	str	x0, [x29, 1104]
-	.loc 1 154 0
-	add	x0, x29, 40
-	mov	x1, 100
-	bl	_ZN13MemoryManager10allocateAsIPcEET_m
-	str	x0, [x29, 1096]
-	.loc 1 157 0
-	ldr	x0, [x29, 1112]
-	mov	w1, 65
-	strb	w1, [x0]
-	.loc 1 158 0
-	ldr	x0, [x29, 1112]
-	add	x0, x0, 1
-	mov	w1, 98
-	strb	w1, [x0]
-	.loc 1 160 0
-	add	x0, x29, 40
-	mov	x3, -1
-	mov	x2, 150
-	ldr	x1, [x29, 1112]
-	bl	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
-	str	x0, [x29, 1088]
-	.loc 1 161 0
-	ldr	x0, [x29, 1104]
-	bl	_ZNK11MemoryChunk11isAllocatedEv
-	and	w0, w0, 255
-	eor	w0, w0, 1
-	and	w0, w0, 255
-	cmp	w0, 0
-	beq	.L25
-	.loc 1 161 0 is_stmt 0 discriminator 1
-	ldr	x0, [x29, 1088]
-	sub	x0, x0, #8
-	bl	_ZNK11MemoryChunk11isAllocatedEv
-	and	w0, w0, 255
-	cmp	w0, 0
-	beq	.L25
-	.loc 1 161 0 discriminator 3
-	ldr	x0, [x29, 1088]
-	ldrsb	w0, [x0]
-	cmp	w0, 65
-	bne	.L25
-	.loc 1 161 0 discriminator 5
-	ldr	x0, [x29, 1088]
-	add	x0, x0, 1
-	ldrsb	w0, [x0]
-	cmp	w0, 98
-	bne	.L25
-	.loc 1 161 0 discriminator 7
-	mov	w0, 1
-	b	.L26
-.L25:
-	.loc 1 161 0 discriminator 8
-	mov	w0, 0
-.L26:
-	.loc 1 164 0 is_stmt 1 discriminator 10
+.L30:
+	.loc 1 159 0 is_stmt 1 discriminator 6
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1120
 	.cfi_restore 29
@@ -851,13 +1073,107 @@ _ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
 	ret
 	.cfi_endproc
 .LFE20:
+	.size	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv, .-_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
+	.align	2
+	.global	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
+	.type	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv, %function
+_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
+.LFB21:
+	.loc 1 162 0
+	.cfi_startproc
+	sub	sp, sp, #1120
+	.cfi_def_cfa_offset 1120
+	stp	x29, x30, [sp]
+	.cfi_offset 29, -1120
+	.cfi_offset 30, -1112
+	add	x29, sp, 0
+	.cfi_def_cfa_register 29
+	str	x0, [x29, 24]
+	.loc 1 164 0
+	add	x1, x29, 64
+	add	x0, x29, 40
+	mov	w3, 1
+	mov	x2, 1024
+	bl	_ZN13MemoryManagerC1EPvmb
+	.loc 1 165 0
+	add	x0, x29, 40
+	mov	x1, 100
+	bl	_ZN13MemoryManager10allocateAsIPcEET_m
+	str	x0, [x29, 1112]
+	.loc 1 166 0
+	ldr	x0, [x29, 1112]
+	sub	x0, x0, #8
+	str	x0, [x29, 1104]
+	.loc 1 167 0
+	add	x0, x29, 40
+	mov	x1, 100
+	bl	_ZN13MemoryManager10allocateAsIPcEET_m
+	str	x0, [x29, 1096]
+	.loc 1 170 0
+	ldr	x0, [x29, 1112]
+	mov	w1, 65
+	strb	w1, [x0]
+	.loc 1 171 0
+	ldr	x0, [x29, 1112]
+	add	x0, x0, 1
+	mov	w1, 98
+	strb	w1, [x0]
+	.loc 1 173 0
+	add	x0, x29, 40
+	mov	x3, -1
+	mov	x2, 150
+	ldr	x1, [x29, 1112]
+	bl	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
+	str	x0, [x29, 1088]
+	.loc 1 174 0
+	ldr	x0, [x29, 1104]
+	bl	_ZNK11MemoryChunk11isAllocatedEv
+	and	w0, w0, 255
+	eor	w0, w0, 1
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L33
+	.loc 1 174 0 is_stmt 0 discriminator 1
+	ldr	x0, [x29, 1088]
+	sub	x0, x0, #8
+	bl	_ZNK11MemoryChunk11isAllocatedEv
+	and	w0, w0, 255
+	cmp	w0, 0
+	beq	.L33
+	.loc 1 174 0 discriminator 3
+	ldr	x0, [x29, 1088]
+	ldrsb	w0, [x0]
+	cmp	w0, 65
+	bne	.L33
+	.loc 1 174 0 discriminator 5
+	ldr	x0, [x29, 1088]
+	add	x0, x0, 1
+	ldrsb	w0, [x0]
+	cmp	w0, 98
+	bne	.L33
+	.loc 1 174 0 discriminator 7
+	mov	w0, 1
+	b	.L34
+.L33:
+	.loc 1 174 0 discriminator 8
+	mov	w0, 0
+.L34:
+	.loc 1 177 0 is_stmt 1 discriminator 10
+	ldp	x29, x30, [sp]
+	add	sp, sp, 1120
+	.cfi_restore 29
+	.cfi_restore 30
+	.cfi_def_cfa 31, 0
+	ret
+	.cfi_endproc
+.LFE21:
 	.size	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv, .-_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
 	.align	2
 	.global	_ZN17TestMemoryManager18nextChunkCorrectlyEv
 	.type	_ZN17TestMemoryManager18nextChunkCorrectlyEv, %function
 _ZN17TestMemoryManager18nextChunkCorrectlyEv:
-.LFB21:
-	.loc 1 168 0
+.LFB22:
+	.loc 1 181 0
 	.cfi_startproc
 	sub	sp, sp, #1088
 	.cfi_def_cfa_offset 1088
@@ -867,36 +1183,36 @@ _ZN17TestMemoryManager18nextChunkCorrectlyEv:
 	add	x29, sp, 0
 	.cfi_def_cfa_register 29
 	str	x0, [x29, 24]
-	.loc 1 170 0
+	.loc 1 183 0
 	add	x1, x29, 56
 	add	x0, x29, 32
 	mov	w3, 1
 	mov	x2, 1024
 	bl	_ZN13MemoryManagerC1EPvmb
-	.loc 1 171 0
+	.loc 1 184 0
 	add	x0, x29, 56
 	str	x0, [x29, 1080]
-	.loc 1 172 0
+	.loc 1 185 0
 	ldr	x0, [x29, 1080]
 	bl	_ZN11MemoryChunk7getNextEv
 	bl	_ZNK11MemoryChunk5isEndEv
 	and	w0, w0, 255
 	cmp	w0, 0
-	beq	.L29
-	.loc 1 172 0 is_stmt 0 discriminator 1
+	beq	.L37
+	.loc 1 185 0 is_stmt 0 discriminator 1
 	ldr	x0, [x29, 1080]
 	bl	_ZN11MemoryChunk7getNextEv
 	bl	_ZN11MemoryChunk7getNextEv
 	cmp	x0, 0
-	bne	.L29
-	.loc 1 172 0 discriminator 3
+	bne	.L37
+	.loc 1 185 0 discriminator 3
 	mov	w0, 1
-	b	.L30
-.L29:
-	.loc 1 172 0 discriminator 4
+	b	.L38
+.L37:
+	.loc 1 185 0 discriminator 4
 	mov	w0, 0
-.L30:
-	.loc 1 173 0 is_stmt 1 discriminator 6
+.L38:
+	.loc 1 186 0 is_stmt 1 discriminator 6
 	ldp	x29, x30, [sp]
 	add	sp, sp, 1088
 	.cfi_restore 29
@@ -904,14 +1220,14 @@ _ZN17TestMemoryManager18nextChunkCorrectlyEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE21:
+.LFE22:
 	.size	_ZN17TestMemoryManager18nextChunkCorrectlyEv, .-_ZN17TestMemoryManager18nextChunkCorrectlyEv
 	.section	.text._ZN13MemoryManager10allocateAsIPcEET_m,"axG",@progbits,_ZN13MemoryManager10allocateAsIPcEET_m,comdat
 	.align	2
 	.weak	_ZN13MemoryManager10allocateAsIPcEET_m
 	.type	_ZN13MemoryManager10allocateAsIPcEET_m, %function
 _ZN13MemoryManager10allocateAsIPcEET_m:
-.LFB22:
+.LFB23:
 	.file 2 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h"
 	.loc 2 15 0
 	.cfi_startproc
@@ -934,14 +1250,14 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE22:
+.LFE23:
 	.size	_ZN13MemoryManager10allocateAsIPcEET_m, .-_ZN13MemoryManager10allocateAsIPcEET_m
 	.section	.text._ZN16IntegerFormatterILi16EEC2Em,"axG",@progbits,_ZN16IntegerFormatterILi16EEC5Em,comdat
 	.align	2
 	.weak	_ZN16IntegerFormatterILi16EEC2Em
 	.type	_ZN16IntegerFormatterILi16EEC2Em, %function
 _ZN16IntegerFormatterILi16EEC2Em:
-.LFB24:
+.LFB25:
 	.file 3 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/IntegerFormatter.h"
 	.loc 3 16 0
 	.cfi_startproc
@@ -960,7 +1276,7 @@ _ZN16IntegerFormatterILi16EEC2Em:
 	.cfi_def_cfa_offset 0
 	ret
 	.cfi_endproc
-.LFE24:
+.LFE25:
 	.size	_ZN16IntegerFormatterILi16EEC2Em, .-_ZN16IntegerFormatterILi16EEC2Em
 	.weak	_ZN16IntegerFormatterILi16EEC1Em
 	.set	_ZN16IntegerFormatterILi16EEC1Em,_ZN16IntegerFormatterILi16EEC2Em
@@ -969,7 +1285,7 @@ _ZN16IntegerFormatterILi16EEC2Em:
 	.weak	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	.type	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE, %function
 _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
-.LFB26:
+.LFB27:
 	.loc 3 31 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -32]!
@@ -995,14 +1311,14 @@ _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE26:
+.LFE27:
 	.size	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE, .-_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 	.section	.text._ZN13MemoryManager12reallocateAsIPcEET_Pvmm,"axG",@progbits,_ZN13MemoryManager12reallocateAsIPcEET_Pvmm,comdat
 	.align	2
 	.weak	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	.type	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm, %function
 _ZN13MemoryManager12reallocateAsIPcEET_Pvmm:
-.LFB27:
+.LFB28:
 	.loc 2 26 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -48]!
@@ -1028,14 +1344,14 @@ _ZN13MemoryManager12reallocateAsIPcEET_Pvmm:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE27:
+.LFE28:
 	.size	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm, .-_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	.section	.text._ZNK16IntegerFormatterILi16EE6formatEv,"axG",@progbits,_ZNK16IntegerFormatterILi16EE6formatEv,comdat
 	.align	2
 	.weak	_ZNK16IntegerFormatterILi16EE6formatEv
 	.type	_ZNK16IntegerFormatterILi16EE6formatEv, %function
 _ZNK16IntegerFormatterILi16EE6formatEv:
-.LFB28:
+.LFB29:
 	.loc 3 24 0
 	.cfi_startproc
 	stp	x29, x30, [sp, -32]!
@@ -1065,7 +1381,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.cfi_def_cfa 31, 0
 	ret
 	.cfi_endproc
-.LFE28:
+.LFE29:
 	.size	_ZNK16IntegerFormatterILi16EE6formatEv, .-_ZNK16IntegerFormatterILi16EE6formatEv
 	.text
 .Letext0:
@@ -1084,15 +1400,15 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.file 16 "<built-in>"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x13be
+	.4byte	0x13f3
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF1008
-	.byte	0x4
 	.4byte	.LASF1009
+	.byte	0x4
 	.4byte	.LASF1010
+	.4byte	.LASF1011
 	.4byte	.Ldebug_ranges0+0
 	.8byte	0
 	.4byte	.Ldebug_line0
@@ -1103,7 +1419,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.4byte	0x112
 	.uleb128 0x3
-	.4byte	.LASF817
+	.4byte	.LASF818
 	.byte	0x6
 	.byte	0xfd
 	.uleb128 0x4
@@ -1228,12 +1544,12 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x2d9
 	.byte	0
 	.uleb128 0x6
-	.4byte	.LASF816
+	.4byte	.LASF817
 	.byte	0x6
 	.byte	0xff
 	.4byte	0x12e
 	.uleb128 0x7
-	.4byte	.LASF817
+	.4byte	.LASF818
 	.byte	0x6
 	.2byte	0x101
 	.uleb128 0x8
@@ -1244,9 +1560,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF818
+	.4byte	.LASF819
 	.uleb128 0xa
-	.4byte	.LASF824
+	.4byte	.LASF825
 	.byte	0x7
 	.byte	0xd8
 	.4byte	0x145
@@ -1255,23 +1571,23 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF819
+	.4byte	.LASF820
 	.uleb128 0xc
 	.byte	0x20
 	.byte	0x10
 	.byte	0x7
 	.2byte	0x1aa
-	.4byte	.LASF1011
+	.4byte	.LASF1012
 	.4byte	0x177
 	.uleb128 0xd
-	.4byte	.LASF820
+	.4byte	.LASF821
 	.byte	0x7
 	.2byte	0x1ab
 	.4byte	0x177
 	.byte	0x8
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF821
+	.4byte	.LASF822
 	.byte	0x7
 	.2byte	0x1ac
 	.4byte	0x17e
@@ -1281,39 +1597,39 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF822
+	.4byte	.LASF823
 	.uleb128 0x9
 	.byte	0x10
 	.byte	0x4
-	.4byte	.LASF823
+	.4byte	.LASF824
 	.uleb128 0xe
-	.4byte	.LASF1012
+	.4byte	.LASF1013
 	.byte	0x7
 	.2byte	0x1b5
 	.4byte	0x14c
 	.byte	0x10
 	.uleb128 0xf
-	.4byte	.LASF1013
+	.4byte	.LASF1014
 	.uleb128 0xa
-	.4byte	.LASF825
+	.4byte	.LASF826
 	.byte	0x8
 	.byte	0x22
 	.4byte	0x1a2
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF826
-	.uleb128 0xa
 	.4byte	.LASF827
+	.uleb128 0xa
+	.4byte	.LASF828
 	.byte	0x8
 	.byte	0x25
 	.4byte	0x1b4
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF828
-	.uleb128 0xa
 	.4byte	.LASF829
+	.uleb128 0xa
+	.4byte	.LASF830
 	.byte	0x8
 	.byte	0x28
 	.4byte	0x1c6
@@ -1324,139 +1640,139 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0xb
 	.4byte	0x1c6
 	.uleb128 0xa
-	.4byte	.LASF830
+	.4byte	.LASF831
 	.byte	0x8
 	.byte	0x2b
 	.4byte	0x12e
 	.uleb128 0xa
-	.4byte	.LASF831
+	.4byte	.LASF832
 	.byte	0x8
 	.byte	0x2e
 	.4byte	0x1e8
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF832
-	.uleb128 0xa
 	.4byte	.LASF833
+	.uleb128 0xa
+	.4byte	.LASF834
 	.byte	0x8
 	.byte	0x31
 	.4byte	0x1fa
 	.uleb128 0x9
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF834
-	.uleb128 0xa
 	.4byte	.LASF835
+	.uleb128 0xa
+	.4byte	.LASF836
 	.byte	0x8
 	.byte	0x34
 	.4byte	0x20c
 	.uleb128 0x9
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF836
-	.uleb128 0xa
 	.4byte	.LASF837
+	.uleb128 0xa
+	.4byte	.LASF838
 	.byte	0x8
 	.byte	0x37
 	.4byte	0x145
 	.uleb128 0xa
-	.4byte	.LASF838
+	.4byte	.LASF839
 	.byte	0x8
 	.byte	0x3c
 	.4byte	0x1a2
 	.uleb128 0xa
-	.4byte	.LASF839
+	.4byte	.LASF840
 	.byte	0x8
 	.byte	0x3d
 	.4byte	0x1b4
 	.uleb128 0xa
-	.4byte	.LASF840
+	.4byte	.LASF841
 	.byte	0x8
 	.byte	0x3e
 	.4byte	0x1c6
 	.uleb128 0xa
-	.4byte	.LASF841
+	.4byte	.LASF842
 	.byte	0x8
 	.byte	0x3f
 	.4byte	0x12e
 	.uleb128 0xa
-	.4byte	.LASF842
+	.4byte	.LASF843
 	.byte	0x8
 	.byte	0x40
 	.4byte	0x1e8
 	.uleb128 0xa
-	.4byte	.LASF843
+	.4byte	.LASF844
 	.byte	0x8
 	.byte	0x41
 	.4byte	0x1fa
 	.uleb128 0xa
-	.4byte	.LASF844
+	.4byte	.LASF845
 	.byte	0x8
 	.byte	0x42
 	.4byte	0x20c
 	.uleb128 0xa
-	.4byte	.LASF845
+	.4byte	.LASF846
 	.byte	0x8
 	.byte	0x43
 	.4byte	0x145
 	.uleb128 0xa
-	.4byte	.LASF846
+	.4byte	.LASF847
 	.byte	0x8
 	.byte	0x47
 	.4byte	0x1c6
 	.uleb128 0xa
-	.4byte	.LASF847
+	.4byte	.LASF848
 	.byte	0x8
 	.byte	0x48
 	.4byte	0x1c6
 	.uleb128 0xa
-	.4byte	.LASF848
+	.4byte	.LASF849
 	.byte	0x8
 	.byte	0x49
 	.4byte	0x1c6
 	.uleb128 0xa
-	.4byte	.LASF849
+	.4byte	.LASF850
 	.byte	0x8
 	.byte	0x4a
 	.4byte	0x12e
 	.uleb128 0xa
-	.4byte	.LASF850
+	.4byte	.LASF851
 	.byte	0x8
 	.byte	0x4b
 	.4byte	0x20c
 	.uleb128 0xa
-	.4byte	.LASF851
+	.4byte	.LASF852
 	.byte	0x8
 	.byte	0x4c
 	.4byte	0x20c
 	.uleb128 0xa
-	.4byte	.LASF852
+	.4byte	.LASF853
 	.byte	0x8
 	.byte	0x4d
 	.4byte	0x20c
 	.uleb128 0xa
-	.4byte	.LASF853
+	.4byte	.LASF854
 	.byte	0x8
 	.byte	0x4e
 	.4byte	0x145
 	.uleb128 0xa
-	.4byte	.LASF854
+	.4byte	.LASF855
 	.byte	0x8
 	.byte	0x53
 	.4byte	0x12e
 	.uleb128 0xa
-	.4byte	.LASF855
+	.4byte	.LASF856
 	.byte	0x8
 	.byte	0x56
 	.4byte	0x145
 	.uleb128 0xa
-	.4byte	.LASF856
+	.4byte	.LASF857
 	.byte	0x8
 	.byte	0x5b
 	.4byte	0x12e
 	.uleb128 0xa
-	.4byte	.LASF857
+	.4byte	.LASF858
 	.byte	0x8
 	.byte	0x5c
 	.4byte	0x145
@@ -1472,16 +1788,16 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF858
+	.4byte	.LASF859
 	.uleb128 0xb
 	.4byte	0x30f
 	.uleb128 0x13
-	.4byte	.LASF859
+	.4byte	.LASF860
 	.byte	0x9
 	.byte	0x16
 	.4byte	0x30a
 	.uleb128 0x14
-	.4byte	.LASF860
+	.4byte	.LASF861
 	.byte	0x9
 	.byte	0x1a
 	.4byte	0x1cd
@@ -1518,12 +1834,12 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x16
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF861
+	.4byte	.LASF862
 	.byte	0xa
 	.byte	0x16
 	.4byte	0x37a
 	.uleb128 0x17
-	.4byte	.LASF872
+	.4byte	.LASF873
 	.byte	0x8
 	.byte	0xb
 	.byte	0x16
@@ -1537,23 +1853,23 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x1
 	.4byte	0x3c9
 	.uleb128 0x19
-	.4byte	.LASF862
-	.byte	0x6
-	.uleb128 0x19
 	.4byte	.LASF863
-	.byte	0x1
+	.byte	0x6
 	.uleb128 0x19
 	.4byte	.LASF864
 	.byte	0x1
 	.uleb128 0x19
 	.4byte	.LASF865
-	.byte	0x26
+	.byte	0x1
 	.uleb128 0x19
 	.4byte	.LASF866
+	.byte	0x26
+	.uleb128 0x19
+	.4byte	.LASF867
 	.byte	0x12
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF867
+	.4byte	.LASF868
 	.byte	0xb
 	.byte	0x42
 	.4byte	0x213
@@ -1562,7 +1878,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x3a
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF868
+	.4byte	.LASF869
 	.byte	0xb
 	.byte	0x43
 	.4byte	0x213
@@ -1571,7 +1887,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x39
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF869
+	.4byte	.LASF870
 	.byte	0xb
 	.byte	0x44
 	.4byte	0x213
@@ -1580,7 +1896,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x38
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF870
+	.4byte	.LASF871
 	.byte	0xb
 	.byte	0x45
 	.4byte	0x213
@@ -1589,7 +1905,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x12
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF871
+	.4byte	.LASF872
 	.byte	0xb
 	.byte	0x46
 	.4byte	0x213
@@ -1598,10 +1914,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF872
+	.4byte	.LASF873
 	.byte	0xb
 	.byte	0x1b
-	.4byte	.LASF874
+	.4byte	.LASF875
 	.byte	0x1
 	.4byte	0x428
 	.4byte	0x447
@@ -1619,10 +1935,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF876
+	.4byte	.LASF877
 	.byte	0xb
 	.byte	0x1c
-	.4byte	.LASF878
+	.4byte	.LASF879
 	.4byte	0x6bc
 	.byte	0x1
 	.4byte	0x45f
@@ -1631,10 +1947,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF873
+	.4byte	.LASF874
 	.byte	0xb
 	.byte	0x1d
-	.4byte	.LASF875
+	.4byte	.LASF876
 	.byte	0x1
 	.4byte	0x479
 	.4byte	0x484
@@ -1644,10 +1960,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6bc
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF877
+	.4byte	.LASF878
 	.byte	0xb
 	.byte	0x1e
-	.4byte	.LASF879
+	.4byte	.LASF880
 	.4byte	0x6bc
 	.byte	0x1
 	.4byte	0x49c
@@ -1656,10 +1972,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF880
+	.4byte	.LASF881
 	.byte	0xb
 	.byte	0x1f
-	.4byte	.LASF881
+	.4byte	.LASF882
 	.byte	0x1
 	.4byte	0x4b6
 	.4byte	0x4c1
@@ -1669,10 +1985,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6bc
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF882
+	.4byte	.LASF883
 	.byte	0xb
 	.byte	0x20
-	.4byte	.LASF883
+	.4byte	.LASF884
 	.4byte	0x6c3
 	.byte	0x1
 	.4byte	0x4d9
@@ -1681,10 +1997,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF882
+	.4byte	.LASF883
 	.byte	0xb
 	.byte	0x21
-	.4byte	.LASF884
+	.4byte	.LASF885
 	.4byte	0x6b6
 	.byte	0x1
 	.4byte	0x4f7
@@ -1693,10 +2009,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6b6
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF885
+	.4byte	.LASF886
 	.byte	0xb
 	.byte	0x22
-	.4byte	.LASF886
+	.4byte	.LASF887
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x515
@@ -1705,10 +2021,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF887
+	.4byte	.LASF888
 	.byte	0xb
 	.byte	0x23
-	.4byte	.LASF888
+	.4byte	.LASF889
 	.byte	0x1
 	.4byte	0x52f
 	.4byte	0x53a
@@ -1718,10 +2034,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF889
+	.4byte	.LASF890
 	.byte	0xb
 	.byte	0x24
-	.4byte	.LASF890
+	.4byte	.LASF891
 	.4byte	0x6c9
 	.byte	0x1
 	.4byte	0x552
@@ -1730,10 +2046,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6b6
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF889
+	.4byte	.LASF890
 	.byte	0xb
 	.byte	0x25
-	.4byte	.LASF891
+	.4byte	.LASF892
 	.4byte	0x6cb
 	.byte	0x1
 	.4byte	0x570
@@ -1742,10 +2058,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF892
+	.4byte	.LASF893
 	.byte	0xb
 	.byte	0x26
-	.4byte	.LASF893
+	.4byte	.LASF894
 	.4byte	0x6c9
 	.byte	0x1
 	.4byte	0x58e
@@ -1754,10 +2070,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6b6
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF892
+	.4byte	.LASF893
 	.byte	0xb
 	.byte	0x27
-	.4byte	.LASF894
+	.4byte	.LASF895
 	.4byte	0x6cb
 	.byte	0x1
 	.4byte	0x5ac
@@ -1766,10 +2082,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF895
+	.4byte	.LASF896
 	.byte	0xb
 	.byte	0x28
-	.4byte	.LASF896
+	.4byte	.LASF897
 	.4byte	0x213
 	.byte	0x1
 	.4byte	0x5ca
@@ -1778,10 +2094,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF897
+	.4byte	.LASF898
 	.byte	0xb
 	.byte	0x29
-	.4byte	.LASF898
+	.4byte	.LASF899
 	.byte	0x1
 	.4byte	0x5e4
 	.4byte	0x5ef
@@ -1791,10 +2107,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x213
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF899
+	.4byte	.LASF900
 	.byte	0xb
 	.byte	0x2a
-	.4byte	.LASF900
+	.4byte	.LASF901
 	.4byte	0x213
 	.byte	0x1
 	.4byte	0x607
@@ -1803,10 +2119,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c3
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF901
+	.4byte	.LASF902
 	.byte	0xb
 	.byte	0x2b
-	.4byte	.LASF902
+	.4byte	.LASF903
 	.byte	0x1
 	.4byte	0x621
 	.4byte	0x62c
@@ -1816,10 +2132,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x213
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF903
+	.4byte	.LASF904
 	.byte	0xb
 	.byte	0x36
-	.4byte	.LASF904
+	.4byte	.LASF905
 	.4byte	0x6b6
 	.byte	0x1
 	.4byte	0x644
@@ -1830,10 +2146,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF905
+	.4byte	.LASF906
 	.byte	0xb
 	.byte	0x38
-	.4byte	.LASF906
+	.4byte	.LASF907
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x667
@@ -1846,10 +2162,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF907
+	.4byte	.LASF908
 	.byte	0xb
 	.byte	0x3a
-	.4byte	.LASF908
+	.4byte	.LASF909
 	.4byte	0x6bc
 	.byte	0x1
 	.4byte	0x68f
@@ -1860,10 +2176,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1f
-	.4byte	.LASF1014
+	.4byte	.LASF1015
 	.byte	0xb
 	.byte	0x3e
-	.4byte	.LASF1015
+	.4byte	.LASF1016
 	.byte	0x1
 	.4byte	0x6aa
 	.uleb128 0x1c
@@ -1878,7 +2194,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF909
+	.4byte	.LASF910
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0x6b1
@@ -1889,34 +2205,34 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6d1
 	.uleb128 0x22
 	.uleb128 0x17
-	.4byte	.LASF910
+	.4byte	.LASF911
 	.byte	0x18
 	.byte	0xc
 	.byte	0x19
 	.4byte	0x8cd
 	.uleb128 0x23
-	.4byte	.LASF911
+	.4byte	.LASF912
 	.byte	0xc
 	.byte	0x54
 	.4byte	0x6b6
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF912
+	.4byte	.LASF913
 	.byte	0xc
 	.byte	0x55
 	.4byte	0x8d2
 	.byte	0x8
 	.uleb128 0x23
-	.4byte	.LASF870
+	.4byte	.LASF871
 	.byte	0xc
 	.byte	0x56
 	.4byte	0x140
 	.byte	0x10
 	.uleb128 0x24
-	.4byte	.LASF910
+	.4byte	.LASF911
 	.byte	0xc
 	.byte	0x1c
-	.4byte	.LASF913
+	.4byte	.LASF914
 	.byte	0x1
 	.4byte	0x716
 	.4byte	0x71c
@@ -1924,10 +2240,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x8d8
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF910
+	.4byte	.LASF911
 	.byte	0xc
 	.byte	0x20
-	.4byte	.LASF914
+	.4byte	.LASF915
 	.byte	0x1
 	.4byte	0x730
 	.4byte	0x745
@@ -1941,10 +2257,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6bc
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF915
+	.4byte	.LASF916
 	.byte	0xc
 	.byte	0x23
-	.4byte	.LASF916
+	.4byte	.LASF917
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x75d
@@ -1955,10 +2271,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF917
+	.4byte	.LASF918
 	.byte	0xc
 	.byte	0x26
-	.4byte	.LASF918
+	.4byte	.LASF919
 	.4byte	0x6c9
 	.byte	0x1
 	.4byte	0x780
@@ -1969,10 +2285,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF917
+	.4byte	.LASF918
 	.byte	0xc
 	.byte	0x29
-	.4byte	.LASF919
+	.4byte	.LASF920
 	.4byte	0x6c9
 	.byte	0x1
 	.4byte	0x7a3
@@ -1985,10 +2301,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF920
+	.4byte	.LASF921
 	.byte	0xc
 	.byte	0x37
-	.4byte	.LASF921
+	.4byte	.LASF922
 	.4byte	0x6bc
 	.byte	0x1
 	.4byte	0x7cb
@@ -2001,10 +2317,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF922
+	.4byte	.LASF923
 	.byte	0xc
 	.byte	0x38
-	.4byte	.LASF923
+	.4byte	.LASF924
 	.4byte	0x6bc
 	.byte	0x1
 	.4byte	0x7f3
@@ -2017,10 +2333,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF924
+	.4byte	.LASF925
 	.byte	0xc
 	.byte	0x41
-	.4byte	.LASF925
+	.4byte	.LASF926
 	.4byte	0x6c9
 	.byte	0x1
 	.4byte	0x81b
@@ -2035,10 +2351,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF926
+	.4byte	.LASF927
 	.byte	0xc
 	.byte	0x4a
-	.4byte	.LASF927
+	.4byte	.LASF928
 	.byte	0x1
 	.4byte	0x844
 	.4byte	0x84f
@@ -2048,10 +2364,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c9
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF928
+	.4byte	.LASF929
 	.byte	0xc
 	.byte	0x50
-	.4byte	.LASF929
+	.4byte	.LASF930
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x867
@@ -2062,17 +2378,17 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6c9
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF930
+	.4byte	.LASF931
 	.byte	0x2
 	.byte	0x1a
-	.4byte	.LASF931
-	.4byte	0xd7b
+	.4byte	.LASF932
+	.4byte	0xd87
 	.byte	0x1
 	.4byte	0x891
 	.4byte	0x8a6
 	.uleb128 0x25
 	.string	"T"
-	.4byte	0xd7b
+	.4byte	0xd87
 	.uleb128 0x1c
 	.4byte	0x8d8
 	.uleb128 0x1d
@@ -2083,16 +2399,16 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x26
-	.4byte	.LASF932
+	.4byte	.LASF933
 	.byte	0x2
 	.byte	0xf
-	.4byte	.LASF933
-	.4byte	0xd7b
+	.4byte	.LASF934
+	.4byte	0xd87
 	.byte	0x1
 	.4byte	0x8c1
 	.uleb128 0x25
 	.string	"T"
-	.4byte	0xd7b
+	.4byte	0xd87
 	.uleb128 0x1c
 	.4byte	0x8d8
 	.uleb128 0x1d
@@ -2113,21 +2429,21 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x8
 	.4byte	0x8cd
 	.uleb128 0x13
-	.4byte	.LASF934
+	.4byte	.LASF935
 	.byte	0xc
 	.byte	0x5b
 	.4byte	0x6d2
 	.uleb128 0x17
-	.4byte	.LASF935
+	.4byte	.LASF936
 	.byte	0x1
 	.byte	0xd
 	.byte	0xd
 	.4byte	0xb0a
 	.uleb128 0x1e
-	.4byte	.LASF936
+	.4byte	.LASF937
 	.byte	0xd
 	.byte	0xf
-	.4byte	.LASF937
+	.4byte	.LASF938
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x918
@@ -2140,10 +2456,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF936
+	.4byte	.LASF937
 	.byte	0xd
 	.byte	0x10
-	.4byte	.LASF938
+	.4byte	.LASF939
 	.4byte	0x135
 	.byte	0x1
 	.4byte	0x940
@@ -2154,10 +2470,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x8d2
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x11
-	.4byte	.LASF940
+	.4byte	.LASF941
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0x963
@@ -2168,10 +2484,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x30f
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x13
-	.4byte	.LASF941
+	.4byte	.LASF942
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0x986
@@ -2182,10 +2498,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x1dd
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x14
-	.4byte	.LASF942
+	.4byte	.LASF943
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0x9a9
@@ -2196,10 +2512,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x1ef
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x15
-	.4byte	.LASF943
+	.4byte	.LASF944
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0x9cc
@@ -2210,10 +2526,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x201
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x16
-	.4byte	.LASF944
+	.4byte	.LASF945
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0x9ef
@@ -2224,10 +2540,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6bc
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x17
-	.4byte	.LASF945
+	.4byte	.LASF946
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xa12
@@ -2238,10 +2554,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x1b4
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x18
-	.4byte	.LASF946
+	.4byte	.LASF947
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xa35
@@ -2252,10 +2568,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x1c6
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x19
-	.4byte	.LASF947
+	.4byte	.LASF948
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xa58
@@ -2266,10 +2582,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0xb16
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x1a
-	.4byte	.LASF948
+	.4byte	.LASF949
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xa7b
@@ -2280,10 +2596,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x8d2
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x1b
-	.4byte	.LASF949
+	.4byte	.LASF950
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xa9e
@@ -2294,10 +2610,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x1c
-	.4byte	.LASF950
+	.4byte	.LASF951
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xac1
@@ -2308,10 +2624,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x6cb
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF939
+	.4byte	.LASF940
 	.byte	0xd
 	.byte	0x1d
-	.4byte	.LASF951
+	.4byte	.LASF952
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xae4
@@ -2322,10 +2638,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0xb1d
 	.byte	0
 	.uleb128 0x26
-	.4byte	.LASF952
+	.4byte	.LASF953
 	.byte	0xd
 	.byte	0x1e
-	.4byte	.LASF953
+	.4byte	.LASF954
 	.4byte	0xb10
 	.byte	0x1
 	.4byte	0xb03
@@ -2342,7 +2658,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x9
 	.byte	0x8
 	.byte	0x4
-	.4byte	.LASF954
+	.4byte	.LASF955
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0xb24
@@ -2350,12 +2666,12 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0xb
 	.4byte	0xb23
 	.uleb128 0x13
-	.4byte	.LASF955
+	.4byte	.LASF956
 	.byte	0xd
 	.byte	0x22
 	.4byte	0x8f4
 	.uleb128 0x14
-	.4byte	.LASF956
+	.4byte	.LASF957
 	.byte	0xd
 	.byte	0x25
 	.4byte	0x140
@@ -2370,7 +2686,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x40
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF957
+	.4byte	.LASF958
 	.byte	0xd
 	.byte	0x26
 	.4byte	0xb49
@@ -2380,7 +2696,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x1a
 	.4byte	0xb6f
 	.uleb128 0x17
-	.4byte	.LASF958
+	.4byte	.LASF959
 	.byte	0x8
 	.byte	0xe
 	.byte	0x10
@@ -2392,45 +2708,45 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF959
+	.4byte	.LASF960
 	.byte	0x3
 	.byte	0x10
-	.4byte	.LASF960
+	.4byte	.LASF961
 	.byte	0x1
 	.4byte	0xb9b
 	.4byte	0xba6
 	.uleb128 0x1c
-	.4byte	0xd70
+	.4byte	0xd7c
 	.uleb128 0x1d
 	.4byte	0x135
 	.byte	0
 	.uleb128 0x1b
-	.4byte	.LASF959
+	.4byte	.LASF960
 	.byte	0x3
 	.byte	0x14
-	.4byte	.LASF961
+	.4byte	.LASF962
 	.byte	0x1
 	.4byte	0xbba
 	.4byte	0xbc5
 	.uleb128 0x1c
-	.4byte	0xd70
+	.4byte	0xd7c
 	.uleb128 0x1d
 	.4byte	0x6cb
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF962
+	.4byte	.LASF963
 	.byte	0x3
 	.byte	0x18
-	.4byte	.LASF963
-	.4byte	0xd7b
+	.4byte	.LASF964
+	.4byte	0xd87
 	.byte	0x1
 	.4byte	0xbdd
 	.4byte	0xbe3
 	.uleb128 0x1c
-	.4byte	0xd81
+	.4byte	0xd8d
 	.byte	0
 	.uleb128 0x2b
-	.4byte	.LASF992
+	.4byte	.LASF993
 	.4byte	0x1c6
 	.byte	0x4
 	.byte	0x10
@@ -2441,165 +2757,171 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0xb
 	.4byte	0xb6f
 	.uleb128 0x17
-	.4byte	.LASF964
+	.4byte	.LASF965
 	.byte	0x1
 	.byte	0xf
 	.byte	0xd
-	.4byte	0xd65
+	.4byte	0xd71
 	.uleb128 0x2c
-	.4byte	.LASF964
+	.4byte	.LASF965
 	.byte	0xf
 	.byte	0x11
-	.4byte	.LASF965
+	.4byte	.LASF966
 	.byte	0x1
 	.byte	0x1
 	.4byte	0xc18
 	.4byte	0xc1e
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
-	.uleb128 0x1e
-	.4byte	.LASF966
+	.uleb128 0x2d
+	.string	"run"
 	.byte	0xf
 	.byte	0x12
-	.4byte	.LASF967
-	.4byte	0x6bc
+	.4byte	.LASF1017
 	.byte	0x1
-	.4byte	0xc36
-	.4byte	0xc3c
-	.uleb128 0x1c
-	.4byte	0xd65
-	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF968
+	.4byte	.LASF967
 	.byte	0xf
 	.byte	0x13
-	.4byte	.LASF969
+	.4byte	.LASF968
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xc54
-	.4byte	0xc5a
+	.4byte	0xc42
+	.4byte	0xc48
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF970
+	.4byte	.LASF969
 	.byte	0xf
 	.byte	0x14
-	.4byte	.LASF971
+	.4byte	.LASF970
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xc72
-	.4byte	0xc78
+	.4byte	0xc60
+	.4byte	0xc66
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF972
+	.4byte	.LASF971
 	.byte	0xf
 	.byte	0x15
-	.4byte	.LASF973
+	.4byte	.LASF972
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xc90
-	.4byte	0xc96
+	.4byte	0xc7e
+	.4byte	0xc84
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF974
+	.4byte	.LASF973
 	.byte	0xf
 	.byte	0x16
-	.4byte	.LASF975
+	.4byte	.LASF974
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xcae
-	.4byte	0xcb4
+	.4byte	0xc9c
+	.4byte	0xca2
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF976
+	.4byte	.LASF975
 	.byte	0xf
 	.byte	0x17
-	.4byte	.LASF977
+	.4byte	.LASF976
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xccc
-	.4byte	0xcd2
+	.4byte	0xcba
+	.4byte	0xcc0
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF978
+	.4byte	.LASF977
 	.byte	0xf
 	.byte	0x18
-	.4byte	.LASF979
+	.4byte	.LASF978
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xcea
-	.4byte	0xcf0
+	.4byte	0xcd8
+	.4byte	0xcde
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF980
+	.4byte	.LASF979
 	.byte	0xf
 	.byte	0x19
-	.4byte	.LASF981
+	.4byte	.LASF980
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xd08
-	.4byte	0xd0e
+	.4byte	0xcf6
+	.4byte	0xcfc
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF982
+	.4byte	.LASF981
 	.byte	0xf
 	.byte	0x1a
-	.4byte	.LASF983
+	.4byte	.LASF982
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xd26
-	.4byte	0xd2c
+	.4byte	0xd14
+	.4byte	0xd1a
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF984
+	.4byte	.LASF983
 	.byte	0xf
 	.byte	0x1b
-	.4byte	.LASF985
+	.4byte	.LASF984
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xd44
-	.4byte	0xd4a
+	.4byte	0xd32
+	.4byte	0xd38
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
 	.byte	0
-	.uleb128 0x26
-	.4byte	.LASF986
+	.uleb128 0x1e
+	.4byte	.LASF985
 	.byte	0xf
 	.byte	0x1c
-	.4byte	.LASF987
+	.4byte	.LASF986
 	.4byte	0x6bc
 	.byte	0x1
-	.4byte	0xd5e
+	.4byte	0xd50
+	.4byte	0xd56
 	.uleb128 0x1c
-	.4byte	0xd65
+	.4byte	0xd71
+	.byte	0
+	.uleb128 0x26
+	.4byte	.LASF987
+	.byte	0xf
+	.byte	0x1d
+	.4byte	.LASF988
+	.4byte	0x6bc
+	.byte	0x1
+	.4byte	0xd6a
+	.uleb128 0x1c
+	.4byte	0xd71
 	.byte	0
 	.byte	0
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0xbf7
 	.uleb128 0xb
-	.4byte	0xd65
+	.4byte	0xd71
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0xb6f
 	.uleb128 0xb
-	.4byte	0xd70
+	.4byte	0xd7c
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0x30f
@@ -2607,59 +2929,59 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x8
 	.4byte	0xbf2
 	.uleb128 0xb
-	.4byte	0xd81
-	.uleb128 0x2d
+	.4byte	0xd8d
+	.uleb128 0x2e
 	.4byte	0xbc5
-	.4byte	0xdaf
-	.8byte	.LFB28
-	.8byte	.LFE28-.LFB28
+	.4byte	0xdbb
+	.8byte	.LFB29
+	.8byte	.LFE29-.LFB29
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xdaf
-	.4byte	0xdbc
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd87
+	.4byte	0xdbb
+	.4byte	0xdc8
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd93
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.4byte	0x872
-	.4byte	0xde6
-	.8byte	.LFB27
-	.8byte	.LFE27-.LFB27
+	.4byte	0xdf2
+	.8byte	.LFB28
+	.8byte	.LFE28-.LFB28
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xde6
-	.4byte	0xe1d
+	.4byte	0xdf2
+	.4byte	0xe29
 	.uleb128 0x25
 	.string	"T"
-	.4byte	0xd7b
-	.uleb128 0x2e
-	.4byte	.LASF988
+	.4byte	0xd87
+	.uleb128 0x2f
+	.4byte	.LASF989
 	.4byte	0x8de
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x2f
-	.4byte	.LASF989
+	.uleb128 0x30
+	.4byte	.LASF990
 	.byte	0x2
 	.byte	0x1a
 	.4byte	0x6c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x2f
-	.4byte	.LASF990
+	.uleb128 0x30
+	.4byte	.LASF991
 	.byte	0x2
 	.byte	0x1a
 	.4byte	0x135
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x2f
-	.4byte	.LASF991
+	.uleb128 0x30
+	.4byte	.LASF992
 	.byte	0x2
 	.byte	0x1a
 	.4byte	0x135
@@ -2667,26 +2989,26 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x91
 	.sleb128 -32
 	.byte	0
-	.uleb128 0x30
-	.4byte	.LASF1016
+	.uleb128 0x31
+	.4byte	.LASF1018
 	.byte	0x3
 	.byte	0x1f
-	.4byte	.LASF1017
+	.4byte	.LASF1019
 	.4byte	0xb10
-	.8byte	.LFB26
-	.8byte	.LFE26-.LFB26
+	.8byte	.LFB27
+	.8byte	.LFE27-.LFB27
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xe6c
+	.4byte	0xe78
 	.uleb128 0x2b
-	.4byte	.LASF992
+	.4byte	.LASF993
 	.4byte	0x1c6
 	.byte	0x4
 	.byte	0x10
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x32
 	.string	"out"
 	.byte	0x3
 	.byte	0x1f
@@ -2694,11 +3016,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x31
+	.uleb128 0x32
 	.string	"hf"
 	.byte	0x3
 	.byte	0x1f
-	.4byte	0xe6c
+	.4byte	0xe78
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -2706,60 +3028,60 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x27
 	.byte	0x8
 	.4byte	0xbf2
-	.uleb128 0x32
+	.uleb128 0x33
 	.4byte	0xb87
 	.byte	0
-	.4byte	0xe80
-	.4byte	0xe95
-	.uleb128 0x33
-	.4byte	.LASF988
-	.4byte	0xd76
+	.4byte	0xe8c
+	.4byte	0xea1
 	.uleb128 0x34
+	.4byte	.LASF989
+	.4byte	0xd82
+	.uleb128 0x35
 	.string	"num"
 	.byte	0x3
 	.byte	0x10
 	.4byte	0x135
 	.byte	0
-	.uleb128 0x35
-	.4byte	0xe72
-	.4byte	.LASF1018
-	.4byte	0xebc
-	.8byte	.LFB24
-	.8byte	.LFE24-.LFB24
+	.uleb128 0x36
+	.4byte	0xe7e
+	.4byte	.LASF1020
+	.4byte	0xec8
+	.8byte	.LFB25
+	.8byte	.LFE25-.LFB25
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xebc
-	.4byte	0xecd
-	.uleb128 0x36
-	.4byte	0xe80
+	.4byte	0xec8
+	.4byte	0xed9
+	.uleb128 0x37
+	.4byte	0xe8c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x36
-	.4byte	0xe89
+	.uleb128 0x37
+	.4byte	0xe95
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.4byte	0x8a6
-	.4byte	0xef7
-	.8byte	.LFB22
-	.8byte	.LFE22-.LFB22
+	.4byte	0xf03
+	.8byte	.LFB23
+	.8byte	.LFE23-.LFB23
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xef7
-	.4byte	0xf10
+	.4byte	0xf03
+	.4byte	0xf1c
 	.uleb128 0x25
 	.string	"T"
-	.4byte	0xd7b
-	.uleb128 0x2e
-	.4byte	.LASF988
+	.4byte	0xd87
+	.uleb128 0x2f
+	.4byte	.LASF989
 	.4byte	0x8de
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x31
+	.uleb128 0x32
 	.string	"n"
 	.byte	0x2
 	.byte	0xf
@@ -2768,43 +3090,43 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0x91
 	.sleb128 -16
 	.byte	0
-	.uleb128 0x37
-	.4byte	0xd4a
+	.uleb128 0x38
+	.4byte	0xd56
 	.byte	0x1
-	.byte	0xa7
-	.4byte	0xf35
-	.8byte	.LFB21
-	.8byte	.LFE21-.LFB21
+	.byte	0xb4
+	.4byte	0xf41
+	.8byte	.LFB22
+	.8byte	.LFE22-.LFB22
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xf35
-	.4byte	0xf6f
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
+	.4byte	0xf41
+	.4byte	0xf7b
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1064
-	.uleb128 0x38
-	.4byte	.LASF912
+	.uleb128 0x39
+	.4byte	.LASF913
 	.byte	0x1
-	.byte	0xa9
-	.4byte	0xf6f
+	.byte	0xb6
+	.4byte	0xf7b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1032
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"man"
 	.byte	0x1
-	.byte	0xaa
+	.byte	0xb7
 	.4byte	0x6d2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1056
-	.uleb128 0x38
-	.4byte	.LASF993
+	.uleb128 0x39
+	.4byte	.LASF994
 	.byte	0x1
-	.byte	0xab
+	.byte	0xb8
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
@@ -2812,483 +3134,484 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x30f
-	.4byte	0xf80
-	.uleb128 0x3a
+	.4byte	0xf8c
+	.uleb128 0x3b
 	.4byte	0x145
 	.2byte	0x3ff
 	.byte	0
-	.uleb128 0x37
-	.4byte	0xd0e
+	.uleb128 0x38
+	.4byte	0xd1a
 	.byte	0x1
-	.byte	0x94
-	.4byte	0xfa5
+	.byte	0xa1
+	.4byte	0xfb1
+	.8byte	.LFB21
+	.8byte	.LFE21-.LFB21
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xfb1
+	.4byte	0x1013
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1096
+	.uleb128 0x39
+	.4byte	.LASF913
+	.byte	0x1
+	.byte	0xa3
+	.4byte	0xf7b
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1056
+	.uleb128 0x3a
+	.string	"man"
+	.byte	0x1
+	.byte	0xa4
+	.4byte	0x6d2
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1080
+	.uleb128 0x3a
+	.string	"p1"
+	.byte	0x1
+	.byte	0xa5
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x39
+	.4byte	.LASF995
+	.byte	0x1
+	.byte	0xa6
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x3a
+	.string	"p2"
+	.byte	0x1
+	.byte	0xa7
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x3a
+	.string	"rp1"
+	.byte	0x1
+	.byte	0xad
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.byte	0
+	.uleb128 0x38
+	.4byte	0xcfc
+	.byte	0x1
+	.byte	0x92
+	.4byte	0x1038
 	.8byte	.LFB20
 	.8byte	.LFE20-.LFB20
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xfa5
-	.4byte	0x1007
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
+	.4byte	0x1038
+	.4byte	0x109b
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1096
-	.uleb128 0x38
-	.4byte	.LASF912
+	.uleb128 0x39
+	.4byte	.LASF913
 	.byte	0x1
-	.byte	0x96
-	.4byte	0xf6f
+	.byte	0x94
+	.4byte	0xf7b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1056
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"man"
 	.byte	0x1
-	.byte	0x97
+	.byte	0x95
 	.4byte	0x6d2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1080
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"p1"
 	.byte	0x1
-	.byte	0x98
-	.4byte	0xd7b
+	.byte	0x96
+	.4byte	0xd87
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF994
+	.uleb128 0x39
+	.4byte	.LASF995
 	.byte	0x1
-	.byte	0x99
+	.byte	0x97
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0x39
-	.string	"p2"
+	.4byte	.LASF996
 	.byte	0x1
-	.byte	0x9a
-	.4byte	0xd7b
+	.byte	0x98
+	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"rp1"
 	.byte	0x1
-	.byte	0xa0
-	.4byte	0xd7b
+	.byte	0x9c
+	.4byte	0xd87
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -32
 	.byte	0
-	.uleb128 0x37
-	.4byte	0xcf0
+	.uleb128 0x38
+	.4byte	0xcde
 	.byte	0x1
-	.byte	0x85
-	.4byte	0x102c
+	.byte	0x87
+	.4byte	0x10c0
 	.8byte	.LFB19
 	.8byte	.LFE19-.LFB19
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x102c
-	.4byte	0x108f
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1096
-	.uleb128 0x38
-	.4byte	.LASF912
-	.byte	0x1
-	.byte	0x87
-	.4byte	0xf6f
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1056
-	.uleb128 0x39
-	.string	"man"
-	.byte	0x1
-	.byte	0x88
-	.4byte	0x6d2
+	.4byte	0x10c0
+	.4byte	0x1115
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1080
 	.uleb128 0x39
-	.string	"p1"
+	.4byte	.LASF913
 	.byte	0x1
 	.byte	0x89
-	.4byte	0xd7b
+	.4byte	0xf7b
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1048
+	.uleb128 0x3a
+	.string	"man"
+	.byte	0x1
+	.byte	0x8a
+	.4byte	0x6d2
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1072
+	.uleb128 0x3a
+	.string	"p1"
+	.byte	0x1
+	.byte	0x8b
+	.4byte	0xd87
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF994
+	.uleb128 0x39
+	.4byte	.LASF995
 	.byte	0x1
-	.byte	0x8a
+	.byte	0x8c
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x38
-	.4byte	.LASF995
-	.byte	0x1
-	.byte	0x8b
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"rp1"
 	.byte	0x1
 	.byte	0x8f
-	.4byte	0xd7b
+	.4byte	0xd87
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -32
+	.sleb128 -24
 	.byte	0
-	.uleb128 0x37
-	.4byte	0xcd2
+	.uleb128 0x38
+	.4byte	0xcc0
 	.byte	0x1
-	.byte	0x7a
-	.4byte	0x10b4
+	.byte	0x78
+	.4byte	0x113a
 	.8byte	.LFB18
 	.8byte	.LFE18-.LFB18
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x10b4
-	.4byte	0x1109
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
+	.4byte	0x113a
+	.4byte	0x118f
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1080
-	.uleb128 0x38
-	.4byte	.LASF912
+	.uleb128 0x39
+	.4byte	.LASF913
+	.byte	0x1
+	.byte	0x7a
+	.4byte	0xf7b
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1048
+	.uleb128 0x3a
+	.string	"man"
+	.byte	0x1
+	.byte	0x7b
+	.4byte	0x6d2
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1072
+	.uleb128 0x3a
+	.string	"p1"
 	.byte	0x1
 	.byte	0x7c
-	.4byte	0xf6f
-	.uleb128 0x3
+	.4byte	0xd87
+	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -1048
+	.sleb128 -8
 	.uleb128 0x39
-	.string	"man"
+	.4byte	.LASF997
 	.byte	0x1
 	.byte	0x7d
-	.4byte	0x6d2
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1072
-	.uleb128 0x39
-	.string	"p1"
-	.byte	0x1
-	.byte	0x7e
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF994
-	.byte	0x1
-	.byte	0x7f
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x39
-	.string	"rp1"
-	.byte	0x1
-	.byte	0x82
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.byte	0
-	.uleb128 0x37
-	.4byte	0xcb4
-	.byte	0x1
-	.byte	0x6b
-	.4byte	0x112e
-	.8byte	.LFB17
-	.8byte	.LFE17-.LFB17
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x112e
-	.4byte	0x1183
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1080
-	.uleb128 0x38
-	.4byte	.LASF912
-	.byte	0x1
-	.byte	0x6d
-	.4byte	0xf6f
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1048
-	.uleb128 0x39
-	.string	"man"
-	.byte	0x1
-	.byte	0x6e
-	.4byte	0x6d2
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1072
-	.uleb128 0x39
-	.string	"p1"
-	.byte	0x1
-	.byte	0x6f
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF996
-	.byte	0x1
-	.byte	0x70
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -16
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"res"
 	.byte	0x1
-	.byte	0x71
+	.byte	0x7e
 	.4byte	0x6bc
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -17
 	.byte	0
-	.uleb128 0x37
-	.4byte	0xc78
+	.uleb128 0x38
+	.4byte	0xc84
 	.byte	0x1
-	.byte	0x4e
-	.4byte	0x11a8
+	.byte	0x5b
+	.4byte	0x11b4
+	.8byte	.LFB17
+	.8byte	.LFE17-.LFB17
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x11b4
+	.4byte	0x123d
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1160
+	.uleb128 0x39
+	.4byte	.LASF913
+	.byte	0x1
+	.byte	0x5d
+	.4byte	0xf7b
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1120
+	.uleb128 0x39
+	.4byte	.LASF994
+	.byte	0x1
+	.byte	0x5f
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x39
+	.4byte	.LASF998
+	.byte	0x1
+	.byte	0x66
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x3a
+	.string	"man"
+	.byte	0x1
+	.byte	0x69
+	.4byte	0x6d2
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1144
+	.uleb128 0x3a
+	.string	"p1"
+	.byte	0x1
+	.byte	0x6b
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x3a
+	.string	"p2"
+	.byte	0x1
+	.byte	0x6c
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x3a
+	.string	"p3"
+	.byte	0x1
+	.byte	0x6d
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -40
+	.uleb128 0x3a
+	.string	"p4"
+	.byte	0x1
+	.byte	0x6e
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.uleb128 0x3a
+	.string	"p5"
+	.byte	0x1
+	.byte	0x6f
+	.4byte	0xd87
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -56
+	.byte	0
+	.uleb128 0x38
+	.4byte	0xc66
+	.byte	0x1
+	.byte	0x46
+	.4byte	0x1262
 	.8byte	.LFB16
 	.8byte	.LFE16-.LFB16
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x11a8
-	.4byte	0x1231
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
+	.4byte	0x1262
+	.4byte	0x12b9
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
-	.sleb128 -1160
-	.uleb128 0x38
-	.4byte	.LASF912
+	.sleb128 -1096
+	.uleb128 0x39
+	.4byte	.LASF913
 	.byte	0x1
-	.byte	0x50
-	.4byte	0xf6f
+	.byte	0x48
+	.4byte	0xf7b
 	.uleb128 0x3
 	.byte	0x91
-	.sleb128 -1120
-	.uleb128 0x38
-	.4byte	.LASF993
+	.sleb128 -1040
+	.uleb128 0x39
+	.4byte	.LASF994
+	.byte	0x1
+	.byte	0x4b
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x39
+	.4byte	.LASF998
 	.byte	0x1
 	.byte	0x52
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF997
-	.byte	0x1
-	.byte	0x59
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"man"
 	.byte	0x1
-	.byte	0x5c
-	.4byte	0x6d2
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1144
-	.uleb128 0x39
-	.string	"p1"
-	.byte	0x1
-	.byte	0x5e
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x39
-	.string	"p2"
-	.byte	0x1
-	.byte	0x5f
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -32
-	.uleb128 0x39
-	.string	"p3"
-	.byte	0x1
-	.byte	0x60
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -40
-	.uleb128 0x39
-	.string	"p4"
-	.byte	0x1
-	.byte	0x61
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -48
-	.uleb128 0x39
-	.string	"p5"
-	.byte	0x1
-	.byte	0x62
-	.4byte	0xd7b
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -56
-	.byte	0
-	.uleb128 0x37
-	.4byte	0xc5a
-	.byte	0x1
-	.byte	0x39
-	.4byte	0x1256
-	.8byte	.LFB15
-	.8byte	.LFE15-.LFB15
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1256
-	.4byte	0x12ad
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1096
-	.uleb128 0x38
-	.4byte	.LASF912
-	.byte	0x1
-	.byte	0x3b
-	.4byte	0xf6f
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1040
-	.uleb128 0x38
-	.4byte	.LASF993
-	.byte	0x1
-	.byte	0x3e
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x38
-	.4byte	.LASF997
-	.byte	0x1
-	.byte	0x45
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -16
-	.uleb128 0x39
-	.string	"man"
-	.byte	0x1
-	.byte	0x48
+	.byte	0x55
 	.4byte	0x6d2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1064
-	.uleb128 0x38
-	.4byte	.LASF998
+	.uleb128 0x39
+	.4byte	.LASF999
 	.byte	0x1
-	.byte	0x49
+	.byte	0x56
 	.4byte	0x6d2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1088
 	.byte	0
-	.uleb128 0x3b
-	.4byte	0xc1e
+	.uleb128 0x38
+	.4byte	0xc2a
 	.byte	0x1
-	.4byte	0x12d1
-	.8byte	.LFB14
-	.8byte	.LFE14-.LFB14
+	.byte	0x1f
+	.4byte	0x12de
+	.8byte	.LFB15
+	.8byte	.LFE15-.LFB15
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x12d1
-	.4byte	0x1395
-	.uleb128 0x2e
-	.4byte	.LASF988
-	.4byte	0xd6b
+	.4byte	0x12de
+	.4byte	0x13a2
+	.uleb128 0x2f
+	.4byte	.LASF989
+	.4byte	0xd77
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1144
-	.uleb128 0x38
-	.4byte	.LASF912
+	.uleb128 0x39
+	.4byte	.LASF913
 	.byte	0x1
-	.byte	0x14
-	.4byte	0xf6f
+	.byte	0x21
+	.4byte	0xf7b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1096
-	.uleb128 0x38
-	.4byte	.LASF999
+	.uleb128 0x39
+	.4byte	.LASF1000
 	.byte	0x1
-	.byte	0x15
-	.4byte	0x1395
+	.byte	0x22
+	.4byte	0x13a2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1128
-	.uleb128 0x38
-	.4byte	.LASF993
+	.uleb128 0x39
+	.4byte	.LASF994
 	.byte	0x1
-	.byte	0x17
+	.byte	0x24
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x38
-	.4byte	.LASF1000
-	.byte	0x1
-	.byte	0x1d
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x38
+	.uleb128 0x39
 	.4byte	.LASF1001
-	.byte	0x1
-	.byte	0x20
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -32
-	.uleb128 0x38
-	.4byte	.LASF1002
-	.byte	0x1
-	.byte	0x23
-	.4byte	0x6b6
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -40
-	.uleb128 0x38
-	.4byte	.LASF1003
 	.byte	0x1
 	.byte	0x2a
 	.4byte	0x6b6
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -48
-	.uleb128 0x38
+	.sleb128 -24
+	.uleb128 0x39
+	.4byte	.LASF1002
+	.byte	0x1
+	.byte	0x2d
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x39
+	.4byte	.LASF1003
+	.byte	0x1
+	.byte	0x30
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -40
+	.uleb128 0x39
 	.4byte	.LASF1004
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x37
+	.4byte	0x6b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.uleb128 0x39
+	.4byte	.LASF1005
+	.byte	0x1
+	.byte	0x3b
 	.4byte	0x135
 	.uleb128 0x3
 	.byte	0x91
@@ -3296,29 +3619,29 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x3c
 	.8byte	.LBB2
 	.8byte	.LBE2-.LBB2
-	.uleb128 0x39
+	.uleb128 0x3a
 	.string	"i"
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x3c
 	.4byte	0x145
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -72
 	.uleb128 0x3d
-	.4byte	.LASF1005
-	.4byte	0x13b5
+	.4byte	.LASF1006
+	.4byte	0x13c2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -56
 	.uleb128 0x3d
-	.4byte	.LASF1006
-	.4byte	0x13bb
+	.4byte	.LASF1007
+	.4byte	0x13c8
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.uleb128 0x3d
-	.4byte	.LASF1007
-	.4byte	0x13bb
+	.4byte	.LASF1008
+	.4byte	0x13c8
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
@@ -3326,24 +3649,41 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x135
-	.4byte	0x13a5
+	.4byte	0x13b2
 	.uleb128 0x12
 	.4byte	0x145
 	.byte	0x3
 	.byte	0
 	.uleb128 0x11
 	.4byte	0x145
-	.4byte	0x13b5
+	.4byte	0x13c2
 	.uleb128 0x12
 	.4byte	0x145
 	.byte	0x3
 	.byte	0
 	.uleb128 0x27
 	.byte	0x8
-	.4byte	0x13a5
+	.4byte	0x13b2
 	.uleb128 0x20
 	.byte	0x8
 	.4byte	0x145
+	.uleb128 0x3e
+	.4byte	0xc1e
+	.byte	0x1
+	.byte	0x10
+	.8byte	.LFB14
+	.8byte	.LFE14-.LFB14
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0x3a
+	.string	"tmm"
+	.byte	0x1
+	.byte	0x13
+	.4byte	0xbf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -3943,6 +4283,25 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.uleb128 0x2d
 	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x6e
+	.uleb128 0xe
+	.uleb128 0x32
+	.uleb128 0xb
+	.uleb128 0x3c
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x2e
+	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
 	.uleb128 0x13
@@ -3962,7 +4321,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -3975,7 +4334,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -3990,7 +4349,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x31
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4017,7 +4376,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x32
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4032,7 +4391,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x32
+	.uleb128 0x33
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4045,7 +4404,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x33
+	.uleb128 0x34
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4056,7 +4415,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x34
+	.uleb128 0x35
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4069,7 +4428,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x35
+	.uleb128 0x36
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -4092,7 +4451,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x36
+	.uleb128 0x37
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -4101,7 +4460,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x37
+	.uleb128 0x38
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4126,7 +4485,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x38
+	.uleb128 0x39
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4141,7 +4500,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x39
+	.uleb128 0x3a
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4156,36 +4515,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x3a
+	.uleb128 0x3b
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2f
 	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x3b
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x47
-	.uleb128 0x13
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x3c
@@ -4210,6 +4546,25 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
+	.uleb128 0x3e
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
+	.uleb128 0x13
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.byte	0
+	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",@progbits
 	.4byte	0x7c
@@ -4221,32 +4576,32 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.2byte	0
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
-	.8byte	.LFB22
-	.8byte	.LFE22-.LFB22
-	.8byte	.LFB24
-	.8byte	.LFE24-.LFB24
-	.8byte	.LFB26
-	.8byte	.LFE26-.LFB26
+	.8byte	.LFB23
+	.8byte	.LFE23-.LFB23
+	.8byte	.LFB25
+	.8byte	.LFE25-.LFB25
 	.8byte	.LFB27
 	.8byte	.LFE27-.LFB27
 	.8byte	.LFB28
 	.8byte	.LFE28-.LFB28
+	.8byte	.LFB29
+	.8byte	.LFE29-.LFB29
 	.8byte	0
 	.8byte	0
 	.section	.debug_ranges,"",@progbits
 .Ldebug_ranges0:
 	.8byte	.Ltext0
 	.8byte	.Letext0
-	.8byte	.LFB22
-	.8byte	.LFE22
-	.8byte	.LFB24
-	.8byte	.LFE24
-	.8byte	.LFB26
-	.8byte	.LFE26
+	.8byte	.LFB23
+	.8byte	.LFE23
+	.8byte	.LFB25
+	.8byte	.LFE25
 	.8byte	.LFB27
 	.8byte	.LFE27
 	.8byte	.LFB28
 	.8byte	.LFE28
+	.8byte	.LFB29
+	.8byte	.LFE29
 	.8byte	0
 	.8byte	0
 	.section	.debug_macro,"",@progbits
@@ -5544,13 +5899,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0xb
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF800
+	.4byte	.LASF801
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0xa
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF801
+	.4byte	.LASF802
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
@@ -5558,7 +5913,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF802
+	.4byte	.LASF803
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0xc
@@ -5578,34 +5933,34 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x16
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF806
+	.4byte	.LASF807
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xc
 	.uleb128 0xe
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF807
+	.4byte	.LASF808
 	.byte	0x3
 	.uleb128 0xc
 	.uleb128 0xd
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF808
+	.4byte	.LASF809
 	.file 23 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0x17
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF809
+	.4byte	.LASF810
 	.file 24 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
 	.byte	0x3
 	.uleb128 0x1b
 	.uleb128 0x18
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF810
+	.4byte	.LASF811
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0x17
@@ -5618,7 +5973,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x3
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF811
+	.4byte	.LASF812
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0xe
@@ -5631,7 +5986,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x19
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF812
+	.4byte	.LASF813
 	.file 26 "d:\\pool\\eclipse-workspace_aarch64\\newspace\\raspios\\include\\io\\printk.h"
 	.byte	0x3
 	.uleb128 0xc
@@ -5645,11 +6000,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0xf
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF815
+	.4byte	.LASF816
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.5b97504b9ce7da9db9704f4f0416a0a4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.4a922712cbeaaf772b737cbe13a2d62a,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -6840,7 +7195,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x102
 	.4byte	.LASF785
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.def.h.11.9164d992df6aeb5d0f792d7be665cc61,comdat
+	.section	.debug_macro,"G",@progbits,wm4.def.h.11.16c29793d9edd3df16b327cc5422ae5c,comdat
 .Ldebug_macro7:
 	.2byte	0x4
 	.byte	0
@@ -6866,23 +7221,26 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.uleb128 0x20
 	.4byte	.LASF793
 	.byte	0x5
-	.uleb128 0x23
+	.uleb128 0x25
 	.4byte	.LASF794
 	.byte	0x5
-	.uleb128 0x24
+	.uleb128 0x26
 	.4byte	.LASF795
 	.byte	0x5
-	.uleb128 0x29
+	.uleb128 0x27
 	.4byte	.LASF796
 	.byte	0x5
-	.uleb128 0x2a
+	.uleb128 0x2e
 	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x2d
+	.uleb128 0x2f
 	.4byte	.LASF798
 	.byte	0x5
-	.uleb128 0x2e
+	.uleb128 0x32
 	.4byte	.LASF799
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF800
 	.byte	0
 	.section	.debug_macro,"G",@progbits,wm4.mem_config.h.4.d09d4df167fc032a09fc7725d6156ba8,comdat
 .Ldebug_macro8:
@@ -6890,13 +7248,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.byte	0x5
 	.uleb128 0x4
-	.4byte	.LASF803
-	.byte	0x5
-	.uleb128 0x10
 	.4byte	.LASF804
 	.byte	0x5
-	.uleb128 0x11
+	.uleb128 0x10
 	.4byte	.LASF805
+	.byte	0x5
+	.uleb128 0x11
+	.4byte	.LASF806
 	.byte	0
 	.section	.debug_macro,"G",@progbits,wm4.test_base.h.14.8f9d7b95abc343d4cc0ce46f1cde119d,comdat
 .Ldebug_macro9:
@@ -6904,10 +7262,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.byte	0
 	.byte	0x5
 	.uleb128 0xe
-	.4byte	.LASF813
+	.4byte	.LASF814
 	.byte	0x5
 	.uleb128 0x1a
-	.4byte	.LASF814
+	.4byte	.LASF815
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
@@ -6916,7 +7274,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__cpp_aggregate_nsdmi 201304"
 .LASF502:
 	.string	"_GLIBCXX_HAVE_ENOTRECOVERABLE 1"
-.LASF825:
+.LASF826:
 	.string	"int8_t"
 .LASF274:
 	.string	"__FLT128_MIN_10_EXP__ (-4931)"
@@ -6928,19 +7286,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2"
 .LASF141:
 	.string	"__UINT32_MAX__ 0xffffffffU"
-.LASF824:
+.LASF825:
 	.string	"size_t"
 .LASF408:
 	.string	"PERIPHBASE 0x08000000"
 .LASF61:
 	.string	"__UINT_LEAST64_TYPE__ long unsigned int"
-.LASF865:
+.LASF866:
 	.string	"SizeBits"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
 .LASF675:
 	.string	"UINT16_MAX __UINT16_MAX__"
-.LASF807:
+.LASF808:
 	.string	"INCLUDE_INTEGERINTEGERFORMATTER_H_ "
 .LASF526:
 	.string	"_GLIBCXX_HAVE_INTTYPES_H 1"
@@ -6948,7 +7306,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__SIZE_WIDTH__ 64"
 .LASF331:
 	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
-.LASF879:
+.LASF880:
 	.string	"_ZNK11MemoryChunk5isEndEv"
 .LASF19:
 	.string	"__LP64__ 1"
@@ -6956,7 +7314,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_DEPRECATED __attribute__ ((__deprecated__))"
 .LASF385:
 	.string	"__ARM_FEATURE_NUMERIC_MAXMIN 1"
-.LASF910:
+.LASF911:
 	.string	"MemoryManager"
 .LASF319:
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
@@ -6964,8 +7322,8 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT64_DECIMAL_DIG__ 17"
 .LASF765:
 	.string	"WINT_MIN __WINT_MIN__"
-.LASF730:
-	.string	"INT_FAST64_MAX"
+.LASF10:
+	.string	"__LINARO_SPIN__ 0"
 .LASF554:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
 .LASF16:
@@ -6974,7 +7332,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_MEMALIGN 1"
 .LASF472:
 	.string	"_GLIBCXX_PSEUDO_VISIBILITY(V) "
-.LASF1004:
+.LASF1005:
 	.string	"sumSize"
 .LASF300:
 	.string	"__FLT64X_DIG__ 33"
@@ -6984,23 +7342,23 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT64X_EPSILON__ 1.92592994438723585305597794258492732e-34F64x"
 .LASF651:
 	.string	"_WCHAR_T_H "
-.LASF797:
+.LASF798:
 	.string	"HEX64(a,b,c,d) 0x ##a ##b ##c ##d"
-.LASF853:
+.LASF854:
 	.string	"uint_fast64_t"
-.LASF829:
+.LASF830:
 	.string	"int32_t"
 .LASF683:
 	.string	"INT64_MAX __INT64_MAX__"
 .LASF744:
 	.string	"INTMAX_MIN"
-.LASF994:
+.LASF995:
 	.string	"p1Chunk"
 .LASF204:
 	.string	"__DBL_MAX_10_EXP__ 308"
 .LASF447:
 	.string	"_GLIBCXX_DEFAULT_ABI_TAG _GLIBCXX_ABI_TAG_CXX11"
-.LASF864:
+.LASF865:
 	.string	"AllocatedBits"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
@@ -7012,9 +7370,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffL"
 .LASF208:
 	.string	"__DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)"
-.LASF812:
+.LASF813:
 	.string	"INCLUDE_TEST_TEST_BASE_H_ "
-.LASF897:
+.LASF898:
 	.string	"setNextBaseFromEnd"
 .LASF761:
 	.string	"WCHAR_MIN __WCHAR_MIN__"
@@ -7028,11 +7386,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_HAS_DENORM__ 1"
 .LASF46:
 	.string	"__INT8_TYPE__ signed char"
-.LASF891:
+.LASF892:
 	.string	"_ZNK11MemoryChunk10getDataPtrEv"
 .LASF249:
 	.string	"__FLT32_DECIMAL_DIG__ 9"
-.LASF995:
+.LASF996:
 	.string	"freeChunk1"
 .LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
@@ -7046,7 +7404,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT16_MAX__ 6.55040000000000000000000000000000000e+4F16"
 .LASF685:
 	.string	"INT64_MIN (-INT64_MAX - 1)"
-.LASF967:
+.LASF968:
 	.string	"_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv"
 .LASF95:
 	.string	"__cpp_alias_templates 200704"
@@ -7056,10 +7414,12 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT16_TYPE__ short int"
 .LASF658:
 	.string	"NULL __null"
-.LASF922:
+.LASF923:
 	.string	"tryDecrease"
-.LASF979:
+.LASF980:
 	.string	"_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv"
+.LASF255:
+	.string	"__FLT32_HAS_INFINITY__ 1"
 .LASF570:
 	.string	"_GLIBCXX_HAVE_VSWSCANF 1"
 .LASF78:
@@ -7076,11 +7436,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
 .LASF220:
 	.string	"__DECIMAL_DIG__ 36"
-.LASF999:
+.LASF1000:
 	.string	"sizes"
-.LASF951:
+.LASF952:
 	.string	"_ZN6OutputlsEPVKv"
-.LASF981:
+.LASF982:
 	.string	"_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv"
 .LASF386:
 	.string	"__ARM_NEON 1"
@@ -7096,13 +7456,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT32_MAX_10_EXP__ 38"
 .LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
-.LASF846:
+.LASF847:
 	.string	"int_fast8_t"
 .LASF740:
 	.string	"UINTPTR_MAX"
 .LASF610:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF1010:
+.LASF1011:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
 .LASF412:
 	.string	"__need_wchar_t"
@@ -7116,7 +7476,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"UINT32_MAX __UINT32_MAX__"
 .LASF620:
 	.string	"_BSD_PTRDIFF_T_ "
-.LASF872:
+.LASF873:
 	.string	"MemoryChunk"
 .LASF241:
 	.string	"__FLT16_HAS_INFINITY__ 1"
@@ -7128,11 +7488,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST64_WIDTH__ 64"
 .LASF707:
 	.string	"INT_LEAST64_MAX __INT_LEAST64_MAX__"
-.LASF809:
+.LASF810:
 	.string	"INCLUDE_IO_PRINTK_H_ "
 .LASF504:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF954:
+.LASF955:
 	.string	"double"
 .LASF494:
 	.string	"_GLIBCXX_HAVE_ECANCELED 1"
@@ -7154,9 +7514,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DBL_MANT_DIG__ 53"
 .LASF37:
 	.string	"__SIZE_TYPE__ long unsigned int"
-.LASF928:
+.LASF929:
 	.string	"getAllocatedLength"
-.LASF982:
+.LASF983:
 	.string	"reallocateOutOfPlaceMoveCorrectly"
 .LASF284:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
@@ -7166,7 +7526,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__WCHAR_T__ "
 .LASF259:
 	.string	"__FLT64_MIN_EXP__ (-1021)"
-.LASF852:
+.LASF853:
 	.string	"uint_fast32_t"
 .LASF458:
 	.string	"_GLIBCXX_NAMESPACE_LDBL "
@@ -7174,7 +7534,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__UINT_FAST8_MAX__ 0xffffffffU"
 .LASF318:
 	.string	"__DEC32_EPSILON__ 1E-6DF"
-.LASF799:
+.LASF800:
 	.string	"BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h"
 .LASF657:
 	.string	"NULL"
@@ -7186,19 +7546,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST16_WIDTH__ 32"
 .LASF782:
 	.string	"INTMAX_C"
-.LASF798:
+.LASF799:
 	.string	"BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d"
 .LASF712:
 	.string	"INT_FAST8_MAX"
 .LASF406:
 	.string	"CONFIG_RAM_SIZE 0x40000000"
-.LASF814:
+.LASF815:
 	.string	"RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << \" [TEST] `\"<< #testCallable << \"` failed.\\n\";}"
 .LASF172:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
 .LASF41:
 	.string	"__INTMAX_TYPE__ long int"
-.LASF958:
+.LASF959:
 	.string	"IntegerFormatter<16>"
 .LASF492:
 	.string	"_GLIBCXX_HAVE_COSHF 1"
@@ -7216,13 +7576,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_SYS_SIZE_T_H "
 .LASF257:
 	.string	"__FLT64_MANT_DIG__ 53"
-.LASF976:
+.LASF977:
 	.string	"deallocateCorrectly"
 .LASF58:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 .LASF726:
 	.string	"INT_FAST32_MIN"
-.LASF818:
+.LASF819:
 	.string	"long int"
 .LASF531:
 	.string	"_GLIBCXX_HAVE_LIMIT_DATA 0"
@@ -7236,7 +7596,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"UINT16_C(c) __UINT16_C(c)"
 .LASF298:
 	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
-.LASF1017:
+.LASF1019:
 	.string	"_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE"
 .LASF328:
 	.string	"__DEC128_MIN_EXP__ (-6142)"
@@ -7256,7 +7616,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_LEAST8_TYPE__ signed char"
 .LASF440:
 	.string	"_GLIBCXX_NOEXCEPT_QUAL "
-.LASF882:
+.LASF883:
 	.string	"getNext"
 .LASF344:
 	.string	"__GCC_ATOMIC_BOOL_LOCK_FREE 2"
@@ -7264,7 +7624,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_END_NAMESPACE_VERSION "
 .LASF310:
 	.string	"__FLT64X_HAS_DENORM__ 1"
-.LASF905:
+.LASF906:
 	.string	"moveOffsetOfAllocSuchAlignedSpace"
 .LASF150:
 	.string	"__INT32_C(c) c"
@@ -7280,7 +7640,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__LDBL_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966L"
 .LASF509:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
-.LASF933:
+.LASF934:
 	.string	"_ZN13MemoryManager10allocateAsIPcEET_m"
 .LASF591:
 	.string	"_GLIBCXX_ATOMIC_BUILTINS 1"
@@ -7290,7 +7650,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT32X_MIN_10_EXP__ (-307)"
 .LASF636:
 	.string	"_SIZE_T_DECLARED "
-.LASF892:
+.LASF893:
 	.string	"getDataEnd"
 .LASF754:
 	.string	"SIG_ATOMIC_MIN"
@@ -7324,7 +7684,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_CONST __attribute__ ((__const__))"
 .LASF592:
 	.string	"_GLIBCXX_FULLY_DYNAMIC_STRING 0"
-.LASF815:
+.LASF816:
 	.string	"INCLUDE_TEST_TESTMEMORYMANAGER_H_ "
 .LASF9:
 	.string	"__LINARO_RELEASE__ 201711"
@@ -7338,11 +7698,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_CSTDINT 1"
 .LASF560:
 	.string	"_GLIBCXX_HAVE_SYS_TIME_H 1"
-.LASF876:
+.LASF877:
 	.string	"isAllocated"
 .LASF187:
 	.string	"__FLT_MIN_10_EXP__ (-37)"
-.LASF845:
+.LASF846:
 	.string	"uint_least64_t"
 .LASF422:
 	.string	"_GLIBCXX_NORETURN __attribute__ ((__noreturn__))"
@@ -7354,9 +7714,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {"
 .LASF593:
 	.string	"_GLIBCXX_HOSTED 1"
-.LASF826:
+.LASF827:
 	.string	"signed char"
-.LASF831:
+.LASF832:
 	.string	"uint8_t"
 .LASF664:
 	.string	"INT8_MAX"
@@ -7388,7 +7748,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_INLINE_VERSION 0"
 .LASF98:
 	.string	"__cpp_generic_lambdas 201304"
-.LASF931:
+.LASF932:
 	.string	"_ZN13MemoryManager12reallocateAsIPcEET_Pvmm"
 .LASF676:
 	.string	"INT32_MAX"
@@ -7402,21 +7762,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_ETXTBSY 1"
 .LASF431:
 	.string	"_GLIBCXX17_CONSTEXPR "
-.LASF574:
-	.string	"_GLIBCXX_HAVE_WCTYPE_H 1"
 .LASF103:
 	.string	"__cpp_digit_separators 201309"
 .LASF635:
 	.string	"_BSD_SIZE_T_DEFINED_ "
 .LASF68:
 	.string	"__UINT_FAST32_TYPE__ unsigned int"
-.LASF832:
+.LASF833:
 	.string	"unsigned char"
 .LASF3:
 	.string	"__STDC_UTF_32__ 1"
 .LASF419:
 	.string	"__GLIBCXX__ 20171011"
-.LASF986:
+.LASF987:
 	.string	"nextChunkCorrectly"
 .LASF516:
 	.string	"_GLIBCXX_HAVE_FLOORF 1"
@@ -7434,8 +7792,6 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST32_MAX__ 0x7fffffff"
 .LASF12:
 	.string	"__ATOMIC_SEQ_CST 5"
-.LASF533:
-	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_TARNAME \"libstdc++\""
 .LASF416:
@@ -7474,7 +7830,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_EVAL_METHOD_C99__ 0"
 .LASF130:
 	.string	"__UINTMAX_C(c) c ## UL"
-.LASF973:
+.LASF974:
 	.string	"_ZN17TestMemoryManager17allocateCorrectlyEv"
 .LASF279:
 	.string	"__FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128"
@@ -7484,7 +7840,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__WCHAR_TYPE__ unsigned int"
 .LASF763:
 	.string	"WINT_MAX __WINT_MAX__"
-.LASF858:
+.LASF859:
 	.string	"char"
 .LASF389:
 	.string	"__AARCH64_CMODEL_SMALL__"
@@ -7510,11 +7866,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_LIMIT_AS 0"
 .LASF718:
 	.string	"INT_FAST16_MAX"
-.LASF984:
+.LASF985:
 	.string	"criticalConditionsStillCorrectly"
 .LASF791:
 	.string	"WARNING \"[WARNING] \""
-.LASF844:
+.LASF845:
 	.string	"uint_least32_t"
 .LASF549:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
@@ -7528,37 +7884,37 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"UINT8_MAX __UINT8_MAX__"
 .LASF786:
 	.string	"_GCC_WRAP_STDINT_H "
-.LASF983:
+.LASF984:
 	.string	"_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv"
 .LASF139:
 	.string	"__UINT8_MAX__ 0xff"
 .LASF193:
 	.string	"__FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F"
-.LASF859:
+.LASF860:
 	.string	"EMPTY_STR"
-.LASF871:
+.LASF872:
 	.string	"nextBaseFromEnd"
-.LASF972:
+.LASF973:
 	.string	"allocateCorrectly"
 .LASF424:
 	.string	"_GLIBCXX_VISIBILITY(V) __attribute__ ((__visibility__ (#V)))"
 .LASF210:
 	.string	"__DBL_HAS_DENORM__ 1"
-.LASF920:
+.LASF921:
 	.string	"tryIncrease"
 .LASF277:
 	.string	"__FLT128_DECIMAL_DIG__ 36"
 .LASF240:
 	.string	"__FLT16_HAS_DENORM__ 1"
-.LASF917:
+.LASF918:
 	.string	"allocate"
 .LASF83:
 	.string	"__cpp_range_based_for 200907"
-.LASF998:
+.LASF999:
 	.string	"man2"
 .LASF498:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
-.LASF1013:
+.LASF1014:
 	.string	"decltype(nullptr)"
 .LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
@@ -7566,9 +7922,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT128_MAX_EXP__ 16384"
 .LASF468:
 	.string	"_GLIBCXX_END_EXTERN_C }"
-.LASF839:
+.LASF840:
 	.string	"int_least16_t"
-.LASF929:
+.LASF930:
 	.string	"_ZNK13MemoryManager18getAllocatedLengthEPv"
 .LASF400:
 	.string	"CXX_MACROS_H__ "
@@ -7576,7 +7932,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__GCC_ATOMIC_SHORT_LOCK_FREE 2"
 .LASF73:
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
-.LASF926:
+.LASF927:
 	.string	"deallocate"
 .LASF746:
 	.string	"UINTMAX_MAX"
@@ -7584,17 +7940,17 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_AS_SYMVER_DIRECTIVE 1"
 .LASF446:
 	.string	"_GLIBCXX_END_NAMESPACE_CXX11 }"
-.LASF974:
+.LASF975:
 	.string	"alignedAllocateCorrectly"
 .LASF460:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
-.LASF934:
+.LASF935:
 	.string	"mman"
 .LASF480:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
 .LASF778:
 	.string	"UINT32_C"
-.LASF956:
+.LASF957:
 	.string	"koutBufSize"
 .LASF595:
 	.string	"_GLIBCXX_STDIO_EOF -1"
@@ -7602,7 +7958,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_END_NAMESPACE_ALGO _GLIBCXX_END_NAMESPACE_VERSION"
 .LASF653:
 	.string	"__INT_WCHAR_T_H "
-.LASF935:
+.LASF936:
 	.string	"Output"
 .LASF459:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_LDBL "
@@ -7618,7 +7974,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_PACKAGE__GLIBCXX_VERSION \"version-unused\""
 .LASF399:
 	.string	"__ELF__ 1"
-.LASF961:
+.LASF962:
 	.string	"_ZN16IntegerFormatterILi16EEC4EPKv"
 .LASF148:
 	.string	"__INT_LEAST16_WIDTH__ 16"
@@ -7628,15 +7984,15 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_SIZET_ "
 .LASF227:
 	.string	"__LDBL_HAS_INFINITY__ 1"
-.LASF996:
+.LASF997:
 	.string	"chunk1"
-.LASF1000:
+.LASF1001:
 	.string	"chunk2"
 .LASF523:
 	.string	"_GLIBCXX_HAVE_IEEEFP_H 1"
-.LASF1002:
-	.string	"chunk4"
 .LASF1003:
+	.string	"chunk4"
+.LASF1004:
 	.string	"chunk5"
 .LASF290:
 	.string	"__FLT32X_MAX_10_EXP__ 308"
@@ -7648,7 +8004,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"USER_SPACE_SIZE 20480"
 .LASF477:
 	.string	"_GLIBCXX_FAST_MATH 0"
-.LASF903:
+.LASF904:
 	.string	"moveAhead"
 .LASF668:
 	.string	"UINT8_MAX"
@@ -7670,9 +8026,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
 .LASF198:
 	.string	"__FP_FAST_FMAF 1"
-.LASF866:
+.LASF867:
 	.string	"NextBaseBits"
-.LASF964:
+.LASF965:
 	.string	"TestMemoryManager"
 .LASF764:
 	.string	"WINT_MIN"
@@ -7682,11 +8038,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"UINT32_MAX"
 .LASF576:
 	.string	"_GLIBCXX_PACKAGE_BUGREPORT \"\""
-.LASF874:
+.LASF875:
 	.string	"_ZN11MemoryChunkC4Embmbm"
 .LASF182:
 	.string	"__DEC_EVAL_METHOD__ 2"
-.LASF883:
+.LASF884:
 	.string	"_ZNK11MemoryChunk7getNextEv"
 .LASF724:
 	.string	"INT_FAST32_MAX"
@@ -7696,7 +8052,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDINT_H 1"
-.LASF955:
+.LASF956:
 	.string	"kout"
 .LASF684:
 	.string	"INT64_MIN"
@@ -7716,9 +8072,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_LEAST32_MAX__ 0x7fffffff"
 .LASF57:
 	.string	"__INT_LEAST64_TYPE__ long int"
-.LASF806:
+.LASF807:
 	.string	"INCLUDE_KERNEL_H_ "
-.LASF1018:
+.LASF1020:
 	.string	"_ZN16IntegerFormatterILi16EEC2Em"
 .LASF143:
 	.string	"__INT_LEAST8_MAX__ 0x7f"
@@ -7732,7 +8088,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"DEF_H__ "
 .LASF377:
 	.string	"__ARM_BIG_ENDIAN"
-.LASF939:
+.LASF940:
 	.string	"operator<<"
 .LASF793:
 	.string	"TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))"
@@ -7744,9 +8100,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_ASINF 1"
 .LASF594:
 	.string	"_GLIBCXX_MANGLE_SIZE_T m"
-.LASF407:
-	.string	"ARCH_IS_qemu_virt "
-.LASF953:
+.LASF574:
+	.string	"_GLIBCXX_HAVE_WCTYPE_H 1"
+.LASF954:
 	.string	"_ZN6Output5flushEv"
 .LASF631:
 	.string	"_SIZE_T_ "
@@ -7762,7 +8118,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_HAS_INFINITY__ 1"
 .LASF35:
 	.string	"__SIZEOF_POINTER__ 8"
-.LASF927:
+.LASF928:
 	.string	"_ZN13MemoryManager10deallocateEPv"
 .LASF441:
 	.string	"_GLIBCXX_EXTERN_TEMPLATE 1"
@@ -7772,13 +8128,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST16_TYPE__ int"
 .LASF355:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
-.LASF888:
+.LASF889:
 	.string	"_ZN11MemoryChunk7setSizeEm"
-.LASF819:
+.LASF820:
 	.string	"long unsigned int"
 .LASF200:
 	.string	"__DBL_DIG__ 15"
-.LASF921:
+.LASF922:
 	.string	"_ZN13MemoryManager11tryIncreaseEPvm"
 .LASF550:
 	.string	"_GLIBCXX_HAVE_STDBOOL_H 1"
@@ -7786,7 +8142,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__GCC_IEC_559_COMPLEX 2"
 .LASF5:
 	.string	"__GNUC__ 7"
-.LASF962:
+.LASF963:
 	.string	"format"
 .LASF51:
 	.string	"__UINT16_TYPE__ short unsigned int"
@@ -7798,7 +8154,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__cpp_raw_strings 200710"
 .LASF315:
 	.string	"__DEC32_MAX_EXP__ 97"
-.LASF893:
+.LASF894:
 	.string	"_ZN11MemoryChunk10getDataEndEv"
 .LASF628:
 	.string	"_T_SIZE_ "
@@ -7806,7 +8162,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 .LASF361:
 	.string	"__aarch64__ 1"
-.LASF925:
+.LASF926:
 	.string	"_ZN13MemoryManager10reallocateEPvmm"
 .LASF224:
 	.string	"__LDBL_EPSILON__ 1.92592994438723585305597794258492732e-34L"
@@ -7828,7 +8184,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__cpp_static_assert 200410"
 .LASF490:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
-.LASF841:
+.LASF842:
 	.string	"int_least64_t"
 .LASF18:
 	.string	"_LP64 1"
@@ -7836,17 +8192,17 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_USE_C99_MATH _GLIBCXX11_USE_C99_MATH"
 .LASF45:
 	.string	"__SIG_ATOMIC_TYPE__ int"
-.LASF988:
+.LASF989:
 	.string	"this"
 .LASF425:
 	.string	"_GLIBCXX_USE_DEPRECATED 1"
-.LASF805:
+.LASF806:
 	.string	"RAM_SIZE static_cast<size_t>(1*GiB)"
 .LASF243:
 	.string	"__FLT32_MANT_DIG__ 24"
 .LASF688:
 	.string	"INT_LEAST8_MAX"
-.LASF869:
+.LASF870:
 	.string	"allocated"
 .LASF659:
 	.string	"offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)"
@@ -7858,7 +8214,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DBL_MAX__ double(1.79769313486231570814527423731704357e+308L)"
 .LASF346:
 	.string	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2"
-.LASF855:
+.LASF856:
 	.string	"uintptr_t"
 .LASF14:
 	.string	"__ATOMIC_RELEASE 3"
@@ -7872,7 +8228,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST32_TYPE__ int"
 .LASF86:
 	.string	"__cpp_attributes 200809"
-.LASF1005:
+.LASF1006:
 	.string	"__for_range"
 .LASF567:
 	.string	"_GLIBCXX_HAVE_USLEEP 1"
@@ -7880,7 +8236,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_LOG10F 1"
 .LASF127:
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffL"
-.LASF886:
+.LASF887:
 	.string	"_ZNK11MemoryChunk7getSizeEv"
 .LASF265:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
@@ -7892,13 +8248,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GXX_NULLPTR_T "
 .LASF1:
 	.string	"__cplusplus 201402L"
-.LASF924:
+.LASF925:
 	.string	"reallocate"
 .LASF129:
 	.string	"__UINTMAX_MAX__ 0xffffffffffffffffUL"
 .LASF232:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
-.LASF1015:
+.LASF1016:
 	.string	"_ZN11MemoryChunk25mergeTrailingsUnallocatedEv"
 .LASF115:
 	.string	"__WINT_MIN__ 0U"
@@ -7908,9 +8264,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INTMAX_WIDTH__ 64"
 .LASF417:
 	.string	"_GLIBCXX_CXX_CONFIG_H 1"
-.LASF887:
+.LASF888:
 	.string	"setSize"
-.LASF977:
+.LASF978:
 	.string	"_ZN17TestMemoryManager19deallocateCorrectlyEv"
 .LASF529:
 	.string	"_GLIBCXX_HAVE_LDEXPF 1"
@@ -7934,19 +8290,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__GCC_ATOMIC_LONG_LOCK_FREE 2"
 .LASF414:
 	.string	"__need_size_t"
-.LASF801:
+.LASF802:
 	.string	"INCLUDE_GENERIC_UTIL_H_ "
 .LASF374:
 	.string	"__ARM_ARCH 8"
-.LASF971:
+.LASF972:
 	.string	"_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv"
-.LASF881:
+.LASF882:
 	.string	"_ZN11MemoryChunk6setEndEb"
-.LASF957:
+.LASF958:
 	.string	"koutBuf"
 .LASF183:
 	.string	"__FLT_RADIX__ 2"
-.LASF822:
+.LASF823:
 	.string	"long long int"
 .LASF112:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
@@ -7964,8 +8320,8 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__wchar_t__ "
 .LASF228:
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
-.LASF10:
-	.string	"__LINARO_SPIN__ 0"
+.LASF1017:
+	.string	"_ZN17TestMemoryManager3runEv"
 .LASF122:
 	.string	"__LONG_LONG_WIDTH__ 64"
 .LASF615:
@@ -7976,15 +8332,15 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_USE_C99_STDINT_TR1 1"
 .LASF105:
 	.string	"__cpp_threadsafe_static_init 200806"
-.LASF908:
+.LASF909:
 	.string	"_ZN11MemoryChunk5splitEm"
 .LASF444:
 	.string	"_GLIBCXX_NAMESPACE_CXX11 __cxx11::"
-.LASF970:
+.LASF971:
 	.string	"uncontiguousChunkMemoryAllocateCorrectly"
 .LASF352:
 	.string	"__GCC_ATOMIC_LLONG_LOCK_FREE 2"
-.LASF811:
+.LASF812:
 	.string	"INCLUDE_TEMPLATES_IMPLEMENTATION_INTEGERFORMATTER_H_ "
 .LASF584:
 	.string	"_GLIBCXX11_USE_C99_STDIO 1"
@@ -7996,9 +8352,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT64_MAX_EXP__ 1024"
 .LASF646:
 	.string	"__WCHAR_T "
-.LASF840:
+.LASF841:
 	.string	"int_least32_t"
-.LASF1009:
+.LASF1010:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
 .LASF120:
 	.string	"__INT_WIDTH__ 32"
@@ -8016,7 +8372,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__N(msgid) (msgid)"
 .LASF484:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
-.LASF857:
+.LASF858:
 	.string	"uintmax_t"
 .LASF404:
 	.string	"UART_BASE 0x09000000"
@@ -8026,7 +8382,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT16_MAX_EXP__ 16"
 .LASF91:
 	.string	"__cpp_delegating_constructors 200604"
-.LASF895:
+.LASF896:
 	.string	"getNextBaseFromEnd"
 .LASF455:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_ALGO _GLIBCXX_BEGIN_NAMESPACE_VERSION"
@@ -8036,9 +8392,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF678:
 	.string	"INT32_MIN"
-.LASF930:
+.LASF931:
 	.string	"reallocateAs<char*>"
-.LASF868:
+.LASF869:
 	.string	"endMark"
 .LASF735:
 	.string	"UINT_FAST64_MAX __UINT_FAST64_MAX__"
@@ -8056,25 +8412,25 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"INT32_C"
 .LASF673:
 	.string	"INT16_MIN (-INT16_MAX - 1)"
-.LASF885:
+.LASF886:
 	.string	"getSize"
 .LASF317:
 	.string	"__DEC32_MAX__ 9.999999E96DF"
-.LASF997:
+.LASF998:
 	.string	"endChunk"
 .LASF22:
 	.string	"__SIZEOF_LONG_LONG__ 8"
-.LASF959:
+.LASF960:
 	.string	"IntegerFormatter"
 .LASF60:
 	.string	"__UINT_LEAST32_TYPE__ unsigned int"
-.LASF993:
+.LASF994:
 	.string	"baseChunk"
 .LASF633:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF1012:
+.LASF1013:
 	.string	"max_align_t"
-.LASF902:
+.LASF903:
 	.string	"_ZN11MemoryChunk23setNextValidChunkOffsetEm"
 .LASF186:
 	.string	"__FLT_MIN_EXP__ (-125)"
@@ -8088,7 +8444,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_THROW_OR_ABORT(_EXC) (__builtin_abort())"
 .LASF442:
 	.string	"_GLIBCXX_USE_DUAL_ABI 1"
-.LASF854:
+.LASF855:
 	.string	"intptr_t"
 .LASF292:
 	.string	"__FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x"
@@ -8098,7 +8454,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_DIG__ 6"
 .LASF434:
 	.string	"_GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)"
-.LASF890:
+.LASF891:
 	.string	"_ZN11MemoryChunk10getDataPtrEv"
 .LASF689:
 	.string	"INT_LEAST8_MAX __INT_LEAST8_MAX__"
@@ -8108,7 +8464,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_EVAL_METHOD__ 0"
 .LASF489:
 	.string	"_GLIBCXX_HAVE_CEILF 1"
-.LASF836:
+.LASF837:
 	.string	"unsigned int"
 .LASF191:
 	.string	"__FLT_MAX__ 3.40282346638528859811704183484516925e+38F"
@@ -8156,14 +8512,16 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF50:
 	.string	"__UINT8_TYPE__ unsigned char"
-.LASF847:
+.LASF848:
 	.string	"int_fast16_t"
-.LASF911:
+.LASF912:
 	.string	"headChunk"
-.LASF867:
+.LASF868:
 	.string	"nextValidChunkOffset"
-.LASF889:
+.LASF890:
 	.string	"getDataPtr"
+.LASF437:
+	.string	"_GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT"
 .LASF687:
 	.string	"UINT64_MAX __UINT64_MAX__"
 .LASF87:
@@ -8176,7 +8534,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DEC128_MANT_DIG__ 34"
 .LASF411:
 	.string	"_GLIBCXX_CSTDDEF 1"
-.LASF918:
+.LASF919:
 	.string	"_ZN13MemoryManager8allocateEm"
 .LASF623:
 	.string	"_PTRDIFF_T_DECLARED "
@@ -8192,19 +8550,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)"
 .LASF197:
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
-.LASF821:
+.LASF822:
 	.string	"__max_align_ld"
-.LASF860:
+.LASF861:
 	.string	"UNIT_K"
 .LASF403:
 	.string	"KERNEL_ADDRESS 0"
-.LASF820:
+.LASF821:
 	.string	"__max_align_ll"
 .LASF375:
 	.string	"__ARM_SIZEOF_MINIMAL_ENUM 4"
-.LASF1006:
+.LASF1007:
 	.string	"__for_begin"
-.LASF1008:
+.LASF1009:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF557:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -8216,7 +8574,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(A) "
 .LASF93:
 	.string	"__cpp_inheriting_constructors 201511"
-.LASF816:
+.LASF817:
 	.string	"__gnu_cxx"
 .LASF787:
 	.string	"AS_MACRO __attribute__((always_inline)) inline"
@@ -8228,43 +8586,43 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DEC32_MANT_DIG__ 7"
 .LASF563:
 	.string	"_GLIBCXX_HAVE_TANF 1"
-.LASF936:
+.LASF937:
 	.string	"print"
 .LASF671:
 	.string	"INT16_MAX __INT16_MAX__"
-.LASF909:
+.LASF910:
 	.string	"bool"
 .LASF767:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF813:
+.LASF814:
 	.string	"EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << \"!=\"<<value<<\",the real value is \" << expr << \"\\n\"; }while(false);}"
-.LASF842:
+.LASF843:
 	.string	"uint_least8_t"
 .LASF214:
 	.string	"__LDBL_MANT_DIG__ 113"
-.LASF880:
+.LASF881:
 	.string	"setEnd"
 .LASF597:
 	.string	"_GLIBCXX_STDIO_SEEK_END 2"
-.LASF838:
+.LASF839:
 	.string	"int_least8_t"
 .LASF104:
 	.string	"__cpp_sized_deallocation 201309"
 .LASF626:
 	.string	"_SIZE_T "
-.LASF873:
+.LASF874:
 	.string	"setAllocated"
-.LASF937:
+.LASF938:
 	.string	"_ZN6Output5printEPKcm"
 .LASF387:
 	.string	"__ARM_FEATURE_CRC32 1"
-.LASF856:
+.LASF857:
 	.string	"intmax_t"
 .LASF443:
 	.string	"_GLIBCXX_USE_CXX11_ABI 1"
 .LASF229:
 	.string	"__FLT16_MANT_DIG__ 11"
-.LASF823:
+.LASF824:
 	.string	"long double"
 .LASF753:
 	.string	"SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__"
@@ -8310,21 +8668,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_CPU_DEFINES 1"
 .LASF694:
 	.string	"INT_LEAST16_MAX"
-.LASF437:
-	.string	"_GLIBCXX_NOTHROW _GLIBCXX_USE_NOEXCEPT"
 .LASF776:
 	.string	"UINT16_C"
 .LASF100:
 	.string	"__cpp_decltype_auto 201304"
 .LASF423:
 	.string	"_GLIBCXX_HAVE_ATTRIBUTE_VISIBILITY 1"
-.LASF796:
+.LASF797:
 	.string	"HEX32(a,b) 0x ##a ##b"
 .LASF226:
 	.string	"__LDBL_HAS_DENORM__ 1"
 .LASF342:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1"
-.LASF884:
+.LASF885:
 	.string	"_ZN11MemoryChunk7getNextEv"
 .LASF293:
 	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
@@ -8340,7 +8696,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_OS_DEFINES 1"
 .LASF582:
 	.string	"STDC_HEADERS 1"
-.LASF914:
+.LASF915:
 	.string	"_ZN13MemoryManagerC4EPvmb"
 .LASF283:
 	.string	"__FLT128_HAS_INFINITY__ 1"
@@ -8356,7 +8712,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__stringify(x) __stringify_1(x)"
 .LASF30:
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
-.LASF870:
+.LASF871:
 	.string	"size"
 .LASF546:
 	.string	"_GLIBCXX_HAVE_SINHF 1"
@@ -8364,9 +8720,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_SQRTF 1"
 .LASF320:
 	.string	"__DEC64_MANT_DIG__ 16"
-.LASF875:
+.LASF876:
 	.string	"_ZN11MemoryChunk12setAllocatedEb"
-.LASF965:
+.LASF966:
 	.string	"_ZN17TestMemoryManagerC4Ev"
 .LASF108:
 	.string	"__SHRT_MAX__ 0x7fff"
@@ -8376,13 +8732,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__WINT_MAX__ 0xffffffffU"
 .LASF706:
 	.string	"INT_LEAST64_MAX"
-.LASF833:
+.LASF834:
 	.string	"uint16_t"
 .LASF602:
 	.string	"_GLIBCXX_USE_FCHMOD 1"
 .LASF70:
 	.string	"__INTPTR_TYPE__ long int"
-.LASF913:
+.LASF914:
 	.string	"_ZN13MemoryManagerC4Ev"
 .LASF239:
 	.string	"__FLT16_DENORM_MIN__ 5.96046447753906250000000000000000000e-8F16"
@@ -8400,11 +8756,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__CHAR16_TYPE__ short unsigned int"
 .LASF286:
 	.string	"__FLT32X_DIG__ 15"
-.LASF904:
+.LASF905:
 	.string	"_ZN11MemoryChunk9moveAheadEm"
-.LASF991:
+.LASF992:
 	.string	"oldSize"
-.LASF919:
+.LASF920:
 	.string	"_ZN13MemoryManager8allocateEmm"
 .LASF175:
 	.string	"__INTPTR_MAX__ 0x7fffffffffffffffL"
@@ -8414,7 +8770,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST16_MAX__ 0x7fffffff"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_RESOURCE_H 1"
-.LASF1007:
+.LASF1008:
 	.string	"__for_end"
 .LASF505:
 	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
@@ -8426,9 +8782,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"INT8_MIN"
 .LASF75:
 	.string	"__DEPRECATED 1"
-.LASF952:
+.LASF953:
 	.string	"flush"
-.LASF916:
+.LASF917:
 	.string	"_ZN13MemoryManager18normalizeAllocSizeEm"
 .LASF357:
 	.string	"__SIZEOF_INT128__ 16"
@@ -8440,13 +8796,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__PTRDIFF_MAX__ 0x7fffffffffffffffL"
 .LASF578:
 	.string	"_GLIBCXX_PACKAGE_STRING \"package-unused version-unused\""
-.LASF980:
+.LASF981:
 	.string	"reallocateInPlaceCollectCorrectly"
 .LASF132:
 	.string	"__SIG_ATOMIC_MAX__ 0x7fffffff"
 .LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
-.LASF817:
+.LASF818:
 	.string	"__cxx11"
 .LASF632:
 	.string	"_BSD_SIZE_T_ "
@@ -8456,7 +8812,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_WCHAR_T_ "
 .LASF699:
 	.string	"UINT_LEAST16_MAX __UINT_LEAST16_MAX__"
-.LASF915:
+.LASF916:
 	.string	"normalizeAllocSize"
 .LASF453:
 	.string	"_GLIBCXX_END_NAMESPACE_CONTAINER _GLIBCXX_END_NAMESPACE_VERSION"
@@ -8464,19 +8820,19 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"USER_SPACE_START 524288"
 .LASF380:
 	.string	"__ARM_FP 14"
-.LASF843:
+.LASF844:
 	.string	"uint_least16_t"
-.LASF850:
+.LASF851:
 	.string	"uint_fast8_t"
-.LASF963:
+.LASF964:
 	.string	"_ZNK16IntegerFormatterILi16EE6formatEv"
 .LASF725:
 	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
 .LASF162:
 	.string	"__UINT64_C(c) c ## UL"
-.LASF906:
+.LASF907:
 	.string	"_ZNK11MemoryChunk33moveOffsetOfAllocSuchAlignedSpaceEmm"
-.LASF802:
+.LASF803:
 	.string	"INCLUDE_TEMPLATES_IMPLEMENTATION_MEMORYMANAGER_H_ "
 .LASF547:
 	.string	"_GLIBCXX_HAVE_SLEEP 1"
@@ -8492,9 +8848,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GCC_WCHAR_T "
 .LASF366:
 	.string	"__ARM_ARCH_8A 1"
-.LASF808:
+.LASF809:
 	.string	"INCLUDE_IO_OUTPUT_H_ "
-.LASF990:
+.LASF991:
 	.string	"newSize"
 .LASF648:
 	.string	"_BSD_WCHAR_T_ "
@@ -8546,17 +8902,17 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_LIMIT_VMEM 0"
 .LASF587:
 	.string	"_GLIBCXX98_USE_C99_MATH 1"
-.LASF803:
+.LASF804:
 	.string	"MEM_CONFIG_H__ "
 .LASF281:
 	.string	"__FLT128_DENORM_MIN__ 6.47517511943802511092443895822764655e-4966F128"
-.LASF975:
+.LASF976:
 	.string	"_ZN17TestMemoryManager24alignedAllocateCorrectlyEv"
 .LASF774:
 	.string	"UINT8_C"
 .LASF207:
 	.string	"__DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)"
-.LASF960:
+.LASF961:
 	.string	"_ZN16IntegerFormatterILi16EEC4Em"
 .LASF733:
 	.string	"INT_FAST64_MIN (-INT_FAST64_MAX - 1)"
@@ -8568,9 +8924,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 .LASF88:
 	.string	"__cpp_rvalue_references 200610"
-.LASF923:
+.LASF924:
 	.string	"_ZN13MemoryManager11tryDecreaseEPvm"
-.LASF848:
+.LASF849:
 	.string	"int_fast32_t"
 .LASF27:
 	.string	"__SIZEOF_SIZE_T__ 8"
@@ -8580,7 +8936,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__AARCH64EL__ 1"
 .LASF266:
 	.string	"__FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64"
-.LASF932:
+.LASF730:
+	.string	"INT_FAST64_MAX"
+.LASF933:
 	.string	"allocateAs<char*>"
 .LASF142:
 	.string	"__UINT64_MAX__ 0xffffffffffffffffUL"
@@ -8588,11 +8946,11 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__glibcxx_assert(_Condition) "
 .LASF588:
 	.string	"_GLIBCXX98_USE_C99_STDIO 1"
-.LASF862:
+.LASF863:
 	.string	"ValidBits"
 .LASF539:
 	.string	"_GLIBCXX_HAVE_MACHINE_PARAM_H 1"
-.LASF828:
+.LASF829:
 	.string	"short int"
 .LASF469:
 	.string	"_GLIBCXX_USE_ALLOCATOR_NEW 1"
@@ -8604,15 +8962,15 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__UINT16_C(c) c"
 .LASF237:
 	.string	"__FLT16_MIN__ 6.10351562500000000000000000000000000e-5F16"
-.LASF837:
+.LASF838:
 	.string	"uint64_t"
-.LASF800:
+.LASF801:
 	.string	"INCLUDE_MEMORYCHUNK_H_ "
 .LASF454:
 	.string	"_GLIBCXX_STD_A std"
 .LASF704:
 	.string	"UINT_LEAST32_MAX"
-.LASF900:
+.LASF901:
 	.string	"_ZNK11MemoryChunk23getNextValidChunkOffsetEv"
 .LASF427:
 	.string	"_GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ (\"cxx11\")))"
@@ -8628,7 +8986,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__DBL_HAS_INFINITY__ 1"
 .LASF711:
 	.string	"UINT_LEAST64_MAX __UINT_LEAST64_MAX__"
-.LASF827:
+.LASF828:
 	.string	"int16_t"
 .LASF705:
 	.string	"UINT_LEAST32_MAX __UINT_LEAST32_MAX__"
@@ -8656,7 +9014,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__cpp_user_defined_literals 200809"
 .LASF619:
 	.string	"_PTRDIFF_T_ "
-.LASF968:
+.LASF969:
 	.string	"memoryChunkSpiltCorrectly"
 .LASF769:
 	.string	"INT16_C(c) __INT16_C(c)"
@@ -8670,7 +9028,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_EBADMSG 1"
 .LASF136:
 	.string	"__INT16_MAX__ 0x7fff"
-.LASF863:
+.LASF864:
 	.string	"IsEndBits"
 .LASF544:
 	.string	"_GLIBCXX_HAVE_POWF 1"
@@ -8678,7 +9036,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_SYNCHRONIZATION_HAPPENS_BEFORE(A) "
 .LASF467:
 	.string	"_GLIBCXX_BEGIN_EXTERN_C extern \"C\" {"
-.LASF1016:
+.LASF1018:
 	.string	"operator<< <16>"
 .LASF590:
 	.string	"_GLIBCXX98_USE_C99_WCHAR 1"
@@ -8692,7 +9050,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__SIG_ATOMIC_WIDTH__ 32"
 .LASF752:
 	.string	"SIG_ATOMIC_MAX"
-.LASF901:
+.LASF902:
 	.string	"setNextValidChunkOffset"
 .LASF566:
 	.string	"_GLIBCXX_HAVE_UNISTD_H 1"
@@ -8700,9 +9058,9 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_ENOSTR 1"
 .LASF8:
 	.string	"__VERSION__ \"7.2.1 20171011\""
-.LASF898:
+.LASF899:
 	.string	"_ZN11MemoryChunk18setNextBaseFromEndEm"
-.LASF861:
+.LASF862:
 	.string	"digitsMap"
 .LASF559:
 	.string	"_GLIBCXX_HAVE_SYS_STAT_H 1"
@@ -8712,7 +9070,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"INT_LEAST64_MIN"
 .LASF370:
 	.string	"__ARM_FEATURE_UNALIGNED 1"
-.LASF899:
+.LASF900:
 	.string	"getNextValidChunkOffset"
 .LASF606:
 	.string	"_GLIBCXX_USE_LONG_LONG 1"
@@ -8724,8 +9082,10 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
 .LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF1014:
+.LASF1015:
 	.string	"mergeTrailingsUnallocated"
+.LASF407:
+	.string	"TARGET_ARCH_IS_qemu_virt "
 .LASF314:
 	.string	"__DEC32_MIN_EXP__ (-94)"
 .LASF53:
@@ -8734,7 +9094,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT_FAST32_WIDTH__ 32"
 .LASF652:
 	.string	"___int_wchar_t_h "
-.LASF969:
+.LASF970:
 	.string	"_ZN17TestMemoryManager25memoryChunkSpiltCorrectlyEv"
 .LASF553:
 	.string	"_GLIBCXX_HAVE_STRERROR_R 1"
@@ -8742,7 +9102,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__SIZEOF_LONG_DOUBLE__ 16"
 .LASF97:
 	.string	"__cpp_init_captures 201304"
-.LASF896:
+.LASF897:
 	.string	"_ZNK11MemoryChunk18getNextBaseFromEndEv"
 .LASF38:
 	.string	"__PTRDIFF_TYPE__ long int"
@@ -8768,13 +9128,13 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF656:
 	.string	"_BSD_WCHAR_T_"
-.LASF966:
+.LASF967:
 	.string	"memoryChunkMergeCorrectly"
-.LASF894:
+.LASF895:
 	.string	"_ZNK11MemoryChunk10getDataEndEv"
 .LASF528:
 	.string	"_GLIBCXX_HAVE_LC_MESSAGES 1"
-.LASF835:
+.LASF836:
 	.string	"uint32_t"
 .LASF568:
 	.string	"_GLIBCXX_HAVE_UTIME_H 1"
@@ -8786,15 +9146,15 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_HAVE_GETIPINFO 1"
 .LASF223:
 	.string	"__LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L"
-.LASF987:
+.LASF988:
 	.string	"_ZN17TestMemoryManager18nextChunkCorrectlyEv"
-.LASF851:
+.LASF852:
 	.string	"uint_fast16_t"
 .LASF67:
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
 .LASF552:
 	.string	"_GLIBCXX_HAVE_STDLIB_H 1"
-.LASF907:
+.LASF908:
 	.string	"split"
 .LASF474:
 	.string	"_GLIBCXX_USE_WEAK_REF __GXX_WEAK__"
@@ -8808,7 +9168,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"_GLIBCXX_RELEASE 7"
 .LASF696:
 	.string	"INT_LEAST16_MIN"
-.LASF1011:
+.LASF1012:
 	.string	"11max_align_t"
 .LASF135:
 	.string	"__INT8_MAX__ 0x7f"
@@ -8820,31 +9180,31 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT_MIN__ 1.17549435082228750796873653722224568e-38F"
 .LASF145:
 	.string	"__INT_LEAST8_WIDTH__ 8"
-.LASF948:
+.LASF949:
 	.string	"_ZN6OutputlsEPKc"
 .LASF55:
 	.string	"__INT_LEAST16_TYPE__ short int"
-.LASF992:
+.LASF993:
 	.string	"Base"
-.LASF834:
+.LASF835:
 	.string	"short unsigned int"
 .LASF690:
 	.string	"INT_LEAST8_MIN"
-.LASF255:
-	.string	"__FLT32_HAS_INFINITY__ 1"
+.LASF533:
+	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF784:
 	.string	"UINTMAX_C"
 .LASF719:
 	.string	"INT_FAST16_MAX __INT_FAST16_MAX__"
-.LASF950:
+.LASF951:
 	.string	"_ZN6OutputlsEPKv"
-.LASF912:
+.LASF913:
 	.string	"base"
 .LASF216:
 	.string	"__LDBL_MIN_EXP__ (-16381)"
 .LASF151:
 	.string	"__INT_LEAST32_WIDTH__ 32"
-.LASF849:
+.LASF850:
 	.string	"int_fast64_t"
 .LASF655:
 	.string	"_WCHAR_T_DECLARED "
@@ -8854,23 +9214,23 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__UINT_LEAST32_MAX__ 0xffffffffU"
 .LASF555:
 	.string	"_GLIBCXX_HAVE_STRING_H 1"
-.LASF985:
+.LASF986:
 	.string	"_ZN17TestMemoryManager32criticalConditionsStillCorrectlyEv"
 .LASF522:
 	.string	"_GLIBCXX_HAVE_ICONV 1"
-.LASF1001:
+.LASF1002:
 	.string	"chunk3"
 .LASF783:
 	.string	"INTMAX_C(c) __INTMAX_C(c)"
 .LASF435:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
-.LASF810:
+.LASF811:
 	.string	"INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ "
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
-.LASF830:
+.LASF831:
 	.string	"int64_t"
-.LASF877:
+.LASF878:
 	.string	"isEnd"
 .LASF29:
 	.string	"__BIGGEST_ALIGNMENT__ 16"
@@ -8880,7 +9240,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"PTRDIFF_MAX"
 .LASF618:
 	.string	"__PTRDIFF_T "
-.LASF978:
+.LASF979:
 	.string	"reallocateSmallerCorrectly"
 .LASF397:
 	.string	"__FLT_EVAL_METHOD_C99__"
@@ -8890,7 +9250,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__FLT32X_MANT_DIG__ 53"
 .LASF123:
 	.string	"__WCHAR_WIDTH__ 32"
-.LASF878:
+.LASF879:
 	.string	"_ZNK11MemoryChunk11isAllocatedEv"
 .LASF762:
 	.string	"WINT_MAX"
@@ -8898,7 +9258,7 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INT16_C(c) c"
 .LASF721:
 	.string	"INT_FAST16_MIN (-INT_FAST16_MAX - 1)"
-.LASF989:
+.LASF990:
 	.string	"origin"
 .LASF586:
 	.string	"_GLIBCXX11_USE_C99_WCHAR 1"
@@ -8910,35 +9270,37 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.string	"__INTPTR_WIDTH__ 64"
 .LASF202:
 	.string	"__DBL_MIN_10_EXP__ (-307)"
+.LASF796:
+	.string	"CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)"
 .LASF525:
 	.string	"_GLIBCXX_HAVE_INT64_T_LONG 1"
 .LASF215:
 	.string	"__LDBL_DIG__ 33"
-.LASF944:
+.LASF945:
 	.string	"_ZN6OutputlsEb"
-.LASF940:
+.LASF941:
 	.string	"_ZN6OutputlsEc"
-.LASF947:
+.LASF948:
 	.string	"_ZN6OutputlsEd"
 .LASF497:
 	.string	"_GLIBCXX_HAVE_ENODATA 1"
 .LASF781:
 	.string	"UINT64_C(c) __UINT64_C(c)"
-.LASF941:
-	.string	"_ZN6OutputlsEh"
-.LASF946:
-	.string	"_ZN6OutputlsEi"
-.LASF943:
-	.string	"_ZN6OutputlsEj"
-.LASF949:
-	.string	"_ZN6OutputlsEm"
-.LASF804:
-	.string	"RAM_START reinterpret_cast<char *>(CONFIG_RAM_START)"
-.LASF938:
-	.string	"_ZN6Output5printEPKc"
-.LASF945:
-	.string	"_ZN6OutputlsEs"
 .LASF942:
+	.string	"_ZN6OutputlsEh"
+.LASF947:
+	.string	"_ZN6OutputlsEi"
+.LASF944:
+	.string	"_ZN6OutputlsEj"
+.LASF950:
+	.string	"_ZN6OutputlsEm"
+.LASF805:
+	.string	"RAM_START reinterpret_cast<char *>(CONFIG_RAM_START)"
+.LASF939:
+	.string	"_ZN6Output5printEPKc"
+.LASF946:
+	.string	"_ZN6OutputlsEs"
+.LASF943:
 	.string	"_ZN6OutputlsEt"
 .LASF638:
 	.string	"_GCC_SIZE_T "

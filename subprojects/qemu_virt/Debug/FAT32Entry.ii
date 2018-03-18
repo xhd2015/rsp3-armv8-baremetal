@@ -428,7 +428,7 @@
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
 #define CONFIG_RAM_SIZE 0x40000000
-#define ARCH_IS_qemu_virt 
+#define TARGET_ARCH_IS_qemu_virt 
 #define PERIPHBASE 0x08000000
 # 32 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FAT32Entry.cpp"
@@ -1562,8 +1562,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 

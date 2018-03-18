@@ -15,6 +15,7 @@ class TestMemoryManager
 {
 public:
 	TestMemoryManager()=default;
+	static void run();
 	bool memoryChunkMergeCorrectly();
 	bool memoryChunkSpiltCorrectly();
 	bool uncontiguousChunkMemoryAllocateCorrectly();

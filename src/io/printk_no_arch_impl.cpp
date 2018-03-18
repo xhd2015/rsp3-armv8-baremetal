@@ -17,12 +17,11 @@ size_t printk(const char *s)
 }
 size_t printk(const char *s,size_t n)
 {
-	if(n==0)
+	if(n==0) // 打印，直到遇到'\0'
 		return printk(s);
 	size_t m=0;
-	if(n)
-		while(n--)
-			m+=printk(*s++);
+	while(n--)
+		m+=printk(*s++);
 	return m;
 }
 

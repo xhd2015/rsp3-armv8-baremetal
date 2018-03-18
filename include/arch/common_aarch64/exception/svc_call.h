@@ -10,8 +10,8 @@
 #include <arch/common_aarch64/exception/exceptions.h>
 #include <asm_instructions.h>
 
-
-enum SvcFunc{
+// `class` ， 为了避免 与全局定义的符号冲突
+enum class SvcFunc{
 	                           // prototype:
 	puts,                      //  size_t    puts(const char *, size_t n=0)
 	allocateBlock,             //  void*     allocateBlock(size_t size,size_t alignment)         // 一般用于分配较大的空间，如4KB的页

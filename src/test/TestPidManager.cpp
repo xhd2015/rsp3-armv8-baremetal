@@ -17,8 +17,19 @@
  */
 
 
+#include <test/test_base.h>
 #include <test/TestPidManager.h>
 
+void TestPidManager::run()
+{
+	kout << INFO << "start TestPidManager\n";
+	TestPidManager test;
+	RUN_TEST(test.clearAllKeepsInvalidAllocated);
+	RUN_TEST(test.allocateInvalidPidAlwaysFailed);
+	RUN_TEST(test.allocateReturnContinousPids);
+	RUN_TEST(test.deallocatePidSuccessfully);
+	kout << INFO << "end TestPidManager\n";
+}
 bool TestPidManager::clearAllKeepsInvalidAllocated()
 {
 	PidManager pidm;
@@ -31,7 +42,7 @@ bool TestPidManager::allocateReturnContinousPids()
 	auto p1=pidm.allocate();
 	auto p2=pidm.allocate();
 
-	return (pidm.isAllocated(p1) && pidm.isAllocated(p2) && p1==1 && p2==2);
+	return (pidm.isAllocated(p1) && pidm.isAllocated(p2) && p2-p1==1);
 }
 
 bool TestPidManager::allocateInvalidPidAlwaysFailed()

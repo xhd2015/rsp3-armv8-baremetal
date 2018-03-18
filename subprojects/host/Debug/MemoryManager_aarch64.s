@@ -47,6 +47,9 @@ _ZnwmPv:
 	.section .rdata,"dr"
 _ZStL19piecewise_construct:
 	.space 1
+	.align 8
+_ZL11koutBufSize:
+	.quad	65
 	.text
 	.align 2
 	.globl	_ZN13MemoryManagerC2EPvmb
@@ -55,7 +58,7 @@ _ZStL19piecewise_construct:
 _ZN13MemoryManagerC2EPvmb:
 .LFB839:
 	.file 2 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp"
-	.loc 2 13 0
+	.loc 2 14 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -73,7 +76,7 @@ _ZN13MemoryManagerC2EPvmb:
 	movl	%r9d, %eax
 	movb	%al, 40(%rbp)
 .LBB2:
-	.loc 2 16 0
+	.loc 2 18 0
 	movq	16(%rbp), %rax
 	movq	24(%rbp), %rdx
 	movq	%rdx, (%rax)
@@ -83,10 +86,10 @@ _ZN13MemoryManagerC2EPvmb:
 	movq	16(%rbp), %rax
 	movq	32(%rbp), %rdx
 	movq	%rdx, 16(%rax)
-	.loc 2 18 0
+	.loc 2 20 0
 	cmpb	$0, 40(%rbp)
 	je	.L7
-	.loc 2 20 0
+	.loc 2 22 0
 	movq	16(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, %rdx
@@ -94,7 +97,7 @@ _ZN13MemoryManagerC2EPvmb:
 	call	_ZnwmPv
 	testq	%rax, %rax
 	je	.L6
-	.loc 2 20 0 is_stmt 0 discriminator 1
+	.loc 2 22 0 is_stmt 0 discriminator 1
 	movq	32(%rbp), %rdx
 	subq	$9, %rdx
 	movq	$0, 40(%rsp)
@@ -104,7 +107,7 @@ _ZN13MemoryManagerC2EPvmb:
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunkC1Embmbm
 .L6:
-	.loc 2 21 0 is_stmt 1
+	.loc 2 23 0 is_stmt 1
 	movq	16(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, %rcx
@@ -114,7 +117,7 @@ _ZN13MemoryManagerC2EPvmb:
 	call	_ZN11MemoryChunk6setEndEb
 .L7:
 .LBE2:
-	.loc 2 23 0
+	.loc 2 25 0
 	nop
 	addq	$48, %rsp
 	popq	%rbp
@@ -133,7 +136,7 @@ _ZN13MemoryManagerC2EPvmb:
 	.seh_proc	_ZN13MemoryManager18normalizeAllocSizeEm
 _ZN13MemoryManager18normalizeAllocSizeEm:
 .LFB841:
-	.loc 2 25 0
+	.loc 2 28 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -145,26 +148,26 @@ _ZN13MemoryManager18normalizeAllocSizeEm:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
-	.loc 2 26 0
+	.loc 2 29 0
 	cmpq	$7, 24(%rbp)
 	ja	.L9
-	.loc 2 27 0
+	.loc 2 30 0
 	movq	$8, 24(%rbp)
 .L9:
-	.loc 2 28 0
+	.loc 2 31 0
 	movq	24(%rbp), %rax
 	andl	$7, %eax
 	testq	%rax, %rax
 	je	.L10
-	.loc 2 29 0
+	.loc 2 32 0
 	movq	24(%rbp), %rax
 	andq	$-8, %rax
 	addq	$8, %rax
 	movq	%rax, 24(%rbp)
 .L10:
-	.loc 2 30 0
+	.loc 2 33 0
 	movq	24(%rbp), %rax
-	.loc 2 31 0
+	.loc 2 34 0
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, 8
@@ -178,7 +181,7 @@ _ZN13MemoryManager18normalizeAllocSizeEm:
 	.seh_proc	_ZN13MemoryManager8allocateEm
 _ZN13MemoryManager8allocateEm:
 .LFB842:
-	.loc 2 33 0
+	.loc 2 36 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -192,13 +195,13 @@ _ZN13MemoryManager8allocateEm:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
-	.loc 2 34 0
+	.loc 2 37 0
 	movq	24(%rbp), %rax
 	movl	$8, %r8d
 	movq	%rax, %rdx
 	movq	16(%rbp), %rcx
 	call	_ZN13MemoryManager8allocateEmm
-	.loc 2 35 0
+	.loc 2 38 0
 	addq	$32, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -213,7 +216,7 @@ _ZN13MemoryManager8allocateEm:
 	.seh_proc	_ZN13MemoryManager8allocateEmm
 _ZN13MemoryManager8allocateEmm:
 .LFB843:
-	.loc 2 37 0
+	.loc 2 40 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -228,45 +231,45 @@ _ZN13MemoryManager8allocateEmm:
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 	movq	%r8, 32(%rbp)
-	.loc 2 38 0
+	.loc 2 41 0
 	movq	16(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, -8(%rbp)
-	.loc 2 40 0
+	.loc 2 43 0
 	movq	$-1, -16(%rbp)
 .L24:
-	.loc 2 44 0
+	.loc 2 47 0
 	cmpq	$0, -8(%rbp)
 	je	.L15
-	.loc 2 44 0 is_stmt 0 discriminator 2
+	.loc 2 47 0 is_stmt 0 discriminator 2
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk5isEndEv
 	testb	%al, %al
 	je	.L16
 .L15:
-	.loc 2 44 0 discriminator 3
+	.loc 2 47 0 discriminator 3
 	movl	$1, %eax
 	jmp	.L17
 .L16:
-	.loc 2 44 0 discriminator 4
+	.loc 2 47 0 discriminator 4
 	movl	$0, %eax
 .L17:
-	.loc 2 44 0 discriminator 6
+	.loc 2 47 0 discriminator 6
 	testb	%al, %al
 	je	.L18
-	.loc 2 45 0 is_stmt 1
+	.loc 2 48 0 is_stmt 1
 	movl	$0, %eax
 	jmp	.L19
 .L18:
-	.loc 2 46 0
+	.loc 2 49 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	xorl	$1, %eax
 	testb	%al, %al
 	je	.L20
-	.loc 2 46 0 is_stmt 0 discriminator 1
+	.loc 2 49 0 is_stmt 0 discriminator 1
 	movq	32(%rbp), %rcx
 	movq	24(%rbp), %rdx
 	movq	-8(%rbp), %rax
@@ -276,48 +279,48 @@ _ZN13MemoryManager8allocateEmm:
 	movq	%rax, -16(%rbp)
 	cmpq	$-1, -16(%rbp)
 	je	.L20
-	.loc 2 46 0 discriminator 3
+	.loc 2 49 0 discriminator 3
 	movl	$1, %eax
 	jmp	.L21
 .L20:
-	.loc 2 46 0 discriminator 4
+	.loc 2 49 0 discriminator 4
 	movl	$0, %eax
 .L21:
-	.loc 2 46 0 discriminator 6
+	.loc 2 49 0 discriminator 6
 	testb	%al, %al
 	jne	.L26
-	.loc 2 48 0 is_stmt 1
+	.loc 2 51 0 is_stmt 1
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7getNextEv
 	movq	%rax, -8(%rbp)
-	.loc 2 44 0
+	.loc 2 47 0
 	jmp	.L24
 .L26:
-	.loc 2 47 0
-	nop
 	.loc 2 50 0
+	nop
+	.loc 2 53 0
 	movq	-16(%rbp), %rdx
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk9moveAheadEm
 	movq	%rax, -24(%rbp)
-	.loc 2 51 0
+	.loc 2 54 0
 	movq	24(%rbp), %rdx
 	movq	-24(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk5splitEm
-	.loc 2 52 0
+	.loc 2 55 0
 	movq	-24(%rbp), %rax
 	movl	$1, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 2 53 0
+	.loc 2 56 0
 	movq	-24(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk10getDataPtrEv
 .L19:
-	.loc 2 54 0
+	.loc 2 57 0
 	addq	$64, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -332,7 +335,7 @@ _ZN13MemoryManager8allocateEmm:
 	.seh_proc	_ZN13MemoryManager10deallocateEPv
 _ZN13MemoryManager10deallocateEPv:
 .LFB844:
-	.loc 2 56 0
+	.loc 2 59 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -347,37 +350,37 @@ _ZN13MemoryManager10deallocateEPv:
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 .LBB3:
-	.loc 2 57 0
+	.loc 2 60 0
 	cmpq	$0, 24(%rbp)
 	je	.L30
-	.loc 2 57 0 is_stmt 0 discriminator 1
+	.loc 2 60 0 is_stmt 0 discriminator 1
 	movq	24(%rbp), %rax
 	cmpq	$8, %rax
 	jbe	.L30
 .LBB4:
-	.loc 2 59 0 is_stmt 1
+	.loc 2 62 0 is_stmt 1
 	movq	24(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, -8(%rbp)
-	.loc 2 60 0
+	.loc 2 63 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	testb	%al, %al
 	je	.L30
-	.loc 2 62 0
+	.loc 2 65 0
 	movq	-8(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 2 63 0
+	.loc 2 66 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv
 .L30:
 .LBE4:
 .LBE3:
-	.loc 2 67 0
+	.loc 2 70 0
 	nop
 	addq	$48, %rsp
 	popq	%rbp
@@ -393,7 +396,7 @@ _ZN13MemoryManager10deallocateEPv:
 	.seh_proc	_ZN13MemoryManager11tryIncreaseEPvm
 _ZN13MemoryManager11tryIncreaseEPvm:
 .LFB845:
-	.loc 2 71 0
+	.loc 2 74 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -406,9 +409,9 @@ _ZN13MemoryManager11tryIncreaseEPvm:
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 	movq	%r8, 32(%rbp)
-	.loc 2 72 0
+	.loc 2 75 0
 	movl	$0, %eax
-	.loc 2 73 0
+	.loc 2 76 0
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, 8
@@ -422,7 +425,7 @@ _ZN13MemoryManager11tryIncreaseEPvm:
 	.seh_proc	_ZN13MemoryManager11tryDecreaseEPvm
 _ZN13MemoryManager11tryDecreaseEPvm:
 .LFB846:
-	.loc 2 75 0
+	.loc 2 78 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -435,9 +438,9 @@ _ZN13MemoryManager11tryDecreaseEPvm:
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 	movq	%r8, 32(%rbp)
-	.loc 2 76 0
+	.loc 2 79 0
 	movl	$0, %eax
-	.loc 2 77 0
+	.loc 2 80 0
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, 8
@@ -451,7 +454,7 @@ _ZN13MemoryManager11tryDecreaseEPvm:
 	.seh_proc	_ZN13MemoryManager10reallocateEPvmm
 _ZN13MemoryManager10reallocateEPvmm:
 .LFB847:
-	.loc 2 79 0
+	.loc 2 82 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -467,65 +470,65 @@ _ZN13MemoryManager10reallocateEPvmm:
 	movq	%rdx, 24(%rbp)
 	movq	%r8, 32(%rbp)
 	movq	%r9, 40(%rbp)
-	.loc 2 80 0
+	.loc 2 83 0
 	cmpq	$0, 24(%rbp)
 	jne	.L36
-	.loc 2 81 0
+	.loc 2 84 0
 	movl	$0, %eax
 	jmp	.L37
 .L36:
-	.loc 2 82 0
+	.loc 2 85 0
 	cmpq	$0, 32(%rbp)
 	jne	.L38
-	.loc 2 84 0
+	.loc 2 87 0
 	movq	24(%rbp), %rax
 	movq	%rax, %rdx
 	movq	16(%rbp), %rcx
 	call	_ZN13MemoryManager10deallocateEPv
-	.loc 2 85 0
+	.loc 2 88 0
 	movl	$0, %eax
 	jmp	.L37
 .L38:
-	.loc 2 87 0
+	.loc 2 90 0
 	cmpq	$-1, 40(%rbp)
 	jne	.L39
-	.loc 2 88 0
+	.loc 2 91 0
 	movq	24(%rbp), %rax
 	movq	%rax, %rdx
 	movq	16(%rbp), %rcx
 	call	_ZNK13MemoryManager18getAllocatedLengthEPv
 	movq	%rax, 40(%rbp)
 .L39:
-	.loc 2 89 0
+	.loc 2 92 0
 	cmpq	$-1, 40(%rbp)
 	jne	.L40
-	.loc 2 90 0
+	.loc 2 93 0
 	movl	$0, %eax
 	jmp	.L37
 .L40:
-	.loc 2 91 0
+	.loc 2 94 0
 	movq	40(%rbp), %rax
 	cmpq	32(%rbp), %rax
 	jne	.L41
-	.loc 2 92 0
+	.loc 2 95 0
 	movq	24(%rbp), %rax
 	jmp	.L37
 .L41:
-	.loc 2 93 0
+	.loc 2 96 0
 	movq	24(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, -8(%rbp)
-	.loc 2 96 0
+	.loc 2 99 0
 	movq	-8(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 2 97 0
+	.loc 2 100 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv
 .LBB5:
-	.loc 2 98 0
+	.loc 2 101 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
@@ -533,57 +536,57 @@ _ZN13MemoryManager10reallocateEPvmm:
 	setnb	%al
 	testb	%al, %al
 	je	.L42
-	.loc 2 100 0
+	.loc 2 103 0
 	movq	32(%rbp), %rdx
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk5splitEm
-	.loc 2 101 0
-	movq	-8(%rbp), %rax
-	movl	$1, %edx
-	movq	%rax, %rcx
-	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 2 102 0
-	movq	24(%rbp), %rax
-	jmp	.L37
-.L42:
-.LBB6:
 	.loc 2 104 0
 	movq	-8(%rbp), %rax
 	movl	$1, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
 	.loc 2 105 0
+	movq	24(%rbp), %rax
+	jmp	.L37
+.L42:
+.LBB6:
+	.loc 2 107 0
+	movq	-8(%rbp), %rax
+	movl	$1, %edx
+	movq	%rax, %rcx
+	call	_ZN11MemoryChunk12setAllocatedEb
+	.loc 2 108 0
 	movq	32(%rbp), %rax
 	movq	%rax, %rdx
 	movq	16(%rbp), %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, -16(%rbp)
-	.loc 2 106 0
+	.loc 2 109 0
 	cmpq	$0, -16(%rbp)
 	jne	.L43
-	.loc 2 107 0
+	.loc 2 110 0
 	movl	$0, %eax
 	jmp	.L37
 .L43:
-	.loc 2 108 0
+	.loc 2 111 0
 	movq	40(%rbp), %rcx
 	movq	24(%rbp), %rdx
 	movq	-16(%rbp), %rax
 	movq	%rcx, %r8
 	movq	%rax, %rcx
 	call	memcpy
-	.loc 2 109 0
+	.loc 2 112 0
 	movq	-8(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 2 110 0
+	.loc 2 113 0
 	movq	-16(%rbp), %rax
 .L37:
 .LBE6:
 .LBE5:
-	.loc 2 112 0
+	.loc 2 115 0
 	addq	$48, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -598,7 +601,7 @@ _ZN13MemoryManager10reallocateEPvmm:
 	.seh_proc	_ZNK13MemoryManager18getAllocatedLengthEPv
 _ZNK13MemoryManager18getAllocatedLengthEPv:
 .LFB848:
-	.loc 2 114 0
+	.loc 2 117 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -613,48 +616,48 @@ _ZNK13MemoryManager18getAllocatedLengthEPv:
 	movq	%rcx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 .LBB7:
-	.loc 2 115 0
+	.loc 2 118 0
 	cmpq	$0, 24(%rbp)
 	je	.L45
-	.loc 2 115 0 is_stmt 0 discriminator 1
+	.loc 2 118 0 is_stmt 0 discriminator 1
 	movq	24(%rbp), %rax
 	cmpq	$8, %rax
 	jbe	.L45
 .LBB8:
-	.loc 2 117 0 is_stmt 1
+	.loc 2 120 0 is_stmt 1
 	movq	24(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, -8(%rbp)
-	.loc 2 118 0
+	.loc 2 121 0
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk23getNextValidChunkOffsetEv
 	testq	%rax, %rax
 	jne	.L46
-	.loc 2 118 0 is_stmt 0 discriminator 1
+	.loc 2 121 0 is_stmt 0 discriminator 1
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk5isEndEv
 	xorl	$1, %eax
 	testb	%al, %al
 	je	.L46
-	.loc 2 118 0 discriminator 3
+	.loc 2 121 0 discriminator 3
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	testb	%al, %al
 	je	.L46
-	.loc 2 118 0 discriminator 5
+	.loc 2 121 0 discriminator 5
 	movl	$1, %eax
 	jmp	.L47
 .L46:
-	.loc 2 118 0 discriminator 6
+	.loc 2 121 0 discriminator 6
 	movl	$0, %eax
 .L47:
-	.loc 2 118 0 discriminator 8
+	.loc 2 121 0 discriminator 8
 	testb	%al, %al
 	je	.L45
-	.loc 2 119 0 is_stmt 1
+	.loc 2 122 0 is_stmt 1
 	movq	-8(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
@@ -662,10 +665,10 @@ _ZNK13MemoryManager18getAllocatedLengthEPv:
 .L45:
 .LBE8:
 .LBE7:
-	.loc 2 121 0
+	.loc 2 124 0
 	movq	$-1, %rax
 .L49:
-	.loc 2 122 0
+	.loc 2 125 0
 	addq	$48, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -739,9 +742,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.file 27 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/predefined_ops.h"
 	.file 28 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/numeric_traits.h"
 	.file 29 "/usr/include/stdlib.h"
+	.file 30 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h"
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x305a
+	.long	0x3396
 	.word	0x4
 	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
@@ -4172,28 +4176,281 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x10
 	.ascii "char32_t\0"
 	.uleb128 0x52
+	.ascii "Output\0"
+	.byte	0x1
+	.byte	0x1e
+	.byte	0xd
+	.long	0x2ec9
+	.uleb128 0x27
+	.ascii "print\0"
+	.byte	0x1e
+	.byte	0xf
+	.ascii "_ZN6Output5printEPKcm\0"
+	.long	0x188
+	.byte	0x1
+	.long	0x2c28
+	.long	0x2c38
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x17f9
+	.uleb128 0xf
+	.long	0x188
+	.byte	0
+	.uleb128 0x27
+	.ascii "print\0"
+	.byte	0x1e
+	.byte	0x10
+	.ascii "_ZN6Output5printEPKc\0"
+	.long	0x188
+	.byte	0x1
+	.long	0x2c63
+	.long	0x2c6e
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x17f9
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x11
+	.ascii "_ZN6OutputlsEc\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2c91
+	.long	0x2c9c
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xd65
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x13
+	.ascii "_ZN6OutputlsEh\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2cbf
+	.long	0x2cca
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xb40
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x14
+	.ascii "_ZN6OutputlsEt\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2ced
+	.long	0x2cf8
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xb60
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x15
+	.ascii "_ZN6OutputlsEj\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2d1b
+	.long	0x2d26
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xb86
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x16
+	.ascii "_ZN6OutputlsEb\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2d49
+	.long	0x2d54
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x1430
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x17
+	.ascii "_ZN6OutputlsEs\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2d77
+	.long	0x2d82
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xb09
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x18
+	.ascii "_ZN6OutputlsEi\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2da5
+	.long	0x2db0
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0xb25
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x19
+	.ascii "_ZN6OutputlsEd\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2dd3
+	.long	0x2dde
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x26b3
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x1a
+	.ascii "_ZN6OutputlsEPKc\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2e03
+	.long	0x2e0e
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x17f9
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x1b
+	.ascii "_ZN6OutputlsEm\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2e31
+	.long	0x2e3c
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x188
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x1c
+	.ascii "_ZN6OutputlsEPKv\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2e61
+	.long	0x2e6c
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x1445
+	.byte	0
+	.uleb128 0x13
+	.secrel32	.LASF10
+	.byte	0x1e
+	.byte	0x1d
+	.ascii "_ZN6OutputlsEPVKv\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2e92
+	.long	0x2e9d
+	.uleb128 0xe
+	.long	0x2ec9
+	.uleb128 0xf
+	.long	0x2ed5
+	.byte	0
+	.uleb128 0x16
+	.ascii "flush\0"
+	.byte	0x1e
+	.byte	0x1e
+	.ascii "_ZN6Output5flushEv\0"
+	.long	0x2ecf
+	.byte	0x1
+	.long	0x2ec2
+	.uleb128 0xe
+	.long	0x2ec9
+	.byte	0
+	.byte	0
+	.uleb128 0x29
+	.byte	0x8
+	.long	0x2bed
+	.uleb128 0x30
+	.byte	0x8
+	.long	0x2bed
+	.uleb128 0x29
+	.byte	0x8
+	.long	0x2edc
+	.uleb128 0x53
+	.uleb128 0x3
+	.long	0x2edb
+	.uleb128 0x23
+	.ascii "kout\0"
+	.byte	0x1e
+	.byte	0x22
+	.long	0x2bed
+	.uleb128 0x24
+	.ascii "koutBufSize\0"
+	.byte	0x1e
+	.byte	0x25
+	.long	0x196
+	.uleb128 0x9
+	.byte	0x3
+	.quad	_ZL11koutBufSize
+	.uleb128 0x21
+	.long	0xd65
+	.long	0x2f1a
+	.uleb128 0x22
+	.long	0xd59
+	.byte	0x40
+	.byte	0
+	.uleb128 0x23
+	.ascii "koutBuf\0"
+	.byte	0x1e
+	.byte	0x26
+	.long	0x2f0a
+	.uleb128 0x54
 	.ascii "_ZN9__gnu_cxx24__numeric_traits_integerIlE5__maxE\0"
 	.long	0x2675
 	.quad	0x7fffffffffffffff
-	.uleb128 0x53
+	.uleb128 0x55
 	.long	0x179c
-	.long	0x2c56
+	.long	0x2f92
 	.quad	.LFB849
 	.quad	.LFE849-.LFB849
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2c56
-	.long	0x2c6f
+	.long	0x2f92
+	.long	0x2fab
 	.uleb128 0x2f
 	.ascii "T\0"
 	.long	0x194f
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "n\0"
 	.byte	0x3
 	.byte	0xf
@@ -4202,81 +4459,81 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x58
 	.long	0x1743
 	.byte	0x2
-	.byte	0x71
-	.long	0x2c94
+	.byte	0x74
+	.long	0x2fd0
 	.quad	.LFB848
 	.quad	.LFE848-.LFB848
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2c94
-	.long	0x2cd1
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x2fd0
+	.long	0x300d
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1810
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x57
-	.secrel32	.LASF11
+	.uleb128 0x59
+	.secrel32	.LASF12
 	.byte	0x2
-	.byte	0x71
+	.byte	0x74
 	.long	0x1443
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x58
+	.uleb128 0x5a
 	.quad	.LBB8
 	.quad	.LBE8-.LBB8
 	.uleb128 0x24
 	.ascii "chunk\0"
 	.byte	0x2
-	.byte	0x75
+	.byte	0x78
 	.long	0x142a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
 	.byte	0
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x58
 	.long	0x16ab
 	.byte	0x2
-	.byte	0x4e
-	.long	0x2cf6
+	.byte	0x51
+	.long	0x3032
 	.quad	.LFB847
 	.quad	.LFE847-.LFB847
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2cf6
-	.long	0x2d65
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x3032
+	.long	0x30a1
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x57
-	.secrel32	.LASF11
+	.uleb128 0x59
+	.secrel32	.LASF12
 	.byte	0x2
-	.byte	0x4e
+	.byte	0x51
 	.long	0x1443
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "newSize\0"
 	.byte	0x2
-	.byte	0x4e
+	.byte	0x51
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "oldSize\0"
 	.byte	0x2
-	.byte	0x4e
+	.byte	0x51
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
@@ -4284,159 +4541,159 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x24
 	.ascii "chunk\0"
 	.byte	0x2
-	.byte	0x5d
+	.byte	0x60
 	.long	0x142a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x58
+	.uleb128 0x5a
 	.quad	.LBB6
 	.quad	.LBE6-.LBB6
 	.uleb128 0x24
 	.ascii "ptr\0"
 	.byte	0x2
-	.byte	0x69
+	.byte	0x6c
 	.long	0x194f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -32
 	.byte	0
 	.byte	0
-	.uleb128 0x59
+	.uleb128 0x5b
 	.long	0x165b
 	.byte	0x2
-	.byte	0x4a
-	.long	0x2d8a
+	.byte	0x4d
+	.long	0x30c6
 	.quad	.LFB846
 	.quad	.LFE846-.LFB846
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2d8a
-	.long	0x2db7
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x30c6
+	.long	0x30f3
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x57
-	.secrel32	.LASF11
+	.uleb128 0x59
+	.secrel32	.LASF12
 	.byte	0x2
-	.byte	0x4a
+	.byte	0x4d
 	.long	0x1443
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "decSize\0"
 	.byte	0x2
-	.byte	0x4a
+	.byte	0x4d
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
 	.byte	0
-	.uleb128 0x59
+	.uleb128 0x5b
 	.long	0x160b
 	.byte	0x2
-	.byte	0x46
-	.long	0x2ddc
+	.byte	0x49
+	.long	0x3118
 	.quad	.LFB845
 	.quad	.LFE845-.LFB845
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2ddc
-	.long	0x2e09
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x3118
+	.long	0x3145
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x57
-	.secrel32	.LASF11
+	.uleb128 0x59
+	.secrel32	.LASF12
 	.byte	0x2
-	.byte	0x46
+	.byte	0x49
 	.long	0x1443
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "incSize\0"
 	.byte	0x2
-	.byte	0x46
+	.byte	0x49
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x58
 	.long	0x16ff
 	.byte	0x2
-	.byte	0x37
-	.long	0x2e2e
+	.byte	0x3a
+	.long	0x316a
 	.quad	.LFB844
 	.quad	.LFE844-.LFB844
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2e2e
-	.long	0x2e69
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x316a
+	.long	0x31a5
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "p\0"
 	.byte	0x2
-	.byte	0x37
+	.byte	0x3a
 	.long	0x1443
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x58
+	.uleb128 0x5a
 	.quad	.LBB4
 	.quad	.LBE4-.LBB4
 	.uleb128 0x24
 	.ascii "chunk\0"
 	.byte	0x2
-	.byte	0x3b
+	.byte	0x3e
 	.long	0x142a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
 	.byte	0
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x58
 	.long	0x15c8
 	.byte	0x2
-	.byte	0x24
-	.long	0x2e8e
+	.byte	0x27
+	.long	0x31ca
 	.quad	.LFB843
 	.quad	.LFE843-.LFB843
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2e8e
-	.long	0x2efa
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x31ca
+	.long	0x3236
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "n\0"
 	.byte	0x2
-	.byte	0x24
+	.byte	0x27
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "alignment\0"
 	.byte	0x2
-	.byte	0x24
+	.byte	0x27
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
@@ -4444,7 +4701,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x24
 	.ascii "foundChunk\0"
 	.byte	0x2
-	.byte	0x26
+	.byte	0x29
 	.long	0x142a
 	.uleb128 0x2
 	.byte	0x91
@@ -4452,7 +4709,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x24
 	.ascii "moveOffset\0"
 	.byte	0x2
-	.byte	0x28
+	.byte	0x2b
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
@@ -4460,122 +4717,122 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x24
 	.ascii "movedChunk\0"
 	.byte	0x2
-	.byte	0x32
+	.byte	0x35
 	.long	0x142a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x58
 	.long	0x158b
 	.byte	0x2
-	.byte	0x20
-	.long	0x2f1f
+	.byte	0x23
+	.long	0x325b
 	.quad	.LFB842
 	.quad	.LFE842-.LFB842
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2f1f
-	.long	0x2f38
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x325b
+	.long	0x3274
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "n\0"
 	.byte	0x2
-	.byte	0x20
+	.byte	0x23
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x59
+	.uleb128 0x5b
 	.long	0x1534
 	.byte	0x2
-	.byte	0x18
-	.long	0x2f5d
+	.byte	0x1b
+	.long	0x3299
 	.quad	.LFB841
 	.quad	.LFE841-.LFB841
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2f5d
-	.long	0x2f76
-	.uleb128 0x54
-	.secrel32	.LASF10
+	.long	0x3299
+	.long	0x32b2
+	.uleb128 0x56
+	.secrel32	.LASF11
 	.long	0x1805
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "n\0"
 	.byte	0x2
-	.byte	0x18
+	.byte	0x1b
 	.long	0x188
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x5a
+	.uleb128 0x5c
 	.long	0x14f5
 	.byte	0x2
-	.byte	0xd
+	.byte	0xe
 	.byte	0
-	.long	0x2f86
-	.long	0x2fba
-	.uleb128 0x5b
-	.secrel32	.LASF10
+	.long	0x32c2
+	.long	0x32f6
+	.uleb128 0x5d
+	.secrel32	.LASF11
 	.long	0x1805
-	.uleb128 0x5c
+	.uleb128 0x5e
 	.ascii "base\0"
 	.byte	0x2
-	.byte	0xd
+	.byte	0xe
 	.long	0x1443
-	.uleb128 0x5c
+	.uleb128 0x5e
 	.ascii "size\0"
 	.byte	0x2
-	.byte	0xd
+	.byte	0xe
 	.long	0x188
-	.uleb128 0x5c
+	.uleb128 0x5e
 	.ascii "initChunks\0"
 	.byte	0x2
-	.byte	0xd
+	.byte	0xe
 	.long	0x1430
 	.byte	0
-	.uleb128 0x5d
-	.long	0x2f76
+	.uleb128 0x5f
+	.long	0x32b2
 	.ascii "_ZN13MemoryManagerC2EPvmb\0"
-	.long	0x2ff7
+	.long	0x3333
 	.quad	.LFB839
 	.quad	.LFE839-.LFB839
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2ff7
-	.long	0x3018
-	.uleb128 0x5e
-	.long	0x2f86
+	.long	0x3333
+	.long	0x3354
+	.uleb128 0x60
+	.long	0x32c2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x5e
-	.long	0x2f8f
+	.uleb128 0x60
+	.long	0x32cb
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x5e
-	.long	0x2f9b
+	.uleb128 0x60
+	.long	0x32d7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
-	.uleb128 0x5e
-	.long	0x2fa7
+	.uleb128 0x60
+	.long	0x32e3
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 24
 	.byte	0
-	.uleb128 0x5f
+	.uleb128 0x61
 	.ascii "operator new\0"
 	.byte	0x1
 	.byte	0x92
@@ -4585,12 +4842,12 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.quad	.LFE58-.LFB58
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x60
+	.uleb128 0x62
 	.long	0xace
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x55
+	.uleb128 0x57
 	.ascii "__p\0"
 	.byte	0x1
 	.byte	0x92
@@ -5786,6 +6043,26 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0
 	.byte	0
 	.uleb128 0x52
+	.uleb128 0x2
+	.byte	0x1
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x53
+	.uleb128 0x35
+	.byte	0
+	.byte	0
+	.byte	0
+	.uleb128 0x54
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x6e
@@ -5796,7 +6073,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x7
 	.byte	0
 	.byte	0
-	.uleb128 0x53
+	.uleb128 0x55
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5817,7 +6094,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x54
+	.uleb128 0x56
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5830,51 +6107,11 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x55
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x56
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x47
-	.uleb128 0x13
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
 	.uleb128 0x57
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -5886,6 +6123,46 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0
 	.byte	0
 	.uleb128 0x58
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
+	.uleb128 0x13
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x59
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x5a
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -5894,7 +6171,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x7
 	.byte	0
 	.byte	0
-	.uleb128 0x59
+	.uleb128 0x5b
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5919,7 +6196,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5a
+	.uleb128 0x5c
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5936,7 +6213,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5b
+	.uleb128 0x5d
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5947,7 +6224,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x5c
+	.uleb128 0x5e
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5960,7 +6237,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5d
+	.uleb128 0x5f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -5983,7 +6260,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x5e
+	.uleb128 0x60
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -5992,7 +6269,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x5f
+	.uleb128 0x61
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -6017,7 +6294,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x60
+	.uleb128 0x62
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
@@ -6916,16 +7193,16 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x1
 	.ascii "unix 1\0"
-	.file 30 "./cxx_macros.h"
+	.file 31 "./cxx_macros.h"
 	.byte	0x3
 	.uleb128 0x2
-	.uleb128 0x1e
+	.uleb128 0x1f
 	.byte	0x1
 	.uleb128 0x3
 	.ascii "CXX_MACROS_H__ \0"
 	.byte	0x1
 	.uleb128 0x5
-	.ascii "ARCH_IS_host \0"
+	.ascii "TARGET_ARCH_IS_host \0"
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x8
@@ -7107,10 +7384,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x1f0
 	.ascii "_GLIBCXX_USE_ALLOCATOR_NEW 1\0"
-	.file 31 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h"
+	.file 32 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/os_defines.h"
 	.byte	0x3
 	.uleb128 0x1fb
-	.uleb128 0x1f
+	.uleb128 0x20
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_GLIBCXX_OS_DEFINES 1\0"
@@ -7136,10 +7413,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x39
 	.ascii "_GLIBCXX_USE_WEAK_REF 0\0"
 	.byte	0x4
-	.file 32 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h"
+	.file 33 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/bits/cpu_defines.h"
 	.byte	0x3
 	.uleb128 0x1fe
-	.uleb128 0x20
+	.uleb128 0x21
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_GLIBCXX_CPU_DEFINES 1\0"
@@ -7951,10 +8228,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x1e
 	.ascii "_GLIBCXX_CSTDINT 1\0"
-	.file 33 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h"
+	.file 34 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stdint.h"
 	.byte	0x3
 	.uleb128 0x29
-	.uleb128 0x21
+	.uleb128 0x22
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0x11
@@ -8355,22 +8632,25 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x20
 	.ascii "TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))\0"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x25
 	.ascii "__stringify_1(x) #x\0"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x26
 	.ascii "__stringify(x) __stringify_1(x)\0"
 	.byte	0x1
-	.uleb128 0x29
-	.ascii "HEX32(a,b) 0x ##a ##b\0"
-	.byte	0x1
-	.uleb128 0x2a
-	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
-	.byte	0x1
-	.uleb128 0x2d
-	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.uleb128 0x27
+	.ascii "CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)\0"
 	.byte	0x1
 	.uleb128 0x2e
+	.ascii "HEX32(a,b) 0x ##a ##b\0"
+	.byte	0x1
+	.uleb128 0x2f
+	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x32
+	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x33
 	.ascii "BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h\0"
 	.byte	0x4
 	.byte	0x3
@@ -8411,10 +8691,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "__EXCEPTION__ \0"
-	.file 34 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h"
+	.file 35 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/atomic_lockfree_defines.h"
 	.byte	0x3
 	.uleb128 0x26
-	.uleb128 0x22
+	.uleb128 0x23
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_GLIBCXX_ATOMIC_LOCK_FREE_H 1\0"
@@ -8455,10 +8735,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x20
 	.ascii "_EXCEPTION_PTR_H \0"
-	.file 35 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h"
+	.file 36 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/exception_defines.h"
 	.byte	0x3
 	.uleb128 0x25
-	.uleb128 0x23
+	.uleb128 0x24
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_EXCEPTION_DEFINES_H 1\0"
@@ -8473,24 +8753,24 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "__throw_exception_again \0"
 	.byte	0x4
 	.byte	0x4
-	.file 36 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h"
+	.file 37 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/nested_exception.h"
 	.byte	0x3
 	.uleb128 0xab
-	.uleb128 0x24
-	.byte	0x1
-	.uleb128 0x1f
-	.ascii "_GLIBCXX_NESTED_EXCEPTION_H 1\0"
-	.file 37 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h"
-	.byte	0x3
-	.uleb128 0x28
 	.uleb128 0x25
 	.byte	0x1
 	.uleb128 0x1f
+	.ascii "_GLIBCXX_NESTED_EXCEPTION_H 1\0"
+	.file 38 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/move.h"
+	.byte	0x3
+	.uleb128 0x28
+	.uleb128 0x26
+	.byte	0x1
+	.uleb128 0x1f
 	.ascii "_MOVE_H 1\0"
-	.file 38 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h"
+	.file 39 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/concept_check.h"
 	.byte	0x3
 	.uleb128 0x22
-	.uleb128 0x26
+	.uleb128 0x27
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_CONCEPT_CHECK_H 1\0"
@@ -8554,24 +8834,24 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x8
 	.ascii "_STRING_H_ \0"
-	.file 39 "/usr/include/_ansi.h"
+	.file 40 "/usr/include/_ansi.h"
 	.byte	0x3
 	.uleb128 0xa
-	.uleb128 0x27
+	.uleb128 0x28
 	.byte	0x1
 	.uleb128 0xd
 	.ascii "_ANSIDECL_H_ \0"
-	.file 40 "/usr/include/newlib.h"
+	.file 41 "/usr/include/newlib.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x28
+	.uleb128 0x29
 	.byte	0x1
 	.uleb128 0x8
 	.ascii "__NEWLIB_H__ 1\0"
-	.file 41 "/usr/include/_newlib_version.h"
+	.file 42 "/usr/include/_newlib_version.h"
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x29
+	.uleb128 0x2a
 	.byte	0x1
 	.uleb128 0x4
 	.ascii "_NEWLIB_VERSION_H__ 1\0"
@@ -8628,25 +8908,25 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x4b
 	.ascii "_UNBUF_STREAM_OPT 1\0"
 	.byte	0x4
-	.file 42 "/usr/include/sys/config.h"
+	.file 43 "/usr/include/sys/config.h"
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0x2a
+	.uleb128 0x2b
 	.byte	0x1
 	.uleb128 0x2
 	.ascii "__SYS_CONFIG_H__ \0"
-	.file 43 "/usr/include/machine/ieeefp.h"
+	.file 44 "/usr/include/machine/ieeefp.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.byte	0x1
 	.uleb128 0x16b
 	.ascii "__IEEE_LITTLE_ENDIAN \0"
 	.byte	0x4
-	.file 44 "/usr/include/sys/features.h"
+	.file 45 "/usr/include/sys/features.h"
 	.byte	0x3
 	.uleb128 0x5
-	.uleb128 0x2c
+	.uleb128 0x2d
 	.byte	0x1
 	.uleb128 0x16
 	.ascii "_SYS_FEATURES_H \0"
@@ -8837,10 +9117,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0xe6
 	.ascii "__RAND_MAX 0x7fffffff\0"
-	.file 45 "/usr/include/cygwin/config.h"
+	.file 46 "/usr/include/cygwin/config.h"
 	.byte	0x3
 	.uleb128 0xea
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x12
 	.ascii "_CYGWIN_CONFIG_H \0"
@@ -8996,7 +9276,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "_SYS_REENT_H_ \0"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x27
+	.uleb128 0x28
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
@@ -9008,17 +9288,17 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x1
 	.uleb128 0x14
 	.ascii "_SYS__TYPES_H \0"
-	.file 46 "/usr/include/machine/_types.h"
+	.file 47 "/usr/include/machine/_types.h"
 	.byte	0x3
 	.uleb128 0x18
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.byte	0x1
 	.uleb128 0x4
 	.ascii "_MACHINE__TYPES_H \0"
-	.file 47 "/usr/include/machine/_default_types.h"
+	.file 48 "/usr/include/machine/_default_types.h"
 	.byte	0x3
 	.uleb128 0x6
-	.uleb128 0x2f
+	.uleb128 0x30
 	.byte	0x1
 	.uleb128 0x6
 	.ascii "_MACHINE__DEFAULT_TYPES_H \0"
@@ -9373,10 +9653,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x31d
 	.ascii "_GLOBAL_ATEXIT (_GLOBAL_REENT->_atexit)\0"
 	.byte	0x4
-	.file 48 "/usr/include/sys/cdefs.h"
+	.file 49 "/usr/include/sys/cdefs.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x30
+	.uleb128 0x31
 	.byte	0x1
 	.uleb128 0x29
 	.ascii "_SYS_CDEFS_H_ \0"
@@ -9785,10 +10065,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x1a1
 	.ascii "offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)\0"
 	.byte	0x4
-	.file 49 "/usr/include/sys/string.h"
+	.file 50 "/usr/include/sys/string.h"
 	.byte	0x3
 	.uleb128 0xaf
-	.uleb128 0x31
+	.uleb128 0x32
 	.byte	0x4
 	.byte	0x4
 	.byte	0x1
@@ -9861,24 +10141,24 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x45
 	.ascii "strxfrm\0"
 	.byte	0x4
-	.file 50 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/algorithm"
+	.file 51 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/algorithm"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0x32
-	.byte	0x1
-	.uleb128 0x38
-	.ascii "_GLIBCXX_ALGORITHM 1\0"
-	.file 51 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/utility"
-	.byte	0x3
-	.uleb128 0x3c
 	.uleb128 0x33
 	.byte	0x1
 	.uleb128 0x38
+	.ascii "_GLIBCXX_ALGORITHM 1\0"
+	.file 52 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/utility"
+	.byte	0x3
+	.uleb128 0x3c
+	.uleb128 0x34
+	.byte	0x1
+	.uleb128 0x38
 	.ascii "_GLIBCXX_UTILITY 1\0"
-	.file 52 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_relops.h"
+	.file 53 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_relops.h"
 	.byte	0x3
 	.uleb128 0x45
-	.uleb128 0x34
+	.uleb128 0x35
 	.byte	0x1
 	.uleb128 0x41
 	.ascii "_STL_RELOPS_H 1\0"
@@ -9890,10 +10170,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x39
 	.ascii "_STL_PAIR_H 1\0"
 	.byte	0x4
-	.file 53 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/initializer_list"
+	.file 54 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/initializer_list"
 	.byte	0x3
 	.uleb128 0x4c
-	.uleb128 0x35
+	.uleb128 0x36
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_INITIALIZER_LIST \0"
@@ -9911,25 +10191,25 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x124
 	.ascii "__cpp_lib_integer_sequence 201304\0"
 	.byte	0x4
-	.file 54 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_algobase.h"
+	.file 55 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_algobase.h"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x36
+	.uleb128 0x37
 	.byte	0x1
 	.uleb128 0x39
 	.ascii "_STL_ALGOBASE_H 1\0"
-	.file 55 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functexcept.h"
+	.file 56 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/functexcept.h"
 	.byte	0x3
 	.uleb128 0x3c
-	.uleb128 0x37
+	.uleb128 0x38
 	.byte	0x1
 	.uleb128 0x25
 	.ascii "_FUNCTEXCEPT_H 1\0"
 	.byte	0x4
-	.file 56 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cpp_type_traits.h"
+	.file 57 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/cpp_type_traits.h"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x38
+	.uleb128 0x39
 	.byte	0x1
 	.uleb128 0x21
 	.ascii "_CPP_TYPE_TRAITS_H 1\0"
@@ -9940,10 +10220,10 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x111
 	.ascii "__INT_N\0"
 	.byte	0x4
-	.file 57 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/type_traits.h"
+	.file 58 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/type_traits.h"
 	.byte	0x3
 	.uleb128 0x3e
-	.uleb128 0x39
+	.uleb128 0x3a
 	.byte	0x1
 	.uleb128 0x1e
 	.ascii "_EXT_TYPE_TRAITS 1\0"
@@ -10003,25 +10283,25 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x88
 	.ascii "__glibcxx_max_exponent10\0"
 	.byte	0x4
-	.file 58 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_types.h"
+	.file 59 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_types.h"
 	.byte	0x3
 	.uleb128 0x41
-	.uleb128 0x3a
+	.uleb128 0x3b
 	.byte	0x1
 	.uleb128 0x3c
 	.ascii "_STL_ITERATOR_BASE_TYPES_H 1\0"
 	.byte	0x4
-	.file 59 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_funcs.h"
+	.file 60 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator_base_funcs.h"
 	.byte	0x3
 	.uleb128 0x42
-	.uleb128 0x3b
+	.uleb128 0x3c
 	.byte	0x1
 	.uleb128 0x3c
 	.ascii "_STL_ITERATOR_BASE_FUNCS_H 1\0"
-	.file 60 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/assertions.h"
+	.file 61 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/debug/assertions.h"
 	.byte	0x3
 	.uleb128 0x41
-	.uleb128 0x3c
+	.uleb128 0x3d
 	.byte	0x1
 	.uleb128 0x1e
 	.ascii "_GLIBCXX_DEBUG_ASSERTIONS_H 1\0"
@@ -10036,17 +10316,17 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "_GLIBCXX_DEBUG_ONLY(_Statement) ;\0"
 	.byte	0x4
 	.byte	0x4
-	.file 61 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator.h"
+	.file 62 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_iterator.h"
 	.byte	0x3
 	.uleb128 0x43
-	.uleb128 0x3d
+	.uleb128 0x3e
 	.byte	0x1
 	.uleb128 0x3d
 	.ascii "_STL_ITERATOR_H 1\0"
-	.file 62 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ptr_traits.h"
+	.file 63 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/ptr_traits.h"
 	.byte	0x3
 	.uleb128 0x42
-	.uleb128 0x3e
+	.uleb128 0x3f
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_PTR_TRAITS_H 1\0"
@@ -10171,7 +10451,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "_STDLIB_H_ \0"
 	.byte	0x3
 	.uleb128 0xa
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0xd
@@ -10207,25 +10487,25 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x1a1
 	.ascii "offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)\0"
 	.byte	0x4
-	.file 63 "/usr/include/machine/stdlib.h"
+	.file 64 "/usr/include/machine/stdlib.h"
 	.byte	0x3
 	.uleb128 0x14
-	.uleb128 0x3f
+	.uleb128 0x40
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "_MACHSTDLIB_H_ \0"
 	.byte	0x4
-	.file 64 "/usr/include/cygwin/stdlib.h"
+	.file 65 "/usr/include/cygwin/stdlib.h"
 	.byte	0x3
 	.uleb128 0x1a
-	.uleb128 0x40
+	.uleb128 0x41
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "_CYGWIN_STDLIB_H \0"
-	.file 65 "/usr/include/cygwin/wait.h"
+	.file 66 "/usr/include/cygwin/wait.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x41
+	.uleb128 0x42
 	.byte	0x1
 	.uleb128 0xa
 	.ascii "_CYGWIN_WAIT_H \0"
@@ -10495,46 +10775,46 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.uleb128 0x1f
 	.ascii "_GLIBCXX_ALGORITHMFWD_H 1\0"
 	.byte	0x4
-	.file 66 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_heap.h"
+	.file 67 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_heap.h"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x42
+	.uleb128 0x43
 	.byte	0x1
 	.uleb128 0x38
 	.ascii "_STL_HEAP_H 1\0"
 	.byte	0x4
-	.file 67 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_tempbuf.h"
+	.file 68 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_tempbuf.h"
 	.byte	0x3
 	.uleb128 0x3e
-	.uleb128 0x43
-	.byte	0x1
-	.uleb128 0x39
-	.ascii "_STL_TEMPBUF_H 1\0"
-	.file 68 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_construct.h"
-	.byte	0x3
-	.uleb128 0x3c
 	.uleb128 0x44
 	.byte	0x1
 	.uleb128 0x39
+	.ascii "_STL_TEMPBUF_H 1\0"
+	.file 69 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/stl_construct.h"
+	.byte	0x3
+	.uleb128 0x3c
+	.uleb128 0x45
+	.byte	0x1
+	.uleb128 0x39
 	.ascii "_STL_CONSTRUCT_H 1\0"
-	.file 69 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/alloc_traits.h"
+	.file 70 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/ext/alloc_traits.h"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x45
+	.uleb128 0x46
 	.byte	0x1
 	.uleb128 0x1e
 	.ascii "_EXT_ALLOC_TRAITS_H 1\0"
-	.file 70 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/alloc_traits.h"
+	.file 71 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/alloc_traits.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x46
+	.uleb128 0x47
 	.byte	0x1
 	.uleb128 0x1f
 	.ascii "_ALLOC_TRAITS_H 1\0"
-	.file 71 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/memoryfwd.h"
+	.file 72 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/memoryfwd.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x47
+	.uleb128 0x48
 	.byte	0x1
 	.uleb128 0x2c
 	.ascii "_MEMORYFWD_H 1\0"
@@ -10546,17 +10826,17 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
-	.file 72 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/uniform_int_dist.h"
+	.file 73 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/bits/uniform_int_dist.h"
 	.byte	0x3
 	.uleb128 0x42
-	.uleb128 0x48
+	.uleb128 0x49
 	.byte	0x1
 	.uleb128 0x20
 	.ascii "_GLIBCXX_BITS_UNIFORM_INT_DIST_H \0"
-	.file 73 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/limits"
+	.file 74 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/limits"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x49
+	.uleb128 0x4a
 	.byte	0x1
 	.uleb128 0x26
 	.ascii "_GLIBCXX_NUMERIC_LIMITS 1\0"
@@ -10672,6 +10952,33 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
+	.byte	0x3
+	.uleb128 0xc
+	.uleb128 0x1e
+	.byte	0x1
+	.uleb128 0x9
+	.ascii "INCLUDE_IO_OUTPUT_H_ \0"
+	.file 75 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+	.byte	0x3
+	.uleb128 0xb
+	.uleb128 0x4b
+	.byte	0x1
+	.uleb128 0x9
+	.ascii "INCLUDE_IO_PRINTK_H_ \0"
+	.file 76 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
+	.byte	0x3
+	.uleb128 0x1b
+	.uleb128 0x4c
+	.byte	0x1
+	.uleb128 0x9
+	.ascii "INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ \0"
+	.byte	0x3
+	.uleb128 0xb
+	.uleb128 0x4b
+	.byte	0x4
+	.byte	0x4
+	.byte	0x4
+	.byte	0x4
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"dr"
@@ -10687,9 +10994,9 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "operator=\0"
 .LASF4:
 	.ascii "MemoryChunk\0"
-.LASF11:
+.LASF12:
 	.ascii "origin\0"
-.LASF10:
+.LASF11:
 	.ascii "this\0"
 .LASF8:
 	.ascii "allocate\0"
@@ -10699,6 +11006,8 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.ascii "_on_exit_args\0"
 .LASF2:
 	.ascii "nothrow_t\0"
+.LASF10:
+	.ascii "operator<<\0"
 .LASF3:
 	.ascii "piecewise_construct_t\0"
 	.ident	"GCC: (GNU) 6.4.0"

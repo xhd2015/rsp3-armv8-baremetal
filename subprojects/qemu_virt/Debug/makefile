@@ -20,6 +20,7 @@ RM := rm -rf
 -include src/arch/common_aarch64/mmu/subdir.mk
 -include src/arch/common_aarch64/exception/subdir.mk
 -include src/subdir.mk
+-include include/programming/subdir.mk
 -include subdir.mk
 -include objects.mk
 

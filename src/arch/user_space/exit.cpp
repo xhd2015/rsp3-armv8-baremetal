@@ -7,7 +7,7 @@
 #include <arch/common_aarch64/exception/svc_call.h>
 #include <schedule/PidManager.h>
 
-void exit(int i)
+void destroy(int i)
 {
 	svc_call<SvcFunc::killProcess>(CURRENT_PID,i);
 }

@@ -1353,7 +1353,7 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.5b97504b9ce7da9db9704f4f0416a0a4,comdat
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.4a922712cbeaaf772b737cbe13a2d62a,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -1890,8 +1890,6 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__throw_bad_function_call"
 .LASF2:
 	.string	"__STDC_UTF_16__ 1"
-.LASF407:
-	.string	"ARCH_IS_qemu_virt "
 .LASF227:
 	.string	"__LDBL_HAS_INFINITY__ 1"
 .LASF179:
@@ -1922,6 +1920,8 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__UINT16_C(c) c"
 .LASF138:
 	.string	"__INT64_MAX__ 0x7fffffffffffffffL"
+.LASF407:
+	.string	"TARGET_ARCH_IS_qemu_virt "
 .LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
 .LASF80:

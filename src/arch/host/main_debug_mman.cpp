@@ -10,7 +10,7 @@
 #include <memory/MemoryManager.h>
 #include <test/TestMemoryManager.h>
 #include <kernel.h>
-#include "../../../include/io/printk.h"
+#include <io/Output.h>
 
 using namespace std;
 int main()
@@ -28,7 +28,7 @@ int main()
 	cout << reinterpret_cast<uint64_t>(chr1) << "\n";
 	cout << reinterpret_cast<uint64_t>(chr2) << "\n";
 
-	kout << INFO << "Run test of MemoryManager\n";
+	kout << INFO << "start TestMemoryManager\n";
 	TestMemoryManager tmm;
 	RUN_TEST(tmm.memoryChunkMergeCorrectly);
 	RUN_TEST(tmm.allocateCorrectly);
@@ -37,7 +37,6 @@ int main()
 	RUN_TEST(tmm.reallocateInPlaceCollectCorrectly);
 	RUN_TEST(tmm.reallocateOutOfPlaceMoveCorrectly);
 	RUN_TEST(tmm.reallocateSmallerCorrectly);
-
 	kout << INFO << "All test ended\n";
 
 	return 0;

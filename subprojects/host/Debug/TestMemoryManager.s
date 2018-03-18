@@ -23,14 +23,233 @@ _ZL8RAM_SIZE:
 _ZL11koutBufSize:
 	.quad	65
 .LC0:
-	.ascii "[FATAL] \0"
+	.ascii "[INFO] \0"
 .LC1:
-	.ascii "baseChunk->getSize()\0"
+	.ascii "start TestMemoryManager\12\0"
 .LC2:
-	.ascii "!=\0"
+	.ascii "[FATAL] \0"
 .LC3:
-	.ascii ",the real value is \0"
+	.ascii " [TEST] `\0"
 .LC4:
+	.ascii "tmm.memoryChunkMergeCorrectly\0"
+.LC5:
+	.ascii "` failed.\12\0"
+.LC6:
+	.ascii "tmm.allocateCorrectly\0"
+.LC7:
+	.ascii "tmm.nextChunkCorrectly\0"
+.LC8:
+	.ascii "tmm.deallocateCorrectly\0"
+	.align 8
+.LC9:
+	.ascii "tmm.reallocateInPlaceCollectCorrectly\0"
+	.align 8
+.LC10:
+	.ascii "tmm.reallocateOutOfPlaceMoveCorrectly\0"
+	.align 8
+.LC11:
+	.ascii "tmm.reallocateSmallerCorrectly\0"
+.LC12:
+	.ascii "end TestMemoryManager\12\0"
+	.text
+	.align 2
+	.globl	_ZN17TestMemoryManager3runEv
+	.def	_ZN17TestMemoryManager3runEv;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZN17TestMemoryManager3runEv
+_ZN17TestMemoryManager3runEv:
+.LFB14:
+	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
+	.loc 1 17 0
+	.cfi_startproc
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.cfi_def_cfa_register 6
+	subq	$48, %rsp
+	.seh_stackalloc	48
+	.seh_endprologue
+	.loc 1 18 0
+	leaq	.LC0(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC1(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	.loc 1 20 0
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L2
+	.loc 1 20 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC4(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L2:
+	.loc 1 21 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager17allocateCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L3
+	.loc 1 21 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC6(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L3:
+	.loc 1 22 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager18nextChunkCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L4
+	.loc 1 22 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC7(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L4:
+	.loc 1 23 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager19deallocateCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L5
+	.loc 1 23 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC8(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L5:
+	.loc 1 24 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L6
+	.loc 1 24 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC9(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L6:
+	.loc 1 25 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L7
+	.loc 1 25 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC10(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L7:
+	.loc 1 26 0 is_stmt 1
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
+	xorl	$1, %eax
+	testb	%al, %al
+	je	.L8
+	.loc 1 26 0 is_stmt 0 discriminator 1
+	leaq	.LC2(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC3(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC11(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC5(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+.L8:
+	.loc 1 28 0 is_stmt 1
+	leaq	.LC0(%rip), %rdx
+	movq	.refptr.kout(%rip), %rcx
+	call	_ZN6OutputlsEPKc
+	leaq	.LC12(%rip), %rdx
+	movq	%rax, %rcx
+	call	_ZN6OutputlsEPKc
+	.loc 1 29 0
+	nop
+	addq	$48, %rsp
+	popq	%rbp
+	.cfi_restore 6
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE14:
+	.seh_endproc
+	.section .rdata,"dr"
+.LC13:
+	.ascii "baseChunk->getSize()\0"
+.LC14:
+	.ascii "!=\0"
+.LC15:
+	.ascii ",the real value is \0"
+.LC16:
 	.ascii "\12\0"
 	.text
 	.align 2
@@ -38,9 +257,8 @@ _ZL11koutBufSize:
 	.def	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
 _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
-.LFB14:
-	.file 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
-	.loc 1 19 0
+.LFB18:
+	.loc 1 32 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -62,40 +280,40 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.cfi_def_cfa 6, 1088
 	.seh_endprologue
 	movq	%rcx, 1088(%rbp)
-	.loc 1 21 0
+	.loc 1 34 0
 	movq	$100, -80(%rbp)
 	movq	$7, -72(%rbp)
 	movq	$5, -64(%rbp)
 	movq	$10, -56(%rbp)
-	.loc 1 23 0
+	.loc 1 36 0
 	leaq	-48(%rbp), %rax
 	movq	%rax, 1040(%rbp)
-	.loc 1 24 0
+	.loc 1 37 0
 	movq	1040(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 25 0
+	.loc 1 38 0
 	movq	1040(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 26 0
+	.loc 1 39 0
 	movq	-80(%rbp), %rdx
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7setSizeEm
-	.loc 1 27 0
+	.loc 1 40 0
 	movq	1040(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 28 0
+	.loc 1 41 0
 	movq	1040(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 29 0
+	.loc 1 42 0
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
@@ -108,70 +326,70 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	leaq	-48(%rbp), %rax
 	addq	%rdx, %rax
 	movq	%rax, 1032(%rbp)
-	.loc 1 30 0
+	.loc 1 43 0
 	movq	-72(%rbp), %rdx
 	movq	1032(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 32 0
+	.loc 1 45 0
 	movq	-72(%rbp), %rdx
 	movq	1032(%rbp), %rax
 	addq	%rdx, %rax
 	movq	%rax, 1024(%rbp)
-	.loc 1 33 0
+	.loc 1 46 0
 	movq	-64(%rbp), %rdx
 	movq	1024(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 35 0
+	.loc 1 48 0
 	movq	-64(%rbp), %rdx
 	movq	1024(%rbp), %rax
 	addq	%rdx, %rax
 	movq	%rax, 1016(%rbp)
-	.loc 1 36 0
+	.loc 1 49 0
 	movq	1016(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 37 0
+	.loc 1 50 0
 	movq	1016(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 38 0
+	.loc 1 51 0
 	movq	1016(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 39 0
+	.loc 1 52 0
 	movq	-56(%rbp), %rdx
 	movq	1016(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7setSizeEm
-	.loc 1 40 0
+	.loc 1 53 0
 	movq	1016(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 42 0
+	.loc 1 55 0
 	movq	1016(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk10getDataEndEv
 	movq	%rax, 1008(%rbp)
-	.loc 1 43 0
+	.loc 1 56 0
 	movq	1008(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 44 0
+	.loc 1 57 0
 	movq	1008(%rbp), %rax
 	movl	$1, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 46 0
+	.loc 1 59 0
 	movq	$0, -88(%rbp)
 .LBB2:
-	.loc 1 47 0
+	.loc 1 60 0
 	leaq	-80(%rbp), %rax
 	movq	%rax, 1000(%rbp)
 	movq	1000(%rbp), %rax
@@ -179,34 +397,34 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	movq	1000(%rbp), %rax
 	addq	$32, %rax
 	movq	%rax, 992(%rbp)
-.L3:
-	.loc 1 47 0 is_stmt 0 discriminator 3
+.L11:
+	.loc 1 60 0 is_stmt 0 discriminator 3
 	movq	1048(%rbp), %rax
 	cmpq	992(%rbp), %rax
-	je	.L2
-	.loc 1 47 0 discriminator 2
+	je	.L10
+	.loc 1 60 0 discriminator 2
 	movq	1048(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, 984(%rbp)
-	.loc 1 48 0 is_stmt 1 discriminator 2
+	.loc 1 61 0 is_stmt 1 discriminator 2
 	movq	-88(%rbp), %rdx
 	movq	984(%rbp), %rax
 	addq	%rdx, %rax
 	movq	%rax, -88(%rbp)
-	.loc 1 47 0 discriminator 2
+	.loc 1 60 0 discriminator 2
 	addq	$8, 1048(%rbp)
-	jmp	.L3
-.L2:
+	jmp	.L11
+.L10:
 .LBE2:
-	.loc 1 49 0
+	.loc 1 62 0
 	movq	-88(%rbp), %rax
 	addq	$8, %rax
 	movq	%rax, -88(%rbp)
-	.loc 1 51 0
+	.loc 1 64 0
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv
-	.loc 1 52 0
+	.loc 1 65 0
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
@@ -215,36 +433,36 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	cmpq	%rax, %rdx
 	setne	%al
 	testb	%al, %al
-	je	.L4
-	.loc 1 52 0 is_stmt 0 discriminator 1
+	je	.L12
+	.loc 1 65 0 is_stmt 0 discriminator 1
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
 	movq	%rax, %rsi
 	movq	-88(%rbp), %rbx
-	leaq	.LC0(%rip), %rdx
+	leaq	.LC2(%rip), %rdx
 	movq	.refptr.kout(%rip), %rcx
 	call	_ZN6OutputlsEPKc
-	leaq	.LC1(%rip), %rdx
+	leaq	.LC13(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
-	leaq	.LC2(%rip), %rdx
+	leaq	.LC14(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rbx, %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEm
-	leaq	.LC3(%rip), %rdx
+	leaq	.LC15(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rsi, %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEm
-	leaq	.LC4(%rip), %rdx
+	leaq	.LC16(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
-.L4:
-	.loc 1 54 0 is_stmt 1
+.L12:
+	.loc 1 67 0 is_stmt 1
 	movq	1040(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
@@ -252,7 +470,7 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	movq	-88(%rbp), %rax
 	cmpq	%rax, %rdx
 	sete	%al
-	.loc 1 55 0
+	.loc 1 68 0
 	addq	$1184, %rsp
 	popq	%rbx
 	.cfi_restore 3
@@ -263,15 +481,15 @@ _ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.cfi_def_cfa 7, -1160
 	ret
 	.cfi_endproc
-.LFE14:
+.LFE18:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv
 	.def	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv
 _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
-.LFB15:
-	.loc 1 58 0
+.LFB19:
+	.loc 1 71 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -285,71 +503,71 @@ _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
 	.cfi_def_cfa 6, 1024
 	.seh_endprologue
 	movq	%rcx, 1024(%rbp)
-	.loc 1 62 0
+	.loc 1 75 0
 	leaq	-32(%rbp), %rax
 	movq	%rax, 1000(%rbp)
-	.loc 1 63 0
+	.loc 1 76 0
 	movq	1000(%rbp), %rax
 	movl	$1015, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7setSizeEm
-	.loc 1 64 0
+	.loc 1 77 0
 	movq	1000(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 65 0
+	.loc 1 78 0
 	movq	1000(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 66 0
+	.loc 1 79 0
 	movq	1000(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 67 0
+	.loc 1 80 0
 	movq	1000(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 69 0
+	.loc 1 82 0
 	movq	1000(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk10getDataEndEv
 	movq	%rax, 992(%rbp)
-	.loc 1 70 0
+	.loc 1 83 0
 	movq	992(%rbp), %rax
 	movl	$1, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 72 0
+	.loc 1 85 0
 	leaq	-32(%rbp), %rdx
 	leaq	-64(%rbp), %rax
 	movl	$0, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 73 0
+	.loc 1 86 0
 	leaq	-32(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 75 0
+	.loc 1 88 0
 	movl	$1, %eax
-	.loc 1 76 0
+	.loc 1 89 0
 	addq	$1136, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1128
 	ret
 	.cfi_endproc
-.LFE15:
+.LFE19:
 	.seh_endproc
 	.section .rdata,"dr"
-.LC5:
+.LC17:
 	.ascii ",\0"
 	.text
 	.align 2
@@ -357,8 +575,8 @@ _ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv:
 	.def	_ZN17TestMemoryManager17allocateCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager17allocateCorrectlyEv
 _ZN17TestMemoryManager17allocateCorrectlyEv:
-.LFB16:
-	.loc 1 79 0
+.LFB20:
+	.loc 1 92 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -372,102 +590,102 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	.cfi_def_cfa 6, 1072
 	.seh_endprologue
 	movq	%rcx, 1072(%rbp)
-	.loc 1 82 0
+	.loc 1 95 0
 	leaq	-64(%rbp), %rax
 	movq	%rax, 1048(%rbp)
-	.loc 1 83 0
+	.loc 1 96 0
 	movq	1048(%rbp), %rax
 	movl	$1015, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7setSizeEm
-	.loc 1 84 0
+	.loc 1 97 0
 	movq	1048(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk18setNextBaseFromEndEm
-	.loc 1 85 0
+	.loc 1 98 0
 	movq	1048(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk23setNextValidChunkOffsetEm
-	.loc 1 86 0
+	.loc 1 99 0
 	movq	1048(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk12setAllocatedEb
-	.loc 1 87 0
+	.loc 1 100 0
 	movq	1048(%rbp), %rax
 	movl	$0, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 89 0
+	.loc 1 102 0
 	movq	1048(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk10getDataEndEv
 	movq	%rax, 1040(%rbp)
-	.loc 1 90 0
+	.loc 1 103 0
 	movq	1040(%rbp), %rax
 	movl	$1, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk6setEndEb
-	.loc 1 92 0
+	.loc 1 105 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$0, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 94 0
+	.loc 1 107 0
 	leaq	-96(%rbp), %rax
 	movl	$500, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 1032(%rbp)
-	.loc 1 95 0
+	.loc 1 108 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 1024(%rbp)
-	.loc 1 96 0
+	.loc 1 109 0
 	leaq	-96(%rbp), %rax
 	movl	$30, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 1016(%rbp)
-	.loc 1 97 0
+	.loc 1 110 0
 	leaq	-96(%rbp), %rax
 	movl	$400, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 1008(%rbp)
-	.loc 1 98 0
+	.loc 1 111 0
 	leaq	-96(%rbp), %rax
 	movl	$1000, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 1000(%rbp)
-	.loc 1 103 0
+	.loc 1 116 0
 	movq	1000(%rbp), %rdx
 	leaq	960(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN16IntegerFormatterILi16EEC1Em
-	.loc 1 102 0
+	.loc 1 115 0
 	movq	1008(%rbp), %rdx
 	leaq	968(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN16IntegerFormatterILi16EEC1Em
-	.loc 1 101 0
+	.loc 1 114 0
 	movq	1016(%rbp), %rdx
 	leaq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN16IntegerFormatterILi16EEC1Em
-	.loc 1 100 0
+	.loc 1 113 0
 	movq	1024(%rbp), %rdx
 	leaq	984(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN16IntegerFormatterILi16EEC1Em
-	.loc 1 99 0
+	.loc 1 112 0
 	movq	1032(%rbp), %rdx
 	leaq	992(%rbp), %rax
 	movq	%rax, %rcx
@@ -476,70 +694,70 @@ _ZN17TestMemoryManager17allocateCorrectlyEv:
 	movq	%rax, %rdx
 	movq	.refptr.kout(%rip), %rcx
 	call	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
-	.loc 1 100 0
-	leaq	.LC5(%rip), %rdx
+	.loc 1 113 0
+	leaq	.LC17(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rax, %rcx
 	leaq	984(%rbp), %rax
 	movq	%rax, %rdx
 	call	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
-	.loc 1 101 0
-	leaq	.LC5(%rip), %rdx
+	.loc 1 114 0
+	leaq	.LC17(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rax, %rcx
 	leaq	976(%rbp), %rax
 	movq	%rax, %rdx
 	call	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
-	.loc 1 102 0
-	leaq	.LC5(%rip), %rdx
+	.loc 1 115 0
+	leaq	.LC17(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rax, %rcx
 	leaq	968(%rbp), %rax
 	movq	%rax, %rdx
 	call	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
-	.loc 1 103 0
-	leaq	.LC5(%rip), %rdx
+	.loc 1 116 0
+	leaq	.LC17(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
 	movq	%rax, %rcx
 	leaq	960(%rbp), %rax
 	movq	%rax, %rdx
 	call	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
-	leaq	.LC4(%rip), %rdx
+	leaq	.LC16(%rip), %rdx
 	movq	%rax, %rcx
 	call	_ZN6OutputlsEPKc
-	.loc 1 105 0
+	.loc 1 118 0
 	cmpq	$0, 1008(%rbp)
-	jne	.L9
-	.loc 1 105 0 is_stmt 0 discriminator 1
+	jne	.L17
+	.loc 1 118 0 is_stmt 0 discriminator 1
 	cmpq	$0, 1000(%rbp)
-	jne	.L9
-	.loc 1 105 0 discriminator 3
+	jne	.L17
+	.loc 1 118 0 discriminator 3
 	movl	$1, %eax
-	jmp	.L11
-.L9:
-	.loc 1 105 0 discriminator 4
+	jmp	.L19
+.L17:
+	.loc 1 118 0 discriminator 4
 	movl	$0, %eax
-.L11:
-	.loc 1 106 0 is_stmt 1
+.L19:
+	.loc 1 119 0 is_stmt 1
 	addq	$1184, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1176
 	ret
 	.cfi_endproc
-.LFE16:
+.LFE20:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager19deallocateCorrectlyEv
 	.def	_ZN17TestMemoryManager19deallocateCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager19deallocateCorrectlyEv
 _ZN17TestMemoryManager19deallocateCorrectlyEv:
-.LFB17:
-	.loc 1 108 0
+.LFB21:
+	.loc 1 121 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -553,50 +771,50 @@ _ZN17TestMemoryManager19deallocateCorrectlyEv:
 	.cfi_def_cfa 6, 1008
 	.seh_endprologue
 	movq	%rcx, 1008(%rbp)
-	.loc 1 110 0
+	.loc 1 123 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 111 0
+	.loc 1 124 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 984(%rbp)
-	.loc 1 112 0
+	.loc 1 125 0
 	movq	984(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, 976(%rbp)
-	.loc 1 113 0
+	.loc 1 126 0
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	testb	%al, %al
-	je	.L13
-	.loc 1 113 0 is_stmt 0 discriminator 1
+	je	.L21
+	.loc 1 126 0 is_stmt 0 discriminator 1
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
 	cmpq	$100, %rax
-	jne	.L13
-	.loc 1 113 0 discriminator 3
+	jne	.L21
+	.loc 1 126 0 discriminator 3
 	movl	$1, %eax
-	jmp	.L14
-.L13:
-	.loc 1 113 0 discriminator 4
+	jmp	.L22
+.L21:
+	.loc 1 126 0 discriminator 4
 	movl	$0, %eax
-.L14:
-	.loc 1 113 0 discriminator 6
+.L22:
+	.loc 1 126 0 discriminator 6
 	movb	%al, 975(%rbp)
-	.loc 1 114 0 is_stmt 1 discriminator 6
+	.loc 1 127 0 is_stmt 1 discriminator 6
 	movq	984(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10deallocateEPv
-	.loc 1 116 0 discriminator 6
+	.loc 1 129 0 discriminator 6
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
@@ -607,24 +825,24 @@ _ZN17TestMemoryManager19deallocateCorrectlyEv:
 	testl	%eax, %eax
 	setne	%al
 	movb	%al, 975(%rbp)
-	.loc 1 117 0 discriminator 6
+	.loc 1 130 0 discriminator 6
 	movzbl	975(%rbp), %eax
-	.loc 1 119 0 discriminator 6
+	.loc 1 132 0 discriminator 6
 	addq	$1120, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1112
 	ret
 	.cfi_endproc
-.LFE17:
+.LFE21:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
 	.def	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv
 _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
-.LFB18:
-	.loc 1 123 0
+.LFB22:
+	.loc 1 136 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -638,24 +856,24 @@ _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
 	.cfi_def_cfa 6, 1008
 	.seh_endprologue
 	movq	%rcx, 1008(%rbp)
-	.loc 1 125 0
+	.loc 1 138 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 126 0
+	.loc 1 139 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 984(%rbp)
-	.loc 1 127 0
+	.loc 1 140 0
 	movq	984(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, 976(%rbp)
-	.loc 1 130 0
+	.loc 1 143 0
 	movq	984(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movq	$-1, %r9
@@ -663,39 +881,39 @@ _ZN17TestMemoryManager26reallocateSmallerCorrectlyEv:
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	movq	%rax, 968(%rbp)
-	.loc 1 131 0
+	.loc 1 144 0
 	movq	968(%rbp), %rax
 	cmpq	984(%rbp), %rax
-	jne	.L17
-	.loc 1 131 0 is_stmt 0 discriminator 1
+	jne	.L25
+	.loc 1 144 0 is_stmt 0 discriminator 1
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
 	cmpq	$80, %rax
-	jne	.L17
-	.loc 1 131 0 discriminator 3
+	jne	.L25
+	.loc 1 144 0 discriminator 3
 	movl	$1, %eax
-	jmp	.L19
-.L17:
-	.loc 1 131 0 discriminator 4
+	jmp	.L27
+.L25:
+	.loc 1 144 0 discriminator 4
 	movl	$0, %eax
-.L19:
-	.loc 1 132 0 is_stmt 1
+.L27:
+	.loc 1 145 0 is_stmt 1
 	addq	$1120, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1112
 	ret
 	.cfi_endproc
-.LFE18:
+.LFE22:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
 	.def	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv
 _ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv:
-.LFB19:
-	.loc 1 134 0
+.LFB23:
+	.loc 1 147 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -709,33 +927,33 @@ _ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv:
 	.cfi_def_cfa 6, 1008
 	.seh_endprologue
 	movq	%rcx, 1008(%rbp)
-	.loc 1 136 0
+	.loc 1 149 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 137 0
+	.loc 1 150 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 984(%rbp)
-	.loc 1 138 0
+	.loc 1 151 0
 	movq	984(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, 976(%rbp)
-	.loc 1 139 0
+	.loc 1 152 0
 	movq	984(%rbp), %rax
 	addq	$100, %rax
 	movq	%rax, 968(%rbp)
-	.loc 1 140 0
+	.loc 1 153 0
 	movq	968(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk9moveAheadEm
-	.loc 1 143 0
+	.loc 1 156 0
 	movq	984(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movq	$-1, %r9
@@ -743,39 +961,39 @@ _ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv:
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	movq	%rax, 960(%rbp)
-	.loc 1 145 0
+	.loc 1 158 0
 	movq	960(%rbp), %rax
 	cmpq	984(%rbp), %rax
-	jne	.L21
-	.loc 1 145 0 is_stmt 0 discriminator 1
+	jne	.L29
+	.loc 1 158 0 is_stmt 0 discriminator 1
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk7getSizeEv
 	cmpq	$200, %rax
-	jne	.L21
-	.loc 1 145 0 discriminator 3
+	jne	.L29
+	.loc 1 158 0 discriminator 3
 	movl	$1, %eax
-	jmp	.L23
-.L21:
-	.loc 1 145 0 discriminator 4
+	jmp	.L31
+.L29:
+	.loc 1 158 0 discriminator 4
 	movl	$0, %eax
-.L23:
-	.loc 1 146 0 is_stmt 1
+.L31:
+	.loc 1 159 0 is_stmt 1
 	addq	$1120, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1112
 	ret
 	.cfi_endproc
-.LFE19:
+.LFE23:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
 	.def	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv
 _ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
-.LFB20:
-	.loc 1 149 0
+.LFB24:
+	.loc 1 162 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -789,37 +1007,37 @@ _ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
 	.cfi_def_cfa 6, 1008
 	.seh_endprologue
 	movq	%rcx, 1008(%rbp)
-	.loc 1 151 0
+	.loc 1 164 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 152 0
+	.loc 1 165 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 984(%rbp)
-	.loc 1 153 0
+	.loc 1 166 0
 	movq	984(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, 976(%rbp)
-	.loc 1 154 0
+	.loc 1 167 0
 	leaq	-96(%rbp), %rax
 	movl	$100, %edx
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager10allocateAsIPcEET_m
 	movq	%rax, 968(%rbp)
-	.loc 1 157 0
+	.loc 1 170 0
 	movq	984(%rbp), %rax
 	movb	$65, (%rax)
-	.loc 1 158 0
+	.loc 1 171 0
 	movq	984(%rbp), %rax
 	addq	$1, %rax
 	movb	$98, (%rax)
-	.loc 1 160 0
+	.loc 1 173 0
 	movq	984(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movq	$-1, %r9
@@ -827,54 +1045,54 @@ _ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv:
 	movq	%rax, %rcx
 	call	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 	movq	%rax, 960(%rbp)
-	.loc 1 161 0
+	.loc 1 174 0
 	movq	976(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	xorl	$1, %eax
 	testb	%al, %al
-	je	.L25
-	.loc 1 161 0 is_stmt 0 discriminator 1
+	je	.L33
+	.loc 1 174 0 is_stmt 0 discriminator 1
 	movq	960(%rbp), %rax
 	subq	$8, %rax
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk11isAllocatedEv
 	testb	%al, %al
-	je	.L25
-	.loc 1 161 0 discriminator 3
+	je	.L33
+	.loc 1 174 0 discriminator 3
 	movq	960(%rbp), %rax
 	movzbl	(%rax), %eax
 	cmpb	$65, %al
-	jne	.L25
-	.loc 1 161 0 discriminator 5
+	jne	.L33
+	.loc 1 174 0 discriminator 5
 	movq	960(%rbp), %rax
 	addq	$1, %rax
 	movzbl	(%rax), %eax
 	cmpb	$98, %al
-	jne	.L25
-	.loc 1 161 0 discriminator 7
+	jne	.L33
+	.loc 1 174 0 discriminator 7
 	movl	$1, %eax
-	jmp	.L27
-.L25:
-	.loc 1 161 0 discriminator 8
+	jmp	.L35
+.L33:
+	.loc 1 174 0 discriminator 8
 	movl	$0, %eax
-.L27:
-	.loc 1 164 0 is_stmt 1
+.L35:
+	.loc 1 177 0 is_stmt 1
 	addq	$1120, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1112
 	ret
 	.cfi_endproc
-.LFE20:
+.LFE24:
 	.seh_endproc
 	.align 2
 	.globl	_ZN17TestMemoryManager18nextChunkCorrectlyEv
 	.def	_ZN17TestMemoryManager18nextChunkCorrectlyEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN17TestMemoryManager18nextChunkCorrectlyEv
 _ZN17TestMemoryManager18nextChunkCorrectlyEv:
-.LFB21:
-	.loc 1 168 0
+.LFB25:
+	.loc 1 181 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -888,47 +1106,47 @@ _ZN17TestMemoryManager18nextChunkCorrectlyEv:
 	.cfi_def_cfa 6, 992
 	.seh_endprologue
 	movq	%rcx, 992(%rbp)
-	.loc 1 170 0
+	.loc 1 183 0
 	leaq	-64(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movl	$1, %r9d
 	movl	$1024, %r8d
 	movq	%rax, %rcx
 	call	_ZN13MemoryManagerC1EPvmb
-	.loc 1 171 0
+	.loc 1 184 0
 	leaq	-64(%rbp), %rax
 	movq	%rax, 968(%rbp)
-	.loc 1 172 0
+	.loc 1 185 0
 	movq	968(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7getNextEv
 	movq	%rax, %rcx
 	call	_ZNK11MemoryChunk5isEndEv
 	testb	%al, %al
-	je	.L29
-	.loc 1 172 0 is_stmt 0 discriminator 1
+	je	.L37
+	.loc 1 185 0 is_stmt 0 discriminator 1
 	movq	968(%rbp), %rax
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7getNextEv
 	movq	%rax, %rcx
 	call	_ZN11MemoryChunk7getNextEv
 	testq	%rax, %rax
-	jne	.L29
-	.loc 1 172 0 discriminator 3
+	jne	.L37
+	.loc 1 185 0 discriminator 3
 	movl	$1, %eax
-	jmp	.L31
-.L29:
-	.loc 1 172 0 discriminator 4
+	jmp	.L39
+.L37:
+	.loc 1 185 0 discriminator 4
 	movl	$0, %eax
-.L31:
-	.loc 1 173 0 is_stmt 1
+.L39:
+	.loc 1 186 0 is_stmt 1
 	addq	$1104, %rsp
 	popq	%rbp
 	.cfi_restore 6
 	.cfi_def_cfa 7, -1096
 	ret
 	.cfi_endproc
-.LFE21:
+.LFE25:
 	.seh_endproc
 	.section	.text$_ZN13MemoryManager10allocateAsIPcEET_m,"x"
 	.linkonce discard
@@ -937,7 +1155,7 @@ _ZN17TestMemoryManager18nextChunkCorrectlyEv:
 	.def	_ZN13MemoryManager10allocateAsIPcEET_m;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN13MemoryManager10allocateAsIPcEET_m
 _ZN13MemoryManager10allocateAsIPcEET_m:
-.LFB22:
+.LFB26:
 	.file 2 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/MemoryManager.h"
 	.loc 2 15 0
 	.cfi_startproc
@@ -965,7 +1183,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE22:
+.LFE26:
 	.seh_endproc
 	.section	.text$_ZN16IntegerFormatterILi16EEC1Em,"x"
 	.linkonce discard
@@ -974,7 +1192,7 @@ _ZN13MemoryManager10allocateAsIPcEET_m:
 	.def	_ZN16IntegerFormatterILi16EEC1Em;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN16IntegerFormatterILi16EEC1Em
 _ZN16IntegerFormatterILi16EEC1Em:
-.LFB25:
+.LFB29:
 	.file 3 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/IntegerFormatter.h"
 	.loc 3 16 0
 	.cfi_startproc
@@ -1000,7 +1218,7 @@ _ZN16IntegerFormatterILi16EEC1Em:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE25:
+.LFE29:
 	.seh_endproc
 	.section	.text$_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE,"x"
 	.linkonce discard
@@ -1008,7 +1226,7 @@ _ZN16IntegerFormatterILi16EEC1Em:
 	.def	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE
 _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
-.LFB26:
+.LFB30:
 	.loc 3 31 0
 	.cfi_startproc
 	pushq	%rbp
@@ -1039,7 +1257,7 @@ _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE26:
+.LFE30:
 	.seh_endproc
 	.section	.text$_ZN13MemoryManager12reallocateAsIPcEET_Pvmm,"x"
 	.linkonce discard
@@ -1048,7 +1266,7 @@ _ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE:
 	.def	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZN13MemoryManager12reallocateAsIPcEET_Pvmm
 _ZN13MemoryManager12reallocateAsIPcEET_Pvmm:
-.LFB27:
+.LFB31:
 	.loc 2 26 0
 	.cfi_startproc
 	pushq	%rbp
@@ -1081,7 +1299,7 @@ _ZN13MemoryManager12reallocateAsIPcEET_Pvmm:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE27:
+.LFE31:
 	.seh_endproc
 	.section	.text$_ZNK16IntegerFormatterILi16EE6formatEv,"x"
 	.linkonce discard
@@ -1090,7 +1308,7 @@ _ZN13MemoryManager12reallocateAsIPcEET_Pvmm:
 	.def	_ZNK16IntegerFormatterILi16EE6formatEv;	.scl	2;	.type	32;	.endef
 	.seh_proc	_ZNK16IntegerFormatterILi16EE6formatEv
 _ZNK16IntegerFormatterILi16EE6formatEv:
-.LFB28:
+.LFB32:
 	.loc 3 24 0
 	.cfi_startproc
 	pushq	%rbp
@@ -1121,14 +1339,14 @@ _ZNK16IntegerFormatterILi16EE6formatEv:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE28:
+.LFE32:
 	.seh_endproc
 	.text
 	.def	_Z41__static_initialization_and_destruction_0ii;	.scl	3;	.type	32;	.endef
 	.seh_proc	_Z41__static_initialization_and_destruction_0ii
 _Z41__static_initialization_and_destruction_0ii:
-.LFB29:
-	.loc 1 173 0
+.LFB33:
+	.loc 1 186 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -1142,19 +1360,19 @@ _Z41__static_initialization_and_destruction_0ii:
 	.seh_endprologue
 	movl	%ecx, 16(%rbp)
 	movl	%edx, 24(%rbp)
-	.loc 1 173 0
+	.loc 1 186 0
 	cmpl	$1, 16(%rbp)
-	jne	.L43
-	.loc 1 173 0 is_stmt 0 discriminator 1
+	jne	.L51
+	.loc 1 186 0 is_stmt 0 discriminator 1
 	cmpl	$65535, 24(%rbp)
-	jne	.L43
+	jne	.L51
 	.file 4 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/memory/mem_config.h"
 	.loc 4 19 0 is_stmt 1
 	movl	$1048576, %ecx
 	call	_Znam
 	movq	%rax, _ZL9RAM_START(%rip)
-.L43:
-	.loc 1 173 0
+.L51:
+	.loc 1 186 0
 	nop
 	addq	$32, %rsp
 	popq	%rbp
@@ -1162,13 +1380,13 @@ _Z41__static_initialization_and_destruction_0ii:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE29:
+.LFE33:
 	.seh_endproc
-	.def	_GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv;	.scl	3;	.type	32;	.endef
-	.seh_proc	_GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
-_GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
-.LFB30:
-	.loc 1 173 0
+	.def	_GLOBAL__sub_I__ZN17TestMemoryManager3runEv;	.scl	3;	.type	32;	.endef
+	.seh_proc	_GLOBAL__sub_I__ZN17TestMemoryManager3runEv
+_GLOBAL__sub_I__ZN17TestMemoryManager3runEv:
+.LFB34:
+	.loc 1 186 0
 	.cfi_startproc
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -1180,7 +1398,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	subq	$32, %rsp
 	.seh_stackalloc	32
 	.seh_endprologue
-	.loc 1 173 0
+	.loc 1 186 0
 	movl	$65535, %edx
 	movl	$1, %ecx
 	call	_Z41__static_initialization_and_destruction_0ii
@@ -1191,11 +1409,11 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE30:
+.LFE34:
 	.seh_endproc
 	.section	.ctors,"w"
 	.align 8
-	.quad	_GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv
+	.quad	_GLOBAL__sub_I__ZN17TestMemoryManager3runEv
 	.text
 .Letext0:
 	.file 5 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/stddef.h"
@@ -1212,7 +1430,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.file 16 "<built-in>"
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x219e
+	.long	0x21d5
 	.word	0x4
 	.secrel32	.Ldebug_abbrev0
 	.byte	0x8
@@ -2528,7 +2746,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.long	0x14ac
 	.long	0x14b7
 	.uleb128 0x15
-	.long	0x19fd
+	.long	0x1a22
 	.uleb128 0x16
 	.long	0x17d
 	.byte	0
@@ -2541,7 +2759,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.long	0x14ea
 	.long	0x14f5
 	.uleb128 0x15
-	.long	0x19fd
+	.long	0x1a22
 	.uleb128 0x16
 	.long	0xcbe
 	.byte	0
@@ -2555,7 +2773,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.long	0x1533
 	.long	0x1539
 	.uleb128 0x15
-	.long	0x1a08
+	.long	0x1a2d
 	.byte	0
 	.uleb128 0x26
 	.ascii "Base\0"
@@ -2569,7 +2787,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0x1
 	.byte	0xf
 	.byte	0xd
-	.long	0x19f2
+	.long	0x1a17
 	.uleb128 0x14
 	.secrel32	.LASF8
 	.byte	0xf
@@ -2579,220 +2797,226 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.long	0x1581
 	.long	0x1587
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
+	.uleb128 0x27
+	.ascii "run\0"
+	.byte	0xf
+	.byte	0x12
+	.ascii "_ZN17TestMemoryManager3runEv\0"
+	.byte	0x1
 	.uleb128 0x17
 	.ascii "memoryChunkMergeCorrectly\0"
 	.byte	0xf
-	.byte	0x12
+	.byte	0x13
 	.ascii "_ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x15e5
-	.long	0x15eb
+	.long	0x160a
+	.long	0x1610
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "memoryChunkSpiltCorrectly\0"
 	.byte	0xf
-	.byte	0x13
+	.byte	0x14
 	.ascii "_ZN17TestMemoryManager25memoryChunkSpiltCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x1649
-	.long	0x164f
+	.long	0x166e
+	.long	0x1674
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "uncontiguousChunkMemoryAllocateCorrectly\0"
 	.byte	0xf
-	.byte	0x14
+	.byte	0x15
 	.ascii "_ZN17TestMemoryManager40uncontiguousChunkMemoryAllocateCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x16cb
-	.long	0x16d1
+	.long	0x16f0
+	.long	0x16f6
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "allocateCorrectly\0"
 	.byte	0xf
-	.byte	0x15
+	.byte	0x16
 	.ascii "_ZN17TestMemoryManager17allocateCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x171f
-	.long	0x1725
+	.long	0x1744
+	.long	0x174a
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "alignedAllocateCorrectly\0"
 	.byte	0xf
-	.byte	0x16
+	.byte	0x17
 	.ascii "_ZN17TestMemoryManager24alignedAllocateCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x1781
-	.long	0x1787
+	.long	0x17a6
+	.long	0x17ac
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "deallocateCorrectly\0"
 	.byte	0xf
-	.byte	0x17
+	.byte	0x18
 	.ascii "_ZN17TestMemoryManager19deallocateCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x17d9
-	.long	0x17df
+	.long	0x17fe
+	.long	0x1804
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "reallocateSmallerCorrectly\0"
 	.byte	0xf
-	.byte	0x18
+	.byte	0x19
 	.ascii "_ZN17TestMemoryManager26reallocateSmallerCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x183f
-	.long	0x1845
+	.long	0x1864
+	.long	0x186a
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "reallocateInPlaceCollectCorrectly\0"
 	.byte	0xf
-	.byte	0x19
+	.byte	0x1a
 	.ascii "_ZN17TestMemoryManager33reallocateInPlaceCollectCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x18b3
-	.long	0x18b9
+	.long	0x18d8
+	.long	0x18de
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "reallocateOutOfPlaceMoveCorrectly\0"
 	.byte	0xf
-	.byte	0x1a
+	.byte	0x1b
 	.ascii "_ZN17TestMemoryManager33reallocateOutOfPlaceMoveCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x1927
-	.long	0x192d
+	.long	0x194c
+	.long	0x1952
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x17
 	.ascii "criticalConditionsStillCorrectly\0"
 	.byte	0xf
-	.byte	0x1b
+	.byte	0x1c
 	.ascii "_ZN17TestMemoryManager32criticalConditionsStillCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x1999
-	.long	0x199f
+	.long	0x19be
+	.long	0x19c4
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.uleb128 0x22
 	.ascii "nextChunkCorrectly\0"
 	.byte	0xf
-	.byte	0x1c
+	.byte	0x1d
 	.ascii "_ZN17TestMemoryManager18nextChunkCorrectlyEv\0"
 	.long	0xcae
 	.byte	0x1
-	.long	0x19eb
+	.long	0x1a10
 	.uleb128 0x15
-	.long	0x19f2
+	.long	0x1a17
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
 	.byte	0x8
 	.long	0x154a
 	.uleb128 0x4
-	.long	0x19f2
+	.long	0x1a17
 	.uleb128 0x1b
 	.byte	0x8
 	.long	0x1452
 	.uleb128 0x4
-	.long	0x19fd
+	.long	0x1a22
 	.uleb128 0x1b
 	.byte	0x8
 	.long	0x1545
 	.uleb128 0x4
-	.long	0x1a08
-	.uleb128 0x27
-	.ascii "_GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv\0"
-	.quad	.LFB30
-	.quad	.LFE30-.LFB30
-	.uleb128 0x1
-	.byte	0x9c
+	.long	0x1a2d
 	.uleb128 0x28
-	.ascii "__static_initialization_and_destruction_0\0"
-	.quad	.LFB29
-	.quad	.LFE29-.LFB29
+	.ascii "_GLOBAL__sub_I__ZN17TestMemoryManager3runEv\0"
+	.quad	.LFB34
+	.quad	.LFE34-.LFB34
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ad9
 	.uleb128 0x29
+	.ascii "__static_initialization_and_destruction_0\0"
+	.quad	.LFB33
+	.quad	.LFE33-.LFB33
+	.uleb128 0x1
+	.byte	0x9c
+	.long	0x1ae7
+	.uleb128 0x2a
 	.ascii "__initialize_p\0"
 	.byte	0x1
-	.byte	0xad
+	.byte	0xba
 	.long	0x353
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "__priority\0"
 	.byte	0x1
-	.byte	0xad
+	.byte	0xba
 	.long	0x353
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x2b
 	.long	0x14f5
-	.long	0x1afc
-	.quad	.LFB28
-	.quad	.LFE28-.LFB28
+	.long	0x1b0a
+	.quad	.LFB32
+	.quad	.LFE32-.LFB32
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1afc
-	.long	0x1b09
-	.uleb128 0x2b
+	.long	0x1b0a
+	.long	0x1b17
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x1a0e
+	.long	0x1a33
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x2b
 	.long	0xfd0
-	.long	0x1b33
-	.quad	.LFB27
-	.quad	.LFE27-.LFB27
+	.long	0x1b41
+	.quad	.LFB31
+	.quad	.LFE31-.LFB31
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1b33
-	.long	0x1b75
+	.long	0x1b41
+	.long	0x1b83
 	.uleb128 0x21
 	.ascii "T\0"
 	.long	0x10d7
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.secrel32	.LASF9
 	.long	0x10a5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "origin\0"
 	.byte	0x2
 	.byte	0x1a
@@ -2800,7 +3024,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "newSize\0"
 	.byte	0x2
 	.byte	0x1a
@@ -2808,7 +3032,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "oldSize\0"
 	.byte	0x2
 	.byte	0x1a
@@ -2817,22 +3041,22 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0x91
 	.sleb128 24
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x2d
 	.ascii "operator<< <16>\0"
 	.byte	0x3
 	.byte	0x1f
 	.ascii "_ZlsILi16EER6OutputS1_RK16IntegerFormatterIXT_EE\0"
 	.long	0x13de
-	.quad	.LFB26
-	.quad	.LFE26-.LFB26
+	.quad	.LFB30
+	.quad	.LFE30-.LFB30
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1bfa
+	.long	0x1c08
 	.uleb128 0x26
 	.ascii "Base\0"
 	.long	0x353
 	.byte	0x10
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "out\0"
 	.byte	0x3
 	.byte	0x1f
@@ -2840,11 +3064,11 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "hf\0"
 	.byte	0x3
 	.byte	0x1f
-	.long	0x1c00
+	.long	0x1c0e
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -2853,61 +3077,61 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0x8
 	.long	0x1545
 	.uleb128 0x4
-	.long	0x1bfa
-	.uleb128 0x2d
+	.long	0x1c08
+	.uleb128 0x2e
 	.long	0x147b
 	.byte	0
-	.long	0x1c13
-	.long	0x1c28
-	.uleb128 0x2e
-	.secrel32	.LASF9
-	.long	0x1a03
+	.long	0x1c21
+	.long	0x1c36
 	.uleb128 0x2f
+	.secrel32	.LASF9
+	.long	0x1a28
+	.uleb128 0x30
 	.ascii "num\0"
 	.byte	0x3
 	.byte	0x10
 	.long	0x17d
 	.byte	0
-	.uleb128 0x30
-	.long	0x1c05
-	.ascii "_ZN16IntegerFormatterILi16EEC1Em\0"
-	.long	0x1c6c
-	.quad	.LFB25
-	.quad	.LFE25-.LFB25
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x1c6c
-	.long	0x1c7d
 	.uleb128 0x31
 	.long	0x1c13
+	.ascii "_ZN16IntegerFormatterILi16EEC1Em\0"
+	.long	0x1c7a
+	.quad	.LFB29
+	.quad	.LFE29-.LFB29
+	.uleb128 0x1
+	.byte	0x9c
+	.long	0x1c7a
+	.long	0x1c8b
+	.uleb128 0x32
+	.long	0x1c21
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x31
-	.long	0x1c1c
+	.uleb128 0x32
+	.long	0x1c2a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x2b
 	.long	0x103c
-	.long	0x1ca7
-	.quad	.LFB22
-	.quad	.LFE22-.LFB22
+	.long	0x1cb5
+	.quad	.LFB26
+	.quad	.LFE26-.LFB26
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ca7
-	.long	0x1cc0
+	.long	0x1cb5
+	.long	0x1cce
 	.uleb128 0x21
 	.ascii "T\0"
 	.long	0x10d7
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.secrel32	.LASF9
 	.long	0x10a5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x29
+	.uleb128 0x2a
 	.ascii "n\0"
 	.byte	0x2
 	.byte	0xf
@@ -2916,43 +3140,43 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0x91
 	.sleb128 8
 	.byte	0
-	.uleb128 0x32
-	.long	0x199f
+	.uleb128 0x33
+	.long	0x19c4
 	.byte	0x1
-	.byte	0xa7
-	.long	0x1ce5
-	.quad	.LFB21
-	.quad	.LFE21-.LFB21
+	.byte	0xb4
+	.long	0x1cf3
+	.quad	.LFB25
+	.quad	.LFE25-.LFB25
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ce5
-	.long	0x1d1e
-	.uleb128 0x2b
+	.long	0x1cf3
+	.long	0x1d2c
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0xa9
-	.long	0x1d1e
+	.byte	0xb6
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1056
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0xaa
+	.byte	0xb7
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1088
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF10
 	.byte	0x1
-	.byte	0xab
+	.byte	0xb8
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -2960,40 +3184,40 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0
 	.uleb128 0xb
 	.long	0x593
-	.long	0x1d2f
-	.uleb128 0x34
+	.long	0x1d3d
+	.uleb128 0x35
 	.long	0x587
 	.word	0x3ff
 	.byte	0
-	.uleb128 0x32
-	.long	0x18b9
+	.uleb128 0x33
+	.long	0x18de
 	.byte	0x1
-	.byte	0x94
-	.long	0x1d54
-	.quad	.LFB20
-	.quad	.LFE20-.LFB20
+	.byte	0xa1
+	.long	0x1d62
+	.quad	.LFB24
+	.quad	.LFE24-.LFB24
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1d54
-	.long	0x1db5
-	.uleb128 0x2b
+	.long	0x1d62
+	.long	0x1dc3
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x96
-	.long	0x1d1e
+	.byte	0xa3
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1072
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0x97
+	.byte	0xa4
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
@@ -3001,15 +3225,15 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p1\0"
 	.byte	0x1
-	.byte	0x98
+	.byte	0xa5
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF11
 	.byte	0x1
-	.byte	0x99
+	.byte	0xa6
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3017,7 +3241,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p2\0"
 	.byte	0x1
-	.byte	0x9a
+	.byte	0xa7
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3025,41 +3249,41 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "rp1\0"
 	.byte	0x1
-	.byte	0xa0
+	.byte	0xad
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
 	.byte	0
-	.uleb128 0x32
-	.long	0x1845
+	.uleb128 0x33
+	.long	0x186a
 	.byte	0x1
-	.byte	0x85
-	.long	0x1dda
-	.quad	.LFB19
-	.quad	.LFE19-.LFB19
+	.byte	0x92
+	.long	0x1de8
+	.quad	.LFB23
+	.quad	.LFE23-.LFB23
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1dda
-	.long	0x1e43
-	.uleb128 0x2b
+	.long	0x1de8
+	.long	0x1e51
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x87
-	.long	0x1d1e
+	.byte	0x94
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1072
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0x88
+	.byte	0x95
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
@@ -3067,15 +3291,15 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p1\0"
 	.byte	0x1
-	.byte	0x89
+	.byte	0x96
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF11
 	.byte	0x1
-	.byte	0x8a
+	.byte	0x97
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3083,11 +3307,69 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "freeChunk1\0"
 	.byte	0x1
-	.byte	0x8b
+	.byte	0x98
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
+	.uleb128 0xe
+	.ascii "rp1\0"
+	.byte	0x1
+	.byte	0x9c
+	.long	0x10d7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -48
+	.byte	0
+	.uleb128 0x33
+	.long	0x1804
+	.byte	0x1
+	.byte	0x87
+	.long	0x1e76
+	.quad	.LFB22
+	.quad	.LFE22-.LFB22
+	.uleb128 0x1
+	.byte	0x9c
+	.long	0x1e76
+	.long	0x1eca
+	.uleb128 0x2c
+	.secrel32	.LASF9
+	.long	0x1a1d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x34
+	.secrel32	.LASF4
+	.byte	0x1
+	.byte	0x89
+	.long	0x1d2c
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1072
+	.uleb128 0xe
+	.ascii "man\0"
+	.byte	0x1
+	.byte	0x8a
+	.long	0xcc5
+	.uleb128 0x3
+	.byte	0x91
+	.sleb128 -1104
+	.uleb128 0xe
+	.ascii "p1\0"
+	.byte	0x1
+	.byte	0x8b
+	.long	0x10d7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x34
+	.secrel32	.LASF11
+	.byte	0x1
+	.byte	0x8c
+	.long	0xca8
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
 	.uleb128 0xe
 	.ascii "rp1\0"
 	.byte	0x1
@@ -3095,95 +3377,37 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -48
-	.byte	0
-	.uleb128 0x32
-	.long	0x17df
-	.byte	0x1
-	.byte	0x7a
-	.long	0x1e68
-	.quad	.LFB18
-	.quad	.LFE18-.LFB18
-	.uleb128 0x1
-	.byte	0x9c
-	.long	0x1e68
-	.long	0x1ebc
-	.uleb128 0x2b
-	.secrel32	.LASF9
-	.long	0x19f8
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.uleb128 0x33
-	.secrel32	.LASF4
-	.byte	0x1
-	.byte	0x7c
-	.long	0x1d1e
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1072
-	.uleb128 0xe
-	.ascii "man\0"
-	.byte	0x1
-	.byte	0x7d
-	.long	0xcc5
-	.uleb128 0x3
-	.byte	0x91
-	.sleb128 -1104
-	.uleb128 0xe
-	.ascii "p1\0"
-	.byte	0x1
-	.byte	0x7e
-	.long	0x10d7
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x33
-	.secrel32	.LASF11
-	.byte	0x1
-	.byte	0x7f
-	.long	0xca8
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -32
-	.uleb128 0xe
-	.ascii "rp1\0"
-	.byte	0x1
-	.byte	0x82
-	.long	0x10d7
-	.uleb128 0x2
-	.byte	0x91
 	.sleb128 -40
 	.byte	0
-	.uleb128 0x32
-	.long	0x1787
+	.uleb128 0x33
+	.long	0x17ac
 	.byte	0x1
-	.byte	0x6b
-	.long	0x1ee1
-	.quad	.LFB17
-	.quad	.LFE17-.LFB17
+	.byte	0x78
+	.long	0x1eef
+	.quad	.LFB21
+	.quad	.LFE21-.LFB21
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1ee1
-	.long	0x1f38
-	.uleb128 0x2b
+	.long	0x1eef
+	.long	0x1f46
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x6d
-	.long	0x1d1e
+	.byte	0x7a
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1072
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0x6e
+	.byte	0x7b
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
@@ -3191,7 +3415,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p1\0"
 	.byte	0x1
-	.byte	0x6f
+	.byte	0x7c
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3199,7 +3423,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "chunk1\0"
 	.byte	0x1
-	.byte	0x70
+	.byte	0x7d
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3207,49 +3431,49 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "res\0"
 	.byte	0x1
-	.byte	0x71
+	.byte	0x7e
 	.long	0xcae
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -33
 	.byte	0
-	.uleb128 0x32
-	.long	0x16d1
+	.uleb128 0x33
+	.long	0x16f6
 	.byte	0x1
-	.byte	0x4e
-	.long	0x1f5d
-	.quad	.LFB16
-	.quad	.LFE16-.LFB16
+	.byte	0x5b
+	.long	0x1f6b
+	.quad	.LFB20
+	.quad	.LFE20-.LFB20
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x1f5d
-	.long	0x1fe6
-	.uleb128 0x2b
+	.long	0x1f6b
+	.long	0x1ff4
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x50
-	.long	0x1d1e
+	.byte	0x5d
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1136
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF10
 	.byte	0x1
-	.byte	0x52
+	.byte	0x5f
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF12
 	.byte	0x1
-	.byte	0x59
+	.byte	0x66
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3257,7 +3481,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0x5c
+	.byte	0x69
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
@@ -3265,7 +3489,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p1\0"
 	.byte	0x1
-	.byte	0x5e
+	.byte	0x6b
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3273,7 +3497,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p2\0"
 	.byte	0x1
-	.byte	0x5f
+	.byte	0x6c
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3281,7 +3505,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p3\0"
 	.byte	0x1
-	.byte	0x60
+	.byte	0x6d
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3289,7 +3513,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p4\0"
 	.byte	0x1
-	.byte	0x61
+	.byte	0x6e
 	.long	0x10d7
 	.uleb128 0x2
 	.byte	0x91
@@ -3297,49 +3521,49 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "p5\0"
 	.byte	0x1
-	.byte	0x62
+	.byte	0x6f
 	.long	0x10d7
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -72
 	.byte	0
-	.uleb128 0x32
-	.long	0x164f
+	.uleb128 0x33
+	.long	0x1674
 	.byte	0x1
-	.byte	0x39
-	.long	0x200b
-	.quad	.LFB15
-	.quad	.LFE15-.LFB15
+	.byte	0x46
+	.long	0x2019
+	.quad	.LFB19
+	.quad	.LFE19-.LFB19
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x200b
-	.long	0x2062
-	.uleb128 0x2b
+	.long	0x2019
+	.long	0x2070
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x3b
-	.long	0x1d1e
+	.byte	0x48
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1056
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF10
 	.byte	0x1
-	.byte	0x3e
+	.byte	0x4b
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF12
 	.byte	0x1
-	.byte	0x45
+	.byte	0x52
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3347,7 +3571,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "man\0"
 	.byte	0x1
-	.byte	0x48
+	.byte	0x55
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
@@ -3355,48 +3579,49 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "man2\0"
 	.byte	0x1
-	.byte	0x49
+	.byte	0x56
 	.long	0xcc5
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1120
 	.byte	0
-	.uleb128 0x35
-	.long	0x1587
+	.uleb128 0x33
+	.long	0x15ac
 	.byte	0x1
-	.long	0x2086
-	.quad	.LFB14
-	.quad	.LFE14-.LFB14
+	.byte	0x1f
+	.long	0x2095
+	.quad	.LFB18
+	.quad	.LFE18-.LFB18
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2086
-	.long	0x2175
-	.uleb128 0x2b
+	.long	0x2095
+	.long	0x2184
+	.uleb128 0x2c
 	.secrel32	.LASF9
-	.long	0x19f8
+	.long	0x1a1d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF4
 	.byte	0x1
-	.byte	0x14
-	.long	0x1d1e
+	.byte	0x21
+	.long	0x1d2c
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1136
 	.uleb128 0xe
 	.ascii "sizes\0"
 	.byte	0x1
-	.byte	0x15
-	.long	0x2175
+	.byte	0x22
+	.long	0x2184
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1168
-	.uleb128 0x33
+	.uleb128 0x34
 	.secrel32	.LASF10
 	.byte	0x1
-	.byte	0x17
+	.byte	0x24
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3404,7 +3629,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "chunk2\0"
 	.byte	0x1
-	.byte	0x1d
+	.byte	0x2a
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3412,7 +3637,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "chunk3\0"
 	.byte	0x1
-	.byte	0x20
+	.byte	0x2d
 	.long	0xca8
 	.uleb128 0x2
 	.byte	0x91
@@ -3420,7 +3645,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "chunk4\0"
 	.byte	0x1
-	.byte	0x23
+	.byte	0x30
 	.long	0xca8
 	.uleb128 0x3
 	.byte	0x91
@@ -3428,7 +3653,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "chunk5\0"
 	.byte	0x1
-	.byte	0x2a
+	.byte	0x37
 	.long	0xca8
 	.uleb128 0x3
 	.byte	0x91
@@ -3436,7 +3661,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "sumSize\0"
 	.byte	0x1
-	.byte	0x2e
+	.byte	0x3b
 	.long	0x17d
 	.uleb128 0x3
 	.byte	0x91
@@ -3447,26 +3672,26 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0xe
 	.ascii "i\0"
 	.byte	0x1
-	.byte	0x2f
+	.byte	0x3c
 	.long	0x190
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
 	.uleb128 0x37
 	.ascii "__for_range\0"
-	.long	0x2195
+	.long	0x21a4
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -88
 	.uleb128 0x37
 	.ascii "__for_begin\0"
-	.long	0x219b
+	.long	0x21aa
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.uleb128 0x37
 	.ascii "__for_end\0"
-	.long	0x219b
+	.long	0x21aa
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
@@ -3474,24 +3699,41 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.byte	0
 	.uleb128 0xb
 	.long	0x17d
-	.long	0x2185
+	.long	0x2194
 	.uleb128 0xc
 	.long	0x587
 	.byte	0x3
 	.byte	0
 	.uleb128 0xb
 	.long	0x190
-	.long	0x2195
+	.long	0x21a4
 	.uleb128 0xc
 	.long	0x587
 	.byte	0x3
 	.byte	0
 	.uleb128 0x24
 	.byte	0x8
-	.long	0x2185
+	.long	0x2194
 	.uleb128 0x1b
 	.byte	0x8
 	.long	0x190
+	.uleb128 0x38
+	.long	0x1587
+	.byte	0x1
+	.byte	0x10
+	.quad	.LFB14
+	.quad	.LFE14-.LFB14
+	.uleb128 0x1
+	.byte	0x9c
+	.uleb128 0xe
+	.ascii "tmm\0"
+	.byte	0x1
+	.byte	0x13
+	.long	0x154a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -17
+	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"dr"
 .Ldebug_abbrev0:
@@ -4022,6 +4264,25 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x27
 	.uleb128 0x2e
 	.byte	0
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x6e
+	.uleb128 0x8
+	.uleb128 0x32
+	.uleb128 0xb
+	.uleb128 0x3c
+	.uleb128 0x19
+	.byte	0
+	.byte	0
+	.uleb128 0x28
+	.uleb128 0x2e
+	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
 	.uleb128 0x34
@@ -4036,7 +4297,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x28
+	.uleb128 0x29
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -4055,7 +4316,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x29
+	.uleb128 0x2a
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4070,7 +4331,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x2a
+	.uleb128 0x2b
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4091,7 +4352,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2b
+	.uleb128 0x2c
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4104,7 +4365,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x2c
+	.uleb128 0x2d
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4131,7 +4392,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2d
+	.uleb128 0x2e
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4144,7 +4405,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x2e
+	.uleb128 0x2f
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4155,7 +4416,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x2f
+	.uleb128 0x30
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4168,7 +4429,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x30
+	.uleb128 0x31
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -4191,7 +4452,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x31
+	.uleb128 0x32
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -4200,7 +4461,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x32
+	.uleb128 0x33
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4225,7 +4486,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x33
+	.uleb128 0x34
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4240,36 +4501,13 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x34
+	.uleb128 0x35
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2f
 	.uleb128 0x5
-	.byte	0
-	.byte	0
-	.uleb128 0x35
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x47
-	.uleb128 0x13
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x36
@@ -4294,6 +4532,25 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
+	.uleb128 0x38
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x47
+	.uleb128 0x13
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.byte	0
+	.byte	0
 	.byte	0
 	.section	.debug_aranges,"dr"
 	.long	0x7c
@@ -4305,32 +4562,32 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.word	0
 	.quad	.Ltext0
 	.quad	.Letext0-.Ltext0
-	.quad	.LFB22
-	.quad	.LFE22-.LFB22
-	.quad	.LFB25
-	.quad	.LFE25-.LFB25
 	.quad	.LFB26
 	.quad	.LFE26-.LFB26
-	.quad	.LFB27
-	.quad	.LFE27-.LFB27
-	.quad	.LFB28
-	.quad	.LFE28-.LFB28
+	.quad	.LFB29
+	.quad	.LFE29-.LFB29
+	.quad	.LFB30
+	.quad	.LFE30-.LFB30
+	.quad	.LFB31
+	.quad	.LFE31-.LFB31
+	.quad	.LFB32
+	.quad	.LFE32-.LFB32
 	.quad	0
 	.quad	0
 	.section	.debug_ranges,"dr"
 .Ldebug_ranges0:
 	.quad	.Ltext0
 	.quad	.Letext0
-	.quad	.LFB22
-	.quad	.LFE22
-	.quad	.LFB25
-	.quad	.LFE25
 	.quad	.LFB26
 	.quad	.LFE26
-	.quad	.LFB27
-	.quad	.LFE27
-	.quad	.LFB28
-	.quad	.LFE28
+	.quad	.LFB29
+	.quad	.LFE29
+	.quad	.LFB30
+	.quad	.LFE30
+	.quad	.LFB31
+	.quad	.LFE31
+	.quad	.LFB32
+	.quad	.LFE32
 	.quad	0
 	.quad	0
 	.section	.debug_macro,"dr"
@@ -5205,7 +5462,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.ascii "CXX_MACROS_H__ \0"
 	.byte	0x1
 	.uleb128 0x5
-	.ascii "ARCH_IS_host \0"
+	.ascii "TARGET_ARCH_IS_host \0"
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x9
@@ -6636,22 +6893,25 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.uleb128 0x20
 	.ascii "TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))\0"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x25
 	.ascii "__stringify_1(x) #x\0"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x26
 	.ascii "__stringify(x) __stringify_1(x)\0"
 	.byte	0x1
-	.uleb128 0x29
-	.ascii "HEX32(a,b) 0x ##a ##b\0"
-	.byte	0x1
-	.uleb128 0x2a
-	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
-	.byte	0x1
-	.uleb128 0x2d
-	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.uleb128 0x27
+	.ascii "CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)\0"
 	.byte	0x1
 	.uleb128 0x2e
+	.ascii "HEX32(a,b) 0x ##a ##b\0"
+	.byte	0x1
+	.uleb128 0x2f
+	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x32
+	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x33
 	.ascii "BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h\0"
 	.byte	0x4
 	.byte	0x3
@@ -6798,6 +7058,7 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 .LASF6:
 	.ascii "operator<<\0"
 	.ident	"GCC: (GNU) 6.4.0"
+	.def	_ZN6OutputlsEPKc;	.scl	2;	.type	32;	.endef
 	.def	_ZN11MemoryChunk12setAllocatedEb;	.scl	2;	.type	32;	.endef
 	.def	_ZN11MemoryChunk18setNextBaseFromEndEm;	.scl	2;	.type	32;	.endef
 	.def	_ZN11MemoryChunk7setSizeEm;	.scl	2;	.type	32;	.endef
@@ -6807,7 +7068,6 @@ _GLOBAL__sub_I__ZN17TestMemoryManager25memoryChunkMergeCorrectlyEv:
 	.def	_ZNK11MemoryChunk18getNextBaseFromEndEv;	.scl	2;	.type	32;	.endef
 	.def	_ZN11MemoryChunk10getDataEndEv;	.scl	2;	.type	32;	.endef
 	.def	_ZN11MemoryChunk25mergeTrailingsUnallocatedEv;	.scl	2;	.type	32;	.endef
-	.def	_ZN6OutputlsEPKc;	.scl	2;	.type	32;	.endef
 	.def	_ZN6OutputlsEm;	.scl	2;	.type	32;	.endef
 	.def	_ZN13MemoryManagerC1EPvmb;	.scl	2;	.type	32;	.endef
 	.def	_ZNK11MemoryChunk11isAllocatedEv;	.scl	2;	.type	32;	.endef

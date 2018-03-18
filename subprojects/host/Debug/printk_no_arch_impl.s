@@ -95,11 +95,8 @@ _Z6printkPKcm:
 .L6:
 	.loc 1 22 0
 	movq	$0, -8(%rbp)
-	.loc 1 23 0
-	cmpq	$0, 24(%rbp)
-	je	.L8
 .L9:
-	.loc 1 24 0
+	.loc 1 23 0
 	movq	24(%rbp), %rax
 	leaq	-1(%rax), %rdx
 	movq	%rdx, 24(%rbp)
@@ -107,7 +104,7 @@ _Z6printkPKcm:
 	setne	%al
 	testb	%al, %al
 	je	.L8
-	.loc 1 25 0
+	.loc 1 24 0
 	movq	16(%rbp), %rax
 	leaq	1(%rax), %rdx
 	movq	%rdx, 16(%rbp)
@@ -116,13 +113,13 @@ _Z6printkPKcm:
 	movl	%eax, %ecx
 	call	_Z6printkc
 	addq	%rax, -8(%rbp)
-	.loc 1 24 0
+	.loc 1 23 0
 	jmp	.L9
 .L8:
-	.loc 1 26 0
+	.loc 1 25 0
 	movq	-8(%rbp), %rax
 .L7:
-	.loc 1 27 0
+	.loc 1 26 0
 	addq	$48, %rsp
 	popq	%rbp
 	.cfi_restore 6
@@ -1750,7 +1747,7 @@ _Z6printkPKcm:
 	.ascii "CXX_MACROS_H__ \0"
 	.byte	0x1
 	.uleb128 0x5
-	.ascii "ARCH_IS_host \0"
+	.ascii "TARGET_ARCH_IS_host \0"
 	.byte	0x4
 	.file 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
 	.byte	0x3
@@ -3182,22 +3179,25 @@ _Z6printkPKcm:
 	.uleb128 0x20
 	.ascii "TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))\0"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x25
 	.ascii "__stringify_1(x) #x\0"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x26
 	.ascii "__stringify(x) __stringify_1(x)\0"
 	.byte	0x1
-	.uleb128 0x29
-	.ascii "HEX32(a,b) 0x ##a ##b\0"
-	.byte	0x1
-	.uleb128 0x2a
-	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
-	.byte	0x1
-	.uleb128 0x2d
-	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.uleb128 0x27
+	.ascii "CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)\0"
 	.byte	0x1
 	.uleb128 0x2e
+	.ascii "HEX32(a,b) 0x ##a ##b\0"
+	.byte	0x1
+	.uleb128 0x2f
+	.ascii "HEX64(a,b,c,d) 0x ##a ##b ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x32
+	.ascii "BIN32(a,bb,c,d) 0b ##a ##bb ##c ##d\0"
+	.byte	0x1
+	.uleb128 0x33
 	.ascii "BIN64(a,bb,c,d,e,f,g,h) 0b ##a ##bb ##c ##d ##e ##f ##g ##h\0"
 	.byte	0x4
 	.file 14 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"

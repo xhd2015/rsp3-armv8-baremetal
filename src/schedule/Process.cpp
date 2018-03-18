@@ -10,10 +10,15 @@
 #include <schedule/PidManager.h>
 #include <arch/common_aarch64/mmu/VirtualAddress.h>
 #include <asm_instructions.h>
+#include <arch/common_aarch64/exception/exceptions.h>
+
+
+Process::Process()
+{}
+
 
 int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize)
 {
-	this->_status = CREATED_INCOMPLETE;
 	this->_pid = pidManager.allocate();
 
 	if(_pid == INVALID_PID)
@@ -21,10 +26,9 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 	this->_parent = parent;
 	this->_priority = priority;
 
-
-
 	VirtualAddress pcVa(0,addrBitsLen);
 	pcVa.ttbrSel(0);
+	pcVa.index(3,Process::CODE_L3_INDEX);// 将nullptr排除在外
 	VirtualAddress spVa(0,addrBitsLen);// 栈的虚拟地址从顶部开始
 	spVa.ttbrSel(0);
 	spVa.index(0,0);
@@ -89,18 +93,18 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 	_tableL2[0].S1.NextLevelTableAddr = (static_cast<uint64_t>(phyaddr.S0.PA51_48) << (48-12)) | (phyaddr.S0.PA47_12);
 
 	phyaddr = asm_at(reinterpret_cast<uint64_t>(_codeBase));
-	// 映射代码到0-20KB
-	for(size_t i=0;i!=5;++i)
+	// 映射代码到4-24KB
+	for(size_t i=0;i!=CODE_L3_ENTRY_NUM;++i)
 	{
-		_tableL3[i] = {0};
-		_tableL3[i].RES1_0 = 1;
-		_tableL3[i].AF = 1;
-		_tableL3[i].Valid = 1;
-		_tableL3[i].nG = 1;
-		_tableL3[i].NS = 1;
-		_tableL3[i].Contiguous = 1;
-		_tableL3[i].AP = 0b11;//RO,EL0
-		_tableL3[i].OutputAddr = ( (static_cast<uint64_t>(phyaddr.S0.PA51_48) << (48-12))|phyaddr.S0.PA47_12 )+i;
+		_tableL3[CODE_L3_INDEX + i] = {0};
+		_tableL3[CODE_L3_INDEX + i].RES1_0 = 1;
+		_tableL3[CODE_L3_INDEX + i].AF = 1;
+		_tableL3[CODE_L3_INDEX + i].Valid = 1;
+		_tableL3[CODE_L3_INDEX + i].nG = 1;
+		_tableL3[CODE_L3_INDEX + i].NS = 1;
+		_tableL3[CODE_L3_INDEX + i].Contiguous = 1;
+		_tableL3[CODE_L3_INDEX + i].AP = 0b11;//RO,EL0
+		_tableL3[CODE_L3_INDEX + i].OutputAddr = ( (static_cast<uint64_t>(phyaddr.S0.PA51_48) << (48-12))|phyaddr.S0.PA47_12 )+i;
 	}
 	auto spPhAddr = asm_at(reinterpret_cast<uint64_t>(_spBase));
 	for(size_t i=0;i<Process::STACK_L3_ENTRY_NUM;++i)
@@ -135,78 +139,145 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 
 }
 
-void* Process::getCodeBase() const {
+void Process::destroy()
+{
+	if(_status == Process::Status::DESTROYED)
+		return;
+	// 也许是CREATED_INCOMPLETE
+	if(_pid!=INVALID_PID)
+	{
+		pidManager.deallocate(_pid);
+		_pid = INVALID_PID;
+	}
+	mman.deallocate(_spBase);
+	mman.deallocate(_heapBase);
+	mman.deallocate(_codeBase);
+	mman.deallocate(_tableL0);
+	mman.deallocate(_tableL1);
+	mman.deallocate(_tableL2);
+	mman.deallocate(_tableL3);
+//	_spBase = nullptr;
+//	_heapBase = nullptr;
+//	_codeBase = nullptr;
+//	_tableL0 = nullptr;
+//	_tableL1 = nullptr;
+//	_tableL2 = nullptr;
+//	_tableL3 = nullptr;
+//
+//	_spSize = 0;
+//	_heapSize = 0;
+//	_codeSize = 0;
+	_status = Process::Status::DESTROYED;
+}
+
+void Process::saveContext(const uint64_t *savedRegisters)
+{
+	std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
+	this->_ttbr0.updateRead();
+	this->_ELR.updateRead();
+	this->_SPSR.updateRead();
+	this->_spEL0.updateRead();
+}
+
+void Process::restoreContextAndExecute(void* savedSpEL1)
+{
+	this->_ttbr0.write();
+	this->_ELR.write();
+	this->_SPSR.write();
+	this->_spEL0.write();
+
+	// 从低地址开始还原
+	__asm__ __volatile__(
+		"cbz %1, 1f \n\t" // if savedSpEL1==nullptr, branch
+		"mov  sp,  %1 \n\t" // else set sp=savedSpEL1
+		"1: \n\t"
+		"mov  x30, %0 \n\t"
+		RESTORE_REGS_ASM_INSTR_X30_BASE
+		"eret \n\t"
+		::"r"(_registers),"r"(savedSpEL1)
+		:"sp"
+	);
+
+}
+
+void* Process::codeBase() const {
 	return _codeBase;
 }
 
-size_t Process::getCodeSize() const {
+size_t Process::codeSize() const {
 	return _codeSize;
 }
 
-void* Process::getHeapBase() const {
-	return _heapBase;
-}
-
-size_t Process::getHeapSize() const {
-	return _heapSize;
-}
-
-const Process* Process::getParent() const {
-	return _parent;
-}
-
-PidType Process::getPid() const {
-	return _pid;
-}
-
-uint32_t Process::getPriority() const {
-	return _priority;
-}
-
-RegELR_EL1 Process::getELR() const {
+RegELR_EL1 Process::ELR() const {
 	return _ELR;
 }
 
-const uint64_t* Process::getRegisters() const {
-	return _Registers;
+void* Process::heapBase() const {
+	return _heapBase;
 }
 
-const RegSPSR_EL1 Process::getSPSR() const {
-	return _SPSR;
+size_t Process::heapSize() const {
+	return _heapSize;
 }
 
-const void* Process::getSpBase() const {
+const Process* Process::parent() const {
+	return _parent;
+}
+
+PidType Process::pid() const {
+	return _pid;
+}
+
+uint32_t Process::priority() const {
+	return _priority;
+}
+uint64_t *    Process::registers()
+{
+	return _registers;
+}
+const uint64_t* Process::registers() const {
+	return _registers;
+}
+
+void* Process::spBase() const {
 	return _spBase;
 }
 
-RegSP_EL0 Process::getSpEL0() const {
+RegSP_EL0 Process::spEL0() const {
 	return _spEL0;
 }
 
-size_t Process::getSpSize() const {
+size_t Process::spSize() const {
 	return _spSize;
 }
-
-Process::Status Process::getStatus() const {
+Process::Status Process::status() const
+{
 	return _status;
 }
+void   Process::status(Status status)
+{
+	_status = status;
+}
+const RegSPSR_EL1 Process::SPSR() const {
+	return _SPSR;
+}
 
-const RegDescriptor4KBL0* Process::getTableL0() const {
+const RegDescriptor4KBL0* Process::tableL0() const {
 	return _tableL0;
 }
 
-const RegDescriptor4KBL1* Process::getTableL1() const {
+RegDescriptor4KBL1* Process::tableL1() const {
 	return _tableL1;
 }
 
-const RegDescriptor4KBL2* Process::getTableL2() const {
+RegDescriptor4KBL2* Process::tableL2() const {
 	return _tableL2;
 }
 
-const RegDescriptor4KBL3* Process::getTableL3() const {
+const RegDescriptor4KBL3* Process::tableL3() const {
 	return _tableL3;
 }
 
-RegTTBR0_EL1 Process::getTTBR0() const {
+const RegTTBR0_EL1& Process::TTBR0() const {
 	return _ttbr0;
 }

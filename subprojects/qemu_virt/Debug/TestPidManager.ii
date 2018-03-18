@@ -428,7 +428,7 @@
 #define UART_BASE 0x09000000
 #define CONFIG_RAM_START 0x40000000
 #define CONFIG_RAM_SIZE 0x40000000
-#define ARCH_IS_qemu_virt 
+#define TARGET_ARCH_IS_qemu_virt 
 #define PERIPHBASE 0x08000000
 # 32 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp"
@@ -1567,8 +1567,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 
@@ -3297,13 +3302,38 @@ extern PidManager pidManager;
 
 class TestPidManager{
 public:
+ static void run();
  bool clearAllKeepsInvalidAllocated();
  bool allocateReturnContinousPids();
  bool allocateInvalidPidAlwaysFailed();
  bool deallocatePidSuccessfully();
 };
 # 11 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp" 2
-# 22 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp"
+# 20 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp"
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/test/test_base.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/test/test_base.h"
+#define INCLUDE_TEST_TEST_BASE_H_ 
+
+
+# 1 "d:\\pool\\eclipse-workspace_aarch64\\newspace\\raspios\\include\\io\\printk.h" 1
+# 13 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/test/test_base.h" 2
+
+#define EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << "!="<<value<<",the real value is " << expr << "\n"; }while(false);}
+# 26 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/test/test_base.h"
+#define RUN_TEST(testCallable) if(!(testCallable())) { kout << FATAL << " [TEST] `"<< #testCallable << "` failed.\n";}
+# 21 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp" 2
+
+
+void TestPidManager::run()
+{
+ kout << "[INFO] " << "start TestPidManager\n";
+ TestPidManager test;
+ if(!(test.clearAllKeepsInvalidAllocated())) { kout << "[FATAL] " << " [TEST] `"<< "test.clearAllKeepsInvalidAllocated" << "` failed.\n";};
+ if(!(test.allocateInvalidPidAlwaysFailed())) { kout << "[FATAL] " << " [TEST] `"<< "test.allocateInvalidPidAlwaysFailed" << "` failed.\n";};
+ if(!(test.allocateReturnContinousPids())) { kout << "[FATAL] " << " [TEST] `"<< "test.allocateReturnContinousPids" << "` failed.\n";};
+ if(!(test.deallocatePidSuccessfully())) { kout << "[FATAL] " << " [TEST] `"<< "test.deallocatePidSuccessfully" << "` failed.\n";};
+ kout << "[INFO] " << "end TestPidManager\n";
+}
 bool TestPidManager::clearAllKeepsInvalidAllocated()
 {
  PidManager pidm;
@@ -3316,7 +3346,7 @@ bool TestPidManager::allocateReturnContinousPids()
  auto p1=pidm.allocate();
  auto p2=pidm.allocate();
 
- return (pidm.isAllocated(p1) && pidm.isAllocated(p2) && p1==1 && p2==2);
+ return (pidm.isAllocated(p1) && pidm.isAllocated(p2) && p2-p1==1);
 }
 
 bool TestPidManager::allocateInvalidPidAlwaysFailed()

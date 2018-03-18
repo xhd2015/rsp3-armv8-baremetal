@@ -292,7 +292,7 @@
 
 #define CXX_MACROS_H__ 
 
-#define ARCH_IS_host 
+#define TARGET_ARCH_IS_host 
 # 1 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
 # 9 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp"
@@ -1663,8 +1663,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 
@@ -2039,6 +2044,7 @@ class TestMemoryManager
 {
 public:
  TestMemoryManager()=default;
+ static void run();
  bool memoryChunkMergeCorrectly();
  bool memoryChunkSpiltCorrectly();
  bool uncontiguousChunkMemoryAllocateCorrectly();
@@ -2053,7 +2059,20 @@ public:
 };
 # 15 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestMemoryManager.cpp" 2
 
+void TestMemoryManager::run()
+{
+ kout << "[INFO] " << "start TestMemoryManager\n";
+ TestMemoryManager tmm;
+ if(!(tmm.memoryChunkMergeCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.memoryChunkMergeCorrectly" << "` failed.\n";};
+ if(!(tmm.allocateCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.allocateCorrectly" << "` failed.\n";};
+ if(!(tmm.nextChunkCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.nextChunkCorrectly" << "` failed.\n";};
+ if(!(tmm.deallocateCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.deallocateCorrectly" << "` failed.\n";};
+ if(!(tmm.reallocateInPlaceCollectCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.reallocateInPlaceCollectCorrectly" << "` failed.\n";};
+ if(!(tmm.reallocateOutOfPlaceMoveCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.reallocateOutOfPlaceMoveCorrectly" << "` failed.\n";};
+ if(!(tmm.reallocateSmallerCorrectly())) { kout << "[FATAL] " << " [TEST] `"<< "tmm.reallocateSmallerCorrectly" << "` failed.\n";};
 
+ kout << "[INFO] " << "end TestMemoryManager\n";
+}
 
 bool TestMemoryManager::memoryChunkMergeCorrectly()
 {

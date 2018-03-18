@@ -8,7 +8,7 @@ include makefile.eclipse.envs
 endif
 
 # 添加辅助依赖, 注意,USER_OBJS 只能在此进行修改，其他地方修改不会产生效果
-USER_OBJS += aux-check-link-script.o aux-check-link-script.o
+USER_OBJS += aux-check-link-script.o
 CLEAN-ALL-LIST += aux-check-link-script.o
 
 # 设置USER_CXX_FLAGS
@@ -16,7 +16,7 @@ CLEAN-ALL-LIST += aux-check-link-script.o
 USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti
 USER_CXX_FLAGS_qemu_virt += -march=armv8.2-a
 USER_CXX_FLAGS_user_space += -march=armv8.2-a
-USER_CXX_FLAGS += ${USER_CXX_FLAGS_${TARGET_ARCH}}
+USER_CXX_FLAGS += $(USER_CXX_FLAGS_$(TARGET_ARCH))
 
 # 设置USER_LINKER_FLAGS
 USER_LINKER_FLAGS += $(foreach sym,$(EXPORT_LINKER_SYMBOLS),-Xlinker --defsym=$(sym)=$($(sym)))

@@ -170,5 +170,6 @@ void MemoryChunk::mergeTrailingsUnallocated()
 	}
 	// 更新size和nextBase
 	this->size+=collectedSize;
-	this->nextBaseFromEnd = lastChunk->nextBaseFromEnd;
+	if(lastChunk->nextValidChunkOffset==0)
+		this->nextBaseFromEnd = lastChunk->nextBaseFromEnd;
 }

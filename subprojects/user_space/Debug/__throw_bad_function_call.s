@@ -26,10 +26,10 @@ _ZSt25__throw_bad_function_callv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF401
-	.byte	0x4
 	.4byte	.LASF402
+	.byte	0x4
 	.4byte	.LASF403
+	.4byte	.LASF404
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -40,10 +40,10 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0
 	.4byte	0x48
 	.uleb128 0x3
-	.4byte	.LASF404
+	.4byte	.LASF405
 	.byte	0x1
 	.byte	0xb
-	.4byte	.LASF405
+	.4byte	.LASF406
 	.byte	0
 	.uleb128 0x4
 	.4byte	0x3c
@@ -1348,11 +1348,21 @@ _ZSt25__throw_bad_function_callv:
 	.byte	0x3
 	.uleb128 0x1f
 	.uleb128 0x3
+	.byte	0x7
+	.4byte	.Ldebug_macro1
+	.byte	0x4
+	.byte	0x4
+	.byte	0
+	.section	.debug_macro,"G",@progbits,wm4.cxx_macros.h.3.6f787bd13ccbdfb50740fcdd2cf80ea4,comdat
+.Ldebug_macro1:
+	.2byte	0x4
+	.byte	0
 	.byte	0x5
 	.uleb128 0x3
 	.4byte	.LASF400
-	.byte	0x4
-	.byte	0x4
+	.byte	0x5
+	.uleb128 0x5
+	.4byte	.LASF401
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
@@ -1721,7 +1731,7 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__DEC64_MIN_EXP__ (-382)"
 .LASF382:
 	.string	"__ARM_FP16_ARGS 1"
-.LASF405:
+.LASF406:
 	.string	"_ZSt25__throw_bad_function_callv"
 .LASF152:
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffL"
@@ -1843,7 +1853,7 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__FLT16_DECIMAL_DIG__ 5"
 .LASF115:
 	.string	"__WINT_MIN__ 0U"
-.LASF404:
+.LASF405:
 	.string	"__throw_bad_function_call"
 .LASF2:
 	.string	"__STDC_UTF_16__ 1"
@@ -1935,6 +1945,8 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__CHAR32_TYPE__ unsigned int"
 .LASF311:
 	.string	"__FLT64X_HAS_INFINITY__ 1"
+.LASF401:
+	.string	"TARGET_ARCH_IS_user_space "
 .LASF330:
 	.string	"__DEC128_MIN__ 1E-6143DL"
 .LASF287:
@@ -1967,7 +1979,7 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__FLT128_EPSILON__ 1.92592994438723585305597794258492732e-34F128"
 .LASF112:
 	.string	"__WCHAR_MAX__ 0xffffffffU"
-.LASF401:
+.LASF402:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF22:
 	.string	"__SIZEOF_LONG_LONG__ 8"
@@ -1991,7 +2003,7 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__FLT_MANT_DIG__ 24"
 .LASF361:
 	.string	"__aarch64__ 1"
-.LASF402:
+.LASF403:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/__throw_bad_function_call.cpp"
 .LASF120:
 	.string	"__INT_WIDTH__ 32"
@@ -2129,7 +2141,7 @@ _ZSt25__throw_bad_function_callv:
 	.string	"__NO_INLINE__ 1"
 .LASF234:
 	.string	"__FLT16_MAX_10_EXP__ 4"
-.LASF403:
+.LASF404:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\user_space\\\\Debug"
 .LASF209:
 	.string	"__DBL_DENORM_MIN__ double(4.94065645841246544176568792868221372e-324L)"

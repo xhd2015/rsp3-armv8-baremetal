@@ -13,7 +13,7 @@
 #include <io/Output.h>
 #include <new>
 
-extern void exit(int errCode);
+extern void destroy(int errCode);
 extern int main();
 
 // user_space所提供的全局变量
@@ -47,6 +47,6 @@ void init()
 
 
 	int res=main();
-	exit(res);
+	destroy(res);
 }
 

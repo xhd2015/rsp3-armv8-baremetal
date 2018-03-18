@@ -292,7 +292,7 @@
 
 #define CXX_MACROS_H__ 
 
-#define ARCH_IS_host 
+#define TARGET_ARCH_IS_host 
 # 1 "<command-line>" 2
 # 1 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp"
 
@@ -1669,8 +1669,13 @@ constexpr int GiB = UNIT_K * MiB;
 #define TIE2(t1,v1,t2,v2) t1 v1;t2 v2;std::tie((v1),(v2))
 
 
+
+
 #define __stringify_1(x) #x
 #define __stringify(x) __stringify_1(x)
+#define CALL_CONST_EQUIV(var,method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+
+
 
 
 
@@ -18956,11 +18961,72 @@ namespace std
 }
 # 63 "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/algorithm" 2 3
 # 12 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp" 2
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h"
+#define INCLUDE_IO_OUTPUT_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+#define INCLUDE_IO_PRINTK_H_ 
 
 
-# 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp"
+
+
+
+# 14 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 1
+# 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h"
+#define INCLUDE_TEMPLATES_IMPLEMENTATION_PRINTK_H_ 
+
+# 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 1
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/printk.h" 2
+# 28 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/printk.h" 2
+# 12 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+# 13 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_aarch64.cpp" 2
+
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
- :headChunk(reinterpret_cast<MemoryChunk*>(base)),
+ :
+ headChunk(reinterpret_cast<MemoryChunk*>(base)),
   base(reinterpret_cast<const char*>(base)),
   size(size)
 {
@@ -18970,6 +19036,7 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
   reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true);
  }
 }
+
 size_t MemoryManager::normalizeAllocSize(size_t n)
 {
  if(n < MINIMAL_ALLOC_SIZE)
