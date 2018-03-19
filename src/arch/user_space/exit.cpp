@@ -9,6 +9,6 @@
 
 void destroy(int i)
 {
-	svc_call<SvcFunc::killProcess>(CURRENT_PID,i);
+	svc_call<SvcFunc::killProcess>(PID_CURRENT,i);
 }
 

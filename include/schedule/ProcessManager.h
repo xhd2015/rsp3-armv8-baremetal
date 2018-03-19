@@ -13,6 +13,7 @@
 
 class ProcessManager{
 public:
+//	enum Config{ PROCESSOR_NUM=4 };
 	using ProcessList = DoublyLinkedList<Process>;
 	using ProcessLink = ProcessList::NodeType;
 
@@ -27,13 +28,17 @@ public:
 	// 选择一个进程进行运行，如果有当前有正在运行的进程，则将其值为READY状态
 	// 调度
 	// 如果没有任何一个进程可以调度，也就是说当前没有进程运行，就绪队列没有进程，则等待。
-	void     scheduleNextProcess();
-
+	// TODO 这里不应当引入savedRegisters参数，因为并不是所有的架构都需要。
+	// 这里或许传递一个CPU保存的参数会比较好，但是，目前最简单的方法就是传递该参数。
+	void     scheduleNextProcess(uint64_t *savedRegsiers);
 
 	template <class ... Args>
 	ProcessLink*  createNewProcess(Args && ... initArgs);
 
-	// oldStatus表明p所在的组
+	// 子进程会被加入到CREATED或者CREATED_INCOMPLETE
+	ProcessLink*  forkProcess(ProcessLink *origin);
+
+	// oldStatus表明p所在的组,缺省时使用p的状态
 	void          changeProcessStatus(ProcessLink *p, Process::Status oldStatus,Process::Status newStatus);
 	void          changeProcessStatus(ProcessLink *p,Process::Status newStatus);
 
@@ -44,8 +49,10 @@ private:
 	ProcessList _statedProcessList[Process::STATUS_NUM];
 };
 
-
+//class KernelArgument;
 extern ProcessManager processManager;
+//extern KernelArgument kernArgs[ProcessManager::PROCESSOR_NUM];
+
 
 #include <templates_implementation/schedule/ProcessManager.h>
 

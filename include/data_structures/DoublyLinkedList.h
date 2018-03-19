@@ -26,7 +26,7 @@ public:
 
 	DoublyLinkedList();
 	// pointer members requires copy constructor/operator --> effective c++
-	DEFINE_COPY_COSNTRUCTOR(DoublyLinkedList)=delete;
+	DEFINE_COPY_CONSTRUCTOR(DoublyLinkedList)=delete;
 	DEFINE_COPY_OPERATOR(DoublyLinkedList)=delete;
 	DEFINE_MOVE_CONSTRUCTOR(DoublyLinkedList);
 	DEFINE_MOVE_OPERATOR(DoublyLinkedList);

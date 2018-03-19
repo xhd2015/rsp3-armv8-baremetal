@@ -12,11 +12,11 @@ PidManager::PidManager()
 	clearAll();
 }
 
-bool PidManager::isAllocated(PidType pid)const
+bool PidManager::isAllocated(Pid pid)const
 {
 	return  (getBit(_masks[indexOfMask(pid)], bitIndexOfMask(pid)) == 1);
 }
-PidType PidManager::allocate()
+Pid PidManager::allocate()
 {
 	for(size_t i=0;i!=MASK_NUM;++i)
 	{
@@ -33,20 +33,20 @@ PidType PidManager::allocate()
 			return i*8 + j;
 		}
 	}
-	return INVALID_PID;
+	return PID_INVALID;
 }
-PidType PidManager::allocate(PidType desiredPid)
+Pid PidManager::allocate(Pid desiredPid)
 {
 	if(isReservedPid(desiredPid))
-		return INVALID_PID;
+		return PID_INVALID;
 	auto i=indexOfMask(desiredPid);
 	auto j=bitIndexOfMask(desiredPid);
 	if(getBit(_masks[i],j)==1)
-		return INVALID_PID;
+		return PID_INVALID;
 	setBit(_masks[i],j,1);
 	return desiredPid;
 }
-void    PidManager::deallocate(PidType pid)
+void    PidManager::deallocate(Pid pid)
 {
 	if(isReservedPid(pid))
 		return;
@@ -63,19 +63,19 @@ void    PidManager::clearAll()
 	forceReservedPidPresetValue();
 }
 
-bool    PidManager::isReservedPid(PidType pid)
+bool    PidManager::isReservedPid(Pid pid)
 {
-	return (pid==INVALID_PID || pid==PARENT_PID || pid==CURRENT_PID);
+	return (pid==PID_INVALID || pid==PID_PARENT || pid==PID_CURRENT);
 }
 
-void PidManager::setPidBit(PidType pid,uint8_t v)
+void PidManager::setPidBit(Pid pid,uint8_t v)
 {
 	setBit(_masks[indexOfMask(pid)], bitIndexOfMask(pid), v);
 }
 void PidManager::forceReservedPidPresetValue()
 {
-	setPidBit(INVALID_PID, 1);
-	setPidBit(PARENT_PID, 1);
-	setPidBit(CURRENT_PID, 1);
+	setPidBit(PID_INVALID, 1);
+	setPidBit(PID_PARENT, 1);
+	setPidBit(PID_CURRENT, 1);
 }
 

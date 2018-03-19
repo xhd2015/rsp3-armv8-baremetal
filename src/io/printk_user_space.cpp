@@ -11,7 +11,7 @@
 
 // 必须确保下面的变量生成的引用是未知无关的
 // 使用buffer进行缓冲
-static constexpr size_t bufferSize=32;
+static constexpr size_t bufferSize=100;
 static char buffer[bufferSize];
 static size_t curSize=0;
 

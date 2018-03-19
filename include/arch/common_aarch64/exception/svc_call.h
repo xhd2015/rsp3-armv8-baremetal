@@ -15,7 +15,11 @@ enum class SvcFunc{
 	                           // prototype:
 	puts,                      //  size_t    puts(const char *, size_t n=0)
 	allocateBlock,             //  void*     allocateBlock(size_t size,size_t alignment)         // 一般用于分配较大的空间，如4KB的页
-	killProcess,               //  void      killProcess(PidType pid, int exitStatus)            // kill进程, pid的取值有特殊含义
+	killProcess,               //  void      killProcess(Pid pid, int exitStatus)            // kill进程, pid的取值有特殊含义
+	scheduleNext,              //  void      scheduleNext()     // 调度下一个进程，表明当前进程主动或被动放弃其执行权，转入等待状态
+	fork,                      //  PidType   fork()             // 复制当前进程，返回其pid。 当前进程将作为新进程的父进程,新进程处于READY状态
+	signal,                    //  void      signal(PidType pid, Signal sig)       // 对目标进程发送信号
+
 };
 
 // ==forward declarations:svc_call

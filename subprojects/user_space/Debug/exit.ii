@@ -3379,6 +3379,10 @@ enum class SvcFunc{
  puts,
  allocateBlock,
  killProcess,
+ scheduleNext,
+ fork,
+ signal,
+
 };
 
 
@@ -4998,12 +5002,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 15 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h" 2
 
 
-# 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
-using PidType = uint16_t;
 
-constexpr PidType INVALID_PID = 0;
-constexpr PidType CURRENT_PID = 1 ;
-constexpr PidType PARENT_PID = 2;
+# 17 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
+using Pid = uint16_t;
+
+constexpr Pid PID_INVALID = 0;
+constexpr Pid PID_CURRENT = 1 ;
+constexpr Pid PID_PARENT = 2;
+
+
 
 class PidManager{
 public:
@@ -5011,22 +5018,22 @@ public:
  enum { MASK_NUM = 128 };
 
  PidManager();
- bool isAllocated(PidType pid)const;
- PidType allocate();
- PidType allocate(PidType desiredPid);
- void deallocate(PidType pid);
+ bool isAllocated(Pid pid)const;
+ Pid allocate();
+ Pid allocate(Pid desiredPid);
+ void deallocate(Pid pid);
  void clearAll();
 private:
- __attribute__((always_inline)) inline size_t indexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t indexOfMask(Pid pid)const
  {
   return pid/8;
  }
- __attribute__((always_inline)) inline size_t bitIndexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t bitIndexOfMask(Pid pid)const
  {
   return pid%8;
  }
- void setPidBit(PidType pid,uint8_t v);
- static bool isReservedPid(PidType pid);
+ void setPidBit(Pid pid,uint8_t v);
+ static bool isReservedPid(Pid pid);
  void forceReservedPidPresetValue();
 private:
  uint8_t _masks[MASK_NUM];
@@ -5037,5 +5044,5 @@ extern PidManager pidManager;
 
 void destroy(int i)
 {
- svc_call<SvcFunc::killProcess>(CURRENT_PID,i);
+ svc_call<SvcFunc::killProcess>(PID_CURRENT,i);
 }

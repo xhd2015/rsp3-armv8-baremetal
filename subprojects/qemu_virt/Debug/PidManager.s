@@ -30,19 +30,19 @@ _ZL3GiB:
 _ZL11koutBufSize:
 	.xword	65
 	.align	1
-	.type	_ZL11INVALID_PID, %object
-	.size	_ZL11INVALID_PID, 2
-_ZL11INVALID_PID:
+	.type	_ZL11PID_INVALID, %object
+	.size	_ZL11PID_INVALID, 2
+_ZL11PID_INVALID:
 	.zero	2
 	.align	1
-	.type	_ZL11CURRENT_PID, %object
-	.size	_ZL11CURRENT_PID, 2
-_ZL11CURRENT_PID:
+	.type	_ZL11PID_CURRENT, %object
+	.size	_ZL11PID_CURRENT, 2
+_ZL11PID_CURRENT:
 	.hword	1
 	.align	1
-	.type	_ZL10PARENT_PID, %object
-	.size	_ZL10PARENT_PID, 2
-_ZL10PARENT_PID:
+	.type	_ZL10PID_PARENT, %object
+	.size	_ZL10PID_PARENT, 2
+_ZL10PID_PARENT:
 	.hword	2
 	.text
 	.align	2
@@ -95,7 +95,7 @@ _ZNK10PidManager11isAllocatedEt:
 .LBB99:
 .LBB100:
 	.file 2 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
-	.loc 2 36 0
+	.loc 2 39 0
 	ldrh	w0, [sp, 30]
 	lsr	w0, w0, 3
 	and	w0, w0, 65535
@@ -112,7 +112,7 @@ _ZNK10PidManager11isAllocatedEt:
 	strh	w1, [sp, 46]
 .LBB101:
 .LBB102:
-	.loc 2 40 0
+	.loc 2 43 0
 	ldrh	w1, [sp, 46]
 	and	x1, x1, 7
 .LBE102:
@@ -383,7 +383,7 @@ _ZN10PidManager8allocateEt:
 	strh	w0, [x29, 94]
 .LBB121:
 .LBB122:
-	.loc 2 36 0
+	.loc 2 39 0
 	ldrh	w0, [x29, 94]
 	lsr	w0, w0, 3
 	and	w0, w0, 65535
@@ -398,7 +398,7 @@ _ZN10PidManager8allocateEt:
 	strh	w0, [x29, 110]
 .LBB123:
 .LBB124:
-	.loc 2 40 0
+	.loc 2 43 0
 	ldrh	w0, [x29, 110]
 	and	x0, x0, 7
 .LBE124:
@@ -599,7 +599,7 @@ _ZN10PidManager10deallocateEt:
 	strh	w0, [x29, 94]
 .LBB139:
 .LBB140:
-	.loc 2 36 0
+	.loc 2 39 0
 	ldrh	w0, [x29, 94]
 	lsr	w0, w0, 3
 	and	w0, w0, 65535
@@ -614,7 +614,7 @@ _ZN10PidManager10deallocateEt:
 	strh	w0, [x29, 110]
 .LBB141:
 .LBB142:
-	.loc 2 40 0
+	.loc 2 43 0
 	ldrh	w0, [x29, 110]
 	and	x0, x0, 7
 .LBE142:
@@ -872,7 +872,7 @@ _ZN10PidManager9setPidBitEth:
 	strh	w0, [sp, 30]
 .LBB157:
 .LBB158:
-	.loc 2 36 0
+	.loc 2 39 0
 	ldrh	w0, [sp, 30]
 	lsr	w0, w0, 3
 	and	w0, w0, 65535
@@ -888,7 +888,7 @@ _ZN10PidManager9setPidBitEth:
 	strh	w1, [sp, 46]
 .LBB159:
 .LBB160:
-	.loc 2 40 0
+	.loc 2 43 0
 	ldrh	w1, [sp, 46]
 	and	x1, x1, 7
 .LBE160:
@@ -1051,10 +1051,10 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF1415
+	.4byte	.LASF1414
 	.byte	0x4
+	.4byte	.LASF1415
 	.4byte	.LASF1416
-	.4byte	.LASF1417
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -1311,7 +1311,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x10
 	.byte	0x8
 	.2byte	0x1aa
-	.4byte	.LASF1418
+	.4byte	.LASF1417
 	.4byte	0x215
 	.uleb128 0xd
 	.4byte	.LASF1121
@@ -1337,13 +1337,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x4
 	.4byte	.LASF1124
 	.uleb128 0xe
-	.4byte	.LASF1419
+	.4byte	.LASF1418
 	.byte	0x8
 	.2byte	0x1b5
 	.4byte	0x1ea
 	.byte	0x10
 	.uleb128 0xf
-	.4byte	.LASF1420
+	.4byte	.LASF1419
 	.uleb128 0xa
 	.4byte	.LASF1126
 	.byte	0x9
@@ -2178,10 +2178,10 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.4byte	0x1d3
 	.byte	0
 	.uleb128 0x24
-	.4byte	.LASF1382
+	.4byte	.LASF1381
 	.byte	0xc
 	.byte	0x3e
-	.4byte	.LASF1384
+	.4byte	.LASF1383
 	.byte	0x1
 	.4byte	0x9cc
 	.uleb128 0x18
@@ -2408,7 +2408,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x8
 	.byte	0xf
 	.byte	0xa4
-	.4byte	.LASF1421
+	.4byte	.LASF1420
 	.4byte	0xc10
 	.uleb128 0x2a
 	.byte	0x4
@@ -3317,7 +3317,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x18
 	.byte	0
 	.uleb128 0x3a
-	.4byte	.LASF1422
+	.4byte	.LASF1421
 	.uleb128 0x1b
 	.byte	0x8
 	.4byte	0x1350
@@ -3616,66 +3616,66 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.4byte	0x634
 	.byte	0
-	.uleb128 0xa
-	.4byte	.LASF1364
+	.uleb128 0x3e
+	.string	"Pid"
 	.byte	0x2
-	.byte	0x10
+	.byte	0x11
 	.4byte	0x28d
 	.uleb128 0xb
 	.4byte	0x1610
 	.uleb128 0x14
-	.4byte	.LASF1365
-	.byte	0x2
-	.byte	0x12
-	.4byte	0x161b
-	.uleb128 0x9
-	.byte	0x3
-	.8byte	_ZL11INVALID_PID
-	.uleb128 0x14
-	.4byte	.LASF1366
+	.4byte	.LASF1364
 	.byte	0x2
 	.byte	0x13
 	.4byte	0x161b
 	.uleb128 0x9
 	.byte	0x3
-	.8byte	_ZL11CURRENT_PID
+	.8byte	_ZL11PID_INVALID
 	.uleb128 0x14
-	.4byte	.LASF1367
+	.4byte	.LASF1365
 	.byte	0x2
 	.byte	0x14
 	.4byte	0x161b
 	.uleb128 0x9
 	.byte	0x3
-	.8byte	_ZL10PARENT_PID
+	.8byte	_ZL11PID_CURRENT
+	.uleb128 0x14
+	.4byte	.LASF1366
+	.byte	0x2
+	.byte	0x15
+	.4byte	0x161b
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL10PID_PARENT
 	.uleb128 0x16
-	.4byte	.LASF1368
+	.4byte	.LASF1367
 	.byte	0x80
 	.byte	0x2
-	.byte	0x16
+	.byte	0x19
 	.4byte	0x17d9
 	.uleb128 0x20
 	.byte	0x7
 	.byte	0x4
 	.4byte	0x2aa
 	.byte	0x2
-	.byte	0x19
+	.byte	0x1c
 	.byte	0x1
 	.4byte	0x1680
 	.uleb128 0x21
-	.4byte	.LASF1369
+	.4byte	.LASF1368
 	.byte	0x80
 	.byte	0
 	.uleb128 0x26
-	.4byte	.LASF1370
+	.4byte	.LASF1369
 	.byte	0x2
-	.byte	0x2e
+	.byte	0x31
 	.4byte	0x17de
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF1368
+	.4byte	.LASF1367
 	.byte	0x2
-	.byte	0x1b
-	.4byte	.LASF1371
+	.byte	0x1e
+	.4byte	.LASF1370
 	.byte	0x1
 	.4byte	0x16a0
 	.4byte	0x16a6
@@ -3685,8 +3685,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x17
 	.4byte	.LASF1199
 	.byte	0x2
-	.byte	0x1c
-	.4byte	.LASF1372
+	.byte	0x1f
+	.4byte	.LASF1371
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x16be
@@ -3699,8 +3699,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x17
 	.4byte	.LASF1241
 	.byte	0x2
-	.byte	0x1d
-	.4byte	.LASF1373
+	.byte	0x20
+	.4byte	.LASF1372
 	.4byte	0x1610
 	.byte	0x1
 	.4byte	0x16e1
@@ -3711,8 +3711,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x17
 	.4byte	.LASF1241
 	.byte	0x2
-	.byte	0x1e
-	.4byte	.LASF1374
+	.byte	0x21
+	.4byte	.LASF1373
 	.4byte	0x1610
 	.byte	0x1
 	.4byte	0x16ff
@@ -3725,8 +3725,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x23
 	.4byte	.LASF1250
 	.byte	0x2
-	.byte	0x1f
-	.4byte	.LASF1375
+	.byte	0x22
+	.4byte	.LASF1374
 	.byte	0x1
 	.4byte	0x171e
 	.4byte	0x1729
@@ -3736,21 +3736,21 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.4byte	0x1610
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF1376
+	.4byte	.LASF1375
 	.byte	0x2
-	.byte	0x20
-	.4byte	.LASF1377
+	.byte	0x23
+	.4byte	.LASF1376
 	.byte	0x1
 	.4byte	0x173d
 	.4byte	0x1743
 	.uleb128 0x18
 	.4byte	0x17ee
 	.byte	0
-	.uleb128 0x3e
-	.4byte	.LASF1378
+	.uleb128 0x3f
+	.4byte	.LASF1377
 	.byte	0x2
-	.byte	0x22
-	.4byte	.LASF1379
+	.byte	0x25
+	.4byte	.LASF1378
 	.4byte	0x1d3
 	.4byte	0x175a
 	.4byte	0x1765
@@ -3759,11 +3759,11 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x3e
-	.4byte	.LASF1380
+	.uleb128 0x3f
+	.4byte	.LASF1379
 	.byte	0x2
-	.byte	0x26
-	.4byte	.LASF1381
+	.byte	0x29
+	.4byte	.LASF1380
 	.4byte	0x1d3
 	.4byte	0x177c
 	.4byte	0x1787
@@ -3772,11 +3772,11 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x3f
-	.4byte	.LASF1383
+	.uleb128 0x40
+	.4byte	.LASF1382
 	.byte	0x2
-	.byte	0x2a
-	.4byte	.LASF1385
+	.byte	0x2d
+	.4byte	.LASF1384
 	.4byte	0x179a
 	.4byte	0x17aa
 	.uleb128 0x18
@@ -3786,21 +3786,21 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.4byte	0x27b
 	.byte	0
-	.uleb128 0x40
-	.4byte	.LASF1386
+	.uleb128 0x41
+	.4byte	.LASF1385
 	.byte	0x2
-	.byte	0x2b
-	.4byte	.LASF1387
+	.byte	0x2e
+	.4byte	.LASF1386
 	.4byte	0x640
 	.4byte	0x17c3
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x41
-	.4byte	.LASF1388
+	.uleb128 0x42
+	.4byte	.LASF1387
 	.byte	0x2
-	.byte	0x2c
-	.4byte	.LASF1391
+	.byte	0x2f
+	.4byte	.LASF1390
 	.4byte	0x17d2
 	.uleb128 0x18
 	.4byte	0x17ee
@@ -3826,39 +3826,39 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xb
 	.4byte	0x17f9
 	.uleb128 0x13
-	.4byte	.LASF1389
+	.4byte	.LASF1388
 	.byte	0x2
-	.byte	0x31
+	.byte	0x34
 	.4byte	0x165f
-	.uleb128 0x42
-	.4byte	.LASF1390
+	.uleb128 0x43
+	.4byte	.LASF1389
 	.byte	0x3
 	.byte	0x45
-	.4byte	.LASF1392
+	.4byte	.LASF1391
 	.byte	0x3
 	.4byte	0x185a
-	.uleb128 0x43
-	.4byte	.LASF1393
-	.4byte	0x286
-	.uleb128 0x43
-	.4byte	.LASF1394
+	.uleb128 0x44
+	.4byte	.LASF1392
 	.4byte	0x286
 	.uleb128 0x44
+	.4byte	.LASF1393
+	.4byte	0x286
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x45
 	.4byte	0x185a
-	.uleb128 0x45
+	.uleb128 0x46
+	.4byte	.LASF1394
+	.byte	0x3
+	.byte	0x45
+	.4byte	0x27b
+	.uleb128 0x46
 	.4byte	.LASF1395
 	.byte	0x3
 	.byte	0x45
 	.4byte	0x27b
 	.uleb128 0x45
-	.4byte	.LASF1396
-	.byte	0x3
-	.byte	0x45
-	.4byte	0x27b
-	.uleb128 0x44
 	.string	"v"
 	.byte	0x3
 	.byte	0x45
@@ -3867,99 +3867,99 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x1c
 	.byte	0x8
 	.4byte	0x286
-	.uleb128 0x42
-	.4byte	.LASF1397
+	.uleb128 0x43
+	.4byte	.LASF1396
 	.byte	0x3
 	.byte	0x45
-	.4byte	.LASF1398
+	.4byte	.LASF1397
 	.byte	0x3
 	.4byte	0x18ab
-	.uleb128 0x43
-	.4byte	.LASF1393
-	.4byte	0x286
-	.uleb128 0x43
-	.4byte	.LASF1394
-	.4byte	0x264
 	.uleb128 0x44
+	.4byte	.LASF1392
+	.4byte	0x286
+	.uleb128 0x44
+	.4byte	.LASF1393
+	.4byte	0x264
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x45
 	.4byte	0x185a
-	.uleb128 0x45
+	.uleb128 0x46
+	.4byte	.LASF1394
+	.byte	0x3
+	.byte	0x45
+	.4byte	0x27b
+	.uleb128 0x46
 	.4byte	.LASF1395
 	.byte	0x3
 	.byte	0x45
 	.4byte	0x27b
 	.uleb128 0x45
-	.4byte	.LASF1396
-	.byte	0x3
-	.byte	0x45
-	.4byte	0x27b
-	.uleb128 0x44
 	.string	"v"
 	.byte	0x3
 	.byte	0x45
 	.4byte	0x264
 	.byte	0
-	.uleb128 0x42
+	.uleb128 0x43
+	.4byte	.LASF1398
+	.byte	0x3
+	.byte	0x4f
 	.4byte	.LASF1399
 	.byte	0x3
+	.4byte	0x18eb
+	.uleb128 0x44
+	.4byte	.LASF1392
+	.4byte	0x286
+	.uleb128 0x44
+	.4byte	.LASF1393
+	.4byte	0x286
+	.uleb128 0x45
+	.string	"i"
+	.byte	0x3
 	.byte	0x4f
+	.4byte	0x185a
+	.uleb128 0x46
 	.4byte	.LASF1400
 	.byte	0x3
-	.4byte	0x18eb
-	.uleb128 0x43
-	.4byte	.LASF1393
-	.4byte	0x286
-	.uleb128 0x43
-	.4byte	.LASF1394
-	.4byte	0x286
-	.uleb128 0x44
-	.string	"i"
-	.byte	0x3
-	.byte	0x4f
-	.4byte	0x185a
-	.uleb128 0x45
-	.4byte	.LASF1401
-	.byte	0x3
 	.byte	0x4f
 	.4byte	0x27b
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"v"
 	.byte	0x3
 	.byte	0x4f
 	.4byte	0x286
 	.byte	0
-	.uleb128 0x42
+	.uleb128 0x43
+	.4byte	.LASF1401
+	.byte	0x3
+	.byte	0x4f
 	.4byte	.LASF1402
 	.byte	0x3
-	.byte	0x4f
-	.4byte	.LASF1403
-	.byte	0x3
 	.4byte	0x192b
-	.uleb128 0x43
-	.4byte	.LASF1393
-	.4byte	0x286
-	.uleb128 0x43
-	.4byte	.LASF1394
-	.4byte	0x264
 	.uleb128 0x44
+	.4byte	.LASF1392
+	.4byte	0x286
+	.uleb128 0x44
+	.4byte	.LASF1393
+	.4byte	0x264
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x4f
 	.4byte	0x185a
-	.uleb128 0x45
-	.4byte	.LASF1401
+	.uleb128 0x46
+	.4byte	.LASF1400
 	.byte	0x3
 	.byte	0x4f
 	.4byte	0x27b
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"v"
 	.byte	0x3
 	.byte	0x4f
 	.4byte	0x264
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.4byte	0x17c3
 	.byte	0x1
 	.byte	0x4b
@@ -3970,14 +3970,14 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1950
 	.4byte	0x195d
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.byte	0
-	.uleb128 0x48
+	.uleb128 0x49
 	.4byte	0x1787
 	.byte	0x1
 	.byte	0x47
@@ -3988,13 +3988,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1982
 	.4byte	0x1abb
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
-	.uleb128 0x49
+	.uleb128 0x4a
 	.string	"pid"
 	.byte	0x1
 	.byte	0x47
@@ -4002,7 +4002,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -106
-	.uleb128 0x49
+	.uleb128 0x4a
 	.string	"v"
 	.byte	0x1
 	.byte	0x47
@@ -4010,114 +4010,114 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -107
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21ae
 	.8byte	.LBB157
 	.8byte	.LBE157-.LBB157
 	.byte	0x1
 	.byte	0x49
 	.4byte	0x19d9
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c9
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -82
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c0
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2187
 	.8byte	.LBB159
 	.8byte	.LBE159-.LBB159
 	.byte	0x1
 	.byte	0x49
 	.4byte	0x1a06
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21a2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -66
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2199
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x18ab
 	.8byte	.LBB161
 	.8byte	.LBE161-.LBB161
 	.byte	0x1
 	.byte	0x49
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18e1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18d6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18cd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x180f
 	.8byte	.LBB163
 	.8byte	.LBE163-.LBB163
 	.byte	0x3
 	.byte	0x51
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1850
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -27
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1845
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -26
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x183a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -25
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1831
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2232
 	.8byte	.LBB165
 	.8byte	.LBE165-.LBB165
 	.byte	0x3
 	.byte	0x48
 	.4byte	0x1a98
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2251
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2246
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB167
 	.8byte	.LBE167-.LBB167
 	.byte	0x3
 	.byte	0x48
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x2
 	.byte	0x91
@@ -4126,7 +4126,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x4d
+	.uleb128 0x4e
 	.4byte	0x17aa
 	.byte	0x1
 	.byte	0x42
@@ -4135,7 +4135,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x1ae7
-	.uleb128 0x49
+	.uleb128 0x4a
 	.string	"pid"
 	.byte	0x1
 	.byte	0x42
@@ -4144,7 +4144,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x91
 	.sleb128 -2
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.4byte	0x1729
 	.byte	0x1
 	.byte	0x3c
@@ -4155,14 +4155,14 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1b0c
 	.4byte	0x1b19
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.4byte	0x170a
 	.byte	0x1
 	.byte	0x31
@@ -4173,13 +4173,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1b3e
 	.4byte	0x1d08
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
-	.uleb128 0x49
+	.uleb128 0x4a
 	.string	"pid"
 	.byte	0x1
 	.byte	0x31
@@ -4187,7 +4187,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -154
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"i"
 	.byte	0x1
 	.byte	0x35
@@ -4195,7 +4195,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"j"
 	.byte	0x1
 	.byte	0x36
@@ -4203,87 +4203,87 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21ae
 	.8byte	.LBB139
 	.8byte	.LBE139-.LBB139
 	.byte	0x1
 	.byte	0x35
 	.4byte	0x1ba0
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c9
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -82
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c0
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2187
 	.8byte	.LBB141
 	.8byte	.LBE141-.LBB141
 	.byte	0x1
 	.byte	0x36
 	.4byte	0x1bcd
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21a2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -66
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2199
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21d5
 	.8byte	.LBB143
 	.8byte	.LBE143-.LBB143
 	.byte	0x1
 	.byte	0x37
 	.4byte	0x1c49
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -25
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21e9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x21fe
 	.8byte	.LBB145
 	.8byte	.LBE145-.LBB145
 	.byte	0x3
 	.byte	0x55
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2226
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -42
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x221b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -41
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2212
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB147
 	.8byte	.LBE147-.LBB147
 	.byte	0x3
 	.byte	0x4c
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x2
 	.byte	0x91
@@ -4291,78 +4291,78 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x18eb
 	.8byte	.LBB149
 	.8byte	.LBE149-.LBB149
 	.byte	0x1
 	.byte	0x39
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1921
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1916
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -97
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x190d
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x1860
 	.8byte	.LBB151
 	.8byte	.LBE151-.LBB151
 	.byte	0x3
 	.byte	0x51
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18a1
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -120
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1896
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -114
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x188b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -113
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1882
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -112
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2232
 	.8byte	.LBB153
 	.8byte	.LBE153-.LBB153
 	.byte	0x3
 	.byte	0x48
 	.4byte	0x1ce4
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2251
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2246
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -128
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB155
 	.8byte	.LBE155-.LBB155
 	.byte	0x3
 	.byte	0x48
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x3
 	.byte	0x91
@@ -4371,7 +4371,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.4byte	0x16e7
 	.byte	0x1
 	.byte	0x26
@@ -4382,21 +4382,21 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1d2d
 	.4byte	0x1ef7
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
-	.uleb128 0x4f
-	.4byte	.LASF1405
+	.uleb128 0x50
+	.4byte	.LASF1404
 	.byte	0x1
 	.byte	0x26
 	.4byte	0x1610
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -154
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"i"
 	.byte	0x1
 	.byte	0x2a
@@ -4404,7 +4404,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"j"
 	.byte	0x1
 	.byte	0x2b
@@ -4412,87 +4412,87 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21ae
 	.8byte	.LBB121
 	.8byte	.LBE121-.LBB121
 	.byte	0x1
 	.byte	0x2a
 	.4byte	0x1d8f
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c9
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -82
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c0
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2187
 	.8byte	.LBB123
 	.8byte	.LBE123-.LBB123
 	.byte	0x1
 	.byte	0x2b
 	.4byte	0x1dbc
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21a2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -66
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2199
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21d5
 	.8byte	.LBB125
 	.8byte	.LBE125-.LBB125
 	.byte	0x1
 	.byte	0x2c
 	.4byte	0x1e38
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -25
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21e9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x21fe
 	.8byte	.LBB127
 	.8byte	.LBE127-.LBB127
 	.byte	0x3
 	.byte	0x55
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2226
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -42
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x221b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -41
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2212
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB129
 	.8byte	.LBE129-.LBB129
 	.byte	0x3
 	.byte	0x4c
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x2
 	.byte	0x91
@@ -4500,78 +4500,78 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x18eb
 	.8byte	.LBB131
 	.8byte	.LBE131-.LBB131
 	.byte	0x1
 	.byte	0x2e
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1921
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1916
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -97
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x190d
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x1860
 	.8byte	.LBB133
 	.8byte	.LBE133-.LBB133
 	.byte	0x3
 	.byte	0x51
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18a1
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -120
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1896
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -114
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x188b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -113
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1882
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -112
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2232
 	.8byte	.LBB135
 	.8byte	.LBE135-.LBB135
 	.byte	0x3
 	.byte	0x48
 	.4byte	0x1ed3
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2251
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2246
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -128
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB137
 	.8byte	.LBE137-.LBB137
 	.byte	0x3
 	.byte	0x48
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x3
 	.byte	0x91
@@ -4580,7 +4580,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x48
+	.uleb128 0x49
 	.4byte	0x16c9
 	.byte	0x1
 	.byte	0x13
@@ -4591,16 +4591,16 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x1f1c
 	.4byte	0x202a
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -88
-	.uleb128 0x50
+	.uleb128 0x51
 	.8byte	.LBB109
 	.8byte	.LBE109-.LBB109
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"i"
 	.byte	0x1
 	.byte	0x15
@@ -4608,18 +4608,18 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x50
+	.uleb128 0x51
 	.8byte	.LBB112
 	.8byte	.LBE112-.LBB112
-	.uleb128 0x51
-	.4byte	.LASF1406
+	.uleb128 0x52
+	.4byte	.LASF1405
 	.byte	0x1
 	.byte	0x19
 	.4byte	0x286
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.string	"j"
 	.byte	0x1
 	.byte	0x1a
@@ -4627,78 +4627,78 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x18eb
 	.8byte	.LBB113
 	.8byte	.LBE113-.LBB113
 	.byte	0x1
 	.byte	0x20
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1921
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1916
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -33
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x190d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -32
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x1860
 	.8byte	.LBB115
 	.8byte	.LBE115-.LBB115
 	.byte	0x3
 	.byte	0x51
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x18a1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -56
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1896
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -50
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x188b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -49
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x1882
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2232
 	.8byte	.LBB117
 	.8byte	.LBE117-.LBB117
 	.byte	0x3
 	.byte	0x48
 	.4byte	0x2004
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2251
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -72
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2246
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB119
 	.8byte	.LBE119-.LBB119
 	.byte	0x3
 	.byte	0x48
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x3
 	.byte	0x91
@@ -4709,7 +4709,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x48
+	.uleb128 0x49
 	.4byte	0x16a6
 	.byte	0x1
 	.byte	0xf
@@ -4720,13 +4720,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x204f
 	.4byte	0x213d
-	.uleb128 0x47
-	.4byte	.LASF1404
+	.uleb128 0x48
+	.4byte	.LASF1403
 	.4byte	0x17ff
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -88
-	.uleb128 0x49
+	.uleb128 0x4a
 	.string	"pid"
 	.byte	0x1
 	.byte	0xf
@@ -4734,86 +4734,86 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -90
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x21ae
 	.8byte	.LBB99
 	.8byte	.LBE99-.LBB99
 	.byte	0x1
 	.byte	0x11
 	.4byte	0x2098
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c9
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -66
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21c0
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
 	.byte	0
-	.uleb128 0x4a
+	.uleb128 0x4b
 	.4byte	0x2187
 	.8byte	.LBB101
 	.8byte	.LBE101-.LBB101
 	.byte	0x1
 	.byte	0x11
 	.4byte	0x20c4
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21a2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -50
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2199
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x21d5
 	.8byte	.LBB103
 	.8byte	.LBE103-.LBB103
 	.byte	0x1
 	.byte	0x11
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21f2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x21e9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x21fe
 	.8byte	.LBB105
 	.8byte	.LBE105-.LBB105
 	.byte	0x3
 	.byte	0x55
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2226
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -26
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x221b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -25
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x2212
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.4byte	0x225d
 	.8byte	.LBB107
 	.8byte	.LBE107-.LBB107
 	.byte	0x3
 	.byte	0x4c
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x226d
 	.uleb128 0x2
 	.byte	0x91
@@ -4822,20 +4822,20 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.byte	0
-	.uleb128 0x52
+	.uleb128 0x53
 	.4byte	0x168c
 	.byte	0x1
 	.byte	0xa
 	.byte	0
 	.4byte	0x214d
 	.4byte	0x2157
-	.uleb128 0x53
-	.4byte	.LASF1404
+	.uleb128 0x54
+	.4byte	.LASF1403
 	.4byte	0x17f4
 	.byte	0
-	.uleb128 0x54
+	.uleb128 0x55
 	.4byte	0x213d
-	.4byte	.LASF1423
+	.4byte	.LASF1422
 	.4byte	0x217e
 	.8byte	.LFB18
 	.8byte	.LFE18-.LFB18
@@ -4843,112 +4843,112 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0x9c
 	.4byte	0x217e
 	.4byte	0x2187
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.4byte	0x214d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -8
 	.byte	0
-	.uleb128 0x55
+	.uleb128 0x56
 	.4byte	0x1765
 	.4byte	0x2199
 	.byte	0x3
 	.4byte	0x2199
 	.4byte	0x21ae
-	.uleb128 0x53
-	.4byte	.LASF1404
+	.uleb128 0x54
+	.4byte	.LASF1403
 	.4byte	0x17ff
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"pid"
 	.byte	0x2
-	.byte	0x26
+	.byte	0x29
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x55
+	.uleb128 0x56
 	.4byte	0x1743
 	.4byte	0x21c0
 	.byte	0x3
 	.4byte	0x21c0
 	.4byte	0x21d5
-	.uleb128 0x53
-	.4byte	.LASF1404
+	.uleb128 0x54
+	.4byte	.LASF1403
 	.4byte	0x17ff
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"pid"
 	.byte	0x2
-	.byte	0x22
+	.byte	0x25
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x56
-	.4byte	.LASF1407
+	.uleb128 0x57
+	.4byte	.LASF1406
 	.byte	0x3
 	.byte	0x53
-	.4byte	.LASF1408
+	.4byte	.LASF1407
 	.4byte	0x2b1
 	.byte	0x3
 	.4byte	0x21fe
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x53
 	.4byte	0x2b1
-	.uleb128 0x45
-	.4byte	.LASF1401
+	.uleb128 0x46
+	.4byte	.LASF1400
 	.byte	0x3
 	.byte	0x53
 	.4byte	0x27b
 	.byte	0
-	.uleb128 0x56
-	.4byte	.LASF1409
+	.uleb128 0x57
+	.4byte	.LASF1408
 	.byte	0x3
 	.byte	0x4a
-	.4byte	.LASF1410
+	.4byte	.LASF1409
 	.4byte	0x2b1
 	.byte	0x3
 	.4byte	0x2232
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x4a
 	.4byte	0x2b1
-	.uleb128 0x45
+	.uleb128 0x46
+	.4byte	.LASF1394
+	.byte	0x3
+	.byte	0x4a
+	.4byte	0x27b
+	.uleb128 0x46
 	.4byte	.LASF1395
 	.byte	0x3
 	.byte	0x4a
 	.4byte	0x27b
-	.uleb128 0x45
-	.4byte	.LASF1396
-	.byte	0x3
-	.byte	0x4a
-	.4byte	0x27b
 	.byte	0
-	.uleb128 0x56
-	.4byte	.LASF1411
+	.uleb128 0x57
+	.4byte	.LASF1410
 	.byte	0x3
 	.byte	0x3d
-	.4byte	.LASF1412
+	.4byte	.LASF1411
 	.4byte	0x2b1
 	.byte	0x3
 	.4byte	0x225d
-	.uleb128 0x45
+	.uleb128 0x46
+	.4byte	.LASF1394
+	.byte	0x3
+	.byte	0x3d
+	.4byte	0x2b1
+	.uleb128 0x46
 	.4byte	.LASF1395
 	.byte	0x3
 	.byte	0x3d
 	.4byte	0x2b1
-	.uleb128 0x45
-	.4byte	.LASF1396
-	.byte	0x3
-	.byte	0x3d
-	.4byte	0x2b1
 	.byte	0
-	.uleb128 0x57
-	.4byte	.LASF1413
+	.uleb128 0x58
+	.4byte	.LASF1412
 	.byte	0x3
 	.byte	0x39
-	.4byte	.LASF1414
+	.4byte	.LASF1413
 	.4byte	0x2b1
 	.byte	0x3
-	.uleb128 0x44
+	.uleb128 0x45
 	.string	"i"
 	.byte	0x3
 	.byte	0x39
@@ -5771,6 +5771,19 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.uleb128 0x3e
+	.uleb128 0x16
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x3f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -5785,27 +5798,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xe
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x6e
-	.uleb128 0xe
 	.uleb128 0x3c
 	.uleb128 0x19
 	.uleb128 0x64
@@ -5827,10 +5819,10 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xb
 	.uleb128 0x6e
 	.uleb128 0xe
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x3c
 	.uleb128 0x19
+	.uleb128 0x64
+	.uleb128 0x13
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -5848,9 +5840,11 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xb
 	.uleb128 0x6e
 	.uleb128 0xe
+	.uleb128 0x49
+	.uleb128 0x13
 	.uleb128 0x3c
 	.uleb128 0x19
-	.uleb128 0x64
+	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
@@ -5867,13 +5861,32 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xb
 	.uleb128 0x6e
 	.uleb128 0xe
+	.uleb128 0x3c
+	.uleb128 0x19
+	.uleb128 0x64
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x43
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x6e
+	.uleb128 0xe
 	.uleb128 0x20
 	.uleb128 0xb
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x43
+	.uleb128 0x44
 	.uleb128 0x2f
 	.byte	0
 	.uleb128 0x3
@@ -5882,7 +5895,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x44
+	.uleb128 0x45
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5895,7 +5908,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x45
+	.uleb128 0x46
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5908,7 +5921,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5933,7 +5946,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x47
+	.uleb128 0x48
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -5946,7 +5959,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x48
+	.uleb128 0x49
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -5969,24 +5982,24 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x4a
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x4b
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -6003,7 +6016,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4b
+	.uleb128 0x4c
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
@@ -6012,7 +6025,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x4c
+	.uleb128 0x4d
 	.uleb128 0x1d
 	.byte	0x1
 	.uleb128 0x31
@@ -6027,7 +6040,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x4d
+	.uleb128 0x4e
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -6048,26 +6061,11 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x4e
+	.uleb128 0x4f
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x4f
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
@@ -6079,6 +6077,21 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.byte	0
 	.byte	0
 	.uleb128 0x50
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x51
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -6087,7 +6100,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x7
 	.byte	0
 	.byte	0
-	.uleb128 0x51
+	.uleb128 0x52
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -6102,7 +6115,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x52
+	.uleb128 0x53
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -6119,7 +6132,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x53
+	.uleb128 0x54
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -6130,7 +6143,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x54
+	.uleb128 0x55
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -6153,7 +6166,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x55
+	.uleb128 0x56
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -6168,7 +6181,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x56
+	.uleb128 0x57
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -6189,7 +6202,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x57
+	.uleb128 0x58
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -10018,7 +10031,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF1189:
 	.string	"SizeBits"
-.LASF1422:
+.LASF1421:
 	.string	"__locale_t"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
@@ -10058,7 +10071,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__FLT32_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F32"
 .LASF766:
 	.string	"WINT_MIN __WINT_MIN__"
-.LASF1400:
+.LASF1399:
 	.string	"_Z6setBitIhhEvRT_hT0_"
 .LASF555:
 	.string	"_GLIBCXX_HAVE_STRINGS_H 1"
@@ -10102,7 +10115,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"AllocatedBits"
 .LASF363:
 	.string	"__ARM_ARCH_ISA_A64 1"
-.LASF1403:
+.LASF1402:
 	.string	"_Z6setBitIhiEvRT_hT0_"
 .LASF935:
 	.string	"_REENT_CHECK_TM(ptr) "
@@ -10176,13 +10189,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__cpp_variable_templates 201304"
 .LASF306:
 	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
-.LASF1391:
+.LASF1390:
 	.string	"_ZN10PidManager27forceReservedPidPresetValueEv"
 .LASF732:
 	.string	"INT_FAST64_MAX __INT_FAST64_MAX__"
 .LASF340:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
-.LASF1376:
+.LASF1375:
 	.string	"clearAll"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
@@ -10194,7 +10207,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__cpp_raw_strings 200710"
 .LASF923:
 	.string	"_RAND48_MULT_0 (0xe66d)"
-.LASF1385:
+.LASF1384:
 	.string	"_ZN10PidManager9setPidBitEth"
 .LASF386:
 	.string	"__ARM_NEON 1"
@@ -10202,7 +10215,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__ATTRIBUTE_IMPURE_PTR__ "
 .LASF952:
 	.string	"_REENT_STRTOK_LAST(ptr) ((ptr)->_new._reent._strtok_last)"
-.LASF1411:
+.LASF1410:
 	.string	"middleMaskBits"
 .LASF1144:
 	.string	"uint_least16_t"
@@ -10210,7 +10223,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32"
 .LASF680:
 	.string	"INT32_MIN (-INT32_MAX - 1)"
-.LASF1390:
+.LASF1389:
 	.string	"setBits<unsigned char, unsigned char>"
 .LASF248:
 	.string	"__FLT32_MAX_10_EXP__ 38"
@@ -10226,9 +10239,9 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"UINTPTR_MAX"
 .LASF611:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF1417:
+.LASF1416:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
-.LASF1402:
+.LASF1401:
 	.string	"setBit<unsigned char, int>"
 .LASF413:
 	.string	"__need_wchar_t"
@@ -10272,7 +10285,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__CC_SUPPORTS___INLINE__ 1"
 .LASF505:
 	.string	"_GLIBCXX_HAVE_EOVERFLOW 1"
-.LASF1412:
+.LASF1411:
 	.string	"_Z14middleMaskBitsmm"
 .LASF1179:
 	.string	"double"
@@ -10338,7 +10351,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__INT_FAST16_WIDTH__ 32"
 .LASF967:
 	.string	"_REENT _impure_ptr"
-.LASF1399:
+.LASF1398:
 	.string	"setBit<unsigned char, unsigned char>"
 .LASF422:
 	.string	"_GLIBCXX_CONST __attribute__ ((__const__))"
@@ -10392,8 +10405,10 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 .LASF1059:
 	.string	"__strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))"
-.LASF1423:
+.LASF1422:
 	.string	"_ZN10PidManagerC2Ev"
+.LASF1366:
+	.string	"PID_PARENT"
 .LASF833:
 	.string	"__GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))"
 .LASF727:
@@ -10472,7 +10487,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_GLIBCXX_HAVE_ETIMEDOUT 1"
 .LASF1298:
 	.string	"_write"
-.LASF1408:
+.LASF1407:
 	.string	"_Z6getBitmh"
 .LASF718:
 	.string	"UINT_FAST8_MAX __UINT_FAST8_MAX__"
@@ -10490,7 +10505,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_GLIBCXX14_CONSTEXPR constexpr"
 .LASF174:
 	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffUL"
-.LASF1410:
+.LASF1409:
 	.string	"_Z7getBitsmhh"
 .LASF1023:
 	.string	"__unused __attribute__((__unused__))"
@@ -10522,7 +10537,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__NEWLIB_MINOR__ 5"
 .LASF219:
 	.string	"__LDBL_MAX_10_EXP__ 4932"
-.LASF1407:
+.LASF1406:
 	.string	"getBit"
 .LASF692:
 	.string	"INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)"
@@ -10604,13 +10619,13 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__UINT_LEAST16_MAX__ 0xffff"
 .LASF1334:
 	.string	"_stdout"
-.LASF1413:
+.LASF1412:
 	.string	"lowerMaskBits"
 .LASF98:
 	.string	"__cpp_generic_lambdas 201304"
 .LASF545:
 	.string	"_GLIBCXX_HAVE_POWF 1"
-.LASF1397:
+.LASF1396:
 	.string	"setBits<unsigned char, int>"
 .LASF868:
 	.string	"_DEFUN(name,arglist,args) name(args)"
@@ -10668,8 +10683,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF580:
 	.string	"_GLIBCXX_PACKAGE_TARNAME \"libstdc++\""
-.LASF1367:
-	.string	"PARENT_PID"
 .LASF1338:
 	.string	"_unspecified_locale_info"
 .LASF417:
@@ -10728,8 +10741,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__INT64_C(c) c ## L"
 .LASF728:
 	.string	"INT_FAST32_MIN (-INT_FAST32_MAX - 1)"
-.LASF949:
-	.string	"_REENT_ASCTIME_BUF(ptr) ((ptr)->_new._reent._asctime_buf)"
+.LASF1365:
+	.string	"PID_CURRENT"
 .LASF338:
 	.string	"__STRICT_ANSI__ 1"
 .LASF609:
@@ -10768,7 +10781,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"UINT32_MAX __UINT32_MAX__"
 .LASF65:
 	.string	"__INT_FAST64_TYPE__ long int"
-.LASF1395:
+.LASF1394:
 	.string	"lowerBound"
 .LASF1288:
 	.string	"_fns"
@@ -10776,8 +10789,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_RAND48_SEED_0 (0x330e)"
 .LASF483:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
-.LASF909:
-	.string	"_WINT_T "
+.LASF1378:
+	.string	"_ZNK10PidManager11indexOfMaskEt"
 .LASF896:
 	.string	"__LOCK_INIT_RECURSIVE(class,lock) static int lock = 0;"
 .LASF477:
@@ -10805,7 +10818,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__noinline __attribute__ ((__noinline__))"
 .LASF550:
 	.string	"_GLIBCXX_HAVE_STDALIGN_H 1"
-.LASF1421:
+.LASF1420:
 	.string	"10_mbstate_t"
 .LASF234:
 	.string	"__FLT16_MAX_10_EXP__ 4"
@@ -10815,7 +10828,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"UINT8_MAX __UINT8_MAX__"
 .LASF787:
 	.string	"_GCC_WRAP_STDINT_H "
-.LASF1387:
+.LASF1386:
 	.string	"_ZN10PidManager13isReservedPidEt"
 .LASF1020:
 	.string	"__weak_symbol __attribute__((__weak__))"
@@ -10831,7 +10844,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	" {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, \"\", \"\", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }"
 .LASF951:
 	.string	"_REENT_EMERGENCY(ptr) ((ptr)->_emergency)"
-.LASF1368:
+.LASF1367:
 	.string	"PidManager"
 .LASF139:
 	.string	"__UINT8_MAX__ 0xff"
@@ -10869,7 +10882,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
 .LASF617:
 	.string	"_T_PTRDIFF_ "
-.LASF1420:
+.LASF1419:
 	.string	"decltype(nullptr)"
 .LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
@@ -10921,8 +10934,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"NextBaseBits"
 .LASF481:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF855:
-	.string	"_NOTHROW __attribute__ ((__nothrow__))"
 .LASF996:
 	.string	"__GNUCLIKE_BUILTIN_VARARGS 1"
 .LASF862:
@@ -11015,8 +11026,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__FP_FAST_FMAF 1"
 .LASF1296:
 	.string	"_cookie"
-.LASF1366:
-	.string	"CURRENT_PID"
 .LASF902:
 	.string	"__lock_acquire_recursive(lock) (_CAST_VOID 0)"
 .LASF708:
@@ -11081,7 +11090,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"INT64_C(c) __INT64_C(c)"
 .LASF1082:
 	.string	"__trylocks_shared(...) __lock_annotate(shared_trylock_function(__VA_ARGS__))"
-.LASF1401:
+.LASF1400:
 	.string	"index"
 .LASF354:
 	.string	"__GCC_ATOMIC_POINTER_LOCK_FREE 2"
@@ -11091,7 +11100,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__ARM_FEATURE_CLZ 1"
 .LASF1008:
 	.string	"__CC_SUPPORTS_WARNING 1"
-.LASF1373:
+.LASF1372:
 	.string	"_ZN10PidManager8allocateEv"
 .LASF1029:
 	.string	"__alloc_align(x) __attribute__((__alloc_align__(x)))"
@@ -11165,7 +11174,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__offsetof(type,field) offsetof(type, field)"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDBOOL_H 1"
-.LASF1377:
+.LASF1376:
 	.string	"_ZN10PidManager8clearAllEv"
 .LASF5:
 	.string	"__GNUC__ 7"
@@ -11223,7 +11232,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__requires_unlocked(...) __lock_annotate(locks_excluded(__VA_ARGS__))"
 .LASF84:
 	.string	"__cpp_static_assert 200410"
-.LASF1378:
+.LASF1377:
 	.string	"indexOfMask"
 .LASF491:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
@@ -11237,7 +11246,9 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_LOCK_RECURSIVE_T"
 .LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
-.LASF1404:
+.LASF949:
+	.string	"_REENT_ASCTIME_BUF(ptr) ((ptr)->_new._reent._asctime_buf)"
+.LASF1403:
 	.string	"this"
 .LASF1093:
 	.string	"__need_NULL "
@@ -11313,7 +11324,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__FLT64_MIN__ 2.22507385850720138309023271733240406e-308F64"
 .LASF1116:
 	.string	"strxfrm"
-.LASF1392:
+.LASF1391:
 	.string	"_Z7setBitsIhhEvRT_hhT0_"
 .LASF662:
 	.string	"_GXX_NULLPTR_T "
@@ -11327,7 +11338,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"UINT64_C(c) __UINT64_C(c)"
 .LASF232:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
-.LASF1384:
+.LASF1383:
 	.string	"_ZN11MemoryChunk25mergeTrailingsUnallocatedEv"
 .LASF815:
 	.string	"__NEWLIB_PATCHLEVEL__ 0"
@@ -11353,7 +11364,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1"
 .LASF901:
 	.string	"__lock_acquire(lock) (_CAST_VOID 0)"
-.LASF1405:
+.LASF1404:
 	.string	"desiredPid"
 .LASF1219:
 	.string	"_ZNK11MemoryChunk10getDataEndEv"
@@ -11469,7 +11480,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__UINTMAX_TYPE__ long unsigned int"
 .LASF124:
 	.string	"__WINT_WIDTH__ 32"
-.LASF1394:
+.LASF1393:
 	.string	"ValueType"
 .LASF804:
 	.string	"INCLUDE_MEMORYMANAGER_H_ "
@@ -11483,7 +11494,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__BSD_VISIBLE 0"
 .LASF1048:
 	.string	"__predict_false(exp) __builtin_expect((exp), 0)"
-.LASF1406:
+.LASF1405:
 	.string	"mask"
 .LASF485:
 	.string	"_GLIBCXX_HAVE_ACOSF 1"
@@ -11497,7 +11508,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"uintmax_t"
 .LASF1345:
 	.string	"_freelist"
-.LASF1369:
+.LASF1368:
 	.string	"MASK_NUM"
 .LASF446:
 	.string	"_GLIBCXX_BEGIN_NAMESPACE_CXX11 namespace __cxx11 {"
@@ -11549,7 +11560,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"MemoryManager"
 .LASF519:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
-.LASF1371:
+.LASF1370:
 	.string	"_ZN10PidManagerC4Ev"
 .LASF790:
 	.string	"NULL_CHAR '\\0'"
@@ -11561,7 +11572,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"INT16_MIN (-INT16_MAX - 1)"
 .LASF1003:
 	.string	"__GNUCLIKE_BUILTIN_MEMCPY 1"
-.LASF1389:
+.LASF1388:
 	.string	"pidManager"
 .LASF1210:
 	.string	"getSize"
@@ -11579,7 +11590,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"unsigned int"
 .LASF634:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF1419:
+.LASF1418:
 	.string	"max_align_t"
 .LASF1227:
 	.string	"_ZN11MemoryChunk23setNextValidChunkOffsetEm"
@@ -11619,7 +11630,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__aligned(x) __attribute__((__aligned__(x)))"
 .LASF1215:
 	.string	"_ZN11MemoryChunk10getDataPtrEv"
-.LASF1374:
+.LASF1373:
 	.string	"_ZN10PidManager8allocateEt"
 .LASF877:
 	.string	"_SYS_REENT_H_ "
@@ -11663,8 +11674,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__tm_mday"
 .LASF696:
 	.string	"INT_LEAST16_MAX __INT_LEAST16_MAX__"
-.LASF1042:
-	.string	"__fastcall __attribute__((__fastcall__))"
+.LASF909:
+	.string	"_WINT_T "
 .LASF601:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1"
 .LASF590:
@@ -11677,8 +11688,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"___int_least8_t_defined 1"
 .LASF369:
 	.string	"__ARM_FEATURE_IDIV 1"
-.LASF1379:
-	.string	"_ZNK10PidManager11indexOfMaskEt"
 .LASF34:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF50:
@@ -11699,7 +11708,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"getDataPtr"
 .LASF1307:
 	.string	"_mbstate"
-.LASF1375:
+.LASF1374:
 	.string	"_ZN10PidManager10deallocateEt"
 .LASF688:
 	.string	"UINT64_MAX __UINT64_MAX__"
@@ -11717,7 +11726,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_flags"
 .LASF412:
 	.string	"_GLIBCXX_CSTDDEF 1"
-.LASF1393:
+.LASF1392:
 	.string	"Type"
 .LASF624:
 	.string	"_PTRDIFF_T_DECLARED "
@@ -11767,7 +11776,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"INT_FAST64_MAX"
 .LASF46:
 	.string	"__INT8_TYPE__ signed char"
-.LASF1415:
+.LASF1414:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -11801,6 +11810,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"bool"
 .LASF768:
 	.string	"INT8_C(c) __INT8_C(c)"
+.LASF1364:
+	.string	"PID_INVALID"
 .LASF1143:
 	.string	"uint_least8_t"
 .LASF214:
@@ -11825,6 +11836,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_ZN6Output5printEPKcm"
 .LASF925:
 	.string	"_RAND48_MULT_2 (0x0005)"
+.LASF1042:
+	.string	"__fastcall __attribute__((__fastcall__))"
 .LASF1113:
 	.string	"strspn"
 .LASF974:
@@ -11975,7 +11988,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__alloc_size(x) __attribute__((__alloc_size__(x)))"
 .LASF858:
 	.string	"_NOARGS void"
-.LASF1383:
+.LASF1382:
 	.string	"setPidBit"
 .LASF1182:
 	.string	"koutBuf"
@@ -12045,7 +12058,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__unreachable() __builtin_unreachable()"
 .LASF1303:
 	.string	"_blksize"
-.LASF1370:
+.LASF1369:
 	.string	"_masks"
 .LASF506:
 	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
@@ -12097,7 +12110,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_BSD_SIZE_T_ "
 .LASF761:
 	.string	"WCHAR_MIN"
-.LASF1386:
+.LASF1385:
 	.string	"isReservedPid"
 .LASF1089:
 	.string	"__no_lock_analysis __lock_annotate(no_thread_safety_analysis)"
@@ -12127,8 +12140,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_GLIBCXX_END_NAMESPACE_LDBL "
 .LASF1110:
 	.string	"strncpy"
-.LASF1364:
-	.string	"PidType"
+.LASF726:
+	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
 .LASF1263:
 	.string	"_mbstate_t"
 .LASF162:
@@ -12175,15 +12188,15 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_HAVE_CC_INHIBIT_LOOP_TO_LIBCALL 1"
 .LASF1266:
 	.string	"_next"
-.LASF1414:
+.LASF1413:
 	.string	"_Z13lowerMaskBitsm"
 .LASF1305:
 	.string	"_data"
-.LASF1398:
+.LASF1397:
 	.string	"_Z7setBitsIhiEvRT_hhT0_"
 .LASF189:
 	.string	"__FLT_MAX_10_EXP__ 38"
-.LASF1396:
+.LASF1395:
 	.string	"upperBound"
 .LASF6:
 	.string	"__GNUC_MINOR__ 2"
@@ -12203,7 +12216,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__GCC_ATOMIC_INT_LOCK_FREE 2"
 .LASF1114:
 	.string	"strstr"
-.LASF1409:
+.LASF1408:
 	.string	"getBits"
 .LASF1096:
 	.string	"memcmp"
@@ -12215,8 +12228,8 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"INTMAX_MAX"
 .LASF661:
 	.string	"_GCC_MAX_ALIGN_T "
-.LASF726:
-	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
+.LASF855:
+	.string	"_NOTHROW __attribute__ ((__nothrow__))"
 .LASF383:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF1101:
@@ -12503,7 +12516,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__cpp_binary_literals 201304"
 .LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF1382:
+.LASF1381:
 	.string	"mergeTrailingsUnallocated"
 .LASF407:
 	.string	"TARGET_ARCH_IS_qemu_virt "
@@ -12579,7 +12592,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__SIZEOF_INT__ 4"
 .LASF657:
 	.string	"_BSD_WCHAR_T_"
-.LASF1380:
+.LASF1379:
 	.string	"bitIndexOfMask"
 .LASF1123:
 	.string	"long long int"
@@ -12639,7 +12652,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__WINT_MIN__ 0U"
 .LASF1145:
 	.string	"uint_least32_t"
-.LASF1418:
+.LASF1417:
 	.string	"11max_align_t"
 .LASF135:
 	.string	"__INT8_MAX__ 0x7f"
@@ -12661,7 +12674,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"_add"
 .LASF922:
 	.string	"_RAND48_SEED_2 (0x1234)"
-.LASF1416:
+.LASF1415:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/PidManager.cpp"
 .LASF1071:
 	.string	"__COPYRIGHT(s) struct __hack"
@@ -12695,7 +12708,7 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"int_fast64_t"
 .LASF1213:
 	.string	"_ZN11MemoryChunk7setSizeEm"
-.LASF1388:
+.LASF1387:
 	.string	"forceReservedPidPresetValue"
 .LASF816:
 	.string	"_WANT_IO_C99_FORMATS 1"
@@ -12717,11 +12730,11 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__ARM_FP_FAST"
 .LASF784:
 	.string	"INTMAX_C(c) __INTMAX_C(c)"
-.LASF1372:
+.LASF1371:
 	.string	"_ZNK10PidManager11isAllocatedEt"
 .LASF436:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
-.LASF1381:
+.LASF1380:
 	.string	"_ZNK10PidManager14bitIndexOfMaskEt"
 .LASF504:
 	.string	"_GLIBCXX_HAVE_ENOTSUP 1"
@@ -12835,8 +12848,6 @@ _ZN10PidManager27forceReservedPidPresetValueEv:
 	.string	"__UINT16_MAX__ 0xffff"
 .LASF428:
 	.string	"_GLIBCXX_ABI_TAG_CXX11 __attribute ((__abi_tag__ (\"cxx11\")))"
-.LASF1365:
-	.string	"INVALID_PID"
 .LASF779:
 	.string	"UINT32_C"
 	.ident	"GCC: (Linaro GCC 7.2-2017.11) 7.2.1 20171011"

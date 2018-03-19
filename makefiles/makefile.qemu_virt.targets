@@ -44,10 +44,22 @@ $(ALL_REGISTERS):
 userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
 # 注意,MASTERY_RELOC必须在MASTERY_ELF之前
 $(MASTERY_BINARY):FORCE
-	$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
+	@$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
 	$(MAKE) $(MASTERY_RELOC)
-	$(MAKE) $(MASTERY_ELF)
-	while [ ! -f $(MASTERY_ELF) ] ;do sleep 1;done
+	# 最多尝试try次make $(MASTERY_ELF)，如果没有，就退出
+	try=2
+	while true;do 
+		if [[ -f $(MASTERY_ELF) || $${try} -eq 0 ]];then 
+			break 
+		else  
+			$(MAKE) $(MASTERY_ELF) 
+			try=$$((try-1))
+		fi 
+	done 
+	if [[ ! -f $(MASTERY_ELF) ]];then
+		echo '$(MASTERY_LEF) still does not exist'
+		exit 1
+	fi
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
 	dd if=$(userSpaceBin) of=$@ seek=$(USER_SPACE_START) bs=1c count=$(USER_SPACE_SIZE)
 

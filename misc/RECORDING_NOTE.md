@@ -1,3 +1,69 @@
+# 2018年3月19日15:08:25
+【commit point】【milestone】 进程相关的函数已经完成：killProcess, fork, scheduleNext。
+
+根据反馈，在.gitignore文件中增加了Debug目录的排除
+
+使用参见[user_main_fork_process.cpp](../src/arch/user_space/user_main_fork_process.cpp)
+# 2018年3月19日13:31:13
+【acknowledged】 析构函数的几个原则： 1.可被重复调用  2.std::move之后仍可调用 
+# 2018年3月19日13:28:07
+【acknowledged】 对于类定义
+```c++
+#include <iostream>
+
+using namespace std;
+
+
+class Process{
+public:
+	Process() // 总是先设置默认值
+	{
+		_priority = 21;
+	}
+
+	Process(int pid) // 仅仅设置_priority的默认值
+		:_pid(pid)
+	{}
+
+	Process(const Process &p) //总是先设置默认值
+	{
+		_pid = p._pid + 1;
+		_priority = p._priority;
+	}
+
+	void dump()const
+	{
+		cout << "_pid = " << _pid << ", _priority = " << _priority << "\n";
+	}
+
+private:
+	int _pid {0};
+	int _priority { 10 };
+};
+
+int main()
+{
+	Process p1;
+	p1.dump();
+	Process p2(2);
+	p2.dump();
+
+	Process p3(p2);
+	p3.dump();
+}
+```
+
+则对Process进行初始化，其各个域如何设置？
+
+从效率的角度来考虑，其实 `int _pid {0}`就相当于初始化列表中的默认值，如果没有提供就会使用，如果提供了，就不使用。因此，初始化列表在赋值上具有更高的优先级。
+
+特别是成员中有类时，更应该使用初始化列表。
+
+使用初始化列表的两个理由：1.覆盖默认值  2.避免重复，提供效率。
+# 2018年3月19日10:44:56
+【todo】 实现fork，探索copy on write的实现。
+# 2018年3月19日10:24:37
+【acknowledged】 命名：Pid要比PidType好许多，   PID_INVALID,PID_CURRENT,PID_PARENT要比INVALID_PID,CURRENT_PID,PARENT_PID好。 因为统一的前缀表明了某种关系，约束了命名空间。
 # 2018年3月19日00:54:59
 【commit point】测试了DoublyLinkedList, 完善了ProcessManager,进程现在可被调度。
 # 2018年3月19日00:49:21
@@ -79,7 +145,7 @@ new 调用 operator new, operator new 只负责分配空间。
 【todo】 完成ProcessManager::scheduleNextProcess(), Process:saveContext(), Process::restoreContext()
 【todo】 查看c语言处理异常的方式
 # 2018年3月17日18:21:45
-【commit point】 修正了svc_call的定义，现在它使用模板参数。新增了Process类的定义，参见 [Process.h](../include/schedule/Process.h), [main_run_process.cpp](../src/arch/common_aarch64/qemu_virt/main_run_process.cpp)
+【commit point】 修正了svc_call的定义，现在它使用模板参数。新增了Process类的定义，参见 [Process.h](../include/schedule/Process.h), [main_run_process.cpp](../src/arch/qemu_virt/main_run_process.cpp)
 # 2018年3月17日17:35:04
 【acknowledged】 如果一个函数中含有内联汇编，且内联汇编声明输入列表中有一个立即数，该立即数来自参数，则能否编译出相应的代码？
 

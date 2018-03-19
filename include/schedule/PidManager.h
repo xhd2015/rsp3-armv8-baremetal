@@ -13,34 +13,37 @@
 #include <generic_util.h>
 #include <cstring>
 
-using PidType = uint16_t;
+// Pid不可能使用enum, 因为所有的整数值都是允许的，而enum无法枚举`所有`。
+using Pid = uint16_t;
 // pid的前面几项保留为特殊使用
-constexpr PidType INVALID_PID = 0;// INVALID_PID总是已分配的
-constexpr PidType CURRENT_PID = 1 ; // 已分配，总是指向当前进程的PID
-constexpr PidType PARENT_PID = 2;  // 表示父进程
+constexpr Pid PID_INVALID = 0;// PID_INVALID总是已分配的
+constexpr Pid PID_CURRENT = 1 ; // 已分配，总是指向当前进程的PID
+constexpr Pid PID_PARENT = 2;  // 表示父进程
 
+
+// 将PidManager从ProcessManager中，主要是考虑解耦的问题。
 class PidManager{
 public:
 	// effective PID range [0,1023], needs 2^10/2^3=2^7bytes=128bytes
 	enum { MASK_NUM = 128 };
 
 	PidManager();
-	bool isAllocated(PidType pid)const;
-	PidType allocate();
-	PidType allocate(PidType desiredPid);
-	void    deallocate(PidType pid);
+	bool isAllocated(Pid pid)const;
+	Pid allocate();
+	Pid allocate(Pid desiredPid);
+	void    deallocate(Pid pid);
 	void    clearAll();
 private:
-	AS_MACRO size_t indexOfMask(PidType pid)const
+	AS_MACRO size_t indexOfMask(Pid pid)const
 	{
 		return pid/8;
 	}
-	AS_MACRO size_t bitIndexOfMask(PidType pid)const
+	AS_MACRO size_t bitIndexOfMask(Pid pid)const
 	{
 		return pid%8;
 	}
-	void setPidBit(PidType pid,uint8_t v);
-	static bool    isReservedPid(PidType pid);
+	void setPidBit(Pid pid,uint8_t v);
+	static bool    isReservedPid(Pid pid);
 	void forceReservedPidPresetValue();
 private:
 	uint8_t _masks[MASK_NUM];

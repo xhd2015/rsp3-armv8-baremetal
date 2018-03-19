@@ -24,7 +24,7 @@ public:
 	using ConstTraverseFunctor = std::function<void(const NodeType*)>;
 
 	ForwardList();
-	DEFINE_COPY_COSNTRUCTOR(ForwardList)=delete;
+	DEFINE_COPY_CONSTRUCTOR(ForwardList)=delete;
 	DEFINE_COPY_OPERATOR(ForwardList)=delete;
 	DEFINE_MOVE_CONSTRUCTOR(ForwardList);
 	DEFINE_MOVE_OPERATOR(ForwardList);

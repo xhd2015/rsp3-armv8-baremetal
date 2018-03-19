@@ -20,7 +20,7 @@ class DoublyLinkedNode{
 public:
 	template <class...Args>
 	DoublyLinkedNode(DoublyLinkedNode *next,DoublyLinkedNode *previous,Args && ... args);
-	DEFINE_COPY_COSNTRUCTOR(DoublyLinkedNode)=delete;
+	DEFINE_COPY_CONSTRUCTOR(DoublyLinkedNode)=delete;
 	DEFINE_COPY_OPERATOR(DoublyLinkedNode)=delete;
 	DEFINE_MOVE_CONSTRUCTOR(DoublyLinkedNode);
 	DEFINE_MOVE_OPERATOR(DoublyLinkedNode);

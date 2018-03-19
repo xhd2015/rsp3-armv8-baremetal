@@ -5252,10 +5252,15 @@ using RefOrValue_t =typename RefOrValue<This,ReturnType>::type;
 
 
 
-#define DEFINE_COPY_COSNTRUCTOR(className) className(const className &rhs)
+#define DEFINE_COPY_CONSTRUCTOR(className) className(const className &rhs)
 #define DEFINE_COPY_OPERATOR(className) className & operator=(const className &rhs)
 #define DEFINE_MOVE_CONSTRUCTOR(className) className(className &&rhs)
 #define DEFINE_MOVE_OPERATOR(className) className & operator=(className &&rhs)
+#define DELETE_COPY(className) DEFINE_COPY_CONSTRUCTOR(className)=delete; DEFINE_COPY_OPERATOR(className)=delete
+
+#define DELETE_MOVE(className) DEFINE_MOVE_CONSTRUCTOR(className)=delete; DEFINE_MOVE_OPERATOR(className)=delete
+
+#define DEFINE_MOVE(className) DEFINE_COPY_CONSTRUCTOR(className); DEFINE_MOVE_OPERATOR(className)
 # 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/DoublyLinkedNode.h" 2
 
 
@@ -24962,12 +24967,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 15 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h" 2
 
 
-# 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
-using PidType = uint16_t;
 
-constexpr PidType INVALID_PID = 0;
-constexpr PidType CURRENT_PID = 1 ;
-constexpr PidType PARENT_PID = 2;
+# 17 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
+using Pid = uint16_t;
+
+constexpr Pid PID_INVALID = 0;
+constexpr Pid PID_CURRENT = 1 ;
+constexpr Pid PID_PARENT = 2;
+
+
 
 class PidManager{
 public:
@@ -24975,22 +24983,22 @@ public:
  enum { MASK_NUM = 128 };
 
  PidManager();
- bool isAllocated(PidType pid)const;
- PidType allocate();
- PidType allocate(PidType desiredPid);
- void deallocate(PidType pid);
+ bool isAllocated(Pid pid)const;
+ Pid allocate();
+ Pid allocate(Pid desiredPid);
+ void deallocate(Pid pid);
  void clearAll();
 private:
- __attribute__((always_inline)) inline size_t indexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t indexOfMask(Pid pid)const
  {
   return pid/8;
  }
- __attribute__((always_inline)) inline size_t bitIndexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t bitIndexOfMask(Pid pid)const
  {
   return pid%8;
  }
- void setPidBit(PidType pid,uint8_t v);
- static bool isReservedPid(PidType pid);
+ void setPidBit(Pid pid,uint8_t v);
+ static bool isReservedPid(Pid pid);
  void forceReservedPidPresetValue();
 private:
  uint8_t _masks[MASK_NUM];
@@ -26876,6 +26884,7 @@ void RegDescriptor4KBL3::write(void *p)const { *reinterpret_cast<RegDescriptor4K
 
 
 
+
 class Process{
 public:
  enum Config{
@@ -26901,18 +26910,41 @@ public:
 
   STATUS_NUM
  };
+ enum Error{
+  SUCCESS=0,
+  PID_ALLOCATE_FAILED,
+  SPACE_ALLCOATE_FAILED,
+ };
 
 
  Process();
+ ~Process();
 
 
- int init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+
+
+
+ Process(const Process & rhs);
+ Process& operator=(const Process &rhs)=delete;
+
+
+ Process(Process &&rhs)=delete;
+ Process& operator=(Process &&rhs)=delete;
+
+
+
+
+ Error init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+
+ Error setupTables(size_t codeSize,size_t heapSize,size_t spSize);
  void destroy();
 
 
  void saveContext(const uint64_t *savedRegisters);
 
+
  void restoreContextAndExecute(void *savedSpEL1 = nullptr);
+
 
  void* codeBase() const;
  size_t codeSize() const;
@@ -26920,7 +26952,7 @@ public:
  void* heapBase() const;
  size_t heapSize() const;
  const Process* parent() const;
- PidType pid() const;
+ Pid pid() const;
  uint32_t priority() const;
  uint64_t * registers();
  const uint64_t* registers() const;
@@ -26937,7 +26969,7 @@ public:
  const RegTTBR0_EL1& TTBR0() const;
 
 private:
- PidType _pid {INVALID_PID};
+ Pid _pid {PID_INVALID};
  uint32_t _priority {0};
  Status _status {Process::CREATED_INCOMPLETE};
  Process * _parent {nullptr};
@@ -26960,6 +26992,7 @@ private:
  void* _spBase{nullptr};
  size_t _spSize{0};
 
+
  uint64_t _registers[REGISTER_NUM];
  RegELR_EL1 _ELR {0};
  RegSPSR_EL1 _SPSR {0};
@@ -26968,6 +27001,7 @@ private:
 
 class ProcessManager{
 public:
+
  using ProcessList = DoublyLinkedList<Process>;
  using ProcessLink = ProcessList::NodeType;
 
@@ -26982,11 +27016,15 @@ public:
 
 
 
- void scheduleNextProcess();
 
+
+ void scheduleNextProcess(uint64_t *savedRegsiers);
 
  template <class ... Args>
  ProcessLink* createNewProcess(Args && ... initArgs);
+
+
+ ProcessLink* forkProcess(ProcessLink *origin);
 
 
  void changeProcessStatus(ProcessLink *p, Process::Status oldStatus,Process::Status newStatus);
@@ -27001,6 +27039,8 @@ private:
 
 
 extern ProcessManager processManager;
+
+
 
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/schedule/ProcessManager.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/templates_implementation/schedule/ProcessManager.h"
@@ -27022,7 +27062,7 @@ ProcessManager::ProcessLink* ProcessManager::createNewProcess(Args && ... initAr
  }
  return node;
 }
-# 51 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/ProcessManager.h" 2
+# 58 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/ProcessManager.h" 2
 # 10 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/ProcessManager.cpp" 2
 # 1 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/asm_instructions.h" 1
 # 9 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/asm_instructions.h"
@@ -27114,7 +27154,7 @@ void ProcessManager::killProcess(ProcessLink* p)
 }
 
 
-void ProcessManager::scheduleNextProcess()
+void ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 {
  auto cur = currentRunningProcess();
 
@@ -27125,21 +27165,37 @@ void ProcessManager::scheduleNextProcess()
   if(cur)
   {
    kout << "schedule with current continuing\n";
-   asm_wfe_loop();
-   return;
+   cur->data<true>().restoreContextAndExecute();
   }else{
    kout << "schedule with idle \n";
+
+
+
+
+
    asm_wfe_loop();
-   return;
   }
  }else{
   kout << "schedule with next ready process\n";
-  asm_wfe_loop();
-
-
-
-
+  if(cur)
+  {
+   cur->data<true>().saveContext(savedRegsiers);
+   changeProcessStatus(cur, Process::READY);
+  }
+  changeProcessStatus(nextReady, Process::RUNNING);
+  nextReady->data<true>().restoreContextAndExecute();
  }
+}
+
+ProcessManager::ProcessLink* ProcessManager::forkProcess(ProcessLink *origin)
+{
+
+ auto node = _statedProcessList[Process::Status::CREATED_INCOMPLETE].insertTail(origin->data<true>());
+ if(node && node->data<true>().status()==Process::Status::CREATED)
+ {
+  changeProcessStatus(node, Process::CREATED_INCOMPLETE,Process::CREATED);
+ }
+ return node;
 }
 
 void ProcessManager::changeProcessStatus(ProcessLink *p, Process::Status oldStatus,Process::Status newStatus)

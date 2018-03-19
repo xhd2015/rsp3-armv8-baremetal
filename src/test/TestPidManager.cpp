@@ -33,7 +33,7 @@ void TestPidManager::run()
 bool TestPidManager::clearAllKeepsInvalidAllocated()
 {
 	PidManager pidm;
-	return pidm.isAllocated(INVALID_PID)==true;
+	return pidm.isAllocated(PID_INVALID)==true;
 }
 
 bool TestPidManager::allocateReturnContinousPids()
@@ -48,8 +48,8 @@ bool TestPidManager::allocateReturnContinousPids()
 bool TestPidManager::allocateInvalidPidAlwaysFailed()
 {
 	PidManager pidm;
-	auto pid=pidm.allocate(INVALID_PID);
-	return pid==INVALID_PID;
+	auto pid=pidm.allocate(PID_INVALID);
+	return pid==PID_INVALID;
 }
 
 bool TestPidManager::deallocatePidSuccessfully()

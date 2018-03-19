@@ -12,6 +12,7 @@
 #include <schedule/PidManager.h>
 #include <arch/common_aarch64/system_common_registers.h>
 #include <arch/common_aarch64/vmsa_descriptors.h>
+#include <programming/define_members.h>
 
 // 提供一个统一的view
 // 系统层面的Process，不是用户层面的Process
@@ -40,12 +41,33 @@ public:
 
 		STATUS_NUM
 	};
+	enum Error{
+		SUCCESS=0,
+		PID_ALLOCATE_FAILED,
+		SPACE_ALLCOATE_FAILED,
+	};
 
 //	__attribute__((optimize("-Wno-error=effc++")))
 	Process();
+	~Process();
+
+	// 复制当前进程， fork的实现
+	// @return CREATED_INCOMPLETE,或者CREATED的进程
+	// 由于pid等资源, 实现隐式的fork构造函数, 不允许赋值，但是允许构造
+	// fork进程之间默认是 父子关系，而不是兄弟关系
+	Process(const Process & rhs);
+	Process& operator=(const Process &rhs)=delete;
+
+
+	Process(Process &&rhs)=delete;
+	Process& operator=(Process &&rhs)=delete;
+
+
 
 	// 建立4级页表，申请空间，映射代码到0地址处,4KB对齐
-	int init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+	Error init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+	// set ttbr0,tabelL0~tableL3, {code,heap,sp}{base,size}
+	Error setupTables(size_t codeSize,size_t heapSize,size_t spSize);
 	void destroy();
 
 
@@ -54,13 +76,14 @@ public:
 	// 如果savedSpEL1 为空，表示不设置
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
 
+
 	void* codeBase() const;
 	size_t codeSize() const;
 	RegELR_EL1 ELR() const;
 	void* heapBase() const;
 	size_t heapSize() const;
 	const Process* parent() const;
-	PidType pid() const;
+	Pid pid() const;
 	uint32_t priority() const;
 	uint64_t *      registers();
 	const uint64_t* registers() const;
@@ -77,7 +100,7 @@ public:
 	const RegTTBR0_EL1& TTBR0() const;
 
 private:
-	PidType     _pid  {INVALID_PID};
+	Pid     _pid  {PID_INVALID};
 	uint32_t     _priority {0};
 	Status       _status {Process::CREATED_INCOMPLETE};
 	Process *   _parent {nullptr};
@@ -100,6 +123,7 @@ private:
 	void*        _spBase{nullptr};
 	size_t       _spSize{0};
 
+	// 注意, _registers[0] 通常作为返回值
 	uint64_t    _registers[REGISTER_NUM];
 	RegELR_EL1  _ELR {0};
 	RegSPSR_EL1 _SPSR {0};

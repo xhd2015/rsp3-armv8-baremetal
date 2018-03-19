@@ -3263,12 +3263,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 15 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h" 2
 
 
-# 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
-using PidType = uint16_t;
 
-constexpr PidType INVALID_PID = 0;
-constexpr PidType CURRENT_PID = 1 ;
-constexpr PidType PARENT_PID = 2;
+# 17 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
+using Pid = uint16_t;
+
+constexpr Pid PID_INVALID = 0;
+constexpr Pid PID_CURRENT = 1 ;
+constexpr Pid PID_PARENT = 2;
+
+
 
 class PidManager{
 public:
@@ -3276,22 +3279,22 @@ public:
  enum { MASK_NUM = 128 };
 
  PidManager();
- bool isAllocated(PidType pid)const;
- PidType allocate();
- PidType allocate(PidType desiredPid);
- void deallocate(PidType pid);
+ bool isAllocated(Pid pid)const;
+ Pid allocate();
+ Pid allocate(Pid desiredPid);
+ void deallocate(Pid pid);
  void clearAll();
 private:
- __attribute__((always_inline)) inline size_t indexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t indexOfMask(Pid pid)const
  {
   return pid/8;
  }
- __attribute__((always_inline)) inline size_t bitIndexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t bitIndexOfMask(Pid pid)const
  {
   return pid%8;
  }
- void setPidBit(PidType pid,uint8_t v);
- static bool isReservedPid(PidType pid);
+ void setPidBit(Pid pid,uint8_t v);
+ static bool isReservedPid(Pid pid);
  void forceReservedPidPresetValue();
 private:
  uint8_t _masks[MASK_NUM];
@@ -3305,11 +3308,11 @@ PidManager::PidManager()
  clearAll();
 }
 
-bool PidManager::isAllocated(PidType pid)const
+bool PidManager::isAllocated(Pid pid)const
 {
  return (getBit(_masks[indexOfMask(pid)], bitIndexOfMask(pid)) == 1);
 }
-PidType PidManager::allocate()
+Pid PidManager::allocate()
 {
  for(size_t i=0;i!=MASK_NUM;++i)
  {
@@ -3326,20 +3329,20 @@ PidType PidManager::allocate()
    return i*8 + j;
   }
  }
- return INVALID_PID;
+ return PID_INVALID;
 }
-PidType PidManager::allocate(PidType desiredPid)
+Pid PidManager::allocate(Pid desiredPid)
 {
  if(isReservedPid(desiredPid))
-  return INVALID_PID;
+  return PID_INVALID;
  auto i=indexOfMask(desiredPid);
  auto j=bitIndexOfMask(desiredPid);
  if(getBit(_masks[i],j)==1)
-  return INVALID_PID;
+  return PID_INVALID;
  setBit(_masks[i],j,1);
  return desiredPid;
 }
-void PidManager::deallocate(PidType pid)
+void PidManager::deallocate(Pid pid)
 {
  if(isReservedPid(pid))
   return;
@@ -3356,18 +3359,18 @@ void PidManager::clearAll()
  forceReservedPidPresetValue();
 }
 
-bool PidManager::isReservedPid(PidType pid)
+bool PidManager::isReservedPid(Pid pid)
 {
- return (pid==INVALID_PID || pid==PARENT_PID || pid==CURRENT_PID);
+ return (pid==PID_INVALID || pid==PID_PARENT || pid==PID_CURRENT);
 }
 
-void PidManager::setPidBit(PidType pid,uint8_t v)
+void PidManager::setPidBit(Pid pid,uint8_t v)
 {
  setBit(_masks[indexOfMask(pid)], bitIndexOfMask(pid), v);
 }
 void PidManager::forceReservedPidPresetValue()
 {
- setPidBit(INVALID_PID, 1);
- setPidBit(PARENT_PID, 1);
- setPidBit(CURRENT_PID, 1);
+ setPidBit(PID_INVALID, 1);
+ setPidBit(PID_PARENT, 1);
+ setPidBit(PID_CURRENT, 1);
 }

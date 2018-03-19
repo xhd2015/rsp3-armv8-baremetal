@@ -16,13 +16,42 @@
 Process::Process()
 {}
 
+Process::~Process()
+{
+	destroy();
+}
 
-int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize)
+Process::Process(const Process & rhs)
+	:_pid(pidManager.allocate()), // 这些值需要从rhs设置，其他的保留默认值
+	 _priority(rhs._priority),
+	 _parent(const_cast<decltype(_parent)>(&rhs)),
+	 _spEL0(rhs._spEL0),
+	 _ELR(rhs._ELR),
+	 _SPSR(rhs._SPSR)
+{
+	if(_pid == PID_INVALID)
+		return;
+	// 赋值寄存器
+	std::memcpy(_registers, rhs._registers, sizeof(_registers));
+
+	// 必须保证在失败的情况下,codeBase等指针为nullptr
+	auto err = setupTables(rhs._codeSize, rhs._heapSize, rhs._spSize);
+
+	if(err == Error::SUCCESS)
+	{
+		std::memcpy(_codeBase, rhs._codeBase, _codeSize);
+		std::memcpy(_heapBase, rhs._heapBase, _heapSize);
+		std::memcpy(_spBase, rhs._spBase, _spSize);
+		_status = CREATED;
+	}
+}
+
+Process::Error Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize)
 {
 	this->_pid = pidManager.allocate();
 
-	if(_pid == INVALID_PID)
-		return 1;
+	if(_pid == PID_INVALID)
+		return Error::PID_ALLOCATE_FAILED;
 	this->_parent = parent;
 	this->_priority = priority;
 
@@ -42,7 +71,16 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 //	this->_savedSPSR.EL = 0;
 //	this->_savedSPSR.SPSel = 0;
 
-	// 由于代码，栈，堆都是需要进行页映射的，而最佳的映射方式是与表对齐。
+	auto err = setupTables(codeSize, heapSize, spSize);
+
+	if(err == Error::SUCCESS)
+		this->_status = CREATED;
+	return err;
+
+}
+
+Process::Error Process::setupTables(size_t codeSize,size_t heapSize,size_t spSize)
+{
 	this->_codeSize = codeSize;
 	this->_codeBase = mman.allocate(codeSize,TABLE_ALIGNMENT);
 	this->_spSize = spSize;
@@ -58,7 +96,7 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 	if(_codeBase==nullptr || _heapBase==nullptr|| _spBase==nullptr || _tableL0 == nullptr || _tableL1==nullptr || _tableL2==nullptr || _tableL3==nullptr)
 	{
 		kout << FATAL << "a level of page table,heap or stack can not be allocated\n";
-		return 1;
+		return Error::SPACE_ALLCOATE_FAILED;
 	}
 
 	auto phyaddr = asm_at(reinterpret_cast<uint64_t>(_tableL0));
@@ -133,10 +171,7 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 		_tableL3[Process::HEAP_L3_INDEX+i].AP=0b01;//RW, EL0
 		_tableL3[Process::HEAP_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(headPhyAddr.S0.PA51_48) << (48-12))|(headPhyAddr.S0.PA47_12)) + i;
 	}
-
-	this->_status = CREATED;
-	return 0;
-
+	return Error::SUCCESS;
 }
 
 void Process::destroy()
@@ -144,11 +179,12 @@ void Process::destroy()
 	if(_status == Process::Status::DESTROYED)
 		return;
 	// 也许是CREATED_INCOMPLETE
-	if(_pid!=INVALID_PID)
+	if(_pid!=PID_INVALID)
 	{
 		pidManager.deallocate(_pid);
-		_pid = INVALID_PID;
+		_pid = PID_INVALID;
 	}
+	// 可以回收空指针
 	mman.deallocate(_spBase);
 	mman.deallocate(_heapBase);
 	mman.deallocate(_codeBase);
@@ -156,6 +192,8 @@ void Process::destroy()
 	mman.deallocate(_tableL1);
 	mman.deallocate(_tableL2);
 	mman.deallocate(_tableL3);
+
+	// 为了效率考虑，不重置指针值，因为DESTROYED可以判定这些值是否有效。
 //	_spBase = nullptr;
 //	_heapBase = nullptr;
 //	_codeBase = nullptr;
@@ -172,7 +210,8 @@ void Process::destroy()
 
 void Process::saveContext(const uint64_t *savedRegisters)
 {
-	std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
+	if(savedRegisters)
+		std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
 	this->_ttbr0.updateRead();
 	this->_ELR.updateRead();
 	this->_SPSR.updateRead();
@@ -224,7 +263,7 @@ const Process* Process::parent() const {
 	return _parent;
 }
 
-PidType Process::pid() const {
+Pid Process::pid() const {
 	return _pid;
 }
 

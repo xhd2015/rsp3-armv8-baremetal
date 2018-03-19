@@ -3375,6 +3375,10 @@ enum class SvcFunc{
  puts,
  allocateBlock,
  killProcess,
+ scheduleNext,
+ fork,
+ signal,
+
 };
 
 
@@ -3457,7 +3461,7 @@ uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3)
 
 
 
-static constexpr size_t bufferSize=32;
+static constexpr size_t bufferSize=100;
 static char buffer[bufferSize];
 static size_t curSize=0;
 

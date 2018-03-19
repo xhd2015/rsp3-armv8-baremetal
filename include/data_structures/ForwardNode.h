@@ -17,7 +17,7 @@ class ForwardNode{
 public:
 	template <class ... Args>
 	ForwardNode(ForwardNode *next,Args && ... args);
-	DEFINE_COPY_COSNTRUCTOR(ForwardNode)=delete;
+	DEFINE_COPY_CONSTRUCTOR(ForwardNode)=delete;
 	DEFINE_COPY_OPERATOR(ForwardNode)=delete;
 	DEFINE_MOVE_CONSTRUCTOR(ForwardNode);
 	DEFINE_MOVE_OPERATOR(ForwardNode);

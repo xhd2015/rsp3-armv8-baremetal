@@ -4113,10 +4113,15 @@ using RefOrValue_t =typename RefOrValue<This,ReturnType>::type;
 
 
 
-#define DEFINE_COPY_COSNTRUCTOR(className) className(const className &rhs)
+#define DEFINE_COPY_CONSTRUCTOR(className) className(const className &rhs)
 #define DEFINE_COPY_OPERATOR(className) className & operator=(const className &rhs)
 #define DEFINE_MOVE_CONSTRUCTOR(className) className(className &&rhs)
 #define DEFINE_MOVE_OPERATOR(className) className & operator=(className &&rhs)
+#define DELETE_COPY(className) DEFINE_COPY_CONSTRUCTOR(className)=delete; DEFINE_COPY_OPERATOR(className)=delete
+
+#define DELETE_MOVE(className) DEFINE_MOVE_CONSTRUCTOR(className)=delete; DEFINE_MOVE_OPERATOR(className)=delete
+
+#define DEFINE_MOVE(className) DEFINE_COPY_CONSTRUCTOR(className); DEFINE_MOVE_OPERATOR(className)
 # 14 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/data_structures/ForwardNode.h" 2
 
 template <class T>
@@ -24439,12 +24444,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 15 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h" 2
 
 
-# 16 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
-using PidType = uint16_t;
 
-constexpr PidType INVALID_PID = 0;
-constexpr PidType CURRENT_PID = 1 ;
-constexpr PidType PARENT_PID = 2;
+# 17 "D:\\Pool\\eclipse-workspace_aarch64\\newspace\\raspiOS\\include/schedule/PidManager.h"
+using Pid = uint16_t;
+
+constexpr Pid PID_INVALID = 0;
+constexpr Pid PID_CURRENT = 1 ;
+constexpr Pid PID_PARENT = 2;
+
+
 
 class PidManager{
 public:
@@ -24452,22 +24460,22 @@ public:
  enum { MASK_NUM = 128 };
 
  PidManager();
- bool isAllocated(PidType pid)const;
- PidType allocate();
- PidType allocate(PidType desiredPid);
- void deallocate(PidType pid);
+ bool isAllocated(Pid pid)const;
+ Pid allocate();
+ Pid allocate(Pid desiredPid);
+ void deallocate(Pid pid);
  void clearAll();
 private:
- __attribute__((always_inline)) inline size_t indexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t indexOfMask(Pid pid)const
  {
   return pid/8;
  }
- __attribute__((always_inline)) inline size_t bitIndexOfMask(PidType pid)const
+ __attribute__((always_inline)) inline size_t bitIndexOfMask(Pid pid)const
  {
   return pid%8;
  }
- void setPidBit(PidType pid,uint8_t v);
- static bool isReservedPid(PidType pid);
+ void setPidBit(Pid pid,uint8_t v);
+ static bool isReservedPid(Pid pid);
  void forceReservedPidPresetValue();
 private:
  uint8_t _masks[MASK_NUM];
@@ -26353,6 +26361,7 @@ void RegDescriptor4KBL3::write(void *p)const { *reinterpret_cast<RegDescriptor4K
 
 
 
+
 class Process{
 public:
  enum Config{
@@ -26378,18 +26387,41 @@ public:
 
   STATUS_NUM
  };
+ enum Error{
+  SUCCESS=0,
+  PID_ALLOCATE_FAILED,
+  SPACE_ALLCOATE_FAILED,
+ };
 
 
  Process();
+ ~Process();
 
 
- int init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+
+
+
+ Process(const Process & rhs);
+ Process& operator=(const Process &rhs)=delete;
+
+
+ Process(Process &&rhs)=delete;
+ Process& operator=(Process &&rhs)=delete;
+
+
+
+
+ Error init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
+
+ Error setupTables(size_t codeSize,size_t heapSize,size_t spSize);
  void destroy();
 
 
  void saveContext(const uint64_t *savedRegisters);
 
+
  void restoreContextAndExecute(void *savedSpEL1 = nullptr);
+
 
  void* codeBase() const;
  size_t codeSize() const;
@@ -26397,7 +26429,7 @@ public:
  void* heapBase() const;
  size_t heapSize() const;
  const Process* parent() const;
- PidType pid() const;
+ Pid pid() const;
  uint32_t priority() const;
  uint64_t * registers();
  const uint64_t* registers() const;
@@ -26414,7 +26446,7 @@ public:
  const RegTTBR0_EL1& TTBR0() const;
 
 private:
- PidType _pid {INVALID_PID};
+ Pid _pid {PID_INVALID};
  uint32_t _priority {0};
  Status _status {Process::CREATED_INCOMPLETE};
  Process * _parent {nullptr};
@@ -26436,6 +26468,7 @@ private:
 
  void* _spBase{nullptr};
  size_t _spSize{0};
+
 
  uint64_t _registers[REGISTER_NUM];
  RegELR_EL1 _ELR {0};
@@ -26623,13 +26656,42 @@ enum ExceptionClass{
 Process::Process()
 {}
 
+Process::~Process()
+{
+ destroy();
+}
 
-int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize)
+Process::Process(const Process & rhs)
+ :_pid(pidManager.allocate()),
+  _priority(rhs._priority),
+  _parent(const_cast<decltype(_parent)>(&rhs)),
+  _spEL0(rhs._spEL0),
+  _ELR(rhs._ELR),
+  _SPSR(rhs._SPSR)
+{
+ if(_pid == PID_INVALID)
+  return;
+
+ std::memcpy(_registers, rhs._registers, sizeof(_registers));
+
+
+ auto err = setupTables(rhs._codeSize, rhs._heapSize, rhs._spSize);
+
+ if(err == Error::SUCCESS)
+ {
+  std::memcpy(_codeBase, rhs._codeBase, _codeSize);
+  std::memcpy(_heapBase, rhs._heapBase, _heapSize);
+  std::memcpy(_spBase, rhs._spBase, _spSize);
+  _status = CREATED;
+ }
+}
+
+Process::Error Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize)
 {
  this->_pid = pidManager.allocate();
 
- if(_pid == INVALID_PID)
-  return 1;
+ if(_pid == PID_INVALID)
+  return Error::PID_ALLOCATE_FAILED;
  this->_parent = parent;
  this->_priority = priority;
 
@@ -26649,7 +26711,16 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
 
 
 
+ auto err = setupTables(codeSize, heapSize, spSize);
 
+ if(err == Error::SUCCESS)
+  this->_status = CREATED;
+ return err;
+
+}
+
+Process::Error Process::setupTables(size_t codeSize,size_t heapSize,size_t spSize)
+{
  this->_codeSize = codeSize;
  this->_codeBase = mman.allocate(codeSize,TABLE_ALIGNMENT);
  this->_spSize = spSize;
@@ -26665,7 +26736,7 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
  if(_codeBase==nullptr || _heapBase==nullptr|| _spBase==nullptr || _tableL0 == nullptr || _tableL1==nullptr || _tableL2==nullptr || _tableL3==nullptr)
  {
   kout << "[FATAL] " << "a level of page table,heap or stack can not be allocated\n";
-  return 1;
+  return Error::SPACE_ALLCOATE_FAILED;
  }
 
  auto phyaddr = asm_at(reinterpret_cast<uint64_t>(_tableL0));
@@ -26740,10 +26811,7 @@ int Process::init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t co
   _tableL3[Process::HEAP_L3_INDEX+i].AP=0b01;
   _tableL3[Process::HEAP_L3_INDEX+i].OutputAddr = ((static_cast<uint64_t>(headPhyAddr.S0.PA51_48) << (48-12))|(headPhyAddr.S0.PA47_12)) + i;
  }
-
- this->_status = CREATED;
- return 0;
-
+ return Error::SUCCESS;
 }
 
 void Process::destroy()
@@ -26751,11 +26819,12 @@ void Process::destroy()
  if(_status == Process::Status::DESTROYED)
   return;
 
- if(_pid!=INVALID_PID)
+ if(_pid!=PID_INVALID)
  {
   pidManager.deallocate(_pid);
-  _pid = INVALID_PID;
+  _pid = PID_INVALID;
  }
+
  mman.deallocate(_spBase);
  mman.deallocate(_heapBase);
  mman.deallocate(_codeBase);
@@ -26763,13 +26832,14 @@ void Process::destroy()
  mman.deallocate(_tableL1);
  mman.deallocate(_tableL2);
  mman.deallocate(_tableL3);
-# 170 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/Process.cpp"
+# 208 "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/Process.cpp"
  _status = Process::Status::DESTROYED;
 }
 
 void Process::saveContext(const uint64_t *savedRegisters)
 {
- std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
+ if(savedRegisters)
+  std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
  this->_ttbr0.updateRead();
  this->_ELR.updateRead();
  this->_SPSR.updateRead();
@@ -26821,7 +26891,7 @@ const Process* Process::parent() const {
  return _parent;
 }
 
-PidType Process::pid() const {
+Pid Process::pid() const {
  return _pid;
 }
 

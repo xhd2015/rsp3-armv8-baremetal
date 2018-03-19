@@ -145,15 +145,32 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 		}else if(svcNumber == static_cast<decltype(svcNumber)>(SvcFunc::killProcess)){
 			kout << "killing Process \n";
 			// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
-			PidType pid = static_cast<PidType>(savedRegisters[0]);
+			auto pid = static_cast<Pid>(savedRegisters[0]);
 			int     status = *reinterpret_cast<int*>(savedRegisters+1);
 			(void)status;
-			if(pid == CURRENT_PID)
+			if(pid == PID_CURRENT)
 			{
 				processManager.killProcess(processManager.currentRunningProcess());
-				processManager.scheduleNextProcess();
+				processManager.scheduleNextProcess(savedRegisters);
 			}
 			asm_wfe_loop();
+		}else if(svcNumber == static_cast<decltype(svcNumber)>(SvcFunc::fork)){
+			// fork父进程返回子进程pid，子进程返回pid=0, 如果失败，返回PID_INVALID
+			auto cur = processManager.currentRunningProcess();
+			// 更新当前进程的上下文，使其与真实的状态保持对应，这样fork才能正确执行。
+			cur->data<true>().saveContext(savedRegisters);
+			auto forked = processManager.forkProcess(cur);
+			if(forked)
+			{
+				// 将forked进程加入就绪队列, 注意，这里对返回值的设置，由于是当前进程，所以直接设置savedRegisters即可
+				processManager.changeProcessStatus(forked, Process::Status::READY);
+				forked->data<true>().registers()[0] = PID_CURRENT ;
+				savedRegisters[0] = forked->data<true>().pid();
+			}else{
+				savedRegisters[0] = PID_INVALID;
+			}
+		}else if(svcNumber == static_cast<decltype(svcNumber)>(SvcFunc::scheduleNext)){
+			processManager.scheduleNextProcess(savedRegisters);
 		}
 	}else if(esr.EC == ExceptionClass::INSTR_ABORT_LOWER_EL){
 		kout << "Instruction Abort \n";

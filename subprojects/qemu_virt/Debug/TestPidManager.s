@@ -30,19 +30,19 @@ _ZL3GiB:
 _ZL11koutBufSize:
 	.xword	65
 	.align	1
-	.type	_ZL11INVALID_PID, %object
-	.size	_ZL11INVALID_PID, 2
-_ZL11INVALID_PID:
+	.type	_ZL11PID_INVALID, %object
+	.size	_ZL11PID_INVALID, 2
+_ZL11PID_INVALID:
 	.zero	2
 	.align	1
-	.type	_ZL11CURRENT_PID, %object
-	.size	_ZL11CURRENT_PID, 2
-_ZL11CURRENT_PID:
+	.type	_ZL11PID_CURRENT, %object
+	.size	_ZL11PID_CURRENT, 2
+_ZL11PID_CURRENT:
 	.hword	1
 	.align	1
-	.type	_ZL10PARENT_PID, %object
-	.size	_ZL10PARENT_PID, 2
-_ZL10PARENT_PID:
+	.type	_ZL10PID_PARENT, %object
+	.size	_ZL10PID_PARENT, 2
+_ZL10PID_PARENT:
 	.hword	2
 	.align	3
 .LC0:
@@ -507,10 +507,10 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x8
 	.uleb128 0x1
-	.4byte	.LASF1405
+	.4byte	.LASF1404
 	.byte	0x4
+	.4byte	.LASF1405
 	.4byte	.LASF1406
-	.4byte	.LASF1407
 	.8byte	.Ltext0
 	.8byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -767,7 +767,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x10
 	.byte	0x6
 	.2byte	0x1aa
-	.4byte	.LASF1408
+	.4byte	.LASF1407
 	.4byte	0x215
 	.uleb128 0xd
 	.4byte	.LASF1125
@@ -793,13 +793,13 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x4
 	.4byte	.LASF1128
 	.uleb128 0xe
-	.4byte	.LASF1409
+	.4byte	.LASF1408
 	.byte	0x6
 	.2byte	0x1b5
 	.4byte	0x1ea
 	.byte	0x10
 	.uleb128 0xf
-	.4byte	.LASF1410
+	.4byte	.LASF1409
 	.uleb128 0xa
 	.4byte	.LASF1130
 	.byte	0x7
@@ -1634,10 +1634,10 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x1d3
 	.byte	0
 	.uleb128 0x24
-	.4byte	.LASF1385
+	.4byte	.LASF1384
 	.byte	0xb
 	.byte	0x3e
-	.4byte	.LASF1387
+	.4byte	.LASF1386
 	.byte	0x1
 	.4byte	0x9cc
 	.uleb128 0x18
@@ -1864,7 +1864,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x8
 	.byte	0xe
 	.byte	0xa4
-	.4byte	.LASF1411
+	.4byte	.LASF1410
 	.4byte	0xc10
 	.uleb128 0x2a
 	.byte	0x4
@@ -2773,7 +2773,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x18
 	.byte	0
 	.uleb128 0x3a
-	.4byte	.LASF1412
+	.4byte	.LASF1411
 	.uleb128 0x1b
 	.byte	0x8
 	.4byte	0x1350
@@ -3072,54 +3072,54 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x19
 	.4byte	0x634
 	.byte	0
-	.uleb128 0xa
-	.4byte	.LASF1368
+	.uleb128 0x3e
+	.string	"Pid"
 	.byte	0x11
-	.byte	0x10
+	.byte	0x11
 	.4byte	0x28d
 	.uleb128 0xb
 	.4byte	0x1610
 	.uleb128 0x14
-	.4byte	.LASF1369
-	.byte	0x11
-	.byte	0x12
-	.4byte	0x161b
-	.uleb128 0x9
-	.byte	0x3
-	.8byte	_ZL11INVALID_PID
-	.uleb128 0x14
-	.4byte	.LASF1370
+	.4byte	.LASF1368
 	.byte	0x11
 	.byte	0x13
 	.4byte	0x161b
 	.uleb128 0x9
 	.byte	0x3
-	.8byte	_ZL11CURRENT_PID
+	.8byte	_ZL11PID_INVALID
 	.uleb128 0x14
-	.4byte	.LASF1371
+	.4byte	.LASF1369
 	.byte	0x11
 	.byte	0x14
 	.4byte	0x161b
 	.uleb128 0x9
 	.byte	0x3
-	.8byte	_ZL10PARENT_PID
+	.8byte	_ZL11PID_CURRENT
+	.uleb128 0x14
+	.4byte	.LASF1370
+	.byte	0x11
+	.byte	0x15
+	.4byte	0x161b
+	.uleb128 0x9
+	.byte	0x3
+	.8byte	_ZL10PID_PARENT
 	.uleb128 0x16
-	.4byte	.LASF1372
+	.4byte	.LASF1371
 	.byte	0x80
 	.byte	0x11
-	.byte	0x16
+	.byte	0x19
 	.4byte	0x17c4
 	.uleb128 0x26
-	.4byte	.LASF1373
+	.4byte	.LASF1372
 	.byte	0x11
-	.byte	0x2e
+	.byte	0x31
 	.4byte	0x17c9
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF1372
+	.4byte	.LASF1371
 	.byte	0x11
-	.byte	0x1b
-	.4byte	.LASF1374
+	.byte	0x1e
+	.4byte	.LASF1373
 	.byte	0x1
 	.4byte	0x168b
 	.4byte	0x1691
@@ -3129,8 +3129,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x17
 	.4byte	.LASF1203
 	.byte	0x11
-	.byte	0x1c
-	.4byte	.LASF1375
+	.byte	0x1f
+	.4byte	.LASF1374
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x16a9
@@ -3143,8 +3143,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x17
 	.4byte	.LASF1245
 	.byte	0x11
-	.byte	0x1d
-	.4byte	.LASF1376
+	.byte	0x20
+	.4byte	.LASF1375
 	.4byte	0x1610
 	.byte	0x1
 	.4byte	0x16cc
@@ -3155,8 +3155,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x17
 	.4byte	.LASF1245
 	.byte	0x11
-	.byte	0x1e
-	.4byte	.LASF1377
+	.byte	0x21
+	.4byte	.LASF1376
 	.4byte	0x1610
 	.byte	0x1
 	.4byte	0x16ea
@@ -3169,8 +3169,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x23
 	.4byte	.LASF1254
 	.byte	0x11
-	.byte	0x1f
-	.4byte	.LASF1378
+	.byte	0x22
+	.4byte	.LASF1377
 	.byte	0x1
 	.4byte	0x1709
 	.4byte	0x1714
@@ -3180,21 +3180,21 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x1610
 	.byte	0
 	.uleb128 0x23
-	.4byte	.LASF1379
+	.4byte	.LASF1378
 	.byte	0x11
-	.byte	0x20
-	.4byte	.LASF1380
+	.byte	0x23
+	.4byte	.LASF1379
 	.byte	0x1
 	.4byte	0x1728
 	.4byte	0x172e
 	.uleb128 0x18
 	.4byte	0x17d9
 	.byte	0
-	.uleb128 0x3e
-	.4byte	.LASF1381
+	.uleb128 0x3f
+	.4byte	.LASF1380
 	.byte	0x11
-	.byte	0x22
-	.4byte	.LASF1382
+	.byte	0x25
+	.4byte	.LASF1381
 	.4byte	0x1d3
 	.4byte	0x1745
 	.4byte	0x1750
@@ -3203,11 +3203,11 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x3e
-	.4byte	.LASF1383
+	.uleb128 0x3f
+	.4byte	.LASF1382
 	.byte	0x11
-	.byte	0x26
-	.4byte	.LASF1384
+	.byte	0x29
+	.4byte	.LASF1383
 	.4byte	0x1d3
 	.4byte	0x1767
 	.4byte	0x1772
@@ -3216,11 +3216,11 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x3f
-	.4byte	.LASF1386
+	.uleb128 0x40
+	.4byte	.LASF1385
 	.byte	0x11
-	.byte	0x2a
-	.4byte	.LASF1388
+	.byte	0x2d
+	.4byte	.LASF1387
 	.4byte	0x1785
 	.4byte	0x1795
 	.uleb128 0x18
@@ -3230,21 +3230,21 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x19
 	.4byte	0x27b
 	.byte	0
-	.uleb128 0x40
-	.4byte	.LASF1389
+	.uleb128 0x41
+	.4byte	.LASF1388
 	.byte	0x11
-	.byte	0x2b
-	.4byte	.LASF1390
+	.byte	0x2e
+	.4byte	.LASF1389
 	.4byte	0x640
 	.4byte	0x17ae
 	.uleb128 0x19
 	.4byte	0x1610
 	.byte	0
-	.uleb128 0x41
-	.4byte	.LASF1391
+	.uleb128 0x42
+	.4byte	.LASF1390
 	.byte	0x11
-	.byte	0x2c
-	.4byte	.LASF1413
+	.byte	0x2f
+	.4byte	.LASF1412
 	.4byte	0x17bd
 	.uleb128 0x18
 	.4byte	0x17d9
@@ -3266,27 +3266,27 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x8
 	.4byte	0x17c4
 	.uleb128 0x13
-	.4byte	.LASF1392
+	.4byte	.LASF1391
 	.byte	0x11
-	.byte	0x31
+	.byte	0x34
 	.4byte	0x165f
 	.uleb128 0x16
-	.4byte	.LASF1393
+	.4byte	.LASF1392
 	.byte	0x1
 	.byte	0x12
 	.byte	0xe
 	.4byte	0x187d
-	.uleb128 0x42
+	.uleb128 0x43
 	.string	"run"
 	.byte	0x12
 	.byte	0x10
-	.4byte	.LASF1414
+	.4byte	.LASF1413
 	.byte	0x1
 	.uleb128 0x17
-	.4byte	.LASF1394
+	.4byte	.LASF1393
 	.byte	0x12
 	.byte	0x11
-	.4byte	.LASF1395
+	.4byte	.LASF1394
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x1820
@@ -3295,10 +3295,10 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x187d
 	.byte	0
 	.uleb128 0x17
+	.4byte	.LASF1395
+	.byte	0x12
+	.byte	0x12
 	.4byte	.LASF1396
-	.byte	0x12
-	.byte	0x12
-	.4byte	.LASF1397
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x183e
@@ -3307,10 +3307,10 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x187d
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF1398
+	.4byte	.LASF1397
 	.byte	0x12
 	.byte	0x13
-	.4byte	.LASF1399
+	.4byte	.LASF1398
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x185c
@@ -3319,10 +3319,10 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x187d
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF1400
+	.4byte	.LASF1399
 	.byte	0x12
 	.byte	0x14
-	.4byte	.LASF1401
+	.4byte	.LASF1400
 	.4byte	0x640
 	.byte	0x1
 	.4byte	0x1876
@@ -3335,7 +3335,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.4byte	0x17f0
 	.uleb128 0xb
 	.4byte	0x187d
-	.uleb128 0x43
+	.uleb128 0x44
 	.4byte	0x1862
 	.byte	0x1
 	.byte	0x37
@@ -3346,21 +3346,21 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x9c
 	.4byte	0x18ad
 	.4byte	0x18f2
-	.uleb128 0x44
-	.4byte	.LASF1403
+	.uleb128 0x45
+	.4byte	.LASF1402
 	.4byte	0x1883
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
-	.uleb128 0x45
-	.4byte	.LASF1402
+	.uleb128 0x46
+	.4byte	.LASF1401
 	.byte	0x1
 	.byte	0x39
 	.4byte	0x165f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"p1"
 	.byte	0x1
 	.byte	0x3a
@@ -3368,7 +3368,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -2
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"p2"
 	.byte	0x1
 	.byte	0x3b
@@ -3376,7 +3376,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -4
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"res"
 	.byte	0x1
 	.byte	0x3c
@@ -3385,7 +3385,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x91
 	.sleb128 -5
 	.byte	0
-	.uleb128 0x43
+	.uleb128 0x44
 	.4byte	0x1844
 	.byte	0x1
 	.byte	0x30
@@ -3396,21 +3396,21 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x9c
 	.4byte	0x1917
 	.4byte	0x1942
-	.uleb128 0x44
-	.4byte	.LASF1403
+	.uleb128 0x45
+	.4byte	.LASF1402
 	.4byte	0x1883
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
-	.uleb128 0x45
-	.4byte	.LASF1402
+	.uleb128 0x46
+	.4byte	.LASF1401
 	.byte	0x1
 	.byte	0x32
 	.4byte	0x165f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"pid"
 	.byte	0x1
 	.byte	0x33
@@ -3419,7 +3419,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x91
 	.sleb128 -2
 	.byte	0
-	.uleb128 0x43
+	.uleb128 0x44
 	.4byte	0x1826
 	.byte	0x1
 	.byte	0x27
@@ -3430,21 +3430,21 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x9c
 	.4byte	0x1967
 	.4byte	0x199e
-	.uleb128 0x44
-	.4byte	.LASF1403
+	.uleb128 0x45
+	.4byte	.LASF1402
 	.4byte	0x1883
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
-	.uleb128 0x45
-	.4byte	.LASF1402
+	.uleb128 0x46
+	.4byte	.LASF1401
 	.byte	0x1
 	.byte	0x29
 	.4byte	0x165f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"p1"
 	.byte	0x1
 	.byte	0x2a
@@ -3452,7 +3452,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -2
-	.uleb128 0x46
+	.uleb128 0x47
 	.string	"p2"
 	.byte	0x1
 	.byte	0x2b
@@ -3461,7 +3461,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x91
 	.sleb128 -4
 	.byte	0
-	.uleb128 0x43
+	.uleb128 0x44
 	.4byte	0x1808
 	.byte	0x1
 	.byte	0x21
@@ -3472,14 +3472,14 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x9c
 	.4byte	0x19c3
 	.4byte	0x19e0
-	.uleb128 0x44
-	.4byte	.LASF1403
+	.uleb128 0x45
+	.4byte	.LASF1402
 	.4byte	0x1883
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -136
-	.uleb128 0x45
-	.4byte	.LASF1402
+	.uleb128 0x46
+	.4byte	.LASF1401
 	.byte	0x1
 	.byte	0x23
 	.4byte	0x165f
@@ -3487,7 +3487,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0x91
 	.sleb128 -128
 	.byte	0
-	.uleb128 0x47
+	.uleb128 0x48
 	.4byte	0x17fc
 	.byte	0x1
 	.byte	0x17
@@ -3495,8 +3495,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.8byte	.LFE17-.LFB17
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x45
-	.4byte	.LASF1404
+	.uleb128 0x46
+	.4byte	.LASF1403
 	.byte	0x1
 	.byte	0x1a
 	.4byte	0x17f0
@@ -4321,6 +4321,19 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.byte	0
 	.byte	0
 	.uleb128 0x3e
+	.uleb128 0x16
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x3f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4335,27 +4348,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0xe
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x64
-	.uleb128 0x13
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x6e
-	.uleb128 0xe
 	.uleb128 0x3c
 	.uleb128 0x19
 	.uleb128 0x64
@@ -4377,6 +4369,27 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0xb
 	.uleb128 0x6e
 	.uleb128 0xe
+	.uleb128 0x3c
+	.uleb128 0x19
+	.uleb128 0x64
+	.uleb128 0x13
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x41
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x6e
+	.uleb128 0xe
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x3c
@@ -4385,7 +4398,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -4404,7 +4417,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x42
+	.uleb128 0x43
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -4423,7 +4436,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x43
+	.uleb128 0x44
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -4448,7 +4461,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x44
+	.uleb128 0x45
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -4461,7 +4474,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x45
+	.uleb128 0x46
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4476,7 +4489,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x46
+	.uleb128 0x47
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -4491,7 +4504,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x47
+	.uleb128 0x48
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x47
@@ -8353,7 +8366,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"PERIPHBASE 0x08000000"
 .LASF1193:
 	.string	"SizeBits"
-.LASF1412:
+.LASF1411:
 	.string	"__locale_t"
 .LASF367:
 	.string	"__ARM_ARCH_PROFILE 65"
@@ -8509,13 +8522,13 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__cpp_variable_templates 201304"
 .LASF306:
 	.string	"__FLT64X_MAX__ 1.18973149535723176508575932662800702e+4932F64x"
-.LASF1413:
+.LASF1412:
 	.string	"_ZN10PidManager27forceReservedPidPresetValueEv"
 .LASF732:
 	.string	"INT_FAST64_MAX __INT_FAST64_MAX__"
 .LASF340:
 	.string	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1"
-.LASF1379:
+.LASF1378:
 	.string	"clearAll"
 .LASF4:
 	.string	"__STDC_HOSTED__ 0"
@@ -8527,7 +8540,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__cpp_raw_strings 200710"
 .LASF924:
 	.string	"_RAND48_MULT_0 (0xe66d)"
-.LASF1388:
+.LASF1387:
 	.string	"_ZN10PidManager9setPidBitEth"
 .LASF386:
 	.string	"__ARM_NEON 1"
@@ -8559,7 +8572,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__SYS_LOCK_H__ "
 .LASF611:
 	.string	"_GLIBCXX_VERBOSE 1"
-.LASF1407:
+.LASF1406:
 	.string	"D:\\\\Pool\\\\eclipse-workspace_aarch64\\\\newspace\\\\raspiOS\\\\subprojects\\\\qemu_virt\\\\Debug"
 .LASF413:
 	.string	"__need_wchar_t"
@@ -8627,7 +8640,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__SIZE_TYPE__ long unsigned int"
 .LASF1256:
 	.string	"getAllocatedLength"
-.LASF1400:
+.LASF1399:
 	.string	"deallocatePidSuccessfully"
 .LASF284:
 	.string	"__FLT128_HAS_QUIET_NAN__ 1"
@@ -8689,7 +8702,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__UINT_FAST16_MAX__ 0xffffffffU"
 .LASF1285:
 	.string	"_on_exit_args"
-.LASF1402:
+.LASF1401:
 	.string	"pidm"
 .LASF1306:
 	.string	"_nbuf"
@@ -8725,6 +8738,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))"
 .LASF1080:
 	.string	"__locks_exclusive(...) __lock_annotate(exclusive_lock_function(__VA_ARGS__))"
+.LASF1370:
+	.string	"PID_PARENT"
 .LASF834:
 	.string	"__GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))"
 .LASF727:
@@ -8767,13 +8782,13 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"UINT8_C(c) __UINT8_C(c)"
 .LASF54:
 	.string	"__INT_LEAST8_TYPE__ signed char"
-.LASF1414:
+.LASF1413:
 	.string	"_ZN14TestPidManager3runEv"
 .LASF991:
 	.string	"__GNUCLIKE_MATH_BUILTIN_CONSTANTS "
 .LASF1211:
 	.string	"getNext"
-.LASF1404:
+.LASF1403:
 	.string	"test"
 .LASF451:
 	.string	"_GLIBCXX_END_NAMESPACE_VERSION "
@@ -8997,8 +9012,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_GLIBCXX_HAVE_LIMIT_RSS 0"
 .LASF580:
 	.string	"_GLIBCXX_PACKAGE_TARNAME \"libstdc++\""
-.LASF1371:
-	.string	"PARENT_PID"
 .LASF1342:
 	.string	"_unspecified_locale_info"
 .LASF417:
@@ -9053,8 +9066,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__predict_true(exp) __builtin_expect((exp), 1)"
 .LASF728:
 	.string	"INT_FAST32_MIN (-INT_FAST32_MAX - 1)"
-.LASF950:
-	.string	"_REENT_ASCTIME_BUF(ptr) ((ptr)->_new._reent._asctime_buf)"
+.LASF1369:
+	.string	"PID_CURRENT"
 .LASF338:
 	.string	"__STRICT_ANSI__ 1"
 .LASF609:
@@ -9099,8 +9112,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_RAND48_SEED_0 (0x330e)"
 .LASF483:
 	.string	"_GLIBCXX_USE_C99_STDLIB _GLIBCXX11_USE_C99_STDLIB"
-.LASF910:
-	.string	"_WINT_T "
+.LASF1381:
+	.string	"_ZNK10PidManager11indexOfMaskEt"
 .LASF897:
 	.string	"__LOCK_INIT_RECURSIVE(class,lock) static int lock = 0;"
 .LASF477:
@@ -9138,7 +9151,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"UINT8_MAX __UINT8_MAX__"
 .LASF787:
 	.string	"_GCC_WRAP_STDINT_H "
-.LASF1390:
+.LASF1389:
 	.string	"_ZN10PidManager13isReservedPidEt"
 .LASF1021:
 	.string	"__weak_symbol __attribute__((__weak__))"
@@ -9154,7 +9167,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	" {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, \"\", \"\", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }"
 .LASF952:
 	.string	"_REENT_EMERGENCY(ptr) ((ptr)->_emergency)"
-.LASF1372:
+.LASF1371:
 	.string	"PidManager"
 .LASF139:
 	.string	"__UINT8_MAX__ 0xff"
@@ -9194,7 +9207,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_GLIBCXX_HAVE_ENOLINK 1"
 .LASF1030:
 	.string	"__alloc_align(x) __attribute__((__alloc_align__(x)))"
-.LASF1410:
+.LASF1409:
 	.string	"decltype(nullptr)"
 .LASF146:
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
@@ -9248,8 +9261,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"NextBaseBits"
 .LASF481:
 	.string	"_GLIBCXX_USE_C99_COMPLEX _GLIBCXX11_USE_C99_COMPLEX"
-.LASF856:
-	.string	"_NOTHROW __attribute__ ((__nothrow__))"
 .LASF997:
 	.string	"__GNUCLIKE_BUILTIN_VARARGS 1"
 .LASF863:
@@ -9284,7 +9295,9 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_GLIBCXX_HAVE_STRING_H 1"
 .LASF737:
 	.string	"INTPTR_MAX"
-.LASF1393:
+.LASF1119:
+	.string	"EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << \"!=\"<<value<<\",the real value is \" << expr << \"\\n\"; }while(false);}"
+.LASF1392:
 	.string	"TestPidManager"
 .LASF148:
 	.string	"__INT_LEAST16_WIDTH__ 16"
@@ -9340,8 +9353,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__FP_FAST_FMAF 1"
 .LASF1300:
 	.string	"_cookie"
-.LASF1370:
-	.string	"CURRENT_PID"
 .LASF903:
 	.string	"__lock_acquire_recursive(lock) (_CAST_VOID 0)"
 .LASF1348:
@@ -9422,7 +9433,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__ARM_FEATURE_CLZ 1"
 .LASF1009:
 	.string	"__CC_SUPPORTS_WARNING 1"
-.LASF1376:
+.LASF1375:
 	.string	"_ZN10PidManager8allocateEv"
 .LASF411:
 	.string	"DEF_H__ "
@@ -9466,11 +9477,11 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__FLT_HAS_INFINITY__ 1"
 .LASF513:
 	.string	"_GLIBCXX_HAVE_EXPF 1"
-.LASF1406:
+.LASF1405:
 	.string	"D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/TestPidManager.cpp"
 .LASF1255:
 	.string	"_ZN13MemoryManager10deallocateEPv"
-.LASF1411:
+.LASF1410:
 	.string	"10_mbstate_t"
 .LASF735:
 	.string	"UINT_FAST64_MAX"
@@ -9480,7 +9491,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__GCC_HAVE_DWARF2_CFI_ASM 1"
 .LASF885:
 	.string	"___int8_t_defined 1"
-.LASF1396:
+.LASF1395:
 	.string	"allocateReturnContinousPids"
 .LASF1124:
 	.string	"long unsigned int"
@@ -9492,7 +9503,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__offsetof(type,field) offsetof(type, field)"
 .LASF551:
 	.string	"_GLIBCXX_HAVE_STDBOOL_H 1"
-.LASF1380:
+.LASF1379:
 	.string	"_ZN10PidManager8clearAllEv"
 .LASF5:
 	.string	"__GNUC__ 7"
@@ -9548,7 +9559,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__requires_unlocked(...) __lock_annotate(locks_excluded(__VA_ARGS__))"
 .LASF84:
 	.string	"__cpp_static_assert 200410"
-.LASF1381:
+.LASF1380:
 	.string	"indexOfMask"
 .LASF491:
 	.string	"_GLIBCXX_HAVE_COMPLEX_H 1"
@@ -9562,7 +9573,9 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_LOCK_RECURSIVE_T"
 .LASF305:
 	.string	"__FLT64X_DECIMAL_DIG__ 36"
-.LASF1403:
+.LASF950:
+	.string	"_REENT_ASCTIME_BUF(ptr) ((ptr)->_new._reent._asctime_buf)"
+.LASF1402:
 	.string	"this"
 .LASF1094:
 	.string	"__need_NULL "
@@ -9650,7 +9663,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_maxwds"
 .LASF232:
 	.string	"__FLT16_MIN_10_EXP__ (-4)"
-.LASF1387:
+.LASF1386:
 	.string	"_ZN11MemoryChunk25mergeTrailingsUnallocatedEv"
 .LASF816:
 	.string	"__NEWLIB_PATCHLEVEL__ 0"
@@ -9870,7 +9883,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"MemoryManager"
 .LASF519:
 	.string	"_GLIBCXX_HAVE_FREXPF 1"
-.LASF1374:
+.LASF1373:
 	.string	"_ZN10PidManagerC4Ev"
 .LASF790:
 	.string	"NULL_CHAR '\\0'"
@@ -9882,7 +9895,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"INT16_MIN (-INT16_MAX - 1)"
 .LASF1004:
 	.string	"__GNUCLIKE_BUILTIN_MEMCPY 1"
-.LASF1392:
+.LASF1391:
 	.string	"pidManager"
 .LASF1214:
 	.string	"getSize"
@@ -9898,7 +9911,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"unsigned int"
 .LASF634:
 	.string	"_SIZE_T_DEFINED_ "
-.LASF1409:
+.LASF1408:
 	.string	"max_align_t"
 .LASF1231:
 	.string	"_ZN11MemoryChunk23setNextValidChunkOffsetEm"
@@ -9936,7 +9949,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_GLIBCXX_NOEXCEPT_IF(_COND) noexcept(_COND)"
 .LASF1219:
 	.string	"_ZN11MemoryChunk10getDataPtrEv"
-.LASF1377:
+.LASF1376:
 	.string	"_ZN10PidManager8allocateEt"
 .LASF878:
 	.string	"_SYS_REENT_H_ "
@@ -9982,11 +9995,11 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__tm_mday"
 .LASF1268:
 	.string	"_flock_t"
-.LASF1043:
-	.string	"__fastcall __attribute__((__fastcall__))"
+.LASF910:
+	.string	"_WINT_T "
 .LASF601:
 	.string	"_GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1"
-.LASF1397:
+.LASF1396:
 	.string	"_ZN14TestPidManager27allocateReturnContinousPidsEv"
 .LASF590:
 	.string	"_GLIBCXX98_USE_C99_STDLIB 1"
@@ -9998,8 +10011,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"___int_least8_t_defined 1"
 .LASF369:
 	.string	"__ARM_FEATURE_IDIV 1"
-.LASF1382:
-	.string	"_ZNK10PidManager11indexOfMaskEt"
 .LASF34:
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 .LASF50:
@@ -10020,7 +10031,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"getDataPtr"
 .LASF1311:
 	.string	"_mbstate"
-.LASF1378:
+.LASF1377:
 	.string	"_ZN10PidManager10deallocateEt"
 .LASF688:
 	.string	"UINT64_MAX __UINT64_MAX__"
@@ -10064,7 +10075,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__max_align_ld"
 .LASF1165:
 	.string	"UNIT_K"
-.LASF1395:
+.LASF1394:
 	.string	"_ZN14TestPidManager29clearAllKeepsInvalidAllocatedEv"
 .LASF690:
 	.string	"INT_LEAST8_MAX __INT_LEAST8_MAX__"
@@ -10078,7 +10089,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__malloc_like __attribute__((__malloc__))"
 .LASF1015:
 	.string	"__STRING(x) #x"
-.LASF1394:
+.LASF1393:
 	.string	"clearAllKeepsInvalidAllocated"
 .LASF1112:
 	.string	"strpbrk"
@@ -10090,7 +10101,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__attribute_format_strfmon__(a,b) "
 .LASF46:
 	.string	"__INT8_TYPE__ signed char"
-.LASF1405:
+.LASF1404:
 	.string	"GNU C++14 7.2.1 20171011 -march=armv8.2-a -mlittle-endian -mabi=lp64 -g3 -O0 -pedantic-errors -std=c++14 -fsigned-char -fmessage-length=0 -fmax-errors=20 -ffreestanding -fno-exceptions -fno-rtti"
 .LASF558:
 	.string	"_GLIBCXX_HAVE_SYS_PARAM_H 1"
@@ -10124,8 +10135,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"bool"
 .LASF768:
 	.string	"INT8_C(c) __INT8_C(c)"
-.LASF1119:
-	.string	"EXPECT_EXPR_EQUAL(expr,value) {do{ if((expr)!=(value)) kout << FATAL << #expr << \"!=\"<<value<<\",the real value is \" << expr << \"\\n\"; }while(false);}"
+.LASF1368:
+	.string	"PID_INVALID"
 .LASF1147:
 	.string	"uint_least8_t"
 .LASF214:
@@ -10248,7 +10259,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_ZN11MemoryChunk7getNextEv"
 .LASF293:
 	.string	"__FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x"
-.LASF1399:
+.LASF1398:
 	.string	"_ZN14TestPidManager30allocateInvalidPidAlwaysFailedEv"
 .LASF433:
 	.string	"_GLIBCXX17_INLINE "
@@ -10302,7 +10313,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__alloc_size(x) __attribute__((__alloc_size__(x)))"
 .LASF859:
 	.string	"_NOARGS void"
-.LASF1386:
+.LASF1385:
 	.string	"setPidBit"
 .LASF1186:
 	.string	"koutBuf"
@@ -10370,7 +10381,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__unreachable() __builtin_unreachable()"
 .LASF1307:
 	.string	"_blksize"
-.LASF1373:
+.LASF1372:
 	.string	"_masks"
 .LASF506:
 	.string	"_GLIBCXX_HAVE_EOWNERDEAD 1"
@@ -10402,6 +10413,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_GCC_STDINT_H "
 .LASF1315:
 	.string	"_strtok_last"
+.LASF1043:
+	.string	"__fastcall __attribute__((__fastcall__))"
 .LASF579:
 	.string	"_GLIBCXX_PACKAGE_STRING \"package-unused version-unused\""
 .LASF867:
@@ -10420,7 +10433,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"_BSD_SIZE_T_ "
 .LASF761:
 	.string	"WCHAR_MIN"
-.LASF1389:
+.LASF1388:
 	.string	"isReservedPid"
 .LASF1090:
 	.string	"__no_lock_analysis __lock_annotate(no_thread_safety_analysis)"
@@ -10450,8 +10463,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"uint_fast8_t"
 .LASF1111:
 	.string	"strncpy"
-.LASF1368:
-	.string	"PidType"
+.LASF726:
+	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
 .LASF1267:
 	.string	"_mbstate_t"
 .LASF162:
@@ -10538,8 +10551,8 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"INTMAX_MAX"
 .LASF661:
 	.string	"_GCC_MAX_ALIGN_T "
-.LASF726:
-	.string	"INT_FAST32_MAX __INT_FAST32_MAX__"
+.LASF856:
+	.string	"_NOTHROW __attribute__ ((__nothrow__))"
 .LASF383:
 	.string	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC"
 .LASF1102:
@@ -10822,7 +10835,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__INT_FAST8_MAX__ 0x7fffffff"
 .LASF254:
 	.string	"__FLT32_HAS_DENORM__ 1"
-.LASF1385:
+.LASF1384:
 	.string	"mergeTrailingsUnallocated"
 .LASF407:
 	.string	"TARGET_ARCH_IS_qemu_virt "
@@ -10898,7 +10911,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__ARM_ALIGN_MAX_PWR 28"
 .LASF657:
 	.string	"_BSD_WCHAR_T_"
-.LASF1383:
+.LASF1382:
 	.string	"bitIndexOfMask"
 .LASF1127:
 	.string	"long long int"
@@ -10962,7 +10975,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__WINT_MIN__ 0U"
 .LASF697:
 	.string	"INT_LEAST16_MIN"
-.LASF1408:
+.LASF1407:
 	.string	"11max_align_t"
 .LASF135:
 	.string	"__INT8_MAX__ 0x7f"
@@ -11016,7 +11029,7 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"int_fast64_t"
 .LASF1217:
 	.string	"_ZN11MemoryChunk7setSizeEm"
-.LASF1391:
+.LASF1390:
 	.string	"forceReservedPidPresetValue"
 .LASF817:
 	.string	"_WANT_IO_C99_FORMATS 1"
@@ -11034,19 +11047,19 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__attribute_pure__ "
 .LASF1041:
 	.string	"__nonnull(x) __attribute__((__nonnull__(x)))"
-.LASF1401:
+.LASF1400:
 	.string	"_ZN14TestPidManager25deallocatePidSuccessfullyEv"
 .LASF523:
 	.string	"_GLIBCXX_HAVE_ICONV 1"
 .LASF784:
 	.string	"INTMAX_C(c) __INTMAX_C(c)"
-.LASF1375:
+.LASF1374:
 	.string	"_ZNK10PidManager11isAllocatedEt"
 .LASF436:
 	.string	"_GLIBCXX_USE_NOEXCEPT noexcept"
-.LASF1384:
+.LASF1383:
 	.string	"_ZNK10PidManager14bitIndexOfMaskEt"
-.LASF1398:
+.LASF1397:
 	.string	"allocateInvalidPidAlwaysFailed"
 .LASF390:
 	.string	"__AARCH64_CMODEL_LARGE__"
@@ -11152,8 +11165,6 @@ _ZN14TestPidManager25deallocatePidSuccessfullyEv:
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffUL"
 .LASF140:
 	.string	"__UINT16_MAX__ 0xffff"
-.LASF1369:
-	.string	"INVALID_PID"
 .LASF779:
 	.string	"UINT32_C"
 	.ident	"GCC: (Linaro GCC 7.2-2017.11) 7.2.1 20171011"
