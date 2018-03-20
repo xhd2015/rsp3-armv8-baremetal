@@ -1,13 +1,13 @@
 #include <arch/common_aarch64/exception/exceptions.h>
 #include <arch/common_aarch64/gicv3_registers.h>
 #include <def.h>
-#include <IntegerFormatter.h>
 #include <arch/common_aarch64/gicv3_registers.h>
 #include <arch/common_aarch64/system_common_registers.h>
 #include <arch/common_aarch64/timer_registers.h>
 #include <asm_instructions.h>
 #include <io/Output.h>
 #include <arch/common_aarch64/exception/svc_call.h>
+#include <io/IntegerFormatter.h>
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
 

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <ctype.h>
 #include <data_structures/StringRef.h>
-#include <IntegerFormatter.h>
+#include <io/IntegerFormatter.h>
 #include <io/printk.h>
 #include <iostream>
 static bool isGood(char ch)

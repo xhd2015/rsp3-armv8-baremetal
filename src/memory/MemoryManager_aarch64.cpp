@@ -19,8 +19,14 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 {
 	if(initChunks)
 	{
-		new (headChunk) MemoryChunk(size - 1 - sizeof(MemoryChunk),false,0,false,0);
-		reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true); // end
+		if(size <= sizeof(MemoryChunk))
+			headChunk->setEnd(true);
+		else
+		{
+			// size需要减去1个字节，该字节用于设置end标记
+			new (headChunk) MemoryChunk(size - sizeof(MemoryChunk) - 1,false,0,false,0);
+			reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true); // end
+		}
 	}
 }
 
@@ -38,18 +44,10 @@ void* MemoryManager::allocate(size_t n)
 }
 void  *MemoryManager::allocate(size_t n,size_t alignment)
 {
-	MemoryChunk *foundChunk=headChunk;
-//	n = normalizeAllocSize(n);
 	size_t moveOffset=SIZE_MAX;
-	// 循环查找，直到第一个能够分配alignment地址的的块
-	while(true)
-	{
-		if(!foundChunk || foundChunk->isEnd())
-			return nullptr;
-		if(!foundChunk->isAllocated() && (moveOffset=foundChunk->moveOffsetOfAllocSuchAlignedSpace(n, alignment))!=SIZE_MAX)
-			break;
-		foundChunk = foundChunk->getNext();
-	}
+	auto foundChunk = headChunk->findAllocable(n, alignment, moveOffset);
+	if(!foundChunk)
+		return  nullptr;
 	MemoryChunk * movedChunk = foundChunk->moveAhead(moveOffset);
 	movedChunk->split(n);
 	movedChunk->setAllocated(true);

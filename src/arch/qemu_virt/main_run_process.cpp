@@ -12,6 +12,11 @@
 #include <new>
 #include <arch/common_aarch64/exception/svc_call.h>
 #include <schedule/ProcessManager.h>
+#include <SystemFeatures.h>
+#include <io/uart/PL011.h>
+#include <io/Input.h>
+#include <filesystem/ramfs/RAMFile.h>
+
 
 extern char __stack_top[];
 
@@ -49,6 +54,38 @@ int main()
 	// 重新初始化pidManager
 	new (&pidManager) PidManager();
 	new (&processManager) ProcessManager();
+	new (&systemFeatures) SystemFeatures();
+
+	new (&pl011) PL011(reinterpret_cast<volatile void*>(UART_BASE|ttbr1Mask));
+	new (&kin)  Input();
+	new (&kout) Output();
+
+//	kout << "&mman = " << &mman << "\n";
+
+
+	systemFeatures.updatePreconfigured();
+	systemFeatures.cores(4);
+	systemFeatures.architecture(Architecture::AARCH64);
+	systemFeatures.asidSelector(0);
+
+	// my tests here
+//	// qemu 在从终端输入时，总是buffered模式，只有回车之后才会将数据写入到串口的缓冲区里，因此只要数据是一次读完就能成功读取
+//	char ch=0;
+//	while( (ch=kin.getchar())!='\n')
+//		kout << ch;
+//	kout << "\n";
+//	kout << "echo end\n";
+//
+//	asm_wfe_loop();
+
+//	RAMFile file("file1");
+//	kout << "diskSize = " << file.diskSize() << "\n";
+//	file.emplaceAppend("what is the fuck");
+//	kout << "content = " << file.content() << "\n";
+//	kout << "now diskSize = " << file.diskSize() << "\n";
+//	asm_wfe_loop();
+
+
 
 	// 建立一个进程
 	auto processLink = processManager.createNewProcess(
@@ -68,9 +105,8 @@ int main()
 	}
 
 	// 复制代码到分配给进程的代码段空间
-	void* codePtr =  process.codeBase();
 	const void *userSpaceStart = reinterpret_cast<const void*>(USER_SPACE_START | ttbr1Mask);
-	std::memcpy(codePtr, userSpaceStart, USER_SPACE_SIZE);
+	std::memcpy(process.codeBase(), userSpaceStart, USER_SPACE_SIZE);
 
 	process.registers()[30] = process.ELR().returnAddr;
 

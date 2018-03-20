@@ -8,7 +8,7 @@
 #ifndef INCLUDE_TEMPLATES_IMPLEMENTATION_INTEGERFORMATTER_H_
 #define INCLUDE_TEMPLATES_IMPLEMENTATION_INTEGERFORMATTER_H_
 
-#include <IntegerFormatter.h>
+#include <io/IntegerFormatter.h>
 #include <generic_util.h>
 #include <io/Output.h>
 

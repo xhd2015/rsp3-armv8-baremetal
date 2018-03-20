@@ -28,6 +28,16 @@
 #define ASM_POPW()
 #define ASM_GOTO(sym) __asm__ __volatile__("b " __stringify(sym) " \n\t")
 //#define ASM_SVC(imm) __asm__ __volatile__("svc %0 \n\t"::"I"(imm))
+#define ASM_HALT_SLAVE_CPUS() \
+		"mrs     x0, mpidr_el1 \n\t" \
+		"and     x0, x0, #3 \n\t" \
+		"cbz     x0, 2f \n\t" \
+		"1:  	wfe	\n\t" \
+		"b       1b	\n\t" \
+		"2: \n\t"
+#define ASM_SET_SP_SYM(sym) \
+		"ldr x0, =" __stringify(sym) " \n\t" \
+		"mov sp, x0 \n\t "
 
 
 //== declarations
@@ -38,6 +48,7 @@ AS_MACRO RegPAR_EL1 asm_at(uint64_t va);
 AS_MACRO void asm_svc(uint16_t imm);
 AS_MACRO void asm_wfe();
 AS_MACRO void asm_wfe_loop();
+AS_MACRO void asm_tlbi_aside1(uint16_t asid);
 
 
 //== definitions
@@ -70,6 +81,15 @@ void asm_wfe_loop()
 {
 	while(true)
 		asm_wfe();
+}
+
+// tlbi aside1, xt  xt= [ASID][RES0]
+void asm_tlbi_aside1(uint16_t asid)
+{
+	__asm__ __volatile__(
+			"tlbi aside1,%0 \n\t"
+			::"r"(static_cast<uint64_t>(asid)<<(64 - 16))
+	);
 }
 
 #endif /* INCLUDE_ASM_INSTRUCTIONS_H_ */

@@ -1,0 +1,26 @@
+include ${ROOT_PROJECT}/makefiles/makefile.qemu_common.targets
+include ${ROOT_PROJECT}/makefiles/makefile.aarch64_ALL_REGISTERS.targets
+
+# gic-version = 2
+.PHONY:qemu-run qemu-debug
+qemu-run:
+	$(QEMU_AARCH64) -machine xlnx-zcu102 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0
+qemu-debug:
+	$(QEMU_AARCH64) -machine xlnx-zcu102 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -S -s	
+
+# 通过dd将用户程序嵌入到内核镜像中
+$(MASTERY_BINARY):FORCE
+	@$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
+	$(MAKE) $(MASTERY_ELF)
+	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
+
+$(MASTERY_RELOC):
+	# 改变IMAGE_BASE的值，然后编译生成即可
+	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
+	mv $(MASTERY_ELF) $@
+dump-reloc:
+	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
+.PHONY:dump-reloc
+
+# CLEAN-ALL-LIST增加
+CLEAN-ALL-LIST += $(MASTERY_RELOC) $(MASTERY_BINARY) $(MASTERY_ELF)

@@ -1,0 +1,11 @@
+
+
+.PHONY:update_all_registers
+ALL_REGISTERS := gicv3_registers.h timer_registers.h system_common_registers.h vmsa_descriptors.h general_registers.h
+update_all_registers: $(ALL_REGISTERS)
+$(ALL_REGISTERS):
+	@
+	target=$@
+	target=$${target/%.h/}
+	include=$(ROOT_PROJECT)/include/arch/common_aarch64
+	$(PYTHON3) $${include}/gen_register_class.py $${include}/$${target}.py $${include}/$${target}.h

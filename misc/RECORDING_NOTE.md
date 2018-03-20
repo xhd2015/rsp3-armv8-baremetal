@@ -1,9 +1,62 @@
+# 2018年3月20日18:42:13
+【commit point】【done】 添加了对`zcu102`的支持，工程为 [subprojects/zcu102](../subprojects/zcu102)，该目标是qemu下的一个板子类型，由xilinx生产，支持cortext-a53。
+
+通过 http://www.wiki.xilinx.com/QEMU+-+Zynq+UltraScalePlus 页面找到了该板子的设备文件树，其uart0的设备地址为0xff000000,再参考 https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_low_echo_example.c 设计出了 [XilinxUARTPS](../include/io/uart/XilinxUARTPS.h) 类，并测试了输出。
+# 2018年3月20日14:27:15
+【todo】 https://www.freertos.org/Using-FreeRTOS-on-Cortex-A-Embedded-Processors.html
+关于qemu的xlnx-zcu102虚拟机（模拟一个真实的板子）。
+根据freertos的文档，它支持的板子如下：
+```
+Zynq UltraScale MPSoC
+Using FreeRTOS on an UltraScale ARM Cortex-A53 (64-bit) Core 
+The first FreeRTOS port and demo application to run native 64-bit! The demo is pre-configured to run on the ZCU102 evaluation board. FreeRTOS support is provided for all the cores (ARM and Microblaze) found on the many-core Xilinx Zynq UltraScale+ MPSoC.
+```
+# 2018年3月20日10:52:46
+【bugfix】 修正了Indexer的Include路径，需要删除解析C语言生成的项。 （Provider中）
+# 2018年3月20日09:54:35
+构建系统的一个基本工作就是，避免clean，避免rebuild。
+# 2018年3月20日00:39:32
+【todo】 将PL011的init函数补充完整。重新定义crt0.cpp  【done】
+
+【todo】 为了执行效率，我们会将定义为AS_MACRO的函数直接定义在头文件中，如果体积较小，就放在原来的函数声明处；体积较大，就放在文件的末尾。  如果是模板，统一实现在template_insta...文件夹中。 
+
+【todo】 确定一种工作良好的refactor操作模式 【done】 在overview工程中，选择需要refactor的元素，如文件名或者是带有重载的函数名。 以带有重载的函数为例(printk)，如果在refactor时eclipse检测到冲突，则不会自动执行重构，而是可以选择取消或者preview，我们将选择preview，在preview中，我们可以查看每个相关的文件的重构细节，通常，preview中会列出所有其他工程的可重构文件，因此某些文件如果被共享，就可能在preview中重复出现，这里，我们只能选择保留其中的一个。一般而言，对于重载函数，我们需要依次对每个原型重构一次，因此我们将保留其中只修改我们重构的那个文件。 执行完所有动作即可保证在所有子工程中重构均已完成。
+
+总得来说，重构仍然需要我们的经验来指导。
+
+需要注意的是，eclipse重构如果没有成功完成，会弹出提示框，此时我们最好选择undo，因此这意味着有错误存在。
+
+【todo】 为了统一性和可读性，我们会把原来的所有get,set前缀去掉。
+
+【todo】 构建文件系统的最本质工作是：1.确定文件的路径寻址方式  2.确定一个根文件系统，它能够链接所有的其他文件系统、以及设备等。
+
+【acknowledged】 测试了输入函数。注意，当使用qemu模拟时, -serial参数应当为 -serial mon:stdio, 只有这样才能正确地从终端输入数据。否则数据可能并没有发送给guest,而是发送给了monitor。
+
+qemu传递输入的方式是行缓冲，也就是说，只有当用户按下了回车键时，数据才会被一次性依次地写入到guest的缓冲区中。如果guest处理每个字符的时间较短的话，就能充分读取所有的字符。
+```c++
+	auto resValue = pl011.reg<uint8_t,PL011::UARTPeriphID0>();
+	kout << "resValue from pl011 is " << Hex(resValue) << "\n";
+	if(resValue != 0x11)
+	{
+		kout << FATAL << "PL011 error configured\n";
+		return 1;
+	}
+
+	// qemu 在从终端输入时，总是buffered模式，只有回车之后才会将数据写入到串口的缓冲区里，因此只要数据是一次读完就能成功读取
+	char ch=0;
+	while( (ch=kin.getchar())!='\n')
+		kout << ch;
+	kout << "\n";
+	kout << "echo end\n";
+```
+# 2018年3月19日20:18:24
+【bugfix】 简化MemoryChunk的next系列方法，包括next(), nextValid(), 增加了3个概念： validChunk(), endChunk(),offsetChunk()。
 # 2018年3月19日15:08:25
-【commit point】【milestone】 进程相关的函数已经完成：killProcess, fork, scheduleNext。
+【commit point】【milestone】 进程调度相关的函数已经完成：killProcess, fork, scheduleNext。
 
 根据反馈，在.gitignore文件中增加了Debug目录的排除
 
-使用参见[user_main_fork_process.cpp](../src/arch/user_space/user_main_fork_process.cpp)
+使用参见 [user_main_fork_process.cpp](../src/arch/user_space/user_main_fork_process.cpp)
 # 2018年3月19日13:31:13
 【acknowledged】 析构函数的几个原则： 1.可被重复调用  2.std::move之后仍可调用 
 # 2018年3月19日13:28:07

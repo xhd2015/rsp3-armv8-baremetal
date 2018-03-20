@@ -1,4 +1,6 @@
 /*
+#include <io/IntegerFormatter.h>
+
  * testMemoryManager.cpp
  *
  *  Created on: Jan 30, 2018
@@ -9,9 +11,9 @@
 #include <memory/MemoryManager.h>
 #include <memory/mem_config.h>
 #include <kernel.h>
-#include <IntegerFormatter.h>
 #include <test/test_base.h>
 #include <test/TestMemoryManager.h>
+
 
 void TestMemoryManager::run()
 {
@@ -182,5 +184,5 @@ bool TestMemoryManager::nextChunkCorrectly()
 	char base[1024];
 	MemoryManager man(base,1024);
 	MemoryChunk * baseChunk = reinterpret_cast<MemoryChunk*>(base);
-	return ( baseChunk->getNext()->isEnd() && baseChunk->getNext()->getNext()==nullptr);
+	return ( baseChunk->next()->isEnd() && baseChunk->next()->next()==nullptr);
 }

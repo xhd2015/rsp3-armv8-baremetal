@@ -1,8 +1,8 @@
 MEMORY
 {
-	BIOS (rx) : ORIGIN = 0x0 + IMAGE_BASE, LENGTH = 1M
-	STACK (rw) : ORIGIN = CONFIG_RAM_START + IMAGE_BASE , LENGTH = 4K
-	RAM  (rwx) : ORIGIN = CONFIG_RAM_START + 4K + IMAGE_BASE, LENGTH = CONFIG_RAM_SIZE - 4K
+	BIOS (rx) : ORIGIN = BIOS_START + IMAGE_BASE, LENGTH = BIOS_SIZE
+	STACK (rw) : ORIGIN = RAM_START + IMAGE_BASE , LENGTH = 4K
+	RAM  (rwx) : ORIGIN = RAM_START + 4K + IMAGE_BASE, LENGTH = RAM_SIZE - 4K
 }
 
 
@@ -54,10 +54,12 @@ SECTIONS{
 	
 	/* .bss 未赋值的变量，比如未赋初值全局类对象，默认构造函数;或者初始化为0的变量 */
 	.bss (NOLOAD): {
-		. = ALIGN(0x4);
+		. = ALIGN(0x8); /* 必须与8字节对齐，为了快速处理 */
 		PROVIDE(__bss_start = .);
 		*(.bss)
 		*(COMMON)
+		. = ALIGN(0x8);
+		PROVIDE(__bss_end = . );
 		
 		/*下面的放法是错误的，分区内的符号在汇编引用中是标号而不是值，但是在c++引用中都是内存地址*/
 		/*PROVIDE(__bss_dw_size = (. - __bss_start) >> 3);*/
@@ -70,21 +72,21 @@ SECTIONS{
     PROVIDE(__bss_dw_size = (. - __bss_start) >> 3);
 	
 	/* for user space */
-	.last : {
-	   . = ABSOLUTE(USER_SPACE_START + IMAGE_BASE);
+	.user_space : {
+	   . = ABSOLUTE(BIOS_START + USER_SPACE_START + IMAGE_BASE);
 	   . = . + USER_SPACE_SIZE;
 	} > BIOS
 	
 	
 	.freeram (NOLOAD) : {
 		PROVIDE(ramStart = .);
-		. = ABSOLUTE( CONFIG_RAM_START + CONFIG_RAM_SIZE + IMAGE_BASE);
+		. = ABSOLUTE( RAM_START + RAM_SIZE + IMAGE_BASE);
 		PROVIDE(ramEnd = . );
 	} > RAM
 	
 
 	/* 4K的栈 */
-	PROVIDE(__stack_top = CONFIG_RAM_START + 4K + IMAGE_BASE);
+	PROVIDE(__stack_top = RAM_START + 4K + IMAGE_BASE);
 	
 	PROVIDE( uart_base = UART_BASE + IMAGE_BASE );
 }

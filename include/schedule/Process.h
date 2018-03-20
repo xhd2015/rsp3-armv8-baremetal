@@ -57,8 +57,6 @@ public:
 	// fork进程之间默认是 父子关系，而不是兄弟关系
 	Process(const Process & rhs);
 	Process& operator=(const Process &rhs)=delete;
-
-
 	Process(Process &&rhs)=delete;
 	Process& operator=(Process &&rhs)=delete;
 

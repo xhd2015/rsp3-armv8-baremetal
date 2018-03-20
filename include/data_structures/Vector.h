@@ -25,8 +25,8 @@ public:
 	Vector(size_t initSize=0);
 	Vector(const std::initializer_list<T> &il);
 	Vector<T> & operator=(const std::initializer_list<T> &il)=delete;
-	Vector(const Vector<T> & vec)=delete;
-	Vector<T> & operator=(const Vector<T> & vec)=delete;
+	Vector(const Vector<T> & vec);
+	Vector<T> & operator=(const Vector<T> & vec);
 	Vector(Vector<T> && vec);
 	Vector<T>& operator=(Vector<T> && vec);
 	~Vector();

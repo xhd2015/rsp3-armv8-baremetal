@@ -9,9 +9,9 @@
 #include <io/Output.h>
 
 #include <generic_util.h>
-#include <IntegerFormatter.h>
 #include <data_structures/StringRef.h>
-
+#include <io/IntegerFormatter.h>
+#include <io/printk.h>
 
 size_t Output::print(const char *s,size_t len)
 {

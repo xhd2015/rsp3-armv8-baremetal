@@ -36,7 +36,7 @@ constexpr int  GiB = UNIT_K * MiB;
 //#define __concate(x,y) x##y
 #define __stringify_1(x)	#x
 #define __stringify(x)		__stringify_1(x)
-#define CALL_CONST_EQUIV(var, method) const_cast<std::remove_const<decltype(((var)->method))>>(reinterpret_cast<const decltype(var) *>(var)->method)
+#define CALL_CONST_EQUIV(thistype,rttype, method) const_cast<rttype>(reinterpret_cast<const thistype*>(this)->method)
 
 
 

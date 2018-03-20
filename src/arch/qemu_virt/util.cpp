@@ -8,6 +8,7 @@
 #include <def.h>
 #include <generic_util.h> //实现delayCPU
 #include <arch/qemu-virt/util.h>
+#include <asm_instructions.h>
 
 
 void delayCPU(size_t i)
@@ -25,5 +26,5 @@ void delayCPU(size_t i,size_t j)
 void haltCPU()
 {
 	while(true)
-		CPUWaitForEvent();
+		asm_wfe();
 }

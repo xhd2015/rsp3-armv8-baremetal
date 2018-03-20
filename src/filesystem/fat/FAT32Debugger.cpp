@@ -1,8 +1,8 @@
 #include <filesystem/fat/FAT32Debugger.h>
+#include <io/IntegerFormatter.h>
 
 
 #include <memory/MemoryManager.h>
-#include <IntegerFormatter.h>
 #include "../../../include/io/printk.h"
 
 

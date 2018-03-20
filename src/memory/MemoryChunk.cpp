@@ -7,6 +7,7 @@
 
 #include <memory/MemoryChunk.h>
 #include <new> //placement new
+#include <programming/define_members.h>
 
 
 MemoryChunk::MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd)
@@ -27,20 +28,81 @@ void MemoryChunk::setEnd(bool end)
 {
 	this->endMark = (end?1:0);
 }
-const MemoryChunk* MemoryChunk::getNext() const
+//const MemoryChunk* MemoryChunk::getNext() const
+//{
+//	if(this->isEnd())
+//		return nullptr;
+//	// move to next offset chunk(if it has)
+//	auto nextOffsetChunk = this;
+//	if(nextOffsetChunk->nextValidChunkOffset==0) //this is not an offset chunk
+//	{
+//		// 移动一次，如果仍旧是validChunk，直接返回，否则退出if块，因为已经找到了nextOffsetChun
+//		nextOffsetChunk->advanceByBytes(size + sizeof(MemoryChunk) + nextBaseFromEnd);
+//		if(nextOffsetChunk->isEnd())
+//			return nullptr;
+//		if(nextOffsetChunk->nextValidChunkOffset==0)
+//			return nextOffsetChunk;
+//	}
+//	while( !nextOffsetChunk->isEnd() && nextOffsetChunk->nextValidChunkOffset) // still offset chunk
+//		nextOffsetChunk = nextOffsetChunk->advanceByBytes(nextOffsetChunk->nextValidChunkOffset);
+//	if(nextOffsetChunk->isEnd())
+//		return nullptr;
+//	else // not offset chunk
+//		return nextOffsetChunk;
+//}
+//MemoryChunk* MemoryChunk::getNext()
+//{
+//	return const_cast<MemoryChunk*>(reinterpret_cast<const MemoryChunk*>(this)->getNext());
+//}
+const MemoryChunk* MemoryChunk::next()const
 {
-	if(this->isEnd())
+	if(endChunk())
 		return nullptr;
-	const MemoryChunk *next=reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(this->getDataEnd()) + this->nextBaseFromEnd);
-	while(!next->isEnd() && next->nextValidChunkOffset!=0)
-		next = reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(next) + next->nextValidChunkOffset);
-	return next;
+	if(validChunk())
+		return advanceByBytes(sizeof(MemoryChunk) + size + nextBaseFromEnd);
+	else
+		return advanceByBytes(nextValidChunkOffset);
 }
-MemoryChunk* MemoryChunk::getNext()
+MemoryChunk*       MemoryChunk::next()
 {
-	return const_cast<MemoryChunk*>(reinterpret_cast<const MemoryChunk*>(this)->getNext());
+	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,next());
+}
+const MemoryChunk* MemoryChunk::nextValid()const
+{
+	auto p=this->next();
+	while(true)
+	{
+		if(!p)
+			return nullptr;
+		if(p->validChunk())
+			return p;
+		p = p->next();
+	}
+}
+MemoryChunk*       MemoryChunk::nextValid()
+{
+	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,nextValid());
 }
 
+const MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &moveOffset)const
+{
+	auto chunk=this;
+	while(true)
+	{
+		if(!chunk)
+			return nullptr;
+		if(chunk->validChunk() &&
+				!chunk->isAllocated() &&
+				((moveOffset = chunk->moveOffsetOfAllocSuchAlignedSpace(n, alignment))!=SIZE_MAX)
+			)
+			return chunk;
+		chunk = chunk->next();
+	}
+}
+MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &moveOffset)
+{
+	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,findAllocable(n, alignment,moveOffset));
+}
 
 size_t MemoryChunk::getSize() const
 {
@@ -65,7 +127,10 @@ void* MemoryChunk::getDataEnd()
 }
 const void * MemoryChunk::getDataEnd()const
 {
-	return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk)+this->getSize();
+	return nextValidChunkOffset?
+			(reinterpret_cast<const char*>(nextValidChunkOffset)):
+			(reinterpret_cast<const char*>(this)+sizeof(MemoryChunk)+this->getSize());
+
 }
 
 
@@ -86,6 +151,19 @@ uint64_t MemoryChunk::getNextValidChunkOffset() const {
 void MemoryChunk::setNextValidChunkOffset(uint64_t nextValidChunkOffset )
 {
 	this->nextValidChunkOffset = nextValidChunkOffset;
+}
+
+bool MemoryChunk::endChunk()const
+{
+	return endMark;
+}
+bool MemoryChunk::offsetChunk()const
+{
+	return (endMark==0 && nextValidChunkOffset!=0);
+}
+bool MemoryChunk::validChunk()const
+{
+	return (endMark==0 && nextValidChunkOffset==0);
 }
 
 MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
@@ -172,4 +250,14 @@ void MemoryChunk::mergeTrailingsUnallocated()
 	this->size+=collectedSize;
 	if(lastChunk->nextValidChunkOffset==0)
 		this->nextBaseFromEnd = lastChunk->nextBaseFromEnd;
+}
+
+
+MemoryChunk* MemoryChunk::advanceByBytes(size_t nbyte) {
+	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,advanceByBytes(nbyte));
+}
+
+const MemoryChunk* MemoryChunk::advanceByBytes(size_t nbyte) const
+{
+	return reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(this)+nbyte);
 }

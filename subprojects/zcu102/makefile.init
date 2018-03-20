@@ -1,0 +1,4 @@
+include  $(ROOT_PROJECT)/makefiles/makefile.init
+
+
+

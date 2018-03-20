@@ -746,6 +746,68 @@ SETUP_REG_STD_WRITE(ISR_EL1)
 
 
 
+class RegID_AA64ISAR0_EL1{
+public:
+        uint64_t		RES0_0:4;
+        uint64_t		AES:4;
+        uint64_t		SHA1:4;
+        uint64_t		SHA2:4;
+        uint64_t		CRC32:4;
+        uint64_t		Atomic:4;
+        uint64_t		RES0_1:4;
+        uint64_t		RDM:4;
+        uint64_t		SHA3:4;
+        uint64_t		SM3:4;
+        uint64_t		SM4:4;
+        uint64_t		DP:4;
+        uint64_t		RES0_2:16;
+        AS_MACRO void dump()const
+        {
+            kout << "ID_AA64ISAR0_EL1 : "
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"AES = "<< AES << ","
+                <<"SHA1 = "<< SHA1 << ","
+                <<"SHA2 = "<< SHA2 << ","
+                <<"CRC32 = "<< CRC32 << ","
+                <<"Atomic = "<< Atomic << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"RDM = "<< RDM << ","
+                <<"SHA3 = "<< SHA3 << ","
+                <<"SM3 = "<< SM3 << ","
+                <<"SM4 = "<< SM4 << ","
+                <<"DP = "<< DP << ","
+                <<"RES0_2 = "<< RES0_2
+                  << "\n";
+        }
+        AS_MACRO static RegID_AA64ISAR0_EL1 read();
+        AS_MACRO RegID_AA64ISAR0_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(ID_AA64ISAR0_EL1)
+SETUP_REG_STD_UPDATE_READ(ID_AA64ISAR0_EL1)
+SETUP_REG_STD_WRITE(ID_AA64ISAR0_EL1)
+
+
+
+class RegCONTEXTIDR_EL1{
+public:
+        uint32_t		PROCID:32;
+        AS_MACRO void dump()const
+        {
+            kout << "CONTEXTIDR_EL1 : "
+                <<"PROCID = "<< PROCID
+                  << "\n";
+        }
+        AS_MACRO static RegCONTEXTIDR_EL1 read();
+        AS_MACRO RegCONTEXTIDR_EL1  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(CONTEXTIDR_EL1)
+SETUP_REG_STD_UPDATE_READ(CONTEXTIDR_EL1)
+SETUP_REG_STD_WRITE(CONTEXTIDR_EL1)
+
+
+
 class RegID_AA64PFR0_EL1{
 public:
         uint64_t		EL0:4;
@@ -1212,6 +1274,80 @@ public:
 SETUP_REG_STD_READ(SCTLR_EL1)
 SETUP_REG_STD_UPDATE_READ(SCTLR_EL1)
 SETUP_REG_STD_WRITE(SCTLR_EL1)
+
+
+
+class RegDLR_EL0{
+public:
+        uint64_t		RestartAddr:64;
+        AS_MACRO void dump()const
+        {
+            kout << "DLR_EL0 : "
+                <<"RestartAddr = "<< RestartAddr
+                  << "\n";
+        }
+        AS_MACRO static RegDLR_EL0 read();
+        AS_MACRO RegDLR_EL0  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(DLR_EL0)
+SETUP_REG_STD_UPDATE_READ(DLR_EL0)
+SETUP_REG_STD_WRITE(DLR_EL0)
+
+
+
+class RegDSPSR_EL0{
+public:
+        uint32_t		SPSel:1;
+        uint32_t		RES0_0:1;
+        uint32_t		EL:2;
+        uint32_t		ExeState:1;
+        uint32_t		RES0_1:1;
+        uint32_t		FIQMask:1;
+        uint32_t		IRQMask:1;
+        uint32_t		SErrorMask:1;
+        uint32_t		DebugMask:1;
+        uint32_t		RES0_2:10;
+        uint32_t		IL:1;
+        uint32_t		SoftwareStep:1;
+        uint32_t		PAN:1;
+        uint32_t		UAO:1;
+        uint32_t		RES0_3:4;
+        uint32_t		V:1;
+        uint32_t		C:1;
+        uint32_t		Z:1;
+        uint32_t		N:1;
+        AS_MACRO void dump()const
+        {
+            kout << "DSPSR_EL0 : "
+                <<"SPSel = "<< SPSel << ","
+                <<"RES0_0 = "<< RES0_0 << ","
+                <<"EL = "<< EL << ","
+                <<"ExeState = "<< ExeState << ","
+                <<"RES0_1 = "<< RES0_1 << ","
+                <<"FIQMask = "<< FIQMask << ","
+                <<"IRQMask = "<< IRQMask << ","
+                <<"SErrorMask = "<< SErrorMask << ","
+                <<"DebugMask = "<< DebugMask << ","
+                <<"RES0_2 = "<< RES0_2 << ","
+                <<"IL = "<< IL << ","
+                <<"SoftwareStep = "<< SoftwareStep << ","
+                <<"PAN = "<< PAN << ","
+                <<"UAO = "<< UAO << ","
+                <<"RES0_3 = "<< RES0_3 << ","
+                <<"V = "<< V << ","
+                <<"C = "<< C << ","
+                <<"Z = "<< Z << ","
+                <<"N = "<< N
+                  << "\n";
+        }
+        AS_MACRO static RegDSPSR_EL0 read();
+        AS_MACRO RegDSPSR_EL0  updateRead();
+        AS_MACRO void write()const;
+}__attribute__((packed));
+SETUP_REG_STD_READ(DSPSR_EL0)
+SETUP_REG_STD_UPDATE_READ(DSPSR_EL0)
+SETUP_REG_STD_WRITE(DSPSR_EL0)
 
 
 

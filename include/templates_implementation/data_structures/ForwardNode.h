@@ -81,7 +81,7 @@ inline const ForwardNode<T>* ForwardNode<T>::next() const
 template<class T>
 inline ForwardNode<T>* ForwardNode<T>::last() {
 //	return const_cast<ForwardNode *>(reinterpret_cast<const ForwardNode*>(this)->last());
-	return CALL_CONST_EQUIV(this,last());
+	return CALL_CONST_EQUIV(ForwardNode<T>,ForwardNode<T>*,last());
 }
 
 template<class T>
@@ -94,7 +94,7 @@ inline const ForwardNode<T>* ForwardNode<T>::last() const {
 
 template<class T>
 inline ForwardNode<T>* ForwardNode<T>::ahead(size_t n) {
-	return CALL_CONST_EQUIV(this,ahead(n));
+	return CALL_CONST_EQUIV(ForwardNode<T>,ForwardNode<T>*,ahead(n));
 }
 
 template<class T>

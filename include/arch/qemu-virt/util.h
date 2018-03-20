@@ -10,9 +10,5 @@
 
 #include <def.h>
 
-AS_MACRO void CPUWaitForEvent()
-{
-	__asm__ ("wfe \n\t");
-}
 
 #endif /* INCLUDE_ARCH_QEMU_VIRT_UTIL_H_ */

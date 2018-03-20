@@ -9,19 +9,15 @@
 #define INCLUDE_TEST_TEST_BASE_H_
 
 #include <def.h>
-#include "../io/printk.h"
+#include <io/Output.h>
+#include <io/IntegerFormatter.h>
+
 
 #define EXPECT_EXPR_EQUAL(expr,value) \
 	{do{ \
 		if((expr)!=(value))\
 		    kout << FATAL << #expr << "!="<<value<<",the real value is " << expr << "\n"; \
 	}while(false);}
-
-
-//bool testMemoryManager();
-//
-//bool testFAT32SizeIsSecSize();
-
 
 #define RUN_TEST(testCallable) if(!(testCallable())) \
 	{ kout << FATAL << " [TEST] `"<< #testCallable << "` failed.\n";}

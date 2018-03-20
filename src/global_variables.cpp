@@ -12,6 +12,10 @@
 #include <new>
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
+#include <SystemFeatures.h>
+#include <io/uart/PL011.h>
+#include <io/Input.h>
+#include <io/uart/XilinxUARTPS.h>
 
 
 
@@ -19,11 +23,22 @@ char koutBuf[koutBufSize]={0};
 extern const char EMPTY_STR[1]={0};
 Output kout;
 
-MemoryManager mman{RAM_START,RAM_SIZE};
+Input kin;
+
+MemoryManager mman(nullptr,0,false);
 PidManager pidManager;
 
-#if defined(TARGET_ARCH_IS_qemu_virt) || defined(TARGET_ARCH_IS_raspi3)
+#if defined(TARGET_ARCH_IS_qemu_virt) || defined(TARGET_ARCH_IS_raspi3) || defined(TARGET_ARCH_IS_zcu102)
 ProcessManager processManager;
+SystemFeatures systemFeatures;
+#endif
+
+#if defined(TARGET_ARCH_IS_zcu102)
+XilinxUARTPS xilinxUART{nullptr};
+#endif
+
+#if defined(TARGET_ARCH_IS_qemu_virt) || defined(TARGET_ARCH_IS_raspi3)
+PL011 pl011{nullptr};
 #endif
 
 

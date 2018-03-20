@@ -29,6 +29,34 @@ Vector<T>::Vector(const std::initializer_list<T> &il)
 }
 
 template <class T>
+Vector<T>::Vector(const Vector<T> & vec)
+	:data(mman.allocateAs<T*>(vec.capacity)),
+	 capacity(0),
+	 size(0)
+{
+	if(data)
+	{
+		capacity = vec.capacity;
+		size = vec.size;
+		auto srcData=vec.data;
+		for(size_t i=0;i!=size;++i)
+			data[i]=srcData[i];
+	}
+}
+
+template <class T>
+Vector<T>& Vector<T>::operator=(const Vector<T> & vec)
+{
+	if(resize(vec.size))
+	{
+		auto src=vec.data;
+		for(size_t i=0;i!=size;++i)
+			data[i]=src[i];
+	}
+	return *this;
+}
+
+template <class T>
 Vector<T>::Vector(Vector<T> && vec)
 	:data(vec.data),capacity(vec.capacity),size(vec.size)
 {
@@ -56,6 +84,8 @@ Vector<T>::~Vector()
 	{
 		mman.deallocate(data);
 		data=nullptr;
+		capacity = 0;
+		size = 0;
 	}
 }
 

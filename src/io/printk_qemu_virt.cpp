@@ -7,14 +7,13 @@
 
 
 #include <io/printk.h>
-extern char uart_base[];
+#include <io/uart/PL011.h>
 size_t printk(char ch)
 {
 //	*reinterpret_cast<volatile unsigned int *>( UART_BASE ) = ch;
-	uart_base[0]=ch;
+	pl011.writeData(ch);
 	return 1;
 }
-
 void flush()
 {
 

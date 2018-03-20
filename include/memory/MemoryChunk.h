@@ -16,7 +16,12 @@
  *	注意，在进行merge操作时，必须确保内存块元信息的终止块（也就是最后一个无法合并的MemoryChunk)必须能够访问到。 为此，在初始化管理器时，必须保证至少两项存在：一项主要的MemoryChunk，一项End标记，紧邻第一项的后面。
  *	End标记放在RAM的高端1字节的位置：endMark=1
  *
- *  对End标记的Chunk调用Next，总是返回nullptr
+ *  End标记的size总是0.
+ *  对End标记的Chunk调用Next，总是返回nullptr.
+ *
+ *  调用next() 永不返回End.
+ *
+ *  必须保证next,dataEnd方法在有效的Chunk,以及offset chunk上能够正确。但是对End标记，不保证任何方法正确。
  *
  */
 class MemoryChunk{
@@ -29,8 +34,15 @@ public:
 	void setAllocated(bool allocated);
 	bool isEnd() const;
 	void setEnd(bool end);
-	const MemoryChunk* getNext()const;
-	MemoryChunk* getNext();
+	// 对于offset chunk,返回下一个有效的chunk
+	const MemoryChunk* getNext()const __attribute__((deprecated));
+	MemoryChunk* getNext()__attribute__((deprecated));
+	const MemoryChunk* next()const;
+	MemoryChunk*       next();
+	const MemoryChunk* nextValid()const;
+	MemoryChunk*       nextValid();
+	const MemoryChunk* findAllocable(size_t n,size_t alignment,size_t& moveOffset)const;
+	MemoryChunk* findAllocable(size_t n,size_t alignment,size_t &moveOffset);
 	size_t getSize() const;
 	void setSize(size_t size);
 	void* getDataPtr();
@@ -41,6 +53,10 @@ public:
 	void setNextBaseFromEnd(uint64_t nextBaseFromEnd);
 	uint64_t getNextValidChunkOffset() const;
 	void setNextValidChunkOffset(uint64_t nextValidChunkOffset );
+
+	bool endChunk()const;
+	bool offsetChunk()const;
+	bool validChunk()const;
 
 
 
@@ -60,7 +76,9 @@ public:
 	// 将到下一个Chunk之间的所有未使用的空间合并起来,包括所有不能形成Chunk的，或者Chunk未分配的
 	// 该函数在一个Chunk由Allocated->NotAllocated时调用
 	void mergeTrailingsUnallocated();
-
+private:
+	MemoryChunk *     advanceByBytes(size_t nbyte);
+	const MemoryChunk *advanceByBytes(size_t nbyte)const;
 
 private:
 	uint64_t  nextValidChunkOffset  :ValidBits; // 在1个字节的范围内标记处下一个ChunkOffset，因为如果某个区域含有少于MemoryChunk大小的字节数目，它们不能存储完整的MemoryChunk，此时必须使第一个字节指向一个真正有效的MemoryChunk。 0值意味着该处就是一个有效的MemoryChunk. MemoryChunk的大小至多是2^ValidBits个字节

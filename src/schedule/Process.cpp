@@ -100,9 +100,9 @@ Process::Error Process::setupTables(size_t codeSize,size_t heapSize,size_t spSiz
 	}
 
 	auto phyaddr = asm_at(reinterpret_cast<uint64_t>(_tableL0));
-	_ttbr0.ASID = 0;
+	_ttbr0.ASID = _pid;
 	_ttbr0.BADDR = ( (static_cast<uint64_t>(phyaddr.S0.PA51_48) << 48) | (phyaddr.S0.PA47_12 << 12))>>1;
-	_ttbr0.CnP=0;
+	_ttbr0.CnP = 0;
 
 	for(size_t i=0;i!=512;++i)
 	{
@@ -192,6 +192,10 @@ void Process::destroy()
 	mman.deallocate(_tableL1);
 	mman.deallocate(_tableL2);
 	mman.deallocate(_tableL3);
+
+	//取出_ttbr0的asid
+	asm_tlbi_aside1(_ttbr0.ASID);
+
 
 	// 为了效率考虑，不重置指针值，因为DESTROYED可以判定这些值是否有效。
 //	_spBase = nullptr;

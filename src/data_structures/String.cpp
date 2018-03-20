@@ -16,9 +16,6 @@
 String::String(size_t initSize)
 	:Vector(initSize){}
 
-String::String(String &&s)
-	:Vector(std::move(s)){}
-
 String::String(const char *s)
 	:Vector()
 {
@@ -43,5 +40,12 @@ String & String::append(const char* s,size_t len)
 		pushBack(*s++);
 		--left;
 	}
+	return *this;
+}
+
+String & String::append(const char *s)
+{
+	while(auto ch = *s++)
+		pushBack(ch);
 	return *this;
 }

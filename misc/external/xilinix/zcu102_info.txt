@@ -1,0 +1,9 @@
+url:https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html#documentation
+
+QEMU + zcu102 : http://www.wiki.xilinx.com/QEMU+-+Zynq+UltraScalePlus  可以下载dts文件
+
+# xilinx_uartps.c
+https://github.com/Xilinx/linux-xlnx/blob/master/drivers/tty/serial/xilinx_uartps.c
+
+# xilinx PS UART example
+https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_hello_world_example.c
