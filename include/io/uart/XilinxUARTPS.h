@@ -9,8 +9,8 @@
 #define INCLUDE_IO_UART_XILINXUARTPS_H_
 
 #include <def.h>
-#include <io/uart/MemBasedRegReader.h>
 #include <generic_util.h>
+#include <io/MemBasedRegReader.h>
 
 class XilinxUARTPS
 		:private MemBasedRegReader
@@ -35,7 +35,7 @@ public:
 		XUARTPS_TXWM    =		0x0044U,  /**< TX FIFO Trigger Level [5:0] */
 		XUARTPS_RXBS    =		0x0048U,  /**< RX FIFO Byte Status [11:0] */
 	};
-	XilinxUARTPS(volatile void *base);
+	XilinxUARTPS(void *base);
 	//enable it
 	void init();
 

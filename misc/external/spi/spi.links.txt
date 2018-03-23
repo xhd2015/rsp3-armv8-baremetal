@@ -1,0 +1,9 @@
+
+# SPI Zynq driver
+http://www.wiki.xilinx.com/SPI+Zynq+driver
+包含了兼容`cdns,spi-r1p6`的驱动。
+
+对于zcu102，应当参考https://github.com/Xilinx/linux-xlnx/blob/056483c7a14cd99b888e386d57191e462e021b87/drivers/spi/spi-cadence.c
+
+对于树莓派，应当参考
+https://github.com/Xilinx/linux-xlnx/blob/056483c7a14cd99b888e386d57191e462e021b87/drivers/spi/spi-bcm2835.c

@@ -1,3 +1,11 @@
+# 2018年3月24日02:42:58
+【commit point】 完成了基于Xilinx ZCU102的SD卡的读写(SD模式，非SPI模式),参见[main_test_sdcard_block_read_write.cpp](../src/arch/zcu102/main_test_sdcard_block_read_write.cpp)
+
+![运行结果](commits/2018-3-24_02.42.30_zcu102_sd_succeed.png)
+# 2018年3月23日02:31:36
+【acknowledged】  had so many days worked on making sdio happy.well it works happy now, but behind that happiness hides so much you-will-never-say.  --------------------------------------------------------------------------------------------- may be a conclusion of recent life.
+
+【todo】 写一份关于sdio方面的技术摘要。
 # 2018年3月20日18:42:13
 【commit point】【done】 添加了对`zcu102`的支持，工程为 [subprojects/zcu102](../subprojects/zcu102)，该目标是qemu下的一个板子类型，由xilinx生产，支持cortext-a53。
 

@@ -5,6 +5,11 @@
 #include <cstring>
 #include <io/uart/XilinxUARTPS.h>
 #include <new>
+#include <generic/cpu.h>
+#include <io/sd/CardSpecData.h>
+#include <io/sd/SDCardStatus.h>
+#include <io/sd/SDDriver.h>
+#include <bitset>
 
 //我们需要提供的入口函数,与一般main函数的接口一致
 int main();
@@ -16,6 +21,7 @@ __asm__(
 ASM_HALT_SLAVE_CPUS()
 ASM_SET_SP_SYM(__stack_top)
 "b init \n\t"
+".text \n\t" // 恢复之前的分区格式
 );
 
 extern uint64_t __bss_start[];
@@ -25,14 +31,21 @@ extern "C"
 void init()
 {
 	// p 的值一定是__bss_start吗？ 不一定，如果栈是错误地放在了一块只读内存上，则先存p的副本，然后取出来，其值就是0.
-//	setupUnintializedToZero();
+//	setupUnintializedToZero();u
 	for(auto p=__bss_start;p!=__bss_end;++p)
 		*p=0;
-	new (&xilinxUART) XilinxUARTPS(reinterpret_cast<volatile void *>(UART_BASE));
+
+	// test if ram good
+	volatile uint8_t *zeroPtr = nullptr;
+	*zeroPtr = 0xef;
+	if(*zeroPtr!=0xef)
+		asm_wfe_loop();
+
+	new (&xilinxUART) XilinxUARTPS(reinterpret_cast<void *>(UART_BASE));
 	xilinxUART.init();
 
-	kout << "test \n";
-
+	int res=main();
+	(void)res;
 	asm_wfe_loop();
 }
 

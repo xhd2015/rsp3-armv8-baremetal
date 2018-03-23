@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0039)http://elm-chan.org/docs/mmc/mmc_e.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="start" title="Site Top" href="http://elm-chan.org/">
+<link rel="up" title="Tech Notes" href="http://elm-chan.org/cc_e.html">
+<link rel="alternate" hreflang="ja" title="Japanese version" href="http://elm-chan.org/docs/mmc/mmc.html">
+<link rel="stylesheet" href="./How to Use MMC_SDC_files/docs_e.css" type="text/css" media="screen" title="ELM Default">
+<title>How to Use MMC/SDC</title>
+</head>
+
+<body crossrider_data_store_temp="{}">
+<h1>How to Use MMC/SDC</h1>
+<p class="hdd"><br>Update: March 13, 2018</p>
+<hr class="hds">
+
+<div class="abst">
+<img class="rset" src="./How to Use MMC_SDC_files/mmsd.jpeg" width="351" height="276" alt="MMC and SDC">
+<p>The <em>Secure Digital Memory Card</em> (SDC below) is the de facto standard memory card for mobile equipments. The SDC was developped as upper-compatible to <em>Multi Media Card</em> (MMC below). SDC compleant equipments can also use MMCs in most case. There are also reduced size versions, such as <em>RS-MMC</em>, <em>miniSD</em> and <em>microSD</em>, with the same function. The MMC/SDC has a microcontroller in it. The flash memory controls (block size conversion, error correction and wearleveling - known as <abbr title="Flash Translation Layer">FTL</abbr>) are completed inside of the memory card. The data is transferred between the memory card and the host controller as data blocks in unit of 512 bytes, so that it can be seen as a block device like a generic harddisk drive from view point of upper level layers.</p>
+<p>This page describes the basic knowledge and miscellaneous things that I become aware, on using MMC/SDC with small embedded system. I believe that this information must be a useful getting started notes for the people who is going to use MMC/SDC on the electronics handiwork projects.</p>
+</div>
+
+
+<div class="para">
+<h3>Pinout</h3>
+<div class="rset">
+<img src="./How to Use MMC_SDC_files/sdmm_contact.jpeg" width="460" height="250" alt="SDC/MMC contact surface"><br>
+<a href="http://elm-chan.org/docs/mmc/ima/mini_contact.jpeg">miniSD</a> | <a href="http://elm-chan.org/docs/mmc/ima/micro_contact.jpeg">microSD</a>
+</div>
+<p>Right photo shows the contact surface of the SDC/MMC. The MMC has seven contact pads. The SDC has nine contact pads that two additional contacts to the MMC. The three of the contacts are assigned for power supply, so that the number of effective signals are four (MMC) and six (SDC). Therfore the data transfer between the host and the card is done via a synchronous serial interface.</p>
+<p>The working supply voltage range is indicated by the operation conditions register (OCR) and it should be read and comfirmed the operating voltage range at card initialization. However, the supply voltage can also be fixed to 3.0 to 3.3 volts withouth any confirmation because the all MMC/SDCs work at <em>2.7 to 3.6 volts</em> at least. Do not supply 5.0 volts to the card, or the card is damaged instantly. The current consumption on write operation can reach up to some ten miliamperes, so that the host system should consider to supply 100 miliamperes to tha card.</p>
+</div>
+
+
+<div class="para">
+<h3>SPI Mode</h3>
+<div class="rset">Minimum setup for SPI mode<br><img src="./How to Use MMC_SDC_files/spicon.png" width="280" height="130" alt=""></div>
+<p>This document describes about <a href="http://elm-chan.org/docs/spi_e.html">SPI mode</a> to control the MMC/SDCs. The SPI mode is an alternative operating mode that defined to use the MMC/SDCs without a native host interface. The communication protocol of the SPI mode is a little simple compared to its native operating mode. The MMC/SDC can be attached to the most microcontrollers via a generic SPI interface or some GPIO ports. Therefore the SPI mode is suitable for low cost embedded applications with no native host interface is available. There are four different SPI modes, 0 to 3, depends on clock phase and polarity. The SPI mode 0 is defined for SDC. For the MMC, it is not the SPI spec, both latch and shift operations are defined with rising edge of the SCLK, but it seems to work at mode 0 at the SPI mode. Thus the <em>SPI mode 0</em> (CPHA=0, CPOL=0) is the proper setting to control MMC/SDC, but mode 3 (CPHA=1, CPOL=1) also works as well in most case. A pull-up on the DO cannot be omited, or some cards will fail initialization process.</p>
+
+<h4>Command and Response</h4>
+<p>In SPI mode, the data direction on the signal lines are fixed and the data is transferred in <em>byte oriented</em> serial communication. The command frame from host to card is a fixed length packet that shown below. The card is ready to receive a command frame when it drives DO high. After a command frame is sent to the card, a response to the command (R1, R2, R3 or R7) is sent back from the card. Because the data transfer is driven by serial clock generated by host controller, the host controller must continue to read data, send a 0xFF and get received byte, until a valid response is detected. The DI signal must be kept high during read transfer (send a 0xFF and get the received data). The response is sent back within command response time (N<small>CR</small>), 0 to 8 bytes for SDC, 1 to 8 bytes for MMC. The CS signal must be driven high to low prior to send a command frame and held it low during the transaction (command, response and data transfer if exist). The CRC feature is optional in SPI mode. CRC field in the command frame is not checked by the card.</p>
+<img src="./How to Use MMC_SDC_files/cmd.png" width="800" height="172" alt="cmd frame"><br>
+
+<h4>SPI Command Set</h4>
+<p>Each command is expressed in abbreviation like GO_IDLE_STATE or CMD&lt;n&gt;, &lt;n&gt; is the number of the command index and the value can be 0 to 63. Following table describes only commands that to be usually used for generic read/write and card initialization. For details on all commands, please refer to spec sheets from MMCA and SDA.</p>
+<table class="lst">
+<tbody><tr><th>Command<br>Index</th><th>Argument</th><th>Response</th><th>Data</th><th>Abbreviation</th><th>Description</th></tr>
+<tr><td>CMD0</td><td>None(0)</td><td>R1</td><td>No</td><td>GO_IDLE_STATE</td><td>Software reset.</td></tr>
+<tr><td>CMD1</td><td>None(0)</td><td>R1</td><td>No</td><td>SEND_OP_COND</td><td>Initiate initialization process.</td></tr>
+<tr><td>ACMD41(*1)</td><td>*2</td><td>R1</td><td>No</td><td>APP_SEND_OP_COND</td><td>For only SDC. Initiate initialization process.</td></tr>
+<tr><td>CMD8</td><td>*3</td><td>R7</td><td>No</td><td>SEND_IF_COND</td><td>For only SDC V2. Check voltage range.</td></tr>
+<tr><td>CMD9</td><td>None(0)</td><td>R1</td><td>Yes</td><td>SEND_CSD</td><td>Read CSD register.</td></tr>
+<tr><td>CMD10</td><td>None(0)</td><td>R1</td><td>Yes</td><td>SEND_CID</td><td>Read CID register.</td></tr>
+<tr><td>CMD12</td><td>None(0)</td><td>R1b</td><td>No</td><td>STOP_TRANSMISSION</td><td>Stop to read data.</td></tr>
+<tr><td>CMD16</td><td>Block<br>length[31:0]</td><td>R1</td><td>No</td><td>SET_BLOCKLEN</td><td>Change R/W block size.</td></tr>
+<tr><td>CMD17</td><td>Address[31:0]</td><td>R1</td><td>Yes</td><td>READ_SINGLE_BLOCK</td><td>Read a block.</td></tr>
+<tr><td>CMD18</td><td>Address[31:0]</td><td>R1</td><td>Yes</td><td>READ_MULTIPLE_BLOCK</td><td>Read multiple blocks.</td></tr>
+<tr><td>CMD23</td><td>Number of<br>blocks[15:0]</td><td>R1</td><td>No</td><td>SET_BLOCK_COUNT</td><td>For only MMC. Define number of blocks to transfer<br>with next multi-block read/write command.</td></tr>
+<tr><td>ACMD23(*1)</td><td>Number of<br>blocks[22:0]</td><td>R1</td><td>No</td><td>SET_WR_BLOCK_ERASE_COUNT</td><td>For only SDC. Define number of blocks to pre-erase<br>with next multi-block write command.</td></tr>
+<tr><td>CMD24</td><td>Address[31:0]</td><td>R1</td><td>Yes</td><td>WRITE_BLOCK</td><td>Write a block.</td></tr>
+<tr><td>CMD25</td><td>Address[31:0]</td><td>R1</td><td>Yes</td><td>WRITE_MULTIPLE_BLOCK</td><td>Write multiple blocks.</td></tr>
+<tr><td>CMD55(*1)</td><td>None(0)</td><td>R1</td><td>No</td><td>APP_CMD</td><td>Leading command of ACMD&lt;n&gt; command.</td></tr>
+<tr><td>CMD58</td><td>None(0)</td><td>R3</td><td>No</td><td>READ_OCR</td><td>Read OCR.</td></tr>
+<tr><td colspan="6"><small>*1:ACMD&lt;n&gt; means a command sequense of CMD55-CMD&lt;n&gt;.<br>
+*2: Rsv(0)[31], HCS[30], Rsv(0)[29:0]<br>
+*3: Rsv(0)[31:12], Supply Voltage(1)[11:8], Check Pattern(0xAA)[7:0]</small></td></tr>
+</tbody></table>
+
+<h4>SPI Response</h4>
+<img class="rset" src="./How to Use MMC_SDC_files/cresp.png" width="500" height="176" alt="MMC and SDC">
+<p>There are some command response formats, R1, R2, R3 and R7, depends on the command index. A byte of response, R1, is returned for most commands. The bit field of the R1 response is shown in right image, the value 0x00 means successful. When any error occured, corresponding status bit in the response will be set. The R3/R7 response (R1 + trailing 32-bit data) is for only CMD58 and CMD8.</p>
+<p>Some commands take a time longer than N<small>CR</small> and it responds <em>R1b</em>. It is an R1 response followed by busy flag (DO is driven to low as long as internal process is in progress). The host controller should wait for end of the process until DO goes high (a 0xFF is received).</p>
+</div>
+
+
+<div class="para">
+<h3>Initialization Procedure for SPI Mode</h3>
+<p>After power on reset, MMC/SDC enters its native operating mode. To put it SPI mode, follwing procedure must be performed like <a href="http://elm-chan.org/docs/mmc/ima/sdinit.png">this flow</a>.</p>
+
+<h4>Power ON or card insersion</h4>
+<p>After supply voltage reached 2.2 volts, wait for one millisecond at least. Set SPI clock rate between 100 kHz and 400 kHz. Set DI and CS high and apply 74 or more clock pulses to SCLK. The card will enter its native operating mode and go ready to accept native command.</p>
+
+<h4>Software reset</h4>
+<p>Send a <em>CMD0 with CS low</em> to reset the card. The card samples CS signal on a CMD0 is received successfully. If the CS signal is low, the card enters SPI mode and responds R1 with In Idle State bit (0x01). Since the CMD0 must be sent as a native command, the CRC field must have a valid value. When once the card enters SPI mode, the CRC feature is disabled and the CRC is not checked by the card, so that command transmission routine can be written with the hardcorded CRC value that valid for only CMD0 and CMD8 with the argument of zero. The CRC feature can also be switched with CMD59.</p>
+
+<h4>Initialization</h4>
+<p>In idle state, the card accepts only CMD0, CMD1, ACMD41,CMD58 and CMD59. Any other commands will be rejected. In this time, read OCR register and check working voltage range of the card. In case of the system sypply voltage is out of working voltage range, the card must be rejected. Note that all cards work at supply voltage range of 2.7 to 3.6 volts at least, so that the host contoller needs not check the OCR if supply voltage is in this range. The card initiates the initialization process when a <em>CMD1</em> is received. To detect end of the initialization process, the host controller must send CMD1 and check the response until end of the initialization. When the card is initialized successfuly, In Idle State bit in the R1 response is cleared (R1 resp changes 0x01 to 0x00). The initialization process can take <em>hundreds of milliseconds</em> (large cards tend to longer), so that this is a consideration to determin the time out value. After the In Idle State bit cleared, generic read/write commands will able to be accepted.</p>
+<p>Because <em>ACMD41</em> instead of CMD1 is recommended for SDC, trying ACMD41 first and retry with CMD1 if rejected, is ideal to support both type of the cards.</p>
+<p>The SCLK rate should be changed to fast as possible to maximize the read/write performance. The TRAN_SPEED field in the CSD register indicates the maximum clock rate of the card. The maximum clock rate is 20MHz for MMC, 25MHz for SDC in most case. Note that the clock rate will able to be fixed to 20/25MHz in SPI mode because there is no open-drain condition that restricts the clock rate.</p>
+<p>The initial read/write block length can be set 1024 on 2GB cards, so that the block size should be re-initialized to 512 with CMD16 to work with FAT file system.</p>
+
+<h4>Initializing high-capacity cards</h4>
+<p>After the card enters idle state with a CMD0, send a <em>CMD8</em> with argument of 0x000001AA and correct CRC prior to initialization process. If the CMD8 is rejected with illigal command error (0x05), the card is SDC version 1 or MMC version 3. If accepted, R7 response (R1(0x01) + 32-bit return value) will be returned. The lower 12 bits in the return value 0x1AA means that the card is SDC version 2 and it can work at voltage range of 2.7 to 3.6 volts. If not the case, the card should be rejected. And then initiate initialization with ACMD41 with HCS flag (bit 30). After the initialization completed, read OCR register with CMD58 and check CCS flag (bit 30). When it is set, the card is a high-capacity card known as <em>SDHC/SDXC</em>. The data read/write operations described below are commanded in block addressing insted of byte addressing. The size of data block at block addressing mode is fixed to 512 bytes.</p>
+</div>
+
+<div class="para">
+<h3>Data Transfer</h3>
+
+<h4>Data Packet and Data Response</h4>
+<img class="rset" src="./How to Use MMC_SDC_files/data.png" width="620" height="300" alt="data block">
+<p>In a transaction with data transfer, one or more data blocks will be sent/received after command response. The data block is transferred as a data packet that consist of Token, Data Block and CRC. The format of the data packet is showin in right image and there are three data tokens. Stop Tran token is to terminate a multiple block write transaction, it is used as single byte packet without data block and CRC.</p>
+<br class="clr">
+
+<h4>Single Block Read</h4>
+<img src="./How to Use MMC_SDC_files/rs.png" width="350" height="110" alt=""><br>
+<p>The argument specifies the location to start to read <em>in unit of byte or block</em>. The sector address in LBA specified by upper layer must be scaled properly. When a CMD17 is accepted, a read operation is initiated and the read data block will be sent to the host. After a valid data token is detected, the host controller receives following data field and CRC. The CRC bytes must be received even if it is not needed. If any error occured during the read operation, an error token will be returned instead of data packet.</p>
+
+<h4>Multiple Block Read</h4>
+<img src="./How to Use MMC_SDC_files/rm.png" width="700" height="110" alt=""><br>
+<p>The CMD18 is to read multiple blocks in sequense from the specified location. The read operation continues as open-ended. To terminate the transaciton, send a CMD12 to the card. The received byte immediataly following CMD12 is a stuff byte, it should be discarded before receive the response of the CMD12. For MMC, if number of transfer blocks has been sepecified by CMD23 prior to CMD18, the read transaction is initiated as a pre-defined multiple block transfer and the read operation is terminated at last block transfer.</p>
+
+<h4>Single Block Write</h4>
+<img src="./How to Use MMC_SDC_files/ws.png" width="360" height="110" alt=""><br>
+<p>The Single Block Write writes a block to the card. After a CMD24 is accepted, the host controller sends a data packet to the card. The packet format is same as block read operations. Most cards cannot change write block size and it is fixed to 512. The CRC field can have any fixed value unless the CRC function is enabled. The card responds a Data Response immediataly following the data packet from the host. The Data Response trails a busy flag and host controller must wait until the card goes ready.</p>
+<p>In principle of the SPI mode, the CS signal must be kept asserted during a transaction. However there is an exception to this rule. When the card is busy, the host controller can deassert CS to release SPI bus for other SPI devices on the bus. The card will drive DO low again when reselected during internal process is in progress. Therefore a preceding busy check, check if card is busy prior to each command and data packet, instead of post wait can eliminate the busy wait time. In addition, the internal write process is initiated a byte after the data response, this means eight SCLK clocks are required to initiate internal write operation. The state of CS signal during the post clocks can be either low or high, so that it can be done with bus release process described below.</p>
+
+<h4>Multiple Block Write</h4>
+<img src="./How to Use MMC_SDC_files/wm.png" width="700" height="110" alt=""><br>
+<p>The Multiple Block Read command writes multiple blocks in sequense from the specified location. After a CMD25 is accepted, the host controller sends one or more data packets to the card. The packet format is same as block read operations except for Data Token. The write operation continues until terminated with a Stop Tran token. The busy flag will output after each data block and Stop Tran token. For MMC, the number of blocks to write can be pre-defined by CMD23 prior to CMD25 and the write transaction is terminated at last data block. For SDC, number of sectors to pre-erased at start of write transaction can be specified by ACMD23 prior to CMD25. A Stop Tran token is always required to treminate the write transaction. It can also be terminated at smaller or larger than pre-erased blocks but the content of the pre-erased and not transferred blocks are undefined.</p>
+
+<h4>Reading CSD and CID</h4>
+<p>These are same as Single Block Read except for the data block length. The CSD and CID are sent to the host as <em>16 byte data block</em>. For details of the CMD, CID and OCR, please refer to the MMC/SDC specs.</p>
+</div>
+
+
+<div class="para">
+<h3>Cosideration to Bus Floating and Hot Insertion</h3>
+<img class="rset" src="./How to Use MMC_SDC_files/dip.png" width="450" height="310" alt="dip">
+<p>SPI signals that can be floated should be pulled low or high properly via a resister. This is a generic design rule on CMOS device. Because DI and DO are normally high, they should be pulled-up. According to SDC/MMC specs, from 50k to 100k ohms is recommended to the value of pull-up registers. However the clock signal is not mentioned in the SDC/MMC specs because it is always driven by host controller. When there is a possibility of floating, it should be pulled to the normal state, low.</p>
+<p>The MMC/SDC can hot insertion/removal. But some considerations to the host circuit are needed to avoid an incorrect operation. For example, if the system power supply (Vcc) is tied to the card socket directly, the Vcc will dip at the instant of the card insertion due to a charge current to the built-in capacitor of the card. 'A' in the right image is the scope view and it shows that occureing a voltage dip of about 600 mV. This is a sufficient level to trigger a brown out detector. 'B' in the right image shows that an inductor is inserted to block the surge current, the voltage dip is reduced to 200 mV. A low ESR capacitor, such as OS-CON, can eliminate the voltage dip dratiscally like shown in 'C'. However the low ESR capacitor can cause an oscillation of LDO regulator.</p>
+</div>
+
+
+<div class="para">
+<h3>Cosideration on Multi-slave Configuration</h3>
+<img class="rset" src="./How to Use MMC_SDC_files/do_diag.png" width="505" height="235" alt="">
+<p>In the SPI bus, each slave device is selected with separated CS signals, and plural devices can be attached to an SPI bus. Generic SPI slave device drives/releases its DO signal by CS signal asynchronously to share an SPI bus. However MMC/SDC drives/releases DO signal in <em>synchronising to the SCLK</em>. This means there is a posibility of bus conflict with MMC/SDC and any other SPI slaves that attached to an SPI bus. Right image shows the drive/release timing of the MMC/SDC (the DO signal is pulled to 1/2 vcc to see the bus state). Therefore to let MMC/SDC release DO signal, the master device must send a byte after CS signal is deasserted.</p>
+</div>
+
+
+<div class="para">
+<h3>Maximum SPI Clock Frequency</h3>
+<img class="rset" src="./How to Use MMC_SDC_files/spi_timing.png" width="219" height="250" alt="">
+<p>MMC/SDC can work at the clock frequency upto 20/25 MHz. Of course all native interfaces guarantee to work at the maximum clock frequency. However generic SPI interface integrated in the microcontrollers may not work at high clock frequency due to a timing issue. Right image shows the timing diagram of the SPI interface. In SPI mode 0/3, the data is shifted out by falling edge of the SCLK and latched by next rising edge. <em>td</em> is the SCLK to DO propagation delay at the SDC, 14ns maximum. <em>tsu</em> is the minimum setup time of the MISO input. Therefore the maximum allowable SCLK frequency can be calculated by:</p>
+<p>F<small>SCLK(max)</small> = 0.5 / (td + tsu)</p>
+<p>Some microcontrollers I have used are limited the allowable clock frequency around 10 MHz according to the timing specs.</p>
+</div>
+
+
+<div class="para">
+<h3>File System</h3>
+<p>The file system used on the MMC/SDC is FAT. The MMC/SDC specifications define the FAT type as: FAT12 for 64MB and smaller, FAT16 for 128MB to 2GB, FAT32 for 4GB to 32GB and exFAT for 64GB to 2TB. Only an FAT volume can be exist on the card with FDISK partitioning and no patition table like floppy disk is not allowed. Of course different file system and partitioning other than the MMC/SDC specifications define can be used as generic storage media for PCs. However such the cards with illigal format may not be accepted by DSCs, camcorders and TVs.</p>
+</div>
+
+
+<div class="para">
+<h3>Optimization of Write Performance</h3>
+<p>Most MMC/SDC employs <a href="http://elm-chan.org/docs/sm_e.html">NAND Flash Memory</a> as a memory array. The NAND flash memory is cost effective and it can read/write <em>large</em> data fast, but on the other hand, there is a disadvantage that rewriting a <em>part</em> of data is inefficient. Generally the flash memory requires to erase existing data before write a new data, and minimum unit of erase operation (called erase block) is larger than write block size. The typical NAND flash memory has a block size of 512/16K bytes for write/erase operation, and recent monster card employs large block chip (2K/128K). This means that rewriting entire data in the erase block is done in the card even if write only a sector (512 bytes).</p>
+
+<h4>Benchmark</h4>
+<p>I examined the read/write performance of <a href="http://elm-chan.org/docs/mmc/ima/sdmm.jpeg">some MMC/SDC</a> with a cheap 8 bit MCU (ATmega64 @9.2MHz) on the assumption that an embedded system <em>with limited memory size</em>. For reason of memory size, <tt>write()</tt> and <tt>read()</tt> ware performed in 2048 bytes at a time. The result is: Write: 77kB/sec, Read: 328kB/sec on the <a href="http://elm-chan.org/docs/mmc/ima/sd128.txt">128MB SDC</a>, Write: 28kB/sec, Read: 234kB/sec on the <a href="http://elm-chan.org/docs/mmc/ima/sd512.txt">512MB SDC</a> and Write: 182kB/sec, Read: 312kB/sec on the <a href="http://elm-chan.org/docs/mmc/ima/mm128.txt">128MB MMC</a>.</p>
+<p><em>By <a href="http://elm-chan.org/fsw/ff/img/rwtest1.png">some benchmarks</a> later, I guess MMC tends to be faster than SDC in write throughput.</em></p>
+<p>Therefor the write performance of the 512MB SDC was very poor that one third value of 128MB SDC. Generally the read/write performance of the mass storage device increases proportional to its recording density, however it sometimes appears a tendency of opposite on the memory card. As for the MMC, it seems to be several times faster than SDC, it is not bad performance. After that time, I examined some SDCs supplied from different makers, and I found that PQI's SDC was as fast as Hitachi's MMC but Panasonic's and Toshiba's one was very poor performances.</p>
+
+<h4>Erase Block Size</h4>
+<p>To analys detail of write operation, busy time (number of polling cycles) after sent a write data is typed out to console in the low level disk write function. Multiple numbers on a line indicates data blocks and a Stop Tran token that issued by a multiple block write transaction.</p>
+<p>In resulut of the analysis, there is a different of internal process between 128MB SDC and 512MB SDC. The 128MB SDC rewrites erase block at end of the mutiple block write transaction. The 512MB SDC seems have 4K bytes data buffer and it rewrites erase block every 4K bytes boundary. Therefor it cannot compared directly but the processing time of rewriting an erase block can be read 3800 for 128MB SDC and the 512MB SDC taeks 30000 that 8 times longer than 128MB SDC. Judging from this resulut, it seems the 128MB SDC uses a small block chip and the 512MB SDC uses a large block or MLC chip. Ofcourse the larger block size decreases the performance on pertial block rewriting. In 512MB SDC, only an area that 512K bytes from top of the memory is relatively fast. This can be read from write time in <tt>close()</tt>. It might any special processing is applied to this area for fast FAT accsess.</p>
+
+<h4>Improving Write Performance</h4>
+<img class="rset" src="./How to Use MMC_SDC_files/f6.png" width="630" height="148" alt="write transactions">
+<p>To avoid this bottleneck and increase the write performance, number of blocks per write transaction must be large as possible. Of course all layers between the application and the media must support multiple sector write feature. For low level SDC/MMC write function, it should inform number of write sectors to the card prior to the write transaction for efficient internal write process. This method called `pre-defined multiple block write'. The pre-definition command is not the same between MMC (CMD23) and SDC (ACMD23).</p>
+<p>The memory cards are initially patitioned and formatted to align the allocation unit to the erase block boundary. When re-patition or re-format the memory card with a device that not compliant to MMC/SDC (this is just a PC) with no care, the optimization will be broken and the write performance might be lost. I tried to re-format a 512MB SDC in FAT32 with a generic format function of the PC, the write performance measured in file copy was decreased to one several. Therefore the re-formatting the card should be done with SD format utility or SDC/MMC compliant equipments.</p>
+</div>
+
+
+<div class="para">
+<h3>License</h3>
+<p>MMC specification had been provided by MMCA (Multimedia Card Association) and then it has been transferred to JEDEC. Any license is not needed to develop and sell the MMC products. However the MMC specification is not opend to the public and you need to join JEDEC to obtain the techinical documentations.</p>
+<p>SD specification is a product that has been developped and provided by SDA (SD Card Association) and SD-3C, LLC. Every organization or individual who sells any product with SD specification must be licensed by SDA. For instance, a HALA (Host and Ancillary Product License Agreement) is needed to sell any SD host product which states support for SD card, <em>no matter which interface, SD mode or SPI mode, is used</em>. For intermediate product, such as embedded module, a license is needed for either the seller of module or final product. Only licensee can put SD logos on the products, packages and manuals. The admission fee of general members is 2,000 USD and the license fee is 1,000 USD a year for HALA.</p>
+<p>Every product states support for SD card needs to be licensed. In other words, the product does not state support for SD card does not need to be licensed, even if it actually supports SD card. To avoid the license issue, some stingy device makers includes major companies state "Supprts MMC", "Supports MMC and compatibles" or "Supports TF card". What a nonsense!</p>
+</div>
+
+
+<div class="para">
+<h3>Links</h3>
+<ul>
+<li><a href="https://www.jedec.org/standards-documents/technology-focus-areas/flash-memory-ssds-ufs-emmc/e-mmc">e.MMC | JEDEC</a></li>
+<li><a href="http://www.sdcard.org/">SDA - SD Card Association</a></li>
+<li><a href="https://www.sdcard.org/downloads/pls/">SDHC Physical Layer Spec. by SDA</a></li>
+<li><a href="http://elm-chan.org/docs/spi_e.html">About SPI</a></li>
+<li><a href="http://elm-chan.org/fsw/ff/00index_e.html">Generic FAT file system module</a> with sample code to control <em>MMC/SDSC/SDHC</em></li>
+</ul>
+</div>
+
+<p class="foot"><img src="./How to Use MMC_SDC_files/sign.png" alt=""></p>
+
+
+</body></html>

@@ -8,7 +8,7 @@
 
 
 
-XilinxUARTPS::XilinxUARTPS(volatile void *base)
+XilinxUARTPS::XilinxUARTPS(void *base)
 	:MemBasedRegReader(base),
 	_control(reg<uint32_t,XUARTPS_CR>()),
 	_status(reg<uint32_t,XUARTPS_SR>()),

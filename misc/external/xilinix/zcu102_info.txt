@@ -7,3 +7,7 @@ https://github.com/Xilinx/linux-xlnx/blob/master/drivers/tty/serial/xilinx_uartp
 
 # xilinx PS UART example
 https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_hello_world_example.c
+
+
+# ethernet
+https://github.com/fpgadeveloper/ethernet-fmc-zynq-gem

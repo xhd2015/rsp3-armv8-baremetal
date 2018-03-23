@@ -10,11 +10,11 @@
 
 #include <def.h>
 #include <generic_util.h>
-#include <io/uart/MemBasedRegReader.h>
+#include <io/MemBasedRegReader.h>
 
 
 class PL011
-	:private MemBasedRegReader
+	:public MemBasedRegReader
 {
 public:
 	enum RegOffset : MemBasedRegReader::RegOffset{
@@ -37,7 +37,7 @@ public:
 		UARTPeriphID0 = 0xFE0, //8bits, reset value=0x11
 
 	};
-	PL011(volatile void *base)
+	PL011(void *base)
 		:MemBasedRegReader(base),
 		_writeDataReg(reg<char,UARTDR>()),
 		  _readDataReg(reg<uint16_t,UARTDR>()),

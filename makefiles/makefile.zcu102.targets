@@ -1,12 +1,17 @@
 include ${ROOT_PROJECT}/makefiles/makefile.qemu_common.targets
 include ${ROOT_PROJECT}/makefiles/makefile.aarch64_ALL_REGISTERS.targets
 
+
 # gic-version = 2
+QEMU_COMMON_ARGS := -machine xlnx-zcu102 -cpu cortex-a53  -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -drive file=sd.bin,if=sd,index=1,format=raw
 .PHONY:qemu-run qemu-debug
 qemu-run:
-	$(QEMU_AARCH64) -machine xlnx-zcu102 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0
+	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS)
 qemu-debug:
-	$(QEMU_AARCH64) -machine xlnx-zcu102 -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -S -s	
+	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS) -S -s	
+sd.bin:FORCE
+	echo 'SD.BIN:what ever do you have in me?I do notknow.........................RAMDOM' > sd.bin
+
 
 # 通过dd将用户程序嵌入到内核镜像中
 $(MASTERY_BINARY):FORCE

@@ -10,11 +10,6 @@
 
 #include <def.h>
 
-// 实现与arch相关的
-void delayCPU(size_t i);
-void delayCPU(size_t i,size_t j);
-void haltCPU();
-
 // 实现与arch无关的
 
 // math 部分
@@ -43,16 +38,84 @@ void reverse(char *str,size_t size);
  */
 const char *strOffset(const char *p,size_t offset);
 
+namespace{
 
+	template <size_t bit,size_t ... bits>
+	struct BitMaskStruct{
+		static constexpr size_t value= BitMaskStruct<bit>::value|BitMaskStruct<bits...>::value;
+	};
+	template <size_t bit>
+	struct BitMaskStruct<bit>{
+		static constexpr size_t value=(1u<<bit);
+	};
+
+}
 
 
 
 //==MACROS
-template <uint8_t bit>
-AS_MACRO uint64_t bitMask()
+template <uint8_t...bit>
+AS_MACRO size_t bitMask()
 {
-	return (1u << bit);
+	return BitMaskStruct<bit...>::value;
 }
+
+// 保留为1的位
+template <size_t ... bit>
+AS_MACRO size_t bitOnes()
+{
+	return BitMaskStruct<bit...>::value;
+}
+// 保留为0的位
+template <size_t ...bit>
+AS_MACRO size_t bitZeros()
+{
+	return ~(BitMaskStruct<bit...>::value);
+}
+// 设置目标位为1，其他位不变
+template <size_t ...bit,class T>
+AS_MACRO T bitsSet(T t)
+{
+	return t | bitOnes<bit...>();
+}
+// 设置目标位为0,其他位不变
+template <size_t ...bit,class T>
+AS_MACRO T bitsClear(T t)
+{
+	return (t &  bitZeros<bit...>());
+}
+// 保留目标位，其他位为0
+// 可用如下的语句检测目标位是否设置： if(bitsKept<16>(t))...
+template <size_t ...bit,class T>
+AS_MACRO T bitsKept(T t)
+{
+	return (t & bitOnes<bit...>());
+}
+template <size_t ...bit,class T>
+AS_MACRO bool bitsAnySet(T t)
+{
+	return bitsKept<bit...>(t);
+}
+template <size_t ...bit,class T>
+AS_MACRO bool bitsNonSet(T t)
+{
+	return !bitsAnySet<bit...>(t);
+}
+
+// bitsMix<0,3, void, 3,4,bool leftAsOne>
+// 处理0的情况
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+AS_MACRO size_t bitsMix0()
+{
+	return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(0)));
+}
+// 处理1的情况
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+AS_MACRO size_t bitsMix1()
+{
+	return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(SIZE_MAX)));
+}
+
 AS_MACRO uint64_t bitMask(uint8_t bit)
 {
 	return (1u << bit);
@@ -84,6 +147,21 @@ AS_MACRO uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
 	return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
 }
+//template <class _BaseType>
+//uint64_t getBits(const _BaseType *p,size_t lowerBound,size_t upperBound,int baseOff=0)
+//{
+//	const uint8_t *p8=reinterpret_cast<const uint8_t*>(p);
+//	lowerBound += baseOff;
+//	upperBound += baseOff;
+//
+//	return
+//}
+//template <class _BaseType>
+//void    setBits(_BaseType *p,size_t lowerBound,size_t upperBound,size_t value,int baseOff=0)
+//{
+//
+//}
+
 template <class Type,class ValueType>
 AS_MACRO void     setBit(Type & i,uint8_t index,ValueType v)
 {

@@ -1,0 +1,21 @@
+# Card Status -- PL, p101
+# sdmmc.c 完整的cmd0-n实现 -- https://github.com/qiupq/keil-E70_201710/blob/7d603098bd494cf4ce24e2b3d95f60bea999e2bf/libraries/libstoragemedia/source/sdmmc/sdmmc.c
+
+# CMD0-CMDn的详细说明 -- PL1,p86
+
+# qemu关于sd.c的实现 --    case 52 ... 54:
+        /* CMD52, CMD53, CMD54: reserved for SDIO cards
+         * (see the SDIO Simplified Specification V2.0)
+         * Handle as illegal command but do not complain
+         * on stderr, as some OSes may use these in their
+         * probing for presence of an SDIO card.
+         */
+        return sd_illegal;  https://github.com/qemu/qemu/blob/5df089564be6e6a6b1bc79207f74b5b7ed4e1277/hw/sd/sd.c
+
+# sdio 模式下的 norm状态 -- PARTA2 p53-p54
+
+# SDIO模式下的响应  -- PARTA2,p31
+
+# SD Slave的内部寄存器 -- Part1,p160
+
+# Card Status -- Part1,p101
