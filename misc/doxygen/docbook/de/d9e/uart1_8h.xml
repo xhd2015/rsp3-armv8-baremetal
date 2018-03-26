@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d9e/uart1_8h">
+    <title>uart1.h File Reference</title>
+    <programlisting>#include &lt;arch/aarch64/gpio.h&gt;</programlisting>
+<para>Include dependency diagram for uart1.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d8a/uart1_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for uart1.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d81/uart1_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a9c0d99d551f0013cada5ad4aac5f1e0b">AUX_ENABLES</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a937c7e17b3bae37fef160a3a651eb883">AUX_IRQ</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1af4c86eb600e81f138962457dd19ecd98">AUX_MU_BAUD_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x68)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1ae245c90b298a3cbf784f859aefc4dd84">AUX_MU_CNTL_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x60)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a8e5ebc2656b6960e85c002a05c2f7d8e">AUX_MU_IIR_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x44)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a90bc89458f19c7cf9c5ef60765f9c47d">AUX_MU_IO_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x40)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a98016f093381e824a53879e9210eda1b">AUX_MU_LCR_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x4c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d9e/uart1_8h_1a277c8db0ce14fd1fce1431c56c50d11b">AUX_MU_LSR_REG</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link>+0x54)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="de/d9e/uart1_8h_1a4028cd378a26a7051189f22af88711a0">uart1Getc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="de/d9e/uart1_8h_1ae6499fe57e2d4658665883c1f60bf380">uart1GetcNonBlocked</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9e/uart1_8h_1af7ac0714aabbedf2bbba3ef37cfcbef6">uart1Putc</link> (
+char c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9e/uart1_8h_1a31257802883dfdd5c05e360da25f16f1">uart1Puts</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d9e/uart1_8h_1a2c447370a42def794cac18803471889c">uart1ReadReady</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d9e/uart1_8h_1a0331ec8e6f8b6a8abccb838651a9beb7">uart1SendReady</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3/uart1.h</para>
+    </simplesect>
+</section>

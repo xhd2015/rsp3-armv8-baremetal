@@ -1,0 +1,588 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d1d/class_memory_chunk">
+<title>MemoryChunk class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/df6/_memory_chunk_8h">&quot;MemoryChunk.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for MemoryChunk</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/dac/class_memory_chunk__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for MemoryChunk</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d13/class_memory_chunk__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449">@29</link> {
+<link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a5dd5a8dcbf886b56b730fa6c06af0c59">ValidBits</link>= 6,
+<link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a5956d1ab4fd85404018dd94bb6b03386">IsEndBits</link>=1,
+<link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449ad1e18dc3cbdce81ddcefe1d764980e19">AllocatedBits</link>=1,
+<link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449ae689e58b57dad51c40471d805eb09145">SizeBits</link>=38,
+<link linkend="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a07f2b8ebbed46479a06ca05a5f6ff703">NextBaseBits</link>=18
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d1d/class_memory_chunk_1a1607a0bc5c1f3f7cf761c11918a4b2ae">@30</link> {
+<link linkend="d4/d1d/class_memory_chunk_1a1607a0bc5c1f3f7cf761c11918a4b2aea20080514f5fbc0a3e5bf01cada2dbe1b">MaxSinlgeMoveBytes</link>= (1 &lt;&lt; ValidBits)
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum MemoryChunk::@29 __attribute__</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t allocated</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t endMark</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t nextBaseFromEnd</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t nextValidChunkOffset</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1a5cb5ae2b25f743044da9ac8121eb810e">endChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1ab3b8549a3aef47a0bbcadce037225ed2">findAllocable</link> (
+size_t n, size_t alignment, size_t &amp; moveOffset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1a934f6242ec16c156bb099240b3fce0de">findAllocable</link> (
+size_t n, size_t alignment, size_t &amp; moveOffset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d4/d1d/class_memory_chunk_1a71a93ac48c88dbaeceb31d1450ffc3c5">getDataEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const void * <link linkend="d4/d1d/class_memory_chunk_1a53a0ac34e35f625fc2eba11cc67db372">getDataEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d4/d1d/class_memory_chunk_1a76229a1376912890e4c358fec643d0eb">getDataPtr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const void * <link linkend="d4/d1d/class_memory_chunk_1a20a03eb15236fbb34151ffafed290514">getDataPtr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1a4103a2383e6c2c4273157e11d434f9d0">getNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1abbd98f8d888a2f7036ff00efd45878d0">getNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/d1d/class_memory_chunk_1ab2cca8d381c3167dae31bb4fdc23affc">getNextBaseFromEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/d1d/class_memory_chunk_1ade085feee596267aef1ab33cc47b8a2d">getNextValidChunkOffset</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d1d/class_memory_chunk_1aa112bc700f6a7ee7a97cb8821d55c701">getSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1ae4ec0a942bb577ece9a1ec0413ba829f">isAllocated</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1a77532081c761e7680970a9dcb0c29660">isEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1d/class_memory_chunk_1aefec33edaebef2383fc1fa09be698433">MemoryChunk</link> (
+size_t size, bool allocated, size_t nextValidChunkOffset, bool endMark, size_t nextBaseFromEnd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1aaa4324b78e79aaf3c4ec5062d0bddba4">mergeTrailingsUnallocated</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1aa394b13e0280bfb9fa945d263fd7849f">moveAhead</link> (
+size_t moveSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d1d/class_memory_chunk_1a65732610d7da0e78c8f550333faefca9">moveOffsetOfAllocSuchAlignedSpace</link> (
+size_t allocSize, size_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1a4cdc4796b4fe962c6cbf386bf82c4f0a">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1ac7610b46047651786dc0d65f0c52e5c3">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1a1736b8411b5d300f91d852026d5b3d32">nextValid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1aa42088fbe06411f446240f084aca5af3">nextValid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1a74cf7d7f70494fd4d08011b7129100f2">offsetChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1ae1d0e05382c171f1720f5b3d0fc62eab">setAllocated</link> (
+bool allocated)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1a01854d44de711dc83c31b64dc4b247f1">setEnd</link> (
+bool end)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1a1055c99bbafcb002f9e0bcb3700907ed">setNextBaseFromEnd</link> (
+uint64_t nextBaseFromEnd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1a335be9ffa8cdbaabb7eedea66b2ac501">setNextValidChunkOffset</link> (
+uint64_t nextValidChunkOffset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d1d/class_memory_chunk_1ad6832d76e07e15e36efcf3571b5c62a8">setSize</link> (
+size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1ae261e5561acf5a4e3c591b6b49e6a3bf">split</link> (
+size_t splitSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d1d/class_memory_chunk_1acc575b5a85e63afc79f121b6ba71fbb2">validChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1aae8721905aad927f06d2a4860196d86f">advanceByBytes</link> (
+size_t nbyte)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d4/d1d/class_memory_chunk_1a1ab3829ea89f75716b2e700fae0c6205">advanceByBytes</link> (
+size_t nbyte)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>MemoryChunk存储一个内存 区域的元信息 根据实际的情况，MemoryChunk是一个链表，并且多数情况下一次分配的大小不可能超过RAM。而通常的RAM配置是8GB，我们只需要支持稍大的RAM，比如1TB(2^40)即可</para>
+
+<para>注意，在进行merge操作时，必须确保内存块元信息的终止块（也就是最后一个无法合并的MemoryChunk)必须能够访问到。 为此，在初始化管理器时，必须保证至少两项存在：一项主要的MemoryChunk，一项End标记，紧邻第一项的后面。 End标记放在RAM的高端1字节的位置：endMark=1</para>
+
+<para>End标记的size总是0. 对End标记的Chunk调用Next，总是返回nullptr.</para>
+
+<para>调用next() 永不返回End.</para>
+
+<para>必须保证next,dataEnd方法在有效的Chunk,以及offset chunk上能够正确。但是对End标记，不保证任何方法正确。 </para>
+                <para>Definition at line 27 of file MemoryChunk.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>MemoryChunk.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449">
+               <title>enum @29 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a5dd5a8dcbf886b56b730fa6c06af0c59">
+                            <term>ValidBits</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a5956d1ab4fd85404018dd94bb6b03386">
+                            <term>IsEndBits</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449ad1e18dc3cbdce81ddcefe1d764980e19">
+                            <term>AllocatedBits</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449ae689e58b57dad51c40471d805eb09145">
+                            <term>SizeBits</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a09d63a438550b02433c3554dfe2da449a07f2b8ebbed46479a06ca05a5f6ff703">
+                            <term>NextBaseBits</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 30 of file MemoryChunk.h
+                    <computeroutput><literallayout>
+{
+ValidBits= 6, 
+IsEndBits=1, 
+AllocatedBits=1, 
+SizeBits=38, 
+NextBaseBits=18, 
+}@29;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a1607a0bc5c1f3f7cf761c11918a4b2ae">
+               <title>enum @30 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d1d/class_memory_chunk_1a1607a0bc5c1f3f7cf761c11918a4b2aea20080514f5fbc0a3e5bf01cada2dbe1b">
+                            <term>MaxSinlgeMoveBytes</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 31 of file MemoryChunk.h
+                    <computeroutput><literallayout>
+{
+MaxSinlgeMoveBytes= (1 &lt;&lt; ValidBits), 
+}@30;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a5cb5ae2b25f743044da9ac8121eb810e">
+                <title>bool MemoryChunk::endChunk () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ab3b8549a3aef47a0bbcadce037225ed2">
+                <title>const MemoryChunk * MemoryChunk::findAllocable (size_t n, size_t alignment, size_t &amp;moveOffset) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a934f6242ec16c156bb099240b3fce0de">
+                <title>MemoryChunk * MemoryChunk::findAllocable (size_t n, size_t alignment, size_t &amp;moveOffset)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a71a93ac48c88dbaeceb31d1450ffc3c5">
+                <title>void * MemoryChunk::getDataEnd ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a53a0ac34e35f625fc2eba11cc67db372">
+                <title>const void * MemoryChunk::getDataEnd () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a76229a1376912890e4c358fec643d0eb">
+                <title>void * MemoryChunk::getDataPtr ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a20a03eb15236fbb34151ffafed290514">
+                <title>const void * MemoryChunk::getDataPtr () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a4103a2383e6c2c4273157e11d434f9d0">
+                <title>const MemoryChunk* MemoryChunk::getNext () const __attribute__((deprecated))</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1abbd98f8d888a2f7036ff00efd45878d0">
+                <title>MemoryChunk* MemoryChunk::getNext () __attribute__((deprecated))</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ab2cca8d381c3167dae31bb4fdc23affc">
+                <title>uint64_t MemoryChunk::getNextBaseFromEnd () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ade085feee596267aef1ab33cc47b8a2d">
+                <title>uint64_t MemoryChunk::getNextValidChunkOffset () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aa112bc700f6a7ee7a97cb8821d55c701">
+                <title>size_t MemoryChunk::getSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ae4ec0a942bb577ece9a1ec0413ba829f">
+                <title>bool MemoryChunk::isAllocated () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a77532081c761e7680970a9dcb0c29660">
+                <title>bool MemoryChunk::isEnd () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aefec33edaebef2383fc1fa09be698433">
+                <title>MemoryChunk::MemoryChunk (size_t size, bool allocated, size_t nextValidChunkOffset, bool endMark, size_t nextBaseFromEnd)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aaa4324b78e79aaf3c4ec5062d0bddba4">
+                <title>void MemoryChunk::mergeTrailingsUnallocated ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aa394b13e0280bfb9fa945d263fd7849f">
+                <title>MemoryChunk * MemoryChunk::moveAhead (size_t moveSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a65732610d7da0e78c8f550333faefca9">
+                <title>size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace (size_t allocSize, size_t alignment) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a4cdc4796b4fe962c6cbf386bf82c4f0a">
+                <title>const MemoryChunk * MemoryChunk::next () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ac7610b46047651786dc0d65f0c52e5c3">
+                <title>MemoryChunk * MemoryChunk::next ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a1736b8411b5d300f91d852026d5b3d32">
+                <title>const MemoryChunk * MemoryChunk::nextValid () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aa42088fbe06411f446240f084aca5af3">
+                <title>MemoryChunk * MemoryChunk::nextValid ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a74cf7d7f70494fd4d08011b7129100f2">
+                <title>bool MemoryChunk::offsetChunk () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ae1d0e05382c171f1720f5b3d0fc62eab">
+                <title>void MemoryChunk::setAllocated (bool allocated)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a01854d44de711dc83c31b64dc4b247f1">
+                <title>void MemoryChunk::setEnd (bool end)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a1055c99bbafcb002f9e0bcb3700907ed">
+                <title>void MemoryChunk::setNextBaseFromEnd (uint64_t nextBaseFromEnd)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a335be9ffa8cdbaabb7eedea66b2ac501">
+                <title>void MemoryChunk::setNextValidChunkOffset (uint64_t nextValidChunkOffset)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ad6832d76e07e15e36efcf3571b5c62a8">
+                <title>void MemoryChunk::setSize (size_t size)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1ae261e5561acf5a4e3c591b6b49e6a3bf">
+                <title>bool MemoryChunk::split (size_t splitSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1acc575b5a85e63afc79f121b6ba71fbb2">
+                <title>bool MemoryChunk::validChunk () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1aae8721905aad927f06d2a4860196d86f">
+                <title>MemoryChunk * MemoryChunk::advanceByBytes (size_t nbyte)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d1d/class_memory_chunk_1a1ab3829ea89f75716b2e700fae0c6205">
+                <title>const MemoryChunk * MemoryChunk::advanceByBytes (size_t nbyte) const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

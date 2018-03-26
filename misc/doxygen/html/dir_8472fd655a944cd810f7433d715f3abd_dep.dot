@@ -1,0 +1,11 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/sd" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c184e51c84f2c3f0345bbc8a0d75d3e1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="io" fontname="Helvetica", fontsize="10", URL="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html"]
+  dir_8472fd655a944cd810f7433d715f3abd [shape=box, label="sd", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_8472fd655a944cd810f7433d715f3abd.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_8472fd655a944cd810f7433d715f3abd->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="8", labeldistance=1.5 headhref="dir_000042_000000.html"];
+}

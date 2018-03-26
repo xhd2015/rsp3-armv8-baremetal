@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d0d/_f_a_t_long_name_entry_8h">
+    <title>FATLongNameEntry.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/String.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FATDirEntry.h&gt;</programlisting>
+<para>Include dependency diagram for FATLongNameEntry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/df1/_f_a_t_long_name_entry_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FATLongNameEntry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/de0/_f_a_t_long_name_entry_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a28478ea2856f6286899bc90b2c6a1ec4">attr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a385e330c40b5fc7d8aa0619183f6705a">chksum</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a6062fbb32388d7473d442e5c17e21eb0">fstClusLO</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a67bef990f6018c3078acbfcbee41c9bd">name1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a4bb21682dc4e7e07064e31435289c0fa">name2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a2e6fd32d649cfd04bea2800a2e6e1454">name3</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1ae204655dc23be1d048e8bebf2dfa5089">ord</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a3c048fba989eac9c773689e635bc1fb8">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a5dc2cc110593627b1af28e6de06310ab">getAsAsciiName</link> (
+bool skipHeadingSpace)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> * <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a387d358eb3e3627f22b7045a77079baa">getLastAppearEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1acd18f5b8522b20f2e19a6da47fe8925b">getNameBytesCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a61d422db0e99faacfe16ca28153a8f20">getNameRequiredCapacity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a54155be6a49d6203ed01ceb3a60a5552">getOwnerDirectoryEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1abb778d1463436f91591fb8ec24ce058d">lookupFirstNullChar</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1aa879372c35c7c4049e9b7fe8c500858e">nameEqulasAsciiName</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1aa0d857ef51d1e38aa84b12d47854d744">nameEqulasAsciiNameUpto</link> (
+const <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> * lastCmpEntr, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a324e20696bbbf8fa655bcea7b4ee6b68">uni_isLongNameEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static char <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1aadcbd72c8a49cc6ab13c92af125b2ea5">unicodeCharToAsciiChar</link> (
+const void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a8ad10fd295c482ed11aa9cc98ae7d5f0">unicodeNameMatchesAsciiName</link> (
+const char * unicodeName, size_t unicodeNameBytesLen, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FATLongNameEntry.h</para>
+    </simplesect>
+</section>

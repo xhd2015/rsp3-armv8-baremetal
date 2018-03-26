@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d32/class_f_a_t32_entry">
+<title>FAT32Entry class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d0/db9/_f_a_t32_entry_8h">&quot;FAT32Entry.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT32Entry</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d42/class_f_a_t32_entry__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT32Entry</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/df4/class_f_a_t32_entry__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77">@3</link> {
+<link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a59fb05de3105fba5fcc233566737099e">MASK</link>= 0x0FFFFFFF,
+<link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a1d6dbb611b97dc7cb89847fcfa142af4">LAST</link>=0x0FFFFFFF,
+<link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a664368fe4a7e8e89687aae0f4b289e27">MAX_BOUND</link>= 0xFFFFFF6,
+<link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a52c8c285b2b66809d68fe6ae6c928215">FREE</link>=0,
+<link linkend="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77abd3cc5fc17cb78574f23383a9fc46022">BAD</link>=0xFFFFFF7
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum FAT32Entry::@3 __attribute</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t effBits</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t reservedNotTouched</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d32/class_f_a_t32_entry_1adaf2b88fbcd9db929098339d5cc3dd92">FAT32Entry</link> (
+uint32_t low28bits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d2/d32/class_f_a_t32_entry_1a10b4d28e15407076b69209493fe59ac5">getAsInt</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d32/class_f_a_t32_entry_1aaf1782e4c0fc042d7e09d9e26a8a31dd">isAlloced</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d32/class_f_a_t32_entry_1aa5cf7a6b7f181baedd1b4765da42cb6c">isBad</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d32/class_f_a_t32_entry_1a209416ada5742ca21a876982dc16d054">isFree</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d32/class_f_a_t32_entry_1a27d113b2c3036e807117fb5c922d0446">isLast</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77">
+               <title>enum @3 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a59fb05de3105fba5fcc233566737099e">
+                            <term>MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a1d6dbb611b97dc7cb89847fcfa142af4">
+                            <term>LAST</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a664368fe4a7e8e89687aae0f4b289e27">
+                            <term>MAX_BOUND</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77a52c8c285b2b66809d68fe6ae6c928215">
+                            <term>FREE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d2/d32/class_f_a_t32_entry_1aa138097b284f7b1ca9832b5fd6583d77abd3cc5fc17cb78574f23383a9fc46022">
+                            <term>BAD</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 16 of file FAT32Entry.h
+                    <computeroutput><literallayout>
+{
+MASK= 0x0FFFFFFF, 
+LAST=0x0FFFFFFF, 
+MAX_BOUND= 0xFFFFFF6, 
+FREE=0, 
+BAD=0xFFFFFF7, 
+}@3;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1adaf2b88fbcd9db929098339d5cc3dd92">
+                <title>FAT32Entry::FAT32Entry (uint32_t low28bits=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1a10b4d28e15407076b69209493fe59ac5">
+                <title>uint32_t FAT32Entry::getAsInt () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1aaf1782e4c0fc042d7e09d9e26a8a31dd">
+                <title>bool FAT32Entry::isAlloced () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1aa5cf7a6b7f181baedd1b4765da42cb6c">
+                <title>bool FAT32Entry::isBad () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1a209416ada5742ca21a876982dc16d054">
+                <title>bool FAT32Entry::isFree () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d32/class_f_a_t32_entry_1a27d113b2c3036e807117fb5c922d0446">
+                <title>bool FAT32Entry::isLast () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/df4/class_reg_x0">
+<title>RegX0 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d1/de4/general__registers_8h">&quot;general_registers.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RegX0</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/dc2/class_reg_x0__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RegX0</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d27/class_reg_x0__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t Value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d9/df4/class_reg_x0_1ab6be2e72fc21d7c8d23255d01f61b553">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/df4/class_reg_x0">RegX0</link> <link linkend="d9/df4/class_reg_x0_1a1dacf36fc73903c6a65dd669bfd06817">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d9/df4/class_reg_x0_1a611dd7a6859900513ae98fa7e95fa1a9">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/df4/class_reg_x0">RegX0</link> <link linkend="d9/df4/class_reg_x0_1ab3cb17d0f13f5b1b71a04742da988004">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/df4/class_reg_x0_1ab6be2e72fc21d7c8d23255d01f61b553">
+                <title>AS_MACRO void RegX0::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/df4/class_reg_x0_1a1dacf36fc73903c6a65dd669bfd06817">
+                <title>AS_MACRO RegX0 RegX0::updateRead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/df4/class_reg_x0_1a611dd7a6859900513ae98fa7e95fa1a9">
+                <title>AS_MACRO void RegX0::write () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/df4/class_reg_x0_1ab3cb17d0f13f5b1b71a04742da988004">
+                <title>static AS_MACRO RegX0 RegX0::read ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d32/_virtio_block_request_8h">
+    <title>VirtioBlockRequest.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+<para>Include dependency diagram for VirtioBlockRequest.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/db3/_virtio_block_request_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for VirtioBlockRequest.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d34/_virtio_block_request_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/dee/class_virtio_block_request_ref">VirtioBlockRequestRef</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockRequest.h</para>
+    </simplesect>
+</section>

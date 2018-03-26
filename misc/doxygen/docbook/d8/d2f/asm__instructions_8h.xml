@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d2f/asm__instructions_8h">
+    <title>asm_instructions.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/system_common_registers.h&gt;</programlisting>
+<para>Include dependency diagram for asm_instructions.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/dfd/asm__instructions_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for asm_instructions.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/daf/asm__instructions_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a4c8b64fc0309a86a5ca457e1a1154f3c">ASM_DEFINE_GLOBAL_SYM</link> __asm__sym__##sym:__asm__ <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;.global &quot; __stringify(sym) &quot; \n\t;&quot; __stringify(sym) &quot;:\n\t&quot;)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1aca1e558cf6a6a15456abc3d10e429e64">ASM_DEFINE_LOCAL_SYM</link> __asm__sym__##sym: <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(<link linkend="d4/da4/def_8h_1ae09d687217717da8684417e61d3278b8">__stringify</link>(sym) &quot;:\n\t&quot;)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1acf45121726017bc068d636e021663b0d">ASM_GOTO</link> <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;b &quot; __stringify(sym) &quot; \n\t&quot;)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1afe2f909cec4d8d6be492a3c20d6c5370">ASM_HALT_SLAVE_CPUS</link> &quot;mrs     x0, mpidr_el1 \n\t&quot; \
+		&quot;and     x0, x0, #3 \n\t&quot; \
+		&quot;cbz     x0, 2f \n\t&quot; \
+		&quot;1:  	wfe	\n\t&quot; \
+		&quot;b       1b	\n\t&quot; \
+		&quot;2: \n\t&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a255d5462b2933f92f49482645b5c19a4">ASM_LDR_REG</link> <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;&quot;)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a65ffbb1780503344ed926187d81b15aa">ASM_POPW</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a1306bade05b0a1923fa2bf4d5baa1caf">ASM_POPW_REG</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1af6a0b4d219f6061cbe33e08d6d7f2be4">ASM_POPX</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a20eb0cd16d4c942e9d928acbba871e6d">ASM_POPX_REG</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a368e899c97c975307dacedd8dfd45108">ASM_PUSHW</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1ae720b1e8fe01c11147c6398d64f13f23">ASM_PUSHW_REG</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1ab084ca714635fc04007432b8378ce6bb">ASM_PUSHX</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a76cb9ed133f158d2673befa24fc0258f">ASM_PUSHX_REG</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a92b22b0b37262aeb0f479d59bda2882d">ASM_SET_SP_SYM</link> &quot;ldr x0, =&quot; __stringify(sym) &quot; \n\t&quot; \
+		&quot;mov sp, x0 \n\t &quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d8/d2f/asm__instructions_8h_1a30dc8cd78aa21e493a77695ee71ab54b">FORCE_CODE_COHERENT_WITH_VIEW</link> L## __LINE__:</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> RegPAR_EL1 <link linkend="d8/d2f/asm__instructions_8h_1a075c935f33c05473d2ccea7c0ab949ea">asm_at</link> (
+uint64_t va)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1a4cb735a660f2bdd4246677f75b094eb9">asm_eret</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1a89846f12608170850becaa5d0cd10794">asm_isb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1a506b0e18e963b50b2bca3104e74d02b3">asm_nop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1ad89da9f7ed47eba7bd81ea23f8764048">asm_svc</link> (
+uint16_t imm)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1add13ff3d68055ca013e2fad7e2af711b">asm_tlbi_aside1</link> (
+uint16_t asid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1a410a755cf61e376491d77042b266409f">asm_wfe</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d8/d2f/asm__instructions_8h_1a2625e63e4302b5a5b7b1b47175ec067d">asm_wfe_loop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/asm_instructions.h</para>
+    </simplesect>
+</section>

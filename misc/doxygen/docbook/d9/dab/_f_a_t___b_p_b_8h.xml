@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dab/_f_a_t___b_p_b_8h">
+    <title>FAT_BPB.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+<para>Include dependency diagram for FAT_BPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d3f/_f_a_t___b_p_b_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT_BPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/dac/_f_a_t___b_p_b_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d6e/class_f_a_t___b_p_b">FAT_BPB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a385c44f6fb256e5716a2302a5b940388">@10</link> {
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a385c44f6fb256e5716a2302a5b940388a1a1d1a0555609fa7905b8cebedc1068e">SEC_PRESENT</link>= 0,
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a385c44f6fb256e5716a2302a5b940388a01c8dd8c968b9dc0b5edc064ed946c8e">SEC_COPY</link>= 6
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4af5d2226d9f80bbf1174cf631cbe925">FATType</link> {
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4af5d2226d9f80bbf1174cf631cbe925aee78460e52f239902d3655a0ee0cf82a">FAT12</link>,
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4af5d2226d9f80bbf1174cf631cbe925a8b322666f7d5865bebdde4f7d6b99da0">FAT16</link>,
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4af5d2226d9f80bbf1174cf631cbe925afc5be65062d254a8cb67d80202a9fb8b">FAT32</link>,
+<link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4af5d2226d9f80bbf1174cf631cbe925a6ce26a62afab55d7606ad4e92428b30c">UNKNOWN</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a3aa0a808b88fa141e0756ca10d5d9b31">BS_jmpBoot</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4fd9152ea3938ac0f243d4c640a1be99">BS_OEMName</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a629767dd11da6d57dc5bd65f9efc7689">bytesPerSec</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4e2bcda22f2630cf263bb29914805d00">FATSz16</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1abec3ec25686a8c656ea532554580f17d">hiddSec</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1aae050d3331d0af257dda82efbe290acd">media</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1ab48b02d160466c5c744773fe31b07afc">numFATs</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a59a74774238113cb621818427f11a877">numHeads</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1ae121b02a6322642f70201fe27c7aba24">rootEntCnt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a9e86bf87eeae4eec6432d8d37edcddf7">rsvdSecCnt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a8719123d50f33dd1a3756f048891b615">secPerClus</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a1ab8362028a174f5cf9c80a95df63b93">secPerTrk</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1ac8ce20a28c3fb700ab196d65907035fb">totSec16</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a265a54c8d8338454eb3b5c796bc8ce85">totSec32</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d7/d6e/class_f_a_t___b_p_b">FAT_BPB</link> <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a4d4ddc32fe4bccc077dd6ba797e47ae1">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a712acacf715fb8df5684eec2f51ef21e">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/dab/_f_a_t___b_p_b_8h_1a6873380335a8014e8c440f58683ae443">uni_getRootDirSecCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT_BPB.h</para>
+    </simplesect>
+</section>

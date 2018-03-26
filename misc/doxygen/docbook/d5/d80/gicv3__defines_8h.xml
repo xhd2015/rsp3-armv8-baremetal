@@ -1,0 +1,922 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d80/gicv3__defines_8h">
+    <title>gicv3_defines.h File Reference</title>
+<para>Include dependency diagram for gicv3_defines.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/da3/gicv3__defines_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for gicv3_defines.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d8c/gicv3__defines_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a855f96fbf6e3c5645d7e4d610eb98664">GIC_CPU_BASE</link> 0x08010000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link> 0x08000000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a7530b93da7684e261328702523880b07">GIC_ITS_BASE</link> 0x08080000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a24fd928f3e669ad71b93bb869f3e812e">GIC_REDIST_BASE</link> 0x080A0000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac8e9963095cac5a8257315053864e166">GIC_REDIST_RD_BASE</link> (<link linkend="d5/d80/gicv3__defines_8h_1a24fd928f3e669ad71b93bb869f3e812e">GIC_REDIST_BASE</link>)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> (<link linkend="d5/d80/gicv3__defines_8h_1ac8e9963095cac5a8257315053864e166">GIC_REDIST_RD_BASE</link> + 1024*64)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a114d095d0a729a825457e1aad6a6fa12">GIC_V2M_BASE</link> 0x08020000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af7c8203a681da1e819cddb472472626d">GICD_CTLR_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link>+0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2331a5709b7c03ae74e6dc993a93415a">GICD_IIDR_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link>+0x8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a9701c54f87584c2aeef86c79487488bd">GICD_ISACTIVER0_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2282a001928c2d916979d77247bfd003">GICD_ISACTIVER10_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(10)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a0782987fdc864b67804523a7d0f87dc2">GICD_ISACTIVER11_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(11)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a919bb55524e17dead166228ce58ebe92">GICD_ISACTIVER12_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(12)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a768e026a23023b73953463ffdcd85cdf">GICD_ISACTIVER13_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(13)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a4bbfd65e25d2a03a0ca052e33b9c06a2">GICD_ISACTIVER14_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(14)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a787da483e65343a4818aa8e94e7431c7">GICD_ISACTIVER15_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(15)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a59b20ffab53dddcbaf6f0ac2fccff002">GICD_ISACTIVER16_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(16)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2647557525374bee0b7f09c43fb5d0b3">GICD_ISACTIVER17_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(17)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ab91a747ec22b2fd18d6e2c655c6f502e">GICD_ISACTIVER18_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(18)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a71f234389316525b88cf09353fcc7f16">GICD_ISACTIVER19_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(19)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a7503929ce2d939dd0cc3dd444b3d12c6">GICD_ISACTIVER1_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a82882aa59655ac8179f2a0659b1662ca">GICD_ISACTIVER20_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(20)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a923345b38236c6848fc9aff2eb4ad499">GICD_ISACTIVER21_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(21)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2b5fab09ddbd9a7040c52b21f28c5c13">GICD_ISACTIVER22_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(22)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aec3b3f239e874d82c8a3f5064cdda517">GICD_ISACTIVER23_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(23)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2d3681811d1ba6437c1d8c4c75bf9838">GICD_ISACTIVER24_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(24)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a131fbca5a62f211a66042564cbca7163">GICD_ISACTIVER25_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(25)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa292759a450ef85a06a99bdfac857d77">GICD_ISACTIVER26_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(26)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aed7970d666272dca976a1f5a04157458">GICD_ISACTIVER27_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(27)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a0c8313c3784d4c5b206e03a8572a7008">GICD_ISACTIVER28_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(28)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af31b4f41d1bc4b8a74e7662cf84b5406">GICD_ISACTIVER29_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(29)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa20cf32f0036700c60693c8522a8b7e0">GICD_ISACTIVER2_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a9dd27c934b26a2ac480ed2c2c0fcbfb3">GICD_ISACTIVER30_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(30)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af0b7e7bd74a515e98de6204149244aba">GICD_ISACTIVER31_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(31)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa95ed62d8bd9c55bbf678398a17fa3fa">GICD_ISACTIVER3_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ad2b4becd6873c1bc1cc269c21ca165cb">GICD_ISACTIVER4_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a5c4314685ecc4dd1488c2c14e97d9ede">GICD_ISACTIVER5_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a52187b8afe426d3cb72be76c79def77f">GICD_ISACTIVER6_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a17dd36161d27ac2c5554f5489263cc38">GICD_ISACTIVER7_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac5b73866f4c25e6e5629a157045e5bab">GICD_ISACTIVER8_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a8bf08784d7a274f8d5965efcf465b100">GICD_ISACTIVER9_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link>(9)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1da4dce09486cc77d31b12e981b4c84b">GICD_ISACTIVER_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link> + 0x300 + 4*(n))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a418a3fba2cab6f06886312b06629b73d">GICD_ISENABLER0_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a29fe69e13feaf2b4d2fe2f69b9a5a64b">GICD_ISENABLER10_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(10)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a58fc89d0386778302b1ee6353fc3cd4d">GICD_ISENABLER11_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(11)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a6c804d681df3f980443da6f0e4b683ac">GICD_ISENABLER12_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(12)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a723cfeb1bc9b8fb5a8ee28cd40925e95">GICD_ISENABLER13_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(13)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ab1cb155c590326e5511b9ed4b274033c">GICD_ISENABLER14_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(14)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1abef92c44133f99203dbeb5bcb851fef8">GICD_ISENABLER15_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(15)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ad94a751e00f6ab0b8cf4d13b56c7c026">GICD_ISENABLER16_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(16)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1c1cbb3b2054ea6d35ab330db3b0ac88">GICD_ISENABLER17_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(17)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac2dc00e55d37c15e285794ad10346dd2">GICD_ISENABLER18_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(18)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a6a9e98fc17bfa7f4342c2a399f1ae082">GICD_ISENABLER19_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(19)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aecbe0fddb818eb76099e3d03e6270636">GICD_ISENABLER1_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a9ce1bdd6703f51a5fb1c1a56c47a6a7a">GICD_ISENABLER20_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(20)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa96a423577e517009bcb468cb43b34ca">GICD_ISENABLER21_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(21)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a14a04b0034e698fc550ed357d452e41e">GICD_ISENABLER22_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(22)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a6df26d31ffed50690c8f3e84b5ac684e">GICD_ISENABLER23_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(23)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a703c4d9027de4b3eee3240e4c0ff99ed">GICD_ISENABLER24_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(24)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1abb616e63026b8f1eeac8a71b6c5754c3">GICD_ISENABLER25_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(25)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a80304d4ace1eed47b94ad892078d1d10">GICD_ISENABLER26_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(26)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a743d8bb183bf6f39df54781024c0d366">GICD_ISENABLER27_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(27)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a4d29dca2840f30fce7f20fa0a4d62b5b">GICD_ISENABLER28_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(28)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa29309d7b705c9348951a06458aa152c">GICD_ISENABLER29_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(29)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1c7a7aeb77f7c14d9cb8bc2f1c22afa1">GICD_ISENABLER2_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a047f945b1fd047f9aa3a6af6057d0bbb">GICD_ISENABLER30_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(30)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a4afe40cf600c8e0081debb291f69ff3b">GICD_ISENABLER31_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(31)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a12ed2db2e0a82632554dd8832ba8a054">GICD_ISENABLER3_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aefa814dcce372d1fb25b8ca049348731">GICD_ISENABLER4_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a4cee8bd7a6c92124ceaca410bb9651c1">GICD_ISENABLER5_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a50414feb7aa89b0d08973777941e30f7">GICD_ISENABLER6_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a070f84e33390e0856cc3b17211c6e4cb">GICD_ISENABLER7_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a0d84a1899f7bc701ee452714e453f7ca">GICD_ISENABLER8_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a780ab020cf57d52139b7c89509228a15">GICD_ISENABLER9_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link>(9)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a329bb1a56212f8deb8f6500668249443">GICD_ISENABLER_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link> + 0x100 + 4*(n))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a317be5e53fdf53c651da46f6f54964bd">GICD_ISPENDR0_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a996c1fa40989b55ee4dac067885f1a32">GICD_ISPENDR10_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(10)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a19243a3c75db418449480a90a4018b99">GICD_ISPENDR11_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(11)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1732282a654ff9ac89f3bf3667ab85e5">GICD_ISPENDR12_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(12)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a19c0d06fe9d7fe273c8b5bde3c345ed3">GICD_ISPENDR13_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(13)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a5ac63a4a08df66522ad8a6827589e4e0">GICD_ISPENDR14_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(14)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a5ee5985e0ea93d56704a06df4adfb117">GICD_ISPENDR15_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(15)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af4c946c234207e35da7d78ed3e89f1d1">GICD_ISPENDR16_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(16)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a4c5cc07e026beff577ae6a29fb8cb3a3">GICD_ISPENDR17_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(17)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1fcb89475b18a172ada452f97247b279">GICD_ISPENDR18_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(18)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2af0eac2ddf356b4281fb61f7a11c429">GICD_ISPENDR19_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(19)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a01acf913b02f9f3c57fb43de0305baf0">GICD_ISPENDR1_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1abb049094466e8ae80938a579d5e9b74f">GICD_ISPENDR20_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(20)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a345449f6aa7aecff502d4fb73943c4eb">GICD_ISPENDR21_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(21)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a7150c2fee13d2c50771c662c569975b5">GICD_ISPENDR22_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(22)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a664563c59388b045afe050fb1b15c4ec">GICD_ISPENDR23_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(23)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a0d57916061b2bb7123a8a7322dac3891">GICD_ISPENDR24_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(24)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af79d33faa63eb4c3b1e83d7eb9abc5c9">GICD_ISPENDR25_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(25)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1acfccd3464208e8c1c8bf0db8293a3146">GICD_ISPENDR26_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(26)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aee1e4c5f3e8f5f9ed44abb7458002ac5">GICD_ISPENDR27_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(27)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a89c902e74c41360365c2e4c83ca6c21d">GICD_ISPENDR28_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(28)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a2b484444476aa02172a9141f1226b1b8">GICD_ISPENDR29_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(29)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ae0ef8efb2a5169e50a5f0ccf62f5c4c8">GICD_ISPENDR2_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac9fc6b483514173f7c3cbdf3fc3bfcd2">GICD_ISPENDR30_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(30)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a325d31e5e480cc754ab848cc171cb5e3">GICD_ISPENDR31_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(31)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aaa2dd959f335d29320c556a897e17f53">GICD_ISPENDR3_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa2d0b8ce62799d6d96b91425be877ec0">GICD_ISPENDR4_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a332dd8a3240e82b32491ed9f0e1948b4">GICD_ISPENDR5_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a3c935c5833ceef856836c7bf0e3057fa">GICD_ISPENDR6_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ada36929d8d5d6db679914a5f263b6312">GICD_ISPENDR7_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac1fcc418877d1061b7407cd01a1b3bc5">GICD_ISPENDR8_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1adc981ec633ab14bb70425169cc47cedd">GICD_ISPENDR9_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link>(9)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a1a1cce84c541446a85473a18d386b632">GICD_ISPENDR_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1adb371115c787d786755ca23eedc6a651">GIC_DIST_BASE</link> + 0x200 + 4*(n))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ad483f4344c2ff8a5b04793fd00722e65">GICR_CTLR_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a24fd928f3e669ad71b93bb869f3e812e">GIC_REDIST_BASE</link>+0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a25656b01178e6a52295a5093f5046513">GICR_ICACTIVER0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> + 0x380)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa42800353df78d84a6bd047ea28b45f7">GICR_ICENABLER0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link>+0x180)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a6bf023e485f468f62060af2182db68e2">GICR_ICFGR0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link>+0xc00)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a263289c4ecc7616b4aefc0d23a5a2afb">GICR_ICFGR1_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link>+0xc04)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a0fd36ae52af6fbd89c721764541205e2">GICR_IGROUPR0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> + 0x80)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a18ab7b1c6c7a361ab08e0d0edb9f286f">GICR_IPRIORITYR0_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a362a468a0138de9fb0263e39aaa323de">GICR_IPRIORITYR1_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac8a624c7c9632d61d9701bb0e9ef757c">GICR_IPRIORITYR2_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aa20b8e9803ea18e785b2dd74370d29d1">GICR_IPRIORITYR3_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ad832631c8d9159717267bb0df2a63f1d">GICR_IPRIORITYR4_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a9642ed8d42734b28af0d6029d7981143">GICR_IPRIORITYR5_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a5f89f04fae0e3b4b6fedaf2107583fc1">GICR_IPRIORITYR6_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1adf5170e5605b9f92c0b3b7ec81ac5b84">GICR_IPRIORITYR7_MEM_MAPPED_ADDR</link> <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link>(7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1ac02bc29ef08129bbeb00816644bc3816">GICR_IPRIORITYR_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> + 0x400 + 4*(n))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1aeaea2cda11d9bc723a6346e75bfcc36e">GICR_ISACTIVER0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> + 0x300)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1adc872b8e88d11c6875eeac797a1c76b3">GICR_ISENABLER0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link> + 0x100)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1a41b22671361683b88e5bed3b4a807aec">GICR_ISPENDR0_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a19ca294af3ebe3e94feb9e83e7590f8f">GIC_REDIST_SGI_BASE</link>+0x200)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d5/d80/gicv3__defines_8h_1af26aaa5b1b2d2820f1dab35593c57f35">GICR_WAKER_MEM_MAPPED_ADDR</link> (<link linkend="d5/d80/gicv3__defines_8h_1a24fd928f3e669ad71b93bb869f3e812e">GIC_REDIST_BASE</link>+0x14)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/gicv3_defines.h</para>
+    </simplesect>
+</section>

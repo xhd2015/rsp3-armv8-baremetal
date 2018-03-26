@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/deb/class_vector_ref">
+<title>VectorRef class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/d95/data__structures_2_vector_ref_8h">&quot;VectorRef.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VectorRef</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dfb/class_vector_ref__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VectorRef</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/def/class_vector_ref__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const T * data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const T * <link linkend="d9/deb/class_vector_ref_1aefa6865b44ab052c5cb463f58e8f87fd">getData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/deb/class_vector_ref_1a556e8d755266a452e5a8d32998518a58">getSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const T &amp; <link linkend="d9/deb/class_vector_ref_1aa761c3c06e2bdf4d5d7dc1dcfd249e93">operator[]</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/deb/class_vector_ref_1a14b7df96f9f2fe63c0a2b0f5c3a6780c">setData</link> (
+const T * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/deb/class_vector_ref_1aa51392df218656cae060761d68a03acd">setSize</link> (
+size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/deb/class_vector_ref_1a8e22bd93ca3cde2f272af9035c3fa12b">VectorRef</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/deb/class_vector_ref_1a2af567c44cbafa7d5c7a12f928611427">VectorRef</link> (
+const T * data, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/deb/class_vector_ref_1a8c98803c41a7faee2654223e5a25c5c2">VectorRef</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; vec, size_t len, size_t offset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/deb/class_vector_ref_1aefa6865b44ab052c5cb463f58e8f87fd">
+                <title>const T * VectorRef&lt; T &gt;::getData () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1a556e8d755266a452e5a8d32998518a58">
+                <title>size_t VectorRef&lt; T &gt;::getSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1aa761c3c06e2bdf4d5d7dc1dcfd249e93">
+                <title>const T &amp; VectorRef&lt; T &gt;::operator[] (size_t i) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1a14b7df96f9f2fe63c0a2b0f5c3a6780c">
+                <title>void VectorRef&lt; T &gt;::setData (const T *data)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1aa51392df218656cae060761d68a03acd">
+                <title>void VectorRef&lt; T &gt;::setSize (size_t size)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1a8e22bd93ca3cde2f272af9035c3fa12b">
+                <title>VectorRef&lt; T &gt;::VectorRef ()=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1a2af567c44cbafa7d5c7a12f928611427">
+                <title>VectorRef&lt; T &gt;::VectorRef (const T *data, size_t len)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/deb/class_vector_ref_1a8c98803c41a7faee2654223e5a25c5c2">
+                <title>VectorRef&lt; T &gt;::VectorRef (const Vector&lt; T &gt; vec, size_t len=SIZE_MAX, size_t offset=0)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

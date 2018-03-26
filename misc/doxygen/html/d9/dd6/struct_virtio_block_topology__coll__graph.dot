@@ -1,0 +1,6 @@
+digraph "VirtioBlockTopology"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{VirtioBlockTopology\n|+ alignment_offset\l+ min_io_size\l+ opt_io_size\l+ physical_block_exp\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

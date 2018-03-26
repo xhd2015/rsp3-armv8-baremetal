@@ -1,0 +1,23 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/ByteReader.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node21 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/io/ByteReader.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node21 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/filesystem/fat/FAT32Entry\lTable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dca/_f_a_t32_entry_table_8h.html"];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/filesystem/fat/FATDirEntry\lTable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d48/_f_a_t_dir_entry_table_8h.html"];
+  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/host/main_fat_test.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d27/main__fat__test_8cpp.html"];
+  Node23 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/filesystem/fat/FATDirEntryTable.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de1/_f_a_t_dir_entry_table_8cpp.html"];
+  Node22 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/filesystem/fat/FAT32EntryTable.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dde/_f_a_t32_entry_table_8cpp.html"];
+  Node22 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/templates_implementation\l/io/ByteReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d51/templates__implementation_2io_2_byte_reader_8h.html"];
+  Node27 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/io/ByteReader.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/db4/_byte_reader_8cpp.html"];
+}

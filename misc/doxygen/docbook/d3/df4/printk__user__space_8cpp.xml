@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/df4/printk__user__space_8cpp">
+    <title>printk_user_space.cpp File Reference</title>
+    <programlisting>#include &lt;io/printk.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/exception/svc_call.h&gt;</programlisting>
+<para>Include dependency diagram for printk_user_space.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d98/printk__user__space_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for printk_user_space.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dc7/printk__user__space_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static char <link linkend="d3/df4/printk__user__space_8cpp_1afb9b58af7a145dbcf06245ccb85c5fe5">buffer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t <link linkend="d3/df4/printk__user__space_8cpp_1a9b17f6e2111da87ec067cd6fe5e90b00">bufferSize</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d3/df4/printk__user__space_8cpp_1a6d56c7bd57a28307ed22d7fc1b0b0ce5">curSize</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/df4/printk__user__space_8cpp_1adac116554b543b7c4228c018a85882f5">flush</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d3/df4/printk__user__space_8cpp_1a8af92b5d9611db79b3408fe71c73ec72">printk</link> (
+char ch)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_user_space.cpp</para>
+    </simplesect>
+</section>

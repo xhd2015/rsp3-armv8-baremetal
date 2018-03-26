@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d33/struct_ref_or_value">
+<title>RefOrValue struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d90/_return_type_selector_8h">&quot;ReturnTypeSelector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RefOrValue</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/deb/struct_ref_or_value__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RefOrValue</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d4e/struct_ref_or_value__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>This</declname>
+        <defname>This</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>ReturnType</declname>
+        <defname>ReturnType</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef typename <link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link>&lt; ReturnType,(sizeof(ReturnType)&gt;sizeof(size_t)), std::is_const&lt; This &gt;::<link linkend="de/d9e/_s_d_card_status_8h_1ae7f66047e6e39ba2bb6af8b95f00d1dd">value</link> &gt;::<link linkend="db/d33/struct_ref_or_value_1a42f7cdf7a60c8482259f40ee86dab7cc">type</link>  <link linkend="db/d33/struct_ref_or_value_1a42f7cdf7a60c8482259f40ee86dab7cc">type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="db/d33/struct_ref_or_value_1a42f7cdf7a60c8482259f40ee86dab7cc">
+                <title>using RefOrValue&lt; This, ReturnType &gt;::type =  typename ReturnTypeSelector&lt;ReturnType,(sizeof(ReturnType)&gt;sizeof(size_t)), std::is_const&lt;This&gt;::value&gt;::type</title> <emphasis></emphasis>
+                
+            </section>
+</section>

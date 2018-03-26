@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/test/TestPidManager.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_69f6b0b437b9d7106ae46b3b241ba72b.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TestPidManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/df0/_test_pid_manager_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * TestPidManager.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Mar 16, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_TEST_TESTPIDMANAGER_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_TEST_TESTPIDMANAGER_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d92/_pid_manager_8h.html">schedule/PidManager.h</a>&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d7b/class_test_pid_manager.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d7b/class_test_pid_manager.html">TestPidManager</a>{</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/d7b/class_test_pid_manager.html#a16be6c7f3bb1f57f8d61ca4a64e431c5">run</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/d7b/class_test_pid_manager.html#a178ae1783133476b342c7f004eb9cc50">clearAllKeepsInvalidAllocated</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/d7b/class_test_pid_manager.html#a13a07f28988bb179ffdd236eaf77ceea">allocateReturnContinousPids</a>();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/d7b/class_test_pid_manager.html#a50d316e8e0d510934d61957e6a656174">allocateInvalidPidAlwaysFailed</a>();</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d7/d7b/class_test_pid_manager.html#a1a74ac37afdd3b0ff147f35069043784">deallocatePidSuccessfully</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_TEST_TESTPIDMANAGER_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_test_pid_manager_html_a50d316e8e0d510934d61957e6a656174"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html#a50d316e8e0d510934d61957e6a656174">TestPidManager::allocateInvalidPidAlwaysFailed</a></div><div class="ttdeci">bool allocateInvalidPidAlwaysFailed()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4f/_test_pid_manager_8cpp_source.html#l00048">TestPidManager.cpp:48</a></div></div>
+<div class="ttc" id="class_test_pid_manager_html_a13a07f28988bb179ffdd236eaf77ceea"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html#a13a07f28988bb179ffdd236eaf77ceea">TestPidManager::allocateReturnContinousPids</a></div><div class="ttdeci">bool allocateReturnContinousPids()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4f/_test_pid_manager_8cpp_source.html#l00039">TestPidManager.cpp:39</a></div></div>
+<div class="ttc" id="class_test_pid_manager_html_a178ae1783133476b342c7f004eb9cc50"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html#a178ae1783133476b342c7f004eb9cc50">TestPidManager::clearAllKeepsInvalidAllocated</a></div><div class="ttdeci">bool clearAllKeepsInvalidAllocated()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4f/_test_pid_manager_8cpp_source.html#l00033">TestPidManager.cpp:33</a></div></div>
+<div class="ttc" id="class_test_pid_manager_html_a1a74ac37afdd3b0ff147f35069043784"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html#a1a74ac37afdd3b0ff147f35069043784">TestPidManager::deallocatePidSuccessfully</a></div><div class="ttdeci">bool deallocatePidSuccessfully()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4f/_test_pid_manager_8cpp_source.html#l00055">TestPidManager.cpp:55</a></div></div>
+<div class="ttc" id="class_test_pid_manager_html_a16be6c7f3bb1f57f8d61ca4a64e431c5"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html#a16be6c7f3bb1f57f8d61ca4a64e431c5">TestPidManager::run</a></div><div class="ttdeci">static void run()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4f/_test_pid_manager_8cpp_source.html#l00023">TestPidManager.cpp:23</a></div></div>
+<div class="ttc" id="_pid_manager_8h_html"><div class="ttname"><a href="../../d4/d92/_pid_manager_8h.html">PidManager.h</a></div></div>
+<div class="ttc" id="class_test_pid_manager_html"><div class="ttname"><a href="../../d7/d7b/class_test_pid_manager.html">TestPidManager</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/df0/_test_pid_manager_8h_source.html#l00014">TestPidManager.h:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

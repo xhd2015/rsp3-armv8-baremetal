@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d7b/cpu__delay__with__nop_8cpp">
+    <title>cpu_delay_with_nop.cpp File Reference</title>
+    <programlisting>#include &lt;generic/cpu.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+<para>Include dependency diagram for cpu_delay_with_nop.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/dd8/cpu__delay__with__nop_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for cpu_delay_with_nop.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d6b/cpu__delay__with__nop_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d7b/cpu__delay__with__nop_8cpp_1a458b6b6220ac01329bacc2761ac05a00">delayCPU</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d7b/cpu__delay__with__nop_8cpp_1aa4a97fa761002995c6d8f3b7f67bff85">delayCPU</link> (
+size_t i, size_t j)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/cpu_delay_with_nop.cpp</para>
+    </simplesect>
+</section>

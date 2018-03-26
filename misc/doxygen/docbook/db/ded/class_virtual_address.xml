@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/ded/class_virtual_address">
+<title>VirtualAddress class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/d6d/_virtual_address_8h">&quot;VirtualAddress.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtualAddress</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d38/class_virtual_address__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtualAddress</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d14/class_virtual_address__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/d82/struct_virtual_address_1_1_segmented_address">VirtualAddress::SegmentedAddress</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _addr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SegmentedAddress _segAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>union VirtualAddress::@0 @1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _addrLen</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _hasTag</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/ded/class_virtual_address">VirtualAddress</link> &amp; <link linkend="db/ded/class_virtual_address_1a83987b21776be042d20df91ed0d17eac">addr</link> (
+uint64_t addr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="db/ded/class_virtual_address_1a2e3d5ee99b4af5079b032fcb1e1105e2">addr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/ded/class_virtual_address">VirtualAddress</link> &amp; <link linkend="db/ded/class_virtual_address_1a2faca91b05602c1314c7c365baf68de6">addrLen</link> (
+uint8_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="db/ded/class_virtual_address_1a5784862f391fde4bd630e1800a13d4bc">addrLen</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/ded/class_virtual_address_1a22dabc723e248dceb97df7315922728c">hasLevel</link> (
+uint8_t which)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/ded/class_virtual_address">VirtualAddress</link> &amp; <link linkend="db/ded/class_virtual_address_1afbcffcce1f528da3348a463df0a3e546">index</link> (
+uint8_t which, uint32_t val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="db/ded/class_virtual_address_1a4d88d6134803c6c3404cee3a800c7a2e">index</link> (
+uint8_t which)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="db/ded/class_virtual_address_1aac235939ce83b1c0020c633c5fcf5751">initialLevel</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/ded/class_virtual_address">VirtualAddress</link> &amp; <link linkend="db/ded/class_virtual_address_1aa0e2813ebf1edb61d3c4f517eb6520a2">offset</link> (
+uint64_t off)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="db/ded/class_virtual_address_1ad24db7cee1ac6163639a85a820e3331b">offset</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/ded/class_virtual_address">VirtualAddress</link> &amp; <link linkend="db/ded/class_virtual_address_1a96178ba41cdab1aebed22f8f38b5d4f6">ttbrSel</link> (
+int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="db/ded/class_virtual_address_1a7d6316e85459e45aa873f87ced3ae66d">ttbrSel</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/ded/class_virtual_address_1a8b38dcb483b9f7e4049e2e2ee06d7a3a">valid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/ded/class_virtual_address_1aed70ecc1287ba0aba1c2a7b1e149da10">VirtualAddress</link> (
+uint8_t addrLen)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/ded/class_virtual_address_1a7478923ce0cdea13e3d93a51777df0c5">VirtualAddress</link> (
+uint64_t vaddr, uint8_t addrLen)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="db/ded/class_virtual_address_1a39c374bec26ce35037d0e6039a9838a9">levelIndexMask</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="db/ded/class_virtual_address_1a2d035796629dccd55a1ea65d0b32bd31">minimalLevelLength</link> (
+uint8_t which)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="db/ded/class_virtual_address_1a19699d09cb1203387b97d0218c7298b6">rightShiftBits</link> (
+uint8_t which)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="db/ded/class_virtual_address_1a83987b21776be042d20df91ed0d17eac">
+                <title>VirtualAddress &amp; VirtualAddress::addr (uint64_t addr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a2e3d5ee99b4af5079b032fcb1e1105e2">
+                <title>uint64_t VirtualAddress::addr () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a2faca91b05602c1314c7c365baf68de6">
+                <title>VirtualAddress &amp; VirtualAddress::addrLen (uint8_t len)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a5784862f391fde4bd630e1800a13d4bc">
+                <title>uint8_t VirtualAddress::addrLen () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a22dabc723e248dceb97df7315922728c">
+                <title>bool VirtualAddress::hasLevel (uint8_t which) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1afbcffcce1f528da3348a463df0a3e546">
+                <title>VirtualAddress &amp; VirtualAddress::index (uint8_t which, uint32_t val)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a4d88d6134803c6c3404cee3a800c7a2e">
+                <title>uint32_t VirtualAddress::index (uint8_t which) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1aac235939ce83b1c0020c633c5fcf5751">
+                <title>uint8_t VirtualAddress::initialLevel () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1aa0e2813ebf1edb61d3c4f517eb6520a2">
+                <title>VirtualAddress &amp; VirtualAddress::offset (uint64_t off)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1ad24db7cee1ac6163639a85a820e3331b">
+                <title>uint64_t VirtualAddress::offset () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a96178ba41cdab1aebed22f8f38b5d4f6">
+                <title>VirtualAddress &amp; VirtualAddress::ttbrSel (int i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a7d6316e85459e45aa873f87ced3ae66d">
+                <title>int VirtualAddress::ttbrSel () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a8b38dcb483b9f7e4049e2e2ee06d7a3a">
+                <title>bool VirtualAddress::valid () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1aed70ecc1287ba0aba1c2a7b1e149da10">
+                <title>VirtualAddress::VirtualAddress (uint8_t addrLen=48)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a7478923ce0cdea13e3d93a51777df0c5">
+                <title>VirtualAddress::VirtualAddress (uint64_t vaddr, uint8_t addrLen=48)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a39c374bec26ce35037d0e6039a9838a9">
+                <title>uint64_t VirtualAddress::levelIndexMask () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a2d035796629dccd55a1ea65d0b32bd31">
+                <title>uint8_t VirtualAddress::minimalLevelLength (uint8_t which) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/ded/class_virtual_address_1a19699d09cb1203387b97d0218c7298b6">
+                <title>uint8_t VirtualAddress::rightShiftBits (uint8_t which) const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

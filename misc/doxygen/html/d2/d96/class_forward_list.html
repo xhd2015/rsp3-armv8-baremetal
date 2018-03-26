@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: ForwardList&lt; T &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../dd/db0/class_forward_list-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">ForwardList&lt; T &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> ForwardList&lt; T &gt; 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/db8/class_forward_list__coll__graph.png" border="0" usemap="#_forward_list_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_forward_list_3_01_t_01_4_coll__map" id="_forward_list_3_01_t_01_4_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ab53d86284af0e5388f9a31ff72cb44cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</a> = std::function&lt; const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *(const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td></tr>
+<tr class="separator:ab53d86284af0e5388f9a31ff72cb44cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b215c98511e88b19476cb55f571ed4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</a> = std::function&lt; void(const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td></tr>
+<tr class="separator:a91b215c98511e88b19476cb55f571ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387971f642b447f0935899f6c78f0063"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a387971f642b447f0935899f6c78f0063">NextFunctor</a> = std::function&lt; <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *(<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td></tr>
+<tr class="separator:a387971f642b447f0935899f6c78f0063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116c72373c9ad63d430acfba4c09bb6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> = <a class="el" href="../../d2/daa/class_forward_node.html">ForwardNode</a>&lt; T &gt;</td></tr>
+<tr class="separator:a116c72373c9ad63d430acfba4c09bb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc2af79b02513f2b9d6b89eea214707"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</a> = std::function&lt; void(<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td></tr>
+<tr class="separator:a2cc2af79b02513f2b9d6b89eea214707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae963fef0586e092955d76ab37450136d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#ae963fef0586e092955d76ab37450136d">DEFINE_COPY_CONSTRUCTOR</a> (<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>)=delete</td></tr>
+<tr class="separator:ae963fef0586e092955d76ab37450136d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99abe232d74c5b1cd186f88d25121d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#ac99abe232d74c5b1cd186f88d25121d6">DEFINE_COPY_OPERATOR</a> (<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>)=delete</td></tr>
+<tr class="separator:ac99abe232d74c5b1cd186f88d25121d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4c172633907b25eb9f4e02d3962e14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a8d4c172633907b25eb9f4e02d3962e14">DEFINE_MOVE_CONSTRUCTOR</a> (<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>)</td></tr>
+<tr class="separator:a8d4c172633907b25eb9f4e02d3962e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfa1042d18909449fdea141e9e914a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a4cfa1042d18909449fdea141e9e914a8">DEFINE_MOVE_OPERATOR</a> (<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>)</td></tr>
+<tr class="separator:a4cfa1042d18909449fdea141e9e914a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7f42f52cc6970047cb6198305416d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a0c7f42f52cc6970047cb6198305416d3">empty</a> () const</td></tr>
+<tr class="separator:a0c7f42f52cc6970047cb6198305416d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63658815ea79219cbd75ef8eada99560"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a63658815ea79219cbd75ef8eada99560">ForwardList</a> ()</td></tr>
+<tr class="separator:a63658815ea79219cbd75ef8eada99560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7006bc76a5c6f6cf2ab96535ea48b25d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a7006bc76a5c6f6cf2ab96535ea48b25d">head</a> ()</td></tr>
+<tr class="separator:a7006bc76a5c6f6cf2ab96535ea48b25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56da8655df1b6f0d346851826736181d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a56da8655df1b6f0d346851826736181d">head</a> () const</td></tr>
+<tr class="separator:a56da8655df1b6f0d346851826736181d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68768eb72b1f508f631ab10fc7ac3981"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a68768eb72b1f508f631ab10fc7ac3981"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a68768eb72b1f508f631ab10fc7ac3981">insertAfterTail</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a68768eb72b1f508f631ab10fc7ac3981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99cb28d57b723c64de59327aec5d447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#ac99cb28d57b723c64de59327aec5d447">insertAfterTail</a> (<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *<a class="el" href="../../d2/d96/class_forward_list.html#a0f84dfc5a182869851322f2c72524aeb">tail</a>)</td></tr>
+<tr class="separator:ac99cb28d57b723c64de59327aec5d447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d86636d797dc3e38b3bbf7d82d898a8"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a9d86636d797dc3e38b3bbf7d82d898a8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a9d86636d797dc3e38b3bbf7d82d898a8">insertBeforeHead</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a9d86636d797dc3e38b3bbf7d82d898a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3c3cdd52e119f335a43f908d007298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#add3c3cdd52e119f335a43f908d007298">insertBeforeHead</a> (<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *<a class="el" href="../../d2/d96/class_forward_list.html#a7006bc76a5c6f6cf2ab96535ea48b25d">head</a>)</td></tr>
+<tr class="separator:add3c3cdd52e119f335a43f908d007298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b555711ba45fa50f6a0af2dad448f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a7b555711ba45fa50f6a0af2dad448f02">removeHead</a> ()</td></tr>
+<tr class="separator:a7b555711ba45fa50f6a0af2dad448f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbcd8437ff717e9bf6a3e5f3088e3f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a2fbcd8437ff717e9bf6a3e5f3088e3f4">removeTail</a> ()</td></tr>
+<tr class="separator:a2fbcd8437ff717e9bf6a3e5f3088e3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7670c566ec6358d7918c8fc6c1a5fbde"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a7670c566ec6358d7918c8fc6c1a5fbde">size</a> () const</td></tr>
+<tr class="separator:a7670c566ec6358d7918c8fc6c1a5fbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f84dfc5a182869851322f2c72524aeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a0f84dfc5a182869851322f2c72524aeb">tail</a> ()</td></tr>
+<tr class="separator:a0f84dfc5a182869851322f2c72524aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea32378f672d38c7eaab62b016c462d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a4ea32378f672d38c7eaab62b016c462d">tail</a> () const</td></tr>
+<tr class="separator:a4ea32378f672d38c7eaab62b016c462d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90038e445820ab06bb08056b6b388a3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a90038e445820ab06bb08056b6b388a3b">traverse</a> (<a class="el" href="../../d2/d96/class_forward_list.html#a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</a> func, <a class="el" href="../../d2/d96/class_forward_list.html#a387971f642b447f0935899f6c78f0063">NextFunctor</a> nextFunc)</td></tr>
+<tr class="separator:a90038e445820ab06bb08056b6b388a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30271380a1defb7e964b56404e9b7143"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a30271380a1defb7e964b56404e9b7143">traverse</a> (<a class="el" href="../../d2/d96/class_forward_list.html#a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</a> func, <a class="el" href="../../d2/d96/class_forward_list.html#ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</a> nextFunc) const</td></tr>
+<tr class="separator:a30271380a1defb7e964b56404e9b7143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e7a7eee73944b77009304d99fe73fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#a16e7a7eee73944b77009304d99fe73fb">~ForwardList</a> ()</td></tr>
+<tr class="separator:a16e7a7eee73944b77009304d99fe73fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af616cb041abc79a5089d20ae13983873"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#af616cb041abc79a5089d20ae13983873">_head</a></td></tr>
+<tr class="separator:af616cb041abc79a5089d20ae13983873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4709fae68d8b73127f24c1e9777a193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_forward_list.html#ab4709fae68d8b73127f24c1e9777a193">_tail</a></td></tr>
+<tr class="separator:ab4709fae68d8b73127f24c1e9777a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class ForwardList&lt; T &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00018">18</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ab53d86284af0e5388f9a31ff72cb44cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53d86284af0e5388f9a31ff72cb44cc">&#9670;&nbsp;</a></span>ConstNextFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</a> =  std::function&lt;const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a>*(const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a91b215c98511e88b19476cb55f571ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b215c98511e88b19476cb55f571ed4">&#9670;&nbsp;</a></span>ConstTraverseFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</a> =  std::function&lt;void(const <a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a>*)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a387971f642b447f0935899f6c78f0063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387971f642b447f0935899f6c78f0063">&#9670;&nbsp;</a></span>NextFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a387971f642b447f0935899f6c78f0063">NextFunctor</a> =  std::function&lt;<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a>*(<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a116c72373c9ad63d430acfba4c09bb6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116c72373c9ad63d430acfba4c09bb6f">&#9670;&nbsp;</a></span>NodeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> =  <a class="el" href="../../d2/daa/class_forward_node.html">ForwardNode</a>&lt;T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2cc2af79b02513f2b9d6b89eea214707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc2af79b02513f2b9d6b89eea214707">&#9670;&nbsp;</a></span>TraverseFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</a> =  std::function&lt;void(<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a63658815ea79219cbd75ef8eada99560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63658815ea79219cbd75ef8eada99560">&#9670;&nbsp;</a></span>ForwardList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a16e7a7eee73944b77009304d99fe73fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e7a7eee73944b77009304d99fe73fb">&#9670;&nbsp;</a></span>~ForwardList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::~<a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae963fef0586e092955d76ab37450136d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae963fef0586e092955d76ab37450136d">&#9670;&nbsp;</a></span>DEFINE_COPY_CONSTRUCTOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::DEFINE_COPY_CONSTRUCTOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac99abe232d74c5b1cd186f88d25121d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99abe232d74c5b1cd186f88d25121d6">&#9670;&nbsp;</a></span>DEFINE_COPY_OPERATOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::DEFINE_COPY_OPERATOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d4c172633907b25eb9f4e02d3962e14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4c172633907b25eb9f4e02d3962e14">&#9670;&nbsp;</a></span>DEFINE_MOVE_CONSTRUCTOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::DEFINE_MOVE_CONSTRUCTOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cfa1042d18909449fdea141e9e914a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfa1042d18909449fdea141e9e914a8">&#9670;&nbsp;</a></span>DEFINE_MOVE_OPERATOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::DEFINE_MOVE_OPERATOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c7f42f52cc6970047cb6198305416d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7f42f52cc6970047cb6198305416d3">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00178">178</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7006bc76a5c6f6cf2ab96535ea48b25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7006bc76a5c6f6cf2ab96535ea48b25d">&#9670;&nbsp;</a></span>head() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::head </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a56da8655df1b6f0d346851826736181d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56da8655df1b6f0d346851826736181d">&#9670;&nbsp;</a></span>head() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::head </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a68768eb72b1f508f631ab10fc7ac3981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68768eb72b1f508f631ab10fc7ac3981">&#9670;&nbsp;</a></span>insertAfterTail() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::insertAfterTail </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00128">128</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac99cb28d57b723c64de59327aec5d447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99cb28d57b723c64de59327aec5d447">&#9670;&nbsp;</a></span>insertAfterTail() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::insertAfterTail </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td>
+          <td class="paramname"><em>tail</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00116">116</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9d86636d797dc3e38b3bbf7d82d898a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d86636d797dc3e38b3bbf7d82d898a8">&#9670;&nbsp;</a></span>insertBeforeHead() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::insertBeforeHead </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a id="add3c3cdd52e119f335a43f908d007298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3c3cdd52e119f335a43f908d007298">&#9670;&nbsp;</a></span>insertBeforeHead() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::insertBeforeHead </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7b555711ba45fa50f6a0af2dad448f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b555711ba45fa50f6a0af2dad448f02">&#9670;&nbsp;</a></span>removeHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::removeHead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00138">138</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d2/d96/class_forward_list_a7b555711ba45fa50f6a0af2dad448f02_cgraph.png" border="0" usemap="#d2/d96/class_forward_list_a7b555711ba45fa50f6a0af2dad448f02_cgraph" alt=""/></div>
+<map name="d2/d96/class_forward_list_a7b555711ba45fa50f6a0af2dad448f02_cgraph" id="d2/d96/class_forward_list_a7b555711ba45fa50f6a0af2dad448f02_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2fbcd8437ff717e9bf6a3e5f3088e3f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbcd8437ff717e9bf6a3e5f3088e3f4">&#9670;&nbsp;</a></span>removeTail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::removeTail </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7670c566ec6358d7918c8fc6c1a5fbde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7670c566ec6358d7918c8fc6c1a5fbde">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00166">166</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0f84dfc5a182869851322f2c72524aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f84dfc5a182869851322f2c72524aeb">&#9670;&nbsp;</a></span>tail() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::tail </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4ea32378f672d38c7eaab62b016c462d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea32378f672d38c7eaab62b016c462d">&#9670;&nbsp;</a></span>tail() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::<a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a> * <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::tail </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a90038e445820ab06bb08056b6b388a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90038e445820ab06bb08056b6b388a3b">&#9670;&nbsp;</a></span>traverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::traverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#a387971f642b447f0935899f6c78f0063">NextFunctor</a>&#160;</td>
+          <td class="paramname"><em>nextFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a30271380a1defb7e964b56404e9b7143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30271380a1defb7e964b56404e9b7143">&#9670;&nbsp;</a></span>traverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::traverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/d96/class_forward_list.html#ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</a>&#160;</td>
+          <td class="paramname"><em>nextFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d6/d60/templates__implementation_2data__structures_2_forward_list_8h_source.html#l00083">83</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="af616cb041abc79a5089d20ae13983873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af616cb041abc79a5089d20ae13983873">&#9670;&nbsp;</a></span>_head</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a>* <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::_head</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab4709fae68d8b73127f24c1e9777a193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4709fae68d8b73127f24c1e9777a193">&#9670;&nbsp;</a></span>_tail</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d96/class_forward_list.html#a116c72373c9ad63d430acfba4c09bb6f">NodeType</a>* <a class="el" href="../../d2/d96/class_forward_list.html">ForwardList</a>&lt; T &gt;::_tail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a> 第 <a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/data_structures/<a class="el" href="../../d8/db0/data__structures_2_forward_list_8h_source.html">ForwardList.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:43 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

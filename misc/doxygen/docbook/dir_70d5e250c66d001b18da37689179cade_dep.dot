@@ -1,0 +1,25 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"]
+  subgraph clusterdir_70d5e250c66d001b18da37689179cade {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_70d5e250c66d001b18da37689179cade.html"];
+    dir_70d5e250c66d001b18da37689179cade [shape=plaintext label="arch"];
+    dir_a71ca7544c7819c44600d5f807c9454f [shape=box label="common_aarch64" color="red" fillcolor="white" style="filled" URL="dir_a71ca7544c7819c44600d5f807c9454f.html"];
+    dir_f17e16d7aa5cbb089011ed52879df375 [shape=box label="host" color="black" fillcolor="white" style="filled" URL="dir_f17e16d7aa5cbb089011ed52879df375.html"];
+    dir_5131d8d8b01f1a86d9c7891f3508d9ef [shape=box label="qemu_virt" color="black" fillcolor="white" style="filled" URL="dir_5131d8d8b01f1a86d9c7891f3508d9ef.html"];
+    dir_1270075813c54bb7e8db823bad0e5983 [shape=box label="raspi3" color="black" fillcolor="white" style="filled" URL="dir_1270075813c54bb7e8db823bad0e5983.html"];
+    dir_eddbbde9675d4b4a706c6f052235a429 [shape=box label="user_space" color="black" fillcolor="white" style="filled" URL="dir_eddbbde9675d4b4a706c6f052235a429.html"];
+    dir_09ce2f3110adf1828808a4389912faeb [shape=box label="zcu102" color="black" fillcolor="white" style="filled" URL="dir_09ce2f3110adf1828808a4389912faeb.html"];
+  }
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_a71ca7544c7819c44600d5f807c9454f->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="13", labeldistance=1.5 headhref="dir_000029_000000.html"];
+  dir_eddbbde9675d4b4a706c6f052235a429->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="15", labeldistance=1.5 headhref="dir_000036_000000.html"];
+  dir_1270075813c54bb7e8db823bad0e5983->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="5", labeldistance=1.5 headhref="dir_000034_000000.html"];
+  dir_09ce2f3110adf1828808a4389912faeb->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="16", labeldistance=1.5 headhref="dir_000035_000000.html"];
+  dir_5131d8d8b01f1a86d9c7891f3508d9ef->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="68", labeldistance=1.5 headhref="dir_000033_000000.html"];
+  dir_f17e16d7aa5cbb089011ed52879df375->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="26", labeldistance=1.5 headhref="dir_000032_000000.html"];
+}

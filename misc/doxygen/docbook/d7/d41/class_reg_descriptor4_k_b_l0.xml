@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d41/class_reg_descriptor4_k_b_l0">
+<title>RegDescriptor4KBL0 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d5/d72/vmsa__descriptors_8h">&quot;vmsa_descriptors.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RegDescriptor4KBL0</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/de1/class_reg_descriptor4_k_b_l0__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RegDescriptor4KBL0</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/dd8/class_reg_descriptor4_k_b_l0__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t APTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t Ignored_0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t Ignored_1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t IsTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t NextLevelTableAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t NSTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t PXNTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t RES0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t Valid</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t XNTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/d41/class_reg_descriptor4_k_b_l0_1a47a2e1ac635d41103c230def5fdb0912">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/d41/class_reg_descriptor4_k_b_l0_1a17de598edbe460e9c6ce4fcc8d1c3cf5">write</link> (
+void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/d41/class_reg_descriptor4_k_b_l0_1a7ef6922af324242147dc68b3990bd4b8">write</link> (
+size_t p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0_1a3df270096ac2a0367b70baf9dbf72af6">read</link> (
+void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0_1ae6bfa2abef4dff2e4a20c741724fcbce">read</link> (
+size_t p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/d41/class_reg_descriptor4_k_b_l0_1a47a2e1ac635d41103c230def5fdb0912">
+                <title>AS_MACRO void RegDescriptor4KBL0::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d41/class_reg_descriptor4_k_b_l0_1a17de598edbe460e9c6ce4fcc8d1c3cf5">
+                <title>AS_MACRO void RegDescriptor4KBL0::write (void *p) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d41/class_reg_descriptor4_k_b_l0_1a7ef6922af324242147dc68b3990bd4b8">
+                <title>AS_MACRO void RegDescriptor4KBL0::write (size_t p) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d41/class_reg_descriptor4_k_b_l0_1a3df270096ac2a0367b70baf9dbf72af6">
+                <title>static AS_MACRO RegDescriptor4KBL0 RegDescriptor4KBL0::read (void *p)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d41/class_reg_descriptor4_k_b_l0_1ae6bfa2abef4dff2e4a20c741724fcbce">
+                <title>static AS_MACRO RegDescriptor4KBL0 RegDescriptor4KBL0::read (size_t p)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

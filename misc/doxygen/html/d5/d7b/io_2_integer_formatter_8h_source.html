@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_a00b633439466cbb1729245c7f66f564.html">io</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IntegerFormatter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d7b/io_2_integer_formatter_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * IntegerFormatter.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Feb 1, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_INTEGERINTEGERFORMATTER_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_INTEGERINTEGERFORMATTER_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/da4/def_8h.html">def.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/d77/_output_8h.html">io/Output.h</a>&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Base&gt;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../df/d66/class_integer_formatter.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d66/class_integer_formatter.html">IntegerFormatter</a>{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../df/d66/class_integer_formatter.html#a7199d0906a8a4dbab0c906f8a490a5ad">IntegerFormatter</a>(<span class="keywordtype">size_t</span> <a class="code" href="../../df/d66/class_integer_formatter.html#a7c2625911a24dd348220a93ac3642aec">num</a>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../df/d66/class_integer_formatter.html#a7199d0906a8a4dbab0c906f8a490a5ad">IntegerFormatter</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *p);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="../../df/d66/class_integer_formatter.html#a4d6a1cc54a00cb3a8ba7b8dc9ad30b20">format</a>()<span class="keyword">const</span>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../df/d66/class_integer_formatter.html#a7c2625911a24dd348220a93ac3642aec">   22</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../df/d66/class_integer_formatter.html#a7c2625911a24dd348220a93ac3642aec">num</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d5/d7b/io_2_integer_formatter_8h.html#aad9fd1508f87d88f5ff5a8dce6a02612">   26</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../df/d66/class_integer_formatter.html">Hex</a>=<a class="code" href="../../df/d66/class_integer_formatter.html">IntegerFormatter&lt;16&gt;</a>;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d5/d7b/io_2_integer_formatter_8h.html#a84bfd3a615b48957cf83c64877b0800d">   27</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../df/d66/class_integer_formatter.html">Dec</a>=<a class="code" href="../../df/d66/class_integer_formatter.html">IntegerFormatter&lt;10&gt;</a>;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d5/d7b/io_2_integer_formatter_8h.html#a929387095e1ee6f188571a7657c09272">   28</a></span>&#160;<span class="keyword">using</span> <a class="code" href="../../df/d66/class_integer_formatter.html">Bin</a>=<a class="code" href="../../df/d66/class_integer_formatter.html">IntegerFormatter&lt;2&gt;</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Base&gt;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="../../db/db4/class_output.html">Output</a> &amp; operator&lt;&lt;(Output &amp; out,const IntegerFormatter&lt;Base&gt; &amp;hf);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d84/templates__implementation_2_integer_formatter_8h.html">templates_implementation/IntegerFormatter.h</a>&gt;</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_INTEGERINTEGERFORMATTER_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="def_8h_html"><div class="ttname"><a href="../../d4/da4/def_8h.html">def.h</a></div></div>
+<div class="ttc" id="templates__implementation_2_integer_formatter_8h_html"><div class="ttname"><a href="../../dc/d84/templates__implementation_2_integer_formatter_8h.html">IntegerFormatter.h</a></div></div>
+<div class="ttc" id="class_output_html"><div class="ttname"><a href="../../db/db4/class_output.html">Output</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d77/_output_8h_source.html#l00013">Output.h:13</a></div></div>
+<div class="ttc" id="class_integer_formatter_html_a4d6a1cc54a00cb3a8ba7b8dc9ad30b20"><div class="ttname"><a href="../../df/d66/class_integer_formatter.html#a4d6a1cc54a00cb3a8ba7b8dc9ad30b20">IntegerFormatter::format</a></div><div class="ttdeci">char * format() const</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d84/templates__implementation_2_integer_formatter_8h_source.html#l00024">IntegerFormatter.h:24</a></div></div>
+<div class="ttc" id="_output_8h_html"><div class="ttname"><a href="../../d6/d77/_output_8h.html">Output.h</a></div></div>
+<div class="ttc" id="class_integer_formatter_html_a7199d0906a8a4dbab0c906f8a490a5ad"><div class="ttname"><a href="../../df/d66/class_integer_formatter.html#a7199d0906a8a4dbab0c906f8a490a5ad">IntegerFormatter::IntegerFormatter</a></div><div class="ttdeci">IntegerFormatter(size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d84/templates__implementation_2_integer_formatter_8h_source.html#l00016">IntegerFormatter.h:16</a></div></div>
+<div class="ttc" id="class_integer_formatter_html"><div class="ttname"><a href="../../df/d66/class_integer_formatter.html">IntegerFormatter</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/io_2_integer_formatter_8h_source.html#l00016">IntegerFormatter.h:16</a></div></div>
+<div class="ttc" id="class_integer_formatter_html_a7c2625911a24dd348220a93ac3642aec"><div class="ttname"><a href="../../df/d66/class_integer_formatter.html#a7c2625911a24dd348220a93ac3642aec">IntegerFormatter::num</a></div><div class="ttdeci">size_t num</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/io_2_integer_formatter_8h_source.html#l00022">IntegerFormatter.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:30 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/d12/exceptions_8cpp">
+    <title>exceptions.cpp File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/exception/exceptions.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/gicv3_registers.h&gt;</programlisting>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/system_common_registers.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/timer_registers.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/exception/svc_call.h&gt;</programlisting>
+    <programlisting>#include &lt;io/IntegerFormatter.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/PidManager.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/ProcessManager.h&gt;</programlisting>
+<para>Include dependency diagram for exceptions.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d68/exceptions_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for exceptions.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/db2/exceptions_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d12/exceptions_8cpp_1a40b46c5cfd33825a3980572ace99e6a1">__asm__</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1a2cb26b70c617615536a6e1daf335da9c">enterFIQEL1ExceptionHandle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1ad9442ecd9e055f0c8ca6668b5107e11f">enterIRQEL1ExceptionHandle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1a849beaea658b3d7ecfa9f02115621e9a">enterSErrorEL1ExceptionHandle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1a5c7bfd6984f8998c2d0d09984f5bee33">enterSynchronousEL1ExceptionHandle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1a34c6f41a1a735cddfad582beba88ed49">FIQEL1Handle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1a3cbea63ae441d4af2826e5b58956f408">IRQEL1Handle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f">SErrorEL1Handle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/d12/exceptions_8cpp_1adf8fdfc202648f336df261faf22abf24">SynchronousEL1Handle</link> (
+uint64_t * savedRegisters)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/common_aarch64/exception/exceptions.cpp</para>
+    </simplesect>
+</section>

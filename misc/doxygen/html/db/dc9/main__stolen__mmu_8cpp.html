@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_stolen_mmu.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_5131d8d8b01f1a86d9c7891f3508d9ef.html">qemu_virt</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">main_stolen_mmu.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/d62/qemu-virt_2gpio_8h_source.html">arch/qemu-virt/gpio.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/da4/def_8h_source.html">def.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d17/io_2printk_8h_source.html">../../../include/io/printk.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> main_stolen_mmu.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d6b/main__stolen__mmu_8cpp__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2qemu__virt_2main__stolen__mmu_8cpp" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2qemu__virt_2main__stolen__mmu_8cpp" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2qemu__virt_2main__stolen__mmu_8cpp">
+</map>
+</div>
+</div>
+<p><a href="../../db/dc9/main__stolen__mmu_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ace116e164b8e667f7fc36a49ce5fae53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</a>&#160;&#160;&#160;0x08000000</td></tr>
+<tr class="separator:ace116e164b8e667f7fc36a49ce5fae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519adc2af3ba06a8f0548b6690050a89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a519adc2af3ba06a8f0548b6690050a89">PAGESIZE</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="separator:a519adc2af3ba06a8f0548b6690050a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ed94055fbf811832f1e4ec4b8d11f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a03ed94055fbf811832f1e4ec4b8d11f7">PT_AF</a>&#160;&#160;&#160;(1&lt;&lt;10)</td></tr>
+<tr class="separator:a03ed94055fbf811832f1e4ec4b8d11f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb055ed2fa4d37123ba1861d9369889"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a8eb055ed2fa4d37123ba1861d9369889">PT_BLOCK</a>&#160;&#160;&#160;0b01</td></tr>
+<tr class="separator:a8eb055ed2fa4d37123ba1861d9369889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04110b9a3486d84473b3c5126b862d78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a04110b9a3486d84473b3c5126b862d78">PT_DEV</a>&#160;&#160;&#160;(1&lt;&lt;2)</td></tr>
+<tr class="separator:a04110b9a3486d84473b3c5126b862d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7d24100c2323ebb75071a3a2744d3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a2c7d24100c2323ebb75071a3a2744d3c">PT_ISH</a>&#160;&#160;&#160;(3&lt;&lt;8)</td></tr>
+<tr class="separator:a2c7d24100c2323ebb75071a3a2744d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49df0e78a2b1ad87469a710c98d48d32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a49df0e78a2b1ad87469a710c98d48d32">PT_KERNEL</a>&#160;&#160;&#160;(0&lt;&lt;6)</td></tr>
+<tr class="separator:a49df0e78a2b1ad87469a710c98d48d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f399dce3c73767cfadd9ee0eb3de6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a98f399dce3c73767cfadd9ee0eb3de6f">PT_MEM</a>&#160;&#160;&#160;(0&lt;&lt;2)</td></tr>
+<tr class="separator:a98f399dce3c73767cfadd9ee0eb3de6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6311a2b77bd9ddc4c2d1542a6a9d29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a7d6311a2b77bd9ddc4c2d1542a6a9d29">PT_NC</a>&#160;&#160;&#160;(2&lt;&lt;2)</td></tr>
+<tr class="separator:a7d6311a2b77bd9ddc4c2d1542a6a9d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090e8c49a1859c9837b0946195d2f546"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a090e8c49a1859c9837b0946195d2f546">PT_NX</a>&#160;&#160;&#160;(1UL&lt;&lt;54)</td></tr>
+<tr class="separator:a090e8c49a1859c9837b0946195d2f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e426296ce2cd38f2397afb7a459fca6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a4e426296ce2cd38f2397afb7a459fca6">PT_OSH</a>&#160;&#160;&#160;(2&lt;&lt;8)</td></tr>
+<tr class="separator:a4e426296ce2cd38f2397afb7a459fca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b3f2db36b60d2cd81a142162cc240e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a91b3f2db36b60d2cd81a142162cc240e">PT_PAGE</a>&#160;&#160;&#160;0b11</td></tr>
+<tr class="separator:a91b3f2db36b60d2cd81a142162cc240e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa379fc7b062263e1e54e6d7d7d972d45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#aa379fc7b062263e1e54e6d7d7d972d45">PT_RO</a>&#160;&#160;&#160;(1&lt;&lt;7)</td></tr>
+<tr class="separator:aa379fc7b062263e1e54e6d7d7d972d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f9683e39e590131cefa58c2d4e7c14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a99f9683e39e590131cefa58c2d4e7c14">PT_RW</a>&#160;&#160;&#160;(0&lt;&lt;7)</td></tr>
+<tr class="separator:a99f9683e39e590131cefa58c2d4e7c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2477ddcd942726817387686604f2cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a6a2477ddcd942726817387686604f2cb">PT_USER</a>&#160;&#160;&#160;(1&lt;&lt;6)</td></tr>
+<tr class="separator:a6a2477ddcd942726817387686604f2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207fd4c45b60f098f1dab342f5c7e8b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a207fd4c45b60f098f1dab342f5c7e8b3">TTBR_ENABLE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a207fd4c45b60f098f1dab342f5c7e8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd7eba8cae99b9fb84685567d7f35242"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#abd7eba8cae99b9fb84685567d7f35242">mmu_init</a> ()</td></tr>
+<tr class="separator:abd7eba8cae99b9fb84685567d7f35242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ab11aa2a8a0873d6bfcf364babaa64f32"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#ab11aa2a8a0873d6bfcf364babaa64f32">_data</a> []</td></tr>
+<tr class="separator:ab11aa2a8a0873d6bfcf364babaa64f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377b7b926057769e0061537bfed34012"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc9/main__stolen__mmu_8cpp.html#a377b7b926057769e0061537bfed34012">_end</a> []</td></tr>
+<tr class="separator:a377b7b926057769e0061537bfed34012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ace116e164b8e667f7fc36a49ce5fae53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace116e164b8e667f7fc36a49ce5fae53">&#9670;&nbsp;</a></span>MMIO_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MMIO_BASE&#160;&#160;&#160;0x08000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a519adc2af3ba06a8f0548b6690050a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519adc2af3ba06a8f0548b6690050a89">&#9670;&nbsp;</a></span>PAGESIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAGESIZE&#160;&#160;&#160;4096</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a03ed94055fbf811832f1e4ec4b8d11f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ed94055fbf811832f1e4ec4b8d11f7">&#9670;&nbsp;</a></span>PT_AF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_AF&#160;&#160;&#160;(1&lt;&lt;10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8eb055ed2fa4d37123ba1861d9369889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb055ed2fa4d37123ba1861d9369889">&#9670;&nbsp;</a></span>PT_BLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_BLOCK&#160;&#160;&#160;0b01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a04110b9a3486d84473b3c5126b862d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04110b9a3486d84473b3c5126b862d78">&#9670;&nbsp;</a></span>PT_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_DEV&#160;&#160;&#160;(1&lt;&lt;2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2c7d24100c2323ebb75071a3a2744d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7d24100c2323ebb75071a3a2744d3c">&#9670;&nbsp;</a></span>PT_ISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_ISH&#160;&#160;&#160;(3&lt;&lt;8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a49df0e78a2b1ad87469a710c98d48d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49df0e78a2b1ad87469a710c98d48d32">&#9670;&nbsp;</a></span>PT_KERNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_KERNEL&#160;&#160;&#160;(0&lt;&lt;6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a98f399dce3c73767cfadd9ee0eb3de6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f399dce3c73767cfadd9ee0eb3de6f">&#9670;&nbsp;</a></span>PT_MEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_MEM&#160;&#160;&#160;(0&lt;&lt;2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7d6311a2b77bd9ddc4c2d1542a6a9d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6311a2b77bd9ddc4c2d1542a6a9d29">&#9670;&nbsp;</a></span>PT_NC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_NC&#160;&#160;&#160;(2&lt;&lt;2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a090e8c49a1859c9837b0946195d2f546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090e8c49a1859c9837b0946195d2f546">&#9670;&nbsp;</a></span>PT_NX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_NX&#160;&#160;&#160;(1UL&lt;&lt;54)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4e426296ce2cd38f2397afb7a459fca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e426296ce2cd38f2397afb7a459fca6">&#9670;&nbsp;</a></span>PT_OSH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_OSH&#160;&#160;&#160;(2&lt;&lt;8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a91b3f2db36b60d2cd81a142162cc240e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b3f2db36b60d2cd81a142162cc240e">&#9670;&nbsp;</a></span>PT_PAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_PAGE&#160;&#160;&#160;0b11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa379fc7b062263e1e54e6d7d7d972d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa379fc7b062263e1e54e6d7d7d972d45">&#9670;&nbsp;</a></span>PT_RO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_RO&#160;&#160;&#160;(1&lt;&lt;7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a99f9683e39e590131cefa58c2d4e7c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99f9683e39e590131cefa58c2d4e7c14">&#9670;&nbsp;</a></span>PT_RW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_RW&#160;&#160;&#160;(0&lt;&lt;7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a2477ddcd942726817387686604f2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a2477ddcd942726817387686604f2cb">&#9670;&nbsp;</a></span>PT_USER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PT_USER&#160;&#160;&#160;(1&lt;&lt;6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a207fd4c45b60f098f1dab342f5c7e8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207fd4c45b60f098f1dab342f5c7e8b3">&#9670;&nbsp;</a></span>TTBR_ENABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TTBR_ENABLE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00175">175</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../db/dc9/main__stolen__mmu_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#db/dc9/main__stolen__mmu_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="db/dc9/main__stolen__mmu_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="db/dc9/main__stolen__mmu_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd7eba8cae99b9fb84685567d7f35242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd7eba8cae99b9fb84685567d7f35242">&#9670;&nbsp;</a></span>mmu_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mmu_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up page translation tables and enable virtual memory </p>
+
+<p class="definition">在文件 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html">main_stolen_mmu.cpp</a> 第 <a class="el" href="../../db/dc9/main__stolen__mmu_8cpp_source.html#l00048">48</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../db/dc9/main__stolen__mmu_8cpp_abd7eba8cae99b9fb84685567d7f35242_icgraph.png" border="0" usemap="#db/dc9/main__stolen__mmu_8cpp_abd7eba8cae99b9fb84685567d7f35242_icgraph" alt=""/></div>
+<map name="db/dc9/main__stolen__mmu_8cpp_abd7eba8cae99b9fb84685567d7f35242_icgraph" id="db/dc9/main__stolen__mmu_8cpp_abd7eba8cae99b9fb84685567d7f35242_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ab11aa2a8a0873d6bfcf364babaa64f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11aa2a8a0873d6bfcf364babaa64f32">&#9670;&nbsp;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _data[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d4b/_card_spec_data_8h_source.html">CardSpecData.h</a> 第 <a class="el" href="../../d6/d4b/_card_spec_data_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a377b7b926057769e0061537bfed34012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377b7b926057769e0061537bfed34012">&#9670;&nbsp;</a></span>_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char _end[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:39 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

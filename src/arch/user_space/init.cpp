@@ -40,7 +40,7 @@ void init()
 		bssStart[i]=0;
 
 	// 初始化全局mman
-	auto adjVa = reinterpret_cast<char*>(alignNext(reinterpret_cast<uint64_t>(freeRamStart), MemoryManager::MINIMAL_ALIGNMENT));
+	auto adjVa = reinterpret_cast<char*>(alignAhead(reinterpret_cast<uint64_t>(freeRamStart), MemoryManager::MINIMAL_ALIGNMENT));
 
 	new (&mman) MemoryManager(reinterpret_cast<void*>(adjVa),freeRamEnd-adjVa,true);
 	new (&kout) Output();

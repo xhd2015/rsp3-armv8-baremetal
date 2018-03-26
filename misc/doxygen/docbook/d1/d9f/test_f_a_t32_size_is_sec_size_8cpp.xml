@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d9f/test_f_a_t32_size_is_sec_size_8cpp">
+    <title>testFAT32SizeIsSecSize.cpp File Reference</title>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;test/test_base.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT_BPB.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT32ExtBPB.h&gt;</programlisting>
+<para>Include dependency diagram for testFAT32SizeIsSecSize.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/de3/test_f_a_t32_size_is_sec_size_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for testFAT32SizeIsSecSize.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/da7/test_f_a_t32_size_is_sec_size_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/d9f/test_f_a_t32_size_is_sec_size_8cpp_1a5eef9f4c48d89296c39a103bd3a42aac">my_offsetof</link> offsetof</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d1/d9f/test_f_a_t32_size_is_sec_size_8cpp_1a8e64e3bae9762586debe95396f4f21eb">testFAT32SizeIsSecSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/test/testFAT32SizeIsSecSize.cpp</para>
+    </simplesect>
+</section>

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d5d/class_byte_reader">
+<title>ByteReader class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/db6/io_2_byte_reader_8h">&quot;ByteReader.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ByteReader</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/dcd/class_byte_reader__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ByteReader</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/dbb/class_byte_reader__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SectorReader &amp; sreader</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/d5d/class_byte_reader_1a585bc2928b9494defbcefb1bbdf40b08">adjustOneSecForReadOrWrite</link> (
+size_t byteStartOrEnd, bool isStartOrEnd, const char * src, char * dst)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/d5d/class_byte_reader_1ab076dfc431fd701c938b2113c263df0a">ByteReader</link> (
+<link linkend="de/de9/class_sector_reader">SectorReader</link> &amp; sreader)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/d5d/class_byte_reader_1a0332893adcb03c8a22b0d70914689a7a">ByteReader</link> (
+const <link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/d5d/class_byte_reader_1a1557e32d37869577a89bfbbe4fa6af9a">getSectorSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; <link linkend="d7/d5d/class_byte_reader_1a4bdde88e08160d99b5cd4f671889bbbc">operator=</link> (
+const <link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; <link linkend="d7/d5d/class_byte_reader_1a9e6ad4f5b375383bc4b8de2e41c39a19">read</link> (
+size_t start, size_t maxLen)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d5d/class_byte_reader_1abbbd51a3647476fa306d5b58c132d7b9">write</link> (
+size_t start, const <link linkend="d9/deb/class_vector_ref">VectorRef</link>&lt; T &gt; &amp; dataRef)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/d5d/class_byte_reader_1ab3c122f94d4e4ea822bfccac39e614ad">~ByteReader</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d5d/class_byte_reader_1ad0457bcdcb3380b159d0a614b3d20f20">ensureSectorBuffer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d5d/class_byte_reader_1a7fd066c1c7cea475b523c0c837c58aeb">readSectorToBuffer</link> (
+size_t sectorIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d5d/class_byte_reader_1af3f8cf7d5bd0c2dd58efc91c5795b051">writeSectorFromBuffer</link> (
+size_t sectorIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a585bc2928b9494defbcefb1bbdf40b08">
+                <title>size_t ByteReader::adjustOneSecForReadOrWrite (size_t byteStartOrEnd, bool isStartOrEnd, const char *src, char *dst)</title> <emphasis></emphasis>
+                
+<para>return the adjusted byte count; </para>
+
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1ab076dfc431fd701c938b2113c263df0a">
+                <title>ByteReader::ByteReader (SectorReader &amp;sreader)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a0332893adcb03c8a22b0d70914689a7a">
+                <title>ByteReader::ByteReader (const ByteReader &amp;)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a1557e32d37869577a89bfbbe4fa6af9a">
+                <title>size_t ByteReader::getSectorSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a4bdde88e08160d99b5cd4f671889bbbc">
+                <title>ByteReader&amp; ByteReader::operator= (const ByteReader &amp;)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a9e6ad4f5b375383bc4b8de2e41c39a19">
+                <title>Vector&lt; T &gt; ByteReader::read (size_t start, size_t maxLen)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1abbbd51a3647476fa306d5b58c132d7b9">
+                <title>void ByteReader::write (size_t start, const VectorRef&lt; T &gt; &amp;dataRef)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1ab3c122f94d4e4ea822bfccac39e614ad">
+                <title>ByteReader::~ByteReader ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1ad0457bcdcb3380b159d0a614b3d20f20">
+                <title>void ByteReader::ensureSectorBuffer ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1a7fd066c1c7cea475b523c0c837c58aeb">
+                <title>bool ByteReader::readSectorToBuffer (size_t sectorIndex)</title> <emphasis></emphasis>
+                
+<para>returns good or bad(sector read is success or failed) </para>
+
+            </section>
+            <section xml:id="d7/d5d/class_byte_reader_1af3f8cf7d5bd0c2dd58efc91c5795b051">
+                <title>bool ByteReader::writeSectorFromBuffer (size_t sectorIndex)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

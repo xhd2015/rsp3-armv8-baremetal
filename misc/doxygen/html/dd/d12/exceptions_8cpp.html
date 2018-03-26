@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/common_aarch64/exception/exceptions.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_a71ca7544c7819c44600d5f807c9454f.html">common_aarch64</a></li><li class="navelem"><a class="el" href="../../dir_f8bc330a5c749db4cf253940572e3a51.html">exception</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">exceptions.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/d03/exceptions_8h_source.html">arch/common_aarch64/exception/exceptions.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d7/dc3/gicv3__registers_8h_source.html">arch/common_aarch64/gicv3_registers.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/da4/def_8h_source.html">def.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d1f/system__common__registers_8h_source.html">arch/common_aarch64/system_common_registers.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/deb/timer__registers_8h_source.html">arch/common_aarch64/timer_registers.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d8/d2f/asm__instructions_8h_source.html">asm_instructions.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/d77/_output_8h_source.html">io/Output.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/d45/svc__call_8h_source.html">arch/common_aarch64/exception/svc_call.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d7b/io_2_integer_formatter_8h_source.html">io/IntegerFormatter.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d92/_pid_manager_8h_source.html">schedule/PidManager.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/dd6/schedule_2_process_manager_8h_source.html">schedule/ProcessManager.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> exceptions.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d68/exceptions_8cpp__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2common__aarch64_2exception_2exceptions_8cpp" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2common__aarch64_2exception_2exceptions_8cpp" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2arch_2common__aarch64_2exception_2exceptions_8cpp">
+</map>
+</div>
+</div>
+<p><a href="../../dd/d12/exceptions_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a40b46c5cfd33825a3980572ace99e6a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a> (&quot;.text \&quot; &quot;.align 11 \&quot; &quot;.global ExceptionVectorEL1 \&quot; &quot;ExceptionVectorEL1:  \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x080 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x100 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x180 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x200 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x280 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x300 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x380 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x400 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x480 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x500 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x580 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x780 \&quot; &quot;. =. + 0x80 \&quot;)</td></tr>
+<tr class="separator:a40b46c5cfd33825a3980572ace99e6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb26b70c617615536a6e1daf335da9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a2cb26b70c617615536a6e1daf335da9c">enterFIQEL1ExceptionHandle</a> ()</td></tr>
+<tr class="separator:a2cb26b70c617615536a6e1daf335da9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9442ecd9e055f0c8ca6668b5107e11f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#ad9442ecd9e055f0c8ca6668b5107e11f">enterIRQEL1ExceptionHandle</a> ()</td></tr>
+<tr class="separator:ad9442ecd9e055f0c8ca6668b5107e11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849beaea658b3d7ecfa9f02115621e9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a849beaea658b3d7ecfa9f02115621e9a">enterSErrorEL1ExceptionHandle</a> ()</td></tr>
+<tr class="separator:a849beaea658b3d7ecfa9f02115621e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7bfd6984f8998c2d0d09984f5bee33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a5c7bfd6984f8998c2d0d09984f5bee33">enterSynchronousEL1ExceptionHandle</a> ()</td></tr>
+<tr class="separator:a5c7bfd6984f8998c2d0d09984f5bee33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c6f41a1a735cddfad582beba88ed49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a34c6f41a1a735cddfad582beba88ed49">FIQEL1Handle</a> ()</td></tr>
+<tr class="separator:a34c6f41a1a735cddfad582beba88ed49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbea63ae441d4af2826e5b58956f408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#a3cbea63ae441d4af2826e5b58956f408">IRQEL1Handle</a> ()</td></tr>
+<tr class="separator:a3cbea63ae441d4af2826e5b58956f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f">SErrorEL1Handle</a> ()</td></tr>
+<tr class="separator:aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8fdfc202648f336df261faf22abf24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d12/exceptions_8cpp.html#adf8fdfc202648f336df261faf22abf24">SynchronousEL1Handle</a> (uint64_t *savedRegisters)</td></tr>
+<tr class="separator:adf8fdfc202648f336df261faf22abf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a40b46c5cfd33825a3980572ace99e6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b46c5cfd33825a3980572ace99e6a1">&#9670;&nbsp;</a></span>__asm__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__asm__ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a40b46c5cfd33825a3980572ace99e6a1_icgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a40b46c5cfd33825a3980572ace99e6a1_icgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a40b46c5cfd33825a3980572ace99e6a1_icgraph" id="dd/d12/exceptions_8cpp_a40b46c5cfd33825a3980572ace99e6a1_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2cb26b70c617615536a6e1daf335da9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb26b70c617615536a6e1daf335da9c">&#9670;&nbsp;</a></span>enterFIQEL1ExceptionHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enterFIQEL1ExceptionHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00082">82</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a2cb26b70c617615536a6e1daf335da9c_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a2cb26b70c617615536a6e1daf335da9c_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a2cb26b70c617615536a6e1daf335da9c_cgraph" id="dd/d12/exceptions_8cpp_a2cb26b70c617615536a6e1daf335da9c_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9442ecd9e055f0c8ca6668b5107e11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9442ecd9e055f0c8ca6668b5107e11f">&#9670;&nbsp;</a></span>enterIRQEL1ExceptionHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enterIRQEL1ExceptionHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00071">71</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_ad9442ecd9e055f0c8ca6668b5107e11f_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_ad9442ecd9e055f0c8ca6668b5107e11f_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_ad9442ecd9e055f0c8ca6668b5107e11f_cgraph" id="dd/d12/exceptions_8cpp_ad9442ecd9e055f0c8ca6668b5107e11f_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a849beaea658b3d7ecfa9f02115621e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849beaea658b3d7ecfa9f02115621e9a">&#9670;&nbsp;</a></span>enterSErrorEL1ExceptionHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enterSErrorEL1ExceptionHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00094">94</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a849beaea658b3d7ecfa9f02115621e9a_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a849beaea658b3d7ecfa9f02115621e9a_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a849beaea658b3d7ecfa9f02115621e9a_cgraph" id="dd/d12/exceptions_8cpp_a849beaea658b3d7ecfa9f02115621e9a_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c7bfd6984f8998c2d0d09984f5bee33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7bfd6984f8998c2d0d09984f5bee33">&#9670;&nbsp;</a></span>enterSynchronousEL1ExceptionHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enterSynchronousEL1ExceptionHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00059">59</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a5c7bfd6984f8998c2d0d09984f5bee33_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a5c7bfd6984f8998c2d0d09984f5bee33_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a5c7bfd6984f8998c2d0d09984f5bee33_cgraph" id="dd/d12/exceptions_8cpp_a5c7bfd6984f8998c2d0d09984f5bee33_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34c6f41a1a735cddfad582beba88ed49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c6f41a1a735cddfad582beba88ed49">&#9670;&nbsp;</a></span>FIQEL1Handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FIQEL1Handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00266">266</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a34c6f41a1a735cddfad582beba88ed49_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a34c6f41a1a735cddfad582beba88ed49_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a34c6f41a1a735cddfad582beba88ed49_cgraph" id="dd/d12/exceptions_8cpp_a34c6f41a1a735cddfad582beba88ed49_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3cbea63ae441d4af2826e5b58956f408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cbea63ae441d4af2826e5b58956f408">&#9670;&nbsp;</a></span>IRQEL1Handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRQEL1Handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00215">215</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_a3cbea63ae441d4af2826e5b58956f408_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_a3cbea63ae441d4af2826e5b58956f408_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_a3cbea63ae441d4af2826e5b58956f408_cgraph" id="dd/d12/exceptions_8cpp_a3cbea63ae441d4af2826e5b58956f408_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d11c7ad8ceb4dcc6f07e8cd9c6b59f">&#9670;&nbsp;</a></span>SErrorEL1Handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SErrorEL1Handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00278">278</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adf8fdfc202648f336df261faf22abf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8fdfc202648f336df261faf22abf24">&#9670;&nbsp;</a></span>SynchronousEL1Handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SynchronousEL1Handle </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>savedRegisters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html">exceptions.cpp</a> 第 <a class="el" href="../../dd/d12/exceptions_8cpp_source.html#l00112">112</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/d12/exceptions_8cpp_adf8fdfc202648f336df261faf22abf24_cgraph.png" border="0" usemap="#dd/d12/exceptions_8cpp_adf8fdfc202648f336df261faf22abf24_cgraph" alt=""/></div>
+<map name="dd/d12/exceptions_8cpp_adf8fdfc202648f336df261faf22abf24_cgraph" id="dd/d12/exceptions_8cpp_adf8fdfc202648f336df261faf22abf24_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:38 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

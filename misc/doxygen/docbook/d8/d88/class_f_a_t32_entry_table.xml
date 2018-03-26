@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d88/class_f_a_t32_entry_table">
+<title>FAT32EntryTable class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/dca/_f_a_t32_entry_table_8h">&quot;FAT32EntryTable.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT32EntryTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/db2/class_f_a_t32_entry_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT32EntryTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/df1/class_f_a_t32_entry_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; void(const <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> entry, size_t index)&gt;  <link linkend="d8/d88/class_f_a_t32_entry_table_1a24db44c5b9ab8b54d4cc3f660e9958ce">EntryHandle</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ByteReader &amp; breader</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>FAT32ExtBPB * e32bpb</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d88/class_f_a_t32_entry_table_1a90e08a5dfd62697387297d510467097b">FAT32EntryTable</link> (
+<link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; breader, <link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> * e32bpb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d88/class_f_a_t32_entry_table_1a1af390f18e410560356745d807ab2f9e">FAT32EntryTable</link> (
+<link linkend="d5/db2/class_vector">Vector</link>&lt; <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> &gt; &amp;&amp; table, <link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; breader, <link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> * e32bpb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d88/class_f_a_t32_entry_table_1a1f8f727dd674bdbbee65834a1e040429">FAT32EntryTable</link> (
+const <link linkend="d8/d88/class_f_a_t32_entry_table">FAT32EntryTable</link> &amp; fat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d8/d88/class_f_a_t32_entry_table_1aaacc81a573b7d317722d2b63fc75290a">findByLongName</link> (
+const char * asciiLongName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d8/d88/class_f_a_t32_entry_table_1aa9cb4f7a3ff8163ec7cccd687cca0d02">findByShortName</link> (
+const char * mainPart, const char * extPart)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d88/class_f_a_t32_entry_table_1a46ad5ddd25256898409ad68e421b63fb">foreachEntry</link> (
+<link linkend="d8/d88/class_f_a_t32_entry_table_1a24db44c5b9ab8b54d4cc3f660e9958ce">EntryHandle</link> handle, <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> startEntry)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d8/d88/class_f_a_t32_entry_table_1a212256f7eb10ad5187d6cf41bc12714a">getEntryCount</link> (
+size_t beginIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d8/d88/class_f_a_t32_entry_table_1afb849f7ed7b5bc30b29679a0ace9f7c1">getSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> <link linkend="d8/d88/class_f_a_t32_entry_table_1ab3934c3baa64a62fbe597851aa39d745">locateFileOffset</link> (
+<link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> fentry, size_t offset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> <link linkend="d8/d88/class_f_a_t32_entry_table_1ae7230908e16bf90bef3a19cd4dcb680a">next</link> (
+<link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> fentry)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d8/d88/class_f_a_t32_entry_table">FAT32EntryTable</link> &amp; <link linkend="d8/d88/class_f_a_t32_entry_table_1aac763ec5c335909db26d13bdb384bf05">operator=</link> (
+const <link linkend="d8/d88/class_f_a_t32_entry_table">FAT32EntryTable</link> &amp; fat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a24db44c5b9ab8b54d4cc3f660e9958ce">
+                <title>using FAT32EntryTable::EntryHandle =  std::function&lt;void(const FAT32Entry entry,size_t index)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a90e08a5dfd62697387297d510467097b">
+                <title>FAT32EntryTable::FAT32EntryTable (ByteReader &amp;breader, FAT32ExtBPB *e32bpb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a1af390f18e410560356745d807ab2f9e">
+                <title>FAT32EntryTable::FAT32EntryTable (Vector&lt; FAT32Entry &gt; &amp;&amp;table, ByteReader &amp;breader, FAT32ExtBPB *e32bpb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a1f8f727dd674bdbbee65834a1e040429">
+                <title>FAT32EntryTable::FAT32EntryTable (const FAT32EntryTable &amp;fat)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1aaacc81a573b7d317722d2b63fc75290a">
+                <title>size_t FAT32EntryTable::findByLongName (const char *asciiLongName) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1aa9cb4f7a3ff8163ec7cccd687cca0d02">
+                <title>size_t FAT32EntryTable::findByShortName (const char *mainPart, const char *extPart) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a46ad5ddd25256898409ad68e421b63fb">
+                <title>void FAT32EntryTable::foreachEntry (EntryHandle handle, FAT32Entry startEntry) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1a212256f7eb10ad5187d6cf41bc12714a">
+                <title>size_t FAT32EntryTable::getEntryCount (size_t beginIndex) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1afb849f7ed7b5bc30b29679a0ace9f7c1">
+                <title>size_t Vector&lt; T &gt;::getSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1ab3934c3baa64a62fbe597851aa39d745">
+                <title>FAT32Entry FAT32EntryTable::locateFileOffset (FAT32Entry fentry, size_t offset) const</title> <emphasis></emphasis>
+                
+<para>return LAST if it overflow </para>
+
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1ae7230908e16bf90bef3a19cd4dcb680a">
+                <title>FAT32Entry FAT32EntryTable::next (FAT32Entry fentry) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d88/class_f_a_t32_entry_table_1aac763ec5c335909db26d13bdb384bf05">
+                <title>FAT32EntryTable&amp; FAT32EntryTable::operator= (const FAT32EntryTable &amp;fat)=delete</title> <emphasis></emphasis>
+                
+            </section>
+</section>

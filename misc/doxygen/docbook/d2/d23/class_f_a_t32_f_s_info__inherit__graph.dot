@@ -1,0 +1,6 @@
+digraph "FAT32FSInfo"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node445 [label="{FAT32FSInfo\n|+ __attribute__\l+ freeCount\l+ leadSig\l+ nextFree\l+ reserved1\l+ reserved2\l+ strucSig\l+ trailSeg\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

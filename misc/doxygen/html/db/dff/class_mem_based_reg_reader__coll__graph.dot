@@ -1,0 +1,6 @@
+digraph "MemBasedRegReader"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node5 [label="{MemBasedRegReader\n|# _base\l|+ reg()\l+ reg()\l+ reg16()\l+ reg16()\l+ reg32()\l+ reg32()\l+ reg64()\l+ reg64()\l+ reg8()\l+ reg8()\l+ regcopy()\l# MemBasedRegReader()\l# MemBasedRegReader()\l# MemBasedRegReader()\l# MemBasedRegReader()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

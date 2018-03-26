@@ -1,0 +1,13 @@
+digraph "FAT32EntryTable::foreachEntry"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="FAT32EntryTable::foreach\lEntry",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="FAT32Entry::isLast",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d32/class_f_a_t32_entry.html#a27d113b2c3036e807117fb5c922d0446"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="FAT32EntryTable::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d88/class_f_a_t32_entry_table.html#ae7230908e16bf90bef3a19cd4dcb680a"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="FAT32Entry::getAsInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d32/class_f_a_t32_entry.html#a10b4d28e15407076b69209493fe59ac5"];
+}

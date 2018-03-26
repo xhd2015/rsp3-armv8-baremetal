@@ -1,0 +1,44 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/data_structures/ForwardList.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node474 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/templates_implementation\l/data_structures/ForwardList.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node474 -> Node475 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node475 [label="data_structures/ForwardList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/db0/data__structures_2_forward_list_8h.html"];
+  Node475 -> Node476 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node476 [label="data_structures/ForwardNode.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d32/data__structures_2_forward_node_8h.html"];
+  Node476 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node477 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node477 -> Node478 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node478 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node477 -> Node479 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node479 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node476 -> Node480 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node480 [label="programming/ReturnTypeSelector.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d90/_return_type_selector_8h.html"];
+  Node480 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node480 -> Node481 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node481 [label="type_traits",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node476 -> Node482 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node482 [label="programming/define\l_members.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d7b/define__members_8h.html"];
+  Node476 -> Node483 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node483 [label="templates_implementation\l/data_structures/ForwardNode.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dbc/templates__implementation_2data__structures_2_forward_node_8h.html"];
+  Node483 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node483 -> Node484 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node484 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node483 -> Node476 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node475 -> Node485 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node485 [label="functional",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node475 -> Node474 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node474 -> Node486 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node486 [label="memory/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d76/memory_2_memory_manager_8h.html"];
+  Node486 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node486 -> Node487 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node487 [label="memory/MemoryChunk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html"];
+  Node487 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node487 -> Node488 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node488 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node488 -> Node477 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node486 -> Node489 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node489 [label="templates_implementation\l/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d2b/templates__implementation_2_memory_manager_8h.html"];
+  Node489 -> Node486 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

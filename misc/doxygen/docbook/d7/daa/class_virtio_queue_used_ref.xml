@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/daa/class_virtio_queue_used_ref">
+<title>VirtioQueueUsedRef class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/de1/_virtio_queue_used_ref_8h">&quot;VirtioQueueUsedRef.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioQueueUsedRef</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d1a/class_virtio_queue_used_ref__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioQueueUsedRef</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d06/class_virtio_queue_used_ref__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d1/de4/struct_virtio_queue_used_ref_1_1_used_element">VirtioQueueUsedRef::UsedElement</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _queueSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d7/daa/class_virtio_queue_used_ref_1a2d426cdcd930e4f5766e67415fb96570">availEvent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d7/daa/class_virtio_queue_used_ref_1afec4de2996c8c7ccc73bfc5a0cd896b7">flags</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d7/daa/class_virtio_queue_used_ref_1a43c1624ad2d1c14e17db2033fa40a078">idx</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d1/de4/struct_virtio_queue_used_ref_1_1_used_element">UsedElement</link> * <link linkend="d7/daa/class_virtio_queue_used_ref_1a963b40b46ef1bdeedeccc2e974c3b62f">ring</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/daa/class_virtio_queue_used_ref_1a2d426cdcd930e4f5766e67415fb96570">
+                <title>uint16_t VirtioQueueUsedRef::availEvent () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/daa/class_virtio_queue_used_ref_1afec4de2996c8c7ccc73bfc5a0cd896b7">
+                <title>uint16_t VirtioQueueUsedRef::flags () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/daa/class_virtio_queue_used_ref_1a43c1624ad2d1c14e17db2033fa40a078">
+                <title>uint16_t VirtioQueueUsedRef::idx () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/daa/class_virtio_queue_used_ref_1a963b40b46ef1bdeedeccc2e974c3b62f">
+                <title>const UsedElement* VirtioQueueUsedRef::ring () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

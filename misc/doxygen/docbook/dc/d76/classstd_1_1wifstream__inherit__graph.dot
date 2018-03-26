@@ -1,0 +1,14 @@
+digraph "std::wifstream"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1003 [label="{std::wifstream\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1004 -> Node1003 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1004 [label="{std::basic_ifstream\l\< wchar_t \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node1005 -> Node1004 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1005 [label="{std::basic_istream\l\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node1006 -> Node1005 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1006 [label="{std::basic_ios\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node1007 -> Node1006 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1007 [label="{std::ios_base\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+}

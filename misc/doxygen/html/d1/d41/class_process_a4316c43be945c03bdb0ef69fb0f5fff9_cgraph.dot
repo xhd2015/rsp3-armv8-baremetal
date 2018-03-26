@@ -1,0 +1,30 @@
+digraph "Process::Process"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node23 [label="Process::Process",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node23 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="memcpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d56/memcpy_8cpp.html#ab68eb7b07f8ada1c6c8bde74731d3de7"];
+  Node23 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="Process::setupTables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d41/class_process.html#adf3b8b00204709e9246aa736768d7a32"];
+  Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="Process::codeSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d41/class_process.html#aa627a0558101acd49b5c3998d7ae998a"];
+  Node25 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08"];
+  Node25 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="Process::spSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d41/class_process.html#a6c9c29aec3a891f294bffb63776ecc4b"];
+  Node25 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="Process::heapSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d41/class_process.html#a80fb4bf056a834cb356110e868ea74b7"];
+  Node25 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="MemoryManager::allocateAs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78"];
+  Node30 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="asm_at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d2f/asm__instructions_8h.html#a075c935f33c05473d2ccea7c0ab949ea"];
+  Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="__asm__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1"];
+  Node31 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="__volatile__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8"];
+  Node31 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa"];
+}

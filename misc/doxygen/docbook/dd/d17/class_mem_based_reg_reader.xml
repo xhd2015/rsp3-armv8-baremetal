@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/d17/class_mem_based_reg_reader">
+<title>MemBasedRegReader class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/d46/_mem_based_reg_reader_8h">&quot;MemBasedRegReader.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for MemBasedRegReader</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dd5/class_mem_based_reg_reader__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for MemBasedRegReader</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/dff/class_mem_based_reg_reader__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef uint32_t  <link linkend="dd/d17/class_mem_based_reg_reader_1a215457b30b6915995fa4bfca1e2cd91a">RegOffset</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Protected 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile char * _base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d17/class_mem_based_reg_reader_1a155c5b45895b607c9ca571beb5fe408d">MemBasedRegReader</link> (
+size_t base)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d17/class_mem_based_reg_reader_1a366f51ac0a2278121fb76dd2b158ac63">MemBasedRegReader</link> (
+void * base)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d17/class_mem_based_reg_reader_1a710282136838c803cbd1f0f76167c4cc">MemBasedRegReader</link> (
+volatile void * base)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/d17/class_mem_based_reg_reader_1a5d0de8f7c377996190e28a6ce7c816fc">MemBasedRegReader</link> (
+nullptr_t base)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> volatile T &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1a4be93af3fe06302f6340e5c7a689e52b">reg</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const volatile T &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1aecb8a26df6a63d49d8b38cf8eb5dba76">reg</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> volatile uint16_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1ab54f599c12c38935ff32e526c39666b6">reg16</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const volatile uint16_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1acbe849531abcf4c0f125569a859886cf">reg16</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> volatile uint32_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1a3d0181d202870b31a91ec5bc1a5c6181">reg32</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const volatile uint64_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1af539b2054048256208e9660d34610f93">reg32</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> volatile uint64_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1a787e59015cafd26ba0725fcc18e03440">reg64</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const volatile uint64_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1aef0b23957384e94af785bd63946d425a">reg64</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> volatile uint8_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1ac68868fd66f2cd04bf594a61b87f5e13">reg8</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const volatile uint8_t &amp; <link linkend="dd/d17/class_mem_based_reg_reader_1a82a1723858bcee844412a086bd12ac01">reg8</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> T <link linkend="dd/d17/class_mem_based_reg_reader_1afa50e6631ba59a188e875cc5f108855d">regcopy</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a215457b30b6915995fa4bfca1e2cd91a">
+                <title>using MemBasedRegReader::RegOffset =  uint32_t</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a155c5b45895b607c9ca571beb5fe408d">
+                <title>MemBasedRegReader::MemBasedRegReader (size_t base)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a366f51ac0a2278121fb76dd2b158ac63">
+                <title>MemBasedRegReader::MemBasedRegReader (void *base)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a710282136838c803cbd1f0f76167c4cc">
+                <title>MemBasedRegReader::MemBasedRegReader (volatile void *base)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a5d0de8f7c377996190e28a6ce7c816fc">
+                <title>MemBasedRegReader::MemBasedRegReader (nullptr_t base)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a4be93af3fe06302f6340e5c7a689e52b">
+                <title>AS_MACRO volatile T&amp; MemBasedRegReader::reg ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1aecb8a26df6a63d49d8b38cf8eb5dba76">
+                <title>AS_MACRO const volatile T&amp; MemBasedRegReader::reg () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1ab54f599c12c38935ff32e526c39666b6">
+                <title>AS_MACRO volatile uint16_t&amp; MemBasedRegReader::reg16 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1acbe849531abcf4c0f125569a859886cf">
+                <title>AS_MACRO const volatile uint16_t&amp; MemBasedRegReader::reg16 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a3d0181d202870b31a91ec5bc1a5c6181">
+                <title>AS_MACRO volatile uint32_t&amp; MemBasedRegReader::reg32 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1af539b2054048256208e9660d34610f93">
+                <title>AS_MACRO const volatile uint64_t&amp; MemBasedRegReader::reg32 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a787e59015cafd26ba0725fcc18e03440">
+                <title>AS_MACRO volatile uint64_t&amp; MemBasedRegReader::reg64 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1aef0b23957384e94af785bd63946d425a">
+                <title>AS_MACRO const volatile uint64_t&amp; MemBasedRegReader::reg64 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1ac68868fd66f2cd04bf594a61b87f5e13">
+                <title>AS_MACRO volatile uint8_t&amp; MemBasedRegReader::reg8 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1a82a1723858bcee844412a086bd12ac01">
+                <title>AS_MACRO const volatile uint8_t&amp; MemBasedRegReader::reg8 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/d17/class_mem_based_reg_reader_1afa50e6631ba59a188e875cc5f108855d">
+                <title>AS_MACRO T MemBasedRegReader::regcopy ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

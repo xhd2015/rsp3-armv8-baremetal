@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_58acba12b30eb7efa3ed7a7f631639c2">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_58acba12b30eb7efa3ed7a7f631639c2_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d7/da0/____cxa__atexit_8cpp">__cxa_atexit.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d2/d1f/____dso__handle_8cpp">__dso_handle.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d3/d34/____throw__bad__function__call_8cpp">__throw_bad_function_call.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d1/d60/operator__delete_8cpp">operator_delete.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d9/d6d/operator__new_8cpp">operator_new.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/</para>
+    </simplesect>
+</section>

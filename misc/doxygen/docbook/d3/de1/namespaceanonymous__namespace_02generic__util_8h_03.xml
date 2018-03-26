@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/de1/namespaceanonymous__namespace_02generic__util_8h_03">
+<title>anonymous_namespace{generic_util.h}</title>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d5b/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct">anonymous_namespace{generic_util.h}::BitMaskStruct</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/de7/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct_3_01bit_01_4">anonymous_namespace{generic_util.h}::BitMaskStruct&lt; bit &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

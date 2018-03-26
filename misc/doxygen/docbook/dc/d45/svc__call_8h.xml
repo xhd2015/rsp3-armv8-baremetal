@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d45/svc__call_8h">
+    <title>svc_call.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/exception/exceptions.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+<para>Include dependency diagram for svc_call.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dc1/svc__call_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for svc_call.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/da7/svc__call_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24">SvcFunc</link> {
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24a79eda979854e9e7c1840e67644c27c08">puts</link>,
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24aa2fc44706be5bcf820131b337019c659">allocateBlock</link>,
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24a22f7c7d9ce086f43ffa60c4d7cb2330f">killProcess</link>,
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24a3303b7107e1b26d4ecc8caaf7d911904">scheduleNext</link>,
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24ab2fcb4ba898f479790076dbd5daa133f">fork</link>,
+<link linkend="dc/d45/svc__call_8h_1a13d6aa36835dffaee815c81de7667e24a521345a9fb579f52117f27be6e0673ee">signal</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dc/d45/svc__call_8h_1a109ab694ad88b9fed282c1344e97adef">svc_call</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dc/d45/svc__call_8h_1a1c71cdf525dc00520881069dcc6c1116">svc_call</link> (
+uint64_t arg0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dc/d45/svc__call_8h_1a3429a195cc1a8c8ccc0f4ed63a5644b8">svc_call</link> (
+uint64_t arg0, uint64_t arg1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dc/d45/svc__call_8h_1adda0bff46964de8d3e13ce296fac51ec">svc_call</link> (
+uint64_t arg0, uint64_t arg1, uint64_t arg2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dc/d45/svc__call_8h_1a06ff128ee5e07359e15501b18b9be30d">svc_call</link> (
+uint64_t arg0, uint64_t arg1, uint64_t arg2, uint64_t arg3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d45/svc__call_8h_1ae4acf1285436ae204a32c3a303d6c98d">svc_call</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d45/svc__call_8h_1a6b19cd2d71c460deedcd9aae4e4ab085">svc_call</link> (
+uint64_t arg0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d45/svc__call_8h_1a6ade4d659cb22a2a54f064940d28b19c">svc_call</link> (
+uint64_t arg0, uint64_t arg1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d45/svc__call_8h_1af6a1a72d667890aca86b23ec6412acef">svc_call</link> (
+uint64_t arg0, uint64_t arg1, uint64_t arg2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d45/svc__call_8h_1a95465ede6c459b5956b95af0e3468d62">svc_call</link> (
+uint64_t arg0, uint64_t arg1, uint64_t arg2, uint64_t arg3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/exception/svc_call.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,26 @@
+digraph "FATLongNameEntry::uni_isLongNameEntry"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node80 [label="FATLongNameEntry::uni\l_isLongNameEntry",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node80 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="FATDirEntry::getLongName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d93/class_f_a_t_dir_entry.html#a29bff9fce399e3765917e103ec222e4a"];
+  Node80 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="FATLongNameEntry::getLast\lAppearEntry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d61/class_f_a_t_long_name_entry.html#aea9cfa8f9213c144ed8bf94a71ff3fbf"];
+  Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="FAT32ReadUtil::findByLongName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db1/class_f_a_t32_read_util.html#ab8e4ea1ab59d70f92b681cdac7a5db70"];
+  Node83 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d27/main__fat__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node82 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="FATDirEntryTable::findBy\lLongName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d43/class_f_a_t_dir_entry_table.html#aba69868e6197a2f75621eff3d448375b"];
+  Node85 -> Node86 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="FATDirEntryTable::readFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d43/class_f_a_t_dir_entry_table.html#a9530e4a8c8ac7be7dd5cf578acef39c9"];
+  Node86 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 -> Node87 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="FATLongNameEntry::getOwner\lDirectoryEntry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d61/class_f_a_t_long_name_entry.html#a86d817108087313b9361dce582b281a0"];
+  Node87 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="FATLongNameEntry::getOwner\lDirectoryEntry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d61/class_f_a_t_long_name_entry.html#a231b55572abec8673e949ab541beabbb"];
+  Node82 -> Node89 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="FATLongNameEntry::getLast\lAppearEntry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d61/class_f_a_t_long_name_entry.html#a73ab1e14882a0cd74750e56096160744"];
+}

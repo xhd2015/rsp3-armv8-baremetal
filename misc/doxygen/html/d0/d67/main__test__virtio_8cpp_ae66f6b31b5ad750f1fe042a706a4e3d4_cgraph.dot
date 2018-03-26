@@ -1,0 +1,38 @@
+digraph "main"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="VirtioDriver::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d4c/class_virtio_driver.html#aaefa0dc1cf30fb46122a819f020f65ba"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="setBit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html#aff4c776861e2f020cd23574941008015"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="setBits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html#a41cd600b56ee27df75b2d0cdb4e18d48"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="middleMaskBits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html#af2f94c964a407f35297f94dcd4e7cd1d"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="lowerMaskBits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html#a3d31e60307c16bf71c379876cc217b62"];
+  Node0 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="MemBasedRegReader::\lreg32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/class_mem_based_reg_reader.html#a3d0181d202870b31a91ec5bc1a5c6181"];
+  Node0 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="MemBasedRegReader::\lreg16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/class_mem_based_reg_reader.html#ab54f599c12c38935ff32e526c39666b6"];
+  Node0 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="MemBasedRegReader::\lregcopy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/class_mem_based_reg_reader.html#afa50e6631ba59a188e875cc5f108855d"];
+  Node0 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="VirtioQueueLayout::\lusedRingAlignment",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/de9/class_virtio_queue_layout.html#aa449473a5076f68264d2bb7a139349a9"];
+  Node0 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="VirtioQueueLayout::\lqueueSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/de9/class_virtio_queue_layout.html#a22c325b4c52e9165fbfc3460f00c6875"];
+  Node0 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="VirtioQueueLayout::\lmemSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/de9/class_virtio_queue_layout.html#ab677543e9dcf57bbae883c8d8360f76c"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="alignAhead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html#a62ffc1a495ad7b7b16cae823fc1b2fad"];
+  Node0 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="VirtioQueueLayout::\lqueueBase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/de9/class_virtio_queue_layout.html#a78febc9b2f11e75c29358448cad5ebec"];
+  Node0 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="VirtioBlockRequestRef\l::memSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/dee/class_virtio_block_request_ref.html#a1971adf324286ddca92a6c16f167d3fc"];
+  Node0 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="VirtioBlockRequestRef\l::type",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/dee/class_virtio_block_request_ref.html#acb8194345c0c82e823407d96c6e034d1"];
+}

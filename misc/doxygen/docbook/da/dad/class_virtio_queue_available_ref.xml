@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dad/class_virtio_queue_available_ref">
+<title>VirtioQueueAvailableRef class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/da7/_virtio_queue_available_ref_8h">&quot;VirtioQueueAvailableRef.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioQueueAvailableRef</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d99/class_virtio_queue_available_ref__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioQueueAvailableRef</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d15/class_virtio_queue_available_ref__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="da/dad/class_virtio_queue_available_ref_1a5611ec6bb3a7bbdc8bec675ea7afef5d">FlagsBit</link> {
+<link linkend="da/dad/class_virtio_queue_available_ref_1a5611ec6bb3a7bbdc8bec675ea7afef5daa83486b430d6b37a003e75c1cf0b87bf">VIRTQ_AVAIL_F_NO_INTERRUPT</link>=1
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _queueSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="da/dad/class_virtio_queue_available_ref_1ac45eeb4cba2d68f29497fa89c8a2457c">flags</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="da/dad/class_virtio_queue_available_ref_1a8293a6291bb5f0389ba5a31dc3bb5336">idx</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const uint16_t * <link linkend="da/dad/class_virtio_queue_available_ref_1a1d2829a8ae7958dd3fd84bb549a657d0">ring</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dad/class_virtio_queue_available_ref_1a70f3a6e595f5de4506df87d1ee0c564f">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="da/dad/class_virtio_queue_available_ref_1a797eebe101b297d0e1bc5deea4aa2d28">usedEvent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1a5611ec6bb3a7bbdc8bec675ea7afef5d">
+               <title>enum FlagsBit </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="da/dad/class_virtio_queue_available_ref_1a5611ec6bb3a7bbdc8bec675ea7afef5daa83486b430d6b37a003e75c1cf0b87bf">
+                            <term>VIRTQ_AVAIL_F_NO_INTERRUPT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 13 of file VirtioQueueAvailableRef.h
+                    <computeroutput><literallayout>
+{
+VIRTQ_AVAIL_F_NO_INTERRUPT=1, 
+}FlagsBit;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1ac45eeb4cba2d68f29497fa89c8a2457c">
+                <title>uint16_t VirtioQueueAvailableRef::flags () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1a8293a6291bb5f0389ba5a31dc3bb5336">
+                <title>uint16_t VirtioQueueAvailableRef::idx () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1a1d2829a8ae7958dd3fd84bb549a657d0">
+                <title>const uint16_t* VirtioQueueAvailableRef::ring () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1a70f3a6e595f5de4506df87d1ee0c564f">
+                <title>size_t VirtioQueueAvailableRef::size () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dad/class_virtio_queue_available_ref_1a797eebe101b297d0e1bc5deea4aa2d28">
+                <title>uint16_t VirtioQueueAvailableRef::usedEvent () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

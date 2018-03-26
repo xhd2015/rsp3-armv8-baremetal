@@ -1,0 +1,28 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/printk_qemu_virt.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3683 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/io/printk_qemu_virt.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3683 -> Node3684 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3684 [label="io/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node3684 -> Node3685 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3685 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3685 -> Node3686 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3686 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3685 -> Node3687 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3687 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3684 -> Node3688 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3688 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node3688 -> Node3684 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3683 -> Node3689 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3689 [label="io/uart/PL011.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dd1/_p_l011_8h.html"];
+  Node3689 -> Node3685 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3689 -> Node3690 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3690 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node3690 -> Node3685 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3689 -> Node3691 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3691 [label="io/MemBasedRegReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d46/_mem_based_reg_reader_8h.html"];
+  Node3691 -> Node3685 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3689 -> Node3692 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3692 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

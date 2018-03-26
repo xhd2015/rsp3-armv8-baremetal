@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/da8/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4">
+<title>ReturnTypeSelector&lt; T, false, IsConst &gt; struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d90/_return_type_selector_8h">&quot;ReturnTypeSelector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ReturnTypeSelector&lt; T, false, IsConst &gt;</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d07/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ReturnTypeSelector&lt; T, false, IsConst &gt;</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d73/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>IsConst</declname>
+        <defname>IsConst</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::remove_const_t&lt; std::remove_reference_t&lt; T &gt; &gt;  <link linkend="d6/da8/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4_1a0e4816078fbeeb1a6d5c0947f486fa5f">type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d6/da8/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4_1a0e4816078fbeeb1a6d5c0947f486fa5f">
+                <title>using ReturnTypeSelector&lt; T, false, IsConst &gt;::type =  std::remove_const_t&lt;std::remove_reference_t&lt;T&gt; &gt;</title> <emphasis></emphasis>
+                
+            </section>
+</section>

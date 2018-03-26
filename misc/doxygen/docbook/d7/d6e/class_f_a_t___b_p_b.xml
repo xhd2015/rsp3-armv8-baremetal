@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d6e/class_f_a_t___b_p_b">
+<title>FAT_BPB class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/dab/_f_a_t___b_p_b_8h">&quot;FAT_BPB.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT_BPB</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d47/class_f_a_t___b_p_b__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT_BPB</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/de7/class_f_a_t___b_p_b__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869e">@9</link> {
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869eaa8c54c4c1ca0af1860cc65b6fae5b00c">SEC_PRESENT</link>= 0,
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869ea1b06fd5e0e52f54555c0073417854593">SEC_COPY</link>= 6
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FATType</link> {
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a08aefd15c6ad67d72cad3c7ce61eaefc">FAT12</link>,
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5afdeb09ce01da744e7b4d512eacf73dc7">FAT16</link>,
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a6e579157a8db4566f6d81c7c91b1f074">FAT32</link>,
+<link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a8ddb3c222f694dfb53e016df16205dba">UNKNOWN</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum FAT_BPB::FATType __attribute__</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t BS_jmpBoot[3]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char BS_OEMName[8]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t bytesPerSec</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t FATSz16</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t hiddSec</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t media</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t numFATs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t numHeads</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t rootEntCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t rsvdSecCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t secPerClus</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t secPerTrk</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t totSec16</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t totSec32</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d7/d6e/class_f_a_t___b_p_b_1aa2d2ec0fce1b586551a28cde754417da">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/d6e/class_f_a_t___b_p_b_1adb4332d528545370498cd33e7bbc2038">uni_getRootDirSecCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>NOTE: to be used on any platform,do not use any platform specific types FORBIDDEN: size_t, int,short,long and their unsiged types, void* ALLOWED:uint32_t,uint64_t,uint16_t,uint8_t,char(less recommended)</para>
+
+<para>char is used where it make sense,such as a name,or an identifier</para>
+
+<para>BS = Boot Sector, prefix means used by BS</para>
+
+<para>NOTE: this implements the Microsoft FAT32 Specification, which can be accessed at:TODO add FAT32 Spec pdf website(original and dumped) TEST NOTE: must-do : check if this class and its derived class are packed as desired. </para>
+                <para>Definition at line 25 of file FAT_BPB.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>FAT_BPB.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869e">
+               <title>enum @9 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869eaa8c54c4c1ca0af1860cc65b6fae5b00c">
+                            <term>SEC_PRESENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1a36356d8cdf2516bb2e639a5bf7fe869ea1b06fd5e0e52f54555c0073417854593">
+                            <term>SEC_COPY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 31 of file FAT_BPB.h
+                    <computeroutput><literallayout>
+{
+SEC_PRESENT= 0, 
+SEC_COPY= 6, 
+}@9;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">
+               <title>enum FATType </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a08aefd15c6ad67d72cad3c7ce61eaefc">
+                            <term>FAT12</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5afdeb09ce01da744e7b4d512eacf73dc7">
+                            <term>FAT16</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a6e579157a8db4566f6d81c7c91b1f074">
+                            <term>FAT32</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5a8ddb3c222f694dfb53e016df16205dba">
+                            <term>UNKNOWN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 27 of file FAT_BPB.h
+                    <computeroutput><literallayout>
+{
+FAT12, 
+FAT16, 
+FAT32, 
+UNKNOWN, 
+}FATType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/d6e/class_f_a_t___b_p_b_1aa2d2ec0fce1b586551a28cde754417da">
+                <title>FAT_BPB::FATType FAT_BPB::getFATType () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d6e/class_f_a_t___b_p_b_1adb4332d528545370498cd33e7bbc2038">
+                <title>size_t FAT_BPB::uni_getRootDirSecCount () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

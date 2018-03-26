@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/d66/class_integer_formatter">
+<title>IntegerFormatter class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d5/d7b/io_2_integer_formatter_8h">&quot;IntegerFormatter.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for IntegerFormatter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d61/class_integer_formatter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IntegerFormatter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/da6/class_integer_formatter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>Base</declname>
+        <defname>Base</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="df/d66/class_integer_formatter_1a4d6a1cc54a00cb3a8ba7b8dc9ad30b20">format</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d66/class_integer_formatter_1a7199d0906a8a4dbab0c906f8a490a5ad">IntegerFormatter</link> (
+size_t num)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d66/class_integer_formatter_1aaa4757efac3b075bef6333ffb9894084">IntegerFormatter</link> (
+const void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="df/d66/class_integer_formatter_1a4d6a1cc54a00cb3a8ba7b8dc9ad30b20">
+                <title>char * IntegerFormatter&lt; Base &gt;::format () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d66/class_integer_formatter_1a7199d0906a8a4dbab0c906f8a490a5ad">
+                <title>IntegerFormatter&lt; Base &gt;::IntegerFormatter (size_t num)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d66/class_integer_formatter_1aaa4757efac3b075bef6333ffb9894084">
+                <title>IntegerFormatter&lt; Base &gt;::IntegerFormatter (const void *p)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

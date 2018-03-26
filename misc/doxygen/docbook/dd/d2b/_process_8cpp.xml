@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/d2b/_process_8cpp">
+    <title>Process.cpp File Reference</title>
+    <programlisting>#include &lt;schedule/Process.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/PidManager.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/mmu/VirtualAddress.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/exception/exceptions.h&gt;</programlisting>
+<para>Include dependency diagram for Process.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d53/_process_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Process.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/db8/_process_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/Process.cpp</para>
+    </simplesect>
+</section>

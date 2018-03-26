@@ -1,0 +1,12 @@
+digraph "std::basic_istringstream&lt; Char &gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node199 [label="{std::basic_istringstream\l\< Char \>\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node200 -> Node199 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node200 [label="{std::basic_istream\l\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node201 -> Node200 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node201 [label="{std::basic_ios\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node202 -> Node201 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node202 [label="{std::ios_base\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+}

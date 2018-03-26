@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d4b/_card_spec_data_8h">
+    <title>CardSpecData.h File Reference</title>
+<para>Include dependency diagram for CardSpecData.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/dfe/_card_spec_data_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for CardSpecData.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d4f/_card_spec_data_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d7f/class_card_spec_data">CardSpecData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d6/d4b/_card_spec_data_8h_1a6b05d920a1bea78a16a235c11a9abbf1">_data</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a65459628343455bab7479c08bea19f74">cardCommandClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a086efec6418a3dea49acc1611b363a01">copyFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a753a56431fa3e292780309dc7cd0a85c">csdVersion</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1ae851fd8951aee3eeb524a67e169c47a2">cSizeMult</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1af9390fe250c3e39c33e538f08be5ea00">deviceSize</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a7e3998f779eb375bd36571f8bc07510c">fileFormat</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a858e1d572bdf422e489b59140dd36e01">fileFormatGrp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1ab0b832a7a4271077c5609203846bb3e9">permWriteProctet</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a6f623b1113aea58642a7ad292930d822">readBlLen</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a7572216586ae066ae034237154cccecf">readBlPartial</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a663578af3a34f7e9b5a2ff5ee5fad69d">res0_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1adae041e797c7a8e744bf5d84b3dbaa5b">res0_2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a59349106a09f8f0eb8579696b748a696">res0_3</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1add6f00ac5c77d5372e778fe38a2f14f2">tmpWriteProctect</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a1e9da7d3ecc86815cd9e4eeef00358a0">unconcern_0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a755fe955f830bfa51231a863a2271cf0">unconcern_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1a6dcf007c13fe36076a28d13f921d9386">unconcern_2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d4b/_card_spec_data_8h_1aa941a8052e1c474851567f2b2ccbf508">unconcern_3</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/sd/CardSpecData.h</para>
+    </simplesect>
+</section>

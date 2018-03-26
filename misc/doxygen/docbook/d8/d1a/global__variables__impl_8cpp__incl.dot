@@ -1,0 +1,28 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host/global_variables_impl.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2700 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/host/global_variables\l_impl.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2700 -> Node2701 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2701 [label="MemoryManager.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2700 -> Node2702 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2702 [label="global_variables.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2700 -> Node2703 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2703 [label="mem_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d18/mem__config_8h.html"];
+  Node2703 -> Node2704 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2704 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node2704 -> Node2705 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2705 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2704 -> Node2706 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2706 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2700 -> Node2707 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2707 [label="arch/host/SectorReaderHelper.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d70/_sector_reader_helper_8h.html"];
+  Node2707 -> Node2708 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2708 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2700 -> Node2709 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2709 [label="../../../include/io\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node2709 -> Node2704 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2709 -> Node2710 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2710 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node2710 -> Node2709 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

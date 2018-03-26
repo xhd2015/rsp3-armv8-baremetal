@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d77/class_pid_manager">
+<title>PidManager class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/d92/_pid_manager_8h">&quot;PidManager.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for PidManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dc0/class_pid_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for PidManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d13/class_pid_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d3/d77/class_pid_manager_1a984f916d179089414b00a1317df36a97">@34</link> {
+<link linkend="d3/d77/class_pid_manager_1a984f916d179089414b00a1317df36a97a52ff5740f147b6bf35e8388f2509eaf9">MASK_NUM</link>= 128
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _masks[MASK_NUM]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d3/d77/class_pid_manager_1a581cb9d0b10047702684d157301f0cd5">allocate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d3/d77/class_pid_manager_1a6e115df5268a2ec5c9b6b688cc36aaab">allocate</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> desiredPid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d77/class_pid_manager_1a265914187c7ad33dd2e14d39aa0b26d1">clearAll</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d77/class_pid_manager_1a7a7409c57e709717233c93e52830a5bb">deallocate</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d77/class_pid_manager_1af82912ee5cdd3838fb9835d54c1c5d78">isAllocated</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d77/class_pid_manager_1adee97816de3820e748cef51051db6b88">PidManager</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d3/d77/class_pid_manager_1ae59c208e98f7ee4f916fc4c2cbd0f6ad">bitIndexOfMask</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d77/class_pid_manager_1aee889bc81dc6e65cf9f7c51e436b369b">forceReservedPidPresetValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d3/d77/class_pid_manager_1a0d66440cc0e36b9cbc63f6a7e6e3ff74">indexOfMask</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d77/class_pid_manager_1ae7018189a8c8976b71db99a3dae4cb28">setPidBit</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid, uint8_t v)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="d3/d77/class_pid_manager_1ad0231a0c34a2843df8d7ab3e527f2eb5">isReservedPid</link> (
+<link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> pid)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d3/d77/class_pid_manager_1a984f916d179089414b00a1317df36a97">
+               <title>enum @34 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d3/d77/class_pid_manager_1a984f916d179089414b00a1317df36a97a52ff5740f147b6bf35e8388f2509eaf9">
+                            <term>MASK_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 28 of file PidManager.h
+                    <computeroutput><literallayout>
+{
+MASK_NUM= 128, 
+}@34;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d3/d77/class_pid_manager_1a581cb9d0b10047702684d157301f0cd5">
+                <title>Pid PidManager::allocate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1a6e115df5268a2ec5c9b6b688cc36aaab">
+                <title>Pid PidManager::allocate (Pid desiredPid)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1a265914187c7ad33dd2e14d39aa0b26d1">
+                <title>void PidManager::clearAll ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1a7a7409c57e709717233c93e52830a5bb">
+                <title>void PidManager::deallocate (Pid pid)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1af82912ee5cdd3838fb9835d54c1c5d78">
+                <title>bool PidManager::isAllocated (Pid pid) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1adee97816de3820e748cef51051db6b88">
+                <title>PidManager::PidManager ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1ae59c208e98f7ee4f916fc4c2cbd0f6ad">
+                <title>AS_MACRO size_t PidManager::bitIndexOfMask (Pid pid) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1aee889bc81dc6e65cf9f7c51e436b369b">
+                <title>void PidManager::forceReservedPidPresetValue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1a0d66440cc0e36b9cbc63f6a7e6e3ff74">
+                <title>AS_MACRO size_t PidManager::indexOfMask (Pid pid) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1ae7018189a8c8976b71db99a3dae4cb28">
+                <title>void PidManager::setPidBit (Pid pid, uint8_t v)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d77/class_pid_manager_1ad0231a0c34a2843df8d7ab3e527f2eb5">
+                <title>bool PidManager::isReservedPid (Pid pid)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

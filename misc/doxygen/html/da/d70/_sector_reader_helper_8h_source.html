@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host/SectorReaderHelper.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_7c40e03ac1dfef8b430578d46da2b8fd.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_5b7425cd5aa1281cab0ed2539c35614b.html">host</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SectorReaderHelper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d70/_sector_reader_helper_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * SectorReaderHelper.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Jan 31, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_ARCH_HOST_SECTORREADERHELPER_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_ARCH_HOST_SECTORREADERHELPER_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d4/d91/class_sector_reader_helper.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d91/class_sector_reader_helper.html">SectorReaderHelper</a>{<span class="comment">//we read it from file</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d4/d91/class_sector_reader_helper.html#a473f9dfa0e88e0e97de37dc7745cd314">~SectorReaderHelper</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d91/class_sector_reader_helper.html#ad6db2d8c45476a18e8871d447ff42a3a">setCurrentFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *file);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d91/class_sector_reader_helper.html#a9812ce5e4e9988850be23a64e8839997">invalidateCurrentFile</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../d4/d91/class_sector_reader_helper.html#a921d6379685fb12c54877b5792c95441">read</a>(<span class="keywordtype">size_t</span> secIndex,<span class="keywordtype">void</span> *dst,<span class="keywordtype">size_t</span> maxNumSec);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../d4/d91/class_sector_reader_helper.html#aa1ac380a556ee08a981dfafded03ef17">write</a>(<span class="keywordtype">size_t</span> secIndex,<span class="keyword">const</span> <span class="keywordtype">void</span> *src,<span class="keywordtype">size_t</span> maxNumSec);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d4/d91/class_sector_reader_helper.html#a67d7da3399884dd3889c22ba13eee886">   22</a></span>&#160;    std::fstream *<a class="code" href="../../d4/d91/class_sector_reader_helper.html#a67d7da3399884dd3889c22ba13eee886">fileStream</a> {<span class="keyword">nullptr</span>};</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <a class="code" href="../../d4/d91/class_sector_reader_helper.html">SectorReaderHelper</a> <a class="code" href="../../da/d70/_sector_reader_helper_8h.html#a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_ARCH_HOST_SECTORREADERHELPER_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_sector_reader_helper_html_a921d6379685fb12c54877b5792c95441"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#a921d6379685fb12c54877b5792c95441">SectorReaderHelper::read</a></div><div class="ttdeci">size_t read(size_t secIndex, void *dst, size_t maxNumSec)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d87/_sector_reader__host_8cpp_source.html#l00032">SectorReader_host.cpp:32</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html">SectorReaderHelper</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d70/_sector_reader_helper_8h_source.html#l00013">SectorReaderHelper.h:13</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html_a67d7da3399884dd3889c22ba13eee886"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#a67d7da3399884dd3889c22ba13eee886">SectorReaderHelper::fileStream</a></div><div class="ttdeci">std::fstream * fileStream</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d70/_sector_reader_helper_8h_source.html#l00022">SectorReaderHelper.h:22</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html_aa1ac380a556ee08a981dfafded03ef17"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#aa1ac380a556ee08a981dfafded03ef17">SectorReaderHelper::write</a></div><div class="ttdeci">size_t write(size_t secIndex, const void *src, size_t maxNumSec)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d87/_sector_reader__host_8cpp_source.html#l00038">SectorReader_host.cpp:38</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html_a9812ce5e4e9988850be23a64e8839997"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#a9812ce5e4e9988850be23a64e8839997">SectorReaderHelper::invalidateCurrentFile</a></div><div class="ttdeci">void invalidateCurrentFile()</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d87/_sector_reader__host_8cpp_source.html#l00024">SectorReader_host.cpp:24</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html_a473f9dfa0e88e0e97de37dc7745cd314"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#a473f9dfa0e88e0e97de37dc7745cd314">SectorReaderHelper::~SectorReaderHelper</a></div><div class="ttdeci">~SectorReaderHelper()</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d87/_sector_reader__host_8cpp_source.html#l00013">SectorReader_host.cpp:13</a></div></div>
+<div class="ttc" id="_sector_reader_helper_8h_html_a427270656c8e525cdc9f125c37e60f6c"><div class="ttname"><a href="../../da/d70/_sector_reader_helper_8h.html#a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</a></div><div class="ttdeci">SectorReaderHelper sys_sectorReaderHelper</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00018">global_variables_impl.cpp:18</a></div></div>
+<div class="ttc" id="class_sector_reader_helper_html_ad6db2d8c45476a18e8871d447ff42a3a"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html#ad6db2d8c45476a18e8871d447ff42a3a">SectorReaderHelper::setCurrentFile</a></div><div class="ttdeci">void setCurrentFile(const char *file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d87/_sector_reader__host_8cpp_source.html#l00017">SectorReader_host.cpp:17</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:29 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

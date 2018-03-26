@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d01/_memory_manager__host_8cpp">
+    <title>MemoryManager_host.cpp File Reference</title>
+    <programlisting>#include &lt;MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+    <programlisting>#include &lt;algorithm&gt;</programlisting>
+<para>Include dependency diagram for MemoryManager_host.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d4a/_memory_manager__host_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for MemoryManager_host.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/da2/_memory_manager__host_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_host.cpp</para>
+    </simplesect>
+</section>

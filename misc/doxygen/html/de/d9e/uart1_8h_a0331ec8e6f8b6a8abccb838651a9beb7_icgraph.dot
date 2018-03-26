@@ -1,0 +1,13 @@
+digraph "uart1SendReady"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node21 [label="uart1SendReady",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node21 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="uart1Putc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/ddf/uart1_8cpp.html#af7ac0714aabbedf2bbba3ef37cfcbef6"];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="uart1Puts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/ddf/uart1_8cpp.html#a31257802883dfdd5c05e360da25f16f1"];
+  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="printk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d68/printk__impl_8cpp.html#a369c0aab90bda82199178651fcc3d359"];
+}

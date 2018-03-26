@@ -1,0 +1,20 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"]
+  subgraph clusterdir_c184e51c84f2c3f0345bbc8a0d75d3e1 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html"];
+    dir_c184e51c84f2c3f0345bbc8a0d75d3e1 [shape=plaintext label="io"];
+    dir_8472fd655a944cd810f7433d715f3abd [shape=box label="sd" color="black" fillcolor="white" style="filled" URL="dir_8472fd655a944cd810f7433d715f3abd.html"];
+    dir_bea3fffa057b0d6d3c1ffb3c8f816130 [shape=box label="uart" color="black" fillcolor="white" style="filled" URL="dir_bea3fffa057b0d6d3c1ffb3c8f816130.html"];
+    dir_ac0438a8e960cde21756c2e6a6f7f771 [shape=box label="virtio" color="black" fillcolor="white" style="filled" URL="dir_ac0438a8e960cde21756c2e6a6f7f771.html"];
+  }
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_ac0438a8e960cde21756c2e6a6f7f771->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="6", labeldistance=1.5 headhref="dir_000044_000000.html"];
+  dir_bea3fffa057b0d6d3c1ffb3c8f816130->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="2", labeldistance=1.5 headhref="dir_000043_000000.html"];
+  dir_8472fd655a944cd810f7433d715f3abd->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="8", labeldistance=1.5 headhref="dir_000042_000000.html"];
+  dir_c184e51c84f2c3f0345bbc8a0d75d3e1->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="38", labeldistance=1.5 headhref="dir_000041_000000.html"];
+}

@@ -1,0 +1,12 @@
+digraph "TestVector"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node888 [label="{TestVector\n||+ capacityDecreasedCorrectly()\l+ capacityIncreasedCorrectly()\l+ eraseCorrectly()\l+ initializeCorrectly()\l+ insertCorrectly()\l+ minimalCapacityEnsured()\l+ popBackWhenEmptyNoException()\l+ pushBackCorrectly()\l+ resizeCorrectly()\l+ setup()\l+ teardown()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node889 -> Node888 [dir="back",color="firebrick4",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node889 [label="{Vector\< int \>\n|- capacity\l- data\l- size\l|+ append()\l+ clear()\l+ empty()\l+ erase()\l+ getCapacity()\l+ getData()\l+ getData()\l+ getSize()\l+ insert()\l+ operator=()\l和 12 更多...\l- adjustCapacityForOneLess()\l- adjustCapacityForOneMore()\l- resizeCapacity()\l- getIncrementalSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html"];
+  Node890 -> Node889 [dir="back",color="orange",fontsize="10",style="solid",label=" \< int \>" ,fontname="Helvetica"];
+  Node890 [label="{Vector\< T \>\n|- capacity\l- size\l|+ append()\l+ clear()\l+ empty()\l+ erase()\l+ getCapacity()\l+ getData()\l+ getData()\l+ getSize()\l+ insert()\l+ operator=()\l和 12 更多...\l- adjustCapacityForOneLess()\l- adjustCapacityForOneMore()\l- resizeCapacity()\l- getIncrementalSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html"];
+  Node891 -> Node890 [color="grey25",fontsize="10",style="solid",label=" -data" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node891 [label="{T\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

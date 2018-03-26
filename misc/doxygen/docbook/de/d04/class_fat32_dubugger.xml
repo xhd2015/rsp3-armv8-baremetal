@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d04/class_fat32_dubugger">
+<title>Fat32Dubugger class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d5/d42/_f_a_t32_debugger_8h">&quot;FAT32Debugger.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Fat32Dubugger</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d02/class_fat32_dubugger__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Fat32Dubugger</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d8d/class_fat32_dubugger__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1a9888152da8d81a0141cc7ed9bd719865">dumpBPB</link> (
+<link linkend="d7/d6e/class_f_a_t___b_p_b">FAT_BPB</link> * bpb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1a506ed1a92214b231f9adeb387af8122f">dumpBPBTypeInformation</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1a2628921fda62e69ea7ae41340cf7bd5e">dumpDirectoryEntry</link> (
+<link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> dentry)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1af917c71cd71a38b216f459e3f7d0ba0f">dumpDirNames</link> (
+<link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> dentry)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1a312d48351305a153cca8ff75c510c23f">dumpDirNames</link> (
+<link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * dentry, size_t count)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d04/class_fat32_dubugger_1aea9a56c709c6897aa37363cb9e3ab4d1">dumpExtBPB32</link> (
+<link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> * bpb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>debug may be unnecessary,so it can be exclude from build when releasing. </para>
+                <para>Definition at line 22 of file FAT32Debugger.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>FAT32Debugger.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="de/d04/class_fat32_dubugger_1a9888152da8d81a0141cc7ed9bd719865">
+                <title>void Fat32Dubugger::dumpBPB (FAT_BPB *bpb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d04/class_fat32_dubugger_1a506ed1a92214b231f9adeb387af8122f">
+                <title>void Fat32Dubugger::dumpBPBTypeInformation ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d04/class_fat32_dubugger_1a2628921fda62e69ea7ae41340cf7bd5e">
+                <title>void Fat32Dubugger::dumpDirectoryEntry (FATDirEntry dentry)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d04/class_fat32_dubugger_1af917c71cd71a38b216f459e3f7d0ba0f">
+                <title>void Fat32Dubugger::dumpDirNames (FATDirEntry dentry)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d04/class_fat32_dubugger_1a312d48351305a153cca8ff75c510c23f">
+                <title>void Fat32Dubugger::dumpDirNames (FATDirEntry *dentry, size_t count)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d04/class_fat32_dubugger_1aea9a56c709c6897aa37363cb9e3ab4d1">
+                <title>void Fat32Dubugger::dumpExtBPB32 (FAT32ExtBPB *bpb)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

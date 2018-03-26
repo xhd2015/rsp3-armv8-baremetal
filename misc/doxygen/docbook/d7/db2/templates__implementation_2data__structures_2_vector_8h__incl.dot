@@ -1,0 +1,42 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/data_structures/Vector.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node664 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/templates_implementation\l/data_structures/Vector.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node664 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node665 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node665 -> Node666 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node666 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node665 -> Node667 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node667 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node664 -> Node668 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node668 [label="data_structures/Vector.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d70/data__structures_2_vector_8h.html"];
+  Node668 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node668 -> Node669 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node669 [label="initializer_list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node668 -> Node670 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node670 [label="io/SectorReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d73/_sector_reader_8h.html"];
+  Node670 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node668 -> Node671 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node671 [label="io/Output.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d77/_output_8h.html"];
+  Node671 -> Node672 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node672 [label="io/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node672 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node672 -> Node673 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node673 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node673 -> Node672 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node668 -> Node664 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node664 -> Node674 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node674 [label="memory/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d76/memory_2_memory_manager_8h.html"];
+  Node674 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node674 -> Node675 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node675 [label="memory/MemoryChunk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html"];
+  Node675 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node675 -> Node676 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node676 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node676 -> Node665 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node674 -> Node677 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node677 [label="templates_implementation\l/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d2b/templates__implementation_2_memory_manager_8h.html"];
+  Node677 -> Node674 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node664 -> Node671 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

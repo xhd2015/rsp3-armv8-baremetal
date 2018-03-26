@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/dc9/main__stolen__mmu_8cpp">
+    <title>main_stolen_mmu.cpp File Reference</title>
+    <programlisting>#include &lt;arch/qemu-virt/gpio.h&gt;</programlisting>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &quot;../../../include/io/printk.h&quot;</programlisting>
+<para>Include dependency diagram for main_stolen_mmu.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d6b/main__stolen__mmu_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for main_stolen_mmu.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/d37/main__stolen__mmu_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link> 0x08000000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a519adc2af3ba06a8f0548b6690050a89">PAGESIZE</link> 4096</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a03ed94055fbf811832f1e4ec4b8d11f7">PT_AF</link> (1&lt;&lt;10)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a8eb055ed2fa4d37123ba1861d9369889">PT_BLOCK</link> 0b01</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a04110b9a3486d84473b3c5126b862d78">PT_DEV</link> (1&lt;&lt;2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a2c7d24100c2323ebb75071a3a2744d3c">PT_ISH</link> (3&lt;&lt;8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a49df0e78a2b1ad87469a710c98d48d32">PT_KERNEL</link> (0&lt;&lt;6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a98f399dce3c73767cfadd9ee0eb3de6f">PT_MEM</link> (0&lt;&lt;2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a7d6311a2b77bd9ddc4c2d1542a6a9d29">PT_NC</link> (2&lt;&lt;2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a090e8c49a1859c9837b0946195d2f546">PT_NX</link> (1UL&lt;&lt;54)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a4e426296ce2cd38f2397afb7a459fca6">PT_OSH</link> (2&lt;&lt;8)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a91b3f2db36b60d2cd81a142162cc240e">PT_PAGE</link> 0b11</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1aa379fc7b062263e1e54e6d7d7d972d45">PT_RO</link> (1&lt;&lt;7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a99f9683e39e590131cefa58c2d4e7c14">PT_RW</link> (0&lt;&lt;7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a6a2477ddcd942726817387686604f2cb">PT_USER</link> (1&lt;&lt;6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="db/dc9/main__stolen__mmu_8cpp_1a207fd4c45b60f098f1dab342f5c7e8b3">TTBR_ENABLE</link> 1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned char <link linkend="db/dc9/main__stolen__mmu_8cpp_1ab11aa2a8a0873d6bfcf364babaa64f32">_data</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned char <link linkend="db/dc9/main__stolen__mmu_8cpp_1a377b7b926057769e0061537bfed34012">_end</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="db/dc9/main__stolen__mmu_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/dc9/main__stolen__mmu_8cpp_1abd7eba8cae99b9fb84685567d7f35242">mmu_init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_stolen_mmu.cpp</para>
+    </simplesect>
+</section>

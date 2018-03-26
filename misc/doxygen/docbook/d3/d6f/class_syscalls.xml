@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d6f/class_syscalls">
+<title>Syscalls class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/ddf/syscall_8h">&quot;syscall.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Syscalls</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dc4/class_syscalls__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Syscalls</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/de9/class_syscalls__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2">CallType</link> {
+<link linkend="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">Allocate</link>,
+<link linkend="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">Puts</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void * <link linkend="d3/d6f/class_syscalls_1a76a312961c3fd5c734373b92f170bf9b">allocate</link> (
+size_t size, size_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d3/d6f/class_syscalls_1a4b1e713c8f3aa688e053c5248ea8e25f">puts</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d3/d6f/class_syscalls_1a9173ec6c027db6fe22af8e3d03cc73c2">syscall</link> (
+<link linkend="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2">CallType</link> type, size_t arg1, size_t arg2, size_t arg3, size_t arg4, size_t arg5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2">
+               <title>enum CallType </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">
+                            <term>Allocate</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d3/d6f/class_syscalls_1aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">
+                            <term>Puts</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 16 of file syscall.h
+                    <computeroutput><literallayout>
+{
+Allocate, 
+Puts, 
+}CallType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d3/d6f/class_syscalls_1a76a312961c3fd5c734373b92f170bf9b">
+                <title>static void* Syscalls::allocate (size_t size, size_t alignment=sizeof(size_t))</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d6f/class_syscalls_1a4b1e713c8f3aa688e053c5248ea8e25f">
+                <title>static size_t Syscalls::puts (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d6f/class_syscalls_1a9173ec6c027db6fe22af8e3d03cc73c2">
+                <title>static size_t Syscalls::syscall (CallType type, size_t arg1=0, size_t arg2=0, size_t arg3=0, size_t arg4=0, size_t arg5=0)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

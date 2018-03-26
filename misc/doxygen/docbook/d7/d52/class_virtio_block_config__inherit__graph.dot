@@ -1,0 +1,6 @@
+digraph "VirtioBlockConfig"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node947 [label="{VirtioBlockConfig\n|+ blk_size\l+ capacity\l+ geometry\l+ seg_max\l+ size_max\l+ topology\l+ writeback\l|+ dump()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

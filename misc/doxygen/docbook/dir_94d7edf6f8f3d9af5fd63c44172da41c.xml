@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_94d7edf6f8f3d9af5fd63c44172da41c">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_94d7edf6f8f3d9af5fd63c44172da41c_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d1/d1e/_memory_chunk_8cpp">MemoryChunk.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d7/dec/_memory_manager__aarch64_8cpp">MemoryManager_aarch64.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d5/d01/_memory_manager__host_8cpp">MemoryManager_host.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/</para>
+    </simplesect>
+</section>

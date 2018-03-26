@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d6b/generic__util_8cpp">
+    <title>generic_util.cpp File Reference</title>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+<para>Include dependency diagram for generic_util.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d7b/generic__util_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for generic_util.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d42/generic__util_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d6/d6b/generic__util_8cpp_1a3fd0302d401f93890a054567e5ac059b">digitsMap</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d6b/generic__util_8cpp_1a62ffc1a495ad7b7b16cae823fc1b2fad">alignAhead</link> (
+uint64_t d, uint64_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d6b/generic__util_8cpp_1a8a467869963f69dab2f1c1720aee7765">alignBackward</link> (
+uint64_t d, uint64_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d6b/generic__util_8cpp_1a9510d749402ed54c44ca35b10a7162c3">itob</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d6b/generic__util_8cpp_1a43715e4d4543de6b46c6cb48cce27169">itod</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d6b/generic__util_8cpp_1a5e7908fb09fcb92255d970d32f6740d6">itos</link> (
+size_t i, unsigned int base, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d6b/generic__util_8cpp_1afeb9f297a4d9c22cfc7c60aa6339c507">itox</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/d6b/generic__util_8cpp_1acb36ebc193ed813f8490ea2afb3a4d1a">reverse</link> (
+char * str, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="d6/d6b/generic__util_8cpp_1ab74f19ae60eb97e1f0b7d848bba10b7c">strOffset</link> (
+const char * p, size_t offset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic_util.cpp</para>
+    </simplesect>
+</section>

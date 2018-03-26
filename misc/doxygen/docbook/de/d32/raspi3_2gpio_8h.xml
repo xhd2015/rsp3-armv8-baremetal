@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d32/raspi3_2gpio_8h">
+    <title>gpio.h File Reference</title>
+<para>Include dependency diagram for gpio.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/ddd/raspi3_2gpio_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for gpio.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d0e/raspi3_2gpio_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1acfd39d8a7cb2699bbb3c34138da18546">GPCLR0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200028)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a856e573a56c5b2d050d2f46c1cbf9ef4">GPEDS0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200040)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1aeb2dbc04151848b8c9e1c5d5a7aad278">GPEDS1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200044)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1afe9fcb936213cde1c119adb9d6bcdfef">GPFSEL0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200000)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1aa72ec0941e0d31e5f32c3e7c86a07d0b">GPFSEL1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200004)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a1132c5f29917c49fbee063e33c3b5692">GPFSEL2</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200008)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1ae4affbaecb6300cb9c3dda7e5c18e06a">GPFSEL3</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x0020000C)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a5caf5d8e852a697878b9b61c9f4d8382">GPFSEL4</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200010)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a117b52d7b4d1b8e670b128366f7666eb">GPFSEL5</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200014)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a5487c952d4db7640aca2a3885d4eb882">GPHEN0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200064)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a15c78e158faf191ded22d2f67b432651">GPHEN1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200068)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1acce3b8a909ed8b957b4e411dfb7cbd91">GPIO_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a210d80264623a8dce1d1a9b069939831">GPLEV0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200034)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1ab363ba9f848a18b2e231673ac3f2f9c9">GPLEV1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200038)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1ac6578485ff4c894df669c72582e855d3">GPPUD</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200094)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a913f6e2a86a5b609f972d4d8cead44ef">GPPUDCLK0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200098)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1af615d57697d1b19dca100eb4cc6101fd">GPPUDCLK1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x0020009C)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a099076bf1364aa3ead421c67ec60714c">GPSET0</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x0020001C)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a554256362902a48654e7733b49d9bc89">GPSET1</link> reinterpret_cast&lt;volatile unsigned int*&gt;(<link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00200020)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a107d207a36f1ddd35678ac9fe114e701">GPU_MAIL_BOX_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x0000B880</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1ab83441b5ca9bd3c25e8e4489f2071f1f">INT_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x0000B000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link> 0x3F000000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a5d8061cca0b3b6df258bd80c6c29928d">PWR_MGMT_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00100000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a8859862bce15cbc2a64671518404debf">SYSTEM_TIMER_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00003000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a7a07348b4332ff6b88abf6092347deba">UART0_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00201000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a383bf0c4670c3a7fa72df80f66331a46">UART1_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00215000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="de/d32/raspi3_2gpio_8h_1a06b8fbef2b12c0a03878d1cba1903c3a">USB_CTRL_BASE</link> <link linkend="db/dc9/main__stolen__mmu_8cpp_1ace116e164b8e667f7fc36a49ce5fae53">MMIO_BASE</link>+0x00980000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3/gpio.h</para>
+    </simplesect>
+</section>

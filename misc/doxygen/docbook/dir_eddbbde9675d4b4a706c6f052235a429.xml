@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_eddbbde9675d4b4a706c6f052235a429">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_eddbbde9675d4b4a706c6f052235a429_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d8/d96/exit_8cpp">exit.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d0/dc9/init_8cpp">init.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d0/ddd/user__main__fork__process_8cpp">user_main_fork_process.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="db/db2/user__main__hello__kernel_8cpp">user_main_hello_kernel.cpp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space/</para>
+    </simplesect>
+</section>

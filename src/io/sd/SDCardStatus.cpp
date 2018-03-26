@@ -6,12 +6,20 @@
  */
 
 
-
+/**
+ * this file tests doxygen
+ * @author tester
+ */
 #include <io/Output.h>
 #include <io/sd/SDCardStatus.h>
 
+/**
+ * @brief this is just something
+ * @return void
+ */
 void SDCardStatus::dump()const
 {
+	// kout << "FUCK\n";
 		kout << "SDCardStatus: ";
 		kout << " resForTest = " << S1.resForTest << ","
 		<< " resForAppCmd = " << S1.resForAppCmd << ","

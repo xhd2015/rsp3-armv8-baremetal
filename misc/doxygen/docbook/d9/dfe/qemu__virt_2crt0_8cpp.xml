@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dfe/qemu__virt_2crt0_8cpp">
+    <title>crt0.cpp File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/qemu-virt/util.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+    <programlisting>#include &lt;io/uart/PL011.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+<para>Include dependency diagram for crt0.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/da2/qemu__virt_2crt0_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for crt0.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/df1/qemu__virt_2crt0_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/dfe/qemu__virt_2crt0_8cpp_1a7e71c68b488daf12e2e79226f115951a">__bss_end</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/dfe/qemu__virt_2crt0_8cpp_1a23d915929e74b952f2f474d8c2e5217a">__bss_start</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dfe/qemu__virt_2crt0_8cpp_1a78d1be758a7bdb2ed2fb684a95f1a286">__asm__</link> (
+&quot;.section .text.boot \<link linkend="d8/d2f/asm__instructions_8h_1afe2f909cec4d8d6be492a3c20d6c5370">ASM_HALT_SLAVE_CPUS</link>() <link linkend="d8/d2f/asm__instructions_8h_1a92b22b0b37262aeb0f479d59bda2882d">ASM_SET_SP_SYM</link>(<link linkend="d9/d35/main__run__process_8cpp_1a4a7156535a511c1a82318c7b176bb1e9">__stack_top</link>) &quot;b <link linkend="d4/d12/zcu102_2crt0_8cpp_1a02fd73d861ef2e4aabb38c0c9ff82947">init</link> \&quot; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/dfe/qemu__virt_2crt0_8cpp_1a02fd73d861ef2e4aabb38c0c9ff82947">init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d9/dfe/qemu__virt_2crt0_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/crt0.cpp</para>
+    </simplesect>
+</section>

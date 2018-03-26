@@ -1,0 +1,11 @@
+digraph "operator&lt;&lt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="operator\<\<",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="VectorRef::getSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/deb/class_vector_ref.html#a556e8d755266a452e5a8d32998518a58"];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="VectorRef::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/deb/class_vector_ref.html#aefa6865b44ab052c5cb463f58e8f87fd"];
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioQueueUsedRef.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_a00b633439466cbb1729245c7f66f564.html">io</a></li><li class="navelem"><a class="el" href="../../dir_53ea9fcfe4d1d68d9b1b07ecf3a36205.html">virtio</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VirtioQueueUsedRef.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/de1/_virtio_queue_used_ref_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * VirtioQueueUsed.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Mar 25, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_IO_VIRTIO_VIRTIOQUEUEUSED_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_IO_VIRTIO_VIRTIOQUEUEUSED_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d7/daa/class_virtio_queue_used_ref.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html">VirtioQueueUsedRef</a>{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html">   13</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html">UsedElement</a>{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">// 已使用的描述符链的索引（下标）</span></div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#ab3e7ab8dacc7b88d97b0a1fa7552e68e">   15</a></span>&#160;        uint32_t <a class="code" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#ab3e7ab8dacc7b88d97b0a1fa7552e68e">_id</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">// 该链的长度</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#a5a961c6d105302b1928645c63e6168ff">   17</a></span>&#160;        uint32_t <a class="code" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#a5a961c6d105302b1928645c63e6168ff">_len</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    uint16_t <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#afec4de2996c8c7ccc73bfc5a0cd896b7">flags</a>()<span class="keyword">const</span>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint16_t <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#a43c1624ad2d1c14e17db2033fa40a078">idx</a>()<span class="keyword">const</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html">UsedElement</a> * <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#a963b40b46ef1bdeedeccc2e974c3b62f">ring</a>()<span class="keyword">const</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    uint16_t <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#a2d426cdcd930e4f5766e67415fb96570">availEvent</a>()<span class="keyword">const</span>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d7/daa/class_virtio_queue_used_ref.html#a4d7518005aec4535f5d6d99e2834768c">   26</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#a4d7518005aec4535f5d6d99e2834768c">_queueSize</a>;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d7/daa/class_virtio_queue_used_ref.html#ae375dc99265ee7e0133f17f3c516674a">   27</a></span>&#160;    <span class="keywordtype">void</span> * <a class="code" href="../../d7/daa/class_virtio_queue_used_ref.html#ae375dc99265ee7e0133f17f3c516674a">_base</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//  布局如下：</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//  uint16_t _flags;</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//  uint16_t _idx;</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//  virtq_used_elem ring[_queueSize];</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//  uint16_t _avail_event;</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_IO_VIRTIO_VIRTIOQUEUEUSEDREF_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_virtio_queue_used_ref_html_a2d426cdcd930e4f5766e67415fb96570"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#a2d426cdcd930e4f5766e67415fb96570">VirtioQueueUsedRef::availEvent</a></div><div class="ttdeci">uint16_t availEvent() const</div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html_a963b40b46ef1bdeedeccc2e974c3b62f"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#a963b40b46ef1bdeedeccc2e974c3b62f">VirtioQueueUsedRef::ring</a></div><div class="ttdeci">const UsedElement * ring() const</div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html_a4d7518005aec4535f5d6d99e2834768c"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#a4d7518005aec4535f5d6d99e2834768c">VirtioQueueUsedRef::_queueSize</a></div><div class="ttdeci">size_t _queueSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00026">VirtioQueueUsedRef.h:26</a></div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html_ae375dc99265ee7e0133f17f3c516674a"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#ae375dc99265ee7e0133f17f3c516674a">VirtioQueueUsedRef::_base</a></div><div class="ttdeci">void * _base</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00027">VirtioQueueUsedRef.h:27</a></div></div>
+<div class="ttc" id="struct_virtio_queue_used_ref_1_1_used_element_html"><div class="ttname"><a href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html">VirtioQueueUsedRef::UsedElement</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00013">VirtioQueueUsedRef.h:13</a></div></div>
+<div class="ttc" id="struct_virtio_queue_used_ref_1_1_used_element_html_ab3e7ab8dacc7b88d97b0a1fa7552e68e"><div class="ttname"><a href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#ab3e7ab8dacc7b88d97b0a1fa7552e68e">VirtioQueueUsedRef::UsedElement::_id</a></div><div class="ttdeci">uint32_t _id</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00015">VirtioQueueUsedRef.h:15</a></div></div>
+<div class="ttc" id="struct_virtio_queue_used_ref_1_1_used_element_html_a5a961c6d105302b1928645c63e6168ff"><div class="ttname"><a href="../../d1/de4/struct_virtio_queue_used_ref_1_1_used_element.html#a5a961c6d105302b1928645c63e6168ff">VirtioQueueUsedRef::UsedElement::_len</a></div><div class="ttdeci">uint32_t _len</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00017">VirtioQueueUsedRef.h:17</a></div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html">VirtioQueueUsedRef</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de1/_virtio_queue_used_ref_8h_source.html#l00011">VirtioQueueUsedRef.h:11</a></div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html_a43c1624ad2d1c14e17db2033fa40a078"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#a43c1624ad2d1c14e17db2033fa40a078">VirtioQueueUsedRef::idx</a></div><div class="ttdeci">uint16_t idx() const</div></div>
+<div class="ttc" id="class_virtio_queue_used_ref_html_afec4de2996c8c7ccc73bfc5a0cd896b7"><div class="ttname"><a href="../../d7/daa/class_virtio_queue_used_ref.html#afec4de2996c8c7ccc73bfc5a0cd896b7">VirtioQueueUsedRef::flags</a></div><div class="ttdeci">uint16_t flags() const</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

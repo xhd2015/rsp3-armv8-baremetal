@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_5b7425cd5aa1281cab0ed2539c35614b">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_5b7425cd5aa1281cab0ed2539c35614b_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="da/d70/_sector_reader_helper_8h">SectorReaderHelper.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host/</para>
+    </simplesect>
+</section>

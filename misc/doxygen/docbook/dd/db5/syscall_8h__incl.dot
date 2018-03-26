@@ -1,0 +1,42 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/syscall.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2502 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/syscall.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2502 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2503 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node2503 -> Node2504 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2504 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2503 -> Node2505 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2505 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2502 -> Node2506 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2506 [label="asm_instructions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d2f/asm__instructions_8h.html"];
+  Node2506 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2506 -> Node2507 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2507 [label="arch/common_aarch64\l/system_common_registers.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1f/system__common__registers_8h.html"];
+  Node2507 -> Node2508 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2508 [label="arch/common_aarch64\l/registers_defines.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dbd/registers__defines_8h.html"];
+  Node2508 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2508 -> Node2509 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2509 [label="kernel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/daa/kernel_8h.html"];
+  Node2508 -> Node2510 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2510 [label="io/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d7b/io_2_integer_formatter_8h.html"];
+  Node2510 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2510 -> Node2511 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2511 [label="io/Output.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d77/_output_8h.html"];
+  Node2511 -> Node2512 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2512 [label="io/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node2512 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2512 -> Node2513 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2513 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node2513 -> Node2512 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2510 -> Node2514 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2514 [label="templates_implementation\l/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d84/templates__implementation_2_integer_formatter_8h.html"];
+  Node2514 -> Node2510 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2514 -> Node2515 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2515 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node2515 -> Node2503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2514 -> Node2511 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2508 -> Node2516 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2516 [label="arch/common_aarch64\l/gicv3_defines.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d80/gicv3__defines_8h.html"];
+}

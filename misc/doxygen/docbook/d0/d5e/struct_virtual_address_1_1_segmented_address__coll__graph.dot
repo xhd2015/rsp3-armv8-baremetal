@@ -1,0 +1,6 @@
+digraph "VirtualAddress::SegmentedAddress"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node829 [label="{VirtualAddress::Segmented\lAddress\n|+ index0\l+ index1\l+ index2\l+ index3\l+ offset\l+ upperBits\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

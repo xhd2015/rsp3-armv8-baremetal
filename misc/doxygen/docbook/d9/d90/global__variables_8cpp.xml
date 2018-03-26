@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d90/global__variables_8cpp">
+    <title>global_variables.cpp File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/mem_config.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+    <programlisting>#include &lt;schedule/PidManager.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/ProcessManager.h&gt;</programlisting>
+    <programlisting>#include &lt;SystemFeatures.h&gt;</programlisting>
+    <programlisting>#include &lt;io/uart/PL011.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Input.h&gt;</programlisting>
+    <programlisting>#include &lt;io/uart/XilinxUARTPS.h&gt;</programlisting>
+<para>Include dependency diagram for global_variables.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d81/global__variables_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for global_variables.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/dc8/global__variables_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d9/d90/global__variables_8cpp_1aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d7b/class_input">Input</link> <link linkend="d9/d90/global__variables_8cpp_1ac487120f69c1071e11502a7c87615dd1">kin</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> <link linkend="d9/d90/global__variables_8cpp_1ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d9/d90/global__variables_8cpp_1a645f0e6682b0f122c08f036a1edfc1f7">koutBuf</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/dff/class_memory_manager">MemoryManager</link> <link linkend="d9/d90/global__variables_8cpp_1a14aecff00558c13ab200585b8b188c92">mman</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d3/d77/class_pid_manager">PidManager</link> <link linkend="d9/d90/global__variables_8cpp_1a5437c9651509d51beaf5ff1966692fd8">pidManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/global_variables.cpp</para>
+    </simplesect>
+</section>

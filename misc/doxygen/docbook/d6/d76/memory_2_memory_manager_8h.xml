@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d76/memory_2_memory_manager_8h">
+    <title>MemoryManager.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/MemoryChunk.h&gt;</programlisting>
+    <programlisting>#include &lt;templates_implementation/MemoryManager.h&gt;</programlisting>
+<para>Include dependency diagram for MemoryManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/d0e/memory_2_memory_manager_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for MemoryManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/dd6/memory_2_memory_manager_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/dff/class_memory_manager">MemoryManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/dff/class_memory_manager">MemoryManager</link> <link linkend="d6/d76/memory_2_memory_manager_8h_1a13d610b0db2083f2a6b615e393b9444d">mman</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/memory/MemoryManager.h</para>
+    </simplesect>
+</section>

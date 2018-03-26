@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_f584a7346c1b8013dc1b331940cf7785">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_f584a7346c1b8013dc1b331940cf7785_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="de/d32/raspi3_2gpio_8h">gpio.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="de/d9e/uart1_8h">uart1.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d2/d34/raspi3_2util_8h">util.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3/</para>
+    </simplesect>
+</section>

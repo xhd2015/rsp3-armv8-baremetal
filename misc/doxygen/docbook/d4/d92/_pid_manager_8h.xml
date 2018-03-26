@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d92/_pid_manager_8h">
+    <title>PidManager.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+<para>Include dependency diagram for PidManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dc1/_pid_manager_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for PidManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/de5/_pid_manager_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d77/class_pid_manager">PidManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类型定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef uint16_t  <link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr <link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d4/d92/_pid_manager_8h_1a3b7195acb4071b817848611ad4e23af3">PID_CURRENT</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr <link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d4/d92/_pid_manager_8h_1ae8b4fcf35345db96f863a153fd2198e9">PID_INVALID</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr <link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d4/d92/_pid_manager_8h_1a6b6f35c66fd9a7757cc496d3a1a3bc2e">PID_PARENT</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d3/d77/class_pid_manager">PidManager</link> <link linkend="d4/d92/_pid_manager_8h_1a5437c9651509d51beaf5ff1966692fd8">pidManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/schedule/PidManager.h</para>
+    </simplesect>
+</section>

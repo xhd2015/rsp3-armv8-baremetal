@@ -1,0 +1,13 @@
+digraph "ByteReader::ensureSectorBuffer"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node27 [label="ByteReader::ensureSector\lBuffer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node27 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="MemoryManager::allocateAs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78"];
+  Node28 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08"];
+  Node27 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="ByteReader::getSectorSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a1557e32d37869577a89bfbbe4fa6af9a"];
+}

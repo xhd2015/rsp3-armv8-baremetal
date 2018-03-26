@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/dce/class_process_manager">
+<title>ProcessManager class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/dd6/schedule_2_process_manager_8h">&quot;ProcessManager.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ProcessManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d92/class_process_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ProcessManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/de3/class_process_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">ProcessList::NodeType</link>  <link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link>&lt; <link linkend="d1/d41/class_process">Process</link> &gt;  <link linkend="d2/dce/class_process_manager_1ae84e64cf4a4e087794647e55343924e0">ProcessList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ProcessList _statedProcessList[Process::STATUS_NUM]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/dce/class_process_manager_1a0bcc42f5333bb6a0613e38721227bbd2">changeProcessStatus</link> (
+<link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * p, <link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Process::Status</link> oldStatus, <link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Process::Status</link> newStatus)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/dce/class_process_manager_1a3e43ea8b76c7d927f074eca7f6349c1b">changeProcessStatus</link> (
+<link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * p, <link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Process::Status</link> newStatus)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * <link linkend="d2/dce/class_process_manager_1aebaf5b36a78fe9c75c1a1fb81d6851ac">createNewProcess</link> (
+Args &amp;&amp;... initArgs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * <link linkend="d2/dce/class_process_manager_1aaf22da025f4a21c6239d2a1181c1c148">currentRunningProcess</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * <link linkend="d2/dce/class_process_manager_1a82f37357a83d54343c703dbf354ccfd8">forkProcess</link> (
+<link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * origin)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/dce/class_process_manager_1aa7b17ec2be5c3de2ef4b712236d71bd7">killProcess</link> (
+<link linkend="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">ProcessLink</link> * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/dce/class_process_manager_1a41b83a8ef0a801ca3aee9a3d82568ac1">ProcessManager</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/dce/class_process_manager_1a64f2aa8b0886f482d5039c65bca72af7">scheduleNextProcess</link> (
+uint64_t * savedRegsiers)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d2/dce/class_process_manager_1aef4db08f722da4593f0092e00bd87723">
+                <title>using ProcessManager::ProcessLink =  ProcessList::NodeType</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1ae84e64cf4a4e087794647e55343924e0">
+                <title>using ProcessManager::ProcessList =  DoublyLinkedList&lt;Process&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d2/dce/class_process_manager_1a0bcc42f5333bb6a0613e38721227bbd2">
+                <title>void ProcessManager::changeProcessStatus (ProcessLink *p, Process::Status oldStatus, Process::Status newStatus)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1a3e43ea8b76c7d927f074eca7f6349c1b">
+                <title>void ProcessManager::changeProcessStatus (ProcessLink *p, Process::Status newStatus)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1aebaf5b36a78fe9c75c1a1fb81d6851ac">
+                <title>ProcessManager::ProcessLink * ProcessManager::createNewProcess (Args &amp;&amp;... initArgs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1aaf22da025f4a21c6239d2a1181c1c148">
+                <title>ProcessManager::ProcessLink * ProcessManager::currentRunningProcess ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1a82f37357a83d54343c703dbf354ccfd8">
+                <title>ProcessManager::ProcessLink * ProcessManager::forkProcess (ProcessLink *origin)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1aa7b17ec2be5c3de2ef4b712236d71bd7">
+                <title>void ProcessManager::killProcess (ProcessLink *p)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1a41b83a8ef0a801ca3aee9a3d82568ac1">
+                <title>ProcessManager::ProcessManager ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/dce/class_process_manager_1a64f2aa8b0886f482d5039c65bca72af7">
+                <title>void ProcessManager::scheduleNextProcess (uint64_t *savedRegsiers)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

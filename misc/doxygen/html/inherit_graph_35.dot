@@ -1,0 +1,7 @@
+digraph "类继承关系图"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="ReturnTypeSelector\l\< T, false, IsConst \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/da8/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4.html"];
+}

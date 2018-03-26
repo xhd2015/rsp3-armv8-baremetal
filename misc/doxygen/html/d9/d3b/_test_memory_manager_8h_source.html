@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/test/TestMemoryManager.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_69f6b0b437b9d7106ae46b3b241ba72b.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TestMemoryManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d3b/_test_memory_manager_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * TestMemoryManager.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Feb 1, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_TEST_TESTMEMORYMANAGER_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_TEST_TESTMEMORYMANAGER_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d74/test__base_8h.html">test/test_base.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../de/d58/class_test_memory_manager.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d58/class_test_memory_manager.html">TestMemoryManager</a></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//      : private MemoryChunk, private MemoryManager</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../de/d58/class_test_memory_manager.html#ad1174730333c35418d858d4951b9ba92">TestMemoryManager</a>()=<span class="keywordflow">default</span>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#acd87b90b4159195484f49ac1aad0b839">run</a>();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a39f10451ea83116596e318cd89d6bfbf">memoryChunkMergeCorrectly</a>();</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a8af7513f18a86970e354f4daddd24dad">memoryChunkSpiltCorrectly</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#adc179531a11daf86f8f07b959c9ceb94">uncontiguousChunkMemoryAllocateCorrectly</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a5eb58c7aceefbe84ef99e217c2b30cdc">allocateCorrectly</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#af8cb2e45c12570e276d6ba48819359d9">alignedAllocateCorrectly</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a0df022882a44e969830ab5d24b827dff">deallocateCorrectly</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#ab9473b249acedd81d0adbdacc5aafa51">reallocateSmallerCorrectly</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a234bf5990122de78b826e431d3c79292">reallocateInPlaceCollectCorrectly</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#aa4c425d3295118b3bcda6b968386a8d6">reallocateOutOfPlaceMoveCorrectly</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a8b9ea0c1607db3d4bed62e2ea0c90d61">criticalConditionsStillCorrectly</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d58/class_test_memory_manager.html#a62654fd075a26f6944e9a45beebaae1f">nextChunkCorrectly</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_TEST_TESTMEMORYMANAGER_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_test_memory_manager_html_ab9473b249acedd81d0adbdacc5aafa51"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#ab9473b249acedd81d0adbdacc5aafa51">TestMemoryManager::reallocateSmallerCorrectly</a></div><div class="ttdeci">bool reallocateSmallerCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00137">TestMemoryManager.cpp:137</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_ad1174730333c35418d858d4951b9ba92"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#ad1174730333c35418d858d4951b9ba92">TestMemoryManager::TestMemoryManager</a></div><div class="ttdeci">TestMemoryManager()=default</div></div>
+<div class="ttc" id="class_test_memory_manager_html_a0df022882a44e969830ab5d24b827dff"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a0df022882a44e969830ab5d24b827dff">TestMemoryManager::deallocateCorrectly</a></div><div class="ttdeci">bool deallocateCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00122">TestMemoryManager.cpp:122</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_aa4c425d3295118b3bcda6b968386a8d6"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#aa4c425d3295118b3bcda6b968386a8d6">TestMemoryManager::reallocateOutOfPlaceMoveCorrectly</a></div><div class="ttdeci">bool reallocateOutOfPlaceMoveCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00163">TestMemoryManager.cpp:163</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_a39f10451ea83116596e318cd89d6bfbf"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a39f10451ea83116596e318cd89d6bfbf">TestMemoryManager::memoryChunkMergeCorrectly</a></div><div class="ttdeci">bool memoryChunkMergeCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00033">TestMemoryManager.cpp:33</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_a8af7513f18a86970e354f4daddd24dad"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a8af7513f18a86970e354f4daddd24dad">TestMemoryManager::memoryChunkSpiltCorrectly</a></div><div class="ttdeci">bool memoryChunkSpiltCorrectly()</div></div>
+<div class="ttc" id="class_test_memory_manager_html_a234bf5990122de78b826e431d3c79292"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a234bf5990122de78b826e431d3c79292">TestMemoryManager::reallocateInPlaceCollectCorrectly</a></div><div class="ttdeci">bool reallocateInPlaceCollectCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00148">TestMemoryManager.cpp:148</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html">TestMemoryManager</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d3b/_test_memory_manager_8h_source.html#l00013">TestMemoryManager.h:13</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_af8cb2e45c12570e276d6ba48819359d9"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#af8cb2e45c12570e276d6ba48819359d9">TestMemoryManager::alignedAllocateCorrectly</a></div><div class="ttdeci">bool alignedAllocateCorrectly()</div></div>
+<div class="ttc" id="class_test_memory_manager_html_a5eb58c7aceefbe84ef99e217c2b30cdc"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a5eb58c7aceefbe84ef99e217c2b30cdc">TestMemoryManager::allocateCorrectly</a></div><div class="ttdeci">bool allocateCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00093">TestMemoryManager.cpp:93</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_a62654fd075a26f6944e9a45beebaae1f"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a62654fd075a26f6944e9a45beebaae1f">TestMemoryManager::nextChunkCorrectly</a></div><div class="ttdeci">bool nextChunkCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00182">TestMemoryManager.cpp:182</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_a8b9ea0c1607db3d4bed62e2ea0c90d61"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#a8b9ea0c1607db3d4bed62e2ea0c90d61">TestMemoryManager::criticalConditionsStillCorrectly</a></div><div class="ttdeci">bool criticalConditionsStillCorrectly()</div></div>
+<div class="ttc" id="class_test_memory_manager_html_adc179531a11daf86f8f07b959c9ceb94"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#adc179531a11daf86f8f07b959c9ceb94">TestMemoryManager::uncontiguousChunkMemoryAllocateCorrectly</a></div><div class="ttdeci">bool uncontiguousChunkMemoryAllocateCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00072">TestMemoryManager.cpp:72</a></div></div>
+<div class="ttc" id="test__base_8h_html"><div class="ttname"><a href="../../dc/d74/test__base_8h.html">test_base.h</a></div></div>
+<div class="ttc" id="class_test_memory_manager_html_acd87b90b4159195484f49ac1aad0b839"><div class="ttname"><a href="../../de/d58/class_test_memory_manager.html#acd87b90b4159195484f49ac1aad0b839">TestMemoryManager::run</a></div><div class="ttdeci">static void run()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfd/_test_memory_manager_8cpp_source.html#l00018">TestMemoryManager.cpp:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

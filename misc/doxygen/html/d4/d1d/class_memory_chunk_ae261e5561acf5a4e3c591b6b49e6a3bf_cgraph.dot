@@ -1,0 +1,19 @@
+digraph "MemoryChunk::split"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node322 [label="MemoryChunk::split",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node322 -> Node323 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node323 [label="MemoryChunk::isEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a77532081c761e7680970a9dcb0c29660"];
+  Node322 -> Node324 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node324 [label="MemoryChunk::isAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae4ec0a942bb577ece9a1ec0413ba829f"];
+  Node322 -> Node325 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node325 [label="MemoryChunk::getSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aa112bc700f6a7ee7a97cb8821d55c701"];
+  Node322 -> Node326 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node326 [label="MemoryChunk::getDataPtr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a76229a1376912890e4c358fec643d0eb"];
+  Node322 -> Node327 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node327 [label="MemoryChunk::MemoryChunk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aefec33edaebef2383fc1fa09be698433"];
+  Node322 -> Node328 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node328 [label="MemoryChunk::getNextBase\lFromEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ab2cca8d381c3167dae31bb4fdc23affc"];
+}

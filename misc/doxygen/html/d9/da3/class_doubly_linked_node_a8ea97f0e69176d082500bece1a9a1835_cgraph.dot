@@ -1,0 +1,17 @@
+digraph "DoublyLinkedNode::removeAfter"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node77 [label="DoublyLinkedNode::remove\lAfter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node77 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html#a76a3ce8ac02f8af29de2179cebb0c8a1"];
+  Node77 -> Node79 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="MemoryChunk::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a4cdc4796b4fe962c6cbf386bf82c4f0a"];
+  Node79 -> Node80 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="MemoryChunk::endChunk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a5cb5ae2b25f743044da9ac8121eb810e"];
+  Node79 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="MemoryChunk::validChunk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#acc575b5a85e63afc79f121b6ba71fbb2"];
+  Node79 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="MemoryChunk::advanceByBytes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aae8721905aad927f06d2a4860196d86f"];
+}

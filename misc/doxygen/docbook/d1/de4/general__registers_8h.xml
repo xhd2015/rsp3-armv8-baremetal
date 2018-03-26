@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/de4/general__registers_8h">
+    <title>general_registers.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/registers_defines.h&gt;</programlisting>
+<para>Include dependency diagram for general_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d85/general__registers_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for general_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d1e/general__registers_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/df4/class_reg_x0">RegX0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d1/de4/general__registers_8h_1ada66fd7d38f43cfb18938e8194b1952b">Value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d9/df4/class_reg_x0">RegX0</link> <link linkend="d1/de4/general__registers_8h_1a69f185bb54c258d57886b75c7a0fe685">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d1/de4/general__registers_8h_1a5ef79f79723cddd5234dc46d851bc381">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/df4/class_reg_x0">RegX0</link> <link linkend="d1/de4/general__registers_8h_1a91bc8a1532103722bfed05ee632e70aa">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a2fce0dcc838ea5cf30d7aa54dbb5716a">SETUP_REG_LOAD_STORE_READ</link> (
+X0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a5ff76ac4aa536f5f3ebc2da4d1497678">SETUP_REG_LOAD_STORE_READ</link> (
+X1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ad70b315c623b6808631d95e23f2480bb">SETUP_REG_LOAD_STORE_READ</link> (
+X2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1aaea5e11086dd4a6a6cf7ff203a3ca0ea">SETUP_REG_LOAD_STORE_READ</link> (
+X3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a74233c9d455500c7bc07703a614727ea">SETUP_REG_LOAD_STORE_READ</link> (
+X4 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a35e5d272e9caf327c61798b611679a84">SETUP_REG_LOAD_STORE_READ</link> (
+X5 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a227c5100db8eac64064ce3a239d156f8">SETUP_REG_LOAD_STORE_READ</link> (
+X6 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a66fda5b91182378ba60a025014dc9bc6">SETUP_REG_LOAD_STORE_READ</link> (
+X7 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a242aaafbb052b5958b95394cf7f1533c">SETUP_REG_LOAD_STORE_READ</link> (
+X8 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1abdc6f3351ab1f9d613f23ffafd843234">SETUP_REG_LOAD_STORE_READ</link> (
+X9 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a1409053d698c307d4d616002fb727bfc">SETUP_REG_LOAD_STORE_READ</link> (
+X10 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a55490d9c8f28fff96bb00d97e2e3d3b6">SETUP_REG_LOAD_STORE_READ</link> (
+X11 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a99fb5b00adf8e49986fa7b389224d4ee">SETUP_REG_LOAD_STORE_READ</link> (
+X12 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a4b4657aa1ee4ec730a9a9768c81fe864">SETUP_REG_LOAD_STORE_READ</link> (
+X13 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a3c7b7d256ebd455a8ebaaf2b074466e3">SETUP_REG_LOAD_STORE_READ</link> (
+X14 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ace6f6fa41a297a10a9bd79f2ca14466d">SETUP_REG_LOAD_STORE_READ</link> (
+X15 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ae95424e1836646887983299d56f69a56">SETUP_REG_LOAD_STORE_READ</link> (
+X16 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a3f8ac7b1dd7b0d276e88a07063dbdf87">SETUP_REG_LOAD_STORE_READ</link> (
+X17 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1acc0a7382e2d5890a8163f53439b4f451">SETUP_REG_LOAD_STORE_READ</link> (
+X18 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ac486251934520fb51608fa49591a5c3d">SETUP_REG_LOAD_STORE_READ</link> (
+X19 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a9a86a176cc8568f625fbfd30cf59cb93">SETUP_REG_LOAD_STORE_READ</link> (
+X20 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a8090ae31d03371b0420b8a948d74ef48">SETUP_REG_LOAD_STORE_READ</link> (
+X21 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1acb93c31cc0bf1f1737260f94522bd2b4">SETUP_REG_LOAD_STORE_READ</link> (
+X22 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a25be77eb801ded665e1e85b3c9d19f6e">SETUP_REG_LOAD_STORE_READ</link> (
+X23 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a6452d7fd1232785b9437a279ba4220d3">SETUP_REG_LOAD_STORE_READ</link> (
+X24 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ac9f8d3158a381d551d0a5912df90f230">SETUP_REG_LOAD_STORE_READ</link> (
+X25 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1ab2e2f5fd7462014f806d9f04c039f9c6">SETUP_REG_LOAD_STORE_READ</link> (
+X26 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a5794f459b11460a23e22be752b72063a">SETUP_REG_LOAD_STORE_READ</link> (
+X27 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1a9d03b750509c94e030e989dc5fb00223">SETUP_REG_LOAD_STORE_READ</link> (
+X28 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/de4/general__registers_8h_1aef7948e5ec44dd0b6915af1eb27e5fe3">SETUP_REG_LOAD_STORE_READ</link> (
+X29 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/df4/class_reg_x0">RegX0</link> <link linkend="d1/de4/general__registers_8h_1a075eb1a3d2ad9fc6b28a51bad49f3df1">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d1/de4/general__registers_8h_1a1b0b8be141a47a8a7fcb470b2f68aabe">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/general_registers.h</para>
+    </simplesect>
+</section>

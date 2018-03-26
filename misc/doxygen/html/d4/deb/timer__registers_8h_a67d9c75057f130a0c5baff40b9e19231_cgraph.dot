@@ -1,0 +1,18 @@
+digraph "SETUP_REG_STD_READ"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node38 [label="SETUP_REG_STD_READ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="dump",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/timer__registers_8h.html#a5ef79f79723cddd5234dc46d851bc381"];
+  Node39 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/timer__registers_8h.html#a09f5b14b501866a7dd4f34f03b7024cc"];
+  Node39 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="updateRead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/timer__registers_8h.html#a52a09a727a67091a66ca99866fbd9835"];
+  Node39 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/timer__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe"];
+  Node38 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

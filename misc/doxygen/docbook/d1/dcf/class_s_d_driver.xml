@@ -1,0 +1,1423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/dcf/class_s_d_driver">
+<title>SDDriver class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/d49/_s_d_driver_8h">&quot;SDDriver.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for SDDriver</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d74/class_s_d_driver__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SDDriver</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d88/class_s_d_driver__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/d05/class_s_d_driver_1_1_command_status">SDDriver::CommandStatus</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160">@25</link> {
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a48b63be781f69156dfdf99700ce03eca">XSDPS_APP_CMD_PREFIX</link>=0x8000U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a95fae240e551bff1c59fce0d80435722">CMD0</link>=0x0000U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a72116adae0d369cf8faee04774464ec7">CMD1</link>=0x0100U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a557ca23a381691a2a52d5af4e5bd19a4">CMD2</link>=0x0200U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a85c04292255a9d0ba28689b9dd01100d">CMD3</link>=0x0300U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ace010d5b947efdc5af4168db29efa8fe">CMD4</link>=0x0400U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a65b3fb39c7780aa26c6885b6917341ae">CMD5</link>=0x0500U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae7f9090dd658dd5af4cc1c416c765b84">CMD6</link>=0x0600U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a49d101b4492a39f51ad846a637e40c93">ACMD6</link>=(XSDPS_APP_CMD_PREFIX + 0x0600U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a4bceff50264cd604e0f426285a614e62">CMD7</link>=0x0700U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a11e9a1638d709cca8a3644910d576577">CMD8</link>=0x0800U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae94647033460a5c249caaf09b8c3adcf">CMD9</link>=0x0900U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afed66bf4e079abe95fa07ce71d82e680">CMD10</link>=0x0A00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aa4a772641bc4a9dd5c6d1470bfc3843a">CMD11</link>=0x0B00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a02afc2d427820ae726f0ea97453628c3">CMD12</link>=0x0C00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a892889c020b21b8dc9d58988dec022d9">CMD13</link>=0x0D00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a429ba2ef64ae721305b82b186a8fbdd3">ACMD13</link>=(XSDPS_APP_CMD_PREFIX + 0x0D00U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a84d5922f2935d0e4c07cae20bb9228e1">CMD16</link>=0x1000U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad5d63b3e0d92977a8d8eeb6866ef7244">CMD17</link>=0x1100U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af122c67ab6276f6355b2f95f919f2266">CMD18</link>=0x1200U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a8dd98fe9c408f9081dce7136ddcaa534">CMD19</link>=0x1300U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aa7bff8fc3e076ec2b5ed62f791af6582">CMD21</link>=0x1500U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aaa54dc39c05aaec7a03f71da375630cf">CMD23</link>=0x1700U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160acba17f0ed06a1e266b0dd9fd7cdee39b">ACMD23</link>=(XSDPS_APP_CMD_PREFIX + 0x1700U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a129b131ade4da310807b2dc7ed1476cb">CMD24</link>=0x1800U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a82daa790e0f0612ca13071e6862cb231">CMD25</link>=0x1900U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a129d8dd3d99f76689ba9840f852cc26a">CMD41</link>=0x2900U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a64251b473aba04eda7a3fc458493b2b8">ACMD41</link>=(XSDPS_APP_CMD_PREFIX + 0x2900U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afa6db4dc7efb084377eb1ed64d623a28">ACMD42</link>=(XSDPS_APP_CMD_PREFIX + 0x2A00U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a5f31d1138a80187a2ef10127d46f5384">ACMD51</link>=(XSDPS_APP_CMD_PREFIX + 0x3300U),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a286e783316e4149a0fb1054013d170a1">CMD52</link>=0x3400U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a6e3bca8f7f099f269069fcf377fb5bc2">CMD55</link>=0x3700U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aea5a6be1159ea4f2f8b8d4f75237c59a">CMD58</link>=0x3A00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a4c327797b22d208d84f2da0c7b75f139">XSDPS_CMD_RESP_NONE_MASK</link>=0x00000000U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2033b63e086632817fff44e9fb23c3c4">XSDPS_CMD_RESP_L136_MASK</link>=0x00000001U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af10c9c81d9296c87c435b8fe99515442">XSDPS_CMD_RESP_L48_MASK</link>=0x00000002U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2646c9bda86e69804d8b0fe97817b975">XSDPS_CMD_RESP_L48_BSY_CHK_MASK</link>=0x00000003U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad86e232f9895ded49c2cbaaee5df9913">XSDPS_CMD_CRC_CHK_EN_MASK</link>= 0x00000008U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7204d6f167172e9066a422e20db8bda6">XSDPS_CMD_INX_CHK_EN_MASK</link>= 0x00000010U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a00aa3c6973a08d64a85a8c7ed68e7faa">XSDPS_DAT_PRESENT_SEL_MASK</link>= 0x00000020U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3c12f0194d655e818818eaf2dcc70f56">XSDPS_CMD_TYPE_MASK</link>=0x000000C0U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a65f29155f51678311c104b869aa85d74">XSDPS_CMD_TYPE_NORM_MASK</link>=0x00000000U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a63be05dadd5856676c4a5fd164a9f182">XSDPS_CMD_TYPE_SUSPEND_MASK</link>=0x00000040U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad6c95d773b3431fc4e7b56d099e34a05">XSDPS_CMD_TYPE_RESUME_MASK</link>=0x00000080U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a38ddcecf9b2183a4266525d61e22e47d">XSDPS_CMD_TYPE_ABORT_MASK</link>=0x000000C0U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ab01d1332bc1104f9e1447cf8d2799733">XSDPS_CMD_MASK</link>=0x00003F00U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a9fa2b343258cfc9df8f611c2c7f175c5">XSDPS_CARD_SD</link>=1U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae40b64c77a17eb0f2309f7c3be14b1d6">XSDPS_CARD_MMC</link>=2U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3ea08ff2323fc9418cf5885275354335">XSDPS_CARD_SDIO</link>=3U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a6cd1951c32bb653cb5e95b6f5f933f32">XSDPS_CARD_SDCOMBO</link>=4U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a43ce7c9f4584be9d2759a5bc1170f83a">XSDPS_CHIP_EMMC</link>=5U,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7dad5243ce634321ee10befdf52cfdb7">HC_VER_1</link>=0x0u,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2acc65a9288ab85f6def7ff03dfbc435">HC_VER_2</link>=0x1u,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3de4a497761ca238664a9e6e40946514">HC_VER_3</link>=0x2u,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a025791f6e80a335848656c21af061f86">SD_VER_1</link>= 0x1u,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a508d3fb9fc4bdb3051510442448f8fbf">SD_VER_2</link>= 0x2u,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a63827138866dc91043bde24d355bd978">RESP_NONE</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_NONE_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad56495dfba3f89646154d4de2cf79fda">RESP_R1</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160abc8ac74d594f6248700f45d743811d20">RESP_R1B</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a1554da4a59aad45784f132f7af173404">RESP_R2</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L136_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ac8fe3b0899cced6d7dff758900c20eb7">RESP_R3</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af793ca332bc031dc22366d6efbb8a039">RESP_R6</link>=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK),
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7eda121d9ecf0b1d7f2cf38a4cb8de35">TRANS_MODE_CARD_TO_HOST</link>=0,
+<link linkend="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afdc2826055c5f751aee8e2c27a80e3c0">TRANS_MODE_ENABLE_DMA</link>=2
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/dcf/class_s_d_driver_1abbfa5ad1760abc65895f0763c693a530">@26</link> {
+<link linkend="d1/dcf/class_s_d_driver_1abbfa5ad1760abc65895f0763c693a530ac63c3f1a86776bc30cfc17d47442e18d">CAP_RESET_VALUE</link>= 0x280737EC6481
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979">RegOffset</link>  <link linkend="d1/dcf/class_s_d_driver_1ae6a0d8d5c9afc8149d5e149dbbea20ae">R</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979">RegOffset</link> {
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa12a867c1791c1a6933d2fbc03995cf4">reg_sdmasysaddrlo</link>= 0x0000,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a560e52571970f8644cbfd0b42c12fe29">reg_sdmasysaddrhi</link>= 0x0002,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a911527de10438e25c4e9b628aed54a27">reg_blocksize</link>= 0x0004,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ae8e458f141909e96c4c9e7a4a61499b5">reg_blockcount</link>= 0x0006,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a1b46e11fd4cbc5f0fac132dd451d1df9">reg_argument1lo</link>= 0x0008,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a31bdde179cf3a8a1b524d1b928a2bd01">reg_argument1hi</link>= 0x000A,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a558a1efbb8b12c97975d5cf668f77c6b">reg_transfermode</link>= 0x000C,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ab333287ec1595df745e7198ee8326e4b">reg_command</link>= 0x000E,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aabc9662cf05bf16a35306635ec33a7c6">reg_response0</link>= 0x0010,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ae1d0cbc9504ee1e9e55986c6b4e6f341">reg_response1</link>= 0x0012,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aaa5ae358e66e623eefc5bb8b6c877e3f">reg_response2</link>= 0x0014,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa8f1ac207b55e557b961e580dc0e4d62">reg_response3</link>= 0x0016,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aad423185b482f33851ff6577027715ba">reg_response4</link>= 0x0018,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a1cfb36623e299cd647c1dc6742b75d00">reg_response5</link>= 0x001A,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a46b74f10652d090e194132feb7688653">reg_response6</link>= 0x001C,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ad02ef6bd6055cd9037a8cb9f58785ae7">reg_response7</link>= 0x001E,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac8847e9acd370a67f6f6e1c1925296f7">reg_dataport</link>= 0x0020,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8c0b7efd9c6da024746b3b922fa67567">reg_presentstate</link>= 0x0024,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a87ff507ad9b91baf9cd46b62e7a172b9">reg_hostcontrol1</link>= 0x0028,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a581a4824d8ef0306deb082339c0f81e4">reg_powercontrol</link>= 0x0029,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aba8b353a5df3280836d603225b697079">reg_timeoutcontrol</link>= 0x002E,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac4268d7b782eebd42efafd07bc806a2b">reg_clockcontrol</link>= 0x002C,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ad50860cbd30f2f8e57f0bc6ee45531f7">reg_softwarereset</link>= 0x002F,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a77e0af7be290ac95c69da58567a1e441">reg_normalintrsts</link>= 0x0030,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac1863677563d922d1c7d40e1d5307a5b">reg_errorintrsts</link>= 0x0032,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a2cbd446aa2799c675dcd7a16edd3e76b">reg_normalintrstsena</link>= 0x0034,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8ec1df81b5c24b91c65841cd8b5e140a">reg_errorintrstsena</link>= 0x0036,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ace90175a9a1e65b06883349b0d6ee336">reg_normalintrsigena</link>= 0x0038,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a315efe58038b4baa66c914a7e2cc5265">reg_errorintrsigena</link>= 0x003A,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ab926a70a643f465bb4d1d7a5af12d4eb">reg_hostcontrol2</link>= 0x003E,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8d5199e02855b6fe04a7354501d6035c">reg_maxcurrentcap</link>= 0x0048,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aab5d3ee1faab6b61a6ba4c90883f1a63">reg_capabilities</link>= 0x0040,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a67feb6955224ec67ed0e22dfb5d5c53c">reg_presetvalue1</link>= 0x0062,
+<link linkend="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa7e86d0d3590493ed39be3c6833791a5">reg_hostcontrollerver</link>= 0x00FE
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _baseClockFreq</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _blockSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _capabilities</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _cardID[4]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _cardInserted</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CardSpecData _cardSpecData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _cardType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _cardVersion</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _clockFreq</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _hostControlVersion</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _relativeCardAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _secCount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t _transferMode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d1/dcf/class_s_d_driver_1aa59e16d99bc6c38d8836558eb163f126">busSpeed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1afbe07ea9f77c84fb77ee37a19c5303e9">busSpeed</link> (
+uint8_t newSpeed)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d1/dcf/class_s_d_driver_1aac899fcbe1228b711e5e36221283ae88">busWidth</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1ab3e036b68fe7f628c406af90647c0cad">busWidth</link> (
+uint8_t newWidth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d1/dcf/class_s_d_driver_1a78c3b8b62af4b02dc480e454990c036d">cardsExists</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d0d/class_s_d_card_status">SDCardStatus</link> <link linkend="d1/dcf/class_s_d_driver_1a465a3a00d6355c7dacfc8896cc52145b">cardStatus</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d1/dcf/class_s_d_driver_1a6056c92a88e9f314ed4fc1f1386ac4d5">clearIntErrStatus</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1ac13094b631297b78753c17bc93d822b9">clearResponseBit</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/d05/class_s_d_driver_1_1_command_status">CommandStatus</link> <link linkend="d1/dcf/class_s_d_driver_1a6748edc406c8da7420eed223a4d3e5fa">clockFreq</link> (
+uint32_t newFreq)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/dcf/class_s_d_driver_1a7a6b575f771428477a23025ef6376673">frameCommand</link> (
+uint32_t cmd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d1/dcf/class_s_d_driver_1ab7b35802ba88cd624635097aa894d0f2">hasCorrectBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d1/dcf/class_s_d_driver_1af290f13cd9eb93eb60d9e007bd02cb39">hasCorrectPresetValue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d1/dcf/class_s_d_driver_1a786c1347a60311e0539a1e350279f6ff">hasResponse</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d1/dcf/class_s_d_driver_1aec3e5611beed0516afb3cf43751da5dc">init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/dcf/class_s_d_driver_1ad59bef3ab3b1e2cf50d2c81fe70221b4">readBlocksNoDMA</link> (
+size_t startSec, size_t blocks, void * buffer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/d05/class_s_d_driver_1_1_command_status">CommandStatus</link> <link linkend="d1/dcf/class_s_d_driver_1a982ca7042713b205d138d7862e142919">readPolled</link> (
+uint32_t arg, uint32_t blkCnt, uint8_t * buff)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/dcf/class_s_d_driver_1ac50ada217e52618382bf17b21755447d">readSingleBlockNoDMA</link> (
+size_t startSec, void * buffer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1a33dff41eeea99cf456b97c7c1b4a2a5b">resetController</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/dcf/class_s_d_driver_1aefebe8ee58ad0495e5d67b7dd2801b42">SDDriver</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1a99abc65cd1740b26ab4ee79452008217">sendPullup</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1ab56e133df4de2a27aa9d84f3fdcb2741">setBlockSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/dcf/class_s_d_driver_1a7f5bbbe50aa6b4b865f614228c9ba837">setupADMA2DescriptorTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/d05/class_s_d_driver_1_1_command_status">CommandStatus</link> <link linkend="d1/dcf/class_s_d_driver_1a68294cf9d19996f6b1bd41c5a0ac82a6">transferCommand</link> (
+uint32_t cmd, uint32_t arg, uint32_t blckCnt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d1/dcf/class_s_d_driver_1aab602d8b14541b323ef9159208bc0ab7">transferMode</link> (
+uint16_t mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint16_t <link linkend="d1/dcf/class_s_d_driver_1a52b4d6d6cbec76e3b1300819fb7ad954">vendorVersion</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/dcf/class_s_d_driver_1a82e54a11a6e4fb310205cd5d64cf567f">writeBlocksNoDMA</link> (
+size_t startSec, size_t blocks, const void * buffer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/dcf/class_s_d_driver_1ac829e5922686cfc8c8f152bfe958d882">writeSingleBlockNoDMA</link> (
+size_t startSec, const void * buffer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>SD,SDIO,MMC </para>
+                <para>Definition at line 21 of file SDDriver.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>SDDriver.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160">
+               <title>enum @25 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a48b63be781f69156dfdf99700ce03eca">
+                            <term>XSDPS_APP_CMD_PREFIX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a95fae240e551bff1c59fce0d80435722">
+                            <term>CMD0</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a72116adae0d369cf8faee04774464ec7">
+                            <term>CMD1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a557ca23a381691a2a52d5af4e5bd19a4">
+                            <term>CMD2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a85c04292255a9d0ba28689b9dd01100d">
+                            <term>CMD3</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ace010d5b947efdc5af4168db29efa8fe">
+                            <term>CMD4</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a65b3fb39c7780aa26c6885b6917341ae">
+                            <term>CMD5</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae7f9090dd658dd5af4cc1c416c765b84">
+                            <term>CMD6</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a49d101b4492a39f51ad846a637e40c93">
+                            <term>ACMD6</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a4bceff50264cd604e0f426285a614e62">
+                            <term>CMD7</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a11e9a1638d709cca8a3644910d576577">
+                            <term>CMD8</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae94647033460a5c249caaf09b8c3adcf">
+                            <term>CMD9</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afed66bf4e079abe95fa07ce71d82e680">
+                            <term>CMD10</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aa4a772641bc4a9dd5c6d1470bfc3843a">
+                            <term>CMD11</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a02afc2d427820ae726f0ea97453628c3">
+                            <term>CMD12</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a892889c020b21b8dc9d58988dec022d9">
+                            <term>CMD13</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a429ba2ef64ae721305b82b186a8fbdd3">
+                            <term>ACMD13</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a84d5922f2935d0e4c07cae20bb9228e1">
+                            <term>CMD16</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad5d63b3e0d92977a8d8eeb6866ef7244">
+                            <term>CMD17</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af122c67ab6276f6355b2f95f919f2266">
+                            <term>CMD18</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a8dd98fe9c408f9081dce7136ddcaa534">
+                            <term>CMD19</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aa7bff8fc3e076ec2b5ed62f791af6582">
+                            <term>CMD21</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aaa54dc39c05aaec7a03f71da375630cf">
+                            <term>CMD23</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160acba17f0ed06a1e266b0dd9fd7cdee39b">
+                            <term>ACMD23</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a129b131ade4da310807b2dc7ed1476cb">
+                            <term>CMD24</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a82daa790e0f0612ca13071e6862cb231">
+                            <term>CMD25</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a129d8dd3d99f76689ba9840f852cc26a">
+                            <term>CMD41</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a64251b473aba04eda7a3fc458493b2b8">
+                            <term>ACMD41</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afa6db4dc7efb084377eb1ed64d623a28">
+                            <term>ACMD42</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a5f31d1138a80187a2ef10127d46f5384">
+                            <term>ACMD51</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a286e783316e4149a0fb1054013d170a1">
+                            <term>CMD52</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a6e3bca8f7f099f269069fcf377fb5bc2">
+                            <term>CMD55</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160aea5a6be1159ea4f2f8b8d4f75237c59a">
+                            <term>CMD58</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a4c327797b22d208d84f2da0c7b75f139">
+                            <term>XSDPS_CMD_RESP_NONE_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2033b63e086632817fff44e9fb23c3c4">
+                            <term>XSDPS_CMD_RESP_L136_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af10c9c81d9296c87c435b8fe99515442">
+                            <term>XSDPS_CMD_RESP_L48_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2646c9bda86e69804d8b0fe97817b975">
+                            <term>XSDPS_CMD_RESP_L48_BSY_CHK_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad86e232f9895ded49c2cbaaee5df9913">
+                            <term>XSDPS_CMD_CRC_CHK_EN_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7204d6f167172e9066a422e20db8bda6">
+                            <term>XSDPS_CMD_INX_CHK_EN_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a00aa3c6973a08d64a85a8c7ed68e7faa">
+                            <term>XSDPS_DAT_PRESENT_SEL_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3c12f0194d655e818818eaf2dcc70f56">
+                            <term>XSDPS_CMD_TYPE_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a65f29155f51678311c104b869aa85d74">
+                            <term>XSDPS_CMD_TYPE_NORM_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a63be05dadd5856676c4a5fd164a9f182">
+                            <term>XSDPS_CMD_TYPE_SUSPEND_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad6c95d773b3431fc4e7b56d099e34a05">
+                            <term>XSDPS_CMD_TYPE_RESUME_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a38ddcecf9b2183a4266525d61e22e47d">
+                            <term>XSDPS_CMD_TYPE_ABORT_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ab01d1332bc1104f9e1447cf8d2799733">
+                            <term>XSDPS_CMD_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a9fa2b343258cfc9df8f611c2c7f175c5">
+                            <term>XSDPS_CARD_SD</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ae40b64c77a17eb0f2309f7c3be14b1d6">
+                            <term>XSDPS_CARD_MMC</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3ea08ff2323fc9418cf5885275354335">
+                            <term>XSDPS_CARD_SDIO</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a6cd1951c32bb653cb5e95b6f5f933f32">
+                            <term>XSDPS_CARD_SDCOMBO</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a43ce7c9f4584be9d2759a5bc1170f83a">
+                            <term>XSDPS_CHIP_EMMC</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7dad5243ce634321ee10befdf52cfdb7">
+                            <term>HC_VER_1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a2acc65a9288ab85f6def7ff03dfbc435">
+                            <term>HC_VER_2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a3de4a497761ca238664a9e6e40946514">
+                            <term>HC_VER_3</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a025791f6e80a335848656c21af061f86">
+                            <term>SD_VER_1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a508d3fb9fc4bdb3051510442448f8fbf">
+                            <term>SD_VER_2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a63827138866dc91043bde24d355bd978">
+                            <term>RESP_NONE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ad56495dfba3f89646154d4de2cf79fda">
+                            <term>RESP_R1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160abc8ac74d594f6248700f45d743811d20">
+                            <term>RESP_R1B</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a1554da4a59aad45784f132f7af173404">
+                            <term>RESP_R2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160ac8fe3b0899cced6d7dff758900c20eb7">
+                            <term>RESP_R3</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160af793ca332bc031dc22366d6efbb8a039">
+                            <term>RESP_R6</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160a7eda121d9ecf0b1d7f2cf38a4cb8de35">
+                            <term>TRANS_MODE_CARD_TO_HOST</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1a331bfee113e04aeef2a626293e92c160afdc2826055c5f751aee8e2c27a80e3c0">
+                            <term>TRANS_MODE_ENABLE_DMA</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 79 of file SDDriver.h
+                    <computeroutput><literallayout>
+{
+XSDPS_APP_CMD_PREFIX=0x8000U, 
+CMD0=0x0000U, 
+CMD1=0x0100U, 
+CMD2=0x0200U, 
+CMD3=0x0300U, 
+CMD4=0x0400U, 
+CMD5=0x0500U, 
+CMD6=0x0600U, 
+ACMD6=(XSDPS_APP_CMD_PREFIX + 0x0600U), 
+CMD7=0x0700U, 
+CMD8=0x0800U, 
+CMD9=0x0900U, 
+CMD10=0x0A00U, 
+CMD11=0x0B00U, 
+CMD12=0x0C00U, 
+CMD13=0x0D00U, 
+ACMD13=(XSDPS_APP_CMD_PREFIX + 0x0D00U), 
+CMD16=0x1000U, 
+CMD17=0x1100U, 
+CMD18=0x1200U, 
+CMD19=0x1300U, 
+CMD21=0x1500U, 
+CMD23=0x1700U, 
+ACMD23=(XSDPS_APP_CMD_PREFIX + 0x1700U), 
+CMD24=0x1800U, 
+CMD25=0x1900U, 
+CMD41=0x2900U, 
+ACMD41=(XSDPS_APP_CMD_PREFIX + 0x2900U), 
+ACMD42=(XSDPS_APP_CMD_PREFIX + 0x2A00U), 
+ACMD51=(XSDPS_APP_CMD_PREFIX + 0x3300U), 
+CMD52=0x3400U, 
+CMD55=0x3700U, 
+CMD58=0x3A00U, 
+XSDPS_CMD_RESP_NONE_MASK=0x00000000U, 
+XSDPS_CMD_RESP_L136_MASK=0x00000001U, 
+XSDPS_CMD_RESP_L48_MASK=0x00000002U, 
+XSDPS_CMD_RESP_L48_BSY_CHK_MASK=0x00000003U, 
+XSDPS_CMD_CRC_CHK_EN_MASK= 0x00000008U, 
+XSDPS_CMD_INX_CHK_EN_MASK= 0x00000010U, 
+XSDPS_DAT_PRESENT_SEL_MASK= 0x00000020U, 
+XSDPS_CMD_TYPE_MASK=0x000000C0U, 
+XSDPS_CMD_TYPE_NORM_MASK=0x00000000U, 
+XSDPS_CMD_TYPE_SUSPEND_MASK=0x00000040U, 
+XSDPS_CMD_TYPE_RESUME_MASK=0x00000080U, 
+XSDPS_CMD_TYPE_ABORT_MASK=0x000000C0U, 
+XSDPS_CMD_MASK=0x00003F00U, 
+XSDPS_CARD_SD=1U, 
+XSDPS_CARD_MMC=2U, 
+XSDPS_CARD_SDIO=3U, 
+XSDPS_CARD_SDCOMBO=4U, 
+XSDPS_CHIP_EMMC=5U, 
+HC_VER_1=0x0u, 
+HC_VER_2=0x1u, 
+HC_VER_3=0x2u, 
+SD_VER_1= 0x1u, 
+SD_VER_2= 0x2u, 
+RESP_NONE=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_NONE_MASK), 
+RESP_R1=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+RESP_R1B=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+RESP_R2=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L136_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK), 
+RESP_R3=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK), 
+RESP_R6=static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+TRANS_MODE_CARD_TO_HOST=0, 
+TRANS_MODE_ENABLE_DMA=2, 
+}@25;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1abbfa5ad1760abc65895f0763c693a530">
+               <title>enum @26 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abbfa5ad1760abc65895f0763c693a530ac63c3f1a86776bc30cfc17d47442e18d">
+                            <term>CAP_RESET_VALUE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 171 of file SDDriver.h
+                    <computeroutput><literallayout>
+{
+CAP_RESET_VALUE= 0x280737EC6481, 
+}@26;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ae6a0d8d5c9afc8149d5e149dbbea20ae">
+                <title>using SDDriver::R =  RegOffset</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979">
+               <title>enum RegOffset </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa12a867c1791c1a6933d2fbc03995cf4">
+                            <term>reg_sdmasysaddrlo</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a560e52571970f8644cbfd0b42c12fe29">
+                            <term>reg_sdmasysaddrhi</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a911527de10438e25c4e9b628aed54a27">
+                            <term>reg_blocksize</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ae8e458f141909e96c4c9e7a4a61499b5">
+                            <term>reg_blockcount</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a1b46e11fd4cbc5f0fac132dd451d1df9">
+                            <term>reg_argument1lo</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a31bdde179cf3a8a1b524d1b928a2bd01">
+                            <term>reg_argument1hi</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a558a1efbb8b12c97975d5cf668f77c6b">
+                            <term>reg_transfermode</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ab333287ec1595df745e7198ee8326e4b">
+                            <term>reg_command</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aabc9662cf05bf16a35306635ec33a7c6">
+                            <term>reg_response0</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ae1d0cbc9504ee1e9e55986c6b4e6f341">
+                            <term>reg_response1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aaa5ae358e66e623eefc5bb8b6c877e3f">
+                            <term>reg_response2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa8f1ac207b55e557b961e580dc0e4d62">
+                            <term>reg_response3</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aad423185b482f33851ff6577027715ba">
+                            <term>reg_response4</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a1cfb36623e299cd647c1dc6742b75d00">
+                            <term>reg_response5</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a46b74f10652d090e194132feb7688653">
+                            <term>reg_response6</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ad02ef6bd6055cd9037a8cb9f58785ae7">
+                            <term>reg_response7</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac8847e9acd370a67f6f6e1c1925296f7">
+                            <term>reg_dataport</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8c0b7efd9c6da024746b3b922fa67567">
+                            <term>reg_presentstate</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a87ff507ad9b91baf9cd46b62e7a172b9">
+                            <term>reg_hostcontrol1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a581a4824d8ef0306deb082339c0f81e4">
+                            <term>reg_powercontrol</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aba8b353a5df3280836d603225b697079">
+                            <term>reg_timeoutcontrol</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac4268d7b782eebd42efafd07bc806a2b">
+                            <term>reg_clockcontrol</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ad50860cbd30f2f8e57f0bc6ee45531f7">
+                            <term>reg_softwarereset</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a77e0af7be290ac95c69da58567a1e441">
+                            <term>reg_normalintrsts</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ac1863677563d922d1c7d40e1d5307a5b">
+                            <term>reg_errorintrsts</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a2cbd446aa2799c675dcd7a16edd3e76b">
+                            <term>reg_normalintrstsena</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8ec1df81b5c24b91c65841cd8b5e140a">
+                            <term>reg_errorintrstsena</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ace90175a9a1e65b06883349b0d6ee336">
+                            <term>reg_normalintrsigena</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a315efe58038b4baa66c914a7e2cc5265">
+                            <term>reg_errorintrsigena</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979ab926a70a643f465bb4d1d7a5af12d4eb">
+                            <term>reg_hostcontrol2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a8d5199e02855b6fe04a7354501d6035c">
+                            <term>reg_maxcurrentcap</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aab5d3ee1faab6b61a6ba4c90883f1a63">
+                            <term>reg_capabilities</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979a67feb6955224ec67ed0e22dfb5d5c53c">
+                            <term>reg_presetvalue1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/dcf/class_s_d_driver_1abdb734f788a683a6117caf5fd5028979aa7e86d0d3590493ed39be3c6833791a5">
+                            <term>reg_hostcontrollerver</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 40 of file SDDriver.h
+                    <computeroutput><literallayout>
+{
+reg_sdmasysaddrlo= 0x0000, 
+reg_sdmasysaddrhi= 0x0002, 
+reg_blocksize= 0x0004, 
+reg_blockcount= 0x0006, 
+reg_argument1lo= 0x0008, 
+reg_argument1hi= 0x000A, 
+reg_transfermode= 0x000C, 
+reg_command= 0x000E, 
+reg_response0= 0x0010, 
+reg_response1= 0x0012, 
+reg_response2= 0x0014, 
+reg_response3= 0x0016, 
+reg_response4= 0x0018, 
+reg_response5= 0x001A, 
+reg_response6= 0x001C, 
+reg_response7= 0x001E, 
+reg_dataport= 0x0020, 
+reg_presentstate= 0x0024, 
+reg_hostcontrol1= 0x0028, 
+reg_powercontrol= 0x0029, 
+reg_timeoutcontrol= 0x002E, 
+reg_clockcontrol= 0x002C, 
+reg_softwarereset= 0x002F, 
+reg_normalintrsts= 0x0030, 
+reg_errorintrsts= 0x0032, 
+reg_normalintrstsena= 0x0034, 
+reg_errorintrstsena= 0x0036, 
+reg_normalintrsigena= 0x0038, 
+reg_errorintrsigena= 0x003A, 
+reg_hostcontrol2= 0x003E, 
+reg_maxcurrentcap= 0x0048, 
+reg_capabilities= 0x0040, 
+reg_presetvalue1= 0x0062, 
+reg_hostcontrollerver= 0x00FE, 
+}RegOffset;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1aa59e16d99bc6c38d8836558eb163f126">
+                <title>uint8_t SDDriver::busSpeed () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1afbe07ea9f77c84fb77ee37a19c5303e9">
+                <title>void SDDriver::busSpeed (uint8_t newSpeed)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1aac899fcbe1228b711e5e36221283ae88">
+                <title>uint8_t SDDriver::busWidth () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ab3e036b68fe7f628c406af90647c0cad">
+                <title>void SDDriver::busWidth (uint8_t newWidth)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a78c3b8b62af4b02dc480e454990c036d">
+                <title>AS_MACRO bool SDDriver::cardsExists () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a465a3a00d6355c7dacfc8896cc52145b">
+                <title>SDCardStatus SDDriver::cardStatus ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a6056c92a88e9f314ed4fc1f1386ac4d5">
+                <title>AS_MACRO void SDDriver::clearIntErrStatus ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ac13094b631297b78753c17bc93d822b9">
+                <title>void SDDriver::clearResponseBit ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a6748edc406c8da7420eed223a4d3e5fa">
+                <title>SDDriver::CommandStatus SDDriver::clockFreq (uint32_t newFreq)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a7a6b575f771428477a23025ef6376673">
+                <title>uint32_t SDDriver::frameCommand (uint32_t cmd) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ab7b35802ba88cd624635097aa894d0f2">
+                <title>AS_MACRO bool SDDriver::hasCorrectBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1af290f13cd9eb93eb60d9e007bd02cb39">
+                <title>AS_MACRO bool SDDriver::hasCorrectPresetValue () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a786c1347a60311e0539a1e350279f6ff">
+                <title>bool SDDriver::hasResponse () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1aec3e5611beed0516afb3cf43751da5dc">
+                <title>bool SDDriver::init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ad59bef3ab3b1e2cf50d2c81fe70221b4">
+                <title>size_t SDDriver::readBlocksNoDMA (size_t startSec, size_t blocks, void *buffer)</title> <emphasis></emphasis>
+                
+<para>实现与图表稍微有区别，主要是初次读时，Buffer Read Ready状态可能没有设置 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>参数                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>startSec</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>blocks</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>buffer</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>返回: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a982ca7042713b205d138d7862e142919">
+                <title>CommandStatus SDDriver::readPolled (uint32_t arg, uint32_t blkCnt, uint8_t *buff)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ac50ada217e52618382bf17b21755447d">
+                <title>size_t SDDriver::readSingleBlockNoDMA (size_t startSec, void *buffer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a33dff41eeea99cf456b97c7c1b4a2a5b">
+                <title>void SDDriver::resetController ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1aefebe8ee58ad0495e5d67b7dd2801b42">
+                <title>SDDriver::SDDriver (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a99abc65cd1740b26ab4ee79452008217">
+                <title>void SDDriver::sendPullup ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ab56e133df4de2a27aa9d84f3fdcb2741">
+                <title>void SDDriver::setBlockSize ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a7f5bbbe50aa6b4b865f614228c9ba837">
+                <title>void SDDriver::setupADMA2DescriptorTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a68294cf9d19996f6b1bd41c5a0ac82a6">
+                <title>SDDriver::CommandStatus SDDriver::transferCommand (uint32_t cmd, uint32_t arg, uint32_t blckCnt)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1aab602d8b14541b323ef9159208bc0ab7">
+                <title>AS_MACRO void SDDriver::transferMode (uint16_t mode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a52b4d6d6cbec76e3b1300819fb7ad954">
+                <title>AS_MACRO uint16_t SDDriver::vendorVersion () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1a82e54a11a6e4fb310205cd5d64cf567f">
+                <title>size_t SDDriver::writeBlocksNoDMA (size_t startSec, size_t blocks, const void *buffer)</title> <emphasis></emphasis>
+                
+<para>参考 misc\external\mmc\xilinx_sd_read_write\NonDMA_Data_Transaction_3.png 注意，在QEMU下，当写入多个扇区时，必须保证物理文件具有blocks个扇区，否则可能产生TimeOutError 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>参数                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>startSec</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>blocks</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>buffer</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>返回: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d1/dcf/class_s_d_driver_1ac829e5922686cfc8c8f152bfe958d882">
+                <title>size_t SDDriver::writeSingleBlockNoDMA (size_t startSec, const void *buffer)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

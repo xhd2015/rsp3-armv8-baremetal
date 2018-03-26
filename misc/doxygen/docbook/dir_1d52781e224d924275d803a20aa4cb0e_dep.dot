@@ -1,0 +1,11 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/memory" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+  dir_1d52781e224d924275d803a20aa4cb0e [shape=box, label="memory", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_1d52781e224d924275d803a20aa4cb0e.html"];
+  }
+  dir_b926265dddcbd40e5e3241dea5a14f9d [shape=box label="templates_implementation" fillcolor="white" style="filled" color="red" URL="dir_b926265dddcbd40e5e3241dea5a14f9d.html"];
+  dir_1d52781e224d924275d803a20aa4cb0e->dir_b926265dddcbd40e5e3241dea5a14f9d [headlabel="1", labeldistance=1.5 headhref="dir_000022_000010.html"];
+}

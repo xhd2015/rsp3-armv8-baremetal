@@ -1,0 +1,15 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e1c7b6d0de41f970aaf64acfab9d22b3 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="filesystem" fontname="Helvetica", fontsize="10", URL="dir_e1c7b6d0de41f970aaf64acfab9d22b3.html"]
+  dir_59ecb4d0e4d6b36dc519bbfc6f4e5e3f [shape=box, label="fat", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_59ecb4d0e4d6b36dc519bbfc6f4e5e3f.html"];
+  }
+  dir_ebed218ca042e0cae3861bf18b14f766 [shape=box label="data_structures" URL="dir_ebed218ca042e0cae3861bf18b14f766.html"];
+  dir_a00b633439466cbb1729245c7f66f564 [shape=box label="io" fillcolor="white" style="filled" color="red" URL="dir_a00b633439466cbb1729245c7f66f564.html"];
+  dir_59ecb4d0e4d6b36dc519bbfc6f4e5e3f->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="8", labeldistance=1.5 headhref="dir_000013_000009.html"];
+  dir_59ecb4d0e4d6b36dc519bbfc6f4e5e3f->dir_a00b633439466cbb1729245c7f66f564 [headlabel="4", labeldistance=1.5 headhref="dir_000013_000016.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766->dir_a00b633439466cbb1729245c7f66f564 [headlabel="5", labeldistance=1.5 headhref="dir_000009_000016.html"];
+  dir_a00b633439466cbb1729245c7f66f564->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="2", labeldistance=1.5 headhref="dir_000016_000009.html"];
+}

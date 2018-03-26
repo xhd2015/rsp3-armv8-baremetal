@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: FAT32Entry类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../da/d61/class_f_a_t32_entry-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">FAT32Entry类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> FAT32Entry 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d2/df4/class_f_a_t32_entry__coll__graph.png" border="0" usemap="#_f_a_t32_entry_coll__map" alt="Collaboration graph"/></div>
+<map name="_f_a_t32_entry_coll__map" id="_f_a_t32_entry_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aa138097b284f7b1ca9832b5fd6583d77"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa138097b284f7b1ca9832b5fd6583d77a59fb05de3105fba5fcc233566737099e">MASK</a> = 0x0FFFFFFF, 
+<a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa138097b284f7b1ca9832b5fd6583d77a1d6dbb611b97dc7cb89847fcfa142af4">LAST</a> =0x0FFFFFFF, 
+<a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa138097b284f7b1ca9832b5fd6583d77a664368fe4a7e8e89687aae0f4b289e27">MAX_BOUND</a> = 0xFFFFFF6, 
+<a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa138097b284f7b1ca9832b5fd6583d77a52c8c285b2b66809d68fe6ae6c928215">FREE</a> =0, 
+<br />
+&#160;&#160;<a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa138097b284f7b1ca9832b5fd6583d77abd3cc5fc17cb78574f23383a9fc46022">BAD</a> =0xFFFFFF7
+<br />
+ }</td></tr>
+<tr class="separator:aa138097b284f7b1ca9832b5fd6583d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adaf2b88fbcd9db929098339d5cc3dd92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#adaf2b88fbcd9db929098339d5cc3dd92">FAT32Entry</a> (uint32_t low28bits=0)</td></tr>
+<tr class="separator:adaf2b88fbcd9db929098339d5cc3dd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b4d28e15407076b69209493fe59ac5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#a10b4d28e15407076b69209493fe59ac5">getAsInt</a> () const</td></tr>
+<tr class="separator:a10b4d28e15407076b69209493fe59ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1782e4c0fc042d7e09d9e26a8a31dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aaf1782e4c0fc042d7e09d9e26a8a31dd">isAlloced</a> () const</td></tr>
+<tr class="separator:aaf1782e4c0fc042d7e09d9e26a8a31dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cf7a6b7f181baedd1b4765da42cb6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa5cf7a6b7f181baedd1b4765da42cb6c">isBad</a> () const</td></tr>
+<tr class="separator:aa5cf7a6b7f181baedd1b4765da42cb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a209416ada5742ca21a876982dc16d054"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#a209416ada5742ca21a876982dc16d054">isFree</a> () const</td></tr>
+<tr class="separator:a209416ada5742ca21a876982dc16d054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d113b2c3036e807117fb5c922d0446"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#a27d113b2c3036e807117fb5c922d0446">isLast</a> () const</td></tr>
+<tr class="separator:a27d113b2c3036e807117fb5c922d0446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aa34ed6905d111bdac4c89e04710f5549"><td class="memItemLeft" align="right" valign="top">enum FAT32Entry:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#aa34ed6905d111bdac4c89e04710f5549">__attribute</a></td></tr>
+<tr class="separator:aa34ed6905d111bdac4c89e04710f5549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c23fbc31478cb133ace2022ac13872d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#a9c23fbc31478cb133ace2022ac13872d">effBits</a>:28</td></tr>
+<tr class="separator:a9c23fbc31478cb133ace2022ac13872d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872ab9f0f043541bcc0b027107823e12"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d32/class_f_a_t32_entry.html#a872ab9f0f043541bcc0b027107823e12">reservedNotTouched</a>:4</td></tr>
+<tr class="separator:a872ab9f0f043541bcc0b027107823e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a> 第 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html#l00014">14</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="aa138097b284f7b1ca9832b5fd6583d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa138097b284f7b1ca9832b5fd6583d77">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aa138097b284f7b1ca9832b5fd6583d77a59fb05de3105fba5fcc233566737099e"></a>MASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa138097b284f7b1ca9832b5fd6583d77a1d6dbb611b97dc7cb89847fcfa142af4"></a>LAST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa138097b284f7b1ca9832b5fd6583d77a664368fe4a7e8e89687aae0f4b289e27"></a>MAX_BOUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa138097b284f7b1ca9832b5fd6583d77a52c8c285b2b66809d68fe6ae6c928215"></a>FREE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa138097b284f7b1ca9832b5fd6583d77abd3cc5fc17cb78574f23383a9fc46022"></a>BAD&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a> 第 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="adaf2b88fbcd9db929098339d5cc3dd92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf2b88fbcd9db929098339d5cc3dd92">&#9670;&nbsp;</a></span>FAT32Entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FAT32Entry::FAT32Entry </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>low28bits</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00012">12</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a10b4d28e15407076b69209493fe59ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b4d28e15407076b69209493fe59ac5">&#9670;&nbsp;</a></span>getAsInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32Entry::getAsInt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00032">32</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d2/d32/class_f_a_t32_entry_a10b4d28e15407076b69209493fe59ac5_icgraph.png" border="0" usemap="#d2/d32/class_f_a_t32_entry_a10b4d28e15407076b69209493fe59ac5_icgraph" alt=""/></div>
+<map name="d2/d32/class_f_a_t32_entry_a10b4d28e15407076b69209493fe59ac5_icgraph" id="d2/d32/class_f_a_t32_entry_a10b4d28e15407076b69209493fe59ac5_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf1782e4c0fc042d7e09d9e26a8a31dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1782e4c0fc042d7e09d9e26a8a31dd">&#9670;&nbsp;</a></span>isAlloced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FAT32Entry::isAlloced </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa5cf7a6b7f181baedd1b4765da42cb6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5cf7a6b7f181baedd1b4765da42cb6c">&#9670;&nbsp;</a></span>isBad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FAT32Entry::isBad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a209416ada5742ca21a876982dc16d054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209416ada5742ca21a876982dc16d054">&#9670;&nbsp;</a></span>isFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FAT32Entry::isFree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a27d113b2c3036e807117fb5c922d0446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d113b2c3036e807117fb5c922d0446">&#9670;&nbsp;</a></span>isLast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FAT32Entry::isLast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a> 第 <a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html#l00023">23</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d2/d32/class_f_a_t32_entry_a27d113b2c3036e807117fb5c922d0446_icgraph.png" border="0" usemap="#d2/d32/class_f_a_t32_entry_a27d113b2c3036e807117fb5c922d0446_icgraph" alt=""/></div>
+<map name="d2/d32/class_f_a_t32_entry_a27d113b2c3036e807117fb5c922d0446_icgraph" id="d2/d32/class_f_a_t32_entry_a27d113b2c3036e807117fb5c922d0446_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aa34ed6905d111bdac4c89e04710f5549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34ed6905d111bdac4c89e04710f5549">&#9670;&nbsp;</a></span>__attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum { ... }  FAT32Entry::__attribute</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c23fbc31478cb133ace2022ac13872d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c23fbc31478cb133ace2022ac13872d">&#9670;&nbsp;</a></span>effBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32Entry::effBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a> 第 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a872ab9f0f043541bcc0b027107823e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a872ab9f0f043541bcc0b027107823e12">&#9670;&nbsp;</a></span>reservedNotTouched</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32Entry::reservedNotTouched</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a> 第 <a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/<a class="el" href="../../d0/db9/_f_a_t32_entry_8h_source.html">FAT32Entry.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/<a class="el" href="../../dd/da1/_f_a_t32_entry_8cpp_source.html">FAT32Entry.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:42 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

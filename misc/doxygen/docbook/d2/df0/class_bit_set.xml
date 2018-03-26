@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/df0/class_bit_set">
+<title>BitSet class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d19/_bit_set_8h">&quot;BitSet.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for BitSet</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/da5/class_bit_set__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for BitSet</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d77/class_bit_set__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>bitLength</declname>
+        <defname>bitLength</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _data[numBytes(bitLength)]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/df0/class_bit_set">BitSet</link> <link linkend="d2/df0/class_bit_set_1ab97fafce94e67a3a72a5505d68a6a9d7">value</link> (
+size_t lower, size_t upper)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d2/df0/class_bit_set_1ab97fafce94e67a3a72a5505d68a6a9d7">
+                <title>BitSet BitSet&lt; bitLength &gt;::value (size_t lower, size_t upper) const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

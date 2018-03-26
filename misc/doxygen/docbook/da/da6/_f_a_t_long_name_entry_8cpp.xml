@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/da6/_f_a_t_long_name_entry_8cpp">
+    <title>FATLongNameEntry.cpp File Reference</title>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FATLongNameEntry.h&gt;</programlisting>
+    <programlisting>#include &lt;utility&gt;</programlisting>
+<para>Include dependency diagram for FATLongNameEntry.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dff/_f_a_t_long_name_entry_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FATLongNameEntry.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/dcf/_f_a_t_long_name_entry_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="da/da6/_f_a_t_long_name_entry_8cpp_1abad806d8e37a18beceab5d3ede55b90c">LOOKUP_HELPER</link> for(size_t i=0;i!=sizeof(nameN);i+=2)\
+	{ \
+		char transferedChar = <link linkend="da/d0d/_f_a_t_long_name_entry_8h_1aadcbd72c8a49cc6ab13c92af125b2ea5">unicodeCharToAsciiChar</link>(nameN + i); \
+		if(transferedChar == <link linkend="d4/da4/def_8h_1ae920d68bf98c6bb1302fdda0f28f5ff1">NULL_CHAR</link>) \
+			return (base)+i;\
+	}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/FATLongNameEntry.cpp</para>
+    </simplesect>
+</section>

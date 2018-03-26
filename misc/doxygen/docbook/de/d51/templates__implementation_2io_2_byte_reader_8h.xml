@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d51/templates__implementation_2io_2_byte_reader_8h">
+    <title>ByteReader.h File Reference</title>
+    <programlisting>#include &lt;io/ByteReader.h&gt;</programlisting>
+    <programlisting>#include &lt;tuple&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+<para>Include dependency diagram for ByteReader.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/dfa/templates__implementation_2io_2_byte_reader_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for ByteReader.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d50/templates__implementation_2io_2_byte_reader_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/io/ByteReader.h</para>
+    </simplesect>
+</section>

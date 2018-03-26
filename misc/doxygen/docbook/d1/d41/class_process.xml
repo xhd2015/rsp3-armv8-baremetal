@@ -1,0 +1,822 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d41/class_process">
+<title>Process class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d77/_process_8h">&quot;Process.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Process</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/de6/class_process__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Process</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/dfc/class_process__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164">Config</link> {
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5b0e934663855110172f173ddb5d92dc">PAGE_SIZE</link>= 4*KiB,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a83a985fcd03a38aa23c9fc2421bcc87c">KERN_ARG_NUM</link>= 4 * sizeof(uint64_t),
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ac25c5a8084ca017bb6a5d753b8169d65">CODE_L3_INDEX</link>= 1,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5d6cc5fa12d82220e98ffcdcda612a9c">CODE_L3_ENTRY_NUM</link>=5,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a3ddb8147e80ea2666391571a27fb2bd6">STACK_L3_INDEX</link>=508,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164afe4ed0af355532b558be0a3c7e567eab">STACK_L3_ENTRY_NUM</link>=2,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5f9019a5c2f27cdc2e579867a6dd9dc0">HEAP_L3_INDEX</link>= 510,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a8cd00d5be6df978914680fac03635db0">HEAP_L3_ENTRY_NUM</link>= 2,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ad9e1970e7c07196b387eda462ed7cf15">TABLE_ALIGNMENT</link>= 4*KiB,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a2fbb42fbda5c1b6e75cfeada7d096bc5">TABLE_SIZE</link>= 4*KiB,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ac862bc0519b25d4893ad238f6ae754a8">CODE_BASE_ALIGNMENT</link>= 4*KiB,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a845f60c7acd70a765c3c4c9865fcbf7a">SP_BASE_ALIGNMENT</link>= 16,
+<link linkend="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab">REGISTER_NUM</link>= 31
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79d">Error</link> {
+<link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da35308de9d793167458edeed2c21383db">SUCCESS</link>=0,
+<link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da5113d9961a22cf1780003564038ccd88">PID_ALLOCATE_FAILED</link>,
+<link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da551a36c44db8550c3b0817ee21981f7a">SPACE_ALLCOATE_FAILED</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Status</link> {
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855">CREATED_INCOMPLETE</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a576311e5856c6f73d0f55736b1549bce">CREATED</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229ab423492f3003702097cbe024e237120f">READY</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229ac171654422744f05154dd132ffba4642">RUNNING</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a749cb1027886cbc0427aed9641b99ee4">BLOCKED</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229abaa28b867c9aec8186491a9418fcfa39">STOPPED</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a2a3f10e2a8593bdb44434c6fdd3c667c">DESTROYED</link>,
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a71f6c3de5310006d06a7a0f64dd960a1">STATUS_NUM</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _codeBase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _codeSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegELR_EL1 _ELR</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _heapBase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _heapSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Process * _parent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Pid _pid</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _priority</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _registers[REGISTER_NUM]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _spBase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegSP_EL0 _spEL0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _spSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegSPSR_EL1 _SPSR</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Status _status</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL0 * _tableL0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL1 * _tableL1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL2 * _tableL2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL3 * _tableL3</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegTTBR0_EL1 _ttbr0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d1/d41/class_process_1a943d8a8fa8d5e45c0fe9df657b6866f3">codeBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/d41/class_process_1aa627a0558101acd49b5c3998d7ae998a">codeSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d41/class_process_1a9a33a79c6587f16670cb86e8bf058450">destroy</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegELR_EL1 <link linkend="d1/d41/class_process_1a11fcd48e9c01bd9df86b2d176d9eb9bd">ELR</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d1/d41/class_process_1a8ca4ddcceafe5b25c7bdcd658faa1fe9">heapBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/d41/class_process_1a80fb4bf056a834cb356110e868ea74b7">heapSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79d">Error</link> <link linkend="d1/d41/class_process_1a136865d6931c5bc599db3cf2c93f149e">init</link> (
+size_t addrBitsLen, <link linkend="d1/d41/class_process">Process</link> * parent, uint32_t priority, size_t codeSize, size_t heapSize, size_t spSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d1/d41/class_process">Process</link> &amp; <link linkend="d1/d41/class_process_1a4b29aeac4543d66fe6ff2bade9405ee5">operator=</link> (
+const <link linkend="d1/d41/class_process">Process</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d1/d41/class_process">Process</link> &amp; <link linkend="d1/d41/class_process_1a1e5013df37ac5eab7bc448b4c61a91de">operator=</link> (
+<link linkend="d1/d41/class_process">Process</link> &amp;&amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d1/d41/class_process">Process</link> * <link linkend="d1/d41/class_process_1a0f0db79b4540bab7467bae1338c36636">parent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d92/_pid_manager_8h_1aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</link> <link linkend="d1/d41/class_process_1aef4727761fd65656572c1635805137d2">pid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d41/class_process_1ae1e161128d16ba72a5f40cca3e986f01">priority</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d41/class_process_1a9f4553eac74c657bb451f390c17d6bea">Process</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d41/class_process_1a4316c43be945c03bdb0ef69fb0f5fff9">Process</link> (
+const <link linkend="d1/d41/class_process">Process</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d41/class_process_1aa81473392aed32ff23303b4d1eed7737">Process</link> (
+<link linkend="d1/d41/class_process">Process</link> &amp;&amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t * <link linkend="d1/d41/class_process_1af06805a17fec5ccf101ae437a1954594">registers</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const uint64_t * <link linkend="d1/d41/class_process_1a919314253bfe539b8250a5100b197fb1">registers</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d41/class_process_1aeeea85d1650ec8e167f09238d1641b9d">restoreContextAndExecute</link> (
+void * savedSpEL1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d41/class_process_1a0f23f1e26603db23922f252d50770cc6">saveContext</link> (
+const uint64_t * savedRegisters)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79d">Error</link> <link linkend="d1/d41/class_process_1adf3b8b00204709e9246aa736768d7a32">setupTables</link> (
+size_t codeSize, size_t heapSize, size_t spSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d1/d41/class_process_1ab4b9fc6d21ff0aad6c0b575d2a8747c2">spBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegSP_EL0 <link linkend="d1/d41/class_process_1aff1a65d4d5af279a130297ebc912f901">spEL0</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d1/d41/class_process_1a6c9c29aec3a891f294bffb63776ecc4b">spSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const RegSPSR_EL1 <link linkend="d1/d41/class_process_1a94f55fd34560d4932e7cb71b05e2246f">SPSR</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Status</link> <link linkend="d1/d41/class_process_1af9af76b443ac17284480006cdd312cd6">status</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d41/class_process_1a5a55590d8793728ebf3b613757d7b246">status</link> (
+<link linkend="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">Status</link> status)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> * <link linkend="d1/d41/class_process_1a23f1c4a7050004bc438cc78537fd4268">tableL0</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL1 * <link linkend="d1/d41/class_process_1ac727c071c861ee041d4baaac3e8fbe1b">tableL1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RegDescriptor4KBL2 * <link linkend="d1/d41/class_process_1a5286117e33f477dc10b3624309d06651">tableL2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const RegDescriptor4KBL3 * <link linkend="d1/d41/class_process_1ad97c9f2ca6315e3d1e4c77e8e9e9c1f6">tableL3</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const RegTTBR0_EL1 &amp; <link linkend="d1/d41/class_process_1a83d80be6ab59fb96a2a035d33ad543ea">TTBR0</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d41/class_process_1a990776d181dbbde7ff8ac12713d814b3">~Process</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164">
+               <title>enum Config </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5b0e934663855110172f173ddb5d92dc">
+                            <term>PAGE_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a83a985fcd03a38aa23c9fc2421bcc87c">
+                            <term>KERN_ARG_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ac25c5a8084ca017bb6a5d753b8169d65">
+                            <term>CODE_L3_INDEX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5d6cc5fa12d82220e98ffcdcda612a9c">
+                            <term>CODE_L3_ENTRY_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a3ddb8147e80ea2666391571a27fb2bd6">
+                            <term>STACK_L3_INDEX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164afe4ed0af355532b558be0a3c7e567eab">
+                            <term>STACK_L3_ENTRY_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a5f9019a5c2f27cdc2e579867a6dd9dc0">
+                            <term>HEAP_L3_INDEX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a8cd00d5be6df978914680fac03635db0">
+                            <term>HEAP_L3_ENTRY_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ad9e1970e7c07196b387eda462ed7cf15">
+                            <term>TABLE_ALIGNMENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a2fbb42fbda5c1b6e75cfeada7d096bc5">
+                            <term>TABLE_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164ac862bc0519b25d4893ad238f6ae754a8">
+                            <term>CODE_BASE_ALIGNMENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a845f60c7acd70a765c3c4c9865fcbf7a">
+                            <term>SP_BASE_ALIGNMENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab">
+                            <term>REGISTER_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 21 of file Process.h
+                    <computeroutput><literallayout>
+{
+PAGE_SIZE= 4*KiB, 
+KERN_ARG_NUM= 4 * sizeof(uint64_t), 
+CODE_L3_INDEX= 1, 
+CODE_L3_ENTRY_NUM=5, 
+STACK_L3_INDEX=508, 
+STACK_L3_ENTRY_NUM=2, 
+HEAP_L3_INDEX= 510, 
+HEAP_L3_ENTRY_NUM= 2, 
+TABLE_ALIGNMENT= 4*KiB, 
+TABLE_SIZE= 4*KiB, 
+CODE_BASE_ALIGNMENT= 4*KiB, 
+SP_BASE_ALIGNMENT= 16, 
+REGISTER_NUM= 31, 
+}Config;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79d">
+               <title>enum Error </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da35308de9d793167458edeed2c21383db">
+                            <term>SUCCESS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da5113d9961a22cf1780003564038ccd88">
+                            <term>PID_ALLOCATE_FAILED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a93456b115d46f58dd4e36189c40cc79da551a36c44db8550c3b0817ee21981f7a">
+                            <term>SPACE_ALLCOATE_FAILED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 44 of file Process.h
+                    <computeroutput><literallayout>
+{
+SUCCESS=0, 
+PID_ALLOCATE_FAILED, 
+SPACE_ALLCOATE_FAILED, 
+}Error;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229">
+               <title>enum Status </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855">
+                            <term>CREATED_INCOMPLETE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a576311e5856c6f73d0f55736b1549bce">
+                            <term>CREATED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229ab423492f3003702097cbe024e237120f">
+                            <term>READY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229ac171654422744f05154dd132ffba4642">
+                            <term>RUNNING</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a749cb1027886cbc0427aed9641b99ee4">
+                            <term>BLOCKED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229abaa28b867c9aec8186491a9418fcfa39">
+                            <term>STOPPED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a2a3f10e2a8593bdb44434c6fdd3c667c">
+                            <term>DESTROYED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d41/class_process_1a313c7a9581e4ca59c722f657ac128229a71f6c3de5310006d06a7a0f64dd960a1">
+                            <term>STATUS_NUM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 33 of file Process.h
+                    <computeroutput><literallayout>
+{
+CREATED_INCOMPLETE, 
+CREATED, 
+READY, 
+RUNNING, 
+BLOCKED, 
+STOPPED, 
+DESTROYED, 
+STATUS_NUM, 
+}Status;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d1/d41/class_process_1a943d8a8fa8d5e45c0fe9df657b6866f3">
+                <title>void * Process::codeBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1aa627a0558101acd49b5c3998d7ae998a">
+                <title>size_t Process::codeSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a9a33a79c6587f16670cb86e8bf058450">
+                <title>void Process::destroy ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a11fcd48e9c01bd9df86b2d176d9eb9bd">
+                <title>RegELR_EL1 Process::ELR () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a8ca4ddcceafe5b25c7bdcd658faa1fe9">
+                <title>void * Process::heapBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a80fb4bf056a834cb356110e868ea74b7">
+                <title>size_t Process::heapSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a136865d6931c5bc599db3cf2c93f149e">
+                <title>Process::Error Process::init (size_t addrBitsLen, Process *parent, uint32_t priority, size_t codeSize, size_t heapSize, size_t spSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a4b29aeac4543d66fe6ff2bade9405ee5">
+                <title>Process&amp; Process::operator= (const Process &amp;rhs)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a1e5013df37ac5eab7bc448b4c61a91de">
+                <title>Process&amp; Process::operator= (Process &amp;&amp;rhs)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a0f0db79b4540bab7467bae1338c36636">
+                <title>const Process * Process::parent () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1aef4727761fd65656572c1635805137d2">
+                <title>Pid Process::pid () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1ae1e161128d16ba72a5f40cca3e986f01">
+                <title>uint32_t Process::priority () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a9f4553eac74c657bb451f390c17d6bea">
+                <title>Process::Process ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a4316c43be945c03bdb0ef69fb0f5fff9">
+                <title>Process::Process (const Process &amp;rhs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1aa81473392aed32ff23303b4d1eed7737">
+                <title>Process::Process (Process &amp;&amp;rhs)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1af06805a17fec5ccf101ae437a1954594">
+                <title>uint64_t * Process::registers ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a919314253bfe539b8250a5100b197fb1">
+                <title>const uint64_t * Process::registers () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1aeeea85d1650ec8e167f09238d1641b9d">
+                <title>void Process::restoreContextAndExecute (void *savedSpEL1=nullptr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a0f23f1e26603db23922f252d50770cc6">
+                <title>void Process::saveContext (const uint64_t *savedRegisters)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1adf3b8b00204709e9246aa736768d7a32">
+                <title>Process::Error Process::setupTables (size_t codeSize, size_t heapSize, size_t spSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1ab4b9fc6d21ff0aad6c0b575d2a8747c2">
+                <title>void * Process::spBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1aff1a65d4d5af279a130297ebc912f901">
+                <title>RegSP_EL0 Process::spEL0 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a6c9c29aec3a891f294bffb63776ecc4b">
+                <title>size_t Process::spSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a94f55fd34560d4932e7cb71b05e2246f">
+                <title>const RegSPSR_EL1 Process::SPSR () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1af9af76b443ac17284480006cdd312cd6">
+                <title>Process::Status Process::status () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a5a55590d8793728ebf3b613757d7b246">
+                <title>void Process::status (Status status)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a23f1c4a7050004bc438cc78537fd4268">
+                <title>const RegDescriptor4KBL0 * Process::tableL0 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1ac727c071c861ee041d4baaac3e8fbe1b">
+                <title>RegDescriptor4KBL1 * Process::tableL1 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a5286117e33f477dc10b3624309d06651">
+                <title>RegDescriptor4KBL2 * Process::tableL2 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1ad97c9f2ca6315e3d1e4c77e8e9e9c1f6">
+                <title>const RegDescriptor4KBL3 * Process::tableL3 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a83d80be6ab59fb96a2a035d33ad543ea">
+                <title>const RegTTBR0_EL1 &amp; Process::TTBR0 () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d41/class_process_1a990776d181dbbde7ff8ac12713d814b3">
+                <title>Process::~Process ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

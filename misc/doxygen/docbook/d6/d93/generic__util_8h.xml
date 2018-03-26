@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d93/generic__util_8h">
+    <title>generic_util.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+<para>Include dependency diagram for generic_util.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dba/generic__util_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for generic_util.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d26/generic__util_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d5b/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct">anonymous_namespace{generic_util.h}::BitMaskStruct</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/de7/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct_3_01bit_01_4">anonymous_namespace{generic_util.h}::BitMaskStruct&lt; bit &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> 命名空间 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/de1/namespaceanonymous__namespace_02generic__util_8h_03">anonymous_namespace{generic_util.h}</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d6/d93/generic__util_8h_1a3fd0302d401f93890a054567e5ac059b">digitsMap</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d93/generic__util_8h_1a62ffc1a495ad7b7b16cae823fc1b2fad">alignAhead</link> (
+uint64_t d, uint64_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d6/d93/generic__util_8h_1a8a467869963f69dab2f1c1720aee7765">alignBackward</link> (
+uint64_t d, uint64_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d6/d93/generic__util_8h_1ac7548a38c0bff8ba1bfe590744e574bb">bitMask</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1a5282d8ce7286a948154c94d61a6f2987">bitMask</link> (
+uint8_t bit)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d6/d93/generic__util_8h_1a822750373ef9e17db637149994344b53">bitOnes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d6/d93/generic__util_8h_1a136dc778fddde8cd2538cbc37fe6be51">bitsAnySet</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> T <link linkend="d6/d93/generic__util_8h_1a28f124a035283e6dedc943cfa313569b">bitsClear</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> T <link linkend="d6/d93/generic__util_8h_1a36e08f088c0737dfac8a491189472389">bitsKept</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d6/d93/generic__util_8h_1a4f87a58ad3079927db8daa8ec909bbfc">bitsMix0</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d6/d93/generic__util_8h_1ad2242c8354787c2a19f079dc79fb376f">bitsMix1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d6/d93/generic__util_8h_1a0aed1cab74818a01ac8cb72b374d972d">bitsNonSet</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> T <link linkend="d6/d93/generic__util_8h_1ae359bbb261d1e7657dcb5199837fc9ce">bitsSet</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d6/d93/generic__util_8h_1a6ac18df33545d9945ab290ead15b7924">bitZeros</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1a94d318548d61ae9415c02f7b231a4eed">getBit</link> (
+uint64_t i, uint8_t index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1ad3eca599f2c56e3c38b1cfdbd9eba440">getBits</link> (
+uint64_t i, uint8_t lowerBound, uint8_t upperBound)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d93/generic__util_8h_1a9510d749402ed54c44ca35b10a7162c3">itob</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d93/generic__util_8h_1a43715e4d4543de6b46c6cb48cce27169">itod</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d93/generic__util_8h_1a5e7908fb09fcb92255d970d32f6740d6">itos</link> (
+size_t i, unsigned int base, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d6/d93/generic__util_8h_1afeb9f297a4d9c22cfc7c60aa6339c507">itox</link> (
+size_t i, char * dst, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1a3d31e60307c16bf71c379876cc217b62">lowerMaskBits</link> (
+uint64_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1af2f94c964a407f35297f94dcd4e7cd1d">middleMaskBits</link> (
+uint64_t lowerBound, uint64_t upperBound)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/d93/generic__util_8h_1acb36ebc193ed813f8490ea2afb3a4d1a">reverse</link> (
+char * str, size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d6/d93/generic__util_8h_1aff4c776861e2f020cd23574941008015">setBit</link> (
+Type &amp; i, uint8_t index, ValueType v)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d6/d93/generic__util_8h_1a41cd600b56ee27df75b2d0cdb4e18d48">setBits</link> (
+Type &amp; i, uint8_t lowerBound, uint8_t upperBound, ValueType v)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="d6/d93/generic__util_8h_1ab74f19ae60eb97e1f0b7d848bba10b7c">strOffset</link> (
+const char * p, size_t offset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="d6/d93/generic__util_8h_1ae5b0ccf9eceeac13bce69e2bf98b8480">upperMaskBits</link> (
+uint64_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h</para>
+    </simplesect>
+</section>

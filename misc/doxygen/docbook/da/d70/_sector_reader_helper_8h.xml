@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d70/_sector_reader_helper_8h">
+    <title>SectorReaderHelper.h File Reference</title>
+    <programlisting>#include &lt;fstream&gt;</programlisting>
+<para>Include dependency diagram for SectorReaderHelper.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d76/_sector_reader_helper_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for SectorReaderHelper.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d56/_sector_reader_helper_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d91/class_sector_reader_helper">SectorReaderHelper</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d4/d91/class_sector_reader_helper">SectorReaderHelper</link> <link linkend="da/d70/_sector_reader_helper_8h_1a628e8e00fe1c12638542d93972e20f6f">__attribute__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d91/class_sector_reader_helper">SectorReaderHelper</link> <link linkend="da/d70/_sector_reader_helper_8h_1a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host/SectorReaderHelper.h</para>
+    </simplesect>
+</section>

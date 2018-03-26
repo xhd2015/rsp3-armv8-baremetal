@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d70/_virtio_driver_8cpp">
+    <title>VirtioDriver.cpp File Reference</title>
+    <programlisting>#include &lt;io/virtio/VirtioDriver.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+<para>Include dependency diagram for VirtioDriver.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/de9/_virtio_driver_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for VirtioDriver.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d55/_virtio_driver_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/VirtioDriver.cpp</para>
+    </simplesect>
+</section>

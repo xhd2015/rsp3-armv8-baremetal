@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d74/_system_features_8h">
+    <title>SystemFeatures.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/system_common_registers.h&gt;</programlisting>
+<para>Include dependency diagram for SystemFeatures.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d5c/_system_features_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for SystemFeatures.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/da8/_system_features_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/df2/class_system_features">SystemFeatures</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668">Architecture</link> {
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668a0508ede5e687d5416a51619e87c3eaf0">UNKONW</link>,
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668a036a8f756db6f6db7e1ed8f22a9f641e">AARCH64</link>,
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668ae88dfb8195ac44364bb899cfb0ebfdf4">AARCH32</link>,
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668a0027f42e1e5dfcb4fd5f8f9c6db89af3">x86_64</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a268227c9cc211c3d62faa64d715c4b72">_addrBits</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1ad397020dfcdffda268b26997fdfc3179">_architecture</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1ab20f9cb95a8f92337f419b7d9d8249ca">_asidBits</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1aeec4aa1c95234ca449590d19b91bb135">_asidSelector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a804795428a6acbb23fe8342c0364ef8e">_cores</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a6dcbb28bba534e7d8dadf2967fc27a6e">_support16KBPage</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1aac058132ad340613cce7103da1e5a537">_support4KBPage</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a55daaa56394c2d15e0e9dda16a309fe8">_support64KBPage</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/df2/class_system_features">SystemFeatures</link> <link linkend="dc/d74/_system_features_8h_1a51c112e3dcb5fc52a275c313843b84d0">systemFeatures</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d4/df2/class_system_features">SystemFeatures</link> <link linkend="dc/d74/_system_features_8h_1a65e350b1e59ee9f488cb8bc64284306d">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a965641e6ac072bef034a5ec1113f8e07">addrBits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a69295c0f68c0d8f73093a64a53c87e07">addrBits</link> (
+uint64_t addrBits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668">Architecture</link> <link linkend="dc/d74/_system_features_8h_1a8605fc2d08dc1e245c443670738d8f74">architecture</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1ad24eeb9f1573d3bd239215ed1198b8c8">architecture</link> (
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668">Architecture</link> architecture)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1af2224f3a8969736625c87a8ea30abadc">asidBits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a303cd3cd16035f965dc2c915346cac3f">asidBits</link> (
+uint64_t asid16Bits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a23ee4d08ec7bb18de14f4b6956bb4338">asidSelector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1ad8e9d6871580617e1c1d7a2e6fe6412a">asidSelector</link> (
+uint64_t asidSelector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="dc/d74/_system_features_8h_1a1f7d1f26a47b42280ce61d9d55e01f61">cores</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a90c958db1ccb1c91e931bed8596c19fd">cores</link> (
+uint64_t cores)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d74/_system_features_8h_1a19147e8d9805242bb6dd434e9c0d5e3c">support16KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a68d54f55a262fd7455695a829ea36bf0">support16KBPage</link> (
+bool support16KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d74/_system_features_8h_1a756e28fb36d322bcddb5e20389e368b7">support4KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a0a5fb83458920dcdbfc9926195c47083">support4KBPage</link> (
+bool support4KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d74/_system_features_8h_1abf8a47612d8fb69984c2f7cdee1b70bd">support64KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a9fffff73d790b7e4474ce4a5f5b4a030">support64KBPage</link> (
+bool support64KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d74/_system_features_8h_1adfa8d2fb2155e12483055fe7cb5240e3">SystemFeatures</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d74/_system_features_8h_1a0d066ac0d3819dcac508a3f79d2cb3b8">updatePreconfigured</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/SystemFeatures.h</para>
+    </simplesect>
+</section>

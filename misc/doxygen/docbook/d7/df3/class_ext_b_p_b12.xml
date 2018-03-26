@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/df3/class_ext_b_p_b12">
+<title>ExtBPB12 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h">&quot;FAT16ExtBPB.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ExtBPB12</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d8d/class_ext_b_p_b12__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ExtBPB12</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/de5/class_ext_b_p_b12__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d7/df3/class_ext_b_p_b12_1a974cfccca3304d822bd2bebf5d8702cf">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para><link linkend="d7/df3/class_ext_b_p_b12">ExtBPB12</link> has exactly the same fields with <link linkend="d3/db9/class_ext_b_p_b16">ExtBPB16</link>,except properties not represented in the real memory field. </para>
+                <para>Definition at line 41 of file FAT16ExtBPB.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>FAT16ExtBPB.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d7/df3/class_ext_b_p_b12_1a974cfccca3304d822bd2bebf5d8702cf">
+                <title>FAT_BPB::FATType ExtBPB12::getFATType () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

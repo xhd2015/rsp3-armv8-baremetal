@@ -1,0 +1,14 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/MemoryManager_host.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3847 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/memory/MemoryManager\l_host.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3847 -> Node3848 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3848 [label="MemoryManager.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3847 -> Node3849 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3849 [label="new",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3847 -> Node3850 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3850 [label="cstring",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3847 -> Node3851 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3851 [label="algorithm",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/da4/def_8h">
+    <title>def.h File Reference</title>
+    <programlisting>#include &lt;cstddef&gt;</programlisting>
+    <programlisting>#include &lt;cstdint&gt;</programlisting>
+<para>Include dependency diagram for def.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d93/def_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for def.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d0b/def_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1ae09d687217717da8684417e61d3278b8">__stringify</link> <link linkend="d4/da4/def_8h_1a2b67a77a01fddb1f69c02b2fb88f7a0c">__stringify_1</link>(x)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a2b67a77a01fddb1f69c02b2fb88f7a0c">__stringify_1</link> #x</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1af96ea0e91321cfa323e4c590d51de899">arrsizeof</link> (sizeof(arr)/sizeof(arr[0]))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d0/dc9/init_8cpp_1a0d37a7d8737cbd20700740c969fca192">__attribute__</link>((always_inline)) inline</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a9ac9488e4cf4ef72364ce6329738b6a2">BIN32</link> 0b##a##bb##c##d</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a5078fdf5a76d4093043b56d2b0434750">BIN64</link> 0b##a##bb##c##d##e##f##g##h</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a38d95436a9d1d529e0cac87efc7e1b0b">CALL_CONST_EQUIV</link> const_cast&lt;rttype&gt;(reinterpret_cast&lt;const thistype*&gt;(this)-&gt;method)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a4362ac890f9e50aac5882590deedde41">FATAL</link> &quot;[FATAL] &quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a7580dd28227775b333c1f117ebfa32b2">HEX32</link> 0x##a##b</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a4dff6778f6322d29ee74a814676b0d86">HEX64</link> 0x##a##b##c##d</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1ae1103fea1e1b3c41ca3322d5389f7162">INFO</link> &quot;[INFO] &quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1ae920d68bf98c6bb1302fdda0f28f5ff1">NULL_CHAR</link> &apos;\0&apos;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a2fd6b236dd0740635a2ad834bfdad78a">TIE2</link> t1 v1;t2 v2;std::tie((v1),(v2))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/da4/def_8h_1a5cb439d9f933fde4cf23caa370c030e7">WARNING</link> &quot;[WARNING] &quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d4/da4/def_8h_1aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr int <link linkend="d4/da4/def_8h_1ad6cef122811f1130221f5ee2352acdce">GiB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr int <link linkend="d4/da4/def_8h_1ae99f8952b8d03b0834d5c76a48b3265b">KiB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr int <link linkend="d4/da4/def_8h_1ad217dbfe94bd494903d34abf065a4a79">MiB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr int <link linkend="d4/da4/def_8h_1af241c69432cfb9aafb65dcce2d92c808">UNIT_K</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h</para>
+    </simplesect>
+</section>

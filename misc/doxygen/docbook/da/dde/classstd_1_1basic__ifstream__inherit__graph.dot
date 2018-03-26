@@ -1,0 +1,20 @@
+digraph "std::basic_ifstream&lt; Char &gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node41 [label="{std::basic_ifstream\l\< Char \>\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node42 -> Node41 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node42 [label="{std::basic_istream\l\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node43 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node43 [label="{std::basic_ios\< Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node44 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node44 [label="{std::ios_base\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node41 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node45 [label="{std::ifstream\< char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node41 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node46 [label="{std::wifstream\< wchar_t \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class "];
+  Node41 -> Node47 [dir="back",color="orange",fontsize="10",style="solid",label=" \< wchar_t \>" ,fontname="Helvetica"];
+  Node47 [label="{std::basic_ifstream\l\< wchar_t \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node41 -> Node48 [dir="back",color="orange",fontsize="10",style="solid",label=" \< char \>" ,fontname="Helvetica"];
+  Node48 [label="{std::basic_ifstream\l\< char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

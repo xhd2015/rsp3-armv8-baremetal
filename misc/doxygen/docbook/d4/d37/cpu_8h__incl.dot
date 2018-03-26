@@ -1,0 +1,12 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/cpu.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1227 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/generic/cpu.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1227 -> Node1228 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1228 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node1228 -> Node1229 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1229 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1228 -> Node1230 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1230 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

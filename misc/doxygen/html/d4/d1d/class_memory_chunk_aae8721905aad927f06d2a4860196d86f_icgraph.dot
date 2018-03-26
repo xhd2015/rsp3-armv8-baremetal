@@ -1,0 +1,29 @@
+digraph "MemoryChunk::advanceByBytes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node15 [label="MemoryChunk::advanceByBytes",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="MemoryChunk::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a4cdc4796b4fe962c6cbf386bf82c4f0a"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="MemoryChunk::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ac7610b46047651786dc0d65f0c52e5c3"];
+  Node16 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="MemoryChunk::nextValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a1736b8411b5d300f91d852026d5b3d32"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="MemoryChunk::nextValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aa42088fbe06411f446240f084aca5af3"];
+  Node16 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="MemoryChunk::findAllocable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ab3b8549a3aef47a0bbcadce037225ed2"];
+  Node20 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="MemoryChunk::findAllocable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a934f6242ec16c156bb099240b3fce0de"];
+  Node20 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a7a9a1ed8aa2df2885d4567eb7d18805a"];
+  Node16 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="TestMemoryManager::\lnextChunkCorrectly",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d58/class_test_memory_manager.html#a62654fd075a26f6944e9a45beebaae1f"];
+  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d12/zcu102_2crt0_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node23 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="TestMemoryManager::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d58/class_test_memory_manager.html#acd87b90b4159195484f49ac1aad0b839"];
+  Node25 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d40/main__debug___pid_manager_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+}

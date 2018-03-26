@@ -1,0 +1,27 @@
+digraph "DoublyLinkedList::removeNode"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node77 [label="DoublyLinkedList::removeNode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node77 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="ProcessManager::changeProcess\lStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a0bcc42f5333bb6a0613e38721227bbd2"];
+  Node78 -> Node79 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="ProcessManager::createNew\lProcess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#aebaf5b36a78fe9c75c1a1fb81d6851ac"];
+  Node79 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d35/main__run__process_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node78 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="SynchronousEL1Handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html#adf8fdfc202648f336df261faf22abf24"];
+  Node78 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="ProcessManager::killProcess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#aa7b17ec2be5c3de2ef4b712236d71bd7"];
+  Node82 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="ProcessManager::schedule\lNextProcess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a64f2aa8b0886f482d5039c65bca72af7"];
+  Node83 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="ProcessManager::forkProcess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a82f37357a83d54343c703dbf354ccfd8"];
+  Node84 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="ProcessManager::changeProcess\lStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a3e43ea8b76c7d927f074eca7f6349c1b"];
+}

@@ -1,0 +1,6 @@
+digraph "FATDirEntry"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node455 [label="{FATDirEntry\n|+ __attribute__\l+ attr\l+ crtDate\l+ crtTime\l+ crtTimeTenth\l+ fileSize\l+ fstClusHI\l+ fstClusLO\l+ lstAccData\l+ name\l+ NTRes\l+ wrtDate\l+ wrtTime\l|+ getFirstClusIndex()\l+ getLongName()\l+ getShortName()\l+ isVolumeID()\l+ shortNameEquals()\l+ uni_isLongNameEntry()\l+ chksum()\l- findFirstNonSpace()\l- findLastNonSpace()\l- trailingSpaceNameEquals()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

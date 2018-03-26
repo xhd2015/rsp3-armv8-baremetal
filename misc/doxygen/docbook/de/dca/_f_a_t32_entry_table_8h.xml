@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/dca/_f_a_t32_entry_table_8h">
+    <title>FAT32EntryTable.h File Reference</title>
+    <programlisting>#include &lt;data_structures/Vector.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT32Entry.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT32ExtBPB.h&gt;</programlisting>
+    <programlisting>#include &lt;io/ByteReader.h&gt;</programlisting>
+<para>Include dependency diagram for FAT32EntryTable.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/dda/_f_a_t32_entry_table_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT32EntryTable.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d4f/_f_a_t32_entry_table_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/d88/class_f_a_t32_entry_table">FAT32EntryTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT32EntryTable.h</para>
+    </simplesect>
+</section>

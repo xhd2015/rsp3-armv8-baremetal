@@ -18,7 +18,16 @@ protected:
 		:_base(reinterpret_cast<volatile char*>(base)){}
 	MemBasedRegReader(void *base)
 		:_base(reinterpret_cast<volatile char*>(base)){}
+	MemBasedRegReader(volatile void *base)
+		:_base(reinterpret_cast<volatile char*>(base)){}
+	MemBasedRegReader(nullptr_t base)
+		:_base(base){}
 public:
+	template <class T,RegOffset offset>
+	AS_MACRO T regcopy()
+	{
+		return *reinterpret_cast<T*>(const_cast<char*>(_base) + offset);
+	}
 	template <class T,RegOffset offset>
 	AS_MACRO volatile T & reg()
 	{

@@ -1,0 +1,6 @@
+digraph "ForwardNode&lt; T &gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node480 [label="{ForwardNode\< T \>\n|- _data\l- _next\l|+ ahead()\l+ ahead()\l+ data()\l+ data()\l+ data()\l+ DEFINE_COPY_CONSTRUCTOR()\l+ DEFINE_COPY_OPERATOR()\l+ DEFINE_MOVE_CONSTRUCTOR()\l+ DEFINE_MOVE_OPERATOR()\l+ ForwardNode()\l和 9 更多...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

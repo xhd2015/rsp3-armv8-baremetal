@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/syscall.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">syscall.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/ddf/syscall_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * syscall.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Mar 8, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_SYSCALL_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_SYSCALL_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/da4/def_8h.html">def.h</a>&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d8/d2f/asm__instructions_8h.html">asm_instructions.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// 系统调用</span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d3/d6f/class_syscalls.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d6f/class_syscalls.html">Syscalls</a>{</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">   16</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">CallType</a>{<a class="code" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">Allocate</a>, <a class="code" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">Puts</a>};</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// allocate a block of memory,with optional alignment</span></div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d3/d6f/class_syscalls.html#a76a312961c3fd5c734373b92f170bf9b">   19</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> * <a class="code" href="../../d3/d6f/class_syscalls.html#a76a312961c3fd5c734373b92f170bf9b">allocate</a>(<span class="keywordtype">size_t</span> <a class="code" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>, <span class="keywordtype">size_t</span> alignment = <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>))</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// print something and return the printed number of characters</span></div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d3/d6f/class_syscalls.html#a4b1e713c8f3aa688e053c5248ea8e25f">   25</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d3/d6f/class_syscalls.html#a4b1e713c8f3aa688e053c5248ea8e25f">puts</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * s)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="../../d8/d2f/asm__instructions_8h.html#a30dc8cd78aa21e493a77695ee71ab54b">FORCE_CODE_COHERENT_WITH_VIEW</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/d6f/class_syscalls.html#a9173ec6c027db6fe22af8e3d03cc73c2">syscall</a>(<a class="code" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">Allocate</a>,reinterpret_cast&lt;size_t&gt;(s));</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// a system call accepts at most 5 arugments, if one type of call accepts less than that, all the rest are treated as RES0</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// the return value must be size_t type, its meaning is either a number or a pointer to the final result.</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d3/d6f/class_syscalls.html#a9173ec6c027db6fe22af8e3d03cc73c2">syscall</a>(<a class="code" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">CallType</a> <a class="code" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a1d127017fb298b889f4ba24752d08b8e">type</a>,<span class="keywordtype">size_t</span> arg1=0,<span class="keywordtype">size_t</span> arg2=0,<span class="keywordtype">size_t</span> arg3=0,<span class="keywordtype">size_t</span> arg4=0,<span class="keywordtype">size_t</span> arg5=0);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_SYSCALL_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="asm__instructions_8h_html"><div class="ttname"><a href="../../d8/d2f/asm__instructions_8h.html">asm_instructions.h</a></div></div>
+<div class="ttc" id="def_8h_html"><div class="ttname"><a href="../../d4/da4/def_8h.html">def.h</a></div></div>
+<div class="ttc" id="class_syscalls_html_aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">Syscalls::Allocate</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00016">syscall.h:16</a></div></div>
+<div class="ttc" id="class_syscalls_html_a9173ec6c027db6fe22af8e3d03cc73c2"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#a9173ec6c027db6fe22af8e3d03cc73c2">Syscalls::syscall</a></div><div class="ttdeci">static size_t syscall(CallType type, size_t arg1=0, size_t arg2=0, size_t arg3=0, size_t arg4=0, size_t arg5=0)</div></div>
+<div class="ttc" id="asm__instructions_8h_html_a30dc8cd78aa21e493a77695ee71ab54b"><div class="ttname"><a href="../../d8/d2f/asm__instructions_8h.html#a30dc8cd78aa21e493a77695ee71ab54b">FORCE_CODE_COHERENT_WITH_VIEW</a></div><div class="ttdeci">#define FORCE_CODE_COHERENT_WITH_VIEW()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d2f/asm__instructions_8h_source.html#l00016">asm_instructions.h:16</a></div></div>
+<div class="ttc" id="_f_a_t_long_name_entry_8h_html_a1d127017fb298b889f4ba24752d08b8e"><div class="ttname"><a href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a1d127017fb298b889f4ba24752d08b8e">type</a></div><div class="ttdeci">uint8_t type</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00045">FATLongNameEntry.h:45</a></div></div>
+<div class="ttc" id="_memory_chunk_8h_html_af931a8871310b4dad23f0f0b0f623560"><div class="ttname"><a href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a></div><div class="ttdeci">uint64_t size</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df6/_memory_chunk_8h_source.html#l00077">MemoryChunk.h:77</a></div></div>
+<div class="ttc" id="class_syscalls_html_a76a312961c3fd5c734373b92f170bf9b"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#a76a312961c3fd5c734373b92f170bf9b">Syscalls::allocate</a></div><div class="ttdeci">static void * allocate(size_t size, size_t alignment=sizeof(size_t))</div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00019">syscall.h:19</a></div></div>
+<div class="ttc" id="class_syscalls_html_aeb39366c5f53d3486d1761e038df49d2"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">Syscalls::CallType</a></div><div class="ttdeci">CallType</div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00016">syscall.h:16</a></div></div>
+<div class="ttc" id="class_syscalls_html_a4b1e713c8f3aa688e053c5248ea8e25f"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#a4b1e713c8f3aa688e053c5248ea8e25f">Syscalls::puts</a></div><div class="ttdeci">static size_t puts(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00025">syscall.h:25</a></div></div>
+<div class="ttc" id="class_syscalls_html"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html">Syscalls</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00014">syscall.h:14</a></div></div>
+<div class="ttc" id="class_syscalls_html_aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1"><div class="ttname"><a href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">Syscalls::Puts</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddf/syscall_8h_source.html#l00016">syscall.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

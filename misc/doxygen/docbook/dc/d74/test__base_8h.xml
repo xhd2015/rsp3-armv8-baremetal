@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d74/test__base_8h">
+    <title>test_base.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;io/IntegerFormatter.h&gt;</programlisting>
+<para>Include dependency diagram for test_base.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/db5/test__base_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for test_base.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/df1/test__base_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/d74/test__base_8h_1a05d08ca9a5574759f733cbd06acb744b">EXPECT_EXPR_EQUAL</link> {do{ \
+		if((expr)!=(<link linkend="de/d9e/_s_d_card_status_8h_1ae7f66047e6e39ba2bb6af8b95f00d1dd">value</link>))\
+		    <link linkend="d9/d90/global__variables_8cpp_1ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</link> &lt;&lt; <link linkend="d4/da4/def_8h_1a4362ac890f9e50aac5882590deedde41">FATAL</link> &lt;&lt; #expr &lt;&lt; &quot;!=&quot;&lt;&lt;<link linkend="de/d9e/_s_d_card_status_8h_1ae7f66047e6e39ba2bb6af8b95f00d1dd">value</link>&lt;&lt;&quot;,the real <link linkend="de/d9e/_s_d_card_status_8h_1ae7f66047e6e39ba2bb6af8b95f00d1dd">value</link> is &quot; &lt;&lt; expr &lt;&lt; &quot;\n&quot;; \
+	}while(false);}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/d74/test__base_8h_1a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</link> if(!(testCallable())) \
+	{ <link linkend="d9/d90/global__variables_8cpp_1ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</link> &lt;&lt; <link linkend="d4/da4/def_8h_1a4362ac890f9e50aac5882590deedde41">FATAL</link> &lt;&lt; &quot; [TEST] `&quot;&lt;&lt; #testCallable &lt;&lt; &quot;` failed.\n&quot;;}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/test/test_base.h</para>
+    </simplesect>
+</section>

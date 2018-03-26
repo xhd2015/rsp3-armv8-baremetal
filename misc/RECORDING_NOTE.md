@@ -1,3 +1,18 @@
+# 2018年3月26日15:13:54
+【commit point】 添加了`qemu_virt`下对virtio-blk驱动的测试，成功读取扇区数据。
+参见文件[main_test_virtio.cpp](../src/arch/qemu_virt/main_test_virtio.cpp)
+# 2018年3月25日13:42:46
+【acknowledged】 在qemu中添加virtio块设备的基本方式是：
+`... -drive file=FILE,format=RAW,if=none,index=N,id=ID -device virtio-blk-device,drive=ID ... `
+该命令通过添加一个`virtio-blk-device`设备，将其与一个`drive`关联起来，构成一个virtio设备。
+
+需要注意的一点是，index=N的N恰恰是从virtio设备的最后一个开始计算的。比如virtio的地址范围是`0xA0000000 - 0xA003E00`，则`index=0`的设备地址是`0xA003E00`,`index=1`的设备地址是`0xA003C00`。
+# 2018年3月24日15:52:46
+完成了multiple blocks的read/write.
+
+现在sd驱动的功能是完整的。
+# 2018年3月24日15:36:52
+【acknowledged】 注意，在QEMU下，当写入多个扇区时，必须保证物理文件具有blocks个扇区，否则可能产生TimeOutError
 # 2018年3月24日02:42:58
 【commit point】 完成了基于Xilinx ZCU102的SD卡的读写(SD模式，非SPI模式),参见[main_test_sdcard_block_read_write.cpp](../src/arch/zcu102/main_test_sdcard_block_read_write.cpp)
 

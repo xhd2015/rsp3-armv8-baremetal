@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space/user_main_hello_kernel.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_eddbbde9675d4b4a706c6f052235a429.html">user_space</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">user_main_hello_kernel.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/db2/user__main__hello__kernel_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d45/svc__call_8h.html">arch/common_aarch64/exception/svc_call.h</a>&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d8/d2f/asm__instructions_8h.html">asm_instructions.h</a>&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d1f/system__common__registers_8h.html">arch/common_aarch64/system_common_registers.h</a>&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/d76/memory_2_memory_manager_8h.html">memory/MemoryManager.h</a>&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;IntegerFormatter.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../db/db2/user__main__hello__kernel_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    9</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../db/db2/user__main__hello__kernel_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// 一个svc(supervisor call, 系统调用)示例</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">auto</span> num=svc_call&lt;SvcFunc::puts&gt;(<span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="stringliteral">&quot;Hello Kernel\n&quot;</span>),0);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// 使用kout进行输出</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a> &lt;&lt; <span class="stringliteral">&quot;Using kout to ouput, num = &quot;</span> &lt;&lt; <a class="code" href="../../d5/d7b/io_2_integer_formatter_8h.html#aad9fd1508f87d88f5ff5a8dce6a02612">Hex</a>(num) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a>.<a class="code" href="../../db/db4/class_output.html#a1fb911f17a0de0ad27f9e44c14852aa3">flush</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> *p=<a class="code" href="../../d6/d76/memory_2_memory_manager_8h.html#a13d610b0db2083f2a6b615e393b9444d">mman</a>.<a class="code" href="../../d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08">allocate</a>(100);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a> &lt;&lt; <span class="stringliteral">&quot;allocated != nullptr?&quot;</span> &lt;&lt; (p!=<span class="keyword">nullptr</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a>.<a class="code" href="../../db/db4/class_output.html#a1fb911f17a0de0ad27f9e44c14852aa3">flush</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d6/d76/memory_2_memory_manager_8h.html#a13d610b0db2083f2a6b615e393b9444d">mman</a>.<a class="code" href="../../d7/dff/class_memory_manager.html#a41a3c946c368918bdb6e4b441080fb8b">deallocate</a>(p);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="ttc" id="io_2_integer_formatter_8h_html_aad9fd1508f87d88f5ff5a8dce6a02612"><div class="ttname"><a href="../../d5/d7b/io_2_integer_formatter_8h.html#aad9fd1508f87d88f5ff5a8dce6a02612">Hex</a></div><div class="ttdeci">IntegerFormatter&lt; 16 &gt; Hex</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/io_2_integer_formatter_8h_source.html#l00026">IntegerFormatter.h:26</a></div></div>
+<div class="ttc" id="asm__instructions_8h_html"><div class="ttname"><a href="../../d8/d2f/asm__instructions_8h.html">asm_instructions.h</a></div></div>
+<div class="ttc" id="memory_2_memory_manager_8h_html_a13d610b0db2083f2a6b615e393b9444d"><div class="ttname"><a href="../../d6/d76/memory_2_memory_manager_8h.html#a13d610b0db2083f2a6b615e393b9444d">mman</a></div><div class="ttdeci">MemoryManager mman</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00016">global_variables_impl.cpp:16</a></div></div>
+<div class="ttc" id="svc__call_8h_html"><div class="ttname"><a href="../../dc/d45/svc__call_8h.html">svc_call.h</a></div></div>
+<div class="ttc" id="system__common__registers_8h_html"><div class="ttname"><a href="../../d4/d1f/system__common__registers_8h.html">system_common_registers.h</a></div></div>
+<div class="ttc" id="memory_2_memory_manager_8h_html"><div class="ttname"><a href="../../d6/d76/memory_2_memory_manager_8h.html">MemoryManager.h</a></div></div>
+<div class="ttc" id="class_memory_manager_html_ac2881a6dbbd6c0312f05761718ac6f08"><div class="ttname"><a href="../../d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08">MemoryManager::allocate</a></div><div class="ttdeci">void * allocate(size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00041">MemoryManager_aarch64.cpp:41</a></div></div>
+<div class="ttc" id="_output_8h_html_ae879b048a9eddaf9ee4e0dbe932ea6c9"><div class="ttname"><a href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a></div><div class="ttdeci">Output kout</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00015">global_variables_impl.cpp:15</a></div></div>
+<div class="ttc" id="user__main__hello__kernel_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../db/db2/user__main__hello__kernel_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db2/user__main__hello__kernel_8cpp_source.html#l00009">user_main_hello_kernel.cpp:9</a></div></div>
+<div class="ttc" id="class_output_html_a1fb911f17a0de0ad27f9e44c14852aa3"><div class="ttname"><a href="../../db/db4/class_output.html#a1fb911f17a0de0ad27f9e44c14852aa3">Output::flush</a></div><div class="ttdeci">Output &amp; flush()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d4c/_output_8cpp_source.html#l00078">Output.cpp:78</a></div></div>
+<div class="ttc" id="class_memory_manager_html_a41a3c946c368918bdb6e4b441080fb8b"><div class="ttname"><a href="../../d7/dff/class_memory_manager.html#a41a3c946c368918bdb6e4b441080fb8b">MemoryManager::deallocate</a></div><div class="ttdeci">void deallocate(void *p)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00056">MemoryManager_aarch64.cpp:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

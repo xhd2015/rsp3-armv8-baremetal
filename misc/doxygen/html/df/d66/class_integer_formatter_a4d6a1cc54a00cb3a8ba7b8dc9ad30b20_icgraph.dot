@@ -1,0 +1,11 @@
+digraph "IntegerFormatter::format"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="IntegerFormatter::format",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="test1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dd3/template__init1_8cpp.html#a1440a7779ac56f47a3f355ce4a8c7da0"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="test2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d3f/template__init2_8cpp.html#a0283886819c7c140a023582b7269e2d0"];
+}

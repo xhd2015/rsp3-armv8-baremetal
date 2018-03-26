@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dcc/global__variables__impl_8cpp">
+    <title>global_variables_impl.cpp File Reference</title>
+    <programlisting>#include &lt;MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;global_variables.h&gt;</programlisting>
+    <programlisting>#include &lt;mem_config.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/host/SectorReaderHelper.h&gt;</programlisting>
+    <programlisting>#include &quot;../../../include/io/printk.h&quot;</programlisting>
+<para>Include dependency diagram for global_variables_impl.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d1a/global__variables__impl_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for global_variables_impl.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/dd1/global__variables__impl_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d9/dcc/global__variables__impl_8cpp_1aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> <link linkend="d9/dcc/global__variables__impl_8cpp_1ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d9/dcc/global__variables__impl_8cpp_1a645f0e6682b0f122c08f036a1edfc1f7">koutBuf</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/dff/class_memory_manager">MemoryManager</link> <link linkend="d9/dcc/global__variables__impl_8cpp_1a13d610b0db2083f2a6b615e393b9444d">mman</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d91/class_sector_reader_helper">SectorReaderHelper</link> <link linkend="d9/dcc/global__variables__impl_8cpp_1a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host/global_variables_impl.cpp</para>
+    </simplesect>
+</section>

@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/de5/_f_a_t_dir_entry_8h">
+    <title>FATDirEntry.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/String.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/StringRef.h&gt;</programlisting>
+<para>Include dependency diagram for FATDirEntry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d8f/_f_a_t_dir_entry_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FATDirEntry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/dc2/_f_a_t_dir_entry_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/de5/_f_a_t_dir_entry_8h_1aee23698cd4bda493bea26f309da59abd">@13</link> {
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1aee23698cd4bda493bea26f309da59abdae2c447f922bf7b3bad215938a11f34da">ATTR_MASK</link>= 0x3f
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052">@14</link> {
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052aa62aa71a2614f75468eab045ecb01058">ATTR_READ_ONLY</link>=0x01,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052adba6b13cf372c3604ae08f82d1cec0cf">ATTR_HIDDEN</link>=0x02,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052a042322e39228b60dba114d89308f6f79">ATTR_SYSTEM</link>=0x04,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052a9e0fbe74c774ea9eee50947567a5dc59">ATTR_VOLUME_ID</link>= 0x08,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052acf549625a8c00e27507689cd3cbeeac6">ATTR_DIRECTORY</link>= 0x10,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052ae175dcdcbee800b5a346fc5c4365315b">ATTR_ARCHIVE</link>= 0x20,
+<link linkend="d9/de5/_f_a_t_dir_entry_8h_1a3a88be31721b2056748f923dccfd7052a9c788ada0bf37d73182045d699331050">ATTR_LONG_NAME</link>= (ATTR_READ_ONLY | ATTR_HIDDEN | ATTR_SYSTEM | ATTR_VOLUME_ID)
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a28478ea2856f6286899bc90b2c6a1ec4">attr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1aa1161d26aa20d427de68c02574f946d9">crtDate</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a089fed42e13ea34d38da6ecda6f826d5">crtTime</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a34675d0a37a994800bfa0e215d593e68">crtTimeTenth</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a48f46ad02b77a00b795d15626ba1d42e">fileSize</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1aa222b479cbbd6d034f28aea8f4e1b21d">fstClusHI</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a6062fbb32388d7473d442e5c17e21eb0">fstClusLO</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a8da0c3f7e81fa766e4283a6e98881985">lstAccData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1ac794fc5a47791370f9f34f96e09e108b">NTRes</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1ac7eea813233b903c8d5724bdf29f8d0f">wrtDate</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a20b4b6ed17c8bc88a1cdeab67a995980">wrtTime</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a58261458d61f0cfae72f60c25ec8f4c6">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static uint8_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a8760afbb6dd0f28545c4023eefb99569">chksum</link> (
+char * shortName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a78958f6e14285d7df4add2c7735f5a08">findFirstNonSpace</link> (
+const char * s, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a6c742c9bcdcede79e58781057efd912a">findLastNonSpace</link> (
+const char * s, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d9/de5/_f_a_t_dir_entry_8h_1ab453ada3d0785d9ccf851cf40e96dca7">getFirstClusIndex</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> <link linkend="d9/de5/_f_a_t_dir_entry_8h_1af174824140c3c679a7fb56998cdfa2f1">getLongName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a94c572fd78ac4d31d478bf5f762b6672">getShortName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a520c8dc12e9fb9e2afebb46e073727cd">isVolumeID</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a6f6596a674f05df5302432214b5df900">shortNameEquals</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; mainPart, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; extPart)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="d9/de5/_f_a_t_dir_entry_8h_1ae94644663f452a7d94cc74a3f9cc9ab6">trailingSpaceNameEquals</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; hasSpaceStr, size_t hasSpaceStrLen, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; nullTermStr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/de5/_f_a_t_dir_entry_8h_1a324e20696bbbf8fa655bcea7b4ee6b68">uni_isLongNameEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FATDirEntry.h</para>
+    </simplesect>
+</section>

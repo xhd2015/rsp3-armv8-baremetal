@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic_util.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">generic_util.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d6/d93/generic__util_8h_source.html">generic_util.h</a>&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> generic_util.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/d7b/generic__util_8cpp__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2generic__util_8cpp" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2generic__util_8cpp" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2src_2generic__util_8cpp">
+</map>
+</div>
+</div>
+<p><a href="../../d6/d6b/generic__util_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a62ffc1a495ad7b7b16cae823fc1b2fad"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a62ffc1a495ad7b7b16cae823fc1b2fad">alignAhead</a> (uint64_t d, uint64_t alignment)</td></tr>
+<tr class="separator:a62ffc1a495ad7b7b16cae823fc1b2fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a467869963f69dab2f1c1720aee7765"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a8a467869963f69dab2f1c1720aee7765">alignBackward</a> (uint64_t d, uint64_t alignment)</td></tr>
+<tr class="separator:a8a467869963f69dab2f1c1720aee7765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9510d749402ed54c44ca35b10a7162c3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a9510d749402ed54c44ca35b10a7162c3">itob</a> (size_t i, char *dst, size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>)</td></tr>
+<tr class="separator:a9510d749402ed54c44ca35b10a7162c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43715e4d4543de6b46c6cb48cce27169"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a43715e4d4543de6b46c6cb48cce27169">itod</a> (size_t i, char *dst, size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>)</td></tr>
+<tr class="separator:a43715e4d4543de6b46c6cb48cce27169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7908fb09fcb92255d970d32f6740d6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a5e7908fb09fcb92255d970d32f6740d6">itos</a> (size_t i, unsigned int base, char *dst, size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>)</td></tr>
+<tr class="separator:a5e7908fb09fcb92255d970d32f6740d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb9f297a4d9c22cfc7c60aa6339c507"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#afeb9f297a4d9c22cfc7c60aa6339c507">itox</a> (size_t i, char *dst, size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>)</td></tr>
+<tr class="separator:afeb9f297a4d9c22cfc7c60aa6339c507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb36ebc193ed813f8490ea2afb3a4d1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#acb36ebc193ed813f8490ea2afb3a4d1a">reverse</a> (char *str, size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>)</td></tr>
+<tr class="separator:acb36ebc193ed813f8490ea2afb3a4d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74f19ae60eb97e1f0b7d848bba10b7c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#ab74f19ae60eb97e1f0b7d848bba10b7c">strOffset</a> (const char *p, size_t offset)</td></tr>
+<tr class="separator:ab74f19ae60eb97e1f0b7d848bba10b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a3fd0302d401f93890a054567e5ac059b"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d6b/generic__util_8cpp.html#a3fd0302d401f93890a054567e5ac059b">digitsMap</a> [] ={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'}</td></tr>
+<tr class="separator:a3fd0302d401f93890a054567e5ac059b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a62ffc1a495ad7b7b16cae823fc1b2fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ffc1a495ad7b7b16cae823fc1b2fad">&#9670;&nbsp;</a></span>alignAhead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t alignAhead </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>alignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00050">50</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_a62ffc1a495ad7b7b16cae823fc1b2fad_icgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_a62ffc1a495ad7b7b16cae823fc1b2fad_icgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_a62ffc1a495ad7b7b16cae823fc1b2fad_icgraph" id="d6/d6b/generic__util_8cpp_a62ffc1a495ad7b7b16cae823fc1b2fad_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8a467869963f69dab2f1c1720aee7765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a467869963f69dab2f1c1720aee7765">&#9670;&nbsp;</a></span>alignBackward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t alignBackward </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>alignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9510d749402ed54c44ca35b10a7162c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9510d749402ed54c44ca35b10a7162c3">&#9670;&nbsp;</a></span>itob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t itob </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00014">14</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_a9510d749402ed54c44ca35b10a7162c3_cgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_a9510d749402ed54c44ca35b10a7162c3_cgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_a9510d749402ed54c44ca35b10a7162c3_cgraph" id="d6/d6b/generic__util_8cpp_a9510d749402ed54c44ca35b10a7162c3_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43715e4d4543de6b46c6cb48cce27169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43715e4d4543de6b46c6cb48cce27169">&#9670;&nbsp;</a></span>itod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t itod </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00018">18</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_a43715e4d4543de6b46c6cb48cce27169_cgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_a43715e4d4543de6b46c6cb48cce27169_cgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_a43715e4d4543de6b46c6cb48cce27169_cgraph" id="d6/d6b/generic__util_8cpp_a43715e4d4543de6b46c6cb48cce27169_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e7908fb09fcb92255d970d32f6740d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7908fb09fcb92255d970d32f6740d6">&#9670;&nbsp;</a></span>itos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t itos </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00027">27</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_cgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_cgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_cgraph" id="d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_cgraph">
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_icgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_icgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_icgraph" id="d6/d6b/generic__util_8cpp_a5e7908fb09fcb92255d970d32f6740d6_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="afeb9f297a4d9c22cfc7c60aa6339c507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb9f297a4d9c22cfc7c60aa6339c507">&#9670;&nbsp;</a></span>itox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t itox </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00022">22</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_afeb9f297a4d9c22cfc7c60aa6339c507_cgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_afeb9f297a4d9c22cfc7c60aa6339c507_cgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_afeb9f297a4d9c22cfc7c60aa6339c507_cgraph" id="d6/d6b/generic__util_8cpp_afeb9f297a4d9c22cfc7c60aa6339c507_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="acb36ebc193ed813f8490ea2afb3a4d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb36ebc193ed813f8490ea2afb3a4d1a">&#9670;&nbsp;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reverse </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00060">60</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_acb36ebc193ed813f8490ea2afb3a4d1a_icgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_acb36ebc193ed813f8490ea2afb3a4d1a_icgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_acb36ebc193ed813f8490ea2afb3a4d1a_icgraph" id="d6/d6b/generic__util_8cpp_acb36ebc193ed813f8490ea2afb3a4d1a_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab74f19ae60eb97e1f0b7d848bba10b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab74f19ae60eb97e1f0b7d848bba10b7c">&#9670;&nbsp;</a></span>strOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* strOffset </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html">generic_util.cpp</a> 第 <a class="el" href="../../d6/d6b/generic__util_8cpp_source.html#l00072">72</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_cgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_cgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_cgraph" id="d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_cgraph">
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_icgraph.png" border="0" usemap="#d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_icgraph" alt=""/></div>
+<map name="d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_icgraph" id="d6/d6b/generic__util_8cpp_ab74f19ae60eb97e1f0b7d848bba10b7c_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a3fd0302d401f93890a054567e5ac059b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd0302d401f93890a054567e5ac059b">&#9670;&nbsp;</a></span>digitsMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char digitsMap[] ={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:40 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,12 @@
+digraph "VirtioQueueLayout"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{VirtioQueueLayout\n|- _queueBase\l- _queueSize\l- _usedRingAlignment\l|+ memSize()\l+ queueBase()\l+ queueBase()\l+ queueSize()\l+ queueSize()\l+ usedRingAlignment()\l+ usedRingAlignment()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -_availRing" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{VirtioQueueAvailableRef\n|- _base\l- _queueSize\l|+ flags()\l+ idx()\l+ ring()\l+ size()\l+ usedEvent()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dad/class_virtio_queue_available_ref.html"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -_usedRing" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{VirtioQueueUsedRef\n|- _base\l- _queueSize\l|+ availEvent()\l+ flags()\l+ idx()\l+ ring()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/daa/class_virtio_queue_used_ref.html"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -_descTable" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{VirtioQueueDescriptor\n|+ __attribute__\l+ addr\l+ flags\l+ len\l+ next\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dc2/class_virtio_queue_descriptor.html"];
+}

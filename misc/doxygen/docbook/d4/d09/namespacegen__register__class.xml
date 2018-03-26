@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d09/namespacegen__register__class">
+<title>gen_register_class</title>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d09/namespacegen__register__class_1a52958cae4b5bbeb3dfb2a2198d326326">f</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d09/namespacegen__register__class_1af3dbf7b8cbb3021ab57c432b76d09236">output_path</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d09/namespacegen__register__class_1a0c5ef1f7bcaf40d132b494243c369da8">reg_list</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a4601be81566b2bca376907403ac6d5f7">funcDump</link> (
+field_list , i , j , field , bits , additional )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a6269397d0a92aedc4fea3fccbdc79846">genAll</link> (
+regList , filepath )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a1aefb7275cbb58faa36889186ce6d9ab">genClass</link> (
+class_config )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1ab05c360df0461e89ce6298a3d0e96a23">genClassName</link> (
+reg_name )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1aa005ebcf2487481f38992ed10bc28aa5">genFuncGenFieldDef</link> (
+scaleType )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a7eec44ac101d62c9139a18389e7b8df5">genIncludeGuard</link> (
+file_path )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1aad700c01399c094e9010325b5d600044">getMapFromList</link> (
+givenList )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a67149964a5edd000666abf58c8aa0af7">testGenMapFromList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>def <link linkend="d4/d09/namespacegen__register__class_1a52e541f7f11d9fd595b8b37346d3976e">toFieldList</link> (
+field_list , func )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

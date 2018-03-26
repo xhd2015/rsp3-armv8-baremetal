@@ -1,0 +1,27 @@
+digraph "ByteReader::adjustOneSecForReadOrWrite"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node11 [label="ByteReader::adjustOneSec\lForReadOrWrite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ByteReader::getSectorSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a1557e32d37869577a89bfbbe4fa6af9a"];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ByteReader::readSectorTo\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a7fd066c1c7cea475b523c0c837c58aeb"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ByteReader::ensureSector\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#ad0457bcdcb3380b159d0a614b3d20f20"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="MemoryManager::allocateAs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08"];
+  Node14 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="SectorReader::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/class_sector_reader.html#a5d254e10f28d3815bdd6baabb29570a4"];
+  Node11 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="memcpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d56/memcpy_8cpp.html#ab68eb7b07f8ada1c6c8bde74731d3de7"];
+  Node11 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="ByteReader::writeSectorFrom\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#af3f8cf7d5bd0c2dd58efc91c5795b051"];
+  Node19 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="SectorReader::write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/class_sector_reader.html#adeb3aa83a42e94d5bdf2b24efa24806c"];
+}

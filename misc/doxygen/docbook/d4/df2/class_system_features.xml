@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/df2/class_system_features">
+<title>SystemFeatures class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/d74/_system_features_8h">&quot;SystemFeatures.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for SystemFeatures</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/dd9/class_system_features__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SystemFeatures</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dc9/class_system_features__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _addrBits</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _architecture</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _asidBits</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _asidSelector</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _cores</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _support16KBPage</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _support4KBPage</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t _support64KBPage</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/df2/class_system_features_1a4c896f2916b51e0818f5f2cc3a134ee2">addrBits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a31fe8d09bcc8d95b41453bf9549fda61">addrBits</link> (
+uint64_t addrBits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668">Architecture</link> <link linkend="d4/df2/class_system_features_1a527dd53206f5b67907472edb6ef07299">architecture</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a675cd4b01f551e6a8d8844e1fbe4ade7">architecture</link> (
+<link linkend="dc/d74/_system_features_8h_1a92fca29224df70a2fcb62583b4579668">Architecture</link> architecture)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/df2/class_system_features_1a54ca50cd6f32fe0245b88a7ba2128b71">asidBits</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a9b5e7dd4dfda8147208f7813923d3dea">asidBits</link> (
+uint64_t asid16Bits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/df2/class_system_features_1ac45966d688b9ea81af9b50ec2b45a198">asidSelector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a7638718175ce331deb229cfacaf67854">asidSelector</link> (
+uint64_t asidSelector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d4/df2/class_system_features_1a41046c342094e214ccc84fe9ef0f5566">cores</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a2888144eae04046c63c7076ad277ac79">cores</link> (
+uint64_t cores)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/df2/class_system_features_1a9d935da6ce4d388ddbb5a14f97417551">support16KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a83231ff1082069eac5a250b8792e3585">support16KBPage</link> (
+bool support16KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/df2/class_system_features_1a0f237c8215426cb326b21e666cea4c05">support4KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a0e898af7d5bd12001f9efd4955e8b2bb">support4KBPage</link> (
+bool support4KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/df2/class_system_features_1a9474ce6bbf53c87e7de687fde84b290c">support64KBPage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a19e83985ec3f3a7fc65cfc8f35e3ecd3">support64KBPage</link> (
+bool support64KbPage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/df2/class_system_features_1ae33be1e2174ef6e7c0c46766f5c083b7">SystemFeatures</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/df2/class_system_features_1a3a3b82c879a037f6664bda5f36ea9c12">updatePreconfigured</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d4/df2/class_system_features_1a4c896f2916b51e0818f5f2cc3a134ee2">
+                <title>uint64_t SystemFeatures::addrBits () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a31fe8d09bcc8d95b41453bf9549fda61">
+                <title>void SystemFeatures::addrBits (uint64_t addrBits)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a527dd53206f5b67907472edb6ef07299">
+                <title>Architecture SystemFeatures::architecture () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a675cd4b01f551e6a8d8844e1fbe4ade7">
+                <title>void SystemFeatures::architecture (Architecture architecture)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a54ca50cd6f32fe0245b88a7ba2128b71">
+                <title>uint64_t SystemFeatures::asidBits () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a9b5e7dd4dfda8147208f7813923d3dea">
+                <title>void SystemFeatures::asidBits (uint64_t asid16Bits)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1ac45966d688b9ea81af9b50ec2b45a198">
+                <title>uint64_t SystemFeatures::asidSelector () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a7638718175ce331deb229cfacaf67854">
+                <title>void SystemFeatures::asidSelector (uint64_t asidSelector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a41046c342094e214ccc84fe9ef0f5566">
+                <title>uint64_t SystemFeatures::cores () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a2888144eae04046c63c7076ad277ac79">
+                <title>void SystemFeatures::cores (uint64_t cores)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a9d935da6ce4d388ddbb5a14f97417551">
+                <title>bool SystemFeatures::support16KBPage () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a83231ff1082069eac5a250b8792e3585">
+                <title>void SystemFeatures::support16KBPage (bool support16KbPage)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a0f237c8215426cb326b21e666cea4c05">
+                <title>bool SystemFeatures::support4KBPage () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a0e898af7d5bd12001f9efd4955e8b2bb">
+                <title>void SystemFeatures::support4KBPage (bool support4KbPage)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a9474ce6bbf53c87e7de687fde84b290c">
+                <title>bool SystemFeatures::support64KBPage () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a19e83985ec3f3a7fc65cfc8f35e3ecd3">
+                <title>void SystemFeatures::support64KBPage (bool support64KbPage)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1ae33be1e2174ef6e7c0c46766f5c083b7">
+                <title>SystemFeatures::SystemFeatures ()=default</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/df2/class_system_features_1a3a3b82c879a037f6664bda5f36ea9c12">
+                <title>void SystemFeatures::updatePreconfigured ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

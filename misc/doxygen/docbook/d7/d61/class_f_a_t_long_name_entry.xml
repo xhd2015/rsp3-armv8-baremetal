@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d61/class_f_a_t_long_name_entry">
+<title>FATLongNameEntry class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/d0d/_f_a_t_long_name_entry_8h">&quot;FATLongNameEntry.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FATLongNameEntry</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/de5/class_f_a_t_long_name_entry__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FATLongNameEntry</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d39/class_f_a_t_long_name_entry__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t attr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t chksum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t fstClusLO</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char name1[10]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char name2[12]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char name3[4]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t ord</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t <link linkend="d7/d61/class_f_a_t_long_name_entry_1ae18dce09eaba67d93df47a0258b09694">getNameBytesCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t <link linkend="d7/d61/class_f_a_t_long_name_entry_1a92881ab876f66060b60d381c06d51c83">getNameRequiredCapacity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> <link linkend="d7/d61/class_f_a_t_long_name_entry_1a34eb7e1de83def912d1e4a4a5b8d211f">getAsAsciiName</link> (
+bool skipHeadingSpace)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> * <link linkend="d7/d61/class_f_a_t_long_name_entry_1aea9cfa8f9213c144ed8bf94a71ff3fbf">getLastAppearEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> * <link linkend="d7/d61/class_f_a_t_long_name_entry_1a73ab1e14882a0cd74750e56096160744">getLastAppearEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * <link linkend="d7/d61/class_f_a_t_long_name_entry_1a86d817108087313b9361dce582b281a0">getOwnerDirectoryEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * <link linkend="d7/d61/class_f_a_t_long_name_entry_1a231b55572abec8673e949ab541beabbb">getOwnerDirectoryEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d61/class_f_a_t_long_name_entry_1a87f35a462137f6b59f36459a74554d1f">nameEqulasAsciiName</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d61/class_f_a_t_long_name_entry_1a38b2a992b1ace06829ae9f5020c45011">nameEqulasAsciiNameUpto</link> (
+const <link linkend="d7/d61/class_f_a_t_long_name_entry">FATLongNameEntry</link> * lastCmpEntr, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d61/class_f_a_t_long_name_entry_1ae95d5ec2fa71155c6c8f2e995adcc176">uni_isLongNameEntry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/d61/class_f_a_t_long_name_entry_1ae21c3b4777c0d68462e9d591888934cd">lookupFirstNullChar</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static char <link linkend="d7/d61/class_f_a_t_long_name_entry_1afdc284fc418210ccf7d2eacbfc5c584b">unicodeCharToAsciiChar</link> (
+const void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="d7/d61/class_f_a_t_long_name_entry_1a3f13934c41cd5369786bab2f073be87d">unicodeNameMatchesAsciiName</link> (
+const char * unicodeName, size_t unicodeNameBytesLen, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; asciiNullTermStr, bool allowAsciiStrMore)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1ae18dce09eaba67d93df47a0258b09694">
+                <title>static constexpr size_t FATLongNameEntry::getNameBytesCount ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a92881ab876f66060b60d381c06d51c83">
+                <title>static constexpr size_t FATLongNameEntry::getNameRequiredCapacity ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a34eb7e1de83def912d1e4a4a5b8d211f">
+                <title>String FATLongNameEntry::getAsAsciiName (bool skipHeadingSpace=true) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1aea9cfa8f9213c144ed8bf94a71ff3fbf">
+                <title>const FATLongNameEntry * FATLongNameEntry::getLastAppearEntry () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a73ab1e14882a0cd74750e56096160744">
+                <title>FATLongNameEntry * FATLongNameEntry::getLastAppearEntry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a86d817108087313b9361dce582b281a0">
+                <title>const FATDirEntry * FATLongNameEntry::getOwnerDirectoryEntry () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a231b55572abec8673e949ab541beabbb">
+                <title>FATDirEntry * FATLongNameEntry::getOwnerDirectoryEntry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a87f35a462137f6b59f36459a74554d1f">
+                <title>bool FATLongNameEntry::nameEqulasAsciiName (const StringRef &amp;asciiNullTermStr, bool allowAsciiStrMore) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a38b2a992b1ace06829ae9f5020c45011">
+                <title>bool FATLongNameEntry::nameEqulasAsciiNameUpto (const FATLongNameEntry *lastCmpEntr, const StringRef &amp;asciiNullTermStr, bool allowAsciiStrMore) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1ae95d5ec2fa71155c6c8f2e995adcc176">
+                <title>bool FATLongNameEntry::uni_isLongNameEntry () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1ae21c3b4777c0d68462e9d591888934cd">
+                <title>size_t FATLongNameEntry::lookupFirstNullChar () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1afdc284fc418210ccf7d2eacbfc5c584b">
+                <title>char FATLongNameEntry::unicodeCharToAsciiChar (const void *p)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d61/class_f_a_t_long_name_entry_1a3f13934c41cd5369786bab2f073be87d">
+                <title>bool FATLongNameEntry::unicodeNameMatchesAsciiName (const char *unicodeName, size_t unicodeNameBytesLen, const StringRef &amp;asciiNullTermStr, bool allowAsciiStrMore)</title> <emphasis></emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>参数                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>allowAsciiStrMore</entry>
+                                <entry>
+<para>是否允许用于比较的ascii字符更长，即asiccStr = unicodeName + MORE,sizeof(MORE)&gt;0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

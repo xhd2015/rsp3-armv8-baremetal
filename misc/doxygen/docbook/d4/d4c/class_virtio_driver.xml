@@ -1,0 +1,920 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d4c/class_virtio_driver">
+<title>VirtioDriver class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/dd7/_virtio_driver_8h">&quot;VirtioDriver.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioDriver</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d0a/class_virtio_driver__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioDriver</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d8e/class_virtio_driver__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8">@28</link> {
+<link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a29584fa655329e11edf590fe45fdc75e">MAGIC_VALUE</link>=0x74726976u,
+<link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a2b44084c26903e335775c2a060d93b6b">VERSION_LEGACY</link>= 1,
+<link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a81c6e8184cf12f0f38a705de5a9e79cd">VERSION_2</link>= 2,
+<link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a186cfa87de20e0f390351053c1bac8db">PAGE_SIZE_4KB</link>= 4096,
+<link linkend="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8adf8f2992935637ac3ef4c7c2de16d747">USED_RING_ALIGNMENT</link>= 4
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6">DeviceType</link> {
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a6dc8c61951728a228563e83a3dff9903">res_invalid</link>=0,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a05c3d7717b8ad559d065fd8331284acb">network_card</link>= 1,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6afa0b5d45590d660d7344767bbe1d1909">block_device</link>= 2,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a5fade2546d0c1be216692fe276f241bc">console</link>= 3,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a2995cb4fb3640b3ef77eed52f77229cc">entropy_source</link>= 4,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a09375a854beca822996b9a0346a3ee0d">memory_ballooning_traditional</link>= 5,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6adddbe7c98edd677e8e7671b043cb0428">ioMemory</link>= 6,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6ab552e659c370de5289eb54a9eee65489">rpmsg</link>= 7,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a915feb10ef33289b8ffdecac9a6638ed">SCSI_host</link>= 8,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a6b6d28a5af2391dc0c03136e27c0c990">P9_transport</link>= 9,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a2a1f3aaf389815783ec3bfb7bb2db796">mac80211_wlan</link>= 10,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a5d969c36fd96d57d57e521cc2cc2a77f">rproc_serial</link>= 11,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a522b513a9a190773f224bd7309185a76">virtio_CAIF</link>= 12,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a7d2a710941bd1de60e138c5fdaa9e653">memory_balloon</link>= 13,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a0208148182a3fab80b89238e26593d57">GPU_device</link>= 16,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a9b2e0e8c10b9cb39e636cf276ca8e22d">Timer_Clock_device</link>= 17,
+<link linkend="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6aad4b3088085c332edfcb4d2b3b37014a">Input_device</link>= 18
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45fee">FeaturesBits</link> {
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea7d52c4d51de67dcc9eef663a558a6e6d">VIRTIO_F_VERSION_1</link>= 32,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeadc054ee54de9778562d4737b5daf34e0">VIRTIO_F_RING_EVENT_IDX</link>= 29,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeac7900dd8ac820451d8e167d3bee14d92">VIRTIO_F_RING_INDIRECT_DESC</link>= 28,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea4914079bb1bb8c54090f7005da104f10">VIRTIO_BLK_F_SIZE_MAX</link>= 1,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea58c2300fd8979bd0b816147b1fa8cf7c">VIRTIO_BLK_F_SEG_MAX</link>= 2,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea482f2938c53a95508306286338933016">VIRTIO_BLK_F_GEOMETRY</link>= 4,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeab1c112426ee749adf4c3a99ffb04dd25">VIRTIO_BLK_F_RO</link>= 5,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea24045844d7d2c5da5a84b780927eaecd">VIRTIO_BLK_F_BLK_SIZE</link>= 6,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeae69bbe02cd7ee2801d5df5684313ddcd">VIRTIO_BLK_F_FLUSH</link>= 9,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeae8326782c1ec2023e164fc962808dc1b">VIRTIO_BLK_F_TOPOLOGY</link>= 10,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea8cf818b3adae853ed36e17612583b142">VIRTIO_BLK_F_CONFIG_WCE</link>= 11,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeab66d3f67ad5bb3819131a564fcaee713">VIRTIO_BLK_F_BARRIER</link>= 0,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea53b84b62c059caf2f1e6950b005299e5">VIRTIO_BLK_F_SCSI</link>= 7,
+<link linkend="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea8adac8d92390ac189f6f36fac42ae37d">VIRTIO_BLK_F_WCE</link>= VIRTIO_BLK_F_FLUSH
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3">R_Legacy</link> {
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3ae6466adc2d5df4be8590438a93f9dacf">V1_MagicValue</link>=0,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3ab8fbba7eccd0ff129cc029173277559d">V1_Version</link>= 0x4,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a0330223f0a5008cb14ebc74e521cbd40">V1_DeviceID</link>= 0x8,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a83b0629f0fd2094c2793ee82a5b21038">V1_VendorID</link>= 0xC,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a5dd16fd8780263931f23d24bf0c7e05a">V1_HostFeatures</link>= 0x10,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a4c85ce8ca3911434aa5cf54568efe9e8">V1_HostFeaturesSel</link>= 0x14,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3af600ef23cc44584d0cbfc08c4e9a2a4f">V1_GuestFeatures</link>= 0x20,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a998d6cb7abc9421d01dafa6c573c6173">V1_GuestFeaturesSel</link>= 0x24,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a14723bbe0769462fb047ad209ca0c71a">V1_GuestPageSize</link>= 0x28,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a67e58cab73500bb2f36f354144f0070a">V1_QueueSel</link>= 0x30,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a9b99f4e0fab6adaeccdedaa59249f45c">V1_QueueNumMax</link>= 0x34,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a568c6a7dec759b44f08c52d964d43759">V1_QueueNum</link>= 0x38,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3aed82a69f60cc95f10b718039c1711bb1">V1_QueueAlign</link>= 0x3C,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a9956b3607ebda273ed22ebe1827fb031">V1_QueuePFN</link>= 0x40,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a525721b99f068b9d1e80f17aeca5cee2">V1_QueueNotify</link>= 0x50,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3af759b7a269c4dfbe4ce217e19ea7d9b3">V1_InterruptStatus</link>= 0x60,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a138fe4aefd2ca51cfb9d40c70de05013">V1_InterruptACK</link>= 0x64,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a1ca7f1bdbd1636266f741892a94d66b3">V1_Status</link>= 0x70,
+<link linkend="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a19aa57ae1e7de47e31a84eceb9d769f7">V1_Config</link>= 0x100
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818">R_V2</link> {
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a924a1a05d2ee059da6d17a08bca8fde4">V2_MagicValue</link>=0,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a89b310ba8f42fa4f4cec67885f515531">V2_Version</link>= 0x4,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818ad06748b74d690b800c9e919663eaa095">V2_DeviceID</link>= 0x8,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a34c20bbdfad6aaf416646fa2308683d3">V2_VendorID</link>= 0xC,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa6bbee95232752cd03833dfdf7f0a8e9">V2_DeviceFeatures</link>= 0x10,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a861d73ee7c7ad3e3d05488495ec5551e">V2_DeviceFeaturesSel</link>= 0x14,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a4c735ec77e0d16a74c9a096c6bccf2db">V2_DriverFeatures</link>= 0x20,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818acb1896eb9d8b4eaf8823ba5428c4909f">V2_DriverFeaturesSel</link>= 0x24,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a2d47ca926a409365a47f617c820215f5">V2_QueueSel</link>= 0x34,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a76a8acd07f96023142c0ef9eac3b97fa">V2_QueueNum</link>= 0x38,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aca8b5b47c1dd7c2b3760cf1e7c7efec9">V2_QueueReady</link>= 0x44,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a9a3396924ad2c674432b0d594dc1ce2a">V2_QueueNotify</link>= 0x50,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818af20796eec8f699d88ddd50a5a8adebc9">V2_InterruptStatus</link>= 0x60,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a3db60ce4d833c6a40b1f5e8fb354db24">V2_InterruptACK</link>= 0x64,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a4e72db706d8a251f1470a92a03d450e4">V2_Status</link>= 0x70,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818ade3da937b5b7350dcf0baac015cb90f5">V2_QueueDescLow</link>= 0x80,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a66b11cfc920f37c66b1a3edda00aff67">V2_QueueDescHigh</link>= 0x84,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a826ce0cd83e3ca5b7fad57b0f2907916">V2_QueueAvailLow</link>= 0x90,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aadfcb048f96c5738b1c83fcc7f771fb5">V2_QueueAvailHigh</link>= 0x94,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa34c08082c8adc8f37b2d8007d836a54">V2_QueueUsedLow</link>= 0xA0,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a647b95b7ec06f993b919f59fd2545b07">V2_QueueUsedHigh</link>= 0xA4,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818abc744919502545dce9136174ec065704">V2_ConfigGeneration</link>= 0xFC,
+<link linkend="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa5de5bcbde85372590655f44707f6020">V2_Config</link>= 0x100
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36">StatusBits</link> {
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ab3f598d700dc2e919a502d2ac8b02655">ACKNOWLEDGE</link>= 1,
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ad7894d91fae434b2ec28ae17db9f19a1">DRIVER</link>= 2,
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a94ce0a98a9fe1add1a353cea6fa380ae">FAILED</link>= 128,
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a9e57414ff557edc5facfcda8726778f3">FEATURES_OK</link>= 8,
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ab4732f26301110aaca2492b40ee9bd60">DRIVER_OK</link>= 4,
+<link linkend="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a8de2c17948047e2ae3beb4206a71a23f">DEVICE_NEEDS_RESET</link>= 64
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t _deviceID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint64_t(&amp; _status)[2]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t _version</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d4c/class_virtio_driver_1aaefa0dc1cf30fb46122a819f020f65ba">init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d4c/class_virtio_driver_1ab995c9d1482ca29425f37cdca0402dfd">VirtioDriver</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>使用mmio方式实现的Virtio</para>
+
+<para>对VERSION_LEGACY的设置 Legacy Interfaces: Virtqueue的布局: 每个virtqueue占据2个或者多个物理上连续的页，页大小通常是4096字节，由三部分组成： [Descriptor Table][Available Ring(..padding...)][Used Ring]</para>
+
+<para>There are two parts to device operation: supplying new buffers to the device, and processing used buffers from the device. </para>
+                <para>Definition at line 26 of file VirtioDriver.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>VirtioDriver.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8">
+               <title>enum @28 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a29584fa655329e11edf590fe45fdc75e">
+                            <term>MAGIC_VALUE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a2b44084c26903e335775c2a060d93b6b">
+                            <term>VERSION_LEGACY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a81c6e8184cf12f0f38a705de5a9e79cd">
+                            <term>VERSION_2</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8a186cfa87de20e0f390351053c1bac8db">
+                            <term>PAGE_SIZE_4KB</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a69f2b4b42fe6d63c891b1ca4dcc8eaa8adf8f2992935637ac3ef4c7c2de16d747">
+                            <term>USED_RING_ALIGNMENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 82 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+MAGIC_VALUE=0x74726976u, 
+VERSION_LEGACY= 1, 
+VERSION_2= 2, 
+PAGE_SIZE_4KB= 4096, 
+USED_RING_ALIGNMENT= 4, 
+}@28;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6">
+               <title>enum DeviceType </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a6dc8c61951728a228563e83a3dff9903">
+                            <term>res_invalid</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a05c3d7717b8ad559d065fd8331284acb">
+                            <term>network_card</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6afa0b5d45590d660d7344767bbe1d1909">
+                            <term>block_device</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a5fade2546d0c1be216692fe276f241bc">
+                            <term>console</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a2995cb4fb3640b3ef77eed52f77229cc">
+                            <term>entropy_source</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a09375a854beca822996b9a0346a3ee0d">
+                            <term>memory_ballooning_traditional</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6adddbe7c98edd677e8e7671b043cb0428">
+                            <term>ioMemory</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6ab552e659c370de5289eb54a9eee65489">
+                            <term>rpmsg</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a915feb10ef33289b8ffdecac9a6638ed">
+                            <term>SCSI_host</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a6b6d28a5af2391dc0c03136e27c0c990">
+                            <term>P9_transport</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a2a1f3aaf389815783ec3bfb7bb2db796">
+                            <term>mac80211_wlan</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a5d969c36fd96d57d57e521cc2cc2a77f">
+                            <term>rproc_serial</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a522b513a9a190773f224bd7309185a76">
+                            <term>virtio_CAIF</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a7d2a710941bd1de60e138c5fdaa9e653">
+                            <term>memory_balloon</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a0208148182a3fab80b89238e26593d57">
+                            <term>GPU_device</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6a9b2e0e8c10b9cb39e636cf276ca8e22d">
+                            <term>Timer_Clock_device</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1af9c65f19658d64591f47799f9cc5bce6aad4b3088085c332edfcb4d2b3b37014a">
+                            <term>Input_device</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 89 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+res_invalid=0, 
+network_card= 1, 
+block_device= 2, 
+console= 3, 
+entropy_source= 4, 
+memory_ballooning_traditional= 5, 
+ioMemory= 6, 
+rpmsg= 7, 
+SCSI_host= 8, 
+P9_transport= 9, 
+mac80211_wlan= 10, 
+rproc_serial= 11, 
+virtio_CAIF= 12, 
+memory_balloon= 13, 
+GPU_device= 16, 
+Timer_Clock_device= 17, 
+Input_device= 18, 
+}DeviceType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45fee">
+               <title>enum FeaturesBits </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea7d52c4d51de67dcc9eef663a558a6e6d">
+                            <term>VIRTIO_F_VERSION_1</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeadc054ee54de9778562d4737b5daf34e0">
+                            <term>VIRTIO_F_RING_EVENT_IDX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeac7900dd8ac820451d8e167d3bee14d92">
+                            <term>VIRTIO_F_RING_INDIRECT_DESC</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea4914079bb1bb8c54090f7005da104f10">
+                            <term>VIRTIO_BLK_F_SIZE_MAX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea58c2300fd8979bd0b816147b1fa8cf7c">
+                            <term>VIRTIO_BLK_F_SEG_MAX</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea482f2938c53a95508306286338933016">
+                            <term>VIRTIO_BLK_F_GEOMETRY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeab1c112426ee749adf4c3a99ffb04dd25">
+                            <term>VIRTIO_BLK_F_RO</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea24045844d7d2c5da5a84b780927eaecd">
+                            <term>VIRTIO_BLK_F_BLK_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeae69bbe02cd7ee2801d5df5684313ddcd">
+                            <term>VIRTIO_BLK_F_FLUSH</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeae8326782c1ec2023e164fc962808dc1b">
+                            <term>VIRTIO_BLK_F_TOPOLOGY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea8cf818b3adae853ed36e17612583b142">
+                            <term>VIRTIO_BLK_F_CONFIG_WCE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feeab66d3f67ad5bb3819131a564fcaee713">
+                            <term>VIRTIO_BLK_F_BARRIER</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea53b84b62c059caf2f1e6950b005299e5">
+                            <term>VIRTIO_BLK_F_SCSI</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a9c9aa78f447e75ae3d96d2a408c45feea8adac8d92390ac189f6f36fac42ae37d">
+                            <term>VIRTIO_BLK_F_WCE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 118 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+VIRTIO_F_VERSION_1= 32, 
+VIRTIO_F_RING_EVENT_IDX= 29, 
+VIRTIO_F_RING_INDIRECT_DESC= 28, 
+VIRTIO_BLK_F_SIZE_MAX= 1, 
+VIRTIO_BLK_F_SEG_MAX= 2, 
+VIRTIO_BLK_F_GEOMETRY= 4, 
+VIRTIO_BLK_F_RO= 5, 
+VIRTIO_BLK_F_BLK_SIZE= 6, 
+VIRTIO_BLK_F_FLUSH= 9, 
+VIRTIO_BLK_F_TOPOLOGY= 10, 
+VIRTIO_BLK_F_CONFIG_WCE= 11, 
+VIRTIO_BLK_F_BARRIER= 0, 
+VIRTIO_BLK_F_SCSI= 7, 
+VIRTIO_BLK_F_WCE= VIRTIO_BLK_F_FLUSH, 
+}FeaturesBits;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3">
+               <title>enum R_Legacy </title>
+               
+<para>适用于Version 1，也就是legacy legacy使用的是基于页的地址，因此控制寄存器布局、设备初始化和virtual queue配置有些许不同 </para>
+
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3ae6466adc2d5df4be8590438a93f9dacf">
+                            <term>V1_MagicValue</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3ab8fbba7eccd0ff129cc029173277559d">
+                            <term>V1_Version</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a0330223f0a5008cb14ebc74e521cbd40">
+                            <term>V1_DeviceID</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a83b0629f0fd2094c2793ee82a5b21038">
+                            <term>V1_VendorID</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a5dd16fd8780263931f23d24bf0c7e05a">
+                            <term>V1_HostFeatures</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a4c85ce8ca3911434aa5cf54568efe9e8">
+                            <term>V1_HostFeaturesSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3af600ef23cc44584d0cbfc08c4e9a2a4f">
+                            <term>V1_GuestFeatures</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a998d6cb7abc9421d01dafa6c573c6173">
+                            <term>V1_GuestFeaturesSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a14723bbe0769462fb047ad209ca0c71a">
+                            <term>V1_GuestPageSize</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a67e58cab73500bb2f36f354144f0070a">
+                            <term>V1_QueueSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a9b99f4e0fab6adaeccdedaa59249f45c">
+                            <term>V1_QueueNumMax</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a568c6a7dec759b44f08c52d964d43759">
+                            <term>V1_QueueNum</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3aed82a69f60cc95f10b718039c1711bb1">
+                            <term>V1_QueueAlign</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a9956b3607ebda273ed22ebe1827fb031">
+                            <term>V1_QueuePFN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a525721b99f068b9d1e80f17aeca5cee2">
+                            <term>V1_QueueNotify</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3af759b7a269c4dfbe4ce217e19ea7d9b3">
+                            <term>V1_InterruptStatus</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a138fe4aefd2ca51cfb9d40c70de05013">
+                            <term>V1_InterruptACK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a1ca7f1bdbd1636266f741892a94d66b3">
+                            <term>V1_Status</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a05d930f9a5f783fdc0754777847654f3a19aa57ae1e7de47e31a84eceb9d769f7">
+                            <term>V1_Config</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 60 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+V1_MagicValue=0, 
+V1_Version= 0x4, 
+V1_DeviceID= 0x8, 
+V1_VendorID= 0xC, 
+V1_HostFeatures= 0x10, 
+V1_HostFeaturesSel= 0x14, 
+V1_GuestFeatures= 0x20, 
+V1_GuestFeaturesSel= 0x24, 
+V1_GuestPageSize= 0x28, 
+V1_QueueSel= 0x30, 
+V1_QueueNumMax= 0x34, 
+V1_QueueNum= 0x38, 
+V1_QueueAlign= 0x3C, 
+V1_QueuePFN= 0x40, 
+V1_QueueNotify= 0x50, 
+V1_InterruptStatus= 0x60, 
+V1_InterruptACK= 0x64, 
+V1_Status= 0x70, 
+V1_Config= 0x100, 
+}R_Legacy;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818">
+               <title>enum R_V2 </title>
+               
+<para>适用于version 2 </para>
+
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a924a1a05d2ee059da6d17a08bca8fde4">
+                            <term>V2_MagicValue</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a89b310ba8f42fa4f4cec67885f515531">
+                            <term>V2_Version</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818ad06748b74d690b800c9e919663eaa095">
+                            <term>V2_DeviceID</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a34c20bbdfad6aaf416646fa2308683d3">
+                            <term>V2_VendorID</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa6bbee95232752cd03833dfdf7f0a8e9">
+                            <term>V2_DeviceFeatures</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a861d73ee7c7ad3e3d05488495ec5551e">
+                            <term>V2_DeviceFeaturesSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a4c735ec77e0d16a74c9a096c6bccf2db">
+                            <term>V2_DriverFeatures</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818acb1896eb9d8b4eaf8823ba5428c4909f">
+                            <term>V2_DriverFeaturesSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a2d47ca926a409365a47f617c820215f5">
+                            <term>V2_QueueSel</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a76a8acd07f96023142c0ef9eac3b97fa">
+                            <term>V2_QueueNum</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aca8b5b47c1dd7c2b3760cf1e7c7efec9">
+                            <term>V2_QueueReady</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a9a3396924ad2c674432b0d594dc1ce2a">
+                            <term>V2_QueueNotify</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818af20796eec8f699d88ddd50a5a8adebc9">
+                            <term>V2_InterruptStatus</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a3db60ce4d833c6a40b1f5e8fb354db24">
+                            <term>V2_InterruptACK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a4e72db706d8a251f1470a92a03d450e4">
+                            <term>V2_Status</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818ade3da937b5b7350dcf0baac015cb90f5">
+                            <term>V2_QueueDescLow</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a66b11cfc920f37c66b1a3edda00aff67">
+                            <term>V2_QueueDescHigh</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a826ce0cd83e3ca5b7fad57b0f2907916">
+                            <term>V2_QueueAvailLow</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aadfcb048f96c5738b1c83fcc7f771fb5">
+                            <term>V2_QueueAvailHigh</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa34c08082c8adc8f37b2d8007d836a54">
+                            <term>V2_QueueUsedLow</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818a647b95b7ec06f993b919f59fd2545b07">
+                            <term>V2_QueueUsedHigh</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818abc744919502545dce9136174ec065704">
+                            <term>V2_ConfigGeneration</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1a5e4f160697b269f5bf5cbae074675818aa5de5bcbde85372590655f44707f6020">
+                            <term>V2_Config</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 31 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+V2_MagicValue=0, 
+V2_Version= 0x4, 
+V2_DeviceID= 0x8, 
+V2_VendorID= 0xC, 
+V2_DeviceFeatures= 0x10, 
+V2_DeviceFeaturesSel= 0x14, 
+V2_DriverFeatures= 0x20, 
+V2_DriverFeaturesSel= 0x24, 
+V2_QueueSel= 0x34, 
+V2_QueueNum= 0x38, 
+V2_QueueReady= 0x44, 
+V2_QueueNotify= 0x50, 
+V2_InterruptStatus= 0x60, 
+V2_InterruptACK= 0x64, 
+V2_Status= 0x70, 
+V2_QueueDescLow= 0x80, 
+V2_QueueDescHigh= 0x84, 
+V2_QueueAvailLow= 0x90, 
+V2_QueueAvailHigh= 0x94, 
+V2_QueueUsedLow= 0xA0, 
+V2_QueueUsedHigh= 0xA4, 
+V2_ConfigGeneration= 0xFC, 
+V2_Config= 0x100, 
+}R_V2;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36">
+               <title>enum StatusBits </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ab3f598d700dc2e919a502d2ac8b02655">
+                            <term>ACKNOWLEDGE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ad7894d91fae434b2ec28ae17db9f19a1">
+                            <term>DRIVER</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a94ce0a98a9fe1add1a353cea6fa380ae">
+                            <term>FAILED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a9e57414ff557edc5facfcda8726778f3">
+                            <term>FEATURES_OK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36ab4732f26301110aaca2492b40ee9bd60">
+                            <term>DRIVER_OK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/d4c/class_virtio_driver_1ac2b7afb36b267ed3586cd7cf09e01f36a8de2c17948047e2ae3beb4206a71a23f">
+                            <term>DEVICE_NEEDS_RESET</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 109 of file VirtioDriver.h
+                    <computeroutput><literallayout>
+{
+ACKNOWLEDGE= 1, 
+DRIVER= 2, 
+FAILED= 128, 
+FEATURES_OK= 8, 
+DRIVER_OK= 4, 
+DEVICE_NEEDS_RESET= 64, 
+}StatusBits;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1aaefa0dc1cf30fb46122a819f020f65ba">
+                <title>void VirtioDriver::init ()</title> <emphasis></emphasis>
+                
+<para>The driver MUST start the device initialization by reading and checking values from MagicValue and Version. If both values are valid, it MUST read DeviceID and if its value is zero (0x0) MUST abort initialization and MUST NOT access any other register. </para>
+
+            </section>
+            <section xml:id="d4/d4c/class_virtio_driver_1ab995c9d1482ca29425f37cdca0402dfd">
+                <title>VirtioDriver::VirtioDriver (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

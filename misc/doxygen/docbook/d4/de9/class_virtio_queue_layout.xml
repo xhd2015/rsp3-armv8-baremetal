@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/de9/class_virtio_queue_layout">
+<title>VirtioQueueLayout class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/d78/_virtio_queue_layout_8h">&quot;VirtioQueueLayout.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioQueueLayout</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d34/class_virtio_queue_layout__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioQueueLayout</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d05/class_virtio_queue_layout__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>VirtioQueueAvailableRef _availRing</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>VirtioQueueDescriptor * _descTable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * _queueBase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _queueSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>VirtioQueueUsedRef _usedRing</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _usedRingAlignment</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/de9/class_virtio_queue_layout_1ab677543e9dcf57bbae883c8d8360f76c">memSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void * <link linkend="d4/de9/class_virtio_queue_layout_1a78febc9b2f11e75c29358448cad5ebec">queueBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/de9/class_virtio_queue_layout_1a1fc93a7aa6bf95437bd3bd53c1df7b96">queueBase</link> (
+void * queueBase)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/de9/class_virtio_queue_layout_1a22c325b4c52e9165fbfc3460f00c6875">queueSize</link> (
+size_t qsize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d4/de9/class_virtio_queue_layout_1a275c87266aa7a71f866983bca0e0cf62">queueSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d4/de9/class_virtio_queue_layout_1aa449473a5076f68264d2bb7a139349a9">usedRingAlignment</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/de9/class_virtio_queue_layout_1ae662e6d683d6fc95fdb2de3280f9b8d2">usedRingAlignment</link> (
+size_t usedRingAlignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1ab677543e9dcf57bbae883c8d8360f76c">
+                <title>size_t VirtioQueueLayout::memSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1a78febc9b2f11e75c29358448cad5ebec">
+                <title>AS_MACRO void* VirtioQueueLayout::queueBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1a1fc93a7aa6bf95437bd3bd53c1df7b96">
+                <title>AS_MACRO void VirtioQueueLayout::queueBase (void *queueBase)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1a22c325b4c52e9165fbfc3460f00c6875">
+                <title>AS_MACRO void VirtioQueueLayout::queueSize (size_t qsize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1a275c87266aa7a71f866983bca0e0cf62">
+                <title>AS_MACRO size_t VirtioQueueLayout::queueSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1aa449473a5076f68264d2bb7a139349a9">
+                <title>AS_MACRO size_t VirtioQueueLayout::usedRingAlignment () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/de9/class_virtio_queue_layout_1ae662e6d683d6fc95fdb2de3280f9b8d2">
+                <title>AS_MACRO void VirtioQueueLayout::usedRingAlignment (size_t usedRingAlignment)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

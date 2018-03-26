@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: VirtioDriver类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d5/db2/class_virtio_driver-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">VirtioDriver类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 VirtioDriver 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d0a/class_virtio_driver__inherit__graph.png" border="0" usemap="#_virtio_driver_inherit__map" alt="Inheritance graph"/></div>
+<map name="_virtio_driver_inherit__map" id="_virtio_driver_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> VirtioDriver 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d0/d8e/class_virtio_driver__coll__graph.png" border="0" usemap="#_virtio_driver_coll__map" alt="Collaboration graph"/></div>
+<map name="_virtio_driver_coll__map" id="_virtio_driver_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a69f2b4b42fe6d63c891b1ca4dcc8eaa8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a69f2b4b42fe6d63c891b1ca4dcc8eaa8a29584fa655329e11edf590fe45fdc75e">MAGIC_VALUE</a> =0x74726976u, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a69f2b4b42fe6d63c891b1ca4dcc8eaa8a2b44084c26903e335775c2a060d93b6b">VERSION_LEGACY</a> = 1, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a69f2b4b42fe6d63c891b1ca4dcc8eaa8a81c6e8184cf12f0f38a705de5a9e79cd">VERSION_2</a> = 2, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a69f2b4b42fe6d63c891b1ca4dcc8eaa8a186cfa87de20e0f390351053c1bac8db">PAGE_SIZE_4KB</a> = 4096, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a69f2b4b42fe6d63c891b1ca4dcc8eaa8adf8f2992935637ac3ef4c7c2de16d747">USED_RING_ALIGNMENT</a> = 4
+<br />
+ }</td></tr>
+<tr class="separator:a69f2b4b42fe6d63c891b1ca4dcc8eaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c65f19658d64591f47799f9cc5bce6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6">DeviceType</a> { <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a6dc8c61951728a228563e83a3dff9903">res_invalid</a> =0, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a05c3d7717b8ad559d065fd8331284acb">network_card</a> = 1, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6afa0b5d45590d660d7344767bbe1d1909">block_device</a> = 2, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a5fade2546d0c1be216692fe276f241bc">console</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a2995cb4fb3640b3ef77eed52f77229cc">entropy_source</a> = 4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a09375a854beca822996b9a0346a3ee0d">memory_ballooning_traditional</a> = 5, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6adddbe7c98edd677e8e7671b043cb0428">ioMemory</a> = 6, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6ab552e659c370de5289eb54a9eee65489">rpmsg</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a915feb10ef33289b8ffdecac9a6638ed">SCSI_host</a> = 8, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a6b6d28a5af2391dc0c03136e27c0c990">P9_transport</a> = 9, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a2a1f3aaf389815783ec3bfb7bb2db796">mac80211_wlan</a> = 10, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a5d969c36fd96d57d57e521cc2cc2a77f">rproc_serial</a> = 11, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a522b513a9a190773f224bd7309185a76">virtio_CAIF</a> = 12, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a7d2a710941bd1de60e138c5fdaa9e653">memory_balloon</a> = 13, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a0208148182a3fab80b89238e26593d57">GPU_device</a> = 16, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6a9b2e0e8c10b9cb39e636cf276ca8e22d">Timer_Clock_device</a> = 17, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6aad4b3088085c332edfcb4d2b3b37014a">Input_device</a> = 18
+<br />
+ }</td></tr>
+<tr class="separator:af9c65f19658d64591f47799f9cc5bce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9aa78f447e75ae3d96d2a408c45fee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45fee">FeaturesBits</a> { <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea7d52c4d51de67dcc9eef663a558a6e6d">VIRTIO_F_VERSION_1</a> = 32, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeadc054ee54de9778562d4737b5daf34e0">VIRTIO_F_RING_EVENT_IDX</a> = 29, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeac7900dd8ac820451d8e167d3bee14d92">VIRTIO_F_RING_INDIRECT_DESC</a> = 28, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea4914079bb1bb8c54090f7005da104f10">VIRTIO_BLK_F_SIZE_MAX</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea58c2300fd8979bd0b816147b1fa8cf7c">VIRTIO_BLK_F_SEG_MAX</a> = 2, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea482f2938c53a95508306286338933016">VIRTIO_BLK_F_GEOMETRY</a> = 4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeab1c112426ee749adf4c3a99ffb04dd25">VIRTIO_BLK_F_RO</a> = 5, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea24045844d7d2c5da5a84b780927eaecd">VIRTIO_BLK_F_BLK_SIZE</a> = 6, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeae69bbe02cd7ee2801d5df5684313ddcd">VIRTIO_BLK_F_FLUSH</a> = 9, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeae8326782c1ec2023e164fc962808dc1b">VIRTIO_BLK_F_TOPOLOGY</a> = 10, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea8cf818b3adae853ed36e17612583b142">VIRTIO_BLK_F_CONFIG_WCE</a> = 11, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feeab66d3f67ad5bb3819131a564fcaee713">VIRTIO_BLK_F_BARRIER</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea53b84b62c059caf2f1e6950b005299e5">VIRTIO_BLK_F_SCSI</a> = 7, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45feea8adac8d92390ac189f6f36fac42ae37d">VIRTIO_BLK_F_WCE</a> = VIRTIO_BLK_F_FLUSH
+<br />
+ }</td></tr>
+<tr class="separator:a9c9aa78f447e75ae3d96d2a408c45fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d930f9a5f783fdc0754777847654f3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3">R_Legacy</a> : MemBasedRegReader::RegOffset { <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3ae6466adc2d5df4be8590438a93f9dacf">V1_MagicValue</a> =0, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3ab8fbba7eccd0ff129cc029173277559d">V1_Version</a> = 0x4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a0330223f0a5008cb14ebc74e521cbd40">V1_DeviceID</a> = 0x8, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a83b0629f0fd2094c2793ee82a5b21038">V1_VendorID</a> = 0xC, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a5dd16fd8780263931f23d24bf0c7e05a">V1_HostFeatures</a> = 0x10, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a4c85ce8ca3911434aa5cf54568efe9e8">V1_HostFeaturesSel</a> = 0x14, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3af600ef23cc44584d0cbfc08c4e9a2a4f">V1_GuestFeatures</a> = 0x20, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a998d6cb7abc9421d01dafa6c573c6173">V1_GuestFeaturesSel</a> = 0x24, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a14723bbe0769462fb047ad209ca0c71a">V1_GuestPageSize</a> = 0x28, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a67e58cab73500bb2f36f354144f0070a">V1_QueueSel</a> = 0x30, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a9b99f4e0fab6adaeccdedaa59249f45c">V1_QueueNumMax</a> = 0x34, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a568c6a7dec759b44f08c52d964d43759">V1_QueueNum</a> = 0x38, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3aed82a69f60cc95f10b718039c1711bb1">V1_QueueAlign</a> = 0x3C, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a9956b3607ebda273ed22ebe1827fb031">V1_QueuePFN</a> = 0x40, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a525721b99f068b9d1e80f17aeca5cee2">V1_QueueNotify</a> = 0x50, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3af759b7a269c4dfbe4ce217e19ea7d9b3">V1_InterruptStatus</a> = 0x60, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a138fe4aefd2ca51cfb9d40c70de05013">V1_InterruptACK</a> = 0x64, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a1ca7f1bdbd1636266f741892a94d66b3">V1_Status</a> = 0x70, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3a19aa57ae1e7de47e31a84eceb9d769f7">V1_Config</a> = 0x100
+<br />
+ }</td></tr>
+<tr class="separator:a05d930f9a5f783fdc0754777847654f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4f160697b269f5bf5cbae074675818"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818">R_V2</a> : MemBasedRegReader::RegOffset { <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a924a1a05d2ee059da6d17a08bca8fde4">V2_MagicValue</a> =0, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a89b310ba8f42fa4f4cec67885f515531">V2_Version</a> = 0x4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818ad06748b74d690b800c9e919663eaa095">V2_DeviceID</a> = 0x8, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a34c20bbdfad6aaf416646fa2308683d3">V2_VendorID</a> = 0xC, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818aa6bbee95232752cd03833dfdf7f0a8e9">V2_DeviceFeatures</a> = 0x10, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a861d73ee7c7ad3e3d05488495ec5551e">V2_DeviceFeaturesSel</a> = 0x14, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a4c735ec77e0d16a74c9a096c6bccf2db">V2_DriverFeatures</a> = 0x20, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818acb1896eb9d8b4eaf8823ba5428c4909f">V2_DriverFeaturesSel</a> = 0x24, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a2d47ca926a409365a47f617c820215f5">V2_QueueSel</a> = 0x34, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a76a8acd07f96023142c0ef9eac3b97fa">V2_QueueNum</a> = 0x38, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818aca8b5b47c1dd7c2b3760cf1e7c7efec9">V2_QueueReady</a> = 0x44, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a9a3396924ad2c674432b0d594dc1ce2a">V2_QueueNotify</a> = 0x50, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818af20796eec8f699d88ddd50a5a8adebc9">V2_InterruptStatus</a> = 0x60, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a3db60ce4d833c6a40b1f5e8fb354db24">V2_InterruptACK</a> = 0x64, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a4e72db706d8a251f1470a92a03d450e4">V2_Status</a> = 0x70, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818ade3da937b5b7350dcf0baac015cb90f5">V2_QueueDescLow</a> = 0x80, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a66b11cfc920f37c66b1a3edda00aff67">V2_QueueDescHigh</a> = 0x84, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a826ce0cd83e3ca5b7fad57b0f2907916">V2_QueueAvailLow</a> = 0x90, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818aadfcb048f96c5738b1c83fcc7f771fb5">V2_QueueAvailHigh</a> = 0x94, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818aa34c08082c8adc8f37b2d8007d836a54">V2_QueueUsedLow</a> = 0xA0, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818a647b95b7ec06f993b919f59fd2545b07">V2_QueueUsedHigh</a> = 0xA4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818abc744919502545dce9136174ec065704">V2_ConfigGeneration</a> = 0xFC, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818aa5de5bcbde85372590655f44707f6020">V2_Config</a> = 0x100
+<br />
+ }</td></tr>
+<tr class="separator:a5e4f160697b269f5bf5cbae074675818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2b7afb36b267ed3586cd7cf09e01f36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36">StatusBits</a> { <br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36ab3f598d700dc2e919a502d2ac8b02655">ACKNOWLEDGE</a> = 1, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36ad7894d91fae434b2ec28ae17db9f19a1">DRIVER</a> = 2, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36a94ce0a98a9fe1add1a353cea6fa380ae">FAILED</a> = 128, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36a9e57414ff557edc5facfcda8726778f3">FEATURES_OK</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36ab4732f26301110aaca2492b40ee9bd60">DRIVER_OK</a> = 4, 
+<a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36a8de2c17948047e2ae3beb4206a71a23f">DEVICE_NEEDS_RESET</a> = 64
+<br />
+ }</td></tr>
+<tr class="separator:ac2b7afb36b267ed3586cd7cf09e01f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aaefa0dc1cf30fb46122a819f020f65ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#aaefa0dc1cf30fb46122a819f020f65ba">init</a> ()</td></tr>
+<tr class="separator:aaefa0dc1cf30fb46122a819f020f65ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab995c9d1482ca29425f37cdca0402dfd"><td class="memTemplParams" colspan="2">template&lt;class ... Args&gt; </td></tr>
+<tr class="memitem:ab995c9d1482ca29425f37cdca0402dfd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#ab995c9d1482ca29425f37cdca0402dfd">VirtioDriver</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:ab995c9d1482ca29425f37cdca0402dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a4be93af3fe06302f6340e5c7a689e52b">reg</a> ()</td></tr>
+<tr class="separator:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aecb8a26df6a63d49d8b38cf8eb5dba76">reg</a> () const</td></tr>
+<tr class="separator:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ab54f599c12c38935ff32e526c39666b6">reg16</a> ()</td></tr>
+<tr class="separator:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#acbe849531abcf4c0f125569a859886cf">reg16</a> () const</td></tr>
+<tr class="separator:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint32_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a3d0181d202870b31a91ec5bc1a5c6181">reg32</a> ()</td></tr>
+<tr class="separator:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#af539b2054048256208e9660d34610f93">reg32</a> () const</td></tr>
+<tr class="separator:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a787e59015cafd26ba0725fcc18e03440">reg64</a> ()</td></tr>
+<tr class="separator:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aef0b23957384e94af785bd63946d425a">reg64</a> () const</td></tr>
+<tr class="separator:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ac68868fd66f2cd04bf594a61b87f5e13">reg8</a> ()</td></tr>
+<tr class="separator:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a82a1723858bcee844412a086bd12ac01">reg8</a> () const</td></tr>
+<tr class="separator:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#afa50e6631ba59a188e875cc5f108855d">regcopy</a> ()</td></tr>
+<tr class="separator:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a39ca9d494fff6bdd6240b1f5c5c9b27a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#a39ca9d494fff6bdd6240b1f5c5c9b27a">_deviceID</a></td></tr>
+<tr class="separator:a39ca9d494fff6bdd6240b1f5c5c9b27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45becfa6fc7ad45b14a96bd7df4b760f"><td class="memItemLeft" align="right" valign="top">volatile uint64_t(&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#a45becfa6fc7ad45b14a96bd7df4b760f">_status</a> )[2]</td></tr>
+<tr class="separator:a45becfa6fc7ad45b14a96bd7df4b760f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe64dc1771a7d5498c0a341e5de16591"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4c/class_virtio_driver.html#abe64dc1771a7d5498c0a341e5de16591">_version</a></td></tr>
+<tr class="separator:abe64dc1771a7d5498c0a341e5de16591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_types_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_types_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">RegOffset</a> = uint32_t</td></tr>
+<tr class="separator:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a155c5b45895b607c9ca571beb5fe408d">MemBasedRegReader</a> (size_t base)</td></tr>
+<tr class="separator:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a366f51ac0a2278121fb76dd2b158ac63">MemBasedRegReader</a> (void *base)</td></tr>
+<tr class="separator:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a710282136838c803cbd1f0f76167c4cc">MemBasedRegReader</a> (volatile void *base)</td></tr>
+<tr class="separator:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a5d0de8f7c377996190e28a6ce7c816fc">MemBasedRegReader</a> (nullptr_t base)</td></tr>
+<tr class="separator:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">volatile char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a56c015b478a295d2ae08a73a219cfce6">_base</a></td></tr>
+<tr class="separator:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>使用mmio方式实现的Virtio</p>
+<p>对VERSION_LEGACY的设置 Legacy Interfaces: Virtqueue的布局: 每个virtqueue占据2个或者多个物理上连续的页，页大小通常是4096字节，由三部分组成： [Descriptor Table][Available Ring(..padding...)][Used Ring]</p>
+<p>There are two parts to device operation: supplying new buffers to the device, and processing used buffers from the device. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00024">24</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f2b4b42fe6d63c891b1ca4dcc8eaa8">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8a29584fa655329e11edf590fe45fdc75e"></a>MAGIC_VALUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8a2b44084c26903e335775c2a060d93b6b"></a>VERSION_LEGACY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8a81c6e8184cf12f0f38a705de5a9e79cd"></a>VERSION_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8a186cfa87de20e0f390351053c1bac8db"></a>PAGE_SIZE_4KB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a69f2b4b42fe6d63c891b1ca4dcc8eaa8adf8f2992935637ac3ef4c7c2de16d747"></a>USED_RING_ALIGNMENT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af9c65f19658d64591f47799f9cc5bce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c65f19658d64591f47799f9cc5bce6">&#9670;&nbsp;</a></span>DeviceType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d4c/class_virtio_driver.html#af9c65f19658d64591f47799f9cc5bce6">VirtioDriver::DeviceType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a6dc8c61951728a228563e83a3dff9903"></a>res_invalid&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a05c3d7717b8ad559d065fd8331284acb"></a>network_card&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6afa0b5d45590d660d7344767bbe1d1909"></a>block_device&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a5fade2546d0c1be216692fe276f241bc"></a>console&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a2995cb4fb3640b3ef77eed52f77229cc"></a>entropy_source&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a09375a854beca822996b9a0346a3ee0d"></a>memory_ballooning_traditional&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6adddbe7c98edd677e8e7671b043cb0428"></a>ioMemory&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6ab552e659c370de5289eb54a9eee65489"></a>rpmsg&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a915feb10ef33289b8ffdecac9a6638ed"></a>SCSI_host&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a6b6d28a5af2391dc0c03136e27c0c990"></a>P9_transport&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a2a1f3aaf389815783ec3bfb7bb2db796"></a>mac80211_wlan&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a5d969c36fd96d57d57e521cc2cc2a77f"></a>rproc_serial&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a522b513a9a190773f224bd7309185a76"></a>virtio_CAIF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a7d2a710941bd1de60e138c5fdaa9e653"></a>memory_balloon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a0208148182a3fab80b89238e26593d57"></a>GPU_device&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6a9b2e0e8c10b9cb39e636cf276ca8e22d"></a>Timer_Clock_device&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9c65f19658d64591f47799f9cc5bce6aad4b3088085c332edfcb4d2b3b37014a"></a>Input_device&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9c9aa78f447e75ae3d96d2a408c45fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9aa78f447e75ae3d96d2a408c45fee">&#9670;&nbsp;</a></span>FeaturesBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d4c/class_virtio_driver.html#a9c9aa78f447e75ae3d96d2a408c45fee">VirtioDriver::FeaturesBits</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea7d52c4d51de67dcc9eef663a558a6e6d"></a>VIRTIO_F_VERSION_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeadc054ee54de9778562d4737b5daf34e0"></a>VIRTIO_F_RING_EVENT_IDX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeac7900dd8ac820451d8e167d3bee14d92"></a>VIRTIO_F_RING_INDIRECT_DESC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea4914079bb1bb8c54090f7005da104f10"></a>VIRTIO_BLK_F_SIZE_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea58c2300fd8979bd0b816147b1fa8cf7c"></a>VIRTIO_BLK_F_SEG_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea482f2938c53a95508306286338933016"></a>VIRTIO_BLK_F_GEOMETRY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeab1c112426ee749adf4c3a99ffb04dd25"></a>VIRTIO_BLK_F_RO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea24045844d7d2c5da5a84b780927eaecd"></a>VIRTIO_BLK_F_BLK_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeae69bbe02cd7ee2801d5df5684313ddcd"></a>VIRTIO_BLK_F_FLUSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeae8326782c1ec2023e164fc962808dc1b"></a>VIRTIO_BLK_F_TOPOLOGY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea8cf818b3adae853ed36e17612583b142"></a>VIRTIO_BLK_F_CONFIG_WCE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feeab66d3f67ad5bb3819131a564fcaee713"></a>VIRTIO_BLK_F_BARRIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea53b84b62c059caf2f1e6950b005299e5"></a>VIRTIO_BLK_F_SCSI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c9aa78f447e75ae3d96d2a408c45feea8adac8d92390ac189f6f36fac42ae37d"></a>VIRTIO_BLK_F_WCE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a05d930f9a5f783fdc0754777847654f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d930f9a5f783fdc0754777847654f3">&#9670;&nbsp;</a></span>R_Legacy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d4c/class_virtio_driver.html#a05d930f9a5f783fdc0754777847654f3">VirtioDriver::R_Legacy</a> : <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">MemBasedRegReader::RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>适用于Version 1，也就是legacy legacy使用的是基于页的地址，因此控制寄存器布局、设备初始化和virtual queue配置有些许不同 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3ae6466adc2d5df4be8590438a93f9dacf"></a>V1_MagicValue&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3ab8fbba7eccd0ff129cc029173277559d"></a>V1_Version&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a0330223f0a5008cb14ebc74e521cbd40"></a>V1_DeviceID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a83b0629f0fd2094c2793ee82a5b21038"></a>V1_VendorID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a5dd16fd8780263931f23d24bf0c7e05a"></a>V1_HostFeatures&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a4c85ce8ca3911434aa5cf54568efe9e8"></a>V1_HostFeaturesSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3af600ef23cc44584d0cbfc08c4e9a2a4f"></a>V1_GuestFeatures&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a998d6cb7abc9421d01dafa6c573c6173"></a>V1_GuestFeaturesSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a14723bbe0769462fb047ad209ca0c71a"></a>V1_GuestPageSize&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a67e58cab73500bb2f36f354144f0070a"></a>V1_QueueSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a9b99f4e0fab6adaeccdedaa59249f45c"></a>V1_QueueNumMax&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a568c6a7dec759b44f08c52d964d43759"></a>V1_QueueNum&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3aed82a69f60cc95f10b718039c1711bb1"></a>V1_QueueAlign&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a9956b3607ebda273ed22ebe1827fb031"></a>V1_QueuePFN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a525721b99f068b9d1e80f17aeca5cee2"></a>V1_QueueNotify&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3af759b7a269c4dfbe4ce217e19ea7d9b3"></a>V1_InterruptStatus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a138fe4aefd2ca51cfb9d40c70de05013"></a>V1_InterruptACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a1ca7f1bdbd1636266f741892a94d66b3"></a>V1_Status&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a05d930f9a5f783fdc0754777847654f3a19aa57ae1e7de47e31a84eceb9d769f7"></a>V1_Config&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e4f160697b269f5bf5cbae074675818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e4f160697b269f5bf5cbae074675818">&#9670;&nbsp;</a></span>R_V2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d4c/class_virtio_driver.html#a5e4f160697b269f5bf5cbae074675818">VirtioDriver::R_V2</a> : <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">MemBasedRegReader::RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>适用于version 2 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a924a1a05d2ee059da6d17a08bca8fde4"></a>V2_MagicValue&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a89b310ba8f42fa4f4cec67885f515531"></a>V2_Version&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818ad06748b74d690b800c9e919663eaa095"></a>V2_DeviceID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a34c20bbdfad6aaf416646fa2308683d3"></a>V2_VendorID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818aa6bbee95232752cd03833dfdf7f0a8e9"></a>V2_DeviceFeatures&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a861d73ee7c7ad3e3d05488495ec5551e"></a>V2_DeviceFeaturesSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a4c735ec77e0d16a74c9a096c6bccf2db"></a>V2_DriverFeatures&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818acb1896eb9d8b4eaf8823ba5428c4909f"></a>V2_DriverFeaturesSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a2d47ca926a409365a47f617c820215f5"></a>V2_QueueSel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a76a8acd07f96023142c0ef9eac3b97fa"></a>V2_QueueNum&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818aca8b5b47c1dd7c2b3760cf1e7c7efec9"></a>V2_QueueReady&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a9a3396924ad2c674432b0d594dc1ce2a"></a>V2_QueueNotify&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818af20796eec8f699d88ddd50a5a8adebc9"></a>V2_InterruptStatus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a3db60ce4d833c6a40b1f5e8fb354db24"></a>V2_InterruptACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a4e72db706d8a251f1470a92a03d450e4"></a>V2_Status&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818ade3da937b5b7350dcf0baac015cb90f5"></a>V2_QueueDescLow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a66b11cfc920f37c66b1a3edda00aff67"></a>V2_QueueDescHigh&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a826ce0cd83e3ca5b7fad57b0f2907916"></a>V2_QueueAvailLow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818aadfcb048f96c5738b1c83fcc7f771fb5"></a>V2_QueueAvailHigh&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818aa34c08082c8adc8f37b2d8007d836a54"></a>V2_QueueUsedLow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818a647b95b7ec06f993b919f59fd2545b07"></a>V2_QueueUsedHigh&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818abc744919502545dce9136174ec065704"></a>V2_ConfigGeneration&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5e4f160697b269f5bf5cbae074675818aa5de5bcbde85372590655f44707f6020"></a>V2_Config&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac2b7afb36b267ed3586cd7cf09e01f36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b7afb36b267ed3586cd7cf09e01f36">&#9670;&nbsp;</a></span>StatusBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d4c/class_virtio_driver.html#ac2b7afb36b267ed3586cd7cf09e01f36">VirtioDriver::StatusBits</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36ab3f598d700dc2e919a502d2ac8b02655"></a>ACKNOWLEDGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36ad7894d91fae434b2ec28ae17db9f19a1"></a>DRIVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36a94ce0a98a9fe1add1a353cea6fa380ae"></a>FAILED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36a9e57414ff557edc5facfcda8726778f3"></a>FEATURES_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36ab4732f26301110aaca2492b40ee9bd60"></a>DRIVER_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2b7afb36b267ed3586cd7cf09e01f36a8de2c17948047e2ae3beb4206a71a23f"></a>DEVICE_NEEDS_RESET&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00109">109</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab995c9d1482ca29425f37cdca0402dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab995c9d1482ca29425f37cdca0402dfd">&#9670;&nbsp;</a></span>VirtioDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtioDriver::VirtioDriver </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00140">140</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aaefa0dc1cf30fb46122a819f020f65ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefa0dc1cf30fb46122a819f020f65ba">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VirtioDriver::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The driver MUST start the device initialization by reading and checking values from MagicValue and Version. If both values are valid, it MUST read DeviceID and if its value is zero (0x0) MUST abort initialization and MUST NOT access any other register. </p>
+
+<p class="definition">在文件 <a class="el" href="../../db/d70/_virtio_driver_8cpp_source.html">VirtioDriver.cpp</a> 第 <a class="el" href="../../db/d70/_virtio_driver_8cpp_source.html#l00013">13</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_cgraph.png" border="0" usemap="#d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_cgraph" alt=""/></div>
+<map name="d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_cgraph" id="d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_cgraph">
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_icgraph.png" border="0" usemap="#d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_icgraph" alt=""/></div>
+<map name="d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_icgraph" id="d4/d4c/class_virtio_driver_aaefa0dc1cf30fb46122a819f020f65ba_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a39ca9d494fff6bdd6240b1f5c5c9b27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ca9d494fff6bdd6240b1f5c5c9b27a">&#9670;&nbsp;</a></span>_deviceID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t VirtioDriver::_deviceID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a45becfa6fc7ad45b14a96bd7df4b760f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45becfa6fc7ad45b14a96bd7df4b760f">&#9670;&nbsp;</a></span>_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint64_t(&amp; VirtioDriver::_status)[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abe64dc1771a7d5498c0a341e5de16591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe64dc1771a7d5498c0a341e5de16591">&#9670;&nbsp;</a></span>_version</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t VirtioDriver::_version</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a> 第 <a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html#l00159">159</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/<a class="el" href="../../d4/dd7/_virtio_driver_8h_source.html">VirtioDriver.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/<a class="el" href="../../db/d70/_virtio_driver_8cpp_source.html">VirtioDriver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:47 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

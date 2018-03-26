@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d61/class_reg_g_i_c_d___c_t_l_r">
+<title>RegGICD_CTLR class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d7/dc3/gicv3__registers_8h">&quot;gicv3_registers.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RegGICD_CTLR</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d79/class_reg_g_i_c_d___c_t_l_r__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RegGICD_CTLR</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d37/class_reg_g_i_c_d___c_t_l_r__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t ARE_NS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t ARE_S</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t DS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t E1NWF</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t EnableGrp0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t EnableGrp1NS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t EnableGrp1S</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t RES0_0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t RES0_1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t RWP</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r_1ab13326da19b64b948098e356dc4d65f4">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a08bc0ec50ec059cce70af9368b7497d7">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a03b569756bf93c034ad60885383b8d32">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a222f7a3ad2d1af52d567e15321c83782">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="dc/d61/class_reg_g_i_c_d___c_t_l_r_1ab13326da19b64b948098e356dc4d65f4">
+                <title>AS_MACRO void RegGICD_CTLR::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a08bc0ec50ec059cce70af9368b7497d7">
+                <title>AS_MACRO RegGICD_CTLR RegGICD_CTLR::updateRead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a03b569756bf93c034ad60885383b8d32">
+                <title>AS_MACRO void RegGICD_CTLR::write () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d61/class_reg_g_i_c_d___c_t_l_r_1a222f7a3ad2d1af52d567e15321c83782">
+                <title>static AS_MACRO RegGICD_CTLR RegGICD_CTLR::read ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

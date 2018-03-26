@@ -1,0 +1,10 @@
+digraph "VirtioBlockConfig"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node948 [label="{VirtioBlockConfig\n|+ blk_size\l+ capacity\l+ seg_max\l+ size_max\l+ writeback\l|+ dump()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node949 -> Node948 [color="grey25",fontsize="10",style="solid",label=" +geometry" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node949 [label="{VirtioBlockConfig::\lVirtioBlockGeometry\n|+ cylinders\l+ heads\l+ sectors\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d38/struct_virtio_block_config_1_1_virtio_block_geometry.html"];
+  Node950 -> Node948 [color="grey25",fontsize="10",style="solid",label=" +topology" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node950 [label="{VirtioBlockConfig::\lVirtioBlockTopology\n|+ alignment_offset\l+ min_io_size\l+ opt_io_size\l+ physical_block_exp\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/db1/struct_virtio_block_config_1_1_virtio_block_topology.html"];
+}

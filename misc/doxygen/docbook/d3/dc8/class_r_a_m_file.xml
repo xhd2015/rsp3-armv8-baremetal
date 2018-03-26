@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/dc8/class_r_a_m_file">
+<title>RAMFile class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d0/de0/_r_a_m_file_8h">&quot;RAMFile.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RAMFile</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d11/class_r_a_m_file__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RAMFile</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/dc8/class_r_a_m_file__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>String _data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>String _name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> const <link linkend="de/d61/class_string">String</link> &amp; <link linkend="d3/dc8/class_r_a_m_file_1a4f1d74cac32f7377c87e7cb8ab9e5382">content</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d3/dc8/class_r_a_m_file_1adcb436e723b7df7c4aaa583585b6659f">diskSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/dc8/class_r_a_m_file_1a26efa4280f61fdc46dfa46f3999b59f7">emplaceAppend</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/dc8/class_r_a_m_file_1a747b5d7e8ecf7137d2d3da25f9254fcd">RAMFile</link> (
+const <link linkend="de/d61/class_string">String</link> &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/dc8/class_r_a_m_file_1aa1ebd44c9f0bce259ebb7e30237898b7">rename</link> (
+<link linkend="de/d61/class_string">String</link> &amp;&amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/dc8/class_r_a_m_file_1a1a4028158ab5682c971e46fa2a2a96c1">rename</link> (
+const <link linkend="de/d61/class_string">String</link> &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d3/dc8/class_r_a_m_file_1a69e5dfe959e700257fdec29f6b876466">resize</link> (
+size_t newSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="d3/dc8/class_r_a_m_file_1acb4162d7db5e0625c9f32efbf1e39346">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1a4f1d74cac32f7377c87e7cb8ab9e5382">
+                <title>AS_MACRO const String&amp; RAMFile::content () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1adcb436e723b7df7c4aaa583585b6659f">
+                <title>AS_MACRO size_t RAMFile::diskSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1a26efa4280f61fdc46dfa46f3999b59f7">
+                <title>void RAMFile::emplaceAppend (Args &amp;&amp;...args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1a747b5d7e8ecf7137d2d3da25f9254fcd">
+                <title>RAMFile::RAMFile (const String &amp;name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1aa1ebd44c9f0bce259ebb7e30237898b7">
+                <title>void RAMFile::rename (String &amp;&amp;name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1a1a4028158ab5682c971e46fa2a2a96c1">
+                <title>void RAMFile::rename (const String &amp;name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1a69e5dfe959e700257fdec29f6b876466">
+                <title>AS_MACRO void RAMFile::resize (size_t newSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/dc8/class_r_a_m_file_1acb4162d7db5e0625c9f32efbf1e39346">
+                <title>AS_MACRO size_t RAMFile::size () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

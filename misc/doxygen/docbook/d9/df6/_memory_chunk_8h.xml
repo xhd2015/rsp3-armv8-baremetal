@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/df6/_memory_chunk_8h">
+    <title>MemoryChunk.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+<para>Include dependency diagram for MemoryChunk.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d72/_memory_chunk_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for MemoryChunk.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d14/_memory_chunk_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291d">@31</link> {
+<link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291da5b4cfdc6a6a982a87c8281fdeaf84056">ValidBits</link>= 6,
+<link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291da2678bd2bea40f825b3f6d50cb90a9818">IsEndBits</link>=1,
+<link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291da04d8f7bcec6936487be933e93fdc7f6e">AllocatedBits</link>=1,
+<link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291da8d035cd9d3bb5fc7e7f62131f3f016ac">SizeBits</link>=38,
+<link linkend="d9/df6/_memory_chunk_8h_1a0944a4353780132eeab7b06e3e42291dadc08ad37625e09a3bf007c48f44df38f">NextBaseBits</link>=18
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/df6/_memory_chunk_8h_1a4790f45dcc812c1b00184a2edccdddf5">@32</link> {
+<link linkend="d9/df6/_memory_chunk_8h_1a4790f45dcc812c1b00184a2edccdddf5ab78ec738867d4ceb1f19d3885f1b07fa">MaxSinlgeMoveBytes</link>= (1 &lt;&lt; ValidBits)
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1acd5fad81256e440dd3ca8721a6cb65cd">allocated</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1acaa4b4395beb36d3ebdd49670a4355b9">endMark</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1a34d0960b08c18c94de0bca020787120f">nextBaseFromEnd</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1a2cb6bd33324db601d38ee60e9c011c35">nextValidChunkOffset</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1af931a8871310b4dad23f0f0b0f623560">size</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> <link linkend="d9/df6/_memory_chunk_8h_1aa639612e57197101b4eae9694982cbdb">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1a70eca46e5e60131ac5231cc0ff3612bd">advanceByBytes</link> (
+size_t nbyte)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1a27a058ff0029e13aa516897bfe9badf2">endChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1a6db6e5b24b1e45f046a03c4cdd875b57">findAllocable</link> (
+size_t n, size_t alignment, size_t &amp; moveOffset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d9/df6/_memory_chunk_8h_1a3ad8c12778af2582d9f572abcaca088b">getDataEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d9/df6/_memory_chunk_8h_1a656a40a4a22d492e0df258d72e02aa74">getDataPtr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1a8bce7c2194f9d4413968a29e4a9f79bf">getNext</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1a8f5b3a07f038373a4fb8ea18561078c3">getNextBaseFromEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/df6/_memory_chunk_8h_1ae7e86a253e9da7fea3a1f1de01496ab2">getNextValidChunkOffset</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/df6/_memory_chunk_8h_1abf8b4288622637e58bc326d26ee4e682">getSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1a9f9a7bac7123aee75e4443caa5f7aab4">isAllocated</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1af5da5d32ab464e25e85838b4edb639c7">isEnd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/df6/_memory_chunk_8h_1ab00b3724e742475821d4471ec24f4707">MemoryChunk</link> (
+size_t size, bool allocated, size_t nextValidChunkOffset, bool endMark, size_t nextBaseFromEnd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1a5f0b645805ee747e1ef00ad1040128ea">mergeTrailingsUnallocated</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1a25a80fa5b218af411bb594531cf365c5">moveAhead</link> (
+size_t moveSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/df6/_memory_chunk_8h_1a8d664a02586b0bcbce28c7b2082810bb">moveOffsetOfAllocSuchAlignedSpace</link> (
+size_t allocSize, size_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1ad38f1c17af260e12611fa64b10daea67">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d1d/class_memory_chunk">MemoryChunk</link> * <link linkend="d9/df6/_memory_chunk_8h_1a06d102dd969d11d9ec6c4ffae6790969">nextValid</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1ae72fba2199ce3772cc99ae900ca2f2f7">offsetChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1abc726121b8a893229b1667fe30d2cbe3">setAllocated</link> (
+bool allocated)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1aad0f755e7d52e080dc2ca0b2d0ff959e">setEnd</link> (
+bool end)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1aa33776e898fc562d0042eb3a54ce5f46">setNextBaseFromEnd</link> (
+uint64_t nextBaseFromEnd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1a764454fad3f3afe6ee3695d1ddf85bce">setNextValidChunkOffset</link> (
+uint64_t nextValidChunkOffset)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/df6/_memory_chunk_8h_1acaed4ca6d16621655c8727c8043ba00e">setSize</link> (
+size_t size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1af23130c586f1a767e500f0dc08f605e0">split</link> (
+size_t splitSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/df6/_memory_chunk_8h_1acd63985af7d6514c9bc863342ec33ebd">validChunk</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/memory/MemoryChunk.h</para>
+    </simplesect>
+</section>

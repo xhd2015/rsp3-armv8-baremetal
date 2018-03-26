@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d5d/_f_a_t32_fs_info_8h">
+    <title>FAT32FsInfo.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+<para>Include dependency diagram for FAT32FsInfo.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dd9/_f_a_t32_fs_info_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT32FsInfo.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d5a/_f_a_t32_fs_info_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d50/class_f_a_t32_f_s_info">FAT32FSInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1abed82baf7f470b522273a3e37c24c600">@8</link> {
+<link linkend="d1/d5d/_f_a_t32_fs_info_8h_1abed82baf7f470b522273a3e37c24c600a1a1d1a0555609fa7905b8cebedc1068e">SEC_PRESENT</link>= 1,
+<link linkend="d1/d5d/_f_a_t32_fs_info_8h_1abed82baf7f470b522273a3e37c24c600a01c8dd8c968b9dc0b5edc064ed946c8e">SEC_COPY</link>=7
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1af5d9e0aff08147617a09dc19d207eafe">freeCount</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1abd7fc9dd84f5b291087c0b8ff0617972">leadSig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1a456cdbc01678df5d05eabb80f5aac9b0">nextFree</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1aed41fe36034f1fcda738da60943924a6">reserved1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1af6dc8e21f5c1ca5ca997fc835808802c">reserved2</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1af001750959f7224dda96010172e7ed0e">strucSig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1a51aef2737a556279fd7bc7a0ceb12d0a">trailSeg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="db/d50/class_f_a_t32_f_s_info">FAT32FSInfo</link> <link linkend="d1/d5d/_f_a_t32_fs_info_8h_1a8927d8fe6910bd29cf8618ae8a4405b7">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT32FsInfo.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,23 @@
+digraph "next"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node47 [label="next",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node47 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="DoublyLinkedList\< Process\l \>::removeHead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a2564bb946727d468f74ca80ec0319f19"];
+  Node47 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="DoublyLinkedNode::insert\lAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html#a0d65b0f098cbdb12bf2b6f0c199a6f04"];
+  Node49 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="DoublyLinkedList\< Process\l \>::insertTail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a780a0f1ed1ec3a3737feac65dd8e7089"];
+  Node49 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="DoublyLinkedList\< Process\l \>::insertNodeAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#ad97df8960522754a536b69855cb7fa28"];
+  Node47 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="DoublyLinkedNode::remove\lAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html#a8ea97f0e69176d082500bece1a9a1835"];
+  Node52 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="DoublyLinkedList\< Process\l \>::removeTail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a49461b435f972fe2832ab5ec374661c1"];
+  Node47 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="ForwardNode::insertAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/daa/class_forward_node.html#ad9ca1cb945541797522c7fd51bdbdbca"];
+  Node47 -> Node55 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="ForwardNode::removeAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/daa/class_forward_node.html#a1069bd95b0dae3c8a3737fd8df98ae37"];
+}

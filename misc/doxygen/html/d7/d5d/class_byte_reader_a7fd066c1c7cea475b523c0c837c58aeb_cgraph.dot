@@ -1,0 +1,17 @@
+digraph "ByteReader::readSectorToBuffer"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node69 [label="ByteReader::readSectorTo\lBuffer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node69 -> Node70 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 [label="ByteReader::ensureSector\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#ad0457bcdcb3380b159d0a614b3d20f20"];
+  Node70 -> Node71 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 [label="MemoryManager::allocateAs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78"];
+  Node71 -> Node72 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08"];
+  Node70 -> Node73 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node73 [label="ByteReader::getSectorSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a1557e32d37869577a89bfbbe4fa6af9a"];
+  Node69 -> Node74 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node74 [label="SectorReader::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/class_sector_reader.html#a5d254e10f28d3815bdd6baabb29570a4"];
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_crt/stolen_from_libgcc/memcpy.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_9498372ce2fd16a85d565c817675dd2b.html">minimal_crt</a></li><li class="navelem"><a class="el" href="../../dir_f0ec886aceeae2f34d7a577dece4327e.html">stolen_from_libgcc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">memcpy.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d16/memcpy_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Public domain.  */</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordtype">void</span> *</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d4/d16/memcpy_8c.html#ab68eb7b07f8ada1c6c8bde74731d3de7">    5</a></span>&#160;<a class="code" href="../../d4/d16/memcpy_8c.html#ab68eb7b07f8ada1c6c8bde74731d3de7">memcpy</a> (<span class="keywordtype">void</span> *dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">size_t</span> <a class="code" href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a>)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordtype">char</span> *d = dest;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *s = src;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a>--)</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    *d++ = *s++;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> dest;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div><div class="ttc" id="memcpy_8c_html_ab68eb7b07f8ada1c6c8bde74731d3de7"><div class="ttname"><a href="../../d4/d16/memcpy_8c.html#ab68eb7b07f8ada1c6c8bde74731d3de7">memcpy</a></div><div class="ttdeci">void * memcpy(void *dest, const void *src, size_t len)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d16/memcpy_8c_source.html#l00005">memcpy.c:5</a></div></div>
+<div class="ttc" id="_virtio_queue_descriptor_8h_html_a96bbf959016e4411c9e6b9812a8be60a"><div class="ttname"><a href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de0/_virtio_queue_descriptor_8h_source.html#l00039">VirtioQueueDescriptor.h:39</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:32 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

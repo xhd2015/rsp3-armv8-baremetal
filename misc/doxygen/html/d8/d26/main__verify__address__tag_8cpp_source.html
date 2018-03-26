@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_verify_address_tag.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_5131d8d8b01f1a86d9c7891f3508d9ef.html">qemu_virt</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main_verify_address_tag.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d26/main__verify__address__tag_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * main_vmsa.cpp</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Feb 10, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d1f/system__common__registers_8h.html">arch/common_aarch64/system_common_registers.h</a>&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="../../d8/d26/main__verify__address__tag_8cpp.html#ad3754da95f2efcf13a75f3a04cca44c4">main_end</a>[];</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// description: if TCR_EL.TBI0=1, then the highest 8 bits is address tag,and when loading address to PC the highest 8 bits are write as 0.</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// for details see program below.</span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d8/d26/main__verify__address__tag_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d8/d26/main__verify__address__tag_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// set exception vector of EL1</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a>(</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="stringliteral">&quot;ldr x0,=ExceptionVectorEL1 \n\t&quot;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="stringliteral">&quot;msr vbar_el1,x0 \n\t&quot;</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">RegMIDR_EL1::read</a>().<a class="code" href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">dump</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d9/d27/class_reg_current_e_l.html#a1e7d733bdf4ace8dd9c8f11945ec108a">RegCurrentEL::read</a>().<a class="code" href="../../d9/d27/class_reg_current_e_l.html#a9b0809d2cf0d000dd343f2518ab79ef4">dump</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">RegPAR_EL1::read</a>().<a class="code" href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">dump</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a> <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;at S1E1R,%0 \n\t&quot;</span>::<span class="stringliteral">&quot;r&quot;</span>(0x112233));</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">RegPAR_EL1::read</a>().<a class="code" href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">dump</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">RegID_AA64MMFR0_EL1::read</a>().<a class="code" href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">dump</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">RegTCR_EL1::read</a>().<a class="code" href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">dump</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a> &lt;&lt; <a class="code" href="../../d4/da4/def_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">INFO</a> &lt;&lt; <span class="stringliteral">&quot;end main.&quot;</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="ttc" id="class_reg_current_e_l_html_a1e7d733bdf4ace8dd9c8f11945ec108a"><div class="ttname"><a href="../../d9/d27/class_reg_current_e_l.html#a1e7d733bdf4ace8dd9c8f11945ec108a">RegCurrentEL::read</a></div><div class="ttdeci">static AS_MACRO RegCurrentEL read()</div></div>
+<div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="class_reg_current_e_l_html_a9b0809d2cf0d000dd343f2518ab79ef4"><div class="ttname"><a href="../../d9/d27/class_reg_current_e_l.html#a9b0809d2cf0d000dd343f2518ab79ef4">RegCurrentEL::dump</a></div><div class="ttdeci">AS_MACRO void dump() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1f/system__common__registers_8h_source.html#l00013">system_common_registers.h:13</a></div></div>
+<div class="ttc" id="main__verify__address__tag_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d8/d26/main__verify__address__tag_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d26/main__verify__address__tag_8cpp_source.html#l00014">main_verify_address_tag.cpp:14</a></div></div>
+<div class="ttc" id="system__common__registers_8h_html"><div class="ttname"><a href="../../d4/d1f/system__common__registers_8h.html">system_common_registers.h</a></div></div>
+<div class="ttc" id="def_8h_html_ae1103fea1e1b3c41ca3322d5389f7162"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">INFO</a></div><div class="ttdeci">#define INFO</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00016">def.h:16</a></div></div>
+<div class="ttc" id="exceptions_8cpp_html_a40b46c5cfd33825a3980572ace99e6a1"><div class="ttname"><a href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a></div><div class="ttdeci">__asm__(&quot;.text \&quot; &quot;.align 11 \&quot; &quot;.global ExceptionVectorEL1 \&quot; &quot;ExceptionVectorEL1:  \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x080 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x100 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x180 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x200 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x280 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x300 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x380 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x400 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x480 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x500 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x580 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x780 \&quot; &quot;. =. + 0x80 \&quot;)</div></div>
+<div class="ttc" id="class_reg_x0_html_ab6be2e72fc21d7c8d23255d01f61b553"><div class="ttname"><a href="../../d9/df4/class_reg_x0.html#ab6be2e72fc21d7c8d23255d01f61b553">RegX0::dump</a></div><div class="ttdeci">AS_MACRO void dump() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/de4/general__registers_8h_source.html#l00011">general_registers.h:11</a></div></div>
+<div class="ttc" id="_output_8h_html_ae879b048a9eddaf9ee4e0dbe932ea6c9"><div class="ttname"><a href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a></div><div class="ttdeci">Output kout</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00015">global_variables_impl.cpp:15</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+<div class="ttc" id="main__verify__address__tag_8cpp_html_ad3754da95f2efcf13a75f3a04cca44c4"><div class="ttname"><a href="../../d8/d26/main__verify__address__tag_8cpp.html#ad3754da95f2efcf13a75f3a04cca44c4">main_end</a></div><div class="ttdeci">char main_end[]</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

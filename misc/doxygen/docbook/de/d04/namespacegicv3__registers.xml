@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d04/namespacegicv3__registers">
+<title>gicv3_registers</title>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>list <link linkend="de/d04/namespacegicv3__registers_1aa8524189e1064d1a4aba1787c13cbfa3">reg_list</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

@@ -1,0 +1,35 @@
+include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
+include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
+
+
+# gic-version = 2
+QEMU_COMMON_ARGS := -machine xlnx-zcu102 -cpu cortex-a53  -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -drive file=sd.bin,if=sd,index=1,format=raw
+.PHONY:qemu-run qemu-debug
+qemu-run:
+	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS)
+qemu-debug:
+	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS) -S -s	
+	
+# 必须保证物理文件sd.bin的真实大小有至少2个扇区
+# 否则写入超过多余实际扇区时可能超时。
+sd.bin:FORCE
+	echo 'SD.BIN:what ever do you have in me?I do notknow.........................RAMDOM' > sd.bin
+	echo 'HELLO' > tmp
+	dd if=tmp of=sd.bin seek=512 bs=1c count=10
+
+# 通过dd将用户程序嵌入到内核镜像中
+$(MASTERY_BINARY):FORCE
+	@$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
+	$(MAKE) $(MASTERY_ELF)
+	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
+
+$(MASTERY_RELOC):
+	# 改变IMAGE_BASE的值，然后编译生成即可
+	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
+	mv $(MASTERY_ELF) $@
+dump-reloc:
+	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
+.PHONY:dump-reloc
+
+# CLEAN-ALL-LIST增加
+CLEAN-ALL-LIST += $(MASTERY_RELOC) $(MASTERY_BINARY) $(MASTERY_ELF)

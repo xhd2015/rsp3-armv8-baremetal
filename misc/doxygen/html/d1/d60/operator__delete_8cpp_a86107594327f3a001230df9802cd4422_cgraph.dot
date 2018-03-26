@@ -1,0 +1,18 @@
+digraph "operator delete"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="operator delete",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="MemoryManager::deallocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a41a3c946c368918bdb6e4b441080fb8b"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MemoryChunk::isAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae4ec0a942bb577ece9a1ec0413ba829f"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MemoryChunk::setAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae1d0e05382c171f1720f5b3d0fc62eab"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MemoryChunk::mergeTrailings\lUnallocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aaa4324b78e79aaf3c4ec5062d0bddba4"];
+  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MemoryChunk::isEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a77532081c761e7680970a9dcb0c29660"];
+}

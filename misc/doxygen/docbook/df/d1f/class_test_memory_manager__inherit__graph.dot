@@ -1,0 +1,6 @@
+digraph "TestMemoryManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node881 [label="{TestMemoryManager\n||+ alignedAllocateCorrectly()\l+ allocateCorrectly()\l+ criticalConditionsStillCorrectly()\l+ deallocateCorrectly()\l+ memoryChunkMergeCorrectly()\l+ memoryChunkSpiltCorrectly()\l+ nextChunkCorrectly()\l+ reallocateInPlaceCollect\lCorrectly()\l+ reallocateOutOfPlaceMove\lCorrectly()\l+ reallocateSmallerCorrectly()\l+ TestMemoryManager()\l+ uncontiguousChunkMemoryAllocate\lCorrectly()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

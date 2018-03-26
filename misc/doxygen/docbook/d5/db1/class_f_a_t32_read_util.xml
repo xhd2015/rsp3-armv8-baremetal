@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/db1/class_f_a_t32_read_util">
+<title>FAT32ReadUtil class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d6/dbc/_f_a_t32_read_util_8h">&quot;FAT32ReadUtil.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT32ReadUtil</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d46/class_f_a_t32_read_util__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT32ReadUtil</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d90/class_f_a_t32_read_util__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d5/db2/class_vector">Vector</link>&lt; const <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * &gt; <link linkend="d5/db1/class_f_a_t32_read_util_1a09d5a6595c2f2bcc45f018f5556205e9">filterInDirFileEntries</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> &gt; &amp; entries)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1ab8e4ea1ab59d70f92b681cdac7a5db70">findByLongName</link> (
+const <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * content, size_t itemCount, const char * asciiLongName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1a540afa3daeb5666af149ccc05c2fbf91">findByShortName</link> (
+const <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> * content, size_t itemCount, const char * mainPart, const char * extPart)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1a336973b6a4ede1dcbabca57314aff045">findFirstFreeClusterIndex</link> (
+const <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> * fat, size_t itemCount, size_t startFrom)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1a3dd71e3f17001aa5046b92e612b5cd96">getEntryCount</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> &gt; &amp; fat, size_t beginIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1a604c3d03de465983eb1fd2a6e52ac349">getLastClusterIndex</link> (
+const <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> * fat, size_t startCluster)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db1/class_f_a_t32_read_util_1a2c5d3bf2993769b46815ad17551a8a43">getNextEntryIndex</link> (
+const <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> * fat, size_t clusterIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d5/db2/class_vector">Vector</link>&lt; <link linkend="dc/d93/class_f_a_t_dir_entry">FATDirEntry</link> &gt; <link linkend="d5/db1/class_f_a_t32_read_util_1aaea962006ced5497f3c00f3340065b9e">readAllDirEntries</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> &gt; &amp; fat, size_t beginIndex, const <link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> * ebpb, <link linkend="de/de9/class_sector_reader">SectorReader</link> &amp; sreader)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a09d5a6595c2f2bcc45f018f5556205e9">
+                <title>Vector&lt; const FATDirEntry * &gt; FAT32ReadUtil::filterInDirFileEntries (const Vector&lt; FATDirEntry &gt; &amp;entries)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1ab8e4ea1ab59d70f92b681cdac7a5db70">
+                <title>size_t FAT32ReadUtil::findByLongName (const FATDirEntry *content, size_t itemCount, const char *asciiLongName)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a540afa3daeb5666af149ccc05c2fbf91">
+                <title>size_t FAT32ReadUtil::findByShortName (const FATDirEntry *content, size_t itemCount, const char *mainPart, const char *extPart)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a336973b6a4ede1dcbabca57314aff045">
+                <title>size_t FAT32ReadUtil::findFirstFreeClusterIndex (const FAT32Entry *fat, size_t itemCount, size_t startFrom)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a3dd71e3f17001aa5046b92e612b5cd96">
+                <title>size_t FAT32ReadUtil::getEntryCount (const Vector&lt; FAT32Entry &gt; &amp;fat, size_t beginIndex)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a604c3d03de465983eb1fd2a6e52ac349">
+                <title>size_t FAT32ReadUtil::getLastClusterIndex (const FAT32Entry *fat, size_t startCluster)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1a2c5d3bf2993769b46815ad17551a8a43">
+                <title>size_t FAT32ReadUtil::getNextEntryIndex (const FAT32Entry *fat, size_t clusterIndex)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db1/class_f_a_t32_read_util_1aaea962006ced5497f3c00f3340065b9e">
+                <title>Vector&lt; FATDirEntry &gt; FAT32ReadUtil::readAllDirEntries (const Vector&lt; FAT32Entry &gt; &amp;fat, size_t beginIndex, const FAT32ExtBPB *ebpb, SectorReader &amp;sreader)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

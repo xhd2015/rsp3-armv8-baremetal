@@ -344,6 +344,7 @@ SDDriver::CommandStatus     SDDriver::transferCommand(uint32_t cmd,uint32_t arg,
 
 size_t   SDDriver::readSingleBlockNoDMA(size_t startSec,void * buffer)
 {
+	clearIntErrStatus();
 	auto oriMode=_transferMode;
 	_transferMode = bitOnes<4>();
 	// read single block
@@ -383,8 +384,70 @@ size_t   SDDriver::readSingleBlockNoDMA(size_t startSec,void * buffer)
 	return 1;
 }
 
+/**
+ * 实现与图表稍微有区别，主要是初次读时，Buffer Read Ready状态可能没有设置
+ * @param startSec
+ * @param blocks
+ * @param buffer
+ * @return
+ */
+size_t    SDDriver::readBlocksNoDMA(size_t startSec,size_t blocks,void * buffer)
+{
+	clearIntErrStatus();
+	auto oriMode=_transferMode;
+	_transferMode = bitOnes<1,4,5>();
+	if(!transferCommand(CMD18, startSec, blocks))
+	{
+		_transferMode=oriMode;
+		return 0;
+	}
+//	SDCardStatus{reg32<R::reg_response0>()}.dump();
+
+	// 读取一个扇区的数据直到完成
+	size_t readBytesPer = 4;
+	auto typedBuffer = reinterpret_cast<uint32_t*>(buffer);
+	size_t nitems= _blockSize/readBytesPer;
+	auto p=typedBuffer;
+	for(size_t blk=0;blk!=blocks;++blk)
+	{
+
+		// 读和写稍微有点区别，初次读可能没有设置Buffer Read Ready状态
+		if(blk>0)
+		{
+			// 等待ready
+			while(bitsNonSet<5>(reg16<R::reg_normalintrsts>()))
+				;
+		}
+		reg16<R::reg_normalintrsts>() = bitOnes<5>();
+
+
+		for(size_t i=0;i<nitems;++i,++p)
+		{
+			*p = reg32<R::reg_dataport>();
+//			kout << "blk = " << blk << ", i = " << i << ", intstatus="<<Hex(reg16<R::reg_normalintrsts>() ) << "\n";
+
+		}
+	}
+
+	// UPDATE: 发送CMD12是没有必要的，会引起内部状态的错误。
+	// 如果没有设置AUTO CMD12，则手动发送
+	// 发送STOP
+//	if(!transferCommand(CMD12, 0, 0))return 0;
+
+
+	// 等待传输完成
+//	uint16_t dbg;
+	while(bitsNonSet<1>(reg16<R::reg_normalintrsts>()))
+		;
+	// 清除该位
+	reg16<R::reg_normalintrsts>()=bitOnes<1>();
+
+	return blocks;
+}
+
 size_t    SDDriver::writeSingleBlockNoDMA(size_t startSec,const void *buffer)
 {
+	clearIntErrStatus();
 	auto oriMode=_transferMode;
 	_transferMode = 0;
 
@@ -420,7 +483,59 @@ size_t    SDDriver::writeSingleBlockNoDMA(size_t startSec,const void *buffer)
 	return 1;
 }
 
-uint32_t  SDDriver::cardStatus()
+/**
+ * 参考 misc\external\mmc\xilinx_sd_read_write\NonDMA_Data_Transaction_3.png
+ * 注意，在QEMU下，当写入多个扇区时，必须保证物理文件具有blocks个扇区，否则可能产生TimeOutError
+ * @param startSec
+ * @param blocks
+ * @param buffer
+ * @return
+ */
+size_t    SDDriver::writeBlocksNoDMA(size_t startSec,size_t blocks,const void *buffer)
+{
+	clearIntErrStatus();
+	auto oriMode=_transferMode;
+	_transferMode = bitOnes<1,2,5>();
+
+	// 写入多个块
+	if(!transferCommand(CMD25, startSec, blocks))
+	{
+		_transferMode = oriMode;
+		return 0;
+	}
+//	SDCardStatus{reg32<R::reg_response0>()}.dump();
+
+	size_t writeBytesPer = 4;
+	auto typedBuffer = reinterpret_cast<const uint32_t*>(buffer);
+	size_t nitems=_blockSize/writeBytesPer;
+	auto p = typedBuffer;
+	for(size_t blk=0;blk<blocks;++blk)
+	{
+		// 等待直到数据可写入
+		while(bitsNonSet<4>(reg16<R::reg_normalintrsts>()))
+			;
+		// 清除
+		reg16<R::reg_normalintrsts>() = bitOnes<4>();
+
+		for(size_t i=0;i<nitems;++i,++p)
+		{
+			reg32<R::reg_dataport>() = *p;
+//			kout << "blk = " << blk << ", i = " << i << ", intstatus="<<Hex(reg16<R::reg_normalintrsts>() ) << "\n";
+		}
+	}
+
+	// 等待本次传输完成
+	while(bitsNonSet<1>(reg16<R::reg_normalintrsts>()))
+			;
+	reg16<R::reg_normalintrsts>()=bitOnes<1>();
+
+	// not necesarry
+//	if(!transferCommand(CMD12, 0, 0)){_transferMode=oriMode;return 0;}
+
+	return blocks;
+}
+
+SDCardStatus  SDDriver::cardStatus()
 {
 	if(!transferCommand(CMD13, _relativeCardAddr, 0))return 0;
 	return reg32<R::reg_response0>();

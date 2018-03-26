@@ -1,0 +1,16 @@
+digraph "ProcessManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node733 [label="{ProcessManager\n||+ changeProcessStatus()\l+ changeProcessStatus()\l+ createNewProcess()\l+ currentRunningProcess()\l+ forkProcess()\l+ killProcess()\l+ ProcessManager()\l+ scheduleNextProcess()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node734 -> Node733 [color="grey25",fontsize="10",style="solid",label=" -_statedProcessList" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node734 [label="{DoublyLinkedList\< Process \>\n||+ clear()\l+ DEFINE_COPY_CONSTRUCTOR()\l+ DEFINE_COPY_OPERATOR()\l+ DEFINE_MOVE_CONSTRUCTOR()\l+ DEFINE_MOVE_OPERATOR()\l+ DoublyLinkedList()\l+ empty()\l+ head()\l+ head()\l+ insertHead()\l和 16 更多...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html"];
+  Node735 -> Node734 [color="grey25",fontsize="10",style="solid",label=" -_tail\n-_head" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node735 [label="{DoublyLinkedNode\< T \>\n||+ data()\l+ data()\l+ data()\l+ DEFINE_COPY_CONSTRUCTOR()\l+ DEFINE_COPY_OPERATOR()\l+ DEFINE_MOVE_CONSTRUCTOR()\l+ DEFINE_MOVE_OPERATOR()\l+ DoublyLinkedNode()\l+ DoublyLinkedNode()\l+ insertAfter()\l和 11 更多...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html"];
+  Node735 -> Node735 [color="grey25",fontsize="10",style="solid",label=" -_next\n-_previous" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node736 -> Node735 [color="grey25",fontsize="10",style="solid",label=" -_data" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node736 [label="{T\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node737 -> Node734 [dir="back",color="orange",fontsize="10",style="solid",label=" \< Process \>" ,fontname="Helvetica"];
+  Node737 [label="{DoublyLinkedList\< T \>\n||+ clear()\l+ DEFINE_COPY_CONSTRUCTOR()\l+ DEFINE_COPY_OPERATOR()\l+ DEFINE_MOVE_CONSTRUCTOR()\l+ DEFINE_MOVE_OPERATOR()\l+ DoublyLinkedList()\l+ empty()\l+ head()\l+ head()\l+ insertHead()\l和 16 更多...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html"];
+  Node735 -> Node737 [color="grey25",fontsize="10",style="solid",label=" -_tail\n-_head" ,arrowhead="odiamond",fontname="Helvetica"];
+}

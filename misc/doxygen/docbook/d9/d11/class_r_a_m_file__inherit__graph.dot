@@ -1,0 +1,6 @@
+digraph "RAMFile"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node741 [label="{RAMFile\n|- _data\l- _name\l|+ content()\l+ diskSize()\l+ emplaceAppend()\l+ RAMFile()\l+ rename()\l+ rename()\l+ resize()\l+ size()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

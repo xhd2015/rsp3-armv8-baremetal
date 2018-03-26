@@ -1,0 +1,19 @@
+digraph "DoublyLinkedList::removeHead"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node70 [label="DoublyLinkedList::removeHead",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node70 -> Node71 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 [label="TestDoublyLinkedList\l::addAndRemoveCorrectly",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dbb/class_test_doubly_linked_list.html#a213f65b1d37dde14c0d37e4b7b08af72"];
+  Node71 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 [label="TestDoublyLinkedList::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dbb/class_test_doubly_linked_list.html#ab6bf21c4d7e82494e2283c0ae636dd1f"];
+  Node72 -> Node73 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node73 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d40/main__debug___pid_manager_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node70 -> Node74 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node74 [label="TestDoublyLinkedList\l::removeNodeCorrectly",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dbb/class_test_doubly_linked_list.html#a77f492c2e602eda06d9c7e2e0d9655d7"];
+  Node74 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 -> Node75 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 [label="TestDoublyLinkedList\l::insertAfterTailCorrectly",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dbb/class_test_doubly_linked_list.html#adeae951f50b0ca5f9c158637630aaa86"];
+  Node75 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

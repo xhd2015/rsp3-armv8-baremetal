@@ -1,0 +1,15 @@
+digraph "MemoryManager::MemoryManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="MemoryManager::MemoryManager",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MemoryChunk::setEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a01854d44de711dc83c31b64dc4b247f1"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MemoryChunk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html#ab00b3724e742475821d4471ec24f4707"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MemoryChunk::getDataEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a71a93ac48c88dbaeceb31d1450ffc3c5"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="setEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html#aad0f755e7d52e080dc2ca0b2d0ff959e"];
+}

@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: FAT32ExtBPB类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../df/d66/class_f_a_t32_ext_b_p_b-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">FAT32ExtBPB类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 FAT32ExtBPB 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/d79/class_f_a_t32_ext_b_p_b__inherit__graph.png" border="0" usemap="#_f_a_t32_ext_b_p_b_inherit__map" alt="Inheritance graph"/></div>
+<map name="_f_a_t32_ext_b_p_b_inherit__map" id="_f_a_t32_ext_b_p_b_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> FAT32ExtBPB 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d0/de1/class_f_a_t32_ext_b_p_b__coll__graph.png" border="0" usemap="#_f_a_t32_ext_b_p_b_coll__map" alt="Collaboration graph"/></div>
+<map name="_f_a_t32_ext_b_p_b_coll__map" id="_f_a_t32_ext_b_p_b_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7c866bfcedcc56bb2fe2dba9e719c3f3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a7c866bfcedcc56bb2fe2dba9e719c3f3a17c2f8d74d84cacaba93689a2e4e07d5">BIT_MASK</a> = 0x0FFFFFFF, 
+<a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a7c866bfcedcc56bb2fe2dba9e719c3f3a8e8fce5bc695aeae213a1b12944941f9">ENTRY_SIZE</a> = 32
+ }</td></tr>
+<tr class="separator:a7c866bfcedcc56bb2fe2dba9e719c3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_f_a_t___b_p_b"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_f_a_t___b_p_b')"><img src="../../closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html">FAT_BPB</a></td></tr>
+<tr class="memitem:a36356d8cdf2516bb2e639a5bf7fe869e inherit pub_types_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a36356d8cdf2516bb2e639a5bf7fe869eaa8c54c4c1ca0af1860cc65b6fae5b00c">SEC_PRESENT</a> = 0, 
+<a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a36356d8cdf2516bb2e639a5bf7fe869ea1b06fd5e0e52f54555c0073417854593">SEC_COPY</a> = 6
+ }</td></tr>
+<tr class="separator:a36356d8cdf2516bb2e639a5bf7fe869e inherit pub_types_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92c3e52a0ef556c967cc78c0afbfee5 inherit pub_types_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FATType</a> { <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5a08aefd15c6ad67d72cad3c7ce61eaefc">FAT12</a>, 
+<a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5afdeb09ce01da744e7b4d512eacf73dc7">FAT16</a>, 
+<a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5a6e579157a8db4566f6d81c7c91b1f074">FAT32</a>, 
+<a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5a8ddb3c222f694dfb53e016df16205dba">UNKNOWN</a>
+ }</td></tr>
+<tr class="separator:ad92c3e52a0ef556c967cc78c0afbfee5 inherit pub_types_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a7a935df740ebd0a570fe952d8f6bbe72"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a7a935df740ebd0a570fe952d8f6bbe72">calculateFATSz32</a> (size_t diskSize) const</td></tr>
+<tr class="separator:a7a935df740ebd0a570fe952d8f6bbe72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a40acb5ea32f9ec27676bd89545e10c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a6a40acb5ea32f9ec27676bd89545e10c">getClusterByteSize</a> () const</td></tr>
+<tr class="separator:a6a40acb5ea32f9ec27676bd89545e10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2380f02e3a09af68485c3d72922ebc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#afd2380f02e3a09af68485c3d72922ebc">getClusterEntryOffset</a> (size_t fatNo, size_t n) const</td></tr>
+<tr class="separator:afd2380f02e3a09af68485c3d72922ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259fa4e7dd83731e9d7c20ce0df5b41d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a259fa4e7dd83731e9d7c20ce0df5b41d">getClusterFirstSector</a> (size_t n) const</td></tr>
+<tr class="separator:a259fa4e7dd83731e9d7c20ce0df5b41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da5088163854f58c89a14c65bfa1799"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a9da5088163854f58c89a14c65bfa1799">getFATType</a> () const</td></tr>
+<tr class="separator:a9da5088163854f58c89a14c65bfa1799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b048c794b787a6645a1fd4d6ec8d919"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a7b048c794b787a6645a1fd4d6ec8d919">getRootDirFirstSector</a> () const</td></tr>
+<tr class="separator:a7b048c794b787a6645a1fd4d6ec8d919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2e44fbdc2ea6a51e1afc1ddaa556bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#acb2e44fbdc2ea6a51e1afc1ddaa556bf">uni_determineFATType</a> () const</td></tr>
+<tr class="separator:acb2e44fbdc2ea6a51e1afc1ddaa556bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26721a9ac6f0cea2092911895e841682"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a26721a9ac6f0cea2092911895e841682">uni_getClustersCount</a> () const</td></tr>
+<tr class="separator:a26721a9ac6f0cea2092911895e841682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bda1eded904b8b0076027d4aba9983"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ae6bda1eded904b8b0076027d4aba9983">uni_getDataRegionSectorCount</a> () const</td></tr>
+<tr class="separator:ae6bda1eded904b8b0076027d4aba9983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fa1e2d61c822e8f2b5c2785b2ac9b3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ad9fa1e2d61c822e8f2b5c2785b2ac9b3">uni_getFatSize</a> () const</td></tr>
+<tr class="separator:ad9fa1e2d61c822e8f2b5c2785b2ac9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ddfdaaa1001d8d0653912cd415f5e8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a27ddfdaaa1001d8d0653912cd415f5e8">uni_getTotalSecCount</a> () const</td></tr>
+<tr class="separator:a27ddfdaaa1001d8d0653912cd415f5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_f_a_t___b_p_b"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_f_a_t___b_p_b')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html">FAT_BPB</a></td></tr>
+<tr class="memitem:aa2d2ec0fce1b586551a28cde754417da inherit pub_methods_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#aa2d2ec0fce1b586551a28cde754417da">getFATType</a> () const</td></tr>
+<tr class="separator:aa2d2ec0fce1b586551a28cde754417da inherit pub_methods_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4332d528545370498cd33e7bbc2038 inherit pub_methods_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#adb4332d528545370498cd33e7bbc2038">uni_getRootDirSecCount</a> () const</td></tr>
+<tr class="separator:adb4332d528545370498cd33e7bbc2038 inherit pub_methods_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a9a8f4ebc3bb94bf41201c2a47704cfc9"><td class="memItemLeft" align="right" valign="top">enum FAT32ExtBPB:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a9a8f4ebc3bb94bf41201c2a47704cfc9">__attribute__</a></td></tr>
+<tr class="separator:a9a8f4ebc3bb94bf41201c2a47704cfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7056bd1155c1a88c728b8ab6600c6650"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a7056bd1155c1a88c728b8ab6600c6650">bkBootSe</a></td></tr>
+<tr class="separator:a7056bd1155c1a88c728b8ab6600c6650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53392be470dfc9b24ce5f6adecc8762b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a53392be470dfc9b24ce5f6adecc8762b">BS_BootSig</a></td></tr>
+<tr class="separator:a53392be470dfc9b24ce5f6adecc8762b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148e8b69e893e9cdc6c7b19e6c9e6d96"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a148e8b69e893e9cdc6c7b19e6c9e6d96">BS_DrvNum</a></td></tr>
+<tr class="separator:a148e8b69e893e9cdc6c7b19e6c9e6d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3456340678d29be4bcb49ce99c3269"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#add3456340678d29be4bcb49ce99c3269">BS_FilSysType</a> [8]</td></tr>
+<tr class="separator:add3456340678d29be4bcb49ce99c3269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e27e19c0b5601ae61367db41ff7839"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a92e27e19c0b5601ae61367db41ff7839">BS_Reserved1</a></td></tr>
+<tr class="separator:a92e27e19c0b5601ae61367db41ff7839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e733a1b3a86855e6f35bec8daa1b19"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a73e733a1b3a86855e6f35bec8daa1b19">BS_VolID</a></td></tr>
+<tr class="separator:a73e733a1b3a86855e6f35bec8daa1b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077b20ca48c26e0f2f974da7b8b8f242"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a077b20ca48c26e0f2f974da7b8b8f242">BS_VolLab</a> [11]</td></tr>
+<tr class="separator:a077b20ca48c26e0f2f974da7b8b8f242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc3c3fc402f6012e407b67d22a93a32"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#aacc3c3fc402f6012e407b67d22a93a32">extFlags</a></td></tr>
+<tr class="separator:aacc3c3fc402f6012e407b67d22a93a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53de6deaf9554db9ffbf12386754312"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ad53de6deaf9554db9ffbf12386754312">FATSz32</a></td></tr>
+<tr class="separator:ad53de6deaf9554db9ffbf12386754312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae052ebeb66f6da7a07a756a4290abe54"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ae052ebeb66f6da7a07a756a4290abe54">FSInfo</a></td></tr>
+<tr class="separator:ae052ebeb66f6da7a07a756a4290abe54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7e1019d20535b069b530ad44a17c2c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#aec7e1019d20535b069b530ad44a17c2c">FSVer</a></td></tr>
+<tr class="separator:aec7e1019d20535b069b530ad44a17c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a1acf50f110b6d9382086e0c2af81f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ab9a1acf50f110b6d9382086e0c2af81f">reserved</a> [12]</td></tr>
+<tr class="separator:ab9a1acf50f110b6d9382086e0c2af81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac639169d7148b79c3309f927e70f6ca8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ac639169d7148b79c3309f927e70f6ca8">rootClus</a></td></tr>
+<tr class="separator:ac639169d7148b79c3309f927e70f6ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d38b3cdc22644ef3105e8dd42c627f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#a77d38b3cdc22644ef3105e8dd42c627f">Signature_word</a></td></tr>
+<tr class="separator:a77d38b3cdc22644ef3105e8dd42c627f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab415801cab510e227cac6e825c7af66e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd1/class_f_a_t32_ext_b_p_b.html#ab415801cab510e227cac6e825c7af66e">undefined</a> [420]</td></tr>
+<tr class="separator:ab415801cab510e227cac6e825c7af66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_f_a_t___b_p_b"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_f_a_t___b_p_b')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html">FAT_BPB</a></td></tr>
+<tr class="memitem:a02e21f9887519908e64abf51f65c428b inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a02e21f9887519908e64abf51f65c428b">__attribute__</a></td></tr>
+<tr class="separator:a02e21f9887519908e64abf51f65c428b inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a50ec90fbd7078f8768baa9572c8b5 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a66a50ec90fbd7078f8768baa9572c8b5">BS_jmpBoot</a> [3]</td></tr>
+<tr class="separator:a66a50ec90fbd7078f8768baa9572c8b5 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3d830faf1bb9f2d5eb901aa8509f23 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a3e3d830faf1bb9f2d5eb901aa8509f23">BS_OEMName</a> [8]</td></tr>
+<tr class="separator:a3e3d830faf1bb9f2d5eb901aa8509f23 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad31c0c03fe060cbad4265a993fbbfc inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#adad31c0c03fe060cbad4265a993fbbfc">bytesPerSec</a></td></tr>
+<tr class="separator:adad31c0c03fe060cbad4265a993fbbfc inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a932261a0005628cf537c7af7294a6 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad5a932261a0005628cf537c7af7294a6">FATSz16</a></td></tr>
+<tr class="separator:ad5a932261a0005628cf537c7af7294a6 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339564dd1f910f7445dde6cce18fa54e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a339564dd1f910f7445dde6cce18fa54e">hiddSec</a></td></tr>
+<tr class="separator:a339564dd1f910f7445dde6cce18fa54e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc796deb1e8796e675559df53d0d1a5 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#adbc796deb1e8796e675559df53d0d1a5">media</a></td></tr>
+<tr class="separator:adbc796deb1e8796e675559df53d0d1a5 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fb86e9943b4a7ed8c0de2d9572956b inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#af7fb86e9943b4a7ed8c0de2d9572956b">numFATs</a></td></tr>
+<tr class="separator:af7fb86e9943b4a7ed8c0de2d9572956b inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9220d1dbe772f590b0cd389dd3750e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a6a9220d1dbe772f590b0cd389dd3750e">numHeads</a></td></tr>
+<tr class="separator:a6a9220d1dbe772f590b0cd389dd3750e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe4f5ca3629d8273c691d7842eec23e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#aefe4f5ca3629d8273c691d7842eec23e">rootEntCnt</a></td></tr>
+<tr class="separator:aefe4f5ca3629d8273c691d7842eec23e inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaacf886bb4c92be0904bce2e175cfa1 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#afaacf886bb4c92be0904bce2e175cfa1">rsvdSecCnt</a></td></tr>
+<tr class="separator:afaacf886bb4c92be0904bce2e175cfa1 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c158bcf5c992ec435817fdb09082378 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a6c158bcf5c992ec435817fdb09082378">secPerClus</a></td></tr>
+<tr class="separator:a6c158bcf5c992ec435817fdb09082378 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5649128666117681eac25dcd666047 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#a0a5649128666117681eac25dcd666047">secPerTrk</a></td></tr>
+<tr class="separator:a0a5649128666117681eac25dcd666047 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ad155c5b5c2cef096e6871fc4fa249 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ae0ad155c5b5c2cef096e6871fc4fa249">totSec16</a></td></tr>
+<tr class="separator:ae0ad155c5b5c2cef096e6871fc4fa249 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0052527e58b6b55fb2b43590aded26 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#add0052527e58b6b55fb2b43590aded26">totSec32</a></td></tr>
+<tr class="separator:add0052527e58b6b55fb2b43590aded26 inherit pub_attribs_class_f_a_t___b_p_b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>NOTE: if you are given a raw data of an FAT header,you do not know what kind is it.Then you can safely assume that it is an FAT32 filesystem type,and use methods prefixed with uni_ (which means universal) to retrieve information from it. Once you get the realy type of it(through uni_determineFATType()),then you can cast that region of memory to ExtBPB32 or <a class="el" href="../../d3/db9/class_ext_b_p_b16.html">ExtBPB16</a>, and use non-prefixed method of that class. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00017">17</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a7c866bfcedcc56bb2fe2dba9e719c3f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c866bfcedcc56bb2fe2dba9e719c3f3">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a7c866bfcedcc56bb2fe2dba9e719c3f3a17c2f8d74d84cacaba93689a2e4e07d5"></a>BIT_MASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7c866bfcedcc56bb2fe2dba9e719c3f3a8e8fce5bc695aeae213a1b12944941f9"></a>ENTRY_SIZE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7a935df740ebd0a570fe952d8f6bbe72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a935df740ebd0a570fe952d8f6bbe72">&#9670;&nbsp;</a></span>calculateFATSz32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32ExtBPB::calculateFATSz32 </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>diskSize</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a40acb5ea32f9ec27676bd89545e10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a40acb5ea32f9ec27676bd89545e10c">&#9670;&nbsp;</a></span>getClusterByteSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::getClusterByteSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00072">72</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a6a40acb5ea32f9ec27676bd89545e10c_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a6a40acb5ea32f9ec27676bd89545e10c_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a6a40acb5ea32f9ec27676bd89545e10c_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a6a40acb5ea32f9ec27676bd89545e10c_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd2380f02e3a09af68485c3d72922ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2380f02e3a09af68485c3d72922ebc">&#9670;&nbsp;</a></span>getClusterEntryOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::getClusterEntryOffset </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fatNo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a259fa4e7dd83731e9d7c20ce0df5b41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259fa4e7dd83731e9d7c20ce0df5b41d">&#9670;&nbsp;</a></span>getClusterFirstSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::getClusterFirstSector </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00036">36</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a259fa4e7dd83731e9d7c20ce0df5b41d_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a259fa4e7dd83731e9d7c20ce0df5b41d_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a259fa4e7dd83731e9d7c20ce0df5b41d_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a259fa4e7dd83731e9d7c20ce0df5b41d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9da5088163854f58c89a14c65bfa1799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da5088163854f58c89a14c65bfa1799">&#9670;&nbsp;</a></span>getFATType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a> FAT32ExtBPB::getFATType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7b048c794b787a6645a1fd4d6ec8d919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b048c794b787a6645a1fd4d6ec8d919">&#9670;&nbsp;</a></span>getRootDirFirstSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::getRootDirFirstSector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00046">46</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_cgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_cgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_cgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_cgraph">
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a7b048c794b787a6645a1fd4d6ec8d919_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="acb2e44fbdc2ea6a51e1afc1ddaa556bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2e44fbdc2ea6a51e1afc1ddaa556bf">&#9670;&nbsp;</a></span>uni_determineFATType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6e/class_f_a_t___b_p_b.html#ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</a> FAT32ExtBPB::uni_determineFATType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00051">51</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_cgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_cgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_cgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_cgraph">
+</map>
+</div>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_acb2e44fbdc2ea6a51e1afc1ddaa556bf_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26721a9ac6f0cea2092911895e841682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26721a9ac6f0cea2092911895e841682">&#9670;&nbsp;</a></span>uni_getClustersCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::uni_getClustersCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00027">27</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_cgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_cgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_cgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_cgraph">
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a26721a9ac6f0cea2092911895e841682_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae6bda1eded904b8b0076027d4aba9983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6bda1eded904b8b0076027d4aba9983">&#9670;&nbsp;</a></span>uni_getDataRegionSectorCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::uni_getDataRegionSectorCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00021">21</a> 行定义.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_cgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_cgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_cgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_cgraph">
+</map>
+</div>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_ae6bda1eded904b8b0076027d4aba9983_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9fa1e2d61c822e8f2b5c2785b2ac9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fa1e2d61c822e8f2b5c2785b2ac9b3">&#9670;&nbsp;</a></span>uni_getFatSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::uni_getFatSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00010">10</a> 行定义.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_ad9fa1e2d61c822e8f2b5c2785b2ac9b3_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_ad9fa1e2d61c822e8f2b5c2785b2ac9b3_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_ad9fa1e2d61c822e8f2b5c2785b2ac9b3_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_ad9fa1e2d61c822e8f2b5c2785b2ac9b3_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a27ddfdaaa1001d8d0653912cd415f5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ddfdaaa1001d8d0653912cd415f5e8">&#9670;&nbsp;</a></span>uni_getTotalSecCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FAT32ExtBPB::uni_getTotalSecCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a> 第 <a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html#l00015">15</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/dd1/class_f_a_t32_ext_b_p_b_a27ddfdaaa1001d8d0653912cd415f5e8_icgraph.png" border="0" usemap="#da/dd1/class_f_a_t32_ext_b_p_b_a27ddfdaaa1001d8d0653912cd415f5e8_icgraph" alt=""/></div>
+<map name="da/dd1/class_f_a_t32_ext_b_p_b_a27ddfdaaa1001d8d0653912cd415f5e8_icgraph" id="da/dd1/class_f_a_t32_ext_b_p_b_a27ddfdaaa1001d8d0653912cd415f5e8_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9a8f4ebc3bb94bf41201c2a47704cfc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8f4ebc3bb94bf41201c2a47704cfc9">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum { ... }  FAT32ExtBPB::__attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7056bd1155c1a88c728b8ab6600c6650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7056bd1155c1a88c728b8ab6600c6650">&#9670;&nbsp;</a></span>bkBootSe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FAT32ExtBPB::bkBootSe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a53392be470dfc9b24ce5f6adecc8762b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53392be470dfc9b24ce5f6adecc8762b">&#9670;&nbsp;</a></span>BS_BootSig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FAT32ExtBPB::BS_BootSig</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a148e8b69e893e9cdc6c7b19e6c9e6d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148e8b69e893e9cdc6c7b19e6c9e6d96">&#9670;&nbsp;</a></span>BS_DrvNum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FAT32ExtBPB::BS_DrvNum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="add3456340678d29be4bcb49ce99c3269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3456340678d29be4bcb49ce99c3269">&#9670;&nbsp;</a></span>BS_FilSysType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char FAT32ExtBPB::BS_FilSysType[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00066">66</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a92e27e19c0b5601ae61367db41ff7839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e27e19c0b5601ae61367db41ff7839">&#9670;&nbsp;</a></span>BS_Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FAT32ExtBPB::BS_Reserved1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a73e733a1b3a86855e6f35bec8daa1b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e733a1b3a86855e6f35bec8daa1b19">&#9670;&nbsp;</a></span>BS_VolID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32ExtBPB::BS_VolID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00061">61</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a077b20ca48c26e0f2f974da7b8b8f242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077b20ca48c26e0f2f974da7b8b8f242">&#9670;&nbsp;</a></span>BS_VolLab</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char FAT32ExtBPB::BS_VolLab[11]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aacc3c3fc402f6012e407b67d22a93a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc3c3fc402f6012e407b67d22a93a32">&#9670;&nbsp;</a></span>extFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FAT32ExtBPB::extFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad53de6deaf9554db9ffbf12386754312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53de6deaf9554db9ffbf12386754312">&#9670;&nbsp;</a></span>FATSz32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32ExtBPB::FATSz32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae052ebeb66f6da7a07a756a4290abe54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae052ebeb66f6da7a07a756a4290abe54">&#9670;&nbsp;</a></span>FSInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FAT32ExtBPB::FSInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aec7e1019d20535b069b530ad44a17c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7e1019d20535b069b530ad44a17c2c">&#9670;&nbsp;</a></span>FSVer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FAT32ExtBPB::FSVer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab9a1acf50f110b6d9382086e0c2af81f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a1acf50f110b6d9382086e0c2af81f">&#9670;&nbsp;</a></span>reserved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FAT32ExtBPB::reserved[12]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac639169d7148b79c3309f927e70f6ca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac639169d7148b79c3309f927e70f6ca8">&#9670;&nbsp;</a></span>rootClus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FAT32ExtBPB::rootClus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a77d38b3cdc22644ef3105e8dd42c627f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d38b3cdc22644ef3105e8dd42c627f">&#9670;&nbsp;</a></span>Signature_word</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FAT32ExtBPB::Signature_word</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab415801cab510e227cac6e825c7af66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab415801cab510e227cac6e825c7af66e">&#9670;&nbsp;</a></span>undefined</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FAT32ExtBPB::undefined[420]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a> 第 <a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/<a class="el" href="../../d5/dca/_f_a_t32_ext_b_p_b_8h_source.html">FAT32ExtBPB.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/filesystem/fat/<a class="el" href="../../de/d34/_f_a_t32_ext_b_p_b_8cpp_source.html">FAT32ExtBPB.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:42 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

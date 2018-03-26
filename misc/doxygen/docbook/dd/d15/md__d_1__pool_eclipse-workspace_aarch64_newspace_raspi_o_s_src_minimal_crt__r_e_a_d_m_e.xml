@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>README</title>
+
+<para>according to</para>
+
+<para><literallayout><computeroutput>{c++}
+
+#ifndef&#32;__CORRECT_ISO_CPP_STRING_H_PROTO
+&#32;&#32;inline&#32;void*
+&#32;&#32;memchr(void*&#32;__s,&#32;int&#32;__c,&#32;size_t&#32;__n)
+&#32;&#32;{&#32;return&#32;__builtin_memchr(__s,&#32;__c,&#32;__n);&#32;}
+
+&#32;&#32;inline&#32;char*
+&#32;&#32;strchr(char*&#32;__s,&#32;int&#32;__n)
+&#32;&#32;{&#32;return&#32;__builtin_strchr(__s,&#32;__n);&#32;}
+
+&#32;&#32;inline&#32;char*
+&#32;&#32;strpbrk(char*&#32;__s1,&#32;const&#32;char*&#32;__s2)
+&#32;&#32;{&#32;return&#32;__builtin_strpbrk(__s1,&#32;__s2);&#32;}
+
+&#32;&#32;inline&#32;char*
+&#32;&#32;strrchr(char*&#32;__s,&#32;int&#32;__n)
+&#32;&#32;{&#32;return&#32;__builtin_strrchr(__s,&#32;__n);&#32;}
+
+&#32;&#32;inline&#32;char*
+&#32;&#32;strstr(char*&#32;__s1,&#32;const&#32;char*&#32;__s2)
+&#32;&#32;{&#32;return&#32;__builtin_strstr(__s1,&#32;__s2);&#32;}
+#endif
+</computeroutput></literallayout></para>
+
+<para>c++ has those built-in functions </para>
+
+</chapter>

@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: Syscalls类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="../../d4/da9/class_syscalls-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Syscalls类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Syscalls 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../db/de9/class_syscalls__coll__graph.png" border="0" usemap="#_syscalls_coll__map" alt="Collaboration graph"/></div>
+<map name="_syscalls_coll__map" id="_syscalls_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aeb39366c5f53d3486d1761e038df49d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">CallType</a> { <a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03">Allocate</a>, 
+<a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1">Puts</a>
+ }</td></tr>
+<tr class="separator:aeb39366c5f53d3486d1761e038df49d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a76a312961c3fd5c734373b92f170bf9b"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6f/class_syscalls.html#a76a312961c3fd5c734373b92f170bf9b">allocate</a> (size_t <a class="el" href="../../d9/df6/_memory_chunk_8h.html#af931a8871310b4dad23f0f0b0f623560">size</a>, size_t alignment=sizeof(size_t))</td></tr>
+<tr class="separator:a76a312961c3fd5c734373b92f170bf9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b1e713c8f3aa688e053c5248ea8e25f"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6f/class_syscalls.html#a4b1e713c8f3aa688e053c5248ea8e25f">puts</a> (const char *s)</td></tr>
+<tr class="separator:a4b1e713c8f3aa688e053c5248ea8e25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a9173ec6c027db6fe22af8e3d03cc73c2"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6f/class_syscalls.html#a9173ec6c027db6fe22af8e3d03cc73c2">syscall</a> (<a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">CallType</a> <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a1d127017fb298b889f4ba24752d08b8e">type</a>, size_t arg1=0, size_t arg2=0, size_t arg3=0, size_t arg4=0, size_t arg5=0)</td></tr>
+<tr class="separator:a9173ec6c027db6fe22af8e3d03cc73c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a> 第 <a class="el" href="../../de/ddf/syscall_8h_source.html#l00014">14</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="aeb39366c5f53d3486d1761e038df49d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb39366c5f53d3486d1761e038df49d2">&#9670;&nbsp;</a></span>CallType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">Syscalls::CallType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aeb39366c5f53d3486d1761e038df49d2a09b3e9fc55d27bd32d94e236e62f2d03"></a>Allocate&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb39366c5f53d3486d1761e038df49d2a1585bd37b59cb041080a2cc64c0ae7b1"></a>Puts&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a> 第 <a class="el" href="../../de/ddf/syscall_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a76a312961c3fd5c734373b92f170bf9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a312961c3fd5c734373b92f170bf9b">&#9670;&nbsp;</a></span>allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* Syscalls::allocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em> = <code>sizeof(size_t)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a> 第 <a class="el" href="../../de/ddf/syscall_8h_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b1e713c8f3aa688e053c5248ea8e25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1e713c8f3aa688e053c5248ea8e25f">&#9670;&nbsp;</a></span>puts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t Syscalls::puts </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a> 第 <a class="el" href="../../de/ddf/syscall_8h_source.html#l00025">25</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d3/d6f/class_syscalls_a4b1e713c8f3aa688e053c5248ea8e25f_cgraph.png" border="0" usemap="#d3/d6f/class_syscalls_a4b1e713c8f3aa688e053c5248ea8e25f_cgraph" alt=""/></div>
+<map name="d3/d6f/class_syscalls_a4b1e713c8f3aa688e053c5248ea8e25f_cgraph" id="d3/d6f/class_syscalls_a4b1e713c8f3aa688e053c5248ea8e25f_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9173ec6c027db6fe22af8e3d03cc73c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9173ec6c027db6fe22af8e3d03cc73c2">&#9670;&nbsp;</a></span>syscall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t Syscalls::syscall </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d6f/class_syscalls.html#aeb39366c5f53d3486d1761e038df49d2">CallType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arg1</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arg2</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arg3</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arg4</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arg5</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d3/d6f/class_syscalls_a9173ec6c027db6fe22af8e3d03cc73c2_icgraph.png" border="0" usemap="#d3/d6f/class_syscalls_a9173ec6c027db6fe22af8e3d03cc73c2_icgraph" alt=""/></div>
+<map name="d3/d6f/class_syscalls_a9173ec6c027db6fe22af8e3d03cc73c2_icgraph" id="d3/d6f/class_syscalls_a9173ec6c027db6fe22af8e3d03cc73c2_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/<a class="el" href="../../de/ddf/syscall_8h_source.html">syscall.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:46 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

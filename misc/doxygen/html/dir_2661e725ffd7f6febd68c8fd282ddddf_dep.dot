@@ -1,0 +1,24 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/schedule" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+  dir_2661e725ffd7f6febd68c8fd282ddddf [shape=box, label="schedule", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2661e725ffd7f6febd68c8fd282ddddf.html"];
+  }
+  dir_1d52781e224d924275d803a20aa4cb0e [shape=box label="memory" URL="dir_1d52781e224d924275d803a20aa4cb0e.html"];
+  dir_b926265dddcbd40e5e3241dea5a14f9d [shape=box label="templates_implementation" fillcolor="white" style="filled" color="red" URL="dir_b926265dddcbd40e5e3241dea5a14f9d.html"];
+  dir_7c40e03ac1dfef8b430578d46da2b8fd [shape=box label="arch" fillcolor="white" style="filled" color="red" URL="dir_7c40e03ac1dfef8b430578d46da2b8fd.html"];
+  dir_2aa1e926f43384db23360c01a574d2c4 [shape=box label="programming" URL="dir_2aa1e926f43384db23360c01a574d2c4.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766 [shape=box label="data_structures" URL="dir_ebed218ca042e0cae3861bf18b14f766.html"];
+  dir_2661e725ffd7f6febd68c8fd282ddddf->dir_1d52781e224d924275d803a20aa4cb0e [headlabel="1", labeldistance=1.5 headhref="dir_000024_000022.html"];
+  dir_2661e725ffd7f6febd68c8fd282ddddf->dir_b926265dddcbd40e5e3241dea5a14f9d [headlabel="1", labeldistance=1.5 headhref="dir_000024_000010.html"];
+  dir_2661e725ffd7f6febd68c8fd282ddddf->dir_7c40e03ac1dfef8b430578d46da2b8fd [headlabel="2", labeldistance=1.5 headhref="dir_000024_000001.html"];
+  dir_2661e725ffd7f6febd68c8fd282ddddf->dir_2aa1e926f43384db23360c01a574d2c4 [headlabel="1", labeldistance=1.5 headhref="dir_000024_000023.html"];
+  dir_2661e725ffd7f6febd68c8fd282ddddf->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="2", labeldistance=1.5 headhref="dir_000024_000009.html"];
+  dir_1d52781e224d924275d803a20aa4cb0e->dir_b926265dddcbd40e5e3241dea5a14f9d [headlabel="1", labeldistance=1.5 headhref="dir_000022_000010.html"];
+  dir_b926265dddcbd40e5e3241dea5a14f9d->dir_1d52781e224d924275d803a20aa4cb0e [headlabel="3", labeldistance=1.5 headhref="dir_000010_000022.html"];
+  dir_b926265dddcbd40e5e3241dea5a14f9d->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="6", labeldistance=1.5 headhref="dir_000010_000009.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766->dir_b926265dddcbd40e5e3241dea5a14f9d [headlabel="6", labeldistance=1.5 headhref="dir_000009_000010.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766->dir_2aa1e926f43384db23360c01a574d2c4 [headlabel="6", labeldistance=1.5 headhref="dir_000009_000023.html"];
+}

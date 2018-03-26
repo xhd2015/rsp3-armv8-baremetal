@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d35/main__run__process_8cpp">
+    <title>main_run_process.cpp File Reference</title>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/system_common_registers.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/vmsa_descriptors.h&gt;</programlisting>
+    <programlisting>#include &lt;generic_util.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/mmu/VirtualAddress.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/Process.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/exception/svc_call.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/ProcessManager.h&gt;</programlisting>
+    <programlisting>#include &lt;SystemFeatures.h&gt;</programlisting>
+    <programlisting>#include &lt;io/uart/PL011.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Input.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/ramfs/RAMFile.h&gt;</programlisting>
+<para>Include dependency diagram for main_run_process.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d03/main__run__process_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for main_run_process.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d15/main__run__process_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d9/d35/main__run__process_8cpp_1a4a7156535a511c1a82318c7b176bb1e9">__stack_top</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d9/d35/main__run__process_8cpp_1ac3fa83f06bb4c57fb33bf3e365b3a20d">enableMMU</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d9/d35/main__run__process_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt/main_run_process.cpp</para>
+    </simplesect>
+</section>

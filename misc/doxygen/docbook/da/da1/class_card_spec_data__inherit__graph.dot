@@ -1,0 +1,6 @@
+digraph "CardSpecData"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node305 [label="{CardSpecData\n|+ @16\l+ _data\l+ cardCommandClass\l+ copyFlag\l+ csdVersion\l+ cSizeMult\l+ deviceSize\l+ fileFormat\l+ fileFormatGrp\l+ permWriteProctet\l和 10 更多...\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

@@ -1,0 +1,22 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/uart/PL011.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3763 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/io/uart/PL011.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3763 -> Node3764 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3764 [label="io/uart/PL011.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dd1/_p_l011_8h.html"];
+  Node3764 -> Node3765 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3765 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3765 -> Node3766 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3766 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3765 -> Node3767 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3767 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3764 -> Node3768 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3768 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node3768 -> Node3765 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3764 -> Node3769 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3769 [label="io/MemBasedRegReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d46/_mem_based_reg_reader_8h.html"];
+  Node3769 -> Node3765 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3764 -> Node3770 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3770 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

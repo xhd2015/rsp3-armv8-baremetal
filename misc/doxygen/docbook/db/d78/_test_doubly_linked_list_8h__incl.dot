@@ -1,0 +1,37 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/test/TestDoublyLinkedList.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2577 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/test/TestDoublyLinkedList.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2577 -> Node2578 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2578 [label="data_structures/DoublyLinked\lList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dde/data__structures_2_doubly_linked_list_8h.html"];
+  Node2578 -> Node2579 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2579 [label="data_structures/DoublyLinked\lNode.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/da2/data__structures_2_doubly_linked_node_8h.html"];
+  Node2579 -> Node2580 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2580 [label="new",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2579 -> Node2581 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2581 [label="type_traits",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2579 -> Node2582 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2582 [label="programming/ReturnTypeSelector.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d90/_return_type_selector_8h.html"];
+  Node2582 -> Node2583 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2583 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node2583 -> Node2584 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2584 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2583 -> Node2585 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2585 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2582 -> Node2581 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2579 -> Node2586 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2586 [label="programming/define\l_members.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d7b/define__members_8h.html"];
+  Node2579 -> Node2587 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2587 [label="templates_implementation\l/data_structures/DoublyLinkedNode.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dc9/templates__implementation_2data__structures_2_doubly_linked_node_8h.html"];
+  Node2587 -> Node2579 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2587 -> Node2588 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2588 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2578 -> Node2582 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2578 -> Node2589 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2589 [label="functional",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2578 -> Node2586 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2578 -> Node2590 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2590 [label="templates_implementation\l/data_structures/DoublyLinkedList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d88/templates__implementation_2data__structures_2_doubly_linked_list_8h.html"];
+  Node2590 -> Node2578 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/dca/_f_a_t32_ext_b_p_b_8h">
+    <title>FAT32ExtBPB.h File Reference</title>
+    <programlisting>#include &lt;filesystem/fat/FAT_BPB.h&gt;</programlisting>
+<para>Include dependency diagram for FAT32ExtBPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d1b/_f_a_t32_ext_b_p_b_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT32ExtBPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/dd0/_f_a_t32_ext_b_p_b_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a726ca809ffd3d67ab4b8476646f26635">@6</link> {
+<link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a726ca809ffd3d67ab4b8476646f26635a364655710bd298e8cb50f27124f0570c">BIT_MASK</link>= 0x0FFFFFFF,
+<link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a726ca809ffd3d67ab4b8476646f26635ab9ce4dd622ed110869ef7a6e492f9417">ENTRY_SIZE</link>= 32
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a4a7594fa9fc4c98d8798619b71c30750">bkBootSe</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a820dd53bafff8ec8b0fa2a5a52ab3ef4">BS_BootSig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a847cc249bf53fb345a0b03966b7b7af0">BS_DrvNum</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ae542ee04e273183dccb00cb297e6de48">BS_FilSysType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a80e92e9eddeace5f6d9f0457a21fc68a">BS_Reserved1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a468c435d5dc7b1b5b9314029dd75cd02">BS_VolID</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a5bb92ec0136bd5298fe61b057ef31d67">BS_VolLab</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ab15d060d67a1501674a420ee90fd54a0">extFlags</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ae3db05939abbc84dc443347dd0a24258">FATSz32</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a20e76960a8ea7d125bf7d24bb9a3a89f">FSInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a8d76df9b2103bce8c67353f0f951c725">FSVer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a794ea2271db47ed732933125dedaf988">reserved</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a61442cb40f907020fb03a5ff6da4716d">rootClus</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ae348719f7a2cf81a7f26c24555b985bc">Signature_word</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a55729cf062604579fad538b3a8e5982c">undefined</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> <link linkend="d7/d6e/class_f_a_t___b_p_b">FAT_BPB</link> <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a38c62e5e92fcafb98bee1170e86bf0f2">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a3e84d4debb18c800ab0c246686912360">calculateFATSz32</link> (
+size_t diskSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ae401e99a4824941022136ade34691761">getClusterByteSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1aa493f18a181dca29ab246bab09e8a41b">getClusterEntryOffset</link> (
+size_t fatNo, size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1ad18b0c0b078f189e22d01c3e07f3ef39">getClusterFirstSector</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a712acacf715fb8df5684eec2f51ef21e">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a6b1c388d93d5e2ef6115a6ad774f71e3">getRootDirFirstSector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a0468192469dcf8c4e168c80a0e884ce5">uni_determineFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a7f47c2f83cb6da4aab619e1660ccc28a">uni_getClustersCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1af30cc839804d4966d2bacacefa013011">uni_getDataRegionSectorCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a0b694e7b21b268ca45106380bf711a61">uni_getFatSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h_1a0d82c6a97ae3d90f2a76612449a36dbf">uni_getTotalSecCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT32ExtBPB.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/BitSet.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_7494f253dd4ea112766116db24ed5ac6.html">generic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BitSet.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/d19/_bit_set_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * BitSet.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Mar 22, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_GENERIC_BITSET_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_GENERIC_BITSET_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/da4/def_8h.html">def.h</a>&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d3/d19/_bit_set_8h.html#a00a89e0a15897b60ed2f5a1487cbe7b5">   11</a></span>&#160;<span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> <a class="code" href="../../d3/d19/_bit_set_8h.html#a00a89e0a15897b60ed2f5a1487cbe7b5">numBytes</a>(<span class="keywordtype">size_t</span> bitLength)</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> (bitLength%8==0?bitLength/8 : (bitLength/8+1));</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> bitLength&gt;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d2/df0/class_bit_set.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/df0/class_bit_set.html">BitSet</a>{</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d2/df0/class_bit_set.html">BitSet</a> <a class="code" href="../../d2/df0/class_bit_set.html#ab97fafce94e67a3a72a5505d68a6a9d7">value</a>(<span class="keywordtype">size_t</span> lower,<span class="keywordtype">size_t</span> upper)<span class="keyword">const</span>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//  BitSet value(size_t lower,size_t upper,)</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d2/df0/class_bit_set.html#a6eed02f2a0c70b30ec98b8bc48de6585">   25</a></span>&#160;    uint8_t <a class="code" href="../../d2/df0/class_bit_set.html#a6eed02f2a0c70b30ec98b8bc48de6585">_data</a>[<a class="code" href="../../d3/d19/_bit_set_8h.html#a00a89e0a15897b60ed2f5a1487cbe7b5">numBytes</a>(bitLength)];</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_GENERIC_BITSET_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="def_8h_html"><div class="ttname"><a href="../../d4/da4/def_8h.html">def.h</a></div></div>
+<div class="ttc" id="class_bit_set_html"><div class="ttname"><a href="../../d2/df0/class_bit_set.html">BitSet</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_bit_set_8h_source.html#l00017">BitSet.h:17</a></div></div>
+<div class="ttc" id="class_bit_set_html_ab97fafce94e67a3a72a5505d68a6a9d7"><div class="ttname"><a href="../../d2/df0/class_bit_set.html#ab97fafce94e67a3a72a5505d68a6a9d7">BitSet::value</a></div><div class="ttdeci">BitSet value(size_t lower, size_t upper) const</div></div>
+<div class="ttc" id="class_bit_set_html_a6eed02f2a0c70b30ec98b8bc48de6585"><div class="ttname"><a href="../../d2/df0/class_bit_set.html#a6eed02f2a0c70b30ec98b8bc48de6585">BitSet::_data</a></div><div class="ttdeci">uint8_t _data[numBytes(bitLength)]</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_bit_set_8h_source.html#l00025">BitSet.h:25</a></div></div>
+<div class="ttc" id="_bit_set_8h_html_a00a89e0a15897b60ed2f5a1487cbe7b5"><div class="ttname"><a href="../../d3/d19/_bit_set_8h.html#a00a89e0a15897b60ed2f5a1487cbe7b5">numBytes</a></div><div class="ttdeci">static constexpr size_t numBytes(size_t bitLength)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_bit_set_8h_source.html#l00011">BitSet.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:30 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

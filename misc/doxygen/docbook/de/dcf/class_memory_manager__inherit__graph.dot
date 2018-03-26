@@ -1,0 +1,6 @@
+digraph "MemoryManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node668 [label="{MemoryManager\n|- base\l- headChunk\l- size\l|+ allocate()\l+ allocate()\l+ allocateAs()\l+ allocateAs()\l+ deallocate()\l+ getAllocatedLength()\l+ MemoryManager()\l+ MemoryManager()\l+ normalizeAllocSize()\l+ reallocate()\l+ reallocateAs()\l+ tryDecrease()\l+ tryIncrease()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

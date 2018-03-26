@@ -1,0 +1,12 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/io" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b926265dddcbd40e5e3241dea5a14f9d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="templates_implementation" fontname="Helvetica", fontsize="10", URL="dir_b926265dddcbd40e5e3241dea5a14f9d.html"]
+  dir_46b4ecea3f7b36735a62a544cbec2752 [shape=box, label="io", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_46b4ecea3f7b36735a62a544cbec2752.html"];
+  }
+  dir_a00b633439466cbb1729245c7f66f564 [shape=box label="io" fillcolor="white" style="filled" color="red" URL="dir_a00b633439466cbb1729245c7f66f564.html"];
+  dir_46b4ecea3f7b36735a62a544cbec2752->dir_a00b633439466cbb1729245c7f66f564 [headlabel="1", labeldistance=1.5 headhref="dir_000017_000016.html"];
+  dir_a00b633439466cbb1729245c7f66f564->dir_46b4ecea3f7b36735a62a544cbec2752 [headlabel="1", labeldistance=1.5 headhref="dir_000016_000017.html"];
+}

@@ -1,0 +1,44 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/cpu_halt.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3525 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/generic/cpu_halt.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3525 -> Node3526 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3526 [label="generic/cpu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/da7/cpu_8h.html"];
+  Node3526 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3527 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3527 -> Node3528 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3528 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3527 -> Node3529 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3529 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3525 -> Node3530 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3530 [label="asm_instructions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d2f/asm__instructions_8h.html"];
+  Node3530 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3530 -> Node3531 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3531 [label="arch/common_aarch64\l/system_common_registers.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1f/system__common__registers_8h.html"];
+  Node3531 -> Node3532 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3532 [label="arch/common_aarch64\l/registers_defines.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dbd/registers__defines_8h.html"];
+  Node3532 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3532 -> Node3533 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3533 [label="kernel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/daa/kernel_8h.html"];
+  Node3532 -> Node3534 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3534 [label="io/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d7b/io_2_integer_formatter_8h.html"];
+  Node3534 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3534 -> Node3535 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3535 [label="io/Output.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d77/_output_8h.html"];
+  Node3535 -> Node3536 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3536 [label="io/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node3536 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3536 -> Node3537 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3537 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node3537 -> Node3536 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3534 -> Node3538 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3538 [label="templates_implementation\l/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d84/templates__implementation_2_integer_formatter_8h.html"];
+  Node3538 -> Node3534 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3538 -> Node3539 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3539 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node3539 -> Node3527 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3538 -> Node3535 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3532 -> Node3540 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3540 [label="arch/common_aarch64\l/gicv3_defines.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d80/gicv3__defines_8h.html"];
+}

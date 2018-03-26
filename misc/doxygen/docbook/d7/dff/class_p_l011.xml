@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/dff/class_p_l011">
+<title>PL011 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d1/dd1/_p_l011_8h">&quot;PL011.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for PL011</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d84/class_p_l011__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for PL011</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dd3/class_p_l011__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982">RegOffset</link> {
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982addbe64da496e7d59a00437fd8a2ad9be">UARTDR</link>=0x000,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0406c8eca8ca8ddb6dcea006eda10c72">UARTRSR</link>=0x004,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0368d72fade93374d0b1998b139c71cf">UARTECR</link>=0x004,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a07689707dbe925761ef52eb4750de3a2">UARTFR</link>=0x018,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982ad552098087df46d71ab1fe486713d0d0">UARTILPR</link>=0x020,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982af8b6f65bc38023b1e608b9820a1ae4d7">UARTIBRD</link>=0x024,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a93be3712911b8afbc687024a7d36a7a2">UARTFBRD</link>= 0x028,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982ac64e31889e8f8518174b1e43f25ba3d3">UARTLCR_H</link>= 0x02C,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a366781197825756fbd9aa43112eae6af">UARTCR</link>= 0x030,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a98a11335c0360886a5dbfb18b560d0cb">UARTIFLS</link>= 0x034,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a8711012e1d6237b8159eb9dd855950b9">UARTRIS</link>= 0x03C,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0ad107e7e2d982287515aebb8aee51c3">UARTMIS</link>= 0x040,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a66099c1ff59c6a1f941a96659a243d0f">UARTICR</link>= 0x044,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a146f6558abf5ea4d128be21508f16bfb">UARTDMACR</link>= 0x048,
+<link linkend="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a2e50856a52c4cf87539d8771eb651113">UARTPeriphID0</link>= 0xFE0
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint16_t &amp; _readDataReg</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint16_t &amp; _statusReg</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile char &amp; _writeDataReg</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="d7/dff/class_p_l011_1a6ce7d9c25ca788e6999a099f93ce85f3">hasCorrectBase</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/dff/class_p_l011_1a16500bc129c69c050cb784b17d70103f">init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dff/class_p_l011_1a7446cf3f2b12c3dfa64037319c52b5d2">PL011</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint16_t <link linkend="d7/dff/class_p_l011_1a01162cd0eedcc398b3913b760b5fbd39">readData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d7/dff/class_p_l011_1acd314ddfa6c5c3d17f89a6b2243d8309">readDataBlocked</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d7/dff/class_p_l011_1a9660ad0ee68795a4adf4290344cad9a0">readDataNonBlocked</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/dff/class_p_l011_1a9a1de31dac22db614ad606d60d56055e">writeData</link> (
+char ch)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982">
+               <title>enum RegOffset </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982addbe64da496e7d59a00437fd8a2ad9be">
+                            <term>UARTDR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0406c8eca8ca8ddb6dcea006eda10c72">
+                            <term>UARTRSR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0368d72fade93374d0b1998b139c71cf">
+                            <term>UARTECR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a07689707dbe925761ef52eb4750de3a2">
+                            <term>UARTFR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982ad552098087df46d71ab1fe486713d0d0">
+                            <term>UARTILPR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982af8b6f65bc38023b1e608b9820a1ae4d7">
+                            <term>UARTIBRD</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a93be3712911b8afbc687024a7d36a7a2">
+                            <term>UARTFBRD</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982ac64e31889e8f8518174b1e43f25ba3d3">
+                            <term>UARTLCR_H</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a366781197825756fbd9aa43112eae6af">
+                            <term>UARTCR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a98a11335c0360886a5dbfb18b560d0cb">
+                            <term>UARTIFLS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a8711012e1d6237b8159eb9dd855950b9">
+                            <term>UARTRIS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a0ad107e7e2d982287515aebb8aee51c3">
+                            <term>UARTMIS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a66099c1ff59c6a1f941a96659a243d0f">
+                            <term>UARTICR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a146f6558abf5ea4d128be21508f16bfb">
+                            <term>UARTDMACR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_p_l011_1ab12021066d48584983a712b056565982a2e50856a52c4cf87539d8771eb651113">
+                            <term>UARTPeriphID0</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 21 of file PL011.h
+                    <computeroutput><literallayout>
+{
+UARTDR=0x000, 
+UARTRSR=0x004, 
+UARTECR=0x004, 
+UARTFR=0x018, 
+UARTILPR=0x020, 
+UARTIBRD=0x024, 
+UARTFBRD= 0x028, 
+UARTLCR_H= 0x02C, 
+UARTCR= 0x030, 
+UARTIFLS= 0x034, 
+UARTRIS= 0x03C, 
+UARTMIS= 0x040, 
+UARTICR= 0x044, 
+UARTDMACR= 0x048, 
+UARTPeriphID0= 0xFE0, 
+}RegOffset;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/dff/class_p_l011_1a6ce7d9c25ca788e6999a099f93ce85f3">
+                <title>AS_MACRO bool PL011::hasCorrectBase () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1a16500bc129c69c050cb784b17d70103f">
+                <title>void PL011::init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1a7446cf3f2b12c3dfa64037319c52b5d2">
+                <title>PL011::PL011 (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1a01162cd0eedcc398b3913b760b5fbd39">
+                <title>AS_MACRO uint16_t PL011::readData () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1acd314ddfa6c5c3d17f89a6b2243d8309">
+                <title>uint16_t PL011::readDataBlocked () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1a9660ad0ee68795a4adf4290344cad9a0">
+                <title>uint16_t PL011::readDataNonBlocked () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_p_l011_1a9a1de31dac22db614ad606d60d56055e">
+                <title>AS_MACRO void PL011::writeData (char ch)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

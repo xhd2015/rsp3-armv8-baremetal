@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d7b/class_input">
+<title>Input class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/d94/_input_8h">&quot;Input.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Input</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d3d/class_input__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Input</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d46/class_input__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d7b/class_input_1a0f9d6030a8232a71795dfef44a8c3119">Config</link> {
+<link linkend="d4/d7b/class_input_1a0f9d6030a8232a71795dfef44a8c3119a3c8bed85be029979545f471854ecf4f6">INPUT_BUFFER_SIZE</link>= 512
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> char <link linkend="d4/d7b/class_input_1ae4c4c180a444789bf86deb437aba4eeb">getchar</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d7b/class_input_1a212fe61f708c212e8dac91d145146050">Input</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d7b/class_input">Input</link> &amp; <link linkend="d4/d7b/class_input_1ad324389a98ebf5889a8c08b6b14dc2f5">operator&gt;&gt;</link> (
+char &amp; ch)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/d7b/class_input">Input</link> &amp; <link linkend="d4/d7b/class_input_1a0088a41b3236cdf0987b9c5ee0e8499a">operator&gt;&gt;</link> (
+int &amp; d)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint16_t <link linkend="d4/d7b/class_input_1a4ec24787bc038bcb246750d968eb4c41">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d4/d7b/class_input_1a0f9d6030a8232a71795dfef44a8c3119">
+               <title>enum Config </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/d7b/class_input_1a0f9d6030a8232a71795dfef44a8c3119a3c8bed85be029979545f471854ecf4f6">
+                            <term>INPUT_BUFFER_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 16 of file Input.h
+                    <computeroutput><literallayout>
+{
+INPUT_BUFFER_SIZE= 512, 
+}Config;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d4/d7b/class_input_1ae4c4c180a444789bf86deb437aba4eeb">
+                <title>AS_MACRO char Input::getchar ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d7b/class_input_1a212fe61f708c212e8dac91d145146050">
+                <title>Input::Input ()=default</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d7b/class_input_1ad324389a98ebf5889a8c08b6b14dc2f5">
+                <title>Input&amp; Input::operator&gt;&gt; (char &amp;ch)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d7b/class_input_1a0088a41b3236cdf0987b9c5ee0e8499a">
+                <title>Input&amp; Input::operator&gt;&gt; (int &amp;d)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d7b/class_input_1a4ec24787bc038bcb246750d968eb4c41">
+                <title>AS_MACRO uint16_t Input::read ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

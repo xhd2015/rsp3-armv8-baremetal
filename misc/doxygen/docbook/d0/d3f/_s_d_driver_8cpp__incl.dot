@@ -1,0 +1,46 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/sd/SDDriver.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3731 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/io/sd/SDDriver.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3731 -> Node3732 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3732 [label="generic/cpu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/da7/cpu_8h.html"];
+  Node3732 -> Node3733 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3733 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3733 -> Node3734 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3734 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3733 -> Node3735 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3735 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3731 -> Node3736 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3736 [label="io/Output.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d77/_output_8h.html"];
+  Node3736 -> Node3737 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3737 [label="io/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d17/io_2printk_8h.html"];
+  Node3737 -> Node3733 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3737 -> Node3738 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3738 [label="templates_implementation\l/printk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d95/templates__implementation_2printk_8h.html"];
+  Node3738 -> Node3737 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3731 -> Node3739 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3739 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node3739 -> Node3733 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3731 -> Node3740 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3740 [label="io/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d7b/io_2_integer_formatter_8h.html"];
+  Node3740 -> Node3733 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3740 -> Node3736 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3740 -> Node3741 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3741 [label="templates_implementation\l/IntegerFormatter.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d84/templates__implementation_2_integer_formatter_8h.html"];
+  Node3741 -> Node3740 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3741 -> Node3739 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3741 -> Node3736 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3731 -> Node3742 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3742 [label="io/sd/SDCardStatus.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d9e/_s_d_card_status_8h.html"];
+  Node3731 -> Node3743 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3743 [label="io/sd/SDDriver.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d49/_s_d_driver_8h.html"];
+  Node3743 -> Node3744 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3744 [label="io/MemBasedRegReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d46/_mem_based_reg_reader_8h.html"];
+  Node3744 -> Node3733 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3743 -> Node3739 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3743 -> Node3745 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3745 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3743 -> Node3746 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3746 [label="io/sd/CardSpecData.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d4b/_card_spec_data_8h.html"];
+}

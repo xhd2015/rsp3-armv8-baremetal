@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/dd6/schedule_2_process_manager_8h">
+    <title>ProcessManager.h File Reference</title>
+    <programlisting>#include &lt;data_structures/DoublyLinkedList.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/Process.h&gt;</programlisting>
+    <programlisting>#include &lt;templates_implementation/schedule/ProcessManager.h&gt;</programlisting>
+<para>Include dependency diagram for ProcessManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d91/schedule_2_process_manager_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for ProcessManager.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d92/schedule_2_process_manager_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/dce/class_process_manager">ProcessManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/dce/class_process_manager">ProcessManager</link> <link linkend="dc/dd6/schedule_2_process_manager_8h_1a97e08ebf7df624c11da27b3a41196189">processManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/schedule/ProcessManager.h</para>
+    </simplesect>
+</section>

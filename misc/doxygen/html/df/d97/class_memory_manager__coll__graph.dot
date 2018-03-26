@@ -1,0 +1,8 @@
+digraph "MemoryManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MemoryManager\n|- base\l- size\l|+ allocate()\l+ allocate()\l+ allocateAs()\l+ allocateAs()\l+ deallocate()\l+ getAllocatedLength()\l+ MemoryManager()\l+ MemoryManager()\l+ normalizeAllocSize()\l+ reallocate()\l+ reallocateAs()\l+ tryDecrease()\l+ tryIncrease()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -headChunk" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{MemoryChunk\n|+ __attribute__\l- allocated\l- endMark\l- nextBaseFromEnd\l- nextValidChunkOffset\l- size\l|+ endChunk()\l+ findAllocable()\l+ findAllocable()\l+ getDataEnd()\l+ getDataEnd()\l+ getDataPtr()\l+ getDataPtr()\l+ getNext()\l+ getNext()\l+ getNextBaseFromEnd()\l和 20 更多...\l- advanceByBytes()\l- advanceByBytes()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html"];
+}

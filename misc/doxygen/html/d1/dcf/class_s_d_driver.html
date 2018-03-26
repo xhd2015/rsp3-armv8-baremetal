@@ -1,0 +1,1705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: SDDriver类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d7/d40/class_s_d_driver-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">SDDriver类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 SDDriver 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d74/class_s_d_driver__inherit__graph.png" border="0" usemap="#_s_d_driver_inherit__map" alt="Inheritance graph"/></div>
+<map name="_s_d_driver_inherit__map" id="_s_d_driver_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> SDDriver 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d3/d88/class_s_d_driver__coll__graph.png" border="0" usemap="#_s_d_driver_coll__map" alt="Collaboration graph"/></div>
+<map name="_s_d_driver_coll__map" id="_s_d_driver_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">CommandStatus</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a331bfee113e04aeef2a626293e92c160"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a48b63be781f69156dfdf99700ce03eca">XSDPS_APP_CMD_PREFIX</a> =0x8000U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a95fae240e551bff1c59fce0d80435722">CMD0</a> =0x0000U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a72116adae0d369cf8faee04774464ec7">CMD1</a> =0x0100U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a557ca23a381691a2a52d5af4e5bd19a4">CMD2</a> =0x0200U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a85c04292255a9d0ba28689b9dd01100d">CMD3</a> =0x0300U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ace010d5b947efdc5af4168db29efa8fe">CMD4</a> =0x0400U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a65b3fb39c7780aa26c6885b6917341ae">CMD5</a> =0x0500U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ae7f9090dd658dd5af4cc1c416c765b84">CMD6</a> =0x0600U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a49d101b4492a39f51ad846a637e40c93">ACMD6</a> =(XSDPS_APP_CMD_PREFIX + 0x0600U), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a4bceff50264cd604e0f426285a614e62">CMD7</a> =0x0700U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a11e9a1638d709cca8a3644910d576577">CMD8</a> =0x0800U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ae94647033460a5c249caaf09b8c3adcf">CMD9</a> =0x0900U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160afed66bf4e079abe95fa07ce71d82e680">CMD10</a> =0x0A00U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160aa4a772641bc4a9dd5c6d1470bfc3843a">CMD11</a> =0x0B00U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a02afc2d427820ae726f0ea97453628c3">CMD12</a> =0x0C00U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a892889c020b21b8dc9d58988dec022d9">CMD13</a> =0x0D00U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a429ba2ef64ae721305b82b186a8fbdd3">ACMD13</a> =(XSDPS_APP_CMD_PREFIX + 0x0D00U), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a84d5922f2935d0e4c07cae20bb9228e1">CMD16</a> =0x1000U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ad5d63b3e0d92977a8d8eeb6866ef7244">CMD17</a> =0x1100U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160af122c67ab6276f6355b2f95f919f2266">CMD18</a> =0x1200U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a8dd98fe9c408f9081dce7136ddcaa534">CMD19</a> =0x1300U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160aa7bff8fc3e076ec2b5ed62f791af6582">CMD21</a> =0x1500U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160aaa54dc39c05aaec7a03f71da375630cf">CMD23</a> =0x1700U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160acba17f0ed06a1e266b0dd9fd7cdee39b">ACMD23</a> =(XSDPS_APP_CMD_PREFIX + 0x1700U), 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a129b131ade4da310807b2dc7ed1476cb">CMD24</a> =0x1800U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a82daa790e0f0612ca13071e6862cb231">CMD25</a> =0x1900U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a129d8dd3d99f76689ba9840f852cc26a">CMD41</a> =0x2900U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a64251b473aba04eda7a3fc458493b2b8">ACMD41</a> =(XSDPS_APP_CMD_PREFIX + 0x2900U), 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160afa6db4dc7efb084377eb1ed64d623a28">ACMD42</a> =(XSDPS_APP_CMD_PREFIX + 0x2A00U), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a5f31d1138a80187a2ef10127d46f5384">ACMD51</a> =(XSDPS_APP_CMD_PREFIX + 0x3300U), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a286e783316e4149a0fb1054013d170a1">CMD52</a> =0x3400U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a6e3bca8f7f099f269069fcf377fb5bc2">CMD55</a> =0x3700U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160aea5a6be1159ea4f2f8b8d4f75237c59a">CMD58</a> =0x3A00U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a4c327797b22d208d84f2da0c7b75f139">XSDPS_CMD_RESP_NONE_MASK</a> =0x00000000U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a2033b63e086632817fff44e9fb23c3c4">XSDPS_CMD_RESP_L136_MASK</a> =0x00000001U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160af10c9c81d9296c87c435b8fe99515442">XSDPS_CMD_RESP_L48_MASK</a> =0x00000002U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a2646c9bda86e69804d8b0fe97817b975">XSDPS_CMD_RESP_L48_BSY_CHK_MASK</a> =0x00000003U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ad86e232f9895ded49c2cbaaee5df9913">XSDPS_CMD_CRC_CHK_EN_MASK</a> = 0x00000008U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a7204d6f167172e9066a422e20db8bda6">XSDPS_CMD_INX_CHK_EN_MASK</a> = 0x00000010U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a00aa3c6973a08d64a85a8c7ed68e7faa">XSDPS_DAT_PRESENT_SEL_MASK</a> = 0x00000020U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a3c12f0194d655e818818eaf2dcc70f56">XSDPS_CMD_TYPE_MASK</a> =0x000000C0U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a65f29155f51678311c104b869aa85d74">XSDPS_CMD_TYPE_NORM_MASK</a> =0x00000000U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a63be05dadd5856676c4a5fd164a9f182">XSDPS_CMD_TYPE_SUSPEND_MASK</a> =0x00000040U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ad6c95d773b3431fc4e7b56d099e34a05">XSDPS_CMD_TYPE_RESUME_MASK</a> =0x00000080U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a38ddcecf9b2183a4266525d61e22e47d">XSDPS_CMD_TYPE_ABORT_MASK</a> =0x000000C0U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ab01d1332bc1104f9e1447cf8d2799733">XSDPS_CMD_MASK</a> =0x00003F00U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a9fa2b343258cfc9df8f611c2c7f175c5">XSDPS_CARD_SD</a> =1U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ae40b64c77a17eb0f2309f7c3be14b1d6">XSDPS_CARD_MMC</a> =2U, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a3ea08ff2323fc9418cf5885275354335">XSDPS_CARD_SDIO</a> =3U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a6cd1951c32bb653cb5e95b6f5f933f32">XSDPS_CARD_SDCOMBO</a> =4U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a43ce7c9f4584be9d2759a5bc1170f83a">XSDPS_CHIP_EMMC</a> =5U, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a7dad5243ce634321ee10befdf52cfdb7">HC_VER_1</a> =0x0u, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a2acc65a9288ab85f6def7ff03dfbc435">HC_VER_2</a> =0x1u, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a3de4a497761ca238664a9e6e40946514">HC_VER_3</a> =0x2u, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a025791f6e80a335848656c21af061f86">SD_VER_1</a> = 0x1u, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a508d3fb9fc4bdb3051510442448f8fbf">SD_VER_2</a> = 0x2u, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a63827138866dc91043bde24d355bd978">RESP_NONE</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_NONE_MASK), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ad56495dfba3f89646154d4de2cf79fda">RESP_R1</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160abc8ac74d594f6248700f45d743811d20">RESP_R1B</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a1554da4a59aad45784f132f7af173404">RESP_R2</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L136_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK), 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160ac8fe3b0899cced6d7dff758900c20eb7">RESP_R3</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_MASK), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160af793ca332bc031dc22366d6efbb8a039">RESP_R6</a> =static_cast&lt;uint32_t&gt;(XSDPS_CMD_RESP_L48_BSY_CHK_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_CRC_CHK_EN_MASK) | static_cast&lt;uint32_t&gt;(XSDPS_CMD_INX_CHK_EN_MASK), 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160a7eda121d9ecf0b1d7f2cf38a4cb8de35">TRANS_MODE_CARD_TO_HOST</a> =0, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#a331bfee113e04aeef2a626293e92c160afdc2826055c5f751aee8e2c27a80e3c0">TRANS_MODE_ENABLE_DMA</a> =2
+<br />
+ }</td></tr>
+<tr class="separator:a331bfee113e04aeef2a626293e92c160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbfa5ad1760abc65895f0763c693a530"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d1/dcf/class_s_d_driver.html#abbfa5ad1760abc65895f0763c693a530ac63c3f1a86776bc30cfc17d47442e18d">CAP_RESET_VALUE</a> = 0x280737EC6481
+ }</td></tr>
+<tr class="separator:abbfa5ad1760abc65895f0763c693a530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a0d8d5c9afc8149d5e149dbbea20ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ae6a0d8d5c9afc8149d5e149dbbea20ae">R</a> = <a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979">RegOffset</a></td></tr>
+<tr class="separator:ae6a0d8d5c9afc8149d5e149dbbea20ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb734f788a683a6117caf5fd5028979"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979">RegOffset</a> : MemBasedRegReader::RegOffset { <br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aa12a867c1791c1a6933d2fbc03995cf4">reg_sdmasysaddrlo</a> = 0x0000, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a560e52571970f8644cbfd0b42c12fe29">reg_sdmasysaddrhi</a> = 0x0002, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a911527de10438e25c4e9b628aed54a27">reg_blocksize</a> = 0x0004, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ae8e458f141909e96c4c9e7a4a61499b5">reg_blockcount</a> = 0x0006, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a1b46e11fd4cbc5f0fac132dd451d1df9">reg_argument1lo</a> = 0x0008, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a31bdde179cf3a8a1b524d1b928a2bd01">reg_argument1hi</a> = 0x000A, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a558a1efbb8b12c97975d5cf668f77c6b">reg_transfermode</a> = 0x000C, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ab333287ec1595df745e7198ee8326e4b">reg_command</a> = 0x000E, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aabc9662cf05bf16a35306635ec33a7c6">reg_response0</a> = 0x0010, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ae1d0cbc9504ee1e9e55986c6b4e6f341">reg_response1</a> = 0x0012, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aaa5ae358e66e623eefc5bb8b6c877e3f">reg_response2</a> = 0x0014, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aa8f1ac207b55e557b961e580dc0e4d62">reg_response3</a> = 0x0016, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aad423185b482f33851ff6577027715ba">reg_response4</a> = 0x0018, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a1cfb36623e299cd647c1dc6742b75d00">reg_response5</a> = 0x001A, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a46b74f10652d090e194132feb7688653">reg_response6</a> = 0x001C, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ad02ef6bd6055cd9037a8cb9f58785ae7">reg_response7</a> = 0x001E, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ac8847e9acd370a67f6f6e1c1925296f7">reg_dataport</a> = 0x0020, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a8c0b7efd9c6da024746b3b922fa67567">reg_presentstate</a> = 0x0024, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a87ff507ad9b91baf9cd46b62e7a172b9">reg_hostcontrol1</a> = 0x0028, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a581a4824d8ef0306deb082339c0f81e4">reg_powercontrol</a> = 0x0029, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aba8b353a5df3280836d603225b697079">reg_timeoutcontrol</a> = 0x002E, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ac4268d7b782eebd42efafd07bc806a2b">reg_clockcontrol</a> = 0x002C, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ad50860cbd30f2f8e57f0bc6ee45531f7">reg_softwarereset</a> = 0x002F, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a77e0af7be290ac95c69da58567a1e441">reg_normalintrsts</a> = 0x0030, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ac1863677563d922d1c7d40e1d5307a5b">reg_errorintrsts</a> = 0x0032, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a2cbd446aa2799c675dcd7a16edd3e76b">reg_normalintrstsena</a> = 0x0034, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a8ec1df81b5c24b91c65841cd8b5e140a">reg_errorintrstsena</a> = 0x0036, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ace90175a9a1e65b06883349b0d6ee336">reg_normalintrsigena</a> = 0x0038, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a315efe58038b4baa66c914a7e2cc5265">reg_errorintrsigena</a> = 0x003A, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979ab926a70a643f465bb4d1d7a5af12d4eb">reg_hostcontrol2</a> = 0x003E, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a8d5199e02855b6fe04a7354501d6035c">reg_maxcurrentcap</a> = 0x0048, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aab5d3ee1faab6b61a6ba4c90883f1a63">reg_capabilities</a> = 0x0040, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979a67feb6955224ec67ed0e22dfb5d5c53c">reg_presetvalue1</a> = 0x0062, 
+<a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979aa7e86d0d3590493ed39be3c6833791a5">reg_hostcontrollerver</a> = 0x00FE
+<br />
+ }</td></tr>
+<tr class="separator:abdb734f788a683a6117caf5fd5028979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa59e16d99bc6c38d8836558eb163f126"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#aa59e16d99bc6c38d8836558eb163f126">busSpeed</a> () const</td></tr>
+<tr class="separator:aa59e16d99bc6c38d8836558eb163f126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe07ea9f77c84fb77ee37a19c5303e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#afbe07ea9f77c84fb77ee37a19c5303e9">busSpeed</a> (uint8_t newSpeed)</td></tr>
+<tr class="separator:afbe07ea9f77c84fb77ee37a19c5303e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac899fcbe1228b711e5e36221283ae88"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#aac899fcbe1228b711e5e36221283ae88">busWidth</a> () const</td></tr>
+<tr class="separator:aac899fcbe1228b711e5e36221283ae88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e036b68fe7f628c406af90647c0cad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ab3e036b68fe7f628c406af90647c0cad">busWidth</a> (uint8_t newWidth)</td></tr>
+<tr class="separator:ab3e036b68fe7f628c406af90647c0cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c3b8b62af4b02dc480e454990c036d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a78c3b8b62af4b02dc480e454990c036d">cardsExists</a> () const</td></tr>
+<tr class="separator:a78c3b8b62af4b02dc480e454990c036d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465a3a00d6355c7dacfc8896cc52145b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d0d/class_s_d_card_status.html">SDCardStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a465a3a00d6355c7dacfc8896cc52145b">cardStatus</a> ()</td></tr>
+<tr class="separator:a465a3a00d6355c7dacfc8896cc52145b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6056c92a88e9f314ed4fc1f1386ac4d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a6056c92a88e9f314ed4fc1f1386ac4d5">clearIntErrStatus</a> ()</td></tr>
+<tr class="separator:a6056c92a88e9f314ed4fc1f1386ac4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13094b631297b78753c17bc93d822b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ac13094b631297b78753c17bc93d822b9">clearResponseBit</a> ()</td></tr>
+<tr class="separator:ac13094b631297b78753c17bc93d822b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6748edc406c8da7420eed223a4d3e5fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">CommandStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a6748edc406c8da7420eed223a4d3e5fa">clockFreq</a> (uint32_t newFreq)</td></tr>
+<tr class="separator:a6748edc406c8da7420eed223a4d3e5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6b575f771428477a23025ef6376673"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a7a6b575f771428477a23025ef6376673">frameCommand</a> (uint32_t cmd) const</td></tr>
+<tr class="separator:a7a6b575f771428477a23025ef6376673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b35802ba88cd624635097aa894d0f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ab7b35802ba88cd624635097aa894d0f2">hasCorrectBase</a> () const</td></tr>
+<tr class="separator:ab7b35802ba88cd624635097aa894d0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af290f13cd9eb93eb60d9e007bd02cb39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#af290f13cd9eb93eb60d9e007bd02cb39">hasCorrectPresetValue</a> () const</td></tr>
+<tr class="separator:af290f13cd9eb93eb60d9e007bd02cb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786c1347a60311e0539a1e350279f6ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a786c1347a60311e0539a1e350279f6ff">hasResponse</a> () const</td></tr>
+<tr class="separator:a786c1347a60311e0539a1e350279f6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3e5611beed0516afb3cf43751da5dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#aec3e5611beed0516afb3cf43751da5dc">init</a> ()</td></tr>
+<tr class="separator:aec3e5611beed0516afb3cf43751da5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59bef3ab3b1e2cf50d2c81fe70221b4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ad59bef3ab3b1e2cf50d2c81fe70221b4">readBlocksNoDMA</a> (size_t startSec, size_t blocks, void *<a class="el" href="../../d3/df4/printk__user__space_8cpp.html#afb9b58af7a145dbcf06245ccb85c5fe5">buffer</a>)</td></tr>
+<tr class="separator:ad59bef3ab3b1e2cf50d2c81fe70221b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982ca7042713b205d138d7862e142919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">CommandStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a982ca7042713b205d138d7862e142919">readPolled</a> (uint32_t arg, uint32_t blkCnt, uint8_t *buff)</td></tr>
+<tr class="separator:a982ca7042713b205d138d7862e142919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50ada217e52618382bf17b21755447d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ac50ada217e52618382bf17b21755447d">readSingleBlockNoDMA</a> (size_t startSec, void *<a class="el" href="../../d3/df4/printk__user__space_8cpp.html#afb9b58af7a145dbcf06245ccb85c5fe5">buffer</a>)</td></tr>
+<tr class="separator:ac50ada217e52618382bf17b21755447d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33dff41eeea99cf456b97c7c1b4a2a5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a33dff41eeea99cf456b97c7c1b4a2a5b">resetController</a> ()</td></tr>
+<tr class="separator:a33dff41eeea99cf456b97c7c1b4a2a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefebe8ee58ad0495e5d67b7dd2801b42"><td class="memTemplParams" colspan="2">template&lt;class ... Args&gt; </td></tr>
+<tr class="memitem:aefebe8ee58ad0495e5d67b7dd2801b42"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#aefebe8ee58ad0495e5d67b7dd2801b42">SDDriver</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:aefebe8ee58ad0495e5d67b7dd2801b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99abc65cd1740b26ab4ee79452008217"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a99abc65cd1740b26ab4ee79452008217">sendPullup</a> ()</td></tr>
+<tr class="separator:a99abc65cd1740b26ab4ee79452008217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56e133df4de2a27aa9d84f3fdcb2741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ab56e133df4de2a27aa9d84f3fdcb2741">setBlockSize</a> ()</td></tr>
+<tr class="separator:ab56e133df4de2a27aa9d84f3fdcb2741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5bbbe50aa6b4b865f614228c9ba837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a7f5bbbe50aa6b4b865f614228c9ba837">setupADMA2DescriptorTable</a> ()</td></tr>
+<tr class="separator:a7f5bbbe50aa6b4b865f614228c9ba837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68294cf9d19996f6b1bd41c5a0ac82a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">CommandStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a68294cf9d19996f6b1bd41c5a0ac82a6">transferCommand</a> (uint32_t cmd, uint32_t arg, uint32_t blckCnt)</td></tr>
+<tr class="separator:a68294cf9d19996f6b1bd41c5a0ac82a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab602d8b14541b323ef9159208bc0ab7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#aab602d8b14541b323ef9159208bc0ab7">transferMode</a> (uint16_t mode)</td></tr>
+<tr class="separator:aab602d8b14541b323ef9159208bc0ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b4d6d6cbec76e3b1300819fb7ad954"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a52b4d6d6cbec76e3b1300819fb7ad954">vendorVersion</a> () const</td></tr>
+<tr class="separator:a52b4d6d6cbec76e3b1300819fb7ad954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e54a11a6e4fb310205cd5d64cf567f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a82e54a11a6e4fb310205cd5d64cf567f">writeBlocksNoDMA</a> (size_t startSec, size_t blocks, const void *<a class="el" href="../../d3/df4/printk__user__space_8cpp.html#afb9b58af7a145dbcf06245ccb85c5fe5">buffer</a>)</td></tr>
+<tr class="separator:a82e54a11a6e4fb310205cd5d64cf567f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac829e5922686cfc8c8f152bfe958d882"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ac829e5922686cfc8c8f152bfe958d882">writeSingleBlockNoDMA</a> (size_t startSec, const void *<a class="el" href="../../d3/df4/printk__user__space_8cpp.html#afb9b58af7a145dbcf06245ccb85c5fe5">buffer</a>)</td></tr>
+<tr class="separator:ac829e5922686cfc8c8f152bfe958d882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a4be93af3fe06302f6340e5c7a689e52b">reg</a> ()</td></tr>
+<tr class="separator:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aecb8a26df6a63d49d8b38cf8eb5dba76">reg</a> () const</td></tr>
+<tr class="separator:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ab54f599c12c38935ff32e526c39666b6">reg16</a> ()</td></tr>
+<tr class="separator:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#acbe849531abcf4c0f125569a859886cf">reg16</a> () const</td></tr>
+<tr class="separator:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint32_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a3d0181d202870b31a91ec5bc1a5c6181">reg32</a> ()</td></tr>
+<tr class="separator:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#af539b2054048256208e9660d34610f93">reg32</a> () const</td></tr>
+<tr class="separator:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a787e59015cafd26ba0725fcc18e03440">reg64</a> ()</td></tr>
+<tr class="separator:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aef0b23957384e94af785bd63946d425a">reg64</a> () const</td></tr>
+<tr class="separator:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ac68868fd66f2cd04bf594a61b87f5e13">reg8</a> ()</td></tr>
+<tr class="separator:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a82a1723858bcee844412a086bd12ac01">reg8</a> () const</td></tr>
+<tr class="separator:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#afa50e6631ba59a188e875cc5f108855d">regcopy</a> ()</td></tr>
+<tr class="separator:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a14664a803143c8f043171976f539ebbc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a14664a803143c8f043171976f539ebbc">_baseClockFreq</a> {0}</td></tr>
+<tr class="separator:a14664a803143c8f043171976f539ebbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274003fd495a435197a0a60cdac4e913"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a274003fd495a435197a0a60cdac4e913">_blockSize</a> {0}</td></tr>
+<tr class="separator:a274003fd495a435197a0a60cdac4e913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0848493cc30b524272c05048593556af"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a0848493cc30b524272c05048593556af">_capabilities</a> {0}</td></tr>
+<tr class="separator:a0848493cc30b524272c05048593556af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182cf630fc70d14d7ff0c9f3752225fd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a182cf630fc70d14d7ff0c9f3752225fd">_cardID</a> [4]</td></tr>
+<tr class="separator:a182cf630fc70d14d7ff0c9f3752225fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07166a65e2f7888060737ede8164a448"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a07166a65e2f7888060737ede8164a448">_cardInserted</a> {false}</td></tr>
+<tr class="separator:a07166a65e2f7888060737ede8164a448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16f5cfbeb3cd1bd3ff8d1031773acf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d7f/class_card_spec_data.html">CardSpecData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ae16f5cfbeb3cd1bd3ff8d1031773acf3">_cardSpecData</a> {0}</td></tr>
+<tr class="separator:ae16f5cfbeb3cd1bd3ff8d1031773acf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c36eda4c65ba911008cf36ece10c4d1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a5c36eda4c65ba911008cf36ece10c4d1">_cardType</a> {0}</td></tr>
+<tr class="separator:a5c36eda4c65ba911008cf36ece10c4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0931a5461737cb0533ff0bd984b115f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ad0931a5461737cb0533ff0bd984b115f">_cardVersion</a> {0}</td></tr>
+<tr class="separator:ad0931a5461737cb0533ff0bd984b115f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1742a2dc497a56fa854cfabb20b3f7c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#ad1742a2dc497a56fa854cfabb20b3f7c">_clockFreq</a> {0}</td></tr>
+<tr class="separator:ad1742a2dc497a56fa854cfabb20b3f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13d4e4a3a1ee3746f743282e9165da00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a13d4e4a3a1ee3746f743282e9165da00">_hostControlVersion</a> {0}</td></tr>
+<tr class="separator:a13d4e4a3a1ee3746f743282e9165da00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057a39af3dccd221ed049b9ea78258aa"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a057a39af3dccd221ed049b9ea78258aa">_relativeCardAddr</a> {0}</td></tr>
+<tr class="separator:a057a39af3dccd221ed049b9ea78258aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6703759468049ccee2f8e1967c1ac9d7"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a6703759468049ccee2f8e1967c1ac9d7">_secCount</a> {0}</td></tr>
+<tr class="separator:a6703759468049ccee2f8e1967c1ac9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b667e866f13f32c742a6d7be7910d4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_s_d_driver.html#a58b667e866f13f32c742a6d7be7910d4">_transferMode</a> {0}</td></tr>
+<tr class="separator:a58b667e866f13f32c742a6d7be7910d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_types_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_types_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">RegOffset</a> = uint32_t</td></tr>
+<tr class="separator:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a155c5b45895b607c9ca571beb5fe408d">MemBasedRegReader</a> (size_t base)</td></tr>
+<tr class="separator:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a366f51ac0a2278121fb76dd2b158ac63">MemBasedRegReader</a> (void *base)</td></tr>
+<tr class="separator:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a710282136838c803cbd1f0f76167c4cc">MemBasedRegReader</a> (volatile void *base)</td></tr>
+<tr class="separator:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a5d0de8f7c377996190e28a6ce7c816fc">MemBasedRegReader</a> (nullptr_t base)</td></tr>
+<tr class="separator:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">volatile char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a56c015b478a295d2ae08a73a219cfce6">_base</a></td></tr>
+<tr class="separator:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>SD,SDIO,MMC </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="ae6a0d8d5c9afc8149d5e149dbbea20ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a0d8d5c9afc8149d5e149dbbea20ae">&#9670;&nbsp;</a></span>R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979">SDDriver::R</a> =  <a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979">RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a331bfee113e04aeef2a626293e92c160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331bfee113e04aeef2a626293e92c160">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a48b63be781f69156dfdf99700ce03eca"></a>XSDPS_APP_CMD_PREFIX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a95fae240e551bff1c59fce0d80435722"></a>CMD0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a72116adae0d369cf8faee04774464ec7"></a>CMD1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a557ca23a381691a2a52d5af4e5bd19a4"></a>CMD2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a85c04292255a9d0ba28689b9dd01100d"></a>CMD3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ace010d5b947efdc5af4168db29efa8fe"></a>CMD4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a65b3fb39c7780aa26c6885b6917341ae"></a>CMD5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ae7f9090dd658dd5af4cc1c416c765b84"></a>CMD6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a49d101b4492a39f51ad846a637e40c93"></a>ACMD6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a4bceff50264cd604e0f426285a614e62"></a>CMD7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a11e9a1638d709cca8a3644910d576577"></a>CMD8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ae94647033460a5c249caaf09b8c3adcf"></a>CMD9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160afed66bf4e079abe95fa07ce71d82e680"></a>CMD10&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160aa4a772641bc4a9dd5c6d1470bfc3843a"></a>CMD11&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a02afc2d427820ae726f0ea97453628c3"></a>CMD12&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a892889c020b21b8dc9d58988dec022d9"></a>CMD13&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a429ba2ef64ae721305b82b186a8fbdd3"></a>ACMD13&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a84d5922f2935d0e4c07cae20bb9228e1"></a>CMD16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ad5d63b3e0d92977a8d8eeb6866ef7244"></a>CMD17&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160af122c67ab6276f6355b2f95f919f2266"></a>CMD18&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a8dd98fe9c408f9081dce7136ddcaa534"></a>CMD19&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160aa7bff8fc3e076ec2b5ed62f791af6582"></a>CMD21&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160aaa54dc39c05aaec7a03f71da375630cf"></a>CMD23&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160acba17f0ed06a1e266b0dd9fd7cdee39b"></a>ACMD23&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a129b131ade4da310807b2dc7ed1476cb"></a>CMD24&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a82daa790e0f0612ca13071e6862cb231"></a>CMD25&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a129d8dd3d99f76689ba9840f852cc26a"></a>CMD41&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a64251b473aba04eda7a3fc458493b2b8"></a>ACMD41&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160afa6db4dc7efb084377eb1ed64d623a28"></a>ACMD42&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a5f31d1138a80187a2ef10127d46f5384"></a>ACMD51&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a286e783316e4149a0fb1054013d170a1"></a>CMD52&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a6e3bca8f7f099f269069fcf377fb5bc2"></a>CMD55&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160aea5a6be1159ea4f2f8b8d4f75237c59a"></a>CMD58&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a4c327797b22d208d84f2da0c7b75f139"></a>XSDPS_CMD_RESP_NONE_MASK&#160;</td><td class="fielddoc"><p>No Response </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a2033b63e086632817fff44e9fb23c3c4"></a>XSDPS_CMD_RESP_L136_MASK&#160;</td><td class="fielddoc"><p>Response length 138 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160af10c9c81d9296c87c435b8fe99515442"></a>XSDPS_CMD_RESP_L48_MASK&#160;</td><td class="fielddoc"><p>Response length 48 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a2646c9bda86e69804d8b0fe97817b975"></a>XSDPS_CMD_RESP_L48_BSY_CHK_MASK&#160;</td><td class="fielddoc"><p>Response length 48 &amp;check busy after response </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ad86e232f9895ded49c2cbaaee5df9913"></a>XSDPS_CMD_CRC_CHK_EN_MASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a7204d6f167172e9066a422e20db8bda6"></a>XSDPS_CMD_INX_CHK_EN_MASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a00aa3c6973a08d64a85a8c7ed68e7faa"></a>XSDPS_DAT_PRESENT_SEL_MASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a3c12f0194d655e818818eaf2dcc70f56"></a>XSDPS_CMD_TYPE_MASK&#160;</td><td class="fielddoc"><p>Command Type </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a65f29155f51678311c104b869aa85d74"></a>XSDPS_CMD_TYPE_NORM_MASK&#160;</td><td class="fielddoc"><p>CMD Type - Normal </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a63be05dadd5856676c4a5fd164a9f182"></a>XSDPS_CMD_TYPE_SUSPEND_MASK&#160;</td><td class="fielddoc"><p>CMD Type - Suspend </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ad6c95d773b3431fc4e7b56d099e34a05"></a>XSDPS_CMD_TYPE_RESUME_MASK&#160;</td><td class="fielddoc"><p>CMD Type - Resume </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a38ddcecf9b2183a4266525d61e22e47d"></a>XSDPS_CMD_TYPE_ABORT_MASK&#160;</td><td class="fielddoc"><p>CMD Type - Abort </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ab01d1332bc1104f9e1447cf8d2799733"></a>XSDPS_CMD_MASK&#160;</td><td class="fielddoc"><p>Command Index Mask - Set to CMD0-63, AMCD0-63 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a9fa2b343258cfc9df8f611c2c7f175c5"></a>XSDPS_CARD_SD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ae40b64c77a17eb0f2309f7c3be14b1d6"></a>XSDPS_CARD_MMC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a3ea08ff2323fc9418cf5885275354335"></a>XSDPS_CARD_SDIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a6cd1951c32bb653cb5e95b6f5f933f32"></a>XSDPS_CARD_SDCOMBO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a43ce7c9f4584be9d2759a5bc1170f83a"></a>XSDPS_CHIP_EMMC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a7dad5243ce634321ee10befdf52cfdb7"></a>HC_VER_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a2acc65a9288ab85f6def7ff03dfbc435"></a>HC_VER_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a3de4a497761ca238664a9e6e40946514"></a>HC_VER_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a025791f6e80a335848656c21af061f86"></a>SD_VER_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a508d3fb9fc4bdb3051510442448f8fbf"></a>SD_VER_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a63827138866dc91043bde24d355bd978"></a>RESP_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ad56495dfba3f89646154d4de2cf79fda"></a>RESP_R1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160abc8ac74d594f6248700f45d743811d20"></a>RESP_R1B&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a1554da4a59aad45784f132f7af173404"></a>RESP_R2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160ac8fe3b0899cced6d7dff758900c20eb7"></a>RESP_R3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160af793ca332bc031dc22366d6efbb8a039"></a>RESP_R6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160a7eda121d9ecf0b1d7f2cf38a4cb8de35"></a>TRANS_MODE_CARD_TO_HOST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a331bfee113e04aeef2a626293e92c160afdc2826055c5f751aee8e2c27a80e3c0"></a>TRANS_MODE_ENABLE_DMA&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00079">79</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abbfa5ad1760abc65895f0763c693a530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbfa5ad1760abc65895f0763c693a530">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="abbfa5ad1760abc65895f0763c693a530ac63c3f1a86776bc30cfc17d47442e18d"></a>CAP_RESET_VALUE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00171">171</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abdb734f788a683a6117caf5fd5028979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb734f788a683a6117caf5fd5028979">&#9670;&nbsp;</a></span>RegOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d1/dcf/class_s_d_driver.html#abdb734f788a683a6117caf5fd5028979">SDDriver::RegOffset</a> : <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">MemBasedRegReader::RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aa12a867c1791c1a6933d2fbc03995cf4"></a>reg_sdmasysaddrlo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a560e52571970f8644cbfd0b42c12fe29"></a>reg_sdmasysaddrhi&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a911527de10438e25c4e9b628aed54a27"></a>reg_blocksize&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ae8e458f141909e96c4c9e7a4a61499b5"></a>reg_blockcount&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a1b46e11fd4cbc5f0fac132dd451d1df9"></a>reg_argument1lo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a31bdde179cf3a8a1b524d1b928a2bd01"></a>reg_argument1hi&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a558a1efbb8b12c97975d5cf668f77c6b"></a>reg_transfermode&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ab333287ec1595df745e7198ee8326e4b"></a>reg_command&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aabc9662cf05bf16a35306635ec33a7c6"></a>reg_response0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ae1d0cbc9504ee1e9e55986c6b4e6f341"></a>reg_response1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aaa5ae358e66e623eefc5bb8b6c877e3f"></a>reg_response2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aa8f1ac207b55e557b961e580dc0e4d62"></a>reg_response3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aad423185b482f33851ff6577027715ba"></a>reg_response4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a1cfb36623e299cd647c1dc6742b75d00"></a>reg_response5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a46b74f10652d090e194132feb7688653"></a>reg_response6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ad02ef6bd6055cd9037a8cb9f58785ae7"></a>reg_response7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ac8847e9acd370a67f6f6e1c1925296f7"></a>reg_dataport&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a8c0b7efd9c6da024746b3b922fa67567"></a>reg_presentstate&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a87ff507ad9b91baf9cd46b62e7a172b9"></a>reg_hostcontrol1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a581a4824d8ef0306deb082339c0f81e4"></a>reg_powercontrol&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aba8b353a5df3280836d603225b697079"></a>reg_timeoutcontrol&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ac4268d7b782eebd42efafd07bc806a2b"></a>reg_clockcontrol&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ad50860cbd30f2f8e57f0bc6ee45531f7"></a>reg_softwarereset&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a77e0af7be290ac95c69da58567a1e441"></a>reg_normalintrsts&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ac1863677563d922d1c7d40e1d5307a5b"></a>reg_errorintrsts&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a2cbd446aa2799c675dcd7a16edd3e76b"></a>reg_normalintrstsena&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a8ec1df81b5c24b91c65841cd8b5e140a"></a>reg_errorintrstsena&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ace90175a9a1e65b06883349b0d6ee336"></a>reg_normalintrsigena&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a315efe58038b4baa66c914a7e2cc5265"></a>reg_errorintrsigena&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979ab926a70a643f465bb4d1d7a5af12d4eb"></a>reg_hostcontrol2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a8d5199e02855b6fe04a7354501d6035c"></a>reg_maxcurrentcap&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aab5d3ee1faab6b61a6ba4c90883f1a63"></a>reg_capabilities&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979a67feb6955224ec67ed0e22dfb5d5c53c"></a>reg_presetvalue1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abdb734f788a683a6117caf5fd5028979aa7e86d0d3590493ed39be3c6833791a5"></a>reg_hostcontrollerver&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aefebe8ee58ad0495e5d67b7dd2801b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefebe8ee58ad0495e5d67b7dd2801b42">&#9670;&nbsp;</a></span>SDDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDDriver::SDDriver </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa59e16d99bc6c38d8836558eb163f126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59e16d99bc6c38d8836558eb163f126">&#9670;&nbsp;</a></span>busSpeed() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SDDriver::busSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbe07ea9f77c84fb77ee37a19c5303e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe07ea9f77c84fb77ee37a19c5303e9">&#9670;&nbsp;</a></span>busSpeed() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::busSpeed </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>newSpeed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac899fcbe1228b711e5e36221283ae88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac899fcbe1228b711e5e36221283ae88">&#9670;&nbsp;</a></span>busWidth() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SDDriver::busWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3e036b68fe7f628c406af90647c0cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e036b68fe7f628c406af90647c0cad">&#9670;&nbsp;</a></span>busWidth() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::busWidth </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>newWidth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78c3b8b62af4b02dc480e454990c036d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c3b8b62af4b02dc480e454990c036d">&#9670;&nbsp;</a></span>cardsExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool SDDriver::cardsExists </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00179">179</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a465a3a00d6355c7dacfc8896cc52145b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465a3a00d6355c7dacfc8896cc52145b">&#9670;&nbsp;</a></span>cardStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d0d/class_s_d_card_status.html">SDCardStatus</a> SDDriver::cardStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00538">538</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a465a3a00d6355c7dacfc8896cc52145b_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a465a3a00d6355c7dacfc8896cc52145b_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a465a3a00d6355c7dacfc8896cc52145b_cgraph" id="d1/dcf/class_s_d_driver_a465a3a00d6355c7dacfc8896cc52145b_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6056c92a88e9f314ed4fc1f1386ac4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6056c92a88e9f314ed4fc1f1386ac4d5">&#9670;&nbsp;</a></span>clearIntErrStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void SDDriver::clearIntErrStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00207">207</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a6056c92a88e9f314ed4fc1f1386ac4d5_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a6056c92a88e9f314ed4fc1f1386ac4d5_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a6056c92a88e9f314ed4fc1f1386ac4d5_icgraph" id="d1/dcf/class_s_d_driver_a6056c92a88e9f314ed4fc1f1386ac4d5_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac13094b631297b78753c17bc93d822b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13094b631297b78753c17bc93d822b9">&#9670;&nbsp;</a></span>clearResponseBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::clearResponseBit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00185">185</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ac13094b631297b78753c17bc93d822b9_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ac13094b631297b78753c17bc93d822b9_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ac13094b631297b78753c17bc93d822b9_cgraph" id="d1/dcf/class_s_d_driver_ac13094b631297b78753c17bc93d822b9_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6748edc406c8da7420eed223a4d3e5fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6748edc406c8da7420eed223a4d3e5fa">&#9670;&nbsp;</a></span>clockFreq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">SDDriver::CommandStatus</a> SDDriver::clockFreq </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>newFreq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00151">151</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a6748edc406c8da7420eed223a4d3e5fa_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a6748edc406c8da7420eed223a4d3e5fa_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a6748edc406c8da7420eed223a4d3e5fa_icgraph" id="d1/dcf/class_s_d_driver_a6748edc406c8da7420eed223a4d3e5fa_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a6b575f771428477a23025ef6376673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6b575f771428477a23025ef6376673">&#9670;&nbsp;</a></span>frameCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::frameCommand </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00200">200</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a7a6b575f771428477a23025ef6376673_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a7a6b575f771428477a23025ef6376673_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a7a6b575f771428477a23025ef6376673_icgraph" id="d1/dcf/class_s_d_driver_a7a6b575f771428477a23025ef6376673_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab7b35802ba88cd624635097aa894d0f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b35802ba88cd624635097aa894d0f2">&#9670;&nbsp;</a></span>hasCorrectBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool SDDriver::hasCorrectBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00173">173</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af290f13cd9eb93eb60d9e007bd02cb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af290f13cd9eb93eb60d9e007bd02cb39">&#9670;&nbsp;</a></span>hasCorrectPresetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool SDDriver::hasCorrectPresetValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00174">174</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a786c1347a60311e0539a1e350279f6ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786c1347a60311e0539a1e350279f6ff">&#9670;&nbsp;</a></span>hasResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SDDriver::hasResponse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00184">184</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aec3e5611beed0516afb3cf43751da5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3e5611beed0516afb3cf43751da5dc">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SDDriver::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00018">18</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_cgraph" id="d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_cgraph">
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_icgraph" id="d1/dcf/class_s_d_driver_aec3e5611beed0516afb3cf43751da5dc_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad59bef3ab3b1e2cf50d2c81fe70221b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad59bef3ab3b1e2cf50d2c81fe70221b4">&#9670;&nbsp;</a></span>readBlocksNoDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SDDriver::readBlocksNoDMA </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>实现与图表稍微有区别，主要是初次读时，Buffer Read Ready状态可能没有设置 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startSec</td><td></td></tr>
+    <tr><td class="paramname">blocks</td><td></td></tr>
+    <tr><td class="paramname">buffer</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00394">394</a> 行定义.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_cgraph" id="d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_cgraph">
+</map>
+</div>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_icgraph" id="d1/dcf/class_s_d_driver_ad59bef3ab3b1e2cf50d2c81fe70221b4_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a982ca7042713b205d138d7862e142919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982ca7042713b205d138d7862e142919">&#9670;&nbsp;</a></span>readPolled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">CommandStatus</a> SDDriver::readPolled </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blkCnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac50ada217e52618382bf17b21755447d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50ada217e52618382bf17b21755447d">&#9670;&nbsp;</a></span>readSingleBlockNoDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SDDriver::readSingleBlockNoDMA </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00345">345</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_cgraph" id="d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_cgraph">
+</map>
+</div>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_icgraph" id="d1/dcf/class_s_d_driver_ac50ada217e52618382bf17b21755447d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a33dff41eeea99cf456b97c7c1b4a2a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33dff41eeea99cf456b97c7c1b4a2a5b">&#9670;&nbsp;</a></span>resetController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::resetController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00143">143</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a99abc65cd1740b26ab4ee79452008217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99abc65cd1740b26ab4ee79452008217">&#9670;&nbsp;</a></span>sendPullup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::sendPullup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab56e133df4de2a27aa9d84f3fdcb2741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56e133df4de2a27aa9d84f3fdcb2741">&#9670;&nbsp;</a></span>setBlockSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::setBlockSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f5bbbe50aa6b4b865f614228c9ba837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5bbbe50aa6b4b865f614228c9ba837">&#9670;&nbsp;</a></span>setupADMA2DescriptorTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDDriver::setupADMA2DescriptorTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68294cf9d19996f6b1bd41c5a0ac82a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68294cf9d19996f6b1bd41c5a0ac82a6">&#9670;&nbsp;</a></span>transferCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d05/class_s_d_driver_1_1_command_status.html">SDDriver::CommandStatus</a> SDDriver::transferCommand </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blckCnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00287">287</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_cgraph" id="d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_cgraph">
+</map>
+</div>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_icgraph" id="d1/dcf/class_s_d_driver_a68294cf9d19996f6b1bd41c5a0ac82a6_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab602d8b14541b323ef9159208bc0ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab602d8b14541b323ef9159208bc0ab7">&#9670;&nbsp;</a></span>transferMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void SDDriver::transferMode </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00201">201</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a52b4d6d6cbec76e3b1300819fb7ad954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b4d6d6cbec76e3b1300819fb7ad954">&#9670;&nbsp;</a></span>vendorVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint16_t SDDriver::vendorVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00182">182</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a82e54a11a6e4fb310205cd5d64cf567f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e54a11a6e4fb310205cd5d64cf567f">&#9670;&nbsp;</a></span>writeBlocksNoDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SDDriver::writeBlocksNoDMA </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>参考 misc\external\mmc\xilinx_sd_read_write\NonDMA_Data_Transaction_3.png 注意，在QEMU下，当写入多个扇区时，必须保证物理文件具有blocks个扇区，否则可能产生TimeOutError </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startSec</td><td></td></tr>
+    <tr><td class="paramname">blocks</td><td></td></tr>
+    <tr><td class="paramname">buffer</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00494">494</a> 行定义.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_cgraph" id="d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_cgraph">
+</map>
+</div>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_icgraph" id="d1/dcf/class_s_d_driver_a82e54a11a6e4fb310205cd5d64cf567f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac829e5922686cfc8c8f152bfe958d882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac829e5922686cfc8c8f152bfe958d882">&#9670;&nbsp;</a></span>writeSingleBlockNoDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SDDriver::writeSingleBlockNoDMA </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a> 第 <a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html#l00448">448</a> 行定义.</p>
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_cgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_cgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_cgraph" id="d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_cgraph">
+</map>
+</div>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_icgraph.png" border="0" usemap="#d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_icgraph" alt=""/></div>
+<map name="d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_icgraph" id="d1/dcf/class_s_d_driver_ac829e5922686cfc8c8f152bfe958d882_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a14664a803143c8f043171976f539ebbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14664a803143c8f043171976f539ebbc">&#9670;&nbsp;</a></span>_baseClockFreq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::_baseClockFreq {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00223">223</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a274003fd495a435197a0a60cdac4e913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274003fd495a435197a0a60cdac4e913">&#9670;&nbsp;</a></span>_blockSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::_blockSize {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00225">225</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0848493cc30b524272c05048593556af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0848493cc30b524272c05048593556af">&#9670;&nbsp;</a></span>_capabilities</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t SDDriver::_capabilities {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00222">222</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a182cf630fc70d14d7ff0c9f3752225fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182cf630fc70d14d7ff0c9f3752225fd">&#9670;&nbsp;</a></span>_cardID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::_cardID[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00228">228</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a07166a65e2f7888060737ede8164a448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07166a65e2f7888060737ede8164a448">&#9670;&nbsp;</a></span>_cardInserted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SDDriver::_cardInserted {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00221">221</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae16f5cfbeb3cd1bd3ff8d1031773acf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16f5cfbeb3cd1bd3ff8d1031773acf3">&#9670;&nbsp;</a></span>_cardSpecData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d7f/class_card_spec_data.html">CardSpecData</a> SDDriver::_cardSpecData {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00230">230</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5c36eda4c65ba911008cf36ece10c4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c36eda4c65ba911008cf36ece10c4d1">&#9670;&nbsp;</a></span>_cardType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SDDriver::_cardType {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00226">226</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad0931a5461737cb0533ff0bd984b115f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0931a5461737cb0533ff0bd984b115f">&#9670;&nbsp;</a></span>_cardVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SDDriver::_cardVersion {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00227">227</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad1742a2dc497a56fa854cfabb20b3f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1742a2dc497a56fa854cfabb20b3f7c">&#9670;&nbsp;</a></span>_clockFreq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::_clockFreq {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00224">224</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a13d4e4a3a1ee3746f743282e9165da00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d4e4a3a1ee3746f743282e9165da00">&#9670;&nbsp;</a></span>_hostControlVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SDDriver::_hostControlVersion {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00220">220</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a057a39af3dccd221ed049b9ea78258aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057a39af3dccd221ed049b9ea78258aa">&#9670;&nbsp;</a></span>_relativeCardAddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t SDDriver::_relativeCardAddr {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00229">229</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6703759468049ccee2f8e1967c1ac9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6703759468049ccee2f8e1967c1ac9d7">&#9670;&nbsp;</a></span>_secCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t SDDriver::_secCount {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00231">231</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a58b667e866f13f32c742a6d7be7910d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b667e866f13f32c742a6d7be7910d4">&#9670;&nbsp;</a></span>_transferMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t SDDriver::_transferMode {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a> 第 <a class="el" href="../../dc/d49/_s_d_driver_8h_source.html#l00219">219</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/sd/<a class="el" href="../../dc/d49/_s_d_driver_8h_source.html">SDDriver.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/sd/<a class="el" href="../../d9/d31/_s_d_driver_8cpp_source.html">SDDriver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:45 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

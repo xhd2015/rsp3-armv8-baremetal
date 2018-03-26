@@ -1,0 +1,12 @@
+digraph "String"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="{String\n||+ append()\l+ append()\l+ operator=()\l+ operator=()\l+ operator=()\l+ operator=()\l+ operator=()\l+ operator=()\l+ String()\l+ String()\l+ String()\l+ String()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Vector\< char \>\n|- capacity\l- data\l- size\l|+ append()\l+ clear()\l+ empty()\l+ erase()\l+ getCapacity()\l+ getData()\l+ getData()\l+ getSize()\l+ insert()\l+ operator=()\l和 12 更多...\l- adjustCapacityForOneLess()\l- adjustCapacityForOneMore()\l- resizeCapacity()\l- getIncrementalSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html"];
+  Node5 -> Node4 [dir="back",color="orange",fontsize="10",style="solid",label=" \< char \>" ,fontname="Helvetica"];
+  Node5 [label="{Vector\< T \>\n|- capacity\l- size\l|+ append()\l+ clear()\l+ empty()\l+ erase()\l+ getCapacity()\l+ getData()\l+ getData()\l+ getSize()\l+ insert()\l+ operator=()\l和 12 更多...\l- adjustCapacityForOneLess()\l- adjustCapacityForOneMore()\l- resizeCapacity()\l- getIncrementalSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html"];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" -data" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{T\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

@@ -1,0 +1,17 @@
+digraph "ProcessManager::killProcess"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node47 [label="ProcessManager::killProcess",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node47 -> Node48 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="destroy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d96/exit_8cpp.html#a59717df97d3f6b424a0528883a351aae"];
+  Node47 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="ProcessManager::changeProcess\lStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a0bcc42f5333bb6a0613e38721227bbd2"];
+  Node49 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="DoublyLinkedList::removeNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a20950e5bd978791d68b723f3ea8be4bb"];
+  Node49 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="DoublyLinkedList::insertTail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a08820eece8a930239f434a7dea802599"];
+  Node49 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="DoublyLinkedNode::data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html#a72a70560baba711c82bb012317557cb8"];
+}

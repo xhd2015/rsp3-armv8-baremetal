@@ -1,0 +1,21 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/SectorReader_host.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3754 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/io/SectorReader_host.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3754 -> Node3755 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3755 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3755 -> Node3756 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3756 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3755 -> Node3757 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3757 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3754 -> Node3758 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3758 [label="arch/host/SectorReaderHelper.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d70/_sector_reader_helper_8h.html"];
+  Node3758 -> Node3759 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3759 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3754 -> Node3760 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3760 [label="io/SectorReader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d73/_sector_reader_8h.html"];
+  Node3760 -> Node3755 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3754 -> Node3761 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3761 [label="kernel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/daa/kernel_8h.html"];
+}

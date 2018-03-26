@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FATLongNameEntry.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_e1c7b6d0de41f970aaf64acfab9d22b3.html">filesystem</a></li><li class="navelem"><a class="el" href="../../dir_59ecb4d0e4d6b36dc519bbfc6f4e5e3f.html">fat</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">FATLongNameEntry.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/da4/def_8h_source.html">def.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../db/db5/_string_8h_source.html">data_structures/String.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h_source.html">filesystem/fat/FATDirEntry.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> FATLongNameEntry.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../db/df1/_f_a_t_long_name_entry_8h__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8h" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8h" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8h">
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/de0/_f_a_t_long_name_entry_8h__dep__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8hdep" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8hdep" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2filesystem_2fat_2_f_a_t_long_name_entry_8hdep">
+</map>
+</div>
+</div>
+<p><a href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a3c048fba989eac9c773689e635bc1fb8"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a3c048fba989eac9c773689e635bc1fb8">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a3c048fba989eac9c773689e635bc1fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc2cc110593627b1af28e6de06310ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d61/class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a5dc2cc110593627b1af28e6de06310ab">getAsAsciiName</a> (bool skipHeadingSpace=true) const</td></tr>
+<tr class="separator:a5dc2cc110593627b1af28e6de06310ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387d358eb3e3627f22b7045a77079baa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a387d358eb3e3627f22b7045a77079baa">getLastAppearEntry</a> () const</td></tr>
+<tr class="separator:a387d358eb3e3627f22b7045a77079baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd18f5b8522b20f2e19a6da47fe8925b"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#acd18f5b8522b20f2e19a6da47fe8925b">getNameBytesCount</a> ()</td></tr>
+<tr class="separator:acd18f5b8522b20f2e19a6da47fe8925b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d422db0e99faacfe16ca28153a8f20"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a61d422db0e99faacfe16ca28153a8f20">getNameRequiredCapacity</a> ()</td></tr>
+<tr class="separator:a61d422db0e99faacfe16ca28153a8f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54155be6a49d6203ed01ceb3a60a5552"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dc/d93/class_f_a_t_dir_entry.html">FATDirEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a54155be6a49d6203ed01ceb3a60a5552">getOwnerDirectoryEntry</a> () const</td></tr>
+<tr class="separator:a54155be6a49d6203ed01ceb3a60a5552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb778d1463436f91591fb8ec24ce058d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#abb778d1463436f91591fb8ec24ce058d">lookupFirstNullChar</a> () const</td></tr>
+<tr class="separator:abb778d1463436f91591fb8ec24ce058d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa879372c35c7c4049e9b7fe8c500858e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#aa879372c35c7c4049e9b7fe8c500858e">nameEqulasAsciiName</a> (const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;asciiNullTermStr, bool allowAsciiStrMore) const</td></tr>
+<tr class="separator:aa879372c35c7c4049e9b7fe8c500858e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d857ef51d1e38aa84b12d47854d744"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#aa0d857ef51d1e38aa84b12d47854d744">nameEqulasAsciiNameUpto</a> (const <a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a> *lastCmpEntr, const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;asciiNullTermStr, bool allowAsciiStrMore) const</td></tr>
+<tr class="separator:aa0d857ef51d1e38aa84b12d47854d744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324e20696bbbf8fa655bcea7b4ee6b68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a324e20696bbbf8fa655bcea7b4ee6b68">uni_isLongNameEntry</a> () const</td></tr>
+<tr class="separator:a324e20696bbbf8fa655bcea7b4ee6b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadcbd72c8a49cc6ab13c92af125b2ea5"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#aadcbd72c8a49cc6ab13c92af125b2ea5">unicodeCharToAsciiChar</a> (const void *p)</td></tr>
+<tr class="separator:aadcbd72c8a49cc6ab13c92af125b2ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad10fd295c482ed11aa9cc98ae7d5f0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a8ad10fd295c482ed11aa9cc98ae7d5f0">unicodeNameMatchesAsciiName</a> (const char *unicodeName, size_t unicodeNameBytesLen, const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;asciiNullTermStr, bool allowAsciiStrMore)</td></tr>
+<tr class="separator:a8ad10fd295c482ed11aa9cc98ae7d5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a28478ea2856f6286899bc90b2c6a1ec4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a28478ea2856f6286899bc90b2c6a1ec4">attr</a></td></tr>
+<tr class="separator:a28478ea2856f6286899bc90b2c6a1ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385e330c40b5fc7d8aa0619183f6705a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a385e330c40b5fc7d8aa0619183f6705a">chksum</a></td></tr>
+<tr class="separator:a385e330c40b5fc7d8aa0619183f6705a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6062fbb32388d7473d442e5c17e21eb0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a6062fbb32388d7473d442e5c17e21eb0">fstClusLO</a></td></tr>
+<tr class="separator:a6062fbb32388d7473d442e5c17e21eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67bef990f6018c3078acbfcbee41c9bd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a67bef990f6018c3078acbfcbee41c9bd">name1</a> [10]</td></tr>
+<tr class="separator:a67bef990f6018c3078acbfcbee41c9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb21682dc4e7e07064e31435289c0fa"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a4bb21682dc4e7e07064e31435289c0fa">name2</a> [12]</td></tr>
+<tr class="separator:a4bb21682dc4e7e07064e31435289c0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6fd32d649cfd04bea2800a2e6e1454"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a2e6fd32d649cfd04bea2800a2e6e1454">name3</a> [4]</td></tr>
+<tr class="separator:a2e6fd32d649cfd04bea2800a2e6e1454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae204655dc23be1d048e8bebf2dfa5089"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#ae204655dc23be1d048e8bebf2dfa5089">ord</a></td></tr>
+<tr class="separator:ae204655dc23be1d048e8bebf2dfa5089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d127017fb298b889f4ba24752d08b8e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h.html#a1d127017fb298b889f4ba24752d08b8e">type</a></td></tr>
+<tr class="separator:a1d127017fb298b889f4ba24752d08b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a3c048fba989eac9c773689e635bc1fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c048fba989eac9c773689e635bc1fb8">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a> __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dc2cc110593627b1af28e6de06310ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc2cc110593627b1af28e6de06310ab">&#9670;&nbsp;</a></span>getAsAsciiName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d61/class_string.html">String</a> __attribute__::getAsAsciiName </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skipHeadingSpace</em> = <code>true</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a387d358eb3e3627f22b7045a77079baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387d358eb3e3627f22b7045a77079baa">&#9670;&nbsp;</a></span>getLastAppearEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a> * getLastAppearEntry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd18f5b8522b20f2e19a6da47fe8925b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd18f5b8522b20f2e19a6da47fe8925b">&#9670;&nbsp;</a></span>getNameBytesCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr size_t __attribute__::getNameBytesCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a61d422db0e99faacfe16ca28153a8f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d422db0e99faacfe16ca28153a8f20">&#9670;&nbsp;</a></span>getNameRequiredCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr size_t __attribute__::getNameRequiredCapacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a54155be6a49d6203ed01ceb3a60a5552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54155be6a49d6203ed01ceb3a60a5552">&#9670;&nbsp;</a></span>getOwnerDirectoryEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d93/class_f_a_t_dir_entry.html">FATDirEntry</a> * getOwnerDirectoryEntry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb778d1463436f91591fb8ec24ce058d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb778d1463436f91591fb8ec24ce058d">&#9670;&nbsp;</a></span>lookupFirstNullChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t __attribute__::lookupFirstNullChar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa879372c35c7c4049e9b7fe8c500858e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa879372c35c7c4049e9b7fe8c500858e">&#9670;&nbsp;</a></span>nameEqulasAsciiName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool __attribute__::nameEqulasAsciiName </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>asciiNullTermStr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowAsciiStrMore</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0d857ef51d1e38aa84b12d47854d744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d857ef51d1e38aa84b12d47854d744">&#9670;&nbsp;</a></span>nameEqulasAsciiNameUpto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool __attribute__::nameEqulasAsciiNameUpto </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d61/class_f_a_t_long_name_entry.html">FATLongNameEntry</a> *&#160;</td>
+          <td class="paramname"><em>lastCmpEntr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>asciiNullTermStr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowAsciiStrMore</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a324e20696bbbf8fa655bcea7b4ee6b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324e20696bbbf8fa655bcea7b4ee6b68">&#9670;&nbsp;</a></span>uni_isLongNameEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool __attribute__::uni_isLongNameEntry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadcbd72c8a49cc6ab13c92af125b2ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadcbd72c8a49cc6ab13c92af125b2ea5">&#9670;&nbsp;</a></span>unicodeCharToAsciiChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char __attribute__::unicodeCharToAsciiChar </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ad10fd295c482ed11aa9cc98ae7d5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad10fd295c482ed11aa9cc98ae7d5f0">&#9670;&nbsp;</a></span>unicodeNameMatchesAsciiName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool __attribute__::unicodeNameMatchesAsciiName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>unicodeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>unicodeNameBytesLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d50/class_string_ref.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>asciiNullTermStr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowAsciiStrMore</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowAsciiStrMore</td><td>是否允许用于比较的ascii字符更长，即asiccStr = unicodeName + MORE,sizeof(MORE)&gt;0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a28478ea2856f6286899bc90b2c6a1ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28478ea2856f6286899bc90b2c6a1ec4">&#9670;&nbsp;</a></span>attr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t attr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a385e330c40b5fc7d8aa0619183f6705a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385e330c40b5fc7d8aa0619183f6705a">&#9670;&nbsp;</a></span>chksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t chksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6062fbb32388d7473d442e5c17e21eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6062fbb32388d7473d442e5c17e21eb0">&#9670;&nbsp;</a></span>fstClusLO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t fstClusLO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a67bef990f6018c3078acbfcbee41c9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67bef990f6018c3078acbfcbee41c9bd">&#9670;&nbsp;</a></span>name1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char name1[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4bb21682dc4e7e07064e31435289c0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb21682dc4e7e07064e31435289c0fa">&#9670;&nbsp;</a></span>name2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char name2[12]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2e6fd32d649cfd04bea2800a2e6e1454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6fd32d649cfd04bea2800a2e6e1454">&#9670;&nbsp;</a></span>name3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char name3[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae204655dc23be1d048e8bebf2dfa5089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae204655dc23be1d048e8bebf2dfa5089">&#9670;&nbsp;</a></span>ord</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ord</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1d127017fb298b889f4ba24752d08b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d127017fb298b889f4ba24752d08b8e">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html">FATLongNameEntry.h</a> 第 <a class="el" href="../../da/d0d/_f_a_t_long_name_entry_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:36 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

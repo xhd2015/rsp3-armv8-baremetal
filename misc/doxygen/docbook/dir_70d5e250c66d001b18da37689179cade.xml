@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_70d5e250c66d001b18da37689179cade">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_70d5e250c66d001b18da37689179cade_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 目录 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_a71ca7544c7819c44600d5f807c9454f">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/common_aarch64</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_f17e16d7aa5cbb089011ed52879df375">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_5131d8d8b01f1a86d9c7891f3508d9ef">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_1270075813c54bb7e8db823bad0e5983">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/raspi3</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_eddbbde9675d4b4a706c6f052235a429">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_09ce2f3110adf1828808a4389912faeb">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/zcu102</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/</para>
+    </simplesect>
+</section>

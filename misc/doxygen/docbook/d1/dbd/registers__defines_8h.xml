@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/dbd/registers__defines_8h">
+    <title>registers_defines.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;kernel.h&gt;</programlisting>
+    <programlisting>#include &lt;io/IntegerFormatter.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/gicv3_defines.h&gt;</programlisting>
+<para>Include dependency diagram for registers_defines.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/de6/registers__defines_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for registers_defines.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d2f/registers__defines_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</link> regTypeInCXX <link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">regTypeInCXX::read</link>(){ regTypeInCXX res;<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(res));return res;}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</link> regTypeInCXX <link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">regTypeInCXX::updateRead</link>(){ <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(*this));return *this;}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</link> void <link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">regTypeInCXX::write</link>() const { <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;msr &quot; __stringify(regNameInAsm) &quot;,%0 \n\t&quot;::&quot;r&quot;(*this));}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ac0e05634e21d9b112caf141a354b3da3">ENCODE_ICC_IGRPEN0_EL1</link> 1100011001100110</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</link> 11010101001</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1aab03f8c7c0526fe5745321b6e961d150">ENCODE_MSR</link> 11010101000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1af222a0f6513605c08328f732a3b61a36">ENCODE_X0</link> 00000</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a021e2797a4c205900a4b3808bfd03cbd">ICC_BPR0_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,8,3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a6457dd501cd1d6eb42dfe8580d815cf5">ICC_BPR1_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ae2cf658a052b9fdd09c1b41c3ffbb735">ICC_CTLR_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1acb888055183b9689aefb93a27fa4c299">ICC_CTLR_EL3_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,6,12,12,4)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ad730846387a41d43a0ab40f2b6b841cb">ICC_DIR_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,11,1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a604999c87fcb990225a77641e65d15ea">ICC_EOIR0_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,8,1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ad7e95fa130fdd9759eed5186235a4d89">ICC_EOIR1_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a34630484290addaee7d2a982aa91fdb4">ICC_HPPIR0_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,8,2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a4426fcfed6350a121297707ac06c3129">ICC_HPPIR1_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a1566fb0c7f9554351fd1a2be13ed7631">ICC_IAR0_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,8,0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1aac2657fe15d8e500ee7ad373632d5666">ICC_IAR1_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a01f62ea779a46917c478461e278c2e90">ICC_IGRPEN0_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,6)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a97d353823a6157d9f6c74e2f5152a09f">ICC_IGRPEN1_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1af93caadd8f5961a3e7206656471fc4c3">ICC_IGRPEN1_EL3_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,6,12,12,7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a8fd5d368a54fc9fbfb36047f2c9b5d67">ICC_PMR_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,4,6,0)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a8388b4f4d2b39925f21f055f3b8773d1">ICC_RPR_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,11,3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a5e7dc9c681f0c7a5bed7ddbe51ce7383">ICC_SGI0R_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,11,7)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a464755ed77d7556cfd73046d9f6b5fc6">ICC_SGI1R_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,11,5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ad13e4f181c3f8e5c2f99bb06028d5453">ICC_SRE_EL1_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,12,12,5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a143e2e54b3185c4a827e995dfb9278e5">ICC_SRE_EL2_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,4,12,9,5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a6d73c494242f47cfe6ab7b992b20019c">ICC_SRE_EL3_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,6,12,12,5)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a4921aba558a2191aaf2b7c0e168c29ce">PAN_GCC_REPR</link> <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link>(3,0,4,2,3)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a9756ec5d311fd0bf4db3f16270b3c0fb">SETUP_REG_ANY_MEM_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>(void *p) \
+{ \
+	return *reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(p);\
+}\
+Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>(size_t p)\
+{\
+	return *reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(p);\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ae84d27908bad7f8b6d41f0caae00fb89">SETUP_REG_ANY_MEM_WRITE</link> void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>(void *p)const \
+{ \
+	*reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(p)=*this; \
+}\
+void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>(size_t p)const\
+{\
+	*reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(p)=*this;\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a3271f36e3c4fce8fda6c770d7d9521d6">SETUP_REG_GCC_REPR_READ</link> <link linkend="d1/dbd/registers__defines_8h_1a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</link>(Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>,<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_GCC_REPR)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ae49d64681a2ac66fea4d5b976bd93978">SETUP_REG_GCC_REPR_UPDATE_READ</link> <link linkend="d1/dbd/registers__defines_8h_1ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</link>(Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>,<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_GCC_REPR)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1af0ad6d900be2c6d51a208cfd6b034c1f">SETUP_REG_GCC_REPR_WRITE</link> <link linkend="d1/dbd/registers__defines_8h_1ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</link>(Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>,<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_GCC_REPR)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a32c72a65be87bfa10dace6542933e79d">SETUP_REG_HARD_CODED_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>() \
+{ \
+	Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> res; \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>( \
+			&quot;.4byte 0b&quot; __stringify(ENCODE_MRS) __stringify(ENCODE_##name) __stringify(ENCODE_X0) &quot;\n\t&quot; \
+			&quot;mov %0,x0 \n\t&quot; \
+			:&quot;=r&quot;(res)); \
+	return res; \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a91de67014e50242e0910a63f15d840d2">SETUP_REG_HARD_CODED_UPDATE_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">name::updateRead</link>() \
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>( \
+			&quot;.4byte 0b&quot; __stringify(ENCODE_MRS) __stringify(ENCODE_##name) __stringify(ENCODE_X0) &quot;\n\t&quot; \
+			&quot;mov %0,x0 \n\t&quot; \
+			:&quot;=r&quot;(*this)); \
+	return *this;\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a84bea788b3713acebfcb9f7e3ed13d63">SETUP_REG_HARD_CODED_WRITE</link> void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>() const\
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> __volatile( \
+		&quot;mov x0,%0 \n\t&quot; \
+		&quot;.4byte 0b&quot; __stringify(ENCODE_MSR) __stringify(ENCODE_##name) __stringify(ENCODE_X0) &quot;\n\t&quot; \
+		: \
+		:&quot;r&quot;(*this) \
+	); \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a9b4eec3fd91dfee6355f3fb6c76fa549">SETUP_REG_LOAD_STORE_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>() \
+{ \
+	Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> res{0};\
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;str &quot; __stringify(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>)&quot;,%0 \n\t&quot;::&quot;m&quot;(res)); \
+	return res; \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a6c9ec8c6b76636714d6fb2c508e0b274">SETUP_REG_LOAD_STORE_UPDATE_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">name::updateRead</link>() \
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;str &quot; __stringify(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>)&quot;,%0 \n\t&quot;::&quot;m&quot;(*this)); \
+	return *this; \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ac8c7bda265eb1548141ea946ad47ca26">SETUP_REG_LOAD_STORE_WRITE</link> void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>()const \
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;ldr &quot; __stringify(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>) &quot;,%0 \n\t&quot;::&quot;m&quot;(*this)); \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1aa278c06e34335429e9c5876633428bc2">SETUP_REG_MEM_MAPPED_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>() \
+{ \
+	return *reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_MEM_MAPPED_ADDR);\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a49b5cf4c4c1b56b34ec7b2d7f0f85e20">SETUP_REG_MEM_MAPPED_UPDATE_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">name::updateRead</link>() \
+{ \
+	return *this=*reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_MEM_MAPPED_ADDR);\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a6637cfa7de246724bb16e9a2caa005b3">SETUP_REG_MEM_MAPPED_WRITE</link> void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>() const\
+{ \
+	*reinterpret_cast&lt;Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>*&gt;(<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link>##_MEM_MAPPED_ADDR)=*this;\
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ac1da2460ffff94743c2a8763bba866f4">SETUP_REG_PC_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">name::read</link>() \
+{ \
+	Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> res;\
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;adr %0,#0\n\t&quot;:&quot;=r&quot;(res)); \
+	return res; \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1ab58184983cb95e98b4434d95e9cd6363">SETUP_REG_PC_UPDATE_READ</link> Reg##<link linkend="d9/de5/_f_a_t_dir_entry_8h_1afb5f90328f746a429516e6c9b1a069e2">name</link> Reg##<link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">name::updateRead</link>() \
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;adr %0,#0\n\t&quot;:&quot;=r&quot;(*this)); \
+	return *this; \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a0df0bf93f99e5d3b02840bcebaf3152b">SETUP_REG_PC_WRITE</link> void Reg##<link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">name::write</link>()const \
+{ \
+	<link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(&quot;br %0\n\t&quot;::&quot;r&quot;(*this)); \
+}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a4f7054fcbbbe32a3fa60970e2ed7e402">SETUP_REG_STD_READ</link> <link linkend="d1/dbd/registers__defines_8h_1a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</link>(Reg##regname,regname)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1adbcf97d50e11d69430aab54e0b15017d">SETUP_REG_STD_UPDATE_READ</link> <link linkend="d1/dbd/registers__defines_8h_1ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</link>(Reg##regname,regname)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a64b1b58ed7de3987f8fa99d249159bf1">SETUP_REG_STD_WRITE</link> <link linkend="d1/dbd/registers__defines_8h_1ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</link>(Reg##regname,regname)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d1/dbd/registers__defines_8h_1a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</link> s##op0##_##op1##_##c##crn##_##c##crm##_##op2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers_defines.h</para>
+    </simplesect>
+</section>

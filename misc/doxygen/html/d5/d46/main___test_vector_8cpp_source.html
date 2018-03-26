@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host/main_TestVector.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_f17e16d7aa5cbb089011ed52879df375.html">host</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main_TestVector.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d46/main___test_vector_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * main_TestVector.cpp</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Feb 1, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/da4/def_8h.html">def.h</a>&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d0/d4a/_test_vector_8h.html">test/TestVector.h</a>&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d74/test__base_8h.html">test/test_base.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../../include/io/printk.h&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d5/d46/main___test_vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d46/main___test_vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d9/d95/class_test_vector.html">TestVector</a> testVector;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a9c8154201fce61d1b4108310be855ccb">minimalCapacityEnsured</a>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#ad961a88f465197cf676128e4b736e445">capacityIncreasedCorrectly</a>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a36f781ee094a8a8fd87f4e63bd0eec0c">capacityDecreasedCorrectly</a>);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a301a7e54860cc7b8338a9a6ca4be817b">initializeCorrectly</a>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a4854bd564dfd3bd7d5fa5f48820e51cd">resizeCorrectly</a>);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a699db1d90bd0d30923ffae074c18d6f3">pushBackCorrectly</a>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a6b3e0a3463b00f29d578b66bee73f34a">eraseCorrectly</a>);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a34e5896d6104724020d48dce650311c7">insertCorrectly</a>);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a>(testVector.<a class="code" href="../../d9/d95/class_test_vector.html#a6b3e0a3463b00f29d578b66bee73f34a">eraseCorrectly</a>);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a> &lt;&lt; <a class="code" href="../../d4/da4/def_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">INFO</a> &lt;&lt; <span class="stringliteral">&quot;All tests ended.\n&quot;</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="ttc" id="class_test_vector_html_a6b3e0a3463b00f29d578b66bee73f34a"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a6b3e0a3463b00f29d578b66bee73f34a">TestVector::eraseCorrectly</a></div><div class="ttdeci">bool eraseCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00057">TestVector.cpp:57</a></div></div>
+<div class="ttc" id="class_test_vector_html_a699db1d90bd0d30923ffae074c18d6f3"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a699db1d90bd0d30923ffae074c18d6f3">TestVector::pushBackCorrectly</a></div><div class="ttdeci">bool pushBackCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00053">TestVector.cpp:53</a></div></div>
+<div class="ttc" id="class_test_vector_html_ad961a88f465197cf676128e4b736e445"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#ad961a88f465197cf676128e4b736e445">TestVector::capacityIncreasedCorrectly</a></div><div class="ttdeci">bool capacityIncreasedCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00036">TestVector.cpp:36</a></div></div>
+<div class="ttc" id="class_test_vector_html"><div class="ttname"><a href="../../d9/d95/class_test_vector.html">TestVector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d4a/_test_vector_8h_source.html#l00012">TestVector.h:12</a></div></div>
+<div class="ttc" id="def_8h_html"><div class="ttname"><a href="../../d4/da4/def_8h.html">def.h</a></div></div>
+<div class="ttc" id="_test_vector_8h_html"><div class="ttname"><a href="../../d0/d4a/_test_vector_8h.html">TestVector.h</a></div></div>
+<div class="ttc" id="class_test_vector_html_a9c8154201fce61d1b4108310be855ccb"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a9c8154201fce61d1b4108310be855ccb">TestVector::minimalCapacityEnsured</a></div><div class="ttdeci">bool minimalCapacityEnsured()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00024">TestVector.cpp:24</a></div></div>
+<div class="ttc" id="main___test_vector_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d5/d46/main___test_vector_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d46/main___test_vector_8cpp_source.html#l00014">main_TestVector.cpp:14</a></div></div>
+<div class="ttc" id="class_test_vector_html_a4854bd564dfd3bd7d5fa5f48820e51cd"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a4854bd564dfd3bd7d5fa5f48820e51cd">TestVector::resizeCorrectly</a></div><div class="ttdeci">bool resizeCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00081">TestVector.cpp:81</a></div></div>
+<div class="ttc" id="test__base_8h_html_a97d6b1288018d74e5ce71d6f9d1c4f28"><div class="ttname"><a href="../../dc/d74/test__base_8h.html#a97d6b1288018d74e5ce71d6f9d1c4f28">RUN_TEST</a></div><div class="ttdeci">#define RUN_TEST(testCallable)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d74/test__base_8h_source.html#l00022">test_base.h:22</a></div></div>
+<div class="ttc" id="def_8h_html_ae1103fea1e1b3c41ca3322d5389f7162"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">INFO</a></div><div class="ttdeci">#define INFO</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00016">def.h:16</a></div></div>
+<div class="ttc" id="class_test_vector_html_a34e5896d6104724020d48dce650311c7"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a34e5896d6104724020d48dce650311c7">TestVector::insertCorrectly</a></div><div class="ttdeci">bool insertCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00067">TestVector.cpp:67</a></div></div>
+<div class="ttc" id="class_test_vector_html_a36f781ee094a8a8fd87f4e63bd0eec0c"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a36f781ee094a8a8fd87f4e63bd0eec0c">TestVector::capacityDecreasedCorrectly</a></div><div class="ttdeci">bool capacityDecreasedCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00042">TestVector.cpp:42</a></div></div>
+<div class="ttc" id="_output_8h_html_ae879b048a9eddaf9ee4e0dbe932ea6c9"><div class="ttname"><a href="../../d6/d77/_output_8h.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a></div><div class="ttdeci">Output kout</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00015">global_variables_impl.cpp:15</a></div></div>
+<div class="ttc" id="class_test_vector_html_a301a7e54860cc7b8338a9a6ca4be817b"><div class="ttname"><a href="../../d9/d95/class_test_vector.html#a301a7e54860cc7b8338a9a6ca4be817b">TestVector::initializeCorrectly</a></div><div class="ttdeci">bool initializeCorrectly()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d50/_test_vector_8cpp_source.html#l00020">TestVector.cpp:20</a></div></div>
+<div class="ttc" id="test__base_8h_html"><div class="ttname"><a href="../../dc/d74/test__base_8h.html">test_base.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

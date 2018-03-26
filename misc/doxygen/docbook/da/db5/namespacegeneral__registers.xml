@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/db5/namespacegeneral__registers">
+<title>general_registers</title>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>list <link linkend="da/db5/namespacegeneral__registers_1affd9b493e41616af348efc2978fbfdba">reg_list</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

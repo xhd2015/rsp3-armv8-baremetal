@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/exception/svc_call.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_7c40e03ac1dfef8b430578d46da2b8fd.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_b769ae817602266205ecc3e3554a24f8.html">common_aarch64</a></li><li class="navelem"><a class="el" href="../../dir_27fb854bd0357dccf2446cabd684912f.html">exception</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">svc_call.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/d03/exceptions_8h_source.html">arch/common_aarch64/exception/exceptions.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d8/d2f/asm__instructions_8h_source.html">asm_instructions.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> svc_call.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dc1/svc__call_8h__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8h" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8h" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8h">
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/da7/svc__call_8h__dep__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8hdep" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8hdep" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2svc__call_8hdep">
+</map>
+</div>
+</div>
+<p><a href="../../dc/d45/svc__call_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a13d6aa36835dffaee815c81de7667e24"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24">SvcFunc</a> { <br />
+&#160;&#160;<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24a79eda979854e9e7c1840e67644c27c08">SvcFunc::puts</a>, 
+<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24aa2fc44706be5bcf820131b337019c659">SvcFunc::allocateBlock</a>, 
+<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24a22f7c7d9ce086f43ffa60c4d7cb2330f">SvcFunc::killProcess</a>, 
+<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24a3303b7107e1b26d4ecc8caaf7d911904">SvcFunc::scheduleNext</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24ab2fcb4ba898f479790076dbd5daa133f">SvcFunc::fork</a>, 
+<a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24a521345a9fb579f52117f27be6e0673ee">SvcFunc::signal</a>
+<br />
+ }</td></tr>
+<tr class="separator:a13d6aa36835dffaee815c81de7667e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a109ab694ad88b9fed282c1344e97adef"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a109ab694ad88b9fed282c1344e97adef"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a109ab694ad88b9fed282c1344e97adef">svc_call</a> ()</td></tr>
+<tr class="separator:a109ab694ad88b9fed282c1344e97adef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c71cdf525dc00520881069dcc6c1116"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a1c71cdf525dc00520881069dcc6c1116"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a1c71cdf525dc00520881069dcc6c1116">svc_call</a> (uint64_t arg0)</td></tr>
+<tr class="separator:a1c71cdf525dc00520881069dcc6c1116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3429a195cc1a8c8ccc0f4ed63a5644b8"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a3429a195cc1a8c8ccc0f4ed63a5644b8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a3429a195cc1a8c8ccc0f4ed63a5644b8">svc_call</a> (uint64_t arg0, uint64_t arg1)</td></tr>
+<tr class="separator:a3429a195cc1a8c8ccc0f4ed63a5644b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda0bff46964de8d3e13ce296fac51ec"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:adda0bff46964de8d3e13ce296fac51ec"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#adda0bff46964de8d3e13ce296fac51ec">svc_call</a> (uint64_t arg0, uint64_t arg1, uint64_t arg2)</td></tr>
+<tr class="separator:adda0bff46964de8d3e13ce296fac51ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ff128ee5e07359e15501b18b9be30d"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a06ff128ee5e07359e15501b18b9be30d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a06ff128ee5e07359e15501b18b9be30d">svc_call</a> (uint64_t arg0, uint64_t arg1, uint64_t arg2, uint64_t arg3)</td></tr>
+<tr class="separator:a06ff128ee5e07359e15501b18b9be30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4acf1285436ae204a32c3a303d6c98d"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:ae4acf1285436ae204a32c3a303d6c98d"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#ae4acf1285436ae204a32c3a303d6c98d">svc_call</a> ()</td></tr>
+<tr class="separator:ae4acf1285436ae204a32c3a303d6c98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b19cd2d71c460deedcd9aae4e4ab085"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a6b19cd2d71c460deedcd9aae4e4ab085"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a6b19cd2d71c460deedcd9aae4e4ab085">svc_call</a> (uint64_t arg0)</td></tr>
+<tr class="separator:a6b19cd2d71c460deedcd9aae4e4ab085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ade4d659cb22a2a54f064940d28b19c"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a6ade4d659cb22a2a54f064940d28b19c"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a6ade4d659cb22a2a54f064940d28b19c">svc_call</a> (uint64_t arg0, uint64_t arg1)</td></tr>
+<tr class="separator:a6ade4d659cb22a2a54f064940d28b19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a1a72d667890aca86b23ec6412acef"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:af6a1a72d667890aca86b23ec6412acef"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#af6a1a72d667890aca86b23ec6412acef">svc_call</a> (uint64_t arg0, uint64_t arg1, uint64_t arg2)</td></tr>
+<tr class="separator:af6a1a72d667890aca86b23ec6412acef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95465ede6c459b5956b95af0e3468d62"><td class="memTemplParams" colspan="2">template&lt;SvcFunc func&gt; </td></tr>
+<tr class="memitem:a95465ede6c459b5956b95af0e3468d62"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d45/svc__call_8h.html#a95465ede6c459b5956b95af0e3468d62">svc_call</a> (uint64_t arg0, uint64_t arg1, uint64_t arg2, uint64_t arg3)</td></tr>
+<tr class="separator:a95465ede6c459b5956b95af0e3468d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a13d6aa36835dffaee815c81de7667e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d6aa36835dffaee815c81de7667e24">&#9670;&nbsp;</a></span>SvcFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dc/d45/svc__call_8h.html#a13d6aa36835dffaee815c81de7667e24">SvcFunc</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24a79eda979854e9e7c1840e67644c27c08"></a>puts&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24aa2fc44706be5bcf820131b337019c659"></a>allocateBlock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24a22f7c7d9ce086f43ffa60c4d7cb2330f"></a>killProcess&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24a3303b7107e1b26d4ecc8caaf7d911904"></a>scheduleNext&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24ab2fcb4ba898f479790076dbd5daa133f"></a>fork&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a13d6aa36835dffaee815c81de7667e24a521345a9fb579f52117f27be6e0673ee"></a>signal&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a109ab694ad88b9fed282c1344e97adef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109ab694ad88b9fed282c1344e97adef">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00041">41</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_cgraph" id="dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_cgraph">
+</map>
+</div>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_icgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_icgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_icgraph" id="dc/d45/svc__call_8h_a109ab694ad88b9fed282c1344e97adef_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c71cdf525dc00520881069dcc6c1116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c71cdf525dc00520881069dcc6c1116">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00052">52</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a1c71cdf525dc00520881069dcc6c1116_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a1c71cdf525dc00520881069dcc6c1116_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a1c71cdf525dc00520881069dcc6c1116_cgraph" id="dc/d45/svc__call_8h_a1c71cdf525dc00520881069dcc6c1116_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3429a195cc1a8c8ccc0f4ed63a5644b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3429a195cc1a8c8ccc0f4ed63a5644b8">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00063">63</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a3429a195cc1a8c8ccc0f4ed63a5644b8_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a3429a195cc1a8c8ccc0f4ed63a5644b8_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a3429a195cc1a8c8ccc0f4ed63a5644b8_cgraph" id="dc/d45/svc__call_8h_a3429a195cc1a8c8ccc0f4ed63a5644b8_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="adda0bff46964de8d3e13ce296fac51ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda0bff46964de8d3e13ce296fac51ec">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00075">75</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_adda0bff46964de8d3e13ce296fac51ec_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_adda0bff46964de8d3e13ce296fac51ec_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_adda0bff46964de8d3e13ce296fac51ec_cgraph" id="dc/d45/svc__call_8h_adda0bff46964de8d3e13ce296fac51ec_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06ff128ee5e07359e15501b18b9be30d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ff128ee5e07359e15501b18b9be30d">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00088">88</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a06ff128ee5e07359e15501b18b9be30d_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a06ff128ee5e07359e15501b18b9be30d_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a06ff128ee5e07359e15501b18b9be30d_cgraph" id="dc/d45/svc__call_8h_a06ff128ee5e07359e15501b18b9be30d_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4acf1285436ae204a32c3a303d6c98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4acf1285436ae204a32c3a303d6c98d">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00041">41</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_cgraph" id="dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_cgraph">
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_icgraph.png" border="0" usemap="#dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_icgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_icgraph" id="dc/d45/svc__call_8h_ae4acf1285436ae204a32c3a303d6c98d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b19cd2d71c460deedcd9aae4e4ab085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b19cd2d71c460deedcd9aae4e4ab085">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00052">52</a> 行定义.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a6b19cd2d71c460deedcd9aae4e4ab085_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a6b19cd2d71c460deedcd9aae4e4ab085_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a6b19cd2d71c460deedcd9aae4e4ab085_cgraph" id="dc/d45/svc__call_8h_a6b19cd2d71c460deedcd9aae4e4ab085_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ade4d659cb22a2a54f064940d28b19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ade4d659cb22a2a54f064940d28b19c">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00063">63</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a6ade4d659cb22a2a54f064940d28b19c_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a6ade4d659cb22a2a54f064940d28b19c_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a6ade4d659cb22a2a54f064940d28b19c_cgraph" id="dc/d45/svc__call_8h_a6ade4d659cb22a2a54f064940d28b19c_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="af6a1a72d667890aca86b23ec6412acef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a1a72d667890aca86b23ec6412acef">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00075">75</a> 行定义.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_af6a1a72d667890aca86b23ec6412acef_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_af6a1a72d667890aca86b23ec6412acef_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_af6a1a72d667890aca86b23ec6412acef_cgraph" id="dc/d45/svc__call_8h_af6a1a72d667890aca86b23ec6412acef_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95465ede6c459b5956b95af0e3468d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95465ede6c459b5956b95af0e3468d62">&#9670;&nbsp;</a></span>svc_call() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;SvcFunc func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t svc_call </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>arg3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d45/svc__call_8h_source.html">svc_call.h</a> 第 <a class="el" href="../../dc/d45/svc__call_8h_source.html#l00088">88</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d45/svc__call_8h_a95465ede6c459b5956b95af0e3468d62_cgraph.png" border="0" usemap="#dc/d45/svc__call_8h_a95465ede6c459b5956b95af0e3468d62_cgraph" alt=""/></div>
+<map name="dc/d45/svc__call_8h_a95465ede6c459b5956b95af0e3468d62_cgraph" id="dc/d45/svc__call_8h_a95465ede6c459b5956b95af0e3468d62_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:32 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

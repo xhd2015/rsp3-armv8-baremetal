@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d50/class_f_a_t32_f_s_info">
+<title>FAT32FSInfo class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d1/d5d/_f_a_t32_fs_info_8h">&quot;FAT32FsInfo.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT32FSInfo</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d23/class_f_a_t32_f_s_info__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT32FSInfo</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d1f/class_f_a_t32_f_s_info__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68">@7</link> {
+<link linkend="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68af7918bb196a7073bc528760819c1c35e">SEC_PRESENT</link>= 1,
+<link linkend="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68ac2d3247882f4e688619614ce751a14d8">SEC_COPY</link>=7
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum FAT32FSInfo::@7 __attribute__</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t freeCount</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t leadSig</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t nextFree</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t reserved1[480]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t reserved2[12]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t strucSig</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t trailSeg</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68">
+               <title>enum @7 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68af7918bb196a7073bc528760819c1c35e">
+                            <term>SEC_PRESENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="db/d50/class_f_a_t32_f_s_info_1a066157dcab3c9ced63c34c61e4a9ad68ac2d3247882f4e688619614ce751a14d8">
+                            <term>SEC_COPY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 15 of file FAT32FsInfo.h
+                    <computeroutput><literallayout>
+{
+SEC_PRESENT= 1, 
+SEC_COPY=7, 
+}@7;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+</section>

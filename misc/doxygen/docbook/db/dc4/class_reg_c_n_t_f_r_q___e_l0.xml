@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/dc4/class_reg_c_n_t_f_r_q___e_l0">
+<title>RegCNTFRQ_EL0 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/deb/timer__registers_8h">&quot;timer_registers.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RegCNTFRQ_EL0</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dc2/class_reg_c_n_t_f_r_q___e_l0__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RegCNTFRQ_EL0</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d3d/class_reg_c_n_t_f_r_q___e_l0__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t ClockFrq</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1aa369fafa608c016acc1ffef464d5d55b">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1a666800d7ae140eaf663cede1d4bc8563">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1af2401970d784e3987f20edf0e71c4f27">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1a9f3045a277833d42c496c2d57b22919f">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1aa369fafa608c016acc1ffef464d5d55b">
+                <title>AS_MACRO void RegCNTFRQ_EL0::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1a666800d7ae140eaf663cede1d4bc8563">
+                <title>AS_MACRO RegCNTFRQ_EL0 RegCNTFRQ_EL0::updateRead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1af2401970d784e3987f20edf0e71c4f27">
+                <title>AS_MACRO void RegCNTFRQ_EL0::write () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/dc4/class_reg_c_n_t_f_r_q___e_l0_1a9f3045a277833d42c496c2d57b22919f">
+                <title>static AS_MACRO RegCNTFRQ_EL0 RegCNTFRQ_EL0::read ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

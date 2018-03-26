@@ -1,0 +1,12 @@
+digraph "ProcessManager::currentRunningProcess"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node37 [label="ProcessManager::currentRunning\lProcess",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node37 -> Node38 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 [label="SynchronousEL1Handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html#adf8fdfc202648f336df261faf22abf24"];
+  Node37 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="ProcessManager::schedule\lNextProcess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a64f2aa8b0886f482d5039c65bca72af7"];
+  Node39 -> Node38 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

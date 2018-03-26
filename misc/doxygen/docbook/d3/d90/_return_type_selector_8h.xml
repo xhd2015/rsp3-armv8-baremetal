@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d90/_return_type_selector_8h">
+    <title>ReturnTypeSelector.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;type_traits&gt;</programlisting>
+<para>Include dependency diagram for ReturnTypeSelector.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d40/_return_type_selector_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for ReturnTypeSelector.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d01/_return_type_selector_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d33/struct_ref_or_value">RefOrValue</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/da8/struct_return_type_selector_3_01_t_00_01false_00_01_is_const_01_4">ReturnTypeSelector&lt; T, false, IsConst &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d06/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4">ReturnTypeSelector&lt; T, true, false &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类型定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef typename <link linkend="db/d33/struct_ref_or_value">RefOrValue</link>&lt; This, ReturnType &gt;::<link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link>  <link linkend="d3/d90/_return_type_selector_8h_1a05d015d798c9f99d9bc42696b3287f7a">RefOrValue_t</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/programming/ReturnTypeSelector.h</para>
+    </simplesect>
+</section>

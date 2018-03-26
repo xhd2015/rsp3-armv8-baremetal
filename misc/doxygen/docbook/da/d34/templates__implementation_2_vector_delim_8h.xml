@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d34/templates__implementation_2_vector_delim_8h">
+    <title>VectorDelim.h File Reference</title>
+    <programlisting>#include &lt;VectorDelim.h&gt;</programlisting>
+<para>Include dependency diagram for VectorDelim.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dee/templates__implementation_2_vector_delim_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for VectorDelim.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/de4/templates__implementation_2_vector_delim_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="da/d34/templates__implementation_2_vector_delim_8h_1a3410d8d891363194c24627c61a5f9462">operator&lt;&lt;</link> (
+<link linkend="db/db4/class_output">Output</link> &amp; out, const <link linkend="db/d58/class_vector_delim">VectorDelim</link>&lt; T &gt; &amp; delim)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/VectorDelim.h</para>
+    </simplesect>
+</section>

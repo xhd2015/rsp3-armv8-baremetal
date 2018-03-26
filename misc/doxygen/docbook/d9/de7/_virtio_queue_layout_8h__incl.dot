@@ -1,0 +1,18 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioQueueLayout.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2030 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/io/virtio/VirtioQueueLayout.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2030 -> Node2031 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2031 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node2031 -> Node2032 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2032 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2031 -> Node2033 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2033 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2030 -> Node2034 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2034 [label="io/virtio/VirtioQueueDescriptor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de0/_virtio_queue_descriptor_8h.html"];
+  Node2030 -> Node2035 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2035 [label="io/virtio/VirtioQueueAvailable\lRef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/da7/_virtio_queue_available_ref_8h.html"];
+  Node2030 -> Node2036 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2036 [label="io/virtio/VirtioQueueUsed\lRef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/de1/_virtio_queue_used_ref_8h.html"];
+}

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/dbc/_f_a_t32_read_util_8h">
+    <title>FAT32ReadUtil.h File Reference</title>
+    <programlisting>#include &lt;filesystem/fat/FAT32Entry.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FATDirEntry.h&gt;</programlisting>
+    <programlisting>#include &lt;io/SectorReader.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/Vector.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/String.h&gt;</programlisting>
+    <programlisting>#include &lt;utility&gt;</programlisting>
+<para>Include dependency diagram for FAT32ReadUtil.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/da7/_f_a_t32_read_util_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT32ReadUtil.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d5b/_f_a_t32_read_util_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/db1/class_f_a_t32_read_util">FAT32ReadUtil</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT32ReadUtil.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d05/class_s_d_driver_1_1_command_status">
+<title>SDDriver::CommandStatus class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/d49/_s_d_driver_8h">&quot;SDDriver.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for SDDriver::CommandStatus</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d7a/class_s_d_driver_1_1_command_status__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SDDriver::CommandStatus</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d37/class_s_d_driver_1_1_command_status__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int32_t _value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d05/class_s_d_driver_1_1_command_status_1ae3c8ca8f4dda103c002ab83f398d2b33">CommandStatus</link> (
+int32_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d05/class_s_d_driver_1_1_command_status_1a8ff73b59bead2f82fcbfe82d7f6e053c">CommandStatus</link> (
+uint32_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d05/class_s_d_driver_1_1_command_status_1a2c386401993793a3c3069743ac950f3e">CommandStatus</link> (
+bool bvalue)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d05/class_s_d_driver_1_1_command_status_1a3291c8d3239af52f62fed77048881db3">operator bool</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d05/class_s_d_driver_1_1_command_status_1a94ee007e8770d4547bf426d129e6bf52">operator int32_t</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/d05/class_s_d_driver_1_1_command_status_1ae3c8ca8f4dda103c002ab83f398d2b33">
+                <title>SDDriver::CommandStatus::CommandStatus (int32_t value=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d05/class_s_d_driver_1_1_command_status_1a8ff73b59bead2f82fcbfe82d7f6e053c">
+                <title>SDDriver::CommandStatus::CommandStatus (uint32_t value)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d05/class_s_d_driver_1_1_command_status_1a2c386401993793a3c3069743ac950f3e">
+                <title>SDDriver::CommandStatus::CommandStatus (bool bvalue)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d05/class_s_d_driver_1_1_command_status_1a3291c8d3239af52f62fed77048881db3">
+                <title>AS_MACRO SDDriver::CommandStatus::operator bool () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d05/class_s_d_driver_1_1_command_status_1a94ee007e8770d4547bf426d129e6bf52">
+                <title>AS_MACRO SDDriver::CommandStatus::operator int32_t () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

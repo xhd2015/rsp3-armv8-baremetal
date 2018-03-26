@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d27/class_reg_current_e_l">
+<title>RegCurrentEL class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/d1f/system__common__registers_8h">&quot;system_common_registers.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for RegCurrentEL</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d40/class_reg_current_e_l__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for RegCurrentEL</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d55/class_reg_current_e_l__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t EL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t RES0_0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t RES0_1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d9/d27/class_reg_current_e_l_1a9b0809d2cf0d000dd343f2518ab79ef4">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link> <link linkend="d9/d27/class_reg_current_e_l_1a85b553bfcbeaa637fabe472e388d52ff">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d9/d27/class_reg_current_e_l_1a5c02629ca75981478a43434d3740fdb0">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link> <link linkend="d9/d27/class_reg_current_e_l_1a1e7d733bdf4ace8dd9c8f11945ec108a">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/d27/class_reg_current_e_l_1a9b0809d2cf0d000dd343f2518ab79ef4">
+                <title>AS_MACRO void RegCurrentEL::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d27/class_reg_current_e_l_1a85b553bfcbeaa637fabe472e388d52ff">
+                <title>AS_MACRO RegCurrentEL RegCurrentEL::updateRead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d27/class_reg_current_e_l_1a5c02629ca75981478a43434d3740fdb0">
+                <title>AS_MACRO void RegCurrentEL::write () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d27/class_reg_current_e_l_1a1e7d733bdf4ace8dd9c8f11945ec108a">
+                <title>static AS_MACRO RegCurrentEL RegCurrentEL::read ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

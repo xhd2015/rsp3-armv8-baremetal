@@ -1,0 +1,8 @@
+digraph "std::multiset&lt; K &gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node676 [label="{std::multiset\< K \>\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node677 -> Node676 [color="grey25",fontsize="10",style="solid",label=" +keys" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node677 [label="{K\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

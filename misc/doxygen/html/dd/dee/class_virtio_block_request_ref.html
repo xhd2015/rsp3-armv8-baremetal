@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: VirtioBlockRequestRef类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d4/daa/class_virtio_block_request_ref-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">VirtioBlockRequestRef类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> VirtioBlockRequestRef 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/da6/class_virtio_block_request_ref__coll__graph.png" border="0" usemap="#_virtio_block_request_ref_coll__map" alt="Collaboration graph"/></div>
+<map name="_virtio_block_request_ref_coll__map" id="_virtio_block_request_ref_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a8e63661e7b1eb0fe344b55e78eb85752"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752acd2ff30285b06bea75477b4d6c45ff5f">REQ_IN</a> = 0, 
+<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752a4c8cdc832fd9b8b9feaa692fa344d2a6">REQ_OUT</a> = 1, 
+<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752aae14445b9f1ab164df37f5cc8658b279">REQ_FLUSH</a> = 4, 
+<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752a6a5a6182a75a2ffac086a1eddc7e9978">STATUS_OK</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752a60c1a54f68d8ec685b34a707c91ec945">STATUS_IOERR</a> = 1, 
+<a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8e63661e7b1eb0fe344b55e78eb85752a73356e7e4c7465d904e0f6b0a5db35c5">STATUS_UNSUPP</a> = 2
+<br />
+ }</td></tr>
+<tr class="separator:a8e63661e7b1eb0fe344b55e78eb85752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4b4c213a2f71addc15454032d7ab00"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a2a4b4c213a2f71addc15454032d7ab00">BufPtr</a> = uint8_t(*)[][512]</td></tr>
+<tr class="separator:a2a4b4c213a2f71addc15454032d7ab00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2e954d187f4d54b5e45125d6242b90"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a7c2e954d187f4d54b5e45125d6242b90">BufPtrConst</a> = const uint8_t(*)[][512]</td></tr>
+<tr class="separator:a7c2e954d187f4d54b5e45125d6242b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af886f580c57b514204877812941db381"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a7c2e954d187f4d54b5e45125d6242b90">BufPtrConst</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#af886f580c57b514204877812941db381">data</a> () const</td></tr>
+<tr class="separator:af886f580c57b514204877812941db381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c00a2494a1b248ae2f260bd855637a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a2a4b4c213a2f71addc15454032d7ab00">BufPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a47c00a2494a1b248ae2f260bd855637a">data</a> ()</td></tr>
+<tr class="separator:a47c00a2494a1b248ae2f260bd855637a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90fe13c7a23662295b1ec674279dab9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#aa90fe13c7a23662295b1ec674279dab9">sector</a> (uint64_t s) const</td></tr>
+<tr class="separator:aa90fe13c7a23662295b1ec674279dab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6838ff4d23bb33f56122866eebe1336b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a6838ff4d23bb33f56122866eebe1336b">sector</a> () const</td></tr>
+<tr class="separator:a6838ff4d23bb33f56122866eebe1336b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3beaac92ef67e22baa0fce6daa3b57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a0b3beaac92ef67e22baa0fce6daa3b57">status</a> () const</td></tr>
+<tr class="separator:a0b3beaac92ef67e22baa0fce6daa3b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8194345c0c82e823407d96c6e034d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#acb8194345c0c82e823407d96c6e034d1">type</a> (uint32_t t) const</td></tr>
+<tr class="separator:acb8194345c0c82e823407d96c6e034d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a30a955abaf413f62a768a0b357c861"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a2a30a955abaf413f62a768a0b357c861">type</a> () const</td></tr>
+<tr class="separator:a2a30a955abaf413f62a768a0b357c861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768ae2e2a48e44880a9ba80745665c38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a768ae2e2a48e44880a9ba80745665c38">VirtioBlockRequestRef</a> (void *base, size_t blocks)</td></tr>
+<tr class="separator:a768ae2e2a48e44880a9ba80745665c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a8c1f7eb91208d888029e847b3c1faf11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a8c1f7eb91208d888029e847b3c1faf11">memSize</a> (size_t blocks)</td></tr>
+<tr class="separator:a8c1f7eb91208d888029e847b3c1faf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1971adf324286ddca92a6c16f167d3fc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a1971adf324286ddca92a6c16f167d3fc">memSize</a> () const</td></tr>
+<tr class="separator:a1971adf324286ddca92a6c16f167d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab19a3c350005cc8c5f5082dcf9574413"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#ab19a3c350005cc8c5f5082dcf9574413">_base</a></td></tr>
+<tr class="separator:ab19a3c350005cc8c5f5082dcf9574413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875b629e7eb56c62c1f6d54a97b1b0ec"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a875b629e7eb56c62c1f6d54a97b1b0ec">_bufBlockNum</a></td></tr>
+<tr class="separator:a875b629e7eb56c62c1f6d54a97b1b0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00013">13</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a2a4b4c213a2f71addc15454032d7ab00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4b4c213a2f71addc15454032d7ab00">&#9670;&nbsp;</a></span>BufPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a2a4b4c213a2f71addc15454032d7ab00">VirtioBlockRequestRef::BufPtr</a> =  uint8_t (*)[][512]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7c2e954d187f4d54b5e45125d6242b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2e954d187f4d54b5e45125d6242b90">&#9670;&nbsp;</a></span>BufPtrConst</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a7c2e954d187f4d54b5e45125d6242b90">VirtioBlockRequestRef::BufPtrConst</a> =  const uint8_t (*)[][512]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a8e63661e7b1eb0fe344b55e78eb85752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e63661e7b1eb0fe344b55e78eb85752">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752acd2ff30285b06bea75477b4d6c45ff5f"></a>REQ_IN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752a4c8cdc832fd9b8b9feaa692fa344d2a6"></a>REQ_OUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752aae14445b9f1ab164df37f5cc8658b279"></a>REQ_FLUSH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752a6a5a6182a75a2ffac086a1eddc7e9978"></a>STATUS_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752a60c1a54f68d8ec685b34a707c91ec945"></a>STATUS_IOERR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e63661e7b1eb0fe344b55e78eb85752a73356e7e4c7465d904e0f6b0a5db35c5"></a>STATUS_UNSUPP&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a768ae2e2a48e44880a9ba80745665c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768ae2e2a48e44880a9ba80745665c38">&#9670;&nbsp;</a></span>VirtioBlockRequestRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VirtioBlockRequestRef::VirtioBlockRequestRef </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="af886f580c57b514204877812941db381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af886f580c57b514204877812941db381">&#9670;&nbsp;</a></span>data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a7c2e954d187f4d54b5e45125d6242b90">BufPtrConst</a> VirtioBlockRequestRef::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a47c00a2494a1b248ae2f260bd855637a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c00a2494a1b248ae2f260bd855637a">&#9670;&nbsp;</a></span>data() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> <a class="el" href="../../dd/dee/class_virtio_block_request_ref.html#a2a4b4c213a2f71addc15454032d7ab00">BufPtr</a> VirtioBlockRequestRef::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8c1f7eb91208d888029e847b3c1faf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1f7eb91208d888029e847b3c1faf11">&#9670;&nbsp;</a></span>memSize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> size_t VirtioBlockRequestRef::memSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>blocks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1971adf324286ddca92a6c16f167d3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1971adf324286ddca92a6c16f167d3fc">&#9670;&nbsp;</a></span>memSize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> size_t VirtioBlockRequestRef::memSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00039">39</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/dee/class_virtio_block_request_ref_a1971adf324286ddca92a6c16f167d3fc_icgraph.png" border="0" usemap="#dd/dee/class_virtio_block_request_ref_a1971adf324286ddca92a6c16f167d3fc_icgraph" alt=""/></div>
+<map name="dd/dee/class_virtio_block_request_ref_a1971adf324286ddca92a6c16f167d3fc_icgraph" id="dd/dee/class_virtio_block_request_ref_a1971adf324286ddca92a6c16f167d3fc_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa90fe13c7a23662295b1ec674279dab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90fe13c7a23662295b1ec674279dab9">&#9670;&nbsp;</a></span>sector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void VirtioBlockRequestRef::sector </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6838ff4d23bb33f56122866eebe1336b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6838ff4d23bb33f56122866eebe1336b">&#9670;&nbsp;</a></span>sector() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint64_t VirtioBlockRequestRef::sector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0b3beaac92ef67e22baa0fce6daa3b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3beaac92ef67e22baa0fce6daa3b57">&#9670;&nbsp;</a></span>status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint8_t VirtioBlockRequestRef::status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acb8194345c0c82e823407d96c6e034d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8194345c0c82e823407d96c6e034d1">&#9670;&nbsp;</a></span>type() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void VirtioBlockRequestRef::type </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00040">40</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dd/dee/class_virtio_block_request_ref_acb8194345c0c82e823407d96c6e034d1_icgraph.png" border="0" usemap="#dd/dee/class_virtio_block_request_ref_acb8194345c0c82e823407d96c6e034d1_icgraph" alt=""/></div>
+<map name="dd/dee/class_virtio_block_request_ref_acb8194345c0c82e823407d96c6e034d1_icgraph" id="dd/dee/class_virtio_block_request_ref_acb8194345c0c82e823407d96c6e034d1_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a30a955abaf413f62a768a0b357c861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a30a955abaf413f62a768a0b357c861">&#9670;&nbsp;</a></span>type() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint32_t VirtioBlockRequestRef::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab19a3c350005cc8c5f5082dcf9574413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19a3c350005cc8c5f5082dcf9574413">&#9670;&nbsp;</a></span>_base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* VirtioBlockRequestRef::_base</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a875b629e7eb56c62c1f6d54a97b1b0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875b629e7eb56c62c1f6d54a97b1b0ec">&#9670;&nbsp;</a></span>_bufBlockNum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t VirtioBlockRequestRef::_bufBlockNum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a> 第 <a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/<a class="el" href="../../d2/d32/_virtio_block_request_8h_source.html">VirtioBlockRequest.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:47 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

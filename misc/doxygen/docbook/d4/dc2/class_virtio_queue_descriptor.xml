@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/dc2/class_virtio_queue_descriptor">
+<title>VirtioQueueDescriptor class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/de0/_virtio_queue_descriptor_8h">&quot;VirtioQueueDescriptor.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioQueueDescriptor</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d8d/class_virtio_queue_descriptor__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioQueueDescriptor</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dc7/class_virtio_queue_descriptor__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2f">FlagsBits</link> {
+<link linkend="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2fa429d7eb32e2767984b5418bae4bcfa90">VIRTQ_DESC_F_NEXT</link>= 1,
+<link linkend="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2fa01971850307c3819c745223d0e9e790d">VIRTQ_DESC_F_WRITE</link>= 2,
+<link linkend="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2faa5511dbef1b21f9053e54ae2264a4787">VIRTQ_DESC_F_INDIRECT</link>= 4
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum VirtioQueueDescriptor::FlagsBits __attribute__</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t addr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t flags</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t len</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2f">
+               <title>enum FlagsBits </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2fa429d7eb32e2767984b5418bae4bcfa90">
+                            <term>VIRTQ_DESC_F_NEXT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2fa01971850307c3819c745223d0e9e790d">
+                            <term>VIRTQ_DESC_F_WRITE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d4/dc2/class_virtio_queue_descriptor_1ab400137f83670c9610fc577f14831e2faa5511dbef1b21f9053e54ae2264a4787">
+                            <term>VIRTQ_DESC_F_INDIRECT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 14 of file VirtioQueueDescriptor.h
+                    <computeroutput><literallayout>
+{
+VIRTQ_DESC_F_NEXT= 1, 
+VIRTQ_DESC_F_WRITE= 2, 
+VIRTQ_DESC_F_INDIRECT= 4, 
+}FlagsBits;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+</section>

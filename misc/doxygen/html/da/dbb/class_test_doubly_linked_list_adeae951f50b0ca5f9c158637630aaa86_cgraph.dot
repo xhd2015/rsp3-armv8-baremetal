@@ -1,0 +1,13 @@
+digraph "TestDoublyLinkedList::insertAfterTailCorrectly"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node18 [label="TestDoublyLinkedList\l::insertAfterTailCorrectly",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="DoublyLinkedList::insertTail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a08820eece8a930239f434a7dea802599"];
+  Node18 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="DoublyLinkedList::removeHead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a2564bb946727d468f74ca80ec0319f19"];
+  Node18 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="DoublyLinkedNode::data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html#a72a70560baba711c82bb012317557cb8"];
+}

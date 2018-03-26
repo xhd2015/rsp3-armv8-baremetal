@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d50/class_string_ref">
+<title>StringRef class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/d55/_string_ref_8h">&quot;StringRef.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for StringRef</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/dcf/class_string_ref__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for StringRef</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d57/class_string_ref__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d50/class_string_ref_1a23a6e013b03c20d298383d6f424d0fb2">StringRef</link> (
+const void * nullTermStr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d50/class_string_ref_1a8d4a3876b13de49c60919358e2849984">StringRef</link> (
+const void * p, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d50/class_string_ref_1afe61e4d7737279c70cfb99feb59de3a7">StringRef</link> (
+const <link linkend="de/d61/class_string">String</link> &amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="db/d50/class_string_ref_1a23a6e013b03c20d298383d6f424d0fb2">
+                <title>StringRef::StringRef (const void *nullTermStr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d50/class_string_ref_1a8d4a3876b13de49c60919358e2849984">
+                <title>StringRef::StringRef (const void *p, size_t len)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d50/class_string_ref_1afe61e4d7737279c70cfb99feb59de3a7">
+                <title>StringRef::StringRef (const String &amp;s)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

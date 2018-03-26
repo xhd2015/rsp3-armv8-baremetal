@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/db9/_f_a_t32_entry_8h">
+    <title>FAT32Entry.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;functional&gt;</programlisting>
+<para>Include dependency diagram for FAT32Entry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dd4/_f_a_t32_entry_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT32Entry.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d75/_f_a_t32_entry_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06c">@4</link> {
+<link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06cabf45d730958ea4212a090650e58b3dd8">MASK</link>= 0x0FFFFFFF,
+<link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06ca990cd45e93be2b4661f3499e0a658a33">LAST</link>=0x0FFFFFFF,
+<link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06cab7809338f6e982d4a8b9608cdb85995a">MAX_BOUND</link>= 0xFFFFFF6,
+<link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06cacc62d1576546f3245237e1b232d838b6">FREE</link>=0,
+<link linkend="d0/db9/_f_a_t32_entry_8h_1adc29c2ff13d900c2f185ee95427fb06cafe29bdbfb6e2165eec29bf28af429856">BAD</link>=0xFFFFFF7
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d0/db9/_f_a_t32_entry_8h_1a242c1589412072d10ba13ea199eff9d2">effBits</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d0/db9/_f_a_t32_entry_8h_1a0c1dfdd14f12349f3c05adebf8c4b18e">reservedNotTouched</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> <link linkend="d0/db9/_f_a_t32_entry_8h_1ac93e6e403c2c17bd0864e82d186d9c7c">__attribute</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/db9/_f_a_t32_entry_8h_1af0119ba057bb86b22e1ccb30c4b91c30">FAT32Entry</link> (
+uint32_t low28bits)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d0/db9/_f_a_t32_entry_8h_1a35c8165d9693c7492f96f387713c0a80">getAsInt</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d0/db9/_f_a_t32_entry_8h_1a8a6fb3cd775e64dfb590678a549d5eb8">isAlloced</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d0/db9/_f_a_t32_entry_8h_1ad6545d97f48eeeb70e9b692341550940">isBad</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d0/db9/_f_a_t32_entry_8h_1ae3abbed50ec7f0308972acd9e1122967">isFree</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d0/db9/_f_a_t32_entry_8h_1ae679c16adb3ed57142504612a6a07c28">isLast</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT32Entry.h</para>
+    </simplesect>
+</section>

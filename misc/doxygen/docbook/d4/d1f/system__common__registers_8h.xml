@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d1f/system__common__registers_8h">
+    <title>system_common_registers.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/registers_defines.h&gt;</programlisting>
+<para>Include dependency diagram for system_common_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d5f/system__common__registers_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for system_common_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dad/system__common__registers_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d4/d1f/system__common__registers_8h_1a253ca491993c905d5f84c40a0b16eb62">EL</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d4/d1f/system__common__registers_8h_1af3515f2a824fcae1291f97efd360fd84">RES0_0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d4/d1f/system__common__registers_8h_1a97cf179815d84d03519a0f31da7df13d">RES0_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link> <link linkend="d4/d1f/system__common__registers_8h_1a0959723bba71525cd8c8ac38074ec397">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/d1f/system__common__registers_8h_1a5ef79f79723cddd5234dc46d851bc381">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link> <link linkend="d4/d1f/system__common__registers_8h_1a2c76dbf050afa9ab8abee9ae0302150e">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a859cecf873079ef7439f37fe8e65a6f1">SETUP_REG_PC_READ</link> (
+PC )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1af4727a28681695ac718e5aa4e2842bab">SETUP_REG_STD_READ</link> (
+CurrentEL )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1af5464cc052f93f01b970ebd576d3f838">SETUP_REG_STD_READ</link> (
+DAIF )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a4ec711fac1c5908e30e15ad8055df934">SETUP_REG_STD_READ</link> (
+VBAR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a37a7f74191834b8b5c045b90937e4512">SETUP_REG_STD_READ</link> (
+ELR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a16b8991f61efab7da11c2dcc5231deb7">SETUP_REG_STD_READ</link> (
+ELR_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1aea3ca537a3a48022e29f910c355b8b03">SETUP_REG_STD_READ</link> (
+ELR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1adce2055a19fcbfe2a47988b55cf5e645">SETUP_REG_STD_READ</link> (
+ESR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a485505fdf6fc2c08113adb37c5d54437">SETUP_REG_STD_READ</link> (
+ESR_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a3eb80595570fe10bc1811d64de8ace6e">SETUP_REG_STD_READ</link> (
+ESR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a8cab311165b1aa7f1d5599896bb0bfcb">SETUP_REG_STD_READ</link> (
+FAR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1aeca9ab894da4fe43dc0d0bc5ecbf3543">SETUP_REG_STD_READ</link> (
+FAR_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab5762f63c605e737a0cf4a96d41c6414">SETUP_REG_STD_READ</link> (
+FAR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a5fa78df22f95dc3d2a2bfdf3ed378f46">SETUP_REG_STD_READ</link> (
+SPSR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ac0c727dbc81c2ee76ca23a94de8cb4ad">SETUP_REG_STD_READ</link> (
+SPSR_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a6445f9beab52e3ea38358b286d6a1df4">SETUP_REG_STD_READ</link> (
+SPSR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a89f7d5aa5680f967af1361ce541bbcc7">SETUP_REG_STD_READ</link> (
+SP )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ae386dc634677add8ee5fe180027dd07f">SETUP_REG_STD_READ</link> (
+SP_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab74fb852e45b671bf62656dccaa76655">SETUP_REG_STD_READ</link> (
+SP_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1aea69f9d22ad31180336483b728813e5b">SETUP_REG_STD_READ</link> (
+SP_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a184b8d62c68a26010d9197d55e94bbb3">SETUP_REG_STD_READ</link> (
+SP_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab5de1a63e51e0dd4128fd60088eb7a5d">SETUP_REG_STD_READ</link> (
+NZCV )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a9ad269ef8050574000241a3c1e5b4511">SETUP_REG_STD_READ</link> (
+PAN )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a6376dfaaf776f5bb679d69de4955510d">SETUP_REG_STD_READ</link> (
+SPSel )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a34640df60f79fdb8b81f8b872d56619c">SETUP_REG_STD_READ</link> (
+UAO )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a636846428bb8e7a82e4d4a14067364ee">SETUP_REG_STD_READ</link> (
+TCR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ac4412e583671d5e86a61bbb567b351a2">SETUP_REG_STD_READ</link> (
+ISR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a69607fb2dca35f90dced31ea1a52e4de">SETUP_REG_STD_READ</link> (
+ID_AA64ISAR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab7fc52c95e06bffb7496bc33b47a9d50">SETUP_REG_STD_READ</link> (
+CONTEXTIDR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a3c77e59e231e1ad39fc78432e89501f0">SETUP_REG_STD_READ</link> (
+ID_AA64PFR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1afd03eb95927b3e73fb5c5806400c294a">SETUP_REG_STD_READ</link> (
+ID_AA64MMFR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab34dca4f0234ab8917867d2da31bfd01">SETUP_REG_STD_READ</link> (
+ID_AA64MMFR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ad106af4fc60291de86c350f92d455216">SETUP_REG_STD_READ</link> (
+MIDR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a5003b87db5699f9bf4248a445419f2b1">SETUP_REG_STD_READ</link> (
+MPIDR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ac4a1c571cce286d0739a313b32160403">SETUP_REG_STD_READ</link> (
+TTBR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a0c8cc8887adaa40031feea4466048813">SETUP_REG_STD_READ</link> (
+TTBR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a176b9ddaec45f79a73fc2fe68b93d371">SETUP_REG_STD_READ</link> (
+PAR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a60f43b7476b36c592d629392cc958b95">SETUP_REG_STD_READ</link> (
+MAIR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a64de5fc90eedd6046f988af9c996a16a">SETUP_REG_STD_READ</link> (
+MAIR_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1ab1102fb3e8295bf4dbad6780e812823f">SETUP_REG_STD_READ</link> (
+MAIR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1a7b04768e0e485a28ebcdb6643608f753">SETUP_REG_STD_READ</link> (
+SCTLR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d1f/system__common__registers_8h_1adfe70f5884b5f0cabd4561a940725c74">SETUP_REG_STD_READ</link> (
+DLR_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d9/d27/class_reg_current_e_l">RegCurrentEL</link> <link linkend="d4/d1f/system__common__registers_8h_1af2143aea21560fb64a920e9dd421d060">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/d1f/system__common__registers_8h_1a1b0b8be141a47a8a7fcb470b2f68aabe">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/system_common_registers.h</para>
+    </simplesect>
+</section>

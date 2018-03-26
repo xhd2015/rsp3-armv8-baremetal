@@ -7,6 +7,6 @@ $(USER_CLEAN):clean
 	- $(RM)  $(CLEAN-ALL-LIST)
 
 
--include  $(ROOT_PROJECT)/makefiles/makefile.$(TARGET_ARCH).targets
+-include  $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/makefile.targets
 -include  $(ROOT_PROJECT)/makefiles/makefile.auxfiles
 -include  $(ROOT_PROJECT)/makefiles/makefile.auxtargets

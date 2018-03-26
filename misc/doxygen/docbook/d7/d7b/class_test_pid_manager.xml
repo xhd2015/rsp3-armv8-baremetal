@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d7b/class_test_pid_manager">
+<title>TestPidManager class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/df0/_test_pid_manager_8h">&quot;TestPidManager.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for TestPidManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d61/class_test_pid_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TestPidManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d7c/class_test_pid_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="d7/d7b/class_test_pid_manager_1a16be6c7f3bb1f57f8d61ca4a64e431c5">run</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d7b/class_test_pid_manager_1a50d316e8e0d510934d61957e6a656174">allocateInvalidPidAlwaysFailed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d7b/class_test_pid_manager_1a13a07f28988bb179ffdd236eaf77ceea">allocateReturnContinousPids</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d7b/class_test_pid_manager_1a178ae1783133476b342c7f004eb9cc50">clearAllKeepsInvalidAllocated</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/d7b/class_test_pid_manager_1a1a74ac37afdd3b0ff147f35069043784">deallocatePidSuccessfully</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d7/d7b/class_test_pid_manager_1a16be6c7f3bb1f57f8d61ca4a64e431c5">
+                <title>void TestPidManager::run ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d7b/class_test_pid_manager_1a50d316e8e0d510934d61957e6a656174">
+                <title>bool TestPidManager::allocateInvalidPidAlwaysFailed ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d7b/class_test_pid_manager_1a13a07f28988bb179ffdd236eaf77ceea">
+                <title>bool TestPidManager::allocateReturnContinousPids ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d7b/class_test_pid_manager_1a178ae1783133476b342c7f004eb9cc50">
+                <title>bool TestPidManager::clearAllKeepsInvalidAllocated ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/d7b/class_test_pid_manager_1a1a74ac37afdd3b0ff147f35069043784">
+                <title>bool TestPidManager::deallocatePidSuccessfully ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

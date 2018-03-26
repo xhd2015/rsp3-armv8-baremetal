@@ -1,0 +1,11 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/zcu102" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_70d5e250c66d001b18da37689179cade {
+    graph [ bgcolor="#ddddee", pencolor="black", label="arch" fontname="Helvetica", fontsize="10", URL="dir_70d5e250c66d001b18da37689179cade.html"]
+  dir_09ce2f3110adf1828808a4389912faeb [shape=box, label="zcu102", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_09ce2f3110adf1828808a4389912faeb.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_09ce2f3110adf1828808a4389912faeb->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="16", labeldistance=1.5 headhref="dir_000035_000000.html"];
+}

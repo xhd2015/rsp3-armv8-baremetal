@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_b926265dddcbd40e5e3241dea5a14f9d">
+    <title>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation 目录参考</title>
+<para>Directory dependency diagram for D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dir_b926265dddcbd40e5e3241dea5a14f9d_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> 目录 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_fe75db00e895da21151eb00c0cb61c18">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/data_structures</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_46b4ecea3f7b36735a62a544cbec2752">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/io</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_32925bdc6d9ab9369f3e6ea5ce48be0a">D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/schedule</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> 文件 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="dc/d84/templates__implementation_2_integer_formatter_8h">IntegerFormatter.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="dd/d2b/templates__implementation_2_memory_manager_8h">MemoryManager.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="d7/d95/templates__implementation_2printk_8h">printk.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="da/d34/templates__implementation_2_vector_delim_8h">VectorDelim.h</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Directory location is D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/</para>
+    </simplesect>
+</section>

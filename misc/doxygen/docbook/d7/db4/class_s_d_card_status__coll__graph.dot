@@ -1,0 +1,6 @@
+digraph "SDCardStatus"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node811 [label="{SDCardStatus\n|+ __attribute__\l+ ADDRESS_ERROR\l+ AKE_SEQ_ERROR\l+ BLOCK_LEN_ERROR\l+ CARD_ECC_DISABLED\l+ CARD_ECC_FAILED\l+ CARD_IS_LOCKED\l+ CC_ERROR\l+ COM_CRC_ERROR\l+ CSD_OVERWIRTE\l和 20 更多...\l|+ dump()\l+ SDCardStatus()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

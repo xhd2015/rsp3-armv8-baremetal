@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d03/exceptions_8h">
+    <title>exceptions.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+<para>Include dependency diagram for exceptions.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/de8/exceptions_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for exceptions.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d85/exceptions_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1a72f9b3d38c15c2b6f00f682b7f0bafd5">RESTORE_REGS</link> <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>(\
+	<link linkend="d4/d03/exceptions_8h_1a1e6b4930dc183a1a4f9b7b38bd80027b">RESTORE_REGS_ASM_INSTR</link> \
+	)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1a1e6b4930dc183a1a4f9b7b38bd80027b">RESTORE_REGS_ASM_INSTR</link> <link linkend="d4/d03/exceptions_8h_1ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</link>(sp) \
+		&quot;ldp x29,x30,[sp],#16 \n\t&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</link> &quot;ldr x0,[&quot; __stringify(base) &quot;],#8 \n\t&quot; \
+		&quot;ldp x1,x2,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x3,x4,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x5,x6,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x7,x8,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x9,x10,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x11,x12,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x13,x14,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x15,x16,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x17,x18,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x19,x20,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x21,x22,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x23,x24,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x25,x26,[&quot; __stringify(base) &quot;],#16 \n\t&quot; \
+		&quot;ldp x27,x28,[&quot; __stringify(base) &quot;],#16 \n\t&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1ac2a7f97d327cf59f9cf4d16a9df6d521">RESTORE_REGS_ASM_INSTR_X30_BASE</link> <link linkend="d4/d03/exceptions_8h_1ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</link>(x30) \
+		&quot;ldp x29,x30,[x30]\n\t&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1a66f13b8e2e117f27da50f5723055b376">SAVE_REGS</link> <link linkend="d4/d12/zcu102_2crt0_8cpp_1ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</link> <link linkend="d8/d64/main__test__adrp__instruction_8cpp_1a28b72fa6de7635a872fd3ae108c838c8">__volatile__</link>( \
+	<link linkend="d4/d03/exceptions_8h_1a2a6e8d1cd555767445a6c1f82fefc994">SAVE_REGS_ASM_INSTR</link> \
+	)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d03/exceptions_8h_1a2a6e8d1cd555767445a6c1f82fefc994">SAVE_REGS_ASM_INSTR</link> &quot;stp x29,x30,[sp,#-16]! \n\t&quot; \
+		&quot;stp x27,x28,[sp,#-16]! \n\t&quot; \
+		&quot;stp x25,x26,[sp,#-16]! \n\t&quot; \
+		&quot;stp x23,x24,[sp,#-16]! \n\t&quot; \
+		&quot;stp x21,x22,[sp,#-16]! \n\t&quot; \
+		&quot;stp x19,x20,[sp,#-16]! \n\t&quot; \
+		&quot;stp x17,x18,[sp,#-16]! \n\t&quot; \
+		&quot;stp x15,x16,[sp,#-16]! \n\t&quot; \
+		&quot;stp x13,x14,[sp,#-16]! \n\t&quot; \
+		&quot;stp x11,x12,[sp,#-16]! \n\t&quot; \
+		&quot;stp x9,x10,[sp,#-16]! \n\t&quot; \
+		&quot;stp x7,x8,[sp,#-16]! \n\t&quot; \
+		&quot;stp x5,x6,[sp,#-16]! \n\t&quot; \
+		&quot;stp x3,x4,[sp,#-16]! \n\t&quot; \
+		&quot;stp x1,x2,[sp,#-16]! \n\t&quot; \
+		&quot;str x0,[sp,#-8]! \n\t&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2">ExceptionClass</link> {
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a936c8aa64d04c3faf2a4d03c2cd32f31">UNDEF_INST</link>=0b000000,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a92c1f245bfb5b916720859a5a4398ed6">INSTR_ABORT_LOWER_EL</link>= 0b100000,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2ac0d37acb16cacb4598bccee1571d37d9">INSTR_ABORT_SAME_EL</link>= 0b100001,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a0f89b4e1f7bd361e0a6ff61607d79c51">PC_ALIGNMENT_FAULT</link>= 0b100010,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2ae5d582dc94a43e8cda6135e4617ad3b8">DATA_ABORT_LOWER_EL</link>= 0b100100,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a9257d5a5e9f2f64cbfe8f689021be9dc">DATA_ABORT_SAME_EL</link>= 0b100101,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a8976fc23130b6e1074165008774ec4b7">SP_ALIGNMENT_FAULT</link>= 0b100110,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a0499063ba0bcced46cc8b296a1c8cc1c">SERROR_INTERRUPT</link>= 0b101111,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a58e95e95d9bd5bf4b6247f6ce9722faa">SVC_AA64</link>=0b010101,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a31e315bf60e1e36a38be83cffebf6683">HVC_AA64</link>= 0b010110,
+<link linkend="d4/d03/exceptions_8h_1a04034d12009cf36227f4d2abff3331a2a33f37265b4268b961d560e73b399fc6c">SMC_AA64</link>= 0b010111
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/exception/exceptions.h</para>
+    </simplesect>
+</section>

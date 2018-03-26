@@ -1,0 +1,6 @@
+digraph "FATLongNameEntry"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node472 [label="{FATLongNameEntry\n|+ attr\l+ chksum\l+ fstClusLO\l+ name1\l+ name2\l+ name3\l+ ord\l+ type\l|+ getAsAsciiName()\l+ getLastAppearEntry()\l+ getLastAppearEntry()\l+ getOwnerDirectoryEntry()\l+ getOwnerDirectoryEntry()\l+ nameEqulasAsciiName()\l+ nameEqulasAsciiNameUpto()\l+ uni_isLongNameEntry()\l+ getNameBytesCount()\l+ getNameRequiredCapacity()\l- lookupFirstNullChar()\l- unicodeCharToAsciiChar()\l- unicodeNameMatchesAsciiName()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

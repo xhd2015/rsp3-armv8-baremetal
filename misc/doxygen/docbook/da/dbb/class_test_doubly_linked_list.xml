@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dbb/class_test_doubly_linked_list">
+<title>TestDoublyLinkedList class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/dd1/_test_doubly_linked_list_8h">&quot;TestDoublyLinkedList.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for TestDoublyLinkedList</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/d67/class_test_doubly_linked_list__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TestDoublyLinkedList</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d56/class_test_doubly_linked_list__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="da/dbb/class_test_doubly_linked_list_1ab6bf21c4d7e82494e2283c0ae636dd1f">run</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1a213f65b1d37dde14c0d37e4b7b08af72">addAndRemoveCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1ad36805b126718ef0fd68bf782de088e5">canBeAppliedStdMove</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1adeae951f50b0ca5f9c158637630aaa86">insertAfterTailCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1a6f9583b054d9129a3d8fef4030b2bc9e">insertBeforeHeadCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1a9f741aab17fb34b76fe7250fe0a9793e">keepsCorrectlyAfterClear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dbb/class_test_doubly_linked_list_1a77f492c2e602eda06d9c7e2e0d9655d7">removeNodeCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1ab6bf21c4d7e82494e2283c0ae636dd1f">
+                <title>void TestDoublyLinkedList::run ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1a213f65b1d37dde14c0d37e4b7b08af72">
+                <title>bool TestDoublyLinkedList::addAndRemoveCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1ad36805b126718ef0fd68bf782de088e5">
+                <title>bool TestDoublyLinkedList::canBeAppliedStdMove ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1adeae951f50b0ca5f9c158637630aaa86">
+                <title>bool TestDoublyLinkedList::insertAfterTailCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1a6f9583b054d9129a3d8fef4030b2bc9e">
+                <title>bool TestDoublyLinkedList::insertBeforeHeadCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1a9f741aab17fb34b76fe7250fe0a9793e">
+                <title>bool TestDoublyLinkedList::keepsCorrectlyAfterClear ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dbb/class_test_doubly_linked_list_1a77f492c2e602eda06d9c7e2e0d9655d7">
+                <title>bool TestDoublyLinkedList::removeNodeCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

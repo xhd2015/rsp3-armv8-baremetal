@@ -1,0 +1,11 @@
+digraph "ForwardNode::next"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node32 [label="ForwardNode::next",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node32 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="ForwardList::removeHead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d96/class_forward_list.html#a7b555711ba45fa50f6a0af2dad448f02"];
+  Node32 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="ForwardNode::insertAfter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/daa/class_forward_node.html#ad9ca1cb945541797522c7fd51bdbdbca"];
+}

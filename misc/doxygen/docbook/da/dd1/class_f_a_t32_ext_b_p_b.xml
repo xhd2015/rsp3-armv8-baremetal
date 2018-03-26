@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dd1/class_f_a_t32_ext_b_p_b">
+<title>FAT32ExtBPB class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d5/dca/_f_a_t32_ext_b_p_b_8h">&quot;FAT32ExtBPB.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FAT32ExtBPB</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d79/class_f_a_t32_ext_b_p_b__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FAT32ExtBPB</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/de1/class_f_a_t32_ext_b_p_b__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3">@5</link> {
+<link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3a17c2f8d74d84cacaba93689a2e4e07d5">BIT_MASK</link>= 0x0FFFFFFF,
+<link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3a8e8fce5bc695aeae213a1b12944941f9">ENTRY_SIZE</link>= 32
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum FAT32ExtBPB::@5 __attribute__</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t bkBootSe</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t BS_BootSig</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t BS_DrvNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char BS_FilSysType[8]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t BS_Reserved1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t BS_VolID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char BS_VolLab[11]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t extFlags</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t FATSz32</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t FSInfo</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t FSVer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t reserved[12]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t rootClus</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t Signature_word</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t undefined[420]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a7a935df740ebd0a570fe952d8f6bbe72">calculateFATSz32</link> (
+size_t diskSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a6a40acb5ea32f9ec27676bd89545e10c">getClusterByteSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1afd2380f02e3a09af68485c3d72922ebc">getClusterEntryOffset</link> (
+size_t fatNo, size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a259fa4e7dd83731e9d7c20ce0df5b41d">getClusterFirstSector</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a9da5088163854f58c89a14c65bfa1799">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a7b048c794b787a6645a1fd4d6ec8d919">getRootDirFirstSector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1acb2e44fbdc2ea6a51e1afc1ddaa556bf">uni_determineFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a26721a9ac6f0cea2092911895e841682">uni_getClustersCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1ae6bda1eded904b8b0076027d4aba9983">uni_getDataRegionSectorCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1ad9fa1e2d61c822e8f2b5c2785b2ac9b3">uni_getFatSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dd1/class_f_a_t32_ext_b_p_b_1a27ddfdaaa1001d8d0653912cd415f5e8">uni_getTotalSecCount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>NOTE: if you are given a raw data of an FAT header,you do not know what kind is it.Then you can safely assume that it is an FAT32 filesystem type,and use methods prefixed with uni_ (which means universal) to retrieve information from it. Once you get the realy type of it(through uni_determineFATType()),then you can cast that region of memory to ExtBPB32 or <link linkend="d3/db9/class_ext_b_p_b16">ExtBPB16</link>, and use non-prefixed method of that class. </para>
+                <para>Definition at line 19 of file FAT32ExtBPB.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>FAT32ExtBPB.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3">
+               <title>enum @5 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3a17c2f8d74d84cacaba93689a2e4e07d5">
+                            <term>BIT_MASK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a7c866bfcedcc56bb2fe2dba9e719c3f3a8e8fce5bc695aeae213a1b12944941f9">
+                            <term>ENTRY_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 21 of file FAT32ExtBPB.h
+                    <computeroutput><literallayout>
+{
+BIT_MASK= 0x0FFFFFFF, 
+ENTRY_SIZE= 32, 
+}@5;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a7a935df740ebd0a570fe952d8f6bbe72">
+                <title>uint32_t FAT32ExtBPB::calculateFATSz32 (size_t diskSize) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a6a40acb5ea32f9ec27676bd89545e10c">
+                <title>size_t FAT32ExtBPB::getClusterByteSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1afd2380f02e3a09af68485c3d72922ebc">
+                <title>size_t FAT32ExtBPB::getClusterEntryOffset (size_t fatNo, size_t n) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a259fa4e7dd83731e9d7c20ce0df5b41d">
+                <title>size_t FAT32ExtBPB::getClusterFirstSector (size_t n) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a9da5088163854f58c89a14c65bfa1799">
+                <title>FAT_BPB::FATType FAT32ExtBPB::getFATType () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a7b048c794b787a6645a1fd4d6ec8d919">
+                <title>size_t FAT32ExtBPB::getRootDirFirstSector () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1acb2e44fbdc2ea6a51e1afc1ddaa556bf">
+                <title>FAT_BPB::FATType FAT32ExtBPB::uni_determineFATType () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a26721a9ac6f0cea2092911895e841682">
+                <title>size_t FAT32ExtBPB::uni_getClustersCount () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1ae6bda1eded904b8b0076027d4aba9983">
+                <title>size_t FAT32ExtBPB::uni_getDataRegionSectorCount () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1ad9fa1e2d61c822e8f2b5c2785b2ac9b3">
+                <title>size_t FAT32ExtBPB::uni_getFatSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dd1/class_f_a_t32_ext_b_p_b_1a27ddfdaaa1001d8d0653912cd415f5e8">
+                <title>size_t FAT32ExtBPB::uni_getTotalSecCount () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

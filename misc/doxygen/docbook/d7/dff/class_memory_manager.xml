@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/dff/class_memory_manager">
+<title>MemoryManager class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d6/d76/memory_2_memory_manager_8h">&quot;MemoryManager.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for MemoryManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/dcf/class_memory_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for MemoryManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d97/class_memory_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7e">@33</link> {
+<link linkend="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7eae364aa682c04fa88badb29bdb65aac07">CHUNK_SIZE</link>= sizeof(MemoryChunk),
+<link linkend="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7ea6cde0a1fbafa169b2869843c69837257">MINIMAL_ALLOC_SIZE</link>= sizeof(size_t),
+<link linkend="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7ea3e5291dae662f4d35154e0adf4db4102">MINIMAL_ALIGNMENT</link>= sizeof(size_t)
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>MemoryChunk * headChunk</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const size_t size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d7/dff/class_memory_manager_1ac2881a6dbbd6c0312f05761718ac6f08">allocate</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d7/dff/class_memory_manager_1a7a9a1ed8aa2df2885d4567eb7d18805a">allocate</link> (
+size_t n, size_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="d7/dff/class_memory_manager_1a98db433aa911826282a28fedcb6e7a78">allocateAs</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="d7/dff/class_memory_manager_1aee201d3ae52d94ffa1869b65abbe26b4">allocateAs</link> (
+size_t n, size_t alignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/dff/class_memory_manager_1a41a3c946c368918bdb6e4b441080fb8b">deallocate</link> (
+void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/dff/class_memory_manager_1a6f9d398838761d0ad08090b40fffd863">getAllocatedLength</link> (
+void * origin)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dff/class_memory_manager_1a675a0d05c74e0ed56ab2e3ad5067730e">MemoryManager</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dff/class_memory_manager_1a763ada776b39d3452f9eab0c5d9740c7">MemoryManager</link> (
+void * base, size_t size, bool initChunks)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d7/dff/class_memory_manager_1af59f6558978a291d1c003dfa2c1155d1">normalizeAllocSize</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * <link linkend="d7/dff/class_memory_manager_1a17da19580dc9a1c21d4d1a6ca6674f6b">reallocate</link> (
+void * origin, size_t newSize, size_t oldSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="d7/dff/class_memory_manager_1a8b00309605d94f159b1a9b4a1b63e15f">reallocateAs</link> (
+void * origin, size_t newSize, size_t oldSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/dff/class_memory_manager_1a861186147bd4684506cd4bae6ede6708">tryDecrease</link> (
+void * origin, size_t decSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d7/dff/class_memory_manager_1a8bfc7ce2134b0952d0bdba5d9cd51d38">tryIncrease</link> (
+void * origin, size_t incSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>不变式: headChunk不为nullptr 分配的地址是对齐到ALIGNMENT的 CHUNK_SIZE 必须是ALIGNMENT的倍数 MINIMAL_ALLOC_SIZE 必须是ALIGNMENT的倍数 起始地址是ALIGNMENT的倍数 每个CHUNK必须对齐到ALIGNMENT</para>
+
+<para>内存管理可以in-place或者out-of-place </para>
+                <para>Definition at line 25 of file MemoryManager.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>MemoryManager.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7e">
+               <title>enum @33 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7eae364aa682c04fa88badb29bdb65aac07">
+                            <term>CHUNK_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7ea6cde0a1fbafa169b2869843c69837257">
+                            <term>MINIMAL_ALLOC_SIZE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d7/dff/class_memory_manager_1ac165b8db409abdce487fc5f044be8f7ea3e5291dae662f4d35154e0adf4db4102">
+                            <term>MINIMAL_ALIGNMENT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 27 of file MemoryManager.h
+                    <computeroutput><literallayout>
+{
+CHUNK_SIZE= sizeof(MemoryChunk), 
+MINIMAL_ALLOC_SIZE= sizeof(size_t), 
+MINIMAL_ALIGNMENT= sizeof(size_t), 
+}@33;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d7/dff/class_memory_manager_1ac2881a6dbbd6c0312f05761718ac6f08">
+                <title>void * MemoryManager::allocate (size_t n)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a7a9a1ed8aa2df2885d4567eb7d18805a">
+                <title>void * MemoryManager::allocate (size_t n, size_t alignment)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a98db433aa911826282a28fedcb6e7a78">
+                <title>T MemoryManager::allocateAs (size_t n)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1aee201d3ae52d94ffa1869b65abbe26b4">
+                <title>T MemoryManager::allocateAs (size_t n, size_t alignment)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a41a3c946c368918bdb6e4b441080fb8b">
+                <title>void MemoryManager::deallocate (void *p)</title> <emphasis></emphasis>
+                
+<para>withdraw an allocated pointer. note:for nullptr,nothing happens. </para>
+
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a6f9d398838761d0ad08090b40fffd863">
+                <title>size_t MemoryManager::getAllocatedLength (void *origin) const</title> <emphasis></emphasis>
+                
+<para>get size that the origin spanned, only if it is allocated from this <link linkend="d7/dff/class_memory_manager">MemoryManager</link>,otherwise 0. return SIZE_MAX, means that &quot;I do not know&quot; </para>
+
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a675a0d05c74e0ed56ab2e3ad5067730e">
+                <title>MemoryManager::MemoryManager ()=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a763ada776b39d3452f9eab0c5d9740c7">
+                <title>MemoryManager::MemoryManager (void *base, size_t size, bool initChunks=true)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1af59f6558978a291d1c003dfa2c1155d1">
+                <title>size_t MemoryManager::normalizeAllocSize (size_t n)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a17da19580dc9a1c21d4d1a6ca6674f6b">
+                <title>void * MemoryManager::reallocate (void *origin, size_t newSize, size_t oldSize=SIZE_MAX)</title> <emphasis></emphasis>
+                
+<para>allocate the pointer in-place or out-place. call tryIncrease or tryDecrease conditionally, if possible. else, just allocate another new memory, and copy the original content to there.</para>
+
+<para>argument <computeroutput>oldSize</computeroutput> is optional, if it is SIZE_MAX,means that the original memory size can be retrieved from the in-place MemoryChunk.Otherwise, oldSize is used if failed,return nullptr </para>
+
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a8b00309605d94f159b1a9b4a1b63e15f">
+                <title>T MemoryManager::reallocateAs (void *origin, size_t newSize, size_t oldSize=SIZE_MAX)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a861186147bd4684506cd4bae6ede6708">
+                <title>bool MemoryManager::tryDecrease (void *origin, size_t decSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d7/dff/class_memory_manager_1a8bfc7ce2134b0952d0bdba5d9cd51d38">
+                <title>bool MemoryManager::tryIncrease (void *origin, size_t incSize)</title> <emphasis></emphasis>
+                
+<para>try to increase or decrease something. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>参数                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>origin, if</entry>
+                                <entry>
+<para>nullptr, return false.we do not expect nullptr as a normal allocated address </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>返回: </title>
+
+<para>true, the decrease really happened; false, nothing happened. for TARGET_ARCH=self-implemented, try decrease will always succeed for TARGET_ARCH=host,those tries will always failed. </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

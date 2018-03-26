@@ -1,0 +1,16 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7c40e03ac1dfef8b430578d46da2b8fd {
+    graph [ bgcolor="#ddddee", pencolor="black", label="arch" fontname="Helvetica", fontsize="10", URL="dir_7c40e03ac1dfef8b430578d46da2b8fd.html"]
+  subgraph clusterdir_b769ae817602266205ecc3e3554a24f8 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_b769ae817602266205ecc3e3554a24f8.html"];
+    dir_b769ae817602266205ecc3e3554a24f8 [shape=plaintext label="common_aarch64"];
+    dir_27fb854bd0357dccf2446cabd684912f [shape=box label="exception" color="black" fillcolor="white" style="filled" URL="dir_27fb854bd0357dccf2446cabd684912f.html"];
+    dir_479cccb1dcee57762b180b220b22c433 [shape=box label="mmu" color="black" fillcolor="white" style="filled" URL="dir_479cccb1dcee57762b180b220b22c433.html"];
+  }
+  }
+  dir_a00b633439466cbb1729245c7f66f564 [shape=box label="io" fillcolor="white" style="filled" color="red" URL="dir_a00b633439466cbb1729245c7f66f564.html"];
+  dir_b769ae817602266205ecc3e3554a24f8->dir_a00b633439466cbb1729245c7f66f564 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000016.html"];
+}

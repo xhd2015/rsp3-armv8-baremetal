@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d95/class_test_vector">
+<title>TestVector class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d0/d4a/_test_vector_8h">&quot;TestVector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for TestVector</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dbc/class_test_vector__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TestVector</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/db2/class_test_vector__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a36f781ee094a8a8fd87f4e63bd0eec0c">capacityDecreasedCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1ad961a88f465197cf676128e4b736e445">capacityIncreasedCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a6b3e0a3463b00f29d578b66bee73f34a">eraseCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a301a7e54860cc7b8338a9a6ca4be817b">initializeCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a34e5896d6104724020d48dce650311c7">insertCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a9c8154201fce61d1b4108310be855ccb">minimalCapacityEnsured</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a5d0f4743379dc275a28470c7dd53fd8b">popBackWhenEmptyNoException</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a699db1d90bd0d30923ffae074c18d6f3">pushBackCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d95/class_test_vector_1a4854bd564dfd3bd7d5fa5f48820e51cd">resizeCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/d95/class_test_vector_1af7b3a260b0007f8ff683f1a3f081add6">setup</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/d95/class_test_vector_1a3cc91a008f55cfc313e5635afda208f1">teardown</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d9/d95/class_test_vector_1a36f781ee094a8a8fd87f4e63bd0eec0c">
+                <title>bool TestVector::capacityDecreasedCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1ad961a88f465197cf676128e4b736e445">
+                <title>bool TestVector::capacityIncreasedCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a6b3e0a3463b00f29d578b66bee73f34a">
+                <title>bool TestVector::eraseCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a301a7e54860cc7b8338a9a6ca4be817b">
+                <title>bool TestVector::initializeCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a34e5896d6104724020d48dce650311c7">
+                <title>bool TestVector::insertCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a9c8154201fce61d1b4108310be855ccb">
+                <title>bool TestVector::minimalCapacityEnsured ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a5d0f4743379dc275a28470c7dd53fd8b">
+                <title>bool TestVector::popBackWhenEmptyNoException ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a699db1d90bd0d30923ffae074c18d6f3">
+                <title>bool TestVector::pushBackCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a4854bd564dfd3bd7d5fa5f48820e51cd">
+                <title>bool TestVector::resizeCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1af7b3a260b0007f8ff683f1a3f081add6">
+                <title>void TestVector::setup ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d95/class_test_vector_1a3cc91a008f55cfc313e5635afda208f1">
+                <title>void TestVector::teardown ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

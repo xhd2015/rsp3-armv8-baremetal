@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/d5b/class_xilinx_u_a_r_t_p_s">
+<title>XilinxUARTPS class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/df7/_xilinx_u_a_r_t_p_s_8h">&quot;XilinxUARTPS.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for XilinxUARTPS</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d7f/class_xilinx_u_a_r_t_p_s__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for XilinxUARTPS</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/da3/class_xilinx_u_a_r_t_p_s__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738">RegOffset</link> {
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a4cf7384f5654525c682cf80233eb70c4">XUARTPS_CR</link>=		0x0000U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a3fe98dee95a98831ff395f53b20a8bc7">XUARTPS_MR</link>=		0x0004U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a343fa3115764cfeea07ac8a51d83bbba">XUARTPS_IER</link>=		0x0008U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a32ca22e9b8d457adc213a53f2207b7aa">XUARTPS_IDR</link>=		0x000CU,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a9f7e4449b17ba793558b083f3e674507">XUARTPS_IMR</link>=		0x0010U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ac426fa2e4987953180882c4cbc2062f1">XUARTPS_ISR</link>=		0x0014U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a011e6f1b08d17ab706da913efbdd85b0">XUARTPS_BAUDGEN</link>=	0x0018U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738aa7e26cfc8a6ef03dd04bac037e8c50c5">XUARTPS_RXTOUT</link>=	0x001CU,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a3d6cca2e43686f111b740003754b1173">XUARTPS_RXWM</link>=		0x0020U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a57aa472465bf6a33f45d72d31e71db6e">XUARTPS_MODEMCR</link>=	0x0024U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ac8b7deb24a40e5af6eabca6a9b16e5fd">XUARTPS_MODEMSR</link>=	0x0028U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ab3d5b38610705df0a1cc1986c2773e3c">XUARTPS_SR</link>=		0x002CU,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a2cdf67f107a3e4e340c9825d8cbac922">XUARTPS_FIFO</link>=		0x0030U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a5338e3f9b61c1b987f8766a76b0794ac">XUARTPS_BAUDDIV</link>=	0x0034U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738af10121f22c84708b1e4bf7f6a9183907">XUARTPS_FLOWDEL</link>=	0x0038U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a9b6f03b087d7fb030133de8f9ebe5240">XUARTPS_TXWM</link>=		0x0044U,
+<link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a2447e857fea0bec358fee117234f8d8a">XUARTPS_RXBS</link>=		0x0048U
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint32_t &amp; _control</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint32_t &amp; _data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile uint32_t &amp; _status</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a1aaf32db70c1477643911d64b6f5239a">init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a88b65cd4905ad4133d24ddf219a7ad8b">readable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1aa5b59ba79fda9bdecb9cfb1ba4a31a43">readBlocked</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a97be2c75d89e4dc431badad10c35cd4d">readNonBlocked</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a0751411da7f8ecb3a43c84ac74eb6256">write</link> (
+char ch)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> bool <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1aa3971cfd2791eeb495f230409edf712a">writeable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d5b/class_xilinx_u_a_r_t_p_s_1a0b5f38a852dd1b506a619d292f13beb8">XilinxUARTPS</link> (
+void * base)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738">
+               <title>enum RegOffset </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a4cf7384f5654525c682cf80233eb70c4">
+                            <term>XUARTPS_CR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a3fe98dee95a98831ff395f53b20a8bc7">
+                            <term>XUARTPS_MR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a343fa3115764cfeea07ac8a51d83bbba">
+                            <term>XUARTPS_IER</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a32ca22e9b8d457adc213a53f2207b7aa">
+                            <term>XUARTPS_IDR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a9f7e4449b17ba793558b083f3e674507">
+                            <term>XUARTPS_IMR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ac426fa2e4987953180882c4cbc2062f1">
+                            <term>XUARTPS_ISR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a011e6f1b08d17ab706da913efbdd85b0">
+                            <term>XUARTPS_BAUDGEN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738aa7e26cfc8a6ef03dd04bac037e8c50c5">
+                            <term>XUARTPS_RXTOUT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a3d6cca2e43686f111b740003754b1173">
+                            <term>XUARTPS_RXWM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a57aa472465bf6a33f45d72d31e71db6e">
+                            <term>XUARTPS_MODEMCR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ac8b7deb24a40e5af6eabca6a9b16e5fd">
+                            <term>XUARTPS_MODEMSR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738ab3d5b38610705df0a1cc1986c2773e3c">
+                            <term>XUARTPS_SR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a2cdf67f107a3e4e340c9825d8cbac922">
+                            <term>XUARTPS_FIFO</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a5338e3f9b61c1b987f8766a76b0794ac">
+                            <term>XUARTPS_BAUDDIV</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738af10121f22c84708b1e4bf7f6a9183907">
+                            <term>XUARTPS_FLOWDEL</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a9b6f03b087d7fb030133de8f9ebe5240">
+                            <term>XUARTPS_TXWM</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a2239c213fd44c1d84e4fb8f6b99ff738a2447e857fea0bec358fee117234f8d8a">
+                            <term>XUARTPS_RXBS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 19 of file XilinxUARTPS.h
+                    <computeroutput><literallayout>
+{
+XUARTPS_CR=		0x0000U, 
+XUARTPS_MR=		0x0004U, 
+XUARTPS_IER=		0x0008U, 
+XUARTPS_IDR=		0x000CU, 
+XUARTPS_IMR=		0x0010U, 
+XUARTPS_ISR=		0x0014U, 
+XUARTPS_BAUDGEN=	0x0018U, 
+XUARTPS_RXTOUT=	0x001CU, 
+XUARTPS_RXWM=		0x0020U, 
+XUARTPS_MODEMCR=	0x0024U, 
+XUARTPS_MODEMSR=	0x0028U, 
+XUARTPS_SR=		0x002CU, 
+XUARTPS_FIFO=		0x0030U, 
+XUARTPS_BAUDDIV=	0x0034U, 
+XUARTPS_FLOWDEL=	0x0038U, 
+XUARTPS_TXWM=		0x0044U, 
+XUARTPS_RXBS=		0x0048U, 
+}RegOffset;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a1aaf32db70c1477643911d64b6f5239a">
+                <title>void XilinxUARTPS::init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a88b65cd4905ad4133d24ddf219a7ad8b">
+                <title>AS_MACRO bool XilinxUARTPS::readable () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1aa5b59ba79fda9bdecb9cfb1ba4a31a43">
+                <title>char XilinxUARTPS::readBlocked () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a97be2c75d89e4dc431badad10c35cd4d">
+                <title>char XilinxUARTPS::readNonBlocked () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a0751411da7f8ecb3a43c84ac74eb6256">
+                <title>void XilinxUARTPS::write (char ch)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1aa3971cfd2791eeb495f230409edf712a">
+                <title>AS_MACRO bool XilinxUARTPS::writeable () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d5b/class_xilinx_u_a_r_t_p_s_1a0b5f38a852dd1b506a619d292f13beb8">
+                <title>XilinxUARTPS::XilinxUARTPS (void *base)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

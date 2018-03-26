@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d88/templates__implementation_2data__structures_2_doubly_linked_list_8h">
+    <title>DoublyLinkedList.h File Reference</title>
+    <programlisting>#include &lt;data_structures/DoublyLinkedList.h&gt;</programlisting>
+<para>Include dependency diagram for DoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d16/templates__implementation_2data__structures_2_doubly_linked_list_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for DoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/dbe/templates__implementation_2data__structures_2_doubly_linked_list_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/data_structures/DoublyLinkedList.h</para>
+    </simplesect>
+</section>

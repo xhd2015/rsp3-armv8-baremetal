@@ -1,0 +1,26 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/operator_delete.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3859 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/minimal_cpprt/operator\l_delete.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3859 -> Node3860 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3860 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node3860 -> Node3861 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3861 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3860 -> Node3862 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3862 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3859 -> Node3863 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3863 [label="new",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3859 -> Node3864 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3864 [label="memory/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d76/memory_2_memory_manager_8h.html"];
+  Node3864 -> Node3860 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3864 -> Node3865 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3865 [label="memory/MemoryChunk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/df6/_memory_chunk_8h.html"];
+  Node3865 -> Node3860 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3865 -> Node3866 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3866 [label="generic_util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d93/generic__util_8h.html"];
+  Node3866 -> Node3860 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3864 -> Node3867 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3867 [label="templates_implementation\l/MemoryManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d2b/templates__implementation_2_memory_manager_8h.html"];
+  Node3867 -> Node3864 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

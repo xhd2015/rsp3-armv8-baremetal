@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d58/class_test_memory_manager">
+<title>TestMemoryManager class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/d3b/_test_memory_manager_8h">&quot;TestMemoryManager.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for TestMemoryManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d1f/class_test_memory_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TestMemoryManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d6b/class_test_memory_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1af8cb2e45c12570e276d6ba48819359d9">alignedAllocateCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a5eb58c7aceefbe84ef99e217c2b30cdc">allocateCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a8b9ea0c1607db3d4bed62e2ea0c90d61">criticalConditionsStillCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a0df022882a44e969830ab5d24b827dff">deallocateCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a39f10451ea83116596e318cd89d6bfbf">memoryChunkMergeCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a8af7513f18a86970e354f4daddd24dad">memoryChunkSpiltCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a62654fd075a26f6944e9a45beebaae1f">nextChunkCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1a234bf5990122de78b826e431d3c79292">reallocateInPlaceCollectCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1aa4c425d3295118b3bcda6b968386a8d6">reallocateOutOfPlaceMoveCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1ab9473b249acedd81d0adbdacc5aafa51">reallocateSmallerCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d58/class_test_memory_manager_1ad1174730333c35418d858d4951b9ba92">TestMemoryManager</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="de/d58/class_test_memory_manager_1adc179531a11daf86f8f07b959c9ceb94">uncontiguousChunkMemoryAllocateCorrectly</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="de/d58/class_test_memory_manager_1acd87b90b4159195484f49ac1aad0b839">run</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="de/d58/class_test_memory_manager_1af8cb2e45c12570e276d6ba48819359d9">
+                <title>bool TestMemoryManager::alignedAllocateCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a5eb58c7aceefbe84ef99e217c2b30cdc">
+                <title>bool TestMemoryManager::allocateCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a8b9ea0c1607db3d4bed62e2ea0c90d61">
+                <title>bool TestMemoryManager::criticalConditionsStillCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a0df022882a44e969830ab5d24b827dff">
+                <title>bool TestMemoryManager::deallocateCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a39f10451ea83116596e318cd89d6bfbf">
+                <title>bool TestMemoryManager::memoryChunkMergeCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a8af7513f18a86970e354f4daddd24dad">
+                <title>bool TestMemoryManager::memoryChunkSpiltCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a62654fd075a26f6944e9a45beebaae1f">
+                <title>bool TestMemoryManager::nextChunkCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1a234bf5990122de78b826e431d3c79292">
+                <title>bool TestMemoryManager::reallocateInPlaceCollectCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1aa4c425d3295118b3bcda6b968386a8d6">
+                <title>bool TestMemoryManager::reallocateOutOfPlaceMoveCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1ab9473b249acedd81d0adbdacc5aafa51">
+                <title>bool TestMemoryManager::reallocateSmallerCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1ad1174730333c35418d858d4951b9ba92">
+                <title>TestMemoryManager::TestMemoryManager ()=default</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1adc179531a11daf86f8f07b959c9ceb94">
+                <title>bool TestMemoryManager::uncontiguousChunkMemoryAllocateCorrectly ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d58/class_test_memory_manager_1acd87b90b4159195484f49ac1aad0b839">
+                <title>void TestMemoryManager::run ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

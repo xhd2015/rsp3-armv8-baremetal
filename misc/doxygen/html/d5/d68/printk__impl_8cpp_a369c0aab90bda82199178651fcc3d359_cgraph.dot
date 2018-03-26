@@ -1,0 +1,13 @@
+digraph "printk"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="printk",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="uart1Puts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d9e/uart1_8h.html#a31257802883dfdd5c05e360da25f16f1"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="uart1Putc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/ddf/uart1_8cpp.html#af7ac0714aabbedf2bbba3ef37cfcbef6"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="uart1SendReady",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/ddf/uart1_8cpp.html#a0331ec8e6f8b6a8abccb838651a9beb7"];
+}

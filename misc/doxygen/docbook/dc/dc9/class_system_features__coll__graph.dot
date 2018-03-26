@@ -1,0 +1,6 @@
+digraph "SystemFeatures"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node878 [label="{SystemFeatures\n|- _addrBits\l- _architecture\l- _asidBits\l- _asidSelector\l- _cores\l- _support16KBPage\l- _support4KBPage\l- _support64KBPage\l|+ addrBits()\l+ addrBits()\l+ architecture()\l+ architecture()\l+ asidBits()\l+ asidBits()\l+ asidSelector()\l+ asidSelector()\l+ cores()\l+ cores()\l和 8 更多...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

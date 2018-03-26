@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d40/_string_ref_8cpp">
+    <title>StringRef.cpp File Reference</title>
+    <programlisting>#include &lt;data_structures/String.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/StringRef.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+    <programlisting>#include &quot;../../include/io/printk.h&quot;</programlisting>
+<para>Include dependency diagram for StringRef.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/da6/_string_ref_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for StringRef.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d67/_string_ref_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="da/d40/_string_ref_8cpp_1a6e094ad7b8570af1342b895d03c91a8e">operator&lt;&lt;</link> (
+<link linkend="db/db4/class_output">Output</link> &amp; out, const <link linkend="db/d50/class_string_ref">StringRef</link> ref)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/data_structures/StringRef.cpp</para>
+    </simplesect>
+</section>

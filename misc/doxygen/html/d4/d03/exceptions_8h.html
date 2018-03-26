@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/exception/exceptions.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_7c40e03ac1dfef8b430578d46da2b8fd.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_b769ae817602266205ecc3e3554a24f8.html">common_aarch64</a></li><li class="navelem"><a class="el" href="../../dir_27fb854bd0357dccf2446cabd684912f.html">exception</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle">
+<div class="title">exceptions.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/da4/def_8h_source.html">def.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d8/d2f/asm__instructions_8h_source.html">asm_instructions.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> exceptions.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/de8/exceptions_8h__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8h" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8h" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8h">
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/d85/exceptions_8h__dep__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8hdep" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8hdep" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2exception_2exceptions_8hdep">
+</map>
+</div>
+</div>
+<p><a href="../../d4/d03/exceptions_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a72f9b3d38c15c2b6f00f682b7f0bafd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#a72f9b3d38c15c2b6f00f682b7f0bafd5">RESTORE_REGS</a>()</td></tr>
+<tr class="separator:a72f9b3d38c15c2b6f00f682b7f0bafd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6b4930dc183a1a4f9b7b38bd80027b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#a1e6b4930dc183a1a4f9b7b38bd80027b">RESTORE_REGS_ASM_INSTR</a></td></tr>
+<tr class="separator:a1e6b4930dc183a1a4f9b7b38bd80027b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3124d57ba41ec55df397caf5f35bbd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</a>(base)</td></tr>
+<tr class="separator:ad3124d57ba41ec55df397caf5f35bbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a7f97d327cf59f9cf4d16a9df6d521"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#ac2a7f97d327cf59f9cf4d16a9df6d521">RESTORE_REGS_ASM_INSTR_X30_BASE</a></td></tr>
+<tr class="separator:ac2a7f97d327cf59f9cf4d16a9df6d521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f13b8e2e117f27da50f5723055b376"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#a66f13b8e2e117f27da50f5723055b376">SAVE_REGS</a>()</td></tr>
+<tr class="separator:a66f13b8e2e117f27da50f5723055b376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6e8d1cd555767445a6c1f82fefc994"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#a2a6e8d1cd555767445a6c1f82fefc994">SAVE_REGS_ASM_INSTR</a></td></tr>
+<tr class="separator:a2a6e8d1cd555767445a6c1f82fefc994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a04034d12009cf36227f4d2abff3331a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2">ExceptionClass</a> { <br />
+&#160;&#160;<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a936c8aa64d04c3faf2a4d03c2cd32f31">UNDEF_INST</a> =0b000000, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a92c1f245bfb5b916720859a5a4398ed6">INSTR_ABORT_LOWER_EL</a> = 0b100000, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2ac0d37acb16cacb4598bccee1571d37d9">INSTR_ABORT_SAME_EL</a> = 0b100001, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a0f89b4e1f7bd361e0a6ff61607d79c51">PC_ALIGNMENT_FAULT</a> = 0b100010, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2ae5d582dc94a43e8cda6135e4617ad3b8">DATA_ABORT_LOWER_EL</a> = 0b100100, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a9257d5a5e9f2f64cbfe8f689021be9dc">DATA_ABORT_SAME_EL</a> = 0b100101, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a8976fc23130b6e1074165008774ec4b7">SP_ALIGNMENT_FAULT</a> = 0b100110, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a0499063ba0bcced46cc8b296a1c8cc1c">SERROR_INTERRUPT</a> = 0b101111, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a58e95e95d9bd5bf4b6247f6ce9722faa">SVC_AA64</a> =0b010101, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a31e315bf60e1e36a38be83cffebf6683">HVC_AA64</a> = 0b010110, 
+<a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2a33f37265b4268b961d560e73b399fc6c">SMC_AA64</a> = 0b010111
+<br />
+ }</td></tr>
+<tr class="separator:a04034d12009cf36227f4d2abff3331a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a72f9b3d38c15c2b6f00f682b7f0bafd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f9b3d38c15c2b6f00f682b7f0bafd5">&#9670;&nbsp;</a></span>RESTORE_REGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESTORE_REGS</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a> <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(\</div><div class="line">    <a class="code" href="../../d4/d03/exceptions_8h.html#a1e6b4930dc183a1a4f9b7b38bd80027b">RESTORE_REGS_ASM_INSTR</a> \</div><div class="line">    )</div><div class="ttc" id="exceptions_8cpp_html_a40b46c5cfd33825a3980572ace99e6a1"><div class="ttname"><a href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a></div><div class="ttdeci">__asm__(&quot;.text \&quot; &quot;.align 11 \&quot; &quot;.global ExceptionVectorEL1 \&quot; &quot;ExceptionVectorEL1:  \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x080 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x100 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x180 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x200 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x280 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x300 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x380 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x400 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x480 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x500 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x580 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x780 \&quot; &quot;. =. + 0x80 \&quot;)</div></div>
+<div class="ttc" id="exceptions_8h_html_a1e6b4930dc183a1a4f9b7b38bd80027b"><div class="ttname"><a href="../../d4/d03/exceptions_8h.html#a1e6b4930dc183a1a4f9b7b38bd80027b">RESTORE_REGS_ASM_INSTR</a></div><div class="ttdeci">#define RESTORE_REGS_ASM_INSTR</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d03/exceptions_8h_source.html#l00062">exceptions.h:62</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1e6b4930dc183a1a4f9b7b38bd80027b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6b4930dc183a1a4f9b7b38bd80027b">&#9670;&nbsp;</a></span>RESTORE_REGS_ASM_INSTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESTORE_REGS_ASM_INSTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code" href="../../d4/d03/exceptions_8h.html#ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</a>(sp) \</div><div class="line">        <span class="stringliteral">&quot;ldp x29,x30,[sp],#16 \n\t&quot;</span></div><div class="ttc" id="exceptions_8h_html_ad3124d57ba41ec55df397caf5f35bbd9"><div class="ttname"><a href="../../d4/d03/exceptions_8h.html#ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</a></div><div class="ttdeci">#define RESTORE_REGS_ASM_INSTR_X0_X28(base)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d03/exceptions_8h_source.html#l00045">exceptions.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad3124d57ba41ec55df397caf5f35bbd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3124d57ba41ec55df397caf5f35bbd9">&#9670;&nbsp;</a></span>RESTORE_REGS_ASM_INSTR_X0_X28</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESTORE_REGS_ASM_INSTR_X0_X28</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">base</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="stringliteral">&quot;ldr x0,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#8 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x1,x2,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x3,x4,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x5,x6,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x7,x8,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x9,x10,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x11,x12,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x13,x14,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x15,x16,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x17,x18,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x19,x20,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x21,x22,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x23,x24,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x25,x26,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;ldp x27,x28,[&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(base) <span class="stringliteral">&quot;],#16 \n\t&quot;</span></div><div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac2a7f97d327cf59f9cf4d16a9df6d521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a7f97d327cf59f9cf4d16a9df6d521">&#9670;&nbsp;</a></span>RESTORE_REGS_ASM_INSTR_X30_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESTORE_REGS_ASM_INSTR_X30_BASE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code" href="../../d4/d03/exceptions_8h.html#ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</a>(x30) \</div><div class="line">        <span class="stringliteral">&quot;ldp x29,x30,[x30]\n\t&quot;</span></div><div class="ttc" id="exceptions_8h_html_ad3124d57ba41ec55df397caf5f35bbd9"><div class="ttname"><a href="../../d4/d03/exceptions_8h.html#ad3124d57ba41ec55df397caf5f35bbd9">RESTORE_REGS_ASM_INSTR_X0_X28</a></div><div class="ttdeci">#define RESTORE_REGS_ASM_INSTR_X0_X28(base)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d03/exceptions_8h_source.html#l00045">exceptions.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a66f13b8e2e117f27da50f5723055b376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f13b8e2e117f27da50f5723055b376">&#9670;&nbsp;</a></span>SAVE_REGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAVE_REGS</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><a class="code" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a> <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>( \</div><div class="line">    <a class="code" href="../../d4/d03/exceptions_8h.html#a2a6e8d1cd555767445a6c1f82fefc994">SAVE_REGS_ASM_INSTR</a> \</div><div class="line">    )</div><div class="ttc" id="exceptions_8cpp_html_a40b46c5cfd33825a3980572ace99e6a1"><div class="ttname"><a href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a></div><div class="ttdeci">__asm__(&quot;.text \&quot; &quot;.align 11 \&quot; &quot;.global ExceptionVectorEL1 \&quot; &quot;ExceptionVectorEL1:  \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x080 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x100 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x180 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x200 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x280 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x300 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x380 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x400 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x480 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x500 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x580 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x780 \&quot; &quot;. =. + 0x80 \&quot;)</div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+<div class="ttc" id="exceptions_8h_html_a2a6e8d1cd555767445a6c1f82fefc994"><div class="ttname"><a href="../../d4/d03/exceptions_8h.html#a2a6e8d1cd555767445a6c1f82fefc994">SAVE_REGS_ASM_INSTR</a></div><div class="ttdeci">#define SAVE_REGS_ASM_INSTR</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d03/exceptions_8h_source.html#l00026">exceptions.h:26</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a6e8d1cd555767445a6c1f82fefc994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6e8d1cd555767445a6c1f82fefc994">&#9670;&nbsp;</a></span>SAVE_REGS_ASM_INSTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAVE_REGS_ASM_INSTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="stringliteral">&quot;stp x29,x30,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x27,x28,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x25,x26,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x23,x24,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x21,x22,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x19,x20,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x17,x18,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x15,x16,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x13,x14,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x11,x12,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x9,x10,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x7,x8,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x5,x6,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x3,x4,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;stp x1,x2,[sp,#-16]! \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;str x0,[sp,#-8]! \n\t&quot;</span></div></div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a04034d12009cf36227f4d2abff3331a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04034d12009cf36227f4d2abff3331a2">&#9670;&nbsp;</a></span>ExceptionClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d03/exceptions_8h.html#a04034d12009cf36227f4d2abff3331a2">ExceptionClass</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a936c8aa64d04c3faf2a4d03c2cd32f31"></a>UNDEF_INST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a92c1f245bfb5b916720859a5a4398ed6"></a>INSTR_ABORT_LOWER_EL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2ac0d37acb16cacb4598bccee1571d37d9"></a>INSTR_ABORT_SAME_EL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a0f89b4e1f7bd361e0a6ff61607d79c51"></a>PC_ALIGNMENT_FAULT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2ae5d582dc94a43e8cda6135e4617ad3b8"></a>DATA_ABORT_LOWER_EL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a9257d5a5e9f2f64cbfe8f689021be9dc"></a>DATA_ABORT_SAME_EL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a8976fc23130b6e1074165008774ec4b7"></a>SP_ALIGNMENT_FAULT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a0499063ba0bcced46cc8b296a1c8cc1c"></a>SERROR_INTERRUPT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a58e95e95d9bd5bf4b6247f6ce9722faa"></a>SVC_AA64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a31e315bf60e1e36a38be83cffebf6683"></a>HVC_AA64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a04034d12009cf36227f4d2abff3331a2a33f37265b4268b961d560e73b399fc6c"></a>SMC_AA64&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d03/exceptions_8h_source.html">exceptions.h</a> 第 <a class="el" href="../../d4/d03/exceptions_8h_source.html#l00012">12</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:32 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

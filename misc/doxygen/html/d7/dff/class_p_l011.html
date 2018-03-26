@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: PL011类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../da/dfe/class_p_l011-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">PL011类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 PL011 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d3/d84/class_p_l011__inherit__graph.png" border="0" usemap="#_p_l011_inherit__map" alt="Inheritance graph"/></div>
+<map name="_p_l011_inherit__map" id="_p_l011_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> PL011 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d0/dd3/class_p_l011__coll__graph.png" border="0" usemap="#_p_l011_coll__map" alt="Collaboration graph"/></div>
+<map name="_p_l011_coll__map" id="_p_l011_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ab12021066d48584983a712b056565982"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982">RegOffset</a> : MemBasedRegReader::RegOffset { <br />
+&#160;&#160;<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982addbe64da496e7d59a00437fd8a2ad9be">UARTDR</a> =0x000, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a0406c8eca8ca8ddb6dcea006eda10c72">UARTRSR</a> =0x004, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a0368d72fade93374d0b1998b139c71cf">UARTECR</a> =0x004, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a07689707dbe925761ef52eb4750de3a2">UARTFR</a> =0x018, 
+<br />
+&#160;&#160;<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982ad552098087df46d71ab1fe486713d0d0">UARTILPR</a> =0x020, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982af8b6f65bc38023b1e608b9820a1ae4d7">UARTIBRD</a> =0x024, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a93be3712911b8afbc687024a7d36a7a2">UARTFBRD</a> = 0x028, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982ac64e31889e8f8518174b1e43f25ba3d3">UARTLCR_H</a> = 0x02C, 
+<br />
+&#160;&#160;<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a366781197825756fbd9aa43112eae6af">UARTCR</a> = 0x030, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a98a11335c0360886a5dbfb18b560d0cb">UARTIFLS</a> = 0x034, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a8711012e1d6237b8159eb9dd855950b9">UARTRIS</a> = 0x03C, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a0ad107e7e2d982287515aebb8aee51c3">UARTMIS</a> = 0x040, 
+<br />
+&#160;&#160;<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a66099c1ff59c6a1f941a96659a243d0f">UARTICR</a> = 0x044, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a146f6558abf5ea4d128be21508f16bfb">UARTDMACR</a> = 0x048, 
+<a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982a2e50856a52c4cf87539d8771eb651113">UARTPeriphID0</a> = 0xFE0
+<br />
+ }</td></tr>
+<tr class="separator:ab12021066d48584983a712b056565982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6ce7d9c25ca788e6999a099f93ce85f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a6ce7d9c25ca788e6999a099f93ce85f3">hasCorrectBase</a> () const</td></tr>
+<tr class="separator:a6ce7d9c25ca788e6999a099f93ce85f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16500bc129c69c050cb784b17d70103f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a16500bc129c69c050cb784b17d70103f">init</a> ()</td></tr>
+<tr class="separator:a16500bc129c69c050cb784b17d70103f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7446cf3f2b12c3dfa64037319c52b5d2"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a7446cf3f2b12c3dfa64037319c52b5d2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a7446cf3f2b12c3dfa64037319c52b5d2">PL011</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a7446cf3f2b12c3dfa64037319c52b5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01162cd0eedcc398b3913b760b5fbd39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a01162cd0eedcc398b3913b760b5fbd39">readData</a> () const</td></tr>
+<tr class="separator:a01162cd0eedcc398b3913b760b5fbd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd314ddfa6c5c3d17f89a6b2243d8309"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#acd314ddfa6c5c3d17f89a6b2243d8309">readDataBlocked</a> () const</td></tr>
+<tr class="separator:acd314ddfa6c5c3d17f89a6b2243d8309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9660ad0ee68795a4adf4290344cad9a0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a9660ad0ee68795a4adf4290344cad9a0">readDataNonBlocked</a> () const</td></tr>
+<tr class="separator:a9660ad0ee68795a4adf4290344cad9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1de31dac22db614ad606d60d56055e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#a9a1de31dac22db614ad606d60d56055e">writeData</a> (char ch)</td></tr>
+<tr class="separator:a9a1de31dac22db614ad606d60d56055e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a4be93af3fe06302f6340e5c7a689e52b">reg</a> ()</td></tr>
+<tr class="separator:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aecb8a26df6a63d49d8b38cf8eb5dba76">reg</a> () const</td></tr>
+<tr class="separator:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ab54f599c12c38935ff32e526c39666b6">reg16</a> ()</td></tr>
+<tr class="separator:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#acbe849531abcf4c0f125569a859886cf">reg16</a> () const</td></tr>
+<tr class="separator:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint32_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a3d0181d202870b31a91ec5bc1a5c6181">reg32</a> ()</td></tr>
+<tr class="separator:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#af539b2054048256208e9660d34610f93">reg32</a> () const</td></tr>
+<tr class="separator:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a787e59015cafd26ba0725fcc18e03440">reg64</a> ()</td></tr>
+<tr class="separator:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aef0b23957384e94af785bd63946d425a">reg64</a> () const</td></tr>
+<tr class="separator:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ac68868fd66f2cd04bf594a61b87f5e13">reg8</a> ()</td></tr>
+<tr class="separator:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a82a1723858bcee844412a086bd12ac01">reg8</a> () const</td></tr>
+<tr class="separator:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#afa50e6631ba59a188e875cc5f108855d">regcopy</a> ()</td></tr>
+<tr class="separator:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af271613fcc5012fa5e562a6bc0700423"><td class="memItemLeft" align="right" valign="top">volatile uint16_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#af271613fcc5012fa5e562a6bc0700423">_readDataReg</a></td></tr>
+<tr class="separator:af271613fcc5012fa5e562a6bc0700423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15fd965b23f167dffbc2f058ed9d7c6"><td class="memItemLeft" align="right" valign="top">volatile uint16_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#ad15fd965b23f167dffbc2f058ed9d7c6">_statusReg</a></td></tr>
+<tr class="separator:ad15fd965b23f167dffbc2f058ed9d7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af612a88f1e72297cb604b37e400e282d"><td class="memItemLeft" align="right" valign="top">volatile char &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_p_l011.html#af612a88f1e72297cb604b37e400e282d">_writeDataReg</a></td></tr>
+<tr class="separator:af612a88f1e72297cb604b37e400e282d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_types_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_types_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">RegOffset</a> = uint32_t</td></tr>
+<tr class="separator:a215457b30b6915995fa4bfca1e2cd91a inherit pro_types_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a155c5b45895b607c9ca571beb5fe408d">MemBasedRegReader</a> (size_t base)</td></tr>
+<tr class="separator:a155c5b45895b607c9ca571beb5fe408d inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a366f51ac0a2278121fb76dd2b158ac63">MemBasedRegReader</a> (void *base)</td></tr>
+<tr class="separator:a366f51ac0a2278121fb76dd2b158ac63 inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a710282136838c803cbd1f0f76167c4cc">MemBasedRegReader</a> (volatile void *base)</td></tr>
+<tr class="separator:a710282136838c803cbd1f0f76167c4cc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a5d0de8f7c377996190e28a6ce7c816fc">MemBasedRegReader</a> (nullptr_t base)</td></tr>
+<tr class="separator:a5d0de8f7c377996190e28a6ce7c816fc inherit pro_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">volatile char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a56c015b478a295d2ae08a73a219cfce6">_base</a></td></tr>
+<tr class="separator:a56c015b478a295d2ae08a73a219cfce6 inherit pro_attribs_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00017">17</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="ab12021066d48584983a712b056565982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12021066d48584983a712b056565982">&#9670;&nbsp;</a></span>RegOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d7/dff/class_p_l011.html#ab12021066d48584983a712b056565982">PL011::RegOffset</a> : <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">MemBasedRegReader::RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982addbe64da496e7d59a00437fd8a2ad9be"></a>UARTDR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a0406c8eca8ca8ddb6dcea006eda10c72"></a>UARTRSR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a0368d72fade93374d0b1998b139c71cf"></a>UARTECR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a07689707dbe925761ef52eb4750de3a2"></a>UARTFR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982ad552098087df46d71ab1fe486713d0d0"></a>UARTILPR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982af8b6f65bc38023b1e608b9820a1ae4d7"></a>UARTIBRD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a93be3712911b8afbc687024a7d36a7a2"></a>UARTFBRD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982ac64e31889e8f8518174b1e43f25ba3d3"></a>UARTLCR_H&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a366781197825756fbd9aa43112eae6af"></a>UARTCR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a98a11335c0360886a5dbfb18b560d0cb"></a>UARTIFLS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a8711012e1d6237b8159eb9dd855950b9"></a>UARTRIS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a0ad107e7e2d982287515aebb8aee51c3"></a>UARTMIS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a66099c1ff59c6a1f941a96659a243d0f"></a>UARTICR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a146f6558abf5ea4d128be21508f16bfb"></a>UARTDMACR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab12021066d48584983a712b056565982a2e50856a52c4cf87539d8771eb651113"></a>UARTPeriphID0&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a7446cf3f2b12c3dfa64037319c52b5d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7446cf3f2b12c3dfa64037319c52b5d2">&#9670;&nbsp;</a></span>PL011()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PL011::PL011 </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6ce7d9c25ca788e6999a099f93ce85f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce7d9c25ca788e6999a099f93ce85f3">&#9670;&nbsp;</a></span>hasCorrectBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool PL011::hasCorrectBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00061">61</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_p_l011_a6ce7d9c25ca788e6999a099f93ce85f3_icgraph.png" border="0" usemap="#d7/dff/class_p_l011_a6ce7d9c25ca788e6999a099f93ce85f3_icgraph" alt=""/></div>
+<map name="d7/dff/class_p_l011_a6ce7d9c25ca788e6999a099f93ce85f3_icgraph" id="d7/dff/class_p_l011_a6ce7d9c25ca788e6999a099f93ce85f3_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a16500bc129c69c050cb784b17d70103f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16500bc129c69c050cb784b17d70103f">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PL011::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html">PL011.cpp</a> 第 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html#l00011">11</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_p_l011_a16500bc129c69c050cb784b17d70103f_icgraph.png" border="0" usemap="#d7/dff/class_p_l011_a16500bc129c69c050cb784b17d70103f_icgraph" alt=""/></div>
+<map name="d7/dff/class_p_l011_a16500bc129c69c050cb784b17d70103f_icgraph" id="d7/dff/class_p_l011_a16500bc129c69c050cb784b17d70103f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01162cd0eedcc398b3913b760b5fbd39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01162cd0eedcc398b3913b760b5fbd39">&#9670;&nbsp;</a></span>readData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> uint16_t PL011::readData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acd314ddfa6c5c3d17f89a6b2243d8309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd314ddfa6c5c3d17f89a6b2243d8309">&#9670;&nbsp;</a></span>readDataBlocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t PL011::readDataBlocked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html">PL011.cpp</a> 第 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html#l00016">16</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_p_l011_acd314ddfa6c5c3d17f89a6b2243d8309_icgraph.png" border="0" usemap="#d7/dff/class_p_l011_acd314ddfa6c5c3d17f89a6b2243d8309_icgraph" alt=""/></div>
+<map name="d7/dff/class_p_l011_acd314ddfa6c5c3d17f89a6b2243d8309_icgraph" id="d7/dff/class_p_l011_acd314ddfa6c5c3d17f89a6b2243d8309_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9660ad0ee68795a4adf4290344cad9a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9660ad0ee68795a4adf4290344cad9a0">&#9670;&nbsp;</a></span>readDataNonBlocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t PL011::readDataNonBlocked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html">PL011.cpp</a> 第 <a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9a1de31dac22db614ad606d60d56055e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a1de31dac22db614ad606d60d56055e">&#9670;&nbsp;</a></span>writeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> void PL011::writeData </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00052">52</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_p_l011_a9a1de31dac22db614ad606d60d56055e_icgraph.png" border="0" usemap="#d7/dff/class_p_l011_a9a1de31dac22db614ad606d60d56055e_icgraph" alt=""/></div>
+<map name="d7/dff/class_p_l011_a9a1de31dac22db614ad606d60d56055e_icgraph" id="d7/dff/class_p_l011_a9a1de31dac22db614ad606d60d56055e_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="af271613fcc5012fa5e562a6bc0700423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af271613fcc5012fa5e562a6bc0700423">&#9670;&nbsp;</a></span>_readDataReg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t&amp; PL011::_readDataReg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad15fd965b23f167dffbc2f058ed9d7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15fd965b23f167dffbc2f058ed9d7c6">&#9670;&nbsp;</a></span>_statusReg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t&amp; PL011::_statusReg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af612a88f1e72297cb604b37e400e282d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af612a88f1e72297cb604b37e400e282d">&#9670;&nbsp;</a></span>_writeDataReg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile char&amp; PL011::_writeDataReg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a> 第 <a class="el" href="../../d1/dd1/_p_l011_8h_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/uart/<a class="el" href="../../d1/dd1/_p_l011_8h_source.html">PL011.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/uart/<a class="el" href="../../d6/d5a/_p_l011_8cpp_source.html">PL011.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:44 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

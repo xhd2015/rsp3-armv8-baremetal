@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/de7/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct_3_01bit_01_4">
+<title>anonymous_namespace{generic_util.h}::BitMaskStruct&lt; bit &gt; struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d6/d93/generic__util_8h">&quot;generic_util.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for anonymous_namespace{generic_util.h}::BitMaskStruct&lt; bit &gt;</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d3a/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct_3_01bit_01_4__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for anonymous_namespace{generic_util.h}::BitMaskStruct&lt; bit &gt;</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d26/structanonymous__namespace_02generic__util_8h_03_1_1_bit_mask_struct_3_01bit_01_4__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>bit</declname>
+        <defname>bit</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static constexpr size_t value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: XilinxUARTPS类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../df/df4/class_xilinx_u_a_r_t_p_s-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">XilinxUARTPS类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 XilinxUARTPS 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../dc/d7f/class_xilinx_u_a_r_t_p_s__inherit__graph.png" border="0" usemap="#_xilinx_u_a_r_t_p_s_inherit__map" alt="Inheritance graph"/></div>
+<map name="_xilinx_u_a_r_t_p_s_inherit__map" id="_xilinx_u_a_r_t_p_s_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> XilinxUARTPS 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/da3/class_xilinx_u_a_r_t_p_s__coll__graph.png" border="0" usemap="#_xilinx_u_a_r_t_p_s_coll__map" alt="Collaboration graph"/></div>
+<map name="_xilinx_u_a_r_t_p_s_coll__map" id="_xilinx_u_a_r_t_p_s_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a2239c213fd44c1d84e4fb8f6b99ff738"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738">RegOffset</a> : MemBasedRegReader::RegOffset { <br />
+&#160;&#160;<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a4cf7384f5654525c682cf80233eb70c4">XUARTPS_CR</a> = 0x0000U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a3fe98dee95a98831ff395f53b20a8bc7">XUARTPS_MR</a> = 0x0004U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a343fa3115764cfeea07ac8a51d83bbba">XUARTPS_IER</a> = 0x0008U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a32ca22e9b8d457adc213a53f2207b7aa">XUARTPS_IDR</a> = 0x000CU, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a9f7e4449b17ba793558b083f3e674507">XUARTPS_IMR</a> = 0x0010U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738ac426fa2e4987953180882c4cbc2062f1">XUARTPS_ISR</a> = 0x0014U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a011e6f1b08d17ab706da913efbdd85b0">XUARTPS_BAUDGEN</a> = 0x0018U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738aa7e26cfc8a6ef03dd04bac037e8c50c5">XUARTPS_RXTOUT</a> = 0x001CU, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a3d6cca2e43686f111b740003754b1173">XUARTPS_RXWM</a> = 0x0020U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a57aa472465bf6a33f45d72d31e71db6e">XUARTPS_MODEMCR</a> = 0x0024U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738ac8b7deb24a40e5af6eabca6a9b16e5fd">XUARTPS_MODEMSR</a> = 0x0028U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738ab3d5b38610705df0a1cc1986c2773e3c">XUARTPS_SR</a> = 0x002CU, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a2cdf67f107a3e4e340c9825d8cbac922">XUARTPS_FIFO</a> = 0x0030U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a5338e3f9b61c1b987f8766a76b0794ac">XUARTPS_BAUDDIV</a> = 0x0034U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738af10121f22c84708b1e4bf7f6a9183907">XUARTPS_FLOWDEL</a> = 0x0038U, 
+<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a9b6f03b087d7fb030133de8f9ebe5240">XUARTPS_TXWM</a> = 0x0044U, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738a2447e857fea0bec358fee117234f8d8a">XUARTPS_RXBS</a> = 0x0048U
+<br />
+ }</td></tr>
+<tr class="separator:a2239c213fd44c1d84e4fb8f6b99ff738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1aaf32db70c1477643911d64b6f5239a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a1aaf32db70c1477643911d64b6f5239a">init</a> ()</td></tr>
+<tr class="separator:a1aaf32db70c1477643911d64b6f5239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b65cd4905ad4133d24ddf219a7ad8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a88b65cd4905ad4133d24ddf219a7ad8b">readable</a> () const</td></tr>
+<tr class="separator:a88b65cd4905ad4133d24ddf219a7ad8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5b59ba79fda9bdecb9cfb1ba4a31a43"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#aa5b59ba79fda9bdecb9cfb1ba4a31a43">readBlocked</a> () const</td></tr>
+<tr class="separator:aa5b59ba79fda9bdecb9cfb1ba4a31a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97be2c75d89e4dc431badad10c35cd4d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a97be2c75d89e4dc431badad10c35cd4d">readNonBlocked</a> () const</td></tr>
+<tr class="separator:a97be2c75d89e4dc431badad10c35cd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0751411da7f8ecb3a43c84ac74eb6256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a0751411da7f8ecb3a43c84ac74eb6256">write</a> (char ch)</td></tr>
+<tr class="separator:a0751411da7f8ecb3a43c84ac74eb6256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3971cfd2791eeb495f230409edf712a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#aa3971cfd2791eeb495f230409edf712a">writeable</a> () const</td></tr>
+<tr class="separator:aa3971cfd2791eeb495f230409edf712a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5f38a852dd1b506a619d292f13beb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a0b5f38a852dd1b506a619d292f13beb8">XilinxUARTPS</a> (void *base)</td></tr>
+<tr class="separator:a0b5f38a852dd1b506a619d292f13beb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a6ca3edff19696c5d5fa6c0f876916e4b"><td class="memItemLeft" align="right" valign="top">volatile uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a6ca3edff19696c5d5fa6c0f876916e4b">_control</a></td></tr>
+<tr class="separator:a6ca3edff19696c5d5fa6c0f876916e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cbbed5b25fc0fe10fae71a9b2110bdf"><td class="memItemLeft" align="right" valign="top">volatile uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a1cbbed5b25fc0fe10fae71a9b2110bdf">_data</a></td></tr>
+<tr class="separator:a1cbbed5b25fc0fe10fae71a9b2110bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba44a24b3eb6e93c86517331884af576"><td class="memItemLeft" align="right" valign="top">volatile uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#aba44a24b3eb6e93c86517331884af576">_status</a></td></tr>
+<tr class="separator:aba44a24b3eb6e93c86517331884af576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Private 属性 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a56c015b478a295d2ae08a73a219cfce6 inherit pub_attribs_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">volatile char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a56c015b478a295d2ae08a73a219cfce6">_base</a></td></tr>
+<tr class="separator:a56c015b478a295d2ae08a73a219cfce6 inherit pub_attribs_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_types_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Private 类型 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a215457b30b6915995fa4bfca1e2cd91a inherit pub_types_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">RegOffset</a> = uint32_t</td></tr>
+<tr class="separator:a215457b30b6915995fa4bfca1e2cd91a inherit pub_types_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_mem_based_reg_reader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mem_based_reg_reader')"><img src="../../closed.png" alt="-"/>&#160;Private 成员函数 继承自 <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html">MemBasedRegReader</a></td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a4be93af3fe06302f6340e5c7a689e52b">reg</a> ()</td></tr>
+<tr class="separator:a4be93af3fe06302f6340e5c7a689e52b inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aecb8a26df6a63d49d8b38cf8eb5dba76">reg</a> () const</td></tr>
+<tr class="separator:aecb8a26df6a63d49d8b38cf8eb5dba76 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ab54f599c12c38935ff32e526c39666b6">reg16</a> ()</td></tr>
+<tr class="separator:ab54f599c12c38935ff32e526c39666b6 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint16_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#acbe849531abcf4c0f125569a859886cf">reg16</a> () const</td></tr>
+<tr class="separator:acbe849531abcf4c0f125569a859886cf inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint32_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a3d0181d202870b31a91ec5bc1a5c6181">reg32</a> ()</td></tr>
+<tr class="separator:a3d0181d202870b31a91ec5bc1a5c6181 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#af539b2054048256208e9660d34610f93">reg32</a> () const</td></tr>
+<tr class="separator:af539b2054048256208e9660d34610f93 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a787e59015cafd26ba0725fcc18e03440">reg64</a> ()</td></tr>
+<tr class="separator:a787e59015cafd26ba0725fcc18e03440 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint64_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#aef0b23957384e94af785bd63946d425a">reg64</a> () const</td></tr>
+<tr class="separator:aef0b23957384e94af785bd63946d425a inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#ac68868fd66f2cd04bf594a61b87f5e13">reg8</a> ()</td></tr>
+<tr class="separator:ac68868fd66f2cd04bf594a61b87f5e13 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;RegOffset offset&gt; </td></tr>
+<tr class="memitem:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> const volatile uint8_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a82a1723858bcee844412a086bd12ac01">reg8</a> () const</td></tr>
+<tr class="separator:a82a1723858bcee844412a086bd12ac01 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplParams" colspan="2">template&lt;class T , RegOffset offset&gt; </td></tr>
+<tr class="memitem:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#afa50e6631ba59a188e875cc5f108855d">regcopy</a> ()</td></tr>
+<tr class="separator:afa50e6631ba59a188e875cc5f108855d inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155c5b45895b607c9ca571beb5fe408d inherit pub_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a155c5b45895b607c9ca571beb5fe408d">MemBasedRegReader</a> (size_t base)</td></tr>
+<tr class="separator:a155c5b45895b607c9ca571beb5fe408d inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f51ac0a2278121fb76dd2b158ac63 inherit pub_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a366f51ac0a2278121fb76dd2b158ac63">MemBasedRegReader</a> (void *base)</td></tr>
+<tr class="separator:a366f51ac0a2278121fb76dd2b158ac63 inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710282136838c803cbd1f0f76167c4cc inherit pub_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a710282136838c803cbd1f0f76167c4cc">MemBasedRegReader</a> (volatile void *base)</td></tr>
+<tr class="separator:a710282136838c803cbd1f0f76167c4cc inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0de8f7c377996190e28a6ce7c816fc inherit pub_methods_class_mem_based_reg_reader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a5d0de8f7c377996190e28a6ce7c816fc">MemBasedRegReader</a> (nullptr_t base)</td></tr>
+<tr class="separator:a5d0de8f7c377996190e28a6ce7c816fc inherit pub_methods_class_mem_based_reg_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00015">15</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a2239c213fd44c1d84e4fb8f6b99ff738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2239c213fd44c1d84e4fb8f6b99ff738">&#9670;&nbsp;</a></span>RegOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../df/d5b/class_xilinx_u_a_r_t_p_s.html#a2239c213fd44c1d84e4fb8f6b99ff738">XilinxUARTPS::RegOffset</a> : <a class="el" href="../../dd/d17/class_mem_based_reg_reader.html#a215457b30b6915995fa4bfca1e2cd91a">MemBasedRegReader::RegOffset</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a4cf7384f5654525c682cf80233eb70c4"></a>XUARTPS_CR&#160;</td><td class="fielddoc"><p>Control Register [8:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a3fe98dee95a98831ff395f53b20a8bc7"></a>XUARTPS_MR&#160;</td><td class="fielddoc"><p>Mode Register [9:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a343fa3115764cfeea07ac8a51d83bbba"></a>XUARTPS_IER&#160;</td><td class="fielddoc"><p>Interrupt Enable [12:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a32ca22e9b8d457adc213a53f2207b7aa"></a>XUARTPS_IDR&#160;</td><td class="fielddoc"><p>Interrupt Disable [12:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a9f7e4449b17ba793558b083f3e674507"></a>XUARTPS_IMR&#160;</td><td class="fielddoc"><p>Interrupt Mask [12:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738ac426fa2e4987953180882c4cbc2062f1"></a>XUARTPS_ISR&#160;</td><td class="fielddoc"><p>Interrupt Status [12:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a011e6f1b08d17ab706da913efbdd85b0"></a>XUARTPS_BAUDGEN&#160;</td><td class="fielddoc"><p>Baud Rate Generator [15:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738aa7e26cfc8a6ef03dd04bac037e8c50c5"></a>XUARTPS_RXTOUT&#160;</td><td class="fielddoc"><p>RX Timeout [7:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a3d6cca2e43686f111b740003754b1173"></a>XUARTPS_RXWM&#160;</td><td class="fielddoc"><p>RX FIFO Trigger Level [5:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a57aa472465bf6a33f45d72d31e71db6e"></a>XUARTPS_MODEMCR&#160;</td><td class="fielddoc"><p>Modem Control [5:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738ac8b7deb24a40e5af6eabca6a9b16e5fd"></a>XUARTPS_MODEMSR&#160;</td><td class="fielddoc"><p>Modem Status [8:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738ab3d5b38610705df0a1cc1986c2773e3c"></a>XUARTPS_SR&#160;</td><td class="fielddoc"><p>Channel Status [14:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a2cdf67f107a3e4e340c9825d8cbac922"></a>XUARTPS_FIFO&#160;</td><td class="fielddoc"><p>FIFO [7:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a5338e3f9b61c1b987f8766a76b0794ac"></a>XUARTPS_BAUDDIV&#160;</td><td class="fielddoc"><p>Baud Rate Divider [7:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738af10121f22c84708b1e4bf7f6a9183907"></a>XUARTPS_FLOWDEL&#160;</td><td class="fielddoc"><p>Flow Delay [5:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a9b6f03b087d7fb030133de8f9ebe5240"></a>XUARTPS_TXWM&#160;</td><td class="fielddoc"><p>TX FIFO Trigger Level [5:0] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2239c213fd44c1d84e4fb8f6b99ff738a2447e857fea0bec358fee117234f8d8a"></a>XUARTPS_RXBS&#160;</td><td class="fielddoc"><p>RX FIFO Byte Status [11:0] </p>
+</td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0b5f38a852dd1b506a619d292f13beb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5f38a852dd1b506a619d292f13beb8">&#9670;&nbsp;</a></span>XilinxUARTPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XilinxUARTPS::XilinxUARTPS </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>base</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a> 第 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html#l00011">11</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1aaf32db70c1477643911d64b6f5239a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aaf32db70c1477643911d64b6f5239a">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XilinxUARTPS::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a> 第 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html#l00019">19</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_a1aaf32db70c1477643911d64b6f5239a_icgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_a1aaf32db70c1477643911d64b6f5239a_icgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_a1aaf32db70c1477643911d64b6f5239a_icgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_a1aaf32db70c1477643911d64b6f5239a_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a88b65cd4905ad4133d24ddf219a7ad8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b65cd4905ad4133d24ddf219a7ad8b">&#9670;&nbsp;</a></span>readable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool XilinxUARTPS::readable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00050">50</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_a88b65cd4905ad4133d24ddf219a7ad8b_icgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_a88b65cd4905ad4133d24ddf219a7ad8b_icgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_a88b65cd4905ad4133d24ddf219a7ad8b_icgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_a88b65cd4905ad4133d24ddf219a7ad8b_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa5b59ba79fda9bdecb9cfb1ba4a31a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5b59ba79fda9bdecb9cfb1ba4a31a43">&#9670;&nbsp;</a></span>readBlocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char XilinxUARTPS::readBlocked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a> 第 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html#l00038">38</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_aa5b59ba79fda9bdecb9cfb1ba4a31a43_cgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_aa5b59ba79fda9bdecb9cfb1ba4a31a43_cgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_aa5b59ba79fda9bdecb9cfb1ba4a31a43_cgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_aa5b59ba79fda9bdecb9cfb1ba4a31a43_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97be2c75d89e4dc431badad10c35cd4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97be2c75d89e4dc431badad10c35cd4d">&#9670;&nbsp;</a></span>readNonBlocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char XilinxUARTPS::readNonBlocked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a> 第 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html#l00031">31</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_a97be2c75d89e4dc431badad10c35cd4d_cgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_a97be2c75d89e4dc431badad10c35cd4d_cgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_a97be2c75d89e4dc431badad10c35cd4d_cgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_a97be2c75d89e4dc431badad10c35cd4d_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0751411da7f8ecb3a43c84ac74eb6256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0751411da7f8ecb3a43c84ac74eb6256">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XilinxUARTPS::write </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a> 第 <a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html#l00025">25</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_cgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_cgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_cgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_cgraph">
+</map>
+</div>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_icgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_icgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_icgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_a0751411da7f8ecb3a43c84ac74eb6256_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa3971cfd2791eeb495f230409edf712a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3971cfd2791eeb495f230409edf712a">&#9670;&nbsp;</a></span>writeable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</a> bool XilinxUARTPS::writeable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00052">52</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5b/class_xilinx_u_a_r_t_p_s_aa3971cfd2791eeb495f230409edf712a_icgraph.png" border="0" usemap="#df/d5b/class_xilinx_u_a_r_t_p_s_aa3971cfd2791eeb495f230409edf712a_icgraph" alt=""/></div>
+<map name="df/d5b/class_xilinx_u_a_r_t_p_s_aa3971cfd2791eeb495f230409edf712a_icgraph" id="df/d5b/class_xilinx_u_a_r_t_p_s_aa3971cfd2791eeb495f230409edf712a_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6ca3edff19696c5d5fa6c0f876916e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca3edff19696c5d5fa6c0f876916e4b">&#9670;&nbsp;</a></span>_control</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t&amp; XilinxUARTPS::_control</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1cbbed5b25fc0fe10fae71a9b2110bdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbbed5b25fc0fe10fae71a9b2110bdf">&#9670;&nbsp;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t&amp; XilinxUARTPS::_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aba44a24b3eb6e93c86517331884af576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba44a24b3eb6e93c86517331884af576">&#9670;&nbsp;</a></span>_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t&amp; XilinxUARTPS::_status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a> 第 <a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/uart/<a class="el" href="../../de/df7/_xilinx_u_a_r_t_p_s_8h_source.html">XilinxUARTPS.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/uart/<a class="el" href="../../df/db7/_xilinx_u_a_r_t_p_s_8cpp_source.html">XilinxUARTPS.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:47 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

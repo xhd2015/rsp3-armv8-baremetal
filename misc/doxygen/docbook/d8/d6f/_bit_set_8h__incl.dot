@@ -1,0 +1,12 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/BitSet.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1222 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/generic/BitSet.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1222 -> Node1223 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1223 [label="def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da4/def_8h.html"];
+  Node1223 -> Node1224 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1224 [label="cstddef",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1223 -> Node1225 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1225 [label="cstdint",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

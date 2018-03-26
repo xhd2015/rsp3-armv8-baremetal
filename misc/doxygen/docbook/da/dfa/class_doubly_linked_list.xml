@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dfa/class_doubly_linked_list">
+<title>DoublyLinkedList class Reference</title>
+<para>
+    <programlisting>#include <link linkend="df/dde/data__structures_2_doubly_linked_list_8h">&quot;DoublyLinkedList.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for DoublyLinkedList</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d7b/class_doubly_linked_list__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DoublyLinkedList</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/da7/class_doubly_linked_list__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; const <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *(const <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *)&gt;  <link linkend="da/dfa/class_doubly_linked_list_1aa457fd6cd37f1f4326abf3803e393a7c">ConstNextFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; void(const <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *)&gt;  <link linkend="da/dfa/class_doubly_linked_list_1ab4b000fd6a5dc89770f80c75bc802018">ConstTraverseFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *(<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *)&gt;  <link linkend="da/dfa/class_doubly_linked_list_1ac03da94b29334666ebbe35fcba29038d">NextFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link>&lt; T &gt;  <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; void(<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> *)&gt;  <link linkend="da/dfa/class_doubly_linked_list_1a8ff9c960d906e4565edb71d537ab7ceb">TraverseFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NodeType * _head</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NodeType * _tail</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1a988dab817e94dc8f7b0e8e5b90383971">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1a3009b5dad0f87d9a6e413512f6409229">DEFINE_COPY_CONSTRUCTOR</link> (
+<link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1a6587dd877d0941ee681d79d7151d4fe4">DEFINE_COPY_OPERATOR</link> (
+<link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1a263365a906d4376a6032dbda9d448f16">DEFINE_MOVE_CONSTRUCTOR</link> (
+<link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1abf8ae140933c935a47d15bfac7271ea8">DEFINE_MOVE_OPERATOR</link> (
+<link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1ab16fd160493247d26572b9bef7fa078b">DoublyLinkedList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="da/dfa/class_doubly_linked_list_1a0007135e206b011cfc4bd69919d33b98">empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1adf48b22bf2fce388ef37fa692733c3ca">head</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a15232d36cbcdee739d6a916538741451">head</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1ac54e1a0bb6531a8f8991299d44003d98">insertHead</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1ad6ea97f3ebbc3b77908531a8d9a79ed0">insertHead</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1ad97df8960522754a536b69855cb7fa28">insertNodeAfter</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * atnode, <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * insnode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a887feefbcc7613c2a72da947ce58459c">insertNodeAfter</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * atnode, Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1a4ede1ed8a905ce0ef840fd751a37707e">insertNodeBefore</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * atnode, <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * insnode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a7c2561783a15b0f4d7efa51a2504d601">insertNodeBefore</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * atnode, Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a08820eece8a930239f434a7dea802599">insertTail</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1a780a0f1ed1ec3a3737feac65dd8e7089">insertTail</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a2564bb946727d468f74ca80ec0319f19">removeHead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a20950e5bd978791d68b723f3ea8be4bb">removeNode</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a49461b435f972fe2832ab5ec374661c1">removeTail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="da/dfa/class_doubly_linked_list_1a6071aef95e9615ce1672e760173ebc71">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1affa9f7b6025f9ec84e46a5946229cc19">tail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">NodeType</link> * <link linkend="da/dfa/class_doubly_linked_list_1a9a61737dc72cb8001c8461e146281e8f">tail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1a0878fcde1e697ade5fa0fa30e1f10a66">traverse</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1a8ff9c960d906e4565edb71d537ab7ceb">TraverseFunctor</link> func, <link linkend="da/dfa/class_doubly_linked_list_1ac03da94b29334666ebbe35fcba29038d">NextFunctor</link> nextFunc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/dfa/class_doubly_linked_list_1af0c95c63c11b31ef07d913a4539e5a4a">traverse</link> (
+<link linkend="da/dfa/class_doubly_linked_list_1ab4b000fd6a5dc89770f80c75bc802018">ConstTraverseFunctor</link> func, <link linkend="da/dfa/class_doubly_linked_list_1aa457fd6cd37f1f4326abf3803e393a7c">ConstNextFunctor</link> nextFunc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/dfa/class_doubly_linked_list_1ade7fbfd3c437d039c88ea9c3b9445150">~DoublyLinkedList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1aa457fd6cd37f1f4326abf3803e393a7c">
+                <title>using DoublyLinkedList&lt; T &gt;::ConstNextFunctor =  std::function&lt;const NodeType*(const NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ab4b000fd6a5dc89770f80c75bc802018">
+                <title>using DoublyLinkedList&lt; T &gt;::ConstTraverseFunctor =  std::function&lt;void(const NodeType*)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ac03da94b29334666ebbe35fcba29038d">
+                <title>using DoublyLinkedList&lt; T &gt;::NextFunctor =  std::function&lt;NodeType*(NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a59dbf0369ba0c61db8a23c7c6f72bf23">
+                <title>using DoublyLinkedList&lt; T &gt;::NodeType =  DoublyLinkedNode&lt;T&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a8ff9c960d906e4565edb71d537ab7ceb">
+                <title>using DoublyLinkedList&lt; T &gt;::TraverseFunctor =  std::function&lt;void(NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a988dab817e94dc8f7b0e8e5b90383971">
+                <title>void DoublyLinkedList&lt; T &gt;::clear ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a3009b5dad0f87d9a6e413512f6409229">
+                <title>DoublyLinkedList&lt; T &gt;::DEFINE_COPY_CONSTRUCTOR (DoublyLinkedList)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a6587dd877d0941ee681d79d7151d4fe4">
+                <title>DoublyLinkedList&lt; T &gt;::DEFINE_COPY_OPERATOR (DoublyLinkedList)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a263365a906d4376a6032dbda9d448f16">
+                <title>DoublyLinkedList&lt; T &gt;::DEFINE_MOVE_CONSTRUCTOR (DoublyLinkedList)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1abf8ae140933c935a47d15bfac7271ea8">
+                <title>DoublyLinkedList&lt; T &gt;::DEFINE_MOVE_OPERATOR (DoublyLinkedList)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ab16fd160493247d26572b9bef7fa078b">
+                <title>DoublyLinkedList&lt; T &gt;::DoublyLinkedList ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a0007135e206b011cfc4bd69919d33b98">
+                <title>bool DoublyLinkedList&lt; T &gt;::empty () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1adf48b22bf2fce388ef37fa692733c3ca">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::head ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a15232d36cbcdee739d6a916538741451">
+                <title>const DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::head () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ac54e1a0bb6531a8f8991299d44003d98">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::insertHead (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ad6ea97f3ebbc3b77908531a8d9a79ed0">
+                <title>void DoublyLinkedList&lt; T &gt;::insertHead (NodeType *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ad97df8960522754a536b69855cb7fa28">
+                <title>void DoublyLinkedList&lt; T &gt;::insertNodeAfter (NodeType *atnode, NodeType *insnode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a887feefbcc7613c2a72da947ce58459c">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::insertNodeAfter (NodeType *atnode, Args &amp;&amp;...args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a4ede1ed8a905ce0ef840fd751a37707e">
+                <title>void DoublyLinkedList&lt; T &gt;::insertNodeBefore (NodeType *atnode, NodeType *insnode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a7c2561783a15b0f4d7efa51a2504d601">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::insertNodeBefore (NodeType *atnode, Args &amp;&amp;...args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a08820eece8a930239f434a7dea802599">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::insertTail (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a780a0f1ed1ec3a3737feac65dd8e7089">
+                <title>void DoublyLinkedList&lt; T &gt;::insertTail (NodeType *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a2564bb946727d468f74ca80ec0319f19">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::removeHead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a20950e5bd978791d68b723f3ea8be4bb">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::removeNode (NodeType *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a49461b435f972fe2832ab5ec374661c1">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::removeTail ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a6071aef95e9615ce1672e760173ebc71">
+                <title>size_t DoublyLinkedList&lt; T &gt;::size () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1affa9f7b6025f9ec84e46a5946229cc19">
+                <title>DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::tail ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a9a61737dc72cb8001c8461e146281e8f">
+                <title>const DoublyLinkedList&lt; T &gt;::NodeType * DoublyLinkedList&lt; T &gt;::tail () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1a0878fcde1e697ade5fa0fa30e1f10a66">
+                <title>void DoublyLinkedList&lt; T &gt;::traverse (TraverseFunctor func, NextFunctor nextFunc)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1af0c95c63c11b31ef07d913a4539e5a4a">
+                <title>void DoublyLinkedList&lt; T &gt;::traverse (ConstTraverseFunctor func, ConstNextFunctor nextFunc) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/dfa/class_doubly_linked_list_1ade7fbfd3c437d039c88ea9c3b9445150">
+                <title>DoublyLinkedList&lt; T &gt;::~DoublyLinkedList ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

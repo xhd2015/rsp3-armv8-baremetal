@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/da3/class_doubly_linked_node">
+<title>DoublyLinkedNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="df/da2/data__structures_2_doubly_linked_node_8h">&quot;DoublyLinkedNode.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for DoublyLinkedNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d5b/class_doubly_linked_node__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for DoublyLinkedNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d10/class_doubly_linked_node__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T _data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoublyLinkedNode * _next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoublyLinkedNode * _previous</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/da3/class_doubly_linked_node_1a72a70560baba711c82bb012317557cb8">data</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link>&lt; T, IsRef, false &gt;::<link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link> <link linkend="d9/da3/class_doubly_linked_node_1a9ad4ae56ca3c1d57c6336cc614135cfc">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link>&lt; T, IsRef, true &gt;::<link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link> <link linkend="d9/da3/class_doubly_linked_node_1a61a617ee29ca300c712ce691c6e4e1f6">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1a389e41e70faf1532a878e95cd9cafe1b">DEFINE_COPY_CONSTRUCTOR</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1aee6634149c29edb09bf2c419752e2e0b">DEFINE_COPY_OPERATOR</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1a4546fc1d921f8cefb869ad034d27049f">DEFINE_MOVE_CONSTRUCTOR</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1ad4ed64e262cf3090324a80174ac97d17">DEFINE_MOVE_OPERATOR</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1a3e8446ca2e101ab217db78ba4e9d0bc2">DoublyLinkedNode</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * next, <link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * previous, Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1a7dfcbae0013d6da08999cd0e4bc8e728">DoublyLinkedNode</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> &amp;&amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/da3/class_doubly_linked_node_1a0d65b0f098cbdb12bf2b6f0c199a6f04">insertAfter</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/da3/class_doubly_linked_node_1a4783dcec7ff9218fbe05ce4e46df9f3e">insertBefore</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1a67e53b9fd7e17a517f295d4b9bf47206">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1ac6fc5b0be34ef56bac52c0bef0276f0c">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/da3/class_doubly_linked_node_1a7a67ce973ad4ebd24833aaf285318a62">next</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1a6aded7e2cdd50528b4c8529f4c78fc0a">previous</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1a49f104a98a5ac03cbd7053e62482a630">previous</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/da3/class_doubly_linked_node_1a2308797df7a51e73e8ef33ae364bf355">previous</link> (
+<link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1a8ea97f0e69176d082500bece1a9a1835">removeAfter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1aee57c23ee14e3bd2de40678456b16306">removeBefore</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/da3/class_doubly_linked_node">DoublyLinkedNode</link> * <link linkend="d9/da3/class_doubly_linked_node_1a91f426cbf852901e1baa8518af4cdcd8">removeSelf</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/da3/class_doubly_linked_node_1a4ea95d6bd0cad839a1021f410c0a64be">~DoublyLinkedNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a72a70560baba711c82bb012317557cb8">
+                <title>void DoublyLinkedNode&lt; T &gt;::data (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a9ad4ae56ca3c1d57c6336cc614135cfc">
+                <title>ReturnTypeSelector&lt; T, IsRef, false &gt;::type DoublyLinkedNode&lt; T &gt;::data ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a61a617ee29ca300c712ce691c6e4e1f6">
+                <title>ReturnTypeSelector&lt; T, IsRef, true &gt;::type DoublyLinkedNode&lt; T &gt;::data () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a389e41e70faf1532a878e95cd9cafe1b">
+                <title>DoublyLinkedNode&lt; T &gt;::DEFINE_COPY_CONSTRUCTOR (DoublyLinkedNode)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1aee6634149c29edb09bf2c419752e2e0b">
+                <title>DoublyLinkedNode&lt; T &gt;::DEFINE_COPY_OPERATOR (DoublyLinkedNode)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a4546fc1d921f8cefb869ad034d27049f">
+                <title>DoublyLinkedNode&lt; T &gt;::DEFINE_MOVE_CONSTRUCTOR (DoublyLinkedNode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1ad4ed64e262cf3090324a80174ac97d17">
+                <title>DoublyLinkedNode&lt; T &gt;::DEFINE_MOVE_OPERATOR (DoublyLinkedNode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a3e8446ca2e101ab217db78ba4e9d0bc2">
+                <title>DoublyLinkedNode&lt; T &gt;::DoublyLinkedNode (DoublyLinkedNode *next, DoublyLinkedNode *previous, Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a7dfcbae0013d6da08999cd0e4bc8e728">
+                <title>DoublyLinkedNode&lt; T &gt;::DoublyLinkedNode (DoublyLinkedNode &amp;&amp;rhs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a0d65b0f098cbdb12bf2b6f0c199a6f04">
+                <title>void DoublyLinkedNode&lt; T &gt;::insertAfter (DoublyLinkedNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a4783dcec7ff9218fbe05ce4e46df9f3e">
+                <title>void DoublyLinkedNode&lt; T &gt;::insertBefore (DoublyLinkedNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a67e53b9fd7e17a517f295d4b9bf47206">
+                <title>DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::next ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1ac6fc5b0be34ef56bac52c0bef0276f0c">
+                <title>const DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::next () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a7a67ce973ad4ebd24833aaf285318a62">
+                <title>void DoublyLinkedNode&lt; T &gt;::next (DoublyLinkedNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a6aded7e2cdd50528b4c8529f4c78fc0a">
+                <title>DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::previous ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a49f104a98a5ac03cbd7053e62482a630">
+                <title>const DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::previous () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a2308797df7a51e73e8ef33ae364bf355">
+                <title>void DoublyLinkedNode&lt; T &gt;::previous (DoublyLinkedNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a8ea97f0e69176d082500bece1a9a1835">
+                <title>DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::removeAfter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1aee57c23ee14e3bd2de40678456b16306">
+                <title>DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::removeBefore ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a91f426cbf852901e1baa8518af4cdcd8">
+                <title>DoublyLinkedNode&lt; T &gt; * DoublyLinkedNode&lt; T &gt;::removeSelf ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/da3/class_doubly_linked_node_1a4ea95d6bd0cad839a1021f410c0a64be">
+                <title>DoublyLinkedNode&lt; T &gt;::~DoublyLinkedNode ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

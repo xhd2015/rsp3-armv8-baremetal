@@ -1,0 +1,9 @@
+digraph "gen_register_class.genClassName"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node11 [label="gen_register_class.genClassName",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="gen_register_class.genClass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d09/namespacegen__register__class.html#a1aefb7275cbb58faa36889186ce6d9ab"];
+}

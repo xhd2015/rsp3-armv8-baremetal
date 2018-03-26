@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/de0/_virtio_queue_descriptor_8h">
+    <title>VirtioQueueDescriptor.h File Reference</title>
+<para>Include dependency diagram for VirtioQueueDescriptor.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/df4/_virtio_queue_descriptor_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for VirtioQueueDescriptor.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d03/_virtio_queue_descriptor_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/dc2/class_virtio_queue_descriptor">VirtioQueueDescriptor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>枚举</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d9/de0/_virtio_queue_descriptor_8h_1a14ed499113f8950064ca96cf60b658a3">FlagsBits</link> {
+<link linkend="d9/de0/_virtio_queue_descriptor_8h_1a14ed499113f8950064ca96cf60b658a3a5005a355d4be957a3bd6b49c55d5a4d7">VIRTQ_DESC_F_NEXT</link>= 1,
+<link linkend="d9/de0/_virtio_queue_descriptor_8h_1a14ed499113f8950064ca96cf60b658a3a0d27a2171cb5139c5ed54ba1606d696d">VIRTQ_DESC_F_WRITE</link>= 2,
+<link linkend="d9/de0/_virtio_queue_descriptor_8h_1a14ed499113f8950064ca96cf60b658a3a322e36b05aa81dbc0c5959057926a154">VIRTQ_DESC_F_INDIRECT</link>= 4
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d9/de0/_virtio_queue_descriptor_8h_1a0e89cf6b9f6cd3125470b1bed2b823df">addr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de0/_virtio_queue_descriptor_8h_1a1e87af3c18a2fd36c61faf89949bdc3f">flags</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d9/de0/_virtio_queue_descriptor_8h_1a96bbf959016e4411c9e6b9812a8be60a">len</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d9/de0/_virtio_queue_descriptor_8h_1a69a3f6794492b94632b5d608326c0eb4">next</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d4/dc2/class_virtio_queue_descriptor">VirtioQueueDescriptor</link> <link linkend="d9/de0/_virtio_queue_descriptor_8h_1ad630a42d9a46f2bc96f4a7105bd19139">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioQueueDescriptor.h</para>
+    </simplesect>
+</section>

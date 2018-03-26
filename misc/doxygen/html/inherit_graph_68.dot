@@ -1,0 +1,7 @@
+digraph "类继承关系图"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="VirtualAddress::Segmented\lAddress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d82/struct_virtual_address_1_1_segmented_address.html"];
+}

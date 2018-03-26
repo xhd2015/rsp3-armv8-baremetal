@@ -1,0 +1,1631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: Process类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d7/df0/class_process-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Process类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Process 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../de/dfc/class_process__coll__graph.png" border="0" usemap="#_process_coll__map" alt="Collaboration graph"/></div>
+<map name="_process_coll__map" id="_process_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a3dc85aca1ab2eb08a66dedbef45b8164"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164">Config</a> { <br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a5b0e934663855110172f173ddb5d92dc">PAGE_SIZE</a> = 4*KiB, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a83a985fcd03a38aa23c9fc2421bcc87c">KERN_ARG_NUM</a> = 4 * sizeof(uint64_t), 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164ac25c5a8084ca017bb6a5d753b8169d65">CODE_L3_INDEX</a> = 1, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a5d6cc5fa12d82220e98ffcdcda612a9c">CODE_L3_ENTRY_NUM</a> =5, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a3ddb8147e80ea2666391571a27fb2bd6">STACK_L3_INDEX</a> =508, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164afe4ed0af355532b558be0a3c7e567eab">STACK_L3_ENTRY_NUM</a> =2, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a5f9019a5c2f27cdc2e579867a6dd9dc0">HEAP_L3_INDEX</a> = 510, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a8cd00d5be6df978914680fac03635db0">HEAP_L3_ENTRY_NUM</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164ad9e1970e7c07196b387eda462ed7cf15">TABLE_ALIGNMENT</a> = 4*KiB, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a2fbb42fbda5c1b6e75cfeada7d096bc5">TABLE_SIZE</a> = 4*KiB, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164ac862bc0519b25d4893ad238f6ae754a8">CODE_BASE_ALIGNMENT</a> = 4*KiB, 
+<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a845f60c7acd70a765c3c4c9865fcbf7a">SP_BASE_ALIGNMENT</a> = 16, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab">REGISTER_NUM</a> = 31
+<br />
+ }</td></tr>
+<tr class="separator:a3dc85aca1ab2eb08a66dedbef45b8164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93456b115d46f58dd4e36189c40cc79d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Error</a> { <a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79da35308de9d793167458edeed2c21383db">SUCCESS</a> =0, 
+<a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79da5113d9961a22cf1780003564038ccd88">PID_ALLOCATE_FAILED</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79da551a36c44db8550c3b0817ee21981f7a">SPACE_ALLCOATE_FAILED</a>
+ }</td></tr>
+<tr class="separator:a93456b115d46f58dd4e36189c40cc79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313c7a9581e4ca59c722f657ac128229"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a> { <br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855">CREATED_INCOMPLETE</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a576311e5856c6f73d0f55736b1549bce">CREATED</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229ab423492f3003702097cbe024e237120f">READY</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229ac171654422744f05154dd132ffba4642">RUNNING</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a749cb1027886cbc0427aed9641b99ee4">BLOCKED</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229abaa28b867c9aec8186491a9418fcfa39">STOPPED</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a2a3f10e2a8593bdb44434c6fdd3c667c">DESTROYED</a>, 
+<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a71f6c3de5310006d06a7a0f64dd960a1">STATUS_NUM</a>
+<br />
+ }</td></tr>
+<tr class="separator:a313c7a9581e4ca59c722f657ac128229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a943d8a8fa8d5e45c0fe9df657b6866f3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a943d8a8fa8d5e45c0fe9df657b6866f3">codeBase</a> () const</td></tr>
+<tr class="separator:a943d8a8fa8d5e45c0fe9df657b6866f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa627a0558101acd49b5c3998d7ae998a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aa627a0558101acd49b5c3998d7ae998a">codeSize</a> () const</td></tr>
+<tr class="separator:aa627a0558101acd49b5c3998d7ae998a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a33a79c6587f16670cb86e8bf058450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a9a33a79c6587f16670cb86e8bf058450">destroy</a> ()</td></tr>
+<tr class="separator:a9a33a79c6587f16670cb86e8bf058450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fcd48e9c01bd9df86b2d176d9eb9bd"><td class="memItemLeft" align="right" valign="top">RegELR_EL1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a11fcd48e9c01bd9df86b2d176d9eb9bd">ELR</a> () const</td></tr>
+<tr class="separator:a11fcd48e9c01bd9df86b2d176d9eb9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca4ddcceafe5b25c7bdcd658faa1fe9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a8ca4ddcceafe5b25c7bdcd658faa1fe9">heapBase</a> () const</td></tr>
+<tr class="separator:a8ca4ddcceafe5b25c7bdcd658faa1fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb4bf056a834cb356110e868ea74b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a80fb4bf056a834cb356110e868ea74b7">heapSize</a> () const</td></tr>
+<tr class="separator:a80fb4bf056a834cb356110e868ea74b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136865d6931c5bc599db3cf2c93f149e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a136865d6931c5bc599db3cf2c93f149e">init</a> (size_t addrBitsLen, <a class="el" href="../../d1/d41/class_process.html">Process</a> *<a class="el" href="../../d1/d41/class_process.html#a0f0db79b4540bab7467bae1338c36636">parent</a>, uint32_t <a class="el" href="../../d1/d41/class_process.html#ae1e161128d16ba72a5f40cca3e986f01">priority</a>, size_t <a class="el" href="../../d1/d41/class_process.html#aa627a0558101acd49b5c3998d7ae998a">codeSize</a>, size_t <a class="el" href="../../d1/d41/class_process.html#a80fb4bf056a834cb356110e868ea74b7">heapSize</a>, size_t <a class="el" href="../../d1/d41/class_process.html#a6c9c29aec3a891f294bffb63776ecc4b">spSize</a>)</td></tr>
+<tr class="separator:a136865d6931c5bc599db3cf2c93f149e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b29aeac4543d66fe6ff2bade9405ee5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a4b29aeac4543d66fe6ff2bade9405ee5">operator=</a> (const <a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;rhs)=delete</td></tr>
+<tr class="separator:a4b29aeac4543d66fe6ff2bade9405ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5013df37ac5eab7bc448b4c61a91de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a1e5013df37ac5eab7bc448b4c61a91de">operator=</a> (<a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&amp;rhs)=delete</td></tr>
+<tr class="separator:a1e5013df37ac5eab7bc448b4c61a91de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0db79b4540bab7467bae1338c36636"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d1/d41/class_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a0f0db79b4540bab7467bae1338c36636">parent</a> () const</td></tr>
+<tr class="separator:a0f0db79b4540bab7467bae1338c36636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4727761fd65656572c1635805137d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d92/_pid_manager_8h.html#aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aef4727761fd65656572c1635805137d2">pid</a> () const</td></tr>
+<tr class="separator:aef4727761fd65656572c1635805137d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e161128d16ba72a5f40cca3e986f01"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ae1e161128d16ba72a5f40cca3e986f01">priority</a> () const</td></tr>
+<tr class="separator:ae1e161128d16ba72a5f40cca3e986f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4553eac74c657bb451f390c17d6bea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a9f4553eac74c657bb451f390c17d6bea">Process</a> ()</td></tr>
+<tr class="separator:a9f4553eac74c657bb451f390c17d6bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4316c43be945c03bdb0ef69fb0f5fff9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a4316c43be945c03bdb0ef69fb0f5fff9">Process</a> (const <a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;rhs)</td></tr>
+<tr class="separator:a4316c43be945c03bdb0ef69fb0f5fff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81473392aed32ff23303b4d1eed7737"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aa81473392aed32ff23303b4d1eed7737">Process</a> (<a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&amp;rhs)=delete</td></tr>
+<tr class="separator:aa81473392aed32ff23303b4d1eed7737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06805a17fec5ccf101ae437a1954594"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#af06805a17fec5ccf101ae437a1954594">registers</a> ()</td></tr>
+<tr class="separator:af06805a17fec5ccf101ae437a1954594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919314253bfe539b8250a5100b197fb1"><td class="memItemLeft" align="right" valign="top">const uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a919314253bfe539b8250a5100b197fb1">registers</a> () const</td></tr>
+<tr class="separator:a919314253bfe539b8250a5100b197fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeea85d1650ec8e167f09238d1641b9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aeeea85d1650ec8e167f09238d1641b9d">restoreContextAndExecute</a> (void *savedSpEL1=nullptr)</td></tr>
+<tr class="separator:aeeea85d1650ec8e167f09238d1641b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f23f1e26603db23922f252d50770cc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a0f23f1e26603db23922f252d50770cc6">saveContext</a> (const uint64_t *savedRegisters)</td></tr>
+<tr class="separator:a0f23f1e26603db23922f252d50770cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3b8b00204709e9246aa736768d7a32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#adf3b8b00204709e9246aa736768d7a32">setupTables</a> (size_t <a class="el" href="../../d1/d41/class_process.html#aa627a0558101acd49b5c3998d7ae998a">codeSize</a>, size_t <a class="el" href="../../d1/d41/class_process.html#a80fb4bf056a834cb356110e868ea74b7">heapSize</a>, size_t <a class="el" href="../../d1/d41/class_process.html#a6c9c29aec3a891f294bffb63776ecc4b">spSize</a>)</td></tr>
+<tr class="separator:adf3b8b00204709e9246aa736768d7a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b9fc6d21ff0aad6c0b575d2a8747c2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ab4b9fc6d21ff0aad6c0b575d2a8747c2">spBase</a> () const</td></tr>
+<tr class="separator:ab4b9fc6d21ff0aad6c0b575d2a8747c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1a65d4d5af279a130297ebc912f901"><td class="memItemLeft" align="right" valign="top">RegSP_EL0&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aff1a65d4d5af279a130297ebc912f901">spEL0</a> () const</td></tr>
+<tr class="separator:aff1a65d4d5af279a130297ebc912f901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9c29aec3a891f294bffb63776ecc4b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a6c9c29aec3a891f294bffb63776ecc4b">spSize</a> () const</td></tr>
+<tr class="separator:a6c9c29aec3a891f294bffb63776ecc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f55fd34560d4932e7cb71b05e2246f"><td class="memItemLeft" align="right" valign="top">const RegSPSR_EL1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a94f55fd34560d4932e7cb71b05e2246f">SPSR</a> () const</td></tr>
+<tr class="separator:a94f55fd34560d4932e7cb71b05e2246f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9af76b443ac17284480006cdd312cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#af9af76b443ac17284480006cdd312cd6">status</a> () const</td></tr>
+<tr class="separator:af9af76b443ac17284480006cdd312cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a55590d8793728ebf3b613757d7b246"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a5a55590d8793728ebf3b613757d7b246">status</a> (<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a> status)</td></tr>
+<tr class="separator:a5a55590d8793728ebf3b613757d7b246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f1c4a7050004bc438cc78537fd4268"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d41/class_reg_descriptor4_k_b_l0.html">RegDescriptor4KBL0</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a23f1c4a7050004bc438cc78537fd4268">tableL0</a> () const</td></tr>
+<tr class="separator:a23f1c4a7050004bc438cc78537fd4268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac727c071c861ee041d4baaac3e8fbe1b"><td class="memItemLeft" align="right" valign="top">RegDescriptor4KBL1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ac727c071c861ee041d4baaac3e8fbe1b">tableL1</a> () const</td></tr>
+<tr class="separator:ac727c071c861ee041d4baaac3e8fbe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5286117e33f477dc10b3624309d06651"><td class="memItemLeft" align="right" valign="top">RegDescriptor4KBL2 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a5286117e33f477dc10b3624309d06651">tableL2</a> () const</td></tr>
+<tr class="separator:a5286117e33f477dc10b3624309d06651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97c9f2ca6315e3d1e4c77e8e9e9c1f6"><td class="memItemLeft" align="right" valign="top">const RegDescriptor4KBL3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ad97c9f2ca6315e3d1e4c77e8e9e9c1f6">tableL3</a> () const</td></tr>
+<tr class="separator:ad97c9f2ca6315e3d1e4c77e8e9e9c1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d80be6ab59fb96a2a035d33ad543ea"><td class="memItemLeft" align="right" valign="top">const RegTTBR0_EL1 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a83d80be6ab59fb96a2a035d33ad543ea">TTBR0</a> () const</td></tr>
+<tr class="separator:a83d80be6ab59fb96a2a035d33ad543ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990776d181dbbde7ff8ac12713d814b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a990776d181dbbde7ff8ac12713d814b3">~Process</a> ()</td></tr>
+<tr class="separator:a990776d181dbbde7ff8ac12713d814b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ae213f16095546936db26c4c821b22ed8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ae213f16095546936db26c4c821b22ed8">_codeBase</a> {nullptr}</td></tr>
+<tr class="separator:ae213f16095546936db26c4c821b22ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc931a09a8eaec6c00256deab7917c1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a5bc931a09a8eaec6c00256deab7917c1">_codeSize</a> {0}</td></tr>
+<tr class="separator:a5bc931a09a8eaec6c00256deab7917c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612b9edc5e617251abe05220651a8a58"><td class="memItemLeft" align="right" valign="top">RegELR_EL1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a612b9edc5e617251abe05220651a8a58">_ELR</a> {0}</td></tr>
+<tr class="separator:a612b9edc5e617251abe05220651a8a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa429432ef889afd1f905fc8faf8ea2fe"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aa429432ef889afd1f905fc8faf8ea2fe">_heapBase</a> {nullptr}</td></tr>
+<tr class="separator:aa429432ef889afd1f905fc8faf8ea2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6936be5703c18a90b1e587ce25ec0f4b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a6936be5703c18a90b1e587ce25ec0f4b">_heapSize</a> {0}</td></tr>
+<tr class="separator:a6936be5703c18a90b1e587ce25ec0f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f87b5399d8377c0924b2937222fcff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a57f87b5399d8377c0924b2937222fcff">_parent</a> {nullptr}</td></tr>
+<tr class="separator:a57f87b5399d8377c0924b2937222fcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e5f5da164449af4c5d4cd316cc4080"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d92/_pid_manager_8h.html#aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#af8e5f5da164449af4c5d4cd316cc4080">_pid</a> {<a class="el" href="../../d4/d92/_pid_manager_8h.html#ae8b4fcf35345db96f863a153fd2198e9">PID_INVALID</a>}</td></tr>
+<tr class="separator:af8e5f5da164449af4c5d4cd316cc4080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b403c4d784e95d277de6da7837ccc7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#aa3b403c4d784e95d277de6da7837ccc7">_priority</a> {0}</td></tr>
+<tr class="separator:aa3b403c4d784e95d277de6da7837ccc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d0e4ae1b958b488e95fd0e2167d47b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#ad3d0e4ae1b958b488e95fd0e2167d47b">_registers</a> [<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab">REGISTER_NUM</a>]</td></tr>
+<tr class="separator:ad3d0e4ae1b958b488e95fd0e2167d47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349cd109315811a7f72dfe43e3fdef2d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a349cd109315811a7f72dfe43e3fdef2d">_spBase</a> {nullptr}</td></tr>
+<tr class="separator:a349cd109315811a7f72dfe43e3fdef2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1285d73e4d482e58b48b0c1251abf1"><td class="memItemLeft" align="right" valign="top">RegSP_EL0&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a4c1285d73e4d482e58b48b0c1251abf1">_spEL0</a> {0}</td></tr>
+<tr class="separator:a4c1285d73e4d482e58b48b0c1251abf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741c1d6e749f8ccc980da92db488ff65"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a741c1d6e749f8ccc980da92db488ff65">_spSize</a> {0}</td></tr>
+<tr class="separator:a741c1d6e749f8ccc980da92db488ff65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8acbbc815455e432c46cfebf583b3d"><td class="memItemLeft" align="right" valign="top">RegSPSR_EL1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a3a8acbbc815455e432c46cfebf583b3d">_SPSR</a> {0}</td></tr>
+<tr class="separator:a3a8acbbc815455e432c46cfebf583b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608f175574147b180b8f3b3f5c886825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a608f175574147b180b8f3b3f5c886825">_status</a> {<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855">Process::CREATED_INCOMPLETE</a>}</td></tr>
+<tr class="separator:a608f175574147b180b8f3b3f5c886825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e936248964eb86fae3ccb5c9f3f3c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d41/class_reg_descriptor4_k_b_l0.html">RegDescriptor4KBL0</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a4e936248964eb86fae3ccb5c9f3f3c7a">_tableL0</a> {nullptr}</td></tr>
+<tr class="separator:a4e936248964eb86fae3ccb5c9f3f3c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b728385c9dcac60a54d99be0d8aa91"><td class="memItemLeft" align="right" valign="top">RegDescriptor4KBL1 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a65b728385c9dcac60a54d99be0d8aa91">_tableL1</a> {nullptr}</td></tr>
+<tr class="separator:a65b728385c9dcac60a54d99be0d8aa91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb629a1365ba3edb877810b5c51d42e0"><td class="memItemLeft" align="right" valign="top">RegDescriptor4KBL2 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#abb629a1365ba3edb877810b5c51d42e0">_tableL2</a> {nullptr}</td></tr>
+<tr class="separator:abb629a1365ba3edb877810b5c51d42e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bdefa40ec1d523e3572e172f07f4256"><td class="memItemLeft" align="right" valign="top">RegDescriptor4KBL3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a3bdefa40ec1d523e3572e172f07f4256">_tableL3</a> {nullptr}</td></tr>
+<tr class="separator:a3bdefa40ec1d523e3572e172f07f4256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e978e05afa4c7c5034fee3b3802154a"><td class="memItemLeft" align="right" valign="top">RegTTBR0_EL1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_process.html#a6e978e05afa4c7c5034fee3b3802154a">_ttbr0</a> {0}</td></tr>
+<tr class="separator:a6e978e05afa4c7c5034fee3b3802154a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a3dc85aca1ab2eb08a66dedbef45b8164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc85aca1ab2eb08a66dedbef45b8164">&#9670;&nbsp;</a></span>Config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164">Process::Config</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a5b0e934663855110172f173ddb5d92dc"></a>PAGE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a83a985fcd03a38aa23c9fc2421bcc87c"></a>KERN_ARG_NUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164ac25c5a8084ca017bb6a5d753b8169d65"></a>CODE_L3_INDEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a5d6cc5fa12d82220e98ffcdcda612a9c"></a>CODE_L3_ENTRY_NUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a3ddb8147e80ea2666391571a27fb2bd6"></a>STACK_L3_INDEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164afe4ed0af355532b558be0a3c7e567eab"></a>STACK_L3_ENTRY_NUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a5f9019a5c2f27cdc2e579867a6dd9dc0"></a>HEAP_L3_INDEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a8cd00d5be6df978914680fac03635db0"></a>HEAP_L3_ENTRY_NUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164ad9e1970e7c07196b387eda462ed7cf15"></a>TABLE_ALIGNMENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a2fbb42fbda5c1b6e75cfeada7d096bc5"></a>TABLE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164ac862bc0519b25d4893ad238f6ae754a8"></a>CODE_BASE_ALIGNMENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a845f60c7acd70a765c3c4c9865fcbf7a"></a>SP_BASE_ALIGNMENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab"></a>REGISTER_NUM&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a93456b115d46f58dd4e36189c40cc79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93456b115d46f58dd4e36189c40cc79d">&#9670;&nbsp;</a></span>Error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Process::Error</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a93456b115d46f58dd4e36189c40cc79da35308de9d793167458edeed2c21383db"></a>SUCCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93456b115d46f58dd4e36189c40cc79da5113d9961a22cf1780003564038ccd88"></a>PID_ALLOCATE_FAILED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93456b115d46f58dd4e36189c40cc79da551a36c44db8550c3b0817ee21981f7a"></a>SPACE_ALLCOATE_FAILED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a313c7a9581e4ca59c722f657ac128229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313c7a9581e4ca59c722f657ac128229">&#9670;&nbsp;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Process::Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855"></a>CREATED_INCOMPLETE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229a576311e5856c6f73d0f55736b1549bce"></a>CREATED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229ab423492f3003702097cbe024e237120f"></a>READY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229ac171654422744f05154dd132ffba4642"></a>RUNNING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229a749cb1027886cbc0427aed9641b99ee4"></a>BLOCKED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229abaa28b867c9aec8186491a9418fcfa39"></a>STOPPED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229a2a3f10e2a8593bdb44434c6fdd3c667c"></a>DESTROYED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a313c7a9581e4ca59c722f657ac128229a71f6c3de5310006d06a7a0f64dd960a1"></a>STATUS_NUM&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a9f4553eac74c657bb451f390c17d6bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4553eac74c657bb451f390c17d6bea">&#9670;&nbsp;</a></span>Process() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Process::Process </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00016">16</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a990776d181dbbde7ff8ac12713d814b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990776d181dbbde7ff8ac12713d814b3">&#9670;&nbsp;</a></span>~Process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Process::~Process </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00019">19</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a990776d181dbbde7ff8ac12713d814b3_cgraph.png" border="0" usemap="#d1/d41/class_process_a990776d181dbbde7ff8ac12713d814b3_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a990776d181dbbde7ff8ac12713d814b3_cgraph" id="d1/d41/class_process_a990776d181dbbde7ff8ac12713d814b3_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4316c43be945c03bdb0ef69fb0f5fff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4316c43be945c03bdb0ef69fb0f5fff9">&#9670;&nbsp;</a></span>Process() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Process::Process </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00024">24</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a4316c43be945c03bdb0ef69fb0f5fff9_cgraph.png" border="0" usemap="#d1/d41/class_process_a4316c43be945c03bdb0ef69fb0f5fff9_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a4316c43be945c03bdb0ef69fb0f5fff9_cgraph" id="d1/d41/class_process_a4316c43be945c03bdb0ef69fb0f5fff9_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa81473392aed32ff23303b4d1eed7737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81473392aed32ff23303b4d1eed7737">&#9670;&nbsp;</a></span>Process() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Process::Process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a943d8a8fa8d5e45c0fe9df657b6866f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a943d8a8fa8d5e45c0fe9df657b6866f3">&#9670;&nbsp;</a></span>codeBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Process::codeBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00246">246</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a943d8a8fa8d5e45c0fe9df657b6866f3_icgraph.png" border="0" usemap="#d1/d41/class_process_a943d8a8fa8d5e45c0fe9df657b6866f3_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a943d8a8fa8d5e45c0fe9df657b6866f3_icgraph" id="d1/d41/class_process_a943d8a8fa8d5e45c0fe9df657b6866f3_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa627a0558101acd49b5c3998d7ae998a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa627a0558101acd49b5c3998d7ae998a">&#9670;&nbsp;</a></span>codeSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::codeSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00250">250</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_aa627a0558101acd49b5c3998d7ae998a_icgraph.png" border="0" usemap="#d1/d41/class_process_aa627a0558101acd49b5c3998d7ae998a_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_aa627a0558101acd49b5c3998d7ae998a_icgraph" id="d1/d41/class_process_aa627a0558101acd49b5c3998d7ae998a_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a33a79c6587f16670cb86e8bf058450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a33a79c6587f16670cb86e8bf058450">&#9670;&nbsp;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Process::destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00177">177</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_cgraph.png" border="0" usemap="#d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_cgraph" id="d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_cgraph">
+</map>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_icgraph.png" border="0" usemap="#d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_icgraph" id="d1/d41/class_process_a9a33a79c6587f16670cb86e8bf058450_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a11fcd48e9c01bd9df86b2d176d9eb9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11fcd48e9c01bd9df86b2d176d9eb9bd">&#9670;&nbsp;</a></span>ELR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegELR_EL1 Process::ELR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00254">254</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a11fcd48e9c01bd9df86b2d176d9eb9bd_icgraph.png" border="0" usemap="#d1/d41/class_process_a11fcd48e9c01bd9df86b2d176d9eb9bd_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a11fcd48e9c01bd9df86b2d176d9eb9bd_icgraph" id="d1/d41/class_process_a11fcd48e9c01bd9df86b2d176d9eb9bd_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ca4ddcceafe5b25c7bdcd658faa1fe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca4ddcceafe5b25c7bdcd658faa1fe9">&#9670;&nbsp;</a></span>heapBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Process::heapBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00258">258</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a80fb4bf056a834cb356110e868ea74b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb4bf056a834cb356110e868ea74b7">&#9670;&nbsp;</a></span>heapSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::heapSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00262">262</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a80fb4bf056a834cb356110e868ea74b7_icgraph.png" border="0" usemap="#d1/d41/class_process_a80fb4bf056a834cb356110e868ea74b7_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a80fb4bf056a834cb356110e868ea74b7_icgraph" id="d1/d41/class_process_a80fb4bf056a834cb356110e868ea74b7_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a136865d6931c5bc599db3cf2c93f149e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136865d6931c5bc599db3cf2c93f149e">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Process::Error</a> Process::init </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>addrBitsLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/class_process.html">Process</a> *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>codeSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>heapSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>spSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00049">49</a> 行定义.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a136865d6931c5bc599db3cf2c93f149e_cgraph.png" border="0" usemap="#d1/d41/class_process_a136865d6931c5bc599db3cf2c93f149e_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a136865d6931c5bc599db3cf2c93f149e_cgraph" id="d1/d41/class_process_a136865d6931c5bc599db3cf2c93f149e_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b29aeac4543d66fe6ff2bade9405ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b29aeac4543d66fe6ff2bade9405ee5">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html">Process</a>&amp; Process::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e5013df37ac5eab7bc448b4c61a91de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5013df37ac5eab7bc448b4c61a91de">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html">Process</a>&amp; Process::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/class_process.html">Process</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f0db79b4540bab7467bae1338c36636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0db79b4540bab7467bae1338c36636">&#9670;&nbsp;</a></span>parent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d1/d41/class_process.html">Process</a> * Process::parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00266">266</a> 行定义.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a0f0db79b4540bab7467bae1338c36636_icgraph.png" border="0" usemap="#d1/d41/class_process_a0f0db79b4540bab7467bae1338c36636_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a0f0db79b4540bab7467bae1338c36636_icgraph" id="d1/d41/class_process_a0f0db79b4540bab7467bae1338c36636_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aef4727761fd65656572c1635805137d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef4727761fd65656572c1635805137d2">&#9670;&nbsp;</a></span>pid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d92/_pid_manager_8h.html#aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</a> Process::pid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00270">270</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae1e161128d16ba72a5f40cca3e986f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e161128d16ba72a5f40cca3e986f01">&#9670;&nbsp;</a></span>priority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Process::priority </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00274">274</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_ae1e161128d16ba72a5f40cca3e986f01_icgraph.png" border="0" usemap="#d1/d41/class_process_ae1e161128d16ba72a5f40cca3e986f01_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_ae1e161128d16ba72a5f40cca3e986f01_icgraph" id="d1/d41/class_process_ae1e161128d16ba72a5f40cca3e986f01_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="af06805a17fec5ccf101ae437a1954594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06805a17fec5ccf101ae437a1954594">&#9670;&nbsp;</a></span>registers() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t * Process::registers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00277">277</a> 行定义.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_af06805a17fec5ccf101ae437a1954594_icgraph.png" border="0" usemap="#d1/d41/class_process_af06805a17fec5ccf101ae437a1954594_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_af06805a17fec5ccf101ae437a1954594_icgraph" id="d1/d41/class_process_af06805a17fec5ccf101ae437a1954594_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a919314253bfe539b8250a5100b197fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919314253bfe539b8250a5100b197fb1">&#9670;&nbsp;</a></span>registers() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64_t * Process::registers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00281">281</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aeeea85d1650ec8e167f09238d1641b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeea85d1650ec8e167f09238d1641b9d">&#9670;&nbsp;</a></span>restoreContextAndExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Process::restoreContextAndExecute </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>savedSpEL1</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00225">225</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_cgraph.png" border="0" usemap="#d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_cgraph" id="d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_cgraph">
+</map>
+</div>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_icgraph.png" border="0" usemap="#d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_icgraph" id="d1/d41/class_process_aeeea85d1650ec8e167f09238d1641b9d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0f23f1e26603db23922f252d50770cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f23f1e26603db23922f252d50770cc6">&#9670;&nbsp;</a></span>saveContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Process::saveContext </td>
+          <td>(</td>
+          <td class="paramtype">const uint64_t *&#160;</td>
+          <td class="paramname"><em>savedRegisters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00215">215</a> 行定义.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a0f23f1e26603db23922f252d50770cc6_cgraph.png" border="0" usemap="#d1/d41/class_process_a0f23f1e26603db23922f252d50770cc6_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a0f23f1e26603db23922f252d50770cc6_cgraph" id="d1/d41/class_process_a0f23f1e26603db23922f252d50770cc6_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf3b8b00204709e9246aa736768d7a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3b8b00204709e9246aa736768d7a32">&#9670;&nbsp;</a></span>setupTables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html#a93456b115d46f58dd4e36189c40cc79d">Process::Error</a> Process::setupTables </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>codeSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>heapSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>spSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00082">82</a> 行定义.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_cgraph.png" border="0" usemap="#d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_cgraph" id="d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_cgraph">
+</map>
+</div>
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_icgraph.png" border="0" usemap="#d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_icgraph" id="d1/d41/class_process_adf3b8b00204709e9246aa736768d7a32_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4b9fc6d21ff0aad6c0b575d2a8747c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b9fc6d21ff0aad6c0b575d2a8747c2">&#9670;&nbsp;</a></span>spBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Process::spBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00285">285</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aff1a65d4d5af279a130297ebc912f901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1a65d4d5af279a130297ebc912f901">&#9670;&nbsp;</a></span>spEL0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegSP_EL0 Process::spEL0 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00289">289</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6c9c29aec3a891f294bffb63776ecc4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9c29aec3a891f294bffb63776ecc4b">&#9670;&nbsp;</a></span>spSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::spSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00293">293</a> 行定义.</p>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a6c9c29aec3a891f294bffb63776ecc4b_icgraph.png" border="0" usemap="#d1/d41/class_process_a6c9c29aec3a891f294bffb63776ecc4b_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_a6c9c29aec3a891f294bffb63776ecc4b_icgraph" id="d1/d41/class_process_a6c9c29aec3a891f294bffb63776ecc4b_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a94f55fd34560d4932e7cb71b05e2246f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f55fd34560d4932e7cb71b05e2246f">&#9670;&nbsp;</a></span>SPSR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const RegSPSR_EL1 Process::SPSR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00304">304</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af9af76b443ac17284480006cdd312cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9af76b443ac17284480006cdd312cd6">&#9670;&nbsp;</a></span>status() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Process::Status</a> Process::status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00296">296</a> 行定义.</p>
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_af9af76b443ac17284480006cdd312cd6_icgraph.png" border="0" usemap="#d1/d41/class_process_af9af76b443ac17284480006cdd312cd6_icgraph" alt=""/></div>
+<map name="d1/d41/class_process_af9af76b443ac17284480006cdd312cd6_icgraph" id="d1/d41/class_process_af9af76b443ac17284480006cdd312cd6_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a55590d8793728ebf3b613757d7b246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a55590d8793728ebf3b613757d7b246">&#9670;&nbsp;</a></span>status() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Process::status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00300">300</a> 行定义.</p>
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d1/d41/class_process_a5a55590d8793728ebf3b613757d7b246_cgraph.png" border="0" usemap="#d1/d41/class_process_a5a55590d8793728ebf3b613757d7b246_cgraph" alt=""/></div>
+<map name="d1/d41/class_process_a5a55590d8793728ebf3b613757d7b246_cgraph" id="d1/d41/class_process_a5a55590d8793728ebf3b613757d7b246_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23f1c4a7050004bc438cc78537fd4268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f1c4a7050004bc438cc78537fd4268">&#9670;&nbsp;</a></span>tableL0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/d41/class_reg_descriptor4_k_b_l0.html">RegDescriptor4KBL0</a> * Process::tableL0 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00308">308</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac727c071c861ee041d4baaac3e8fbe1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac727c071c861ee041d4baaac3e8fbe1b">&#9670;&nbsp;</a></span>tableL1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegDescriptor4KBL1 * Process::tableL1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00312">312</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5286117e33f477dc10b3624309d06651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5286117e33f477dc10b3624309d06651">&#9670;&nbsp;</a></span>tableL2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegDescriptor4KBL2 * Process::tableL2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00316">316</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad97c9f2ca6315e3d1e4c77e8e9e9c1f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97c9f2ca6315e3d1e4c77e8e9e9c1f6">&#9670;&nbsp;</a></span>tableL3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const RegDescriptor4KBL3 * Process::tableL3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00320">320</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a83d80be6ab59fb96a2a035d33ad543ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d80be6ab59fb96a2a035d33ad543ea">&#9670;&nbsp;</a></span>TTBR0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const RegTTBR0_EL1 &amp; Process::TTBR0 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a> 第 <a class="el" href="../../dd/d2b/_process_8cpp_source.html#l00324">324</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae213f16095546936db26c4c821b22ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae213f16095546936db26c4c821b22ed8">&#9670;&nbsp;</a></span>_codeBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Process::_codeBase {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00115">115</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5bc931a09a8eaec6c00256deab7917c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc931a09a8eaec6c00256deab7917c1">&#9670;&nbsp;</a></span>_codeSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::_codeSize {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00116">116</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a612b9edc5e617251abe05220651a8a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612b9edc5e617251abe05220651a8a58">&#9670;&nbsp;</a></span>_ELR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegELR_EL1 Process::_ELR {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00126">126</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa429432ef889afd1f905fc8faf8ea2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa429432ef889afd1f905fc8faf8ea2fe">&#9670;&nbsp;</a></span>_heapBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Process::_heapBase {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6936be5703c18a90b1e587ce25ec0f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6936be5703c18a90b1e587ce25ec0f4b">&#9670;&nbsp;</a></span>_heapSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::_heapSize {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00119">119</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a57f87b5399d8377c0924b2937222fcff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f87b5399d8377c0924b2937222fcff">&#9670;&nbsp;</a></span>_parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html">Process</a>* Process::_parent {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af8e5f5da164449af4c5d4cd316cc4080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8e5f5da164449af4c5d4cd316cc4080">&#9670;&nbsp;</a></span>_pid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d92/_pid_manager_8h.html#aeafc03b7c4e1d001da1a06cf0ca814b5">Pid</a> Process::_pid {<a class="el" href="../../d4/d92/_pid_manager_8h.html#ae8b4fcf35345db96f863a153fd2198e9">PID_INVALID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa3b403c4d784e95d277de6da7837ccc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b403c4d784e95d277de6da7837ccc7">&#9670;&nbsp;</a></span>_priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Process::_priority {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00102">102</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad3d0e4ae1b958b488e95fd0e2167d47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d0e4ae1b958b488e95fd0e2167d47b">&#9670;&nbsp;</a></span>_registers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Process::_registers[<a class="el" href="../../d1/d41/class_process.html#a3dc85aca1ab2eb08a66dedbef45b8164a80d6e1140b73d1ae9098e8e41f0453ab">REGISTER_NUM</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00125">125</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a349cd109315811a7f72dfe43e3fdef2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349cd109315811a7f72dfe43e3fdef2d">&#9670;&nbsp;</a></span>_spBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Process::_spBase {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00121">121</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4c1285d73e4d482e58b48b0c1251abf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1285d73e4d482e58b48b0c1251abf1">&#9670;&nbsp;</a></span>_spEL0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegSP_EL0 Process::_spEL0 {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00109">109</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a741c1d6e749f8ccc980da92db488ff65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741c1d6e749f8ccc980da92db488ff65">&#9670;&nbsp;</a></span>_spSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Process::_spSize {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3a8acbbc815455e432c46cfebf583b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8acbbc815455e432c46cfebf583b3d">&#9670;&nbsp;</a></span>_SPSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegSPSR_EL1 Process::_SPSR {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00127">127</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a608f175574147b180b8f3b3f5c886825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608f175574147b180b8f3b3f5c886825">&#9670;&nbsp;</a></span>_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229">Status</a> Process::_status {<a class="el" href="../../d1/d41/class_process.html#a313c7a9581e4ca59c722f657ac128229a92f42c1d5c7df2a5ba772f48a6ef1855">Process::CREATED_INCOMPLETE</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00103">103</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4e936248964eb86fae3ccb5c9f3f3c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e936248964eb86fae3ccb5c9f3f3c7a">&#9670;&nbsp;</a></span>_tableL0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d41/class_reg_descriptor4_k_b_l0.html">RegDescriptor4KBL0</a>* Process::_tableL0 {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00110">110</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a65b728385c9dcac60a54d99be0d8aa91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b728385c9dcac60a54d99be0d8aa91">&#9670;&nbsp;</a></span>_tableL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegDescriptor4KBL1* Process::_tableL1 {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00111">111</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abb629a1365ba3edb877810b5c51d42e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb629a1365ba3edb877810b5c51d42e0">&#9670;&nbsp;</a></span>_tableL2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegDescriptor4KBL2* Process::_tableL2 {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00112">112</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3bdefa40ec1d523e3572e172f07f4256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bdefa40ec1d523e3572e172f07f4256">&#9670;&nbsp;</a></span>_tableL3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegDescriptor4KBL3* Process::_tableL3 {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00113">113</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6e978e05afa4c7c5034fee3b3802154a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e978e05afa4c7c5034fee3b3802154a">&#9670;&nbsp;</a></span>_ttbr0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegTTBR0_EL1 Process::_ttbr0 {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a> 第 <a class="el" href="../../dd/d77/_process_8h_source.html#l00108">108</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/schedule/<a class="el" href="../../dd/d77/_process_8h_source.html">Process.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/schedule/<a class="el" href="../../dd/d2b/_process_8cpp_source.html">Process.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:44 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

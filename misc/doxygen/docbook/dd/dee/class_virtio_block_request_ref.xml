@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/dee/class_virtio_block_request_ref">
+<title>VirtioBlockRequestRef class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/d32/_virtio_block_request_8h">&quot;VirtioBlockRequest.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioBlockRequestRef</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d17/class_virtio_block_request_ref__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioBlockRequestRef</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/da6/class_virtio_block_request_ref__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752">@27</link> {
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752acd2ff30285b06bea75477b4d6c45ff5f">REQ_IN</link>= 0,
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a4c8cdc832fd9b8b9feaa692fa344d2a6">REQ_OUT</link>= 1,
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752aae14445b9f1ab164df37f5cc8658b279">REQ_FLUSH</link>= 4,
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a6a5a6182a75a2ffac086a1eddc7e9978">STATUS_OK</link>= 0,
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a60c1a54f68d8ec685b34a707c91ec945">STATUS_IOERR</link>= 1,
+<link linkend="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a73356e7e4c7465d904e0f6b0a5db35c5">STATUS_UNSUPP</link>= 2
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef uint8_t(*)[][512]  <link linkend="dd/dee/class_virtio_block_request_ref_1a2a4b4c213a2f71addc15454032d7ab00">BufPtr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef const uint8_t(*)[][512]  <link linkend="dd/dee/class_virtio_block_request_ref_1a7c2e954d187f4d54b5e45125d6242b90">BufPtrConst</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * _base</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _bufBlockNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dd/dee/class_virtio_block_request_ref_1a7c2e954d187f4d54b5e45125d6242b90">BufPtrConst</link> <link linkend="dd/dee/class_virtio_block_request_ref_1af886f580c57b514204877812941db381">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dd/dee/class_virtio_block_request_ref_1a2a4b4c213a2f71addc15454032d7ab00">BufPtr</link> <link linkend="dd/dee/class_virtio_block_request_ref_1a47c00a2494a1b248ae2f260bd855637a">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="dd/dee/class_virtio_block_request_ref_1aa90fe13c7a23662295b1ec674279dab9">sector</link> (
+uint64_t s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint64_t <link linkend="dd/dee/class_virtio_block_request_ref_1a6838ff4d23bb33f56122866eebe1336b">sector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint8_t <link linkend="dd/dee/class_virtio_block_request_ref_1a0b3beaac92ef67e22baa0fce6daa3b57">status</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="dd/dee/class_virtio_block_request_ref_1acb8194345c0c82e823407d96c6e034d1">type</link> (
+uint32_t t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> uint32_t <link linkend="dd/dee/class_virtio_block_request_ref_1a2a30a955abaf413f62a768a0b357c861">type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dd/dee/class_virtio_block_request_ref_1a768ae2e2a48e44880a9ba80745665c38">VirtioBlockRequestRef</link> (
+void * base, size_t blocks)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="dd/dee/class_virtio_block_request_ref_1a8c1f7eb91208d888029e847b3c1faf11">memSize</link> (
+size_t blocks)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> size_t <link linkend="dd/dee/class_virtio_block_request_ref_1a1971adf324286ddca92a6c16f167d3fc">memSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752">
+               <title>enum @27 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752acd2ff30285b06bea75477b4d6c45ff5f">
+                            <term>REQ_IN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a4c8cdc832fd9b8b9feaa692fa344d2a6">
+                            <term>REQ_OUT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752aae14445b9f1ab164df37f5cc8658b279">
+                            <term>REQ_FLUSH</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a6a5a6182a75a2ffac086a1eddc7e9978">
+                            <term>STATUS_OK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a60c1a54f68d8ec685b34a707c91ec945">
+                            <term>STATUS_IOERR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="dd/dee/class_virtio_block_request_ref_1a8e63661e7b1eb0fe344b55e78eb85752a73356e7e4c7465d904e0f6b0a5db35c5">
+                            <term>STATUS_UNSUPP</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 17 of file VirtioBlockRequest.h
+                    <computeroutput><literallayout>
+{
+REQ_IN= 0, 
+REQ_OUT= 1, 
+REQ_FLUSH= 4, 
+STATUS_OK= 0, 
+STATUS_IOERR= 1, 
+STATUS_UNSUPP= 2, 
+}@27;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a2a4b4c213a2f71addc15454032d7ab00">
+                <title>using VirtioBlockRequestRef::BufPtr =  uint8_t (*)[][512]</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a7c2e954d187f4d54b5e45125d6242b90">
+                <title>using VirtioBlockRequestRef::BufPtrConst =  const uint8_t (*)[][512]</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1af886f580c57b514204877812941db381">
+                <title>AS_MACRO BufPtrConst VirtioBlockRequestRef::data () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a47c00a2494a1b248ae2f260bd855637a">
+                <title>AS_MACRO BufPtr VirtioBlockRequestRef::data ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1aa90fe13c7a23662295b1ec674279dab9">
+                <title>AS_MACRO void VirtioBlockRequestRef::sector (uint64_t s) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a6838ff4d23bb33f56122866eebe1336b">
+                <title>AS_MACRO uint64_t VirtioBlockRequestRef::sector () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a0b3beaac92ef67e22baa0fce6daa3b57">
+                <title>AS_MACRO uint8_t VirtioBlockRequestRef::status () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1acb8194345c0c82e823407d96c6e034d1">
+                <title>AS_MACRO void VirtioBlockRequestRef::type (uint32_t t) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a2a30a955abaf413f62a768a0b357c861">
+                <title>AS_MACRO uint32_t VirtioBlockRequestRef::type () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a768ae2e2a48e44880a9ba80745665c38">
+                <title>VirtioBlockRequestRef::VirtioBlockRequestRef (void *base, size_t blocks)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a8c1f7eb91208d888029e847b3c1faf11">
+                <title>static AS_MACRO size_t VirtioBlockRequestRef::memSize (size_t blocks)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dd/dee/class_virtio_block_request_ref_1a1971adf324286ddca92a6c16f167d3fc">
+                <title>static AS_MACRO size_t VirtioBlockRequestRef::memSize () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

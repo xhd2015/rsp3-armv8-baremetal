@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/d06/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4">
+<title>ReturnTypeSelector&lt; T, true, false &gt; struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d90/_return_type_selector_8h">&quot;ReturnTypeSelector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ReturnTypeSelector&lt; T, true, false &gt;</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d31/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ReturnTypeSelector&lt; T, true, false &gt;</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d7e/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::add_lvalue_reference_t&lt; std::remove_const_t&lt; T &gt; &gt;  <link linkend="d0/d06/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4_1a6a1a7f4a1a17901cb13a30eb34455aaa">type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d0/d06/struct_return_type_selector_3_01_t_00_01true_00_01false_01_4_1a6a1a7f4a1a17901cb13a30eb34455aaa">
+                <title>using ReturnTypeSelector&lt; T, true, false &gt;::type =  std::add_lvalue_reference_t&lt;std::remove_const_t&lt;T&gt; &gt;</title> <emphasis></emphasis>
+                
+            </section>
+</section>

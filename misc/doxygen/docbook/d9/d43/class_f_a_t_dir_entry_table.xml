@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d43/class_f_a_t_dir_entry_table">
+<title>FATDirEntryTable class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/d48/_f_a_t_dir_entry_table_8h">&quot;FATDirEntryTable.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for FATDirEntryTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/db7/class_f_a_t_dir_entry_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for FATDirEntryTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/dd2/class_f_a_t_dir_entry_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ByteReader &amp; breader</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>FAT32ExtBPB * e32bpb</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>FAT32EntryTable &amp; fat</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/d43/class_f_a_t_dir_entry_table_1adf63fb5d89558b50f0f7fa27136fe9d9">changeVolume</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d43/class_f_a_t_dir_entry_table_1ae905cdc329bb292d29e7aa3ceae32f92">FATDirEntryTable</link> (
+<link linkend="d7/d5d/class_byte_reader">ByteReader</link> &amp; breader, <link linkend="d8/d88/class_f_a_t32_entry_table">FAT32EntryTable</link> &amp; fat, <link linkend="d2/d32/class_f_a_t32_entry">FAT32Entry</link> fentry, <link linkend="da/dd1/class_f_a_t32_ext_b_p_b">FAT32ExtBPB</link> * e32bpb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d43/class_f_a_t_dir_entry_table_1a5f3e5be70d2da643bd59430e12503bfc">FATDirEntryTable</link> (
+const <link linkend="d9/d43/class_f_a_t_dir_entry_table">FATDirEntryTable</link> &amp; fat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/d43/class_f_a_t_dir_entry_table_1aba69868e6197a2f75621eff3d448375b">findByLongName</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; longFileName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d9/d43/class_f_a_t_dir_entry_table_1a8e9f2057828f18cc42063245420f50a3">findByShortName</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; mainPart, const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; extPart)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d9/d43/class_f_a_t_dir_entry_table">FATDirEntryTable</link> &amp; <link linkend="d9/d43/class_f_a_t_dir_entry_table_1a92c014fcc128f658832cbda61f402c57">operator=</link> (
+const <link linkend="d9/d43/class_f_a_t_dir_entry_table">FATDirEntryTable</link> &amp; fat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; char &gt; <link linkend="d9/d43/class_f_a_t_dir_entry_table_1a9530e4a8c8ac7be7dd5cf578acef39c9">readFile</link> (
+const <link linkend="db/d50/class_string_ref">StringRef</link> &amp; longFileName, size_t offset, size_t byteCount)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1adf63fb5d89558b50f0f7fa27136fe9d9">
+                <title>void FATDirEntryTable::changeVolume ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1ae905cdc329bb292d29e7aa3ceae32f92">
+                <title>FATDirEntryTable::FATDirEntryTable (ByteReader &amp;breader, FAT32EntryTable &amp;fat, FAT32Entry fentry, FAT32ExtBPB *e32bpb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1a5f3e5be70d2da643bd59430e12503bfc">
+                <title>FATDirEntryTable::FATDirEntryTable (const FATDirEntryTable &amp;fat)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1aba69868e6197a2f75621eff3d448375b">
+                <title>size_t FATDirEntryTable::findByLongName (const StringRef &amp;longFileName) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1a8e9f2057828f18cc42063245420f50a3">
+                <title>size_t FATDirEntryTable::findByShortName (const StringRef &amp;mainPart, const StringRef &amp;extPart) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1a92c014fcc128f658832cbda61f402c57">
+                <title>FATDirEntryTable&amp; FATDirEntryTable::operator= (const FATDirEntryTable &amp;fat)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d43/class_f_a_t_dir_entry_table_1a9530e4a8c8ac7be7dd5cf578acef39c9">
+                <title>Vector&lt; char &gt; FATDirEntryTable::readFile (const StringRef &amp;longFileName, size_t offset=0, size_t byteCount=SIZE_MAX)</title> <emphasis></emphasis>
+                
+<para>if byteCount is SIZE_MAX,then read all left </para>
+
+            </section>
+</section>

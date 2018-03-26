@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d89/_virtio_block_config_8h">
+    <title>VirtioBlockConfig.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+<para>Include dependency diagram for VirtioBlockConfig.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/df3/_virtio_block_config_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for VirtioBlockConfig.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d50/_virtio_block_config_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/d60/class_virtio_block_config">VirtioBlockConfig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/de3/struct_virtio_block_geometry">VirtioBlockGeometry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d38/struct_virtio_block_config_1_1_virtio_block_geometry">VirtioBlockConfig::VirtioBlockGeometry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/d6e/struct_virtio_block_topology">VirtioBlockTopology</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/db1/struct_virtio_block_config_1_1_virtio_block_topology">VirtioBlockConfig::VirtioBlockTopology</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d8/d89/_virtio_block_config_8h_1a5a7a469cfd9a212cfc40a5bc7598a1dd">blk_size</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d8/d89/_virtio_block_config_8h_1a2bc2f5cac86e32633d8da58f7797efdb">capacity</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/de3/struct_virtio_block_geometry">VirtioBlockGeometry</link> <link linkend="d8/d89/_virtio_block_config_8h_1abc9e199efb69679507acc173f25d8327">geometry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d8/d89/_virtio_block_config_8h_1afe41c69568a6a343c937bce412943295">seg_max</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d8/d89/_virtio_block_config_8h_1a13eee6ea15969a27cb4bef8f94e0ccf7">size_max</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/d6e/struct_virtio_block_topology">VirtioBlockTopology</link> <link linkend="d8/d89/_virtio_block_config_8h_1a1363bc718945438fb3b29732a7aa4015">topology</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d8/d89/_virtio_block_config_8h_1a7bfaca46ac479359d722e67abea1fc0e">writeback</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d9/d60/class_virtio_block_config">VirtioBlockConfig</link> <link linkend="d8/d89/_virtio_block_config_8h_1a773e7ec6d00a55b0b7ec05da5ba04cae">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d89/_virtio_block_config_8h_1a842d99126ea561085bbf69faa1081313">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockConfig.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d7b/io_2_integer_formatter_8h">
+    <title>IntegerFormatter.h File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;templates_implementation/IntegerFormatter.h&gt;</programlisting>
+<para>Include dependency diagram for IntegerFormatter.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/db4/io_2_integer_formatter_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for IntegerFormatter.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d93/io_2_integer_formatter_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d66/class_integer_formatter">IntegerFormatter</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类型定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="df/d66/class_integer_formatter">IntegerFormatter</link>&lt; 2 &gt;  <link linkend="d5/d7b/io_2_integer_formatter_8h_1a929387095e1ee6f188571a7657c09272">Bin</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="df/d66/class_integer_formatter">IntegerFormatter</link>&lt; 10 &gt;  <link linkend="d5/d7b/io_2_integer_formatter_8h_1a84bfd3a615b48957cf83c64877b0800d">Dec</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="df/d66/class_integer_formatter">IntegerFormatter</link>&lt; 16 &gt;  <link linkend="d5/d7b/io_2_integer_formatter_8h_1aad9fd1508f87d88f5ff5a8dce6a02612">Hex</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="d5/d7b/io_2_integer_formatter_8h_1a16341ec63338a440e567a6cb4a444938">operator&lt;&lt;</link> (
+<link linkend="db/db4/class_output">Output</link> &amp; out, const <link linkend="df/d66/class_integer_formatter">IntegerFormatter</link>&lt; Base &gt; &amp; hf)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h</para>
+    </simplesect>
+</section>

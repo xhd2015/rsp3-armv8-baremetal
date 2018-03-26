@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d27/main__fat__test_8cpp">
+    <title>main_fat_test.cpp File Reference</title>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+    <programlisting>#include &lt;fstream&gt;</programlisting>
+    <programlisting>#include &lt;MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/host/SectorReaderHelper.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT32Debugger.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FAT32ReadUtil.h&gt;</programlisting>
+    <programlisting>#include &lt;filesystem/fat/FATDirEntryTable.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/Vector.h&gt;</programlisting>
+    <programlisting>#include &lt;data_structures/StringRef.h&gt;</programlisting>
+    <programlisting>#include &lt;IntegerFormatter.h&gt;</programlisting>
+<para>Include dependency diagram for main_fat_test.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/dba/main__fat__test_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for main_fat_test.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/da5/main__fat__test_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>宏定义</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d2/d27/main__fat__test_8cpp_1aa4153bf3c0bcd980fba8bb2f2ef258b6">IMG_FILE</link> R&quot;(C:\Users\13774\Desktop\temp_for_gui\2017-11-29-raspbian-stretch\partition1.img)&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d2/d27/main__fat__test_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host/main_fat_test.cpp</para>
+    </simplesect>
+</section>

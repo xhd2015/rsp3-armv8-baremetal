@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/dc9/init_8cpp">
+    <title>init.cpp File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;kernel.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/common_aarch64/mmu/VirtualAddress.h&gt;</programlisting>
+    <programlisting>#include &lt;memory/MemoryManager.h&gt;</programlisting>
+    <programlisting>#include &lt;schedule/Process.h&gt;</programlisting>
+    <programlisting>#include &lt;io/Output.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+<para>Include dependency diagram for init.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d07/init_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for init.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/d63/init_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d0/dc9/init_8cpp_1a2426a9e9ce8dc5d87735dec884f030d5">bssEnd</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d0/dc9/init_8cpp_1aaef8abac4bded43d86c35708bdd57a81">bssStart</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char <link linkend="d0/dc9/init_8cpp_1aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d0/dc9/init_8cpp_1a45f4a18eb9d68ac86dd7277b358d091d">freeRamEnd</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d0/dc9/init_8cpp_1a608b92f2126c48d3a22339896ec642e7">freeRamStart</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> <link linkend="d0/dc9/init_8cpp_1ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d0/dc9/init_8cpp_1a645f0e6682b0f122c08f036a1edfc1f7">koutBuf</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/dff/class_memory_manager">MemoryManager</link> <link linkend="d0/dc9/init_8cpp_1a4a7ecefbca51dfbb2ab7094df8264dbb">mman</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/dc9/init_8cpp_1a0d37a7d8737cbd20700740c969fca192">__attribute__</link> (
+(section(&quot;.text.init&quot;)) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d0/dc9/init_8cpp_1ac7fe10a863fce318334b4386b34a30ba">destroy</link> (
+int errCode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d0/dc9/init_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/user_space/init.cpp</para>
+    </simplesect>
+</section>

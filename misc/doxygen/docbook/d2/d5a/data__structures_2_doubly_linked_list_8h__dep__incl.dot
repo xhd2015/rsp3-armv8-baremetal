@@ -1,0 +1,28 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/data_structures/DoublyLinkedList.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node365 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/data_structures\l/DoublyLinkedList.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node365 -> Node366 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node366 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/templates_implementation\l/data_structures/DoublyLinkedList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d88/templates__implementation_2data__structures_2_doubly_linked_list_8h.html"];
+  Node366 -> Node365 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node365 -> Node367 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node367 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/schedule/ProcessManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dd6/schedule_2_process_manager_8h.html"];
+  Node367 -> Node368 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node368 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/templates_implementation\l/schedule/ProcessManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/templates__implementation_2schedule_2_process_manager_8h.html"];
+  Node368 -> Node367 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node367 -> Node369 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node369 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/common_aarch64\l/exception/exceptions.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html"];
+  Node367 -> Node370 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node370 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/qemu_virt/main\l_run_process.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d35/main__run__process_8cpp.html"];
+  Node367 -> Node371 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node371 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/global_variables.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d90/global__variables_8cpp.html"];
+  Node367 -> Node372 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node372 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/schedule/ProcessManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d3c/_process_manager_8cpp.html"];
+  Node365 -> Node373 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node373 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/test/TestDoublyLinkedList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/dd1/_test_doubly_linked_list_8h.html"];
+  Node373 -> Node374 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node374 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/host/main_debug\l_PidManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d40/main__debug___pid_manager_8cpp.html"];
+  Node373 -> Node375 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node375 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/test/TestDoublyLinkedList.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d96/_test_doubly_linked_list_8cpp.html"];
+}

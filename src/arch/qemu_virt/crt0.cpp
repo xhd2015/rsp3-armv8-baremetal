@@ -30,7 +30,7 @@ void init()
 		*p=0;
 
 //	initQemuUART();
-	new (&pl011) PL011(reinterpret_cast<volatile void*>(UART_BASE));
+	new (&pl011) PL011(UART_BASE);
 	pl011.init();
 	if(pl011.hasCorrectBase()) // 仅当配置正确时才进入
 	{

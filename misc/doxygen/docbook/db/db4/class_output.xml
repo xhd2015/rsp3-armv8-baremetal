@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/db4/class_output">
+<title>Output class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d6/d77/_output_8h">&quot;Output.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Output</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d6d/class_output__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Output</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/dc7/class_output__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a1fb911f17a0de0ad27f9e44c14852aa3">flush</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a1ea61e0a1a5922776089404f6b98ae8c">operator&lt;&lt;</link> (
+char ch)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a23f7f60b5e0707150b3ca6cf5bb07008">operator&lt;&lt;</link> (
+uint8_t u)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1acf00409d54bd41c4f13d7bcf41fe95cc">operator&lt;&lt;</link> (
+uint16_t u)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a7fafb90267a6bbe29aeac3e737abbb27">operator&lt;&lt;</link> (
+uint32_t u)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1aed4453bf34f5177359f79fa99fed30cf">operator&lt;&lt;</link> (
+bool i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1ae1660f64b9053d2d6e463ea6495da088">operator&lt;&lt;</link> (
+short i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a928bb590b52b7a082243c095d75b184b">operator&lt;&lt;</link> (
+int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a9a23692f211f354aa3a4e560423553b4">operator&lt;&lt;</link> (
+double d)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1afbbac28b8b526fc00a9c1807cf303dc0">operator&lt;&lt;</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a139ebfe359c4e8fa508a65098dfbd822">operator&lt;&lt;</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a9261ec4177dcf4837babbf4b9835c6a4">operator&lt;&lt;</link> (
+const void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/db4/class_output">Output</link> &amp; <link linkend="db/db4/class_output_1a7af0b9c118b54fbedea2513a1311deb0">operator&lt;&lt;</link> (
+const volatile void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="db/db4/class_output_1a9b805f9866e80ecde51f3b166bc32f29">print</link> (
+const char * s, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="db/db4/class_output_1a82b5eab256459ae63918f78f1d534ca8">print</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="db/db4/class_output_1a1fb911f17a0de0ad27f9e44c14852aa3">
+                <title>Output &amp; Output::flush ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a1ea61e0a1a5922776089404f6b98ae8c">
+                <title>Output &amp; Output::operator&lt;&lt; (char ch)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a23f7f60b5e0707150b3ca6cf5bb07008">
+                <title>Output &amp; Output::operator&lt;&lt; (uint8_t u)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1acf00409d54bd41c4f13d7bcf41fe95cc">
+                <title>Output &amp; Output::operator&lt;&lt; (uint16_t u)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a7fafb90267a6bbe29aeac3e737abbb27">
+                <title>Output &amp; Output::operator&lt;&lt; (uint32_t u)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1aed4453bf34f5177359f79fa99fed30cf">
+                <title>Output &amp; Output::operator&lt;&lt; (bool i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1ae1660f64b9053d2d6e463ea6495da088">
+                <title>Output &amp; Output::operator&lt;&lt; (short i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a928bb590b52b7a082243c095d75b184b">
+                <title>Output &amp; Output::operator&lt;&lt; (int i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a9a23692f211f354aa3a4e560423553b4">
+                <title>Output &amp; Output::operator&lt;&lt; (double d)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1afbbac28b8b526fc00a9c1807cf303dc0">
+                <title>Output &amp; Output::operator&lt;&lt; (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a139ebfe359c4e8fa508a65098dfbd822">
+                <title>Output &amp; Output::operator&lt;&lt; (size_t i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a9261ec4177dcf4837babbf4b9835c6a4">
+                <title>Output &amp; Output::operator&lt;&lt; (const void *p)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a7af0b9c118b54fbedea2513a1311deb0">
+                <title>Output &amp; Output::operator&lt;&lt; (const volatile void *p)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a9b805f9866e80ecde51f3b166bc32f29">
+                <title>size_t Output::print (const char *s, size_t len)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/db4/class_output_1a82b5eab256459ae63918f78f1d534ca8">
+                <title>size_t Output::print (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

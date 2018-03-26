@@ -50,6 +50,8 @@ D15-D06:res0
 D05: Multi/Single Block
 D04: Data Transfer  Direction,1==CardToHost,0==HostToCard, 仅当从SD卡读取数据时设置为1
 D03-D02: Auto CMD Enable, Rsvd
+	D02:Auto CMD12
+	D03:Auto CMD23
 D01:Block Count Enable, 是否允许使用Block Count寄存器
 D00: DMA Enable
 
@@ -118,27 +120,66 @@ D00 : Command Complete,RW1C == 当接受完response之后，该位设置。
 
 ## Error Interrupt Status Register -- 0x32 -- 16bits
 
+D01: CRCError      超时
+D00: TimeOutError  响应超时
 清除值： 0xF7FF
 
 # 命令
-注：A表示参数
+注：A表示参数, AStuff表示不需要参数，仅仅是填充用的
+
+注: bc==广播命令，没有回复   bcr=广播命令有回复  ac==p2p的命令，没有数据传送   adtc=p2p数据传送命令，数据放在DAT线上 
 ACMD41  发送主机具有的能力，slave相应OCR(operating condition register)
+CMD0   bc   AStuff  进入IDLE状态
 
-CMD3   R6
+CMD1   保留
 
-CMD12  R1b   停止数据传送
+CMD2   bcr  R2  AStuff  要求所有的卡发送CID
 
-CMD13  R1   发送cardStatus或者taskStatus,   A[31:16]=RCA,A[15]=0==CardStatus,1==taskStatus, A[14:0]=0 
+CMD3   bcr   R6  AStuff  要求卡发送RCA
 
-CMD16  R1   设置block的大小，默认为512.  A[31:0]=block length
+CMD4   bc    -  A[31:16]=DSR,A[15:0]=stuff  设置所有卡的DSR
 
-CMD17  R1     读取单个块
+CMD5   为SDIO保留
+
+CMD7   ac   R1b(仅仅从选择的卡发送过来)  A[31:16]=RCA  选择一个卡
+
+CDM8   bcr  R7  发送condition
+
+CMD9   ac   R2  A[31:16]=RCA,发送CSD
+
+CMD10  ac   R2  发送CID
+
+CMD11  ac   R1  A=res0,改变到1.8v
+
+CMD12  ac  AStuff R1b  强制停止数据传输
 
 
 
-CMD23  R1   设置CMD18,CMD25的block count的参数
+CMD13 ac R1   发送cardStatus或者taskStatus,   A[31:16]=RCA,A[15]=0==CardStatus,1==taskStatus, A[14:0]=0 
 
-CMD24  R1
+CMD14  保留
+
+CMD15  ac   进入inactive状态
+
+CMD16  ac  R1   设置block的大小，默认为512.  A[31:0]=block length
+
+CMD17  adtc R1     A=地址  读取单个块
+
+CMD18 adtc  R1    A=起始地址  传送多个块，直到发送了停止传输命令，块的长度由CMD16决定
+
+CMD19  adtc R1  A=res0,SEND_TUNNING_BLOCK
+
+CMD20  ac   SPEED_CLASS_CONTROL
+
+CMD22  保留
+
+CMD23  ac   R1  A=block count, 为CMD18,CMD25设置块数目
+
+
+
+CMD24 adtc R1  A=地址， 写一个块
+
+CMD25 adtc R1  A=地址，写多个块，直到CMD12发生
 # 响应
 响应分为SPI和SD两种模式，
 

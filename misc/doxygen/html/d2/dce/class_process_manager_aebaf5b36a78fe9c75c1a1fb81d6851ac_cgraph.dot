@@ -1,0 +1,33 @@
+digraph "ProcessManager::createNewProcess"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node20 [label="ProcessManager::createNew\lProcess",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="DoublyLinkedList::insertTail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a08820eece8a930239f434a7dea802599"];
+  Node20 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="DoublyLinkedNode::data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/da3/class_doubly_linked_node.html#a72a70560baba711c82bb012317557cb8"];
+  Node20 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfe/qemu__virt_2crt0_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947"];
+  Node23 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="PL011::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_p_l011.html#a16500bc129c69c050cb784b17d70103f"];
+  Node23 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="PL011::hasCorrectBase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_p_l011.html#a6ce7d9c25ca788e6999a099f93ce85f3"];
+  Node23 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfe/qemu__virt_2crt0_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node23 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="asm_wfe_loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d2f/asm__instructions_8h.html#a2625e63e4302b5a5b7b1b47175ec067d"];
+  Node27 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="asm_wfe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d2f/asm__instructions_8h.html#a410a755cf61e376491d77042b266409f"];
+  Node28 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="__asm__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1"];
+  Node28 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="__volatile__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8"];
+  Node20 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="ProcessManager::changeProcess\lStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dce/class_process_manager.html#a0bcc42f5333bb6a0613e38721227bbd2"];
+  Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="DoublyLinkedList::removeNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dfa/class_doubly_linked_list.html#a20950e5bd978791d68b723f3ea8be4bb"];
+  Node31 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

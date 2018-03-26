@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/dde/data__structures_2_doubly_linked_list_8h">
+    <title>DoublyLinkedList.h File Reference</title>
+    <programlisting>#include &lt;data_structures/DoublyLinkedNode.h&gt;</programlisting>
+    <programlisting>#include &lt;programming/ReturnTypeSelector.h&gt;</programlisting>
+    <programlisting>#include &lt;functional&gt;</programlisting>
+    <programlisting>#include &lt;programming/define_members.h&gt;</programlisting>
+    <programlisting>#include &lt;templates_implementation/data_structures/DoublyLinkedList.h&gt;</programlisting>
+<para>Include dependency diagram for DoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d37/data__structures_2_doubly_linked_list_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for DoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d5a/data__structures_2_doubly_linked_list_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/dfa/class_doubly_linked_list">DoublyLinkedList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/data_structures/DoublyLinkedList.h</para>
+    </simplesect>
+</section>

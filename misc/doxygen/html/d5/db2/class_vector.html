@@ -1,0 +1,1029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: Vector&lt; T &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d7/d3c/class_vector-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Vector&lt; T &gt; 模板类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> 类 Vector&lt; T &gt; 继承关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../da/d98/class_vector__inherit__graph.png" border="0" usemap="#_vector_3_01_t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="_vector_3_01_t_01_4_inherit__map" id="_vector_3_01_t_01_4_inherit__map">
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Vector&lt; T &gt; 的协作图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/d99/class_vector__coll__graph.png" border="0" usemap="#_vector_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_vector_3_01_t_01_4_coll__map" id="_vector_3_01_t_01_4_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7fd34362861863fde1851fb94f4ebf62"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d5/db2/class_vector.html#a7fd34362861863fde1851fb94f4ebf62a2ae103f0bfc2f01a7878b951da29b0e3">MINIMAL_CAPACITY</a> = 8
+ }</td></tr>
+<tr class="separator:a7fd34362861863fde1851fb94f4ebf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e241e014551221f8bf08189512b7d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a81e241e014551221f8bf08189512b7d3">SizeType</a> = size_t</td></tr>
+<tr class="separator:a81e241e014551221f8bf08189512b7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a242c91192546c60726f0781ac95400a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a242c91192546c60726f0781ac95400a0">ValueType</a> = T</td></tr>
+<tr class="separator:a242c91192546c60726f0781ac95400a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4b8bd4e1fc4179474730315d7925a7b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a4b8bd4e1fc4179474730315d7925a7b9">append</a> (const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;vec, size_t <a class="el" href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a>=SIZE_MAX)</td></tr>
+<tr class="separator:a4b8bd4e1fc4179474730315d7925a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ad98b135472b0ebc5d6cb3ae5d0085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a32ad98b135472b0ebc5d6cb3ae5d0085">clear</a> ()</td></tr>
+<tr class="separator:a32ad98b135472b0ebc5d6cb3ae5d0085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad688a8a0dfbd07ea63d838058a436f79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ad688a8a0dfbd07ea63d838058a436f79">empty</a> () const</td></tr>
+<tr class="separator:ad688a8a0dfbd07ea63d838058a436f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7d0c600ceefe269176cef77dc49382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a6a7d0c600ceefe269176cef77dc49382">erase</a> (size_t i)</td></tr>
+<tr class="separator:a6a7d0c600ceefe269176cef77dc49382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac249f0cd6a15ca3e4dd6cfa469d83245"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ac249f0cd6a15ca3e4dd6cfa469d83245">getCapacity</a> () const</td></tr>
+<tr class="separator:ac249f0cd6a15ca3e4dd6cfa469d83245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ab3c154a8408f62e3b1d24fc140a80"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ad4ab3c154a8408f62e3b1d24fc140a80">getData</a> ()</td></tr>
+<tr class="separator:ad4ab3c154a8408f62e3b1d24fc140a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41546ccc85331c7589377e40f36670d"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ac41546ccc85331c7589377e40f36670d">getData</a> () const</td></tr>
+<tr class="separator:ac41546ccc85331c7589377e40f36670d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb849f7ed7b5bc30b29679a0ace9f7c1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#afb849f7ed7b5bc30b29679a0ace9f7c1">getSize</a> () const</td></tr>
+<tr class="separator:afb849f7ed7b5bc30b29679a0ace9f7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0fe321f274575a7705bcabb40a2587"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#afc0fe321f274575a7705bcabb40a2587">insert</a> (size_t i, const T &amp;t)</td></tr>
+<tr class="separator:afc0fe321f274575a7705bcabb40a2587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782044e0552a4d3b2d3fc646dd5f3944"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a782044e0552a4d3b2d3fc646dd5f3944">operator=</a> (const std::initializer_list&lt; T &gt; &amp;il)=delete</td></tr>
+<tr class="separator:a782044e0552a4d3b2d3fc646dd5f3944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad176f0324e1e2d087861e487b3d1d93e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ad176f0324e1e2d087861e487b3d1d93e">operator=</a> (const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;vec)</td></tr>
+<tr class="separator:ad176f0324e1e2d087861e487b3d1d93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae99cd00ee8d2a85535c4209b894a00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a5ae99cd00ee8d2a85535c4209b894a00">operator=</a> (<a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&amp;vec)</td></tr>
+<tr class="separator:a5ae99cd00ee8d2a85535c4209b894a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8789bf3c232d443c5f46c709fd655e4c"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a8789bf3c232d443c5f46c709fd655e4c">operator[]</a> (size_t i) const</td></tr>
+<tr class="separator:a8789bf3c232d443c5f46c709fd655e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31102212204be8e4197a1deac5faa48c"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a31102212204be8e4197a1deac5faa48c">operator[]</a> (size_t i)</td></tr>
+<tr class="separator:a31102212204be8e4197a1deac5faa48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80569243e4f2ea1bfad4da183e321d6d"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a80569243e4f2ea1bfad4da183e321d6d">popBack</a> ()</td></tr>
+<tr class="separator:a80569243e4f2ea1bfad4da183e321d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2e76bed89ae88c391c5cd22c6c7b56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a9f2e76bed89ae88c391c5cd22c6c7b56">pushBack</a> (T t)</td></tr>
+<tr class="separator:a9f2e76bed89ae88c391c5cd22c6c7b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13badcacec751f1e00b0300aa8658c35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a13badcacec751f1e00b0300aa8658c35">resize</a> (size_t newSize)</td></tr>
+<tr class="separator:a13badcacec751f1e00b0300aa8658c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48942fb58b7ab66b3b0bcf60c940c7ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a48942fb58b7ab66b3b0bcf60c940c7ea">Vector</a> (size_t initSize=0)</td></tr>
+<tr class="separator:a48942fb58b7ab66b3b0bcf60c940c7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9af0dbc42012ed20329133ff502dfd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ae9af0dbc42012ed20329133ff502dfd8">Vector</a> (const std::initializer_list&lt; T &gt; &amp;il)</td></tr>
+<tr class="separator:ae9af0dbc42012ed20329133ff502dfd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306dd81a8f3b84c7295ca6d90ce71192"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a306dd81a8f3b84c7295ca6d90ce71192">Vector</a> (const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;vec)</td></tr>
+<tr class="separator:a306dd81a8f3b84c7295ca6d90ce71192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57042023b72335eb47a2081ba531ac47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a57042023b72335eb47a2081ba531ac47">Vector</a> (<a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&amp;vec)</td></tr>
+<tr class="separator:a57042023b72335eb47a2081ba531ac47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd524fac19e6d3d69db5198ffe2952b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#afd524fac19e6d3d69db5198ffe2952b0">~Vector</a> ()</td></tr>
+<tr class="separator:afd524fac19e6d3d69db5198ffe2952b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a6b554f869411a2502cac94de1d5cf763"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a6b554f869411a2502cac94de1d5cf763">adjustCapacityForOneLess</a> ()</td></tr>
+<tr class="separator:a6b554f869411a2502cac94de1d5cf763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715e96ede3749d656389ea183e3a732a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a715e96ede3749d656389ea183e3a732a">adjustCapacityForOneMore</a> ()</td></tr>
+<tr class="separator:a715e96ede3749d656389ea183e3a732a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2200dde3c6beb2f84f3dbd0e6bb104f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a2200dde3c6beb2f84f3dbd0e6bb104f3">resizeCapacity</a> (size_t <a class="el" href="../../d5/db2/class_vector.html#ab65c9775787e3529e5cbafb44782cf37">capacity</a>)</td></tr>
+<tr class="separator:a2200dde3c6beb2f84f3dbd0e6bb104f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a23b1206d5ed82e4712cde658e96e16cd"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a23b1206d5ed82e4712cde658e96e16cd">getIncrementalSize</a> (size_t <a class="el" href="../../d3/df4/printk__user__space_8cpp.html#a6d56c7bd57a28307ed22d7fc1b0b0ce5">curSize</a>)</td></tr>
+<tr class="separator:a23b1206d5ed82e4712cde658e96e16cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab65c9775787e3529e5cbafb44782cf37"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#ab65c9775787e3529e5cbafb44782cf37">capacity</a></td></tr>
+<tr class="separator:ab65c9775787e3529e5cbafb44782cf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a536da87a916c8bdf2565fa6d808337f2"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a536da87a916c8bdf2565fa6d808337f2">data</a></td></tr>
+<tr class="separator:a536da87a916c8bdf2565fa6d808337f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2dd54f141e234e098918299bbcc27c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db2/class_vector.html#a0a2dd54f141e234e098918299bbcc27c">size</a></td></tr>
+<tr class="separator:a0a2dd54f141e234e098918299bbcc27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class Vector&lt; T &gt;</h3>
+
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00019">19</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a81e241e014551221f8bf08189512b7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e241e014551221f8bf08189512b7d3">&#9670;&nbsp;</a></span>SizeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html#a81e241e014551221f8bf08189512b7d3">SizeType</a> =  size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a242c91192546c60726f0781ac95400a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a242c91192546c60726f0781ac95400a0">&#9670;&nbsp;</a></span>ValueType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html#a242c91192546c60726f0781ac95400a0">ValueType</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a7fd34362861863fde1851fb94f4ebf62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fd34362861863fde1851fb94f4ebf62">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a7fd34362861863fde1851fb94f4ebf62a2ae103f0bfc2f01a7878b951da29b0e3"></a>MINIMAL_CAPACITY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a48942fb58b7ab66b3b0bcf60c940c7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48942fb58b7ab66b3b0bcf60c940c7ea">&#9670;&nbsp;</a></span>Vector() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html">Vector</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>initSize</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00015">15</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae9af0dbc42012ed20329133ff502dfd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9af0dbc42012ed20329133ff502dfd8">&#9670;&nbsp;</a></span>Vector() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html">Vector</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::initializer_list&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>il</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a306dd81a8f3b84c7295ca6d90ce71192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306dd81a8f3b84c7295ca6d90ce71192">&#9670;&nbsp;</a></span>Vector() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html">Vector</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a57042023b72335eb47a2081ba531ac47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57042023b72335eb47a2081ba531ac47">&#9670;&nbsp;</a></span>Vector() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::<a class="el" href="../../d5/db2/class_vector.html">Vector</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afd524fac19e6d3d69db5198ffe2952b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd524fac19e6d3d69db5198ffe2952b0">&#9670;&nbsp;</a></span>~Vector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::~<a class="el" href="../../d5/db2/class_vector.html">Vector</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00081">81</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6b554f869411a2502cac94de1d5cf763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b554f869411a2502cac94de1d5cf763">&#9670;&nbsp;</a></span>adjustCapacityForOneLess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::adjustCapacityForOneLess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00225">225</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a715e96ede3749d656389ea183e3a732a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715e96ede3749d656389ea183e3a732a">&#9670;&nbsp;</a></span>adjustCapacityForOneMore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::adjustCapacityForOneMore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00217">217</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b8bd4e1fc4179474730315d7925a7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8bd4e1fc4179474730315d7925a7b9">&#9670;&nbsp;</a></span>append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em> = <code>SIZE_MAX</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00168">168</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a4b8bd4e1fc4179474730315d7925a7b9_icgraph.png" border="0" usemap="#d5/db2/class_vector_a4b8bd4e1fc4179474730315d7925a7b9_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a4b8bd4e1fc4179474730315d7925a7b9_icgraph" id="d5/db2/class_vector_a4b8bd4e1fc4179474730315d7925a7b9_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32ad98b135472b0ebc5d6cb3ae5d0085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ad98b135472b0ebc5d6cb3ae5d0085">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00151">151</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad688a8a0dfbd07ea63d838058a436f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad688a8a0dfbd07ea63d838058a436f79">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00145">145</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a7d0c600ceefe269176cef77dc49382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a7d0c600ceefe269176cef77dc49382">&#9670;&nbsp;</a></span>erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00157">157</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a6a7d0c600ceefe269176cef77dc49382_icgraph.png" border="0" usemap="#d5/db2/class_vector_a6a7d0c600ceefe269176cef77dc49382_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a6a7d0c600ceefe269176cef77dc49382_icgraph" id="d5/db2/class_vector_a6a7d0c600ceefe269176cef77dc49382_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac249f0cd6a15ca3e4dd6cfa469d83245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac249f0cd6a15ca3e4dd6cfa469d83245">&#9670;&nbsp;</a></span>getCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::getCapacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00139">139</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_ac249f0cd6a15ca3e4dd6cfa469d83245_icgraph.png" border="0" usemap="#d5/db2/class_vector_ac249f0cd6a15ca3e4dd6cfa469d83245_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_ac249f0cd6a15ca3e4dd6cfa469d83245_icgraph" id="d5/db2/class_vector_ac249f0cd6a15ca3e4dd6cfa469d83245_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad4ab3c154a8408f62e3b1d24fc140a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ab3c154a8408f62e3b1d24fc140a80">&#9670;&nbsp;</a></span>getData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::getData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00121">121</a> 行定义.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_ad4ab3c154a8408f62e3b1d24fc140a80_icgraph.png" border="0" usemap="#d5/db2/class_vector_ad4ab3c154a8408f62e3b1d24fc140a80_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_ad4ab3c154a8408f62e3b1d24fc140a80_icgraph" id="d5/db2/class_vector_ad4ab3c154a8408f62e3b1d24fc140a80_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac41546ccc85331c7589377e40f36670d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac41546ccc85331c7589377e40f36670d">&#9670;&nbsp;</a></span>getData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T * <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::getData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00127">127</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a23b1206d5ed82e4712cde658e96e16cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b1206d5ed82e4712cde658e96e16cd">&#9670;&nbsp;</a></span>getIncrementalSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::getIncrementalSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>curSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00239">239</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afb849f7ed7b5bc30b29679a0ace9f7c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb849f7ed7b5bc30b29679a0ace9f7c1">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00133">133</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_afb849f7ed7b5bc30b29679a0ace9f7c1_icgraph.png" border="0" usemap="#d5/db2/class_vector_afb849f7ed7b5bc30b29679a0ace9f7c1_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_afb849f7ed7b5bc30b29679a0ace9f7c1_icgraph" id="d5/db2/class_vector_afb849f7ed7b5bc30b29679a0ace9f7c1_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc0fe321f274575a7705bcabb40a2587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0fe321f274575a7705bcabb40a2587">&#9670;&nbsp;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>valid index [0,size] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00176">176</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a782044e0552a4d3b2d3fc646dd5f3944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782044e0552a4d3b2d3fc646dd5f3944">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt;T&gt;&amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::initializer_list&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>il</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a782044e0552a4d3b2d3fc646dd5f3944_icgraph.png" border="0" usemap="#d5/db2/class_vector_a782044e0552a4d3b2d3fc646dd5f3944_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a782044e0552a4d3b2d3fc646dd5f3944_icgraph" id="d5/db2/class_vector_a782044e0552a4d3b2d3fc646dd5f3944_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad176f0324e1e2d087861e487b3d1d93e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad176f0324e1e2d087861e487b3d1d93e">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5ae99cd00ee8d2a85535c4209b894a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae99cd00ee8d2a85535c4209b894a00">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8789bf3c232d443c5f46c709fd655e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8789bf3c232d443c5f46c709fd655e4c">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a31102212204be8e4197a1deac5faa48c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31102212204be8e4197a1deac5faa48c">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00098">98</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a80569243e4f2ea1bfad4da183e321d6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80569243e4f2ea1bfad4da183e321d6d">&#9670;&nbsp;</a></span>popBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::popBack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>it is your responsiblity to ensure size&gt;0 </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00103">103</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a80569243e4f2ea1bfad4da183e321d6d_icgraph.png" border="0" usemap="#d5/db2/class_vector_a80569243e4f2ea1bfad4da183e321d6d_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a80569243e4f2ea1bfad4da183e321d6d_icgraph" id="d5/db2/class_vector_a80569243e4f2ea1bfad4da183e321d6d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f2e76bed89ae88c391c5cd22c6c7b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2e76bed89ae88c391c5cd22c6c7b56">&#9670;&nbsp;</a></span>pushBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::pushBack </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00111">111</a> 行定义.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a9f2e76bed89ae88c391c5cd22c6c7b56_icgraph.png" border="0" usemap="#d5/db2/class_vector_a9f2e76bed89ae88c391c5cd22c6c7b56_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a9f2e76bed89ae88c391c5cd22c6c7b56_icgraph" id="d5/db2/class_vector_a9f2e76bed89ae88c391c5cd22c6c7b56_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13badcacec751f1e00b0300aa8658c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13badcacec751f1e00b0300aa8658c35">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00188">188</a> 行定义.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a13badcacec751f1e00b0300aa8658c35_icgraph.png" border="0" usemap="#d5/db2/class_vector_a13badcacec751f1e00b0300aa8658c35_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a13badcacec751f1e00b0300aa8658c35_icgraph" id="d5/db2/class_vector_a13badcacec751f1e00b0300aa8658c35_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2200dde3c6beb2f84f3dbd0e6bb104f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2200dde3c6beb2f84f3dbd0e6bb104f3">&#9670;&nbsp;</a></span>resizeCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::resizeCapacity </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d6/d5d/templates__implementation_2data__structures_2_vector_8h_source.html#l00197">197</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d5/db2/class_vector_a2200dde3c6beb2f84f3dbd0e6bb104f3_icgraph.png" border="0" usemap="#d5/db2/class_vector_a2200dde3c6beb2f84f3dbd0e6bb104f3_icgraph" alt=""/></div>
+<map name="d5/db2/class_vector_a2200dde3c6beb2f84f3dbd0e6bb104f3_icgraph" id="d5/db2/class_vector_a2200dde3c6beb2f84f3dbd0e6bb104f3_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab65c9775787e3529e5cbafb44782cf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab65c9775787e3529e5cbafb44782cf37">&#9670;&nbsp;</a></span>capacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::capacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a536da87a916c8bdf2565fa6d808337f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a536da87a916c8bdf2565fa6d808337f2">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0a2dd54f141e234e098918299bbcc27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2dd54f141e234e098918299bbcc27c">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d5/db2/class_vector.html">Vector</a>&lt; T &gt;::size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a> 第 <a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/data_structures/<a class="el" href="../../d0/d70/data__structures_2_vector_8h_source.html">Vector.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:46 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

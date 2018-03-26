@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/host/global_variables_impl.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_f17e16d7aa5cbb089011ed52879df375.html">host</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">global_variables_impl.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/dcc/global__variables__impl_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * global_variables.cpp</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Jan 31, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;MemoryManager.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;global_variables.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d8/d18/mem__config_8h.html">mem_config.h</a>&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../da/d70/_sector_reader_helper_8h.html">arch/host/SectorReaderHelper.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../../include/io/printk.h&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d9/dcc/global__variables__impl_8cpp.html#a645f0e6682b0f122c08f036a1edfc1f7">   14</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="../../d9/dcc/global__variables__impl_8cpp.html#a645f0e6682b0f122c08f036a1edfc1f7">koutBuf</a>[<a class="code" href="../../d6/d77/_output_8h.html#a19e6898ad5f3c1904028d00353c3eb14">koutBufSize</a>];</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d9/dcc/global__variables__impl_8cpp.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">   15</a></span>&#160;<a class="code" href="../../db/db4/class_output.html">Output</a> <a class="code" href="../../d9/dcc/global__variables__impl_8cpp.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d9/d90/global__variables_8cpp.html#a14aecff00558c13ab200585b8b188c92">   16</a></span>&#160;<a class="code" href="../../d7/dff/class_memory_manager.html">MemoryManager</a> <a class="code" href="../../d9/dcc/global__variables__impl_8cpp.html#a13d610b0db2083f2a6b615e393b9444d">mman</a>{RAM_START,RAM_SIZE};</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d9/d90/global__variables_8cpp.html#aab65cd5c1499c8f4d5f16d3cae39e68e">   17</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="../../d9/dcc/global__variables__impl_8cpp.html#aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</a>[1]={0};</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d9/dcc/global__variables__impl_8cpp.html#a427270656c8e525cdc9f125c37e60f6c">   18</a></span>&#160;<a class="code" href="../../d4/d91/class_sector_reader_helper.html">SectorReaderHelper</a> <a class="code" href="../../d9/dcc/global__variables__impl_8cpp.html#a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="ttc" id="class_sector_reader_helper_html"><div class="ttname"><a href="../../d4/d91/class_sector_reader_helper.html">SectorReaderHelper</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d70/_sector_reader_helper_8h_source.html#l00013">SectorReaderHelper.h:13</a></div></div>
+<div class="ttc" id="mem__config_8h_html"><div class="ttname"><a href="../../d8/d18/mem__config_8h.html">mem_config.h</a></div></div>
+<div class="ttc" id="_output_8h_html_a19e6898ad5f3c1904028d00353c3eb14"><div class="ttname"><a href="../../d6/d77/_output_8h.html#a19e6898ad5f3c1904028d00353c3eb14">koutBufSize</a></div><div class="ttdeci">constexpr size_t koutBufSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d77/_output_8h_source.html#l00037">Output.h:37</a></div></div>
+<div class="ttc" id="class_output_html"><div class="ttname"><a href="../../db/db4/class_output.html">Output</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d77/_output_8h_source.html#l00013">Output.h:13</a></div></div>
+<div class="ttc" id="global__variables__impl_8cpp_html_a13d610b0db2083f2a6b615e393b9444d"><div class="ttname"><a href="../../d9/dcc/global__variables__impl_8cpp.html#a13d610b0db2083f2a6b615e393b9444d">mman</a></div><div class="ttdeci">MemoryManager mman</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00016">global_variables_impl.cpp:16</a></div></div>
+<div class="ttc" id="global__variables__impl_8cpp_html_a645f0e6682b0f122c08f036a1edfc1f7"><div class="ttname"><a href="../../d9/dcc/global__variables__impl_8cpp.html#a645f0e6682b0f122c08f036a1edfc1f7">koutBuf</a></div><div class="ttdeci">char koutBuf[koutBufSize]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00014">global_variables_impl.cpp:14</a></div></div>
+<div class="ttc" id="class_memory_manager_html"><div class="ttname"><a href="../../d7/dff/class_memory_manager.html">MemoryManager</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00025">MemoryManager.h:25</a></div></div>
+<div class="ttc" id="_sector_reader_helper_8h_html"><div class="ttname"><a href="../../da/d70/_sector_reader_helper_8h.html">SectorReaderHelper.h</a></div></div>
+<div class="ttc" id="global__variables__impl_8cpp_html_ae879b048a9eddaf9ee4e0dbe932ea6c9"><div class="ttname"><a href="../../d9/dcc/global__variables__impl_8cpp.html#ae879b048a9eddaf9ee4e0dbe932ea6c9">kout</a></div><div class="ttdeci">Output kout</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00015">global_variables_impl.cpp:15</a></div></div>
+<div class="ttc" id="global__variables__impl_8cpp_html_a427270656c8e525cdc9f125c37e60f6c"><div class="ttname"><a href="../../d9/dcc/global__variables__impl_8cpp.html#a427270656c8e525cdc9f125c37e60f6c">sys_sectorReaderHelper</a></div><div class="ttdeci">SectorReaderHelper sys_sectorReaderHelper</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00018">global_variables_impl.cpp:18</a></div></div>
+<div class="ttc" id="global__variables__impl_8cpp_html_aab65cd5c1499c8f4d5f16d3cae39e68e"><div class="ttname"><a href="../../d9/dcc/global__variables__impl_8cpp.html#aab65cd5c1499c8f4d5f16d3cae39e68e">EMPTY_STR</a></div><div class="ttdeci">const char EMPTY_STR[1]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcc/global__variables__impl_8cpp_source.html#l00017">global_variables_impl.cpp:17</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:31 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

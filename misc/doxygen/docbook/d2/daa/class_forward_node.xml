@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/daa/class_forward_node">
+<title>ForwardNode class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d7/d32/data__structures_2_forward_node_8h">&quot;ForwardNode.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ForwardNode</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dd/d11/class_forward_node__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ForwardNode</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/d86/class_forward_node__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T _data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ForwardNode * _next</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a30200c55b488e3969f06f3f82d9d6634">ahead</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a995974f75ae79d730f1766eac90e95c7">ahead</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/daa/class_forward_node_1a56065f67cfb177d9fe70ab137f7332ab">data</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link>&lt; T, IsRef, false &gt;::<link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link> <link linkend="d2/daa/class_forward_node_1aef87f49dc5bb016dde3a3ce000a2c0af">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/df6/struct_return_type_selector">ReturnTypeSelector</link>&lt; T, IsRef, true &gt;::<link linkend="da/d0d/_f_a_t_long_name_entry_8h_1a1d127017fb298b889f4ba24752d08b8e">type</link> <link linkend="d2/daa/class_forward_node_1abe538294b919e8727fcc17ea5c76e0b8">data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a5a1a3b9e7602fe17bdfc2679602274e4">DEFINE_COPY_CONSTRUCTOR</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a7e52e2b3a95ab623670c95d648f9f921">DEFINE_COPY_OPERATOR</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a690586607b05bb6390d72e19c29f6e26">DEFINE_MOVE_CONSTRUCTOR</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a5079239171117274768795fc039dcc57">DEFINE_MOVE_OPERATOR</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a6f54e286f80275a1701fa5f5df6ca109">ForwardNode</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> * next, Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1aebddfb0fa4faf62e259da0eaccac801b">ForwardNode</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> &amp;&amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/daa/class_forward_node_1ad9ca1cb945541797522c7fd51bdbdbca">insertAfter</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a2dbe8eea6cc7b08e67342fc9aff6cdd1">last</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a065781b4408bb1783bc22820fabca046">last</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/daa/class_forward_node_1a1bbad630e42ab981367b16aab2278324">next</link> (
+<link linkend="d2/daa/class_forward_node">ForwardNode</link> * node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a45fa150f435a9842a2ee5e6915faa6ab">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a0d37f82f99a384e227580dc7fdb2a667">next</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/daa/class_forward_node">ForwardNode</link> * <link linkend="d2/daa/class_forward_node_1a1069bd95b0dae3c8a3737fd8df98ae37">removeAfter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/daa/class_forward_node_1a817e29951a162b4cf8b4c988218637d9">~ForwardNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d2/daa/class_forward_node_1a30200c55b488e3969f06f3f82d9d6634">
+                <title>ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::ahead (size_t n)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a995974f75ae79d730f1766eac90e95c7">
+                <title>const ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::ahead (size_t n) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a56065f67cfb177d9fe70ab137f7332ab">
+                <title>void ForwardNode&lt; T &gt;::data (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1aef87f49dc5bb016dde3a3ce000a2c0af">
+                <title>ReturnTypeSelector&lt; T, IsRef, false &gt;::type ForwardNode&lt; T &gt;::data ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1abe538294b919e8727fcc17ea5c76e0b8">
+                <title>ReturnTypeSelector&lt; T, IsRef, true &gt;::type ForwardNode&lt; T &gt;::data () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a5a1a3b9e7602fe17bdfc2679602274e4">
+                <title>ForwardNode&lt; T &gt;::DEFINE_COPY_CONSTRUCTOR (ForwardNode)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a7e52e2b3a95ab623670c95d648f9f921">
+                <title>ForwardNode&lt; T &gt;::DEFINE_COPY_OPERATOR (ForwardNode)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a690586607b05bb6390d72e19c29f6e26">
+                <title>ForwardNode&lt; T &gt;::DEFINE_MOVE_CONSTRUCTOR (ForwardNode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a5079239171117274768795fc039dcc57">
+                <title>ForwardNode&lt; T &gt;::DEFINE_MOVE_OPERATOR (ForwardNode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a6f54e286f80275a1701fa5f5df6ca109">
+                <title>ForwardNode&lt; T &gt;::ForwardNode (ForwardNode *next, Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1aebddfb0fa4faf62e259da0eaccac801b">
+                <title>ForwardNode&lt; T &gt;::ForwardNode (ForwardNode &amp;&amp;rhs)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1ad9ca1cb945541797522c7fd51bdbdbca">
+                <title>void ForwardNode&lt; T &gt;::insertAfter (ForwardNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a2dbe8eea6cc7b08e67342fc9aff6cdd1">
+                <title>ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::last ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a065781b4408bb1783bc22820fabca046">
+                <title>const ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::last () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a1bbad630e42ab981367b16aab2278324">
+                <title>void ForwardNode&lt; T &gt;::next (ForwardNode *node)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a45fa150f435a9842a2ee5e6915faa6ab">
+                <title>ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::next ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a0d37f82f99a384e227580dc7fdb2a667">
+                <title>const ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::next () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a1069bd95b0dae3c8a3737fd8df98ae37">
+                <title>ForwardNode&lt; T &gt; * ForwardNode&lt; T &gt;::removeAfter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/daa/class_forward_node_1a817e29951a162b4cf8b4c988218637d9">
+                <title>ForwardNode&lt; T &gt;::~ForwardNode ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

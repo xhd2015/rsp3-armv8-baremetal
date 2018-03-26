@@ -1,0 +1,1229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/dc3/gicv3__registers_8h">
+    <title>gicv3_registers.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/registers_defines.h&gt;</programlisting>
+<para>Include dependency diagram for gicv3_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d0d/gicv3__registers_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for gicv3_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/df0/gicv3__registers_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a6df5355282488dcb73bd90c51359e6a7">ARE_NS</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a68e79d0e50e0c62a0f81c0ce6b8269bc">ARE_S</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1aa6578b6e3d187f2450b01b6ad03b5fcd">DS</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1af65ec5d8e028645c390414b95a39682a">E1NWF</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a4d80b18521c6d1a2fc00e91ae461bffd">EnableGrp0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1ab8db0fe9a112c6456d4ed7b1af8d9402">EnableGrp1NS</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a21d4d4cf84eea871a842dfeda5804a74">EnableGrp1S</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1af3515f2a824fcae1291f97efd360fd84">RES0_0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a97cf179815d84d03519a0f31da7df13d">RES0_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d7/dc3/gicv3__registers_8h_1a9fb51e9537980f4d87884487923651d6">RWP</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link> <link linkend="d7/dc3/gicv3__registers_8h_1a70e14ab0f08f9387844d26c50c78ea63">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/dc3/gicv3__registers_8h_1a5ef79f79723cddd5234dc46d851bc381">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link> <link linkend="d7/dc3/gicv3__registers_8h_1a6563fd09480f82c49e55a9dda32f7228">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a52f5531bfe7a54fae68ead2a34711664">SETUP_REG_GCC_REPR_READ</link> (
+ICC_BPR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a6e4751cbcce8692676f5fa997f02bce5">SETUP_REG_GCC_REPR_READ</link> (
+ICC_BPR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a4e6abba34b41d5497d776f10d44cf18e">SETUP_REG_GCC_REPR_READ</link> (
+ICC_CTLR_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab989a80e43587a278c0ca38145a8e233">SETUP_REG_GCC_REPR_READ</link> (
+ICC_CTLR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a552e2f35a29eb0753a428903cfd76815">SETUP_REG_GCC_REPR_READ</link> (
+ICC_DIR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a65e4d26d5836a110f182dc88bd94481b">SETUP_REG_GCC_REPR_READ</link> (
+ICC_EOIR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a82bbab25b733884437c76bccff24f774">SETUP_REG_GCC_REPR_READ</link> (
+ICC_EOIR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a47983a6fc36a531bfda3896df0d9ce12">SETUP_REG_GCC_REPR_READ</link> (
+ICC_HPPIR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a9b5473109675a296e9263a6fba49b456">SETUP_REG_GCC_REPR_READ</link> (
+ICC_HPPIR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a9112b04b5f31b8cd51f1320b01b032b4">SETUP_REG_GCC_REPR_READ</link> (
+ICC_IAR0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab879592b45c67239b410ff571921d1ec">SETUP_REG_GCC_REPR_READ</link> (
+ICC_IAR1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a00483bdfa647deaebd3087af192f941f">SETUP_REG_GCC_REPR_READ</link> (
+ICC_IGRPEN0_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab3c100e3de5bd329b44dea5a34f173cc">SETUP_REG_GCC_REPR_READ</link> (
+ICC_IGRPEN1_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a73437795b130abb9ce23d7b5422379f8">SETUP_REG_GCC_REPR_READ</link> (
+ICC_IGRPEN1_EL3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a29b520aadbf522739b8421ec8605133d">SETUP_REG_GCC_REPR_READ</link> (
+ICC_PMR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac697ea7e3dd2f5062641466cdd138d4c">SETUP_REG_GCC_REPR_READ</link> (
+ICC_RPR_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a835feb8d6d973f251bb9366faaac9f6d">SETUP_REG_GCC_REPR_READ</link> (
+ICC_SRE_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a4fcf6ede5170a606d3bef7faa9683c86">SETUP_REG_GCC_REPR_UPDATE_READ</link> (
+ICC_SGI0R_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa3a9d7cecff3ea30edf1e03c176bd636">SETUP_REG_GCC_REPR_UPDATE_READ</link> (
+ICC_SGI1R_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a1ed1bb33e4e5399df363bdef7aa9104d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_CTLR )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1add2f39898c71c14f97a4c2ae775c4adb">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_CTLR )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a8ce4e8c06fd2e05ca9312df745f76195">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_WAKER )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a3dc5b47169ed7a6814585717cbf1bf8a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IGROUPR0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a59f393477fe6c0a432465fc813eb72cf">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ISENABLER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a45ac60a79594407cf9dbee32207afd95">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_IIDR )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a382fa4efee4d2cd401a42a4cbc90448b">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ICENABLER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a17536da29e3d2743ee774f8e48572072">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ISPENDR0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a694f47b76684cc50fba3d359e905de44">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ISACTIVER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab397898aa7172148a1e7728a70630a43">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ICFGR0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac6f2f3a979ad6dcfa9f3dcaac95a21c1">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ICFGR1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a7c3aec2d7bf01da8a2b99a6263fc21be">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_ICACTIVER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a8006263814f5aee13f39359d04982b16">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a252dff6565dac7dee46e14b4345ea1df">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab419f8c2a4495b965540f1b8360e22e9">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a03744f8744049b72400428559a6736c0">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af8d172a897ddfb9656b39ce1acefd346">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR4 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aebee765ce58102e99ec0efa2fc7086a1">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR5 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aff113ea87ad67fe0fe0567d7d1ed7588">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR6 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a47a9ad6d5537573fb5606108270438f8">SETUP_REG_MEM_MAPPED_READ</link> (
+GICR_IPRIORITYR7 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af306dad37085c741ce34934f737b3032">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af4ae69b768b582094dff8761bcff2c15">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a416be2ba666055b8a940cb2bb7f13990">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a4b55771083e3e95ac328ee2db4a53f08">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1abd8ad2b798ce6366b76a905f5968799a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER4 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab32571efc583100ef984b6e3c1e41667">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER5 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aae12ecfa0a2617698fd4b819fd960b4b">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER6 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1afcbccaa412f63530580d5af14085a5e7">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER7 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a13703cf21e410c117b96b0ac8517fe98">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER8 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a59fce1a897700344af2a27fc1d89f300">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER9 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a4d425fe108264d8f3de50342d90e71af">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER10 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa61ffda3f317108e304fbd2d99393657">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER11 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1afa3955861e8974191e0acbe3cd5d3a19">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER12 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a23cae8f1edbe6f2b3edccc1e5cdaffdd">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER13 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a19366612d34e729f7814a9992796d33a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER14 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a3d1d40c40a2fbc2b3083ee4fbfff85ab">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER15 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a2ce2b33532e5388aa1081c611fe2797d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER16 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aaa36d38490524783ab4766e4aa71d4c2">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER17 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a426f351af067ac7a6c784790b74162ae">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER18 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab05375e5d09d0a3555d89cfdc49f2d8b">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER19 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aad50f1bf1e97f0746e271a68a5d7e829">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER20 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a5162e597beaf891246809bace793a3cf">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER21 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af22c2930b9fc4bfc63bec64a050cfe63">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER22 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a429d3c259ae53f6204ff452f52613e77">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER23 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1afc95813566568f427204e2da3ad42c4a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER24 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa590acc8dfccbd5cafb721cd07920ae7">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER25 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab4c0d7ce1a7cf913a0e4534a5f60217d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER26 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a87d3d8dec1afc68e0c3781351acadd7d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER27 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a643961de6dba4f826453becb1dcd6508">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER28 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a74404b482bcd7b764c1cfa67ab6ced30">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER29 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a1941542ede28b90bf954127dad214f86">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER30 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa813984a12fc029d76b571227f31a1b9">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISENABLER31 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa6e7d183c82dfe0eeae83f2afe36dcfd">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a671de81caad2e66559af094826864359">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a32a0c63c99b61401dcc5777dba7aca3c">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a1c16225c0157063d578ecbe87c3f1c2b">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a54a8c232ca5dc70a7bc46c8738800a25">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR4 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a905eac2b7936abd7e1a6e7c73fd5eedb">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR5 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aaf1546dfc737a0b84f5e535c563b91d7">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR6 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a0186c9108072af2bccb111ea55bf13df">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR7 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab8bc02248f03951e624a44262d6ffa69">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR8 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab4b9d13e9fc559d9d753e530f7647fae">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR9 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac019b61f4be299096e9e88ca92117050">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR10 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ae389404b049efd843253955a0cdc189a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR11 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a41f759034a3dc4f1d05635ddeffa343e">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR12 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aee117615f214da1df3f1724f33dcac56">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR13 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a26234aa09fcd977adea9903dba6b7933">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR14 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a8f23d75cb709c89983d67837bb9f90aa">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR15 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a752c15f554208a8a8209974592f9d337">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR16 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a02194dd3393d2eee25f83373b8df129d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR17 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a28811793faa4051390fd1c007c58b226">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR18 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a78a84b27e7acac8474fcc22a545d9f91">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR19 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a419b488a8065a013e92d71dad5a4a9c9">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR20 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ae3da5e12a5c84ad95e96e27c45225f39">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR21 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ad470181578bd8d2eaecb08900d09f38c">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR22 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a20dcc410d5f5175be96d0f987d6d106e">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR23 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a06bc290d5d85729fb114ba2ec49c32e9">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR24 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ace723a9367fbcd542fc10ec820da7b7f">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR25 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a1ff1225d8e15f8c4afa17d80c21a8e01">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR26 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ad386fc043f2327e0f9763f8c54183f40">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR27 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a20ffc37ed9f4e830063df243c411eefc">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR28 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ad4723b5a7e642973bceab1157f5e5a01">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR29 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a44b3bb1478f4fad249f102af11524ebe">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR30 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a2581a75d69e3c360b446ee102dccb38a">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISPENDR31 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1aa72e94c6a71c8f423ca00c25ed4c8c98">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af95e923d764009b1db8522b906c5307f">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab5366491f09964d9e5f6d399b26dad73">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a8b72a15498059b3a5c066ed1c1ea5a68">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER3 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1adc2df4e9af55de7a187c3a1a38a41fef">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER4 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1acf5db176bc93e8f647654db82cd6ea7c">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER5 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac50d2326f1f200aa182d674770e23af1">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER6 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac4c33516eab0880d1cdd93c94cba8214">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER7 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a90748d7d16e8b00bc65244923092f8db">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER8 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a17dcb79af14a67e6c7c3f9e3290d0861">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER9 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a7e589c3515f4bb43c5c7253be22e99b4">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER10 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a093c173282058c2e02262a1967ceabd1">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER11 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a791974133140d4c125b52337bf890b8b">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER12 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1af131c2d0008fe60f03e683e59c7fed56">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER13 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ad8dc264f6e37946696929254668ef521">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER14 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ad32e705c05045ae127e7639ea84d2475">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER15 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ab6df57a51627c2a153041627a82f20b0">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER16 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a533e27f998ae8eadb3f4a5e90bee5767">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER17 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a588fc53d0e1dc3621e1c2d628e010475">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER18 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a6890160d1a3c29021b6f10b16ec0dc0d">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER19 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a4096d56b646090f5df1c42929d2298ae">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER20 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a655b17360d1afd4b2bce2d4562ca6cdb">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER21 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a6da4885fc5afa087d97603691c780f86">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER22 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a2c2661b284c64325aadad7411502b822">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER23 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a2b9ec1c8adb975a09d5b76f05a673b28">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER24 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1abaa1892e00628968a4c981d48b27ff6f">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER25 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a16228314c9e4176e612e80208a10a8c9">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER26 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1ac687586de7fcb7ac36a0305e4cfbc9fe">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER27 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a984e03cda940f1913eadada3121c5067">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER28 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a629cc1ed9ca98232909c6938e7c329df">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER29 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/dc3/gicv3__registers_8h_1a9ad6d68ebd3f1ccdc6ed9cce4aff3f42">SETUP_REG_MEM_MAPPED_READ</link> (
+GICD_ISACTIVER30 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="dc/d61/class_reg_g_i_c_d___c_t_l_r">RegGICD_CTLR</link> <link linkend="d7/dc3/gicv3__registers_8h_1a7336831c629d79fb3e77a158ae3de1f6">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d7/dc3/gicv3__registers_8h_1a1b0b8be141a47a8a7fcb470b2f68aabe">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/gicv3_registers.h</para>
+    </simplesect>
+</section>

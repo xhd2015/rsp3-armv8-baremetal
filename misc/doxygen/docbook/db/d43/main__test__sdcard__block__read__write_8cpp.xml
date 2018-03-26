@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d43/main__test__sdcard__block__read__write_8cpp">
+    <title>main_test_sdcard_block_read_write.cpp File Reference</title>
+    <programlisting>#include &lt;def.h&gt;</programlisting>
+    <programlisting>#include &lt;arch/qemu-virt/util.h&gt;</programlisting>
+    <programlisting>#include &lt;asm_instructions.h&gt;</programlisting>
+    <programlisting>#include &lt;cstring&gt;</programlisting>
+    <programlisting>#include &lt;io/uart/XilinxUARTPS.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+    <programlisting>#include &lt;generic/cpu.h&gt;</programlisting>
+    <programlisting>#include &lt;io/sd/CardSpecData.h&gt;</programlisting>
+    <programlisting>#include &lt;io/sd/SDCardStatus.h&gt;</programlisting>
+    <programlisting>#include &lt;io/sd/SDDriver.h&gt;</programlisting>
+    <programlisting>#include &lt;bitset&gt;</programlisting>
+<para>Include dependency diagram for main_test_sdcard_block_read_write.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/deb/main__test__sdcard__block__read__write_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for main_test_sdcard_block_read_write.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/dfb/main__test__sdcard__block__read__write_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="db/d43/main__test__sdcard__block__read__write_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/zcu102/main_test_sdcard_block_read_write.cpp</para>
+    </simplesect>
+</section>

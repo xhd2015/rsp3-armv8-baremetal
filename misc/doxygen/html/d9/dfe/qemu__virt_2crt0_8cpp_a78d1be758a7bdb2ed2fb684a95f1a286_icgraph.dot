@@ -1,0 +1,21 @@
+digraph "__asm__"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="__asm__",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CPUWaitForEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/df1/raspi3_2crt0_8cpp.html#a1730a8b5f60ff61ab5abcc55c73c6e86"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="__attribute__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/df1/raspi3_2crt0_8cpp.html#a91fe37a104d81ff8a5f2a23e64563878"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="haltSlaveCPUs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/df1/raspi3_2crt0_8cpp.html#a367dc7c1c333836d004567937d776e9d"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="setupStackTop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/df1/raspi3_2crt0_8cpp.html#a907184ae8759c78d0dffe832e19d517a"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="setupUnintializedToZero",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/df1/raspi3_2crt0_8cpp.html#ac7e9bbc8943114c20a589212d4411b54"];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

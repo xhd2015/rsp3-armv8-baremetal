@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/data_structures/StringRef.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_ebed218ca042e0cae3861bf18b14f766.html">data_structures</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">StringRef.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d55/_string_ref_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * StringRef.h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Jan 31, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INCLUDE_DATA_STRUCTURES_STRINGREF_H_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INCLUDE_DATA_STRUCTURES_STRINGREF_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;data_structures/VectorRef.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../db/db5/_string_8h.html">data_structures/String.h</a>&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../io/printk.h&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// ref of str</span></div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../db/d50/class_string_ref.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d50/class_string_ref.html">StringRef</a></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    :<span class="keyword">public</span> <a class="code" href="../../d9/deb/class_vector_ref.html">VectorRef</a>&lt;char&gt;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../db/d50/class_string_ref.html#a23a6e013b03c20d298383d6f424d0fb2">StringRef</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *nullTermStr);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../db/d50/class_string_ref.html#a23a6e013b03c20d298383d6f424d0fb2">StringRef</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *p,<span class="keywordtype">size_t</span> <a class="code" href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../db/d50/class_string_ref.html#a23a6e013b03c20d298383d6f424d0fb2">StringRef</a>(<span class="keyword">const</span> <a class="code" href="../../de/d61/class_string.html">String</a> &amp;s);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="../../db/db4/class_output.html">Output</a> &amp; <a class="code" href="../../da/d55/_string_ref_8h.html#a6e094ad7b8570af1342b895d03c91a8e">operator&lt;&lt;</a>(<a class="code" href="../../db/db4/class_output.html">Output</a> &amp; out,<span class="keyword">const</span> <a class="code" href="../../db/d50/class_string_ref.html">StringRef</a> ref);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_DATA_STRUCTURES_STRINGREF_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="class_string_ref_html_a23a6e013b03c20d298383d6f424d0fb2"><div class="ttname"><a href="../../db/d50/class_string_ref.html#a23a6e013b03c20d298383d6f424d0fb2">StringRef::StringRef</a></div><div class="ttdeci">StringRef(const void *nullTermStr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d40/_string_ref_8cpp_source.html#l00015">StringRef.cpp:15</a></div></div>
+<div class="ttc" id="class_vector_ref_html"><div class="ttname"><a href="../../d9/deb/class_vector_ref.html">VectorRef</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d95/data__structures_2_vector_ref_8h_source.html#l00016">VectorRef.h:16</a></div></div>
+<div class="ttc" id="class_output_html"><div class="ttname"><a href="../../db/db4/class_output.html">Output</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d77/_output_8h_source.html#l00013">Output.h:13</a></div></div>
+<div class="ttc" id="_string_ref_8h_html_a6e094ad7b8570af1342b895d03c91a8e"><div class="ttname"><a href="../../da/d55/_string_ref_8h.html#a6e094ad7b8570af1342b895d03c91a8e">operator&lt;&lt;</a></div><div class="ttdeci">Output &amp; operator&lt;&lt;(Output &amp;out, const StringRef ref)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d40/_string_ref_8cpp_source.html#l00023">StringRef.cpp:23</a></div></div>
+<div class="ttc" id="_virtio_queue_descriptor_8h_html_a96bbf959016e4411c9e6b9812a8be60a"><div class="ttname"><a href="../../d9/de0/_virtio_queue_descriptor_8h.html#a96bbf959016e4411c9e6b9812a8be60a">len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de0/_virtio_queue_descriptor_8h_source.html#l00039">VirtioQueueDescriptor.h:39</a></div></div>
+<div class="ttc" id="class_string_ref_html"><div class="ttname"><a href="../../db/d50/class_string_ref.html">StringRef</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/_string_ref_8h_source.html#l00016">StringRef.h:16</a></div></div>
+<div class="ttc" id="_string_8h_html"><div class="ttname"><a href="../../db/db5/_string_8h.html">String.h</a></div></div>
+<div class="ttc" id="class_string_html"><div class="ttname"><a href="../../de/d61/class_string.html">String</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/db5/_string_8h_source.html#l00015">String.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:30 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,19 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/data_structures" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b926265dddcbd40e5e3241dea5a14f9d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="templates_implementation" fontname="Helvetica", fontsize="10", URL="dir_b926265dddcbd40e5e3241dea5a14f9d.html"]
+  dir_fe75db00e895da21151eb00c0cb61c18 [shape=box, label="data_structures", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_fe75db00e895da21151eb00c0cb61c18.html"];
+  }
+  dir_1d52781e224d924275d803a20aa4cb0e [shape=box label="memory" URL="dir_1d52781e224d924275d803a20aa4cb0e.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766 [shape=box label="data_structures" URL="dir_ebed218ca042e0cae3861bf18b14f766.html"];
+  dir_a00b633439466cbb1729245c7f66f564 [shape=box label="io" fillcolor="white" style="filled" color="red" URL="dir_a00b633439466cbb1729245c7f66f564.html"];
+  dir_fe75db00e895da21151eb00c0cb61c18->dir_1d52781e224d924275d803a20aa4cb0e [headlabel="2", labeldistance=1.5 headhref="dir_000011_000022.html"];
+  dir_fe75db00e895da21151eb00c0cb61c18->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="6", labeldistance=1.5 headhref="dir_000011_000009.html"];
+  dir_fe75db00e895da21151eb00c0cb61c18->dir_a00b633439466cbb1729245c7f66f564 [headlabel="1", labeldistance=1.5 headhref="dir_000011_000016.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766->dir_fe75db00e895da21151eb00c0cb61c18 [headlabel="6", labeldistance=1.5 headhref="dir_000009_000011.html"];
+  dir_ebed218ca042e0cae3861bf18b14f766->dir_a00b633439466cbb1729245c7f66f564 [headlabel="5", labeldistance=1.5 headhref="dir_000009_000016.html"];
+  dir_a00b633439466cbb1729245c7f66f564->dir_1d52781e224d924275d803a20aa4cb0e [headlabel="1", labeldistance=1.5 headhref="dir_000016_000022.html"];
+  dir_a00b633439466cbb1729245c7f66f564->dir_ebed218ca042e0cae3861bf18b14f766 [headlabel="2", labeldistance=1.5 headhref="dir_000016_000009.html"];
+}

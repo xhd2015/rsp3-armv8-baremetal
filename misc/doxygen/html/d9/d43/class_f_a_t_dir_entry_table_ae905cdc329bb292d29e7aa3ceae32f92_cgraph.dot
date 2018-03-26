@@ -1,0 +1,48 @@
+digraph "FATDirEntryTable::FATDirEntryTable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="FATDirEntryTable::FATDir\lEntryTable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="FAT32EntryTable::foreach\lEntry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d88/class_f_a_t32_entry_table.html#a46ad5ddd25256898409ad68e421b63fb"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="FAT32Entry::isLast",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d32/class_f_a_t32_entry.html#a27d113b2c3036e807117fb5c922d0446"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FAT32EntryTable::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d88/class_f_a_t32_entry_table.html#ae7230908e16bf90bef3a19cd4dcb680a"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FAT32Entry::getAsInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d32/class_f_a_t32_entry.html#a10b4d28e15407076b69209493fe59ac5"];
+  Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Vector\< FATDirEntry\l \>::append",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html#a4b8bd4e1fc4179474730315d7925a7b9"];
+  Node0 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ByteReader::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a9e6ad4f5b375383bc4b8de2e41c39a19"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Vector::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/db2/class_vector.html#ad4ab3c154a8408f62e3b1d24fc140a80"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ByteReader::adjustOneSec\lForReadOrWrite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a585bc2928b9494defbcefb1bbdf40b08"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ByteReader::getSectorSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a1557e32d37869577a89bfbbe4fa6af9a"];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ByteReader::readSectorTo\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#a7fd066c1c7cea475b523c0c837c58aeb"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ByteReader::ensureSector\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#ad0457bcdcb3380b159d0a614b3d20f20"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="MemoryManager::allocateAs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="MemoryManager::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="SectorReader::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/class_sector_reader.html#a5d254e10f28d3815bdd6baabb29570a4"];
+  Node8 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="memcpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d56/memcpy_8cpp.html#ab68eb7b07f8ada1c6c8bde74731d3de7"];
+  Node8 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ByteReader::writeSectorFrom\lBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d5d/class_byte_reader.html#af3f8cf7d5bd0c2dd58efc91c5795b051"];
+  Node16 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="SectorReader::write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/class_sector_reader.html#adeb3aa83a42e94d5bdf2b24efa24806c"];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="FAT32ExtBPB::getClusterFirst\lSector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dd1/class_f_a_t32_ext_b_p_b.html#a259fa4e7dd83731e9d7c20ce0df5b41d"];
+  Node0 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

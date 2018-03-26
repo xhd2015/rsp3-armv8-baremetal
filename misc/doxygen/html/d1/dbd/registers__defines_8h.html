@@ -1,0 +1,1191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers_defines.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_7c40e03ac1dfef8b430578d46da2b8fd.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_b769ae817602266205ecc3e3554a24f8.html">common_aarch64</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle">
+<div class="title">registers_defines.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/da4/def_8h_source.html">def.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d0/daa/kernel_8h_source.html">kernel.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d7b/io_2_integer_formatter_8h_source.html">io/IntegerFormatter.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d80/gicv3__defines_8h_source.html">arch/common_aarch64/gicv3_defines.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> registers_defines.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/de6/registers__defines_8h__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8h" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8h" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8h">
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d0/d2f/registers__defines_8h__dep__incl.png" border="0" usemap="#_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8hdep" alt=""/></div>
+<map name="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8hdep" id="_d_1_2_pool_2eclipse-workspace__aarch64_2newspace_2raspi_o_s_2include_2arch_2common__aarch64_2registers__defines_8hdep">
+</map>
+</div>
+</div>
+<p><a href="../../d1/dbd/registers__defines_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a84d94b55d474e2d825a4b463d788a00f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</a>(regTypeInCXX,  regNameInAsm)&#160;&#160;&#160;regTypeInCXX <a class="el" href="../../d5/d72/vmsa__descriptors_8h.html#a594628bebe075c368261fc44da3a6994">regTypeInCXX::read</a>(){ regTypeInCXX res;<a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(res));return res;}</td></tr>
+<tr class="separator:a84d94b55d474e2d825a4b463d788a00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8704441de784f6cb0aeb5a48e27de19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</a>(regTypeInCXX,  regNameInAsm)&#160;&#160;&#160;regTypeInCXX <a class="el" href="../../d4/deb/timer__registers_8h.html#a52a09a727a67091a66ca99866fbd9835">regTypeInCXX::updateRead</a>(){ <a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(*this));return *this;}</td></tr>
+<tr class="separator:ad8704441de784f6cb0aeb5a48e27de19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad908403aabf665fd5569d706a7ebea75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</a>(regTypeInCXX,  regNameInAsm)&#160;&#160;&#160;void <a class="el" href="../../d5/d72/vmsa__descriptors_8h.html#aa22ebcd05fe946c1a134d72490c14c6f">regTypeInCXX::write</a>() const { <a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;msr &quot; __stringify(regNameInAsm) &quot;,%0 \n\t&quot;::&quot;r&quot;(*this));}</td></tr>
+<tr class="separator:ad908403aabf665fd5569d706a7ebea75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e05634e21d9b112caf141a354b3da3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ac0e05634e21d9b112caf141a354b3da3">ENCODE_ICC_IGRPEN0_EL1</a>&#160;&#160;&#160;1100011001100110</td></tr>
+<tr class="separator:ac0e05634e21d9b112caf141a354b3da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d14c9eaf5d5af099bfafe6f1320ff1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</a>&#160;&#160;&#160;11010101001</td></tr>
+<tr class="separator:a88d14c9eaf5d5af099bfafe6f1320ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab03f8c7c0526fe5745321b6e961d150"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#aab03f8c7c0526fe5745321b6e961d150">ENCODE_MSR</a>&#160;&#160;&#160;11010101000</td></tr>
+<tr class="separator:aab03f8c7c0526fe5745321b6e961d150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af222a0f6513605c08328f732a3b61a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a>&#160;&#160;&#160;00000</td></tr>
+<tr class="separator:af222a0f6513605c08328f732a3b61a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021e2797a4c205900a4b3808bfd03cbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a021e2797a4c205900a4b3808bfd03cbd">ICC_BPR0_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,3)</td></tr>
+<tr class="separator:a021e2797a4c205900a4b3808bfd03cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6457dd501cd1d6eb42dfe8580d815cf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a6457dd501cd1d6eb42dfe8580d815cf5">ICC_BPR1_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,3)</td></tr>
+<tr class="separator:a6457dd501cd1d6eb42dfe8580d815cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2cf658a052b9fdd09c1b41c3ffbb735"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ae2cf658a052b9fdd09c1b41c3ffbb735">ICC_CTLR_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,4)</td></tr>
+<tr class="separator:ae2cf658a052b9fdd09c1b41c3ffbb735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb888055183b9689aefb93a27fa4c299"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#acb888055183b9689aefb93a27fa4c299">ICC_CTLR_EL3_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,4)</td></tr>
+<tr class="separator:acb888055183b9689aefb93a27fa4c299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad730846387a41d43a0ab40f2b6b841cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ad730846387a41d43a0ab40f2b6b841cb">ICC_DIR_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,1)</td></tr>
+<tr class="separator:ad730846387a41d43a0ab40f2b6b841cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604999c87fcb990225a77641e65d15ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a604999c87fcb990225a77641e65d15ea">ICC_EOIR0_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,1)</td></tr>
+<tr class="separator:a604999c87fcb990225a77641e65d15ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e95fa130fdd9759eed5186235a4d89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ad7e95fa130fdd9759eed5186235a4d89">ICC_EOIR1_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,1)</td></tr>
+<tr class="separator:ad7e95fa130fdd9759eed5186235a4d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34630484290addaee7d2a982aa91fdb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a34630484290addaee7d2a982aa91fdb4">ICC_HPPIR0_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,2)</td></tr>
+<tr class="separator:a34630484290addaee7d2a982aa91fdb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4426fcfed6350a121297707ac06c3129"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a4426fcfed6350a121297707ac06c3129">ICC_HPPIR1_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,2)</td></tr>
+<tr class="separator:a4426fcfed6350a121297707ac06c3129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1566fb0c7f9554351fd1a2be13ed7631"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a1566fb0c7f9554351fd1a2be13ed7631">ICC_IAR0_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,0)</td></tr>
+<tr class="separator:a1566fb0c7f9554351fd1a2be13ed7631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2657fe15d8e500ee7ad373632d5666"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#aac2657fe15d8e500ee7ad373632d5666">ICC_IAR1_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,0)</td></tr>
+<tr class="separator:aac2657fe15d8e500ee7ad373632d5666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f62ea779a46917c478461e278c2e90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a01f62ea779a46917c478461e278c2e90">ICC_IGRPEN0_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,6)</td></tr>
+<tr class="separator:a01f62ea779a46917c478461e278c2e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d353823a6157d9f6c74e2f5152a09f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a97d353823a6157d9f6c74e2f5152a09f">ICC_IGRPEN1_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,7)</td></tr>
+<tr class="separator:a97d353823a6157d9f6c74e2f5152a09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af93caadd8f5961a3e7206656471fc4c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#af93caadd8f5961a3e7206656471fc4c3">ICC_IGRPEN1_EL3_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,7)</td></tr>
+<tr class="separator:af93caadd8f5961a3e7206656471fc4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd5d368a54fc9fbfb36047f2c9b5d67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a8fd5d368a54fc9fbfb36047f2c9b5d67">ICC_PMR_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,4,6,0)</td></tr>
+<tr class="separator:a8fd5d368a54fc9fbfb36047f2c9b5d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8388b4f4d2b39925f21f055f3b8773d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a8388b4f4d2b39925f21f055f3b8773d1">ICC_RPR_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,3)</td></tr>
+<tr class="separator:a8388b4f4d2b39925f21f055f3b8773d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7dc9c681f0c7a5bed7ddbe51ce7383"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a5e7dc9c681f0c7a5bed7ddbe51ce7383">ICC_SGI0R_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,7)</td></tr>
+<tr class="separator:a5e7dc9c681f0c7a5bed7ddbe51ce7383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464755ed77d7556cfd73046d9f6b5fc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a464755ed77d7556cfd73046d9f6b5fc6">ICC_SGI1R_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,5)</td></tr>
+<tr class="separator:a464755ed77d7556cfd73046d9f6b5fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13e4f181c3f8e5c2f99bb06028d5453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ad13e4f181c3f8e5c2f99bb06028d5453">ICC_SRE_EL1_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,5)</td></tr>
+<tr class="separator:ad13e4f181c3f8e5c2f99bb06028d5453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143e2e54b3185c4a827e995dfb9278e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a143e2e54b3185c4a827e995dfb9278e5">ICC_SRE_EL2_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,4,12,9,5)</td></tr>
+<tr class="separator:a143e2e54b3185c4a827e995dfb9278e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d73c494242f47cfe6ab7b992b20019c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a6d73c494242f47cfe6ab7b992b20019c">ICC_SRE_EL3_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,5)</td></tr>
+<tr class="separator:a6d73c494242f47cfe6ab7b992b20019c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4921aba558a2191aaf2b7c0e168c29ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a4921aba558a2191aaf2b7c0e168c29ce">PAN_GCC_REPR</a>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,4,2,3)</td></tr>
+<tr class="separator:a4921aba558a2191aaf2b7c0e168c29ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9756ec5d311fd0bf4db3f16270b3c0fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a9756ec5d311fd0bf4db3f16270b3c0fb">SETUP_REG_ANY_MEM_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a9756ec5d311fd0bf4db3f16270b3c0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84d27908bad7f8b6d41f0caae00fb89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ae84d27908bad7f8b6d41f0caae00fb89">SETUP_REG_ANY_MEM_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:ae84d27908bad7f8b6d41f0caae00fb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3271f36e3c4fce8fda6c770d7d9521d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a3271f36e3c4fce8fda6c770d7d9521d6">SETUP_REG_GCC_REPR_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td></tr>
+<tr class="separator:a3271f36e3c4fce8fda6c770d7d9521d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49d64681a2ac66fea4d5b976bd93978"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ae49d64681a2ac66fea4d5b976bd93978">SETUP_REG_GCC_REPR_UPDATE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td></tr>
+<tr class="separator:ae49d64681a2ac66fea4d5b976bd93978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0ad6d900be2c6d51a208cfd6b034c1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#af0ad6d900be2c6d51a208cfd6b034c1f">SETUP_REG_GCC_REPR_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td></tr>
+<tr class="separator:af0ad6d900be2c6d51a208cfd6b034c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c72a65be87bfa10dace6542933e79d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a32c72a65be87bfa10dace6542933e79d">SETUP_REG_HARD_CODED_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a32c72a65be87bfa10dace6542933e79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91de67014e50242e0910a63f15d840d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a91de67014e50242e0910a63f15d840d2">SETUP_REG_HARD_CODED_UPDATE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a91de67014e50242e0910a63f15d840d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bea788b3713acebfcb9f7e3ed13d63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a84bea788b3713acebfcb9f7e3ed13d63">SETUP_REG_HARD_CODED_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a84bea788b3713acebfcb9f7e3ed13d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4eec3fd91dfee6355f3fb6c76fa549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a9b4eec3fd91dfee6355f3fb6c76fa549">SETUP_REG_LOAD_STORE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a9b4eec3fd91dfee6355f3fb6c76fa549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9ec8c6b76636714d6fb2c508e0b274"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a6c9ec8c6b76636714d6fb2c508e0b274">SETUP_REG_LOAD_STORE_UPDATE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a6c9ec8c6b76636714d6fb2c508e0b274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c7bda265eb1548141ea946ad47ca26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ac8c7bda265eb1548141ea946ad47ca26">SETUP_REG_LOAD_STORE_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:ac8c7bda265eb1548141ea946ad47ca26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa278c06e34335429e9c5876633428bc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#aa278c06e34335429e9c5876633428bc2">SETUP_REG_MEM_MAPPED_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:aa278c06e34335429e9c5876633428bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b5cf4c4c1b56b34ec7b2d7f0f85e20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a49b5cf4c4c1b56b34ec7b2d7f0f85e20">SETUP_REG_MEM_MAPPED_UPDATE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a49b5cf4c4c1b56b34ec7b2d7f0f85e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6637cfa7de246724bb16e9a2caa005b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a6637cfa7de246724bb16e9a2caa005b3">SETUP_REG_MEM_MAPPED_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a6637cfa7de246724bb16e9a2caa005b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1da2460ffff94743c2a8763bba866f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ac1da2460ffff94743c2a8763bba866f4">SETUP_REG_PC_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:ac1da2460ffff94743c2a8763bba866f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58184983cb95e98b4434d95e9cd6363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#ab58184983cb95e98b4434d95e9cd6363">SETUP_REG_PC_UPDATE_READ</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:ab58184983cb95e98b4434d95e9cd6363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0df0bf93f99e5d3b02840bcebaf3152b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a0df0bf93f99e5d3b02840bcebaf3152b">SETUP_REG_PC_WRITE</a>(<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)</td></tr>
+<tr class="separator:a0df0bf93f99e5d3b02840bcebaf3152b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7054fcbbbe32a3fa60970e2ed7e402"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a4f7054fcbbbe32a3fa60970e2ed7e402">SETUP_REG_STD_READ</a>(regname)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</a>(Reg##regname,regname)</td></tr>
+<tr class="separator:a4f7054fcbbbe32a3fa60970e2ed7e402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbcf97d50e11d69430aab54e0b15017d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#adbcf97d50e11d69430aab54e0b15017d">SETUP_REG_STD_UPDATE_READ</a>(regname)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</a>(Reg##regname,regname)</td></tr>
+<tr class="separator:adbcf97d50e11d69430aab54e0b15017d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b1b58ed7de3987f8fa99d249159bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a64b1b58ed7de3987f8fa99d249159bf1">SETUP_REG_STD_WRITE</a>(regname)&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</a>(Reg##regname,regname)</td></tr>
+<tr class="separator:a64b1b58ed7de3987f8fa99d249159bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7015edbd60e0301fecaccc3a41ff7e25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(op0,  op1,  crn,  crm,  op2)&#160;&#160;&#160;s##op0##_##op1##_##c##crn##_##c##crm##_##op2</td></tr>
+<tr class="separator:a7015edbd60e0301fecaccc3a41ff7e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a84d94b55d474e2d825a4b463d788a00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d94b55d474e2d825a4b463d788a00f">&#9670;&nbsp;</a></span>DEFINE_REG_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFINE_REG_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regTypeInCXX, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regNameInAsm&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;regTypeInCXX <a class="el" href="../../d5/d72/vmsa__descriptors_8h.html#a594628bebe075c368261fc44da3a6994">regTypeInCXX::read</a>(){ regTypeInCXX res;<a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(res));return res;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad8704441de784f6cb0aeb5a48e27de19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8704441de784f6cb0aeb5a48e27de19">&#9670;&nbsp;</a></span>DEFINE_REG_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFINE_REG_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regTypeInCXX, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regNameInAsm&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;regTypeInCXX <a class="el" href="../../d4/deb/timer__registers_8h.html#a52a09a727a67091a66ca99866fbd9835">regTypeInCXX::updateRead</a>(){ <a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;mrs %0,&quot; __stringify(regNameInAsm) &quot;\n\t&quot;:&quot;=r&quot;(*this));return *this;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad908403aabf665fd5569d706a7ebea75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad908403aabf665fd5569d706a7ebea75">&#9670;&nbsp;</a></span>DEFINE_REG_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFINE_REG_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regTypeInCXX, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regNameInAsm&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;void <a class="el" href="../../d5/d72/vmsa__descriptors_8h.html#aa22ebcd05fe946c1a134d72490c14c6f">regTypeInCXX::write</a>() const { <a class="el" href="../../d4/d12/zcu102_2crt0_8cpp.html#ae91fbcc2694270e3c4d5330a5cf604f6">__asm__</a> <a class="el" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(&quot;msr &quot; __stringify(regNameInAsm) &quot;,%0 \n\t&quot;::&quot;r&quot;(*this));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac0e05634e21d9b112caf141a354b3da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e05634e21d9b112caf141a354b3da3">&#9670;&nbsp;</a></span>ENCODE_ICC_IGRPEN0_EL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENCODE_ICC_IGRPEN0_EL1&#160;&#160;&#160;1100011001100110</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00066">66</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a88d14c9eaf5d5af099bfafe6f1320ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d14c9eaf5d5af099bfafe6f1320ff1">&#9670;&nbsp;</a></span>ENCODE_MRS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENCODE_MRS&#160;&#160;&#160;11010101001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aab03f8c7c0526fe5745321b6e961d150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab03f8c7c0526fe5745321b6e961d150">&#9670;&nbsp;</a></span>ENCODE_MSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENCODE_MSR&#160;&#160;&#160;11010101000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00062">62</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af222a0f6513605c08328f732a3b61a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af222a0f6513605c08328f732a3b61a36">&#9670;&nbsp;</a></span>ENCODE_X0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENCODE_X0&#160;&#160;&#160;00000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a021e2797a4c205900a4b3808bfd03cbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021e2797a4c205900a4b3808bfd03cbd">&#9670;&nbsp;</a></span>ICC_BPR0_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_BPR0_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6457dd501cd1d6eb42dfe8580d815cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6457dd501cd1d6eb42dfe8580d815cf5">&#9670;&nbsp;</a></span>ICC_BPR1_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_BPR1_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae2cf658a052b9fdd09c1b41c3ffbb735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cf658a052b9fdd09c1b41c3ffbb735">&#9670;&nbsp;</a></span>ICC_CTLR_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_CTLR_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acb888055183b9689aefb93a27fa4c299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb888055183b9689aefb93a27fa4c299">&#9670;&nbsp;</a></span>ICC_CTLR_EL3_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_CTLR_EL3_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad730846387a41d43a0ab40f2b6b841cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad730846387a41d43a0ab40f2b6b841cb">&#9670;&nbsp;</a></span>ICC_DIR_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_DIR_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a604999c87fcb990225a77641e65d15ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604999c87fcb990225a77641e65d15ea">&#9670;&nbsp;</a></span>ICC_EOIR0_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_EOIR0_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad7e95fa130fdd9759eed5186235a4d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e95fa130fdd9759eed5186235a4d89">&#9670;&nbsp;</a></span>ICC_EOIR1_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_EOIR1_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a34630484290addaee7d2a982aa91fdb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34630484290addaee7d2a982aa91fdb4">&#9670;&nbsp;</a></span>ICC_HPPIR0_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_HPPIR0_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4426fcfed6350a121297707ac06c3129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4426fcfed6350a121297707ac06c3129">&#9670;&nbsp;</a></span>ICC_HPPIR1_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_HPPIR1_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1566fb0c7f9554351fd1a2be13ed7631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1566fb0c7f9554351fd1a2be13ed7631">&#9670;&nbsp;</a></span>ICC_IAR0_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_IAR0_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,8,0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aac2657fe15d8e500ee7ad373632d5666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2657fe15d8e500ee7ad373632d5666">&#9670;&nbsp;</a></span>ICC_IAR1_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_IAR1_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a01f62ea779a46917c478461e278c2e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f62ea779a46917c478461e278c2e90">&#9670;&nbsp;</a></span>ICC_IGRPEN0_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_IGRPEN0_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a97d353823a6157d9f6c74e2f5152a09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d353823a6157d9f6c74e2f5152a09f">&#9670;&nbsp;</a></span>ICC_IGRPEN1_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_IGRPEN1_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af93caadd8f5961a3e7206656471fc4c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af93caadd8f5961a3e7206656471fc4c3">&#9670;&nbsp;</a></span>ICC_IGRPEN1_EL3_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_IGRPEN1_EL3_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8fd5d368a54fc9fbfb36047f2c9b5d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fd5d368a54fc9fbfb36047f2c9b5d67">&#9670;&nbsp;</a></span>ICC_PMR_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_PMR_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,4,6,0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8388b4f4d2b39925f21f055f3b8773d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8388b4f4d2b39925f21f055f3b8773d1">&#9670;&nbsp;</a></span>ICC_RPR_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_RPR_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e7dc9c681f0c7a5bed7ddbe51ce7383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7dc9c681f0c7a5bed7ddbe51ce7383">&#9670;&nbsp;</a></span>ICC_SGI0R_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_SGI0R_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a464755ed77d7556cfd73046d9f6b5fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464755ed77d7556cfd73046d9f6b5fc6">&#9670;&nbsp;</a></span>ICC_SGI1R_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_SGI1R_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,11,5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad13e4f181c3f8e5c2f99bb06028d5453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13e4f181c3f8e5c2f99bb06028d5453">&#9670;&nbsp;</a></span>ICC_SRE_EL1_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_SRE_EL1_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,12,12,5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a143e2e54b3185c4a827e995dfb9278e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143e2e54b3185c4a827e995dfb9278e5">&#9670;&nbsp;</a></span>ICC_SRE_EL2_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_SRE_EL2_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,4,12,9,5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6d73c494242f47cfe6ab7b992b20019c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d73c494242f47cfe6ab7b992b20019c">&#9670;&nbsp;</a></span>ICC_SRE_EL3_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICC_SRE_EL3_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,6,12,12,5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4921aba558a2191aaf2b7c0e168c29ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4921aba558a2191aaf2b7c0e168c29ce">&#9670;&nbsp;</a></span>PAN_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAN_GCC_REPR&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a7015edbd60e0301fecaccc3a41ff7e25">SYS_REG_GCC_REPR</a>(3,0,4,2,3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9756ec5d311fd0bf4db3f16270b3c0fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9756ec5d311fd0bf4db3f16270b3c0fb">&#9670;&nbsp;</a></span>SETUP_REG_ANY_MEM_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_ANY_MEM_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>(<span class="keywordtype">void</span> *p) \</div><div class="line">{ \</div><div class="line">    return *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(p);\</div><div class="line">}\</div><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>(<span class="keywordtype">size_t</span> p)\</div><div class="line">{\</div><div class="line">    return *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(p);\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae84d27908bad7f8b6d41f0caae00fb89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84d27908bad7f8b6d41f0caae00fb89">&#9670;&nbsp;</a></span>SETUP_REG_ANY_MEM_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_ANY_MEM_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>(<span class="keywordtype">void</span> *p)<span class="keyword">const</span> \</div><div class="line">{ \</div><div class="line">    *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(p)=*<span class="keyword">this</span>; \</div><div class="line">}\</div><div class="line">void Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>(<span class="keywordtype">size_t</span> p)<span class="keyword">const</span>\</div><div class="line">{\</div><div class="line">    *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(p)=*<span class="keyword">this</span>;\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a1b0b8be141a47a8a7fcb470b2f68aabe"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">write</a></div><div class="ttdeci">AS_MACRO void write() const</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00159">159</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3271f36e3c4fce8fda6c770d7d9521d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3271f36e3c4fce8fda6c770d7d9521d6">&#9670;&nbsp;</a></span>SETUP_REG_GCC_REPR_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_GCC_REPR_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae49d64681a2ac66fea4d5b976bd93978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49d64681a2ac66fea4d5b976bd93978">&#9670;&nbsp;</a></span>SETUP_REG_GCC_REPR_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_GCC_REPR_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af0ad6d900be2c6d51a208cfd6b034c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ad6d900be2c6d51a208cfd6b034c1f">&#9670;&nbsp;</a></span>SETUP_REG_GCC_REPR_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_GCC_REPR_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</a>(Reg##<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>,<a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_GCC_REPR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a32c72a65be87bfa10dace6542933e79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c72a65be87bfa10dace6542933e79d">&#9670;&nbsp;</a></span>SETUP_REG_HARD_CODED_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_HARD_CODED_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>() \</div><div class="line">{ \</div><div class="line">    Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> res; \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>( \</div><div class="line">            <span class="stringliteral">&quot;.4byte 0b&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(ENCODE_##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a>) <span class="stringliteral">&quot;\n\t&quot;</span> \</div><div class="line">            <span class="stringliteral">&quot;mov %0,x0 \n\t&quot;</span> \</div><div class="line">            :<span class="stringliteral">&quot;=r&quot;</span>(res)); \</div><div class="line">    return res; \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="registers__defines_8h_html_a88d14c9eaf5d5af099bfafe6f1320ff1"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</a></div><div class="ttdeci">#define ENCODE_MRS</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00065">registers_defines.h:65</a></div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="registers__defines_8h_html_af222a0f6513605c08328f732a3b61a36"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a></div><div class="ttdeci">#define ENCODE_X0</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00067">registers_defines.h:67</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a91de67014e50242e0910a63f15d840d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91de67014e50242e0910a63f15d840d2">&#9670;&nbsp;</a></span>SETUP_REG_HARD_CODED_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_HARD_CODED_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">name::updateRead</a>() \</div><div class="line">{ \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>( \</div><div class="line">            <span class="stringliteral">&quot;.4byte 0b&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(ENCODE_##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a>) <span class="stringliteral">&quot;\n\t&quot;</span> \</div><div class="line">            <span class="stringliteral">&quot;mov %0,x0 \n\t&quot;</span> \</div><div class="line">            :<span class="stringliteral">&quot;=r&quot;</span>(*<span class="keyword">this</span>)); \</div><div class="line">    return *<span class="keyword">this</span>;\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a075eb1a3d2ad9fc6b28a51bad49f3df1"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">updateRead</a></div><div class="ttdeci">AS_MACRO RegX0 updateRead()</div></div>
+<div class="ttc" id="registers__defines_8h_html_a88d14c9eaf5d5af099bfafe6f1320ff1"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#a88d14c9eaf5d5af099bfafe6f1320ff1">ENCODE_MRS</a></div><div class="ttdeci">#define ENCODE_MRS</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00065">registers_defines.h:65</a></div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="registers__defines_8h_html_af222a0f6513605c08328f732a3b61a36"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a></div><div class="ttdeci">#define ENCODE_X0</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00067">registers_defines.h:67</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00081">81</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a84bea788b3713acebfcb9f7e3ed13d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84bea788b3713acebfcb9f7e3ed13d63">&#9670;&nbsp;</a></span>SETUP_REG_HARD_CODED_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_HARD_CODED_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>() const\</div><div class="line">{ \</div><div class="line">    __asm__ __volatile( \</div><div class="line">        <span class="stringliteral">&quot;mov x0,%0 \n\t&quot;</span> \</div><div class="line">        <span class="stringliteral">&quot;.4byte 0b&quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#aab03f8c7c0526fe5745321b6e961d150">ENCODE_MSR</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(ENCODE_##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>) <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a>) <span class="stringliteral">&quot;\n\t&quot;</span> \</div><div class="line">        : \</div><div class="line">        :<span class="stringliteral">&quot;r&quot;</span>(*<span class="keyword">this</span>) \</div><div class="line">    ); \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a1b0b8be141a47a8a7fcb470b2f68aabe"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">write</a></div><div class="ttdeci">AS_MACRO void write() const</div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="registers__defines_8h_html_af222a0f6513605c08328f732a3b61a36"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#af222a0f6513605c08328f732a3b61a36">ENCODE_X0</a></div><div class="ttdeci">#define ENCODE_X0</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00067">registers_defines.h:67</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="registers__defines_8h_html_aab03f8c7c0526fe5745321b6e961d150"><div class="ttname"><a href="../../d1/dbd/registers__defines_8h.html#aab03f8c7c0526fe5745321b6e961d150">ENCODE_MSR</a></div><div class="ttdeci">#define ENCODE_MSR</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/registers__defines_8h_source.html#l00062">registers_defines.h:62</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9b4eec3fd91dfee6355f3fb6c76fa549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4eec3fd91dfee6355f3fb6c76fa549">&#9670;&nbsp;</a></span>SETUP_REG_LOAD_STORE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_LOAD_STORE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>() \</div><div class="line">{ \</div><div class="line">    Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> res{0};\</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;str &quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)<span class="stringliteral">&quot;,%0 \n\t&quot;</span>::<span class="stringliteral">&quot;m&quot;</span>(res)); \</div><div class="line">    return res; \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00170">170</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6c9ec8c6b76636714d6fb2c508e0b274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9ec8c6b76636714d6fb2c508e0b274">&#9670;&nbsp;</a></span>SETUP_REG_LOAD_STORE_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_LOAD_STORE_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">name::updateRead</a>() \</div><div class="line">{ \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;str &quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>)<span class="stringliteral">&quot;,%0 \n\t&quot;</span>::<span class="stringliteral">&quot;m&quot;</span>(*<span class="keyword">this</span>)); \</div><div class="line">    return *<span class="keyword">this</span>; \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a075eb1a3d2ad9fc6b28a51bad49f3df1"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">updateRead</a></div><div class="ttdeci">AS_MACRO RegX0 updateRead()</div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00177">177</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac8c7bda265eb1548141ea946ad47ca26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c7bda265eb1548141ea946ad47ca26">&#9670;&nbsp;</a></span>SETUP_REG_LOAD_STORE_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_LOAD_STORE_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>()const \</div><div class="line">{ \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;ldr &quot;</span> <a class="code" href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>) <span class="stringliteral">&quot;,%0 \n\t&quot;</span>::<span class="stringliteral">&quot;m&quot;</span>(*<span class="keyword">this</span>)); \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a1b0b8be141a47a8a7fcb470b2f68aabe"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">write</a></div><div class="ttdeci">AS_MACRO void write() const</div></div>
+<div class="ttc" id="def_8h_html_ae09d687217717da8684417e61d3278b8"><div class="ttname"><a href="../../d4/da4/def_8h.html#ae09d687217717da8684417e61d3278b8">__stringify</a></div><div class="ttdeci">#define __stringify(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00038">def.h:38</a></div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00183">183</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa278c06e34335429e9c5876633428bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa278c06e34335429e9c5876633428bc2">&#9670;&nbsp;</a></span>SETUP_REG_MEM_MAPPED_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_MEM_MAPPED_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>() \</div><div class="line">{ \</div><div class="line">    return *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_MEM_MAPPED_ADDR);\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00108">108</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a49b5cf4c4c1b56b34ec7b2d7f0f85e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b5cf4c4c1b56b34ec7b2d7f0f85e20">&#9670;&nbsp;</a></span>SETUP_REG_MEM_MAPPED_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_MEM_MAPPED_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">name::updateRead</a>() \</div><div class="line">{ \</div><div class="line">    return *<span class="keyword">this</span>=*<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_MEM_MAPPED_ADDR);\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a075eb1a3d2ad9fc6b28a51bad49f3df1"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">updateRead</a></div><div class="ttdeci">AS_MACRO RegX0 updateRead()</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00114">114</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6637cfa7de246724bb16e9a2caa005b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6637cfa7de246724bb16e9a2caa005b3">&#9670;&nbsp;</a></span>SETUP_REG_MEM_MAPPED_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_MEM_MAPPED_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>() const\</div><div class="line">{ \</div><div class="line">    *<span class="keyword">reinterpret_cast&lt;</span>Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a>##_MEM_MAPPED_ADDR)=*<span class="keyword">this</span>;\</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a1b0b8be141a47a8a7fcb470b2f68aabe"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">write</a></div><div class="ttdeci">AS_MACRO void write() const</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac1da2460ffff94743c2a8763bba866f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1da2460ffff94743c2a8763bba866f4">&#9670;&nbsp;</a></span>SETUP_REG_PC_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_PC_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">name::read</a>() \</div><div class="line">{ \</div><div class="line">    Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> res;\</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;adr %0,#0\n\t&quot;</span>:<span class="stringliteral">&quot;=r&quot;</span>(res)); \</div><div class="line">    return res; \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a91bc8a1532103722bfed05ee632e70aa"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a91bc8a1532103722bfed05ee632e70aa">read</a></div><div class="ttdeci">static AS_MACRO RegX0 read()</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00128">128</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab58184983cb95e98b4434d95e9cd6363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58184983cb95e98b4434d95e9cd6363">&#9670;&nbsp;</a></span>SETUP_REG_PC_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_PC_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">Reg##<a class="code" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">name::updateRead</a>() \</div><div class="line">{ \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;adr %0,#0\n\t&quot;</span>:<span class="stringliteral">&quot;=r&quot;</span>(*<span class="keyword">this</span>)); \</div><div class="line">    return *<span class="keyword">this</span>; \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a075eb1a3d2ad9fc6b28a51bad49f3df1"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a075eb1a3d2ad9fc6b28a51bad49f3df1">updateRead</a></div><div class="ttdeci">AS_MACRO RegX0 updateRead()</div></div>
+<div class="ttc" id="_f_a_t_dir_entry_8h_html_afb5f90328f746a429516e6c9b1a069e2"><div class="ttname"><a href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></div><div class="ttdeci">char name[11]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de5/_f_a_t_dir_entry_8h_source.html#l00110">FATDirEntry.h:110</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00135">135</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0df0bf93f99e5d3b02840bcebaf3152b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df0bf93f99e5d3b02840bcebaf3152b">&#9670;&nbsp;</a></span>SETUP_REG_PC_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_PC_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="../../d9/de5/_f_a_t_dir_entry_8h.html#afb5f90328f746a429516e6c9b1a069e2">name</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reg##<a class="code" href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">name::write</a>()const \</div><div class="line">{ \</div><div class="line">    __asm__ <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;br %0\n\t&quot;</span>::<span class="stringliteral">&quot;r&quot;</span>(*<span class="keyword">this</span>)); \</div><div class="line">}</div><div class="ttc" id="general__registers_8h_html_a1b0b8be141a47a8a7fcb470b2f68aabe"><div class="ttname"><a href="../../d1/de4/general__registers_8h.html#a1b0b8be141a47a8a7fcb470b2f68aabe">write</a></div><div class="ttdeci">AS_MACRO void write() const</div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00141">141</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4f7054fcbbbe32a3fa60970e2ed7e402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7054fcbbbe32a3fa60970e2ed7e402">&#9670;&nbsp;</a></span>SETUP_REG_STD_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_STD_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regname</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#a84d94b55d474e2d825a4b463d788a00f">DEFINE_REG_READ</a>(Reg##regname,regname)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adbcf97d50e11d69430aab54e0b15017d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbcf97d50e11d69430aab54e0b15017d">&#9670;&nbsp;</a></span>SETUP_REG_STD_UPDATE_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_STD_UPDATE_READ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regname</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad8704441de784f6cb0aeb5a48e27de19">DEFINE_REG_UPDATE_READ</a>(Reg##regname,regname)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a64b1b58ed7de3987f8fa99d249159bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b1b58ed7de3987f8fa99d249159bf1">&#9670;&nbsp;</a></span>SETUP_REG_STD_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETUP_REG_STD_WRITE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">regname</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/dbd/registers__defines_8h.html#ad908403aabf665fd5569d706a7ebea75">DEFINE_REG_WRITE</a>(Reg##regname,regname)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7015edbd60e0301fecaccc3a41ff7e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7015edbd60e0301fecaccc3a41ff7e25">&#9670;&nbsp;</a></span>SYS_REG_GCC_REPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYS_REG_GCC_REPR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">crn, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">crm, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;s##op0##_##op1##_##c##crn##_##c##crm##_##op2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html">registers_defines.h</a> 第 <a class="el" href="../../d1/dbd/registers__defines_8h_source.html#l00029">29</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:34 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

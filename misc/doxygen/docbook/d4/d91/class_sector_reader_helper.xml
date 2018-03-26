@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d91/class_sector_reader_helper">
+<title>SectorReaderHelper class Reference</title>
+<para>
+    <programlisting>#include <link linkend="da/d70/_sector_reader_helper_8h">&quot;SectorReaderHelper.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for SectorReaderHelper</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d76/class_sector_reader_helper__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SectorReaderHelper</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dad/class_sector_reader_helper__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::fstream * fileStream</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d91/class_sector_reader_helper_1a9812ce5e4e9988850be23a64e8839997">invalidateCurrentFile</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d91/class_sector_reader_helper_1a921d6379685fb12c54877b5792c95441">read</link> (
+size_t secIndex, void * dst, size_t maxNumSec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d91/class_sector_reader_helper_1ad6db2d8c45476a18e8871d447ff42a3a">setCurrentFile</link> (
+const char * file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d91/class_sector_reader_helper_1aa1ac380a556ee08a981dfafded03ef17">write</link> (
+size_t secIndex, const void * src, size_t maxNumSec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d91/class_sector_reader_helper_1a473f9dfa0e88e0e97de37dc7745cd314">~SectorReaderHelper</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d4/d91/class_sector_reader_helper_1a9812ce5e4e9988850be23a64e8839997">
+                <title>void SectorReaderHelper::invalidateCurrentFile ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d91/class_sector_reader_helper_1a921d6379685fb12c54877b5792c95441">
+                <title>size_t SectorReaderHelper::read (size_t secIndex, void *dst, size_t maxNumSec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d91/class_sector_reader_helper_1ad6db2d8c45476a18e8871d447ff42a3a">
+                <title>void SectorReaderHelper::setCurrentFile (const char *file)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d91/class_sector_reader_helper_1aa1ac380a556ee08a981dfafded03ef17">
+                <title>size_t SectorReaderHelper::write (size_t secIndex, const void *src, size_t maxNumSec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d91/class_sector_reader_helper_1a473f9dfa0e88e0e97de37dc7745cd314">
+                <title>SectorReaderHelper::~SectorReaderHelper ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

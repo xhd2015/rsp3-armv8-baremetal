@@ -1,0 +1,13 @@
+digraph "Output::print"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node58 [label="Output::print",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node58 -> Node59 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 [label="SynchronousEL1Handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d12/exceptions_8cpp.html#adf8fdfc202648f336df261faf22abf24"];
+  Node58 -> Node60 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d3e/main__run__kernel__application_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node58 -> Node61 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="operator\<\<",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d40/_string_ref_8cpp.html#a6e094ad7b8570af1342b895d03c91a8e"];
+}

@@ -1,0 +1,9 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/raspi3" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7c40e03ac1dfef8b430578d46da2b8fd {
+    graph [ bgcolor="#ddddee", pencolor="black", label="arch" fontname="Helvetica", fontsize="10", URL="dir_7c40e03ac1dfef8b430578d46da2b8fd.html"]
+  dir_f584a7346c1b8013dc1b331940cf7785 [shape=box, label="raspi3", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f584a7346c1b8013dc1b331940cf7785.html"];
+  }
+}

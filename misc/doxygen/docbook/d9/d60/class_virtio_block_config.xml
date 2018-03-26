@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d60/class_virtio_block_config">
+<title>VirtioBlockConfig class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/d89/_virtio_block_config_8h">&quot;VirtioBlockConfig.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VirtioBlockConfig</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d52/class_virtio_block_config__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VirtioBlockConfig</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/def/class_virtio_block_config__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d38/struct_virtio_block_config_1_1_virtio_block_geometry">VirtioBlockConfig::VirtioBlockGeometry</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/db1/struct_virtio_block_config_1_1_virtio_block_topology">VirtioBlockConfig::VirtioBlockTopology</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Public 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t blk_size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t capacity</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct VirtioBlockConfig::VirtioBlockGeometry geometry</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t seg_max</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t size_max</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct VirtioBlockConfig::VirtioBlockTopology topology</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t writeback</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/d60/class_virtio_block_config_1ad0c7eaa08e89c82cb698050721ee5f15">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>详细描述</title>
+
+<para>对V1,V2都适用 </para>
+                <para>Definition at line 16 of file VirtioBlockConfig.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>VirtioBlockConfig.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d9/d60/class_virtio_block_config_1ad0c7eaa08e89c82cb698050721ee5f15">
+                <title>void VirtioBlockConfig::dump () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

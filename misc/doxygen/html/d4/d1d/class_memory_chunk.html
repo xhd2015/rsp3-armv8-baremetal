@@ -1,0 +1,1370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: MemoryChunk类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../df/d08/class_memory_chunk-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">MemoryChunk类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> MemoryChunk 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../db/d13/class_memory_chunk__coll__graph.png" border="0" usemap="#_memory_chunk_coll__map" alt="Collaboration graph"/></div>
+<map name="_memory_chunk_coll__map" id="_memory_chunk_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a09d63a438550b02433c3554dfe2da449"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a5dd5a8dcbf886b56b730fa6c06af0c59">ValidBits</a> = 6, 
+<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a5956d1ab4fd85404018dd94bb6b03386">IsEndBits</a> =1, 
+<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449ad1e18dc3cbdce81ddcefe1d764980e19">AllocatedBits</a> =1, 
+<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449ae689e58b57dad51c40471d805eb09145">SizeBits</a> =38, 
+<br />
+&#160;&#160;<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a07f2b8ebbed46479a06ca05a5f6ff703">NextBaseBits</a> =18
+<br />
+ }</td></tr>
+<tr class="separator:a09d63a438550b02433c3554dfe2da449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1607a0bc5c1f3f7cf761c11918a4b2ae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d4/d1d/class_memory_chunk.html#a1607a0bc5c1f3f7cf761c11918a4b2aea20080514f5fbc0a3e5bf01cada2dbe1b">MaxSinlgeMoveBytes</a> = (1 &lt;&lt; ValidBits)
+ }</td></tr>
+<tr class="separator:a1607a0bc5c1f3f7cf761c11918a4b2ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5cb5ae2b25f743044da9ac8121eb810e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a5cb5ae2b25f743044da9ac8121eb810e">endChunk</a> () const</td></tr>
+<tr class="separator:a5cb5ae2b25f743044da9ac8121eb810e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b8549a3aef47a0bbcadce037225ed2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ab3b8549a3aef47a0bbcadce037225ed2">findAllocable</a> (size_t n, size_t alignment, size_t &amp;moveOffset) const</td></tr>
+<tr class="separator:ab3b8549a3aef47a0bbcadce037225ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934f6242ec16c156bb099240b3fce0de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a934f6242ec16c156bb099240b3fce0de">findAllocable</a> (size_t n, size_t alignment, size_t &amp;moveOffset)</td></tr>
+<tr class="separator:a934f6242ec16c156bb099240b3fce0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a93ac48c88dbaeceb31d1450ffc3c5"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a71a93ac48c88dbaeceb31d1450ffc3c5">getDataEnd</a> ()</td></tr>
+<tr class="separator:a71a93ac48c88dbaeceb31d1450ffc3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53a0ac34e35f625fc2eba11cc67db372"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a53a0ac34e35f625fc2eba11cc67db372">getDataEnd</a> () const</td></tr>
+<tr class="separator:a53a0ac34e35f625fc2eba11cc67db372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76229a1376912890e4c358fec643d0eb"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a76229a1376912890e4c358fec643d0eb">getDataPtr</a> ()</td></tr>
+<tr class="separator:a76229a1376912890e4c358fec643d0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a03eb15236fbb34151ffafed290514"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a20a03eb15236fbb34151ffafed290514">getDataPtr</a> () const</td></tr>
+<tr class="separator:a20a03eb15236fbb34151ffafed290514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4103a2383e6c2c4273157e11d434f9d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a4103a2383e6c2c4273157e11d434f9d0">getNext</a> () const <a class="el" href="../../d4/d1d/class_memory_chunk.html#a5421588a01d16b99b50e87bf7cf75000">__attribute__</a>((deprecated))</td></tr>
+<tr class="separator:a4103a2383e6c2c4273157e11d434f9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd98f8d888a2f7036ff00efd45878d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#abbd98f8d888a2f7036ff00efd45878d0">getNext</a> () <a class="el" href="../../d4/d1d/class_memory_chunk.html#a5421588a01d16b99b50e87bf7cf75000">__attribute__</a>((deprecated))</td></tr>
+<tr class="separator:abbd98f8d888a2f7036ff00efd45878d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2cca8d381c3167dae31bb4fdc23affc"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ab2cca8d381c3167dae31bb4fdc23affc">getNextBaseFromEnd</a> () const</td></tr>
+<tr class="separator:ab2cca8d381c3167dae31bb4fdc23affc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade085feee596267aef1ab33cc47b8a2d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ade085feee596267aef1ab33cc47b8a2d">getNextValidChunkOffset</a> () const</td></tr>
+<tr class="separator:ade085feee596267aef1ab33cc47b8a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa112bc700f6a7ee7a97cb8821d55c701"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aa112bc700f6a7ee7a97cb8821d55c701">getSize</a> () const</td></tr>
+<tr class="separator:aa112bc700f6a7ee7a97cb8821d55c701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ec0a942bb577ece9a1ec0413ba829f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ae4ec0a942bb577ece9a1ec0413ba829f">isAllocated</a> () const</td></tr>
+<tr class="separator:ae4ec0a942bb577ece9a1ec0413ba829f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77532081c761e7680970a9dcb0c29660"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a77532081c761e7680970a9dcb0c29660">isEnd</a> () const</td></tr>
+<tr class="separator:a77532081c761e7680970a9dcb0c29660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefec33edaebef2383fc1fa09be698433"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aefec33edaebef2383fc1fa09be698433">MemoryChunk</a> (size_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#ad4c9ab2b12a3ad26c71d8f88c6eb17b3">size</a>, bool <a class="el" href="../../d4/d1d/class_memory_chunk.html#a06725bf11148abf46713bfaaa3a654d5">allocated</a>, size_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#a63899be8c88c1faa437654923c8bc998">nextValidChunkOffset</a>, bool <a class="el" href="../../d4/d1d/class_memory_chunk.html#a63766eb1d21768411ce33b4e9779006b">endMark</a>, size_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#a3590fd66a34adc94e9bd95cfd8cfd1fa">nextBaseFromEnd</a>)</td></tr>
+<tr class="separator:aefec33edaebef2383fc1fa09be698433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4324b78e79aaf3c4ec5062d0bddba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aaa4324b78e79aaf3c4ec5062d0bddba4">mergeTrailingsUnallocated</a> ()</td></tr>
+<tr class="separator:aaa4324b78e79aaf3c4ec5062d0bddba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa394b13e0280bfb9fa945d263fd7849f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aa394b13e0280bfb9fa945d263fd7849f">moveAhead</a> (size_t moveSize)</td></tr>
+<tr class="separator:aa394b13e0280bfb9fa945d263fd7849f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65732610d7da0e78c8f550333faefca9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a65732610d7da0e78c8f550333faefca9">moveOffsetOfAllocSuchAlignedSpace</a> (size_t allocSize, size_t alignment) const</td></tr>
+<tr class="separator:a65732610d7da0e78c8f550333faefca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cdc4796b4fe962c6cbf386bf82c4f0a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a4cdc4796b4fe962c6cbf386bf82c4f0a">next</a> () const</td></tr>
+<tr class="separator:a4cdc4796b4fe962c6cbf386bf82c4f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7610b46047651786dc0d65f0c52e5c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ac7610b46047651786dc0d65f0c52e5c3">next</a> ()</td></tr>
+<tr class="separator:ac7610b46047651786dc0d65f0c52e5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1736b8411b5d300f91d852026d5b3d32"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a1736b8411b5d300f91d852026d5b3d32">nextValid</a> () const</td></tr>
+<tr class="separator:a1736b8411b5d300f91d852026d5b3d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42088fbe06411f446240f084aca5af3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aa42088fbe06411f446240f084aca5af3">nextValid</a> ()</td></tr>
+<tr class="separator:aa42088fbe06411f446240f084aca5af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cf7d7f70494fd4d08011b7129100f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a74cf7d7f70494fd4d08011b7129100f2">offsetChunk</a> () const</td></tr>
+<tr class="separator:a74cf7d7f70494fd4d08011b7129100f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d0e05382c171f1720f5b3d0fc62eab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ae1d0e05382c171f1720f5b3d0fc62eab">setAllocated</a> (bool <a class="el" href="../../d4/d1d/class_memory_chunk.html#a06725bf11148abf46713bfaaa3a654d5">allocated</a>)</td></tr>
+<tr class="separator:ae1d0e05382c171f1720f5b3d0fc62eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01854d44de711dc83c31b64dc4b247f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a01854d44de711dc83c31b64dc4b247f1">setEnd</a> (bool end)</td></tr>
+<tr class="separator:a01854d44de711dc83c31b64dc4b247f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1055c99bbafcb002f9e0bcb3700907ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a1055c99bbafcb002f9e0bcb3700907ed">setNextBaseFromEnd</a> (uint64_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#a3590fd66a34adc94e9bd95cfd8cfd1fa">nextBaseFromEnd</a>)</td></tr>
+<tr class="separator:a1055c99bbafcb002f9e0bcb3700907ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335be9ffa8cdbaabb7eedea66b2ac501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a335be9ffa8cdbaabb7eedea66b2ac501">setNextValidChunkOffset</a> (uint64_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#a63899be8c88c1faa437654923c8bc998">nextValidChunkOffset</a>)</td></tr>
+<tr class="separator:a335be9ffa8cdbaabb7eedea66b2ac501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6832d76e07e15e36efcf3571b5c62a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ad6832d76e07e15e36efcf3571b5c62a8">setSize</a> (size_t <a class="el" href="../../d4/d1d/class_memory_chunk.html#ad4c9ab2b12a3ad26c71d8f88c6eb17b3">size</a>)</td></tr>
+<tr class="separator:ad6832d76e07e15e36efcf3571b5c62a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae261e5561acf5a4e3c591b6b49e6a3bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ae261e5561acf5a4e3c591b6b49e6a3bf">split</a> (size_t splitSize)</td></tr>
+<tr class="separator:ae261e5561acf5a4e3c591b6b49e6a3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc575b5a85e63afc79f121b6ba71fbb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#acc575b5a85e63afc79f121b6ba71fbb2">validChunk</a> () const</td></tr>
+<tr class="separator:acc575b5a85e63afc79f121b6ba71fbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a5421588a01d16b99b50e87bf7cf75000"><td class="memItemLeft" align="right" valign="top">enum MemoryChunk:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a5421588a01d16b99b50e87bf7cf75000">__attribute__</a></td></tr>
+<tr class="separator:a5421588a01d16b99b50e87bf7cf75000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:aae8721905aad927f06d2a4860196d86f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#aae8721905aad927f06d2a4860196d86f">advanceByBytes</a> (size_t nbyte)</td></tr>
+<tr class="separator:aae8721905aad927f06d2a4860196d86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab3829ea89f75716b2e700fae0c6205"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a1ab3829ea89f75716b2e700fae0c6205">advanceByBytes</a> (size_t nbyte) const</td></tr>
+<tr class="separator:a1ab3829ea89f75716b2e700fae0c6205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a06725bf11148abf46713bfaaa3a654d5"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a06725bf11148abf46713bfaaa3a654d5">allocated</a>:<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449ad1e18dc3cbdce81ddcefe1d764980e19">AllocatedBits</a></td></tr>
+<tr class="separator:a06725bf11148abf46713bfaaa3a654d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63766eb1d21768411ce33b4e9779006b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a63766eb1d21768411ce33b4e9779006b">endMark</a>:<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a5956d1ab4fd85404018dd94bb6b03386">IsEndBits</a></td></tr>
+<tr class="separator:a63766eb1d21768411ce33b4e9779006b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3590fd66a34adc94e9bd95cfd8cfd1fa"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a3590fd66a34adc94e9bd95cfd8cfd1fa">nextBaseFromEnd</a>:<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a07f2b8ebbed46479a06ca05a5f6ff703">NextBaseBits</a></td></tr>
+<tr class="separator:a3590fd66a34adc94e9bd95cfd8cfd1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63899be8c88c1faa437654923c8bc998"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#a63899be8c88c1faa437654923c8bc998">nextValidChunkOffset</a>:<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449a5dd5a8dcbf886b56b730fa6c06af0c59">ValidBits</a></td></tr>
+<tr class="separator:a63899be8c88c1faa437654923c8bc998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c9ab2b12a3ad26c71d8f88c6eb17b3"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d1d/class_memory_chunk.html#ad4c9ab2b12a3ad26c71d8f88c6eb17b3">size</a>:<a class="el" href="../../d4/d1d/class_memory_chunk.html#a09d63a438550b02433c3554dfe2da449ae689e58b57dad51c40471d805eb09145">SizeBits</a></td></tr>
+<tr class="separator:ad4c9ab2b12a3ad26c71d8f88c6eb17b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>MemoryChunk存储一个内存 区域的元信息 根据实际的情况，MemoryChunk是一个链表，并且多数情况下一次分配的大小不可能超过RAM。而通常的RAM配置是8GB，我们只需要支持稍大的RAM，比如1TB(2^40)即可</p>
+<p>注意，在进行merge操作时，必须确保内存块元信息的终止块（也就是最后一个无法合并的MemoryChunk)必须能够访问到。 为此，在初始化管理器时，必须保证至少两项存在：一项主要的MemoryChunk，一项End标记，紧邻第一项的后面。 End标记放在RAM的高端1字节的位置：endMark=1</p>
+<p>End标记的size总是0. 对End标记的Chunk调用Next，总是返回nullptr.</p>
+<p>调用next() 永不返回End.</p>
+<p>必须保证next,dataEnd方法在有效的Chunk,以及offset chunk上能够正确。但是对End标记，不保证任何方法正确。 </p>
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00027">27</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a09d63a438550b02433c3554dfe2da449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d63a438550b02433c3554dfe2da449">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a09d63a438550b02433c3554dfe2da449a5dd5a8dcbf886b56b730fa6c06af0c59"></a>ValidBits&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09d63a438550b02433c3554dfe2da449a5956d1ab4fd85404018dd94bb6b03386"></a>IsEndBits&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09d63a438550b02433c3554dfe2da449ad1e18dc3cbdce81ddcefe1d764980e19"></a>AllocatedBits&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09d63a438550b02433c3554dfe2da449ae689e58b57dad51c40471d805eb09145"></a>SizeBits&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a09d63a438550b02433c3554dfe2da449a07f2b8ebbed46479a06ca05a5f6ff703"></a>NextBaseBits&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1607a0bc5c1f3f7cf761c11918a4b2ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1607a0bc5c1f3f7cf761c11918a4b2ae">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a1607a0bc5c1f3f7cf761c11918a4b2aea20080514f5fbc0a3e5bf01cada2dbe1b"></a>MaxSinlgeMoveBytes&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aefec33edaebef2383fc1fa09be698433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefec33edaebef2383fc1fa09be698433">&#9670;&nbsp;</a></span>MemoryChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MemoryChunk::MemoryChunk </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allocated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nextValidChunkOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>endMark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nextBaseFromEnd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00013">13</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aefec33edaebef2383fc1fa09be698433_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aefec33edaebef2383fc1fa09be698433_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aefec33edaebef2383fc1fa09be698433_icgraph" id="d4/d1d/class_memory_chunk_aefec33edaebef2383fc1fa09be698433_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aae8721905aad927f06d2a4860196d86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8721905aad927f06d2a4860196d86f">&#9670;&nbsp;</a></span>advanceByBytes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::advanceByBytes </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nbyte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00256">256</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aae8721905aad927f06d2a4860196d86f_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aae8721905aad927f06d2a4860196d86f_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aae8721905aad927f06d2a4860196d86f_icgraph" id="d4/d1d/class_memory_chunk_aae8721905aad927f06d2a4860196d86f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ab3829ea89f75716b2e700fae0c6205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab3829ea89f75716b2e700fae0c6205">&#9670;&nbsp;</a></span>advanceByBytes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::advanceByBytes </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nbyte</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00260">260</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5cb5ae2b25f743044da9ac8121eb810e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb5ae2b25f743044da9ac8121eb810e">&#9670;&nbsp;</a></span>endChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::endChunk </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00156">156</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a5cb5ae2b25f743044da9ac8121eb810e_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a5cb5ae2b25f743044da9ac8121eb810e_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a5cb5ae2b25f743044da9ac8121eb810e_icgraph" id="d4/d1d/class_memory_chunk_a5cb5ae2b25f743044da9ac8121eb810e_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab3b8549a3aef47a0bbcadce037225ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b8549a3aef47a0bbcadce037225ed2">&#9670;&nbsp;</a></span>findAllocable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::findAllocable </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>moveOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00087">87</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_cgraph" id="d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_cgraph">
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_icgraph" id="d4/d1d/class_memory_chunk_ab3b8549a3aef47a0bbcadce037225ed2_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a934f6242ec16c156bb099240b3fce0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934f6242ec16c156bb099240b3fce0de">&#9670;&nbsp;</a></span>findAllocable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::findAllocable </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>moveOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00102">102</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a934f6242ec16c156bb099240b3fce0de_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a934f6242ec16c156bb099240b3fce0de_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a934f6242ec16c156bb099240b3fce0de_cgraph" id="d4/d1d/class_memory_chunk_a934f6242ec16c156bb099240b3fce0de_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a71a93ac48c88dbaeceb31d1450ffc3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a93ac48c88dbaeceb31d1450ffc3c5">&#9670;&nbsp;</a></span>getDataEnd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MemoryChunk::getDataEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00124">124</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a71a93ac48c88dbaeceb31d1450ffc3c5_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a71a93ac48c88dbaeceb31d1450ffc3c5_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a71a93ac48c88dbaeceb31d1450ffc3c5_icgraph" id="d4/d1d/class_memory_chunk_a71a93ac48c88dbaeceb31d1450ffc3c5_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53a0ac34e35f625fc2eba11cc67db372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a0ac34e35f625fc2eba11cc67db372">&#9670;&nbsp;</a></span>getDataEnd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * MemoryChunk::getDataEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00128">128</a> 行定义.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a53a0ac34e35f625fc2eba11cc67db372_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a53a0ac34e35f625fc2eba11cc67db372_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a53a0ac34e35f625fc2eba11cc67db372_cgraph" id="d4/d1d/class_memory_chunk_a53a0ac34e35f625fc2eba11cc67db372_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76229a1376912890e4c358fec643d0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76229a1376912890e4c358fec643d0eb">&#9670;&nbsp;</a></span>getDataPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MemoryChunk::getDataPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00116">116</a> 行定义.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a76229a1376912890e4c358fec643d0eb_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a76229a1376912890e4c358fec643d0eb_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a76229a1376912890e4c358fec643d0eb_icgraph" id="d4/d1d/class_memory_chunk_a76229a1376912890e4c358fec643d0eb_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20a03eb15236fbb34151ffafed290514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a03eb15236fbb34151ffafed290514">&#9670;&nbsp;</a></span>getDataPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * MemoryChunk::getDataPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4103a2383e6c2c4273157e11d434f9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4103a2383e6c2c4273157e11d434f9d0">&#9670;&nbsp;</a></span>getNext() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a>* MemoryChunk::getNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbd98f8d888a2f7036ff00efd45878d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd98f8d888a2f7036ff00efd45878d0">&#9670;&nbsp;</a></span>getNext() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a>* MemoryChunk::getNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2cca8d381c3167dae31bb4fdc23affc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cca8d381c3167dae31bb4fdc23affc">&#9670;&nbsp;</a></span>getNextBaseFromEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::getNextBaseFromEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00138">138</a> 行定义.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ab2cca8d381c3167dae31bb4fdc23affc_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ab2cca8d381c3167dae31bb4fdc23affc_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ab2cca8d381c3167dae31bb4fdc23affc_icgraph" id="d4/d1d/class_memory_chunk_ab2cca8d381c3167dae31bb4fdc23affc_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade085feee596267aef1ab33cc47b8a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade085feee596267aef1ab33cc47b8a2d">&#9670;&nbsp;</a></span>getNextValidChunkOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::getNextValidChunkOffset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00147">147</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ade085feee596267aef1ab33cc47b8a2d_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ade085feee596267aef1ab33cc47b8a2d_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ade085feee596267aef1ab33cc47b8a2d_icgraph" id="d4/d1d/class_memory_chunk_ade085feee596267aef1ab33cc47b8a2d_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa112bc700f6a7ee7a97cb8821d55c701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa112bc700f6a7ee7a97cb8821d55c701">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MemoryChunk::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00107">107</a> 行定义.</p>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aa112bc700f6a7ee7a97cb8821d55c701_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aa112bc700f6a7ee7a97cb8821d55c701_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aa112bc700f6a7ee7a97cb8821d55c701_icgraph" id="d4/d1d/class_memory_chunk_aa112bc700f6a7ee7a97cb8821d55c701_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4ec0a942bb577ece9a1ec0413ba829f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ec0a942bb577ece9a1ec0413ba829f">&#9670;&nbsp;</a></span>isAllocated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::isAllocated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00015">15</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ae4ec0a942bb577ece9a1ec0413ba829f_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ae4ec0a942bb577ece9a1ec0413ba829f_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ae4ec0a942bb577ece9a1ec0413ba829f_icgraph" id="d4/d1d/class_memory_chunk_ae4ec0a942bb577ece9a1ec0413ba829f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a77532081c761e7680970a9dcb0c29660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77532081c761e7680970a9dcb0c29660">&#9670;&nbsp;</a></span>isEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::isEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00023">23</a> 行定义.</p>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a77532081c761e7680970a9dcb0c29660_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a77532081c761e7680970a9dcb0c29660_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a77532081c761e7680970a9dcb0c29660_icgraph" id="d4/d1d/class_memory_chunk_a77532081c761e7680970a9dcb0c29660_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa4324b78e79aaf3c4ec5062d0bddba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4324b78e79aaf3c4ec5062d0bddba4">&#9670;&nbsp;</a></span>mergeTrailingsUnallocated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::mergeTrailingsUnallocated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00228">228</a> 行定义.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_cgraph" id="d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_cgraph">
+</map>
+</div>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_icgraph" id="d4/d1d/class_memory_chunk_aaa4324b78e79aaf3c4ec5062d0bddba4_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa394b13e0280bfb9fa945d263fd7849f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa394b13e0280bfb9fa945d263fd7849f">&#9670;&nbsp;</a></span>moveAhead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::moveAhead </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>moveSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00169">169</a> 行定义.</p>
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_cgraph" id="d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_cgraph">
+</map>
+</div>
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_icgraph" id="d4/d1d/class_memory_chunk_aa394b13e0280bfb9fa945d263fd7849f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a65732610d7da0e78c8f550333faefca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65732610d7da0e78c8f550333faefca9">&#9670;&nbsp;</a></span>moveOffsetOfAllocSuchAlignedSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>allocSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00196">196</a> 行定义.</p>
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a65732610d7da0e78c8f550333faefca9_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a65732610d7da0e78c8f550333faefca9_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a65732610d7da0e78c8f550333faefca9_cgraph" id="d4/d1d/class_memory_chunk_a65732610d7da0e78c8f550333faefca9_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4cdc4796b4fe962c6cbf386bf82c4f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cdc4796b4fe962c6cbf386bf82c4f0a">&#9670;&nbsp;</a></span>next() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00057">57</a> 行定义.</p>
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_cgraph" id="d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_cgraph">
+</map>
+</div>
+<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_icgraph" id="d4/d1d/class_memory_chunk_a4cdc4796b4fe962c6cbf386bf82c4f0a_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7610b46047651786dc0d65f0c52e5c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7610b46047651786dc0d65f0c52e5c3">&#9670;&nbsp;</a></span>next() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00066">66</a> 行定义.</p>
+<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ac7610b46047651786dc0d65f0c52e5c3_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ac7610b46047651786dc0d65f0c52e5c3_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ac7610b46047651786dc0d65f0c52e5c3_cgraph" id="d4/d1d/class_memory_chunk_ac7610b46047651786dc0d65f0c52e5c3_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1736b8411b5d300f91d852026d5b3d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1736b8411b5d300f91d852026d5b3d32">&#9670;&nbsp;</a></span>nextValid() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::nextValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00070">70</a> 行定义.</p>
+<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_cgraph" id="d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_cgraph">
+</map>
+</div>
+<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_icgraph" id="d4/d1d/class_memory_chunk_a1736b8411b5d300f91d852026d5b3d32_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa42088fbe06411f446240f084aca5af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42088fbe06411f446240f084aca5af3">&#9670;&nbsp;</a></span>nextValid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> * MemoryChunk::nextValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00082">82</a> 行定义.</p>
+<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_aa42088fbe06411f446240f084aca5af3_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_aa42088fbe06411f446240f084aca5af3_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_aa42088fbe06411f446240f084aca5af3_cgraph" id="d4/d1d/class_memory_chunk_aa42088fbe06411f446240f084aca5af3_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a74cf7d7f70494fd4d08011b7129100f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cf7d7f70494fd4d08011b7129100f2">&#9670;&nbsp;</a></span>offsetChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::offsetChunk </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae1d0e05382c171f1720f5b3d0fc62eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d0e05382c171f1720f5b3d0fc62eab">&#9670;&nbsp;</a></span>setAllocated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::setAllocated </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allocated</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00019">19</a> 行定义.</p>
+<div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ae1d0e05382c171f1720f5b3d0fc62eab_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ae1d0e05382c171f1720f5b3d0fc62eab_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ae1d0e05382c171f1720f5b3d0fc62eab_icgraph" id="d4/d1d/class_memory_chunk_ae1d0e05382c171f1720f5b3d0fc62eab_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01854d44de711dc83c31b64dc4b247f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01854d44de711dc83c31b64dc4b247f1">&#9670;&nbsp;</a></span>setEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::setEnd </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>end</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00027">27</a> 行定义.</p>
+<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a01854d44de711dc83c31b64dc4b247f1_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a01854d44de711dc83c31b64dc4b247f1_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a01854d44de711dc83c31b64dc4b247f1_icgraph" id="d4/d1d/class_memory_chunk_a01854d44de711dc83c31b64dc4b247f1_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1055c99bbafcb002f9e0bcb3700907ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1055c99bbafcb002f9e0bcb3700907ed">&#9670;&nbsp;</a></span>setNextBaseFromEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::setNextBaseFromEnd </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>nextBaseFromEnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00142">142</a> 行定义.</p>
+<div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a1055c99bbafcb002f9e0bcb3700907ed_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a1055c99bbafcb002f9e0bcb3700907ed_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a1055c99bbafcb002f9e0bcb3700907ed_icgraph" id="d4/d1d/class_memory_chunk_a1055c99bbafcb002f9e0bcb3700907ed_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a335be9ffa8cdbaabb7eedea66b2ac501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335be9ffa8cdbaabb7eedea66b2ac501">&#9670;&nbsp;</a></span>setNextValidChunkOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::setNextValidChunkOffset </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>nextValidChunkOffset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00151">151</a> 行定义.</p>
+<div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_a335be9ffa8cdbaabb7eedea66b2ac501_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_a335be9ffa8cdbaabb7eedea66b2ac501_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_a335be9ffa8cdbaabb7eedea66b2ac501_icgraph" id="d4/d1d/class_memory_chunk_a335be9ffa8cdbaabb7eedea66b2ac501_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad6832d76e07e15e36efcf3571b5c62a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6832d76e07e15e36efcf3571b5c62a8">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryChunk::setSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00112">112</a> 行定义.</p>
+<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ad6832d76e07e15e36efcf3571b5c62a8_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ad6832d76e07e15e36efcf3571b5c62a8_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ad6832d76e07e15e36efcf3571b5c62a8_icgraph" id="d4/d1d/class_memory_chunk_ad6832d76e07e15e36efcf3571b5c62a8_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae261e5561acf5a4e3c591b6b49e6a3bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae261e5561acf5a4e3c591b6b49e6a3bf">&#9670;&nbsp;</a></span>split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::split </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>splitSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00210">210</a> 行定义.</p>
+<div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_cgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_cgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_cgraph" id="d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_cgraph">
+</map>
+</div>
+<div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_icgraph" id="d4/d1d/class_memory_chunk_ae261e5561acf5a4e3c591b6b49e6a3bf_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc575b5a85e63afc79f121b6ba71fbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc575b5a85e63afc79f121b6ba71fbb2">&#9670;&nbsp;</a></span>validChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryChunk::validChunk </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a> 第 <a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html#l00164">164</a> 行定义.</p>
+<div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d4/d1d/class_memory_chunk_acc575b5a85e63afc79f121b6ba71fbb2_icgraph.png" border="0" usemap="#d4/d1d/class_memory_chunk_acc575b5a85e63afc79f121b6ba71fbb2_icgraph" alt=""/></div>
+<map name="d4/d1d/class_memory_chunk_acc575b5a85e63afc79f121b6ba71fbb2_icgraph" id="d4/d1d/class_memory_chunk_acc575b5a85e63afc79f121b6ba71fbb2_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5421588a01d16b99b50e87bf7cf75000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5421588a01d16b99b50e87bf7cf75000">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum { ... }  MemoryChunk::__attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06725bf11148abf46713bfaaa3a654d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06725bf11148abf46713bfaaa3a654d5">&#9670;&nbsp;</a></span>allocated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::allocated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a63766eb1d21768411ce33b4e9779006b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63766eb1d21768411ce33b4e9779006b">&#9670;&nbsp;</a></span>endMark</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::endMark</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3590fd66a34adc94e9bd95cfd8cfd1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3590fd66a34adc94e9bd95cfd8cfd1fa">&#9670;&nbsp;</a></span>nextBaseFromEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::nextBaseFromEnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a63899be8c88c1faa437654923c8bc998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63899be8c88c1faa437654923c8bc998">&#9670;&nbsp;</a></span>nextValidChunkOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::nextValidChunkOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad4c9ab2b12a3ad26c71d8f88c6eb17b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c9ab2b12a3ad26c71d8f88c6eb17b3">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t MemoryChunk::size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a> 第 <a class="el" href="../../d9/df6/_memory_chunk_8h_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/memory/<a class="el" href="../../d9/df6/_memory_chunk_8h_source.html">MemoryChunk.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/<a class="el" href="../../d1/d1e/_memory_chunk_8cpp_source.html">MemoryChunk.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:44 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

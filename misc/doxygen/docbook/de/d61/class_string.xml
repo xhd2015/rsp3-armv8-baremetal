@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d61/class_string">
+<title>String class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/db5/_string_8h">&quot;String.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for String</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/d2a/class_string__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for String</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/dc1/class_string__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> &amp; <link linkend="de/d61/class_string_1a0f13b0f7a63adcf6a90f3a49be584c57">append</link> (
+const char * s, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> &amp; <link linkend="de/d61/class_string_1a62e34a8baf903bfc79521b51971ae702">append</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="de/d61/class_string_1a782044e0552a4d3b2d3fc646dd5f3944">operator=</link> (
+const std::initializer_list&lt; T &gt; &amp; il)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="de/d61/class_string_1ad176f0324e1e2d087861e487b3d1d93e">operator=</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="de/d61/class_string_1a5ae99cd00ee8d2a85535c4209b894a00">operator=</link> (
+<link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp;&amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> &amp; <link linkend="de/d61/class_string_1af05f7df1db9885d2ff0daf8dcc77c2ea">operator=</link> (
+const <link linkend="de/d61/class_string">String</link> &amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> &amp; <link linkend="de/d61/class_string_1a0a2980517155b5b797bc268ad9d43393">operator=</link> (
+<link linkend="de/d61/class_string">String</link> &amp;&amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/d61/class_string">String</link> &amp; <link linkend="de/d61/class_string_1a62f0c50021eede706120c0160a40e4b3">operator=</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d61/class_string_1adc9a076f2fd76e746685640bb5564eb4">String</link> (
+size_t initSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d61/class_string_1a50ec7bf093552bdd2f467225c185490a">String</link> (
+const <link linkend="de/d61/class_string">String</link> &amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d61/class_string_1a523540992190c04c4c4d2cd01eae625f">String</link> (
+<link linkend="de/d61/class_string">String</link> &amp;&amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d61/class_string_1aca70b223e220368172eb5c4f50436e4b">String</link> (
+const char * s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="de/d61/class_string_1a0f13b0f7a63adcf6a90f3a49be584c57">
+                <title>String &amp; String::append (const char *s, size_t len)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a62e34a8baf903bfc79521b51971ae702">
+                <title>String &amp; String::append (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a782044e0552a4d3b2d3fc646dd5f3944">
+                <title>Vector&lt;T&gt;&amp; Vector&lt; T &gt;::operator= (const std::initializer_list&lt; T &gt; &amp;il)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1ad176f0324e1e2d087861e487b3d1d93e">
+                <title>Vector&lt; T &gt; &amp; Vector&lt; T &gt;::operator= (const Vector&lt; T &gt; &amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a5ae99cd00ee8d2a85535c4209b894a00">
+                <title>Vector&lt; T &gt; &amp; Vector&lt; T &gt;::operator= (Vector&lt; T &gt; &amp;&amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1af05f7df1db9885d2ff0daf8dcc77c2ea">
+                <title>String&amp; String::operator= (const String &amp;s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a0a2980517155b5b797bc268ad9d43393">
+                <title>String&amp; String::operator= (String &amp;&amp;s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a62f0c50021eede706120c0160a40e4b3">
+                <title>String &amp; String::operator= (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1adc9a076f2fd76e746685640bb5564eb4">
+                <title>String::String (size_t initSize=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a50ec7bf093552bdd2f467225c185490a">
+                <title>String::String (const String &amp;s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1a523540992190c04c4c4d2cd01eae625f">
+                <title>String::String (String &amp;&amp;s)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d61/class_string_1aca70b223e220368172eb5c4f50436e4b">
+                <title>String::String (const char *s)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

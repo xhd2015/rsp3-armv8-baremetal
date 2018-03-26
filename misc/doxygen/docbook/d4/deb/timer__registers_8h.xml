@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/deb/timer__registers_8h">
+    <title>timer_registers.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/registers_defines.h&gt;</programlisting>
+<para>Include dependency diagram for timer_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../de/dc6/timer__registers_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for timer_registers.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d3/d03/timer__registers_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d4/deb/timer__registers_8h_1a9e75900e0b30bb20ecd2f5482543f64a">ClockFrq</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link> <link linkend="d4/deb/timer__registers_8h_1a499557f473a6c06689e16ef9fc45396d">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/deb/timer__registers_8h_1a5ef79f79723cddd5234dc46d851bc381">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link> <link linkend="d4/deb/timer__registers_8h_1a09f5b14b501866a7dd4f34f03b7024cc">read</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a07d853f046f2801585b1bc06fc280ded">SETUP_REG_STD_READ</link> (
+CNTFRQ_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1aa7e043d46002511bba8c3b2902eec3f9">SETUP_REG_STD_READ</link> (
+CNTHCTL_EL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a4ab99435b2df9f84e59a79d21eb2c0d3">SETUP_REG_STD_READ</link> (
+CNTKCTL_EL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a1ada189ec6c9add3eaa640b48d161509">SETUP_REG_STD_READ</link> (
+CNTP_CTL_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a4f7d55f00388a1dea38d432028df6845">SETUP_REG_STD_READ</link> (
+CNTP_CVAL_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a67d9c75057f130a0c5baff40b9e19231">SETUP_REG_STD_READ</link> (
+CNTP_TVAL_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1adc2606f5a12b1fe822c242550de77b20">SETUP_REG_STD_READ</link> (
+CNTPCT_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/deb/timer__registers_8h_1a4a22043767722d15dd77c7fb14fd3b49">SETUP_REG_STD_READ</link> (
+CNTVCT_EL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="db/dc4/class_reg_c_n_t_f_r_q___e_l0">RegCNTFRQ_EL0</link> <link linkend="d4/deb/timer__registers_8h_1a52a09a727a67091a66ca99866fbd9835">updateRead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d4/deb/timer__registers_8h_1a1b0b8be141a47a8a7fcb470b2f68aabe">write</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/timer_registers.h</para>
+    </simplesect>
+</section>

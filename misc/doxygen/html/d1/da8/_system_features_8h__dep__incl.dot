@@ -1,0 +1,12 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/SystemFeatures.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node14 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/SystemFeatures.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/arch/qemu_virt/main\l_run_process.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d35/main__run__process_8cpp.html"];
+  Node14 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/global_variables.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d90/global__variables_8cpp.html"];
+  Node14 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/src/SystemFeatures.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d8d/_system_features_8cpp.html"];
+}

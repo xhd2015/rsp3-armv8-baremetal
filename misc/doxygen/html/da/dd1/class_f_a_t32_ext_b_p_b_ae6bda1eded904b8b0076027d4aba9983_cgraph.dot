@@ -1,0 +1,13 @@
+digraph "FAT32ExtBPB::uni_getDataRegionSectorCount"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node38 [label="FAT32ExtBPB::uni_getData\lRegionSectorCount",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="FAT32ExtBPB::uni_getTotal\lSecCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dd1/class_f_a_t32_ext_b_p_b.html#a27ddfdaaa1001d8d0653912cd415f5e8"];
+  Node38 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="FAT32ExtBPB::uni_getFatSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/dd1/class_f_a_t32_ext_b_p_b.html#ad9fa1e2d61c822e8f2b5c2785b2ac9b3"];
+  Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="FAT_BPB::uni_getRootDirSec\lCount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d6e/class_f_a_t___b_p_b.html#adb4332d528545370498cd33e7bbc2038"];
+}

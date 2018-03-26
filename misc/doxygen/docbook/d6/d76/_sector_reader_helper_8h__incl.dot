@@ -1,0 +1,8 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/host/SectorReaderHelper.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node285 [label="D:/Pool/eclipse-workspace\l_aarch64/newspace/raspiOS\l/include/arch/host/SectorReaderHelper.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node285 -> Node286 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node286 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

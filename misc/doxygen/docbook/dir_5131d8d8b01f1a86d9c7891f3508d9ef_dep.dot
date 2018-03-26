@@ -1,0 +1,11 @@
+digraph "D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/qemu_virt" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_70d5e250c66d001b18da37689179cade {
+    graph [ bgcolor="#ddddee", pencolor="black", label="arch" fontname="Helvetica", fontsize="10", URL="dir_70d5e250c66d001b18da37689179cade.html"]
+  dir_5131d8d8b01f1a86d9c7891f3508d9ef [shape=box, label="qemu_virt", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5131d8d8b01f1a86d9c7891f3508d9ef.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_5131d8d8b01f1a86d9c7891f3508d9ef->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="68", labeldistance=1.5 headhref="dir_000033_000000.html"];
+}

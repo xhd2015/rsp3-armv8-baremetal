@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d58/class_vector_delim">
+<title>VectorDelim class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/de1/_vector_delim_8h">&quot;VectorDelim.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for VectorDelim</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d69/class_vector_delim__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for VectorDelim</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/d0d/class_vector_delim__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>String delim</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Vector&lt; T &gt; * vec</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="de/d61/class_string">String</link> &amp; <link linkend="db/d58/class_vector_delim_1ae174ec2ae405ed3d1b494ae9e4ddd8ef">getDelim</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="db/d58/class_vector_delim_1af7e67778a0339b678af458c27efd432c">getVector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d58/class_vector_delim_1a5cd2455553f6130d1105de04eca334b6">VectorDelim</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d58/class_vector_delim_1a755c8957f42daefb498f0ccadae063c7">VectorDelim</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; vec, const <link linkend="de/d61/class_string">String</link> &amp; delim)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="db/d58/class_vector_delim_1ae174ec2ae405ed3d1b494ae9e4ddd8ef">
+                <title>const String &amp; VectorDelim&lt; T &gt;::getDelim () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d58/class_vector_delim_1af7e67778a0339b678af458c27efd432c">
+                <title>const Vector&lt; T &gt; &amp; VectorDelim&lt; T &gt;::getVector () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d58/class_vector_delim_1a5cd2455553f6130d1105de04eca334b6">
+                <title>VectorDelim&lt; T &gt;::VectorDelim ()=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d58/class_vector_delim_1a755c8957f42daefb498f0ccadae063c7">
+                <title>VectorDelim&lt; T &gt;::VectorDelim (const Vector&lt; T &gt; &amp;vec, const String &amp;delim)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

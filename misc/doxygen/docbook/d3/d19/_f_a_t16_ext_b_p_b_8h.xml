@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d19/_f_a_t16_ext_b_p_b_8h">
+    <title>FAT16ExtBPB.h File Reference</title>
+    <programlisting>#include &lt;filesystem/fat/FAT_BPB.h&gt;</programlisting>
+<para>Include dependency diagram for FAT16ExtBPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/d0f/_f_a_t16_ext_b_p_b_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for FAT16ExtBPB.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/de0/_f_a_t16_ext_b_p_b_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/df3/class_ext_b_p_b12">ExtBPB12</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/db9/class_ext_b_p_b16">ExtBPB16</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/df3/class_ext_b_p_b12">ExtBPB12</link> <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1ad4d65a58569539f2692bfd1b38ab7732">__attribute__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a820dd53bafff8ec8b0fa2a5a52ab3ef4">BS_BootSig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a847cc249bf53fb345a0b03966b7b7af0">BS_DrvNum</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1ae542ee04e273183dccb00cb297e6de48">BS_FilSysType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a80e92e9eddeace5f6d9f0457a21fc68a">BS_Reserved1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a468c435d5dc7b1b5b9314029dd75cd02">BS_VolID</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a5bb92ec0136bd5298fe61b057ef31d67">BS_VolLab</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1ae348719f7a2cf81a7f26c24555b985bc">Signature_word</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a6db7f9d25b7af54956d89d7937a96b10">undefined</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d3/db9/class_ext_b_p_b16">ExtBPB16</link> <link linkend="d7/d6e/class_f_a_t___b_p_b">FAT_BPB</link> <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a8e012f61d439b237ea81a9a6c8c5377d">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a3012c4e13ab9f239c7e774ac5001a335">calculateFATSz16</link> (
+size_t diskSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a4e3417e356db21e67889570cc6e7f6ac">getClusterEntryOffset</link> (
+size_t n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/d6e/class_f_a_t___b_p_b_1ad92c3e52a0ef556c967cc78c0afbfee5">FAT_BPB::FATType</link> <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a712acacf715fb8df5684eec2f51ef21e">getFATType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d3/d19/_f_a_t16_ext_b_p_b_8h_1a6b1c388d93d5e2ef6115a6ad774f71e3">getRootDirFirstSector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/filesystem/fat/FAT16ExtBPB.h</para>
+    </simplesect>
+</section>

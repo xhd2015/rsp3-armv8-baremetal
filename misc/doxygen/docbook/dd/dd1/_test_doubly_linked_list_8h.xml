@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/dd1/_test_doubly_linked_list_8h">
+    <title>TestDoublyLinkedList.h File Reference</title>
+    <programlisting>#include &lt;data_structures/DoublyLinkedList.h&gt;</programlisting>
+<para>Include dependency diagram for TestDoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d78/_test_doubly_linked_list_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for TestDoublyLinkedList.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/dd5/_test_doubly_linked_list_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/dbb/class_test_doubly_linked_list">TestDoublyLinkedList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="da/dbb/class_test_doubly_linked_list">TestDoublyLinkedList</link> <link linkend="dd/dd1/_test_doubly_linked_list_8h_1aa296e7e17a66d947f59488776e63f373">__attribute__</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/test/TestDoublyLinkedList.h</para>
+    </simplesect>
+</section>

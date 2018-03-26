@@ -1,0 +1,724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: MemoryManager类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d9/db7/class_memory_manager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">MemoryManager类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a>&quot;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> MemoryManager 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d97/class_memory_manager__coll__graph.png" border="0" usemap="#_memory_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_memory_manager_coll__map" id="_memory_manager_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ac165b8db409abdce487fc5f044be8f7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d7/dff/class_memory_manager.html#ac165b8db409abdce487fc5f044be8f7eae364aa682c04fa88badb29bdb65aac07">CHUNK_SIZE</a> = sizeof(MemoryChunk), 
+<a class="el" href="../../d7/dff/class_memory_manager.html#ac165b8db409abdce487fc5f044be8f7ea6cde0a1fbafa169b2869843c69837257">MINIMAL_ALLOC_SIZE</a> = sizeof(size_t), 
+<a class="el" href="../../d7/dff/class_memory_manager.html#ac165b8db409abdce487fc5f044be8f7ea3e5291dae662f4d35154e0adf4db4102">MINIMAL_ALIGNMENT</a> = sizeof(size_t)
+ }</td></tr>
+<tr class="separator:ac165b8db409abdce487fc5f044be8f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac2881a6dbbd6c0312f05761718ac6f08"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#ac2881a6dbbd6c0312f05761718ac6f08">allocate</a> (size_t n)</td></tr>
+<tr class="separator:ac2881a6dbbd6c0312f05761718ac6f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9a1ed8aa2df2885d4567eb7d18805a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a7a9a1ed8aa2df2885d4567eb7d18805a">allocate</a> (size_t n, size_t alignment)</td></tr>
+<tr class="separator:a7a9a1ed8aa2df2885d4567eb7d18805a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98db433aa911826282a28fedcb6e7a78"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a98db433aa911826282a28fedcb6e7a78"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a98db433aa911826282a28fedcb6e7a78">allocateAs</a> (size_t n)</td></tr>
+<tr class="separator:a98db433aa911826282a28fedcb6e7a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee201d3ae52d94ffa1869b65abbe26b4"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aee201d3ae52d94ffa1869b65abbe26b4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#aee201d3ae52d94ffa1869b65abbe26b4">allocateAs</a> (size_t n, size_t alignment)</td></tr>
+<tr class="separator:aee201d3ae52d94ffa1869b65abbe26b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a3c946c368918bdb6e4b441080fb8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a41a3c946c368918bdb6e4b441080fb8b">deallocate</a> (void *p)</td></tr>
+<tr class="separator:a41a3c946c368918bdb6e4b441080fb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9d398838761d0ad08090b40fffd863"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a6f9d398838761d0ad08090b40fffd863">getAllocatedLength</a> (void *origin) const</td></tr>
+<tr class="separator:a6f9d398838761d0ad08090b40fffd863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675a0d05c74e0ed56ab2e3ad5067730e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a675a0d05c74e0ed56ab2e3ad5067730e">MemoryManager</a> ()=delete</td></tr>
+<tr class="separator:a675a0d05c74e0ed56ab2e3ad5067730e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763ada776b39d3452f9eab0c5d9740c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a763ada776b39d3452f9eab0c5d9740c7">MemoryManager</a> (void *<a class="el" href="../../d7/dff/class_memory_manager.html#a4e8ecb77b86ddb99c5ce833e7e150017">base</a>, size_t <a class="el" href="../../d7/dff/class_memory_manager.html#a17562134547cbd42d28628edbf2b7839">size</a>, bool initChunks=true)</td></tr>
+<tr class="separator:a763ada776b39d3452f9eab0c5d9740c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af59f6558978a291d1c003dfa2c1155d1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#af59f6558978a291d1c003dfa2c1155d1">normalizeAllocSize</a> (size_t n)</td></tr>
+<tr class="separator:af59f6558978a291d1c003dfa2c1155d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17da19580dc9a1c21d4d1a6ca6674f6b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a17da19580dc9a1c21d4d1a6ca6674f6b">reallocate</a> (void *origin, size_t newSize, size_t oldSize=SIZE_MAX)</td></tr>
+<tr class="separator:a17da19580dc9a1c21d4d1a6ca6674f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b00309605d94f159b1a9b4a1b63e15f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8b00309605d94f159b1a9b4a1b63e15f"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a8b00309605d94f159b1a9b4a1b63e15f">reallocateAs</a> (void *origin, size_t newSize, size_t oldSize=SIZE_MAX)</td></tr>
+<tr class="separator:a8b00309605d94f159b1a9b4a1b63e15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861186147bd4684506cd4bae6ede6708"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a861186147bd4684506cd4bae6ede6708">tryDecrease</a> (void *origin, size_t decSize)</td></tr>
+<tr class="separator:a861186147bd4684506cd4bae6ede6708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfc7ce2134b0952d0bdba5d9cd51d38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a8bfc7ce2134b0952d0bdba5d9cd51d38">tryIncrease</a> (void *origin, size_t incSize)</td></tr>
+<tr class="separator:a8bfc7ce2134b0952d0bdba5d9cd51d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a4e8ecb77b86ddb99c5ce833e7e150017"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a4e8ecb77b86ddb99c5ce833e7e150017">base</a></td></tr>
+<tr class="separator:a4e8ecb77b86ddb99c5ce833e7e150017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f78a7ba5db041d23baeb56e74f6bd50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a9f78a7ba5db041d23baeb56e74f6bd50">headChunk</a></td></tr>
+<tr class="separator:a9f78a7ba5db041d23baeb56e74f6bd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17562134547cbd42d28628edbf2b7839"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dff/class_memory_manager.html#a17562134547cbd42d28628edbf2b7839">size</a></td></tr>
+<tr class="separator:a17562134547cbd42d28628edbf2b7839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>不变式: headChunk不为nullptr 分配的地址是对齐到ALIGNMENT的 CHUNK_SIZE 必须是ALIGNMENT的倍数 MINIMAL_ALLOC_SIZE 必须是ALIGNMENT的倍数 起始地址是ALIGNMENT的倍数 每个CHUNK必须对齐到ALIGNMENT</p>
+<p>内存管理可以in-place或者out-of-place </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00025">25</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="ac165b8db409abdce487fc5f044be8f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac165b8db409abdce487fc5f044be8f7e">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ac165b8db409abdce487fc5f044be8f7eae364aa682c04fa88badb29bdb65aac07"></a>CHUNK_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac165b8db409abdce487fc5f044be8f7ea6cde0a1fbafa169b2869843c69837257"></a>MINIMAL_ALLOC_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac165b8db409abdce487fc5f044be8f7ea3e5291dae662f4d35154e0adf4db4102"></a>MINIMAL_ALIGNMENT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a675a0d05c74e0ed56ab2e3ad5067730e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675a0d05c74e0ed56ab2e3ad5067730e">&#9670;&nbsp;</a></span>MemoryManager() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MemoryManager::MemoryManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a763ada776b39d3452f9eab0c5d9740c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763ada776b39d3452f9eab0c5d9740c7">&#9670;&nbsp;</a></span>MemoryManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MemoryManager::MemoryManager </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>initChunks</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00014">14</a> 行定义.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a763ada776b39d3452f9eab0c5d9740c7_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a763ada776b39d3452f9eab0c5d9740c7_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a763ada776b39d3452f9eab0c5d9740c7_cgraph" id="d7/dff/class_memory_manager_a763ada776b39d3452f9eab0c5d9740c7_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac2881a6dbbd6c0312f05761718ac6f08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2881a6dbbd6c0312f05761718ac6f08">&#9670;&nbsp;</a></span>allocate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MemoryManager::allocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00041">41</a> 行定义.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_ac2881a6dbbd6c0312f05761718ac6f08_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_ac2881a6dbbd6c0312f05761718ac6f08_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_ac2881a6dbbd6c0312f05761718ac6f08_icgraph" id="d7/dff/class_memory_manager_ac2881a6dbbd6c0312f05761718ac6f08_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a9a1ed8aa2df2885d4567eb7d18805a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9a1ed8aa2df2885d4567eb7d18805a">&#9670;&nbsp;</a></span>allocate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MemoryManager::allocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00045">45</a> 行定义.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a7a9a1ed8aa2df2885d4567eb7d18805a_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a7a9a1ed8aa2df2885d4567eb7d18805a_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a7a9a1ed8aa2df2885d4567eb7d18805a_cgraph" id="d7/dff/class_memory_manager_a7a9a1ed8aa2df2885d4567eb7d18805a_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a98db433aa911826282a28fedcb6e7a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98db433aa911826282a28fedcb6e7a78">&#9670;&nbsp;</a></span>allocateAs() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T MemoryManager::allocateAs </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html#l00015">15</a> 行定义.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_cgraph" id="d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_cgraph">
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_icgraph" id="d7/dff/class_memory_manager_a98db433aa911826282a28fedcb6e7a78_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee201d3ae52d94ffa1869b65abbe26b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee201d3ae52d94ffa1869b65abbe26b4">&#9670;&nbsp;</a></span>allocateAs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T MemoryManager::allocateAs </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>alignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html#l00020">20</a> 行定义.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_aee201d3ae52d94ffa1869b65abbe26b4_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_aee201d3ae52d94ffa1869b65abbe26b4_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_aee201d3ae52d94ffa1869b65abbe26b4_cgraph" id="d7/dff/class_memory_manager_aee201d3ae52d94ffa1869b65abbe26b4_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41a3c946c368918bdb6e4b441080fb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a3c946c368918bdb6e4b441080fb8b">&#9670;&nbsp;</a></span>deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MemoryManager::deallocate </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>withdraw an allocated pointer. note:for nullptr,nothing happens. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00056">56</a> 行定义.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_cgraph" id="d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_cgraph">
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_icgraph" id="d7/dff/class_memory_manager_a41a3c946c368918bdb6e4b441080fb8b_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f9d398838761d0ad08090b40fffd863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9d398838761d0ad08090b40fffd863">&#9670;&nbsp;</a></span>getAllocatedLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MemoryManager::getAllocatedLength </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>origin</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get size that the origin spanned, only if it is allocated from this <a class="el" href="../../d7/dff/class_memory_manager.html">MemoryManager</a>,otherwise 0. return SIZE_MAX, means that "I do not know" </p>
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00114">114</a> 行定义.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_cgraph" id="d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_cgraph">
+</map>
+</div>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_icgraph" id="d7/dff/class_memory_manager_a6f9d398838761d0ad08090b40fffd863_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="af59f6558978a291d1c003dfa2c1155d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af59f6558978a291d1c003dfa2c1155d1">&#9670;&nbsp;</a></span>normalizeAllocSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MemoryManager::normalizeAllocSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a17da19580dc9a1c21d4d1a6ca6674f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17da19580dc9a1c21d4d1a6ca6674f6b">&#9670;&nbsp;</a></span>reallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MemoryManager::reallocate </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>newSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>oldSize</em> = <code>SIZE_MAX</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>allocate the pointer in-place or out-place. call tryIncrease or tryDecrease conditionally, if possible. else, just allocate another new memory, and copy the original content to there.</p>
+<p>argument <code>oldSize</code> is optional, if it is SIZE_MAX,means that the original memory size can be retrieved from the in-place MemoryChunk.Otherwise, oldSize is used if failed,return nullptr </p>
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00079">79</a> 行定义.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_cgraph" id="d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_cgraph">
+</map>
+</div>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_icgraph" id="d7/dff/class_memory_manager_a17da19580dc9a1c21d4d1a6ca6674f6b_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b00309605d94f159b1a9b4a1b63e15f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b00309605d94f159b1a9b4a1b63e15f">&#9670;&nbsp;</a></span>reallocateAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T MemoryManager::reallocateAs </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>newSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>oldSize</em> = <code>SIZE_MAX</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../dd/d2b/templates__implementation_2_memory_manager_8h_source.html#l00026">26</a> 行定义.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> 函数调用图:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_cgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_cgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_cgraph" id="d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_cgraph">
+</map>
+</div>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> 这是这个函数的调用关系图:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_icgraph.png" border="0" usemap="#d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_icgraph" alt=""/></div>
+<map name="d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_icgraph" id="d7/dff/class_memory_manager_a8b00309605d94f159b1a9b4a1b63e15f_icgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a861186147bd4684506cd4bae6ede6708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861186147bd4684506cd4bae6ede6708">&#9670;&nbsp;</a></span>tryDecrease()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryManager::tryDecrease </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>decSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8bfc7ce2134b0952d0bdba5d9cd51d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bfc7ce2134b0952d0bdba5d9cd51d38">&#9670;&nbsp;</a></span>tryIncrease()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryManager::tryIncrease </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>incSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>try to increase or decrease something. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">origin,if</td><td>nullptr, return false.we do not expect nullptr as a normal allocated address </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true, the decrease really happened; false, nothing happened. for TARGET_ARCH=self-implemented, try decrease will always succeed for TARGET_ARCH=host,those tries will always failed. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a> 第 <a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a4e8ecb77b86ddb99c5ce833e7e150017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8ecb77b86ddb99c5ce833e7e150017">&#9670;&nbsp;</a></span>base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* MemoryManager::base</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9f78a7ba5db041d23baeb56e74f6bd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f78a7ba5db041d23baeb56e74f6bd50">&#9670;&nbsp;</a></span>headChunk</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/class_memory_chunk.html">MemoryChunk</a>* MemoryManager::headChunk</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a17562134547cbd42d28628edbf2b7839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17562134547cbd42d28628edbf2b7839">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t MemoryManager::size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a> 第 <a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/memory/<a class="el" href="../../d6/d76/memory_2_memory_manager_8h_source.html">MemoryManager.h</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/<a class="el" href="../../d7/dec/_memory_manager__aarch64_8cpp_source.html">MemoryManager_aarch64.cpp</a></li>
+<li>D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/memory/<a class="el" href="../../d5/d01/_memory_manager__host_8cpp_source.html">MemoryManager_host.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 25日 星期日 20:30:44 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

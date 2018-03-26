@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d9e/_s_d_card_status_8h">
+    <title>SDCardStatus.h File Reference</title>
+<para>Include dependency diagram for SDCardStatus.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d57/_s_d_card_status_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for SDCardStatus.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d9/d40/_s_d_card_status_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d0d/class_s_d_card_status">SDCardStatus</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>union @22 <link linkend="de/d9e/_s_d_card_status_8h_1aa7d5b57d2296db93d2e8286b65105216">@23</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1aa8583ca7a874922e0b94e7863084c75d">ADDRESS_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1ad00738d606df3e07df557cc794c7bfa0">AKE_SEQ_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a1ccba0a0db1af9764d95488a2157d024">BLOCK_LEN_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a81024fd3d3e7b54ddd8be4fabe4c2542">CARD_ECC_DISABLED</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1af6fe7863b08e2d3dad795b575e676163">CARD_ECC_FAILED</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a90b4450c79d7fc383d2fcfc5553bb0b1">CARD_IS_LOCKED</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1aa2cf82a7d5ca5f399b924fe2d7f01dd3">CC_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a8e2c03e53bdf1c88dd2901b83d82d72d">COM_CRC_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a611ab140c52a3ee15f2bfb80f9da6b07">CSD_OVERWIRTE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1af2927469bdabe945a31b86bc1ea3f278">CURRENT_STATE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a51fcdf157b4e4b037b198e63303496ad">ERASE_PARAM</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1aa489c59af89379fbb2f1b440def0993d">ERASE_RESET</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a3fc682b53a0f70ff0504441915beba7f">ERASE_SEQ_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a1d8b684fbe363ba400f7debb65862244">EXPECT_APP_CMD</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a40ab760628d1ccb4e2bdb84f8c111160">FX_EVENT_HAPPEN</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1abb60df08b5ac09b48b7bc377737a01d5">GENERAL_ERROR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a98fc17b3380911ce7ff51b1f7c2ff771">ILLEGAL_COMMAND</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1af0bcf3c6cf963a86a1e2568fb615762c">LOCK_UNLOCK_FAILED</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a59b5d31c312e39d4feb90a6ce93cd177">OUT_OF_RANGE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1aa886da934878f4cf774b3d67b6724a8f">READY_FOR_DATA</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a6c625e2d6b3363998698f0b64fafb4e4">res0_0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a7aa9475982b891345f875586a7ca3f61">res0_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a41736f285826834f00cf384f69a4fcad">resForAppCmd</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a17336e40245d82095ffec54911d324ce">resForSDIO</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a96834f250c594034c2e575fe3859542c">resForTest</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct @22::@24 <link linkend="de/d9e/_s_d_card_status_8h_1aac61666af481ee10728b9c5cb34fbd5b">S1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1ae7f66047e6e39ba2bb6af8b95f00d1dd">value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1a94bec41b2aad94d0fc9c53c6e3d90e3b">WP_ERASE_SKIP</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="de/d9e/_s_d_card_status_8h_1aad6e6e3511ab8eee3190f4853fa32f54">WP_VIOLATION</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d7/d0d/class_s_d_card_status">SDCardStatus</link> <link linkend="de/d9e/_s_d_card_status_8h_1aa065e47aa4f6a05a06b9ca9a6164e37b">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9e/_s_d_card_status_8h_1a842d99126ea561085bbf69faa1081313">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d9e/_s_d_card_status_8h_1ac191842ae7bac5d7c168ef1363e7e5b1">SDCardStatus</link> (
+uint32_t v)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/sd/SDCardStatus.h</para>
+    </simplesect>
+</section>

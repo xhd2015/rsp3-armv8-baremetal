@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d72/vmsa__descriptors_8h">
+    <title>vmsa_descriptors.h File Reference</title>
+    <programlisting>#include &lt;arch/common_aarch64/registers_defines.h&gt;</programlisting>
+<para>Include dependency diagram for vmsa_descriptors.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d74/vmsa__descriptors_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for vmsa_descriptors.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/dc8/vmsa__descriptors_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> 类 </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>变量</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a2fb40e4b9a6aa18196cd9dd2b1b4695c">APTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a35239665008e111c26e5d3b37b552723">Ignored_0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1af97046b348b0a6bf75006f03d4abac83">Ignored_1</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1ae5337d9015a39a5a7a46a1ad07e49c69">IsTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a9f1c2debe0dac9b976ed07ec9fd14967">NextLevelTableAddr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a9f11d09d0737bdacac0bc302445f5a03">NSTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a294a62ad680552886cecdd567f832a2f">PXNTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a53470f7f279afaafc9a6ea417933e2fd">RES0</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1ade9bd757cecd98e6f8d009a62c4b0a5a">Valid</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint64_t <link linkend="d5/d72/vmsa__descriptors_8h_1a22890fe30700e35bccaef60bf5a95c4e">XNTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>函数</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>class <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> <link linkend="d5/d72/vmsa__descriptors_8h_1aef13e0daaaf36e07fef84d08502226f2">__attribute__</link> (
+(packed) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d5/d72/vmsa__descriptors_8h_1a5ef79f79723cddd5234dc46d851bc381">dump</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> <link linkend="d5/d72/vmsa__descriptors_8h_1a74c85d33d59feea6ad4a23bb99ed54dc">read</link> (
+void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> <link linkend="d7/d41/class_reg_descriptor4_k_b_l0">RegDescriptor4KBL0</link> <link linkend="d5/d72/vmsa__descriptors_8h_1a594628bebe075c368261fc44da3a6994">read</link> (
+size_t p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/d72/vmsa__descriptors_8h_1a93dd7cc8430fd209c3136f90aa01baf6">SETUP_REG_ANY_MEM_READ</link> (
+Descriptor4KBL0 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/d72/vmsa__descriptors_8h_1a8e1098cfb06d1dd628f3d71e095f59dc">SETUP_REG_ANY_MEM_READ</link> (
+Descriptor4KBL1 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/d72/vmsa__descriptors_8h_1a49ab32c207d02a4bd0f73136899391b0">SETUP_REG_ANY_MEM_READ</link> (
+Descriptor4KBL2 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d5/d72/vmsa__descriptors_8h_1a4a3e7c4a6c13599948e24d14de1b0d9a">write</link> (
+void * p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d4/da4/def_8h_1a4bfe996d2d0d0324d8423605149e2e0d">AS_MACRO</link> void <link linkend="d5/d72/vmsa__descriptors_8h_1aa22ebcd05fe946c1a134d72490c14c6f">write</link> (
+size_t p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>详细描述</title>
+    <para>Definition in file D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/vmsa_descriptors.h</para>
+    </simplesect>
+</section>

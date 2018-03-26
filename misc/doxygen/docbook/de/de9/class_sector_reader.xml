@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/de9/class_sector_reader">
+<title>SectorReader class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/d73/_sector_reader_8h">&quot;SectorReader.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for SectorReader</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../db/d54/class_sector_reader__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SectorReader</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/de9/class_sector_reader__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="de/de9/class_sector_reader_1a5d254e10f28d3815bdd6baabb29570a4">read</link> (
+size_t secIndex, void * dst, size_t maxNumSec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="de/de9/class_sector_reader_1adeb3aa83a42e94d5bdf2b24efa24806c">write</link> (
+size_t secIndex, const void * src, size_t maxNumSec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="de/de9/class_sector_reader_1a5d254e10f28d3815bdd6baabb29570a4">
+                <title>size_t SectorReader::read (size_t secIndex, void *dst, size_t maxNumSec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/de9/class_sector_reader_1adeb3aa83a42e94d5bdf2b24efa24806c">
+                <title>size_t SectorReader::write (size_t secIndex, const void *src, size_t maxNumSec)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

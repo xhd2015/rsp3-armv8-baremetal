@@ -25,8 +25,8 @@ size_t itox(size_t i,char *dst,size_t size);
 size_t itos(size_t i,unsigned int base,char *dst,size_t size);
 
 // alignPrevious : 0是所有对齐的起点,0也是对齐的终点，会发生循环，即达到最大值附近后增加到0
-uint64_t alignNext(uint64_t d,uint64_t alignment);
-uint64_t alignPrevious(uint64_t d,uint64_t alignment);
+uint64_t alignAhead(uint64_t d,uint64_t alignment);
+uint64_t alignBackward(uint64_t d,uint64_t alignment);
 
 
 // string部分

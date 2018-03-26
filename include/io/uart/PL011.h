@@ -11,6 +11,7 @@
 #include <def.h>
 #include <generic_util.h>
 #include <io/MemBasedRegReader.h>
+#include <utility>
 
 
 class PL011
@@ -37,8 +38,9 @@ public:
 		UARTPeriphID0 = 0xFE0, //8bits, reset value=0x11
 
 	};
-	PL011(void *base)
-		:MemBasedRegReader(base),
+	template <class...Args>
+	PL011(Args && ... args)
+		:MemBasedRegReader(std::forward<Args>(args)...),
 		_writeDataReg(reg<char,UARTDR>()),
 		  _readDataReg(reg<uint16_t,UARTDR>()),
 		  _statusReg(reg<uint16_t,UARTFR>())

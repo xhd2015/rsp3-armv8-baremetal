@@ -1,0 +1,42 @@
+digraph "MemoryManager::reallocate"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node120 [label="MemoryManager::reallocate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node120 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node121 [label="MemoryManager::deallocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a41a3c946c368918bdb6e4b441080fb8b"];
+  Node121 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node122 [label="MemoryChunk::isAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae4ec0a942bb577ece9a1ec0413ba829f"];
+  Node121 -> Node123 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node123 [label="MemoryChunk::setAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae1d0e05382c171f1720f5b3d0fc62eab"];
+  Node121 -> Node124 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node124 [label="MemoryChunk::mergeTrailings\lUnallocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aaa4324b78e79aaf3c4ec5062d0bddba4"];
+  Node124 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node124 -> Node125 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node125 [label="MemoryChunk::isEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a77532081c761e7680970a9dcb0c29660"];
+  Node120 -> Node126 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 [label="MemoryManager::getAllocated\lLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dff/class_memory_manager.html#a6f9d398838761d0ad08090b40fffd863"];
+  Node126 -> Node127 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 [label="MemoryChunk::getNextValid\lChunkOffset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ade085feee596267aef1ab33cc47b8a2d"];
+  Node126 -> Node125 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="MemoryChunk::getSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aa112bc700f6a7ee7a97cb8821d55c701"];
+  Node120 -> Node123 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 -> Node124 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 [label="MemoryChunk::split",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ae261e5561acf5a4e3c591b6b49e6a3bf"];
+  Node129 -> Node125 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node130 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node130 [label="MemoryChunk::getDataPtr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#a76229a1376912890e4c358fec643d0eb"];
+  Node129 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="MemoryChunk::MemoryChunk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#aefec33edaebef2383fc1fa09be698433"];
+  Node129 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="MemoryChunk::getNextBase\lFromEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1d/class_memory_chunk.html#ab2cca8d381c3167dae31bb4fdc23affc"];
+  Node120 -> Node133 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="memcpy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d56/memcpy_8cpp.html#ab68eb7b07f8ada1c6c8bde74731d3de7"];
+}

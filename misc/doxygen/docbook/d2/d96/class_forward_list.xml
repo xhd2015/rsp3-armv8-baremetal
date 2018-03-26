@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d96/class_forward_list">
+<title>ForwardList class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d8/db0/data__structures_2_forward_list_8h">&quot;ForwardList.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ForwardList</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d1/d78/class_forward_list__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ForwardList</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../dc/db8/class_forward_list__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; const <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *(const <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *)&gt;  <link linkend="d2/d96/class_forward_list_1ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; void(const <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *)&gt;  <link linkend="d2/d96/class_forward_list_1a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *(<link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *)&gt;  <link linkend="d2/d96/class_forward_list_1a387971f642b447f0935899f6c78f0063">NextFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d2/daa/class_forward_node">ForwardNode</link>&lt; T &gt;  <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::function&lt; void(<link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> *)&gt;  <link linkend="d2/d96/class_forward_list_1a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NodeType * _head</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>NodeType * _tail</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1ae963fef0586e092955d76ab37450136d">DEFINE_COPY_CONSTRUCTOR</link> (
+<link linkend="d2/d96/class_forward_list">ForwardList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1ac99abe232d74c5b1cd186f88d25121d6">DEFINE_COPY_OPERATOR</link> (
+<link linkend="d2/d96/class_forward_list">ForwardList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1a8d4c172633907b25eb9f4e02d3962e14">DEFINE_MOVE_CONSTRUCTOR</link> (
+<link linkend="d2/d96/class_forward_list">ForwardList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1a4cfa1042d18909449fdea141e9e914a8">DEFINE_MOVE_OPERATOR</link> (
+<link linkend="d2/d96/class_forward_list">ForwardList</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d96/class_forward_list_1a0c7f42f52cc6970047cb6198305416d3">empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1a63658815ea79219cbd75ef8eada99560">ForwardList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a7006bc76a5c6f6cf2ab96535ea48b25d">head</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a56da8655df1b6f0d346851826736181d">head</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a68768eb72b1f508f631ab10fc7ac3981">insertAfterTail</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d96/class_forward_list_1ac99cb28d57b723c64de59327aec5d447">insertAfterTail</link> (
+<link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * tail)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a9d86636d797dc3e38b3bbf7d82d898a8">insertBeforeHead</link> (
+Args &amp;&amp;... args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d96/class_forward_list_1add3c3cdd52e119f335a43f908d007298">insertBeforeHead</link> (
+<link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * head)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a7b555711ba45fa50f6a0af2dad448f02">removeHead</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a2fbcd8437ff717e9bf6a3e5f3088e3f4">removeTail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d2/d96/class_forward_list_1a7670c566ec6358d7918c8fc6c1a5fbde">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a0f84dfc5a182869851322f2c72524aeb">tail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">NodeType</link> * <link linkend="d2/d96/class_forward_list_1a4ea32378f672d38c7eaab62b016c462d">tail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d96/class_forward_list_1a90038e445820ab06bb08056b6b388a3b">traverse</link> (
+<link linkend="d2/d96/class_forward_list_1a2cc2af79b02513f2b9d6b89eea214707">TraverseFunctor</link> func, <link linkend="d2/d96/class_forward_list_1a387971f642b447f0935899f6c78f0063">NextFunctor</link> nextFunc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d96/class_forward_list_1a30271380a1defb7e964b56404e9b7143">traverse</link> (
+<link linkend="d2/d96/class_forward_list_1a91b215c98511e88b19476cb55f571ed4">ConstTraverseFunctor</link> func, <link linkend="d2/d96/class_forward_list_1ab53d86284af0e5388f9a31ff72cb44cc">ConstNextFunctor</link> nextFunc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d96/class_forward_list_1a16e7a7eee73944b77009304d99fe73fb">~ForwardList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d2/d96/class_forward_list_1ab53d86284af0e5388f9a31ff72cb44cc">
+                <title>using ForwardList&lt; T &gt;::ConstNextFunctor =  std::function&lt;const NodeType*(const NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a91b215c98511e88b19476cb55f571ed4">
+                <title>using ForwardList&lt; T &gt;::ConstTraverseFunctor =  std::function&lt;void(const NodeType*)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a387971f642b447f0935899f6c78f0063">
+                <title>using ForwardList&lt; T &gt;::NextFunctor =  std::function&lt;NodeType*(NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a116c72373c9ad63d430acfba4c09bb6f">
+                <title>using ForwardList&lt; T &gt;::NodeType =  ForwardNode&lt;T&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a2cc2af79b02513f2b9d6b89eea214707">
+                <title>using ForwardList&lt; T &gt;::TraverseFunctor =  std::function&lt;void(NodeType *)&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d2/d96/class_forward_list_1ae963fef0586e092955d76ab37450136d">
+                <title>ForwardList&lt; T &gt;::DEFINE_COPY_CONSTRUCTOR (ForwardList)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1ac99abe232d74c5b1cd186f88d25121d6">
+                <title>ForwardList&lt; T &gt;::DEFINE_COPY_OPERATOR (ForwardList)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a8d4c172633907b25eb9f4e02d3962e14">
+                <title>ForwardList&lt; T &gt;::DEFINE_MOVE_CONSTRUCTOR (ForwardList)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a4cfa1042d18909449fdea141e9e914a8">
+                <title>ForwardList&lt; T &gt;::DEFINE_MOVE_OPERATOR (ForwardList)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a0c7f42f52cc6970047cb6198305416d3">
+                <title>bool ForwardList&lt; T &gt;::empty () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a63658815ea79219cbd75ef8eada99560">
+                <title>ForwardList&lt; T &gt;::ForwardList ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a7006bc76a5c6f6cf2ab96535ea48b25d">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::head ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a56da8655df1b6f0d346851826736181d">
+                <title>const ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::head () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a68768eb72b1f508f631ab10fc7ac3981">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::insertAfterTail (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1ac99cb28d57b723c64de59327aec5d447">
+                <title>void ForwardList&lt; T &gt;::insertAfterTail (NodeType *tail)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a9d86636d797dc3e38b3bbf7d82d898a8">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::insertBeforeHead (Args &amp;&amp;... args)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1add3c3cdd52e119f335a43f908d007298">
+                <title>void ForwardList&lt; T &gt;::insertBeforeHead (NodeType *head)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a7b555711ba45fa50f6a0af2dad448f02">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::removeHead ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a2fbcd8437ff717e9bf6a3e5f3088e3f4">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::removeTail ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a7670c566ec6358d7918c8fc6c1a5fbde">
+                <title>size_t ForwardList&lt; T &gt;::size () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a0f84dfc5a182869851322f2c72524aeb">
+                <title>ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::tail ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a4ea32378f672d38c7eaab62b016c462d">
+                <title>const ForwardList&lt; T &gt;::NodeType * ForwardList&lt; T &gt;::tail () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a90038e445820ab06bb08056b6b388a3b">
+                <title>void ForwardList&lt; T &gt;::traverse (TraverseFunctor func, NextFunctor nextFunc)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a30271380a1defb7e964b56404e9b7143">
+                <title>void ForwardList&lt; T &gt;::traverse (ConstTraverseFunctor func, ConstNextFunctor nextFunc) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d96/class_forward_list_1a16e7a7eee73944b77009304d99fe73fb">
+                <title>ForwardList&lt; T &gt;::~ForwardList ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

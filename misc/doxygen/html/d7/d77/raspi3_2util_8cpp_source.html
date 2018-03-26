@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>raspiOS: D:/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/arch/raspi3/util.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">raspiOS
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">A baremetal OS for ARMv8/raspi3</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_70d5e250c66d001b18da37689179cade.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_1270075813c54bb7e8db823bad0e5983.html">raspi3</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">util.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d77/raspi3_2util_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * util.cpp</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Jan 27, 2018</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: 13774</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/da4/def_8h.html">def.h</a>&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d2/d34/raspi3_2util_8h.html">arch/raspi3/util.h</a>&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d7/d77/raspi3_2util_8cpp.html#a458b6b6220ac01329bacc2761ac05a00">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/de3/qemu__virt_2util_8cpp.html#a458b6b6220ac01329bacc2761ac05a00">delayCPU</a>(<span class="keywordtype">size_t</span> i)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">while</span>(i--)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a> <a class="code" href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a>(<span class="stringliteral">&quot;nop \n\t&quot;</span>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d7/d77/raspi3_2util_8cpp.html#aa4a97fa761002995c6d8f3b7f67bff85">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/de3/qemu__virt_2util_8cpp.html#a458b6b6220ac01329bacc2761ac05a00">delayCPU</a>(<span class="keywordtype">size_t</span> i,<span class="keywordtype">size_t</span> j)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">while</span>(i--)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../d5/de3/qemu__virt_2util_8cpp.html#a458b6b6220ac01329bacc2761ac05a00">delayCPU</a>(j);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div><div class="ttc" id="def_8h_html"><div class="ttname"><a href="../../d4/da4/def_8h.html">def.h</a></div></div>
+<div class="ttc" id="exceptions_8cpp_html_a40b46c5cfd33825a3980572ace99e6a1"><div class="ttname"><a href="../../dd/d12/exceptions_8cpp.html#a40b46c5cfd33825a3980572ace99e6a1">__asm__</a></div><div class="ttdeci">__asm__(&quot;.text \&quot; &quot;.align 11 \&quot; &quot;.global ExceptionVectorEL1 \&quot; &quot;ExceptionVectorEL1:  \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x080 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x100 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x180 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x200 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x280 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x300 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x380 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x400 \&quot; &quot;b enterSynchronousEL1ExceptionHandle_no_prologue \&quot; &quot;. = ExceptionVectorEL1 + 0x480 \&quot; &quot;b enterIRQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x500 \&quot; &quot;b enterFIQEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x580 \&quot; &quot;b enterSErrorEL1ExceptionHandle_no_prologue\&quot; &quot;. = ExceptionVectorEL1 + 0x780 \&quot; &quot;. =. + 0x80 \&quot;)</div></div>
+<div class="ttc" id="qemu__virt_2util_8cpp_html_a458b6b6220ac01329bacc2761ac05a00"><div class="ttname"><a href="../../d5/de3/qemu__virt_2util_8cpp.html#a458b6b6220ac01329bacc2761ac05a00">delayCPU</a></div><div class="ttdeci">void delayCPU(size_t i)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de3/qemu__virt_2util_8cpp_source.html#l00014">util.cpp:14</a></div></div>
+<div class="ttc" id="raspi3_2util_8h_html"><div class="ttname"><a href="../../d2/d34/raspi3_2util_8h.html">util.h</a></div></div>
+<div class="ttc" id="main__test__adrp__instruction_8cpp_html_a28b72fa6de7635a872fd3ae108c838c8"><div class="ttname"><a href="../../d8/d64/main__test__adrp__instruction_8cpp.html#a28b72fa6de7635a872fd3ae108c838c8">__volatile__</a></div><div class="ttdeci">__asm__ __volatile__(&quot;.text \&quot; &quot;.global label1,label2,label3 \&quot; &quot;.align 12 \&quot; &quot;local_label1:\&quot; &quot;label1: \&quot; &quot;. = . + 0xc \&quot; &quot;local_label2:\&quot; &quot;label2: \&quot; &quot;.align 12 \&quot; &quot;. = . + 0xc \&quot; &quot;local_label3:\&quot; &quot;label3: \&quot; &quot;.4byte 0 \&quot;)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2018年 三月 24日 星期六 16:04:32 , 为 raspiOS使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

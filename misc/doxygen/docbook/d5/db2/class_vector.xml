@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/db2/class_vector">
+<title>Vector class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d0/d70/data__structures_2_vector_8h">&quot;Vector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for Vector</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../da/d98/class_vector__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Vector</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d99/class_vector__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="d5/db2/class_vector_1a7fd34362861863fde1851fb94f4ebf62">@2</link> {
+<link linkend="d5/db2/class_vector_1a7fd34362861863fde1851fb94f4ebf62a2ae103f0bfc2f01a7878b951da29b0e3">MINIMAL_CAPACITY</link>= 8
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef size_t  <link linkend="d5/db2/class_vector_1a81e241e014551221f8bf08189512b7d3">SizeType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef T  <link linkend="d5/db2/class_vector_1a242c91192546c60726f0781ac95400a0">ValueType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private 属性</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t capacity</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T * data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="d5/db2/class_vector_1a4b8bd4e1fc4179474730315d7925a7b9">append</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; vec, size_t len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/db2/class_vector_1a32ad98b135472b0ebc5d6cb3ae5d0085">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/db2/class_vector_1ad688a8a0dfbd07ea63d838058a436f79">empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/db2/class_vector_1a6a7d0c600ceefe269176cef77dc49382">erase</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/db2/class_vector_1ac249f0cd6a15ca3e4dd6cfa469d83245">getCapacity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T * <link linkend="d5/db2/class_vector_1ad4ab3c154a8408f62e3b1d24fc140a80">getData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const T * <link linkend="d5/db2/class_vector_1ac41546ccc85331c7589377e40f36670d">getData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/db2/class_vector_1afb849f7ed7b5bc30b29679a0ace9f7c1">getSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d5/db2/class_vector_1afc0fe321f274575a7705bcabb40a2587">insert</link> (
+size_t i, const T &amp; t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="d5/db2/class_vector_1a782044e0552a4d3b2d3fc646dd5f3944">operator=</link> (
+const std::initializer_list&lt; T &gt; &amp; il)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="d5/db2/class_vector_1ad176f0324e1e2d087861e487b3d1d93e">operator=</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; <link linkend="d5/db2/class_vector_1a5ae99cd00ee8d2a85535c4209b894a00">operator=</link> (
+<link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp;&amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const T &amp; <link linkend="d5/db2/class_vector_1a8789bf3c232d443c5f46c709fd655e4c">operator[]</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T &amp; <link linkend="d5/db2/class_vector_1a31102212204be8e4197a1deac5faa48c">operator[]</link> (
+size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="d5/db2/class_vector_1a80569243e4f2ea1bfad4da183e321d6d">popBack</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/db2/class_vector_1a9f2e76bed89ae88c391c5cd22c6c7b56">pushBack</link> (
+T t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/db2/class_vector_1a13badcacec751f1e00b0300aa8658c35">resize</link> (
+size_t newSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/db2/class_vector_1a48942fb58b7ab66b3b0bcf60c940c7ea">Vector</link> (
+size_t initSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/db2/class_vector_1ae9af0dbc42012ed20329133ff502dfd8">Vector</link> (
+const std::initializer_list&lt; T &gt; &amp; il)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/db2/class_vector_1a306dd81a8f3b84c7295ca6d90ce71192">Vector</link> (
+const <link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/db2/class_vector_1a57042023b72335eb47a2081ba531ac47">Vector</link> (
+<link linkend="d5/db2/class_vector">Vector</link>&lt; T &gt; &amp;&amp; vec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/db2/class_vector_1afd524fac19e6d3d69db5198ffe2952b0">~Vector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/db2/class_vector_1a6b554f869411a2502cac94de1d5cf763">adjustCapacityForOneLess</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/db2/class_vector_1a715e96ede3749d656389ea183e3a732a">adjustCapacityForOneMore</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/db2/class_vector_1a2200dde3c6beb2f84f3dbd0e6bb104f3">resizeCapacity</link> (
+size_t capacity)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static size_t <link linkend="d5/db2/class_vector_1a23b1206d5ed82e4712cde658e96e16cd">getIncrementalSize</link> (
+size_t curSize)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="d5/db2/class_vector_1a7fd34362861863fde1851fb94f4ebf62">
+               <title>enum @2 </title>
+               
+               <formalpara>
+                    <title>枚举值:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d5/db2/class_vector_1a7fd34362861863fde1851fb94f4ebf62a2ae103f0bfc2f01a7878b951da29b0e3">
+                            <term>MINIMAL_CAPACITY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 21 of file Vector.h
+                    <computeroutput><literallayout>
+{
+MINIMAL_CAPACITY= 8, 
+}@2;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="d5/db2/class_vector_1a81e241e014551221f8bf08189512b7d3">
+                <title>using Vector&lt; T &gt;::SizeType =  size_t</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a242c91192546c60726f0781ac95400a0">
+                <title>using Vector&lt; T &gt;::ValueType =  T</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>类成员变量说明</title>
+        </section>
+            <section xml:id="d5/db2/class_vector_1a4b8bd4e1fc4179474730315d7925a7b9">
+                <title>Vector&lt; T &gt; &amp; Vector&lt; T &gt;::append (const Vector&lt; T &gt; &amp;vec, size_t len=SIZE_MAX)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a32ad98b135472b0ebc5d6cb3ae5d0085">
+                <title>void Vector&lt; T &gt;::clear ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ad688a8a0dfbd07ea63d838058a436f79">
+                <title>bool Vector&lt; T &gt;::empty () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a6a7d0c600ceefe269176cef77dc49382">
+                <title>void Vector&lt; T &gt;::erase (size_t i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ac249f0cd6a15ca3e4dd6cfa469d83245">
+                <title>size_t Vector&lt; T &gt;::getCapacity () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ad4ab3c154a8408f62e3b1d24fc140a80">
+                <title>T * Vector&lt; T &gt;::getData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ac41546ccc85331c7589377e40f36670d">
+                <title>const T * Vector&lt; T &gt;::getData () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1afb849f7ed7b5bc30b29679a0ace9f7c1">
+                <title>size_t Vector&lt; T &gt;::getSize () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1afc0fe321f274575a7705bcabb40a2587">
+                <title>size_t Vector&lt; T &gt;::insert (size_t i, const T &amp;t)</title> <emphasis></emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>参数                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>valid index [0,size] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="d5/db2/class_vector_1a782044e0552a4d3b2d3fc646dd5f3944">
+                <title>Vector&lt;T&gt;&amp; Vector&lt; T &gt;::operator= (const std::initializer_list&lt; T &gt; &amp;il)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ad176f0324e1e2d087861e487b3d1d93e">
+                <title>Vector&lt; T &gt; &amp; Vector&lt; T &gt;::operator= (const Vector&lt; T &gt; &amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a5ae99cd00ee8d2a85535c4209b894a00">
+                <title>Vector&lt; T &gt; &amp; Vector&lt; T &gt;::operator= (Vector&lt; T &gt; &amp;&amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a8789bf3c232d443c5f46c709fd655e4c">
+                <title>const T &amp; Vector&lt; T &gt;::operator[] (size_t i) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a31102212204be8e4197a1deac5faa48c">
+                <title>T &amp; Vector&lt; T &gt;::operator[] (size_t i)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a80569243e4f2ea1bfad4da183e321d6d">
+                <title>T Vector&lt; T &gt;::popBack ()</title> <emphasis></emphasis>
+                
+<para>it is your responsiblity to ensure size&gt;0 </para>
+
+            </section>
+            <section xml:id="d5/db2/class_vector_1a9f2e76bed89ae88c391c5cd22c6c7b56">
+                <title>void Vector&lt; T &gt;::pushBack (T t)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a13badcacec751f1e00b0300aa8658c35">
+                <title>bool Vector&lt; T &gt;::resize (size_t newSize)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a48942fb58b7ab66b3b0bcf60c940c7ea">
+                <title>Vector&lt; T &gt;::Vector (size_t initSize=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1ae9af0dbc42012ed20329133ff502dfd8">
+                <title>Vector&lt; T &gt;::Vector (const std::initializer_list&lt; T &gt; &amp;il)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a306dd81a8f3b84c7295ca6d90ce71192">
+                <title>Vector&lt; T &gt;::Vector (const Vector&lt; T &gt; &amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a57042023b72335eb47a2081ba531ac47">
+                <title>Vector&lt; T &gt;::Vector (Vector&lt; T &gt; &amp;&amp;vec)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1afd524fac19e6d3d69db5198ffe2952b0">
+                <title>Vector&lt; T &gt;::~Vector ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a6b554f869411a2502cac94de1d5cf763">
+                <title>bool Vector&lt; T &gt;::adjustCapacityForOneLess ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a715e96ede3749d656389ea183e3a732a">
+                <title>bool Vector&lt; T &gt;::adjustCapacityForOneMore ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a2200dde3c6beb2f84f3dbd0e6bb104f3">
+                <title>bool Vector&lt; T &gt;::resizeCapacity (size_t capacity)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/db2/class_vector_1a23b1206d5ed82e4712cde658e96e16cd">
+                <title>size_t Vector&lt; T &gt;::getIncrementalSize (size_t curSize)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

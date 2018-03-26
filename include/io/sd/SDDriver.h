@@ -13,7 +13,9 @@
 #include <utility>
 #include <io/sd/CardSpecData.h>
 
-// SD,SDIO,MMC
+/**
+ *  SD,SDIO,MMC
+ */
 class SDDriver
 	:public MemBasedRegReader
 {
@@ -201,7 +203,11 @@ public:
 	size_t    readBlocksNoDMA(size_t startSec,size_t blocks,void * buffer);
 	size_t    writeSingleBlockNoDMA(size_t startSec,const void *buffer);
 	size_t    writeBlocksNoDMA(size_t startSec,size_t blocks,const void *buffer);
-	uint32_t  cardStatus();
+	SDCardStatus  cardStatus();
+	AS_MACRO void     clearIntErrStatus(){	reg<uint16_t,reg_normalintrsts>()=0x0000FFFFu;
+	reg<uint16_t,reg_errorintrsts>()=0x0000F3FFu;}
+
+
 //	AS_MACRO void normalIntStatus(uint16_t mask){reg<uint16_t,reg_normalintrsts>() = mask;}
 //	AS_MACRO void errorIntStatus(uint16_t mask){reg<uint16_t,reg_errorintrsts>() = mask;}
 //	AS_MACRO void argumentLo(uint16_t argLo){reg<uint16_t,reg_argument1lo>()=argLo;}

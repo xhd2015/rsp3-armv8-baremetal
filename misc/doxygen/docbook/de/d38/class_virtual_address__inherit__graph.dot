@@ -1,0 +1,6 @@
+digraph "VirtualAddress"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node976 [label="{VirtualAddress\n|+ _addr\l+ _segAddr\l- @1\l- _addrLen\l- _hasTag\l|+ addr()\l+ addr()\l+ addrLen()\l+ addrLen()\l+ hasLevel()\l+ index()\l+ index()\l+ initialLevel()\l+ offset()\l+ offset()\l+ ttbrSel()\l+ ttbrSel()\l+ valid()\l+ VirtualAddress()\l+ VirtualAddress()\l- levelIndexMask()\l- minimalLevelLength()\l- rightShiftBits()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

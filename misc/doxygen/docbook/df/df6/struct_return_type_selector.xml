@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/df6/struct_return_type_selector">
+<title>ReturnTypeSelector struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d90/_return_type_selector_8h">&quot;ReturnTypeSelector.h&quot;</link></programlisting>
+</para>
+<para>Inheritance diagram for ReturnTypeSelector</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d7/d93/struct_return_type_selector__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ReturnTypeSelector</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d6/d43/struct_return_type_selector__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>IsRef</declname>
+        <defname>IsRef</defname>
+        <defval>true</defval>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>IsConst</declname>
+        <defname>IsConst</defname>
+        <defval>true</defval>
+      </param>
+    </templateparamlist>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::add_lvalue_reference_t&lt; std::add_const_t&lt; T &gt; &gt;  <link linkend="df/df6/struct_return_type_selector_1ad517973d8abb3606b55a44d69409aedb">type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="df/df6/struct_return_type_selector_1ad517973d8abb3606b55a44d69409aedb">
+                <title>using ReturnTypeSelector&lt; T, IsRef, IsConst &gt;::type =  std::add_lvalue_reference_t&lt;std::add_const_t&lt;T&gt; &gt;</title> <emphasis></emphasis>
+                
+            </section>
+</section>
