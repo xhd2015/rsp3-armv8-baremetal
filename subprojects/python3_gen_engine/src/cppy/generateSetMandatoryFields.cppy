@@ -1,0 +1,25 @@
+<#
+	*includable module*
+	requires: has_write, hasMultiFields,qualName,ori_fields,field
+>
+<```
+if has_write and not hasMultiFields:
+>
+<=++>
+    AS_MACRO {qualName} & setMandatoryFields()
+    {{
+<```
+    for i in range(0,len(field),2):
+        fd=field[i]
+        v = resValue(ori_fields[0][1][i])
+        if v==1:
+            value=1
+        else:
+            value=0
+>
+<=++>
+        {fd} = {value};
+<=-->
+        return *this;
+    }}
+<=-->

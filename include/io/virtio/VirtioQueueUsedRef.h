@@ -27,7 +27,10 @@ public:
 		uint32_t _len;
 	}__attribute__((packed));
 
-
+	VirtioQueueUsedRef()
+		:_queueSize(0),
+		 _base(nullptr)
+	{}
 
 	VirtioQueueUsedRef(void *base, size_t queueSize,uint16_t flags, uint16_t idx,uint16_t availEvent)
 	  : _queueSize(queueSize),

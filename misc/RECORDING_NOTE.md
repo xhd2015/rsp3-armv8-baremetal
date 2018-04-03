@@ -1,3 +1,196 @@
+# 2018年4月3日14:00:58
+【commit point】完成了基于python的模板文件生成，参见[README of python3_gen_engine](../subprojects/python3_gen_engine/src/README.md)，该引擎支持*模块化*。
+
+基于该引擎可以更容易地生成C++文件。
+# 2018年4月2日23:25:41
+【acknowledged】make的pattern rule必须加空格：`%.o : %.c`
+# 2018年4月1日13:48:19
+优化含位域的类设计
+1.系统寄存器   --  需要一个中间变量
+2.内存映射寄存器 -- 需要volatile
+3.普通的内存结构体 -- 没有要求
+
+对于系统寄存器，原来的设计可以使用
+对于内存映射的寄存器， 需要定义该寄存器是否是volatile的，需要一个静态of方法，接受void*,size_t，volatile void*作为参数，返回一个该结构体
+对于普通的内存结构体，静态of方法
+
+```
+<```
+	if not has_header:
+		guard=...
+>
+<=++>
+#ifndef {guard}
+#define {guard}
+<=-->
+class {name} {{
+public:
+<```
+	for i in...
+>
+<#
+	type 应当含有volatile和非volatile两种形式
+	定义一个位域结构体的关键：
+
+	系统寄存器存在一个：read，update的序列
+	系统寄存器可以是静态的，这是可以通过内存中的数据来定义。
+	也可以是volatile的，这种情况下每次更新都必须先读取。
+
+>
+<=++>
+		{type}    {filed}:{bits};
+<=-->
+<#
+	根据不同的情况生成静态的read或者of函数
+>
+<```
+	if is_sys_reg:
+>
+<=++>
+	AS_MACRO static {name} read();
+<-->
+<```
+	else:#memmory mapped
+		if is_volatile:
+		for arg_type in ["volatile void*","size_t","void *"]:
+>
+<=+2>
+	AS_MACRO static {name} of({arg_type} addr);
+<=-2>
+}}
+
+<```
+	if not has_header:
+>
+<=++>
+#endif //{guard}
+<=-->
+```
+
+调用方式:
+`python3 GenEngine.py WHAT.cppy WHAT.py`
+
+```c++
+<```
+import Output
+import WHAT
+guard=gen...
+>
+#ifndef {guard}
+#define {guard}
+
+<```
+for inf in include_files:
+>
+<=++>
+#include <{inf}>
+<=-->
+<```
+out=Output.Output()
+for each_class in classes:
+	WHAT.genOutput(each_calss,out,has_header=true)
+
+out.print()
+>
+#endif // {guard}
+```
+
+each_class的定义方式：
+```python
+{"name":"", "scale_type":"uint64_t","is_sys_reg":True,  "is_volatile":True, "is_mem_reg":False,  "sys_reg_name":"S0...",   "fields":[("name",[]),("name",[])],
+"need_read":True,
+"need_updateRead":True,
+"need_write":True
+}
+```
+
+用于用户的定义：
+```python
+["NAME", "SCALE_TYPE",[[],[]],"sys_reg","volatile",  ]
+
+# 默认使用Sn作为结构体的名称, 当只有一个结构体时，名称为""，同时也不会生成union+结构体的方式
+# 在域后面的项是可选的，"sys_reg"表明"is_sys_reg", 后面必然跟一项用于gcc编译的名称, 即sys_reg_name.
+# 如果最后没有设置sys_reg,mem_reg，则会设置is_mem_reg
+# volatile 表明 is_volatile
+# has_read
+# has_write
+
+# 对于mem_reg, 默认只有of静态方法
+# 对于volatile mem_reg, of方法还需要增加一个voaltile构造
+
+# 对于sys_reg,默认有read静态方法，有write方法，update方法返回自身的引用
+
+
+```
+
+
+# 2018年3月30日21:20:22
+编写中断系统的文档
+# 2018年3月27日23:23:54
+按照php生成html文件的风格，所有无特殊符号的均原样输出。
+
+代码块使用``` ... ``` 引起
+
+文档的输出对象是out, 可使用out.write方法。
+
+比如一个例子的源文件是：
+```
+import header
+
+class ${} {{
+
+}}
+
+
+```
+
+${VAR} 使用python的变量替换。
+
+
+
+# 2018年3月27日15:32:33
+定义一种无须外部Python来生成代码文件的bit operations
+
+定义位域关键的信息在于：1.每个位的含义  2.RES0,RES1   3.某个标识不同的取值有不同的位含义。
+
+定义BitRange标识位范围
+
+BitRange的含义：由enum定义的
+```c++
+// 按顺序的
+// type数组是否有可能？
+static constexpr BitRange Ranges[]
+static constexpr A3V = BitRanage<0,3>;
+static constexpr EOI = BitRange<4>;
+
+enum{
+	A3V,
+	EOI,
+	...
+}
+
+constexpr BitRange ranges[]={
+	{}, // 名称
+	{},
+	{},
+};
+
+
+
+```
+
+静态检查：如果定义的位数和声明的位数不相等，则报错
+
+取值
+
+# 2018年3月27日10:46:03
+【todo】撰写sdio和virtio的文档
+# 2018年3月27日01:25:31
+改进了virtio的类体系结构设计，新增了VirtioBlockDriver类，用于读取和写入扇区。参见文件[main_test_virtio_VirtioBlockDriver.cpp](../src/arch/qemu_virt/main_test_virtio_VirtioBlockDriver.cpp)
+
+【todo】 完整地重新定义abort,assert等c语言级别的函数。定义如何从错误中恢复，且实现机制简单。
+# 2018年3月26日23:17:59
+【acknowledged】 尽量少用nullptr检查，因为这实际上是对调用者的信任。
 # 2018年3月26日15:13:54
 【commit point】 添加了`qemu_virt`下对virtio-blk驱动的测试，成功读取扇区数据。
 参见文件[main_test_virtio.cpp](../src/arch/qemu_virt/main_test_virtio.cpp)

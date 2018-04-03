@@ -1,11 +1,11 @@
 
+REG_PATH := $(ROOT_PROJECT)/include/arch/common_aarch64/registers
+PY_PATH := $(ROOT_PROJECT)/subprojects/python3_gen_engine/src
 
-.PHONY:update_all_registers
-ALL_REGISTERS := gicv3_registers.h timer_registers.h system_common_registers.h vmsa_descriptors.h general_registers.h
-update_all_registers: $(ALL_REGISTERS)
-$(ALL_REGISTERS):
-	@
-	target=$@
-	target=$${target/%.h/}
-	include=$(ROOT_PROJECT)/include/arch/common_aarch64
-	$(PYTHON3) $${include}/gen_register_class.py $${include}/$${target}.py $${include}/$${target}.h
+ALL_REGISTERS := $(REG_PATH)/gicv3_registers.h $(REG_PATH)/timer_registers.h $(REG_PATH)/system_common_registers.h $(REG_PATH)/vmsa_descriptors.h
+
+$(REG_PATH)/%.h : $(PY_PATH)/reg_defs/%.py FORCE
+	cd $(PY_PATH) && $(PYTHON3) $(PY_PATH)/GenEngine.py $< $@
+
+.PHONY:all_registers
+all_registers:$(ALL_REGISTERS)

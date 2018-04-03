@@ -13,20 +13,36 @@
 #include <io/virtio/VirtioQueueAvailableRef.h>
 #include <io/virtio/VirtioQueueUsedRef.h>
 #include <generic_util.h>
+#include <cstring>
 
 class VirtioQueueLayout{
 public:
+	VirtioQueueLayout()
+		:_queueSize(0),
+		 _usedRingAlignment(0),
+		 _queueBase(nullptr),
+		 _usedDescs(0),
+		 _descTable(nullptr),
+		 _availRing(),
+		 _usedRing()
+		{}
 
 	// TODO 重新初始化AvailRing和UsedRing
-	VirtioQueueLayout(void *base,size_t queueSize,size_t usedRingAlignment)
+	VirtioQueueLayout(void *base,size_t queueSize,size_t usedRingAlignment,bool doInit=false)
 		:_queueSize(queueSize),
 		 _usedRingAlignment(usedRingAlignment),
 		 _queueBase(reinterpret_cast<char*>(base)),
+		 _usedDescs(0),
 		 _descTable(reinterpret_cast<decltype((_descTable))>(base)),
 		 _availRing(_queueBase+ sizeof(_descTable[0])*_queueSize,queueSize,0,0,0),
 		 _usedRing(reinterpret_cast<void*>(alignAhead(reinterpret_cast<uint64_t>(_availRing.base()),usedRingAlignment)),queueSize,0,0,0)
 
-	{}
+	{
+		if(doInit)
+		{
+			std::memset(base, 0, memSize());
+		}
+	}
 	AS_MACRO void   queueSize(size_t qsize){_queueSize = qsize;}
 	AS_MACRO size_t queueSize()const{return _queueSize;}
 	size_t memSize()const;
@@ -47,30 +63,49 @@ public:
 		_usedRingAlignment = usedRingAlignment;
 	}
 
-	VirtioQueueAvailableRef& availRing() {
+	AS_MACRO VirtioQueueAvailableRef& availRing() {
 		return _availRing;
 	}
 
-	const VirtioQueueAvailableRef& availRing() const {
+	AS_MACRO const VirtioQueueAvailableRef& availRing() const {
 		return _availRing;
 	}
-	VirtioQueueDescriptor* descTable() {
+	AS_MACRO VirtioQueueDescriptor* descTable() {
 		return _descTable;
 	}
-	const VirtioQueueDescriptor* descTable() const {
+	AS_MACRO const VirtioQueueDescriptor* descTable() const {
 		return _descTable;
 	}
-	VirtioQueueUsedRef& usedRing() {
+	AS_MACRO VirtioQueueUsedRef& usedRing() {
 		return _usedRing;
 	}
-	const VirtioQueueUsedRef& usedRing() const {
+	AS_MACRO const VirtioQueueUsedRef& usedRing() const {
 		return _usedRing;
 	}
+
+	void                    chainDescriptors(VirtioQueueDescriptor ** descs,size_t size);
+
+	AS_MACRO size_t         leftDescriptors()const{return _queueSize - _usedDescs;}
+
+	/**
+	 * 分配一个描述符，空间不足则返回nullptr
+	 * @return 分配的描述符
+	 */
+	VirtioQueueDescriptor * allocateDescriptor();
+	void                    deallocateDescriptor(VirtioQueueDescriptor * desc);
+	// most conditions are not checked.
+	bool                    allocateDescriptros(VirtioQueueDescriptor ** dest, size_t len);
+	void                    deallocateDescriptors(VirtioQueueDescriptor ** dest, size_t len);
+
+	void					pushAvl(VirtioQueueDescriptor * desc);
 
 private:
 	size_t  _queueSize;
 	size_t  _usedRingAlignment;
 	char *  _queueBase;
+
+	// helper fileds
+	size_t  _usedDescs;
 
 	// layout from queueBase
 	VirtioQueueDescriptor *  _descTable; // align=16,size=16*_queueSize

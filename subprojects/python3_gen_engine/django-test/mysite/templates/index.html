@@ -1,0 +1,33 @@
+
+
+
+class {{name}} {
+public:
+	{% if fields|length > 1 %}
+	union {
+		{% for struct_name,field in fields %}
+		struct {
+			{% for fd,bts in field %}
+			{% if volatile %}
+			volatile {{scale_type}}   {{fd}}:{{bts}};
+			{% else %}
+			{{scale_type}}   {{fd}}:{{bts}};
+			{% endif %}
+			{% endfor %}
+		}__attribute__((packed)) {{struct_name}};
+		{% endfor %}
+	};
+	{% else %}
+	{% for _,field in fields %}
+	{% for fd,bts in field %}
+        {% if volatile %}
+	volatile {{scale_type}}   {{fd}}:{{bts}};
+	{% else %}
+	{{scale_type}}   {{fd}}:{{bts}};
+	{% endif %}
+	{% endfor %}
+	{% endfor %}
+
+	{% endif %}
+	// volatile={{volatile}}
+};

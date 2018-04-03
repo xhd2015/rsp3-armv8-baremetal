@@ -16,29 +16,33 @@ public:
 		//
 		VIRTQ_AVAIL_F_NO_INTERRUPT=0,
 	};
+	VirtioQueueAvailableRef()
+		:_queueSize(0),
+		 _base(nullptr)
+	{}
 
 	VirtioQueueAvailableRef(void *base,size_t queueSize,uint16_t flags,uint16_t idx,uint16_t usedEvent)
 		:_queueSize(queueSize),
 		 _base(reinterpret_cast<char*>(base))
 		 {
-			this->flags();
+			this->flags()=flags;
+			this->idx()=idx;
+			this->usedEvent()=usedEvent;
 		 }
 	AS_MACRO const void * base(){return _base;}
 	AS_MACRO void *   base()const{return _base;}
 	AS_MACRO size_t   queueSize()const{return _queueSize;}
 	AS_MACRO size_t   memSize()const{return 2+2+2*_queueSize + 2;}
 
-	AS_MACRO void flags(uint16_t f){ *reinterpret_cast<uint16_t*>(_base)=f;}
-	AS_MACRO void idx(uint16_t i) { *reinterpret_cast<uint16_t*>(_base + 2)=i;}
-	AS_MACRO void  usedEvent(uint16_t e){ *reinterpret_cast<uint16_t*>(_base+2+2+_queueSize*2)=e;}
+	AS_MACRO uint16_t& flags(){ return *reinterpret_cast<uint16_t*>(_base);}
+	AS_MACRO uint16_t flags()const{ return *reinterpret_cast<uint16_t*>(_base);}
+	AS_MACRO uint16_t& idx() { return *reinterpret_cast<uint16_t*>(_base + 2);}
+	AS_MACRO uint16_t idx()const { return *reinterpret_cast<uint16_t*>(_base + 2);}
+	AS_MACRO uint16_t&  usedEvent(){ return *reinterpret_cast<uint16_t*>(_base+2+2+_queueSize*2);}
+	AS_MACRO uint16_t  usedEvent()const{ return *reinterpret_cast<uint16_t*>(_base+2+2+_queueSize*2);}
 
-	// 布局
-	AS_MACRO uint16_t flags()const{return *reinterpret_cast<uint16_t*>(_base);}
-	AS_MACRO uint16_t idx()const{return *reinterpret_cast<uint16_t*>(_base + 2);}
-	AS_MACRO uint16_t * ring(){return reinterpret_cast<uint16_t*>(_base + 4);}
 	AS_MACRO const uint16_t* ring()const{return reinterpret_cast<const uint16_t*>(_base + 4);}
-	AS_MACRO uint16_t  usedEvent()const{return  *reinterpret_cast<uint16_t*>(_base+2+2+_queueSize*2);}
-
+	AS_MACRO uint16_t* ring(){return reinterpret_cast<uint16_t*>(_base + 4);}
 
 private:
 	size_t _queueSize;

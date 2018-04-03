@@ -1,0 +1,50 @@
+<#
+	*includable module*
+	requires:name, hasMultiFields, applies, ori_fields
+	所有的base都是相对于0的。
+>
+AS_MACRO void dump()const
+{{
+    kout << "{name}: ";
+<```
+applyIndex=-1
+for struct_name,field in fields:
+    applyIndex+=1
+    if hasMultiFields:
+        if applies[applyIndex]:
+            ifCond = "if("+applies[applyIndex]+")"
+        else:
+            ifCond = "else"
+>
+<=  ++>
+<=      ++>
+    {ifCond}
+    {{
+<=  -->
+        kout
+<```
+    for i in range(0,len(field),2):
+        fd=field[i]
+        if hasMultiFields:
+            fd=struct_name+"."+fd
+        features=ori_fields[applyIndex][1][i].split(",")
+        if len(features)>1:
+            features=features[1:]
+            if len(features)>1:
+                raise Exception("Currently Unsupported Feature Number more than 1\n")
+            transferedFd = features[0].strip()+"("+fd+")"
+        else:
+            transferedFd = fd    
+>
+<=      ++>
+            << "{fd} = " << {transferedFd} << ", "
+<=  -->
+            << "\\n";
+<```
+    if hasMultiFields:
+>
+<=      ++>
+    }}
+<=  -->
+<=-->
+}}

@@ -62,13 +62,13 @@ AS_MACRO size_t bitMask()
 
 // 保留为1的位
 template <size_t ... bit>
-AS_MACRO size_t bitOnes()
+AS_MACRO constexpr size_t bitOnes()
 {
 	return BitMaskStruct<bit...>::value;
 }
 // 保留为0的位
 template <size_t ...bit>
-AS_MACRO size_t bitZeros()
+AS_MACRO constexpr size_t bitZeros()
 {
 	return ~(BitMaskStruct<bit...>::value);
 }

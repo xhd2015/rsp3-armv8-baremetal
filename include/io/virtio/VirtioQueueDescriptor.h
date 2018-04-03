@@ -8,6 +8,8 @@
 #ifndef INCLUDE_IO_VIRTIO_VIRTIOQUEUEDESCRIPTOR_H_
 #define INCLUDE_IO_VIRTIO_VIRTIOQUEUEDESCRIPTOR_H_
 
+#include <def.h>
+#include <programming/macros.h>
 /**
  * 描述符（表）主要用于引用驱动使用的缓冲区
  *  描述符可以指向一个描述符表
@@ -42,8 +44,8 @@ public:
 		return _flags;
 	}
 
-	AS_MACRO void flags(uint16_t flags) {
-		_flags = flags;
+	AS_MACRO uint16_t& flags() {
+		return referenceof(this,_flags);
 	}
 
 	AS_MACRO uint32_t len() const {
@@ -58,9 +60,12 @@ public:
 		return _next;
 	}
 
-	AS_MACRO void next(uint16_t next) {
-		_next = next;
+	AS_MACRO uint16_t & next() {
+		return referenceof(this,_next);
 	}
+	AS_MACRO void markAllocated(){_len=1;}
+	AS_MACRO bool allocated()const{ return _addr!=0 || _len!=0;}
+	AS_MACRO void deallocate(){ _addr=0;_len=0;_flags=0;_next=0;}
 
 private:
 	uint64_t  _addr; // 如果指向一个间接描述符表，则间接描述符表的内容为：

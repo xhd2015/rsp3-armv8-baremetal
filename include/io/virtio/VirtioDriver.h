@@ -9,6 +9,9 @@
 #define SRC_IO_VIRTIO_VIRTIODRIVER_H_
 #include <io/MemBasedRegReader.h>
 #include <utility>
+#include <io/virtio/VirtioQueueDescriptor.h>
+#include <io/virtio/VirtioQueueLayout.h>
+#include <new>
 /**
  * 使用mmio方式实现的Virtio
  *
@@ -64,7 +67,7 @@ public:
 		V1_MagicValue=0, // 读取域必须返回 "virt",0x74726976
 		V1_Version = 0x4,  // 必须返回VERSION_LEGACY
 		V1_DeviceID = 0x8,          // 32 bits
-		V1_VendorID = 0xC,          // 32bits
+		V1_VendorID = 0xC,          // 32bits，,如果virtio设备由QEMU提供，则返回字符串"QEMU"
 		V1_HostFeatures = 0x10,   // 32bits,V1_Host = Device, V1_Guest = Driver
 		V1_HostFeaturesSel = 0x14,// 32bits
 		V1_GuestFeatures = 0x20,   // 32bits
@@ -152,24 +155,38 @@ public:
 		: MemBasedRegReader(std::forward<Args>(args)...),
 		  _version(0),
 		  _deviceID(0),
-
-		  _status(reinterpret_cast<decltype((_status))>(reg8<V2_Status>()))
+		  _virtqueue()
 		{}
+
+protected:
 	/**
 	 * The driver MUST start the device initialization by reading and checking values from MagicValue and Version.
 If both values are valid, it MUST read DeviceID and if its value is zero (0x0) MUST abort initialization and
 MUST NOT access any other register.
+	* 这个方法不能被客户端调用，因为只有具体的驱动设备才能完成它自己的初始化过程。
 	 */
 	void init();
+public:
+
+	template <class ... Args>
+	AS_MACRO void initVirtQueue(Args && ... args)
+	{
+		new (&_virtqueue) VirtioQueueLayout(std::forward<Args>(args)...);
+	}
+	AS_MACRO VirtioQueueLayout& virtqueue()  {
+		return _virtqueue;
+	}
+	AS_MACRO const VirtioQueueLayout& virtqueue() const {
+		return _virtqueue;
+	}
 
 
+	AS_MACRO void notify(uint32_t qIndex=0){ reg32<VirtioDriver::V1_QueueNotify>()=qIndex;}
 
-
-private:
-
+protected:
 	uint8_t  _version;
 	uint32_t _deviceID;
-	volatile uint64_t (&_status)[2];
+	VirtioQueueLayout _virtqueue;
 };
 
 

@@ -1,0 +1,73 @@
+<```
+# -*-encoding:utf8-*-
+>
+<```
+from support import *
+
+hasMultiFields = (len(fields)>1)
+ori_fields=fields
+fields=processedFields(ori_fields)
+qualScaleType = scale_type
+>
+
+
+class {name} {{
+public:
+
+<! cppy/generateFieldsDefinition.cppy >
+
+<```
+qualName = name
+>
+    AS_MACRO {name}({scale_type} v)            {{set(v);}}
+    AS_MACRO {name}& operator=({scale_type} v) {{set(v);return *this;}}
+    AS_MACRO void set({scale_type} v) {{ *reinterpret_cast<{scale_type}*>(this)=v;}}
+    AS_MACRO {scale_type}  get()const 
+    {{
+        return *reinterpret_cast<{scale_type}*>(this);
+    }}
+
+
+<```
+if has_read:
+>
+<=
+indent=1;indentFmtStr=1;indentPyCode=1
+>
+<! cppy/generateFieldsDump.cppy >
+<=
+indent=0;indentFmtStr=0;indentPyCode=0
+>
+
+
+<```
+if has_read:
+>
+<=++>
+
+    AS_MACRO static {name} read()
+    {{ 
+        {name} res;
+        __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(res));
+        return res;
+    }}
+    AS_MACRO {name} & update()
+    {{
+        __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(*this));
+        return *this;
+    }}
+<=-->
+
+<! cppy/generateSetMandatoryFields.cppy >
+<```
+if has_write:
+>
+<=++>
+    
+    AS_MACRO void write()const
+    {{
+        __asm__ __volatile__("msr {sys_reg_name},%0\\n\\t"::"r"(*this));
+    }}
+<=-->
+
+}}__attribute__((packed));

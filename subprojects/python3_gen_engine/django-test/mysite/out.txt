@@ -1,0 +1,32 @@
+
+
+
+class SPSel {
+public:
+	
+	union {
+		
+		struct {
+			
+			
+			uint64_t   SPSel:1;
+			
+			
+			
+			uint64_t   RES0:63;
+			
+			
+		}__attribute__((packed)) S0;
+		
+		struct {
+			
+			
+			uint64_t   RES1:64;
+			
+			
+		}__attribute__((packed)) S1;
+		
+	};
+	
+	// volatile=False
+};

@@ -26,6 +26,7 @@
 
 
 // 2.using gcc reprensentation
+// s3_0_c4_c2_3
 #define SYS_REG_GCC_REPR(op0,op1,crn,crm,op2) s##op0##_##op1##_##c##crn##_##c##crm##_##op2
 
 
@@ -105,7 +106,7 @@ void Reg##name::write() const\
 
 // 4. for memory-mapped register
 
-#define SETUP_REG_MEM_MAPPED_READ(name) \
+#define SETUP_REG_MEM_MAPPED_OF(name) \
 Reg##name Reg##name::read() \
 { \
 	return *reinterpret_cast<Reg##name*>(name##_MEM_MAPPED_ADDR);\

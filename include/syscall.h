@@ -10,6 +10,12 @@
 #include <def.h>
 #include <asm_instructions.h>
 
+
+// 任何位域，
+// RES0,RES1标准属性
+//   updateRead() 返回引用
+// "NamePrefix","default" // 默认添加reg
+
 // 系统调用
 class Syscalls{
 public:

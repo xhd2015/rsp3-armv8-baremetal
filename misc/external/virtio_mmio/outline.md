@@ -1,4 +1,86 @@
 
+# 总体描述
+本文档描述的版本是virtio的version=1，即legacy接口，并且此接口基于内存映射的传输方式（不同于PIC)
+
+对于version=2的版本，它们具有相似的函数，在将来会做出介绍。
+
+virtio的提出与半虚拟化有直接的联系，virtio本身就是用于虚拟机的。在虚拟机上，完全模拟IO设备所导致的问题就是IO性能的下降，而实际上虚拟机只是主机上的一个进程，理论上来说，该进程中的IO的性能应该和主机的IO性能一样，这就是virtio提出的基本目标。
+
+virtio将一个IO分为两部分：Host(或称Device)端，以及Guest(或称Driver)端。内存映射的virtio设备由设备树描述，包括virtio设备的地址，以及其寄存器框架的范围，比如
+```c++
+    // EXAMPLE: virtio_mmio device占据了0xa000000地址空间的512字节
+	virtio_mmio@a000000 {
+		dma-coherent;
+		interrupts = <0x0 0x10 0x1>;
+		reg = <0x0 0xa000000 0x0 0x200>;
+		compatible = "virtio,mmio";
+	};
+```
+该项描述了一个virtio_mmio设备，其地址是0xa000000, 大小是0x200(512)字节。
+
+virtio的寄存器框架分为两个部分： 通用部分和设备专属的配置部分。通用部分的描述如下：
+```c++
+		V1_MagicValue=0, // 读取域必须返回 "virt",0x74726976
+		V1_Version = 0x4,  // 必须返回VERSION_LEGACY
+		V1_DeviceID = 0x8,          // 32 bits
+		V1_VendorID = 0xC,          // 32bits,如果virtio设备由QEMU提供，则返回字符串"QEMU"，0x554D4551
+		V1_HostFeatures = 0x10,   // 32bits,V1_Host = Device, V1_Guest = Driver
+		V1_HostFeaturesSel = 0x14,// 32bits
+		V1_GuestFeatures = 0x20,   // 32bits
+		V1_GuestFeaturesSel = 0x24,// 32bits
+		V1_GuestPageSize = 0x28, //32bits, 在初始化过程中设置。应当为2的幂。用于计算Guest的第一个队列的页地址
+		V1_QueueSel = 0x30,         //16bits view,32bits physical, 当前使用的队列
+		V1_QueueNumMax = 0x34,         //32bits,当前队列
+		V1_QueueNum = 0x38,     //32bits, 当前队列的queue_size,Queue Size corresponds to the maximum number of buffers in the virtqueue
+		V1_QueueAlign = 0x3C,  //32bits Used Ring的对齐值
+		V1_QueuePFN = 0x40,    //32bits, page number, 描述符表的内存页索引。This value is the index number of	a page starting with the queue Descriptor Table
+		V1_QueueNotify = 0x50,      //32bits,Writing a queue index to this register notifies the device that there are new buffers to process in the queue.
+		V1_InterruptStatus = 0x60, // 32bits,reset时必须全部清0
+		V1_InterruptACK = 0x64,     // 32bits,
+		V1_Status = 0x70,           // 8bits view,32bits physical
+		V1_Config = 0x100,  // size = left
+```
+
+其中Version寄存器决定了该设备支持的接口，1表示legacy接口，2表示最新的接口。DeviceID表明设备的类型，同时也决定了Config部分的布局。
+
+以块设备为例：其DeviceID=2， Config的布局如下：
+```C++
+class VirtioBlockConfig{
+public:
+	uint64_t capacity;
+	uint32_t size_max;
+	uint32_t seg_max;
+	struct VirtioBlockGeometry {
+		uint16_t cylinders;
+		uint8_t heads;
+		uint8_t sectors;
+	} geometry;
+	uint32_t blk_size;
+	struct VirtioBlockTopology {
+		// # of logical blocks per physical block (log2)
+		uint8_t physical_block_exp;
+		// offset of first aligned logical block
+		uint8_t alignment_offset;
+		// suggested minimum I/O size in blocks
+		uint16_t min_io_size;
+		// optimal (suggested maximum) I/O size in blocks
+		uint32_t opt_io_size;
+	} topology;
+	uint8_t writeback;
+}__attribute__((packed));
+```
+
+接下来我们将会描述virtio的基本功能。首先，virtio设备需要一个初始化过程，在该过程中，驱动和设备约定共同支持的特征。然后，virtio设备进入工作状态。
+
+重点在于virtio设备的工作状态，它维持一个称为virtqueue的数据结构，该数据结构由3部分组成：缓冲区描述符表、可用的请求索引和已完成的请求索引。
+
+缓冲区描述符表的每一个项描述了一块内存区域，该内存区域可以用于设备读或者设备写。驱动发出一个请求时，首先准备好发送的请求元信息（也就是头部，告知需要的起始地址，字节数量），然后在准备另一片相应的内存区域，该区域用于设备根据请求信息写入数据。如果有必要，驱动还需要准备一个附加的缓冲区，该缓冲区只包含一个字节，用于设备写入操作的状态。
+
+在准备好必要的缓冲区之后，在缓冲区描述符表中查找同等数量的可用描述符，使它们指向这些缓冲区，同时通过next域链接起来。
+
+之后，根据请求的数量，在增加`可用的请求索引`的idx域之前，先在old_idx和new_idx之间设置所有的项的值为每个请求的头部描述符的索引，然后更新idx域，并通过notify接口写入通知队列内容改变。
+
+最后，等待中断发生，或者循环检测`已完成的请求索引`，直到写入在`可用的请求索引`出现，此次请求即完成。
 
 # Virtio设备的基本功能
 每个设备由下面的部分组成：

@@ -29,14 +29,13 @@ void VirtioDriver::init()
 
 	// VERSION_LEGACY, step 5,6 are omitted
 	// 1.reset, write 0 to status
-	_status[0]=0;
-	_status[1]=0;
+	reg8<V1_Status>()=0;
 
 	// 2. set acknowledge, know existence
-	setBit(_status[0],S_ACKNOWLEDGE,1);
+	setBit(reg8<V1_Status>(),S_ACKNOWLEDGE,1);
 
 	// 3.set DRIVER bit, know how  to driver
-	setBit(_status[0],S_DRIVER,1);
+	setBit(reg8<V1_Status>(),S_DRIVER,1);
 
 
 	// 4. set feature bits
@@ -50,7 +49,7 @@ void VirtioDriver::init()
 	// 7. deviceid specific setup
 
 	// 8.set DRIVER_OK
-	setBit(_status[0],S_DRIVER_OK,1);
+	setBit(reg8<V1_Status>(),S_DRIVER_OK,1);
 
 	// additional, 写入page_size
 	reg32<V1_GuestPageSize>() = PAGE_SIZE_4KB;

@@ -8,6 +8,12 @@ import imp
 if len(sys.argv)<3:
     print("usage: "+sys.argv[0] + " [reg_list_file] [output_path]")
     exit()
+    
+TYPE_LENGTH = {"uint64_t":64, 
+               "uint32_t":32,
+                "uint16_t":16,
+                "uint8_t":8}
+
   
 # common SETUP_TYPE: STD, MEM_MAPPED,GCC_REPR,HARD_CODED,ANY_MEM  
 # common options: no_read,no_write,no_update_read,no_dump defines whether one has read,write,updateRead,dump methods
@@ -78,8 +84,14 @@ def genClassName(reg_name):
 
 
 # applies when ( struct1.Fn==Valn && )..
-# {"reg_name":"XX","setup_type":"STD","fields":[[],[]],"applies":[["Fn==Valn"]],"scale_type":"uint64_t",no_read":true,"no_write":true}
-# return declaration(in header) and definition(in source file)
+# {"reg_name":"XX","setup_type":"STD","fields":[[],[]],"applies":[["Fn==Valn"]],
+# "scale_type":"uint64_t",
+#  "no_read":true,"no_write":true,
+#  "volatile":true,"
+#  "
+# }
+#
+#  return declaration(in header) and definition(in source file)
 def genClass(class_config):
     definition=''
     declaration = r'''
@@ -147,6 +159,7 @@ public:
     declaration += "\n"
     return declaration
 
+
 def getMapFromList(givenList):
     res ={ "reg_name":givenList[0], 
           "scale_type":givenList[1],
@@ -160,7 +173,6 @@ def getMapFromList(givenList):
         else:
             res[givenList[i]] = True
             i+=1
-    if(res["setup_type"]=="ANY_MEM"):
         res["no_update_read"]=True
     return res
 
@@ -177,6 +189,12 @@ def genAll(regList,filepath):
     res += "\n\n"
     res += "#endif // " + guard
     return res
+
+# 检查reg_list的所有项是否合法，即位数和是否与声明相等
+#def checkProcessRegList(reg_list):
+
+# 对reg_list进行处理，将其中的RES0,RES1转换成RES0_/RES1_ $INDEX
+#def processRegList(reg_list):
 
 # if __name__=='__main__':
 #     regList=[["PC","uint64_t","PC",[["PC,Hex",32,"PC1",32],["PC,Hex",32,"PC2",16,"PC4",16]],"applies",["PC!=0 && PC!=1",""]]]

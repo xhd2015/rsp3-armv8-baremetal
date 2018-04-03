@@ -401,8 +401,6 @@ size_t    SDDriver::readBlocksNoDMA(size_t startSec,size_t blocks,void * buffer)
 		_transferMode=oriMode;
 		return 0;
 	}
-//	SDCardStatus{reg32<R::reg_response0>()}.dump();
-
 	// 读取一个扇区的数据直到完成
 	size_t readBytesPer = 4;
 	auto typedBuffer = reinterpret_cast<uint32_t*>(buffer);
@@ -419,8 +417,6 @@ size_t    SDDriver::readBlocksNoDMA(size_t startSec,size_t blocks,void * buffer)
 				;
 		}
 		reg16<R::reg_normalintrsts>() = bitOnes<5>();
-
-
 		for(size_t i=0;i<nitems;++i,++p)
 		{
 			*p = reg32<R::reg_dataport>();
@@ -428,13 +424,6 @@ size_t    SDDriver::readBlocksNoDMA(size_t startSec,size_t blocks,void * buffer)
 
 		}
 	}
-
-	// UPDATE: 发送CMD12是没有必要的，会引起内部状态的错误。
-	// 如果没有设置AUTO CMD12，则手动发送
-	// 发送STOP
-//	if(!transferCommand(CMD12, 0, 0))return 0;
-
-
 	// 等待传输完成
 //	uint16_t dbg;
 	while(bitsNonSet<1>(reg16<R::reg_normalintrsts>()))

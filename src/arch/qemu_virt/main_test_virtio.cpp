@@ -69,12 +69,18 @@ int main()
 		return 1;
 	}
 
+	// 至少包含readBytes个
 	char reqBuf[readBytes+512];
 
 	VirtioBlockRequestRef vreq(reqBuf,blkNum,VirtioBlockRequestRef::REQ_IN,0);
 	const char * invalidStr = "if you see this, then it is invalid\n";
 	std::memcpy(vreq.data(),invalidStr,std::strlen(invalidStr));
 
+
+	VirtioQueueDescriptor * descs[3];
+	vq.allocateDescriptros(descs, 3);
+	vq.chainDescriptors(descs, 3);
+//	descs[0]
 
 	// DW = DeviceWriteOnly,DR = DeviceReadOnly
 	// [0]=header,DR,[1]=status,DW[2]=empty buffer,DW
@@ -83,8 +89,8 @@ int main()
 	// 前一个用于legacy模式
 	auto descTable = vq.descTable();
 	new (&descTable[startDescrIndex]) VirtioQueueDescriptor(reinterpret_cast<uint64_t>(vreq.base()),16,bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_NEXT>(),startDescrIndex+1);
-	new (&descTable[startDescrIndex+1]) VirtioQueueDescriptor(descTable[1].addr() + 16,readBytes,bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_NEXT,VirtioQueueDescriptor::VIRTQ_DESC_F_WRITE>(),startDescrIndex+2);
-	new (&descTable[startDescrIndex+2]) VirtioQueueDescriptor(descTable[2].addr() + readBytes,1,bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_WRITE>(),0);
+	new (&descTable[startDescrIndex+1]) VirtioQueueDescriptor(descTable[startDescrIndex+1].addr() + 16,readBytes,bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_NEXT,VirtioQueueDescriptor::VIRTQ_DESC_F_WRITE>(),startDescrIndex+2);
+	new (&descTable[startDescrIndex+2]) VirtioQueueDescriptor(descTable[startDescrIndex+2].addr() + readBytes,1,bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_WRITE>(),0);
 
 	// 注意, old_idx和new_idx之间的差值就是本次请求的数目
 	auto & avRef = vq.availRing();
