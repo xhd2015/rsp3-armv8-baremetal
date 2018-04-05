@@ -1,0 +1,16 @@
+<#
+	*incluable module*
+>
+<```
+if in_place_mode and has_write:
+>
+<= ++>
+AS_MACRO static {name}& make(void *addr,{scale_type} val)
+{{ 
+    return reinterpret_cast<{name}*>(addr)->set(val);
+}}
+AS_MACRO static volatile {name}& make(volatile void *addr,{scale_type} val)
+{{ 
+    return reinterpret_cast<volatile {name}*>(addr)->set(val);
+}}
+<= -->

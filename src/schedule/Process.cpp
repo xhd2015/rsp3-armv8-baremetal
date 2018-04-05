@@ -216,10 +216,10 @@ void Process::saveContext(const uint64_t *savedRegisters)
 {
 	if(savedRegisters)
 		std::memcpy(this->_registers, savedRegisters, sizeof(savedRegisters[0])*REGISTER_NUM);
-	this->_ttbr0.updateRead();
-	this->_ELR.updateRead();
-	this->_SPSR.updateRead();
-	this->_spEL0.updateRead();
+	this->_ttbr0.update();
+	this->_ELR.update();
+	this->_SPSR.update();
+	this->_spEL0.update();
 }
 
 void Process::restoreContextAndExecute(void* savedSpEL1)

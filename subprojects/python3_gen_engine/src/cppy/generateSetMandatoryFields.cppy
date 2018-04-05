@@ -1,13 +1,13 @@
 <#
 	*includable module*
-	requires: has_write, hasMultiFields,qualName,ori_fields,field
+	requires: has_write, hasMultiFields,qualName,ori_fields,fields
 >
 <```
-if has_write and not hasMultiFields:
+if has_setMandatory and len(fields)==1:
 >
 <=++>
-    AS_MACRO {qualName} & setMandatoryFields()
-    {{
+AS_MACRO {name} & setMandatoryFields()
+{{
 <```
     for i in range(0,len(field),2):
         fd=field[i]
@@ -18,8 +18,8 @@ if has_write and not hasMultiFields:
             value=0
 >
 <=++>
-        {fd} = {value};
+    {fd} = {value};
 <=-->
-        return *this;
+    return *this;
     }}
 <=-->

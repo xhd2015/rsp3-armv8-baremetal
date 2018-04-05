@@ -1,3 +1,105 @@
+# 2018年4月5日13:40:27
+【commit point】 中断系统重构完成，SGI测试成功。
+# 2018年4月5日13:37:34
+【acknowledged】 在GIC Distributor中，下面的代码设置启用中断位
+```c++
+// enable all interrupts
+auto en=RegGICD_ISENABLER::make(0xFFFFFFFF);
+for(size_t i=0;i!=32;++i)
+	en.write(regPtr(isenabler+i*4));
+
+RegGICD_ISENABLER::read(regPtr(isenabler)).dump(); // 全0
+RegGICD_ISENABLER::read(regPtr(isenabler+4)).dump(); // 全1
+```
+上面的代码说明，sgi和ppi只能通过GIC Redistributor来设置。
+
+上下文： aarch64， 没有EL2,EL3, 非安全状态。
+
+# 2018年4月5日12:06:33
+【todo】Process.h 旧的vmsa_descriptor.h
+# 2018年4月5日11:04:32
+volatile是件麻烦事。
+```c++
+AS_MACRO static {name} read(void* addr)
+{{
+    return *reinterpret_cast<{name}*>(addr); 
+}}
+AS_MACRO static {name}& update(void* addr)
+{{
+    return *this=*reinterpret_cast<{name}*>(addr); 
+}}
+AS_MACRO static {name}& update(volatile void* addr)
+{{ 
+    *reinterpret_cast<{scale_type}*>(this)=(addr)*reinterpret_cast<volatile {scale_type}*>(addr);
+    return *this;
+}}
+AS_MACRO static {name} read(volatile void* addr)
+{{
+	{scale_type} res=*reinterpret_cast<volatile {scale_type}*>(addr);
+    return *reinterpret_cast<{name}*>(&res); 
+}}
+```
+# 2018年4月4日23:25:01
+【acknowledged】 在内存映射的寄存器中，gic的Redistributor必须使用完整的32位读写，也就是说ldrb 指令读写会引起错误：
+```
+gicv3_redist_read: invalid guest read at offset 0000000000000014size 1
+```
+解决方法就是引入 mode 的区别，mode=in-place, mode=out-place两种。
+典型代表是内存映射寄存器和系统寄存器。
+# 2018年4月4日20:31:30
+【mark】 完善了基于位的定义。调整了qemu_virt工程，现在能够编译通过。
+# 2018年4月4日20:17:23
+【acknowledged】c++中，不要返回volatile值(copy,read)，但是可以返回volatile引用
+```c++
+volatile int read()
+{
+	return ...;
+}
+```
+# 2018年4月4日11:29:16
+【acknowledged】c++的符号空间冲突法则
+```c++
+#include <cstdint>
+class AC{
+public:
+        // 类型名不能与类型名冲突，域名不能与域名冲突。
+    enum A{
+        N //A则与uint32_t A:1冲突
+    };
+    uint32_t A:1;
+    uint32_t RES:31;
+
+}__attribute__((packed));
+#include <iostream>
+int main()
+{
+        AC AC;
+        std::cout << AC.A<<"\n";
+}
+```
+# 2018年4月4日09:44:18
+关于InterruptManager, 它已经耗费了我们过多的时间了，而这是因为找不到它的应用场景所致。
+整个GIC的配置过程如下： 初始化
+# 2018年4月4日09:42:49
+我们提供了flattenList的一种新思路：
+```python3
+["RegGICD_ICFGR","uint32_t",[["RES0",1, "cfg"+str(i//4),1][i%4] for i in range(0,64)]]
+```
+# 2018年4月3日23:04:00
+虽然两个系统寄存器读取的名称不同，但是它们的域完全相同（它们的意义也是完全相同的），这种情况下，应当将它们视为同一类。视为同一类的好处是能够通过数组对它们进行统一的操作。
+比如对于ICC_EOIR0_EL1和ICC_EOIR1_EL1。
+
+一个可能的实现是使用它们的scale_type进行存储，然后通过数组下标进行强制转换。
+```c++
+class UseSysReg{
+public:
+    template <int grp>
+	AS_MACRO void eoi(){ reinterpret_cast<RegICC_EOIR_EL1<grp>*>(_eois+grp)->write(); }
+private:
+	typename ICC_EOIR_EL1<0>::ScaleType& _eois[2];
+}
+
+```
 # 2018年4月3日14:00:58
 【commit point】完成了基于python的模板文件生成，参见[README of python3_gen_engine](../subprojects/python3_gen_engine/src/README.md)，该引擎支持*模块化*。
 

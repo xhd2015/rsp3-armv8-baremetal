@@ -8,6 +8,7 @@
 #ifndef INCLUDE_INTERRUPT_GICDEFINITIONS_H_
 #define INCLUDE_INTERRUPT_GICDEFINITIONS_H_
 
+#include <def.h>
 /**
  * 定义在写入ack的同时是否将CPU的当前优先级降低，已经是否将中断取消激活状态。
  */
@@ -26,6 +27,11 @@ constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
 
 constexpr uint8_t INT_IDLE_PRIORITY=0xFF;
 
+template <template <int,class...> class T,int index,class ... Args>
+AS_MACRO T<index,Args...>& arrReg(typename T<index,Args...>::ScaleType  reg[])
+{
+	return *reinterpret_cast<T<index,Args...>*>(reg+index);
+}
 
 
 #endif /* INCLUDE_INTERRUPT_GICDEFINITIONS_H_ */

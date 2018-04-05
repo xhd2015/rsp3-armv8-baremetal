@@ -9,13 +9,14 @@
 #define INCLUDE_IO_UART_PL011_H_
 
 #include <def.h>
+#include <runtime_def.h>
 #include <generic_util.h>
 #include <io/MemBasedRegReader.h>
 #include <utility>
 
 
 class PL011
-	:public MemBasedRegReader
+	:public MemBasedRegReader<true>
 {
 public:
 	enum RegOffset : MemBasedRegReader::RegOffset{
@@ -72,8 +73,9 @@ private:
 	volatile uint16_t &_statusReg;
 };
 
-
+#ifndef _NOT_NEED_PL011
 extern PL011 pl011;
+#endif
 
 
 

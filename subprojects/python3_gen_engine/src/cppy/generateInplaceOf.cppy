@@ -1,0 +1,20 @@
+<#
+	*incluable module*
+>
+<```
+if in_place_mode and has_read:
+>
+<=++>
+AS_MACRO static {name}& of(size_t addr)
+{{ 
+    return *reinterpret_cast<{name}*>(addr);
+}}
+AS_MACRO static {name}& of(void* addr)
+{{ 
+    return *reinterpret_cast<{name}*>(addr);
+}}
+AS_MACRO static volatile {name}& of(volatile void* addr)
+{{ 
+    return *reinterpret_cast<volatile {name}*>(addr);
+}}
+<=-->

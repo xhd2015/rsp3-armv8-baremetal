@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.make": "makefile",
+        "*.makefile": "makefile",
+        "*.json": "jsonc",
+        "ios": "cpp"
+    }
+}

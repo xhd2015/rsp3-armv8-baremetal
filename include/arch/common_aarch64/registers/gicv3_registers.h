@@ -4,121 +4,194 @@
 #ifndef __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_GICV3_REGISTERS_H__
 #define __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_GICV3_REGISTERS_H__
 #include <def.h>
+#include <io/Output.h>
+#include <io/IntegerFormatter.h>
 
-
-class RegICC_BPR0_EL1 {
+class RegICC_BPR_EL1_BASE 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  BinaryPoint:3;
             uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegICC_BPR0_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_BPR0_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
+    
+    AS_MACRO RegICC_BPR_EL1_BASE & setMandatoryFields()
     {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-    AS_MACRO void dump()const
+        BinaryPoint = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO void dump()const volatile
     {
-        kout << "RegICC_BPR0_EL1: ";
+        kout << "RegICC_BPR_EL1_BASE: ";
             kout
                 << "BinaryPoint = " << BinaryPoint << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
-    AS_MACRO static RegICC_BPR0_EL1 read()
-    { 
-        RegICC_BPR0_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_3\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegICC_BPR0_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_3\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_BPR0_EL1 & setMandatoryFields()
-    {
-        BinaryPoint = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_8_3,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_BPR1_EL1 {
-public:
-
-            uint32_t  BinaryPoint:3;
-            uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegICC_BPR1_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_BPR1_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
     AS_MACRO void dump()const
     {
-        kout << "RegICC_BPR1_EL1: ";
-            kout
-                << "BinaryPoint = " << BinaryPoint << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "\n";
+    	reinterpret_cast<volatile const RegICC_BPR_EL1_BASE*>(this)->dump();
     }
-
-
-
-    AS_MACRO static RegICC_BPR1_EL1 read()
-    { 
-        RegICC_BPR1_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_3\n\t":"=r"(res));
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_BPR_EL1_BASE make(uint32_t val)
+    {
+        RegICC_BPR_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
         return res;
     }
-    AS_MACRO RegICC_BPR1_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_3\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_BPR1_EL1 & setMandatoryFields()
-    {
-        BinaryPoint = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_12_3,%0\n\t"::"r"(*this));
-    }
-
 }__attribute__((packed));
 
 
-
-class RegICC_CTLR_EL3 {
+template <int grp=0>
+class RegICC_BPR_EL1 
+    :public RegICC_BPR_EL1_BASE
+{
 public:
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_BPR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_BPR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_BPR_EL1 copy()const volatile
+    {
+    	RegICC_BPR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_BPR_EL1 copy()const
+    {
+    	RegICC_BPR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_BPR_EL1 make(uint32_t val)
+    {
+        RegICC_BPR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_BPR_EL1 read()
+    { 
+        RegICC_BPR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_3\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_BPR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_3\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c8_3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
+
+template <>
+class RegICC_BPR_EL1<1> 
+    :public RegICC_BPR_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_BPR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_BPR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_BPR_EL1 copy()const volatile
+    {
+    	RegICC_BPR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_BPR_EL1 copy()const
+    {
+    	RegICC_BPR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_BPR_EL1 make(uint32_t val)
+    {
+        RegICC_BPR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_BPR_EL1 read()
+    { 
+        RegICC_BPR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_3\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_BPR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_3\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegICC_CTLR_EL3 
+{
+public:
+    using ScaleType=uint32_t;
             uint32_t  CBPR_EL1S:1;
             uint32_t  CBPR_EL1NS:1;
             uint32_t  EOImode_EL3:1;
@@ -135,18 +208,58 @@ public:
             uint32_t  nDS:1;
             uint32_t  RSS:1;
             uint32_t  RES0_2:13;
-
-
-    AS_MACRO RegICC_CTLR_EL3(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_CTLR_EL3& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_CTLR_EL3& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_CTLR_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_CTLR_EL3 & setMandatoryFields()
+    {
+        CBPR_EL1S = 0;
+        CBPR_EL1NS = 0;
+        EOImode_EL3 = 0;
+        EOImode_EL1S = 0;
+        EOImode_EL1NS = 0;
+        RM = 0;
+        PMHE = 0;
+        RES0_0 = 0;
+        PRIbits = 0;
+        IDbits = 0;
+        SEIS = 0;
+        A3V = 0;
+        RES0_1 = 0;
+        nDS = 0;
+        RSS = 0;
+        RES0_2 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_CTLR_EL3 copy()const volatile
+    {
+    	RegICC_CTLR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_CTLR_EL3 copy()const
+    {
+    	RegICC_CTLR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_CTLR_EL3: ";
             kout
@@ -168,54 +281,47 @@ public:
                 << "RES0_2 = " << RES0_2 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_CTLR_EL3*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_CTLR_EL3 make(uint32_t val)
+    {
+        RegICC_CTLR_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_CTLR_EL3 read()
     { 
         RegICC_CTLR_EL3 res;
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_4\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_4\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_CTLR_EL3 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_4\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_4\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegICC_CTLR_EL3 & setMandatoryFields()
-    {
-        CBPR_EL1S = 0;
-        CBPR_EL1NS = 0;
-        EOImode_EL3 = 0;
-        EOImode_EL1S = 0;
-        EOImode_EL1NS = 0;
-        RM = 0;
-        PMHE = 0;
-        RES0_0 = 0;
-        PRIbits = 0;
-        IDbits = 0;
-        SEIS = 0;
-        A3V = 0;
-        RES0_1 = 0;
-        nDS = 0;
-        RSS = 0;
-        RES0_2 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_6_c12_12_4,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_6_c12_c12_4,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegICC_CTLR_EL1 {
+class RegICC_CTLR_EL1 
+{
 public:
-
+    using ScaleType=uint32_t;
+    enum  { INTIDBits16=0b000,INTIDBits24=0b001 };
             uint32_t  CBPR:1;
             uint32_t  EOImode:1;
             uint32_t  RES0_0:4;
@@ -228,18 +334,54 @@ public:
             uint32_t  RES0_2:2;
             uint32_t  RSS:1;
             uint32_t  RES0_3:13;
-
-
-    AS_MACRO RegICC_CTLR_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_CTLR_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_CTLR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_CTLR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_CTLR_EL1 & setMandatoryFields()
+    {
+        CBPR = 0;
+        EOImode = 0;
+        RES0_0 = 0;
+        PMHE = 0;
+        RES0_1 = 0;
+        PRIbits = 0;
+        IDbits = 0;
+        SEIS = 0;
+        A3V = 0;
+        RES0_2 = 0;
+        RSS = 0;
+        RES0_3 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_CTLR_EL1 copy()const volatile
+    {
+    	RegICC_CTLR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_CTLR_EL1 copy()const
+    {
+    	RegICC_CTLR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_CTLR_EL1: ";
             kout
@@ -257,64 +399,86 @@ public:
                 << "RES0_3 = " << RES0_3 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_CTLR_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_CTLR_EL1 make(uint32_t val)
+    {
+        RegICC_CTLR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_CTLR_EL1 read()
     { 
         RegICC_CTLR_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_4\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_4\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_CTLR_EL1 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_4\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_4\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegICC_CTLR_EL1 & setMandatoryFields()
-    {
-        CBPR = 0;
-        EOImode = 0;
-        RES0_0 = 0;
-        PMHE = 0;
-        RES0_1 = 0;
-        PRIbits = 0;
-        IDbits = 0;
-        SEIS = 0;
-        A3V = 0;
-        RES0_2 = 0;
-        RSS = 0;
-        RES0_3 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_0_c12_12_4,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_0_c12_c12_4,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegICC_DIR_EL1 {
+class RegICC_DIR_EL1 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  INTID:24;
             uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_DIR_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_DIR_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_DIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_DIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_DIR_EL1 & setMandatoryFields()
+    {
+        INTID = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_DIR_EL1 copy()const volatile
+    {
+    	RegICC_DIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_DIR_EL1 copy()const
+    {
+    	RegICC_DIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_DIR_EL1: ";
             kout
@@ -322,495 +486,762 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_DIR_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_DIR_EL1 make(uint32_t val)
+    {
+        RegICC_DIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_DIR_EL1 read()
     { 
         RegICC_DIR_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_11_1\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c11_1\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_DIR_EL1 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_11_1\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c11_1\n\t":"=r"(*this));
         return *this;
     }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c11_1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_DIR_EL1 & setMandatoryFields()
+
+class RegICC_EOIR_EL1_BASE 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  INTID:24;
+            uint32_t  RES0_0:8;
+    
+    AS_MACRO RegICC_EOIR_EL1_BASE & setMandatoryFields()
     {
         INTID = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO void dump()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c12_11_1,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_EOIR0_EL1 {
-public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_EOIR0_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_EOIR0_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegICC_EOIR0_EL1: ";
+        kout << "RegICC_EOIR_EL1_BASE: ";
             kout
                 << "INTID = " << INTID << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
-    AS_MACRO static RegICC_EOIR0_EL1 read()
-    { 
-        RegICC_EOIR0_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_1\n\t":"=r"(res));
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_EOIR_EL1_BASE*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_EOIR_EL1_BASE make(uint32_t val)
+    {
+        RegICC_EOIR_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
         return res;
     }
-    AS_MACRO RegICC_EOIR0_EL1 & update()
+}__attribute__((packed));
+
+
+template <int grp=0>
+class RegICC_EOIR_EL1 
+    :public RegICC_EOIR_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
+    AS_MACRO uint32_t  get()const 
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_1\n\t":"=r"(*this));
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_EOIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
         return *this;
     }
+    AS_MACRO volatile RegICC_EOIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_EOIR_EL1 copy()const volatile
+    {
+    	RegICC_EOIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_EOIR_EL1 copy()const
+    {
+    	RegICC_EOIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_EOIR_EL1 make(uint32_t val)
+    {
+        RegICC_EOIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_EOIR_EL1 read()
+    { 
+        RegICC_EOIR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_1\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_EOIR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_1\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c8_1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_EOIR0_EL1 & setMandatoryFields()
+
+template <>
+class RegICC_EOIR_EL1<1> 
+    :public RegICC_EOIR_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_EOIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_EOIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_EOIR_EL1 copy()const volatile
+    {
+    	RegICC_EOIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_EOIR_EL1 copy()const
+    {
+    	RegICC_EOIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_EOIR_EL1 make(uint32_t val)
+    {
+        RegICC_EOIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_EOIR_EL1 read()
+    { 
+        RegICC_EOIR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_1\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_EOIR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_1\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegICC_HPPIR_EL1_BASE 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  INTID:24;
+            uint32_t  RES0_0:8;
+    
+    AS_MACRO RegICC_HPPIR_EL1_BASE & setMandatoryFields()
     {
         INTID = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO void dump()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c12_8_1,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_EOIR1_EL1 {
-public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_EOIR1_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_EOIR1_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegICC_EOIR1_EL1: ";
+        kout << "RegICC_HPPIR_EL1_BASE: ";
             kout
                 << "INTID = " << INTID << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
-    AS_MACRO static RegICC_EOIR1_EL1 read()
-    { 
-        RegICC_EOIR1_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_1\n\t":"=r"(res));
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_HPPIR_EL1_BASE*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_HPPIR_EL1_BASE make(uint32_t val)
+    {
+        RegICC_HPPIR_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
         return res;
     }
-    AS_MACRO RegICC_EOIR1_EL1 & update()
+}__attribute__((packed));
+
+
+template <int grp=0>
+class RegICC_HPPIR_EL1 
+    :public RegICC_HPPIR_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
+    AS_MACRO uint32_t  get()const 
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_1\n\t":"=r"(*this));
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_HPPIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
         return *this;
     }
+    AS_MACRO volatile RegICC_HPPIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 copy()const volatile
+    {
+    	RegICC_HPPIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 copy()const
+    {
+    	RegICC_HPPIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_HPPIR_EL1 make(uint32_t val)
+    {
+        RegICC_HPPIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_HPPIR_EL1 read()
+    { 
+        RegICC_HPPIR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_2\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_2\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c8_2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_EOIR1_EL1 & setMandatoryFields()
+
+template <>
+class RegICC_HPPIR_EL1<1> 
+    :public RegICC_HPPIR_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  INTID:24;
+            uint32_t  RES0_0:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_HPPIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_HPPIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 copy()const volatile
+    {
+    	RegICC_HPPIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 copy()const
+    {
+    	RegICC_HPPIR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_HPPIR_EL1 make(uint32_t val)
+    {
+        RegICC_HPPIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_HPPIR_EL1 read()
+    { 
+        RegICC_HPPIR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_2\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_HPPIR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_2\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegICC_IAR_EL1_BASE 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  INTID:24;
+            uint32_t  RES0_0:8;
+    
+    AS_MACRO RegICC_IAR_EL1_BASE & setMandatoryFields()
     {
         INTID = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO void dump()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c12_12_1,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_HPPIR0_EL1 {
-public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_HPPIR0_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_HPPIR0_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegICC_HPPIR0_EL1: ";
+        kout << "RegICC_IAR_EL1_BASE: ";
             kout
                 << "INTID = " << INTID << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
-    AS_MACRO static RegICC_HPPIR0_EL1 read()
-    { 
-        RegICC_HPPIR0_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_2\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegICC_HPPIR0_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_2\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_HPPIR0_EL1 & setMandatoryFields()
-    {
-        INTID = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_8_2,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_HPPIR1_EL1 {
-public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_HPPIR1_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_HPPIR1_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
     AS_MACRO void dump()const
     {
-        kout << "RegICC_HPPIR1_EL1: ";
-            kout
-                << "INTID = " << INTID << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "\n";
+    	reinterpret_cast<volatile const RegICC_IAR_EL1_BASE*>(this)->dump();
     }
-
-
-
-    AS_MACRO static RegICC_HPPIR1_EL1 read()
-    { 
-        RegICC_HPPIR1_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_2\n\t":"=r"(res));
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IAR_EL1_BASE make(uint32_t val)
+    {
+        RegICC_IAR_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
         return res;
     }
-    AS_MACRO RegICC_HPPIR1_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_2\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_HPPIR1_EL1 & setMandatoryFields()
-    {
-        INTID = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_12_2,%0\n\t"::"r"(*this));
-    }
-
 }__attribute__((packed));
 
 
-
-class RegICC_IAR0_EL1 {
+template <int grp=0>
+class RegICC_IAR_EL1 
+    :public RegICC_IAR_EL1_BASE
+{
 public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_IAR0_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_IAR0_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
     {
-        kout << "RegICC_IAR0_EL1: ";
-            kout
-                << "INTID = " << INTID << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "\n";
-    }
-
-
-
-    AS_MACRO static RegICC_IAR0_EL1 read()
-    { 
-        RegICC_IAR0_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_0\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegICC_IAR0_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_8_0\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_IAR0_EL1 & setMandatoryFields()
-    {
-        INTID = 0;
-        RES0_0 = 0;
-        return *this;
+        return *reinterpret_cast<const volatile uint32_t*>(this);
     }
     
-    AS_MACRO void write()const
+    AS_MACRO uint32_t & asuint32_t()
     {
-        __asm__ __volatile__("msr s3_0_c12_8_0,%0\n\t"::"r"(*this));
+    	return *reinterpret_cast<uint32_t*>(this);
     }
-
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IAR_EL1 make(uint32_t val)
+    {
+        RegICC_IAR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_IAR_EL1 read()
+    { 
+        RegICC_IAR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_0\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_IAR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c8_0\n\t":"=r"(*this));
+        return *this;
+    }
 }__attribute__((packed));
 
 
-
-class RegICC_IAR1_EL1 {
+template <>
+class RegICC_IAR_EL1<1> 
+    :public RegICC_IAR_EL1_BASE
+{
 public:
-
-            uint32_t  INTID:24;
-            uint32_t  RES0_0:8;
-
-
-    AS_MACRO RegICC_IAR1_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_IAR1_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
+    using ScaleType=uint32_t;
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
     {
-        kout << "RegICC_IAR1_EL1: ";
-            kout
-                << "INTID = " << INTID << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "\n";
-    }
-
-
-
-    AS_MACRO static RegICC_IAR1_EL1 read()
-    { 
-        RegICC_IAR1_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_0\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegICC_IAR1_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_0\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_IAR1_EL1 & setMandatoryFields()
-    {
-        INTID = 0;
-        RES0_0 = 0;
-        return *this;
+        return *reinterpret_cast<const volatile uint32_t*>(this);
     }
     
-    AS_MACRO void write()const
+    AS_MACRO uint32_t & asuint32_t()
     {
-        __asm__ __volatile__("msr s3_0_c12_12_0,%0\n\t"::"r"(*this));
+    	return *reinterpret_cast<uint32_t*>(this);
     }
-
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IAR_EL1 make(uint32_t val)
+    {
+        RegICC_IAR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_IAR_EL1 read()
+    { 
+        RegICC_IAR_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_0\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_IAR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_0\n\t":"=r"(*this));
+        return *this;
+    }
 }__attribute__((packed));
 
 
-
-class RegICC_IGRPEN0_EL1 {
+class RegICC_IGRPEN_EL1_BASE 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  Enable:1;
             uint32_t  RES0_0:31;
-
-
-    AS_MACRO RegICC_IGRPEN0_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_IGRPEN0_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
+    
+    AS_MACRO RegICC_IGRPEN_EL1_BASE & setMandatoryFields()
     {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-    AS_MACRO void dump()const
+        Enable = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO void dump()const volatile
     {
-        kout << "RegICC_IGRPEN0_EL1: ";
+        kout << "RegICC_IGRPEN_EL1_BASE: ";
             kout
                 << "Enable = " << Enable << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
-    AS_MACRO static RegICC_IGRPEN0_EL1 read()
-    { 
-        RegICC_IGRPEN0_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_6\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegICC_IGRPEN0_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_6\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_IGRPEN0_EL1 & setMandatoryFields()
-    {
-        Enable = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_12_6,%0\n\t"::"r"(*this));
-    }
-
-}__attribute__((packed));
-
-
-
-class RegICC_IGRPEN1_EL1 {
-public:
-
-            uint32_t  Enable:1;
-            uint32_t  RES0_0:31;
-
-
-    AS_MACRO RegICC_IGRPEN1_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_IGRPEN1_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
     AS_MACRO void dump()const
     {
-        kout << "RegICC_IGRPEN1_EL1: ";
-            kout
-                << "Enable = " << Enable << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "\n";
+    	reinterpret_cast<volatile const RegICC_IGRPEN_EL1_BASE*>(this)->dump();
     }
-
-
-
-    AS_MACRO static RegICC_IGRPEN1_EL1 read()
-    { 
-        RegICC_IGRPEN1_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_7\n\t":"=r"(res));
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IGRPEN_EL1_BASE make(uint32_t val)
+    {
+        RegICC_IGRPEN_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
         return res;
     }
-    AS_MACRO RegICC_IGRPEN1_EL1 & update()
-    {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_7\n\t":"=r"(*this));
-        return *this;
-    }
-
-    AS_MACRO RegICC_IGRPEN1_EL1 & setMandatoryFields()
-    {
-        Enable = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr s3_0_c12_12_7,%0\n\t"::"r"(*this));
-    }
-
 }__attribute__((packed));
 
 
-
-class RegICC_IGRPEN1_EL3 {
+template <int grp=0>
+class RegICC_IGRPEN_EL1 
+    :public RegICC_IGRPEN_EL1_BASE
+{
 public:
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_IGRPEN_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_IGRPEN_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 copy()const volatile
+    {
+    	RegICC_IGRPEN_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 copy()const
+    {
+    	RegICC_IGRPEN_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IGRPEN_EL1 make(uint32_t val)
+    {
+        RegICC_IGRPEN_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_IGRPEN_EL1 read()
+    { 
+        RegICC_IGRPEN_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_6\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_6\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_6,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
+
+template <>
+class RegICC_IGRPEN_EL1<1> 
+    :public RegICC_IGRPEN_EL1_BASE
+{
+public:
+    using ScaleType=uint32_t;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_IGRPEN_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_IGRPEN_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 copy()const volatile
+    {
+    	RegICC_IGRPEN_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 copy()const
+    {
+    	RegICC_IGRPEN_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IGRPEN_EL1 make(uint32_t val)
+    {
+        RegICC_IGRPEN_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegICC_IGRPEN_EL1 read()
+    { 
+        RegICC_IGRPEN_EL1 res;
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_7\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegICC_IGRPEN_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_7\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_7,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegICC_IGRPEN1_EL3 
+{
+public:
+    using ScaleType=uint32_t;
             uint32_t  EnableGrp1NS:1;
             uint32_t  EnableGrp1S:1;
             uint32_t  RES0_0:30;
-
-
-    AS_MACRO RegICC_IGRPEN1_EL3(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_IGRPEN1_EL3& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_IGRPEN1_EL3& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_IGRPEN1_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_IGRPEN1_EL3 & setMandatoryFields()
+    {
+        EnableGrp1NS = 0;
+        EnableGrp1S = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_IGRPEN1_EL3 copy()const volatile
+    {
+    	RegICC_IGRPEN1_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_IGRPEN1_EL3 copy()const
+    {
+    	RegICC_IGRPEN1_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_IGRPEN1_EL3: ";
             kout
@@ -819,55 +1250,86 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_IGRPEN1_EL3*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_IGRPEN1_EL3 make(uint32_t val)
+    {
+        RegICC_IGRPEN1_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_IGRPEN1_EL3 read()
     { 
         RegICC_IGRPEN1_EL3 res;
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_7\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_7\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_IGRPEN1_EL3 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_7\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_7\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegICC_IGRPEN1_EL3 & setMandatoryFields()
-    {
-        EnableGrp1NS = 0;
-        EnableGrp1S = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_6_c12_12_7,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_6_c12_c12_7,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegICC_PMR_EL1 {
+class RegICC_PMR_EL1 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  Priortiy:8;
             uint32_t  RES0_0:24;
-
-
-    AS_MACRO RegICC_PMR_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_PMR_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_PMR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_PMR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_PMR_EL1 & setMandatoryFields()
+    {
+        Priortiy = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_PMR_EL1 copy()const volatile
+    {
+    	RegICC_PMR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_PMR_EL1 copy()const
+    {
+    	RegICC_PMR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_PMR_EL1: ";
             kout
@@ -875,54 +1337,86 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_PMR_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_PMR_EL1 make(uint32_t val)
+    {
+        RegICC_PMR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_PMR_EL1 read()
     { 
         RegICC_PMR_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c4_6_0\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_0_c4_c6_0\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_PMR_EL1 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_0_c4_6_0\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_0_c4_c6_0\n\t":"=r"(*this));
         return *this;
     }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c4_c6_0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_PMR_EL1 & setMandatoryFields()
+
+class RegICC_RPR_EL1 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Priortiy:8;
+            uint32_t  RES0_0:24;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_RPR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_RPR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_RPR_EL1 & setMandatoryFields()
     {
         Priortiy = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO RegICC_RPR_EL1 copy()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c4_6_0,%0\n\t"::"r"(*this));
+    	RegICC_RPR_EL1 res;
+    	res.set(this->get());
+    	return res;
     }
-
-}__attribute__((packed));
-
-
-
-class RegICC_RPR_EL1 {
-public:
-
-            uint32_t  Priortiy:8;
-            uint32_t  RES0_0:24;
-
-
-    AS_MACRO RegICC_RPR_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_RPR_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO RegICC_RPR_EL1 copy()const
     {
-        return *reinterpret_cast<uint32_t*>(this);
+    	RegICC_RPR_EL1 res;
+    	res.set(this->get());
+    	return res;
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_RPR_EL1: ";
             kout
@@ -930,40 +1424,47 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_RPR_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_RPR_EL1 make(uint32_t val)
+    {
+        RegICC_RPR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_RPR_EL1 read()
     { 
         RegICC_RPR_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_11_3\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c11_3\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_RPR_EL1 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_11_3\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c11_3\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegICC_RPR_EL1 & setMandatoryFields()
-    {
-        Priortiy = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_0_c12_11_3,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_0_c12_c11_3,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegICC_SGI0R_EL1 {
+class RegICC_SGIR_EL1_BASE 
+{
 public:
-
+    using ScaleType=uint32_t;
+    enum IRMmode { ByAffinity=0,AllNoSelf=1 };
             uint32_t  TargetList:16;
             uint32_t  Aff1:8;
             uint32_t  INTID:4;
@@ -974,21 +1475,8 @@ public:
             uint32_t  RS:4;
             uint32_t  Aff3:8;
             uint32_t  RES0_2:8;
-
-
-    AS_MACRO RegICC_SGI0R_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_SGI0R_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-
-
-
-    AS_MACRO RegICC_SGI0R_EL1 & setMandatoryFields()
+    
+    AS_MACRO RegICC_SGIR_EL1_BASE & setMandatoryFields()
     {
         TargetList = 0;
         Aff1 = 0;
@@ -1001,87 +1489,169 @@ public:
         Aff3 = 0;
         RES0_2 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO void dump()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c12_11_7,%0\n\t"::"r"(*this));
+        kout << "RegICC_SGIR_EL1_BASE: ";
+            kout
+                << "TargetList = " << TargetList << ", "
+                << "Aff1 = " << Aff1 << ", "
+                << "INTID = " << INTID << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "Aff2 = " << Aff2 << ", "
+                << "IRM = " << IRM << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "RS = " << RS << ", "
+                << "Aff3 = " << Aff3 << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "\n";
     }
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_SGIR_EL1_BASE*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SGIR_EL1_BASE make(uint32_t val)
+    {
+        RegICC_SGIR_EL1_BASE res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
 }__attribute__((packed));
 
 
-
-class RegICC_SGI1R_EL1 {
+template <int grp=0>
+class RegICC_SGIR_EL1 
+    :public RegICC_SGIR_EL1_BASE
+{
 public:
-
-            uint32_t  TargetList:16;
-            uint32_t  Aff1:8;
-            uint32_t  INTID:4;
-            uint32_t  RES0_0:4;
-            uint32_t  Aff2:8;
-            uint32_t  IRM:1;
-            uint32_t  RES0_1:3;
-            uint32_t  RS:4;
-            uint32_t  Aff3:8;
-            uint32_t  RES0_2:8;
-
-
-    AS_MACRO RegICC_SGI1R_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_SGI1R_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    }
-
-
-
-
-
-    AS_MACRO RegICC_SGI1R_EL1 & setMandatoryFields()
-    {
-        TargetList = 0;
-        Aff1 = 0;
-        INTID = 0;
-        RES0_0 = 0;
-        Aff2 = 0;
-        IRM = 0;
-        RES0_1 = 0;
-        RS = 0;
-        Aff3 = 0;
-        RES0_2 = 0;
+    using ScaleType=uint32_t;
+    static_assert(grp==0,"group must be 0");
+    
+    AS_MACRO RegICC_SGIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
         return *this;
     }
-    
+    AS_MACRO volatile RegICC_SGIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SGIR_EL1 make(uint32_t val)
+    {
+        RegICC_SGIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_0_c12_11_5,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_0_c12_c11_7,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegICC_SRE_EL1 {
+template <>
+class RegICC_SGIR_EL1<1> 
+    :public RegICC_SGIR_EL1_BASE
+{
 public:
+    using ScaleType=uint32_t;
+    
+    AS_MACRO RegICC_SGIR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_SGIR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SGIR_EL1 make(uint32_t val)
+    {
+        RegICC_SGIR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c11_5,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
+
+class RegICC_SRE_EL1 
+{
+public:
+    using ScaleType=uint32_t;
             uint32_t  SRE:1;
             uint32_t  DFB:1;
             uint32_t  DIB:1;
             uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegICC_SRE_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_SRE_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_SRE_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_SRE_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_SRE_EL1 & setMandatoryFields()
+    {
+        SRE = 0;
+        DFB = 0;
+        DIB = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegICC_SRE_EL1 copy()const volatile
+    {
+    	RegICC_SRE_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegICC_SRE_EL1 copy()const
+    {
+    	RegICC_SRE_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_SRE_EL1: ";
             kout
@@ -1091,58 +1661,90 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_SRE_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SRE_EL1 make(uint32_t val)
+    {
+        RegICC_SRE_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_SRE_EL1 read()
     { 
         RegICC_SRE_EL1 res;
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_5\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_5\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_SRE_EL1 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_0_c12_12_5\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_0_c12_c12_5\n\t":"=r"(*this));
         return *this;
     }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_0_c12_c12_5,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_SRE_EL1 & setMandatoryFields()
+
+class RegICC_SRE_EL2 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  SRE:1;
+            uint32_t  DFB:1;
+            uint32_t  DIB:1;
+            uint32_t  RES0_0:29;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_SRE_EL2& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_SRE_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_SRE_EL2 & setMandatoryFields()
     {
         SRE = 0;
         DFB = 0;
         DIB = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO RegICC_SRE_EL2 copy()const volatile
     {
-        __asm__ __volatile__("msr s3_0_c12_12_5,%0\n\t"::"r"(*this));
+    	RegICC_SRE_EL2 res;
+    	res.set(this->get());
+    	return res;
     }
-
-}__attribute__((packed));
-
-
-
-class RegICC_SRE_EL2 {
-public:
-
-            uint32_t  SRE:1;
-            uint32_t  DFB:1;
-            uint32_t  DIB:1;
-            uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegICC_SRE_EL2(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_SRE_EL2& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO RegICC_SRE_EL2 copy()const
     {
-        return *reinterpret_cast<uint32_t*>(this);
+    	RegICC_SRE_EL2 res;
+    	res.set(this->get());
+    	return res;
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_SRE_EL2: ";
             kout
@@ -1152,58 +1754,90 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_SRE_EL2*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SRE_EL2 make(uint32_t val)
+    {
+        RegICC_SRE_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_SRE_EL2 read()
     { 
         RegICC_SRE_EL2 res;
-        __asm__ __volatile__("mrs %0,s3_4_c12_9_5\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_4_c12_c9_5\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_SRE_EL2 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_4_c12_9_5\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_4_c12_c9_5\n\t":"=r"(*this));
         return *this;
     }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr s3_4_c12_c9_5,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
 
-    AS_MACRO RegICC_SRE_EL2 & setMandatoryFields()
+
+class RegICC_SRE_EL3 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  SRE:1;
+            uint32_t  DFB:1;
+            uint32_t  DIB:1;
+            uint32_t  RES0_0:29;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegICC_SRE_EL3& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegICC_SRE_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegICC_SRE_EL3 & setMandatoryFields()
     {
         SRE = 0;
         DFB = 0;
         DIB = 0;
         RES0_0 = 0;
         return *this;
-    }
-    
-    AS_MACRO void write()const
+        }
+    AS_MACRO RegICC_SRE_EL3 copy()const volatile
     {
-        __asm__ __volatile__("msr s3_4_c12_9_5,%0\n\t"::"r"(*this));
+    	RegICC_SRE_EL3 res;
+    	res.set(this->get());
+    	return res;
     }
-
-}__attribute__((packed));
-
-
-
-class RegICC_SRE_EL3 {
-public:
-
-            uint32_t  SRE:1;
-            uint32_t  DFB:1;
-            uint32_t  DIB:1;
-            uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegICC_SRE_EL3(uint32_t v)            {set(v);}
-    AS_MACRO RegICC_SRE_EL3& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO RegICC_SRE_EL3 copy()const
     {
-        return *reinterpret_cast<uint32_t*>(this);
+    	RegICC_SRE_EL3 res;
+    	res.set(this->get());
+    	return res;
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO void dump()const volatile
     {
         kout << "RegICC_SRE_EL3: ";
             kout
@@ -1213,42 +1847,46 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegICC_SRE_EL3*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegICC_SRE_EL3 make(uint32_t val)
+    {
+        RegICC_SRE_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegICC_SRE_EL3 read()
     { 
         RegICC_SRE_EL3 res;
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_5\n\t":"=r"(res));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_5\n\t":"=r"(res));
         return res;
     }
     AS_MACRO RegICC_SRE_EL3 & update()
     {
-        __asm__ __volatile__("mrs %0,s3_6_c12_12_5\n\t":"=r"(*this));
+        __asm__ __volatile__("mrs %0,s3_6_c12_c12_5\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegICC_SRE_EL3 & setMandatoryFields()
-    {
-        SRE = 0;
-        DFB = 0;
-        DIB = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
-        __asm__ __volatile__("msr s3_6_c12_12_5,%0\n\t"::"r"(*this));
+        __asm__ __volatile__("msr s3_6_c12_c12_5,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-
-class RegGICR_CTLR {
+class RegGICR_CTLR 
+{
 public:
+    using ScaleType=uint32_t;
             uint32_t  EnableLPIs:1;
             uint32_t  RES0_0:2;
             uint32_t  RWP:1;
@@ -1258,12 +1896,51 @@ public:
             uint32_t  DPG1S:1;
             uint32_t  RES0_2:4;
             uint32_t  UWP:1;
-
-    AS_MACRO RegGICR_CTLR(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_CTLR& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_CTLR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_CTLR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_CTLR & setMandatoryFields()
+    {
+        EnableLPIs = 0;
+        RES0_0 = 0;
+        RWP = 0;
+        RES0_1 = 0;
+        DPG0 = 0;
+        DPG1NS = 0;
+        DPG1S = 0;
+        RES0_2 = 0;
+        UWP = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_CTLR copy()const volatile
+    {
+    	RegGICR_CTLR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_CTLR copy()const
+    {
+    	RegGICR_CTLR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegGICR_CTLR: ";
             kout
@@ -1278,52 +1955,1541 @@ public:
                 << "UWP = " << UWP << ", "
                 << "\n";
     }
-
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO void dump()const
     {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_CTLR& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_CTLR*>(addr);
+    	reinterpret_cast<volatile const RegGICR_CTLR*>(this)->dump();
     }
-    AS_MACRO static RegGICR_CTLR& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_CTLR*>(addr);
-    }
-
-    AS_MACRO RegGICR_CTLR & setMandatoryFields()
+    AS_MACRO uint32_t & asuint32_t()
     {
-        EnableLPIs = 0;
-        RES0_0 = 0;
-        RWP = 0;
-        RES0_1 = 0;
-        DPG0 = 0;
-        DPG1NS = 0;
-        DPG1S = 0;
-        RES0_2 = 0;
-        UWP = 0;
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_CTLR make(uint32_t val)
+    {
+        RegGICR_CTLR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_CTLR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_CTLR*>(addr); 
+    }
+    AS_MACRO RegGICR_CTLR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_CTLR*>(addr); 
+    }
+    AS_MACRO RegGICR_CTLR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
         return *this;
     }
-
+    AS_MACRO static RegGICR_CTLR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_CTLR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_CTLR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
 }__attribute__((packed));
 
 
-
-
-class RegGICR_WAKER {
+class RegGICR_ICACTIVER0 
+{
 public:
-            volatile uint32_t  IMP_DEF_0:1;
-            volatile uint32_t  ProcessorSleep:1;
-            volatile uint32_t  ChildrenAsleep:1;
-            volatile uint32_t  RES0_0:28;
-            volatile uint32_t  IMP_DEF_1:1;
-
-    AS_MACRO RegGICR_WAKER(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_WAKER& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
+    using ScaleType=uint32_t;
+            uint32_t  Actives:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ICACTIVER0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ICACTIVER0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ICACTIVER0 & setMandatoryFields()
+    {
+        Actives = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ICACTIVER0 copy()const volatile
+    {
+    	RegGICR_ICACTIVER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ICACTIVER0 copy()const
+    {
+    	RegGICR_ICACTIVER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ICACTIVER0: ";
+            kout
+                << "Actives = " << Hex(Actives) << ", "
+                << "\n";
+    }
     AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ICACTIVER0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ICACTIVER0 make(uint32_t val)
+    {
+        RegGICR_ICACTIVER0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ICACTIVER0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ICACTIVER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICACTIVER0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ICACTIVER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICACTIVER0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ICACTIVER0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ICACTIVER0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ICACTIVER0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ICENABLER0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  ClearEnables:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ICENABLER0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ICENABLER0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ICENABLER0 & setMandatoryFields()
+    {
+        ClearEnables = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ICENABLER0 copy()const volatile
+    {
+    	RegGICR_ICENABLER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ICENABLER0 copy()const
+    {
+    	RegGICR_ICENABLER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ICENABLER0: ";
+            kout
+                << "ClearEnables = " << Hex(ClearEnables) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ICENABLER0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ICENABLER0 make(uint32_t val)
+    {
+        RegGICR_ICENABLER0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ICENABLER0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ICENABLER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICENABLER0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ICENABLER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICENABLER0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ICENABLER0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ICENABLER0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ICENABLER0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ICFGR0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Configs:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ICFGR0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ICFGR0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ICFGR0 & setMandatoryFields()
+    {
+        Configs = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ICFGR0 copy()const volatile
+    {
+    	RegGICR_ICFGR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ICFGR0 copy()const
+    {
+    	RegGICR_ICFGR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ICFGR0: ";
+            kout
+                << "Configs = " << Hex(Configs) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ICFGR0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ICFGR0 make(uint32_t val)
+    {
+        RegGICR_ICFGR0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ICFGR0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ICFGR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICFGR0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ICFGR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICFGR0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ICFGR0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ICFGR0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ICFGR0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ICFGR1 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Configs:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ICFGR1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ICFGR1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ICFGR1 & setMandatoryFields()
+    {
+        Configs = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ICFGR1 copy()const volatile
+    {
+    	RegGICR_ICFGR1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ICFGR1 copy()const
+    {
+    	RegGICR_ICFGR1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ICFGR1: ";
+            kout
+                << "Configs = " << Hex(Configs) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ICFGR1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ICFGR1 make(uint32_t val)
+    {
+        RegGICR_ICFGR1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ICFGR1 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ICFGR1*>(addr); 
+    }
+    AS_MACRO RegGICR_ICFGR1& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ICFGR1*>(addr); 
+    }
+    AS_MACRO RegGICR_ICFGR1& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ICFGR1 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ICFGR1*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ICFGR1*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ICPENDR0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Clears:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ICPENDR0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ICPENDR0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ICPENDR0 & setMandatoryFields()
+    {
+        Clears = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ICPENDR0 copy()const volatile
+    {
+    	RegGICR_ICPENDR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ICPENDR0 copy()const
+    {
+    	RegGICR_ICPENDR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ICPENDR0: ";
+            kout
+                << "Clears = " << Clears << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ICPENDR0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ICPENDR0 make(uint32_t val)
+    {
+        RegGICR_ICPENDR0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ICPENDR0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ICPENDR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICPENDR0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ICPENDR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ICPENDR0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ICPENDR0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ICPENDR0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ICPENDR0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_IGROUPR0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  InGrp:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_IGROUPR0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_IGROUPR0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_IGROUPR0 & setMandatoryFields()
+    {
+        InGrp = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_IGROUPR0 copy()const volatile
+    {
+    	RegGICR_IGROUPR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_IGROUPR0 copy()const
+    {
+    	RegGICR_IGROUPR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_IGROUPR0: ";
+            kout
+                << "InGrp = " << InGrp << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_IGROUPR0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_IGROUPR0 make(uint32_t val)
+    {
+        RegGICR_IGROUPR0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_IGROUPR0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_IGROUPR0*>(addr); 
+    }
+    AS_MACRO RegGICR_IGROUPR0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_IGROUPR0*>(addr); 
+    }
+    AS_MACRO RegGICR_IGROUPR0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_IGROUPR0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_IGROUPR0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_IGROUPR0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_IIDR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Implementer:12;
+            uint32_t  Revision:4;
+            uint32_t  Variant:4;
+            uint32_t  RES0_0:4;
+            uint32_t  ProductID:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_IIDR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_IIDR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_IIDR & setMandatoryFields()
+    {
+        Implementer = 0;
+        Revision = 0;
+        Variant = 0;
+        RES0_0 = 0;
+        ProductID = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_IIDR copy()const volatile
+    {
+    	RegGICR_IIDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_IIDR copy()const
+    {
+    	RegGICR_IIDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_IIDR: ";
+            kout
+                << "Implementer = " << Implementer << ", "
+                << "Revision = " << Revision << ", "
+                << "Variant = " << Variant << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "ProductID = " << ProductID << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_IIDR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_IIDR make(uint32_t val)
+    {
+        RegGICR_IIDR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_IIDR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_IIDR*>(addr); 
+    }
+    AS_MACRO RegGICR_IIDR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_IIDR*>(addr); 
+    }
+    AS_MACRO RegGICR_IIDR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_IIDR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_IIDR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_IIDR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_IPRIORITYR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  p0:8;
+            uint32_t  p1:8;
+            uint32_t  p2:8;
+            uint32_t  p3:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_IPRIORITYR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_IPRIORITYR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_IPRIORITYR & setMandatoryFields()
+    {
+        p0 = 0;
+        p1 = 0;
+        p2 = 0;
+        p3 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_IPRIORITYR copy()const volatile
+    {
+    	RegGICR_IPRIORITYR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_IPRIORITYR copy()const
+    {
+    	RegGICR_IPRIORITYR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_IPRIORITYR: ";
+            kout
+                << "p0 = " << p0 << ", "
+                << "p1 = " << p1 << ", "
+                << "p2 = " << p2 << ", "
+                << "p3 = " << p3 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_IPRIORITYR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_IPRIORITYR make(uint32_t val)
+    {
+        RegGICR_IPRIORITYR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_IPRIORITYR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_IPRIORITYR*>(addr); 
+    }
+    AS_MACRO RegGICR_IPRIORITYR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_IPRIORITYR*>(addr); 
+    }
+    AS_MACRO RegGICR_IPRIORITYR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_IPRIORITYR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_IPRIORITYR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_IPRIORITYR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ISACTIVER0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Actives:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ISACTIVER0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ISACTIVER0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ISACTIVER0 & setMandatoryFields()
+    {
+        Actives = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ISACTIVER0 copy()const volatile
+    {
+    	RegGICR_ISACTIVER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ISACTIVER0 copy()const
+    {
+    	RegGICR_ISACTIVER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ISACTIVER0: ";
+            kout
+                << "Actives = " << Hex(Actives) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ISACTIVER0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ISACTIVER0 make(uint32_t val)
+    {
+        RegGICR_ISACTIVER0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ISACTIVER0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ISACTIVER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISACTIVER0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ISACTIVER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISACTIVER0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ISACTIVER0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ISACTIVER0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ISACTIVER0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ISENABLER0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Enables:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ISENABLER0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ISENABLER0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ISENABLER0 & setMandatoryFields()
+    {
+        Enables = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ISENABLER0 copy()const volatile
+    {
+    	RegGICR_ISENABLER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ISENABLER0 copy()const
+    {
+    	RegGICR_ISENABLER0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ISENABLER0: ";
+            kout
+                << "Enables = " << Hex(Enables) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ISENABLER0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ISENABLER0 make(uint32_t val)
+    {
+        RegGICR_ISENABLER0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ISENABLER0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ISENABLER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISENABLER0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ISENABLER0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISENABLER0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ISENABLER0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ISENABLER0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ISENABLER0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_ISPENDR0 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Pendings:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_ISPENDR0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_ISPENDR0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_ISPENDR0 & setMandatoryFields()
+    {
+        Pendings = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_ISPENDR0 copy()const volatile
+    {
+    	RegGICR_ISPENDR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_ISPENDR0 copy()const
+    {
+    	RegGICR_ISPENDR0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_ISPENDR0: ";
+            kout
+                << "Pendings = " << Hex(Pendings) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_ISPENDR0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_ISPENDR0 make(uint32_t val)
+    {
+        RegGICR_ISPENDR0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_ISPENDR0 read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_ISPENDR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISPENDR0& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_ISPENDR0*>(addr); 
+    }
+    AS_MACRO RegGICR_ISPENDR0& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_ISPENDR0 read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_ISPENDR0*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_ISPENDR0*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_NSACR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  NSAccess0:2;
+            uint32_t  NSAccess1:2;
+            uint32_t  NSAccess2:2;
+            uint32_t  NSAccess3:2;
+            uint32_t  NSAccess4:2;
+            uint32_t  NSAccess5:2;
+            uint32_t  NSAccess6:2;
+            uint32_t  NSAccess7:2;
+            uint32_t  NSAccess8:2;
+            uint32_t  NSAccess9:2;
+            uint32_t  NSAccess10:2;
+            uint32_t  NSAccess11:2;
+            uint32_t  NSAccess12:2;
+            uint32_t  NSAccess13:2;
+            uint32_t  NSAccess14:2;
+            uint32_t  NSAccess15:2;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_NSACR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_NSACR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_NSACR & setMandatoryFields()
+    {
+        NSAccess0 = 0;
+        NSAccess1 = 0;
+        NSAccess2 = 0;
+        NSAccess3 = 0;
+        NSAccess4 = 0;
+        NSAccess5 = 0;
+        NSAccess6 = 0;
+        NSAccess7 = 0;
+        NSAccess8 = 0;
+        NSAccess9 = 0;
+        NSAccess10 = 0;
+        NSAccess11 = 0;
+        NSAccess12 = 0;
+        NSAccess13 = 0;
+        NSAccess14 = 0;
+        NSAccess15 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_NSACR copy()const volatile
+    {
+    	RegGICR_NSACR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_NSACR copy()const
+    {
+    	RegGICR_NSACR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_NSACR: ";
+            kout
+                << "NSAccess0 = " << NSAccess0 << ", "
+                << "NSAccess1 = " << NSAccess1 << ", "
+                << "NSAccess2 = " << NSAccess2 << ", "
+                << "NSAccess3 = " << NSAccess3 << ", "
+                << "NSAccess4 = " << NSAccess4 << ", "
+                << "NSAccess5 = " << NSAccess5 << ", "
+                << "NSAccess6 = " << NSAccess6 << ", "
+                << "NSAccess7 = " << NSAccess7 << ", "
+                << "NSAccess8 = " << NSAccess8 << ", "
+                << "NSAccess9 = " << NSAccess9 << ", "
+                << "NSAccess10 = " << NSAccess10 << ", "
+                << "NSAccess11 = " << NSAccess11 << ", "
+                << "NSAccess12 = " << NSAccess12 << ", "
+                << "NSAccess13 = " << NSAccess13 << ", "
+                << "NSAccess14 = " << NSAccess14 << ", "
+                << "NSAccess15 = " << NSAccess15 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_NSACR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_NSACR make(uint32_t val)
+    {
+        RegGICR_NSACR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_NSACR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_NSACR*>(addr); 
+    }
+    AS_MACRO RegGICR_NSACR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_NSACR*>(addr); 
+    }
+    AS_MACRO RegGICR_NSACR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_NSACR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_NSACR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_NSACR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_STATUSR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  RRD:1;
+            uint32_t  WRD:1;
+            uint32_t  RWOD:1;
+            uint32_t  WROD:1;
+            uint32_t  RES0_0:28;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_STATUSR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_STATUSR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_STATUSR & setMandatoryFields()
+    {
+        RRD = 0;
+        WRD = 0;
+        RWOD = 0;
+        WROD = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_STATUSR copy()const volatile
+    {
+    	RegGICR_STATUSR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_STATUSR copy()const
+    {
+    	RegGICR_STATUSR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_STATUSR: ";
+            kout
+                << "RRD = " << RRD << ", "
+                << "WRD = " << WRD << ", "
+                << "RWOD = " << RWOD << ", "
+                << "WROD = " << WROD << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_STATUSR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_STATUSR make(uint32_t val)
+    {
+        RegGICR_STATUSR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_STATUSR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_STATUSR*>(addr); 
+    }
+    AS_MACRO RegGICR_STATUSR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_STATUSR*>(addr); 
+    }
+    AS_MACRO RegGICR_STATUSR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_STATUSR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_STATUSR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_STATUSR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_TYPER 
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t  PLPIS:1;
+            uint64_t  VLPIS:1;
+            uint64_t  RES0_0:1;
+            uint64_t  DirectLPI:1;
+            uint64_t  Last:1;
+            uint64_t  DPGR:1;
+            uint64_t  RES0_1:2;
+            uint64_t  ProcessorNumber:16;
+            uint64_t  CommonLPIAff:2;
+            uint64_t  RES0_2:6;
+            uint64_t  AffinityValue:32;
+    AS_MACRO uint64_t  get()const 
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_TYPER& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_TYPER & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_TYPER & setMandatoryFields()
+    {
+        PLPIS = 0;
+        VLPIS = 0;
+        RES0_0 = 0;
+        DirectLPI = 0;
+        Last = 0;
+        DPGR = 0;
+        RES0_1 = 0;
+        ProcessorNumber = 0;
+        CommonLPIAff = 0;
+        RES0_2 = 0;
+        AffinityValue = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_TYPER copy()const volatile
+    {
+    	RegGICR_TYPER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_TYPER copy()const
+    {
+    	RegGICR_TYPER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICR_TYPER: ";
+            kout
+                << "PLPIS = " << PLPIS << ", "
+                << "VLPIS = " << VLPIS << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "DirectLPI = " << DirectLPI << ", "
+                << "Last = " << Last << ", "
+                << "DPGR = " << DPGR << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "ProcessorNumber = " << ProcessorNumber << ", "
+                << "CommonLPIAff = " << CommonLPIAff << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "AffinityValue = " << AffinityValue << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICR_TYPER*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegGICR_TYPER make(uint64_t val)
+    {
+        RegGICR_TYPER res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_TYPER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_TYPER*>(addr); 
+    }
+    AS_MACRO RegGICR_TYPER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_TYPER*>(addr); 
+    }
+    AS_MACRO RegGICR_TYPER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=*reinterpret_cast<volatile uint64_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICR_TYPER read(volatile void* addr)
+    {
+    	uint64_t res=*reinterpret_cast<volatile uint64_t*>(addr);
+        return *reinterpret_cast<RegGICR_TYPER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_TYPER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint64_t*>(addr)=*reinterpret_cast<const uint64_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICR_WAKER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  IMP_DEF_0:1;
+            uint32_t  ProcessorSleep:1;
+            uint32_t  ChildrenAsleep:1;
+            uint32_t  RES0_0:28;
+            uint32_t  IMP_DEF_1:1;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICR_WAKER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICR_WAKER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICR_WAKER & setMandatoryFields()
+    {
+        IMP_DEF_0 = 0;
+        ProcessorSleep = 0;
+        ChildrenAsleep = 0;
+        RES0_0 = 0;
+        IMP_DEF_1 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICR_WAKER copy()const volatile
+    {
+    	RegGICR_WAKER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICR_WAKER copy()const
+    {
+    	RegGICR_WAKER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegGICR_WAKER: ";
             kout
@@ -1334,582 +3500,57 @@ public:
                 << "IMP_DEF_1 = " << IMP_DEF_1 << ", "
                 << "\n";
     }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static volatile RegGICR_WAKER& of(size_t addr)
-    { 
-        return *reinterpret_cast<volatile RegGICR_WAKER*>(addr);
-    }
-    AS_MACRO static volatile RegGICR_WAKER& of(void* addr)
-    { 
-        return *reinterpret_cast<volatile RegGICR_WAKER*>(addr);
-    }
-    AS_MACRO static volatile RegGICR_WAKER& of(volatile void * addr)
-    {
-        return *reinterpret_cast<volatile RegGICR_WAKER*>(addr);
-    }
-
-    AS_MACRO volatile RegGICR_WAKER & setMandatoryFields()
-    {
-        IMP_DEF_0 = 0;
-        ProcessorSleep = 0;
-        ChildrenAsleep = 0;
-        RES0_0 = 0;
-        IMP_DEF_1 = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_IGROUPR0 {
-public:
-            uint32_t  InGrp:32;
-
-    AS_MACRO RegGICR_IGROUPR0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_IGROUPR0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
     AS_MACRO void dump()const
     {
-        kout << "RegGICR_IGROUPR0: ";
-            kout
-                << "InGrp = " << InGrp << ", "
-                << "\n";
+    	reinterpret_cast<volatile const RegGICR_WAKER*>(this)->dump();
     }
-
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO uint32_t & asuint32_t()
     {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_IGROUPR0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_IGROUPR0*>(addr);
+    	return *reinterpret_cast<uint32_t*>(this);
     }
-    AS_MACRO static RegGICR_IGROUPR0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_IGROUPR0*>(addr);
-    }
-
-    AS_MACRO RegGICR_IGROUPR0 & setMandatoryFields()
+    AS_MACRO const uint32_t & asuint32_t()const
     {
-        InGrp = 0;
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICR_WAKER make(uint32_t val)
+    {
+        RegGICR_WAKER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICR_WAKER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICR_WAKER*>(addr); 
+    }
+    AS_MACRO RegGICR_WAKER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICR_WAKER*>(addr); 
+    }
+    AS_MACRO RegGICR_WAKER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
         return *this;
     }
-
+    AS_MACRO static RegGICR_WAKER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICR_WAKER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICR_WAKER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
 }__attribute__((packed));
 
 
-
-
-class RegGICR_ISENABLER0 {
+class RegGICD_CTLR 
+{
 public:
-            uint32_t  Enables:32;
-
-    AS_MACRO RegGICR_ISENABLER0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ISENABLER0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ISENABLER0: ";
-            kout
-                << "Enables = " << Hex(Enables) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ISENABLER0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISENABLER0*>(addr);
-    }
-    AS_MACRO static RegGICR_ISENABLER0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISENABLER0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ISENABLER0 & setMandatoryFields()
-    {
-        Enables = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICD_IIDR {
-public:
-            uint32_t  Implementer:12;
-            uint32_t  Revision:4;
-            uint32_t  Variant:4;
-            uint32_t  RES0_0:4;
-            uint32_t  ProductID:8;
-
-    AS_MACRO RegGICD_IIDR(uint32_t v)            {set(v);}
-    AS_MACRO RegGICD_IIDR& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICD_IIDR: ";
-            kout
-                << "Implementer = " << Implementer << ", "
-                << "Revision = " << Revision << ", "
-                << "Variant = " << Variant << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "ProductID = " << ProductID << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICD_IIDR& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICD_IIDR*>(addr);
-    }
-    AS_MACRO static RegGICD_IIDR& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICD_IIDR*>(addr);
-    }
-
-    AS_MACRO RegGICD_IIDR & setMandatoryFields()
-    {
-        Implementer = 0;
-        Revision = 0;
-        Variant = 0;
-        RES0_0 = 0;
-        ProductID = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ICENABLER0 {
-public:
-            uint32_t  ClearEnables:32;
-
-    AS_MACRO RegGICR_ICENABLER0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ICENABLER0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ICENABLER0: ";
-            kout
-                << "ClearEnables = " << Hex(ClearEnables) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ICENABLER0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICENABLER0*>(addr);
-    }
-    AS_MACRO static RegGICR_ICENABLER0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICENABLER0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ICENABLER0 & setMandatoryFields()
-    {
-        ClearEnables = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ISPENDR0 {
-public:
-            uint32_t  Pendings:32;
-
-    AS_MACRO RegGICR_ISPENDR0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ISPENDR0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ISPENDR0: ";
-            kout
-                << "Pendings = " << Hex(Pendings) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ISPENDR0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISPENDR0*>(addr);
-    }
-    AS_MACRO static RegGICR_ISPENDR0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISPENDR0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ISPENDR0 & setMandatoryFields()
-    {
-        Pendings = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ISACTIVER0 {
-public:
-            uint32_t  Actives:32;
-
-    AS_MACRO RegGICR_ISACTIVER0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ISACTIVER0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ISACTIVER0: ";
-            kout
-                << "Actives = " << Hex(Actives) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ISACTIVER0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISACTIVER0*>(addr);
-    }
-    AS_MACRO static RegGICR_ISACTIVER0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ISACTIVER0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ISACTIVER0 & setMandatoryFields()
-    {
-        Actives = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ICFGR0 {
-public:
-            uint32_t  Configs:32;
-
-    AS_MACRO RegGICR_ICFGR0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ICFGR0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ICFGR0: ";
-            kout
-                << "Configs = " << Hex(Configs) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ICFGR0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICFGR0*>(addr);
-    }
-    AS_MACRO static RegGICR_ICFGR0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICFGR0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ICFGR0 & setMandatoryFields()
-    {
-        Configs = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ICFGR1 {
-public:
-            uint32_t  Configs:32;
-
-    AS_MACRO RegGICR_ICFGR1(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ICFGR1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ICFGR1: ";
-            kout
-                << "Configs = " << Hex(Configs) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ICFGR1& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICFGR1*>(addr);
-    }
-    AS_MACRO static RegGICR_ICFGR1& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICFGR1*>(addr);
-    }
-
-    AS_MACRO RegGICR_ICFGR1 & setMandatoryFields()
-    {
-        Configs = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_ICACTIVER0 {
-public:
-            uint32_t  Actives:32;
-
-    AS_MACRO RegGICR_ICACTIVER0(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_ICACTIVER0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_ICACTIVER0: ";
-            kout
-                << "Actives = " << Hex(Actives) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_ICACTIVER0& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICACTIVER0*>(addr);
-    }
-    AS_MACRO static RegGICR_ICACTIVER0& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_ICACTIVER0*>(addr);
-    }
-
-    AS_MACRO RegGICR_ICACTIVER0 & setMandatoryFields()
-    {
-        Actives = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICR_IPRIORITYR {
-public:
-            uint32_t  p0:8;
-            uint32_t  p1:8;
-            uint32_t  p2:8;
-            uint32_t  p3:8;
-
-    AS_MACRO RegGICR_IPRIORITYR(uint32_t v)            {set(v);}
-    AS_MACRO RegGICR_IPRIORITYR& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICR_IPRIORITYR: ";
-            kout
-                << "p0 = " << p0 << ", "
-                << "p1 = " << p1 << ", "
-                << "p2 = " << p2 << ", "
-                << "p3 = " << p3 << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICR_IPRIORITYR& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICR_IPRIORITYR*>(addr);
-    }
-    AS_MACRO static RegGICR_IPRIORITYR& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICR_IPRIORITYR*>(addr);
-    }
-
-    AS_MACRO RegGICR_IPRIORITYR & setMandatoryFields()
-    {
-        p0 = 0;
-        p1 = 0;
-        p2 = 0;
-        p3 = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICD_ISENABLER {
-public:
-            uint32_t  Enables:32;
-
-    AS_MACRO RegGICD_ISENABLER(uint32_t v)            {set(v);}
-    AS_MACRO RegGICD_ISENABLER& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICD_ISENABLER: ";
-            kout
-                << "Enables = " << Hex(Enables) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICD_ISENABLER& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISENABLER*>(addr);
-    }
-    AS_MACRO static RegGICD_ISENABLER& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISENABLER*>(addr);
-    }
-
-    AS_MACRO RegGICD_ISENABLER & setMandatoryFields()
-    {
-        Enables = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICD_ISPENDR {
-public:
-            uint32_t  Pendings:32;
-
-    AS_MACRO RegGICD_ISPENDR(uint32_t v)            {set(v);}
-    AS_MACRO RegGICD_ISPENDR& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICD_ISPENDR: ";
-            kout
-                << "Pendings = " << Hex(Pendings) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICD_ISPENDR& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISPENDR*>(addr);
-    }
-    AS_MACRO static RegGICD_ISPENDR& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISPENDR*>(addr);
-    }
-
-    AS_MACRO RegGICD_ISPENDR & setMandatoryFields()
-    {
-        Pendings = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICD_ISACTIVER {
-public:
-            uint32_t  Actives:32;
-
-    AS_MACRO RegGICD_ISACTIVER(uint32_t v)            {set(v);}
-    AS_MACRO RegGICD_ISACTIVER& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
-    {
-        kout << "RegGICD_ISACTIVER: ";
-            kout
-                << "Actives = " << Hex(Actives) << ", "
-                << "\n";
-    }
-
-    AS_MACRO uint32_t  get()const 
-    {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICD_ISACTIVER& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISACTIVER*>(addr);
-    }
-    AS_MACRO static RegGICD_ISACTIVER& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICD_ISACTIVER*>(addr);
-    }
-
-    AS_MACRO RegGICD_ISACTIVER & setMandatoryFields()
-    {
-        Actives = 0;
-        return *this;
-    }
-
-}__attribute__((packed));
-
-
-
-
-class RegGICD_CTLR {
-public:
+    using ScaleType=uint32_t;
             uint32_t  EnableGrp0:1;
             uint32_t  EnableGrp1NS:1;
             uint32_t  EnableGrp1S:1;
@@ -1920,12 +3561,52 @@ public:
             uint32_t  E1NWF:1;
             uint32_t  RES0_1:23;
             uint32_t  RWP:1;
-
-    AS_MACRO RegGICD_CTLR(uint32_t v)            {set(v);}
-    AS_MACRO RegGICD_CTLR& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_CTLR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_CTLR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_CTLR & setMandatoryFields()
+    {
+        EnableGrp0 = 0;
+        EnableGrp1NS = 0;
+        EnableGrp1S = 0;
+        RES0_0 = 0;
+        ARE_S = 0;
+        ARE_NS = 0;
+        DS = 0;
+        E1NWF = 0;
+        RES0_1 = 0;
+        RWP = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_CTLR copy()const volatile
+    {
+    	RegGICD_CTLR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_CTLR copy()const
+    {
+    	RegGICD_CTLR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegGICD_CTLR: ";
             kout
@@ -1941,35 +3622,1566 @@ public:
                 << "RWP = " << RWP << ", "
                 << "\n";
     }
-
-    AS_MACRO uint32_t  get()const 
+    AS_MACRO void dump()const
     {
-        return *reinterpret_cast<uint32_t*>(this);
-    } 
-    AS_MACRO static RegGICD_CTLR& of(size_t addr)
-    { 
-        return *reinterpret_cast<RegGICD_CTLR*>(addr);
+    	reinterpret_cast<volatile const RegGICD_CTLR*>(this)->dump();
     }
-    AS_MACRO static RegGICD_CTLR& of(void* addr)
-    { 
-        return *reinterpret_cast<RegGICD_CTLR*>(addr);
-    }
-
-    AS_MACRO RegGICD_CTLR & setMandatoryFields()
+    AS_MACRO uint32_t & asuint32_t()
     {
-        EnableGrp0 = 0;
-        EnableGrp1NS = 0;
-        EnableGrp1S = 0;
-        RES0_0 = 0;
-        ARE_S = 0;
-        ARE_NS = 0;
-        DS = 0;
-        E1NWF = 0;
-        RES0_1 = 0;
-        RWP = 0;
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_CTLR make(uint32_t val)
+    {
+        RegGICD_CTLR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_CTLR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_CTLR*>(addr); 
+    }
+    AS_MACRO RegGICD_CTLR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_CTLR*>(addr); 
+    }
+    AS_MACRO RegGICD_CTLR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
         return *this;
     }
+    AS_MACRO static RegGICD_CTLR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_CTLR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_CTLR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
 
+
+class RegGICD_ICACTIVER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Actives:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ICACTIVER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ICACTIVER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ICACTIVER & setMandatoryFields()
+    {
+        Actives = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ICACTIVER copy()const volatile
+    {
+    	RegGICD_ICACTIVER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ICACTIVER copy()const
+    {
+    	RegGICD_ICACTIVER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ICACTIVER: ";
+            kout
+                << "Actives = " << Hex(Actives) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ICACTIVER*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ICACTIVER make(uint32_t val)
+    {
+        RegGICD_ICACTIVER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ICACTIVER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ICACTIVER*>(addr); 
+    }
+    AS_MACRO RegGICD_ICACTIVER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ICACTIVER*>(addr); 
+    }
+    AS_MACRO RegGICD_ICACTIVER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ICACTIVER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ICACTIVER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ICACTIVER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ICENABLER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  ClearEnables:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ICENABLER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ICENABLER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ICENABLER & setMandatoryFields()
+    {
+        ClearEnables = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ICENABLER copy()const volatile
+    {
+    	RegGICD_ICENABLER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ICENABLER copy()const
+    {
+    	RegGICD_ICENABLER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ICENABLER: ";
+            kout
+                << "ClearEnables = " << Hex(ClearEnables) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ICENABLER*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ICENABLER make(uint32_t val)
+    {
+        RegGICD_ICENABLER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ICENABLER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ICENABLER*>(addr); 
+    }
+    AS_MACRO RegGICD_ICENABLER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ICENABLER*>(addr); 
+    }
+    AS_MACRO RegGICD_ICENABLER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ICENABLER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ICENABLER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ICENABLER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ICFGR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  RES0_0:1;
+            uint32_t  cfg0:1;
+            uint32_t  RES0_1:1;
+            uint32_t  cfg1:1;
+            uint32_t  RES0_2:1;
+            uint32_t  cfg2:1;
+            uint32_t  RES0_3:1;
+            uint32_t  cfg3:1;
+            uint32_t  RES0_4:1;
+            uint32_t  cfg4:1;
+            uint32_t  RES0_5:1;
+            uint32_t  cfg5:1;
+            uint32_t  RES0_6:1;
+            uint32_t  cfg6:1;
+            uint32_t  RES0_7:1;
+            uint32_t  cfg7:1;
+            uint32_t  RES0_8:1;
+            uint32_t  cfg8:1;
+            uint32_t  RES0_9:1;
+            uint32_t  cfg9:1;
+            uint32_t  RES0_10:1;
+            uint32_t  cfg10:1;
+            uint32_t  RES0_11:1;
+            uint32_t  cfg11:1;
+            uint32_t  RES0_12:1;
+            uint32_t  cfg12:1;
+            uint32_t  RES0_13:1;
+            uint32_t  cfg13:1;
+            uint32_t  RES0_14:1;
+            uint32_t  cfg14:1;
+            uint32_t  RES0_15:1;
+            uint32_t  cfg15:1;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ICFGR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ICFGR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ICFGR & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        cfg0 = 0;
+        RES0_1 = 0;
+        cfg1 = 0;
+        RES0_2 = 0;
+        cfg2 = 0;
+        RES0_3 = 0;
+        cfg3 = 0;
+        RES0_4 = 0;
+        cfg4 = 0;
+        RES0_5 = 0;
+        cfg5 = 0;
+        RES0_6 = 0;
+        cfg6 = 0;
+        RES0_7 = 0;
+        cfg7 = 0;
+        RES0_8 = 0;
+        cfg8 = 0;
+        RES0_9 = 0;
+        cfg9 = 0;
+        RES0_10 = 0;
+        cfg10 = 0;
+        RES0_11 = 0;
+        cfg11 = 0;
+        RES0_12 = 0;
+        cfg12 = 0;
+        RES0_13 = 0;
+        cfg13 = 0;
+        RES0_14 = 0;
+        cfg14 = 0;
+        RES0_15 = 0;
+        cfg15 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ICFGR copy()const volatile
+    {
+    	RegGICD_ICFGR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ICFGR copy()const
+    {
+    	RegGICD_ICFGR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ICFGR: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "cfg0 = " << cfg0 << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "cfg1 = " << cfg1 << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "cfg2 = " << cfg2 << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "cfg3 = " << cfg3 << ", "
+                << "RES0_4 = " << RES0_4 << ", "
+                << "cfg4 = " << cfg4 << ", "
+                << "RES0_5 = " << RES0_5 << ", "
+                << "cfg5 = " << cfg5 << ", "
+                << "RES0_6 = " << RES0_6 << ", "
+                << "cfg6 = " << cfg6 << ", "
+                << "RES0_7 = " << RES0_7 << ", "
+                << "cfg7 = " << cfg7 << ", "
+                << "RES0_8 = " << RES0_8 << ", "
+                << "cfg8 = " << cfg8 << ", "
+                << "RES0_9 = " << RES0_9 << ", "
+                << "cfg9 = " << cfg9 << ", "
+                << "RES0_10 = " << RES0_10 << ", "
+                << "cfg10 = " << cfg10 << ", "
+                << "RES0_11 = " << RES0_11 << ", "
+                << "cfg11 = " << cfg11 << ", "
+                << "RES0_12 = " << RES0_12 << ", "
+                << "cfg12 = " << cfg12 << ", "
+                << "RES0_13 = " << RES0_13 << ", "
+                << "cfg13 = " << cfg13 << ", "
+                << "RES0_14 = " << RES0_14 << ", "
+                << "cfg14 = " << cfg14 << ", "
+                << "RES0_15 = " << RES0_15 << ", "
+                << "cfg15 = " << cfg15 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ICFGR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ICFGR make(uint32_t val)
+    {
+        RegGICD_ICFGR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ICFGR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ICFGR*>(addr); 
+    }
+    AS_MACRO RegGICD_ICFGR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ICFGR*>(addr); 
+    }
+    AS_MACRO RegGICD_ICFGR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ICFGR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ICFGR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ICFGR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ICPENDR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Clears:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ICPENDR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ICPENDR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ICPENDR & setMandatoryFields()
+    {
+        Clears = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ICPENDR copy()const volatile
+    {
+    	RegGICD_ICPENDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ICPENDR copy()const
+    {
+    	RegGICD_ICPENDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ICPENDR: ";
+            kout
+                << "Clears = " << Clears << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ICPENDR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ICPENDR make(uint32_t val)
+    {
+        RegGICD_ICPENDR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ICPENDR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ICPENDR*>(addr); 
+    }
+    AS_MACRO RegGICD_ICPENDR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ICPENDR*>(addr); 
+    }
+    AS_MACRO RegGICD_ICPENDR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ICPENDR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ICPENDR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ICPENDR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_IGROUPR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  InGrp:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_IGROUPR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_IGROUPR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_IGROUPR & setMandatoryFields()
+    {
+        InGrp = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_IGROUPR copy()const volatile
+    {
+    	RegGICD_IGROUPR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_IGROUPR copy()const
+    {
+    	RegGICD_IGROUPR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_IGROUPR: ";
+            kout
+                << "InGrp = " << InGrp << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_IGROUPR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_IGROUPR make(uint32_t val)
+    {
+        RegGICD_IGROUPR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_IGROUPR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_IGROUPR*>(addr); 
+    }
+    AS_MACRO RegGICD_IGROUPR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_IGROUPR*>(addr); 
+    }
+    AS_MACRO RegGICD_IGROUPR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_IGROUPR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_IGROUPR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_IGROUPR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_IIDR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Implementer:12;
+            uint32_t  Revision:4;
+            uint32_t  Variant:4;
+            uint32_t  RES0_0:4;
+            uint32_t  ProductID:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_IIDR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_IIDR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_IIDR & setMandatoryFields()
+    {
+        Implementer = 0;
+        Revision = 0;
+        Variant = 0;
+        RES0_0 = 0;
+        ProductID = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_IIDR copy()const volatile
+    {
+    	RegGICD_IIDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_IIDR copy()const
+    {
+    	RegGICD_IIDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_IIDR: ";
+            kout
+                << "Implementer = " << Implementer << ", "
+                << "Revision = " << Revision << ", "
+                << "Variant = " << Variant << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "ProductID = " << ProductID << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_IIDR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_IIDR make(uint32_t val)
+    {
+        RegGICD_IIDR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_IIDR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_IIDR*>(addr); 
+    }
+    AS_MACRO RegGICD_IIDR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_IIDR*>(addr); 
+    }
+    AS_MACRO RegGICD_IIDR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_IIDR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_IIDR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_IIDR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_IPRIORITYR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  p0:8;
+            uint32_t  p1:8;
+            uint32_t  p2:8;
+            uint32_t  p3:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_IPRIORITYR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_IPRIORITYR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_IPRIORITYR & setMandatoryFields()
+    {
+        p0 = 0;
+        p1 = 0;
+        p2 = 0;
+        p3 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_IPRIORITYR copy()const volatile
+    {
+    	RegGICD_IPRIORITYR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_IPRIORITYR copy()const
+    {
+    	RegGICD_IPRIORITYR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_IPRIORITYR: ";
+            kout
+                << "p0 = " << p0 << ", "
+                << "p1 = " << p1 << ", "
+                << "p2 = " << p2 << ", "
+                << "p3 = " << p3 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_IPRIORITYR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_IPRIORITYR make(uint32_t val)
+    {
+        RegGICD_IPRIORITYR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_IPRIORITYR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_IPRIORITYR*>(addr); 
+    }
+    AS_MACRO RegGICD_IPRIORITYR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_IPRIORITYR*>(addr); 
+    }
+    AS_MACRO RegGICD_IPRIORITYR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_IPRIORITYR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_IPRIORITYR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_IPRIORITYR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ISACTIVER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Actives:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ISACTIVER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ISACTIVER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ISACTIVER & setMandatoryFields()
+    {
+        Actives = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ISACTIVER copy()const volatile
+    {
+    	RegGICD_ISACTIVER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ISACTIVER copy()const
+    {
+    	RegGICD_ISACTIVER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ISACTIVER: ";
+            kout
+                << "Actives = " << Hex(Actives) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ISACTIVER*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ISACTIVER make(uint32_t val)
+    {
+        RegGICD_ISACTIVER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ISACTIVER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ISACTIVER*>(addr); 
+    }
+    AS_MACRO RegGICD_ISACTIVER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ISACTIVER*>(addr); 
+    }
+    AS_MACRO RegGICD_ISACTIVER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ISACTIVER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ISACTIVER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ISACTIVER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ISENABLER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Enables:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ISENABLER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ISENABLER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ISENABLER & setMandatoryFields()
+    {
+        Enables = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ISENABLER copy()const volatile
+    {
+    	RegGICD_ISENABLER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ISENABLER copy()const
+    {
+    	RegGICD_ISENABLER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ISENABLER: ";
+            kout
+                << "Enables = " << Hex(Enables) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ISENABLER*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ISENABLER make(uint32_t val)
+    {
+        RegGICD_ISENABLER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ISENABLER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ISENABLER*>(addr); 
+    }
+    AS_MACRO RegGICD_ISENABLER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ISENABLER*>(addr); 
+    }
+    AS_MACRO RegGICD_ISENABLER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ISENABLER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ISENABLER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ISENABLER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_ISPENDR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  Pendings:32;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_ISPENDR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_ISPENDR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_ISPENDR & setMandatoryFields()
+    {
+        Pendings = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_ISPENDR copy()const volatile
+    {
+    	RegGICD_ISPENDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_ISPENDR copy()const
+    {
+    	RegGICD_ISPENDR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_ISPENDR: ";
+            kout
+                << "Pendings = " << Hex(Pendings) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_ISPENDR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_ISPENDR make(uint32_t val)
+    {
+        RegGICD_ISPENDR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_ISPENDR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_ISPENDR*>(addr); 
+    }
+    AS_MACRO RegGICD_ISPENDR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_ISPENDR*>(addr); 
+    }
+    AS_MACRO RegGICD_ISPENDR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_ISPENDR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_ISPENDR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_ISPENDR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_SGIR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  INTID:4;
+            uint32_t  RES0_0:11;
+            uint32_t  NSTATT:1;
+            uint32_t  CPUTargetList:8;
+            uint32_t  TargetListFilter:2;
+            uint32_t  RES0_1:6;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_SGIR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_SGIR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_SGIR & setMandatoryFields()
+    {
+        INTID = 0;
+        RES0_0 = 0;
+        NSTATT = 0;
+        CPUTargetList = 0;
+        TargetListFilter = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_SGIR copy()const volatile
+    {
+    	RegGICD_SGIR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_SGIR copy()const
+    {
+    	RegGICD_SGIR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_SGIR: ";
+            kout
+                << "INTID = " << INTID << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "NSTATT = " << NSTATT << ", "
+                << "CPUTargetList = " << CPUTargetList << ", "
+                << "TargetListFilter = " << TargetListFilter << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_SGIR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_SGIR make(uint32_t val)
+    {
+        RegGICD_SGIR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_SGIR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_SGIR*>(addr); 
+    }
+    AS_MACRO RegGICD_SGIR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_SGIR*>(addr); 
+    }
+    AS_MACRO RegGICD_SGIR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_SGIR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_SGIR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_SGIR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_SPENDSGIR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  set0:8;
+            uint32_t  set1:8;
+            uint32_t  set2:8;
+            uint32_t  set3:8;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_SPENDSGIR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_SPENDSGIR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_SPENDSGIR & setMandatoryFields()
+    {
+        set0 = 0;
+        set1 = 0;
+        set2 = 0;
+        set3 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_SPENDSGIR copy()const volatile
+    {
+    	RegGICD_SPENDSGIR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_SPENDSGIR copy()const
+    {
+    	RegGICD_SPENDSGIR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_SPENDSGIR: ";
+            kout
+                << "set0 = " << set0 << ", "
+                << "set1 = " << set1 << ", "
+                << "set2 = " << set2 << ", "
+                << "set3 = " << set3 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_SPENDSGIR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_SPENDSGIR make(uint32_t val)
+    {
+        RegGICD_SPENDSGIR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_SPENDSGIR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_SPENDSGIR*>(addr); 
+    }
+    AS_MACRO RegGICD_SPENDSGIR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_SPENDSGIR*>(addr); 
+    }
+    AS_MACRO RegGICD_SPENDSGIR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_SPENDSGIR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_SPENDSGIR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_SPENDSGIR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_STATUSR 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  RRD:1;
+            uint32_t  WRD:1;
+            uint32_t  RWOD:1;
+            uint32_t  WROD:1;
+            uint32_t  RES0_0:28;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_STATUSR& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_STATUSR & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_STATUSR & setMandatoryFields()
+    {
+        RRD = 0;
+        WRD = 0;
+        RWOD = 0;
+        WROD = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_STATUSR copy()const volatile
+    {
+    	RegGICD_STATUSR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_STATUSR copy()const
+    {
+    	RegGICD_STATUSR res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_STATUSR: ";
+            kout
+                << "RRD = " << RRD << ", "
+                << "WRD = " << WRD << ", "
+                << "RWOD = " << RWOD << ", "
+                << "WROD = " << WROD << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_STATUSR*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_STATUSR make(uint32_t val)
+    {
+        RegGICD_STATUSR res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_STATUSR read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_STATUSR*>(addr); 
+    }
+    AS_MACRO RegGICD_STATUSR& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_STATUSR*>(addr); 
+    }
+    AS_MACRO RegGICD_STATUSR& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_STATUSR read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_STATUSR*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_STATUSR*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
+}__attribute__((packed));
+
+
+class RegGICD_TYPER 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  ITLinesNumber:5;
+            uint32_t  CPUNumber:3;
+            uint32_t  RES0_0:2;
+            uint32_t  SecurityExtn:1;
+            uint32_t  RES0_1:5;
+            uint32_t  MBIS:1;
+            uint32_t  LPIS:1;
+            uint32_t  DVIS:1;
+            uint32_t  IDbits:5;
+            uint32_t  A3V:1;
+            uint32_t  No1N:1;
+            uint32_t  RSS:1;
+            uint32_t  RES0_2:5;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegGICD_TYPER& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegGICD_TYPER & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegGICD_TYPER & setMandatoryFields()
+    {
+        ITLinesNumber = 0;
+        CPUNumber = 0;
+        RES0_0 = 0;
+        SecurityExtn = 0;
+        RES0_1 = 0;
+        MBIS = 0;
+        LPIS = 0;
+        DVIS = 0;
+        IDbits = 0;
+        A3V = 0;
+        No1N = 0;
+        RSS = 0;
+        RES0_2 = 0;
+        return *this;
+        }
+    AS_MACRO RegGICD_TYPER copy()const volatile
+    {
+    	RegGICD_TYPER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegGICD_TYPER copy()const
+    {
+    	RegGICD_TYPER res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegGICD_TYPER: ";
+            kout
+                << "ITLinesNumber = " << ITLinesNumber << ", "
+                << "CPUNumber = " << CPUNumber << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "SecurityExtn = " << SecurityExtn << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "MBIS = " << MBIS << ", "
+                << "LPIS = " << LPIS << ", "
+                << "DVIS = " << DVIS << ", "
+                << "IDbits = " << IDbits << ", "
+                << "A3V = " << A3V << ", "
+                << "No1N = " << No1N << ", "
+                << "RSS = " << RSS << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegGICD_TYPER*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegGICD_TYPER make(uint32_t val)
+    {
+        RegGICD_TYPER res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegGICD_TYPER read(void* addr)
+    {
+        return *reinterpret_cast<RegGICD_TYPER*>(addr); 
+    }
+    AS_MACRO RegGICD_TYPER& update(void* addr)
+    {
+        return *this=*reinterpret_cast<RegGICD_TYPER*>(addr); 
+    }
+    AS_MACRO RegGICD_TYPER& update(volatile void* addr)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *this;
+    }
+    AS_MACRO static RegGICD_TYPER read(volatile void* addr)
+    {
+    	uint32_t res=*reinterpret_cast<volatile uint32_t*>(addr);
+        return *reinterpret_cast<RegGICD_TYPER*>(&res); 
+    }
+    AS_MACRO void write(void *addr)const
+    {
+        *reinterpret_cast<RegGICD_TYPER*>(addr)=*this;
+    }
+    AS_MACRO void write(volatile void *addr)const
+    {
+        *reinterpret_cast<volatile uint32_t*>(addr)=*reinterpret_cast<const uint32_t*>(this);
+    }
 }__attribute__((packed));
 
 #endif //__INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_GICV3_REGISTERS_H__

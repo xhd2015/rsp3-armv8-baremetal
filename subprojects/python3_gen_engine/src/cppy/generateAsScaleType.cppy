@@ -1,0 +1,11 @@
+<#
+	requires: scale_type
+>
+AS_MACRO {scale_type} & as{scale_type}()
+{{
+	return *reinterpret_cast<{scale_type}*>(this);
+}}
+AS_MACRO const {scale_type} & as{scale_type}()const
+{{
+	return *reinterpret_cast<const {scale_type}*>(this);
+}}

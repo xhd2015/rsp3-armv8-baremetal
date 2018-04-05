@@ -1,15 +1,16 @@
 #include <arch/common_aarch64/exception/exceptions.h>
-#include <arch/common_aarch64/gicv3_registers.h>
+#include <arch/common_aarch64/registers/gicv3_registers.h>
 #include <def.h>
-#include <arch/common_aarch64/gicv3_registers.h>
-#include <arch/common_aarch64/system_common_registers.h>
-#include <arch/common_aarch64/timer_registers.h>
+#include <arch/common_aarch64/registers/gicv3_registers.h>
+#include <arch/common_aarch64/registers/system_common_registers.h>
+#include <arch/common_aarch64/registers/timer_registers.h>
 #include <asm_instructions.h>
 #include <io/Output.h>
 #include <arch/common_aarch64/exception/svc_call.h>
 #include <io/IntegerFormatter.h>
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
+#include <interrupt/InterruptManager.h>
 
 __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -216,16 +217,19 @@ void IRQEL1Handle()
 {
 	kout << INFO <<"processing IRQ_EL1 \n";
 
-	auto iar = RegICC_IAR1_EL1::read(); // NOTE:by reading it, we  acknowledged it.So it will change to 1023 after this read
+
+
+	auto iar = RegICC_IAR_EL1<1>::read(); // NOTE:by reading it, we  acknowledged it.So it will change to 1023 after this read
 	RegICC_RPR_EL1::read().dump();
 	RegICC_PMR_EL1::read().dump();
-	RegGICD_ISACTIVER0::read().dump();
-	RegGICR_ISACTIVER0::read().dump();
-	RegGICD_ISPENDR0::read().dump();
-	RegGICR_ISPENDR0::read().dump();
+//	RegGICD_ISACTIVER0::read().dump();
+//	RegGICR_ISACTIVER0::read().dump();
+//	RegGICD_ISPENDR0::read().dump();
+//	RegGICR_ISPENDR0::read().dump();
 	RegISR_EL1::read().dump();
 	iar.dump();
-	RegICC_EOIR1_EL1 eoi{0};
+
+	auto eoi=RegICC_EOIR_EL1<1>::make(0);
 	eoi.INTID = iar.INTID;
 	eoi.write();
 
@@ -267,9 +271,9 @@ void FIQEL1Handle()
 {
 	kout << INFO <<"processing FIQ_EL1 \n";
     RegICC_RPR_EL1::read().dump();
-	auto iar = RegICC_IAR0_EL1::read();
+	auto iar = RegICC_IAR_EL1<0>::read();
 	iar.dump();
-	RegICC_EOIR0_EL1 eoi{0};
+	auto eoi=RegICC_EOIR_EL1<0>::make(0);
 	eoi.INTID = iar.INTID; // this must be correctly done, else eret will causes errors
 	eoi.write();
 }

@@ -17,7 +17,7 @@
  *  SD,SDIO,MMC
  */
 class SDDriver
-	:public MemBasedRegReader
+	:public MemBasedRegReader<true>
 {
 public:
 	// 表明命令发送的状态，正确值为0，一般异常值为1，其他异常值为自定义的常数

@@ -1,0 +1,110 @@
+<```
+# -*-encoding:utf8-*-
+>
+<```
+from support import *
+
+hasMultiFields = (len(fields)>1)
+ori_fields=fields
+fields=processedFields(ori_fields)
+qualScaleType = scale_type
+>
+<```
+qualTemplateSpecArgs=""
+qualTemplateAssert=""
+if templateSpecArgs is not None:
+    qualTemplateSpecArgs="<"+templateSpecArgs+">"
+if templateArgs is not None:
+>
+<=  ++>
+template <{templateArgs}>
+<=  -->
+class {name}{qualTemplateSpecArgs} 
+<```
+if extends is not None:
+>
+<=  ++>
+    :public {extends}
+<=  -->
+{{
+public:
+<#  set static_assert >
+<#  ------------------>
+<```
+if templateAssert is not None:
+    cond=templateAssert[0]
+    err=templateAssert[1]
+>
+<=   ++>
+    static_assert({cond},"{err}");
+<=   -->
+    using ScaleType={scale_type};
+<#  generateEnums             >
+<#  -------------------------->
+<=
+   indentFmtStr=1
+>
+<!  cppy/generateEnums.cppy   >
+<=
+    indentFmtStr=0
+>
+<#  generateFieldsDefinition  >
+<#  -------------------------->
+<! cppy/generateFieldsDefinition.cppy >
+<# common methods>
+<# -------------->
+<# as{scale_type},set,get>
+<# -------------->
+<=
+indentFmtStr=1
+>
+<! cppy/generateAsScaleType.cppy >
+<! cppy/generateSetGet.cppy      >
+<! cppy/generateSetMandatoryFields.cppy >
+<! cppy/generateCopier.cppy>
+<=
+indentFmtStr=0
+>
+    AS_MACRO static {name} make({scale_type} val)
+    {{ 
+        {name} res;
+        *reinterpret_cast<{scale_type}*>(&res)=val;
+        return res;
+    }}
+<#  generate dump >
+<#  -------------->
+<=
+indentFmtStr=1
+>
+<! cppy/generateFieldsDump.cppy >
+<=
+indentFmtStr=0
+>
+<# read,write>
+<# ---------->
+<```
+if has_read and sys_reg_name:
+>
+<=++>
+    AS_MACRO static {name} read()
+    {{ 
+        {name} res;
+        __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(res));
+        return res;
+    }}
+    AS_MACRO {name} & update()
+    {{
+        __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(*this));
+        return *this;
+    }}
+<=-->
+<```
+if has_write and sys_reg_name:
+>
+<=++>
+    AS_MACRO void write()const
+    {{
+        __asm__ __volatile__("msr {sys_reg_name},%0\\n\\t"::"r"(*this));
+    }}
+<=-->
+}}__attribute__((packed));

@@ -37,6 +37,7 @@ void init()
 		int res = main();
 		(void)res;
 	}
+	// 配置错误时，我们无法进行输出
 	asm_wfe_loop();
 }
 

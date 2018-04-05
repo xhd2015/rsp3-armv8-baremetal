@@ -11,9 +11,10 @@
 #include <def.h>
 #include <generic_util.h>
 #include <io/MemBasedRegReader.h>
+#include <runtime_def.h>
 
 class XilinxUARTPS
-		:private MemBasedRegReader
+		:private MemBasedRegReader<true>
 {
 public:
 	enum RegOffset : MemBasedRegReader::RegOffset{

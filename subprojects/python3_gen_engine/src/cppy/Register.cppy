@@ -1,0 +1,47 @@
+<```
+# -*-encoding:utf8-*-
+>
+<#  pre-setup>
+<#  --------->
+<```
+from support import *
+hasMultiFields = (len(fields)>1)
+ori_fields=fields
+fields=processedFields(ori_fields)
+qualScaleType = scale_type
+>
+<#  class NAME >
+<#  ----------->
+<!  cppy/generateHeader.cppy>
+{{
+public:
+<#  type alias:ScaleType>
+<#  -------------------->
+    using ScaleType={scale_type};
+<#  generateEnums,generateFieldsDefinition             >
+<#  -------------------------->
+<=
+   indentFmtStr=1
+>
+<#  static_assert(...,...) >
+<#  ----------------------->
+<! cppy/generateTemplateAssert.cppy>
+<! cppy/generateEnums.cppy   >
+<! cppy/generateFieldsDefinition.cppy >
+<! cppy/generateSetGet.cppy      >
+<! cppy/generateSetMandatoryFields.cppy >
+<! cppy/generateCopier.cppy>
+<! cppy/generateFieldsDump.cppy>
+<! cppy/generateAsScaleType.cppy>
+<#  out_place_mode>
+<#  ------------------------------->
+<! cppy/generateOutplaceMake.cppy>
+<! cppy/generateOutplaceReadWrite.cppy>
+<#  in_place_mode>
+<#  ------------------------------->
+<! cppy/generateInplaceMake.cppy>
+<! cppy/generateInplaceOf.cppy>
+<=
+indentFmtStr=0
+>
+}}__attribute__((packed));

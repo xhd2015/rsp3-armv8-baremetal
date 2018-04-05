@@ -10,6 +10,7 @@
 
 #include <def.h>
 #include <memory/MemoryChunk.h>
+#include <runtime_def.h>
 
 /**
  * 不变式:
@@ -88,7 +89,9 @@ private:
 
 
 // 定义一个全局的内存管理器
+#ifndef _NOT_NEED_MemoryManager
 extern MemoryManager mman;
+#endif
 
 #include <templates_implementation/MemoryManager.h>
 

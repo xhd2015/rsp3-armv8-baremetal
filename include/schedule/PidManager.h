@@ -12,6 +12,7 @@
 #include <memory/MemoryManager.h>
 #include <generic_util.h>
 #include <cstring>
+#include <runtime_def.h>
 
 // Pid不可能使用enum, 因为所有的整数值都是允许的，而enum无法枚举`所有`。
 using Pid = uint16_t;
@@ -49,6 +50,8 @@ private:
 	uint8_t _masks[MASK_NUM];
 };
 
+#ifndef _NOT_NEED_PidManager
 extern PidManager pidManager;
+#endif
 
 #endif /* INCLUDE_SCHEDULE_PIDMANAGER_H_ */

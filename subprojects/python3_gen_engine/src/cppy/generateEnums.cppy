@@ -1,0 +1,12 @@
+<#
+	*includable module*
+	requires:enums(not None)
+>
+<```
+for i in range(0,len(enums),2):
+    enumName=enums[i]
+    enumVals=enums[i+1]
+>
+<=  ++>
+enum {enumName} {{ {enumVals} }};
+<=  -->

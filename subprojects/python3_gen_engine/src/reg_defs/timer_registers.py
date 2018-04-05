@@ -1,3 +1,9 @@
+includes=["<def.h>",  #for uint64_t
+          "<io/Output.h>", #for  kout
+          "<io/IntegerFormatter.h>",#for Hex,Bin
+          ]
+
+
 
 reg_defs=[
     ["","uint32_t",[["ClockFrq",32]],"sys_reg_name","CNTFRQ_EL0"],

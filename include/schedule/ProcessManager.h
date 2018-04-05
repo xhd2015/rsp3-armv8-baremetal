@@ -10,6 +10,7 @@
 
 #include <data_structures/DoublyLinkedList.h>
 #include <schedule/Process.h>
+#include <runtime_def.h>
 
 class ProcessManager{
 public:
@@ -49,10 +50,9 @@ private:
 	ProcessList _statedProcessList[Process::STATUS_NUM];
 };
 
-//class KernelArgument;
+#ifndef _NOT_NEED_ProcessManager
 extern ProcessManager processManager;
-//extern KernelArgument kernArgs[ProcessManager::PROCESSOR_NUM];
-
+#endif
 
 #include <templates_implementation/schedule/ProcessManager.h>
 

@@ -5,9 +5,9 @@ include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.
 # gic-version = 2
 QEMU_COMMON_ARGS := -machine xlnx-zcu102 -cpu cortex-a53  -smp 1 -m 1G -nographic -serial mon:stdio -d int,guest_errors,mmu -D qemu_log.txt -device loader,force-raw=on,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -drive file=sd.bin,if=sd,index=1,format=raw
 .PHONY:qemu-run qemu-debug
-qemu-run:
+qemu_run:
 	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS)
-qemu-debug:
+qemu_debug:
 	$(QEMU_AARCH64) $(QEMU_COMMON_ARGS) -S -s	
 	
 # 必须保证物理文件sd.bin的真实大小有至少2个扇区
@@ -27,7 +27,7 @@ $(MASTERY_RELOC):
 	# 改变IMAGE_BASE的值，然后编译生成即可
 	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
-dump-reloc:
+dump_reloc:
 	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
 .PHONY:dump-reloc
 

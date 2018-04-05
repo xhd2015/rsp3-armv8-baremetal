@@ -10,6 +10,7 @@
 
 #include <array>
 #include <io/uart/PL011.h>
+#include <runtime_def.h>
 
 class Input{
 public:
@@ -41,6 +42,8 @@ private:
 //constexpr size_t inputBufferSize = 512;
 //extern std::array<uint16_t,inputBufferSize> inputBuffer;
 
+#ifndef _NOT_NEED_Input
 extern Input kin;
+#endif
 
 #endif /* INCLUDE_IO_INPUT_H_ */

@@ -1,0 +1,34 @@
+<#
+	*includable module*
+	provides: get(),set()
+	requires:scale_type,has_read,name
+>
+<```
+if has_read:
+>
+<=  ++>
+AS_MACRO {scale_type}  get()const 
+{{
+    return *reinterpret_cast<const {scale_type}*>(this);
+}}
+AS_MACRO {scale_type}  get()const volatile
+{{
+    return *reinterpret_cast<const volatile {scale_type}*>(this);
+}}
+<= -->
+
+<```
+if has_write:
+>
+<=  ++>
+AS_MACRO {name}& set({scale_type} v)
+{{ 
+    *reinterpret_cast<{scale_type}*>(this)=v;
+    return *this;
+}}
+AS_MACRO volatile {name} & set({scale_type} v)volatile
+{{
+    *reinterpret_cast<volatile {scale_type}*>(this)=v;
+    return *this;
+}}
+<= -->

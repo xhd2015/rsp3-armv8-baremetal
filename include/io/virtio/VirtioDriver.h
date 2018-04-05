@@ -25,7 +25,7 @@ from the device.
  *
  */
 class VirtioDriver
-	:public MemBasedRegReader
+	:public MemBasedRegReader<true>
 {
 public:
 	/**

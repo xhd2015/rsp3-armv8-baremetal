@@ -1,0 +1,71 @@
+<```
+# -*-encoding:utf8-*-
+>
+<#
+ 此文件应当如下运行： 首先使用GenEngine生成字符串s
+定义全局Output
+ 然后对每个reg_def, 调用exec(s, globals(),reg_def)
+
+ exec的脚本必须提供： globasl含有out,  locals含有name,scale_type,volatile等
+>
+<```
+from support import *
+
+hasMultiFields = (len(fields)>1)
+ori_fields=fields
+fields=processedFields(ori_fields)
+>
+class {name} {{
+public:
+   using ScaleType={scale_type};
+<! cppy/generateFieldsDefinition.cppy >
+<```
+if has_write:
+>
+<=++>
+    AS_MACRO static {name}& make(void *addr,{scale_type} val)
+    {{ 
+        return reinterpret_cast<{name}*>(addr)->set(val);
+    }}
+<=-->
+<#  generate dump >
+<#  -------------->
+<=
+indent=1;indentFmtStr=1;indentPyCode=1
+>
+<! cppy/generateFieldsDump.cppy >
+<=
+indent=0;indentFmtStr=0;indentPyCode=0
+>
+<# as{scale_type}>
+<# -------------->
+<=
+indentFmtStr=1
+>
+<! cppy/generateAsScaleType.cppy >
+<! cppy/generateSetGet.cppy      >
+<! cppy/generateSetMandatoryFields.cppy >
+<! cppy/generateCopier.cppy>
+<=
+indentFmtStr=0
+>
+    AS_MACRO static {name} make({scale_type} val)
+    {{ 
+        {name} res;
+        *reinterpret_cast<{scale_type}*>(&res)=val;
+        return res;
+    }}
+<```
+if has_read:
+>
+<=++>
+    AS_MACRO static {name}& of(size_t addr)
+    {{ 
+        return *reinterpret_cast<{name}*>(addr);
+    }}
+    AS_MACRO static {name}& of(void* addr)
+    {{ 
+        return *reinterpret_cast<{name}*>(addr);
+    }}
+<=-->
+}}__attribute__((packed));

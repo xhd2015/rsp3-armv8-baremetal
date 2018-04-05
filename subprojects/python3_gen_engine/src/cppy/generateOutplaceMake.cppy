@@ -1,0 +1,14 @@
+<#
+	*incluable module*
+>
+<```
+if out_place_mode:
+>
+<=  ++>
+AS_MACRO static {name} make({scale_type} val)
+{{
+    {name} res;
+    *reinterpret_cast<{scale_type}*>(&res)=val;
+    return res;
+}}
+<= -->

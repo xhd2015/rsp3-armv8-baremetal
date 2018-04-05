@@ -9,7 +9,7 @@
 #define INCLUDE_ASM_INSTRUCTIONS_H_
 
 #include <def.h>
-#include <arch/common_aarch64/system_common_registers.h>
+#include <arch/common_aarch64/registers/system_common_registers.h>
 // 与汇编标号同时使用。
 //   当函数中有局部变量时，或者其他需要栈空间的内存，则汇编代码处定义的标号不一定就是我们所看到的c++代码的位置，可能被插入一些无关的代码。通过使用C++标号能解决这个问题
 //   此宏通过定义一个标号，来将后序的汇编标号定义具有准确性。

@@ -5,7 +5,7 @@ GDB_AARCH64 := $(GDB_ROOT)/aarch64-elf-gdb.exe
 PYTHON3 := /usr/bin/python3
 DTC := /cygdrive/d/installed/githubs/dtc-for-win/dtc.exe
 	
-gdb-connect:
+gdb_connect:
 	$(GDB_AARCH64) -iex 'set disassemble-next-line on' -iex 'file $(MASTERY_ELF)' -iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
 	
 

@@ -5,39 +5,52 @@
  *      Author: 13774
  */
 
-#include <def.h>
-#include <memory/MemoryManager.h>
+#include <runtime_def.h>
+
+#ifndef _NOT_NEED_InterruptManager
+#include <interrupt/InterruptManager.h>
+InterruptManager intm(nullptr,nullptr);
+#endif
+
+#ifndef _NOT_NEED_Output
 #include <io/Output.h>
-#include <memory/mem_config.h>
-#include <new>
-#include <schedule/PidManager.h>
-#include <schedule/ProcessManager.h>
-#include <SystemFeatures.h>
-#include <io/uart/PL011.h>
-#include <io/Input.h>
-#include <io/uart/XilinxUARTPS.h>
-
-
-
 char koutBuf[koutBufSize]={0};
 extern const char EMPTY_STR[1]={0};
 Output kout;
+#endif
 
+#ifndef _NOT_NEED_Input
+#include <io/Input.h>
 Input kin;
+#endif
 
+#ifndef _NOT_NEED_MemoryManager
+#include <memory/MemoryManager.h>
 MemoryManager mman(nullptr,0,false);
-PidManager pidManager;
+#endif
 
-#if defined(TARGET_ARCH_IS_qemu_virt) || defined(TARGET_ARCH_IS_raspi3) || defined(TARGET_ARCH_IS_zcu102)
+#ifndef _NOT_NEED_PidManager
+#include <schedule/PidManager.h>
+PidManager pidManager;
+#endif
+
+#ifndef _NOT_NEED_ProcessManager
+#include <schedule/ProcessManager.h>
 ProcessManager processManager;
+#endif
+
+#ifndef _NOT_NEED_SystemFeatures
+#include <SystemFeatures.h>
 SystemFeatures systemFeatures;
 #endif
 
-#if defined(TARGET_ARCH_IS_zcu102)
+#ifndef _NOT_NEED_XilinxUARTPS
+#include <io/uart/XilinxUARTPS.h>
 XilinxUARTPS xilinxUART{nullptr};
 #endif
 
-#if defined(TARGET_ARCH_IS_qemu_virt) || defined(TARGET_ARCH_IS_raspi3)
+#ifndef _NOT_NEED_PL011
+#include <io/uart/PL011.h>
 PL011 pl011{nullptr};
 #endif
 

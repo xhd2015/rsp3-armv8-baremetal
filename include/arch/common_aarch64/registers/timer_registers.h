@@ -4,33 +4,75 @@
 #ifndef __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_TIMER_REGISTERS_H__
 #define __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_TIMER_REGISTERS_H__
 #include <def.h>
+#include <io/Output.h>
+#include <io/IntegerFormatter.h>
 
-
-class RegCNTFRQ_EL0 {
+class RegCNTFRQ_EL0 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  ClockFrq:32;
-
-
-    AS_MACRO RegCNTFRQ_EL0(uint32_t v)            {set(v);}
-    AS_MACRO RegCNTFRQ_EL0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegCNTFRQ_EL0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTFRQ_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTFRQ_EL0 & setMandatoryFields()
+    {
+        ClockFrq = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTFRQ_EL0 copy()const volatile
+    {
+    	RegCNTFRQ_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTFRQ_EL0 copy()const
+    {
+    	RegCNTFRQ_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTFRQ_EL0: ";
             kout
                 << "ClockFrq = " << ClockFrq << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTFRQ_EL0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegCNTFRQ_EL0 make(uint32_t val)
+    {
+        RegCNTFRQ_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTFRQ_EL0 read()
     { 
         RegCNTFRQ_EL0 res;
@@ -42,43 +84,65 @@ public:
         __asm__ __volatile__("mrs %0,CNTFRQ_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTFRQ_EL0 & setMandatoryFields()
-    {
-        ClockFrq = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTFRQ_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTHCTL_EL2 {
+class RegCNTHCTL_EL2 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  EL1PCTEN:1;
             uint32_t  EL1PCEN:1;
             uint32_t  EVNTEN:1;
             uint32_t  EVNTDIR:1;
             uint32_t  EVNTI:4;
             uint32_t  RES0_0:24;
-
-
-    AS_MACRO RegCNTHCTL_EL2(uint32_t v)            {set(v);}
-    AS_MACRO RegCNTHCTL_EL2& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegCNTHCTL_EL2& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTHCTL_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTHCTL_EL2 & setMandatoryFields()
+    {
+        EL1PCTEN = 0;
+        EL1PCEN = 0;
+        EVNTEN = 0;
+        EVNTDIR = 0;
+        EVNTI = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTHCTL_EL2 copy()const volatile
+    {
+    	RegCNTHCTL_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTHCTL_EL2 copy()const
+    {
+    	RegCNTHCTL_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTHCTL_EL2: ";
             kout
@@ -90,9 +154,24 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTHCTL_EL2*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegCNTHCTL_EL2 make(uint32_t val)
+    {
+        RegCNTHCTL_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTHCTL_EL2 read()
     { 
         RegCNTHCTL_EL2 res;
@@ -104,30 +183,17 @@ public:
         __asm__ __volatile__("mrs %0,CNTHCTL_EL2\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTHCTL_EL2 & setMandatoryFields()
-    {
-        EL1PCTEN = 0;
-        EL1PCEN = 0;
-        EVNTEN = 0;
-        EVNTDIR = 0;
-        EVNTI = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTHCTL_EL2,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTKCTL_EL1 {
+class RegCNTKCTL_EL1 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  EL10PCTEN:1;
             uint32_t  EL0VCTEN:1;
             uint32_t  EVNTEN:1;
@@ -136,18 +202,50 @@ public:
             uint32_t  EL0VTEN:1;
             uint32_t  EL0PTEN:1;
             uint32_t  RES0_0:22;
-
-
-    AS_MACRO RegCNTKCTL_EL1(uint32_t v)            {set(v);}
-    AS_MACRO RegCNTKCTL_EL1& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegCNTKCTL_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTKCTL_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTKCTL_EL1 & setMandatoryFields()
+    {
+        EL10PCTEN = 0;
+        EL0VCTEN = 0;
+        EVNTEN = 0;
+        EVNTDIR = 0;
+        EVNTI = 0;
+        EL0VTEN = 0;
+        EL0PTEN = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTKCTL_EL1 copy()const volatile
+    {
+    	RegCNTKCTL_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTKCTL_EL1 copy()const
+    {
+    	RegCNTKCTL_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTKCTL_EL1: ";
             kout
@@ -161,9 +259,24 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTKCTL_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegCNTKCTL_EL1 make(uint32_t val)
+    {
+        RegCNTKCTL_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTKCTL_EL1 read()
     { 
         RegCNTKCTL_EL1 res;
@@ -175,48 +288,61 @@ public:
         __asm__ __volatile__("mrs %0,CNTKCTL_EL1\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTKCTL_EL1 & setMandatoryFields()
-    {
-        EL10PCTEN = 0;
-        EL0VCTEN = 0;
-        EVNTEN = 0;
-        EVNTDIR = 0;
-        EVNTI = 0;
-        EL0VTEN = 0;
-        EL0PTEN = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTKCTL_EL1,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTP_CTL_EL0 {
+class RegCNTP_CTL_EL0 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  ENABLE:1;
             uint32_t  IMASK:1;
             uint32_t  ISTATUS:1;
             uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegCNTP_CTL_EL0(uint32_t v)            {set(v);}
-    AS_MACRO RegCNTP_CTL_EL0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegCNTP_CTL_EL0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTP_CTL_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTP_CTL_EL0 & setMandatoryFields()
+    {
+        ENABLE = 0;
+        IMASK = 0;
+        ISTATUS = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTP_CTL_EL0 copy()const volatile
+    {
+    	RegCNTP_CTL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTP_CTL_EL0 copy()const
+    {
+    	RegCNTP_CTL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTP_CTL_EL0: ";
             kout
@@ -226,9 +352,24 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTP_CTL_EL0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegCNTP_CTL_EL0 make(uint32_t val)
+    {
+        RegCNTP_CTL_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTP_CTL_EL0 read()
     { 
         RegCNTP_CTL_EL0 res;
@@ -240,50 +381,79 @@ public:
         __asm__ __volatile__("mrs %0,CNTP_CTL_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTP_CTL_EL0 & setMandatoryFields()
-    {
-        ENABLE = 0;
-        IMASK = 0;
-        ISTATUS = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTP_CTL_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTP_CVAL_EL0 {
+class RegCNTP_CVAL_EL0 
+{
 public:
-
+    using ScaleType=uint64_t;
             uint64_t  CompareValue:64;
-
-
-    AS_MACRO RegCNTP_CVAL_EL0(uint64_t v)            {set(v);}
-    AS_MACRO RegCNTP_CVAL_EL0& operator=(uint64_t v) {set(v);return *this;}
-    AS_MACRO void set(uint64_t v) { *reinterpret_cast<uint64_t*>(this)=v;}
     AS_MACRO uint64_t  get()const 
     {
-        return *reinterpret_cast<uint64_t*>(this);
+        return *reinterpret_cast<const uint64_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegCNTP_CVAL_EL0& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTP_CVAL_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTP_CVAL_EL0 & setMandatoryFields()
+    {
+        CompareValue = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTP_CVAL_EL0 copy()const volatile
+    {
+    	RegCNTP_CVAL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTP_CVAL_EL0 copy()const
+    {
+    	RegCNTP_CVAL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTP_CVAL_EL0: ";
             kout
                 << "CompareValue = " << CompareValue << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTP_CVAL_EL0*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegCNTP_CVAL_EL0 make(uint64_t val)
+    {
+        RegCNTP_CVAL_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTP_CVAL_EL0 read()
     { 
         RegCNTP_CVAL_EL0 res;
@@ -295,47 +465,79 @@ public:
         __asm__ __volatile__("mrs %0,CNTP_CVAL_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTP_CVAL_EL0 & setMandatoryFields()
-    {
-        CompareValue = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTP_CVAL_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTP_TVAL_EL0 {
+class RegCNTP_TVAL_EL0 
+{
 public:
-
+    using ScaleType=uint64_t;
             uint64_t  TimerValue:64;
-
-
-    AS_MACRO RegCNTP_TVAL_EL0(uint64_t v)            {set(v);}
-    AS_MACRO RegCNTP_TVAL_EL0& operator=(uint64_t v) {set(v);return *this;}
-    AS_MACRO void set(uint64_t v) { *reinterpret_cast<uint64_t*>(this)=v;}
     AS_MACRO uint64_t  get()const 
     {
-        return *reinterpret_cast<uint64_t*>(this);
+        return *reinterpret_cast<const uint64_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegCNTP_TVAL_EL0& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTP_TVAL_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTP_TVAL_EL0 & setMandatoryFields()
+    {
+        TimerValue = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTP_TVAL_EL0 copy()const volatile
+    {
+    	RegCNTP_TVAL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTP_TVAL_EL0 copy()const
+    {
+    	RegCNTP_TVAL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTP_TVAL_EL0: ";
             kout
                 << "TimerValue = " << TimerValue << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTP_TVAL_EL0*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegCNTP_TVAL_EL0 make(uint64_t val)
+    {
+        RegCNTP_TVAL_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTP_TVAL_EL0 read()
     { 
         RegCNTP_TVAL_EL0 res;
@@ -347,47 +549,79 @@ public:
         __asm__ __volatile__("mrs %0,CNTP_TVAL_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTP_TVAL_EL0 & setMandatoryFields()
-    {
-        TimerValue = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTP_TVAL_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTPCT_EL0 {
+class RegCNTPCT_EL0 
+{
 public:
-
+    using ScaleType=uint64_t;
             uint64_t  PhysicalCount:64;
-
-
-    AS_MACRO RegCNTPCT_EL0(uint64_t v)            {set(v);}
-    AS_MACRO RegCNTPCT_EL0& operator=(uint64_t v) {set(v);return *this;}
-    AS_MACRO void set(uint64_t v) { *reinterpret_cast<uint64_t*>(this)=v;}
     AS_MACRO uint64_t  get()const 
     {
-        return *reinterpret_cast<uint64_t*>(this);
+        return *reinterpret_cast<const uint64_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegCNTPCT_EL0& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTPCT_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTPCT_EL0 & setMandatoryFields()
+    {
+        PhysicalCount = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTPCT_EL0 copy()const volatile
+    {
+    	RegCNTPCT_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTPCT_EL0 copy()const
+    {
+    	RegCNTPCT_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTPCT_EL0: ";
             kout
                 << "PhysicalCount = " << PhysicalCount << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTPCT_EL0*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegCNTPCT_EL0 make(uint64_t val)
+    {
+        RegCNTPCT_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTPCT_EL0 read()
     { 
         RegCNTPCT_EL0 res;
@@ -399,47 +633,79 @@ public:
         __asm__ __volatile__("mrs %0,CNTPCT_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTPCT_EL0 & setMandatoryFields()
-    {
-        PhysicalCount = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTPCT_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTVCT_EL0 {
+class RegCNTVCT_EL0 
+{
 public:
-
+    using ScaleType=uint64_t;
             uint64_t  VirtualCountValue:64;
-
-
-    AS_MACRO RegCNTVCT_EL0(uint64_t v)            {set(v);}
-    AS_MACRO RegCNTVCT_EL0& operator=(uint64_t v) {set(v);return *this;}
-    AS_MACRO void set(uint64_t v) { *reinterpret_cast<uint64_t*>(this)=v;}
     AS_MACRO uint64_t  get()const 
     {
-        return *reinterpret_cast<uint64_t*>(this);
+        return *reinterpret_cast<const uint64_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegCNTVCT_EL0& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTVCT_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTVCT_EL0 & setMandatoryFields()
+    {
+        VirtualCountValue = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTVCT_EL0 copy()const volatile
+    {
+    	RegCNTVCT_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTVCT_EL0 copy()const
+    {
+    	RegCNTVCT_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTVCT_EL0: ";
             kout
                 << "VirtualCountValue = " << VirtualCountValue << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTVCT_EL0*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegCNTVCT_EL0 make(uint64_t val)
+    {
+        RegCNTVCT_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTVCT_EL0 read()
     { 
         RegCNTVCT_EL0 res;
@@ -451,41 +717,61 @@ public:
         __asm__ __volatile__("mrs %0,CNTVCT_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTVCT_EL0 & setMandatoryFields()
-    {
-        VirtualCountValue = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTVCT_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 
-
-class RegCNTV_CTL_EL0 {
+class RegCNTV_CTL_EL0 
+{
 public:
-
+    using ScaleType=uint32_t;
             uint32_t  ENABLE:1;
             uint32_t  IMASK:1;
             uint32_t  ISTATUS:1;
             uint32_t  RES0_0:29;
-
-
-    AS_MACRO RegCNTV_CTL_EL0(uint32_t v)            {set(v);}
-    AS_MACRO RegCNTV_CTL_EL0& operator=(uint32_t v) {set(v);return *this;}
-    AS_MACRO void set(uint32_t v) { *reinterpret_cast<uint32_t*>(this)=v;}
     AS_MACRO uint32_t  get()const 
     {
-        return *reinterpret_cast<uint32_t*>(this);
+        return *reinterpret_cast<const uint32_t*>(this);
     }
-
-
-    AS_MACRO void dump()const
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegCNTV_CTL_EL0& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegCNTV_CTL_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegCNTV_CTL_EL0 & setMandatoryFields()
+    {
+        ENABLE = 0;
+        IMASK = 0;
+        ISTATUS = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegCNTV_CTL_EL0 copy()const volatile
+    {
+    	RegCNTV_CTL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegCNTV_CTL_EL0 copy()const
+    {
+    	RegCNTV_CTL_EL0 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
     {
         kout << "RegCNTV_CTL_EL0: ";
             kout
@@ -495,9 +781,24 @@ public:
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
-
-
-
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegCNTV_CTL_EL0*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegCNTV_CTL_EL0 make(uint32_t val)
+    {
+        RegCNTV_CTL_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
     AS_MACRO static RegCNTV_CTL_EL0 read()
     { 
         RegCNTV_CTL_EL0 res;
@@ -509,21 +810,10 @@ public:
         __asm__ __volatile__("mrs %0,CNTV_CTL_EL0\n\t":"=r"(*this));
         return *this;
     }
-
-    AS_MACRO RegCNTV_CTL_EL0 & setMandatoryFields()
-    {
-        ENABLE = 0;
-        IMASK = 0;
-        ISTATUS = 0;
-        RES0_0 = 0;
-        return *this;
-    }
-    
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr CNTV_CTL_EL0,%0\n\t"::"r"(*this));
     }
-
 }__attribute__((packed));
 
 #endif //__INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_TIMER_REGISTERS_H__

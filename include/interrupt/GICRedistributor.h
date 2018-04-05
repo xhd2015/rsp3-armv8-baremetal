@@ -10,20 +10,45 @@
 
 
 #include <interrupt/GICDefinitions.h>
+#include <arch/common_aarch64/registers/gicv3_registers.h>
+#include <io/MemBasedRegReader.h>
+#include <utility>
 
-class GICRedistributor{
+class GICRedistributor
+	:public MemBasedRegReader<true>
+{
 public:
-	// Args只能从0-31,0-15 SGI, 16-31 PPI
-	template <IntID ... Args>
-	void enableIntIDs()const;
+	enum{
+		RDOffset=0,
+		SGIOffset=64*1024,
+	};
+	enum RefOffset:MemBasedRegReader::RegOffset{
+		ctrl=0x0,
+		iidr=0x4,
+		typer=0x8,
+		statusr=0x10,
+		waker=0x14,
+		nsacr=0xE00,
 
-	template <IntID ... Args>
-	void disableIntIDs()const;
+		// SGI frame
+		igroupr0=SGIOffset + 0x80,
+		isenabler0=SGIOffset + 0x100,
+		icenabler0=SGIOffset + 0x180,
+		ispendr0=SGIOffset + 0x200,
+		icpender=SGIOffset + 0x280,
+		isactiver0=SGIOffset + 0x300,
+		icavtiver0=SGIOffset + 0x380,
+		ipriortiy=SGIOffset + 0x400, //n=0-7,s
 
+	};
+	template <class ... Args>
+	GICRedistributor(Args && ... args)
+		: MemBasedRegReader(std::forward<Args>(args)...)
+		{}
+	int init(uint8_t initPrty);
 	void awake();
 
 private:
-	RegGICR_WAKER _weaker;
 };
 
 

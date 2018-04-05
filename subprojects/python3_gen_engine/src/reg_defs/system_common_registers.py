@@ -1,4 +1,10 @@
-includes = ["<def.h>"] #默认就是def.h
+
+includes=["<def.h>",  #for uint64_t
+          "<io/Output.h>", #for  kout
+          "<io/IntegerFormatter.h>",#for Hex,Bin
+          ]
+
+
 reg_defs=[
     ["","uint32_t",[["RES0",2,   "EL",2,   "RES0",28]],"sys_reg_name","CurrentEL"],     
     ["","uint32_t",[["RES0",6,   "F",1,   "I",1,    "A",1   ,"D",1,   "RES0",22]],"sys_reg_name","DAIF"],

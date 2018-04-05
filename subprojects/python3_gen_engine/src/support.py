@@ -11,7 +11,10 @@ specialFields=specialFields0.union(specialFields1).union(specialFieldsX)
 
 import copy
 import re
+from functools import reduce
+
 def processedFields(fields):
+#     print(fields)
     res=copy.deepcopy(fields)
     for _,field in res:
         j=0
@@ -33,32 +36,47 @@ def  canonicalRegDefs(reg_defs):
               "sys_reg_name":None,
               "has_read":True,
               "has_write":True,
-              "volatile":False
+              "has_dump":True,
+              "has_copy":True,
+              "in_place_mode":None,
+              "out_place_mode":None,
+              "has_setMandatory":True,
+              "templateArgs":None,
+              "templateSpecArgs":None,
+              "templateAssert":None,
+              "extends":None,
+              "enums":[],
             }
+        
         for i in range(0,len(reg_def[2])):
             t["fields"].append( ("S"+str(i),reg_def[2][i]) )
             t["applies"].append("")
         i=3
         while i != len(reg_def):
-            if reg_def[i]=="applies":
-                t["applies"]=reg_def[i+1]
-                i+=2
-            elif reg_def[i]=="sys_reg_name":
+            if reg_def[i]=="sys_reg_name":
                 t["sys_reg_name"]=reg_def[i+1]
                 if not t["name"]:
                     t["name"] = "Reg"+t["sys_reg_name"]
                 i+=2
-            elif reg_def[i]=="no_read":
-                t["has_read"]=False
+            elif reg_def[i] in {"no_read","no_dump","no_write","no_copy","no_setMandatory"}:
+                t["has_"+reg_def[i][len("no_"):]]=False
                 i+=1
-            elif reg_def[i]=="no_write":
-                t["has_write"]=False
+            elif reg_def[i] in {"in_place","out_place"}:
+                t[reg_def[i]+"_mode"]=True
                 i+=1
-            elif reg_def[i]=="volatile":
-                t["volatile"]=True
-                i+=1
+            elif reg_def[i] in t:#key + 参数
+                t[reg_def[i]]=reg_def[i+1]
+                i+=2
             else:
                 raise Exception("Unknow configuration key : " + reg_def[i])
+        # set nature
+        if t["in_place_mode"] is None and t["out_place_mode"] is None:
+            if t["sys_reg_name"]:
+                t["out_place_mode"]=True
+            else:
+                t["in_place_mode"]=True
+        if t["in_place_mode"]==t["out_place_mode"]:
+            raise Exception("mode error, either in_place or out_place\n")
         res.append(t)
     return res
 # 0,1 表明RES0,RES1
@@ -75,7 +93,7 @@ def resValue(field_name):
     
 #s3_0_c4_c2_3
 def gccReprRegister(op0,op1,crn,crm,op2):
-    return "s"+str(op0)+"_"+str(op1)+"_c"+str(crn)+"_"+str(crm)+"_"+str(op2)
+    return "s"+str(op0)+"_"+str(op1)+"_c"+str(crn)+"_c"+str(crm)+"_"+str(op2)
 
 # gccReprMap = {
 #     "PAN":gccReprRegister(3,0,4,2,3),
@@ -101,6 +119,12 @@ def gccReprRegister(op0,op1,crn,crm,op2):
 #     "ICC_SRE_EL2":gccReprRegister(3,4,12,9,5),
 #     "ICC_SRE_EL3":gccReprRegister(3,6,12,12,5),
 # }
+
+def extendList(e,lst):
+    lst.extend(e)
+    return lst
+def flattenList(lst):
+    return list(reduce(extendList, lst,[]))
 
 
 

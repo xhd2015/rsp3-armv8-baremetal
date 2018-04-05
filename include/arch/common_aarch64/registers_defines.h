@@ -106,7 +106,7 @@ void Reg##name::write() const\
 
 // 4. for memory-mapped register
 
-#define SETUP_REG_MEM_MAPPED_OF(name) \
+#define SETUP_REG_MEM_MAPPED_READ(name) \
 Reg##name Reg##name::read() \
 { \
 	return *reinterpret_cast<Reg##name*>(name##_MEM_MAPPED_ADDR);\

@@ -1,0 +1,22 @@
+<#
+	*includable module*
+	requries: name
+	provides: copy ctor, copy operator
+>
+<```
+if has_copy and has_read and has_write:
+>
+<=  ++>
+AS_MACRO {name} copy()const volatile
+{{
+	{name} res;
+	res.set(this->get());
+	return res;
+}}
+AS_MACRO {name} copy()const
+{{
+	{name} res;
+	res.set(this->get());
+	return res;
+}}
+<= -->

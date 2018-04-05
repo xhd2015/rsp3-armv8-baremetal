@@ -1,0 +1,71 @@
+<#
+	*incluable module*
+	requires: name,sys_reg_name
+	provides:read,update, write,make
+>
+<```
+if out_place_mode:
+    if sys_reg_name:
+        if has_read:
+>
+<=          +3>  
+AS_MACRO static {name} read()
+{{ 
+    {name} res;
+    __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(res));
+    return res;
+}}
+AS_MACRO {name} & update()
+{{
+    __asm__ __volatile__("mrs %0,{sys_reg_name}\\n\\t":"=r"(*this));
+    return *this;
+}}
+<=         -3>
+<```
+        if has_write:
+>
+<=         +3>
+AS_MACRO void write()const
+{{
+    __asm__ __volatile__("msr {sys_reg_name},%0\\n\\t"::"r"(*this));
+}}
+<=         -3>
+<#  out_place_mode,not sys reg >
+<#  ------------------------------->
+<```
+    else:
+        if has_read:
+>
+<=          +3>
+AS_MACRO static {name} read(void* addr)
+{{
+    return *reinterpret_cast<{name}*>(addr); 
+}}
+AS_MACRO {name}& update(void* addr)
+{{
+    return *this=*reinterpret_cast<{name}*>(addr); 
+}}
+AS_MACRO {name}& update(volatile void* addr)
+{{ 
+    *reinterpret_cast<{scale_type}*>(this)=*reinterpret_cast<volatile {scale_type}*>(addr);
+    return *this;
+}}
+AS_MACRO static {name} read(volatile void* addr)
+{{
+	{scale_type} res=*reinterpret_cast<volatile {scale_type}*>(addr);
+    return *reinterpret_cast<{name}*>(&res); 
+}}
+<=          -3>
+<```
+        if has_write:
+>
+<=         +3>
+AS_MACRO void write(void *addr)const
+{{
+    *reinterpret_cast<{name}*>(addr)=*this;
+}}
+AS_MACRO void write(volatile void *addr)const
+{{
+    *reinterpret_cast<volatile {scale_type}*>(addr)=*reinterpret_cast<const {scale_type}*>(this);
+}}
+<=         -3>

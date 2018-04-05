@@ -1,0 +1,22 @@
+<#
+   *includable module*
+   provides: header of class definition
+>
+
+<```
+qualTemplateSpecArgs=""
+qualTemplateAssert=""
+if templateSpecArgs is not None:
+    qualTemplateSpecArgs="<"+templateSpecArgs+">"
+if templateArgs is not None:
+>
+<=  ++>
+template <{templateArgs}>
+<=  -->
+class {name}{qualTemplateSpecArgs} 
+<```
+if extends is not None:
+>
+<=  ++>
+    :public {extends}
+<=  -->

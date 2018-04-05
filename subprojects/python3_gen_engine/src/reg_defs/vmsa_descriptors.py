@@ -1,4 +1,11 @@
 
+includes=["<def.h>",  #for uint64_t
+          "<io/Output.h>", #for  kout
+          "<io/IntegerFormatter.h>",#for Hex,Bin
+          ]
+
+
+
 reg_defs=[
   # the higher bits of the table descriptor(the second list), from 59 to 63, are RES0 in Stage2
   ## lowerAttribute from NS to nG, upperAttribute from DBM or Contiguous to Ignored

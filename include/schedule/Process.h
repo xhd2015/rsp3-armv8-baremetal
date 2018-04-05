@@ -10,7 +10,7 @@
 
 #include <data_structures/ForwardList.h>
 #include <schedule/PidManager.h>
-#include <arch/common_aarch64/system_common_registers.h>
+#include <arch/common_aarch64/registers/system_common_registers.h>
 #include <arch/common_aarch64/vmsa_descriptors.h>
 #include <programming/define_members.h>
 

@@ -8,9 +8,9 @@ QEMU_ARGS := -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1024M -nograp
 # if only using virtualization=on, EL=2
 # if none of them is used,using EL1
 # default secure=off,virtualization=off
-qemu-run:
+qemu_run:
 	$(QEMU_AARCH64) $(QEMU_ARGS)
-qemu-debug:
+qemu_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
 qemu_virt.dts:
 	$(QEMU_AARCH64) -machine virt,gic-version=3,dumpdtb=qemu_virt.dtb -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio  -bios $(MASTERY_BINARY) -d int,mmu -D qemu_log.txt
@@ -47,7 +47,7 @@ $(MASTERY_RELOC):
 	# 改变IMAGE_BASE的值，然后编译生成即可
 	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
-dump-reloc:
+dump_reloc:
 	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
 .PHONY:dump-reloc
 

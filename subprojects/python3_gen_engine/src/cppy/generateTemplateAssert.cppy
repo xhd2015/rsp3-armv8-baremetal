@@ -1,0 +1,12 @@
+<#
+	*incluable module*
+	provides:static_assert
+>
+<```
+if templateAssert is not None:
+    cond=templateAssert[0]
+    err=templateAssert[1]
+>
+<=   ++>
+static_assert({cond},"{err}");
+<=   -->

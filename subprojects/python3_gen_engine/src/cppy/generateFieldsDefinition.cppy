@@ -1,39 +1,39 @@
 <#
 	*includable module*
-	requires : hasMultiFields, qualScaleType
+	requires : hasMultiFields,scale_type
 >
 <```
 if hasMultiFields:
 >
-<=++>
-    union {{
-<=-->
+<=  ++>
+union {{
+<=  -->
 <```
 for struct_name,field in fields:
     if hasMultiFields:
 >
-<=++>
-<=++>
-        struct {{
-<=-->
+<=  ++>
+<=      ++>
+    struct {{
+<=      -->
 <```
     for i in range(0,len(field),2):
         fd=field[i]
         bits=str(field[i+1])
 >
-<=++>
-            {qualScaleType}  {fd}:{bits};
-<=-->
+<=      ++>
+        {scale_type}  {fd}:{bits};
+<=      -->
 <```
     if hasMultiFields:
 >
-<=++>
-        }}__attribute__((packed)) {struct_name};
-<=-->
-<=-->
+<=      ++>
+    }}__attribute__((packed)) {struct_name};
+<=      -->
+<=  -->
 <```
 if hasMultiFields:
 >
-<=++>
-    }}; //union
-<=-->
+<=  ++>
+}}; //union
+<=  -->

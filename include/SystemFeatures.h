@@ -9,7 +9,8 @@
 #define INCLUDE_SYSTEMFEATURE_H_
 
 #include <def.h>
-#include <arch/common_aarch64/system_common_registers.h>
+#include <runtime_def.h>
+#include <arch/common_aarch64/registers/system_common_registers.h>
 
 enum class Architecture:uint64_t{
 	UNKONW,
@@ -54,8 +55,10 @@ private:
 
 }__attribute__((packed));
 
-extern SystemFeatures systemFeatures;
 
+#ifndef _NOT_NEED_SystemFeatures
+extern SystemFeatures systemFeatures;
+#endif
 
 
 

@@ -9,6 +9,7 @@
 #define INCLUDE_INTERRUPT_INTERRUPTMANAGER_H_
 
 #include <def.h>
+#include <runtime_def.h>
 #include <interrupt/GICDefinitions.h>
 #include <interrupt/GICDistributor.h>
 #include <interrupt/GICRedistributor.h>
@@ -24,37 +25,47 @@ class InterruptManager
 	  private GICCPUInterface
 {
 public:
-	InterruptManager()=default;
+	enum CPUIntBit{FIQ=6,IRQ=7,SError=8,Debug=9};
+	InterruptManager(void *gicdAddr,void *gicrAddr)
+		:GICDistributor(gicdAddr),
+		 GICRedistributor(gicrAddr),
+		 GICCPUInterface()
+	{}
+
+	// 所有中断默认都是启用的， 将Redistributor唤醒
+	int init(void * vecAddr,bool a3vEn,EOIMode mode,uint8_t lowestPrty,uint8_t initPrty);
+
+
+	template <CPUIntBit intBit>
+	void cpuIntEnable(bool v);
+
 
 	AS_MACRO bool systemRegistersSupported()const
 	{
 		return RegID_AA64PFR0_EL1::read().GIC;
 	}
-	AS_MACRO void enableICCRegisters(bool allow)
-	{
-
-	}
 
 	// 重载RegVBAR的operator=
 	AS_MACRO void    vectorAddr(void *addr)
 	{
-		_vbarel1.Addr = reinterpret_cast<uint64_t>(addr);
-		_vbarel1.write();
+		RegVBAR_EL1::make(reinterpret_cast<uint64_t>(addr)).write();
 	}
-	AS_MACRO void    awakeRedistributor(){ GICRedistributor::awake();}
 
-	AS_MACRO void    sgi(){}
+	using GICCPUInterface::sgiTarget;
+	using GICCPUInterface::sgiSelf;
+	using GICCPUInterface::sgiTargetList;
+	using GICCPUInterface::sgiAllOtherCPUs;
 
-	// 方法声明
-	using GICCPUInterface::eoiMode;
-
-	template <int grp>
-	void ACKIntGroup();
-
+	template <class Base>
+	Base & cast(){return *static_cast<Base*>(this);}
+	template <class Base>
+	const Base & cast()const{return *static_cast<const Base*>(this);}
 private:
-	RegVBAR_EL1    _vbarel1;
 };
 
+#ifndef _NOT_NEED_InterruptManager
+extern InterruptManager intm;
+#endif
 
 
 
