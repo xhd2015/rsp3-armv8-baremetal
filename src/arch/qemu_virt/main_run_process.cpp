@@ -137,8 +137,6 @@ int enableMMU()
 	spsel.SP = 1;
 	spsel.write();
 
-
-
 	// set exception vector of EL1
 	extern char ExceptionVectorEL1[];
 	RegVBAR_EL1 vbar;

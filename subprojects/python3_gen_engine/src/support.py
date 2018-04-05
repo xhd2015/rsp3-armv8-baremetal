@@ -45,6 +45,7 @@ def  canonicalRegDefs(reg_defs):
               "templateSpecArgs":None,
               "templateAssert":None,
               "extends":None,
+              "read_needs_isb":False,
               "enums":[],
             }
         
@@ -63,6 +64,9 @@ def  canonicalRegDefs(reg_defs):
                 i+=1
             elif reg_def[i] in {"in_place","out_place"}:
                 t[reg_def[i]+"_mode"]=True
+                i+=1
+            elif reg_def[i] in {"read_needs_isb"}:#set true
+                t[reg_def[i]]=True
                 i+=1
             elif reg_def[i] in t:#key + 参数
                 t[reg_def[i]]=reg_def[i+1]

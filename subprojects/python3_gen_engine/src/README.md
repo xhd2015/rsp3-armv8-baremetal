@@ -1,8 +1,7 @@
 # 帮助
 使用方法： 首先定义reg_defs.py文件，该文件格式参见后面的章节。
-然后，
-
-
+然后，cd到src目录，运行： python3 GenEngine.py reg_defs.py output.h
+即可根据Registers.cppy模板文件生成output.h文件。
 # cppy文件的格式
 cppy使用<...>来标记一个块，下面是一个简单的例子：
 ```
@@ -15,9 +14,18 @@ This will be varbatim
 from support import *
 
 hasMultiFields = (len(fields)>1)
+if hasMultiFields:
 >
-<=++>
-<=-->
+<=  ++>
+something goes here  if hasMultiFields True
+<=  -->
+<```
+else:
+    if hasNoFields:
+>
+<=      +2>
+something goest here if not hasMultiFields and hasNoFields
+<=      -2>
 ```
 生成的python文件格式如下：
 ```python
@@ -80,11 +88,13 @@ reg_defs=[
                   ("F1",["RES1",64])
                   ],
          "scale_type":"uint64_t",
-         "volatile":False,
          "applies":["F0.A==0",""],
          "has_read":False,
          "has_write":False,
-         "sys_reg_name":"SPSel",# 如果该项存在，则说明是sys_reg,其他的含义均不相同
+         "sys_reg_name":"SPSel",# 如果该项存在，则说明是sys_reg,其他的含义均不相同,
+         "in_place_mode":True,
+         "out_place_mode":False,
+         "read_needs_isb":False,
     },
 ]
 ```

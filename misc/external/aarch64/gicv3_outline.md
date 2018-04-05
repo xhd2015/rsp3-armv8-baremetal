@@ -1,4 +1,18 @@
 
+
+
+# 要点概述
+中断分为几个类型：LPI，SPI，PPI，SGI等
+中断控制系统具有层次结构：Distributor，Redistributor和CPU Interface。
+
+所有的中断都具有唯一的标识符IntID， 其中， IntID0-15由SGI使用，IntID16-31由PPI使用。每种中断的产生方式都不相同。
+
+中断具有组的概念，在只有一个安全状态的系统中，中断是两组：group0和group1。每种中断都可以配置为或者是group0，或者是group1的类型。前者对于FIQ，后者对应IRQ。
+
+SGI中断比较特殊，它不仅可以配置，还可以在产生时指定它的group（有两个SGI寄存器）。
+
+编程模型：CPU Interface使用系统寄存器控制， 其他的（Distributor，Redistributor）使用内存映射的寄存器。其中，Distributor是全局的，所有的PE都使用一组框架，而Redistributor则是每个PE私有的，也就是说，尽管Redistributor具有相同的内存地址，但是每个PE访问这个内存时看到的是私有的。
+
 # 概述
 本文档对ARM的通用中断控制系统版本3（GICv3）做出一个基本的描述。
 
@@ -193,3 +207,4 @@ Distributor,Redistributor和ITS共同称为IRI.
 ![](gicv3/register_map.png)
 
 使用内存映射的寄存器和系统寄存器也许并不处于同一个状态，因此当SRE启用时，并不能保证同步。ARM推荐使用系统寄存器替代内存映射的寄存器。
+

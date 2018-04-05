@@ -23,6 +23,11 @@ using IntID = uint32_t;
 constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
 		        INT_IS_NON_SECURE_GRP1=1021,
 		        INT_LEGACY=1022,
+				INT_VIRTUAL_MAINTENCE=5,
+				INT_HYP_TIMER=26,
+				INT_VIRTUAL_TIMER=27,
+				INT_S_PHY_TIMER=29,
+			    INT_NS_PHY_TIMER=30,
 				INT_SPURIOUS=1023; // no interrupt
 
 constexpr uint8_t INT_IDLE_PRIORITY=0xFF;

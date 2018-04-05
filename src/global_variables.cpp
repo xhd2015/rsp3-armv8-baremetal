@@ -54,6 +54,11 @@ XilinxUARTPS xilinxUART{nullptr};
 PL011 pl011{nullptr};
 #endif
 
+#ifndef _NOT_NEED_GenericTimer
+#include <interrupt/GenericTimer.h>
+GenericTimer ktimer;
+#endif
+
 
 // 编译器提供的函数
 // 如果不注释下面这一行，该文件可能无法编译

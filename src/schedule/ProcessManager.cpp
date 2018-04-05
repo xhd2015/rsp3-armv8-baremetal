@@ -65,7 +65,7 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 
 ProcessManager::ProcessLink*  ProcessManager::forkProcess(ProcessLink *origin)
 {
-	// 调用 COPY构造函数
+	// 调用 COPY构造函数,隐式fork
 	auto node = _statedProcessList[Process::Status::CREATED_INCOMPLETE].insertTail(origin->data<true>());
 	if(node && node->data<true>().status()==Process::Status::CREATED)
 	{

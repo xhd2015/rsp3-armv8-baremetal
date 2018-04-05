@@ -72,6 +72,7 @@ public:
 	void saveContext(const uint64_t *savedRegisters);
 	// 还原进程的状态，如果调用此函数后不需要返回现场，则传递sp的值来设置下次进入EL1时的栈指针。
 	// 如果savedSpEL1 为空，表示不设置
+	// 注意，初始化程序可能借助设置saedSpEL1来进入用户空间，同时设置下一次进入内核空间的栈地址
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
 
 

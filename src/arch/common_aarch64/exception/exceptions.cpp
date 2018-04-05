@@ -11,6 +11,8 @@
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
 #include <interrupt/InterruptManager.h>
+#include <interrupt/GenericTimer.h>
+#include <interrupt/GICDefinitions.h>
 
 __asm__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -75,6 +77,7 @@ void enterIRQEL1ExceptionHandle()
 	__asm__("enterIRQEL1ExceptionHandle_no_prologue: \n\t");
 	SAVE_REGS();
 	__asm__(
+		"mov     x0, sp \n\t"
 		"bl      IRQEL1Handle \n\t"
 	);
 	RESTORE_REGS();
@@ -86,6 +89,7 @@ void enterFIQEL1ExceptionHandle()
 	__asm__("enterFIQEL1ExceptionHandle_no_prologue: \n\t");
 	SAVE_REGS();
 	__asm__(
+		"mov     x0, sp \n\t"
 		"bl      FIQEL1Handle \n\t"
 	);
 	RESTORE_REGS();
@@ -213,13 +217,13 @@ void SynchronousEL1Handle(uint64_t *savedRegisters)//savedRegisters[31], from X3
 }
 
 extern "C"
-void IRQEL1Handle()
+void IRQEL1Handle(uint64_t *savedRegisters)
 {
 	kout << INFO <<"processing IRQ_EL1 \n";
 
-
-
 	auto iar = RegICC_IAR_EL1<1>::read(); // NOTE:by reading it, we  acknowledged it.So it will change to 1023 after this read
+	auto eoi=RegICC_EOIR_EL1<1>::make(0);
+	eoi.INTID = iar.INTID;
 	RegICC_RPR_EL1::read().dump();
 	RegICC_PMR_EL1::read().dump();
 //	RegGICD_ISACTIVER0::read().dump();
@@ -228,11 +232,6 @@ void IRQEL1Handle()
 //	RegGICR_ISPENDR0::read().dump();
 	RegISR_EL1::read().dump();
 	iar.dump();
-
-	auto eoi=RegICC_EOIR_EL1<1>::make(0);
-	eoi.INTID = iar.INTID;
-	eoi.write();
-
 	// write here to make sure that the event come in order
 	if(iar.INTID == 27) // virtual timer event stream
 	{
@@ -242,22 +241,15 @@ void IRQEL1Handle()
 		ctl.ENABLE = 1;
 		ctl.IMASK = 0;
 		ctl.write();
-	}else if(iar.INTID == 30)//el1 physical timer interrupt
+		eoi.write();
+	}else if(iar.INTID == INT_NS_PHY_TIMER)//el1 physical timer interrupt
 	{
-//		RegCNTP_CTL_EL0 ctl {0};
-//		ctl.ENABLE = 0;
-//		writeRegCNTP_CTL_EL0(ctl);
-
-		// rewrite this compare value will generate interrupt again
-		auto cmpvPhy1 = RegCNTP_CVAL_EL0::read();
-		cmpvPhy1.dump();
-	//	cmpvPhy1.CompareValue = 0x2a3a4a5a;
-		cmpvPhy1.CompareValue += 0x3a4a5a;
-		cmpvPhy1.write();
-
-//		ctl.ENABLE = 1;
-//		ctl.IMASK = 0;
-//		writeRegCNTP_CTL_EL0(ctl);
+	    ktimer.nextPeriod();
+		eoi.write();
+		// this no return
+//	    processManager.scheduleNextProcess(savedRegisters);
+	}else{ // others
+		eoi.write();
 	}
 }
 

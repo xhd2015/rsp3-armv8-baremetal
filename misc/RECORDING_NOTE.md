@@ -1,3 +1,42 @@
+# 2018年4月5日22:06:23
+【commit point】 通用计时器完成，产生定时中断。
+
+下一步进行多进程的运行。
+# 2018年4月5日22:04:22
+我们将之前一直使用的验证代码组织重新进行一次说明：
+验证代码名称为main_XXX.cpp
+首部含有注释，注释表明它完成的功能。
+
+由于一个版本的依赖的代码在下个版本可能改变，因此能够契合上下文展示源程序的唯一方法就是通过git的commit history来回顾。
+# 2018年4月5日19:36:30
+【acknowledged】 uint32_t和uint32_t相乘，返回uint64_t
+```c++
+#include <iostream>
+#include <cstdint>
+
+uint64_t mul(uint32_t a,uint32_t b)
+{
+        return a*b;
+}
+int main()
+{
+        uint32_t freq=625000000;
+        uint32_t ms=100;
+        std::cout << static_cast<uint64_t>(freq)*ms/1000 <<std::endl;
+        std::cout << freq*ms/1000 <<std::endl;
+        std::cout << mul(freq,ms)/1000 <<std::endl;
+
+}
+```
+输出
+```
+62500000
+2370457
+2370457
+```
+问题在于相乘的方式。
+# 2018年4月5日16:07:49
+修复了一个CNTPCT_EL0的读问题：需要ISB。参见ARMv8 profile,D8.2.1
 # 2018年4月5日13:40:27
 【commit point】 中断系统重构完成，SGI测试成功。
 # 2018年4月5日13:37:34
