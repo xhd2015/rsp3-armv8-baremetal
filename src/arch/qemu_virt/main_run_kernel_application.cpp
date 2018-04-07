@@ -5,7 +5,7 @@
 #include <arch/common_aarch64/vmsa_descriptors.h>
 #include <generic_util.h>
 #include <kernel.h>
-#include <arch/common_aarch64/mmu/VirtualAddress.h>
+#include <memory/VirtualAddress.h>
 #include <cstring>
 #include <new>
 

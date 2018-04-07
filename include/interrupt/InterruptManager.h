@@ -50,16 +50,17 @@ public:
 	{
 		RegVBAR_EL1::make(reinterpret_cast<uint64_t>(addr)).write();
 	}
+	template <class Base>
+	AS_MACRO Base & cast(){return *static_cast<Base*>(this);}
+	template <class Base>
+	AS_MACRO const Base & cast()const{return *static_cast<const Base*>(this);}
 
 	using GICCPUInterface::sgiTarget;
 	using GICCPUInterface::sgiSelf;
 	using GICCPUInterface::sgiTargetList;
 	using GICCPUInterface::sgiAllOtherCPUs;
-
-	template <class Base>
-	Base & cast(){return *static_cast<Base*>(this);}
-	template <class Base>
-	const Base & cast()const{return *static_cast<const Base*>(this);}
+	using GICCPUInterface::ack;
+	using GICCPUInterface::eoi;
 private:
 };
 

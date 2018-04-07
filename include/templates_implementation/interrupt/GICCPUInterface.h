@@ -10,6 +10,28 @@
 
 #include <interrupt/GICCPUInterface.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
+#include <arch/common_aarch64/registers/gicv3_registers.h>
+
+template <int grp>
+IntID   GICCPUInterface::ack()
+{
+	return RegICC_IAR_EL1<grp>::read().INTID;
+}
+template <int grp>
+void  GICCPUInterface::eoi(IntID id)
+{
+	RegICC_EOIR_EL1<grp>::make(id & 0xFFFFFF).wrte();
+}
+
+template <int grp>
+void   GICCPUInterface::subPriorityBits(size_t n)
+{
+	if(n<1 || n>8)
+		return;
+	auto reg=RegICC_BPR_EL1<grp>::make(0);
+	reg.BinaryPoint=n-1;
+	reg.write();
+}
 
 template <int grp>
 void GICCPUInterface::enableGroup(bool enable)

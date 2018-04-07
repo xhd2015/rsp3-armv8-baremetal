@@ -4,8 +4,8 @@
  *  Created on: Mar 19, 2018
  *      Author: 13774
  */
+#include <interrupt/svc_call.h>
 #include <schedule/PidManager.h>
-#include <arch/common_aarch64/exception/svc_call.h>
 #include <io/Output.h>
 
 int main()

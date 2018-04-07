@@ -120,6 +120,16 @@ AS_MACRO uint64_t bitMask(uint8_t bit)
 {
 	return (1u << bit);
 }
+template <uint64_t i>
+AS_MACRO uint64_t upperMaskBits()
+{
+	return HEX64(ffff,ffff,ffff,ffff) >> (64-i) << (64-i);
+}
+template <uint64_t i>
+AS_MACRO uint64_t lowerMaskBits()
+{
+	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
+}
 // example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
 AS_MACRO uint64_t upperMaskBits(uint64_t i)
 {

@@ -6,8 +6,8 @@
  */
 
 
+#include <interrupt/svc_call.h>
 #include <io/printk.h>
-#include <arch/common_aarch64/exception/svc_call.h>
 
 // 必须确保下面的变量生成的引用是未知无关的
 // 使用buffer进行缓冲

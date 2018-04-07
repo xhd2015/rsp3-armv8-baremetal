@@ -1,3 +1,7 @@
+# 2018年4月7日18:49:26
+【commit point】重构了虚拟内存组织架构。这一版本的示例代码可以参加[main_demo_universal_init_kernel.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel.cpp)
+# 2018年4月6日12:32:02
+重用是最本质的东西，而重用的形式可能各不相同。
 # 2018年4月5日22:06:23
 【commit point】 通用计时器完成，产生定时中断。
 

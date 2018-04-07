@@ -14,6 +14,7 @@ int main();
 __asm__(
 ".section .text.boot \n\t"
 ASM_HALT_SLAVE_CPUS()
+ASM_SET_SP_SEL(1)  //使用SP_EL1
 ASM_SET_SP_SYM(__stack_top)
 "b init \n\t"
 );
@@ -24,12 +25,16 @@ extern uint64_t __bss_end[];
 extern "C"
 void init()
 {
+	// 禁用EL3,EL2，设置EL1
+	// TODO
+
 	// p 的值一定是__bss_start吗？ 不一定，如果栈是错误地放在了一块只读内存上，则先存p的副本，然后取出来，其值就是0.
 //	setupUnintializedToZero();
 	for(auto p=__bss_start;p!=__bss_end;++p)
 		*p=0;
 
-//	initQemuUART();
+
+	// 初始化串口驱动
 	new (&pl011) PL011(UART_BASE);
 	pl011.init();
 	if(pl011.hasCorrectBase()) // 仅当配置正确时才进入

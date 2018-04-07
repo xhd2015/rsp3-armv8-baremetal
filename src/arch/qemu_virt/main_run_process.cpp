@@ -6,16 +6,16 @@
 #include <generic_util.h>
 #include <memory/MemoryManager.h>
 #include <io/Output.h>
-#include <arch/common_aarch64/mmu/VirtualAddress.h>
 #include <schedule/Process.h>
 #include <cstring>
 #include <new>
-#include <arch/common_aarch64/exception/svc_call.h>
 #include <schedule/ProcessManager.h>
 #include <SystemFeatures.h>
 #include <io/uart/PL011.h>
 #include <io/Input.h>
 #include <filesystem/ramfs/RAMFile.h>
+#include <interrupt/svc_call.h>
+#include <memory/VirtualAddress.h>
 
 
 extern char __stack_top[];

@@ -30,23 +30,13 @@ public:
 
 	// only group 0,1 is allowed
 	template <int grp>
-	AS_MACRO IntID   ackGroup()
-	{
-		return arrReg<RegICC_IAR_EL1,grp>(_eoiRegs).update().INTID;
-//		return reinterpret_cast<RegICC_IAR_EL1<grp>*>(_eoiRegs+grp)->update().INTID;
-	}
+	AS_MACRO IntID   ack();
+	template <int grp>
+	AS_MACRO void  eoi(IntID id);
 
 
 	template <int grp>
-	void   subPriorityBits(size_t n)
-	{
-		if(n<1 || n>8)
-			return;
-		auto & reg = arrReg<RegICC_BPR_EL1,grp>(_binaryRegs);
-		reg.update();
-		reg.BinaryPoint=n-1;
-		reg.write();
-	}
+	void   subPriorityBits(size_t n);
 
 	// read-only
 	AS_MACRO size_t  IDBits()const
@@ -75,9 +65,6 @@ public:
 
 private:
 	RegICC_CTLR_EL1 _ctrl;
-	typename RegICC_EOIR_EL1<0>::ScaleType  _eoiRegs[2];
-	typename RegICC_IAR_EL1<0>::ScaleType   _iarRegs[2];
-	typename RegICC_BPR_EL1<0>::ScaleType   _binaryRegs[2];
 
 
 };

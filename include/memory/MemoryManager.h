@@ -80,11 +80,13 @@ public:
 	 */
 	size_t getAllocatedLength(void *origin)const;
 
+	AS_MACRO const char* base() const {return _base;}
+	AS_MACRO const size_t size() const {return _size;}
 
 private:
-	MemoryChunk *headChunk;
-	const char		*base;
-	const size_t	size;
+	MemoryChunk *_headChunk;
+	const char		*_base;
+	const size_t	_size;
 };
 
 

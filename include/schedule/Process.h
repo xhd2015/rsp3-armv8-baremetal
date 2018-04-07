@@ -11,7 +11,7 @@
 #include <data_structures/ForwardList.h>
 #include <schedule/PidManager.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
-#include <arch/common_aarch64/vmsa_descriptors.h>
+#include <arch/common_aarch64/registers/vmsa_descriptors.h>
 #include <programming/define_members.h>
 
 // 提供一个统一的view
@@ -92,10 +92,10 @@ public:
 	Status status() const;
 	void   status(Status status);
 	const RegSPSR_EL1 SPSR() const;
-	const RegDescriptor4KBL0* tableL0() const;
-	RegDescriptor4KBL1* tableL1() const;
-	RegDescriptor4KBL2* tableL2() const;
-	const RegDescriptor4KBL3* tableL3() const;
+	const Descriptor4KBL0* tableL0() const;
+	Descriptor4KBL1* tableL1() const;
+	Descriptor4KBL2* tableL2() const;
+	const Descriptor4KBL3* tableL3() const;
 	const RegTTBR0_EL1& TTBR0() const;
 
 private:
@@ -108,10 +108,10 @@ private:
 	// ARMv8 特有的结构
 	RegTTBR0_EL1   _ttbr0 {0};
 	RegSP_EL0   _spEL0 {0};
-	RegDescriptor4KBL0 * _tableL0{nullptr};
-	RegDescriptor4KBL1 * _tableL1{nullptr};
-	RegDescriptor4KBL2 * _tableL2{nullptr};
-	RegDescriptor4KBL3 * _tableL3{nullptr};
+	Descriptor4KBL0 * _tableL0{nullptr};
+	Descriptor4KBL1 * _tableL1{nullptr};
+	Descriptor4KBL2 * _tableL2{nullptr};
+	Descriptor4KBL3 * _tableL3{nullptr};
 
 	void*         _codeBase{nullptr};
 	size_t        _codeSize{0};

@@ -1,13 +1,11 @@
-#include <arch/common_aarch64/exception/exceptions.h>
-#include <arch/common_aarch64/exception/svc_call.h>
-
-
 #include <asm_instructions.h>
 #include <arch/common_aarch64/system_common_registers.h>
 // provide RegDescriptor4KBL0,RegDescriptor4KBL1..., see include/arch/common_aarch64/vmsa_descriptors.py for its raw definitions
 #include <arch/common_aarch64/vmsa_descriptors.h>
 #include <arch/common_aarch64/general_registers.h>
 #include <generic_util.h>
+#include <interrupt/exceptions.h>
+#include <interrupt/svc_call.h>
 #include <kernel.h>
 
 // 程序测试了svc_call的调用及返回值

@@ -8,9 +8,9 @@
 
 #include <schedule/Process.h>
 #include <schedule/PidManager.h>
-#include <arch/common_aarch64/mmu/VirtualAddress.h>
 #include <asm_instructions.h>
-#include <arch/common_aarch64/exception/exceptions.h>
+#include <interrupt/exception_def.h>
+#include <memory/VirtualAddress.h>
 
 
 Process::Process()
@@ -67,8 +67,8 @@ Process::Error Process::init(size_t addrBitsLen,Process *parent,uint32_t priorit
 
 	this->_spEL0.SP = spVa.addr();
 	this->_ELR.returnAddr = pcVa.addr();
-	this->_SPSR = {0};
-//	this->_savedSPSR.EL = 0;
+	this->_SPSR = RegSPSR_EL1::make(0);
+//	this->_savedSPSR.EL = 0; //EL=0时SPSel必须等于0
 //	this->_savedSPSR.SPSel = 0;
 
 	auto err = setupTables(codeSize, heapSize, spSize);
@@ -88,10 +88,10 @@ Process::Error Process::setupTables(size_t codeSize,size_t heapSize,size_t spSiz
 	this->_heapSize = heapSize;
 	this->_heapBase = mman.allocate(heapSize,TABLE_ALIGNMENT);
 
-	this->_tableL0 = mman.allocateAs<RegDescriptor4KBL0*>(TABLE_SIZE,TABLE_ALIGNMENT);
-	this->_tableL1 = mman.allocateAs<RegDescriptor4KBL1*>(TABLE_SIZE,TABLE_ALIGNMENT);
-	this->_tableL2 = mman.allocateAs<RegDescriptor4KBL2*>(TABLE_SIZE,TABLE_ALIGNMENT);
-	this->_tableL3 = mman.allocateAs<RegDescriptor4KBL3*>(TABLE_SIZE,TABLE_ALIGNMENT);
+	this->_tableL0 = mman.allocateAs<Descriptor4KBL0*>(TABLE_SIZE,TABLE_ALIGNMENT);
+	this->_tableL1 = mman.allocateAs<Descriptor4KBL1*>(TABLE_SIZE,TABLE_ALIGNMENT);
+	this->_tableL2 = mman.allocateAs<Descriptor4KBL2*>(TABLE_SIZE,TABLE_ALIGNMENT);
+	this->_tableL3 = mman.allocateAs<Descriptor4KBL3*>(TABLE_SIZE,TABLE_ALIGNMENT);
 
 	if(_codeBase==nullptr || _heapBase==nullptr|| _spBase==nullptr || _tableL0 == nullptr || _tableL1==nullptr || _tableL2==nullptr || _tableL3==nullptr)
 	{
@@ -235,7 +235,7 @@ void Process::restoreContextAndExecute(void* savedSpEL1)
 		"mov  sp,  %1 \n\t" // else set sp=savedSpEL1
 		"1: \n\t"
 		"mov  x30, %0 \n\t"
-		RESTORE_REGS_ASM_INSTR_X30_BASE
+		RESTORE_REGS_ASM_INSTR_X30_BASE()
 		"eret \n\t"
 		::"r"(_registers),"r"(savedSpEL1)
 		:"sp"
@@ -305,19 +305,19 @@ const RegSPSR_EL1 Process::SPSR() const {
 	return _SPSR;
 }
 
-const RegDescriptor4KBL0* Process::tableL0() const {
+const Descriptor4KBL0* Process::tableL0() const {
 	return _tableL0;
 }
 
-RegDescriptor4KBL1* Process::tableL1() const {
+Descriptor4KBL1* Process::tableL1() const {
 	return _tableL1;
 }
 
-RegDescriptor4KBL2* Process::tableL2() const {
+Descriptor4KBL2* Process::tableL2() const {
 	return _tableL2;
 }
 
-const RegDescriptor4KBL3* Process::tableL3() const {
+const Descriptor4KBL3* Process::tableL3() const {
 	return _tableL3;
 }
 

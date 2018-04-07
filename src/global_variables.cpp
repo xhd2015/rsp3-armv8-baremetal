@@ -59,6 +59,15 @@ PL011 pl011{nullptr};
 GenericTimer ktimer;
 #endif
 
+#ifndef _NOT_NEED_InterruptHandler
+#include <interrupt/InterruptHandler.h>
+InterruptHandler intHandler;
+#endif
+
+#ifndef _NOT_NEED_VirtualManager
+#include <memory/VirtualManager.h>
+VirtualManager  virtman;
+#endif
 
 // 编译器提供的函数
 // 如果不注释下面这一行，该文件可能无法编译

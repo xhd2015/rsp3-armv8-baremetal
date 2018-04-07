@@ -1,7 +1,7 @@
 //
-#include <arch/common_aarch64/exception/svc_call.h>
 #include <asm_instructions.h>
 #include <arch/common_aarch64/system_common_registers.h>
+#include <interrupt/svc_call.h>
 #include <memory/MemoryManager.h>
 #include <IntegerFormatter.h>
 

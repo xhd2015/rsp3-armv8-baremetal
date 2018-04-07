@@ -13,19 +13,19 @@
 
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	:
-	headChunk(reinterpret_cast<MemoryChunk*>(base)),// set headChunk
-	 base(reinterpret_cast<const char*>(base)),
-	 size(size)
+	_headChunk(reinterpret_cast<MemoryChunk*>(base)),// set headChunk
+	 _base(reinterpret_cast<const char*>(base)),
+	 _size(size)
 {
 	if(initChunks)
 	{
 		if(size <= sizeof(MemoryChunk))
-			headChunk->setEnd(true);
+			_headChunk->setEnd(true);
 		else
 		{
 			// size需要减去1个字节，该字节用于设置end标记
-			new (headChunk) MemoryChunk(size - sizeof(MemoryChunk) - 1,false,0,false,0);
-			reinterpret_cast<MemoryChunk*>(headChunk->getDataEnd())->setEnd(true); // end
+			new (_headChunk) MemoryChunk(size - sizeof(MemoryChunk) - 1,false,0,false,0);
+			reinterpret_cast<MemoryChunk*>(_headChunk->getDataEnd())->setEnd(true); // end
 		}
 	}
 }
@@ -45,7 +45,7 @@ void* MemoryManager::allocate(size_t n)
 void  *MemoryManager::allocate(size_t n,size_t alignment)
 {
 	size_t moveOffset=SIZE_MAX;
-	auto foundChunk = headChunk->findAllocable(n, alignment, moveOffset);
+	auto foundChunk = _headChunk->findAllocable(n, alignment, moveOffset);
 	if(!foundChunk)
 		return  nullptr;
 	MemoryChunk * movedChunk = foundChunk->moveAhead(moveOffset);

@@ -3,6 +3,7 @@
 #include <io/IntegerFormatter.h>
 #include <interrupt/InterruptManager.h>
 #include <interrupt/GenericTimer.h>
+#include <interrupt/InterruptHandler.h>
 #include <io/Output.h>
 #include <new>
 
@@ -26,7 +27,7 @@ int main()
 		kout << FATAL << "This program is designed to run at EL1\n";
 		return 1;
 	}
-
+    new (&intHandler) InterruptHandler();
 	new (&intm) InterruptManager(
 			reinterpret_cast<char*>(GIC_DIST_BASE),
 			reinterpret_cast<char*>(GIC_REDIST_BASE));

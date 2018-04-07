@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_EXCEPTION_SVC_CALL_H_
 #define INCLUDE_EXCEPTION_SVC_CALL_H_
-#include <arch/common_aarch64/exception/exceptions.h>
 #include <asm_instructions.h>
+#include <interrupt/exception_def.h>
 
 // `class` ， 为了避免 与全局定义的符号冲突
 enum class SvcFunc{

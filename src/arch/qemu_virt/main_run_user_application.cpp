@@ -6,7 +6,7 @@
 #include <generic_util.h>
 #include <memory/MemoryManager.h>
 #include <io/Output.h>
-#include <arch/common_aarch64/mmu/VirtualAddress.h>
+#include <memory/VirtualAddress.h>
 #include <schedule/Process.h>
 #include <cstring>
 #include <new>
