@@ -20,12 +20,12 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	if(initChunks)
 	{
 		if(size <= sizeof(MemoryChunk))
-			_headChunk->setEnd(true);
+			_headChunk->end(true);
 		else
 		{
 			// size需要减去1个字节，该字节用于设置end标记
-			new (_headChunk) MemoryChunk(size - sizeof(MemoryChunk) - 1,false,0,false,0);
-			reinterpret_cast<MemoryChunk*>(_headChunk->getDataEnd())->setEnd(true); // end
+			new (_headChunk) MemoryChunk(0,false,false,size - sizeof(MemoryChunk) - 1);
+			reinterpret_cast<MemoryChunk*>(_headChunk->endPtr())->end(true); // end
 		}
 	}
 }
@@ -50,20 +50,16 @@ void  *MemoryManager::allocate(size_t n,size_t alignment)
 		return  nullptr;
 	MemoryChunk * movedChunk = foundChunk->moveAhead(moveOffset);
 	movedChunk->split(n);
-	movedChunk->setAllocated(true);
-	return movedChunk->getDataPtr();
+	movedChunk->allocated(true);
+	return movedChunk->dataPtr();
 }
 void  MemoryManager::deallocate(void *p)
 {
-	if(p && reinterpret_cast<size_t>(p) > CHUNK_SIZE )
+	auto chunkPtr= MemoryChunk::chunkPtrOfDataPtr(p);
+	if(chunkPtr && chunkPtr->validChunk() &&chunkPtr->allocated())
 	{
-		MemoryChunk *chunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(p) - CHUNK_SIZE);
-		if(chunk->isAllocated())
-		{
-			chunk->setAllocated(false);
-			chunk->mergeTrailingsUnallocated();
-		}
-
+		chunkPtr->allocated(false);
+		chunkPtr->mergeTrailingsUnallocated();
 	}
 }
 
@@ -91,34 +87,30 @@ void* MemoryManager::reallocate(void *origin,size_t newSize,size_t oldSize)
 		return nullptr;
 	if(oldSize==newSize)
 		return origin;
-	MemoryChunk *chunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(origin) - sizeof(MemoryChunk));
-
+	MemoryChunk *chunk = MemoryChunk::chunkPtrOfDataPtr(origin);
 	//try to collect unallocated,must be tested
-	chunk->setAllocated(false);
+	chunk->allocated(false);
 	chunk->mergeTrailingsUnallocated();
-	if(chunk->getSize() >= newSize)
+	if(chunk->size() >= newSize)
 	{
 		chunk->split(newSize);
-		chunk->setAllocated(true);
+		chunk->allocated(true);
 		return origin;
 	}else{ //need to be moved to another place , newSize > oldSize
-		chunk->setAllocated(true);
+		chunk->allocated(true);
 		char *ptr = this->allocateAs<char*>(newSize);
 		if(!ptr) // failed
 			return nullptr;
 		std::memcpy(ptr,origin,oldSize);
-		chunk->setAllocated(false);
+		chunk->allocated(false);
 		return ptr;
 	}
 }
 size_t MemoryManager::getAllocatedLength(void *origin)const
 {
-	if(origin && reinterpret_cast<uint64_t>(origin) > sizeof(MemoryChunk))
-	{
-		MemoryChunk* chunk=reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(origin) - sizeof(MemoryChunk));
-		if(chunk->getNextValidChunkOffset()==0 && !chunk->isEnd() && chunk->isAllocated())
-			return chunk->getSize();
-	}
+	auto ptr= MemoryChunk::chunkPtrOfDataPtr(origin);
+	if(ptr && ptr->validChunk() && ptr->allocated())
+		return ptr->size();
 	return SIZE_MAX;
 }
 

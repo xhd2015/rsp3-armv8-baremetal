@@ -16,8 +16,8 @@ VectorRef<T>::VectorRef(const T *data,size_t len)
 	:data(data),size(len){}
 
 template <class T>
-VectorRef<T>::VectorRef(const Vector<T> vec,size_t len,size_t offset)
-	:data(vec.getData() + offset),size(len==SIZE_MAX?vec.getSize():len) {}
+VectorRef<T>::VectorRef(const Vector<T>& vec,size_t len,size_t offset)
+	:data(vec.data() + offset),size(len==SIZE_MAX?vec.size():len) {}
 
 template <class T>
 const T * VectorRef<T>::getData()const

@@ -90,3 +90,4 @@ void	VirtioQueueLayout::pushAvl(VirtioQueueDescriptor * desc)
 	r.ring()[oldIdx]=static_cast<uint16_t>(desc - _descTable );
 	r.idx() = (oldIdx + 1)%_queueSize;
 }
+

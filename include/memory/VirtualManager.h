@@ -63,7 +63,8 @@ public:
 	 * 使TTBR0置为无效，该函数应当在跳转到高端地址之后调用
 	 * 通过设置TCR.EPD=1, 重置所有TTBR0的缓存即可。
 	 */
-	void disableTTBR0();
+	void enableTTBR0(bool enable);
+
 
 	/**
 	 * 通过内存和外设的信息来构造一个sizeAttrGroup,groupNum初始至少是10个，函数返回后是实际的值

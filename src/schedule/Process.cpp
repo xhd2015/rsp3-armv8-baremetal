@@ -67,7 +67,7 @@ Process::Error Process::init(size_t addrBitsLen,Process *parent,uint32_t priorit
 
 	this->_spEL0.SP = spVa.addr();
 	this->_ELR.returnAddr = pcVa.addr();
-	this->_SPSR = RegSPSR_EL1::make(0);
+	this->_SPSR = RegSPSR_EL1::make(0);// enable all interrutps
 //	this->_savedSPSR.EL = 0; //EL=0时SPSel必须等于0
 //	this->_savedSPSR.SPSel = 0;
 
@@ -112,7 +112,7 @@ Process::Error Process::setupTables(size_t codeSize,size_t heapSize,size_t spSiz
 		_tableL3[i].Valid = 0; // invalidate all
 	}
 
-	_tableL0[0] = {0};
+	Descriptor4KBL0::make(_tableL0+0,0);
 	_tableL0[0].Valid = 1;
 	_tableL0[0].IsTable = 1;
 	phyaddr = asm_at(reinterpret_cast<uint64_t>(_tableL1));

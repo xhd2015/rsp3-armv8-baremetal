@@ -63,6 +63,13 @@ public:
 	size_t readSector(uint64_t sector,size_t num,void * buffer);
 	size_t writeSector(uint64_t sector,size_t num,const void *buffer);
 
+	AS_MACRO uint16_t  currentUsedIdx()const{return virtqueue().usedRing().idx();}
+	/**
+	 *  当一次请求完成后，usedRing的idx会更新。
+	 * @param oldUsedIdx
+	 */
+	AS_MACRO void      waitCompleted(uint16_t oldUsedIdx)const { while(currentUsedIdx()==oldUsedIdx);}
+
 	bool setupDescriptors();
 
 private:

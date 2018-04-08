@@ -10,6 +10,9 @@
 #include <def.h>
 
 /**
+ * BIOS Parameter Block,存在于卷上的保留区域的第一个扇区（扇区#0)
+ * 从第36个字节起，FAT32的BPB和FAT16的BPB不同。
+ *
  * NOTE: to be used on any platform,do not use any platform specific types
  * FORBIDDEN: size_t, int,short,long and their unsiged types, void*
  * ALLOWED:uint32_t,uint64_t,uint16_t,uint8_t,char(less recommended)

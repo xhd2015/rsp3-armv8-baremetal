@@ -18,8 +18,18 @@ StringRef::StringRef(const void *p,size_t len)
 	:VectorRef(reinterpret_cast<const char*>(p),len){}
 
 StringRef::StringRef(const String &s)
-	:VectorRef(s.getData(),s.getSize()){}
+	:VectorRef(s.data(),s.size()){}
 
+
+bool      operator==(const StringRef &lhs,const StringRef &rhs)
+{
+	if(lhs.getSize()!=rhs.getSize())
+		return false;
+	for(size_t i=0; i!=rhs.getSize();++i)
+		if(lhs[i]!=rhs[i])
+			return false;
+	return true;
+}
 Output & operator<<(Output & out,const StringRef ref)
 {
 	out.print(ref.getData(), ref.getSize());

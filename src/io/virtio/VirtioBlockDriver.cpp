@@ -34,7 +34,9 @@ size_t VirtioBlockDriver::readSector(uint64_t sector,size_t num,void * buffer)
 	// put head into avail
 	_virtqueue.pushAvl(_reqDescs[0]);
 
+	auto oldIdex=currentUsedIdx();
 	notify(CUR_QUEUE);
+	waitCompleted(oldIdex);
 
 	return num;
 }
@@ -56,7 +58,9 @@ size_t VirtioBlockDriver::writeSector(uint64_t sector,size_t num,const void *buf
 	// put head into avail
 	_virtqueue.pushAvl(_reqDescs[0]);
 
+	auto oldIdex=currentUsedIdx();
 	notify(CUR_QUEUE);
+	waitCompleted(oldIdex);
 
 	return num;
 }

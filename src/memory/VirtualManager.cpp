@@ -75,15 +75,10 @@ int VirtualManager::init(size_t mmuBasePage,size_t sizeAttrGroup[][3],size_t gro
 	asm_isb();
 
 
-	// 将上下文切换到高端地址,包括中断地址，栈指针,内存管理器
+	// 将上下文切换到高端地址,包括中断地址，栈指针
 	auto vbar=RegVBAR_EL1::read();
 	vbar.Addr |= _ttbr1Mask;
 	vbar.write();
-	new (&mman) MemoryManager(
-			reinterpret_cast<char*>(reinterpret_cast<uint64_t>(mman.base())|_ttbr1Mask),
-			mman.size(),
-			false
-	);
 
 	// 跳转到预定的函数处
 	__asm__ __volatile__(
@@ -91,7 +86,7 @@ int VirtualManager::init(size_t mmuBasePage,size_t sizeAttrGroup[][3],size_t gro
 			"br  %1 \n\t"
 			::"r"(reinterpret_cast<uint64_t>(newSp)|_ttbr1Mask),"r"(reinterpret_cast<uint64_t>(jmpFunc)|_ttbr1Mask));
 
-	return 0;//no return,make gcc happy
+	return 0;//no return,but make gcc happy
 
 }
 
@@ -207,11 +202,12 @@ void VirtualManager::setFlatMap(size_t mmuBasePage,size_t sizeAttrGroup[][3],siz
 	asm_isb();
 }
 
-void VirtualManager::disableTTBR0()
+void VirtualManager::enableTTBR0(bool enable)
 {
-	asm_tlbi_aside1(RegTTBR0_EL1::read().ASID);
+	if(!enable)
+		asm_tlbi_aside1(RegTTBR0_EL1::read().ASID);
 	auto tcr=RegTCR_EL1::read();
-	tcr.EPD0 = 1; // 产生Translation Fault中断而不是进行转换表遍历
+	tcr.EPD0 = (!enable); // 产生Translation Fault中断而不是进行转换表遍历
 	tcr.write();
 	asm_isb();
 }

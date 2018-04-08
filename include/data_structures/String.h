@@ -33,7 +33,13 @@ public:
 	String & append(const char* s,size_t len);
 	String & append(const char *s);
 
+	size_t   findFirst(size_t start,const String &s)const;
+	Vector<String> split(const String & s)const;
+
+	String subString(size_t i,size_t len)const;
+
 };
 
+bool   operator==(const String &lhs,const String &rhs);
 
 #endif /* INCLUDE_DATA_STRUCTURES_STRING_H_ */

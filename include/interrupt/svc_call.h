@@ -41,7 +41,6 @@ template <SvcFunc func>
 uint64_t svc_call()
 {
 	uint64_t res=0;
-	FORCE_CODE_COHERENT_WITH_VIEW();
 	__asm__ __volatile__(
 						"svc %1 \n\t"
 						"str x0,%0 \n\t"
@@ -52,7 +51,6 @@ template <SvcFunc func>
 uint64_t svc_call(uint64_t arg0)
 {
 	uint64_t res=0;
-	FORCE_CODE_COHERENT_WITH_VIEW();
 	__asm__ __volatile__("mov x0, %2 \n\t"
 						"svc %1 \n\t"
 						"str x0,%0 \n\t"
@@ -63,7 +61,6 @@ template <SvcFunc func>
 uint64_t svc_call(uint64_t arg0,uint64_t arg1)
 {
 	uint64_t res=0;
-	FORCE_CODE_COHERENT_WITH_VIEW();
 	__asm__ __volatile__("mov x0, %2 \n\t"
 						"mov  x1, %3  \n\t"
 						"svc %1 \n\t"
@@ -75,7 +72,6 @@ template <SvcFunc func>
 uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2)
 {
 	uint64_t res=0;
-	FORCE_CODE_COHERENT_WITH_VIEW();
 	__asm__ __volatile__("mov x0, %2 \n\t"
 						"mov  x1, %3  \n\t"
 						"mov  x2, %4 \n\t"
@@ -88,7 +84,6 @@ template <SvcFunc func>
 uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3)
 {
 	uint64_t res=0;
-	FORCE_CODE_COHERENT_WITH_VIEW();
 	__asm__ __volatile__("mov x0, %2 \n\t"
 						"mov  x1, %3  \n\t"
 						"mov  x2, %4 \n\t"

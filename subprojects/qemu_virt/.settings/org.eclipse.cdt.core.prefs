@@ -276,8 +276,8 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ROOT_PROJECT/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/ROOT_PROJECT/value=../../..
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/delimiter=;
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/operation=append
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/value=0x4000
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/value=0xA000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/value=qemu_virt

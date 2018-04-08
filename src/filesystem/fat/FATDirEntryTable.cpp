@@ -10,63 +10,40 @@
 #include <filesystem/fat/FATLongNameEntry.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <io/IntegerFormatter.h>
+#include <generic/cpu.h>
 
 
 
-FATDirEntryTable::FATDirEntryTable(ByteReader &breader,FAT32EntryTable &fat,FAT32Entry fentry,FAT32ExtBPB * e32bpb)
-	:Vector(),breader(breader),e32bpb(e32bpb),fat(fat)
-{
-	size_t eachClusCount = e32bpb->secPerClus *  e32bpb->bytesPerSec / sizeof(FATDirEntry);
-	fat.foreachEntry([this,&breader,eachClusCount,e32bpb](FAT32Entry entry,size_t index){
-		this->append(breader.read<FATDirEntry>(e32bpb->getClusterFirstSector(entry.getAsInt()) * e32bpb->bytesPerSec,eachClusCount));
-	}, fentry);
-}
-Vector<char> FATDirEntryTable::readFile( const StringRef & longFileName,size_t offset ,size_t byteCount  )
-{
-	size_t i=findByLongName(longFileName);
-	Vector<char> content;
-	if(i < getSize()  )
-	{
-		FATDirEntry fentry = (*this)[i];
-
-		FAT32Entry  fatEntry = fentry.getFirstClusIndex();
-		fatEntry = fat.locateFileOffset(fatEntry, offset);
-		if(!fatEntry.isLast())//can be located
-		{
-			size_t offsetInClus = offset % e32bpb->getClusterByteSize();
-			if(byteCount==SIZE_MAX)
-				byteCount = fentry.fileSize - offset;
-			if(offset + byteCount <= fentry.fileSize) // not overflow
-			{
-				const size_t  clusBytes = e32bpb->getClusterByteSize();
-
-				//read first cluse
-				content.append(breader.read<char>(e32bpb->getClusterFirstSector(fatEntry.getAsInt())*e32bpb->bytesPerSec + offsetInClus,clusBytes - offsetInClus));
-				size_t leftByte = byteCount - (clusBytes - offsetInClus);
-				fatEntry = fat.next(fatEntry);
-				fat.foreachEntry([this,&content,&leftByte,clusBytes](FAT32Entry entry,size_t index){
-					if(leftByte)
-					{
-						size_t thisReadByte = leftByte > clusBytes ? clusBytes:leftByte;
-						content.append(breader.read<char>(e32bpb->getClusterFirstSector(entry.getAsInt()) * e32bpb->bytesPerSec, thisReadByte / sizeof(char)));
-						leftByte -= thisReadByte;
-					}
-				}, fatEntry);
-			}
-		}
-
-	}
-	return std::move(content);
-}
-
-//void FATDirEntryTable::consumeFileContent( const StringRef & longFileName )
+//FATDirEntryTable::FATDirEntryTable(ByteReader &breader,FAT32EntryTable &fat,FAT32Entry fentry,FAT32ExtBPB * e32bpb,bool load)
+//	:Vector(),breader(breader),e32bpb(e32bpb),fat(fat)
 //{
-//
+//	if(load)
+//	{
+//		size_t eachClusCount = e32bpb->secPerClus *  e32bpb->bytesPerSec;
+//		auto entry = fentry;
+//		while(!entry.isLast())
+//		{
+//			auto vec=breader.read(e32bpb->getClusterFirstSector(entry.getAsInt()) * e32bpb->bytesPerSec,eachClusCount);
+//			this->append(vec.castMove<FATDirEntry>());
+//			// 注意，下面的过程可能不准确，主要是因为某些项跨越两个entry的话，只有一个entry项不能完整显示。
+//	//		auto data=reinterpret_cast<const FATDirEntry*>(vec.data());
+//	//		auto size=vec.size() / sizeof(FATDirEntry);
+//	//		for(size_t i=0;i!=size;++i)
+//	//		{
+//	//			if(!data[i].uni_isLongNameEntry() && !data[i].isVolumeID())//is file or dir
+//	//			{
+//	//				++count;
+//	//				kout << "\""<< data[i].getLongName() << "\"\n";
+//	//			}
+//	//		}
+//			entry = fat.next(entry);
+//		}
+//	}
 //}
 
 size_t   FATDirEntryTable::findByShortName( const StringRef & mainPart,const StringRef & extPart)const
 {
-	for(size_t i=0;i!=getSize();++i)
+	for(size_t i=0;i!=size();++i)
 	{
 		if(!operator[](i).uni_isLongNameEntry() && operator[](i).shortNameEquals(mainPart, extPart)) // not long name
 			return i; // they are unique
@@ -79,14 +56,42 @@ size_t   FATDirEntryTable::findByLongName( const StringRef & longFileName )const
 	size_t i=0;
 	while(true)
 	{
-		while(i != getSize() && !operator[](i).uni_isLongNameEntry())++i;
-		if(i==getSize())
+		while(i != size() && !operator[](i).uni_isLongNameEntry())++i;
+		if(i==size())
 			return SIZE_MAX;
-		const FATLongNameEntry *firstAppearEntry=reinterpret_cast<const FATLongNameEntry*>( getData() +i );
+		const FATLongNameEntry *firstAppearEntry=reinterpret_cast<const FATLongNameEntry*>( data() +i );
 		const FATLongNameEntry *lastAppearEntry=firstAppearEntry->getLastAppearEntry();
 		if(lastAppearEntry->nameEqulasAsciiNameUpto(firstAppearEntry, longFileName, false))
 			return i + (lastAppearEntry - firstAppearEntry + 1);
 		else
 			i += lastAppearEntry - firstAppearEntry + 1;//advance to the next group.
 	}
+}
+
+String  FATDirEntryTable::volumnLabel()const
+{
+	auto &t=*this;
+	for(size_t i=0;i!=size();++i)
+	{
+		if(t[i].isVolumeID())
+			return t[i].getVolumnLabel();
+	}
+	return "";
+}
+
+void     FATDirEntryTable::showAllFileNames()const
+{
+	auto &entries=*this;
+	size_t count=0;
+	for(size_t i=0;i!=entries.size();++i)
+	{
+		if(!entries[i].zeroEntry() &&
+				!entries[i].uni_isLongNameEntry() &&
+				!entries[i].isVolumeID())//is file or dir
+		{
+			++count;
+			kout << entries[i].getLongName() << "\n";
+		}
+	}
+	kout << "count : " << count <<"\n";
 }

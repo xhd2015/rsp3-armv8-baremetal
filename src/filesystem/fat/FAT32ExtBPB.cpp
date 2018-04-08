@@ -43,6 +43,11 @@ size_t FAT32ExtBPB::getClusterFirstSector(size_t n)const
 		return rsvdSecCnt + (numFATs * FATSz32) + (n-2)*secPerClus;
 }
 
+uint32_t FAT32ExtBPB::getRootFATEntry()const
+{
+	return rootClus;
+}
+
 size_t FAT32ExtBPB::getRootDirFirstSector()const
 {
 	return getClusterFirstSector(rootClus);

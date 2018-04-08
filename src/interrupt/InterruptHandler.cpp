@@ -114,17 +114,8 @@ void InterruptHandler::handleSVC(SvcFunc func)
 
 void InterruptHandler::handleIRQ(IntID id)
 {
-	kout << INFO <<"processing IRQ_EL1 \n";
-
 	auto eoi=RegICC_EOIR_EL1<1>::make(0);
 	eoi.INTID = id;
-	RegICC_RPR_EL1::read().dump();
-	RegICC_PMR_EL1::read().dump();
-//	RegGICD_ISACTIVER0::read().dump();
-//	RegGICR_ISACTIVER0::read().dump();
-//	RegGICD_ISPENDR0::read().dump();
-//	RegGICR_ISPENDR0::read().dump();
-	RegISR_EL1::read().dump();
 	// write here to make sure that the event come in order
 	if(id == INT_VIRTUAL_TIMER) // virtual timer event stream
 	{
@@ -140,7 +131,8 @@ void InterruptHandler::handleIRQ(IntID id)
 	    ktimer.nextPeriod();
 		eoi.write();
 		// this no return
-//	    processManager.scheduleNextProcess(savedRegisters);
+		_processing=false;
+	    processManager.scheduleNextProcess(_savedRegisters);
 	}else{ // others
 		eoi.write();
 	}

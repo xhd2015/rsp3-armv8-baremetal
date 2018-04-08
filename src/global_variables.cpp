@@ -69,6 +69,11 @@ InterruptHandler intHandler;
 VirtualManager  virtman;
 #endif
 
+#ifndef _NOT_NEED_VirtualFileSystem
+#include <filesystem/VirutalFileSystem.h>
+VirtualFileSystem vfs;
+#endif
+
 // 编译器提供的函数
 // 如果不注释下面这一行，该文件可能无法编译
 //extern "C" void __static_initialization_and_destruction_0(int,int);

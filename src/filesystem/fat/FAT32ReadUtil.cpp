@@ -38,7 +38,7 @@ Vector<FATDirEntry> FAT32ReadUtil::readAllDirEntries(const Vector<FAT32Entry> &f
 	Vector<FATDirEntry> res( clusCount * entryPerClus );
 	for(size_t i=0;i!=clusCount;++i)
 	{
-		sreader.read(ebpb->getClusterFirstSector(beginIndex), res.getData() + i*entryPerClus, ebpb->secPerClus);
+		sreader.read(ebpb->getClusterFirstSector(beginIndex), res.data() + i*entryPerClus, ebpb->secPerClus);
 		beginIndex = fat[beginIndex].getAsInt();
 	}
 	return std::move(res);
@@ -82,11 +82,11 @@ size_t FAT32ReadUtil::findFirstFreeClusterIndex(const FAT32Entry *fat,size_t ite
 Vector<const FATDirEntry*> FAT32ReadUtil::filterInDirFileEntries(const Vector<FATDirEntry> & entries)
 {
 	Vector<const FATDirEntry*> res;
-	for(size_t i=0;i!=entries.getSize();++i)
+	for(size_t i=0;i!=entries.size();++i)
 	{
 		if(!entries[i].uni_isLongNameEntry() && !entries[i].isVolumeID())//is file or dir
 		{
-			res.pushBack(entries.getData() + i);
+			res.pushBack(entries.data() + i);
 		}
 	}
 	return std::move(res);

@@ -21,6 +21,7 @@
 #define _NOT_NEED_PidManager
 #define _NOT_NEED_SystemFeatures
 #define _NOT_NEED_XilinxUARTPS
+#define _NOT_NEED_VirtualFileSystem
 #endif
 
 

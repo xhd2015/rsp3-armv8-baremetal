@@ -9,10 +9,11 @@
 #define INCLUDE_FILESYSTEM_FAT_FAT32EXTBPB_H_
 
 #include <filesystem/fat/FAT_BPB.h>
+#include <io/ByteReader.h>
 
 /**
- * NOTE: if you are given a raw data of an FAT header,you do not know what kind is it.Then you can safely assume that it is an FAT32 filesystem type,and use methods prefixed with uni_ (which means universal) to retrieve information from it.
- * Once you get the realy type of it(through uni_determineFATType()),then you can cast that region of memory to ExtBPB32 or ExtBPB16, and use non-prefixed method of that class.
+ * NOTE: if you are given a raw data of an FAT header,you do not know what kind it is.Then you can safely assume that it is an FAT32 filesystem type,and use methods prefixed with uni_ (which means universal) to retrieve information from it.
+ * Once you get the real type of it(through uni_determineFATType()),then you can cast that region of memory to ExtBPB32 or ExtBPB16, and use non-prefixed method of that class.
  */
 class FAT32ExtBPB
 	:public FAT_BPB
@@ -71,6 +72,7 @@ public:
 	// 0xaa55
 	uint16_t Signature_word;
 
+	FAT32ExtBPB()=default;
 	size_t uni_getFatSize()const;
 
 	size_t uni_getTotalSecCount()const;
@@ -82,6 +84,7 @@ public:
 	// fatNo, starting from 1 to numFATs
 	size_t getClusterEntryOffset(size_t fatNo,size_t n)const;
 	size_t getClusterFirstSector(size_t n)const;
+	uint32_t getRootFATEntry()const;
 
 	size_t getRootDirFirstSector()const;
 

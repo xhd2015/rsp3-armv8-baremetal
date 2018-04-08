@@ -1,7 +1,8 @@
 include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
 include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
 
-QEMU_ARGS := -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial mon:stdio -bios $(MASTERY_BINARY) -drive file=virtio.bin,format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
+IO_IMG := fat32.img
+QEMU_ARGS := -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial mon:stdio -bios $(MASTERY_BINARY) -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
 
 .PHONY:qemu-run qemu-debug
 # if only using secure=on,then EL=3

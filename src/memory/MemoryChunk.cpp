@@ -8,83 +8,63 @@
 #include <memory/MemoryChunk.h>
 #include <new> //placement new
 #include <programming/define_members.h>
+#include <io/Output.h>
 
 
-MemoryChunk::MemoryChunk(size_t size,bool allocated,size_t nextValidChunkOffset,bool endMark,size_t nextBaseFromEnd)
-	: nextValidChunkOffset(nextValidChunkOffset),endMark(endMark?1:0),allocated(allocated?1:0),size(size),nextBaseFromEnd(nextBaseFromEnd){}
-bool MemoryChunk::isAllocated() const {
-	return allocated==1;
-}
+MemoryChunk::MemoryChunk(size_t chunkOffset,bool end,bool allocated,size_t size)
+	:OffsetChunk(chunkOffset,end),
+	 _allocated(allocated),
+	 _size(size)
+{}
 
-void MemoryChunk::setAllocated(bool allocated)
-{
-	this->allocated = allocated?1:0;
-}
-bool MemoryChunk::isEnd() const
-{
-	return this->endMark==1;
-}
-void MemoryChunk::setEnd(bool end)
-{
-	this->endMark = (end?1:0);
-}
-//const MemoryChunk* MemoryChunk::getNext() const
-//{
-//	if(this->isEnd())
-//		return nullptr;
-//	// move to next offset chunk(if it has)
-//	auto nextOffsetChunk = this;
-//	if(nextOffsetChunk->nextValidChunkOffset==0) //this is not an offset chunk
-//	{
-//		// 移动一次，如果仍旧是validChunk，直接返回，否则退出if块，因为已经找到了nextOffsetChun
-//		nextOffsetChunk->advanceByBytes(size + sizeof(MemoryChunk) + nextBaseFromEnd);
-//		if(nextOffsetChunk->isEnd())
-//			return nullptr;
-//		if(nextOffsetChunk->nextValidChunkOffset==0)
-//			return nextOffsetChunk;
-//	}
-//	while( !nextOffsetChunk->isEnd() && nextOffsetChunk->nextValidChunkOffset) // still offset chunk
-//		nextOffsetChunk = nextOffsetChunk->advanceByBytes(nextOffsetChunk->nextValidChunkOffset);
-//	if(nextOffsetChunk->isEnd())
-//		return nullptr;
-//	else // not offset chunk
-//		return nextOffsetChunk;
-//}
-//MemoryChunk* MemoryChunk::getNext()
-//{
-//	return const_cast<MemoryChunk*>(reinterpret_cast<const MemoryChunk*>(this)->getNext());
-//}
-const MemoryChunk* MemoryChunk::next()const
+const MemoryChunk* MemoryChunk::nextContineous()const
 {
 	if(endChunk())
 		return nullptr;
 	if(validChunk())
-		return advanceByBytes(sizeof(MemoryChunk) + size + nextBaseFromEnd);
+		return reinterpret_cast<const MemoryChunk*>(endPtr());
 	else
-		return advanceByBytes(nextValidChunkOffset);
+		return reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(this)+chunkOffset());
 }
-MemoryChunk*       MemoryChunk::next()
+MemoryChunk* MemoryChunk::nextContineous()
 {
-	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,next());
+	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,nextContineous());
 }
 const MemoryChunk* MemoryChunk::nextValid()const
 {
-	auto p=this->next();
+	auto p=this->nextContineous();
 	while(true)
 	{
 		if(!p)
 			return nullptr;
 		if(p->validChunk())
 			return p;
-		p = p->next();
+		p = p->nextContineous();
 	}
 }
 MemoryChunk*       MemoryChunk::nextValid()
 {
 	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,nextValid());
 }
+void* MemoryChunk::dataPtr()
+{
+	return CALL_CONST_EQUIV(MemoryChunk,void*,dataPtr());
+}
+const void * MemoryChunk::dataPtr()const
+{
+	return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk);
+}
 
-const MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &moveOffset)const
+void* MemoryChunk::endPtr()
+{
+	return CALL_CONST_EQUIV(MemoryChunk,void*,endPtr());
+}
+const void * MemoryChunk::endPtr()const
+{
+	return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk)+_size;
+}
+
+MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &moveOffset)
 {
 	auto chunk=this;
 	while(true)
@@ -92,83 +72,18 @@ const MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &
 		if(!chunk)
 			return nullptr;
 		if(chunk->validChunk() &&
-				!chunk->isAllocated() &&
+				!chunk->allocated() &&
 				((moveOffset = chunk->moveOffsetOfAllocSuchAlignedSpace(n, alignment))!=SIZE_MAX)
 			)
 			return chunk;
-		chunk = chunk->next();
+		chunk = chunk->nextContineous();
 	}
 }
-MemoryChunk* MemoryChunk::findAllocable(size_t n,size_t alignment,size_t &moveOffset)
-{
-	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,findAllocable(n, alignment,moveOffset));
-}
 
-size_t MemoryChunk::getSize() const
-{
-	return size;
-}
-
-void MemoryChunk::setSize(size_t size)
-{
-	this->size = size;
-}
-void* MemoryChunk::getDataPtr()
-{
-	return const_cast<void*>(reinterpret_cast<const MemoryChunk*>(this)->getDataPtr());
-}
-const void * MemoryChunk::getDataPtr()const
-{
-	return reinterpret_cast<const char*>(this)+sizeof(MemoryChunk);
-}
-void* MemoryChunk::getDataEnd()
-{
-	return const_cast<void*>(reinterpret_cast<const MemoryChunk*>(this)->getDataEnd());
-}
-const void * MemoryChunk::getDataEnd()const
-{
-	return nextValidChunkOffset?
-			(reinterpret_cast<const char*>(nextValidChunkOffset)):
-			(reinterpret_cast<const char*>(this)+sizeof(MemoryChunk)+this->getSize());
-
-}
-
-
-
-uint64_t MemoryChunk::getNextBaseFromEnd() const
-{
-	return nextBaseFromEnd;
-}
-void MemoryChunk::setNextBaseFromEnd(uint64_t nextBaseFromEnd)
-{
-	this->nextBaseFromEnd = nextBaseFromEnd;
-}
-
-uint64_t MemoryChunk::getNextValidChunkOffset() const {
-	return nextValidChunkOffset;
-}
-
-void MemoryChunk::setNextValidChunkOffset(uint64_t nextValidChunkOffset )
-{
-	this->nextValidChunkOffset = nextValidChunkOffset;
-}
-
-bool MemoryChunk::endChunk()const
-{
-	return endMark;
-}
-bool MemoryChunk::offsetChunk()const
-{
-	return (endMark==0 && nextValidChunkOffset!=0);
-}
-bool MemoryChunk::validChunk()const
-{
-	return (endMark==0 && nextValidChunkOffset==0);
-}
 
 MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
 {
-	if(this->allocated || moveSize >= this->size)
+	if(!this->validChunk() || this->allocated() || moveSize >= this->_size)
 		return nullptr;
 	if(moveSize==0)
 		return this;
@@ -180,27 +95,26 @@ MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
 		MemoryChunk temp=*this;
 		*nextChunk = temp;
 	}
-	nextChunk->size -= moveSize;
+	nextChunk->_size -= moveSize;
 
 
 	if(moveSize >= sizeof(MemoryChunk)+1) // 能够形成MemoryChunk
 	{
 		// 更新this
-		this->nextBaseFromEnd=0;//就在End的偏移0处
-		this->size = moveSize - sizeof(MemoryChunk);
+		this->_size = moveSize - sizeof(MemoryChunk);
 	}else{ // 使用第一个字节记录下一个MemoryChunk所在的位置
-		this->nextValidChunkOffset = moveSize;
+		this->chunkOffset(moveSize);
 	}
 	return nextChunk;
 }
 size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const
 {
-	if(allocSize > this->size)
+	if(allocSize > this->_size)
 		return SIZE_MAX;
-	size_t mod=reinterpret_cast<uint64_t>(this->getDataPtr()) % alignment;
+	size_t mod=reinterpret_cast<uint64_t>(this->dataPtr()) % alignment;
 	if(mod!=0) // 基址是不对齐的,因此需要进行一定的移动
 	{
-		if(alignment - mod + allocSize > this->size)
+		if(alignment - mod + allocSize > this->_size)
 			return SIZE_MAX;
 		else
 			return alignment - mod;
@@ -209,55 +123,70 @@ size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t al
 }
 bool MemoryChunk::split(size_t splitSize)
 {
-	if(this->isEnd() || this->isAllocated() || splitSize > this->getSize() || splitSize==0)
+	if(!this->validChunk() ||this->allocated() || splitSize > this->_size || splitSize==0)
 		return false;
-	size_t leftSize = this->getSize() - splitSize;
-	MemoryChunk * nextChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this->getDataPtr())+splitSize);
+	// 分离尾部
+	size_t leftSize = _size - splitSize;
+	MemoryChunk * tailChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this)+sizeof(MemoryChunk)+splitSize);
 	if(leftSize >= sizeof(MemoryChunk) + 1) // 形成一个Chunk
 	{
-		new (nextChunk) MemoryChunk(leftSize - sizeof(MemoryChunk),this->isAllocated(),0,false,this->getNextBaseFromEnd());
-
-		this->size = splitSize;
-		this->nextBaseFromEnd=0;
-	}else{
-		this->nextValidChunkOffset = leftSize;
+		new (tailChunk) MemoryChunk(0,false,false,leftSize - sizeof(MemoryChunk));
+		this->_size = splitSize;
+	}else if(leftSize > 0){
+		if(leftSize > MAX_OFFSET ) // 不能分离
+			return false;
+		tailChunk->chunkOffset(leftSize);
+		tailChunk->allocated(false);
 	}
 	return true;
 }
 
 void MemoryChunk::mergeTrailingsUnallocated()
 {
-	if(this->isAllocated() || this->nextBaseFromEnd !=0 || this->isEnd())
+	if(!validChunk() || this->allocated())
 		return;
+
 	size_t collectedSize = 0;
-	MemoryChunk * freeChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this)+sizeof(MemoryChunk) + this->size);
-	MemoryChunk * lastChunk = nullptr;
+	MemoryChunk * p = this->nextContineous();
+	// 循环前，保证this不是end，未分配,有连续的下一个
+	// 从this开始，每次：
+	//     增加size
+	//     检测是否能够继续，如果：
+	//         当前chunk已经分配 或者  当前chunk是endChunk
+	//                则退出
+	//         当前chunk的下一个chunk不连续
+	//                更新nextBaseFromEnd域
+	// 最后设置this的size域
 	while(true)
 	{
-		size_t addingSize=freeChunk->nextValidChunkOffset;
-		if(addingSize==0) // 是一个有效的Chunk
+		if(!p || p->endChunk())
+			break;
+		else if(p->validChunk())
 		{
-			if(!freeChunk->isEnd() && !freeChunk->isAllocated() && freeChunk->nextBaseFromEnd==0) // 连续且未分配的Chunk,且非最后一项
-				addingSize =  freeChunk->size + sizeof(MemoryChunk);
-			else // else 第一个已经分配的Chunk，因此合并至多能够到达此处
+			if(p->allocated())
+			{
 				break;
+			}else{ //未分配，
+				collectedSize += p->_size + sizeof(MemoryChunk);
+			}
+		}else{ // offset chunk
+			collectedSize += p->chunkOffset();
 		}
-		collectedSize += addingSize;
-		lastChunk = freeChunk;
-		freeChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(freeChunk) + addingSize);
+		p=p->nextContineous();
 	}
-	// 更新size和nextBase
-	this->size+=collectedSize;
-	if(lastChunk->nextValidChunkOffset==0)
-		this->nextBaseFromEnd = lastChunk->nextBaseFromEnd;
+	//  更新size
+	this->_size+=collectedSize;
 }
 
-
-MemoryChunk* MemoryChunk::advanceByBytes(size_t nbyte) {
-	return CALL_CONST_EQUIV(MemoryChunk,MemoryChunk*,advanceByBytes(nbyte));
-}
-
-const MemoryChunk* MemoryChunk::advanceByBytes(size_t nbyte) const
+MemoryChunk * MemoryChunk::chunkPtrOfDataPtr(void *dataPtr)
 {
-	return reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(this)+nbyte);
+	if(reinterpret_cast<uint64_t>(dataPtr)<sizeof(MemoryChunk))
+		return nullptr;
+	return reinterpret_cast<MemoryChunk*>(reinterpret_cast< char*>(dataPtr) - sizeof(MemoryChunk));
+}
+const MemoryChunk * MemoryChunk::chunkPtrOfDataPtr(const void *dataPtr)
+{
+	if(reinterpret_cast<uint64_t>(dataPtr)<sizeof(MemoryChunk))
+		return nullptr;
+	return reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(dataPtr) - sizeof(MemoryChunk));
 }

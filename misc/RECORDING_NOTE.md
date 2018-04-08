@@ -1,3 +1,80 @@
+# 2018年4月9日01:46:28
+【milestone】【commit point】 编写了VirtualFileSystem和FAT32VirtualFile，添加了虚拟文件系统，用于支持不同的文件系统共存
+这非常重要，参见[main_demo_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_VirtualFileSystem.cpp)
+# 2018年4月9日01:40:22
+【todo】 添加VirtualFileSystem的说明，并注释其中思想的精妙之处。（懒惰加载等）
+# 2018年4月8日23:52:43
+【todo】 处理错误和异常。 在内存分配错误时，如果不能恢复，报告系统。 使用异常处理。
+# 2018年4月8日18:38:52
+【bugfix】 修复了virtio 的驱动中，读取和写入的问题，这是一个异步模型，在单线程的环境中必须添加同步或者等待操作。
+现在通过usedRing的old_idx和new_idx来判断是否有完成的idx，以此判断是否完成读取。
+因此，读取从本质上来说是blocked的。
+
+该问题再次启发我们，所有曾经考虑过的问题，最好在当时就解决，不要做任何后来的假定。
+因为我们曾经就该问题做过假定，而现在发现由于读请求过快可能导致上述问题。
+# 2018年4月8日18:27:20
+深入理解FAT
+
+FAT的两个主要部分是： FAT表和Data区域
+FAT表的每个项（FAT32的表项大小为32位）对应于Data区域的每个簇（簇的大小由bpb决定）
+
+根目录是一个簇链表，但是根目录没有大小，其大小应当由第一个全0的DirEntry确定。
+根目录所指向的所有簇的内容组成了一个DirEntry表，正如上面说的，表的大小由最后一个簇的第一个全0项确定。因为根目录没有指定字节数目。
+
+根目录中的每一DirEntry项，反过来，有一个起始簇号，决定了一个簇链表；有一个size域，决定了总共的字节大小（实际读取的字节数目由size域与簇数目决定的大小中的最小值决定）； 有一个attr域，决定该项是一个目录、文件还是其他特殊类型。
+注：需要size域的原因是，簇只能基于簇大小来确定文件的大小，而size能够在字节粒度上确定文件大小。
+
+
+
+# 2018年4月8日14:09:54
+【todo】 重新编写vector的参数传递，使其能够支持引用和值两种方式，并且能够做出自动选择（当没有明确指定时）
+# 2018年4月8日13:47:59
+重构内存管理器和Vector完成。
+# 2018年4月8日09:48:22
+【acknowledged】 "Virtqueue size exceeded"的错误
+在virtio的读写中，如果描述符的数量不足，而一段时间内系统处于读状态availRing足够多，则会产生ring数量不足的情况，从而导致virtio读写错误。
+
+解决方案：增加descrNum的数量（推荐）
+或者等待。
+# 2018年4月8日09:14:31
+错误：undefined reference to `__cxa_pure_virtual'
+参见
+https://stackoverflow.com/questions/920500/what-is-the-purpose-of-cxa-pure-virtual
+
+原因：虚函数不能在构造函数以及析构函数中调用，如果这样的调用发生了，就会调用__cxa_pure_virtual来报告这个错误。
+
+库的开发者应当提供自己的__cxa_pure_virtual函数。
+extern "C" void __cxa_pure_virtual() { while (1); }
+# 2018年4月7日22:07:30
+实际上，正是那些demo构成了整个库的基础价值：它的示例用法。
+# 2018年4月7日21:23:21
+用户态程序的建立：
+输入输出： echo
+文件系统的管理：pwd,ls,cd,cat,mkdir,rm,rmdir
+计算机管理： shutdown,reboot
+进程管理：   pid,ppid,exit
+
+对文件系统的管理需要建立路径模型。有一个根目录/，该根目录下有不同的文件系统。该模型很简单：在开机过程中检测挂载的sd卡（如果是qemu，检测virtio的块设备），然后将其挂载到根目录下。
+
+因此，根文件系统的责任就是映射目录和设备。
+
+根文件系统适合使用树结构实现，每个节点是一个通用的文件系统节点，然而这是一个多态节点，意味着它可以更加细化为其他类型。(static_cast)
+
+节点的通用属性： 节点类型，节点的名称
+FAT根节点：代表的是一个FAT文件系统管理器。
+
+FAT文件系统管理器：包括一个实例化的ByteReader, 实现read,write,createDir,createFile等操作。
+
+初始化过程：预定义的块设备通过FAT文件系统管理器加载到根目录下，目录名称为FAT卷的名称。
+
+
+
+
+# 2018年4月7日20:32:16
+借助设置和初始化两个过程在概念上的分开，我们可以在启用MMU之后完整地重新设置类的基地址而不用调用其初始化过程。
+因此分开这两个过程是有益的。
+
+当然，我们也可以附加参数指定是否在构造函数中进行初始化，而这种特殊的情况用于MemoryManager比较实用。
 # 2018年4月7日18:49:26
 【commit point】重构了虚拟内存组织架构。这一版本的示例代码可以参加[main_demo_universal_init_kernel.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel.cpp)
 # 2018年4月6日12:32:02

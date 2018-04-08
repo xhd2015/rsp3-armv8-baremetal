@@ -17,14 +17,6 @@ uint8_t FATDirEntry::chksum(char *shortName)
 		sum = ((sum&1)?0x80:0)+(sum>>1);
 	return sum;
 }
-bool FATDirEntry::uni_isLongNameEntry()const
-{
-	return (attr & ATTR_MASK) == ATTR_LONG_NAME;
-}
-bool FATDirEntry::isVolumeID()const
-{
-	return (attr & ATTR_MASK) == ATTR_VOLUME_ID ;
-}
 
 
 bool FATDirEntry::shortNameEquals(const StringRef &mainPart,const StringRef &extPart)const
@@ -65,6 +57,16 @@ String FATDirEntry::getShortName()const
 	for(;i<=j;++i)
 		sname.pushBack(name[i]);
 	return std::move(sname);
+}
+
+String FATDirEntry::getVolumnLabel()const
+{
+	String sname;
+	size_t i=findFirstNonSpace(name, 8);
+	size_t j=findLastNonSpace(name, 8);
+	for(;i<=j;++i)
+		sname.pushBack(name[i]);
+	return sname;
 }
 
 bool FATDirEntry::trailingSpaceNameEquals(const StringRef &hasSpaceStr,size_t hasSpaceStrLen,const StringRef &nullTermStr)

@@ -33,15 +33,8 @@ void init()
 	for(auto p=__bss_start;p!=__bss_end;++p)
 		*p=0;
 
-
-	// 初始化串口驱动
-	new (&pl011) PL011(UART_BASE);
-	pl011.init();
-	if(pl011.hasCorrectBase()) // 仅当配置正确时才进入
-	{
-		int res = main();
-		(void)res;
-	}
+	int res = main();
+	(void)res;
 	// 配置错误时，我们无法进行输出
 	asm_wfe_loop();
 }

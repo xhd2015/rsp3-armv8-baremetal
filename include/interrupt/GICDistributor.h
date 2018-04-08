@@ -56,12 +56,8 @@ public:
 
 	void intPriority(IntID id,uint8_t prty);
 
-
 	template <int grp>
 	void enableGroup(bool enable);
-
-
-
 private:
 
 

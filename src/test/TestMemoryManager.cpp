@@ -9,7 +9,6 @@
 
 
 #include <memory/MemoryManager.h>
-#include <memory/mem_config.h>
 #include <kernel.h>
 #include <test/test_base.h>
 #include <test/TestMemoryManager.h>
@@ -33,40 +32,39 @@ void TestMemoryManager::run()
 bool TestMemoryManager::memoryChunkMergeCorrectly()
 {
 	char base[1024];
-	size_t sizes[]={100,7,5,10};
+//	size_t sizes[]={100,7,5,10};// 竟然不能使用？
+//	(void)sizes;
 
 	MemoryChunk *baseChunk = reinterpret_cast<MemoryChunk*>(base);
-	baseChunk->setAllocated(false);
-	baseChunk->setNextBaseFromEnd(0);
-	baseChunk->setSize(sizes[0]);
-	baseChunk->setNextValidChunkOffset(0);
-	baseChunk->setEnd(false);
-	MemoryChunk *chunk2 = reinterpret_cast<MemoryChunk*>(base + sizeof(MemoryChunk)+baseChunk->getSize() + baseChunk->getNextBaseFromEnd());
-	chunk2->setNextValidChunkOffset(sizes[1]);
+	baseChunk->allocated(false);
+	baseChunk->size(100);
+	baseChunk->chunkOffset(0);
+	baseChunk->end(false);
+	MemoryChunk *chunk2 = reinterpret_cast<MemoryChunk*>(base + sizeof(MemoryChunk)+baseChunk->size() );
+	chunk2->chunkOffset(7);
 
-	MemoryChunk *chunk3 = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(chunk2) + sizes[1]);
-	chunk3->setNextValidChunkOffset(sizes[2]);
+	MemoryChunk *chunk3 = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(chunk2) + 7);
+	chunk3->chunkOffset(5);
 
-	MemoryChunk *chunk4 = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(chunk3) + sizes[2]);
-	chunk4->setNextValidChunkOffset(0);
-	chunk4->setAllocated(false);
-	chunk4->setNextBaseFromEnd(0);
-	chunk4->setSize(sizes[3]);
-	chunk4->setEnd(false);
+	MemoryChunk *chunk4 = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(chunk3) + 5);
+	chunk4->chunkOffset(0);
+	chunk4->allocated(false);
+	chunk4->size(10);
+	chunk4->end(false);
 
-	MemoryChunk *chunk5 = reinterpret_cast<MemoryChunk*>(chunk4->getDataEnd()); // end Chunk
-	chunk5->setNextValidChunkOffset(0);
-	chunk5->setEnd(true);
+	MemoryChunk *chunk5 = reinterpret_cast<MemoryChunk*>(chunk4->endPtr()); // end Chunk
+	chunk5->chunkOffset(0);
+	chunk5->end(true);
 
-	size_t sumSize=0;
-	for(auto i:sizes)
-		sumSize += i;
+	size_t sumSize=100+7+5+10;
+//	for(auto i:sizes)
+//		sumSize += i;
 	sumSize += sizeof(MemoryChunk);
 
 	baseChunk->mergeTrailingsUnallocated();
-	EXPECT_EXPR_EQUAL(baseChunk->getSize(), sumSize);
+	EXPECT_EXPR_EQUAL(baseChunk->size(), sumSize);
 
-	return baseChunk->getSize() == sumSize;
+	return baseChunk->size() == sumSize;
 }
 
 bool TestMemoryManager::uncontiguousChunkMemoryAllocateCorrectly()
@@ -75,14 +73,13 @@ bool TestMemoryManager::uncontiguousChunkMemoryAllocateCorrectly()
 
 
 	MemoryChunk *baseChunk = reinterpret_cast<MemoryChunk*>(base);
-	baseChunk->setSize(1024 - 1 - sizeof(MemoryChunk));
-	baseChunk->setNextBaseFromEnd(0);
-	baseChunk->setNextValidChunkOffset(0);
-	baseChunk->setAllocated(false);
-	baseChunk->setEnd(false);
+	baseChunk->size(1024 - 1 - sizeof(MemoryChunk));
+	baseChunk->chunkOffset(0);
+	baseChunk->allocated(false);
+	baseChunk->end(false);
 
-	MemoryChunk *endChunk = reinterpret_cast<MemoryChunk*>(baseChunk->getDataEnd());
-	endChunk->setEnd(true);
+	MemoryChunk *endChunk = reinterpret_cast<MemoryChunk*>(baseChunk->endPtr());
+	endChunk->end(true);
 
 	MemoryManager man(base,1024,false);
 	MemoryManager man2(base,1024,true);
@@ -95,14 +92,13 @@ bool TestMemoryManager::allocateCorrectly()
 	char base[1024];
 
 	MemoryChunk *baseChunk = reinterpret_cast<MemoryChunk*>(base);
-	baseChunk->setSize(1024 - 1 - sizeof(MemoryChunk));
-	baseChunk->setNextBaseFromEnd(0);
-	baseChunk->setNextValidChunkOffset(0);
-	baseChunk->setAllocated(false);
-	baseChunk->setEnd(false);
+	baseChunk->size(1024 - 1 - sizeof(MemoryChunk));
+	baseChunk->chunkOffset(0);
+	baseChunk->allocated(false);
+	baseChunk->end(false);
 
-	MemoryChunk *endChunk = reinterpret_cast<MemoryChunk*>(baseChunk->getDataEnd());
-	endChunk->setEnd(true);
+	MemoryChunk *endChunk = reinterpret_cast<MemoryChunk*>(baseChunk->endPtr());
+	endChunk->end(true);
 
 	MemoryManager man(base,1024,false);
 
@@ -111,11 +107,14 @@ bool TestMemoryManager::allocateCorrectly()
 	auto p3=man.allocateAs<char*>(30);
 	auto p4=man.allocateAs<char*>(400);
 	auto p5=man.allocateAs<char*>(1000);
-	kout << Hex(reinterpret_cast<uint64_t>(p1)) << ","
-			<< Hex(reinterpret_cast<uint64_t>(p2)) << ","
-			<< Hex(reinterpret_cast<uint64_t>(p3)) << ","
-			<< Hex(reinterpret_cast<uint64_t>(p4)) << ","
-			<< Hex(reinterpret_cast<uint64_t>(p5)) << "\n";
+	(void)p1;
+	(void)p2;
+	(void)p3;
+//	kout << Hex(reinterpret_cast<uint64_t>(p1)) << ","
+//			<< Hex(reinterpret_cast<uint64_t>(p2)) << ","
+//			<< Hex(reinterpret_cast<uint64_t>(p3)) << ","
+//			<< Hex(reinterpret_cast<uint64_t>(p4)) << ","
+//			<< Hex(reinterpret_cast<uint64_t>(p5)) << "\n";
 
 	return p4==nullptr && p5==nullptr;
 }
@@ -125,10 +124,10 @@ bool TestMemoryManager::deallocateCorrectly()
 	MemoryManager man(base,1024);
 	auto p1=man.allocateAs<char*>(100);
 	auto chunk1=reinterpret_cast<MemoryChunk*>(p1- sizeof(MemoryChunk));
-	bool res = (chunk1->isAllocated()==true && chunk1->getSize()==100);
+	bool res = (chunk1->allocated()==true && chunk1->size()==100);
 	man.deallocate(p1);
 
-	res &= chunk1->isAllocated()==false;
+	res &= chunk1->allocated()==false;
 	return res;
 
 }
@@ -143,21 +142,21 @@ bool TestMemoryManager::reallocateSmallerCorrectly()
 
 
 	auto rp1 = man.reallocateAs<char*>(p1, 80);
-	return (rp1 == p1 && p1Chunk->getSize()==80);
+	return (rp1 == p1 && p1Chunk->size()==80);
 }
 bool TestMemoryManager::reallocateInPlaceCollectCorrectly()
 {
 	char base[1024];
 	MemoryManager man(base,1024);
 	auto p1=man.allocateAs<char*>(100);
-	MemoryChunk *p1Chunk = reinterpret_cast<MemoryChunk*>(p1 - sizeof(MemoryChunk));
+	MemoryChunk *p1Chunk = MemoryChunk::chunkPtrOfDataPtr(p1);
 	MemoryChunk *freeChunk1 = reinterpret_cast<MemoryChunk*>(p1 + 100);
 	freeChunk1->moveAhead(100);//+100
 
 
 	auto rp1 = man.reallocateAs<char*>(p1, 200);
 
-	return (rp1==p1 && p1Chunk->getSize()==200);
+	return (rp1==p1 && p1Chunk->size()==200);
 }
 
 bool TestMemoryManager::reallocateOutOfPlaceMoveCorrectly()
@@ -173,16 +172,14 @@ bool TestMemoryManager::reallocateOutOfPlaceMoveCorrectly()
 	p1[1]='b';
 
 	auto rp1 = man.reallocateAs<char*>(p1, 150);
-	return p1Chunk->isAllocated()==false && reinterpret_cast<MemoryChunk*>(rp1-sizeof(MemoryChunk))->isAllocated()==true&& rp1[0]=='A' && rp1[1]=='b' ;
+	return p1Chunk->allocated()==false && reinterpret_cast<MemoryChunk*>(rp1-sizeof(MemoryChunk))->allocated()==true&& rp1[0]=='A' && rp1[1]=='b' ;
 
 
 }
-
-
 bool TestMemoryManager::nextChunkCorrectly()
 {
 	char base[1024];
 	MemoryManager man(base,1024);
 	MemoryChunk * baseChunk = reinterpret_cast<MemoryChunk*>(base);
-	return ( baseChunk->next()->isEnd() && baseChunk->next()->next()==nullptr);
+	return ( baseChunk->nextContineous()->endChunk() && baseChunk->nextContineous()->nextContineous()==nullptr);
 }

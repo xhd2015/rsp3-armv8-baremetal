@@ -11,4 +11,3 @@ void destroy(int i)
 {
 	svc_call<SvcFunc::killProcess>(PID_CURRENT,i);
 }
-

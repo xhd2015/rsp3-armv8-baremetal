@@ -12,9 +12,6 @@
 // 不推荐使用
 #define for_range(var,start,end) for(decltype(end) var=(start),tmp=(end);var!=end;++var)
 
-#define __offsetof(type,filed) reinterpret_cast<size_t>()
-
-
 // 下面这个宏用于在某些情况下，比如packed的struct,不能直接获取引用的时候
 #define referenceof(var,field) *reinterpret_cast<decltype((var)->field)*>(reinterpret_cast<char*>(var)+offsetof(std::remove_reference_t<decltype(*(var))>,field))
 

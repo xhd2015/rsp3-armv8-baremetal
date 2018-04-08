@@ -15,7 +15,10 @@
 class FATDirEntry{
 public:
 	enum : char { ATTR_MASK = 0x3f };
-	enum : char { ATTR_READ_ONLY=0x01,ATTR_HIDDEN=0x02,ATTR_SYSTEM=0x04,
+	enum : char {
+		ATTR_READ_ONLY=0x01,
+		ATTR_HIDDEN=0x02,
+		ATTR_SYSTEM=0x04,
 		ATTR_VOLUME_ID = 0x08,
 		ATTR_DIRECTORY = 0x10,
 		ATTR_ARCHIVE = 0x20,
@@ -35,8 +38,12 @@ public:
 	uint32_t fileSize;
 
 	static uint8_t chksum(char *shortName);
-	bool uni_isLongNameEntry()const;
-	bool isVolumeID()const;
+	bool uni_isLongNameEntry()const{return (attr & ATTR_MASK) == ATTR_LONG_NAME;}
+	bool isLongNameEntry()const{return (attr & ATTR_MASK) == ATTR_LONG_NAME;}
+	bool isVolumeID()const{ return (attr & ATTR_MASK) == ATTR_VOLUME_ID ;}
+	bool isFile()const{return (attr & ATTR_MASK) == ATTR_ARCHIVE;}
+	AS_MACRO bool isDir()const{return (attr & ATTR_MASK) == ATTR_DIRECTORY;}
+	AS_MACRO bool isFileOrDir()const{ return isFile() || isDir();}
 
 
 	bool shortNameEquals(const StringRef &mainPart,const StringRef &extPart)const;
@@ -50,6 +57,8 @@ public:
 	 */
 	String getLongName()const;
 	String getShortName()const;
+	String getVolumnLabel()const;
+	AS_MACRO bool zeroEntry()const { return *reinterpret_cast<const uint32_t*>(this)==0;}
 
 private:
 	static bool trailingSpaceNameEquals(const StringRef & hasSpaceStr,size_t hasSpaceStrLen,const StringRef & nullTermStr);

@@ -85,7 +85,7 @@ int main()
 //	const char *catfile = "COPYING.linux"; // much more content,but still fine
 //	const char *catfile = "kernel7.img";// segment fault if file so big
 	kout << INFO << "cat " << catfile << ":\n";
-	ByteReader breader(sreader);
+	SectorReaderToByteReader breader(sreader);
 	FAT32EntryTable fat32Table(std::move(fat),breader,e32bpb);
 	FATDirEntryTable dirTable(breader,fat32Table,e32bpb->rootClus,e32bpb);
 	Vector<char> vec = dirTable.readFile(catfile,0,1024);

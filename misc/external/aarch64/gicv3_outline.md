@@ -13,6 +13,8 @@ SGI中断比较特殊，它不仅可以配置，还可以在产生时指定它�
 
 编程模型：CPU Interface使用系统寄存器控制， 其他的（Distributor，Redistributor）使用内存映射的寄存器。其中，Distributor是全局的，所有的PE都使用一组框架，而Redistributor则是每个PE私有的，也就是说，尽管Redistributor具有相同的内存地址，但是每个PE访问这个内存时看到的是私有的。
 
+
+
 # 概述
 本文档对ARM的通用中断控制系统版本3（GICv3）做出一个基本的描述。
 

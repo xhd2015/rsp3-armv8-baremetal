@@ -13,4 +13,8 @@ void* operator new(size_t n)
 {
 	return mman.allocate(n);
 }
+void *operator new[](size_t n)
+{
+	return mman.allocate(n);
+}
 

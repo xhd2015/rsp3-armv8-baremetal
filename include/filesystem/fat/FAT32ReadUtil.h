@@ -39,6 +39,7 @@ public:
 	// reserved 0,1 is not searched.it is searched from startFrom to MAX
 	static size_t findFirstFreeClusterIndex(const FAT32Entry *fat,size_t itemCount,size_t startFrom);
 
+	// 保留文件和目录
 	static Vector<const FATDirEntry*> filterInDirFileEntries(const Vector<FATDirEntry> & entries);
 
 	// create short name's main & ext part,based on the input.

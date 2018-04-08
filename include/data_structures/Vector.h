@@ -6,13 +6,13 @@
  */
 
 #ifndef INCLUDE_VECTOR_H_
-
 #define INCLUDE_VECTOR_H_
 
 #include <def.h>
 #include <initializer_list>
 #include <io/SectorReader.h>
 #include <io/Output.h>
+#include <utility>
 
 
 template <class T>
@@ -31,6 +31,18 @@ public:
 	Vector<T>& operator=(Vector<T> && vec);
 	~Vector();
 
+	/*
+	 * 调用castMove之后，原来的数组不应当再使用
+	 *  可以castMove的原因是Vector<T> Vector<char>占据的空间实际上是同样的。
+	 */
+	template <class CastType>
+	AS_MACRO Vector<CastType> && castMove()
+	{
+		_capacity /= sizeof(CastType);
+		_size /= sizeof(CastType);
+		return std::move(*reinterpret_cast<Vector<CastType>*>(this));
+	}
+
 	const T& operator[](size_t i)const;
 	T &operator[](size_t i);
 
@@ -39,10 +51,10 @@ public:
 	 */
 	T popBack();
 	void pushBack(T t);
-	T *getData();
-	const T* getData()const;
-	size_t   getSize()const;
-	size_t getCapacity()const;
+	T *data();
+	const T* data()const;
+	size_t   size()const;
+	size_t capacity()const;
 	bool	empty()const;
 	void   clear();
 	void  erase(size_t i);
@@ -66,9 +78,9 @@ private:
 
 	static size_t getIncrementalSize(size_t curSize);
 private:
-	T *data;
-	size_t capacity;
-	size_t size;
+	T *_data;
+	size_t _capacity;
+	size_t _size;
 };
 
 

@@ -17,3 +17,13 @@ void operator delete(void *p,size_t size)
 {
 	mman.deallocate(p);
 }
+
+void operator delete[](void* p)
+{
+	mman.deallocate(p);
+}
+
+void operator delete[](void* p,size_t size)
+{
+	mman.deallocate(p);
+}
