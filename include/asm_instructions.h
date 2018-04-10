@@ -54,7 +54,7 @@ AS_MACRO void asm_eret();
 AS_MACRO RegPAR_EL1 asm_at(uint64_t va);
 AS_MACRO void asm_svc(uint16_t imm);
 AS_MACRO void asm_wfe();
-AS_MACRO void asm_wfe_loop();
+AS_MACRO __attribute__((noreturn)) void asm_wfe_loop();
 AS_MACRO void asm_tlbi_aside1(uint16_t asid);
 AS_MACRO void asm_tlbi_allel1();
 AS_MACRO void asm_tbli_vmallel1();

@@ -20,7 +20,7 @@ public:
 	using Vector::operator=;
 	using Vector<char>::append;
 
-	String(size_t initSize=0);
+	String(size_t initSize=0,bool setMinCapacity=true):Vector(initSize,setMinCapacity){}
 	String(const String &s):Vector(s){}
 	String & operator=(const String &s){Vector::operator =(s);return *this;}
 	String(String &&s):Vector(std::move(s)){}

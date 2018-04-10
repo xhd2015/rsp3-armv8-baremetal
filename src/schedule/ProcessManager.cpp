@@ -8,6 +8,7 @@
 #include <memory/MemoryManager.h>
 #include <schedule/ProcessManager.h>
 #include <asm_instructions.h>
+#include <interrupt/InterruptHandler.h>
 
 ProcessManager::ProcessManager()
 {
@@ -54,6 +55,7 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 		}
 	}else{
 		kout << "schedule with next ready process\n";
+		intHandler.exitCurrent();// 这里是从中断而来的，不返回。
 		if(cur) //需要执行切换动作
 		{
 			cur->data<true>().saveContext(savedRegsiers);

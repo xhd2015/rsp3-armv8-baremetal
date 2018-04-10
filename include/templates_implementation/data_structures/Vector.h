@@ -10,19 +10,33 @@
 #include <data_structures/Vector.h>
 #include <memory/MemoryManager.h>
 #include <io/Output.h>
+#include <new>
+#include <utility>
+#include <type_traits>
+
 
 template <class T>
-Vector<T>::Vector(size_t initSize)
+Vector<T>::Vector(size_t initSize,bool setMinCapacity)
 	:_data(nullptr),_capacity(0),_size(0)
  {
-	_capacity=(initSize <= MINIMAL_CAPACITY ? MINIMAL_CAPACITY : initSize);
-//	_data=mman.allocateAs<T*>(_capacity*sizeof(T));
-	_data = new T[_capacity];
-	if(_data==nullptr)
-		_capacity=0;
+	if(setMinCapacity)
+		_capacity=(initSize <= MINIMAL_CAPACITY ? MINIMAL_CAPACITY : initSize);
 	else
-		_size=initSize;
+		_capacity=initSize;
+	if(_capacity>0)
+	{
+		_data = mman.allocateAs<T*>(_capacity*sizeof(T));
+		if(_data)
+		{
+			for(size_t i=0;i!=initSize;++i)
+				new (_data+i) T();
+			_size = initSize;
+		}else{
+			_capacity=0;
+		}
+	}
  }
+
 template <class T>
 Vector<T>::Vector(const std::initializer_list<T> &il)
 	:Vector()
@@ -43,7 +57,7 @@ Vector<T>::Vector(const Vector<T> & vec)
 		_size = vec._size;
 		auto srcData=vec._data;
 		for(size_t i=0;i!=_size;++i)
-			_data[i]=srcData[i];
+			new (_data+i) T(srcData[i]);
 	}
 }
 
@@ -93,6 +107,14 @@ Vector<T>::~Vector()
 		_size = 0;
 	}
 }
+template <class T>
+template <class CastType>
+Vector<CastType> && Vector<T>::castMove()
+{
+	_capacity /= sizeof(CastType);
+	_size /= sizeof(CastType);
+	return std::move(*reinterpret_cast<Vector<CastType>*>(this));
+}
 
 template <class T>
 const T& Vector<T>::operator[](size_t i)const
@@ -118,7 +140,17 @@ void Vector<T>::pushBack(T t)
 	if(adjustCapacityForOneMore())
 	{
 		++_size;
-		_data[_size-1]=t;
+		new (_data + _size - 1) T(t);// 使用复制构造函数
+	}
+}
+template <class T>
+template <class ... Args>
+void Vector<T>::emplaceBack(Args && ... args)
+{
+	if(adjustCapacityForOneMore())
+	{
+		++_size;
+		new (_data + _size -1) T(std::forward<Args>(args)...);
 	}
 }
 
@@ -199,11 +231,23 @@ bool  Vector<T>::resize(size_t newSize)
 }
 
 template <class T>
+bool  Vector<T>::ensureEnoughCapacity(size_t capacity)
+{
+	if(capacity > _capacity)
+		return resizeCapacity(capacity);
+	return true;
+}
+
+template <class T>
 bool  Vector<T>::resizeCapacity(size_t capacity)
 {
 	if(this->_capacity == capacity)
 		return true;
-	auto newData=mman.reallocate(_data, capacity * sizeof(T));
+	void *newData=nullptr;
+	if(_data)
+		newData=mman.reallocate(_data, capacity * sizeof(T));
+	else
+		newData=mman.allocate(capacity*sizeof(T));
 	if(!newData)
 		return false;
 

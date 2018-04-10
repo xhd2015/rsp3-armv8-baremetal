@@ -16,10 +16,8 @@
 						       __PRETTY_FUNCTION__, #__e))
 #endif
 
-void reportError();
+void reportError(const char *s);
 
-// 程序不能继续运行
-void abort();
 
 void resume();
 

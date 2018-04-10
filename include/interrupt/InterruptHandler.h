@@ -16,10 +16,12 @@
 #include <generic_util.h>
 #include <arch/common_aarch64/registers/gicv3_registers.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
+#include <data_structures/Vector.h>
+#include <interrupt/ExceptionState.h>
 
 class InterruptHandler{
 public:
-
+	InterruptHandler();
 	/**
 	 * 该处理函数被exceptionCHandler调用，为了效率上的考虑，将其inline
 	 * @param savedRegs
@@ -27,6 +29,7 @@ public:
 	 * @param sp
 	 */
 	AS_MACRO void handleInlined(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin);
+	AS_MACRO void     rebase(size_t diff){assert(_nestedExceps.size()==0);_nestedExceps.rebase(diff);}
 
 	void handleUndefinedInstruction();
 	void handleInstructionAbort();
@@ -39,22 +42,31 @@ public:
 	void handleSError();
 	void unhandledException();
 
+	/**
+	 * 可能经过几重中断，现在寄存器已经不是进入时的状态，需要还原。
+	 */
+	void exitCurrent();
+
+	ExceptionState & currentState() { return _nestedExceps.last();}
+	const ExceptionState & current()const{return _nestedExceps.last();}
+
+	AS_MACRO bool allowSyncException()const{return _allowSyncExcep;}
+	void          allowSyncException(bool v){_allowSyncExcep=v;}
 private:
-	bool          _processing;//正在处理中断？
-	ExceptionType _curType; // 当前中断类型
-	ExceptionOrigin _curOrigin; //中断源
-	uint64_t       *_savedRegisters;
+	bool          _allowSyncExcep; // 是否允许非同步异常的发生？
+	Vector<ExceptionState>  _nestedExceps; // size>0时表明有异常正在处理
 };
 
 void InterruptHandler::handleInlined(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin)
 {
-	_processing = true;
-	_savedRegisters = savedRegs;
-	_curType = type;
-	_curOrigin = origin;
-//	auto far = RegFAR_EL1::read();
-//	auto elr = RegELR_EL1::read();
-//	auto spsr = RegSPSR_EL1::read();
+	if(!_allowSyncExcep)
+	{
+		kout << FATAL << "synchronous exception happened while the handler indicates that synchronous exception is not allowed.\n";
+		asm_wfe_loop();
+	}
+	_allowSyncExcep=false;// 需要保存状态
+	_nestedExceps.emplaceBack(savedRegs,type,origin);
+	_allowSyncExcep=true;
 	switch(type)
 	{
 	case ExceptionType::IRQ:
@@ -77,7 +89,7 @@ void InterruptHandler::handleInlined(uint64_t  * savedRegs,ExceptionType type,Ex
 	}
 	case ExceptionType::SYNC:
 	{
-		auto esr = RegESR_EL1::read();
+		auto esr =currentState()._esr;
 		switch(esr.EC)
 		{
 		case ExceptionClass::UNDEF_INST:
@@ -110,7 +122,7 @@ void InterruptHandler::handleInlined(uint64_t  * savedRegs,ExceptionType type,Ex
 		break;
 	}
 	}
-	_processing=false;
+	exitCurrent();
 }
 
 #ifndef _NOT_NEED_InterruptHandler

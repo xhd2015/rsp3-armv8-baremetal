@@ -1,3 +1,188 @@
+# 2018年4月11日04:50:34
+【commit point】 正确实现了用户态的ls,cd命令，采用的方法(workaround)虽不优雅但是却工作良好。此版本修复了大量bug，系统能够支持多重同步中断。示例文件参见 [内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp] (../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和 [用户态例程 user_main_demo_vfs_proxy.cpp] (../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
+# 2018年4月11日03:12:20
+【todo】 了解expresson sfinae
+参见https://stackoverflow.com/questions/13786482/detect-if-a-default-constructor-exists-at-compile-time
+如何实现default函数检查。
+```c++
+template<typename T>
+class is_default_constructible {
+
+    typedef char yes;
+    typedef struct { char arr[2]; } no;
+
+    template<typename U>
+    static decltype(U(), yes()) test(int);
+
+    template<typename>
+    static no test(...);
+
+public:
+
+    static constexpr bool value = sizeof(test<T>(0)) == sizeof(yes);
+};
+```
+
+# 2018年4月11日02:52:45
+【bugfix】 修复了Vector的初始化和pushBack，区分已分配和已初始化两个过程。
+# 2018年4月11日01:58:40
+关于成员指针
+```c++
+// expre_Expressions_with_Pointer_Member_Operators.cpp  
+// compile with: /EHsc  
+#include <iostream>  
+  
+using namespace std;  
+  
+class Testpm {  
+public:  
+   void m_func1() { cout << "m_func1\n"; }  
+   int m_num;  
+};  
+  
+// Define derived types pmfn and pmd.  
+// These types are pointers to members m_func1() and  
+// m_num, respectively.  
+void (Testpm::*pmfn)() = &Testpm::m_func1;  
+int Testpm::*pmd = &Testpm::m_num;  
+  
+int main() {  
+   Testpm ATestpm;  
+   Testpm *pTestpm = new Testpm;  
+  
+// Access the member function  
+   (ATestpm.*pmfn)();  
+   (pTestpm->*pmfn)();   // Parentheses required since * binds  
+                        // less tightly than the function call.  
+  
+// Access the member data  
+   ATestpm.*pmd = 1;  
+   pTestpm->*pmd = 2;  
+  
+   cout  << ATestpm.*pmd << endl  
+         << pTestpm->*pmd << endl;  
+   delete pTestpm;  
+}  
+```
+需要理解的一点就是：把A::类型的指针当做偏移值即可。
+
+# 2018年4月11日00:31:17
+将当前目录reset --hard到上一个commit，不再考虑Vector支持自定义memoryManager。
+
+我想，经过这次重构后，以后对待修改，我们会更加谨慎和保守。
+# 2018年4月11日00:25:53
+【todo】 修改，使系统能够在EL1时再次进入同步中断，这是系统调用的关键。
+主要是需要存储： 从EL1进入EL1时，栈指针不需要保存；SPSR不需要保存，需要保存的就是SPSR, 
+中断进入设置的寄存器： PSTATE --> SPSR, PC --> ELR , ESR,FAR,
+中断返回设置的寄存器： SPSR-->PSTATE,    ELR-->PC 
+
+下面用sync指代同步异常
+
+模型： 栈模型
+在某些区域，不允许sync发生， 用一个变量： sync表明
+当不允许sync发生，但是却再次进入了sync时，表明存在错误。
+_allowSyncExcep
+
+
+注：目的是为了用户态能够传递函数得到执行，因为这些函数里面可能包含系统调用。
+
+# 2018年4月11日00:20:49（该时间段产生的工程修改被重置）
+修复了strlen
+```c++
+size_t strlen(const char *src)
+{
+	const char *p=src;
+	while(*p++);
+	return (p-src-1); // old: return(p-src)
+}
+修复了 abort noreturn的属性
+# 2018年4月10日18:36:13（该时间段产生的工程修改被重置）
+在内核态和用户态之间不应当传递对象，而应当传递对象的函数。
+因为，内核编译时产生的方法的偏移和用户态不一样。
+比如，下面的函数期望输入是一个用户态的vector，希望调用pushBack时调用的是用户态的相应函数，然而由于是在内核环境下，所以pushBack函数实际调用的是内核的函数。
+```c++
+// 内核态的处理函数
+void findPath(Vector<String> & res)
+{
+	...
+	res.pushBack("..."); // 希望使用用户态的pushBack，但实际上编译产生的是内核态的偏移。
+	...
+}
+```
+
+只能说，这种设计十分naive。
+
+原则： 在内核态和用户态之间，传递函数，并且函数的参数不能含有复杂的对象。（必须含有trivial可构造的对象）。
+
+函数能够传递必须保证：函数内部没有与内核态/用户态相关的使用， 调用的函数也没有内核态/用户态相关的使用。
+定义这样的函数为：通用函数。
+
+如果一个对象的所有函数是通用的，则这个对象是通用的。
+
+
+将一个对象改写成通用对象的过程：  
+使用模板参数<bool universal>
+将所有的全局变量使用 指针替换： A [universal?1:0]  -- 使用c++允许的0大小的数组特性
+
+下面展示了一个例子：
+```c++
+#include <iostream>
+
+template <bool universal>
+class V{
+public:
+		V()
+		{
+			static_assert(universal,"");
+		}
+		V(std::ostream &o)
+			{
+			    static_assert(!universal,"");
+				_out[0]=&o;
+			}
+		std::ostream   &getOut();
+private:
+		std::ostream*   _out[universal?0:1];// error: ISO C++ forbids zero-size array [-Wpedantic]
+};
+
+template <bool universal>
+std::ostream  & V<universal>::getOut()
+{
+        return std::cout;
+}
+template <>
+std::ostream  & V<false>::getOut()
+{
+        return *_out[0];
+}
+
+int main()
+{
+        V<false> v1(std::cout);
+        v1.getOut() << "v1\n";
+        V<true>  v2;
+        v2.getOut() << "v2\n";
+        std::cout << "sizeof(v1) = " << sizeof(v1) << "\n";
+        std::cout << "sizeof(v2) = " << sizeof(v2) << "\n";
+}
+```
+注意： 在没有特化的情况下，期望调用的方法应当使用static_assert 
+
+注意：如果报错：ISO C++不允许使用长度为0的数组，则使用下面的设计模式替代：
+```c++
+class MemoryManagerWrapper{
+public:
+	static_assert(universal,"");
+	AS_MACRO MemoryManager & getMemMan() { return mman;}
+};
+template <>
+class MemoryManagerWrapper<false>{
+public:
+	MemoryManagerWrapper(MemoryManager &mman):_mman(&mman){}
+	AS_MACRO MemoryManager & getMemMan() { return *_mman;}
+	MemoryManager *_mman;
+};
+```
 # 2018年4月10日13:47:51
 【commit point】 修复了vtables, virtio的bug，更新了用户态文件系统。参见
 这非常重要，参见[内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和[用户态例程 user_main_demo_vfs_proxy.cpp](../src/arch/user_space/user_main_demo_vfs_proxy.cpp)

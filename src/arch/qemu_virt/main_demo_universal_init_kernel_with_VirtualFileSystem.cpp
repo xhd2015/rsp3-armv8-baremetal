@@ -57,13 +57,13 @@ int main()
 		return 1;
 	}
 
-	// 进行必要的组件初始化
+	// 初始化4个必须的组件
+	size_t ramSize = static_cast<size_t>(ramEnd - ramStart);
+	new (&mman) MemoryManager(ramStart, ramSize,true);
     new (&intHandler) InterruptHandler();
 	new (&intm) InterruptManager(
 			reinterpret_cast<char*>(GIC_DIST_BASE),
 			reinterpret_cast<char*>(GIC_REDIST_BASE));
-	size_t ramSize = static_cast<size_t>(ramEnd - ramStart);
-	new (&mman) MemoryManager(ramStart, ramSize,true);
 	new (&virtman) VirtualManager();
 
 	// 初始化中断，但是目前屏蔽了所有的中断
@@ -119,9 +119,13 @@ void main_mmu_set()
 	// 禁用TTBR0
 	virtman.enableTTBR0(false);
 
-	// 重新建立TTBR0的低端地址的映射
+	// 对之前的组件进行rebase
 	pl011.rebase(virtman.ttbr1Mask());
 	mman.rebase(virtman.ttbr1Mask());
+	intm.rebase(virtman.ttbr1Mask());
+	intHandler.rebase(virtman.ttbr1Mask());
+	// virtman.rebase(); // virtman no rebase
+
 //	size_t loEntryNum = lowerSize/VirtualMap::_D::PAGE_SIZE;
 //	assert(loEntryNum <= VirtualMap::_D::ENTRY_NUM_OF_EACH_TABLE);
 //	VirtualAddress va(0xFFFFF000,virtman.addressBits());

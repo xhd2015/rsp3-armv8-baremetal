@@ -8,6 +8,7 @@
 #include <generic/error.h>
 #include <io/Output.h>
 #include <asm_instructions.h>
+#include <cstdlib> // for abort
 
 void abort()
 {
@@ -21,6 +22,11 @@ void resume()
 
 }
 
+void reportError(const char *s)
+{
+	kout << FATAL << s << "\n";
+	abort();
+}
 
 void report_assert_error(const char *file,size_t line,const char *func,const char *expr)
 {

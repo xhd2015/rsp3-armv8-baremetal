@@ -12,7 +12,13 @@
 #include <arch/common_aarch64/registers/timer_registers.h>
 #include <filesystem/VirtualProxyKernel.h>
 #include <io/Output.h>
+#include <generic/error.h>
 
+
+InterruptHandler::InterruptHandler()
+	:_allowSyncExcep(true),
+	 _nestedExceps(0)
+{}
 
 void InterruptHandler::handleUndefinedInstruction()
 {
@@ -58,27 +64,28 @@ void InterruptHandler::handlePCAlignmentFault()
 }
 void InterruptHandler::handleSVC(SvcFunc func)
 {
+	auto savedRegisters=currentState()._generalRegisters;
 	switch(func)
 	{
 	case SvcFunc::puts:
 	{
-		auto str = reinterpret_cast<const char*>(_savedRegisters[0]);
-		auto len = reinterpret_cast<size_t>(_savedRegisters[1]);
+		auto str = reinterpret_cast<const char*>(savedRegisters[0]);
+		auto len = reinterpret_cast<size_t>(savedRegisters[1]);
 		auto printkChars = kout.print(str, len);
-		_savedRegisters[0] = printkChars; // savedResult
+		savedRegisters[0] = printkChars; // savedResult
 		break;
 	}
 	case SvcFunc::killProcess:
 	{
 		kout << "killing Process \n";
 		// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
-		auto pid = static_cast<Pid>(_savedRegisters[0]);
-		int     status = *reinterpret_cast<int*>(_savedRegisters+1);
+		auto pid = static_cast<Pid>(savedRegisters[0]);
+		int     status = *reinterpret_cast<int*>(savedRegisters+1);
 		(void)status;
 		if(pid == PID_CURRENT)
 		{
 			processManager.killProcess(processManager.currentRunningProcess());
-			processManager.scheduleNextProcess(_savedRegisters);
+			processManager.scheduleNextProcess(savedRegisters);
 		}
 		asm_wfe_loop();
          break;
@@ -88,28 +95,27 @@ void InterruptHandler::handleSVC(SvcFunc func)
 		// fork父进程返回子进程pid，子进程返回pid=0, 如果失败，返回PID_INVALID
 		auto cur = processManager.currentRunningProcess();
 		// 更新当前进程的上下文，使其与真实的状态保持对应，这样fork才能正确执行。
-		cur->data<true>().saveContext(_savedRegisters);
+		cur->data<true>().saveContext(savedRegisters);
 		auto forked = processManager.forkProcess(cur);
 		if(forked)
 		{
 			// 将forked进程加入就绪队列, 注意，这里对返回值的设置，由于是当前进程，所以直接设置savedRegisters即可
 			processManager.changeProcessStatus(forked, Process::Status::READY);
 			forked->data<true>().registers()[0] = PID_CURRENT ;
-			_savedRegisters[0] = forked->data<true>().pid();
+			savedRegisters[0] = forked->data<true>().pid();
 		}else{
-			_savedRegisters[0] = PID_INVALID;
+			savedRegisters[0] = PID_INVALID;
 		}
         break;
 	}
 	case SvcFunc::scheduleNext:
 	{
-	   _processing=false;//设置未处理状态
-	   processManager.scheduleNextProcess(_savedRegisters);
+	   processManager.scheduleNextProcess(savedRegisters);
        break;
 	}
 	case SvcFunc::vfsProxy:
 	{
-		_savedRegisters[0]=VirtualProxyKernel::handleVFSProxySVC(_savedRegisters);
+		savedRegisters[0]=VirtualProxyKernel::handleVFSProxySVC(savedRegisters);
 		break;
 	}
 	default:
@@ -141,8 +147,7 @@ void InterruptHandler::handleIRQ(IntID id)
 	    ktimer.nextPeriod();
 		eoi.write();
 		// this no return
-		_processing=false;
-	    processManager.scheduleNextProcess(_savedRegisters);
+	    processManager.scheduleNextProcess(currentState()._generalRegisters);
 	}else{ // others
 		eoi.write();
 	}
@@ -166,3 +171,11 @@ void InterruptHandler::unhandledException()
 	asm_wfe_loop();
 }
 
+void InterruptHandler::exitCurrent()
+{
+	assert(_nestedExceps.size() > 0);// 当前正在处理
+	_allowSyncExcep=false; // 处于中断退出阶段，不允许新的同步异常发生
+	_nestedExceps.last().restore();
+	_nestedExceps.resize(_nestedExceps.size() - 1);
+	_allowSyncExcep=true;
+}

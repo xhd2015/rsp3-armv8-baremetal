@@ -229,7 +229,7 @@ void Process::restoreContextAndExecute(void* savedSpEL1)
 	this->_SPSR.write();
 	this->_spEL0.write();
 
-	// 从低地址开始还原
+	// 从低地址开始还原, 绝对不会发生同步异常
 	__asm__ __volatile__(
 		"cbz %1, 1f \n\t" // if savedSpEL1==nullptr, branch
 		"mov  sp,  %1 \n\t" // else set sp=savedSpEL1

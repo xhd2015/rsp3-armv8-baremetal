@@ -12,11 +12,6 @@
 #include <generic_util.h>
 #include <cstring>
 
-
-
-String::String(size_t initSize)
-	:Vector(initSize){}
-
 String::String(const char *s)
 	:Vector()
 {

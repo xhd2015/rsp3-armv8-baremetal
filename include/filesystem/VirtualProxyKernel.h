@@ -17,6 +17,7 @@
 #include <utility>
 #include <programming/define_members.h>
 
+// 使用内核和用户态都能理解的数据结构。
 class VirtualProxyKernel{
 public:
 	using VirtualProxyFunction=::VirtualProxyFunction;
@@ -24,7 +25,9 @@ public:
 	DELETE_COPY(VirtualProxyKernel);
 	~VirtualProxyKernel();
 	bool             cd(const VectorRef<String> &path);
-	size_t           ls(Vector<String> &res);
+	size_t           ls(Vector<String> &res,
+			VirtualProxyVectorResizeCapacityOp opPtr,
+			VirtualProxyStringResizeOp strResizer);
 
 	/**
 	 * savedRegs[0] 作为insPtr

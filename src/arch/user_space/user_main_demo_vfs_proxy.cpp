@@ -17,12 +17,12 @@ int main()
 	path[0]=vec[0];
 	vp.cd(path);
 
-//	kout << "ls " << path[0] << ":\n";
-//	kout.flush();
-//	auto vec2 = vp.ls();
-//	for(size_t i=0;i!=vec2.size();++i)
-//		kout << vec2[i] << "\n";
-//	kout << "\n";
+	kout << "ls " << path[0] << ":\n";
+	kout.flush();
+	auto vec2 = vp.ls();
+	for(size_t i=0;i!=vec2.size();++i)
+		kout << vec2[i] << "\n";
+	kout << "\n";
 
 	kout << "END.\n";
 	kout.flush();

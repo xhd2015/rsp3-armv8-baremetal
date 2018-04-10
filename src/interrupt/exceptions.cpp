@@ -66,6 +66,7 @@ void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin 
 	// 暂不允许其他中断的发生，处理异常的过程中不允许发生其他非同步异常
 	// 但是同步异常是不可避免的
 
+	// 此处以及之前的区域保证绝对不会产生同步异常
 	intHandler.handleInlined(savedRegs,type,origin);
 
 	// 重新允许所有的中断

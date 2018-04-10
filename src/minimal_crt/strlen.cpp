@@ -13,5 +13,5 @@ size_t strlen(const char *src)
 {
 	const char *p=src;
 	while(*p++);
-	return (p-src);
+	return (p-src-1);
 }

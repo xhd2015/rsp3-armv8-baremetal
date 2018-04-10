@@ -13,16 +13,20 @@
 #include <io/SectorReader.h>
 #include <io/Output.h>
 #include <utility>
+#include <generic/error.h>
+#include <programming/construct.h>
 
 
 template <class T>
 class Vector{
 public:
 	enum { MINIMAL_CAPACITY = 8};
+	static constexpr DefaultConstructPolicy CONSTRUCT_POLICY = DEFAULT;
+
 	using ValueType = T;
 	using SizeType = size_t;
 
-	Vector(size_t initSize=0);
+	Vector(size_t initSize=0,bool setMinCapacity=true);
 	Vector(const std::initializer_list<T> &il);
 	Vector<T> & operator=(const std::initializer_list<T> &il)=delete;
 	Vector(const Vector<T> & vec);
@@ -30,27 +34,28 @@ public:
 	Vector(Vector<T> && vec);
 	Vector<T>& operator=(Vector<T> && vec);
 	~Vector();
+	AS_MACRO void rebase(size_t diff) { if(_data){_data=reinterpret_cast<T*>(reinterpret_cast<char*>(_data)+diff);}}
+
 
 	/*
 	 * 调用castMove之后，原来的数组不应当再使用
 	 *  可以castMove的原因是Vector<T> Vector<char>占据的空间实际上是同样的。
 	 */
 	template <class CastType>
-	AS_MACRO Vector<CastType> && castMove()
-	{
-		_capacity /= sizeof(CastType);
-		_size /= sizeof(CastType);
-		return std::move(*reinterpret_cast<Vector<CastType>*>(this));
-	}
+	Vector<CastType> && castMove();
 
 	const T& operator[](size_t i)const;
 	T &operator[](size_t i);
+	AS_MACRO const T &last()const { return _data[_size-1];}
+	AS_MACRO T &last(){ return _data[_size-1];}
 
 	/**
 	 * it is your responsiblity to ensure size>0
 	 */
 	T popBack();
 	void pushBack(T t);
+	template <class ... Args>
+	void emplaceBack(Args && ... args);
 	T *data();
 	const T* data()const;
 	size_t   size()const;
@@ -69,6 +74,7 @@ public:
 	// size==newSize,   capacity==newSize or capacity==MINIMAL_CAPACITY
 	// afte this,capacity  >= MINIMAL_CAPACITY
 	bool  resize(size_t newSize);
+	bool  ensureEnoughCapacity(size_t capacity);
 
 private:
 	bool  resizeCapacity(size_t capacity);

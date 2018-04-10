@@ -21,6 +21,11 @@ public:
 	~VirtualProxyUser();
 	bool     cd(const VectorRef<String> &path);
 	Vector<String>           ls();
+private:
+	static  bool resizeVectorString(Vector<String> &res,size_t newCapacity);
+	static  bool resizeString(String &res,size_t newSize);
+
+	static void * const MEM_OPS[] ;
 
 private:
 	void * _proxyKernel;
