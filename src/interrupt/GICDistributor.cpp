@@ -47,4 +47,17 @@ void GICDistributor::intPriority(IntID id,uint8_t prty)
 			lowerBound, lowerBound + 7,
 			prty);
 }
+void GICDistributor::clearAllPendings()
+{
+	auto idiot=RegGICD_ICPENDR::make(0xFFFFFFFF);
+	for(size_t i=0;i!=INT_GRP_NUM;++i)
+		idiot.write(regPtr(icpender + i*4));
+}
 
+
+void GICDistributor::disableAllInterrupts()
+{
+	auto idiot=RegGICD_ICENABLER::make(0xFFFFFFFF);
+	for(size_t i=0;i!=INT_GRP_NUM;++i)
+		idiot.write(regPtr(icenabler + i*4));
+}

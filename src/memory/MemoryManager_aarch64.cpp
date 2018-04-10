@@ -14,7 +14,7 @@
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	:
 	_headChunk(reinterpret_cast<MemoryChunk*>(base)),// set headChunk
-	 _base(reinterpret_cast<const char*>(base)),
+	 _base(reinterpret_cast<char*>(base)),
 	 _size(size)
 {
 	if(initChunks)

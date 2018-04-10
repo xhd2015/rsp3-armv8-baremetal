@@ -29,4 +29,5 @@ void GICDistributor::enableGroup(bool enable)
 
 
 
+
 #endif /* INCLUDE_TEMPLATES_IMPLEMENTATION_INTERRUPT_GICDISTRIBUTOR_H_ */

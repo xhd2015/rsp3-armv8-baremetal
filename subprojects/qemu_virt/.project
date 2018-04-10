@@ -3,6 +3,7 @@
 	<name>raspiOS_qemu_virt</name>
 	<comment></comment>
 	<projects>
+		<project>raspiOS_user_space</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

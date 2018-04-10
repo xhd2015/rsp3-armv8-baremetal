@@ -9,7 +9,6 @@
 
 
 #include <memory/MemoryManager.h>
-#include <kernel.h>
 #include <test/test_base.h>
 #include <test/TestMemoryManager.h>
 

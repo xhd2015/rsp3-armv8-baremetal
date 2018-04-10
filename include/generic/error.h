@@ -7,6 +7,14 @@
 
 #ifndef INCLUDE_GENERIC_ERROR_H_
 #define INCLUDE_GENERIC_ERROR_H_
+#include <def.h>
+// STOLEN from gcc
+#ifdef NDEBUG           /* required by ANSI standard */
+# define assert(__e) ((void)0)
+#else
+# define assert(__e) ((__e) ? (void)0 : report_assert_error(__FILE__, __LINE__, \
+						       __PRETTY_FUNCTION__, #__e))
+#endif
 
 void reportError();
 
@@ -15,8 +23,7 @@ void abort();
 
 void resume();
 
-
-void assert(bool v);
+void report_assert_error(const char *file,size_t line,const char *func,const char *expr);
 
 
 

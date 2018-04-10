@@ -1,6 +1,142 @@
+# 2018年4月10日13:47:51
+【commit point】 修复了vtables, virtio的bug，更新了用户态文件系统。参见
+这非常重要，参见[内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和[用户态例程 user_main_demo_vfs_proxy.cpp](../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
+此版本包括很多bug修复： 1.vtables的重定位  2.virtio使用DMA地址而不是虚拟地址  3.重构了VirtualMap
+
+ps：经过连续两天的奋战，终于理解和找到了virtio的bug。
+# 2018年4月10日13:37:02
+【acknowledged】 查询IntID=79是什么中断，该中断在系统中持续发生。
+# 2018年4月10日12:39:52
+【bugfix】 在scheduleNext中，当直接使用current时，使用return而不是restoreXXX
+# 2018年4月10日12:36:26
+【todo】所有的init可用等价的构造函数替代。
+所谓的资源获取即初始化，十分重要。
+# 2018年4月10日11:34:52
+遇见了一个虚拟内存启用之后的virtio的bug，现在已经弄清楚了： 外设使用的DMA地址是物理地址，并不是虚拟地址。因此在设置外设的地址相关的寄存器时，应当转换成物理地址。
+
+这就对legacy 的 virtio有一个限制：实际的内存地址不能高于32位。
+
+而原来的设想的内核能够拥有一段低地址空间也就作罢。
+# 2018年4月10日00:03:40
+未做笔记
+# 2018年4月9日19:36:44
+关于virtualbox不能创建软链接的解决方案。
+https://serverfault.com/questions/476610/virtualbox-issue-with-symlinks-in-shared-folders
+# 2018年4月9日18:12:42
+virtio 的32位PFN的限制
+https://github.com/TheNewNormal/libxhyve/blob/master/include/xhyve/virtio.h
+
+为了在内核空间使用vio，需要一些内核可专门访问的低端地址。
+包括：起始，大小。
+大小必须为4KB的数倍。
+将RAM的一部分映射到那里。
+
+所有的进程必须保留这些项。
+
+参数n, va, pa
+改变：1.初始化内核过程中，  将TTBR1的内存的pa对应的高端n个页的项置为无效
+     2.新建一个低端内核内存管理器，用于这片区域。
+	 3.对于每一个新建的进程，总是将va指定的连续n项映射到实际ram的相应位置。
+
+
+
+# 2018年4月9日11:40:21
+测试vtable
+ld文件：vt.ld
+```
+MEMORY{
+        BIOS(rx) : ORIGIN = 1K, LENGTH = 8K
+        RAM(rwx) : ORIGIN = 10K, LENGTH = 8K
+}
+SECTIONS{
+
+        .text : {
+         *(.text)
+         *(.text.*)
+         PROVIDE( __vt_rom_begin = .);
+        } > BIOS
+
+		/* 产生vtable的数据 */
+        .vtables : AT(__vt_rom_begin){
+        PROVIDE( __vt_begin = . );
+         *(.rodata._ZTV*)
+        PROVIDE( __vt_end = . );
+        } > RAM
+        .rodata __vt_rom_begin + SIZEOF(.vtables):{
+                PROVIDE( __vt_rom_end = . );
+                QUAD(SIZEOF(.vtables)); /* .vtable的大小*/
+                QUAD(__vt_end - __vt_begin);
+                QUAD(LOADADDR(.vtables));
+                QUAD(__vt_rom_begin);
+                QUAD(__vt_rom_end);
+                QUAD(__vt_begin);
+                QUAD(__vt_end);
+                *(.rodata)
+                *(.rodata.*)
+        } > BIOS
+
+}
+
+```
+源文件：vt.cpp
+```c++
+void operator delete(void*, unsigned long)
+{
+
+}
+class Base{
+        public:
+                virtual ~Base()=default;
+                virtual void print()
+                {
+                        auto p="Base\n";
+                }
+};
+
+class Son:public Base{
+        public:
+                virtual ~Son()=default;
+                virtual void print()override
+                {
+                        auto p= "Son\n";
+                }
+};
+
+int main()
+{
+        Son s;
+        Base *p=&s;
+        p->print();
+}
+```
+编译：`aarch64-elf-g++ vt.cpp -c -o vt.o -fno-exceptions -fno-rtti`
+
+链接：` aarch64-elf-g++ -nostdlib -Xlinker -Tvt.ld vt.o  -o vt.elf`
+
+objcopy：` aarch64-elf-objcopy.exe vt.elf -O binary vt.elf vt.img`
+
+dump : `aarch64-elf-objdump.exe -D vt.elf |less`
+# 2018年4月9日10:07:49
+vtable模型
+virtual ptr : p
+*p --> vtable 基地址
+p->method() :  Func *f = *p+ offset(method),  (*f)(...)
+虚指针p存储的是其vtable的基地址， 每个类型的指针存储各自类型的vtable基地址。
+
+一个实例： 基地址：0x1bfb0  
+
+
+
+# 2018年4月9日01:52:34
+【todo】 实现高效的memcpy,memset
 # 2018年4月9日01:46:28
 【milestone】【commit point】 编写了VirtualFileSystem和FAT32VirtualFile，添加了虚拟文件系统，用于支持不同的文件系统共存
 这非常重要，参见[main_demo_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_VirtualFileSystem.cpp)
+
+VirtualFileSystem这一设计是如此的精妙以致于我都为其叹服了！
+因为它的引入解决之前许多冗余的设计，而且实践显示了这种设计的简洁和精练。
+
+Powerful Design！
 # 2018年4月9日01:40:22
 【todo】 添加VirtualFileSystem的说明，并注释其中思想的精妙之处。（懒惰加载等）
 # 2018年4月8日23:52:43

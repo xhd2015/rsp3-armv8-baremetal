@@ -10,6 +10,8 @@
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
 #include <arch/common_aarch64/registers/timer_registers.h>
+#include <filesystem/VirtualProxyKernel.h>
+#include <io/Output.h>
 
 
 void InterruptHandler::handleUndefinedInstruction()
@@ -105,8 +107,15 @@ void InterruptHandler::handleSVC(SvcFunc func)
 	   processManager.scheduleNextProcess(_savedRegisters);
        break;
 	}
+	case SvcFunc::vfsProxy:
+	{
+		_savedRegisters[0]=VirtualProxyKernel::handleVFSProxySVC(_savedRegisters);
+		break;
+	}
 	default:
 	{
+		kout << FATAL << "unhandled svc : " << static_cast<uint64_t>(func) << "\n";
+		asm_wfe_loop();
 		break;
 	}
 	}
@@ -114,6 +123,7 @@ void InterruptHandler::handleSVC(SvcFunc func)
 
 void InterruptHandler::handleIRQ(IntID id)
 {
+	kout << "int id = " << id << "\n";
 	auto eoi=RegICC_EOIR_EL1<1>::make(0);
 	eoi.INTID = id;
 	// write here to make sure that the event come in order

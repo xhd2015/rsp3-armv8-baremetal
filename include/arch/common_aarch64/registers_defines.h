@@ -10,7 +10,6 @@
 
 
 #include <def.h>
-#include <kernel.h>
 #include <io/IntegerFormatter.h>
 #include <arch/common_aarch64/gicv3_defines.h>
 

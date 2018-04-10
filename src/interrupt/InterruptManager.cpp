@@ -47,3 +47,27 @@ void InterruptManager::cpuIntEnable(bool v)
 	setBit(daif.asuint32_t(), intBit, !(v));
 	daif.write();
 }
+
+void InterruptManager::clearAllPendings()
+{
+	GICDistributor::clearAllPendings();
+	GICRedistributor::clearAllPendings();
+}
+void InterruptManager::disableAllInterrupts()
+{
+	GICDistributor::disableAllInterrupts();
+}
+volatile uint32_t & InterruptManager::enableWord(int intGrp)
+{
+	if(intGrp==0)
+		return GICRedistributor::reg32(GICRedistributor::isenabler0);
+	else
+		return GICDistributor::reg32(GICDistributor::isenabler + intGrp*4);
+}
+volatile uint32_t & InterruptManager::disableWord(int intGrp)
+{
+	if(intGrp==0)
+		return GICRedistributor::reg32(GICRedistributor::icenabler0);
+	else
+		return GICDistributor::reg32(GICDistributor::icenabler + intGrp*4);
+}

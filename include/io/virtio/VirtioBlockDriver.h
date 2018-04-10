@@ -22,6 +22,7 @@ public:
 	static constexpr uint8_t BufferReadFlags=bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_NEXT,VirtioQueueDescriptor::VIRTQ_DESC_F_WRITE>(); //device-write,has next
 	static constexpr uint8_t BufferWriteFlags=bitOnes<VirtioQueueDescriptor::VIRTQ_DESC_F_NEXT>();
 	static constexpr size_t DescriptorNum=3;
+	static constexpr size_t MAX_PAGE_SIZE = (1u << 31);
 	enum{
 		REQ_BUF_HEAD=0,
 		REQ_BUF_STATUS=16,
@@ -47,18 +48,10 @@ public:
 	DELETE_COPY(VirtioBlockDriver);
 	~VirtioBlockDriver();
 	/**
-	 *
+	 * @param vqAddr   virtqueue的虚拟地址，必须页对齐
 	 * @param descrNum 至少是3。
 	 */
-	template <class ... Args>
-	void init(uint32_t pfn,size_t descrNum,Args && ... virtQargs)
-	{
-		VirtioDriver::init();
-		reg32<VirtioDriver::V1_QueueSel>() = CUR_QUEUE; // set current
-		reg32<VirtioDriver::V1_QueueNum>() = (descrNum<DescriptorNum)?DescriptorNum:descrNum; // set current queue size
-		reg32<VirtioDriver::V1_QueuePFN>() = pfn;
-		initVirtQueue(std::forward<Args>(virtQargs)...);
-	}
+	void init(void *vqAddr,size_t descrNum,size_t pageSize,size_t usedRingAlignment,bool doInit);
 
 	size_t readSector(uint64_t sector,size_t num,void * buffer);
 	size_t writeSector(uint64_t sector,size_t num,const void *buffer);

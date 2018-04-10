@@ -22,10 +22,10 @@ void resume()
 }
 
 
-void assert(bool v)
+void report_assert_error(const char *file,size_t line,const char *func,const char *expr)
 {
-	if(!v)
-		abort();
+	kout << "at line " << line << ", file \"" << file << "\", function \""<<func<<"\", fails\n\t \""<<expr<<"\"\n";
+	abort();
 }
 
 

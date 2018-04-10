@@ -41,10 +41,7 @@ public:
 	};
 	template <class...Args>
 	PL011(Args && ... args)
-		:MemBasedRegReader(std::forward<Args>(args)...),
-		_writeDataReg(reg<char,UARTDR>()),
-		  _readDataReg(reg<uint16_t,UARTDR>()),
-		  _statusReg(reg<uint16_t,UARTFR>())
+		:MemBasedRegReader(std::forward<Args>(args)...)
 	{}
 
 	// set baudrate, and enable it
@@ -52,12 +49,12 @@ public:
 
 	AS_MACRO void writeData(char ch)
 	{
-		_writeDataReg = ch;
+		reg<char,UARTDR>() = ch;
 	}
 
 	AS_MACRO uint16_t readData()const
 	{
-		return _readDataReg;
+		return reg<uint16_t,UARTDR>();
 	}
 	AS_MACRO bool    hasCorrectBase()const
 	{
@@ -68,9 +65,10 @@ public:
 
 private:
 	// 下面三个是比较常用的，因此先将它们的地址计算出来。
-	volatile char & _writeDataReg;
-	volatile uint16_t &_readDataReg;
-	volatile uint16_t &_statusReg;
+	// DEPRECATED 因为rebase的原因
+//	volatile char & _writeDataReg;
+//	volatile uint16_t &_readDataReg;
+//	volatile uint16_t &_statusReg;
 };
 
 #ifndef _NOT_NEED_PL011

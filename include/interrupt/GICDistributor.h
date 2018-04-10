@@ -20,6 +20,7 @@ class GICDistributor
 	:public MemBasedRegReader<true>
 {
 public:
+	static constexpr size_t INT_GRP_NUM=32;
 	enum RegOffset : MemBasedRegReader::RegOffset{
 		ctrl=0x0,
 		typer=0x4,
@@ -58,6 +59,9 @@ public:
 
 	template <int grp>
 	void enableGroup(bool enable);
+
+	void clearAllPendings();
+	void disableAllInterrupts();
 private:
 
 

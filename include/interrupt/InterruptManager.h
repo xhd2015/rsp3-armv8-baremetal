@@ -34,7 +34,7 @@ public:
 
 	// 所有中断默认都是启用的， 将Redistributor唤醒
 	int init(void * vecAddr,bool a3vEn,EOIMode mode,uint8_t lowestPrty,uint8_t initPrty);
-
+	AS_MACRO void rebase(size_t diff) { GICDistributor::rebase(diff);GICRedistributor::rebase(diff);}
 
 	template <CPUIntBit intBit>
 	void cpuIntEnable(bool v);
@@ -54,6 +54,12 @@ public:
 	AS_MACRO Base & cast(){return *static_cast<Base*>(this);}
 	template <class Base>
 	AS_MACRO const Base & cast()const{return *static_cast<const Base*>(this);}
+
+	void clearAllPendings();
+	void disableAllInterrupts();
+	volatile uint32_t & enableWord(int intGrp);
+	volatile uint32_t & disableWord(int intGrp);
+
 
 	using GICCPUInterface::sgiTarget;
 	using GICCPUInterface::sgiSelf;

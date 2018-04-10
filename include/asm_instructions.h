@@ -57,6 +57,7 @@ AS_MACRO void asm_wfe();
 AS_MACRO void asm_wfe_loop();
 AS_MACRO void asm_tlbi_aside1(uint16_t asid);
 AS_MACRO void asm_tlbi_allel1();
+AS_MACRO void asm_tbli_vmallel1();
 
 
 //== definitions
@@ -103,5 +104,9 @@ void asm_tlbi_aside1(uint16_t asid)
 void asm_tlbi_allel1()
 {
 	__asm__ __volatile__("tlbi ALLE1 \n\t");
+}
+void asm_tbli_vmallel1()
+{
+	__asm__ __volatile__("tlbi  VMALLE1 \n\t");
 }
 #endif /* INCLUDE_ASM_INSTRUCTIONS_H_ */

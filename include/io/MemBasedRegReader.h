@@ -29,6 +29,7 @@ protected:
 	MemBasedRegReader(nullptr_t base)
 		:_base(base){}
 public:
+	AS_MACRO void rebase(size_t diff){ _base += diff;}
 	template <class T,RegOffset offset>
 	AS_MACRO T regcopy()
 	{

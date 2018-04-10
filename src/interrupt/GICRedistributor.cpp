@@ -36,3 +36,8 @@ void GICRedistributor::awake()
 	while(l_waker.update(regPtr(waker)).ChildrenAsleep)
 		;
 }
+void GICRedistributor::clearAllPendings()
+{
+	auto idiot=RegGICR_ICPENDR0::make(0xFFFFFFFF);
+	idiot.write(regPtr(icpender0));
+}

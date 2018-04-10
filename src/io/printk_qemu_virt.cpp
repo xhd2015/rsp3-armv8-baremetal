@@ -11,6 +11,8 @@
 size_t printk(char ch)
 {
 //	*reinterpret_cast<volatile unsigned int *>( UART_BASE ) = ch;
+	if(!ch)
+		return 0;
 	pl011.writeData(ch);
 	return 1;
 }

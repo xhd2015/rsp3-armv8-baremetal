@@ -51,10 +51,6 @@ void VirtioDriver::init()
 	// 8.set DRIVER_OK
 	setBit(reg8<V1_Status>(),S_DRIVER_OK,1);
 
-	// additional, 写入page_size
-	reg32<V1_GuestPageSize>() = PAGE_SIZE_4KB;
-	reg32<V1_QueueAlign>() = PAGE_SIZE_4KB;
-
 	// set invalid
 	reg32<V1_QueuePFN>()=0;
 

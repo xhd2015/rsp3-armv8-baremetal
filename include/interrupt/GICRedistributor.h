@@ -35,7 +35,7 @@ public:
 		isenabler0=SGIOffset + 0x100,
 		icenabler0=SGIOffset + 0x180,
 		ispendr0=SGIOffset + 0x200,
-		icpender=SGIOffset + 0x280,
+		icpender0=SGIOffset + 0x280,
 		isactiver0=SGIOffset + 0x300,
 		icavtiver0=SGIOffset + 0x380,
 		ipriortiy=SGIOffset + 0x400, //n=0-7,s
@@ -47,6 +47,7 @@ public:
 		{}
 	int init(uint8_t initPrty);
 	void awake();
+	void clearAllPendings();
 
 private:
 };

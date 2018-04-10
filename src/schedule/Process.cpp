@@ -301,7 +301,7 @@ void   Process::status(Status status)
 {
 	_status = status;
 }
-const RegSPSR_EL1 Process::SPSR() const {
+const RegSPSR_EL1 & Process::SPSR() const {
 	return _SPSR;
 }
 

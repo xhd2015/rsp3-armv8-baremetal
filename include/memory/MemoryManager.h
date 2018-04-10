@@ -31,6 +31,7 @@ public:
 	 * @param base 不能为空
 	 */
 	MemoryManager(void *base,size_t size,bool initChunks=true);
+	AS_MACRO void rebase(size_t diff) { _base += diff;*reinterpret_cast<char**>(&_headChunk)+=diff;}
 public:
 	// 最小分配要求
 	size_t normalizeAllocSize(size_t n);
@@ -85,8 +86,8 @@ public:
 
 private:
 	MemoryChunk *_headChunk;
-	const char		*_base;
-	const size_t	_size;
+	char		*_base;
+	size_t	_size;
 };
 
 

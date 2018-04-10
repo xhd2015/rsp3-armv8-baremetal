@@ -6,7 +6,6 @@
  */
 
 #include <def.h>
-#include <kernel.h>
 #include <memory/MemoryManager.h>
 #include <schedule/Process.h>
 #include <io/Output.h>

@@ -91,7 +91,8 @@ public:
 	size_t spSize() const;
 	Status status() const;
 	void   status(Status status);
-	const RegSPSR_EL1 SPSR() const;
+	AS_MACRO RegSPSR_EL1& SPSR() { return _SPSR;}
+	const RegSPSR_EL1& SPSR() const;
 	const Descriptor4KBL0* tableL0() const;
 	Descriptor4KBL1* tableL1() const;
 	Descriptor4KBL2* tableL2() const;

@@ -168,11 +168,6 @@ MUST NOT access any other register.
 	void init();
 public:
 
-	template <class ... Args>
-	AS_MACRO void initVirtQueue(Args && ... args)
-	{
-		new (&_virtqueue) VirtioQueueLayout(std::forward<Args>(args)...);
-	}
 	AS_MACRO VirtioQueueLayout& virtqueue()  {
 		return _virtqueue;
 	}
