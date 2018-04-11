@@ -9,7 +9,9 @@
 #include <data_structures/String.h>
 #include <data_structures/StringRef.h>
 #include <cstring>
-#include "../../include/io/printk.h"
+#include <io/Output.h>
+#include <data_structures/String.h>
+#include <data_structures/UniversalString.h>
 
 
 StringRef::StringRef(const void *nullTermStr)
@@ -19,7 +21,8 @@ StringRef::StringRef(const void *p,size_t len)
 
 StringRef::StringRef(const String &s)
 	:VectorRef(s.data(),s.size()){}
-
+StringRef::StringRef(const UniversalString &s)
+	:VectorRef(s.data(),s.size()){}
 
 bool      operator==(const StringRef &lhs,const StringRef &rhs)
 {

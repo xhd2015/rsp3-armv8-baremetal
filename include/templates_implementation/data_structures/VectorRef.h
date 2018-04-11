@@ -8,7 +8,7 @@
 #ifndef INCLUDE_TEMPLATES_IMPLEMENTATION_DATA_STRUCTURES_VECTORREF_H_
 #define INCLUDE_TEMPLATES_IMPLEMENTATION_DATA_STRUCTURES_VECTORREF_H_
 #include <data_structures/VectorRef.h>
-
+#include <data_structures/Vector.h>
 
 
 template <class T>

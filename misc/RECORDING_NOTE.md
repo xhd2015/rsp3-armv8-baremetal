@@ -1,5 +1,18 @@
+# 2018年4月11日16:02:37
+【commit point】 重构了Vector和String，增加UniversalVector和UniversalString两个类，用于支持内核态和用户态之间的内存管理交互。参见[内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和 [用户态例程 user_main_demo_vfs_proxy.cpp](../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
+此外，由于代码体积的膨胀，将UserSpace的代码空间从5*4K调整到7*4K。
+
+每到commit的时间，我们似乎显得很轻松，这时候，贝多芬的第九交响曲的最后一节应当被用作庆贺！
+# 2018年4月11日15:59:18
+花了很多时间重构Vector，使其能够跨越内核态和用户态的使用，同时考虑多数情况下使用的是全局内存分配器的情况。
+使用新的UniversalVector和UniversalString重写了过去那些古怪的用法（那种用法如果不被解决，就会像病毒一样扩散下去）
+但是作为代价，就是代码的体积增大了。
+
+目前为止，我们为此项目花费了很多心血，我甚至要病了。
+这样的情况不能持续下去。
+那么，休息几天吧！
 # 2018年4月11日04:50:34
-【commit point】 正确实现了用户态的ls,cd命令，采用的方法(workaround)虽不优雅但是却工作良好。此版本修复了大量bug，系统能够支持多重同步中断。示例文件参见 [内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp] (../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和 [用户态例程 user_main_demo_vfs_proxy.cpp] (../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
+【commit point】 正确实现了用户态的ls,cd命令，采用的方法(workaround)虽不优雅但是却工作良好。此版本修复了大量bug，系统能够支持多重同步中断。示例文件参见 [内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和 [用户态例程 user_main_demo_vfs_proxy.cpp](../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
 # 2018年4月11日03:12:20
 【todo】 了解expresson sfinae
 参见https://stackoverflow.com/questions/13786482/detect-if-a-default-constructor-exists-at-compile-time

@@ -13,8 +13,8 @@ int main()
 	kout << "\n";
 	kout.flush();
 
-	Vector<String> path(1);
-	path[0]=vec[0];
+	Vector<String> path;
+	path.emplaceBack(vec[0].data(),vec[0].size());
 	vp.cd(path);
 
 	kout << "ls " << path[0] << ":\n";

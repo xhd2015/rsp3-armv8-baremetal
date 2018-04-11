@@ -9,8 +9,11 @@
 #define INCLUDE_DATA_STRUCTURES_VECTORREF_H_
 
 #include <def.h>
-#include <data_structures/Vector.h>
+//#include <data_structures/Vector.h>
 #include <io/Output.h>
+
+template <class T>
+class Vector;
 
 /**
  * 对Vector的引用，可以从任意位置开始，包含任意允许的数量。

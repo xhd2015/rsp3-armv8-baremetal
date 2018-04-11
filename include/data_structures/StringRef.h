@@ -9,8 +9,8 @@
 #define INCLUDE_DATA_STRUCTURES_STRINGREF_H_
 
 #include <data_structures/VectorRef.h>
-#include <data_structures/String.h>
-#include "../io/printk.h"
+#include <io/Output.h>
+#include <data_structures/vector_forward_decl.h>
 
 // ref of str
 class StringRef
@@ -20,6 +20,7 @@ public:
 	StringRef(const void *nullTermStr);
 	StringRef(const void *p,size_t len);
 	StringRef(const String &s);
+	StringRef(const UniversalString &s);
 
 };
 bool      operator==(const StringRef &lhs,const StringRef &rhs);

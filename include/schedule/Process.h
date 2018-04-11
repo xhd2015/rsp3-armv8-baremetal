@@ -18,10 +18,11 @@
 // 系统层面的Process，不是用户层面的Process
 class Process{
 public:
+	static_assert(USER_SPACE_SIZE % 4096==0,"");
 	enum Config{
 		PAGE_SIZE = 4*KiB,
 		KERN_ARG_NUM = 4 * sizeof(uint64_t),
-		CODE_L3_INDEX = 1, CODE_L3_ENTRY_NUM=5,
+		CODE_L3_INDEX = 1, CODE_L3_ENTRY_NUM= USER_SPACE_SIZE/PAGE_SIZE,
 		STACK_L3_INDEX=508, STACK_L3_ENTRY_NUM=2,
 		HEAP_L3_INDEX = 510,HEAP_L3_ENTRY_NUM = 2,
 		TABLE_ALIGNMENT = 4*KiB,

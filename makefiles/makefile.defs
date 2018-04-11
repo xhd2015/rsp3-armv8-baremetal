@@ -8,6 +8,8 @@ include makefile.eclipse.envs
 endif
 
 # 添加导出的变量
+# TODO 强制使用EXPORT_TO_ALL
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_TO_ALL.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_VARIABLES.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_CXX_MACROS.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_LINKER_SYMBOLS.makefile

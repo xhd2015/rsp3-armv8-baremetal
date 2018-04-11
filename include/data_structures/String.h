@@ -1,7 +1,7 @@
 /*
- * String.h
+ * String2.h
  *
- *  Created on: Feb 1, 2018
+ *  Created on: Apr 11, 2018
  *      Author: 13774
  */
 
@@ -9,37 +9,23 @@
 #define INCLUDE_DATA_STRUCTURES_STRING_H_
 
 #include <data_structures/Vector.h>
-#include <io/printk.h>
-#include <utility>
 
-class String
-	:public Vector<char>
-{
-public:
+#undef _ARG_DO_GENERATE
+#define _ARG_DO_GENERATE
 
-	using Vector::operator=;
-	using Vector<char>::append;
+#undef _ARG_GEN_DEFINITIONS
+#define _ARG_GEN_DECL
 
-	String(size_t initSize=0,bool setMinCapacity=true):Vector(initSize,setMinCapacity){}
-	String(const String &s):Vector(s){}
-	String & operator=(const String &s){Vector::operator =(s);return *this;}
-	String(String &&s):Vector(std::move(s)){}
-	String & operator=(String &&s){ Vector::operator =(std::move(s));return *this;}
+#undef _ARG_NAME
+#define _ARG_NAME String
 
-	String(const char *s);
-	String &operator=(const char *s);
+#undef _ARG_BASE_TYPE
+#define _ARG_BASE_TYPE Vector
+
+#undef _ARG_GLOBAL
+#define _ARG_GLOBAL
+#include <data_structures/GenerateString.h>
 
 
-	String & append(const char* s,size_t len);
-	String & append(const char *s);
-
-	size_t   findFirst(size_t start,const String &s)const;
-	Vector<String> split(const String & s)const;
-
-	String subString(size_t i,size_t len)const;
-
-};
-
-bool   operator==(const String &lhs,const String &rhs);
 
 #endif /* INCLUDE_DATA_STRUCTURES_STRING_H_ */

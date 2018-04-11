@@ -1,7 +1,7 @@
 
 MEMORY
 {
-    ROM (rx) : ORIGIN = 4K,  LENGTH = 20K
+    ROM (rx) : ORIGIN = 4K,  LENGTH = USER_SPACE_SIZE
     RAM (rwx) : ORIGIN = RAM_START , LENGTH = RAM_SIZE
 }
 

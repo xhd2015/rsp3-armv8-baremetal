@@ -12,6 +12,8 @@
 #include <data_structures/Vector.h>
 #include <data_structures/String.h>
 #include <programming/define_members.h>
+#include <data_structures/UniversalVector.h>
+#include <data_structures/UniversalString.h>
 
 class VirtualProxyUser{
 public:
@@ -20,12 +22,7 @@ public:
 	DELETE_COPY(VirtualProxyUser);
 	~VirtualProxyUser();
 	bool     cd(const VectorRef<String> &path);
-	Vector<String>           ls();
-private:
-	static  bool resizeVectorString(Vector<String> &res,size_t newCapacity);
-	static  bool resizeString(String &res,size_t newSize);
-
-	static void * const MEM_OPS[] ;
+	UniversalVector<UniversalString>           ls();
 
 private:
 	void * _proxyKernel;

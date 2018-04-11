@@ -34,18 +34,11 @@ bool     VirtualProxyKernel::cd(const VectorRef<String> &path)
 	}
 }
 
-size_t VirtualProxyKernel::ls(Vector<String> &res,
-		VirtualProxyVectorResizeCapacityOp opPtr,
-		VirtualProxyStringResizeOp strResizer)
+size_t VirtualProxyKernel::ls(UniversalVector<UniversalString> &res)
 {
 	size_t count=0;
-	auto handler=[&res,&count,opPtr,strResizer](VirtualFile *file){
-		bool resized=opPtr(res, res.size()+1);//resize capacity
-		assert(resized);
-		res.emplaceBack(0,false);//无内存分配
-		resized=strResizer(res[res.size()-1],file->name().size());//自定义内存分配
-		assert(resized);
-		std::memcpy(res[res.size()-1].data(), file->name().data(), file->name().size());
+	auto handler=[&res,&count](VirtualFile *file){
+		res.emplaceBack(res.memMan(), file->name().data(), file->name().size());
 		++count;
 	};
 	if(!_curFile)
@@ -76,11 +69,7 @@ uint64_t    VirtualProxyKernel::handleVFSProxySVC(uint64_t * savedRegs)
 		break;
 	case VP_LS:
 	{
-		void ** opArr=reinterpret_cast<void**>(args[1]);
-		return insPtr->ls(*reinterpret_cast<Vector<String>*>(args[0]),
-				reinterpret_cast<VirtualProxyVectorResizeCapacityOp>(opArr[0]),
-				reinterpret_cast<VirtualProxyStringResizeOp>(opArr[1])
-		);
+		return insPtr->ls(*reinterpret_cast<UniversalVector<UniversalString>*>(args[0]));
 		break;
 	}
 	}

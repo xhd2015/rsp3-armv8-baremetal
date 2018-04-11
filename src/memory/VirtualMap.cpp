@@ -77,10 +77,14 @@ void VirtualMap::mapL2()
 }
 void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 {
+	for(size_t i=0;i!=descr.size();++i) // 必须是4KB的整数倍
+		assert(descr[i].size() % _D::PAGE_SIZE == 0);
 	// 设置curGroup
 	size_t curGroup=0;
-	while(descr[curGroup].size()==0)
+	while(curGroup <descr.size() && descr[curGroup].size()==0)
 		++curGroup;
+	if(curGroup==descr.size())
+		return;
 	size_t curGroupLeftSize=descr[curGroup].size();
 	size_t basePage = reinterpret_cast<size_t>(_phyAddr) >> _D::PAGE_BITS;
 	size_t index=_startAddr.index(3);
@@ -128,8 +132,10 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 		curGroupLeftSize -= _D::PAGE_SIZE;
 		if(curGroupLeftSize == 0)
 		{
-			while(descr[++curGroup].size()==0) // 略过所有size为0 的配置组
-				;
+			while(curGroup <descr.size() && descr[curGroup].size()==0)// 略过所有size为0 的配置组
+				++curGroup;
+			if(curGroup == descr.size())
+				break;
 			curGroupLeftSize = descr[curGroup].size();
 		}
 	}

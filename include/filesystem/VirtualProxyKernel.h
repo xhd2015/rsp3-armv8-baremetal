@@ -16,6 +16,8 @@
 #include <filesystem/VirtualProxyDefinitions.h>
 #include <utility>
 #include <programming/define_members.h>
+#include <data_structures/UniversalVector.h>
+#include <data_structures/UniversalString.h>
 
 // 使用内核和用户态都能理解的数据结构。
 class VirtualProxyKernel{
@@ -25,9 +27,7 @@ public:
 	DELETE_COPY(VirtualProxyKernel);
 	~VirtualProxyKernel();
 	bool             cd(const VectorRef<String> &path);
-	size_t           ls(Vector<String> &res,
-			VirtualProxyVectorResizeCapacityOp opPtr,
-			VirtualProxyStringResizeOp strResizer);
+	size_t           ls(UniversalVector<UniversalString> &res);
 
 	/**
 	 * savedRegs[0] 作为insPtr

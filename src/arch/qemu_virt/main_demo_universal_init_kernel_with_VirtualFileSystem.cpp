@@ -23,6 +23,10 @@
 #include <memory/VirtualAddress.h>
 #include <memory/VirtualMap.h>
 #include <generic/error.h>
+#include <data_structures/Vector.h>
+#include <data_structures/UniversalVector.h>
+#include <data_structures/String.h>
+#include <data_structures/UniversalString.h>
 
 #define GIC_DIST_BASE 0x08000000
 #define GIC_REDIST_BASE 0x080A0000
@@ -37,7 +41,6 @@ extern char ramStart[];
 extern char ramEnd[];
 
 void main_mmu_set();
-void error_report(const char *string="error happened \n");
 
 int main()
 {
@@ -75,6 +78,30 @@ int main()
 			0xF0);
 	if(status!=0)
 		return status;
+
+//	// 测试UniversalVector
+//	Vector<char> vec;
+//	kout << "capactiy = " << vec.capacity() << "\n";
+//	vec.pushBack('A');
+//	kout << vec << "\n";
+//
+//	UniversalVector<char> uvec(mman);
+//	uvec.pushBack('A');
+//	kout << uvec << "\n";
+//	asm_wfe_loop();
+
+	// 测试UniversalString
+//	String    s2;
+//	s2="what is the fuck";
+//	kout << s2 << "\n";
+//	String   hello("hello");
+//	kout << (s2==hello) << "\n";
+//
+//	UniversalString us(mman);
+//	kout << us.size() << "\n";
+//	kout << us << "\n";
+
+
 	// 启用MMU
 	Vector<AddressSpaceDescriptor> config;
 	config.pushBack(AddressSpaceDescriptor{reinterpret_cast<void*>(RAM_START),RAM_SIZE ,AddressSpaceDescriptor::T_NORMAL,false,true,false});
