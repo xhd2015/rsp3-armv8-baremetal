@@ -43,6 +43,9 @@ public:
 
 	AS_MACRO const uint16_t* ring()const{return reinterpret_cast<const uint16_t*>(_base + 4);}
 	AS_MACRO uint16_t* ring(){return reinterpret_cast<uint16_t*>(_base + 4);}
+	// 占据的常量大小和变量大小， 所谓常量，就是指不随_queueSize变化；而变量相反。
+	AS_MACRO static   size_t constantSpanSize() { return 2+2+2;} // _flags + _idx + _used_event
+	AS_MACRO static   size_t variableSpanSize() { return 2;} // _ring[i]
 
 private:
 	size_t _queueSize;

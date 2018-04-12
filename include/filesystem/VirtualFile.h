@@ -52,9 +52,10 @@ public:
 	 * @param name
 	 * @return 表明文件是否已经不存在
 	 */
-	virtual VirtualFile*     removeFile(const String &name);
+	virtual VirtualFile*     removeFile(const StringRef &name);
 	virtual VirtualFile*  findFile(const VectorRef<String> &path);
-	virtual VirtualFile*   findFile(const String &name);
+	virtual VirtualFile*  findFile(const Vector<StringRef> &path);
+	virtual VirtualFile*   findFile(const StringRef &name);
 	virtual void           foreachFile(VirtualFileHandler handler);
 	virtual String         read(size_t offset,size_t maxBytes);
 	virtual size_t         write(const StringRef & ref,size_t offset);

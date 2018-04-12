@@ -25,8 +25,9 @@ public:
 	VirtualFileSystem(const VirtualFileSystem &rhs)=delete;
 	VirtualFileSystem & operator=(const VirtualFileSystem &rhs)=delete;
 	AS_MACRO void addRootFile(VirtualFile *file){ _root->addFile(file);}
-	AS_MACRO VirtualFile * findRootFile(const String &name){return _root->findFile(name);}
+	AS_MACRO VirtualFile * findRootFile(const StringRef &name){return _root->findFile(name);}
 	AS_MACRO VirtualFile * findRootFile(const VectorRef<String> &path){ return _root->findFile(path);}
+	AS_MACRO VirtualFile * findRootFile(const Vector<StringRef> &path){ return _root->findFile(path);}
 	AS_MACRO void          foreachRootFile(VirtualFile::VirtualFileHandler handler){ _root->foreachFile(handler); }
 private:
 	VirtualFile *_root;

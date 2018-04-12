@@ -64,7 +64,8 @@ public:
 	AS_MACRO void      waitCompleted(uint16_t oldUsedIdx)const { while(currentUsedIdx()==oldUsedIdx);}
 
 	bool setupDescriptors();
-
+	// 计算一页内能够容纳的最大描述符数量
+	static  size_t  maximumDescriptorNum(size_t pageSize);
 private:
 	// head, buffer, status
 	VirtioQueueDescriptor * _reqDescs[DescriptorNum];

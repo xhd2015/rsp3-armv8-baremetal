@@ -30,6 +30,10 @@ constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
 			    INT_NS_PHY_TIMER=30,
 				INT_SPURIOUS=1023; // no interrupt
 
+#ifdef TARGET_ARCH_IS_qemu_virt
+constexpr IntID		INT_INPUT = 33; //  UART的中断
+#endif
+
 constexpr uint8_t INT_IDLE_PRIORITY=0xFF;
 
 template <template <int,class...> class T,int index,class ... Args>

@@ -11,6 +11,7 @@
 #include <array>
 #include <io/uart/PL011.h>
 #include <runtime_def.h>
+#include <data_structures/String.h>
 
 class Input{
 public:
@@ -19,20 +20,15 @@ public:
 	Input()=default;
 
 
-	Input &operator >>(char &ch);
-	Input &operator >>(int &d);
+	AS_MACRO Input &operator>>(char &ch) { ch=getchar();return *this;}
+	Input &operator>>(int &d);
+	//读取字符串，略过空白符，直到遇到下一个空白符 ， 空白符=换行，tab,空格
+	Input &operator>>(String &s);
+	String readline();
 
 	// will block
-	AS_MACRO uint16_t   read()
-	{
-		return pl011.readDataBlocked();
-	}
-
-	AS_MACRO char      getchar()
-	{
-		return static_cast<char>(pl011.readDataBlocked());
-	}
-
+	uint16_t   read();
+	AS_MACRO char      getchar(){return static_cast<char>(read());}
 
 private:
 };

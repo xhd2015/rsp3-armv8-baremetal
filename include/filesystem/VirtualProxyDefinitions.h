@@ -17,9 +17,9 @@ enum VirtualProxyFunction{
 	VP_CD,  // (insPtr, VP_CD, VectorRefAddr)
 	VP_DELETE, // (insPtr,VP_DELETE)
 };
-// 用于为res新增空间
-using VirtualProxyVectorResizeCapacityOp = bool (*)(Vector<String> &res,size_t newCapacity);
-using VirtualProxyStringResizeOp = bool (*)(String &s,size_t newSize);
+// 这些函数只能接受scalar_type
+using VirtualProxyCdHandler = const char * (*)(void *instPtr,size_t index, size_t &len);
+using VirtualProxyLsHandler = void (*)(void *instPtr,const char *s,size_t len);
 
 
 #endif /* INCLUDE_FILESYSTEM_VIRTUALPROXYDEFINITIONS_H_ */

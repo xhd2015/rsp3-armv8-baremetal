@@ -26,15 +26,15 @@ StringRef::StringRef(const UniversalString &s)
 
 bool      operator==(const StringRef &lhs,const StringRef &rhs)
 {
-	if(lhs.getSize()!=rhs.getSize())
+	if(lhs.size()!=rhs.size())
 		return false;
-	for(size_t i=0; i!=rhs.getSize();++i)
+	for(size_t i=0; i!=rhs.size();++i)
 		if(lhs[i]!=rhs[i])
 			return false;
 	return true;
 }
 Output & operator<<(Output & out,const StringRef ref)
 {
-	out.print(ref.getData(), ref.getSize());
+	out.print(ref.data(), ref.size());
 	return out;
 }

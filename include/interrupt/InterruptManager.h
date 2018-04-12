@@ -57,9 +57,14 @@ public:
 
 	void clearAllPendings();
 	void disableAllInterrupts();
-	volatile uint32_t & enableWord(int intGrp);
-	volatile uint32_t & disableWord(int intGrp);
+	AS_MACRO volatile uint32_t & enableWord(int intGrp){return readWriteWord(GICRedistributor::isenabler0,GICDistributor::isenabler, intGrp);}
+	volatile uint32_t & disableWord(int intGrp){return readWriteWord(GICRedistributor::icenabler0,GICDistributor::icenabler, intGrp);}
+	volatile uint32_t & activeWord(int intGrp){return readWriteWord(GICRedistributor::isactiver0,GICDistributor::isactiver, intGrp);}
+	volatile uint32_t & deactiveWord(int intGrp){return readWriteWord(GICRedistributor::icavtiver0,GICDistributor::icactiver, intGrp);}
+	volatile uint32_t & pendingWord(int intGrp){return readWriteWord(GICRedistributor::ispendr0,GICDistributor::ispender, intGrp);}
+	volatile uint32_t & clearPendingWord(int intGrp){return readWriteWord(GICRedistributor::icpender0,GICDistributor::icpender, intGrp);}
 
+	AS_MACRO void    enableIntID(IntID id,bool enable){ setBit(enableWord(id/32),id%32,enable);}
 
 	using GICCPUInterface::sgiTarget;
 	using GICCPUInterface::sgiSelf;
@@ -67,6 +72,10 @@ public:
 	using GICCPUInterface::sgiAllOtherCPUs;
 	using GICCPUInterface::ack;
 	using GICCPUInterface::eoi;
+
+	using GICDistributor::enableGroup;
+private:
+	volatile uint32_t & readWriteWord(size_t offset0,size_t offsetOther,int grp);
 private:
 };
 

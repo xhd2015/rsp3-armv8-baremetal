@@ -1,3 +1,66 @@
+# 2018年4月12日18:02:58
+【milestone】【commit point】 完成了Input和inputBuffer,使用Queue实现。该版本完成了一些基本的用户态功能，内核态的代码基本编写完成。代码参见[内核初始化 main_demo_complete_input.cpp](../src/arch/qemu_virt/main_demo_complete_input.cpp)和 [用户态例程 user_main_demo_repl.cpp](../src/arch/user_space/user_main_demo_repl.cpp)
+
+运行示例参见![ls, cd和exit命令示例](commits/2018-4-12_17_57_41_when_almost_done_user_space.png)
+
+<iframe width="560" height="315" src="commits/2018-4-12_17_57_41_when_almost_done_user_space.mp4" frameborder="0" allowfullscreen></iframe>
+
+# 2018年4月12日16:21:16
+[系统调用：输入请求]设计
+系统调用形式：用户请求填充至多n个输入字符到data指定的区域，并且当输入中有换行符时是否标记本次输入结束，返回实际填充的字符数。
+注意：字符时16位的，因为需要高8位来确定输入一个字符时是否有控制键的产生。
+额外有两种模式：阻塞式和非阻塞式
+
+阻塞式：   请求直到输入的条件满足。
+阻塞至多n秒： 
+非阻塞式： 请求输入立即返回
+
+# 2018年4月12日15:31:58
+virt.c的 irqmap定义
+```c
+static const int a15irqmap[] = {
+    [VIRT_UART] = 1,
+    [VIRT_RTC] = 2,
+    [VIRT_PCIE] = 3, /* ... to 6 */
+    [VIRT_GPIO] = 7,
+    [VIRT_SECURE_UART] = 8,
+    [VIRT_MMIO] = 16, /* ...to 16 + NUM_VIRTIO_TRANSPORTS - 1 */
+    [VIRT_GIC_V2M] = 48, /* ...to 48 + NUM_GICV2M_SPIS - 1 */
+    [VIRT_PLATFORM_BUS] = 112, /* ...to 112 + PLATFORM_BUS_NUM_IRQS -1 */
+};
+```
+# 2018年4月12日13:48:00
+关于移动构造和析构函数应当完成的功能，实际上是需要完成资源回收和移动的功能，参见下面的代码
+```c++
+template <class T>
+Queue<T>::Queue(Queue &&rhs)
+:_data(rhs._data),
+ _len(rhs._len),
+ _curLen(rhs._curLen),
+ _indexAdd(rhs._indexAdd),
+ _indexRemove(rhs._indexRemove)
+{
+	rhs._data=nullptr;
+}
+template <class T>
+Queue<T>::~Queue()
+{
+	if(_data)
+	{
+		delete [] _data;
+		_data=nullptr;
+	}
+}
+```
+根据上面所说的原则，只需要针对资源进行管理即可， 而这里代表资源状态的只有_data.
+# 2018年4月11日22:54:45
+找到一个bug： virtio的descrNum随着使用的增加，不会减少。
+update: 2018年4月12日12:37:03  经过调试QEMU的源码，发现vq.inuse也会减少。并不是总是保持增加。其中的原因不得而知，但是已经确认这不是一个很严格的bug。只要设置descrNum尽量大即可，它是可重用的。
+# 2018年4月11日22:54:19
+修复了allocate的一个bug： n=0时直接返回nullptr
+# 2018年4月11日16:09:13
+在4月13日13:00之前，不要再修改此项目。此期间休息。
+【todo】 增加用户态的foreach遍历函数。
 # 2018年4月11日16:02:37
 【commit point】 重构了Vector和String，增加UniversalVector和UniversalString两个类，用于支持内核态和用户态之间的内存管理交互。参见[内核态初始化 main_demo_universal_init_kernel_with_VirtualFileSystem.cpp](../src/arch/qemu_virt/main_demo_universal_init_kernel_with_VirtualFileSystem.cpp)和 [用户态例程 user_main_demo_vfs_proxy.cpp](../src/arch/user_space/user_main_demo_vfs_proxy.cpp)
 此外，由于代码体积的膨胀，将UserSpace的代码空间从5*4K调整到7*4K。
@@ -765,6 +828,7 @@ constexpr BitRange ranges[]={
 # 2018年3月24日02:42:58
 【commit point】 完成了基于Xilinx ZCU102的SD卡的读写(SD模式，非SPI模式),参见[main_test_sdcard_block_read_write.cpp](../src/arch/zcu102/main_test_sdcard_block_read_write.cpp)
 
+运行结果
 ![运行结果](commits/2018-3-24_02.42.30_zcu102_sd_succeed.png)
 # 2018年3月23日02:31:36
 【acknowledged】  had so many days worked on making sdio happy.well it works happy now, but behind that happiness hides so much you-will-never-say.  --------------------------------------------------------------------------------------------- may be a conclusion of recent life.

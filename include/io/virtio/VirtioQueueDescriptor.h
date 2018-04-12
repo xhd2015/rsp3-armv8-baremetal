@@ -32,40 +32,19 @@ public:
 		 _next(next)
 	{}
 
-	AS_MACRO uint64_t addr() const {
-		return _addr;
-	}
-
-	AS_MACRO void addr(uint64_t addr) {
-		_addr = addr;
-	}
-
-	AS_MACRO uint16_t flags() const {
-		return _flags;
-	}
-
-	AS_MACRO uint16_t& flags() {
-		return referenceof(this,_flags);
-	}
-
-	AS_MACRO uint32_t len() const {
-		return _len;
-	}
-
-	AS_MACRO void len(uint32_t len) {
-		_len = len;
-	}
-
-	AS_MACRO uint16_t next() const {
-		return _next;
-	}
-
-	AS_MACRO uint16_t & next() {
-		return referenceof(this,_next);
-	}
+	AS_MACRO uint64_t addr() const {		return _addr;	}
+	AS_MACRO void addr(uint64_t addr) {		_addr = addr;}
+	AS_MACRO uint16_t flags() const {		return _flags;}
+	AS_MACRO uint16_t& flags() {		return referenceof(this,_flags);}
+	AS_MACRO uint32_t len() const {		return _len;}
+	AS_MACRO void len(uint32_t len) {_len = len;}
+	AS_MACRO uint16_t next() const {return _next;}
+	AS_MACRO uint16_t & next() {return referenceof(this,_next);}
 	AS_MACRO void markAllocated(){_len=1;}
 	AS_MACRO bool allocated()const{ return _addr!=0 || _len!=0;}
 	AS_MACRO void deallocate(){ _addr=0;_len=0;_flags=0;_next=0;}
+	// 计算占据空间的大小
+	AS_MACRO static size_t variableSpanSize() { return sizeof(VirtioQueueDescriptor);}
 
 private:
 	uint64_t  _addr; // 如果指向一个间接描述符表，则间接描述符表的内容为：

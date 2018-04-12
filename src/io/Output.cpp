@@ -84,8 +84,8 @@ Output & Output::flush()
 
 Output & operator<<(Output &out,const StringRef& ref)
 {
-	size_t len=ref.getSize();
-	const char *p=ref.getData();
+	size_t len=ref.size();
+	const char *p=ref.data();
 	if(len)
 		while(len--)
 			out << *p++;

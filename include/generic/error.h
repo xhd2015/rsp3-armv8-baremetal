@@ -16,13 +16,12 @@
 						       __PRETTY_FUNCTION__, #__e))
 #endif
 
-void reportError(const char *s);
+void __attribute__((noreturn)) reportError(const char *s);
 
 
 void resume();
 
-void report_assert_error(const char *file,size_t line,const char *func,const char *expr);
-
+void __attribute__((noreturn)) report_assert_error(const char *file,size_t line,const char *func,const char *expr);
 
 
 #endif /* INCLUDE_GENERIC_ERROR_H_ */

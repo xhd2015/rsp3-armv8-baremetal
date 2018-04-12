@@ -2,7 +2,8 @@ include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
 include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
 
 IO_IMG := fat32.img
-QEMU_ARGS := -machine virt,gic-version=3 -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial mon:stdio -bios $(MASTERY_BINARY) -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
+QEMU_NO_MACHINE = -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial mon:stdio -bios $(MASTERY_BINARY) -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
+QEMU_ARGS := -machine virt,gic-version=3 $(QEMU_NO_MACHINE)
 
 .PHONY:qemu-run qemu-debug
 # if only using secure=on,then EL=3
@@ -13,8 +14,8 @@ qemu_run:
 	$(QEMU_AARCH64) $(QEMU_ARGS)
 qemu_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
-qemu_virt.dts:
-	$(QEMU_AARCH64) -machine virt,gic-version=3,dumpdtb=qemu_virt.dtb -cpu cortex-a53 -smp 1 -m 1G -nographic -serial mon:stdio  -bios $(MASTERY_BINARY) -d int,mmu -D qemu_log.txt
+qemu_virt.dts:FORCE
+	$(QEMU_AARCH64) -machine virt,gic-version=3,dumpdtb=qeme_virt.dtb $(QEMU_NO_MACHINE)
 	$(DTC) -I dtb -O dts -o $@ qemu_virt.dtb
 
 # 通过dd将用户程序嵌入到内核镜像中

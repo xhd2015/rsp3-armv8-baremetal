@@ -14,7 +14,7 @@ int main()
 	kout.flush();
 
 	Vector<String> path;
-	path.emplaceBack(vec[0].data(),vec[0].size());
+	path.emplaceBack(vec[0]);
 	vp.cd(path);
 
 	kout << "ls " << path[0] << ":\n";
@@ -23,6 +23,20 @@ int main()
 	for(size_t i=0;i!=vec2.size();++i)
 		kout << vec2[i] << "\n";
 	kout << "\n";
+
+	path.clear();
+	path.emplaceBack(vec2[0]);
+	kout << "cd " << path[0] << "\n";
+	bool v=vp.cd(path);
+	kout << "cd succeed? " << v<<"\n";
+	if(v)
+	{
+		kout << "ls " << path[0] << "\n";
+		auto vec3=vp.ls();
+		for(size_t i=0;i!=vec3.size();++i)
+			kout <<"\""<< vec3[i] << "\"\n";
+		kout.flush();
+	}
 
 	kout << "END.\n";
 	kout.flush();

@@ -79,17 +79,24 @@ VirtualFile*     FAT32VirtualFile::removeFile(const VectorRef<String> &path)
 {
 	return nullptr;
 }
-VirtualFile*     FAT32VirtualFile::removeFile(const String &name)
+VirtualFile*     FAT32VirtualFile::removeFile(const StringRef &name)
 {
 	return nullptr;
 }
 VirtualFile*  FAT32VirtualFile::findFile(const VectorRef<String> &path)
 {
-	return nullptr;
+	buildSubEntries();
+	return VirtualFile::findFile(path);
 }
-VirtualFile*   FAT32VirtualFile::findFile(const String &name)
+VirtualFile*  FAT32VirtualFile::findFile(const Vector<StringRef> &path)
 {
-	return nullptr;
+	buildSubEntries();
+	return VirtualFile::findFile(path);
+}
+VirtualFile*   FAT32VirtualFile::findFile(const StringRef &name)
+{
+	buildSubEntries();
+	return VirtualFile::findFile(name);
 }
 void     FAT32VirtualFile::foreachFile(VirtualFileHandler handler)
 {

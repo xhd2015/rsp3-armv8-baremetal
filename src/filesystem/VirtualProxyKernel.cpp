@@ -6,17 +6,26 @@
  */
 #include <filesystem/VirtualProxyKernel.h>
 #include <cstring>
-VirtualProxyKernel::VirtualProxyKernel(MemoryManager &mman)
-	:_mman(mman),
-	 _curFile(nullptr)
+VirtualProxyKernel::VirtualProxyKernel()
+	:_curFile(nullptr)
 {}
 
 VirtualProxyKernel::~VirtualProxyKernel()
 {}
 
-bool     VirtualProxyKernel::cd(const VectorRef<String> &path)
+bool     VirtualProxyKernel::cd(VirtualProxyCdHandler handler,void *instPtr)
 {
-	if(path.getSize()==0)
+	Vector<StringRef> path;
+	size_t i=0;
+	size_t len=0;
+	while(true)
+	{
+		const char * s = handler(instPtr,i, len);
+		if(!s)break;
+		path.emplaceBack(s, len);
+		++i;
+	}
+	if(path.size()==0)
 		return true;
 	if(!_curFile)
 	{
@@ -34,18 +43,18 @@ bool     VirtualProxyKernel::cd(const VectorRef<String> &path)
 	}
 }
 
-size_t VirtualProxyKernel::ls(UniversalVector<UniversalString> &res)
+size_t VirtualProxyKernel::ls(VirtualProxyLsHandler handler,void *instPtr)
 {
 	size_t count=0;
-	auto handler=[&res,&count](VirtualFile *file){
-		res.emplaceBack(res.memMan(), file->name().data(), file->name().size());
+	auto vhandler=[handler,instPtr,&count](VirtualFile *file){
+		handler(instPtr,file->name().data(), file->name().size());
 		++count;
 	};
 	if(!_curFile)
 	{
-		vfs.foreachRootFile(handler);
+		vfs.foreachRootFile(vhandler);
 	}else{
-		_curFile->foreachFile(handler);
+		_curFile->foreachFile(vhandler);
 	}
 	return count;
 }
@@ -59,17 +68,20 @@ uint64_t    VirtualProxyKernel::handleVFSProxySVC(uint64_t * savedRegs)
 	switch(func)
 	{
 	case VP_NEW:
-		return reinterpret_cast<uint64_t>(new VirtualProxyKernel(*reinterpret_cast<MemoryManager*>(args[0])));
+		return reinterpret_cast<uint64_t>(new VirtualProxyKernel());
 		break;
 	case VP_DELETE:
 		delete insPtr;
 		break;
 	case VP_CD:
-		return insPtr->cd(*reinterpret_cast<const VectorRef<String>*>(args[0]));
+		return insPtr->cd(reinterpret_cast<VirtualProxyCdHandler>(args[0]),
+				reinterpret_cast<void*>(args[1]));
 		break;
 	case VP_LS:
 	{
-		return insPtr->ls(*reinterpret_cast<UniversalVector<UniversalString>*>(args[0]));
+		return insPtr->ls(reinterpret_cast<VirtualProxyLsHandler>(args[0]),
+				reinterpret_cast<void*>(args[1])
+		);
 		break;
 	}
 	}

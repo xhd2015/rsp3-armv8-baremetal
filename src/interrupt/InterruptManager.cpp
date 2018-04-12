@@ -57,17 +57,12 @@ void InterruptManager::disableAllInterrupts()
 {
 	GICDistributor::disableAllInterrupts();
 }
-volatile uint32_t & InterruptManager::enableWord(int intGrp)
+
+volatile uint32_t & InterruptManager::readWriteWord(size_t offset0,size_t offsetOther,int grp)
 {
-	if(intGrp==0)
-		return GICRedistributor::reg32(GICRedistributor::isenabler0);
+	if(grp==0)
+		return GICRedistributor::reg32(offset0);
 	else
-		return GICDistributor::reg32(GICDistributor::isenabler + intGrp*4);
+		return GICDistributor::reg32(offsetOther + grp*4);
 }
-volatile uint32_t & InterruptManager::disableWord(int intGrp)
-{
-	if(intGrp==0)
-		return GICRedistributor::reg32(GICRedistributor::icenabler0);
-	else
-		return GICDistributor::reg32(GICDistributor::icenabler + intGrp*4);
-}
+

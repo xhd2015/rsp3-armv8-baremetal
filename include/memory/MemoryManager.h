@@ -90,11 +90,22 @@ private:
 	size_t	_size;
 };
 
-
 // 定义一个全局的内存管理器
 #ifndef _NOT_NEED_MemoryManager
 extern MemoryManager mman;
 #endif
+
+// 与std::nothrow_t 相似，
+struct MemAbort{};
+
+#ifndef _NOT_NEED_MemAbort
+extern MemAbort m_abort;
+#endif
+
+void *operator new(size_t size,MemAbort);
+void *operator new[](size_t size,MemAbort);
+
+
 
 #include <templates_implementation/MemoryManager.h>
 

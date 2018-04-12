@@ -6,33 +6,29 @@
  */
 
 #include <io/uart/PL011.h>
+#include <generic_util.h>
 
 
 void PL011::init()
 {
-	reg<uint16_t,UARTIBRD>()=0x10;
-	reg<uint16_t,UARTCR>() = 0xc301;
+	reg<uint16_t,UARTIBRD>()=0x10;//配置波特率
+//	reg<uint16_t,UARTCR>() = 0xc301;
+	reg<uint16_t,UARTCR>() = bitOnes<0,8,9,15,14>();// 启用0,8,9位，这是关键的
+	// 屏蔽所有的中断
+	reg16<UARTIMSC>() = 0;//lowerMaskBits(11); // 高5位res0
+	readInterruptLevel(L_1of8);
 }
 uint16_t PL011::readDataBlocked()const
 {
-	while(true)
-	{
-		auto status=reg<uint16_t,UARTFR>(); // 必需使用一次性读，否则多次读其结果不统一
-		// while busy or empty
-		if( (status & bitMask<3>())==0 && //non-busy
-			 (status & bitMask<4>())==0  //receive non-empty
-				)
-			return reg<uint16_t,UARTDR>();
-	}
+	while(bitsAnySet<3,4>(reg16<UARTFR>())) //still busy or still recive empty
+		;
+	return reg16<UARTDR>();
 }
 uint16_t PL011::readDataNonBlocked()const
 {
-	auto status = reg<uint16_t,UARTFR>();
-	if( (status & bitMask<3>())==0 && //non-busy
-		 (status & bitMask<4>())==0  //receive non-empty
-			)
-		return reg<uint16_t,UARTDR>();
-	return 0xffff;
+	if(bitsAnySet<3,4>(reg16<UARTFR>()))
+		return 0xffff;
+	return reg16<UARTDR>();
 }
 
 

@@ -67,7 +67,7 @@ public:
 	AS_MACRO uint16_t availEvent(){return *reinterpret_cast<uint16_t*>(_base + 4 + _queueSize * sizeof(UsedElement));	}
 	AS_MACRO void availEvent(uint16_t availEvent) {*reinterpret_cast<uint16_t*>(_base + 4 + _queueSize * sizeof(UsedElement)) = availEvent;	}
 
-
+	AS_MACRO static size_t  maximumElementNum(size_t pageSize) { return (pageSize - 6)/sizeof(UsedElement);}
 private:
 	size_t _queueSize;
 	char * _base;

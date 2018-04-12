@@ -119,3 +119,11 @@ bool VirtioBlockDriver::setupDescriptors()
 
 	return true;
 }
+size_t  VirtioBlockDriver::maximumDescriptorNum(size_t pageSize)
+{
+	size_t elemSize = VirtioQueueDescriptor::variableSpanSize() + VirtioQueueAvailableRef::variableSpanSize();
+	size_t contantSize = VirtioQueueAvailableRef::constantSpanSize();
+	size_t page1Num = (pageSize-contantSize) / elemSize;
+	size_t page2Num = VirtioQueueUsedRef::maximumElementNum(pageSize);
+	return (page1Num > page2Num)? page2Num:page1Num; // 两个最大值中的最小者
+}

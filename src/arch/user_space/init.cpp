@@ -17,12 +17,12 @@ extern int main();
 
 // user_space所提供的全局变量
 // 在代码中重新初始化
-MemoryManager mman(0,0);
-const char EMPTY_STR[1]={0};
-
-// prink相关的
-char koutBuf[koutBufSize];
-Output kout;
+//MemoryManager mman(0,0);
+//const char EMPTY_STR[1]={0};
+//
+//// prink相关的
+//char koutBuf[koutBufSize];
+//Output kout;
 
 extern char freeRamStart[];
 extern char freeRamEnd[];

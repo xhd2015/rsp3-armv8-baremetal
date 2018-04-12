@@ -13,7 +13,9 @@
 #include <filesystem/VirtualProxyKernel.h>
 #include <io/Output.h>
 #include <generic/error.h>
-
+#include <io/uart/PL011.h>
+#include <data_structures/Queue.h>
+#include <interrupt/InterruptManager.h>
 
 InterruptHandler::InterruptHandler()
 	:_allowSyncExcep(true),
@@ -75,6 +77,40 @@ void InterruptHandler::handleSVC(SvcFunc func)
 		savedRegisters[0] = printkChars; // savedResult
 		break;
 	}
+	case SvcFunc::gets:
+	{
+		// 禁用输入中断
+		auto buf = reinterpret_cast<uint16_t*>(savedRegisters[0]);
+		size_t maxNum = savedRegisters[1];
+		bool returnOnNewLine = getBit(savedRegisters[2],0);
+		bool blocked = getBit(savedRegisters[2],1);
+		intm.enableIntID(INT_INPUT,false);
+		size_t i=0;
+		while(i<maxNum)
+		{
+			// 还没有读取到maxNum个数据
+
+			if(inputBuffer.empty()) // 如果没有数据，启用输入中断，并等待
+			{
+				if(blocked)
+				{
+					intm.enableIntID(INT_INPUT,true);
+					intm.cpuIntEnable<InterruptManager::IRQ>(true);
+					while(inputBuffer.empty());// 原子读，不存在同步问题
+					intm.cpuIntEnable<InterruptManager::IRQ>(false);
+					intm.enableIntID(INT_INPUT,false);
+				}else{
+					break; // 退出
+				}
+			}
+			buf[i++]=inputBuffer.remove();
+			if(returnOnNewLine && (buf[i-1]=='\n' || buf[i-1]=='\a')) // 遇到换行，并且表明换行退出
+				break;
+		}
+		savedRegisters[0]=i;// 返回
+		intm.enableIntID(INT_INPUT,true);
+		break;
+	}
 	case SvcFunc::killProcess:
 	{
 		kout << "killing Process \n";
@@ -129,7 +165,7 @@ void InterruptHandler::handleSVC(SvcFunc func)
 
 void InterruptHandler::handleIRQ(IntID id)
 {
-	kout << "int id = " << id << "\n";
+//	kout << "int id = " << id << "\n";
 	auto eoi=RegICC_EOIR_EL1<1>::make(0);
 	eoi.INTID = id;
 	// write here to make sure that the event come in order
@@ -148,6 +184,18 @@ void InterruptHandler::handleIRQ(IntID id)
 		eoi.write();
 		// this no return
 	    processManager.scheduleNextProcess(currentState()._generalRegisters);
+	}else if(id== INT_INPUT){
+		uint16_t ch;
+//		kout << "queue old size = " << inputBuffer.size() << "\n";
+		while( (ch=pl011.readDataNonBlocked())!=0xFFFF)
+		{
+			if(inputBuffer.full())
+				kout << WARNING << "input buffer is full,extra inputs are discarded.\n";
+			else
+				inputBuffer.put(ch);
+		}
+//		kout << "queue new size = " << inputBuffer.size() << "\n";
+		eoi.write();
 	}else{ // others
 		eoi.write();
 	}

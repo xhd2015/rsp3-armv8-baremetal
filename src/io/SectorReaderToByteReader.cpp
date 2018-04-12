@@ -34,7 +34,7 @@ String SectorReaderToByteReader::read(size_t byteStart,size_t maxCount)
 
 size_t	    SectorReaderToByteReader:: write(size_t byteStart,const StringRef &dataRef)
 {
-	return write(byteStart,dataRef.getData(),dataRef.getSize());
+	return write(byteStart,dataRef.data(),dataRef.size());
 }
 size_t       SectorReaderToByteReader::read(size_t byteStart,void *buffer,size_t maxCount)
 {

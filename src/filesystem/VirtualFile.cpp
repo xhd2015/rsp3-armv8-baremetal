@@ -59,23 +59,23 @@ bool          VirtualFile::addFile(VirtualFile *file)
 }
 VirtualFile*          VirtualFile::removeFile(const VectorRef<String> &path)
 {
-	if(path.getSize()==0)
+	if(path.size()==0)
 		return nullptr;
-	else if(path.getSize()==1)
+	else if(path.size()==1)
 		return removeFile(path[0]);
 	else{
-		VectorRef<String> refReduced(path.getData(), path.getSize()-1);
+		VectorRef<String> refReduced(path.data(), path.size()-1);
 		auto p = findFile(refReduced);
 		if(p)
-			return p->removeFile(path[path.getSize()-1]);
+			return p->removeFile(path[path.size()-1]);
 		else
 			return nullptr;
 	}
 }
-VirtualFile*          VirtualFile::removeFile(const String &name)
+VirtualFile*          VirtualFile::removeFile(const StringRef &name)
 {
 	auto p=this->_subFile;
-	if(p->_name==name)
+	if(StringRef(p->_name)==name)
 	{
 		p->_parent=nullptr;
 		this->_subFile = p->_nextFile;
@@ -88,7 +88,7 @@ VirtualFile*          VirtualFile::removeFile(const String &name)
 		p=p->_nextFile;
 		while(p)
 		{
-			if(p->_name == name)
+			if(StringRef(p->_name) == name)
 			{
 				prev->_nextFile=p->_nextFile;
 				p->_nextFile=nullptr;
@@ -104,7 +104,19 @@ VirtualFile*          VirtualFile::removeFile(const String &name)
 VirtualFile*  VirtualFile::findFile(const VectorRef<String> &path)
 {
 	auto p=this;
-	for(size_t i=0;i!=path.getSize();++i)
+	for(size_t i=0;i!=path.size();++i)
+	{
+		p=p->findFile(path[i]);
+		if(!p)
+			return nullptr;
+	}
+	return p;
+}
+
+VirtualFile*  VirtualFile::findFile(const Vector<StringRef> &path)
+{
+	auto p=this;
+	for(size_t i=0;i!=path.size();++i)
 	{
 		p=p->findFile(path[i]);
 		if(!p)
@@ -122,12 +134,12 @@ void          VirtualFile::foreachFile(VirtualFileHandler handler)
 		p=p->_nextFile;
 	}
 }
-VirtualFile*  VirtualFile::findFile(const String &name)
+VirtualFile*  VirtualFile::findFile(const StringRef &name)
 {
 	auto p=this->_subFile;
 	while(p)
 	{
-		if(p->_name == name)
+		if(StringRef(p->_name) == name)
 			return p;
 		p=p->_nextFile;
 	}

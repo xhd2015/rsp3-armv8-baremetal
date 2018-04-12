@@ -44,6 +44,7 @@ void* MemoryManager::allocate(size_t n)
 }
 void  *MemoryManager::allocate(size_t n,size_t alignment)
 {
+	if(!n)return nullptr;
 	size_t moveOffset=SIZE_MAX;
 	auto foundChunk = _headChunk->findAllocable(n, alignment, moveOffset);
 	if(!foundChunk)

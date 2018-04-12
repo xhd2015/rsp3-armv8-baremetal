@@ -9,11 +9,9 @@
 #define INCLUDE_DATA_STRUCTURES_VECTORREF_H_
 
 #include <def.h>
-//#include <data_structures/Vector.h>
 #include <io/Output.h>
-
-template <class T>
-class Vector;
+#include <data_structures/vector_forward_decl.h>
+#include <generic/error.h>
 
 /**
  * 对Vector的引用，可以从任意位置开始，包含任意允许的数量。
@@ -23,18 +21,18 @@ template <class T>
 class VectorRef{
 public:
 	VectorRef()=delete;
-	VectorRef(const T *data,size_t len);
+	VectorRef(const T *_data,size_t len);
 	VectorRef(const Vector<T>& vec,size_t len=SIZE_MAX,size_t offset=0);
-	const T * getData()const;
-	size_t    getSize()const;
-	void	  setData(const T * data);
-	void	  setSize(size_t size);
-	const T&  operator[](size_t i)const;
+	AS_MACRO const T * data()const { return _data;}
+	AS_MACRO size_t    size()const { return _size;}
+	AS_MACRO void	  data(const T * data) { _data=data;}
+	AS_MACRO void	  size(size_t size) { _size = size;}
+	AS_MACRO const T&  operator[](size_t i)const { assert(i<_size);return _data[i];}
 
 
 private:
-	const T *data;
-	size_t size;
+	const T *_data;
+	size_t _size;
 };
 
 template <class T>

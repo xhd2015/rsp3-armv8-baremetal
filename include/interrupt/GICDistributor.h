@@ -41,20 +41,6 @@ public:
 		: MemBasedRegReader(std::forward<Args>(args)...)
 	{}
 	int init(uint8_t initPriorty);
-
-	// indivadual settings
-	template <IntID id0,IntID...Args>
-	AS_MACRO void enableIntID(){enableIntID<id0>();enableIntID<Args...>();}
-	AS_MACRO void enableIntID(){}
-	template <IntID id0>
-	AS_MACRO void enableIntID(){reg32<isenabler + (id0/32)*4>() = bitOnes<id0%32>();}
-
-	template <IntID id0,IntID...Args>
-	AS_MACRO void disableIntID(){disableIntID<id0>();disableIntID<Args...>();}
-	AS_MACRO void disableIntID(){}
-	template <IntID id0>
-	AS_MACRO void disableIntID(){reg32<icenabler + (id0/32)*4>() = bitOnes<id0%32>();}
-
 	void intPriority(IntID id,uint8_t prty);
 
 	template <int grp>

@@ -399,7 +399,7 @@ template <class T>
 Output & operator<<(Output &out,const _ARG_NAME<T> & vec)
 {
 	for(size_t i=0;i!=vec.size();++i)
-		out << vec[i];
+		out << vec[i] << ' ';
 	return out;
 }
 

@@ -22,6 +22,9 @@
 #define _NOT_NEED_SystemFeatures
 #define _NOT_NEED_XilinxUARTPS
 #define _NOT_NEED_VirtualFileSystem
+#define _NOT_NEED_VirtualManager
+#define _NOT_NEED_InterruptHandler
+#define _NOT_NEED_GenericTimer
 #endif
 
 

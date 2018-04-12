@@ -59,10 +59,10 @@ bool FATLongNameEntry::nameEqulasAsciiName(const StringRef &asciiNullTermStr,boo
 		return unicodeNameMatchesAsciiName(name1, sizeof(name1), asciiNullTermStr, allowAsciiStrMore);
 		break;
 	case 2:
-		return unicodeNameMatchesAsciiName(name1, sizeof(name1), asciiNullTermStr, true) && unicodeNameMatchesAsciiName(name2, sizeof(name2), strOffset(asciiNullTermStr.getData(),sizeof(name1)/2), allowAsciiStrMore);
+		return unicodeNameMatchesAsciiName(name1, sizeof(name1), asciiNullTermStr, true) && unicodeNameMatchesAsciiName(name2, sizeof(name2), strOffset(asciiNullTermStr.data(),sizeof(name1)/2), allowAsciiStrMore);
 		break;
 	case 3:
-		return unicodeNameMatchesAsciiName(name1, sizeof(name1), asciiNullTermStr, true) && unicodeNameMatchesAsciiName(name2, sizeof(name2), strOffset(asciiNullTermStr.getData(),sizeof(name1)/2), true) && unicodeNameMatchesAsciiName(name3, sizeof(name3), strOffset(asciiNullTermStr.getData(), (sizeof(name1) + sizeof(name2))/2), allowAsciiStrMore);
+		return unicodeNameMatchesAsciiName(name1, sizeof(name1), asciiNullTermStr, true) && unicodeNameMatchesAsciiName(name2, sizeof(name2), strOffset(asciiNullTermStr.data(),sizeof(name1)/2), true) && unicodeNameMatchesAsciiName(name3, sizeof(name3), strOffset(asciiNullTermStr.data(), (sizeof(name1) + sizeof(name2))/2), allowAsciiStrMore);
 		break;
 	}
 	return false;
@@ -77,13 +77,13 @@ bool FATLongNameEntry::nameEqulasAsciiNameUpto(const FATLongNameEntry *lastCmpEn
 			return false;
 		--p;
 		size_t advanceLen =  getNameBytesCount()/2;
-		if(pasciiStr.getSize() > advanceLen)
+		if(pasciiStr.size() > advanceLen)
 		{
-			pasciiStr.setData(pasciiStr.getData() + advanceLen);
-			pasciiStr.setSize(pasciiStr.getSize() - advanceLen);
+			pasciiStr.data(pasciiStr.data() + advanceLen);
+			pasciiStr.size(pasciiStr.size() - advanceLen);
 		}else{
-			pasciiStr.setData(EMPTY_STR);
-			pasciiStr.setSize(0);
+			pasciiStr.data(EMPTY_STR);
+			pasciiStr.size(0);
 		}
 	}
 	return p->nameEqulasAsciiName(pasciiStr, allowAsciiStrMore);

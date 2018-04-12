@@ -101,6 +101,11 @@ int main()
 //	kout << us.size() << "\n";
 //	kout << us << "\n";
 
+	// 请在这里插入测试
+	// ====== TEST START
+
+	//==== TEST END
+
 
 	// 启用MMU
 	Vector<AddressSpaceDescriptor> config;
@@ -205,9 +210,9 @@ void main_mmu_set()
 	assert(queueBuffer);
 
 	// 对齐处的地址
-	VirtioBlockDriver vio(VIRTIO_0_BASE|virtman.ttbr1Mask());
-	size_t descrNum=10;
-	vio.init(
+	auto  vio = new (m_abort) VirtioBlockDriver(VIRTIO_0_BASE|virtman.ttbr1Mask());
+	size_t descrNum= VirtioBlockDriver::maximumDescriptorNum(VirtioBlockDriver::PAGE_SIZE_4KB);
+	vio->init(
 			queueBuffer, // 队列的页地址
 			descrNum, // 队列的大小，legacy需要3个，[0]=8byte,3fields, [1]=data,[2]=1byte status
 			VirtioBlockDriver::PAGE_SIZE_4KB,
@@ -215,15 +220,15 @@ void main_mmu_set()
 			true  // 是否初始化区域的值为0
 			);
 
-	VirtioSectorReader  vioSecReader(vio);
-	SectorReaderToByteReader byteReader(vioSecReader);
+	auto * vioSecReader = new (m_abort) VirtioSectorReader(*vio);
+	auto * byteReader = new (m_abort) SectorReaderToByteReader(*vioSecReader);
 
-	FAT32VirtualFile::readBPB(byteReader, bpb);
-	FAT32VirtualFile::readFAT(byteReader, bpb, fat);
-	auto fatNode = FAT32VirtualFile::makeRootFile(byteReader, bpb, fat);
+	FAT32VirtualFile::readBPB(*byteReader, bpb);
+	FAT32VirtualFile::readFAT(*byteReader, bpb, fat);
+	auto fatNode = FAT32VirtualFile::makeRootFile(*byteReader, bpb, fat);
 	vfs.addRootFile(fatNode);
 
-//	// 设置定时中断，但是暂不启用中断
+//	// 设置定时中断，并启用。 将会在第一个进程执行后开始进程调度
 	ktimer.timerPeriod(1000);//1000ms
 	ktimer.nextPeriod(); // 进入下一个中断周期
 	ktimer.enableTimerWork(true);

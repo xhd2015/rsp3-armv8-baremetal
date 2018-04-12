@@ -23,11 +23,11 @@
 class VirtualProxyKernel{
 public:
 	using VirtualProxyFunction=::VirtualProxyFunction;
-	VirtualProxyKernel(MemoryManager &mman);
+	VirtualProxyKernel();
 	DELETE_COPY(VirtualProxyKernel);
 	~VirtualProxyKernel();
-	bool             cd(const VectorRef<String> &path);
-	size_t           ls(UniversalVector<UniversalString> &res);
+	bool             cd(VirtualProxyCdHandler handler,void *instPtr);
+	size_t           ls(VirtualProxyLsHandler handler,void *instPtr);
 
 	/**
 	 * savedRegs[0] 作为insPtr
@@ -37,7 +37,6 @@ public:
 	 */
 	static uint64_t    handleVFSProxySVC(uint64_t * savedRegs);
 private:
-	MemoryManager &_mman;
 	VirtualFile   *_curFile;// 当其为nullptr时认为与root等价
 };
 

@@ -13,43 +13,11 @@
 
 template <class T>
 VectorRef<T>::VectorRef(const T *data,size_t len)
-	:data(data),size(len){}
+	:_data(data),_size(len){}
 
 template <class T>
 VectorRef<T>::VectorRef(const Vector<T>& vec,size_t len,size_t offset)
-	:data(vec.data() + offset),size(len==SIZE_MAX?vec.size():len) {}
-
-template <class T>
-const T * VectorRef<T>::getData()const
-{
-	return data;
-}
-
-template <class T>
-size_t    VectorRef<T>::getSize()const
-{
-	return size;
-}
-
-
-template <class T>
-void	 VectorRef<T>::setData(const T * data)
-{
-	this->data = data;
-}
-template <class T>
-void	 VectorRef<T>::setSize(size_t size)
-{
-	this->size = size;
-}
-
-template <class T>
-const T&  VectorRef<T>::operator[](size_t i)const
-{
-	return data[i];
-}
-
-
+	:_data(vec.data() + offset),_size(len==SIZE_MAX?vec.size():len) {}
 
 template <class T>
 Output & operator<<(Output & out,const VectorRef<T> &ref)

@@ -34,9 +34,10 @@ public:
 	virtual bool          addFile(const VectorRef<String>& path,VirtualFile *file) override;
 	virtual bool          addFile(VirtualFile *file) override;
 	virtual VirtualFile*     removeFile(const VectorRef<String> &path) override;
-	virtual VirtualFile*     removeFile(const String &name) override;
+	virtual VirtualFile*     removeFile(const StringRef &name) override;
 	virtual VirtualFile*  findFile(const VectorRef<String> &path) override;
-	virtual VirtualFile*   findFile(const String &name) override;
+	virtual VirtualFile*  findFile(const Vector<StringRef> &path) override;
+	virtual VirtualFile*   findFile(const StringRef &name) override;
 	virtual void     foreachFile(VirtualFileHandler handler) override;
 	virtual String         read(size_t offset,size_t maxBytes) override;
 	virtual size_t         write(const StringRef & ref,size_t offset) override;

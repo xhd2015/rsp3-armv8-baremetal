@@ -41,7 +41,7 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 	{
 		if(cur) // 没有下一个就绪的，且有当前进程，则继续运行
 		{
-			kout << "schedule with current continuing\n";
+//			kout << "schedule with current continuing\n";
 //			cur->data<true>().restoreContextAndExecute();
 			return;// 直接从中断现场返回
 		}else{ // 当前没有正在运行的进程，于是只能运行 idle进程(所谓idle进程并不是一个真正的进程，而是表示系统所处的状态：当前没有正在运行的进程， 只能等待某个进程被唤醒。)
