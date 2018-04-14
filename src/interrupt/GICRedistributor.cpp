@@ -23,7 +23,7 @@ int GICRedistributor::init(uint8_t initPrty)
 	prty0.p2=initPrty;
 	prty0.p3=initPrty;
 	for(size_t i=0;i!=8;++i)
-		prty0.write(regPtr(ipriortiy + 4*i));
+		prty0.write(regPtr(ipriortiy0 + 4*i));
 
 	return 0;
 }

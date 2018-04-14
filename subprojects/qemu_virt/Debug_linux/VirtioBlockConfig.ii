@@ -1,0 +1,315 @@
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/VirtioBlockConfig.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "./cxx_macros.h" 1
+# 32 "<command-line>" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/VirtioBlockConfig.cpp"
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/VirtioBlockConfig.cpp"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockConfig.h" 1
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockConfig.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 1
+
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 1 3
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+       
+# 43 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 1 3
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+# 251 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+# 533 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/os_defines.h" 1 3
+# 534 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/cpu_defines.h" 1 3
+# 537 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+# 50 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 149 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
+# 216 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 426 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+
+  typedef decltype(nullptr) nullptr_t;
+# 51 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 1 3
+# 32 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+       
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 41 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 1 3 4
+# 11 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 1 3 4
+# 34 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 3 4
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef int int_fast16_t;
+typedef int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+# 12 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 2 3 4
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+extern const char EMPTY_STR[1];
+
+
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockConfig.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 14 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 2
+# 28 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 2
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/runtime_def.h" 1
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/virtio/VirtioBlockConfig.h" 2
+
+
+
+
+class VirtioBlockConfig{
+public:
+
+ uint64_t capacity;
+ uint32_t size_max;
+ uint32_t seg_max;
+ struct VirtioBlockGeometry {
+  uint16_t cylinders;
+  uint8_t heads;
+  uint8_t sectors;
+ } geometry;
+ uint32_t blk_size;
+ struct VirtioBlockTopology {
+
+  uint8_t physical_block_exp;
+
+  uint8_t alignment_offset;
+
+  uint16_t min_io_size;
+
+  uint32_t opt_io_size;
+ } topology;
+ uint8_t writeback;
+
+ void dump()const;
+}__attribute__((packed));
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/io/virtio/VirtioBlockConfig.cpp" 2
+
+
+void VirtioBlockConfig::dump()const
+{
+ kout << "VirtioBlockConfig: ";
+ kout
+  << " capacity = " << capacity << ","
+  << " size_max = " << size_max << ","
+  << " seg_max = " << seg_max << ","
+   << " cylinders = " << geometry.cylinders << ","
+   << " heads = " << geometry.heads << ","
+   << " sectors = " << geometry.sectors << ","
+  << " blk_size = " << blk_size << ","
+   << " physical_block_exp = " << topology.physical_block_exp << ","
+   << " alignment_offset = " << topology.alignment_offset << ","
+   << " min_io_size = " << topology.min_io_size << ","
+   << " opt_io_size = " << topology.opt_io_size << ","
+  << " writeback = " << writeback << ","
+  << "\n";
+}

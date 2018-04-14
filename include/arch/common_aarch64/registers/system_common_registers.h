@@ -4375,4 +4375,331 @@ public:
     }
 }__attribute__((packed));
 
+
+class RegHCR_EL2 
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t  VM:1;
+            uint64_t  SWIO:1;
+            uint64_t  PTW:1;
+            uint64_t  FMO:1;
+            uint64_t  IMO:1;
+            uint64_t  AMO:1;
+            uint64_t  VF:1;
+            uint64_t  VI:1;
+            uint64_t  VSE:1;
+            uint64_t  FB:1;
+            uint64_t  BSU:2;
+            uint64_t  DC:1;
+            uint64_t  TWI:1;
+            uint64_t  TWE:1;
+            uint64_t  TID0:1;
+            uint64_t  TID1:1;
+            uint64_t  TID2:1;
+            uint64_t  TID3:1;
+            uint64_t  TSC:1;
+            uint64_t  TIDCP:1;
+            uint64_t  TACR:1;
+            uint64_t  TSW:1;
+            uint64_t  TPCP:1;
+            uint64_t  TPU:1;
+            uint64_t  TTLB:1;
+            uint64_t  TVM:1;
+            uint64_t  TGE:1;
+            uint64_t  TDZ:1;
+            uint64_t  HCD:1;
+            uint64_t  TRVM:1;
+            uint64_t  RW:1;
+            uint64_t  CD:1;
+            uint64_t  ID:1;
+            uint64_t  E2H:1;
+            uint64_t  TLOR:1;
+            uint64_t  TERR:1;
+            uint64_t  TEA:1;
+            uint64_t  MIOCNCE:1;
+            uint64_t  RES0_0:25;
+    AS_MACRO uint64_t  get()const 
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegHCR_EL2& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegHCR_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegHCR_EL2 & setMandatoryFields()
+    {
+        VM = 0;
+        SWIO = 0;
+        PTW = 0;
+        FMO = 0;
+        IMO = 0;
+        AMO = 0;
+        VF = 0;
+        VI = 0;
+        VSE = 0;
+        FB = 0;
+        BSU = 0;
+        DC = 0;
+        TWI = 0;
+        TWE = 0;
+        TID0 = 0;
+        TID1 = 0;
+        TID2 = 0;
+        TID3 = 0;
+        TSC = 0;
+        TIDCP = 0;
+        TACR = 0;
+        TSW = 0;
+        TPCP = 0;
+        TPU = 0;
+        TTLB = 0;
+        TVM = 0;
+        TGE = 0;
+        TDZ = 0;
+        HCD = 0;
+        TRVM = 0;
+        RW = 0;
+        CD = 0;
+        ID = 0;
+        E2H = 0;
+        TLOR = 0;
+        TERR = 0;
+        TEA = 0;
+        MIOCNCE = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegHCR_EL2 copy()const volatile
+    {
+    	RegHCR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegHCR_EL2 copy()const
+    {
+    	RegHCR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegHCR_EL2: ";
+            kout
+                << "VM = " << VM << ", "
+                << "SWIO = " << SWIO << ", "
+                << "PTW = " << PTW << ", "
+                << "FMO = " << FMO << ", "
+                << "IMO = " << IMO << ", "
+                << "AMO = " << AMO << ", "
+                << "VF = " << VF << ", "
+                << "VI = " << VI << ", "
+                << "VSE = " << VSE << ", "
+                << "FB = " << FB << ", "
+                << "BSU = " << BSU << ", "
+                << "DC = " << DC << ", "
+                << "TWI = " << TWI << ", "
+                << "TWE = " << TWE << ", "
+                << "TID0 = " << TID0 << ", "
+                << "TID1 = " << TID1 << ", "
+                << "TID2 = " << TID2 << ", "
+                << "TID3 = " << TID3 << ", "
+                << "TSC = " << TSC << ", "
+                << "TIDCP = " << TIDCP << ", "
+                << "TACR = " << TACR << ", "
+                << "TSW = " << TSW << ", "
+                << "TPCP = " << TPCP << ", "
+                << "TPU = " << TPU << ", "
+                << "TTLB = " << TTLB << ", "
+                << "TVM = " << TVM << ", "
+                << "TGE = " << TGE << ", "
+                << "TDZ = " << TDZ << ", "
+                << "HCD = " << HCD << ", "
+                << "TRVM = " << TRVM << ", "
+                << "RW = " << RW << ", "
+                << "CD = " << CD << ", "
+                << "ID = " << ID << ", "
+                << "E2H = " << E2H << ", "
+                << "TLOR = " << TLOR << ", "
+                << "TERR = " << TERR << ", "
+                << "TEA = " << TEA << ", "
+                << "MIOCNCE = " << MIOCNCE << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegHCR_EL2*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegHCR_EL2 make(uint64_t val)
+    {
+        RegHCR_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegHCR_EL2 read()
+    { 
+        RegHCR_EL2 res;
+        __asm__ __volatile__("mrs %0,HCR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegHCR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,HCR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr HCR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSCR_EL3 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  NS:1;
+            uint32_t  FIQ:1;
+            uint32_t  IRQ:1;
+            uint32_t  EA:1;
+            uint32_t  RES1_0:2;
+            uint32_t  RES0_1:1;
+            uint32_t  SMD:1;
+            uint32_t  HCE:1;
+            uint32_t  SIF:1;
+            uint32_t  RW:1;
+            uint32_t  ST:1;
+            uint32_t  TWI:1;
+            uint32_t  TWE:1;
+            uint32_t  TLOR:1;
+            uint32_t  TERR:1;
+            uint32_t  RES0_2:16;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegSCR_EL3& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegSCR_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegSCR_EL3 & setMandatoryFields()
+    {
+        NS = 0;
+        FIQ = 0;
+        IRQ = 0;
+        EA = 0;
+        RES1_0 = 1;
+        RES0_1 = 0;
+        SMD = 0;
+        HCE = 0;
+        SIF = 0;
+        RW = 0;
+        ST = 0;
+        TWI = 0;
+        TWE = 0;
+        TLOR = 0;
+        TERR = 0;
+        RES0_2 = 0;
+        return *this;
+        }
+    AS_MACRO RegSCR_EL3 copy()const volatile
+    {
+    	RegSCR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegSCR_EL3 copy()const
+    {
+    	RegSCR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegSCR_EL3: ";
+            kout
+                << "NS = " << NS << ", "
+                << "FIQ = " << FIQ << ", "
+                << "IRQ = " << IRQ << ", "
+                << "EA = " << EA << ", "
+                << "RES1_0 = " << RES1_0 << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "SMD = " << SMD << ", "
+                << "HCE = " << HCE << ", "
+                << "SIF = " << SIF << ", "
+                << "RW = " << RW << ", "
+                << "ST = " << ST << ", "
+                << "TWI = " << TWI << ", "
+                << "TWE = " << TWE << ", "
+                << "TLOR = " << TLOR << ", "
+                << "TERR = " << TERR << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegSCR_EL3*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegSCR_EL3 make(uint32_t val)
+    {
+        RegSCR_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegSCR_EL3 read()
+    { 
+        RegSCR_EL3 res;
+        __asm__ __volatile__("mrs %0,SCR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegSCR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,SCR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr SCR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
 #endif //__INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_SYSTEM_COMMON_REGISTERS_H__

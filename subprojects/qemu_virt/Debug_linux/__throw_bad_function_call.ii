@@ -1,0 +1,16 @@
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/__throw_bad_function_call.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "./cxx_macros.h" 1
+# 32 "<command-line>" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/__throw_bad_function_call.cpp"
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/minimal_cpprt/__throw_bad_function_call.cpp"
+namespace std{
+
+ void __throw_bad_function_call()
+ {
+
+ }
+
+}

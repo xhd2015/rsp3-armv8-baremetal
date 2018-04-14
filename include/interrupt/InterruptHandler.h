@@ -39,6 +39,7 @@ public:
 	void handleSVC(SvcFunc func);
 	void handleIRQ(IntID id);
 	void handleFIQ(IntID id);
+	void handleInputEvent();
 	void handleSError();
 	void unhandledException();
 

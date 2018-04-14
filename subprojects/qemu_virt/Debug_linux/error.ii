@@ -1,0 +1,5787 @@
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "./cxx_macros.h" 1
+# 32 "<command-line>" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp"
+
+
+
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/error.h" 1
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/error.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 1
+
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 1 3
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+       
+# 43 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 1 3
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+# 251 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+# 533 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/os_defines.h" 1 3
+# 534 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/cpu_defines.h" 1 3
+# 537 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+# 50 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 149 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
+# 216 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 426 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+
+  typedef decltype(nullptr) nullptr_t;
+# 51 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 1 3
+# 32 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+       
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 41 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 1 3 4
+# 11 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 1 3 4
+# 34 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 3 4
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef int int_fast16_t;
+typedef int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+# 12 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 2 3 4
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+extern const char EMPTY_STR[1];
+
+
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/error.h" 2
+# 19 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic/error.h"
+void __attribute__((noreturn)) reportError(const char *s);
+
+
+void resume();
+
+void __attribute__((noreturn)) report_assert_error(const char *file,size_t line,const char *func,const char *expr);
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 14 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 2
+# 28 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 2
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/runtime_def.h" 1
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/asm_instructions.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/asm_instructions.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers/system_common_registers.h" 1
+
+
+
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 1
+# 15 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h"
+template <int Base>
+class IntegerFormatter{
+public:
+ IntegerFormatter(size_t num);
+ IntegerFormatter(const void *p);
+ char *format()const;
+private:
+ size_t num;
+};
+
+
+using Hex=IntegerFormatter<16>;
+using Dec=IntegerFormatter<10>;
+using Bin=IntegerFormatter<2>;
+
+template <int Base>
+Output & operator<<(Output & out,const IntegerFormatter<Base> &hf);
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h" 1
+# 17 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h"
+extern const char digitsMap[];
+
+
+
+size_t itob(size_t i,char *dst,size_t size);
+size_t itod(size_t i,char *dst,size_t size);
+size_t itox(size_t i,char *dst,size_t size);
+
+size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+
+
+uint64_t alignAhead(uint64_t d,uint64_t alignment);
+uint64_t alignBackward(uint64_t d,uint64_t alignment);
+
+
+
+
+
+void reverse(char *str,size_t size);
+
+
+
+const char *strOffset(const char *p,size_t offset);
+
+namespace{
+
+ template <size_t bit,size_t ... bits>
+ struct BitMaskStruct{
+  static constexpr size_t value= BitMaskStruct<bit>::value|BitMaskStruct<bits...>::value;
+ };
+ template <size_t bit>
+ struct BitMaskStruct<bit>{
+  static constexpr size_t value=(1u<<bit);
+ };
+
+}
+
+
+
+
+template <uint8_t...bit>
+__attribute__((always_inline)) inline size_t bitMask()
+{
+ return BitMaskStruct<bit...>::value;
+}
+
+
+template <size_t ... bit>
+__attribute__((always_inline)) inline constexpr size_t bitOnes()
+{
+ return BitMaskStruct<bit...>::value;
+}
+
+template <size_t ...bit>
+__attribute__((always_inline)) inline constexpr size_t bitZeros()
+{
+ return ~(BitMaskStruct<bit...>::value);
+}
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsSet(T t)
+{
+ return t | bitOnes<bit...>();
+}
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsClear(T t)
+{
+ return (t & bitZeros<bit...>());
+}
+
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsKept(T t)
+{
+ return (t & bitOnes<bit...>());
+}
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline bool bitsAnySet(T t)
+{
+ return bitsKept<bit...>(t);
+}
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline bool bitsNonSet(T t)
+{
+ return !bitsAnySet<bit...>(t);
+}
+
+
+
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+__attribute__((always_inline)) inline size_t bitsMix0()
+{
+ return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(0)));
+}
+
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+__attribute__((always_inline)) inline size_t bitsMix1()
+{
+ return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(0xffffffffffffffffUL)));
+}
+
+__attribute__((always_inline)) inline uint64_t bitMask(uint8_t bit)
+{
+ return (1u << bit);
+}
+template <uint64_t i>
+__attribute__((always_inline)) inline uint64_t upperMaskBits()
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+template <uint64_t i>
+__attribute__((always_inline)) inline uint64_t lowerMaskBits()
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
+}
+
+
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+# 175 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h"
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBit(Type & i,uint8_t index,ValueType v)
+{
+ setBits(i,index,index,v);
+}
+__attribute__((always_inline)) inline uint64_t getBit(uint64_t i,uint8_t index)
+{
+ return getBits(i,index,index);
+}
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 2
+
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(size_t num)
+ :num(num){}
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(const void *p)
+ :num(reinterpret_cast<size_t>(p)){}
+
+template <int Base>
+char *IntegerFormatter<Base>::format()const
+{
+ itos(num, Base, koutBuf, koutBufSize);
+ return koutBuf;
+}
+
+template <int Base>
+Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
+{
+ out << hf.format();
+ return out;
+}
+# 36 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 2
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers/system_common_registers.h" 2
+
+class RegCurrentEL
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t RES0_0:2;
+            uint32_t EL:2;
+            uint32_t RES0_1:28;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCurrentEL& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCurrentEL & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCurrentEL & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        EL = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCurrentEL copy()const volatile
+    {
+     RegCurrentEL res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCurrentEL copy()const
+    {
+     RegCurrentEL res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCurrentEL: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EL = " << EL << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCurrentEL*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCurrentEL make(uint32_t val)
+    {
+        RegCurrentEL res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCurrentEL read()
+    {
+        RegCurrentEL res;
+        __asm__ __volatile__("mrs %0,CurrentEL\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCurrentEL & update()
+    {
+        __asm__ __volatile__("mrs %0,CurrentEL\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CurrentEL,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegDAIF
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t RES0_0:6;
+            uint32_t F:1;
+            uint32_t I:1;
+            uint32_t A:1;
+            uint32_t D:1;
+            uint32_t RES0_1:22;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegDAIF& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegDAIF & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegDAIF & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        F = 0;
+        I = 0;
+        A = 0;
+        D = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegDAIF copy()const volatile
+    {
+     RegDAIF res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegDAIF copy()const
+    {
+     RegDAIF res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegDAIF: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "F = " << F << ", "
+                << "I = " << I << ", "
+                << "A = " << A << ", "
+                << "D = " << D << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegDAIF*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegDAIF make(uint32_t val)
+    {
+        RegDAIF res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegDAIF read()
+    {
+        RegDAIF res;
+        __asm__ __volatile__("mrs %0,DAIF\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegDAIF & update()
+    {
+        __asm__ __volatile__("mrs %0,DAIF\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr DAIF,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegVBAR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t Addr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegVBAR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegVBAR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegVBAR_EL1 & setMandatoryFields()
+    {
+        Addr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegVBAR_EL1 copy()const volatile
+    {
+     RegVBAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegVBAR_EL1 copy()const
+    {
+     RegVBAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegVBAR_EL1: ";
+            kout
+                << "Addr = " << Hex(Addr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegVBAR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegVBAR_EL1 make(uint64_t val)
+    {
+        RegVBAR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegVBAR_EL1 read()
+    {
+        RegVBAR_EL1 res;
+        __asm__ __volatile__("mrs %0,VBAR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegVBAR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,VBAR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr VBAR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegELR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t returnAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegELR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegELR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegELR_EL1 & setMandatoryFields()
+    {
+        returnAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegELR_EL1 copy()const volatile
+    {
+     RegELR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL1 copy()const
+    {
+     RegELR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegELR_EL1: ";
+            kout
+                << "returnAddr = " << Hex(returnAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegELR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegELR_EL1 make(uint64_t val)
+    {
+        RegELR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegELR_EL1 read()
+    {
+        RegELR_EL1 res;
+        __asm__ __volatile__("mrs %0,ELR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ELR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ELR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegELR_EL2
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t returnAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegELR_EL2& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegELR_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegELR_EL2 & setMandatoryFields()
+    {
+        returnAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegELR_EL2 copy()const volatile
+    {
+     RegELR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL2 copy()const
+    {
+     RegELR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegELR_EL2: ";
+            kout
+                << "returnAddr = " << Hex(returnAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegELR_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegELR_EL2 make(uint64_t val)
+    {
+        RegELR_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegELR_EL2 read()
+    {
+        RegELR_EL2 res;
+        __asm__ __volatile__("mrs %0,ELR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,ELR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ELR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegELR_EL3
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t returnAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegELR_EL3& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegELR_EL3 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegELR_EL3 & setMandatoryFields()
+    {
+        returnAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegELR_EL3 copy()const volatile
+    {
+     RegELR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL3 copy()const
+    {
+     RegELR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegELR_EL3: ";
+            kout
+                << "returnAddr = " << Hex(returnAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegELR_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegELR_EL3 make(uint64_t val)
+    {
+        RegELR_EL3 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegELR_EL3 read()
+    {
+        RegELR_EL3 res;
+        __asm__ __volatile__("mrs %0,ELR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegELR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,ELR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ELR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegESR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ISS:25;
+            uint32_t IL:1;
+            uint32_t EC:6;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegESR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegESR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegESR_EL1 & setMandatoryFields()
+    {
+        ISS = 0;
+        IL = 0;
+        EC = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegESR_EL1 copy()const volatile
+    {
+     RegESR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL1 copy()const
+    {
+     RegESR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegESR_EL1: ";
+            kout
+                << "ISS = " << Hex(ISS) << ", "
+                << "IL = " << IL << ", "
+                << "EC = " << Hex(EC) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegESR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegESR_EL1 make(uint32_t val)
+    {
+        RegESR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegESR_EL1 read()
+    {
+        RegESR_EL1 res;
+        __asm__ __volatile__("mrs %0,ESR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ESR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ESR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegESR_EL2
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ISS:25;
+            uint32_t IL:1;
+            uint32_t EC:6;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegESR_EL2& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegESR_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegESR_EL2 & setMandatoryFields()
+    {
+        ISS = 0;
+        IL = 0;
+        EC = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegESR_EL2 copy()const volatile
+    {
+     RegESR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL2 copy()const
+    {
+     RegESR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegESR_EL2: ";
+            kout
+                << "ISS = " << Hex(ISS) << ", "
+                << "IL = " << IL << ", "
+                << "EC = " << Hex(EC) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegESR_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegESR_EL2 make(uint32_t val)
+    {
+        RegESR_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegESR_EL2 read()
+    {
+        RegESR_EL2 res;
+        __asm__ __volatile__("mrs %0,ESR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,ESR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ESR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegESR_EL3
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ISS:25;
+            uint32_t IL:1;
+            uint32_t EC:6;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegESR_EL3& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegESR_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegESR_EL3 & setMandatoryFields()
+    {
+        ISS = 0;
+        IL = 0;
+        EC = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegESR_EL3 copy()const volatile
+    {
+     RegESR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL3 copy()const
+    {
+     RegESR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegESR_EL3: ";
+            kout
+                << "ISS = " << Hex(ISS) << ", "
+                << "IL = " << IL << ", "
+                << "EC = " << Hex(EC) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegESR_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegESR_EL3 make(uint32_t val)
+    {
+        RegESR_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegESR_EL3 read()
+    {
+        RegESR_EL3 res;
+        __asm__ __volatile__("mrs %0,ESR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegESR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,ESR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ESR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegFAR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t faultAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegFAR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegFAR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL1 & setMandatoryFields()
+    {
+        faultAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegFAR_EL1 copy()const volatile
+    {
+     RegFAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL1 copy()const
+    {
+     RegFAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegFAR_EL1: ";
+            kout
+                << "faultAddr = " << Hex(faultAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegFAR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL1 make(uint64_t val)
+    {
+        RegFAR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL1 read()
+    {
+        RegFAR_EL1 res;
+        __asm__ __volatile__("mrs %0,FAR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,FAR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr FAR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegFAR_EL2
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t faultAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegFAR_EL2& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegFAR_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL2 & setMandatoryFields()
+    {
+        faultAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegFAR_EL2 copy()const volatile
+    {
+     RegFAR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL2 copy()const
+    {
+     RegFAR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegFAR_EL2: ";
+            kout
+                << "faultAddr = " << Hex(faultAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegFAR_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL2 make(uint64_t val)
+    {
+        RegFAR_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL2 read()
+    {
+        RegFAR_EL2 res;
+        __asm__ __volatile__("mrs %0,FAR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,FAR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr FAR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegFAR_EL3
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t faultAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegFAR_EL3& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegFAR_EL3 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL3 & setMandatoryFields()
+    {
+        faultAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegFAR_EL3 copy()const volatile
+    {
+     RegFAR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL3 copy()const
+    {
+     RegFAR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegFAR_EL3: ";
+            kout
+                << "faultAddr = " << Hex(faultAddr) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegFAR_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL3 make(uint64_t val)
+    {
+        RegFAR_EL3 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegFAR_EL3 read()
+    {
+        RegFAR_EL3 res;
+        __asm__ __volatile__("mrs %0,FAR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegFAR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,FAR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr FAR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSPSR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t SPSel:1;
+            uint32_t RES0_0:1;
+            uint32_t EL:2;
+            uint32_t ExeState:1;
+            uint32_t RES0_1:1;
+            uint32_t FIQMask:1;
+            uint32_t IRQMask:1;
+            uint32_t SErrorMask:1;
+            uint32_t DebugMask:1;
+            uint32_t RES0_2:10;
+            uint32_t IL:1;
+            uint32_t SoftwareStep:1;
+            uint32_t PAN:1;
+            uint32_t UAO:1;
+            uint32_t RES0_3:4;
+            uint32_t V:1;
+            uint32_t C:1;
+            uint32_t Z:1;
+            uint32_t N:1;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSPSR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSPSR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL1 & setMandatoryFields()
+    {
+        SPSel = 0;
+        RES0_0 = 0;
+        EL = 0;
+        ExeState = 0;
+        RES0_1 = 0;
+        FIQMask = 0;
+        IRQMask = 0;
+        SErrorMask = 0;
+        DebugMask = 0;
+        RES0_2 = 0;
+        IL = 0;
+        SoftwareStep = 0;
+        PAN = 0;
+        UAO = 0;
+        RES0_3 = 0;
+        V = 0;
+        C = 0;
+        Z = 0;
+        N = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSPSR_EL1 copy()const volatile
+    {
+     RegSPSR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL1 copy()const
+    {
+     RegSPSR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSPSR_EL1: ";
+            kout
+                << "SPSel = " << SPSel << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EL = " << EL << ", "
+                << "ExeState = " << ExeState << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "FIQMask = " << FIQMask << ", "
+                << "IRQMask = " << IRQMask << ", "
+                << "SErrorMask = " << SErrorMask << ", "
+                << "DebugMask = " << DebugMask << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "IL = " << IL << ", "
+                << "SoftwareStep = " << SoftwareStep << ", "
+                << "PAN = " << PAN << ", "
+                << "UAO = " << UAO << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "V = " << V << ", "
+                << "C = " << C << ", "
+                << "Z = " << Z << ", "
+                << "N = " << N << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSPSR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL1 make(uint32_t val)
+    {
+        RegSPSR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL1 read()
+    {
+        RegSPSR_EL1 res;
+        __asm__ __volatile__("mrs %0,SPSR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,SPSR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SPSR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSPSR_EL2
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t SPSel:1;
+            uint32_t RES0_0:1;
+            uint32_t EL:2;
+            uint32_t ExeState:1;
+            uint32_t RES0_1:1;
+            uint32_t FIQMask:1;
+            uint32_t IRQMask:1;
+            uint32_t SErrorMask:1;
+            uint32_t DebugMask:1;
+            uint32_t RES0_2:10;
+            uint32_t IL:1;
+            uint32_t SoftwareStep:1;
+            uint32_t PAN:1;
+            uint32_t UAO:1;
+            uint32_t RES0_3:4;
+            uint32_t V:1;
+            uint32_t C:1;
+            uint32_t Z:1;
+            uint32_t N:1;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSPSR_EL2& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSPSR_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL2 & setMandatoryFields()
+    {
+        SPSel = 0;
+        RES0_0 = 0;
+        EL = 0;
+        ExeState = 0;
+        RES0_1 = 0;
+        FIQMask = 0;
+        IRQMask = 0;
+        SErrorMask = 0;
+        DebugMask = 0;
+        RES0_2 = 0;
+        IL = 0;
+        SoftwareStep = 0;
+        PAN = 0;
+        UAO = 0;
+        RES0_3 = 0;
+        V = 0;
+        C = 0;
+        Z = 0;
+        N = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSPSR_EL2 copy()const volatile
+    {
+     RegSPSR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL2 copy()const
+    {
+     RegSPSR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSPSR_EL2: ";
+            kout
+                << "SPSel = " << SPSel << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EL = " << EL << ", "
+                << "ExeState = " << ExeState << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "FIQMask = " << FIQMask << ", "
+                << "IRQMask = " << IRQMask << ", "
+                << "SErrorMask = " << SErrorMask << ", "
+                << "DebugMask = " << DebugMask << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "IL = " << IL << ", "
+                << "SoftwareStep = " << SoftwareStep << ", "
+                << "PAN = " << PAN << ", "
+                << "UAO = " << UAO << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "V = " << V << ", "
+                << "C = " << C << ", "
+                << "Z = " << Z << ", "
+                << "N = " << N << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSPSR_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL2 make(uint32_t val)
+    {
+        RegSPSR_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL2 read()
+    {
+        RegSPSR_EL2 res;
+        __asm__ __volatile__("mrs %0,SPSR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,SPSR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SPSR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSPSR_EL3
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t SPSel:1;
+            uint32_t RES0_0:1;
+            uint32_t EL:2;
+            uint32_t ExeState:1;
+            uint32_t RES0_1:1;
+            uint32_t FIQMask:1;
+            uint32_t IRQMask:1;
+            uint32_t SErrorMask:1;
+            uint32_t DebugMask:1;
+            uint32_t RES0_2:10;
+            uint32_t IL:1;
+            uint32_t SoftwareStep:1;
+            uint32_t PAN:1;
+            uint32_t UAO:1;
+            uint32_t RES0_3:4;
+            uint32_t V:1;
+            uint32_t C:1;
+            uint32_t Z:1;
+            uint32_t N:1;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSPSR_EL3& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSPSR_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL3 & setMandatoryFields()
+    {
+        SPSel = 0;
+        RES0_0 = 0;
+        EL = 0;
+        ExeState = 0;
+        RES0_1 = 0;
+        FIQMask = 0;
+        IRQMask = 0;
+        SErrorMask = 0;
+        DebugMask = 0;
+        RES0_2 = 0;
+        IL = 0;
+        SoftwareStep = 0;
+        PAN = 0;
+        UAO = 0;
+        RES0_3 = 0;
+        V = 0;
+        C = 0;
+        Z = 0;
+        N = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSPSR_EL3 copy()const volatile
+    {
+     RegSPSR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL3 copy()const
+    {
+     RegSPSR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSPSR_EL3: ";
+            kout
+                << "SPSel = " << SPSel << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EL = " << EL << ", "
+                << "ExeState = " << ExeState << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "FIQMask = " << FIQMask << ", "
+                << "IRQMask = " << IRQMask << ", "
+                << "SErrorMask = " << SErrorMask << ", "
+                << "DebugMask = " << DebugMask << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "IL = " << IL << ", "
+                << "SoftwareStep = " << SoftwareStep << ", "
+                << "PAN = " << PAN << ", "
+                << "UAO = " << UAO << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "V = " << V << ", "
+                << "C = " << C << ", "
+                << "Z = " << Z << ", "
+                << "N = " << N << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSPSR_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL3 make(uint32_t val)
+    {
+        RegSPSR_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSPSR_EL3 read()
+    {
+        RegSPSR_EL3 res;
+        __asm__ __volatile__("mrs %0,SPSR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSPSR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,SPSR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SPSR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSP
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t SP:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSP& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSP & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSP & setMandatoryFields()
+    {
+        SP = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSP copy()const volatile
+    {
+     RegSP res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSP copy()const
+    {
+     RegSP res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSP: ";
+            kout
+                << "SP = " << SP << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSP*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSP make(uint64_t val)
+    {
+        RegSP res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSP read()
+    {
+        RegSP res;
+        __asm__ __volatile__("mrs %0,SP\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSP & update()
+    {
+        __asm__ __volatile__("mrs %0,SP\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SP,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSP_EL0
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t SP:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSP_EL0& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSP_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSP_EL0 & setMandatoryFields()
+    {
+        SP = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSP_EL0 copy()const volatile
+    {
+     RegSP_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL0 copy()const
+    {
+     RegSP_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSP_EL0: ";
+            kout
+                << "SP = " << SP << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSP_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSP_EL0 make(uint64_t val)
+    {
+        RegSP_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSP_EL0 read()
+    {
+        RegSP_EL0 res;
+        __asm__ __volatile__("mrs %0,SP_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,SP_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SP_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSP_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t SP:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSP_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSP_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSP_EL1 & setMandatoryFields()
+    {
+        SP = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSP_EL1 copy()const volatile
+    {
+     RegSP_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL1 copy()const
+    {
+     RegSP_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSP_EL1: ";
+            kout
+                << "SP = " << SP << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSP_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSP_EL1 make(uint64_t val)
+    {
+        RegSP_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSP_EL1 read()
+    {
+        RegSP_EL1 res;
+        __asm__ __volatile__("mrs %0,SP_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,SP_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SP_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSP_EL2
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t SP:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSP_EL2& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSP_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSP_EL2 & setMandatoryFields()
+    {
+        SP = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSP_EL2 copy()const volatile
+    {
+     RegSP_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL2 copy()const
+    {
+     RegSP_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSP_EL2: ";
+            kout
+                << "SP = " << SP << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSP_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSP_EL2 make(uint64_t val)
+    {
+        RegSP_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSP_EL2 read()
+    {
+        RegSP_EL2 res;
+        __asm__ __volatile__("mrs %0,SP_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,SP_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SP_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSP_EL3
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t SP:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSP_EL3& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSP_EL3 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSP_EL3 & setMandatoryFields()
+    {
+        SP = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSP_EL3 copy()const volatile
+    {
+     RegSP_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL3 copy()const
+    {
+     RegSP_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSP_EL3: ";
+            kout
+                << "SP = " << SP << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSP_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSP_EL3 make(uint64_t val)
+    {
+        RegSP_EL3 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSP_EL3 read()
+    {
+        RegSP_EL3 res;
+        __asm__ __volatile__("mrs %0,SP_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSP_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,SP_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SP_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegNZCV
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t RES0_0:28;
+            uint64_t V:1;
+            uint64_t C:1;
+            uint64_t Z:1;
+            uint64_t N:1;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegNZCV& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegNZCV & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegNZCV & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        V = 0;
+        C = 0;
+        Z = 0;
+        N = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegNZCV copy()const volatile
+    {
+     RegNZCV res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegNZCV copy()const
+    {
+     RegNZCV res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegNZCV: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "V = " << V << ", "
+                << "C = " << C << ", "
+                << "Z = " << Z << ", "
+                << "N = " << N << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegNZCV*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegNZCV make(uint64_t val)
+    {
+        RegNZCV res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegNZCV read()
+    {
+        RegNZCV res;
+        __asm__ __volatile__("mrs %0,NZCV\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegNZCV & update()
+    {
+        __asm__ __volatile__("mrs %0,NZCV\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr NZCV,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegPAN
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t RES0_0:22;
+            uint32_t PAN:1;
+            uint32_t RES0_1:9;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegPAN& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegPAN & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegPAN & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        PAN = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegPAN copy()const volatile
+    {
+     RegPAN res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegPAN copy()const
+    {
+     RegPAN res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegPAN: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "PAN = " << PAN << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegPAN*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegPAN make(uint32_t val)
+    {
+        RegPAN res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegPAN read()
+    {
+        RegPAN res;
+        __asm__ __volatile__("mrs %0,PAN\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegPAN & update()
+    {
+        __asm__ __volatile__("mrs %0,PAN\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr PAN,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSPSel
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t SP:1;
+            uint32_t RES0_0:31;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSPSel& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSPSel & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSPSel & setMandatoryFields()
+    {
+        SP = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSPSel copy()const volatile
+    {
+     RegSPSel res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSPSel copy()const
+    {
+     RegSPSel res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSPSel: ";
+            kout
+                << "SP = " << SP << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSPSel*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSPSel make(uint32_t val)
+    {
+        RegSPSel res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSPSel read()
+    {
+        RegSPSel res;
+        __asm__ __volatile__("mrs %0,SPSel\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSPSel & update()
+    {
+        __asm__ __volatile__("mrs %0,SPSel\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SPSel,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegUAO
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t RES0_0:23;
+            uint64_t UAO:1;
+            uint64_t RES0_1:8;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegUAO& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegUAO & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegUAO & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        UAO = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegUAO copy()const volatile
+    {
+     RegUAO res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegUAO copy()const
+    {
+     RegUAO res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegUAO: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "UAO = " << UAO << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegUAO*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegUAO make(uint64_t val)
+    {
+        RegUAO res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegUAO read()
+    {
+        RegUAO res;
+        __asm__ __volatile__("mrs %0,UAO\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegUAO & update()
+    {
+        __asm__ __volatile__("mrs %0,UAO\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr UAO,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegPC
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t PC:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegPC& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegPC & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegPC & setMandatoryFields()
+    {
+        PC = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegPC copy()const volatile
+    {
+     RegPC res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegPC copy()const
+    {
+     RegPC res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegPC: ";
+            kout
+                << "PC = " << Hex(PC) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegPC*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegPC make(uint64_t val)
+    {
+        RegPC res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegPC read()
+    {
+        RegPC res;
+        __asm__ __volatile__("mrs %0,PC\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegPC & update()
+    {
+        __asm__ __volatile__("mrs %0,PC\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr PC,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegTCR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t T0SZ:6;
+            uint64_t RES0_0:1;
+            uint64_t EPD0:1;
+            uint64_t IRGN0:2;
+            uint64_t ORGN0:2;
+            uint64_t SH0:2;
+            uint64_t TG0:2;
+            uint64_t T1SZ:6;
+            uint64_t A1:1;
+            uint64_t EPD1:1;
+            uint64_t IRGN1:2;
+            uint64_t ORGN1:2;
+            uint64_t SH1:2;
+            uint64_t TG1:2;
+            uint64_t IPS:3;
+            uint64_t RES0_1:1;
+            uint64_t AS:1;
+            uint64_t TBI0:1;
+            uint64_t TBI1:1;
+            uint64_t HA:1;
+            uint64_t HD:1;
+            uint64_t HPD0:1;
+            uint64_t HPD1:1;
+            uint64_t HWU059:1;
+            uint64_t HWU060:1;
+            uint64_t HWU061:1;
+            uint64_t HWU062:1;
+            uint64_t HWU159:1;
+            uint64_t HWU160:1;
+            uint64_t HWU161:1;
+            uint64_t HWU162:1;
+            uint64_t RES0_2:2;
+            uint64_t NFD0:1;
+            uint64_t NFD1:1;
+            uint64_t RES0_3:9;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegTCR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegTCR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegTCR_EL1 & setMandatoryFields()
+    {
+        T0SZ = 0;
+        RES0_0 = 0;
+        EPD0 = 0;
+        IRGN0 = 0;
+        ORGN0 = 0;
+        SH0 = 0;
+        TG0 = 0;
+        T1SZ = 0;
+        A1 = 0;
+        EPD1 = 0;
+        IRGN1 = 0;
+        ORGN1 = 0;
+        SH1 = 0;
+        TG1 = 0;
+        IPS = 0;
+        RES0_1 = 0;
+        AS = 0;
+        TBI0 = 0;
+        TBI1 = 0;
+        HA = 0;
+        HD = 0;
+        HPD0 = 0;
+        HPD1 = 0;
+        HWU059 = 0;
+        HWU060 = 0;
+        HWU061 = 0;
+        HWU062 = 0;
+        HWU159 = 0;
+        HWU160 = 0;
+        HWU161 = 0;
+        HWU162 = 0;
+        RES0_2 = 0;
+        NFD0 = 0;
+        NFD1 = 0;
+        RES0_3 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegTCR_EL1 copy()const volatile
+    {
+     RegTCR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegTCR_EL1 copy()const
+    {
+     RegTCR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegTCR_EL1: ";
+            kout
+                << "T0SZ = " << T0SZ << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EPD0 = " << EPD0 << ", "
+                << "IRGN0 = " << IRGN0 << ", "
+                << "ORGN0 = " << ORGN0 << ", "
+                << "SH0 = " << SH0 << ", "
+                << "TG0 = " << TG0 << ", "
+                << "T1SZ = " << T1SZ << ", "
+                << "A1 = " << A1 << ", "
+                << "EPD1 = " << EPD1 << ", "
+                << "IRGN1 = " << IRGN1 << ", "
+                << "ORGN1 = " << ORGN1 << ", "
+                << "SH1 = " << SH1 << ", "
+                << "TG1 = " << TG1 << ", "
+                << "IPS = " << IPS << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "AS = " << AS << ", "
+                << "TBI0 = " << TBI0 << ", "
+                << "TBI1 = " << TBI1 << ", "
+                << "HA = " << HA << ", "
+                << "HD = " << HD << ", "
+                << "HPD0 = " << HPD0 << ", "
+                << "HPD1 = " << HPD1 << ", "
+                << "HWU059 = " << HWU059 << ", "
+                << "HWU060 = " << HWU060 << ", "
+                << "HWU061 = " << HWU061 << ", "
+                << "HWU062 = " << HWU062 << ", "
+                << "HWU159 = " << HWU159 << ", "
+                << "HWU160 = " << HWU160 << ", "
+                << "HWU161 = " << HWU161 << ", "
+                << "HWU162 = " << HWU162 << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "NFD0 = " << NFD0 << ", "
+                << "NFD1 = " << NFD1 << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegTCR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegTCR_EL1 make(uint64_t val)
+    {
+        RegTCR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegTCR_EL1 read()
+    {
+        RegTCR_EL1 res;
+        __asm__ __volatile__("mrs %0,TCR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegTCR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,TCR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr TCR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegISR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t RES0_0:6;
+            uint32_t F:1;
+            uint32_t I:1;
+            uint32_t A:1;
+            uint32_t RES0_1:23;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegISR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegISR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegISR_EL1 & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        F = 0;
+        I = 0;
+        A = 0;
+        RES0_1 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegISR_EL1 copy()const volatile
+    {
+     RegISR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegISR_EL1 copy()const
+    {
+     RegISR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegISR_EL1: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "F = " << F << ", "
+                << "I = " << I << ", "
+                << "A = " << A << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegISR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegISR_EL1 make(uint32_t val)
+    {
+        RegISR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegISR_EL1 read()
+    {
+        RegISR_EL1 res;
+        __asm__ __volatile__("mrs %0,ISR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegISR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ISR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ISR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegID_AA64ISAR0_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t RES0_0:4;
+            uint64_t AES:4;
+            uint64_t SHA1:4;
+            uint64_t SHA2:4;
+            uint64_t CRC32:4;
+            uint64_t Atomic:4;
+            uint64_t RES0_1:4;
+            uint64_t RDM:4;
+            uint64_t SHA3:4;
+            uint64_t SM3:4;
+            uint64_t SM4:4;
+            uint64_t DP:4;
+            uint64_t RES0_2:16;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegID_AA64ISAR0_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegID_AA64ISAR0_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegID_AA64ISAR0_EL1 & setMandatoryFields()
+    {
+        RES0_0 = 0;
+        AES = 0;
+        SHA1 = 0;
+        SHA2 = 0;
+        CRC32 = 0;
+        Atomic = 0;
+        RES0_1 = 0;
+        RDM = 0;
+        SHA3 = 0;
+        SM3 = 0;
+        SM4 = 0;
+        DP = 0;
+        RES0_2 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegID_AA64ISAR0_EL1 copy()const volatile
+    {
+     RegID_AA64ISAR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64ISAR0_EL1 copy()const
+    {
+     RegID_AA64ISAR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegID_AA64ISAR0_EL1: ";
+            kout
+                << "RES0_0 = " << RES0_0 << ", "
+                << "AES = " << AES << ", "
+                << "SHA1 = " << SHA1 << ", "
+                << "SHA2 = " << SHA2 << ", "
+                << "CRC32 = " << CRC32 << ", "
+                << "Atomic = " << Atomic << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "RDM = " << RDM << ", "
+                << "SHA3 = " << SHA3 << ", "
+                << "SM3 = " << SM3 << ", "
+                << "SM4 = " << SM4 << ", "
+                << "DP = " << DP << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegID_AA64ISAR0_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegID_AA64ISAR0_EL1 make(uint64_t val)
+    {
+        RegID_AA64ISAR0_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegID_AA64ISAR0_EL1 read()
+    {
+        RegID_AA64ISAR0_EL1 res;
+        __asm__ __volatile__("mrs %0,ID_AA64ISAR0_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64ISAR0_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ID_AA64ISAR0_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ID_AA64ISAR0_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCONTEXTIDR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t PROCID:32;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCONTEXTIDR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCONTEXTIDR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCONTEXTIDR_EL1 & setMandatoryFields()
+    {
+        PROCID = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCONTEXTIDR_EL1 copy()const volatile
+    {
+     RegCONTEXTIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCONTEXTIDR_EL1 copy()const
+    {
+     RegCONTEXTIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCONTEXTIDR_EL1: ";
+            kout
+                << "PROCID = " << PROCID << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCONTEXTIDR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCONTEXTIDR_EL1 make(uint32_t val)
+    {
+        RegCONTEXTIDR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCONTEXTIDR_EL1 read()
+    {
+        RegCONTEXTIDR_EL1 res;
+        __asm__ __volatile__("mrs %0,CONTEXTIDR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCONTEXTIDR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,CONTEXTIDR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CONTEXTIDR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegID_AA64PFR0_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t EL0:4;
+            uint64_t EL1:4;
+            uint64_t EL2:4;
+            uint64_t EL3:4;
+            uint64_t FP:4;
+            uint64_t AdvSIMD:4;
+            uint64_t GIC:4;
+            uint64_t RAS:4;
+            uint64_t SVE:4;
+            uint64_t RES0_0:28;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegID_AA64PFR0_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegID_AA64PFR0_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegID_AA64PFR0_EL1 & setMandatoryFields()
+    {
+        EL0 = 0;
+        EL1 = 0;
+        EL2 = 0;
+        EL3 = 0;
+        FP = 0;
+        AdvSIMD = 0;
+        GIC = 0;
+        RAS = 0;
+        SVE = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegID_AA64PFR0_EL1 copy()const volatile
+    {
+     RegID_AA64PFR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64PFR0_EL1 copy()const
+    {
+     RegID_AA64PFR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegID_AA64PFR0_EL1: ";
+            kout
+                << "EL0 = " << EL0 << ", "
+                << "EL1 = " << EL1 << ", "
+                << "EL2 = " << EL2 << ", "
+                << "EL3 = " << EL3 << ", "
+                << "FP = " << FP << ", "
+                << "AdvSIMD = " << AdvSIMD << ", "
+                << "GIC = " << GIC << ", "
+                << "RAS = " << RAS << ", "
+                << "SVE = " << SVE << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegID_AA64PFR0_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegID_AA64PFR0_EL1 make(uint64_t val)
+    {
+        RegID_AA64PFR0_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegID_AA64PFR0_EL1 read()
+    {
+        RegID_AA64PFR0_EL1 res;
+        __asm__ __volatile__("mrs %0,ID_AA64PFR0_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64PFR0_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ID_AA64PFR0_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ID_AA64PFR0_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegID_AA64MMFR1_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t HAFDBS:4;
+            uint64_t VMIDBits:4;
+            uint64_t VH:4;
+            uint64_t HPDS:4;
+            uint64_t LO:4;
+            uint64_t PAN:4;
+            uint64_t SpecSEI:4;
+            uint64_t XNX:4;
+            uint64_t RES0_0:32;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegID_AA64MMFR1_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1 & setMandatoryFields()
+    {
+        HAFDBS = 0;
+        VMIDBits = 0;
+        VH = 0;
+        HPDS = 0;
+        LO = 0;
+        PAN = 0;
+        SpecSEI = 0;
+        XNX = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1 copy()const volatile
+    {
+     RegID_AA64MMFR1_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1 copy()const
+    {
+     RegID_AA64MMFR1_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegID_AA64MMFR1_EL1: ";
+            kout
+                << "HAFDBS = " << HAFDBS << ", "
+                << "VMIDBits = " << VMIDBits << ", "
+                << "VH = " << VH << ", "
+                << "HPDS = " << HPDS << ", "
+                << "LO = " << LO << ", "
+                << "PAN = " << PAN << ", "
+                << "SpecSEI = " << SpecSEI << ", "
+                << "XNX = " << XNX << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegID_AA64MMFR1_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegID_AA64MMFR1_EL1 make(uint64_t val)
+    {
+        RegID_AA64MMFR1_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegID_AA64MMFR1_EL1 read()
+    {
+        RegID_AA64MMFR1_EL1 res;
+        __asm__ __volatile__("mrs %0,ID_AA64MMFR1_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR1_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ID_AA64MMFR1_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ID_AA64MMFR1_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegID_AA64MMFR0_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t PARange:4;
+            uint64_t ASIDBits:4;
+            uint64_t BigEnd:4;
+            uint64_t SNSMem:4;
+            uint64_t BigEndEL0:4;
+            uint64_t TGran16:4;
+            uint64_t TGran64:4;
+            uint64_t TGran4:4;
+            uint64_t RES0_0:32;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegID_AA64MMFR0_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegID_AA64MMFR0_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR0_EL1 & setMandatoryFields()
+    {
+        PARange = 0;
+        ASIDBits = 0;
+        BigEnd = 0;
+        SNSMem = 0;
+        BigEndEL0 = 0;
+        TGran16 = 0;
+        TGran64 = 0;
+        TGran4 = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegID_AA64MMFR0_EL1 copy()const volatile
+    {
+     RegID_AA64MMFR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR0_EL1 copy()const
+    {
+     RegID_AA64MMFR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegID_AA64MMFR0_EL1: ";
+            kout
+                << "PARange = " << PARange << ", "
+                << "ASIDBits = " << ASIDBits << ", "
+                << "BigEnd = " << BigEnd << ", "
+                << "SNSMem = " << SNSMem << ", "
+                << "BigEndEL0 = " << BigEndEL0 << ", "
+                << "TGran16 = " << Hex(TGran16) << ", "
+                << "TGran64 = " << Hex(TGran64) << ", "
+                << "TGran4 = " << Hex(TGran4) << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegID_AA64MMFR0_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegID_AA64MMFR0_EL1 make(uint64_t val)
+    {
+        RegID_AA64MMFR0_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegID_AA64MMFR0_EL1 read()
+    {
+        RegID_AA64MMFR0_EL1 res;
+        __asm__ __volatile__("mrs %0,ID_AA64MMFR0_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegID_AA64MMFR0_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,ID_AA64MMFR0_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr ID_AA64MMFR0_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegMIDR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t Revision:4;
+            uint32_t PartNum:12;
+            uint32_t Architecture:4;
+            uint32_t Variant:4;
+            uint32_t Implementer:8;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegMIDR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegMIDR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegMIDR_EL1 & setMandatoryFields()
+    {
+        Revision = 0;
+        PartNum = 0;
+        Architecture = 0;
+        Variant = 0;
+        Implementer = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegMIDR_EL1 copy()const volatile
+    {
+     RegMIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegMIDR_EL1 copy()const
+    {
+     RegMIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegMIDR_EL1: ";
+            kout
+                << "Revision = " << Revision << ", "
+                << "PartNum = " << PartNum << ", "
+                << "Architecture = " << Architecture << ", "
+                << "Variant = " << Variant << ", "
+                << "Implementer = " << Implementer << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegMIDR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegMIDR_EL1 make(uint32_t val)
+    {
+        RegMIDR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegMIDR_EL1 read()
+    {
+        RegMIDR_EL1 res;
+        __asm__ __volatile__("mrs %0,MIDR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegMIDR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,MIDR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr MIDR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegMPIDR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t Aff0:8;
+            uint64_t Aff1:8;
+            uint64_t Aff2:8;
+            uint64_t MT:1;
+            uint64_t RES0_0:5;
+            uint64_t U:1;
+            uint64_t RES1_1:1;
+            uint64_t Aff3:8;
+            uint64_t RES0_2:24;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegMPIDR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegMPIDR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegMPIDR_EL1 & setMandatoryFields()
+    {
+        Aff0 = 0;
+        Aff1 = 0;
+        Aff2 = 0;
+        MT = 0;
+        RES0_0 = 0;
+        U = 0;
+        RES1_1 = 1;
+        Aff3 = 0;
+        RES0_2 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegMPIDR_EL1 copy()const volatile
+    {
+     RegMPIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegMPIDR_EL1 copy()const
+    {
+     RegMPIDR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegMPIDR_EL1: ";
+            kout
+                << "Aff0 = " << Aff0 << ", "
+                << "Aff1 = " << Aff1 << ", "
+                << "Aff2 = " << Aff2 << ", "
+                << "MT = " << MT << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "U = " << U << ", "
+                << "RES1_1 = " << RES1_1 << ", "
+                << "Aff3 = " << Aff3 << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegMPIDR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegMPIDR_EL1 make(uint64_t val)
+    {
+        RegMPIDR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegMPIDR_EL1 read()
+    {
+        RegMPIDR_EL1 res;
+        __asm__ __volatile__("mrs %0,MPIDR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegMPIDR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,MPIDR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr MPIDR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegTTBR0_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t CnP:1;
+            uint64_t BADDR:47;
+            uint64_t ASID:16;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegTTBR0_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegTTBR0_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegTTBR0_EL1 & setMandatoryFields()
+    {
+        CnP = 0;
+        BADDR = 0;
+        ASID = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegTTBR0_EL1 copy()const volatile
+    {
+     RegTTBR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegTTBR0_EL1 copy()const
+    {
+     RegTTBR0_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegTTBR0_EL1: ";
+            kout
+                << "CnP = " << CnP << ", "
+                << "BADDR = " << Hex(BADDR) << ", "
+                << "ASID = " << ASID << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegTTBR0_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegTTBR0_EL1 make(uint64_t val)
+    {
+        RegTTBR0_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegTTBR0_EL1 read()
+    {
+        RegTTBR0_EL1 res;
+        __asm__ __volatile__("mrs %0,TTBR0_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegTTBR0_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,TTBR0_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr TTBR0_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegTTBR1_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t CnP:1;
+            uint64_t BADDR:47;
+            uint64_t ASID:16;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegTTBR1_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegTTBR1_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegTTBR1_EL1 & setMandatoryFields()
+    {
+        CnP = 0;
+        BADDR = 0;
+        ASID = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegTTBR1_EL1 copy()const volatile
+    {
+     RegTTBR1_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegTTBR1_EL1 copy()const
+    {
+     RegTTBR1_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegTTBR1_EL1: ";
+            kout
+                << "CnP = " << CnP << ", "
+                << "BADDR = " << Hex(BADDR) << ", "
+                << "ASID = " << ASID << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegTTBR1_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegTTBR1_EL1 make(uint64_t val)
+    {
+        RegTTBR1_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegTTBR1_EL1 read()
+    {
+        RegTTBR1_EL1 res;
+        __asm__ __volatile__("mrs %0,TTBR1_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegTTBR1_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,TTBR1_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr TTBR1_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegPAR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+    union {
+        struct {
+            uint64_t F:1;
+            uint64_t RES0_0:6;
+            uint64_t SH:2;
+            uint64_t NS:1;
+            uint64_t IMP_DEF_1:1;
+            uint64_t RES1_2:1;
+            uint64_t PA47_12:36;
+            uint64_t PA51_48:4;
+            uint64_t RES0_3:4;
+            uint64_t ATTR:8;
+        }__attribute__((packed)) S0;
+        struct {
+            uint64_t F:1;
+            uint64_t FST:6;
+            uint64_t RES0_0:1;
+            uint64_t PTW:1;
+            uint64_t S:1;
+            uint64_t RES0_1:1;
+            uint64_t RES1_2:1;
+            uint64_t RES0_3:36;
+            uint64_t IMP_DEF0:4;
+            uint64_t IMP_DEF1:4;
+            uint64_t IMP_DEF2:8;
+        }__attribute__((packed)) S1;
+    };
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegPAR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegPAR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegPAR_EL1 copy()const volatile
+    {
+     RegPAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegPAR_EL1 copy()const
+    {
+     RegPAR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegPAR_EL1: ";
+        if(S0.F==0)
+        {
+            kout
+                << "S0.F = " << S0.F << ", "
+                << "S0.RES0_0 = " << S0.RES0_0 << ", "
+                << "S0.SH = " << S0.SH << ", "
+                << "S0.NS = " << S0.NS << ", "
+                << "S0.IMP_DEF_1 = " << S0.IMP_DEF_1 << ", "
+                << "S0.RES1_2 = " << S0.RES1_2 << ", "
+                << "S0.PA47_12 = " << Hex(S0.PA47_12) << ", "
+                << "S0.PA51_48 = " << Hex(S0.PA51_48) << ", "
+                << "S0.RES0_3 = " << S0.RES0_3 << ", "
+                << "S0.ATTR = " << S0.ATTR << ", "
+                << "\n";
+        }
+        else
+        {
+            kout
+                << "S1.F = " << S1.F << ", "
+                << "S1.FST = " << S1.FST << ", "
+                << "S1.RES0_0 = " << S1.RES0_0 << ", "
+                << "S1.PTW = " << S1.PTW << ", "
+                << "S1.S = " << S1.S << ", "
+                << "S1.RES0_1 = " << S1.RES0_1 << ", "
+                << "S1.RES1_2 = " << S1.RES1_2 << ", "
+                << "S1.RES0_3 = " << S1.RES0_3 << ", "
+                << "S1.IMP_DEF0 = " << S1.IMP_DEF0 << ", "
+                << "S1.IMP_DEF1 = " << S1.IMP_DEF1 << ", "
+                << "S1.IMP_DEF2 = " << S1.IMP_DEF2 << ", "
+                << "\n";
+        }
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegPAR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegPAR_EL1 make(uint64_t val)
+    {
+        RegPAR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegPAR_EL1 read()
+    {
+        RegPAR_EL1 res;
+        __asm__ __volatile__("mrs %0,PAR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegPAR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,PAR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr PAR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegMAIR_EL1
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t Attr0:8;
+            uint64_t Attr1:8;
+            uint64_t Attr2:8;
+            uint64_t Attr3:8;
+            uint64_t Attr4:8;
+            uint64_t Attr5:8;
+            uint64_t Attr6:8;
+            uint64_t Attr7:8;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegMAIR_EL1& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegMAIR_EL1 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL1 & setMandatoryFields()
+    {
+        Attr0 = 0;
+        Attr1 = 0;
+        Attr2 = 0;
+        Attr3 = 0;
+        Attr4 = 0;
+        Attr5 = 0;
+        Attr6 = 0;
+        Attr7 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegMAIR_EL1 copy()const volatile
+    {
+     RegMAIR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL1 copy()const
+    {
+     RegMAIR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegMAIR_EL1: ";
+            kout
+                << "Attr0 = " << Hex(Attr0) << ", "
+                << "Attr1 = " << Hex(Attr1) << ", "
+                << "Attr2 = " << Hex(Attr2) << ", "
+                << "Attr3 = " << Hex(Attr3) << ", "
+                << "Attr4 = " << Hex(Attr4) << ", "
+                << "Attr5 = " << Hex(Attr5) << ", "
+                << "Attr6 = " << Hex(Attr6) << ", "
+                << "Attr7 = " << Hex(Attr7) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegMAIR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL1 make(uint64_t val)
+    {
+        RegMAIR_EL1 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL1 read()
+    {
+        RegMAIR_EL1 res;
+        __asm__ __volatile__("mrs %0,MAIR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,MAIR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr MAIR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegMAIR_EL2
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t Attr0:8;
+            uint64_t Attr1:8;
+            uint64_t Attr2:8;
+            uint64_t Attr3:8;
+            uint64_t Attr4:8;
+            uint64_t Attr5:8;
+            uint64_t Attr6:8;
+            uint64_t Attr7:8;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegMAIR_EL2& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegMAIR_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL2 & setMandatoryFields()
+    {
+        Attr0 = 0;
+        Attr1 = 0;
+        Attr2 = 0;
+        Attr3 = 0;
+        Attr4 = 0;
+        Attr5 = 0;
+        Attr6 = 0;
+        Attr7 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegMAIR_EL2 copy()const volatile
+    {
+     RegMAIR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL2 copy()const
+    {
+     RegMAIR_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegMAIR_EL2: ";
+            kout
+                << "Attr0 = " << Hex(Attr0) << ", "
+                << "Attr1 = " << Hex(Attr1) << ", "
+                << "Attr2 = " << Hex(Attr2) << ", "
+                << "Attr3 = " << Hex(Attr3) << ", "
+                << "Attr4 = " << Hex(Attr4) << ", "
+                << "Attr5 = " << Hex(Attr5) << ", "
+                << "Attr6 = " << Hex(Attr6) << ", "
+                << "Attr7 = " << Hex(Attr7) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegMAIR_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL2 make(uint64_t val)
+    {
+        RegMAIR_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL2 read()
+    {
+        RegMAIR_EL2 res;
+        __asm__ __volatile__("mrs %0,MAIR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,MAIR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr MAIR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegMAIR_EL3
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t Attr0:8;
+            uint64_t Attr1:8;
+            uint64_t Attr2:8;
+            uint64_t Attr3:8;
+            uint64_t Attr4:8;
+            uint64_t Attr5:8;
+            uint64_t Attr6:8;
+            uint64_t Attr7:8;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegMAIR_EL3& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegMAIR_EL3 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL3 & setMandatoryFields()
+    {
+        Attr0 = 0;
+        Attr1 = 0;
+        Attr2 = 0;
+        Attr3 = 0;
+        Attr4 = 0;
+        Attr5 = 0;
+        Attr6 = 0;
+        Attr7 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegMAIR_EL3 copy()const volatile
+    {
+     RegMAIR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL3 copy()const
+    {
+     RegMAIR_EL3 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegMAIR_EL3: ";
+            kout
+                << "Attr0 = " << Hex(Attr0) << ", "
+                << "Attr1 = " << Hex(Attr1) << ", "
+                << "Attr2 = " << Hex(Attr2) << ", "
+                << "Attr3 = " << Hex(Attr3) << ", "
+                << "Attr4 = " << Hex(Attr4) << ", "
+                << "Attr5 = " << Hex(Attr5) << ", "
+                << "Attr6 = " << Hex(Attr6) << ", "
+                << "Attr7 = " << Hex(Attr7) << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegMAIR_EL3*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL3 make(uint64_t val)
+    {
+        RegMAIR_EL3 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegMAIR_EL3 read()
+    {
+        RegMAIR_EL3 res;
+        __asm__ __volatile__("mrs %0,MAIR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegMAIR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,MAIR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr MAIR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegSCTLR_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t M:1;
+            uint32_t A:1;
+            uint32_t C:1;
+            uint32_t SA:1;
+            uint32_t SA0:1;
+            uint32_t CP15BEN:1;
+            uint32_t RES0_0:1;
+            uint32_t ITD:1;
+            uint32_t SED:1;
+            uint32_t UMA:1;
+            uint32_t RES0_1:1;
+            uint32_t RES1_2:1;
+            uint32_t I:1;
+            uint32_t RES0_3:1;
+            uint32_t DZE:1;
+            uint32_t UCT:1;
+            uint32_t nTWI:1;
+            uint32_t RES0_4:1;
+            uint32_t nTWE:1;
+            uint32_t WXN:1;
+            uint32_t RES1_5:1;
+            uint32_t IESB:1;
+            uint32_t RES1_6:1;
+            uint32_t SPAN:1;
+            uint32_t E0E:1;
+            uint32_t EE:1;
+            uint32_t UCI:1;
+            uint32_t RES0_7:1;
+            uint32_t nTLSMD:1;
+            uint32_t LSMAOE:1;
+            uint32_t RES0_8:2;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegSCTLR_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegSCTLR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegSCTLR_EL1 & setMandatoryFields()
+    {
+        M = 0;
+        A = 0;
+        C = 0;
+        SA = 0;
+        SA0 = 0;
+        CP15BEN = 0;
+        RES0_0 = 0;
+        ITD = 0;
+        SED = 0;
+        UMA = 0;
+        RES0_1 = 0;
+        RES1_2 = 1;
+        I = 0;
+        RES0_3 = 0;
+        DZE = 0;
+        UCT = 0;
+        nTWI = 0;
+        RES0_4 = 0;
+        nTWE = 0;
+        WXN = 0;
+        RES1_5 = 1;
+        IESB = 0;
+        RES1_6 = 1;
+        SPAN = 0;
+        E0E = 0;
+        EE = 0;
+        UCI = 0;
+        RES0_7 = 0;
+        nTLSMD = 0;
+        LSMAOE = 0;
+        RES0_8 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegSCTLR_EL1 copy()const volatile
+    {
+     RegSCTLR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegSCTLR_EL1 copy()const
+    {
+     RegSCTLR_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegSCTLR_EL1: ";
+            kout
+                << "M = " << M << ", "
+                << "A = " << A << ", "
+                << "C = " << C << ", "
+                << "SA = " << SA << ", "
+                << "SA0 = " << SA0 << ", "
+                << "CP15BEN = " << CP15BEN << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "ITD = " << ITD << ", "
+                << "SED = " << SED << ", "
+                << "UMA = " << UMA << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "RES1_2 = " << RES1_2 << ", "
+                << "I = " << I << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "DZE = " << DZE << ", "
+                << "UCT = " << UCT << ", "
+                << "nTWI = " << nTWI << ", "
+                << "RES0_4 = " << RES0_4 << ", "
+                << "nTWE = " << nTWE << ", "
+                << "WXN = " << WXN << ", "
+                << "RES1_5 = " << RES1_5 << ", "
+                << "IESB = " << IESB << ", "
+                << "RES1_6 = " << RES1_6 << ", "
+                << "SPAN = " << SPAN << ", "
+                << "E0E = " << E0E << ", "
+                << "EE = " << EE << ", "
+                << "UCI = " << UCI << ", "
+                << "RES0_7 = " << RES0_7 << ", "
+                << "nTLSMD = " << nTLSMD << ", "
+                << "LSMAOE = " << LSMAOE << ", "
+                << "RES0_8 = " << RES0_8 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegSCTLR_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegSCTLR_EL1 make(uint32_t val)
+    {
+        RegSCTLR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegSCTLR_EL1 read()
+    {
+        RegSCTLR_EL1 res;
+        __asm__ __volatile__("mrs %0,SCTLR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegSCTLR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,SCTLR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr SCTLR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegDLR_EL0
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t RestartAddr:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegDLR_EL0& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegDLR_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegDLR_EL0 & setMandatoryFields()
+    {
+        RestartAddr = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegDLR_EL0 copy()const volatile
+    {
+     RegDLR_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegDLR_EL0 copy()const
+    {
+     RegDLR_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegDLR_EL0: ";
+            kout
+                << "RestartAddr = " << RestartAddr << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegDLR_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegDLR_EL0 make(uint64_t val)
+    {
+        RegDLR_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegDLR_EL0 read()
+    {
+        RegDLR_EL0 res;
+        __asm__ __volatile__("mrs %0,DLR_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegDLR_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,DLR_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr DLR_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegDSPSR_EL0
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t SPSel:1;
+            uint32_t RES0_0:1;
+            uint32_t EL:2;
+            uint32_t ExeState:1;
+            uint32_t RES0_1:1;
+            uint32_t FIQMask:1;
+            uint32_t IRQMask:1;
+            uint32_t SErrorMask:1;
+            uint32_t DebugMask:1;
+            uint32_t RES0_2:10;
+            uint32_t IL:1;
+            uint32_t SoftwareStep:1;
+            uint32_t PAN:1;
+            uint32_t UAO:1;
+            uint32_t RES0_3:4;
+            uint32_t V:1;
+            uint32_t C:1;
+            uint32_t Z:1;
+            uint32_t N:1;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegDSPSR_EL0& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegDSPSR_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegDSPSR_EL0 & setMandatoryFields()
+    {
+        SPSel = 0;
+        RES0_0 = 0;
+        EL = 0;
+        ExeState = 0;
+        RES0_1 = 0;
+        FIQMask = 0;
+        IRQMask = 0;
+        SErrorMask = 0;
+        DebugMask = 0;
+        RES0_2 = 0;
+        IL = 0;
+        SoftwareStep = 0;
+        PAN = 0;
+        UAO = 0;
+        RES0_3 = 0;
+        V = 0;
+        C = 0;
+        Z = 0;
+        N = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegDSPSR_EL0 copy()const volatile
+    {
+     RegDSPSR_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegDSPSR_EL0 copy()const
+    {
+     RegDSPSR_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegDSPSR_EL0: ";
+            kout
+                << "SPSel = " << SPSel << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "EL = " << EL << ", "
+                << "ExeState = " << ExeState << ", "
+                << "RES0_1 = " << RES0_1 << ", "
+                << "FIQMask = " << FIQMask << ", "
+                << "IRQMask = " << IRQMask << ", "
+                << "SErrorMask = " << SErrorMask << ", "
+                << "DebugMask = " << DebugMask << ", "
+                << "RES0_2 = " << RES0_2 << ", "
+                << "IL = " << IL << ", "
+                << "SoftwareStep = " << SoftwareStep << ", "
+                << "PAN = " << PAN << ", "
+                << "UAO = " << UAO << ", "
+                << "RES0_3 = " << RES0_3 << ", "
+                << "V = " << V << ", "
+                << "C = " << C << ", "
+                << "Z = " << Z << ", "
+                << "N = " << N << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegDSPSR_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegDSPSR_EL0 make(uint32_t val)
+    {
+        RegDSPSR_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegDSPSR_EL0 read()
+    {
+        RegDSPSR_EL0 res;
+        __asm__ __volatile__("mrs %0,DSPSR_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegDSPSR_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,DSPSR_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr DSPSR_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/asm_instructions.h" 2
+# 132 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/asm_instructions.h"
+__attribute__((always_inline)) inline void asm_nop();
+__attribute__((always_inline)) inline void asm_isb();
+__attribute__((always_inline)) inline void asm_eret();
+__attribute__((always_inline)) inline RegPAR_EL1 asm_at(uint64_t va);
+__attribute__((always_inline)) inline void asm_svc(uint16_t imm);
+__attribute__((always_inline)) inline void asm_wfe();
+__attribute__((always_inline)) inline __attribute__((noreturn)) void asm_wfe_loop();
+__attribute__((always_inline)) inline void asm_tlbi_aside1(uint16_t asid);
+__attribute__((always_inline)) inline void asm_tlbi_allel1();
+__attribute__((always_inline)) inline void asm_tbli_vmallel1();
+
+
+
+void asm_nop()
+{
+ __asm__ __volatile__("nop \n\t");
+}
+void asm_isb()
+{
+ __asm__ __volatile__("isb \n\t");
+}
+void asm_eret()
+{
+ __asm__ __volatile__("eret \n\t");
+}
+RegPAR_EL1 asm_at(uint64_t va)
+{
+ __asm__ __volatile__("at S1E1R,%0 \n\t"::"r"(va));
+ return RegPAR_EL1::read();
+}
+void asm_svc(uint16_t imm)
+{
+ __asm__ __volatile__("svc %0"::"i"(imm));
+}
+void asm_wfe()
+{
+ __asm__ __volatile__("wfe \n\t");
+}
+void asm_wfe_loop()
+{
+ while(true)
+  asm_wfe();
+}
+
+
+void asm_tlbi_aside1(uint16_t asid)
+{
+ __asm__ __volatile__(
+   "tlbi aside1,%0 \n\t"
+   ::"r"(static_cast<uint64_t>(asid)<<(64 - 16))
+ );
+}
+
+void asm_tlbi_allel1()
+{
+ __asm__ __volatile__("tlbi ALLE1 \n\t");
+}
+void asm_tbli_vmallel1()
+{
+ __asm__ __volatile__("tlbi  VMALLE1 \n\t");
+}
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp" 2
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 1 3
+# 39 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+       
+# 40 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+# 75 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 1 3 4
+# 10 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/ieeefp.h" 1 3 4
+# 11 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_ansi.h" 1 3 4
+# 15 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_ansi.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/newlib.h" 1 3 4
+# 14 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/newlib.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_newlib_version.h" 1 3 4
+# 15 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/newlib.h" 2 3 4
+# 16 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_ansi.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/config.h" 1 3 4
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/ieeefp.h" 1 3 4
+# 5 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/config.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/features.h" 1 3 4
+# 25 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/features.h" 3 4
+
+# 25 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/features.h" 3 4
+extern "C" {
+# 516 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/features.h" 3 4
+}
+# 6 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/config.h" 2 3 4
+# 17 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_ansi.h" 2 3 4
+# 12 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 17 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 1 3 4
+# 9 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+extern "C" {
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/_ansi.h" 1 3 4
+# 14 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 15 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 1 3 4
+# 24 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_types.h" 1 3 4
+# 32 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_types.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 1 3 4
+# 37 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+extern "C" {
+
+
+
+typedef signed char __int8_t;
+
+typedef unsigned char __uint8_t;
+# 55 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef short int __int16_t;
+
+typedef short unsigned int __uint16_t;
+# 77 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef int __int32_t;
+
+typedef unsigned int __uint32_t;
+# 103 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef long int __int64_t;
+
+typedef long unsigned int __uint64_t;
+# 134 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef signed char __int_least8_t;
+
+typedef unsigned char __uint_least8_t;
+# 160 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef short int __int_least16_t;
+
+typedef short unsigned int __uint_least16_t;
+# 182 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef int __int_least32_t;
+
+typedef unsigned int __uint_least32_t;
+# 200 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef long int __int_least64_t;
+
+typedef long unsigned int __uint_least64_t;
+# 214 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+typedef long int __intmax_t;
+
+
+
+
+
+
+
+typedef long unsigned int __uintmax_t;
+
+
+
+
+
+
+
+typedef long int __intptr_t;
+
+typedef long unsigned int __uintptr_t;
+# 247 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_default_types.h" 3 4
+}
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/_types.h" 2 3 4
+
+
+typedef long signed int _ssize_t;
+# 25 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/lock.h" 1 3 4
+
+
+
+
+
+typedef int _LOCK_T;
+typedef int _LOCK_RECURSIVE_T;
+# 26 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 2 3 4
+
+
+typedef long __blkcnt_t;
+
+
+
+typedef long __blksize_t;
+
+
+
+typedef __uint64_t __fsblkcnt_t;
+
+
+
+typedef __uint32_t __fsfilcnt_t;
+
+
+
+typedef long _off_t;
+
+
+
+
+
+typedef int __pid_t;
+
+
+
+typedef short __dev_t;
+
+
+
+typedef unsigned short __uid_t;
+
+
+typedef unsigned short __gid_t;
+
+
+
+typedef __uint32_t __id_t;
+
+
+
+
+
+
+
+typedef unsigned short __ino_t;
+# 88 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 3 4
+typedef __uint32_t __mode_t;
+
+
+
+
+
+__extension__ typedef long long _off64_t;
+
+
+
+
+
+typedef _off_t __off_t;
+
+
+typedef _off64_t __loff_t;
+
+
+typedef long __key_t;
+
+
+
+
+
+
+
+typedef long _fpos_t;
+# 129 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 3 4
+typedef long unsigned int __size_t;
+# 156 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 3 4
+typedef _ssize_t __ssize_t;
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 357 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef unsigned int wint_t;
+# 160 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/_types.h" 2 3 4
+
+
+
+typedef struct
+{
+  int __count;
+  union
+  {
+    wint_t __wch;
+    unsigned char __wchb[4];
+  } __value;
+} _mbstate_t;
+
+
+
+typedef _LOCK_RECURSIVE_T _flock_t;
+
+
+
+
+typedef void *_iconv_t;
+
+
+
+typedef unsigned long __clock_t;
+
+
+typedef long __time_t;
+
+
+typedef unsigned long __clockid_t;
+
+
+typedef unsigned long __timer_t;
+
+
+typedef __uint8_t __sa_family_t;
+
+
+
+typedef __uint32_t __socklen_t;
+
+
+typedef unsigned short __nlink_t;
+typedef long __suseconds_t;
+typedef unsigned long __useconds_t;
+
+
+
+
+typedef char * __va_list;
+# 16 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 2 3 4
+# 25 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+typedef unsigned int __ULong;
+# 38 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct _reent;
+
+struct __locale_t;
+
+
+
+
+
+
+struct _Bigint
+{
+  struct _Bigint *_next;
+  int _k, _maxwds, _sign, _wds;
+  __ULong _x[1];
+};
+
+
+struct __tm
+{
+  int __tm_sec;
+  int __tm_min;
+  int __tm_hour;
+  int __tm_mday;
+  int __tm_mon;
+  int __tm_year;
+  int __tm_wday;
+  int __tm_yday;
+  int __tm_isdst;
+};
+
+
+
+
+
+
+
+struct _on_exit_args {
+ void * _fnargs[32];
+ void * _dso_handle[32];
+
+ __ULong _fntypes;
+
+
+ __ULong _is_cxa;
+};
+# 93 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct _atexit {
+ struct _atexit *_next;
+ int _ind;
+
+ void (*_fns[32])(void);
+        struct _on_exit_args _on_exit_args;
+};
+# 117 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+# 181 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct __sFILE {
+  unsigned char *_p;
+  int _r;
+  int _w;
+  short _flags;
+  short _file;
+  struct __sbuf _bf;
+  int _lbfsize;
+
+
+
+
+
+
+  void * _cookie;
+
+  int (* _read) (struct _reent *, void *, char *, int)
+                                          ;
+  int (* _write) (struct _reent *, void *, const char *, int)
+
+                                   ;
+  _fpos_t (* _seek) (struct _reent *, void *, _fpos_t, int);
+  int (* _close) (struct _reent *, void *);
+
+
+  struct __sbuf _ub;
+  unsigned char *_up;
+  int _ur;
+
+
+  unsigned char _ubuf[3];
+  unsigned char _nbuf[1];
+
+
+  struct __sbuf _lb;
+
+
+  int _blksize;
+  _off_t _offset;
+
+
+  struct _reent *_data;
+
+
+
+  _flock_t _lock;
+
+  _mbstate_t _mbstate;
+  int _flags2;
+};
+# 287 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+typedef struct __sFILE __FILE;
+
+
+
+struct _glue
+{
+  struct _glue *_next;
+  int _niobs;
+  __FILE *_iobs;
+};
+# 319 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct _rand48 {
+  unsigned short _seed[3];
+  unsigned short _mult[3];
+  unsigned short _add;
+
+
+
+
+};
+# 569 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+struct _reent
+{
+  int _errno;
+
+
+
+
+  __FILE *_stdin, *_stdout, *_stderr;
+
+  int _inc;
+  char _emergency[25];
+
+
+  int _unspecified_locale_info;
+  struct __locale_t *_locale;
+
+  int __sdidinit;
+
+  void (* __cleanup) (struct _reent *);
+
+
+  struct _Bigint *_result;
+  int _result_k;
+  struct _Bigint *_p5s;
+  struct _Bigint **_freelist;
+
+
+  int _cvtlen;
+  char *_cvtbuf;
+
+  union
+    {
+      struct
+        {
+          unsigned int _unused_rand;
+          char * _strtok_last;
+          char _asctime_buf[26];
+          struct __tm _localtime_buf;
+          int _gamma_signgam;
+          __extension__ unsigned long long _rand_next;
+          struct _rand48 _r48;
+          _mbstate_t _mblen_state;
+          _mbstate_t _mbtowc_state;
+          _mbstate_t _wctomb_state;
+          char _l64a_buf[8];
+          char _signal_buf[24];
+          int _getdate_err;
+          _mbstate_t _mbrlen_state;
+          _mbstate_t _mbrtowc_state;
+          _mbstate_t _mbsrtowcs_state;
+          _mbstate_t _wcrtomb_state;
+          _mbstate_t _wcsrtombs_state;
+   int _h_errno;
+        } _reent;
+
+
+
+      struct
+        {
+
+          unsigned char * _nextf[30];
+          unsigned int _nmalloc[30];
+        } _unused;
+    } _new;
+
+
+
+  struct _atexit *_atexit;
+  struct _atexit _atexit0;
+
+
+
+  void (**(_sig_func))(int);
+
+
+
+
+  struct _glue __sglue;
+  __FILE __sf[3];
+};
+# 766 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+extern struct _reent *_impure_ptr ;
+extern struct _reent *const _global_impure_ptr ;
+
+void _reclaim_reent (struct _reent *);
+# 792 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/reent.h" 3 4
+}
+# 19 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/cdefs.h" 1 3 4
+# 45 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/cdefs.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 46 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/sys/cdefs.h" 2 3 4
+# 20 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/machine/stdlib.h" 1 3 4
+# 21 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 2 3 4
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+extern "C" {
+
+typedef struct
+{
+  int quot;
+  int rem;
+} div_t;
+
+typedef struct
+{
+  long quot;
+  long rem;
+} ldiv_t;
+
+
+typedef struct
+{
+  long long int quot;
+  long long int rem;
+} lldiv_t;
+
+
+
+
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+
+
+
+
+
+
+int __locale_mb_cur_max (void);
+
+
+
+void abort (void) __attribute__ ((__noreturn__));
+int abs (int);
+
+
+
+
+
+int atexit (void (*__func)(void));
+double atof (const char *__nptr);
+
+
+
+int atoi (const char *__nptr);
+int _atoi_r (struct _reent *, const char *__nptr);
+long atol (const char *__nptr);
+long _atol_r (struct _reent *, const char *__nptr);
+void * bsearch (const void * __key, const void * __base, size_t __nmemb, size_t __size, __compar_fn_t _compar)
+
+
+
+                                ;
+void * calloc (size_t __nmemb, size_t __size) __attribute__ ((__nothrow__));
+div_t div (int __numer, int __denom);
+void exit (int __status) __attribute__ ((__noreturn__));
+void free (void *) __attribute__ ((__nothrow__));
+char * getenv (const char *__string);
+char * _getenv_r (struct _reent *, const char *__string);
+char * _findenv (const char *, int *);
+char * _findenv_r (struct _reent *, const char *, int *);
+
+
+
+
+long labs (long);
+ldiv_t ldiv (long __numer, long __denom);
+void * malloc (size_t __size) __attribute__ ((__nothrow__));
+int mblen (const char *, size_t);
+int _mblen_r (struct _reent *, const char *, size_t, _mbstate_t *);
+int mbtowc (wchar_t *, const char *, size_t);
+int _mbtowc_r (struct _reent *, wchar_t *, const char *, size_t, _mbstate_t *);
+int wctomb (char *, wchar_t);
+int _wctomb_r (struct _reent *, char *, wchar_t, _mbstate_t *);
+size_t mbstowcs (wchar_t *, const char *, size_t);
+size_t _mbstowcs_r (struct _reent *, wchar_t *, const char *, size_t, _mbstate_t *);
+size_t wcstombs (char *, const wchar_t *, size_t);
+size_t _wcstombs_r (struct _reent *, char *, const wchar_t *, size_t, _mbstate_t *);
+# 133 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+char * _mkdtemp_r (struct _reent *, char *);
+int _mkostemp_r (struct _reent *, char *, int);
+int _mkostemps_r (struct _reent *, char *, int, int);
+int _mkstemp_r (struct _reent *, char *);
+int _mkstemps_r (struct _reent *, char *, int);
+char * _mktemp_r (struct _reent *, char *) __attribute__ ((__deprecated__("the use of `mktemp' is dangerous; use `mkstemp' instead")));
+void qsort (void * __base, size_t __nmemb, size_t __size, __compar_fn_t _compar);
+int rand (void);
+void * realloc (void * __r, size_t __size) __attribute__ ((__nothrow__));
+# 154 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+void srand (unsigned __seed);
+double strtod (const char * __n, char ** __end_PTR);
+double _strtod_r (struct _reent *,const char * __n, char ** __end_PTR);
+
+float strtof (const char * __n, char ** __end_PTR);
+
+
+
+
+
+
+
+long strtol (const char * __n, char ** __end_PTR, int __base);
+long _strtol_r (struct _reent *,const char * __n, char ** __end_PTR, int __base);
+unsigned long strtoul (const char * __n, char ** __end_PTR, int __base);
+unsigned long _strtoul_r (struct _reent *,const char * __n, char ** __end_PTR, int __base);
+# 186 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+int system (const char *__string);
+# 197 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+void _Exit (int __status) __attribute__ ((__noreturn__));
+
+
+
+
+int _putenv_r (struct _reent *, char *__string);
+void * _reallocf_r (struct _reent *, void *, size_t);
+
+
+
+int _setenv_r (struct _reent *, const char *__string, const char *__value, int __overwrite);
+# 219 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+char * __itoa (int, char *, int);
+char * __utoa (unsigned, char *, int);
+# 258 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+long long atoll (const char *__nptr);
+
+long long _atoll_r (struct _reent *, const char *__nptr);
+
+long long llabs (long long);
+lldiv_t lldiv (long long __numer, long long __denom);
+long long strtoll (const char * __n, char ** __end_PTR, int __base);
+
+long long _strtoll_r (struct _reent *, const char * __n, char ** __end_PTR, int __base);
+
+unsigned long long strtoull (const char * __n, char ** __end_PTR, int __base);
+
+unsigned long long _strtoull_r (struct _reent *, const char * __n, char ** __end_PTR, int __base);
+# 279 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+int _unsetenv_r (struct _reent *, const char *__string);
+
+
+
+
+
+
+char * _dtoa_r (struct _reent *, double, int, int, int *, int*, char**);
+
+void * _malloc_r (struct _reent *, size_t) __attribute__ ((__nothrow__));
+void * _calloc_r (struct _reent *, size_t, size_t) __attribute__ ((__nothrow__));
+void _free_r (struct _reent *, void *) __attribute__ ((__nothrow__));
+void * _realloc_r (struct _reent *, void *, size_t) __attribute__ ((__nothrow__));
+void _mstats_r (struct _reent *, char *);
+
+int _system_r (struct _reent *, const char *);
+
+void __eprintf (const char *, const char *, unsigned int, const char *);
+# 316 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/libc/usr/include/stdlib.h" 3 4
+extern long double _strtold_r (struct _reent *, const char *, char **);
+
+extern long double strtold (const char *, char **);
+
+
+
+
+
+
+
+void * aligned_alloc(size_t, size_t) __attribute__((__malloc__)) __attribute__((__alloc_align__(1)))
+     __attribute__((__alloc_size__(2)));
+int at_quick_exit(void (*)(void));
+[[noreturn]] void
+ quick_exit(int);
+
+
+}
+# 76 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 2 3
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/bits/std_abs.h" 1 3
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/bits/std_abs.h" 3
+       
+# 34 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/bits/std_abs.h" 3
+# 46 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/bits/std_abs.h" 3
+extern "C++"
+{
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  using ::abs;
+
+
+  inline long
+  abs(long __i) { return __builtin_labs(__i); }
+
+
+
+  inline long long
+  abs(long long __x) { return __builtin_llabs (__x); }
+
+
+
+
+
+
+
+  inline constexpr double
+  abs(double __x)
+  { return __builtin_fabs(__x); }
+
+  inline constexpr float
+  abs(float __x)
+  { return __builtin_fabsf(__x); }
+
+  inline constexpr long double
+  abs(long double __x)
+  { return __builtin_fabsl(__x); }
+# 106 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/bits/std_abs.h" 3
+
+}
+}
+# 78 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 2 3
+# 118 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+extern "C++"
+{
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+
+  using ::div_t;
+  using ::ldiv_t;
+
+  using ::abort;
+  using ::atexit;
+
+
+
+
+
+  using ::atof;
+  using ::atoi;
+  using ::atol;
+  using ::bsearch;
+  using ::calloc;
+  using ::div;
+  using ::exit;
+  using ::free;
+  using ::getenv;
+  using ::labs;
+  using ::ldiv;
+  using ::malloc;
+
+  using ::mblen;
+  using ::mbstowcs;
+  using ::mbtowc;
+
+  using ::qsort;
+
+
+
+
+
+  using ::rand;
+  using ::realloc;
+  using ::srand;
+  using ::strtod;
+  using ::strtol;
+  using ::strtoul;
+  using ::system;
+
+  using ::wcstombs;
+  using ::wctomb;
+
+
+
+  inline ldiv_t
+  div(long __i, long __j) { return ldiv(__i, __j); }
+
+
+
+
+}
+# 189 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
+{
+
+
+
+  using ::lldiv_t;
+
+
+
+
+
+  using ::_Exit;
+
+
+
+  using ::llabs;
+
+  inline lldiv_t
+  div(long long __n, long long __d)
+  { lldiv_t __q; __q.quot = __n / __d; __q.rem = __n % __d; return __q; }
+
+  using ::lldiv;
+# 221 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdlib" 3
+  using ::atoll;
+  using ::strtoll;
+  using ::strtoull;
+
+  using ::strtof;
+  using ::strtold;
+
+
+}
+
+namespace std
+{
+
+  using ::__gnu_cxx::lldiv_t;
+
+  using ::__gnu_cxx::_Exit;
+
+  using ::__gnu_cxx::llabs;
+  using ::__gnu_cxx::div;
+  using ::__gnu_cxx::lldiv;
+
+  using ::__gnu_cxx::atoll;
+  using ::__gnu_cxx::strtof;
+  using ::__gnu_cxx::strtoll;
+  using ::__gnu_cxx::strtoull;
+  using ::__gnu_cxx::strtold;
+}
+
+
+
+}
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp" 2
+
+
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/generic/error.cpp"
+void abort()
+{
+ kout << "[FATAL] " << "-- ABORT -- \n";
+ kout.flush();
+ asm_wfe_loop();
+}
+
+void resume()
+{
+
+}
+
+void reportError(const char *s)
+{
+ kout << "[FATAL] " << s << "\n";
+ abort();
+}
+
+void report_assert_error(const char *file,size_t line,const char *func,const char *expr)
+{
+ kout << "at line " << line << ", file \"" << file << "\", function \""<<func<<"\", fails\n\t \""<<expr<<"\"\n";
+ abort();
+}

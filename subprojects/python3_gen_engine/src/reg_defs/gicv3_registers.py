@@ -123,7 +123,9 @@ reg_defs=[
      "templateSpecArgs","1",
      "no_dump","no_setMandatory"
      ],
-    ["RegICC_IGRPEN1_EL3","uint32_t",[["EnableGrp1NS",1,       "EnableGrp1S",1,       "RES0",30]],"sys_reg_name",gccReprRegister(3,6,12,12,7)],
+    ["RegICC_IGRPEN1_EL3","uint32_t",
+     [["EnableGrp1NS",1,       "EnableGrp1S",1,       "RES0",30]],
+     "sys_reg_name",gccReprRegister(3,6,12,12,7)],
     #
     ["RegICC_PMR_EL1","uint32_t",[["Priortiy",8,       "RES0",24]],"sys_reg_name",gccReprRegister(3,0,4,6,0)],
     ["RegICC_RPR_EL1","uint32_t",[["Priortiy",8,       "RES0",24]],"sys_reg_name",gccReprRegister(3,0,12,11,3)],
@@ -151,9 +153,13 @@ reg_defs=[
     ],
     # Interrupt Controller System Register Enable register (EL1)
     # Controls whether the System register interface or the memory-mapped interface to the GIC CPU interface is used for EL1.
-    ["RegICC_SRE_EL1","uint32_t",[["SRE",1,       "DFB",1,       "DIB",1,       "RES0",29]],"sys_reg_name",gccReprRegister(3,0,12,12,5)],
-    ["RegICC_SRE_EL2","uint32_t",[["SRE",1,       "DFB",1,       "DIB",1,       "RES0",29]],"sys_reg_name",gccReprRegister(3,4,12,9,5)],
-    ["RegICC_SRE_EL3","uint32_t",[["SRE",1,       "DFB",1,       "DIB",1,       "RES0",29]],"sys_reg_name",gccReprRegister(3,6,12,12,5)],
+    # Enable决定低异常级是否可以使用ICC_*寄存器
+    ["RegICC_SRE_EL1","uint32_t",
+     [["SRE",1,       "DFB",1,       "DIB",1,       "RES0",29]],"sys_reg_name",gccReprRegister(3,0,12,12,5)],
+    ["RegICC_SRE_EL2","uint32_t",
+     [["SRE",1,       "DFB",1,       "DIB",1, "Enable",1,   "RES0",28]],"sys_reg_name",gccReprRegister(3,4,12,9,5)],
+    ["RegICC_SRE_EL3","uint32_t",
+     [["SRE",1,       "DFB",1,       "DIB",1,"Enable",1,       "RES0",28]],"sys_reg_name",gccReprRegister(3,6,12,12,5)],
     
     #============redistributor
     ["RegGICR_CTLR","uint32_t",[["EnableLPIs",1,   "RES0",2,   "RWP",1,    "RES0",20,    "DPG0",1,    "DPG1NS",1,   "DPG1S",1,   "RES0",4,   "UWP",1]],"out_place"],
@@ -182,7 +188,14 @@ reg_defs=[
     # • GICD_CTLR.EnableGrp1==0.
     # • GICD_CTLR.EnableGrp0==0.
     # if not GICv2,then ARE=RAO/WI
-    ["RegGICD_CTLR","uint32_t",[["EnableGrp0",1,  "EnableGrp1NS",1,   "EnableGrp1S",1,     "RES0",1,   "ARE_S",1, "ARE_NS",1,     "DS",1,    "E1NWF",1,   "RES0",23,   "RWP",1  ]]  ,"out_place"],
+    # 1 for S_2S,2 for NS_2S,3 for NS_1S or S_1S
+    ["RegGICD_CTLR","uint32_t",
+     [
+         ["EnableGrp0",1,  "EnableGrp1NS",1,   "EnableGrp1S",1,     "RES0",1,   "ARE_S",1, "ARE_NS",1,     "DS",1,    "E1NWF",1,   "RES0",23,   "RWP",1  ],
+         ["EnableGrp1",1,"EnableGrp1A",1,"RES0",2,"ARE_NS",1,"RES0",26,"RWP",1],       
+         ["EnableGrp0",1,"EnableGrp1",1,"RES0",2,"ARE",1,"RES0",1,"DS",1,"E1NWF",1,"RES0",23,"RWP",1],
+         ]  ,"out_place", "applies",["0==0","1==1",""]],
+    
     # n=0-31, Clear-Active
     ["RegGICD_ICACTIVER","uint32_t",[["Actives,Hex",32]],"out_place"],
     #n=0-31, Clear-Enable, read returns enabled, write 0 ignroed, write 1 clear enabled.

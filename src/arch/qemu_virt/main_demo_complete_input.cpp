@@ -24,20 +24,17 @@
 #include <memory/VirtualMap.h>
 #include <generic/error.h>
 #include <data_structures/Vector.h>
-#include <data_structures/UniversalVector.h>
 #include <data_structures/String.h>
-#include <data_structures/UniversalString.h>
 #include <data_structures/Queue.h>
 #include <io/Input.h>
 #include <data_structures/Queue.h>
+#include <interrupt/GICDefinitions.h>
+
 
 // 展示了内核的初始化过程： 中断，虚拟内存，内存管理，定时器，输入缓冲区等的设置
-#define GIC_DIST_BASE 0x08000000
-#define GIC_REDIST_BASE 0x080A0000
-#define GIC_REDIST_RD_BASE  (GIC_REDIST_BASE)
-#define GIC_REDIST_SGI_BASE (GIC_REDIST_RD_BASE + 1024*64)
 extern char ExceptionVectorEL1[];
 extern char __stack_top[];
+extern const char user_space_start[];
 extern uint64_t __vt_rom_begin[];
 extern uint64_t __vt_end[];
 extern uint64_t __vt_begin[];
@@ -66,6 +63,8 @@ int main()
 
 	// 初始化4个必须的组件
 	size_t ramSize = static_cast<size_t>(ramEnd - ramStart);
+	securityState = SecurityState::S_NS_2S;
+	exceptionLevel = ExceptionLevel::EL1;
 	new (&mman) MemoryManager(ramStart, ramSize,true);
     new (&intHandler) InterruptHandler();
 	new (&intm) InterruptManager(
@@ -78,7 +77,6 @@ int main()
 	// 依赖于 InterruptHandler
 	int status=intm.init(
 			ExceptionVectorEL1,
-			true,
 			EOIMode::ack_priority_drop_and_deactivation,
 			0xFE,
 			0xF0);
@@ -87,6 +85,16 @@ int main()
 
 	// 请在这里插入测试
 	// ====== TEST START
+//	new (&kin) Input();
+//	new (&inputBuffer) Queue<uint16_t>(512);
+//	while(true)
+//	{
+//		char ch;
+//		kin >> ch;
+//		while(!pl011.hasReceiveData());
+//		ch = pl011.readDataNonBlocked();
+//		kout << ch;
+//	}
 	//==== TEST END
 
 
@@ -180,6 +188,9 @@ void main_mmu_set()
 	ktimer.enableTimerWork(true);
 	ktimer.enableTimerInt(true);
 
+	// 这里插入TEST
+	// TEST END
+
 	// 建立一个进程
 	auto processLink = processManager.createNewProcess(
 			virtman.addressBits(), // virtual address length in bits
@@ -194,15 +205,15 @@ void main_mmu_set()
 			process.status()!=Process::CREATED_INCOMPLETE);
 
 	// 复制代码到分配给进程的代码段空间
-	const void *userSpaceStart = reinterpret_cast<const void*>(USER_SPACE_START | virtman.ttbr1Mask());
-	std::memcpy(process.codeBase(), userSpaceStart, USER_SPACE_SIZE);
+	std::memcpy(process.codeBase(),
+			user_space_start,
+			USER_SPACE_SIZE);
 
 	// 设置LR寄存器(x30)为入口地址
 	process.registers()[30] = process.ELR().returnAddr;
 
 	// 使用任务调度切换到下一个进程
 	virtman.enableTTBR0(true);
-	intm.disableAllInterrupts();
 	intm.enableWord(0) = 0xFFFFFFFF;
 	intm.enableIntID(INT_INPUT, true);// 允许输入
 	pl011.enableReceiveInterrupt(true);

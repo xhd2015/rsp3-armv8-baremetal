@@ -7,9 +7,9 @@
 
 #ifndef INCLUDE_IO_VIRTIO_VIRTIOBLOCKCONFIG_H_
 #define INCLUDE_IO_VIRTIO_VIRTIOBLOCKCONFIG_H_
-
 #include <def.h>
 #include <io/Output.h>
+
 /**
  * 对V1,V2都适用
  */

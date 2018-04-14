@@ -1,0 +1,25 @@
+##=======Automatically generated=========##
+# This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment
+# after this file included,ENVS_PRESENT will never be used.So no need to define it.
+# ENVS_PRESENT := true
+PATH := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin:/bin:/usr/bin
+ USER_SPACE_START := 524288
+ USER_SPACE_SIZE := 28672
+ KERNEL_ADDRESS := 0
+ TARGET_ARCH := qemu_virt
+ MASTERY_ELF := qemu_virt.elf
+ MASTERY_BINARY := qemu_virt.bin
+ LINKER_SCRIPT := 
+ TOOLCHAIN_PREFIX := aarch64-elf-
+ TOOLCHAIN_CC := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-gcc
+ TOOLCHAIN_CXX := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-g++
+ TOOLCHAIN_LD := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-ld
+ TOOLCHAIN_OBJCOPY := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-objcopy
+ TOOLCHAIN_OBJDUMP := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-objdump
+ USER_ALL := qemu_virt.bin
+ USER_CLEAN := user-clean
+ BUILD_BASE_SYSTEM := LINUX
+ BUILD_BASE_SYSTEM_IS_LINUX := 
+ QEMU_ROOT := /home/francis/QEMU_2018_4/build/aarch64-softmmu
+ GDB_BIN := /home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-gdb
+

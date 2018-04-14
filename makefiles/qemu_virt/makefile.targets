@@ -2,9 +2,14 @@ include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
 include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
 
 IO_IMG := fat32.img
-QEMU_NO_MACHINE = -cpu cortex-a53 -smp 1 -m 1024M -nographic -serial mon:stdio -bios $(MASTERY_BINARY) -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
-QEMU_ARGS := -machine virt,gic-version=3 $(QEMU_NO_MACHINE)
+QEMU_NO_BIOS = -cpu cortex-a53 -smp 4 -m 1024M -nographic -serial mon:stdio  -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
+#trace:load_file,trace:cpu_in,trace:guest_mem_before_exec,trace:guest_mem_before_trans,trace:memory_region_tb_read,trace:memory_region_ops_read
+QEMU_NO_MACHINE = -bios $(MASTERY_BINARY) $(QEMU_NO_BIOS)
 
+KERNEL_ADDRESS := $(shell echo '$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))')
+QEMU_ARGS := -machine virt,gic-version=3 $(QEMU_NO_MACHINE)
+QEMU_ARGS_EL2 := -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0  -machine virt,gic-version=3,virtualization=on $(QEMU_NO_MACHINE)
+QEMU_ARGS_EL3 := -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0  $(QEMU_NO_BIOS) -machine virt,gic-version=3,virtualization=on,secure=on
 .PHONY:qemu-run qemu-debug
 # if only using secure=on,then EL=3
 # if only using virtualization=on, EL=2
@@ -14,41 +19,38 @@ qemu_run:
 	$(QEMU_AARCH64) $(QEMU_ARGS)
 qemu_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
+qemu_run_el2:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL2)
+qemu_debug_el2:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL2) -S -s
+qemu_run_el3:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL3)
+qemu_debug_el3:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL3) -S -s
+qemu_loader:
+	$(QEMU_AARCH64) $(QEMU_NO_BIOS) -machine virt,gic-version=3,virtualization=on,secure=on -device loader,file=$(MASTERY_BINARY),addr=0,data=0
 qemu_virt.dts:FORCE
 	$(QEMU_AARCH64) -machine virt,gic-version=3,dumpdtb=qeme_virt.dtb $(QEMU_NO_MACHINE)
 	$(DTC) -I dtb -O dts -o $@ qemu_virt.dtb
-
+qemu_virt_el3.dts:FORCE
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL3),dumpdtb=qeme_virt.dtb
+	$(DTC) -I dtb -O dts -o $@ qemu_virt.dtb
 # 通过dd将用户程序嵌入到内核镜像中
 userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
 # 注意,MASTERY_RELOC必须在MASTERY_ELF之前
-$(MASTERY_BINARY):FORCE
-	@$(RM) $@ $(MASTERY_RELOC) $(MASTERY_ELF)
-	$(MAKE) $(MASTERY_RELOC)
-	# 最多尝试try次make $(MASTERY_ELF)，如果没有，就退出
-	try=2
-	while true;do 
-		if [[ -f $(MASTERY_ELF) || $${try} -eq 0 ]];then 
-			break 
-		else  
-			$(MAKE) $(MASTERY_ELF)
-			if [[ ! $$? -eq 0 ]];then #有错误
-				break
-			fi
-			try=$$((try-1))
-		fi 
-	done 
-	if [[ ! -f $(MASTERY_ELF) ]];then
-		echo '$(MASTERY_LEF) still does not exist'
-		exit 1
-	fi
+$(MASTERY_BINARY):$(MASTERY_RELOC) $(MASTERY_ELF)
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
-	dd if=$(userSpaceBin) of=$@ seek=$(USER_SPACE_START) bs=1c count=$(USER_SPACE_SIZE)
+	userSpaceStart=$$(($(CODE_SIZE)))
+	count=$$(($(USER_SPACE_SIZE)))
+	dd if=$(userSpaceBin) of=$@ seek=$$userSpaceStart bs=1c count=$$count
 
 
-$(MASTERY_RELOC):
+$(MASTERY_RELOC):$(MASTERY_ELF)
 	# 改变IMAGE_BASE的值，然后编译生成即可
+	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
 	$(MAKE) IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
+	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
 dump_reloc:
 	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
 .PHONY:dump-reloc

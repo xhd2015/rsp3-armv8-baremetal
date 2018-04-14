@@ -83,6 +83,16 @@ MemAbort m_abort;
 #include <data_structures/Queue.h>
 Queue<uint16_t>  inputBuffer(512);//512字节大小，通常
 #endif
+
+#ifndef _NOT_NEED_SecurityState
+#include <interrupt/GICDefinitions.h>
+SecurityState securityState=SecurityState::S_NS_1S;
+#endif
+
+#ifndef _NOT_NEED_ExceptionLevel
+#include <interrupt/GICDefinitions.h>
+ExceptionLevel exceptionLevel=ExceptionLevel::EL0;
+#endif
 // 编译器提供的函数
 // 如果不注释下面这一行，该文件可能无法编译
 //extern "C" void __static_initialization_and_destruction_0(int,int);

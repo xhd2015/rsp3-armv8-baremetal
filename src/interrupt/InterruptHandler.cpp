@@ -95,9 +95,9 @@ void InterruptHandler::handleSVC(SvcFunc func)
 				if(blocked)
 				{
 					intm.enableIntID(INT_INPUT,true);
-					intm.cpuIntEnable<InterruptManager::IRQ>(true);
+					intm.cpuIntEnable(InterruptManager::IRQ,true);
 					while(inputBuffer.empty());// 原子读，不存在同步问题
-					intm.cpuIntEnable<InterruptManager::IRQ>(false);
+					intm.cpuIntEnable(InterruptManager::IRQ,false);
 					intm.enableIntID(INT_INPUT,false);
 				}else{
 					break; // 退出
@@ -185,16 +185,7 @@ void InterruptHandler::handleIRQ(IntID id)
 		// this no return
 	    processManager.scheduleNextProcess(currentState()._generalRegisters);
 	}else if(id== INT_INPUT){
-		uint16_t ch;
-//		kout << "queue old size = " << inputBuffer.size() << "\n";
-		while( (ch=pl011.readDataNonBlocked())!=0xFFFF)
-		{
-			if(inputBuffer.full())
-				kout << WARNING << "input buffer is full,extra inputs are discarded.\n";
-			else
-				inputBuffer.put(ch);
-		}
-//		kout << "queue new size = " << inputBuffer.size() << "\n";
+		handleInputEvent();
 		eoi.write();
 	}else{ // others
 		eoi.write();
@@ -203,11 +194,29 @@ void InterruptHandler::handleIRQ(IntID id)
 
 void InterruptHandler::handleFIQ(IntID id)
 {
-	kout << INFO <<"processing FIQ_EL1 \n";
-	RegICC_RPR_EL1::read().dump();
+	kout << INFO <<"processing FIQ_EL1 : " << id << "\n";
+	if(id==INT_SPURIOUS) // assume it is INT_INPUT
+	{
+		handleInputEvent();
+	}
 	auto eoi=RegICC_EOIR_EL1<0>::make(0);
 	eoi.INTID =id ; // this must be correctly done, else eret will causes errors
 	eoi.write();
+}
+void InterruptHandler::handleInputEvent()
+{
+	uint16_t ch;
+//		kout << "queue old size = " << inputBuffer.size() << "\n";
+	intm.enableIntID(INT_INPUT, false);
+	while( (ch=pl011.readDataNonBlocked())!=0xFFFF)
+	{
+		if(inputBuffer.full())
+			kout << WARNING << "input buffer is full,extra inputs are discarded.\n";
+		else
+			inputBuffer.put(ch);
+	}
+	intm.enableIntID(INT_INPUT, true);
+//		kout << "queue new size = " << inputBuffer.size() << "\n";
 }
 void InterruptHandler::handleSError()
 {

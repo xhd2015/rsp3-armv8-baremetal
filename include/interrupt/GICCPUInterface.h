@@ -19,7 +19,7 @@
 class GICCPUInterface{
 public:
 	GICCPUInterface()=default;
-	int init(uint8_t lowestPriority,bool a3vEn,EOIMode mode);
+	int init(uint8_t lowestPriority,EOIMode mode);
 
 
 	AS_MACRO uint8_t runningPriority()const{return 0;}

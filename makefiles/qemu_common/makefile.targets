@@ -1,12 +1,10 @@
-QEMU_ROOT := /cygdrive/d/installed/qemu-x86_64
+#QEMU_ROOT := 
 QEMU_AARCH64 := $(QEMU_ROOT)/qemu-system-aarch64
-GDB_ROOT := /cygdrive/d/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin
-GDB_AARCH64 := $(GDB_ROOT)/aarch64-elf-gdb.exe
 PYTHON3 := /usr/bin/python3
 DTC := /cygdrive/d/installed/githubs/dtc-for-win/dtc.exe
 	
 gdb_connect:
-	$(GDB_AARCH64) -iex 'set disassemble-next-line on' -iex 'file $(MASTERY_ELF)' -iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
+	$(GDB_BIN) -iex 'set disassemble-next-line on' -iex 'file $(MASTERY_ELF)' -iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
 	
 
 .PHONY:qemu_log

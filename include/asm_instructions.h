@@ -27,25 +27,6 @@
 #define ASM_POPW_REG()
 #define ASM_POPW()
 #define ASM_GOTO(sym) __asm__ __volatile__("b " __stringify(sym) " \n\t")
-//#define ASM_SVC(imm) __asm__ __volatile__("svc %0 \n\t"::"I"(imm))
-// 不能使用代码实现，会导致不确定性
-#define ASM_HALT_SLAVE_CPUS() \
-		"mrs     x0, mpidr_el1 \n\t" \
-		"and     x0, x0, #3 \n\t" \
-		"cbz     x0, 2f \n\t" \
-		"1:  	wfe	\n\t" \
-		"b       1b	\n\t" \
-		"2: \n\t"
-// which 使用0,1
-// x0保留最低位
-#define ASM_SET_SP_SEL(which) \
-	    "mov x0,#" __stringify(which) "\n\t" \
-        "and x0,x0,#1 \n\t"  \
-        "msr SPSel, x0 \n\t"
-#define ASM_SET_SP_SYM(sym) \
-		"ldr x0, =" __stringify(sym) " \n\t" \
-		"mov sp, x0 \n\t "
-
 
 //== declarations
 AS_MACRO void asm_nop();

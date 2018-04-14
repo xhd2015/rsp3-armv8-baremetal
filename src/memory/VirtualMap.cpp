@@ -99,6 +99,7 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 			_l3Table[i].Valid=1;
 			_l3Table[i].RES1_0=1;
 			_l3Table[i].NS=1;
+//			_l3Table[i].NS=0;
 			_l3Table[i].OutputAddr = basePage+i-index; //VA[12:0] = OA[12:0]
 			_l3Table[i].AF = 1; // if AF=0, the first access will generate a fault
 //			_l3Table[i].AttrIndex=_D::MEMORY_ATTR_NORMAL;

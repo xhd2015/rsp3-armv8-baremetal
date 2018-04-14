@@ -1,9 +1,167 @@
+# 2018年4月14日16:13:17
+【commit point】 现在系统能够从EL3启动，并且切换到non-secure EL1. 代码[crt0_EL3](../src/arch/qemu_virt/crt0_EL3.cpp)
+从EL1模式调整到EL3模式是一个痛苦的过程，尽管最后代码的调整很少。
+回顾之前的代码，能够工作在：非安全 的EL1， 配置中断为IRQ进入。
+而从EL3启动之后，要切换到EL1，需要：1.设置SCR_EL3  2.设置HCR_EL2  3.在EL3设置Distributor的igroup
+# 2018年4月14日13:47:18
+注:在非安全状态不能访问的寄存器
+GICD_IGROUPR<n>
+GICD_IGRPMODR<n>
+GICD_NSACR<n>
+GICR_IGROUPR0
+GICR_IGRPMODR0
+# 2018年4月14日12:45:09
+终于解决了在non-secure EL1下的组配置问题， Distributor必须在EL3时配置为 igroup=1,igroupmode=0, 此时配置才是有效的。
+
+参考了linux的irqchip gicv3的代码，主要是更改了中断初始化的顺序，以及增加对RWP位的检测。
+当group禁用时，甚至不会看到pending状态。
+
+这样一来，必须在EL3时完成interrupt的配置，主要是将中断id分配到non-secure group1组，启用系统寄存器。
+概念性的代码
+```c++
+// bl to
+static int InterruptManager::preconfigEL3() // applies only when EL=3
+{
+	// SRE at EL3,EL2
+	// enable group 1 NS
+	// 
+}
+static void changeToEL1(void * addr,bool spsel)
+{
+	// determine current el
+	// sp keeps the same, sp_el1 or sp_el0
+	// elr_elx = addr
+	// spsr_elx =0x3cZ , Z=0101 or 0100
+}
+```
+# 2018年4月14日02:37:15
+Secure Group 1 interrupts are treated as Group 0 by a CPU interface if:
+— The PE does not implement EL3.
+— ICC_SRE_EL1(S).SRE == 0
+
+只有secure下的secure group1 作为IRQ通知，而配置为secure group1 需要1:groupmode=1,
+groupstatus=0
+
+
+At start-up, and after a reset, a PE can use this register to discover which peripheral INTIDs the GIC supports. If
+GICD_CTLR.DS==0 in a system that supports EL3, the PE must do this for the Secure view of the available
+interrupts, and Non-secure software running on the PE must do this discovery after the Secure software has
+configured interrupts as Group 0/Secure Group 1 and Non-secure Group 1
+
+
+关于不能正确配置aarch64的FIQ和IRQ，我认为这是qemu的bug。
+目前，我们使用FIQ来处理输入中断。因为目前QEMU通过FIQ报告的中断号是1023,简直就是胡扯。
+
+然而不应当有任何假定。  因此，还是回归树莓派吧！这个bug暂时记下来，以后再说吧。
+# 2018年4月13日22:02:50
+qemu设置pc的起始地址
+
+qemu是将dtb文件存放在RAM的开始处，而将加载的代码放置到RAM+0x8000处 （这是基于virt得出的结果）
+
+但是注意，偏移不一定是0x8000, 当提示
+```
+rom: requested regions overlap (rom qemu_virt.bin. free=0x0000000040010000, addr=0x0000000040008000)
+```
+依次增加其值，比如0x50000000, 什么时候可以就是取那个值。
+
+而Debug时，停止地址尝试停放在 BASE + 0x4上，因为BASE上可能停不下来。
+
+当使用下面版本的qemu运行时，有一个已知的bug:不能设置cpu-num=0的addr，这是代码上的bug。
+```
+QEMU emulator version 2.11.0 (v2.11.0-11693-g21057c841e-dirty)
+Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
+```
+该bug在2018年2月05日，linaro的修复中提及：https://patches.linaro.org/patch/126903/
+希望在下个版本的qemu中它已经修复。（UDPATE：在最新版本的qemu中已经修复，因此请保持qemu最新版本）
+```
+ -device loader,file=qemu_virt.bin,addr=0x50000000,cpu-num=0,force-raw=on
+```
+
+我们可以按照下面的方式启动kernel，并且保持在非安全状态：
+
+当使用secure=on时， -bios指定的文件内容会变成dtb中secflash/secram的一部分。而我们需要避免使用安全区域。
+
+--- 使用新版本qemu，代码的调整
+1.查找dtb的大小，按4KB对齐保留这部分   -- 经过测定，dtb大小约等于0x2000, 因此保留0x4000的空间即可
+2.栈的变化： 大小仍然不变，基址向上调整  -- 
+3.将BIOS命名为ROM， 基址调整
+4.将KERNEL_ADDR调整为ROM_BASE
+5.在地址映射时，ROM_BASE,ROM_SIZE这部分设置为只读。
+6.设置0~RAM_BASE为未映射。
+7.重新解析dts文件，查看各个外设的基地址。   -- 外设地址不变，增加secram,secflash. secram为 0xe000000 +0x1000000
+8.命名改变： 主要的内存布局命名：DTB STACK CODE DATA ， ld脚本提供的变量要么是小写+下划线(如user_space_size), 要么是大写加下划线。
+9.pl011的intid的变化
+
+# 2018年4月13日22:02:40
+[关于环境变量]
+windows下不区分大小写， linux区分
+PROVIDER专节：
+PROVIDER使用命令：${COMMAND} ${FLAGS} -E -P -v -dD "${INPUTS}" 来发现include路径和宏定义， 在cross环境下，COMMAND带有前缀。 但是，PROVIDER使用的是windows路径方式，因此应当修改成：${TOOLCHAIN_ROOT_windows}/${COMMAND}
+
+# 2018年4月13日14:08:04
+关于eclipse生成makefile中的编译器名称： 只包含prefix，不包含路径。 需要手动将路径加入到PATH的前部。
+# 2018年4月13日03:01:19
+然而执着是有代价的，正如我们现在所做的一样。 针对多个目标是困难的。
+
+只要组件之间以某种形式工作良好就可以了。
+
+QEMU： 仅有EL1和EL0，工作良好
+
+也许可以从Linux的调试中找到灵感
+
+也许最终的结果是：所有的代码加载到RAM中执行。
+
+// 使用二进制格式的SystemFeatures
+概念性的展示：
+选择处理器
+```c++
+if (PROCESSOR_NUM >= 2)//use 1
+	selectRunning=1
+else
+	selectRunning=0
+```
+
+QEMU加载到指定地址： -smp 4  -device loader,addr=ADDR,cpu-num=1
+
+# 2018年4月12日23:13:38
+SCTLR_EL1.nTWI和nTWF 决定EL0是否能够访问WFI,WFE
+# 2018年4月12日22:12:37
+?:语法
+```c++
+a= b?:1;
+```
+# 2018年4月12日20:40:37
+[异常级别的影响]
+寄存器的访问，寄存器的使用。
+
+EL1下， 不同的配置，当前系统要求：
+1.非安全状态
+2.所有在EL1的访问没有trap
+
+执行状态： EL0由PSTATE.nRW决定， EL1由HCR_EL2.RW决定，EL2由SCR_EL3.RW决定
+
+安全和非安全空间：ID_AA64MMFR0_EL1的SNSMem域决定了是否能够区分Secure和Non-Secure两个空间。如果从Secure EL3切换到Non-Secure EL1,则EL3能够访问内存在EL1访问就会失败。
+比如：
+```
+0x0:    adr x0,2f
+0x4:    msr elr_el3,x0
+0x8:    eret
+0xc     2:
+0xf:    nop
+```
+由于0xf属于安全空间，因此在切换到EL1之后，对0xf的访问将会报external sync abort.
+
+从另一个侧面来看，BIOS确实属于secure space。
+
+我们将会作出一个改变：内核运行在安全空间。
+
+
 # 2018年4月12日18:02:58
 【milestone】【commit point】 完成了Input和inputBuffer,使用Queue实现。该版本完成了一些基本的用户态功能，内核态的代码基本编写完成。代码参见[内核初始化 main_demo_complete_input.cpp](../src/arch/qemu_virt/main_demo_complete_input.cpp)和 [用户态例程 user_main_demo_repl.cpp](../src/arch/user_space/user_main_demo_repl.cpp)
 
-运行示例参见![ls, cd和exit命令示例](commits/2018-4-12_17_57_41_when_almost_done_user_space.png)
+运行示例![ls, cd和exit命令示例](commits/2018-4-12_17_57_41_when_almost_done_user_space.png)
 
-<iframe width="560" height="315" src="commits/2018-4-12_17_57_41_when_almost_done_user_space.mp4" frameborder="0" allowfullscreen></iframe>
+[video](commits/2018-4-12_17_57_41_when_almost_done_user_space.mp4)
 
 # 2018年4月12日16:21:16
 [系统调用：输入请求]设计
@@ -16,7 +174,7 @@
 非阻塞式： 请求输入立即返回
 
 # 2018年4月12日15:31:58
-virt.c的 irqmap定义
+hw/arm/virt.c的 irqmap定义
 ```c
 static const int a15irqmap[] = {
     [VIRT_UART] = 1,

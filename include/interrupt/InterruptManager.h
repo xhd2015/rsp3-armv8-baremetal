@@ -33,12 +33,10 @@ public:
 	{}
 
 	// 所有中断默认都是启用的， 将Redistributor唤醒
-	int init(void * vecAddr,bool a3vEn,EOIMode mode,uint8_t lowestPrty,uint8_t initPrty);
+	int init(void * vecAddr,EOIMode mode,uint8_t lowestPrty,uint8_t initPrty);
 	AS_MACRO void rebase(size_t diff) { GICDistributor::rebase(diff);GICRedistributor::rebase(diff);}
 
-	template <CPUIntBit intBit>
-	void cpuIntEnable(bool v);
-
+	void cpuIntEnable(CPUIntBit intBit,bool v);
 
 	AS_MACRO bool systemRegistersSupported()const
 	{
@@ -46,10 +44,7 @@ public:
 	}
 
 	// 重载RegVBAR的operator=
-	AS_MACRO void    vectorAddr(void *addr)
-	{
-		RegVBAR_EL1::make(reinterpret_cast<uint64_t>(addr)).write();
-	}
+	AS_MACRO void    vectorAddr(void *addr){		RegVBAR_EL1::make(reinterpret_cast<uint64_t>(addr)).write();}
 	template <class Base>
 	AS_MACRO Base & cast(){return *static_cast<Base*>(this);}
 	template <class Base>
@@ -57,12 +52,16 @@ public:
 
 	void clearAllPendings();
 	void disableAllInterrupts();
-	AS_MACRO volatile uint32_t & enableWord(int intGrp){return readWriteWord(GICRedistributor::isenabler0,GICDistributor::isenabler, intGrp);}
-	volatile uint32_t & disableWord(int intGrp){return readWriteWord(GICRedistributor::icenabler0,GICDistributor::icenabler, intGrp);}
-	volatile uint32_t & activeWord(int intGrp){return readWriteWord(GICRedistributor::isactiver0,GICDistributor::isactiver, intGrp);}
-	volatile uint32_t & deactiveWord(int intGrp){return readWriteWord(GICRedistributor::icavtiver0,GICDistributor::icactiver, intGrp);}
-	volatile uint32_t & pendingWord(int intGrp){return readWriteWord(GICRedistributor::ispendr0,GICDistributor::ispender, intGrp);}
-	volatile uint32_t & clearPendingWord(int intGrp){return readWriteWord(GICRedistributor::icpender0,GICDistributor::icpender, intGrp);}
+	AS_MACRO volatile uint32_t & enableWord(int intGrp){return readWriteWord(GICRedistributor::isenabler0,GICDistributor::isenabler, intGrp,0);}
+	volatile uint32_t & disableWord(int intGrp){return readWriteWord(GICRedistributor::icenabler0,GICDistributor::icenabler, intGrp,0);}
+	volatile uint32_t & activeWord(int intGrp){return readWriteWord(GICRedistributor::isactiver0,GICDistributor::isactiver, intGrp,0);}
+	volatile uint32_t & deactiveWord(int intGrp){return readWriteWord(GICRedistributor::icavtiver0,GICDistributor::icactiver, intGrp,0);}
+	volatile uint32_t & pendingWord(int intGrp){return readWriteWord(GICRedistributor::ispendr0,GICDistributor::ispender, intGrp,0);}
+	volatile uint32_t & clearPendingWord(int intGrp){return readWriteWord(GICRedistributor::icpender0,GICDistributor::icpender, intGrp,0);}
+	volatile uint32_t & groupAssignWord(int intGrp){return readWriteWord(GICRedistributor::igroupr0,GICDistributor::igroupr, intGrp,0);}
+	volatile uint32_t & groupModifierWord(int intGrp){return readWriteWord(GICRedistributor::igrpmodr0,GICDistributor::igrpmodr, intGrp,0);}
+	volatile uint32_t & triggerConfigWord(int intGrp){return readWriteWord(GICRedistributor::icfgr0,GICDistributor::icfgr, intGrp,1);}
+	volatile uint32_t & priorityWord(int intGrp){return readWriteWord(GICRedistributor::ipriortiy0,GICDistributor::ipriority, intGrp,7);}
 
 	AS_MACRO void    enableIntID(IntID id,bool enable){ setBit(enableWord(id/32),id%32,enable);}
 
@@ -74,8 +73,15 @@ public:
 	using GICCPUInterface::eoi;
 
 	using GICDistributor::enableGroup;
+
+	/**
+	 * 当在EL3时，配置在EL1不能配置的寄存器。
+	 * 包括EL3，EL2的SRE两个寄存器，均配置为允许
+	 * 主要是igroupr和igrpmodr, 配置中断的分组： group和secure与否。当配置为non-secure时，group为1
+	 */
+	static void preconfigEL3(volatile void *distrBase,volatile void *redistrBase,bool secure,int group,bool allowGroup1S,bool allowGroup1NS);
 private:
-	volatile uint32_t & readWriteWord(size_t offset0,size_t offsetOther,int grp);
+	volatile uint32_t & readWriteWord(size_t offset0,size_t offsetOther,int grp,int delimGrp=0);
 private:
 };
 

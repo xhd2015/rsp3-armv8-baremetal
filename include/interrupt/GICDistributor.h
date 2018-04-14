@@ -13,6 +13,7 @@
 #include <io/MemBasedRegReader.h>
 #include <utility>
 #include <generic_util.h>
+#include <interrupt/GICRedistributor.h>
 
 // we assert that we are in Non-secure,Single-security
 // we treat all registers here as volatile
@@ -33,14 +34,23 @@ public:
 		isactiver=0x300,// - 0x37C
 		icactiver=0x380, // - 0x3FC
 		ipriority=0x400, // - 0x7F8
+		icfgr = 0xC00, //
+		igrpmodr=0x0D00, // -0xD7C, [mod:group]=0b10==Secure Group1
 		nscar=0xE00, // - 0xEFC
+		irouter=0x6000,//64bits
 		sgir=0xF00, // WO
 	};
 	template <class ... Args>
 	GICDistributor(Args && ... args)
-		: MemBasedRegReader(std::forward<Args>(args)...)
+		:MemBasedRegReader(std::forward<Args>(args)...)
 	{}
-	int init(uint8_t initPriorty);
+	/**
+	 *
+	 * @param initPriorty
+	 * @param redistr  按照同样的配置初始化SGI和PPI所需的Redistributor对象
+	 * @return
+	 */
+	int init(uint8_t initPriorty,GICRedistributor *redistr);
 	void intPriority(IntID id,uint8_t prty);
 
 	template <int grp>
@@ -49,8 +59,6 @@ public:
 	void clearAllPendings();
 	void disableAllInterrupts();
 private:
-
-
 };
 
 

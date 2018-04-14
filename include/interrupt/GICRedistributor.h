@@ -38,7 +38,9 @@ public:
 		icpender0=SGIOffset + 0x280,
 		isactiver0=SGIOffset + 0x300,
 		icavtiver0=SGIOffset + 0x380,
-		ipriortiy=SGIOffset + 0x400, //n=0-7,s
+		ipriortiy0=SGIOffset + 0x400, //n=0-7,s
+		icfgr0=SGIOffset + 0xC00, //n=0-1
+		igrpmodr0=SGIOffset + 0x0D00,
 
 	};
 	template <class ... Args>

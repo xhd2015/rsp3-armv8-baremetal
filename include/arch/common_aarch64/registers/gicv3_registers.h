@@ -1704,7 +1704,8 @@ public:
             uint32_t  SRE:1;
             uint32_t  DFB:1;
             uint32_t  DIB:1;
-            uint32_t  RES0_0:29;
+            uint32_t  Enable:1;
+            uint32_t  RES0_0:28;
     AS_MACRO uint32_t  get()const 
     {
         return *reinterpret_cast<const uint32_t*>(this);
@@ -1729,6 +1730,7 @@ public:
         SRE = 0;
         DFB = 0;
         DIB = 0;
+        Enable = 0;
         RES0_0 = 0;
         return *this;
         }
@@ -1751,6 +1753,7 @@ public:
                 << "SRE = " << SRE << ", "
                 << "DFB = " << DFB << ", "
                 << "DIB = " << DIB << ", "
+                << "Enable = " << Enable << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
@@ -1797,7 +1800,8 @@ public:
             uint32_t  SRE:1;
             uint32_t  DFB:1;
             uint32_t  DIB:1;
-            uint32_t  RES0_0:29;
+            uint32_t  Enable:1;
+            uint32_t  RES0_0:28;
     AS_MACRO uint32_t  get()const 
     {
         return *reinterpret_cast<const uint32_t*>(this);
@@ -1822,6 +1826,7 @@ public:
         SRE = 0;
         DFB = 0;
         DIB = 0;
+        Enable = 0;
         RES0_0 = 0;
         return *this;
         }
@@ -1844,6 +1849,7 @@ public:
                 << "SRE = " << SRE << ", "
                 << "DFB = " << DFB << ", "
                 << "DIB = " << DIB << ", "
+                << "Enable = " << Enable << ", "
                 << "RES0_0 = " << RES0_0 << ", "
                 << "\n";
     }
@@ -3551,6 +3557,8 @@ class RegGICD_CTLR
 {
 public:
     using ScaleType=uint32_t;
+    union {
+        struct {
             uint32_t  EnableGrp0:1;
             uint32_t  EnableGrp1NS:1;
             uint32_t  EnableGrp1S:1;
@@ -3561,6 +3569,27 @@ public:
             uint32_t  E1NWF:1;
             uint32_t  RES0_1:23;
             uint32_t  RWP:1;
+        }__attribute__((packed)) S0;
+        struct {
+            uint32_t  EnableGrp1:1;
+            uint32_t  EnableGrp1A:1;
+            uint32_t  RES0_0:2;
+            uint32_t  ARE_NS:1;
+            uint32_t  RES0_1:26;
+            uint32_t  RWP:1;
+        }__attribute__((packed)) S1;
+        struct {
+            uint32_t  EnableGrp0:1;
+            uint32_t  EnableGrp1:1;
+            uint32_t  RES0_0:2;
+            uint32_t  ARE:1;
+            uint32_t  RES0_1:1;
+            uint32_t  DS:1;
+            uint32_t  E1NWF:1;
+            uint32_t  RES0_2:23;
+            uint32_t  RWP:1;
+        }__attribute__((packed)) S2;
+    }; //union
     AS_MACRO uint32_t  get()const 
     {
         return *reinterpret_cast<const uint32_t*>(this);
@@ -3580,20 +3609,6 @@ public:
         *reinterpret_cast<volatile uint32_t*>(this)=v;
         return *this;
     }
-    AS_MACRO RegGICD_CTLR & setMandatoryFields()
-    {
-        EnableGrp0 = 0;
-        EnableGrp1NS = 0;
-        EnableGrp1S = 0;
-        RES0_0 = 0;
-        ARE_S = 0;
-        ARE_NS = 0;
-        DS = 0;
-        E1NWF = 0;
-        RES0_1 = 0;
-        RWP = 0;
-        return *this;
-        }
     AS_MACRO RegGICD_CTLR copy()const volatile
     {
     	RegGICD_CTLR res;
@@ -3609,18 +3624,46 @@ public:
     AS_MACRO void dump()const volatile
     {
         kout << "RegGICD_CTLR: ";
+        if(0==0)
+        {
             kout
-                << "EnableGrp0 = " << EnableGrp0 << ", "
-                << "EnableGrp1NS = " << EnableGrp1NS << ", "
-                << "EnableGrp1S = " << EnableGrp1S << ", "
-                << "RES0_0 = " << RES0_0 << ", "
-                << "ARE_S = " << ARE_S << ", "
-                << "ARE_NS = " << ARE_NS << ", "
-                << "DS = " << DS << ", "
-                << "E1NWF = " << E1NWF << ", "
-                << "RES0_1 = " << RES0_1 << ", "
-                << "RWP = " << RWP << ", "
+                << "S0.EnableGrp0 = " << S0.EnableGrp0 << ", "
+                << "S0.EnableGrp1NS = " << S0.EnableGrp1NS << ", "
+                << "S0.EnableGrp1S = " << S0.EnableGrp1S << ", "
+                << "S0.RES0_0 = " << S0.RES0_0 << ", "
+                << "S0.ARE_S = " << S0.ARE_S << ", "
+                << "S0.ARE_NS = " << S0.ARE_NS << ", "
+                << "S0.DS = " << S0.DS << ", "
+                << "S0.E1NWF = " << S0.E1NWF << ", "
+                << "S0.RES0_1 = " << S0.RES0_1 << ", "
+                << "S0.RWP = " << S0.RWP << ", "
                 << "\n";
+        }
+        if(1==1)
+        {
+            kout
+                << "S1.EnableGrp1 = " << S1.EnableGrp1 << ", "
+                << "S1.EnableGrp1A = " << S1.EnableGrp1A << ", "
+                << "S1.RES0_0 = " << S1.RES0_0 << ", "
+                << "S1.ARE_NS = " << S1.ARE_NS << ", "
+                << "S1.RES0_1 = " << S1.RES0_1 << ", "
+                << "S1.RWP = " << S1.RWP << ", "
+                << "\n";
+        }
+        else
+        {
+            kout
+                << "S2.EnableGrp0 = " << S2.EnableGrp0 << ", "
+                << "S2.EnableGrp1 = " << S2.EnableGrp1 << ", "
+                << "S2.RES0_0 = " << S2.RES0_0 << ", "
+                << "S2.ARE = " << S2.ARE << ", "
+                << "S2.RES0_1 = " << S2.RES0_1 << ", "
+                << "S2.DS = " << S2.DS << ", "
+                << "S2.E1NWF = " << S2.E1NWF << ", "
+                << "S2.RES0_2 = " << S2.RES0_2 << ", "
+                << "S2.RWP = " << S2.RWP << ", "
+                << "\n";
+        }
     }
     AS_MACRO void dump()const
     {

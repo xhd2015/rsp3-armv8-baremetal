@@ -8,7 +8,7 @@
 #include <interrupt/GICCPUInterface.h>
 #include <arch/common_aarch64/registers/gicv3_registers.h>
 
-int GICCPUInterface::init(uint8_t lowestPriority,bool a3vEn,EOIMode mode)
+int GICCPUInterface::init(uint8_t lowestPriority,EOIMode mode)
 {
 	// make sure _ctrl proper
 	_ctrl.update();
@@ -17,12 +17,13 @@ int GICCPUInterface::init(uint8_t lowestPriority,bool a3vEn,EOIMode mode)
 	lowestAllowedPriority(lowestPriority);
 
 
-	_ctrl.A3V=a3vEn;
+//	_ctrl.A3V=a3vEn; // write ignored
 	_ctrl.EOImode=mode; // EOI at the same time or what
 	_ctrl.write();
 
 	// enable group 0(fiq),1(irq)
 	enableGroup<0>(true);
+//	if(securityState==SecurityState::S_S_2S && exceptionLevel==ExceptionLevel::EL3) // only control from EL3-S
 	enableGroup<1>(true);
 
 	return 0;

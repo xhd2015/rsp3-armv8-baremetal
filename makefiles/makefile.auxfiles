@@ -17,7 +17,11 @@ update-cxx_macros.h:
 	echo '#ifndef CXX_MACROS_H__'
 	echo '#define CXX_MACROS_H__'
 	echo
+ifeq ($(BUILD_BASE_SYSTEM),CYGWIN)
 	echo -e '$(foreach macro,$(EXPORT_CXX_MACROS),#define $(macro)    $($(macro))\n)'
+else ifeq ($(BUILD_BASE_SYSTEM),LINUX) #linux/dash doest not need -e
+	echo -e '$(foreach macro,$(EXPORT_CXX_MACROS),#define $(macro)    $($(macro))\n)'
+endif
 	echo '#endif // CXX_MACROS_H__'
 	) > cxx_macros.h
 

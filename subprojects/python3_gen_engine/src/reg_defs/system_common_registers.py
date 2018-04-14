@@ -89,5 +89,9 @@ reg_defs=[
     # Debug 
     ["","uint64_t",[["RestartAddr",64]],"sys_reg_name","DLR_EL0"],
     ["","uint32_t",[["SPSel",1,   "RES0",1,   "EL",2,   "ExeState",1,   "RES0",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0",4,   "V",1,   "C",1,   "Z",1,   "N",1]],"sys_reg_name","DSPSR_EL0"],
-
+    
+    # SCR,HCR
+    ["","uint64_t",[["VM",1,"SWIO",1,"PTW",1,"FMO",1,"IMO",1,"AMO",1,"VF",1,"VI",1,"VSE",1,"FB",1,"BSU",2,"DC",1,"TWI",1,"TWE",1,"TID0",1,"TID1",1,"TID2",1,"TID3",1,"TSC",1,"TIDCP",1,"TACR",1,"TSW",1,"TPCP",1,"TPU",1,"TTLB",1,"TVM",1,"TGE",1,"TDZ",1,"HCD",1,"TRVM",1,"RW",1,"CD",1,"ID",1,"E2H",1,"TLOR",1,"TERR",1,"TEA",1,"MIOCNCE",1,"RES0",25]],"sys_reg_name","HCR_EL2"],
+        ["","uint32_t",[["NS",1,"FIQ",1,"IRQ",1,"EA",1,"RES1",2,"RES0",1,"SMD",1,"HCE",1,"SIF",1,"RW",1,"ST",1,"TWI",1,"TWE",1,"TLOR",1,"TERR",1,"RES0",16]],"sys_reg_name","SCR_EL3"],
+    
 ]

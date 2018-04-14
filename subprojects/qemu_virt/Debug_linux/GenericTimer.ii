@@ -1,0 +1,1302 @@
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/interrupt/GenericTimer.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "./cxx_macros.h" 1
+# 32 "<command-line>" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/interrupt/GenericTimer.cpp"
+
+
+
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/interrupt/GenericTimer.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/interrupt/GenericTimer.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 1
+
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 1 3
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+       
+# 43 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 3
+
+
+
+
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 1 3
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+
+# 229 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+}
+# 251 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+# 533 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/os_defines.h" 1 3
+# 534 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+
+
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/cpu_defines.h" 1 3
+# 537 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/aarch64-elf/bits/c++config.h" 2 3
+# 50 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 1 3 4
+# 149 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
+# 216 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 426 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+
+  typedef decltype(nullptr) nullptr_t;
+# 51 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstddef" 2 3
+
+
+namespace std
+{
+
+  using ::max_align_t;
+}
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 1 3
+# 32 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+       
+# 33 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 41 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 3
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 1 3 4
+# 11 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 3 4
+# 1 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 1 3 4
+# 34 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint-gcc.h" 3 4
+typedef signed char int8_t;
+
+
+typedef short int int16_t;
+
+
+typedef int int32_t;
+
+
+typedef long int int64_t;
+
+
+typedef unsigned char uint8_t;
+
+
+typedef short unsigned int uint16_t;
+
+
+typedef unsigned int uint32_t;
+
+
+typedef long unsigned int uint64_t;
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+typedef long int int_least64_t;
+typedef unsigned char uint_least8_t;
+typedef short unsigned int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef long unsigned int uint_least64_t;
+
+
+
+typedef int int_fast8_t;
+typedef int int_fast16_t;
+typedef int int_fast32_t;
+typedef long int int_fast64_t;
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef long unsigned int uint_fast64_t;
+
+
+
+
+typedef long int intptr_t;
+
+
+typedef long unsigned int uintptr_t;
+
+
+
+
+typedef long int intmax_t;
+typedef long unsigned int uintmax_t;
+# 12 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/lib/gcc/aarch64-elf/7.2.1/include/stdint.h" 2 3 4
+# 42 "/home/francis/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/aarch64-elf/include/c++/7.2.1/cstdint" 2 3
+
+
+
+
+namespace std
+{
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+}
+# 10 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h" 2
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+
+# 22 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/def.h"
+extern const char EMPTY_STR[1];
+
+
+
+constexpr int UNIT_K=1024;
+constexpr int KiB = UNIT_K;
+constexpr int MiB = UNIT_K * KiB;
+constexpr int GiB = UNIT_K * MiB;
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/interrupt/GenericTimer.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers/timer_registers.h" 1
+
+
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 14 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h"
+size_t printk(char ch);
+
+
+size_t printk(const char *s);
+
+size_t printk(const char *s,size_t n);
+
+
+void flush();
+
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/printk.h" 2
+# 28 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/printk.h" 2
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/runtime_def.h" 1
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/Output.h" 2
+
+class Output{
+public:
+ size_t print(const char *s,size_t len);
+ size_t print(const char *s);
+ Output & operator<<(char ch);
+
+ Output & operator<<(uint8_t u);
+ Output & operator<<(uint16_t u);
+ Output & operator<<(uint32_t u);
+ Output & operator<<(bool i);
+ Output & operator<<(short i);
+ Output & operator<<(int i);
+ Output & operator<<(double d);
+ Output & operator<<(const char *s);
+ Output & operator<<(size_t i);
+ Output & operator<<(const void *p);
+ Output & operator<<(const volatile void *p);
+ Output & flush();
+};
+
+
+
+extern Output kout;
+
+
+constexpr size_t koutBufSize = 65;
+extern char koutBuf[koutBufSize];
+# 8 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers/timer_registers.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 1
+# 15 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h"
+template <int Base>
+class IntegerFormatter{
+public:
+ IntegerFormatter(size_t num);
+ IntegerFormatter(const void *p);
+ char *format()const;
+private:
+ size_t num;
+};
+
+
+using Hex=IntegerFormatter<16>;
+using Dec=IntegerFormatter<10>;
+using Bin=IntegerFormatter<2>;
+
+template <int Base>
+Output & operator<<(Output & out,const IntegerFormatter<Base> &hf);
+
+
+
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 1
+# 11 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h"
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 1
+# 12 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 2
+# 1 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h" 1
+# 17 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h"
+extern const char digitsMap[];
+
+
+
+size_t itob(size_t i,char *dst,size_t size);
+size_t itod(size_t i,char *dst,size_t size);
+size_t itox(size_t i,char *dst,size_t size);
+
+size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+
+
+uint64_t alignAhead(uint64_t d,uint64_t alignment);
+uint64_t alignBackward(uint64_t d,uint64_t alignment);
+
+
+
+
+
+void reverse(char *str,size_t size);
+
+
+
+const char *strOffset(const char *p,size_t offset);
+
+namespace{
+
+ template <size_t bit,size_t ... bits>
+ struct BitMaskStruct{
+  static constexpr size_t value= BitMaskStruct<bit>::value|BitMaskStruct<bits...>::value;
+ };
+ template <size_t bit>
+ struct BitMaskStruct<bit>{
+  static constexpr size_t value=(1u<<bit);
+ };
+
+}
+
+
+
+
+template <uint8_t...bit>
+__attribute__((always_inline)) inline size_t bitMask()
+{
+ return BitMaskStruct<bit...>::value;
+}
+
+
+template <size_t ... bit>
+__attribute__((always_inline)) inline constexpr size_t bitOnes()
+{
+ return BitMaskStruct<bit...>::value;
+}
+
+template <size_t ...bit>
+__attribute__((always_inline)) inline constexpr size_t bitZeros()
+{
+ return ~(BitMaskStruct<bit...>::value);
+}
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsSet(T t)
+{
+ return t | bitOnes<bit...>();
+}
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsClear(T t)
+{
+ return (t & bitZeros<bit...>());
+}
+
+
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline T bitsKept(T t)
+{
+ return (t & bitOnes<bit...>());
+}
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline bool bitsAnySet(T t)
+{
+ return bitsKept<bit...>(t);
+}
+template <size_t ...bit,class T>
+__attribute__((always_inline)) inline bool bitsNonSet(T t)
+{
+ return !bitsAnySet<bit...>(t);
+}
+
+
+
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+__attribute__((always_inline)) inline size_t bitsMix0()
+{
+ return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(0)));
+}
+
+template <size_t ...bitsAsOne,class VoidT,size_t ...bitsAsZero>
+__attribute__((always_inline)) inline size_t bitsMix1()
+{
+ return bitsClear<bitsAsZero...>(bitsSet<bitsAsOne...>(static_cast<size_t>(0xffffffffffffffffUL)));
+}
+
+__attribute__((always_inline)) inline uint64_t bitMask(uint8_t bit)
+{
+ return (1u << bit);
+}
+template <uint64_t i>
+__attribute__((always_inline)) inline uint64_t upperMaskBits()
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+template <uint64_t i>
+__attribute__((always_inline)) inline uint64_t lowerMaskBits()
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t upperMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff >> (64-i) << (64-i);
+}
+
+__attribute__((always_inline)) inline uint64_t lowerMaskBits(uint64_t i)
+{
+ return 0xffffffffffffffff << (64-i) >> (64-i);
+}
+__attribute__((always_inline)) inline uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
+{
+
+ return 0xffffffffffffffff >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
+}
+
+
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
+{
+
+ i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+__attribute__((always_inline)) inline uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
+{
+ return (i>>lowerBound)&lowerMaskBits(upperBound - lowerBound + 1);
+}
+# 175 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/generic_util.h"
+template <class Type,class ValueType>
+__attribute__((always_inline)) inline void setBit(Type & i,uint8_t index,ValueType v)
+{
+ setBits(i,index,index,v);
+}
+__attribute__((always_inline)) inline uint64_t getBit(uint64_t i,uint8_t index)
+{
+ return getBits(i,index,index);
+}
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/templates_implementation/IntegerFormatter.h" 2
+
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(size_t num)
+ :num(num){}
+
+template <int Base>
+IntegerFormatter<Base>::IntegerFormatter(const void *p)
+ :num(reinterpret_cast<size_t>(p)){}
+
+template <int Base>
+char *IntegerFormatter<Base>::format()const
+{
+ itos(num, Base, koutBuf, koutBufSize);
+ return koutBuf;
+}
+
+template <int Base>
+Output & operator<<(Output &out,const IntegerFormatter<Base> &hf)
+{
+ out << hf.format();
+ return out;
+}
+# 36 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/io/IntegerFormatter.h" 2
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/arch/common_aarch64/registers/timer_registers.h" 2
+
+class RegCNTFRQ_EL0
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ClockFrq:32;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTFRQ_EL0& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTFRQ_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTFRQ_EL0 & setMandatoryFields()
+    {
+        ClockFrq = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTFRQ_EL0 copy()const volatile
+    {
+     RegCNTFRQ_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTFRQ_EL0 copy()const
+    {
+     RegCNTFRQ_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTFRQ_EL0: ";
+            kout
+                << "ClockFrq = " << ClockFrq << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTFRQ_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTFRQ_EL0 make(uint32_t val)
+    {
+        RegCNTFRQ_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTFRQ_EL0 read()
+    {
+        RegCNTFRQ_EL0 res;
+        __asm__ __volatile__("mrs %0,CNTFRQ_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTFRQ_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTFRQ_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTFRQ_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTHCTL_EL2
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t EL1PCTEN:1;
+            uint32_t EL1PCEN:1;
+            uint32_t EVNTEN:1;
+            uint32_t EVNTDIR:1;
+            uint32_t EVNTI:4;
+            uint32_t RES0_0:24;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTHCTL_EL2& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTHCTL_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTHCTL_EL2 & setMandatoryFields()
+    {
+        EL1PCTEN = 0;
+        EL1PCEN = 0;
+        EVNTEN = 0;
+        EVNTDIR = 0;
+        EVNTI = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTHCTL_EL2 copy()const volatile
+    {
+     RegCNTHCTL_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTHCTL_EL2 copy()const
+    {
+     RegCNTHCTL_EL2 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTHCTL_EL2: ";
+            kout
+                << "EL1PCTEN = " << EL1PCTEN << ", "
+                << "EL1PCEN = " << EL1PCEN << ", "
+                << "EVNTEN = " << EVNTEN << ", "
+                << "EVNTDIR = " << EVNTDIR << ", "
+                << "EVNTI = " << EVNTI << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTHCTL_EL2*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTHCTL_EL2 make(uint32_t val)
+    {
+        RegCNTHCTL_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTHCTL_EL2 read()
+    {
+        RegCNTHCTL_EL2 res;
+        __asm__ __volatile__("mrs %0,CNTHCTL_EL2\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTHCTL_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTHCTL_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTHCTL_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTKCTL_EL1
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t EL10PCTEN:1;
+            uint32_t EL0VCTEN:1;
+            uint32_t EVNTEN:1;
+            uint32_t EVNTDIR:1;
+            uint32_t EVNTI:4;
+            uint32_t EL0VTEN:1;
+            uint32_t EL0PTEN:1;
+            uint32_t RES0_0:22;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTKCTL_EL1& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTKCTL_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTKCTL_EL1 & setMandatoryFields()
+    {
+        EL10PCTEN = 0;
+        EL0VCTEN = 0;
+        EVNTEN = 0;
+        EVNTDIR = 0;
+        EVNTI = 0;
+        EL0VTEN = 0;
+        EL0PTEN = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTKCTL_EL1 copy()const volatile
+    {
+     RegCNTKCTL_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTKCTL_EL1 copy()const
+    {
+     RegCNTKCTL_EL1 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTKCTL_EL1: ";
+            kout
+                << "EL10PCTEN = " << EL10PCTEN << ", "
+                << "EL0VCTEN = " << EL0VCTEN << ", "
+                << "EVNTEN = " << EVNTEN << ", "
+                << "EVNTDIR = " << EVNTDIR << ", "
+                << "EVNTI = " << EVNTI << ", "
+                << "EL0VTEN = " << EL0VTEN << ", "
+                << "EL0PTEN = " << EL0PTEN << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTKCTL_EL1*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTKCTL_EL1 make(uint32_t val)
+    {
+        RegCNTKCTL_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTKCTL_EL1 read()
+    {
+        RegCNTKCTL_EL1 res;
+        __asm__ __volatile__("mrs %0,CNTKCTL_EL1\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTKCTL_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTKCTL_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTKCTL_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTP_CTL_EL0
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ENABLE:1;
+            uint32_t IMASK:1;
+            uint32_t ISTATUS:1;
+            uint32_t RES0_0:29;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTP_CTL_EL0& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTP_CTL_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CTL_EL0 & setMandatoryFields()
+    {
+        ENABLE = 0;
+        IMASK = 0;
+        ISTATUS = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTP_CTL_EL0 copy()const volatile
+    {
+     RegCNTP_CTL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CTL_EL0 copy()const
+    {
+     RegCNTP_CTL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTP_CTL_EL0: ";
+            kout
+                << "ENABLE = " << ENABLE << ", "
+                << "IMASK = " << IMASK << ", "
+                << "ISTATUS = " << ISTATUS << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTP_CTL_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTP_CTL_EL0 make(uint32_t val)
+    {
+        RegCNTP_CTL_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTP_CTL_EL0 read()
+    {
+        RegCNTP_CTL_EL0 res;
+        __asm__ __volatile__("mrs %0,CNTP_CTL_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CTL_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTP_CTL_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTP_CTL_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTP_CVAL_EL0
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t CompareValue:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTP_CVAL_EL0& set(uint64_t v)
+    {
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTP_CVAL_EL0 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CVAL_EL0 & setMandatoryFields()
+    {
+        CompareValue = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTP_CVAL_EL0 copy()const volatile
+    {
+     RegCNTP_CVAL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CVAL_EL0 copy()const
+    {
+     RegCNTP_CVAL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTP_CVAL_EL0: ";
+            kout
+                << "CompareValue = " << CompareValue << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTP_CVAL_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTP_CVAL_EL0 make(uint64_t val)
+    {
+        RegCNTP_CVAL_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTP_CVAL_EL0 read()
+    {
+        RegCNTP_CVAL_EL0 res;
+        __asm__ __volatile__("mrs %0,CNTP_CVAL_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_CVAL_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTP_CVAL_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTP_CVAL_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTP_TVAL_EL0
+{
+public:
+    using ScaleType=int32_t;
+            int32_t TimerValue:32;
+    __attribute__((always_inline)) inline int32_t get()const
+    {
+        return *reinterpret_cast<const int32_t*>(this);
+    }
+    __attribute__((always_inline)) inline int32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile int32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTP_TVAL_EL0& set(int32_t v)
+    {
+        *reinterpret_cast<int32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTP_TVAL_EL0 & set(int32_t v)volatile
+    {
+        *reinterpret_cast<volatile int32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTP_TVAL_EL0 & setMandatoryFields()
+    {
+        TimerValue = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTP_TVAL_EL0 copy()const volatile
+    {
+     RegCNTP_TVAL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_TVAL_EL0 copy()const
+    {
+     RegCNTP_TVAL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTP_TVAL_EL0: ";
+            kout
+                << "TimerValue = " << TimerValue << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTP_TVAL_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline int32_t & asint32_t()
+    {
+     return *reinterpret_cast<int32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const int32_t & asint32_t()const
+    {
+     return *reinterpret_cast<const int32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTP_TVAL_EL0 make(int32_t val)
+    {
+        RegCNTP_TVAL_EL0 res;
+        *reinterpret_cast<int32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTP_TVAL_EL0 read()
+    {
+        RegCNTP_TVAL_EL0 res;
+        __asm__ __volatile__("mrs %0,CNTP_TVAL_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTP_TVAL_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTP_TVAL_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTP_TVAL_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegCNTPCT_EL0
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t PhysicalCount:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTPCT_EL0 & setMandatoryFields()
+    {
+        PhysicalCount = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTPCT_EL0: ";
+            kout
+                << "PhysicalCount = " << PhysicalCount << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTPCT_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTPCT_EL0 make(uint64_t val)
+    {
+        RegCNTPCT_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTPCT_EL0 read()
+    {
+        RegCNTPCT_EL0 res;
+        __asm__ __volatile__("isb; mrs %0,CNTPCT_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTPCT_EL0 & update()
+    {
+        __asm__ __volatile__("isb; mrs %0,CNTPCT_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+}__attribute__((packed));
+
+
+class RegCNTVCT_EL0
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t VirtualCountValue:64;
+    __attribute__((always_inline)) inline uint64_t get()const
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint64_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTVCT_EL0 & setMandatoryFields()
+    {
+        VirtualCountValue = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTVCT_EL0: ";
+            kout
+                << "VirtualCountValue = " << VirtualCountValue << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTVCT_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint64_t & asuint64_t()
+    {
+     return *reinterpret_cast<uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint64_t & asuint64_t()const
+    {
+     return *reinterpret_cast<const uint64_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTVCT_EL0 make(uint64_t val)
+    {
+        RegCNTVCT_EL0 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTVCT_EL0 read()
+    {
+        RegCNTVCT_EL0 res;
+        __asm__ __volatile__("isb; mrs %0,CNTVCT_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTVCT_EL0 & update()
+    {
+        __asm__ __volatile__("isb; mrs %0,CNTVCT_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+}__attribute__((packed));
+
+
+class RegCNTV_CTL_EL0
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t ENABLE:1;
+            uint32_t IMASK:1;
+            uint32_t ISTATUS:1;
+            uint32_t RES0_0:29;
+    __attribute__((always_inline)) inline uint32_t get()const
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline uint32_t get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+
+    __attribute__((always_inline)) inline RegCNTV_CTL_EL0& set(uint32_t v)
+    {
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline volatile RegCNTV_CTL_EL0 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    __attribute__((always_inline)) inline RegCNTV_CTL_EL0 & setMandatoryFields()
+    {
+        ENABLE = 0;
+        IMASK = 0;
+        ISTATUS = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    __attribute__((always_inline)) inline RegCNTV_CTL_EL0 copy()const volatile
+    {
+     RegCNTV_CTL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline RegCNTV_CTL_EL0 copy()const
+    {
+     RegCNTV_CTL_EL0 res;
+     res.set(this->get());
+     return res;
+    }
+    __attribute__((always_inline)) inline void dump()const volatile
+    {
+        kout << "RegCNTV_CTL_EL0: ";
+            kout
+                << "ENABLE = " << ENABLE << ", "
+                << "IMASK = " << IMASK << ", "
+                << "ISTATUS = " << ISTATUS << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    __attribute__((always_inline)) inline void dump()const
+    {
+     reinterpret_cast<volatile const RegCNTV_CTL_EL0*>(this)->dump();
+    }
+    __attribute__((always_inline)) inline uint32_t & asuint32_t()
+    {
+     return *reinterpret_cast<uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline const uint32_t & asuint32_t()const
+    {
+     return *reinterpret_cast<const uint32_t*>(this);
+    }
+    __attribute__((always_inline)) inline static RegCNTV_CTL_EL0 make(uint32_t val)
+    {
+        RegCNTV_CTL_EL0 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    __attribute__((always_inline)) inline static RegCNTV_CTL_EL0 read()
+    {
+        RegCNTV_CTL_EL0 res;
+        __asm__ __volatile__("mrs %0,CNTV_CTL_EL0\n\t":"=r"(res));
+        return res;
+    }
+    __attribute__((always_inline)) inline RegCNTV_CTL_EL0 & update()
+    {
+        __asm__ __volatile__("mrs %0,CNTV_CTL_EL0\n\t":"=r"(*this));
+        return *this;
+    }
+    __attribute__((always_inline)) inline void write()const
+    {
+        __asm__ __volatile__("msr CNTV_CTL_EL0,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+# 13 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/include/interrupt/GenericTimer.h" 2
+
+
+
+class GenericTimer{
+public:
+ void enableTimerWork(bool enable);
+ void enableTimerInt(bool enable);
+ __attribute__((always_inline)) inline bool timerConditionMet()const{ return RegCNTP_CTL_EL0::read().ISTATUS;}
+ __attribute__((always_inline)) inline int32_t timerValue()const{return RegCNTP_TVAL_EL0::read().TimerValue;}
+
+ __attribute__((always_inline)) inline void timerValue(int32_t timerValue){ RegCNTP_TVAL_EL0::make(timerValue).write();}
+ void timerValueMS(uint32_t ms);
+ __attribute__((always_inline)) inline uint64_t compareValue()const{return RegCNTP_CVAL_EL0::read().CompareValue;}
+ __attribute__((always_inline)) inline void compareValue(uint64_t value){ RegCNTP_CVAL_EL0::make(value).write();}
+ __attribute__((always_inline)) inline uint64_t counterValue()const{return RegCNTPCT_EL0::read().PhysicalCount;}
+
+ __attribute__((always_inline)) inline uint32_t clockFreq()const{return RegCNTFRQ_EL0::read().ClockFrq;}
+ void delayMS(uint32_t ms)const;
+ __attribute__((always_inline)) inline void delayS(uint32_t s)const{delayMS(s*1000);}
+
+ __attribute__((always_inline)) inline uint64_t timeToCountS(uint32_t s)const{ return static_cast<uint64_t>(clockFreq())*s;}
+ __attribute__((always_inline)) inline uint64_t timeToCountMS(uint32_t ms)const{ return static_cast<uint64_t>(clockFreq())*ms/1000;}
+
+ __attribute__((always_inline)) inline uint32_t timerPeriod() const {return _timerPeriod;}
+ __attribute__((always_inline)) inline void timerPeriod(uint32_t timerPeriod) {_timerPeriod = timerPeriod;}
+ __attribute__((always_inline)) inline void nextPeriod(){ timerValueMS(static_cast<int32_t>(_timerPeriod));}
+private:
+ uint32_t _timerPeriod;
+};
+
+
+extern GenericTimer ktimer;
+# 9 "/media/sf_D_DRIVE/Pool/eclipse-workspace_aarch64/newspace/raspiOS/src/interrupt/GenericTimer.cpp" 2
+
+void GenericTimer::enableTimerWork(bool enable)
+{
+ auto ctl = RegCNTP_CTL_EL0::read();
+ ctl.ENABLE=enable;
+ ctl.write();
+}
+void GenericTimer::enableTimerInt(bool enable)
+{
+ auto ctl = RegCNTP_CTL_EL0::read();
+ ctl.IMASK= (!enable);
+ ctl.write();
+}
+
+void GenericTimer::timerValueMS(uint32_t ms)
+{
+  timerValue(timeToCountMS(ms));
+}
+
+
+void GenericTimer::delayMS(uint32_t ms)const
+{
+ uint64_t neededCount = timeToCountMS(ms);
+ uint64_t initCount = counterValue();
+ while(counterValue() - initCount < neededCount)
+  ;
+}
