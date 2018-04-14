@@ -11,7 +11,7 @@
 #include <def.h>
 #include <generic_util.h>
 #include <io/MemBasedRegReader.h>
-#include <runtime_def.h>
+#include <runtime.h>
 
 class XilinxUARTPS
 		:private MemBasedRegReader<true>

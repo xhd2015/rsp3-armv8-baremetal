@@ -8,7 +8,7 @@
 #ifndef INCLUDE_ARCH_AARCH64_UART1_H_
 #define INCLUDE_ARCH_AARCH64_UART1_H_
 
-#include <arch/aarch64/gpio.h>
+#include <arch/raspi3/gpio.h>
 
 #define AUX_IRQ reinterpret_cast<volatile unsigned int*>(UART1_BASE+0x0)
 #define AUX_ENABLES reinterpret_cast<volatile unsigned int*>(UART1_BASE+0x4)

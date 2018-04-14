@@ -63,8 +63,6 @@ int main()
 
 	// 初始化4个必须的组件
 	size_t ramSize = static_cast<size_t>(ramEnd - ramStart);
-	securityState = SecurityState::S_NS_2S;
-	exceptionLevel = ExceptionLevel::EL1;
 	new (&mman) MemoryManager(ramStart, ramSize,true);
     new (&intHandler) InterruptHandler();
 	new (&intm) InterruptManager(
@@ -189,6 +187,18 @@ void main_mmu_set()
 	ktimer.enableTimerInt(true);
 
 	// 这里插入TEST
+//	pl011.enableReceive(true);
+//	pl011.enableReceiveInterrupt(true);
+//	intm.enableWord(1)=0xFFFFFFFF;
+//	kout << Hex(intm.enableWord(1)) << "\n";
+//	intm.cpuIntEnable(InterruptManager::IRQ, true);
+//	intm.cpuIntEnable(InterruptManager::FIQ, true);
+//	while(true)
+//	{
+//		kout << "===========\n";
+//		kout << Hex(intm.pendingWord(1)) << "\n";
+//		ktimer.delayMS(1000);
+//	}
 	// TEST END
 
 	// 建立一个进程

@@ -1,7 +1,24 @@
+# 2018年4月15日02:30:03
+【commit point】 raspi3的mini uart驱动编写完成，连接树莓派3能够正确输出。
+
+raspi3和qemu_virt共用的是同一个ld文件，未来的目标是使所有的aarch架构使用同一个ld文件。
+
+此外，raspi3的crt0也能使用qemu_virt的crt0.未来的目标是共用一个crt0.
+
+注意：连接树莓派时，TTL接口的TXD应当与树莓派的RXD相连，即接受口与传输口对联。
+【todo】 不遗余力地将此项目更加优化。
+# 2018-4-14 16:24:07
+【todo】 将m_abort修改成null_abort
+【todo】 修复bug： 在main_mmu_set中，__stack_top已经是高端地址，这是由于其-fpie编译的原因。
+所有的extern我们都可以理解为offset，偏移。 在代码中用到的extern都是偏移，偏移基本上是不变的。
+【todo】 fatentry两个变量使用new。
 # 2018年4月14日16:13:17
 【commit point】 现在系统能够从EL3启动，并且切换到non-secure EL1. 代码[crt0_EL3](../src/arch/qemu_virt/crt0_EL3.cpp)
+
 从EL1模式调整到EL3模式是一个痛苦的过程，尽管最后代码的调整很少。
+
 回顾之前的代码，能够工作在：非安全 的EL1， 配置中断为IRQ进入。
+
 而从EL3启动之后，要切换到EL1，需要：1.设置SCR_EL3  2.设置HCR_EL2  3.在EL3设置Distributor的igroup
 # 2018年4月14日13:47:18
 注:在非安全状态不能访问的寄存器

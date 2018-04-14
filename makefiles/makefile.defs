@@ -24,17 +24,17 @@ USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-label -Wno-invalid-off
 USER_CXX_FLAGS_qemu_virt += -march=armv8.2-a
 USER_CXX_FLAGS_zcu102 += -march=armv8.2-a 
 USER_CXX_FLAGS_user_space += -march=armv8.2-a
+USER_CXX_FLAGS_raspi3 += -march=armv8.2-a
 USER_CXX_FLAGS += $(USER_CXX_FLAGS_$(TARGET_ARCH))
+
+
+# 设置各个目标对应的linker flags
+USER_LINKER_FLAGS_COMMON += -nostdlib -Xlinker  -T$(LINKER_SCRIPT)
+USER_LINKER_FLAGS_host += 
+USER_LINKER_FLAGS_qemu_virt += 
+USER_LINKER_FLAGS_user_space += 
+USER_LINKER_FLAGS_zcu102 += 
+USER_LINKER_FLAGS +=  $(USER_LINKER_FLAGS_$(TARGET_ARCH)) $(USER_LINKER_FLAGS_COMMON) 
 
 # 设置USER_LINKER_FLAGS
 USER_LINKER_FLAGS += $(foreach sym,$(EXPORT_LINKER_SYMBOLS),-Xlinker --defsym=$(sym)=$($(sym)))
-
-# 设置各个目标对应的linker flags
-USER_LINKER_FLAGS_host += 
-USER_LINKER_FLAGS_COMMON += -nostdlib -Xlinker  -T$(LINKER_SCRIPT)
-#USER_LINKER_FLAGS_COMMON += -Xlinker -N
-USER_LINKER_FLAGS_qemu_virt += $(USER_LINKER_FLAGS_COMMON) 
-USER_LINKER_FLAGS_user_space += $(USER_LINKER_FLAGS_COMMON)
-USER_LINKER_FLAGS_zcu102 += $(USER_LINKER_FLAGS_COMMON)
-USER_LINKER_FLAGS += $(USER_LINKER_FLAGS_$(TARGET_ARCH))
-

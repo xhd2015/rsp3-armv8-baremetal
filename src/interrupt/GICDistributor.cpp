@@ -21,7 +21,7 @@ int GICDistributor::init(uint8_t initPriorty,GICRedistributor *redistr)
 		if(redistr)
 			redistr->reg32(GICRedistributor::igroupr0)=0xFFFFFFFF;
 		for(size_t i=1;i!=INT_GRP_NUM;++i) // assume that sysmtem is in non-secure mode
-			reg32(igroupr)=0xFFFFFFFF;
+			reg32(igroupr+i*4)=0xFFFFFFFF;
 	}
 	// level triggered
 	if(redistr)

@@ -1,15 +1,39 @@
-
+include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
+include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
 
 # this is for rasp berry pi
-.PHONY:update-config.$(MASTERY_ELF).txt
-update-config.$(MASTERY_ELF).txt:
+config.$(TARGET_ARCH).txt:FORCE
+	kernel_address=$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))
 	(echo '##======Automatically generated==========##'
-	echo 'kernel=$(MASTERY_BINARY_BINARY)'
-	echo 'kernel_address=$(KERNEL_ADDRESS)'
+	echo 'kernel=$(MASTERY_BINARY)'
+	echo 'kernel_address='$$kernel_address
 	echo 'arm_64bit=1'
 	echo 'disable_commandline_tags=1'
 	echo 'enable_uart=1'
 	echo '##=====THE END======##'
-	) > config.$(MASTERY_ELF).txt
+	) > config.$(TARGET_ARCH).txt
+
+install:config.$(TARGET_ARCH).txt $(MASTERY_BINARY)
+	root_path=/cygdrive/e
+	cp config.$(TARGET_ARCH).txt $$root_path/
+	cp $(MASTERY_BINARY) $$root_path/
+	
+
     
-AUX_FILES += update-config.$(MASTERY_ELF).txt
+userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
+$(MASTERY_BINARY): $(MASTERY_ELF)
+	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
+	userSpaceStart=$$(($(CODE_SIZE)))
+	count=$$(($(USER_SPACE_SIZE)))
+	dd if=$(userSpaceBin) of=$@ seek=$$userSpaceStart bs=1c count=$$count
+    
+$(MASTERY_RELOC) : $(MASTERY_ELF)
+	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
+	$(MAKE) IMAGE_BASE=0x40000000 $(MASTERY_ELF)
+	mv $(MASTERY_ELF) $@
+	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
+raspi3_debug:
+	$(MAKE) RAM_START=0x40000000 qemu_debug_el3
+raspi3_run:
+	$(MAKE) RAM_START=0x40000000 qemu_run_el3
+#AUX_FILES += update-config.$(TARGET_ARCH).txt

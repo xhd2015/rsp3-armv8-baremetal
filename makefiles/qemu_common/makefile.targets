@@ -10,3 +10,32 @@ gdb_connect:
 .PHONY:qemu_log
 qemu_log:
 	less qemu_log.txt
+	
+	
+IO_IMG := fat32.img
+QEMU_NO_BIOS = -cpu cortex-a53 -smp 4 -m 1024M -nographic -serial mon:stdio  -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
+#trace:load_file,trace:cpu_in,trace:guest_mem_before_exec,trace:guest_mem_before_trans,trace:memory_region_tb_read,trace:memory_region_ops_read
+QEMU_BIOS_NO_MACHINE = -bios $(MASTERY_BINARY) $(QEMU_NO_BIOS)
+KERNEL_ADDRESS := $(shell echo "$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))")
+QEMU_LOADER_NO_MACHINE = -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 $(QEMU_NO_BIOS)
+
+QEMU_ARGS :=     $(QEMU_LOADER_NO_MACHINE) -machine virt,gic-version=3
+QEMU_ARGS_EL2 := $(QEMU_LOADER_NO_MACHINE) -machine virt,gic-version=3,virtualization=on
+QEMU_ARGS_EL3 := $(QEMU_LOADER_NO_MACHINE) -machine virt,gic-version=3,virtualization=on,secure=on
+.PHONY:qemu-run qemu-debug
+# if only using secure=on,then EL=3
+# if only using virtualization=on, EL=2
+# if none of them is used,using EL1
+# default secure=off,virtualization=off
+qemu_run:
+	$(QEMU_AARCH64) $(QEMU_ARGS)
+qemu_debug:
+	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
+qemu_run_el2:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL2)
+qemu_debug_el2:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL2) -S -s
+qemu_run_el3:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL3)
+qemu_debug_el3:
+	$(QEMU_AARCH64) $(QEMU_ARGS_EL3) -S -s

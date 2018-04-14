@@ -12,21 +12,14 @@
 
 
 #ifdef TARGET_ARCH_IS_qemu_virt
+#include <arch/qemu_virt/runtime_def.h>
 
-
+#elif defined(TARGET_ARCH_IS_raspi3)
+#include <arch/raspi3/runtime_def.h>
 #elif defined(TARGET_ARCH_IS_user_space)
-#define _NOT_NEED_InterruptManager
-#define _NOT_NEED_PL011
-#define _NOT_NEED_ProcessManager
-#define _NOT_NEED_PidManager
-#define _NOT_NEED_SystemFeatures
-#define _NOT_NEED_XilinxUARTPS
-#define _NOT_NEED_VirtualFileSystem
-#define _NOT_NEED_VirtualManager
-#define _NOT_NEED_InterruptHandler
-#define _NOT_NEED_GenericTimer
+#include <arch/user_space/runtime.h>
 #endif
 
 
 
-#endif /* INCLUDE_RUNTIME_DEF_H_ */
+#endif /* INCLUDE_RUNTIME_H_ */
