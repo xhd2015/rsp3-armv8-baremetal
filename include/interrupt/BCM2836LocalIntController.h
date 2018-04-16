@@ -17,6 +17,20 @@
  *  一个local interrupt controller含有一个对统一的系统时钟的控制器：通过core_timer_XXX来访问
  *  注意， core_timer的频率仅仅是系统时钟的一半，因此一般需要设置增量为2.
  *  树莓派的系统时钟是1.2GHz, 而core_timer的频率计算为： core_freq = SYS_FREQ/divider, divider=2^31/prescalar_value
+ *
+ *  NOTE 请注意，在QEMU上，读取 coreTimerCount()会失败，总是返回0：这是因为QEMU的bcm2836的控制器实现不完整，很多寄存器都没有实现。
+ *  bcm2836_control_read: Bad offset 1c  -- 这是读取寄存器时产生的错误
+ *  而在树莓派上能够正确读取时间。
+ *
+ *  NOTE 根据我们在树莓派上的测试，sysTimer和coreTimer计数器并不是同一个，下面是他们的同步输出
+		sys : 736ceb
+		core : 58c299900000000
+		sys : 82bba3
+		core : 6b210e000000000
+		sys : 920a5e
+		core : 7d7f84800000000
+ *
+ *
  */
 class BCM2836LocalIntController
 	:public MemBasedRegReader<true>

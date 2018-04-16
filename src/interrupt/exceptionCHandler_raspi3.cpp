@@ -13,6 +13,7 @@
 #include <io/uart/BCM2835MiniUART.h>
 #include <interrupt/BCM2835InterruptController.h>
 #include <interrupt/BCM2836LocalIntController.h>
+#include <runtime_def.h>
 void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin)
 {
 	kout << "===-----=======---==\n";
@@ -42,12 +43,17 @@ void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin 
 			kout << "intc.pending(1) = " << Hex(intc.pendingWord(1)) << "\n";
 			kout << "intc.pending(2) = " << Hex(intc.pendingWord(2)) << "\n";
 			irqId = intc.locateInterrupt();
-			assert(!isMax(irqId));
+//			assert(!isMax(irqId));
 			kout << "irq id = " << irqId << "\n";
 			if(irqId == BCM2835InterruptController::SRC_UART_INT)
 			{
 				while(pl011.readReady())
 					kout << static_cast<char>(pl011.rawRead()) << "\n";
+			}else if(irqId >= BCM2835InterruptController::SRC_SYS_TIMER_FIRST && irqId<=BCM2835InterruptController::SRC_SYS_TIMER_LAST)
+			{
+				auto n=irqId - BCM2835InterruptController::SRC_SYS_TIMER_FIRST;
+				sysTimer.clearIntStatus(n);
+				sysTimer.addCompareValueMS(n, sysTimerTick);
 			}
 			// 经过测试可知，在正确地读取完输入后，中断会自己清除掉。
 //			kout << "after processed\n";
@@ -71,10 +77,6 @@ void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin 
 			kout << "unhandled IRQ src :" << src << "\n";
 			asm_wfe_loop();
 		}
-		}
-		if(isMax(src))//invalid
-		{
-
 		}
 	}else{
 		kout << "ExceptionType = " << type << "\n";

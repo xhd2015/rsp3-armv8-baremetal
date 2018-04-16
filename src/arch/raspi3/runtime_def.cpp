@@ -22,4 +22,6 @@ BCM2836MailBox mailBox { nullptr};
 GPIO gpio{nullptr};
 
 GenericTimer  ktimer;
+BCM2835SystemTimer sysTimer{nullptr};
+uint32_t           sysTimerTick=0;
 

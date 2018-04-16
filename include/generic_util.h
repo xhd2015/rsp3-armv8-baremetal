@@ -183,11 +183,25 @@ AS_MACRO uint64_t getBit(uint64_t i,uint8_t index)
 	return getBits(i,index,index);
 }
 
-template <class T>
+template <class T=uint64_t>
 AS_MACRO bool   isMax(T t)
 {
-	return !(static_cast<T>(~t));
+	return t==UINT64_MAX;
 }
+AS_MACRO bool   isMax(uint32_t t)
+{
+	return t==UINT32_MAX;
+}
+AS_MACRO bool   isMax(uint16_t t)
+{
+	return t==UINT16_MAX;
+}
+AS_MACRO bool   isMax(uint8_t t)
+{
+	return t==UINT8_MAX;
+}
+
+
 // template, must be implemented in-place
 template <class T>
 uint8_t         findFirstSet(T i)

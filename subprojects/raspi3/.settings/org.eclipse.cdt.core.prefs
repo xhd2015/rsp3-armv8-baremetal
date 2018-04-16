@@ -290,6 +290,9 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/STACK_SIZE/value=0x100000
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/SYS_TIMER_BASE/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/SYS_TIMER_BASE/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/SYS_TIMER_BASE/value=0x3F003000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/operation=replace
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TARGET_ARCH/value=raspi3
