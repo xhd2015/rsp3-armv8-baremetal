@@ -8,6 +8,7 @@ aux-check-link-script.cpp: $(LINKER_SCRIPT)
 .PHONY:modify_date_force_update
 modify_date_force_update:
 	touch $(LINKER_SCRIPT)
+	touch makefile.eclipse.envs
 
 # 查看二进制对象文件
 dump-elf:$(MASTERY_ELF)

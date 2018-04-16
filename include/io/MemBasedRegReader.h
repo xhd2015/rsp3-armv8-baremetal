@@ -10,6 +10,7 @@
 
 #include <def.h>
 #include <type_traits>
+#include <utility>
 
 template <bool is_volatile=true>
 class MemBasedRegReader{
@@ -77,7 +78,7 @@ public:
 	template <RegOffset offset>
 	AS_MACRO const QualType<uint64_t> & reg64()const{return reg<uint64_t,offset>();}
 
-	AS_MACRO QualType<uint8_t> & reg8(RegOffset offset){return reg<uint8_t,offset>();}
+	AS_MACRO QualType<uint8_t> & reg8(RegOffset offset){return reg<uint8_t>(offset);}
 	AS_MACRO const QualType<uint8_t> & reg8(RegOffset offset)const{return reg<uint8_t>(offset);}
 	AS_MACRO QualType<uint16_t> & reg16(RegOffset offset){return reg<uint16_t>(offset);}
 	AS_MACRO const QualType<uint16_t>& reg16(RegOffset offset)const{return reg<uint16_t>(offset);}

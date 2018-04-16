@@ -10,6 +10,8 @@ reg_defs=[
     ["","uint32_t",[["RES0",6,   "F",1,   "I",1,    "A",1   ,"D",1,   "RES0",22]],"sys_reg_name","DAIF"],
     # Exception related
     ["","uint64_t",[["Addr,Hex",64]],"sys_reg_name","VBAR_EL1"],
+    ["","uint64_t",[["Addr,Hex",64]],"sys_reg_name","VBAR_EL2"],
+    ["","uint64_t",[["Addr,Hex",64]],"sys_reg_name","VBAR_EL3"],
     ["","uint64_t",[["returnAddr,Hex",64]],"sys_reg_name","ELR_EL1"],
     ["","uint64_t",[["returnAddr,Hex",64]],"sys_reg_name","ELR_EL2"],
     ["","uint64_t",[["returnAddr,Hex",64]],"sys_reg_name","ELR_EL3"],    
@@ -25,7 +27,6 @@ reg_defs=[
     ["","uint32_t",[["SPSel",1,   "RES0",1,   "EL",2,   "ExeState",1,   "RES0",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0",4,   "V",1,   "C",1,   "Z",1,   "N",1]],"sys_reg_name","SPSR_EL1"],
     ["","uint32_t",[["SPSel",1,   "RES0",1,   "EL",2,   "ExeState",1,   "RES0",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0",4,   "V",1,   "C",1,   "Z",1,   "N",1]],"sys_reg_name","SPSR_EL2"],
     ["","uint32_t",[["SPSel",1,   "RES0",1,   "EL",2,   "ExeState",1,   "RES0",1,   "FIQMask",1,   "IRQMask",1,   "SErrorMask",1,   "DebugMask",1,   "RES0",10,   "IL",1,   "SoftwareStep",1,   "PAN",1,   "UAO",1,   "RES0",4,   "V",1,   "C",1,   "Z",1,   "N",1]],"sys_reg_name","SPSR_EL3"],
-    ["","uint64_t",[["SP",64]],"sys_reg_name","SP"],
     ["","uint64_t",[["SP",64]],"sys_reg_name","SP_EL0"],
     ["","uint64_t",[["SP",64]],"sys_reg_name","SP_EL1"],
     ["","uint64_t",[["SP",64]],"sys_reg_name","SP_EL2"],

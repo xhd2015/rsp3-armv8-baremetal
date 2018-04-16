@@ -50,7 +50,4 @@ constexpr int  GiB = UNIT_K * MiB;
 #define BIN32(a,bb,c,d) 0b##a##bb##c##d
 #define BIN64(a,bb,c,d,e,f,g,h) 0b##a##bb##c##d##e##f##g##h
 
-//#include "../cxx_macros"
-// #include <runtime_def.h>
-
 #endif //DEF_H__

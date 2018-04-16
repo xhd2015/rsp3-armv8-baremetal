@@ -13,5 +13,15 @@ void delayCPU(size_t i);
 void delayCPU(size_t i,size_t j);
 void haltCPU();
 
+void delayMS(size_t msec);
+void delayS(size_t sec);
+
+size_t  cpuID();
+/**
+ *
+ * @return  freq，单位Hz
+ */
+size_t  cpuFreq();
+
 
 #endif /* INCLUDE_GENERIC_CPU_H_ */

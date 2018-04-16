@@ -280,6 +280,174 @@ public:
 }__attribute__((packed));
 
 
+class RegVBAR_EL2 
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t  Addr:64;
+    AS_MACRO uint64_t  get()const 
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegVBAR_EL2& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegVBAR_EL2 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegVBAR_EL2 & setMandatoryFields()
+    {
+        Addr = 0;
+        return *this;
+        }
+    AS_MACRO RegVBAR_EL2 copy()const volatile
+    {
+    	RegVBAR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegVBAR_EL2 copy()const
+    {
+    	RegVBAR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegVBAR_EL2: ";
+            kout
+                << "Addr = " << Hex(Addr) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegVBAR_EL2*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegVBAR_EL2 make(uint64_t val)
+    {
+        RegVBAR_EL2 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegVBAR_EL2 read()
+    { 
+        RegVBAR_EL2 res;
+        __asm__ __volatile__("mrs %0,VBAR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegVBAR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,VBAR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr VBAR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegVBAR_EL3 
+{
+public:
+    using ScaleType=uint64_t;
+            uint64_t  Addr:64;
+    AS_MACRO uint64_t  get()const 
+    {
+        return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO uint64_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint64_t*>(this);
+    }
+    
+    AS_MACRO RegVBAR_EL3& set(uint64_t v)
+    { 
+        *reinterpret_cast<uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegVBAR_EL3 & set(uint64_t v)volatile
+    {
+        *reinterpret_cast<volatile uint64_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegVBAR_EL3 & setMandatoryFields()
+    {
+        Addr = 0;
+        return *this;
+        }
+    AS_MACRO RegVBAR_EL3 copy()const volatile
+    {
+    	RegVBAR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegVBAR_EL3 copy()const
+    {
+    	RegVBAR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegVBAR_EL3: ";
+            kout
+                << "Addr = " << Hex(Addr) << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegVBAR_EL3*>(this)->dump();
+    }
+    AS_MACRO uint64_t & asuint64_t()
+    {
+    	return *reinterpret_cast<uint64_t*>(this);
+    }
+    AS_MACRO const uint64_t & asuint64_t()const
+    {
+    	return *reinterpret_cast<const uint64_t*>(this);
+    }
+    AS_MACRO static RegVBAR_EL3 make(uint64_t val)
+    {
+        RegVBAR_EL3 res;
+        *reinterpret_cast<uint64_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegVBAR_EL3 read()
+    { 
+        RegVBAR_EL3 res;
+        __asm__ __volatile__("mrs %0,VBAR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegVBAR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,VBAR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr VBAR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
 class RegELR_EL1 
 {
 public:
@@ -1464,90 +1632,6 @@ public:
     AS_MACRO void write()const
     {
         __asm__ __volatile__("msr SPSR_EL3,%0\n\t"::"r"(*this));
-    }
-}__attribute__((packed));
-
-
-class RegSP 
-{
-public:
-    using ScaleType=uint64_t;
-            uint64_t  SP:64;
-    AS_MACRO uint64_t  get()const 
-    {
-        return *reinterpret_cast<const uint64_t*>(this);
-    }
-    AS_MACRO uint64_t  get()const volatile
-    {
-        return *reinterpret_cast<const volatile uint64_t*>(this);
-    }
-    
-    AS_MACRO RegSP& set(uint64_t v)
-    { 
-        *reinterpret_cast<uint64_t*>(this)=v;
-        return *this;
-    }
-    AS_MACRO volatile RegSP & set(uint64_t v)volatile
-    {
-        *reinterpret_cast<volatile uint64_t*>(this)=v;
-        return *this;
-    }
-    AS_MACRO RegSP & setMandatoryFields()
-    {
-        SP = 0;
-        return *this;
-        }
-    AS_MACRO RegSP copy()const volatile
-    {
-    	RegSP res;
-    	res.set(this->get());
-    	return res;
-    }
-    AS_MACRO RegSP copy()const
-    {
-    	RegSP res;
-    	res.set(this->get());
-    	return res;
-    }
-    AS_MACRO void dump()const volatile
-    {
-        kout << "RegSP: ";
-            kout
-                << "SP = " << SP << ", "
-                << "\n";
-    }
-    AS_MACRO void dump()const
-    {
-    	reinterpret_cast<volatile const RegSP*>(this)->dump();
-    }
-    AS_MACRO uint64_t & asuint64_t()
-    {
-    	return *reinterpret_cast<uint64_t*>(this);
-    }
-    AS_MACRO const uint64_t & asuint64_t()const
-    {
-    	return *reinterpret_cast<const uint64_t*>(this);
-    }
-    AS_MACRO static RegSP make(uint64_t val)
-    {
-        RegSP res;
-        *reinterpret_cast<uint64_t*>(&res)=val;
-        return res;
-    }
-    AS_MACRO static RegSP read()
-    { 
-        RegSP res;
-        __asm__ __volatile__("mrs %0,SP\n\t":"=r"(res));
-        return res;
-    }
-    AS_MACRO RegSP & update()
-    {
-        __asm__ __volatile__("mrs %0,SP\n\t":"=r"(*this));
-        return *this;
-    }
-    AS_MACRO void write()const
-    {
-        __asm__ __volatile__("msr SP,%0\n\t"::"r"(*this));
     }
 }__attribute__((packed));
 

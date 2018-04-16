@@ -9,7 +9,6 @@
 #define INCLUDE_INTERRUPT_GICDEFINITIONS_H_
 
 #include <def.h>
-#include <runtime_def.h>
 /**
  * 定义在写入ack的同时是否将CPU的当前优先级降低，已经是否将中断取消激活状态。
  */
@@ -20,7 +19,7 @@ enum EOIMode{
 
 
 enum class SecurityState { S_NS_2S, S_NS_1S, S_S_2S, S_S_1S};
-enum class ExceptionLevel {EL0,EL1,EL2,EL3};
+enum class ExceptionLevel {EL0 = 0,EL1 = 1,EL2 = 2,EL3 = 3};
 
 using IntID = uint32_t;
 
@@ -32,7 +31,9 @@ constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
 				INT_VIRTUAL_TIMER=27,
 				INT_S_PHY_TIMER=29,
 			    INT_NS_PHY_TIMER=30,
-				INT_SPURIOUS=1023; // no interrupt
+				INT_SPURIOUS=1023, // no interrupt
+				INT_ID_IS_INVALID = 0xFFFFFFFF
+				;
 
 #ifdef TARGET_ARCH_IS_qemu_virt
 constexpr IntID		INT_INPUT = 33; //  UART的中断

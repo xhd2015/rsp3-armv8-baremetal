@@ -1,5 +1,6 @@
 /*内存模型： 所有的数据均位于RAM中*/
 /*qemu_virt和raspi3共享相同的内存布局模型*/
+/* 命名风格概述： 内存布局的区域-大写字母  不打算提供给汇编的符号-大写字母 打算提供给汇编的符号-两个下划线+小写字母 */
 MEMORY
 {
     DTB (r)  : ORIGIN = RAM_START + IMAGE_BASE , LENGTH = DTB_SIZE

@@ -33,16 +33,16 @@ int main();
         "msr SPSel, x0 \n\t"
 // CurrentEL[3:2]=EL, 因此除以4就是我们期望的值
 #define ASM_INIT_CALLER(spsym) \
-		"ldr  x30,=" __stringify(spsym) "\n\t"		/*设置SP,同时保存x30=SP*/ \
-		"mov  sp,x30 \n\t"                                       \
+		"ldr  x0,=" __stringify(spsym) "\n\t"	               \
+		"mov  sp,x0 \n\t"                                       \
 	    "mrs x0,CurrentEL \n\t"                                  \
 		"mov x1,#4 \n\t"                                         \
 		"udiv x0,x0,x1 \n\t" /*获取x0=EL*/                        \
-		"cmp x0,#1 \n\t"                                         \
-		"b.le init \n\t"      /* if(el<=1) init(x0); */            \
-		"msr sp_el1,x30 \n\t" /* else 设置EL1的SP && init(x0) */    \
 		"b   init \n\t"
+// 必须保证el > 1,因为需要访问SP_EL1
 #define ASM_ERET_FROM(el,spsr) \
+	  "mov x0,sp \n\t"            /*设置 sp_el1= current sp*/              \
+	  "msr sp_el1,x0 \n\t"                                 \
 	  "ldr x0,=" __stringify(spsr) "\n\t"                  \
 	  "msr spsr_el" __stringify(el) ",x0 \n\t"             \
 	  "adr x0,1f \n\t"                                     \

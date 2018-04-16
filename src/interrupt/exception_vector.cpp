@@ -1,19 +1,4 @@
-#include <arch/common_aarch64/registers/gicv3_registers.h>
-#include <def.h>
-#include <arch/common_aarch64/registers/gicv3_registers.h>
-#include <arch/common_aarch64/registers/system_common_registers.h>
-#include <arch/common_aarch64/registers/timer_registers.h>
-#include <asm_instructions.h>
 #include <interrupt/exception_def.h>
-#include <io/Output.h>
-#include <io/IntegerFormatter.h>
-#include <schedule/PidManager.h>
-#include <schedule/ProcessManager.h>
-#include <interrupt/InterruptManager.h>
-#include <interrupt/GenericTimer.h>
-#include <interrupt/GICDefinitions.h>
-#include <interrupt/svc_call.h>
-#include <interrupt/InterruptHandler.h>
 
 __asm__ __volatile__(//".align  11 \n\t" // for ARM, this is lower order zero bits, but seems not working. we must get depend on the final linker script
 		".text \n\t"
@@ -58,24 +43,3 @@ __asm__ __volatile__(//".align  11 \n\t" // for ARM, this is lower order zero bi
 		// 异常表的结束位置
 		". = ExceptionVectorEL1 + 0x780 + 0x80\n\t"
 		);
-
-//savedRegisters[31], from X0-X30
-extern "C"
-void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin)
-{
-	// 暂不允许其他中断的发生，处理异常的过程中不允许发生其他非同步异常
-	// 但是同步异常是不可避免的
-
-	// 此处以及之前的区域保证绝对不会产生同步异常
-	intHandler.handleInlined(savedRegs,type,origin);
-
-	// 重新允许所有的中断
-
-	// 主要是平衡堆栈的问题，先将栈指针还原
-	__asm__ __volatile__(
-		"mov sp,%0 \n\t"
-		RESTORE_CONTEXT_AND_ERET_ASM_INSTR()
-		::"r"(savedRegs)
-	);
-}
-

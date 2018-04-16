@@ -9,7 +9,6 @@
 #define INCLUDE_IO_OUTPUT_H_
 
 #include <io/printk.h>
-#include <runtime_def.h>
 
 class Output{
 public:

@@ -33,6 +33,10 @@ public:
 	AS_MACRO uint64_t timeToCountS(uint32_t s)const{ return static_cast<uint64_t>(clockFreq())*s;}
 	AS_MACRO uint64_t timeToCountMS(uint32_t ms)const{ return static_cast<uint64_t>(clockFreq())*ms/1000;}
 
+	/**
+	 * MS作为单位
+	 * @return
+	 */
 	AS_MACRO uint32_t   timerPeriod() const {return _timerPeriod;}
 	AS_MACRO void       timerPeriod(uint32_t timerPeriod) {_timerPeriod = timerPeriod;}
 	AS_MACRO void       nextPeriod(){ timerValueMS(static_cast<int32_t>(_timerPeriod));}

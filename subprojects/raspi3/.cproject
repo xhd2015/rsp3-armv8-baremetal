@@ -66,7 +66,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/filesystem/VirtualProxyUser.cpp|src/filesystem/VirtualProxyKernel.cpp|src/filesystem/VirtualFileSystem.cpp|src/filesystem/VirtualFile.cpp|src/filesystem/FAT32VirtualFile.cpp|src/test|src/schedule|src/memory/VirtualMemoryDefinition.cpp|src/memory/VirtualMap.cpp|src/memory/VirtualManager.cpp|src/memory/VirtualAddress.cpp|src/memory/MemoryManager_host.cpp|src/memory/AddressSpaceDescriptor.cpp|src/io/SectorReaderToByteReader.cpp|src/io/Input.cpp|src/io/Input_read_user_space.cpp|src/io/Input_read_qemu_virt.cpp|src/io/VirtioSectorReader.cpp|src/io/virtio|src/io/sd|src/interrupt|src/arch/raspi3/uart1.cpp|Debug-qemu_virt_reloc_elf|src/io/SectorReader_host.cpp|src/io/printk_host.cpp|src/arch/aarch64|src/printk_qemu_virt.cpp|src/arch/user_space|Debug-qemu_virt|include/arch/aarch64|src/arch/qemu-virt/main.cpp|src/main.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/minimal_crt/stolen_from_libgcc|src/arch/qemu_virt/main_test_svc.cpp|src/io/uart/XilinxUARTPS.cpp|src/MemoryManager_host.cpp|misc|Debug-aarch64|src/arch/qemu_virt/main_test_stp.cpp|src/arch/host|src/io/printk_user_space.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/arch/zcu102|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/io/printk_zcu102.cpp|src/io/printk_qemu_virt.cpp|Debug-host|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt|src/arch/qemu_virt/main_into_EL0.cpp|src/io/uart/PL011.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="src/arch/raspi3/uart0_good|src/interrupt/InterruptManager.cpp|Debug-qemu_virt_reloc_elf|src/test|src/arch/aarch64|src/io/Input.cpp|src/printk_qemu_virt.cpp|src/interrupt/ExceptionState.cpp|src/memory/VirtualManager.cpp|src/interrupt/exceptionCHandler_qemu_virt.cpp|Debug-qemu_virt|include/arch/aarch64|src/filesystem/VirtualFileSystem.cpp|src/arch/qemu-virt/main.cpp|src/minimal_crt/stolen_from_libgcc|misc|src/arch/qemu_virt/main_test_stp.cpp|src/io/virtio|src/io/Input_read_qemu_virt.cpp|src/arch/host|src/io/printk_user_space.cpp|src/memory/VirtualAddress.cpp|src/arch/zcu102|src/memory/VirtualMemoryDefinition.cpp|src/memory/MemoryManager_host.cpp|src/arch/raspi3/main_raspi3_hello.cpp|src/schedule|src/io/printk_zcu102.cpp|src/io/printk_qemu_virt.cpp|Debug-host|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/interrupt/GICCPUInterface.cpp|src/io/SectorReader_host.cpp|src/interrupt/GICRedistributor.cpp|src/io/printk_host.cpp|src/arch/user_space|src/filesystem/VirtualProxyKernel.cpp|src/filesystem/FAT32VirtualFile.cpp|src/memory/AddressSpaceDescriptor.cpp|src/main.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/io/SectorReaderToByteReader.cpp|src/arch/qemu_virt/main_test_svc.cpp|src/io/uart/XilinxUARTPS.cpp|src/MemoryManager_host.cpp|src/interrupt/InterruptHandler.cpp|Debug-aarch64|src/filesystem/VirtualProxyUser.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/interrupt/GICDistributor.cpp|src/filesystem/VirtualFile.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/memory/VirtualMap.cpp|src/io/Input_read_user_space.cpp|src/io/VirtioSectorReader.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/raspi3/uart1.cpp|src/io/sd|src/arch/qemu_virt|src/arch/qemu_virt/main_into_EL0.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -243,10 +243,10 @@
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
 			</target>
-			<target name="${MASTERY_RELOC}" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+			<target name="${MASTERY_RELOC_BIN}" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>${MAKE_BIN}</buildCommand>
 				<buildArguments>-j4</buildArguments>
-				<buildTarget>${MASTERY_RELOC}</buildTarget>
+				<buildTarget>${MASTERY_RELOC_BIN}</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>

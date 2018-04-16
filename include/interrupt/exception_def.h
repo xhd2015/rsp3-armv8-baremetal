@@ -53,6 +53,11 @@ enum ExceptionOrigin:uint64_t{
 	FROM_LOWER_A32=EXCEPTION_ORIGIN_FROM_LOWER_A32,
 };
 
+// 我们期望使用的异常处理函数
+//savedRegisters[31], from X0-X30
+extern "C"
+void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin);
+extern char ExceptionVectorEL1[]; // 向量表的地址
 
 #define SAVE_REGS_ASM_INSTR() \
 		"stp x29,x30,[sp,#-16]! \n\t" \

@@ -1,22 +1,30 @@
 include ${ROOT_PROJECT}/makefiles/qemu_common/makefile.targets
 include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.aarch64_ALL_REGISTERS.targets
-
+ROOT_PATH ?=/cygdrive/e
 # this is for rasp berry pi
-config.$(TARGET_ARCH).txt:FORCE
+# 测试UART0的初始化过程：
+# 1.经过测试，在没有gpu mailbox操作的情况下，dtoverlay=pi3-disable-bt (optional + enable_uart=1) 输出乱码
+# 而在有gpu mailbox操作的情况下，不加任何一个选项，都能正常工作。
+# 2.在注释了GPIO的初始化过程后，dtoverlay=pi3-disable-bt  (optional + enable_uart=1) 不能输出
+# 3.
+config.$(TARGET_ARCH).txt:makefile.eclipse.envs
 	kernel_address=$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))
 	(echo '##======Automatically generated==========##'
 	echo 'kernel=$(MASTERY_BINARY)'
 	echo 'kernel_address='$$kernel_address
 	echo 'arm_64bit=1'
 	echo 'disable_commandline_tags=1'
-	echo 'enable_uart=1'
+	echo '# 下面三个在baremetal环境下并不是必须的，只要正确设置了GPIO即可'
+	echo '#enable_uart=1'
+	echo '#dtoverlay=pi3-disable-bt'
+	echo '#dtoverlay=pi3-miniuart-bt'
 	echo '##=====THE END======##'
 	) > config.$(TARGET_ARCH).txt
 
-install:config.$(TARGET_ARCH).txt $(MASTERY_BINARY)
-	root_path=/cygdrive/e
-	cp config.$(TARGET_ARCH).txt $$root_path/
-	cp $(MASTERY_BINARY) $$root_path/
+$(ROOT_PATH)/config.$(TARGET_ARCH).txt : config.$(TARGET_ARCH).txt
+	cp $< $@
+install : $(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
+	cp $(MASTERY_BINARY) $(ROOT_PATH)/
 	
 
     
@@ -29,11 +37,18 @@ $(MASTERY_BINARY): $(MASTERY_ELF)
     
 $(MASTERY_RELOC) : $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
-	$(MAKE) IMAGE_BASE=0x40000000 $(MASTERY_ELF)
+	$(MAKE) RAM_START=0x40000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
+$(MASTERY_RELOC_BIN) : $(MASTERY_RELOC)
+	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_RELOC) $@
+
+# -cpu cortex-a53 -smp 4  -m 1024M  # 都有default值
+# 可以增加 -serial mon:stdio ，来redirect 第二个。 但是注意，这样输入就会有问题
+QEMU_LOADER_NO_MACHINE := -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -device loader,cpu-num=1,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=2,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=3,addr=$(KERNEL_ADDRESS) -nographic -serial mon:stdio -d int,mmu,guest_errors -D qemu_log.txt
+QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE) -machine raspi3
 raspi3_debug:
-	$(MAKE) RAM_START=0x40000000 qemu_debug_el3
+	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
 raspi3_run:
-	$(MAKE) RAM_START=0x40000000 qemu_run_el3
+	$(QEMU_AARCH64) $(QEMU_ARGS)
 #AUX_FILES += update-config.$(TARGET_ARCH).txt

@@ -9,7 +9,12 @@
 #define INCLUDE_RUNTIME_DEF_H_
 
 //#define REQUIRES(A,name)
-
+/**
+ * 注意：如果一个文件打算提供一个全局变量，那么它最好不要引入runtime_def.h.
+ * 但是这条规则并不是硬性的，只要能通过编译就是最低限度上允许的（虽然不推荐那样做）
+ *
+ * 我们推荐：只有源文件（不包括模板文件）可以安全地引用runtime_def.h
+ */
 
 #ifdef TARGET_ARCH_IS_qemu_virt
 #include <arch/qemu_virt/runtime_def.h>

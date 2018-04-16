@@ -9,6 +9,7 @@
 #define INCLUDE_GENERIC_UTIL_H_
 
 #include <def.h>
+#include <type_traits>
 
 // 实现与arch无关的
 
@@ -147,8 +148,8 @@ AS_MACRO uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
 }
 
 // no check, set bits[lowerBound,upperBound]=v, others keep unchanged
-template <class Type,class ValueType>
-AS_MACRO void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,ValueType v)
+template <class Type>
+AS_MACRO void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v)
 {
 	// clear middle, and validate v, shift v to proper position, concate i,v together
 	i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
@@ -180,6 +181,28 @@ AS_MACRO void     setBit(Type & i,uint8_t index,ValueType v)
 AS_MACRO uint64_t getBit(uint64_t i,uint8_t index)
 {
 	return getBits(i,index,index);
+}
+
+template <class T>
+AS_MACRO bool   isMax(T t)
+{
+	return !(static_cast<T>(~t));
+}
+// template, must be implemented in-place
+template <class T>
+uint8_t         findFirstSet(T i)
+{
+	static_assert(std::is_unsigned<T>::value,"");
+	uint8_t index=0;
+	while(index<(sizeof(T)*8) && !(i& 0b1) )
+	{
+		i >>= 1;
+		++index;
+	}
+	if(index==sizeof(T)*8)
+		return 0xffu;
+	else
+		return index;
 }
 
 

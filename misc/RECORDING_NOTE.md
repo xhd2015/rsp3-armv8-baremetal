@@ -1,3 +1,44 @@
+# 2018年4月16日19:14:38
+【commit point】 树莓派的UART0(PL011)输入中断在真机上测试通过。
+# 2018年4月15日19:10:49
+ffs是什么？查找__ffs的文档
+```c++
+static __inline__ int ffs(int x)
+{
+	return x ? (__ffs((unsigned long)x) + 1) : 0;
+}
+```
+# 2018年4月15日17:09:08
+关于BCM2837， 继承自BCM2836
+BCM2836
+The ARM cores run at 1.2GHz, making the device about 50% faster than the Raspberry Pi 2. The VideoCore IV runs at 400MHz.
+# 2018年4月15日17:08:49
+【提议】 null_abort可以使用指针传递
+# 2018年4月15日14:33:30
+【提议】 可以使用Delim这样的参数来获得更好的可变参数传递：
+原来是这样的：
+```c++
+	template <class ... Args>
+	GICDistributor(Args && ... args)
+		:MemBasedRegReader(std::forward<Args>(args)...)
+	{}
+```
+改成：
+```c++
+	template <class ... Args,class ... OtherArgs>
+	GICDistributor(Args && ... args,Delim d,OtherArgs && ... otherargs)
+		:MemBasedRegReader(std::forward<Args>(args)...),
+		Other(std::forward<OtherArgs>(otherargs)...)
+	{}
+	// or
+	template <class ... Args,class Delim,class ... OtherArgs>
+	GICDistributor(Args && ... args,Delim d,OtherArgs && ... otherargs)
+		:MemBasedRegReader(std::forward<Args>(args)...),
+		Other(std::forward<OtherArgs>(otherargs)...)
+	{}
+```
+# 2018年4月15日12:43:00
+经过测试，树莓派3开机处于EL2，因此它处于非安全状态。
 # 2018年4月15日02:30:03
 【commit point】 raspi3的mini uart驱动编写完成，连接树莓派3能够正确输出。
 
@@ -5,7 +46,11 @@ raspi3和qemu_virt共用的是同一个ld文件，未来的目标是使所有的
 
 此外，raspi3的crt0也能使用qemu_virt的crt0.未来的目标是共用一个crt0.
 
+还规定了对树莓派config.txt的更新，必须进行注释，注释要求见其中的例子。
+
+
 注意：连接树莓派时，TTL接口的TXD应当与树莓派的RXD相连，即接受口与传输口对联。
+注意： 发送速率过快还可能对称windows蓝屏，虽然不知道为什么。
 【todo】 不遗余力地将此项目更加优化。
 # 2018-4-14 16:24:07
 【todo】 将m_abort修改成null_abort

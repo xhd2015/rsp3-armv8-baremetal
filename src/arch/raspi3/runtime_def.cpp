@@ -12,4 +12,14 @@ MemoryManager mman {nullptr,0,false};
 MemAbort m_abort;
 
 BCM2835MiniUART miniUART {nullptr};
+PL011           pl011 {nullptr};
+
+BCM2835InterruptController intc { nullptr};
+BCM2836LocalIntController localIntc{nullptr};
+BCM2836MailBox mailBox { nullptr};
+
+
+GPIO gpio{nullptr};
+
+GenericTimer  ktimer;
 
