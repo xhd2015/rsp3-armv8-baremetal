@@ -28,6 +28,7 @@ void GPIO::signalModify(uint32_t pin,PUD initPUD)
 }
 void GPIO::selectAltFunction(uint32_t pin, ALT alt)
 {
+	kout << INFO << "GPIO select pin "<< pin << " to ALT " << Hex(alt) << "\n";
 	assert(pin <= MAX_PIN);
 	auto grp = pin/SEL_OF_EACH_GROUP;
 	auto offset=pin%SEL_OF_EACH_GROUP;

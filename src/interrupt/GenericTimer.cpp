@@ -26,9 +26,10 @@ void GenericTimer::timerValueMS(uint32_t ms)
 }
 
 
-void GenericTimer::delayMS(uint32_t ms)const
+
+void GenericTimer::delayUS(uint32_t us)const
 {
-	uint64_t neededCount = timeToCountMS(ms);
+	uint64_t neededCount = timeToCountUS(us);
 	uint64_t initCount = counterValue();
 	while(counterValue() - initCount < neededCount) // wait
 		;

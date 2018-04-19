@@ -92,8 +92,9 @@ MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
 	if(moveSize >= sizeof(MemoryChunk))
 		*nextChunk=*this;
 	else{ // 可能产生冲突
-		// FIXME 在树莓派3上测试出现错误，因为sizeof(MemoryChunk)=8, 而this作为地址居然没有与8对齐
+		// _FIXME 在树莓派3上测试出现错误，因为sizeof(MemoryChunk)=8, 而this作为地址居然没有与8对齐
 		//  因此一次复制错误了。 请找到原因之后修复
+		// NOTE  树莓派3的内存要求Strongly Ordered,因此必须对齐访问
 		kout << "move chunk not correct\n";
 		kout << "move size = " << moveSize << "\n";
 //		MemoryChunk temp=*this; // 错误

@@ -13,8 +13,8 @@ class ScalarBase
 {
 public:
 	AS_MACRO static SubType     make(ScaleType v) { return *reinterpret_cast<SubType*>(&v);}
-	AS_MACRO ScaleType & ref() { return *reinterpret_cast<ScaleType*>(this);}
-	AS_MACRO const ScaleType & ref()const{ return *reinterpret_cast<const ScaleType*>(this);}
+	AS_MACRO ScaleType & raw() { return *reinterpret_cast<ScaleType*>(this);}
+	AS_MACRO const ScaleType & raw()const{ return *reinterpret_cast<const ScaleType*>(this);}
 };
 
 

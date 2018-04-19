@@ -7,6 +7,8 @@
 #include <io/MemBasedRegReader.h>
 #include <generic_util.h>
 #include <driver/sd/SDDefinitions.h>
+#include <driver/sd/SDCardOperationCond.h>
+#include <driver/sd/SDCardIdentification.h>
 /**
  * Base = 0x3F300000
  *
@@ -195,20 +197,35 @@ public:
 	 _hcver(V_3),
 	 _capabilities(0),
 	 _rca(0),
-	 _sdsc_or_sdxc(0),
-	 _blockSize(512)
-	{
-
-	}
+	 _blockSize(512),
+	 _cid(),
+	 _ocr()
+	{}
 
 	int init();
-
 	int reset();
+	/**
+	 * 通过发送ACMD41获取OCR，来启动SDCard
+	 * @return
+	 */
+	int powerUpSDCard();
+	/**
+	 * legacy card，即不支持CMD8的卡
+	 * @return
+	 */
+	int initLegacyCard();
+	int signalVoltageSwitch();
 
 	// 为了支持不同的卡类型，有些卡可能永远都不会返回
 	int sendCommand(Command cmd,uint32_t arg,uint32_t waitMS=0xFFFFFFFF);
 	int sendAppCommand(Command cmd,uint32_t arg,uint32_t waitMS=0xFFFFFFFF);
 	static bool commandUsesDAT(Command cmd);
+	/**
+	 * 主要指的是R1b,R5b的command
+	 * @param cmd
+	 * @param type
+	 * @return
+	 */
 	static bool commandNeedsTransferComplete(Command cmd,RespType type);
 	AS_MACRO void clearNormInt(){	reg16(NORM_INT_STATUS) = 0xFFFFu;}
 	AS_MACRO void clearErrInt() {   reg16(ERR_INT_STATUS) = 0xF3FFu;}
@@ -269,16 +286,14 @@ public:
 	 * Operation Conditions Register = OCR
 	 */
 	void       setVoltage();
-	// FIXME 移除这个方法，在初始化中设置
-	// 选择卡的类型：SDSC or SDXC
-	AS_MACRO void       typeSelect(uint8_t sdsc_or_sdxc){ _sdsc_or_sdxc=sdsc_or_sdxc;}
 	void    dumpStatus()const;
 private:
 	HCVersion  _hcver;
 	uint64_t   _capabilities;
 	uint32_t   _rca;// shifted rca
-	uint8_t       _sdsc_or_sdxc;
 	size_t     _blockSize;//512
+	SDCardIdentification _cid;
+	SDCardOperationCond  _ocr;
 };
 
 

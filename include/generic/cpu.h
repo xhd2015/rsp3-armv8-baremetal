@@ -13,6 +13,7 @@ void delayCPU(size_t i);
 void delayCPU(size_t i,size_t j);
 void haltCPU();
 
+void delayUS(size_t usec);
 void delayMS(size_t msec);
 void delayS(size_t sec);
 

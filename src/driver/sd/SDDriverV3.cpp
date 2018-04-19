@@ -20,20 +20,65 @@ int SDDriverV3::init()
 	int status=reset();
 	if(status!=0)
 		return status;
-	setBit(reg16(CLOCK_CTRL),0,1);
+	setBit(reg16(CLOCK_CTRL),0,1); // stop clock supply
 	setBits(reg8(TIMEOUT_CTRL),0,3,0b1110);//max timeout
 	delayMS(10);
 
 	_capabilities = reg64(CAPABILITIES);
 	_hcver = static_cast<HCVersion>(reg16(HOST_CTRL_VER) & 0xff);
+	kout << "version=" << (_hcver+1) << "\n";
+	kout << "cap = " << Hex(_capabilities) << "\n";
 
 	// 允许所有的中断状态，同时清除状态位
 	reg16(ERR_INT_EN)=0xFFFF;
 	reg16(NORM_INT_EN)=0xFFFF;
 	clearNormErrInt();
 
-	kout << "version=" << (_hcver+1) << "\n";
-	kout << "cap = " << Hex(_capabilities) << "\n";
+	setSDClockFreq(400000);
+	status=sendCommand(Command::IDLE,0);
+	if(status!=0)
+		return status;
+	uint32_t pattern=0x1AA;
+	kout << "pattern = " << Hex(pattern) << "\n";
+	status=sendCommand(Command::SEND_IF_COND,pattern);
+	if(status!=0)
+		return initLegacyCard();
+	if(response()!=pattern)
+	{
+		kout << FATAL << "SD Card is unusable because of wrong echo\n";
+		return 1;
+	}
+	status = powerUpSDCard();
+	if(status!=0)
+		return status;
+	if(_ocr._sdsc_or_sdhc_sdxc==1) // SDXC needs siwtch 1.8v?
+	{
+		// 暂时不进行switch操作 ,因为总是failed
+//		status=signalVoltageSwitch();
+//		if(status!=0)
+//			return status;
+	}
+
+	status=sendCommand(Command::ALL_SEND_CID, 0);
+	if(status!=0)
+	{
+		kout << FATAL << "SD card respond CID failed\n";
+		return status;
+	}
+	_cid = SDCardIdentification::make(response());
+	_cid.dump();
+
+	auto rca=getAnyRCA();
+	if(rca==0)
+	{
+		kout << FATAL << "SD Card does not send valid RCA\n";
+		return 1;
+	}
+	status=setRCA(rca);
+	if(status!=0)
+		return status;
+
+	setSDClockFreq(25000000);// set to max
 	return 0;
 }
 
@@ -43,6 +88,78 @@ int SDDriverV3::reset()
 	reg32(HOST_CTRL1)=0;
 	softwareResetAll();
 	return 0;
+}
+int SDDriverV3::powerUpSDCard()
+{
+	// 根据技术手册的说明，设置VoltageWindow=0可以获取OCR响应， 只有首次响应OK后才能
+	//  发送后续的初始化命令
+	kout << INFO << "SD power up sdcard using SEND_OP_COND(ACMD41)\n";
+	int status = sendAppCommand(Command::APP_SEND_OP_COND,0);
+	if(status!=0)
+	{
+		kout << FATAL << "SD get OCR failed\n";
+		return 1;
+	}
+	uint32_t opcond=SDDefinitions::makeACMD41Arg(0xFF8000, true, true, true);
+	kout << INFO << "SD OP cond = " << Hex(opcond) <<"\n";
+
+	uint32_t msWait=1000;//等待至多1s
+	uint32_t delayInterv=50;//每两次检测之间的间隔至多是50ms
+	while(true)
+	{
+		status=sendAppCommand(Command::APP_SEND_OP_COND, opcond);
+		if(status!=0)
+		{
+			kout << FATAL << "SD Send OP Cond failed\n";
+			return 1;
+		}
+		_ocr=SDCardOperationCond::make(response());
+		if(msWait <delayInterv || _ocr._powerUpDone)
+			break;
+		delayMS(delayInterv);
+		msWait-=delayInterv;
+	}
+	if(!_ocr._powerUpDone)
+	{
+		kout << FATAL << "SD keeps busy,power on timeout/failed\n";
+		return 1;
+	}
+	kout << INFO << "SD Type = " << (_ocr._sdsc_or_sdhc_sdxc?"SDHC/SDXC":"SDSC") << "\n";
+	return 0;
+}
+// 目前不支持legacy card，太老了
+int SDDriverV3::initLegacyCard()
+{
+	kout << INFO << "SD init legacy card\n";
+	return 1;
+}
+
+int SDDriverV3::signalVoltageSwitch()
+{
+	kout << INFO << "SD signal voltage switch to 1.8v\n";
+	if(!_ocr._switch1v8Accepted)
+		return 0;
+	auto status=sendCommand(Command::VOLTAGE_SWITCH_1V8, 0);
+	do{
+		if(status!=0)
+			break;
+		stopSDClock(true);
+		if(getBits(reg32(PRESENT_STATE),20,23)!=0b0000)
+			break;
+		setBit(reg16(HOST_CTRL2),3,1);
+		delayMS(5);//等待5ms
+		if(bitsNonSet<3>(reg16(HOST_CTRL2)))
+			break;
+		stopSDClock(false);
+		delayMS(1);//等待1ms
+		if(getBits(reg32(PRESENT_STATE),20,23)!=0b1111)
+			break;
+		return 0;
+	}while(false);//为了使用break语句
+	// 停止供电,应当尝试重新初始化，且不要支持1.8v
+	kout << FATAL <<"switch to 1.8v failed,try init agian\n";
+	setBit(reg8(POWER_CTRL),0,0);
+	return 1;
 }
 /**
  * Implementation Note:
@@ -65,18 +182,6 @@ int SDDriverV3::sendCommand(Command cmd,uint32_t arg,uint32_t waitMS)
 			<< "response tpye:" << responseTypeString(rtp) << ","
 			<< "arg1 = " << Hex(arg)
 			<< "\n";
-//	if(cmd==Command::SELECT_DESELECT_CARD)
-//	{
-//		if(cmdBusy()) { kout << FATAL << "busy\n";return 1;}
-//		auto temp=reg32(NORM_INT_STATUS);
-//		reg32(NORM_INT_STATUS)=temp;
-//		reg32(ARG1)=arg;
-//		reg32(CMD_TRANS)=cmd;
-//		while(!lastCommandCompleted());
-//		auto r=reg32(RESP);
-//		(void)r;
-//		return 0;
-//	}
 	if(cmdBusy())
 	{
 		kout << INFO << "SD CMD line busy,wait on...\n";
@@ -102,11 +207,10 @@ int SDDriverV3::sendCommand(Command cmd,uint32_t arg,uint32_t waitMS)
 
 	reg32(ARG1)=arg;
 	reg32(CMD_TRANS)=cmd;
-	extern void wait_msec(unsigned int n);
-	// FIXME 这里可不可以没有延迟？
+	// _FIXME 这里可不可以没有延迟？ NOTE 不能没有延迟，延迟1000us，如果有性能上的要求，根据各个命令进行单独的delay
 	// NOTE 这里延迟太重要了，我可以说，因为没有写这条延迟语句，我调试了10+小时
 	//      实际硬件还是太难受了
-	wait_msec(1000);
+	delayUS(1000);
 
 	// complete sequence
 	while(!lastCommandCompleted())
@@ -124,35 +228,26 @@ int SDDriverV3::sendCommand(Command cmd,uint32_t arg,uint32_t waitMS)
 		return 1;
 	}
 	completeLastCommand();
-	// 清除commandcomplete
-//	completeLastCommand();
 	// 在command complete的情况下，可以忽略command timeout
-	// FIXME 这里不应当清除某位，因为可能引起其他位的变化
-//	setBit(reg16(ERR_INT_STATUS),0,1);
-//	if(commandNeedsTransferComplete(cmd, rtp))
-//	{
-//		while(waitMS>=10 && !lastTransferCompleted()) { waitMS-=10;delayMS(10);dumpStatus();}
-//		if(!lastTransferCompleted())
-//		{
-//			kout << FATAL << "SD Transfer complete failed/DAT timedout\n";
-//			return 1;
-//		}
-//		completeLastTransfer();
+	reg16(ERR_INT_STATUS)=bitOnes<0>();
+	if(commandNeedsTransferComplete(cmd, rtp))
+	{
+		while(waitMS>=10 && !lastTransferCompleted()) { waitMS-=10;delayMS(10);dumpStatus();}
+		if(!lastTransferCompleted())
+		{
+			kout << FATAL << "SD Transfer complete failed/DAT timedout\n";
+			return 1;
+		}
+		completeLastTransfer();
 		// transfer complete优先级比data timeout优先级高
-//		if(lastTransferCompleted())
-//			setBit(reg16(ERR_INT_STATUS),4,1);
-//	}
-	// 不要对原寄存器直接操作
-//	uint16_t err=reg16(ERR_INT_STATUS);
-//	setBit(err,0,0);// 清除
-//	if(lastTransferCompleted())
-//		setBit(err,4,0);
-//	if(err)//any bit set,error response
-//	{
-//		kout << WARNING << "SD commmand has error\n";
-//		kout << "ERROR state is " << Hex(err) << "\n";
-//		return 1;
-//	}
+		reg16(ERR_INT_STATUS)=bitOnes<4>();
+	}
+	if(reg16(ERR_INT_STATUS))//any bit set,error response
+	{
+		kout << WARNING << "SD commmand has error\n";
+		kout << "ERROR state is " << Hex(reg16(ERR_INT_STATUS)) << "\n";
+		return 1;
+	}
 	return 0;
 }
 
@@ -176,12 +271,13 @@ bool SDDriverV3::commandNeedsTransferComplete(Command cmd,RespType type)
 {
 	if(type==RespType::R1b||type==RespType::R5b)//busy command needs
 		return true;
-	if(cmd==Command::READ_MULTIPLE_BLOCK|| //write,read
-			cmd==Command::READ_SINGLE_BLOCK ||
-			cmd==Command::WRITE_MULTIPLE_BLOCK ||
-			cmd==Command::WRITE_SINGLE_BLOCK
-			)
-		return true;
+	// 这些命令只有在读写完成后才需要TransferComplete
+//	if(cmd==Command::READ_MULTIPLE_BLOCK|| //write,read
+//			cmd==Command::READ_SINGLE_BLOCK ||
+//			cmd==Command::WRITE_MULTIPLE_BLOCK ||
+//			cmd==Command::WRITE_SINGLE_BLOCK
+//			)
+//		return true;
 	return false;
 }
 
@@ -200,7 +296,7 @@ void SDDriverV3::softwareResetDAT()
 	setBit(reg8(SOFTWARE_RESET),2,1);
 	while(bitsAnySet<2>(reg8(SOFTWARE_RESET)));
 }
-const char*  SDDriverV3::responseTypeString(RespType r)const
+const char*  SDDriverV3::responseTypeString(SDDriverV3::RespType r)const
 {
 	switch(r)
 	{
@@ -235,7 +331,7 @@ int  SDDriverV3::transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,cons
 	reg16(BLOCK_SIZE)=_blockSize;
 	reg16(BLOCK_COUNT)=num;
 	int status=0;
-	if(_sdsc_or_sdxc==0)//sdsc,需要SET_BLOCKLEN, 地址需要调整
+	if(_ocr._sdsc_or_sdhc_sdxc==0)//sdsc,需要SET_BLOCKLEN, 地址需要调整
 	{
 		uint64_t temp=static_cast<uint64_t>(blockAddr) * _blockSize;
 		if(temp > UINT32_MAX) // 是否溢出
@@ -263,17 +359,11 @@ int  SDDriverV3::transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,cons
 		else
 			status=sendCommand(Command::WRITE_MULTIPLE_BLOCK, blockAddr);
 	}
-	// complete last command
-	// 不检测传输错误
-	// FIXME 注意，如果这里不注释掉，第一个bufferReadReady就会一直等待。
-	// 而技术手册上写明需要clear Command Complete, 也就是说，在发送完成后，Command Complete Int应当保留
-//	completeLastCommand();
-//	completeLastTransfer();
-	// BUGFIX  下面两行调试展示了原因：当写入完成位后，readReady位也被清除。（此时就可以开始写了）
-//	dumpStatus();
-//	completeLastCommand();
-//	clearErrInt();
-//	dumpStatus();
+	if(status!=0)
+	{
+		kout << FATAL << "SD Transfer Block failed sending command\n";
+		return 0;
+	}
 	if(readBuf)//read
 	{
 		uint32_t * readPtr=reinterpret_cast<uint32_t*>(readBuf);
@@ -322,56 +412,34 @@ int     SDDriverV3::setRCA(uint32_t rca)
 	kout << INFO << "SD set RCA " << Hex(rca) << "\n";
 	int status=0;
 	status=sendCommand(Command::SELECT_DESELECT_CARD, rca);
-//	while(t-- && (status=sendCommand(Command::SELECT_DESELECT_CARD, rca&0xFFFF0000,100))!=0)
-//	{
-////		softwareResetDAT();
-//	}
 	if(status!=0)
+	{
+		kout << FATAL << "SD setting RCA failed\n";
 		return status;
-	uint32_t ms=1000;
-	while(ms-- && !lastTransferCompleted()) delayMS(1);//等待完成
-	if(!lastTransferCompleted()) // 超时，重试
-		return 1;
-	completeLastTransfer();
+	}
 	_rca=rca;
 	return 0;
 }
-// 如果需要检测卡，即中断的产生，则启用insert和removal中断
-//	/**
-//	 * 启用检测卡的中断
-//	 * 清除中断状态
-//	 * 检测present state
-//	 * @return
-//	 */
-//bool    SDDriverV3::cardInserted()const
-//{
-//	setBit(reg16(NORM_INT_EN),6,1);
-//	setBit(reg16(NORM_INT_STATUS),6,1);//清除
-//	return getBit(reg32(PRESENT_STATE),16);
-//}
-// FIXME 为什么 wait_sec可以，delayMS不可以？
-void wait_msec(unsigned int n);
 void    SDDriverV3::setSDClockFreq(size_t freq)
 {
 
 	kout << INFO << "SD setting clock freq to " << freq << "\n";
 	while(busy());
 	stopSDClock(true);
-	wait_msec(10);
-//	delayMS(10);
+	delayUS(10);
 	if(baseSDCardFreq()==0)
 	{
 		uint32_t d=clockDivisorForEMMC(freq);
 		kout << INFO << "SD calculate divisor using EMMC method, divisor="
 					<< Hex(d)<<"\n";
 		reg16(CLOCK_CTRL) = (reg16(CLOCK_CTRL)&0x003f) | d;
-		wait_msec(10);
+		delayUS(10);
 	}else{
 		setBits(reg16(CLOCK_CTRL),8,15, clockDivisor(freq));
-		wait_msec(10);
+		delayUS(10);
 	}
 	stopSDClock(false);
-	wait_msec(10);
+	delayUS(10);
 	while(bitsNonSet<1>(reg16(CLOCK_CTRL)));//wait stable
 }
 

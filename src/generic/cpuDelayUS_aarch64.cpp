@@ -7,9 +7,9 @@
 #include <generic/cpu.h>
 //#include <interrupt/BCM2836LocalIntController.h>
 #include <interrupt/GenericTimer.h>
-void delayMS(size_t msec)
+void delayUS(size_t usec)
 {
-	ktimer.delayMS(msec);// 结果与delayCPU(1000*1000*msec)差不多
+	ktimer.delayUS(usec);// 结果与delayCPU(1000*1000*msec)差不多
 //	localIntc.delayMS(msec);// 使用localIntc实现的方式不准确
 }
 

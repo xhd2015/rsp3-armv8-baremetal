@@ -27,12 +27,11 @@ public:
 	AS_MACRO uint64_t counterValue()const{return RegCNTPCT_EL0::read().PhysicalCount;}
 	// Hz
 	AS_MACRO uint32_t clockFreq()const{return RegCNTFRQ_EL0::read().ClockFrq;}
-	void delayMS(uint32_t ms)const;
-	AS_MACRO void delayS(uint32_t s)const{delayMS(s*1000);}
+	void delayUS(uint32_t us)const;
 	// calculate needed count to pass time: second-->count
 	AS_MACRO uint64_t timeToCountS(uint32_t s)const{ return static_cast<uint64_t>(clockFreq())*s;}
 	AS_MACRO uint64_t timeToCountMS(uint32_t ms)const{ return static_cast<uint64_t>(clockFreq())/1000*ms;}
-
+	AS_MACRO uint64_t timeToCountUS(uint32_t us)const { return static_cast<uint64_t>(clockFreq())/1000*us/1000;}
 	/**
 	 * MS作为单位
 	 * @return

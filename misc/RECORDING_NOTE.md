@@ -1,3 +1,5 @@
+# 2018年4月19日19:33:04
+【commit point】 对之前的代码的整合，现在仍然保持功能正确。
 # 2018年4月19日14:52:03
 【commit point】 初步实现了一个可用的SD卡驱动（SD Bus模式）， 参考 [Part1_Physical_Layer_Simplified_Specification_Ver6.00.pdf](external/SDA/Part1_Physical_Layer_Simplified_Specification_Ver6.00.pdf) 和 [Host_Controller_Simplified_Specification_Ver3.00.pdf](external/SDA/Host_Controller_Simplified_Specification_Ver3.00.pdf) 真机上测试通过。
 

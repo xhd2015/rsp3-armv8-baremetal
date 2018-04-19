@@ -137,3 +137,7 @@ Auto CMD23是一个特性：在CMD18和CMD25之前先发送CMD23.如果支持该
 下标展示了Block Count的使用：
 ![](data_transfer_length.png)
 注意：在使用ADMA时，应当设置Block Count Enable=0.
+
+
+# 标准寄存器
+

@@ -405,7 +405,6 @@ int sd_init()
 //    if((r=sd_clk(25000000))) return r;
 	  sd.setSDClockFreq(25000000);// ojbk
 
-// // FIXME Bug存在于下面的语句中 UPDATE 不一定，前面的也有bug
     kout << "his CMD7 = " << Hex(CMD_CARD_SELECT) << "\n";
     kout << "my CMD7 = " << Hex(Command::SELECT_DESELECT_CARD) << "\n";
 //    sd_cmd(CMD_CARD_SELECT,sd_rca );
