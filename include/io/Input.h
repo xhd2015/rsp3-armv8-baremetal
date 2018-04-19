@@ -9,9 +9,9 @@
 #define INCLUDE_IO_INPUT_H_
 
 #include <array>
-#include <io/uart/PL011.h>
 #include <runtime_def.h>
-#include <data_structures/String.h>
+#include <data/String.h>
+#include <driver/uart/PL011.h>
 
 class Input{
 public:

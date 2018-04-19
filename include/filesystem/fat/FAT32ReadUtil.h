@@ -11,8 +11,8 @@
 #include <filesystem/fat/FAT32Entry.h>
 #include <filesystem/fat/FATDirEntry.h>
 #include <io/SectorReader.h>
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
+#include <data/Vector.h>
+#include <data/String.h>
 
 #include <utility>
 

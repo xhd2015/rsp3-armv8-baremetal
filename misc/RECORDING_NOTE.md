@@ -1,3 +1,75 @@
+# 2018年4月19日14:52:03
+【commit point】 初步实现了一个可用的SD卡驱动（SD Bus模式）， 参考 [Part1_Physical_Layer_Simplified_Specification_Ver6.00.pdf](external/SDA/Part1_Physical_Layer_Simplified_Specification_Ver6.00.pdf) 和 [Host_Controller_Simplified_Specification_Ver3.00.pdf](external/SDA/Host_Controller_Simplified_Specification_Ver3.00.pdf) 真机上测试通过。
+
+这次commit的更多信息参见`2018年4月19日00:01:49`
+
+昨天想要commit的时间距今已经过去了13个小时，昨天编写的SD卡驱动存在的问题：只能正常执行第一次，后面的读写会卡在CMD7(选择卡的地址)这条命令上。（为了不提交有bug的驱动，我们确实花了更多时间，这值得吗？问题总是要解决的，但是以什么方式最好呢？）
+
+首先我们总结一下昨天彼时到现在，驱动修改的部分：
+
+ - 发送CMD8时不发送VHS=1(也就是说只有pattern=0x1AA)
+ - 直接发送ACMD41而不首先获取其信息
+ - sendCommand中加入延时1000ms的等待，但是注意：这里使用的wait_msec，还不是delayMS，这一点需要进一步确认
+ - 设置clockFreq的过程中，加入延时等待，这一点也很重要。
+ - 修改了所有的command，取消了crc和index检查。后面我们应当按照标准将它们重新正确设置。
+
+
+
+我们调试的真实体验：
+ - 插入树莓派运行第一次成功，但是第二次，第三次失败
+ - 我们认为只有4次以上的读写成功，才能算测试成功
+
+驱动成功的关键条件：
+ - 明白哪些条件下发生哪些情况。
+ - 针对这些情况改进
+ - 延时对于真实硬件真的很重要，模拟器不能过于信任。
+ - 如果可以，先找到一个正常工作的例子，将其作为base改进
+ - step-by-step
+
+这里，首先，我需要向bzt致谢，他的教程 https://github.com/bztsrc/raspi3-tutorial 是我调试成功的基础。我主要参考了 https://github.com/bztsrc/raspi3-tutorial/tree/master/0B_readsector/sd.c 。
+
+经过这次调试，首先，我们的精力被耗费了大半； 其次，我们有所长进，认识到了需要认识的东西。经验难能可贵，但是失败的经验越少越好。
+
+我们需要休息。
+# 2018年4月19日00:01:49
+(commit point取消，参见2018年4月19日14:52:03) 参考`Part1_Physical_Layer_Simplified_Specification_Ver6.00.pdf`和`PartA2_SD Host_Controller_Simplified_Specification_Ver3.00.pdf`实现了SD卡的读写驱动（SD Bus模式，非SPI模式），驱动的实现基本上按照技术手册的描述进行，除了计算clockFreq部分。读测试在真机上测试通过
+测试结果如下：
+
+boot分区的第一个扇区内容-->[test_of_boot_sector1.txt](external/SDA/test/test_of_boot_sector1.txt)
+
+从树莓派上读取SD卡的第8192个扇区（该扇区为boot分区的第一个扇区）：
+![raspi3_real_machine_test.png](external/SDA/test/raspi3_real_machine_test.png)
+
+经验证，读取正确。
+
+测试源代码 [main_raspi3_test_sd_read.cpp](../src/arch/raspi3/main_raspi3_test_sd_read.cpp)
+
+# 2018年4月17日18:21:40
+一个bug：（真机上）
+```c++
+	uint64_t * addr=reinterpret_cast<uint64_t*>(0x110b184);
+	kout << "addr = " << addr << "\n";
+	kout << "value = " << Hex(*addr) << "\n";
+	while(true);
+```
+异常信息
+```
+interrupt
+cpuID = 0
+SYNC
+RegELR_EL1: returnAddr = 10730c,
+RegESR_EL1: ISS = 21, IL = 1, EC = 25,
+RegFAR_EL1: faultAddr = 110b184,
+```
+
+产生数据不对齐的异常。
+```
+RegSCTLR_EL1: M = 0, A = 0, C = 0, SA = 0, SA0 = 0, CP15BEN = 0, RES0_0 = 0, ITD = 0, SED = 0, UMA = 0, RES0_1 = 0, RES1_2 = 1, I = 0, RES0_3 = 0, DZE = 0, UCT = 0, nTWI = 0, RES0_4 = 0, nTWE = 0, WXN = 0, RES1_5 = 1, IESB = 0, RES1_6 = 1, SPAN = 1, E0E = 0, EE = 0, UCI = 0, RES0_7 = 0, nTL
+```
+解决：https://stackoverflow.com/questions/37534144/armv8-alignment-abort
+```
+https://stackoverflow.com/questions/37534144/armv8-alignment-abort
+```
 # 2018年4月16日21:34:41
 【commit point】 树莓派的SystemTimer在真机上测试通过，经过验证，在我所使用的板子上只有Timer1和Timer3是完全正确的，其他两个Timer能够产生中断但是没有中断状态信息。
 # 2018年4月16日19:56:21

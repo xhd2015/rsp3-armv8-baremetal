@@ -7,6 +7,8 @@ char koutBuf[koutBufSize]={0};
 extern const char EMPTY_STR[1]={0};
 Output kout;
 
+Input kin;
+
 
 MemoryManager mman {nullptr,0,false};
 MemAbort m_abort;

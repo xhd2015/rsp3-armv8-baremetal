@@ -24,6 +24,8 @@ size_t itod(size_t i,char *dst,size_t size);
 size_t itox(size_t i,char *dst,size_t size);
 
 size_t itos(size_t i,unsigned int base,char *dst,size_t size);
+size_t stoi(const char *src,size_t size,bool *failed=nullptr);
+size_t stoi(const char *src,bool *failed=nullptr);
 
 // alignPrevious : 0是所有对齐的起点,0也是对齐的终点，会发生循环，即达到最大值附近后增加到0
 uint64_t alignAhead(uint64_t d,uint64_t alignment);
@@ -126,11 +128,6 @@ AS_MACRO uint64_t upperMaskBits()
 {
 	return HEX64(ffff,ffff,ffff,ffff) >> (64-i) << (64-i);
 }
-template <uint64_t i>
-AS_MACRO uint64_t lowerMaskBits()
-{
-	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
-}
 // example: upperMaskBits(4) = 0xf000 0000 0000 0000, meaning that, the upper 4 bits are all 1,others are all 0
 AS_MACRO uint64_t upperMaskBits(uint64_t i)
 {
@@ -141,9 +138,21 @@ AS_MACRO uint64_t lowerMaskBits(uint64_t i)
 {
 	return HEX64(ffff,ffff,ffff,ffff) << (64-i) >> (64-i);
 }
+template <uint8_t lowerBits>
+constexpr uint64_t lowerMaskBits()
+{
+	static_assert(lowerBits<=63,"");
+	return HEX64(ffff,ffff,ffff,ffff) << (64-lowerBits) >>(64-lowerBits);
+}
 AS_MACRO uint64_t middleMaskBits(uint64_t lowerBound,uint64_t upperBound)
 {
 	// clear lowerBound and then clear upperBound
+	return HEX64(ffff,ffff,ffff,ffff) >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
+}
+template <uint8_t lowerBound,uint8_t upperBound>
+constexpr uint64_t middleMaskBits()
+{
+	static_assert(lowerBound<=upperBound && upperBound<=63,"");
 	return HEX64(ffff,ffff,ffff,ffff) >> lowerBound << (64 - upperBound - 1 + lowerBound) >> (64-upperBound -1);
 }
 
@@ -153,6 +162,12 @@ AS_MACRO void setBits(Type & i, uint8_t lowerBound,uint8_t upperBound,uint64_t v
 {
 	// clear middle, and validate v, shift v to proper position, concate i,v together
 	i = (i & (~middleMaskBits(lowerBound, upperBound))) |((v & lowerMaskBits(upperBound - lowerBound + 1))<<lowerBound );
+}
+template <class Tp, uint8_t lowerBound,uint8_t upperBound,uint64_t v>
+constexpr Tp makeBits(Tp val)
+{
+	// clear middle, and validate v, shift v to proper position, concate i,v together
+	return (val & (~middleMaskBits<lowerBound, upperBound>())) |((v & lowerMaskBits<upperBound - lowerBound + 1>())<<lowerBound );
 }
 AS_MACRO uint64_t getBits(uint64_t i, uint8_t lowerBound,uint8_t upperBound)
 {
@@ -220,6 +235,11 @@ uint8_t         findFirstSet(T i)
 }
 
 
+// math
+// gcd:最大公约数
+size_t gcd(size_t a,size_t b);
+// lcm:最小公倍数
+size_t lcm(size_t a,size_t b);
 
 
 

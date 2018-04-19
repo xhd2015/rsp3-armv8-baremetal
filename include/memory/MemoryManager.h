@@ -10,7 +10,6 @@
 
 #include <def.h>
 #include <memory/MemoryChunk.h>
-#include <runtime_def.h>
 
 /**
  * 不变式:
@@ -45,6 +44,13 @@ public:
 	T        allocateAs(size_t n);
 	template <class T>
 	T        allocateAs(size_t n,size_t alignment);
+	/**
+	 * 返回合适的alignment, 同时满足alignment和MINIMAL_ALIGNMENT
+	 * 返回最小公倍数，使用欧几里得算法
+	 * @param alignment
+	 * @return
+	 */
+	size_t    properAlignment(size_t alignment)const;
 
 	/**
 	 * try to increase or decrease something.
@@ -107,7 +113,24 @@ void *operator new[](size_t size,MemAbort);
 
 
 
-#include <templates_implementation/MemoryManager.h>
+//===template impl
+template <class T>
+T		MemoryManager::allocateAs(size_t n)
+{
+	return reinterpret_cast<T>(this->allocate(n));
+}
+template <class T>
+T        MemoryManager::allocateAs(size_t n,size_t alignment)
+{
+	return reinterpret_cast<T>(this->allocate(n,alignment));
+}
+
+template <class T>
+T   MemoryManager::reallocateAs(void *origin,size_t newSize,size_t oldSize)
+{
+	return reinterpret_cast<T>(reallocate(origin, newSize,oldSize));
+}
+
 
 
 #endif /* INCLUDE_MEMORYMANAGER_H_ */

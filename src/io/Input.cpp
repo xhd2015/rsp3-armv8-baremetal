@@ -18,7 +18,7 @@ String Input::readline()
 	{
 		ch=getchar();
 		s.pushBack(ch);
-		if(ch=='\n')
+		if(ch=='\n' || ch=='\r') // 回车键
 			break;
 	}
 	return std::move(s);

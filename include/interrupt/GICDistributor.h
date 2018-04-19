@@ -61,8 +61,38 @@ public:
 private:
 };
 
+//== template
 
-#include <templates_implementation/interrupt/GICDistributor.h>
+template <int grp>
+void GICDistributor::enableGroup(bool enable)
+{
+	static_assert(grp==0||grp==1,"group must be 0,1\n");
+	assert(securityState!=SecurityState::S_NS_2S || grp==1); //when NS of 2S, grp must be 1
+	auto distr=RegGICD_CTLR::read(regPtr(ctrl));
+	if(grp==0)
+	{
+		if(securityState==SecurityState::S_S_2S)
+			distr.S0.EnableGrp0=enable;
+//		else if(_sstate==S_NS_2S) //error
+//			distr.S1.E=enable;
+		else
+			distr.S2.EnableGrp0=enable;
+	}else{
+		if(securityState==SecurityState::S_S_2S)
+		{
+			distr.S0.EnableGrp1NS=enable;
+			distr.S0.EnableGrp1S=enable;
+		}
+		if(securityState==SecurityState::S_NS_2S)
+		{
+			distr.S1.EnableGrp1=enable;
+			distr.S1.EnableGrp1A=enable;
+		}else{
+			distr.S2.EnableGrp1=enable;
+		}
+	}
+	distr.write(regPtr(ctrl));
+}
 
 
 

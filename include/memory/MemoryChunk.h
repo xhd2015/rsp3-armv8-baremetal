@@ -25,6 +25,8 @@
  *
  *  必须保证next,dataEnd方法在有效的Chunk,以及offset chunk上能够正确。但是对End标记，不保证任何方法正确。
  *
+ *  UDPATE：注意，在树莓派3上，内存是Strongly Ordered，因此返回的地址必须按8字节对齐。（按最大可访问大小对齐）
+ *
  */
 class MemoryChunk
 	:public OffsetChunk
@@ -57,8 +59,11 @@ public:
 	// 移动后，其大小改变,但是移动的距离只能小于其大小。一个有效MemoryChunk的大小至少是1
 	// 返回移动后的MemoryChunk指针，如果 无效，则返回nullptr
 	// 如果移动留下的空隙足以使用MemoryChunk来管理，则使用，否则使用offset记录
+	// UPDATE：必须保证moveSize是最小对齐的整数倍。
 	MemoryChunk* moveAhead(size_t moveSize);
 	// 能够分配一个按alignment的地址所需的move偏移，如果是SIZE_MAX意味着不能
+	// moveOffset预留出的空间必须至少包含一个chunk的大小，否则分配失败。
+	// 因为sizeof(chunk)=sizeof(size_t), 并且所有的chunk都是在
 	size_t moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const;
 	// 将当前Chunk的前splitSize部分分离出来
 	/**
@@ -66,6 +71,7 @@ public:
 	 * 首部仍然保持原来的属性，尾部属性进行一定的设置
 	 * @param splitSize
 	 * @return
+	 * FIXME 应当返回实际分隔的大小，便于内存统计
 	 */
 	bool split(size_t splitSize);
 

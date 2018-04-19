@@ -23,8 +23,10 @@ config.$(TARGET_ARCH).txt:makefile.eclipse.envs
 
 $(ROOT_PATH)/config.$(TARGET_ARCH).txt : config.$(TARGET_ARCH).txt
 	cp $< $@
-install : $(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
-	cp $(MASTERY_BINARY) $(ROOT_PATH)/
+$(ROOT_PATH)/$(MASTERY_BINARY) : $(MASTERY_BINARY)
+	cp $< $@
+install : $(ROOT_PATH)/$(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
+	
 	
 
     
@@ -43,10 +45,11 @@ $(MASTERY_RELOC) : $(MASTERY_ELF)
 $(MASTERY_RELOC_BIN) : $(MASTERY_RELOC)
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_RELOC) $@
 
-# -cpu cortex-a53 -smp 4  -m 1024M  # 都有default值
+# -cpu cortex-a53 -smp 4  -m 1024M  # 都有default值, 不能设置smp为其他值。
 # 可以增加 -serial mon:stdio ，来redirect 第二个。 但是注意，这样输入就会有问题
+# 
 QEMU_LOADER_NO_MACHINE := -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -device loader,cpu-num=1,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=2,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=3,addr=$(KERNEL_ADDRESS) -nographic -serial mon:stdio -d int,mmu,guest_errors -D qemu_log.txt
-QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE) -machine raspi3
+QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE) -machine raspi3 -sd fat32.img
 raspi3_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
 raspi3_run:

@@ -10,6 +10,7 @@
 #include <cstring>
 #include <algorithm>
 #include <io/Output.h>
+#include <generic_util.h>
 
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	:
@@ -45,6 +46,7 @@ void* MemoryManager::allocate(size_t n)
 void  *MemoryManager::allocate(size_t n,size_t alignment)
 {
 	if(!n)return nullptr;
+	alignment = properAlignment(alignment);// 保证所有的分配都是按照最小进行对齐的，并且对齐只能是MINIMAL_ALIGNMENT的整数倍。
 	size_t moveOffset=SIZE_MAX;
 	auto foundChunk = _headChunk->findAllocable(n, alignment, moveOffset);
 	if(!foundChunk)
@@ -63,7 +65,10 @@ void  MemoryManager::deallocate(void *p)
 		chunkPtr->mergeTrailingsUnallocated();
 	}
 }
-
+size_t    MemoryManager::properAlignment(size_t alignment)const
+{
+	return lcm(alignment,MINIMAL_ALIGNMENT);
+}
 
 bool  MemoryManager::tryIncrease(void *origin,size_t incSize)
 {

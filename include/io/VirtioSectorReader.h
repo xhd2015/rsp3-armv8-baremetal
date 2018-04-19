@@ -7,8 +7,8 @@
 
 #ifndef INCLUDE_IO_VIRTIOSECTORREADER_H_
 #define INCLUDE_IO_VIRTIOSECTORREADER_H_
+#include <driver/virtio/VirtioBlockDriver.h>
 #include <io/SectorReader.h>
-#include <io/virtio/VirtioBlockDriver.h>
 
 class VirtioSectorReader
 	:public SectorReader

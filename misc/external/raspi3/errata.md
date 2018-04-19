@@ -1,0 +1,1 @@
+https://elinux.org/BCM2835_datasheet_errata

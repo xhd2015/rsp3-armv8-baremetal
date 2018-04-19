@@ -55,7 +55,20 @@ private:
 extern ProcessManager processManager;
 #endif
 
-#include <templates_implementation/schedule/ProcessManager.h>
+//== template
+template <class ... Args>
+ProcessManager::ProcessLink*   ProcessManager::createNewProcess(Args && ... initArgs)
+{
+	auto node = _statedProcessList[Process::CREATED_INCOMPLETE].insertTail();
+	if(node)
+	{
+		int initState = node->data<true>().init(std::forward<Args>(initArgs)...);
+		(void)initState;
+		if(initState==0)
+			changeProcessStatus(node, Process::CREATED_INCOMPLETE,Process::CREATED);
+	}
+	return node;
+}
 
 
 #endif /* INCLUDE_SCHEDULE_PROCESSMANAGER_H_ */

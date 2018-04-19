@@ -6,7 +6,7 @@
  */
 
 #include <io/Input.h>
-#include <data_structures/Queue.h>
+#include <data/Queue.h>
 
 uint16_t   Input::read()
 {
@@ -14,4 +14,3 @@ uint16_t   Input::read()
 		;
 	return inputBuffer.remove();
 }
-

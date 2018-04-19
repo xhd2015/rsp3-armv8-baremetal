@@ -92,7 +92,12 @@ MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
 	if(moveSize >= sizeof(MemoryChunk))
 		*nextChunk=*this;
 	else{ // 可能产生冲突
-		MemoryChunk temp=*this;
+		// FIXME 在树莓派3上测试出现错误，因为sizeof(MemoryChunk)=8, 而this作为地址居然没有与8对齐
+		//  因此一次复制错误了。 请找到原因之后修复
+		kout << "move chunk not correct\n";
+		kout << "move size = " << moveSize << "\n";
+//		MemoryChunk temp=*this; // 错误
+		MemoryChunk temp(*this);
 		*nextChunk = temp;
 	}
 	nextChunk->_size -= moveSize;
@@ -107,36 +112,43 @@ MemoryChunk* MemoryChunk::moveAhead(size_t moveSize)
 	}
 	return nextChunk;
 }
+
 size_t MemoryChunk::moveOffsetOfAllocSuchAlignedSpace(size_t allocSize,size_t alignment)const
 {
 	if(allocSize > this->_size)
 		return SIZE_MAX;
 	size_t mod=reinterpret_cast<uint64_t>(this->dataPtr()) % alignment;
-	if(mod!=0) // 基址是不对齐的,因此需要进行一定的移动
-	{
-		if(alignment - mod + allocSize > this->_size)
-			return SIZE_MAX;
-		else
-			return alignment - mod;
-	}else
+	if(mod==0) //已经对齐
 		return 0;
+	// 基址是不对齐的,因此需要进行一定的移动
+	size_t preferedMove = alignment - mod;
+	if(preferedMove < sizeof(MemoryChunk)) // 必须足够容纳一个新的MemoryChunk
+		preferedMove += alignment;
+	if(preferedMove + allocSize > this->_size)
+		return SIZE_MAX;
+	else
+		return preferedMove;
 }
 bool MemoryChunk::split(size_t splitSize)
 {
-	if(!this->validChunk() ||this->allocated() || splitSize > this->_size || splitSize==0)
+	if(!this->validChunk() ||this->allocated() || splitSize > this->_size)
 		return false;
+	if(splitSize==0)
+		return true;
+	// tailChunk必须与sizeof(MemoryChunk)对齐
+	auto tailAddr = reinterpret_cast<uint64_t>(this)+sizeof(MemoryChunk)+splitSize;
+	auto alignedAddr = alignAhead(tailAddr, sizeof(MemoryChunk));
+
+	// 增加splitSize的大小。
+	splitSize += alignedAddr - tailAddr;
 	// 分离尾部
 	size_t leftSize = _size - splitSize;
-	MemoryChunk * tailChunk = reinterpret_cast<MemoryChunk*>(reinterpret_cast<char*>(this)+sizeof(MemoryChunk)+splitSize);
-	if(leftSize >= sizeof(MemoryChunk) + 1) // 形成一个Chunk
+	if(leftSize >= sizeof(MemoryChunk)+1)// 形成一个chunk
 	{
-		new (tailChunk) MemoryChunk(0,false,false,leftSize - sizeof(MemoryChunk));
+		new (reinterpret_cast<MemoryChunk*>(alignedAddr)) MemoryChunk(0,false,false,leftSize - sizeof(MemoryChunk));
 		this->_size = splitSize;
-	}else if(leftSize > 0){
-		if(leftSize > MAX_OFFSET ) // 不能分离
-			return false;
-		tailChunk->chunkOffset(leftSize);
-		tailChunk->allocated(false);
+	}else{ // 剩余的自选集不可能形成Chunk。于是，全部分配,什么也不做
+
 	}
 	return true;
 }

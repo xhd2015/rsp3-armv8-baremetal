@@ -8,9 +8,7 @@
 #ifndef INCLUDE_IO_BYTEREADER_H_
 #define INCLUDE_IO_BYTEREADER_H_
 
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
-#include <data_structures/StringRef.h>
+#include <data/forward_decl.h> // Vector String StringRef
 
 // 多态
 class ByteReader{

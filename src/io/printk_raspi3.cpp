@@ -6,7 +6,7 @@
  */
 
 #include <io/Output.h>
-#include <io/uart/PL011.h>
+#include <driver/uart/PL011.h>
 
 size_t printk(char ch)
 {

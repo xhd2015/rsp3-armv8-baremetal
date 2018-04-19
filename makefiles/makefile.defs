@@ -20,7 +20,7 @@ CLEAN-ALL-LIST += aux-check-link-script.o
 
 # 设置USER_CXX_FLAGS
 # DEPRECATED: -Wconversion
-USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=5 -ffreestanding -fno-exceptions -fno-rtti
+USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-function -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=5 -ffreestanding -fno-exceptions -fno-rtti
 USER_CXX_FLAGS_qemu_virt += -march=armv8.2-a
 USER_CXX_FLAGS_zcu102 += -march=armv8.2-a 
 USER_CXX_FLAGS_user_space += -march=armv8.2-a

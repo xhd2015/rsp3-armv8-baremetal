@@ -8,7 +8,7 @@
 #ifndef INCLUDE_FILESYSTEM_FAT_FAT32ENTRYTABLE_H_
 #define INCLUDE_FILESYSTEM_FAT_FAT32ENTRYTABLE_H_
 
-#include <data_structures/Vector.h>
+#include <data/Vector.h>
 #include <filesystem/fat/FAT32Entry.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <io/ByteReader.h>

@@ -9,7 +9,7 @@
 #define INCLUDE_FILESYSTEM_FAT_FATLONGNAMEENTRY_H_
 
 #include <def.h>
-#include <data_structures/String.h>
+#include <data/String.h>
 #include <filesystem/fat/FATDirEntry.h>
 
 // 长文件名的填充是0

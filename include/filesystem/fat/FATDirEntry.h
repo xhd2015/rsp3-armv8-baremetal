@@ -9,8 +9,8 @@
 #define INCLUDE_FILESYSTEM_FAT_FATDIRENTRY_H_
 
 #include <def.h>
-#include <data_structures/String.h>
-#include <data_structures/StringRef.h>
+#include <data/String.h>
+#include <data/StringRef.h>
 
 class FATDirEntry{
 public:

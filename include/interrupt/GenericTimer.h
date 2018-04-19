@@ -31,7 +31,7 @@ public:
 	AS_MACRO void delayS(uint32_t s)const{delayMS(s*1000);}
 	// calculate needed count to pass time: second-->count
 	AS_MACRO uint64_t timeToCountS(uint32_t s)const{ return static_cast<uint64_t>(clockFreq())*s;}
-	AS_MACRO uint64_t timeToCountMS(uint32_t ms)const{ return static_cast<uint64_t>(clockFreq())*ms/1000;}
+	AS_MACRO uint64_t timeToCountMS(uint32_t ms)const{ return static_cast<uint64_t>(clockFreq())/1000*ms;}
 
 	/**
 	 * MS作为单位

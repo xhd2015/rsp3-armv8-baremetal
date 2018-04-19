@@ -5,15 +5,18 @@
  *      Author: 13774
  */
 #include <interrupt/exception_def.h>
-#include <io/Output.h>
-#include <io/uart/PL011.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
 #include <arch/common_aarch64/registers/gicv3_registers.h>
+#include <driver/uart/BCM2835MiniUART.h>
+#include <driver/uart/PL011.h>
 #include <generic/cpu.h>
-#include <io/uart/BCM2835MiniUART.h>
 #include <interrupt/BCM2835InterruptController.h>
 #include <interrupt/BCM2836LocalIntController.h>
+#include <io/Output.h>
+#include <io/Output.h>
 #include <runtime_def.h>
+#include <generic_util.h>
+
 void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin origin)
 {
 	kout << "===-----=======---==\n";
@@ -23,9 +26,22 @@ void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin 
 	{
 		kout << "SYNC\n";
 		auto esr=RegESR_EL1::read();
+		auto elr=RegELR_EL1::read();
+		elr.dump();
 		esr.dump();
+		RegSCTLR_EL1::read().dump();
+		RegFAR_EL1::read().dump();
+		uint32_t * instr = reinterpret_cast<uint32_t*>(alignBackward(elr.returnAddr,16) - 4);
+		for(size_t i=0;i!=16;++i)
+			kout << "["<<Hex(instr+i)<<"]:"<< Hex(instr[i]) << "\n";
 		if(esr.EC == ExceptionClass::UNDEF_INST)
 			kout << "Undefined instruction \n";
+		else if(esr.EC == ExceptionClass::DATA_ABORT_SAME_EL)
+		{
+			kout << "DataAbort, skip the failing addr.\n";
+			elr.returnAddr += 4;
+			elr.write();
+		}
 	}
 	else if(type==ExceptionType::IRQ)
 	{

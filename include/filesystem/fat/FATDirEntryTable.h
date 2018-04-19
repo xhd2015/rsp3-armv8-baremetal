@@ -7,12 +7,12 @@
 
 #ifndef INCLUDE_FILESYSTEM_FAT_FATDIRENTRYTABLE_H_
 #define INCLUDE_FILESYSTEM_FAT_FATDIRENTRYTABLE_H_
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
+#include <data/Vector.h>
+#include <data/String.h>
 #include <filesystem/fat/FATDirEntry.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <filesystem/fat/FAT32EntryTable.h>
-#include <data_structures/String.h>
+#include <data/String.h>
 #include <io/ByteReader.h>
 
 

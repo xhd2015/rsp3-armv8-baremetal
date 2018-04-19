@@ -14,7 +14,8 @@
 #include <interrupt/GICDistributor.h>
 #include <interrupt/GICRedistributor.h>
 #include <interrupt/GICCPUInterface.h>
-
+#include <arch/common_aarch64/registers/system_common_registers.h>
+#include <arch/common_aarch64/registers/gicv3_registers.h>
 // 更加直接的读写方式
 // 不需要中间变量
 // 某个功能就是直接对寄存器变量的读写

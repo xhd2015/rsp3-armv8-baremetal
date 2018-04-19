@@ -9,13 +9,13 @@
 #define INCLUDE_IO_SECTORREADERTOBYTEREADER_H_
 
 
-#include <io/SectorReader.h>
-#include <io/ByteReader.h>
 #include <memory/MemoryManager.h>
 #include <data_structures/Vector.h>
 #include <data_structures/VectorRef.h>
 #include <data_structures/String.h>
 #include <data_structures/StringRef.h>
+#include <io/ByteReader.h>
+#include <io/SectorReader.h>
 #include <utility>
 
 // 将一个SectorReader转换成ByteReader
@@ -70,7 +70,7 @@ private:
 
 };
 
-#include <templates_implementation/io/SectorReaderToByteReader.h>
+#include <templated_impl/io/SectorReaderToByteReader.h>
 
 
 #endif /* INCLUDE_IO_SECTORREADERTOBYTEREADER_H_ */

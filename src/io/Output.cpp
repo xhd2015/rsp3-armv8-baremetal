@@ -9,7 +9,7 @@
 #include <io/Output.h>
 
 #include <generic_util.h>
-#include <data_structures/StringRef.h>
+#include <data/StringRef.h>
 #include <io/IntegerFormatter.h>
 #include <io/printk.h>
 

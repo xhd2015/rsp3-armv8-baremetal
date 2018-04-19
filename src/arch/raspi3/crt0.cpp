@@ -40,6 +40,7 @@ void init(uint64_t currentEL)
 	gpio.selectAltFunction(15, GPIO::ALT_0);
 	pl011.init();
 
+	while(!pl011.readReady());
 //	test();
 	if(currentEL == 3)//我们可能处于模拟器模式
 	{
@@ -101,9 +102,10 @@ void init(uint64_t currentEL)
 	exceptionLevel = static_cast<ExceptionLevel>(RegCurrentEL::read().EL);
 	assert(exceptionLevel == ExceptionLevel::EL1);
 
+
 	RegSCTLR_EL1::make(0x30D00800).write();
 	RegSCTLR_EL1::read().dump();
-
+//	while(true);
 	// 设置EL1的中断向量
 	RegVBAR_EL1 vbar1;
 	vbar1.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);

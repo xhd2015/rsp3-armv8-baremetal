@@ -24,6 +24,5 @@ void flush();
 
 
 // template
-#include <templates_implementation/printk.h>
 
 #endif /* INCLUDE_IO_PRINTK_H_ */
