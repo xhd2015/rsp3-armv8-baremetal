@@ -8,6 +8,8 @@
 
 #include <driver/gpio/GPIO.h>
 #include <generic_util.h>
+#include <io/Output.h>
+#include <io/IntegerFormatter.h>
 
 void GPIO::signalModify(uint32_t pin,PUD initPUD)
 {
@@ -29,6 +31,11 @@ void GPIO::signalModify(uint32_t pin,PUD initPUD)
 void GPIO::selectAltFunction(uint32_t pin, ALT alt)
 {
 	kout << INFO << "GPIO select pin "<< pin << " to ALT " << Hex(alt) << "\n";
+	selectAltFunctionNoLog(pin, alt);
+}
+
+void GPIO::selectAltFunctionNoLog(uint32_t pin, ALT alt)
+{
 	assert(pin <= MAX_PIN);
 	auto grp = pin/SEL_OF_EACH_GROUP;
 	auto offset=pin%SEL_OF_EACH_GROUP;

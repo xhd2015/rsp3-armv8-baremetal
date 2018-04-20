@@ -21,8 +21,6 @@ public:
 	static constexpr size_t MEMORY_ATTR_NORMAL=0;  // typically:RAM
 	static constexpr size_t MEMORY_ATTR_PERIPHERAL=1; // PERIPHERAL
 	static constexpr size_t MEMORY_ATTR_NON_CACHEABLE=2; //不可缓存
-	static constexpr size_t MEMORY_AP_RW = 0;
-	static constexpr size_t MEMORY_AP_RO = 1;
 
 
 	static const size_t MAP_SIZE[4];

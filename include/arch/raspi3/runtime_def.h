@@ -20,6 +20,6 @@
 #include <driver/gpio/GPIO.h>
 #include <driver/uart/PL011.h>
 #include <io/Input.h>
-
+#include <memory/VirtualManager.h>
 
 #endif /* INCLUDE_ARCH_RASPI3_RUNTIME_H_ */

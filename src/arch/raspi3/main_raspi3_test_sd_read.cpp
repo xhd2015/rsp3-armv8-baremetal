@@ -29,7 +29,6 @@ extern char ramEnd[];
 //  设置RCA：必须是正确的RCA，否则可能超时
 //  读写操作： 单块：必须设置BlockSize， 必须设置RCA（否则可能超时）。
 // 作为编程人员，必须明白硬件在什么时候会出现什么状态。
-void test();
 int main()
 {
 	new (&intc) BCM2835InterruptController(INTC_BASE);

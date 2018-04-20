@@ -15,7 +15,7 @@ userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
 # 注意,MASTERY_RELOC必须在MASTERY_ELF之前
 $(MASTERY_BINARY):$(MASTERY_RELOC) $(MASTERY_ELF)
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
-	userSpaceStart=$$(($(CODE_SIZE)))
+	userSpaceStart=$$(($(CODE_SIZE) + $(INITRAM_SIZE)))
 	count=$$(($(USER_SPACE_SIZE)))
 	dd if=$(userSpaceBin) of=$@ seek=$$userSpaceStart bs=1c count=$$count
 
@@ -27,7 +27,7 @@ $(MASTERY_RELOC):$(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
 dump_reloc:
-	$(TOOLCHAIN_OBJDUMP) -D $(MASTERY_RELOC)|less
+	$(TOOLCHAIN_OBJDUMP -D $(MASTERY_RELOC)|less
 .PHONY:dump-reloc
 
 # CLEAN-ALL-LIST增加

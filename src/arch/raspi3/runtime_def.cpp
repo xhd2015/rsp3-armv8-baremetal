@@ -13,6 +13,8 @@ Input kin;
 MemoryManager mman {nullptr,0,false};
 MemAbort m_abort;
 
+VirtualManager virtman;
+
 BCM2835MiniUART miniUART {nullptr};
 PL011           pl011 {nullptr};
 

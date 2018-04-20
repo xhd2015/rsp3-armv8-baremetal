@@ -14,6 +14,7 @@ VirtualManager::VirtualManager()
 	:_addressBits(0),
 	 _ttbr1Mask(0)
 {
+	kout << INFO << "VirtualManager init\n";
 	// 先判断是否支持4KB映射
 	auto aa64 = RegID_AA64MMFR0_EL1::read();
 	assert(aa64.TGran4 == 0b0000);
@@ -21,13 +22,17 @@ VirtualManager::VirtualManager()
 	// 初始化所有的内存属性
 	RegMAIR_EL1 mair=RegMAIR_EL1::make(0);
 	mair.Attr0 = 0xff; //Normal
-	mair.Attr1 = 0x00; // Device-nGnRnE, PERIPHERAL
-	mair.Attr2 = 0xff; //Normal,non-cacheable
+//	mair.Attr1 = 0x04; // Device-nGnRE, PERIPHERAL
+	mair.Attr1 = 0x00;// nGnRnE
+//	mair.Attr1 = 0xff;
+	mair.Attr2 = 0x44; //Normal,non-cacheable
 	mair.write();
 
 	// 后面设置虚拟地址的范围与物理地址范围相同, 并且只能是40,42,44,48这几个值,如果在这些值之外，就选择40
     size_t paBitsMap[]={32,  36,  40,  42,  44,  48,  52};
 	size_t paIndex = aa64.PARange;
+	kout << "PARangeIndex = " << aa64.PARange << "\n";
+	kout << "PARange = " << paBitsMap[aa64.PARange] << "\n";
 	if(paBitsMap[paIndex]<40 || paBitsMap[paIndex]>48)
 		paIndex=2;
 
@@ -46,7 +51,7 @@ VirtualManager::VirtualManager()
 	tcr.A1 = 0; //ASID is in ttbr0
 	tcr.TG0 = 0b00;//TTBR0 4KB
 	tcr.TG1 = 0b10;//TTBR1 4KB
-	tcr.SH0 = tcr.SH1 = 0b10;//outer shareable
+	tcr.SH0 = tcr.SH1 = 0b11;//inner shareable
 	tcr.IRGN0 = tcr.IRGN1 = 0b01;//inner cacheable
 	tcr.ORGN0 = tcr.ORGN1 =0b01;// outer cacheable
 	tcr.EPD0 = tcr.EPD1 = 0; // not disable page walk on TLB miss
@@ -55,44 +60,41 @@ VirtualManager::VirtualManager()
 
 	_ttbr1Mask = upperMaskBits(tcr.T1SZ);
 }
-
-//int VirtualManager::init(size_t mmuBasePage,const Vector<AddressSpaceDescriptor> &fullSizeSpace,InitFunctionPtr jmpFunc,void *newSp)
-//{
-//
-//
-//	// 所有的大小必须是页的倍数，否则无法实现属性分离。
-//	for(size_t i=0;i!=fullSizeSpace.size();++i)
-//		if(fullSizeSpace[i].size() % PAGE_SIZE != 0)
-//			return 1;
-//
-//
-//}
-
 void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp)
 {
+	kout << INFO << "VirtualManager enableMMU, jmpFunc = " << reinterpret_cast<void*>(jmpFunc) << ","
+			     << "newSp = " << newSp
+				 << "\n";
 	// 启用MMU
 	auto sctl = RegSCTLR_EL1::read();
+	sctl.RES1_2=1;
+	sctl.RES1_5=1;
+	sctl.RES1_6=1;
 	sctl.EE = 0;//little endian
-	sctl.E0E = 0;
+	sctl.E0E = 0; // little endian EL0
 	sctl.WXN = 0; // no effect,XNs normal
-	sctl.I = 1;
-	sctl.SA = 0;
-	sctl.SA0 = 0;
-	sctl.C = 1;
-	sctl.A = 0;
+	sctl.I = 0; // no instruction fetch
+	sctl.SA = 0; // no SPAlignment check
+	sctl.SA0 = 0; // no SP Chekc EL0
+	sctl.C = 0; // no cache
+	sctl.A = 0;// no data alignment check
 	sctl.M = 1;
 	sctl.write();
 	asm_isb();
 
+	kout << INFO << "successfully enabled MMU \n";
 	// 将上下文切换到高端地址,包括中断地址，栈指针
 	auto vbar=RegVBAR_EL1::read();
-	vbar.Addr |= _ttbr1Mask;
+	vbar.Addr += _ttbr1Mask;
 	vbar.write();
+	kout << INFO << "jump to selected address/function\n";
 	// 跳转到预定的函数处
 	__asm__ __volatile__(
 			"mov sp,%0 \n\t"
 			"br  %1 \n\t"
-			::"r"(reinterpret_cast<uint64_t>(newSp)|_ttbr1Mask),"r"(reinterpret_cast<uint64_t>(jmpFunc)|_ttbr1Mask));
+			::"r"(reinterpret_cast<uint64_t>(newSp)+_ttbr1Mask),
+			  "r"(reinterpret_cast<uint64_t>(jmpFunc)+_ttbr1Mask)
+			  );
 }
 
 void VirtualManager::enableTTBR0(bool enable)
@@ -107,6 +109,7 @@ void VirtualManager::enableTTBR0(bool enable)
 
 void VirtualManager::updateTTBR0(Descriptor4KBL0 *l0Table)
 {
+	kout << INFO << "VirtualManager updateTTBR0\n";
 	auto ttbr0 = RegTTBR0_EL1::make(0);
 	ttbr0.BADDR = reinterpret_cast<uint64_t>(translateVAToPA(l0Table))>>1;
 	ttbr0.write();
@@ -114,6 +117,7 @@ void VirtualManager::updateTTBR0(Descriptor4KBL0 *l0Table)
 }
 void VirtualManager::updateTTBR1(Descriptor4KBL0 *l0Table)
 {
+	kout << INFO << "VirtualManager updateTTBR1\n";
 	auto ttbr1 = RegTTBR1_EL1::make(0);
 	ttbr1.BADDR =reinterpret_cast<uint64_t>(translateVAToPA(l0Table))>>1;
 	ttbr1.write();
@@ -139,6 +143,7 @@ uint64_t  VirtualManager::translateVAToPA(uint64_t va)
 Vector<AddressSpaceDescriptor> VirtualManager::makeFullOrderedDescriptors(const Vector<AddressSpaceDescriptor> &config)
 {
 	Vector<int>         lowOrders(config.size());
+	assert(lowOrders.size() >0);
 	for(size_t i=0;i!=lowOrders.size();++i)
 		lowOrders[i]=i;
 

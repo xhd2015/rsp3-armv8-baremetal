@@ -12,7 +12,7 @@
 #include <programming/define_members.h>
 #include <memory/VirtualAddress.h>
 #include <memory/AddressSpaceDescriptor.h>
-#include <data_structures/Vector.h>
+#include <data/Vector.h>
 #include <memory/VirtualMemoryDefinition.h>
 
 /**

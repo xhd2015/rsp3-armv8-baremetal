@@ -1,3 +1,44 @@
+# 2018年4月20日13:14:27
+【commit point】 虚拟内存的启用验证成功，在真机上测试通过。
+示例代码： [main_test_mmu.cpp](../src/arch/raspi3/main_test_mmu.cpp)
+
+示例输出：
+![1](commits/2018-04-20_13_04_45_connect_raspi3_to_verify_mmu_1.png)
+![2](commits/2018-04-20_13_04_45_connect_raspi3_to_verify_mmu_2.png)
+# 2018年4月20日12:52:27
+【bugfix】 修复了之前设置虚拟内存属性的一个bug，该bug导致外设的属性被设置为正常的内存，从而产生bug。
+# 2018年4月19日23:34:17
+内存的属性
+```
+The shareability field is only relevant if the memory is a Normal Cacheable memory type. All Device and Normal
+Non-cacheable memory regions are always treated as Outer Shareable, regardless of the translation table
+shareability attributes
+```
+# 2018年4月19日20:38:29
+关于可重定位性：
+```c++
+extern const char * const REG_NAME_MAP[] ;
+const char *  const REG_NAME_MAP[]={
+		"general",
+		"vbar",
+		"currentel",
+};
+```
+const限定将其放在.text分区，extern声明其为可以重定位的，但是，REG_NAME_MAP里面的值是指针，因此REG_NAME_MAP的完整可重定位包括其内容可重定位。
+
+通过将其定义在.relocptr分区，在mmu启用后进行重新定址即可。
+```c++
+extern const char * const REG_NAME_MAP[] __attribute__((section(".relocptr")));
+```
+链接脚本
+```
+	.relocptr : {
+		PROVIDE(__reloc_ptr_start = .);
+		*(.relocptr)
+		PROVIDE(__reloc_ptr_end = . );
+	} > CODE
+```
+
 # 2018年4月19日19:33:04
 【commit point】 对之前的代码的整合，现在仍然保持功能正确。
 # 2018年4月19日14:52:03

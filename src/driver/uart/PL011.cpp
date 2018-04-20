@@ -54,7 +54,8 @@ uint16_t PL011::readDataBlocked()const
 
 void   PL011::writeDataBlocked(char ch)
 {
-	while(bitsAnySet<3,5>(reg32<UARTFR>())) //still busy or still send full
+	// BUGFIX bit3=busy,但是只要不空都可传送，因此不必检测bit3
+	while(bitsAnySet<5>(reg32<UARTFR>())) //still busy or still send full
 			;
 	reg32(UARTDR)=ch;
 
@@ -65,6 +66,10 @@ uint16_t PL011::readDataNonBlocked()const
 		return 0xffff;
 	return reg32<UARTDR>();
 }
-
+void     PL011::waitInput()const
+{
+	while(!readReady());
+	rawRead();
+}
 
 

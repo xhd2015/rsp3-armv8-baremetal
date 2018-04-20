@@ -38,3 +38,6 @@ USER_LINKER_FLAGS +=  $(USER_LINKER_FLAGS_$(TARGET_ARCH)) $(USER_LINKER_FLAGS_CO
 
 # 设置USER_LINKER_FLAGS
 USER_LINKER_FLAGS += $(foreach sym,$(EXPORT_LINKER_SYMBOLS),-Xlinker --defsym=$(sym)=$($(sym)))
+
+
+# OBJCOPY_FLAGS += --change-warnings --adjust-warnings

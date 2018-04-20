@@ -15,33 +15,49 @@ ASM_SET_SP_SEL(1)  //使用SP_ELx
 ASM_INIT_CALLER(__stack_top)
 );
 
-extern char __bss_start[];
-extern char __bss_end[];
+extern uint64_t __bss_start[];
+extern uint64_t __bss_end[];
+extern uint64_t __vt_end[];
+extern uint64_t __vt_begin[];
+extern uint64_t __init_ram_start[];
+extern uint64_t __init_ram_end[];
 
-extern void test();
+extern uint64_t DTB_START[];
+extern uint64_t STACK_START[];
+extern uint64_t CODE_START[];
+extern uint64_t USER_SPACE_START[];
+extern uint64_t DATA_START[];
+extern uint64_t VIDEO_RAM_START[];
+
+
 
 // 必须与init位于同一个分区？ 不是，取决于编译选项
 // 放在.text.boot分区有利于调试。
 __attribute__((section(".text.boot")))
 void init(uint64_t currentEL)
 {
-	// 确保所有初始化数据都是正确的
-	std::memset(__bss_start,0,__bss_end - __bss_start );
-	new (&mailBox) BCM2836MailBox(MBOX_BASE);
-	new (&pl011) PL011(UART0_BASE);
-	new (&gpio) GPIO(GPIO_BASE);
-	new (&kout) Output();
+	// 注意，在任何 new (&x) X()之前，必须先设置 bss段，否则，如果留到后面设置，就会覆盖之前的设置
+	for(auto p=__bss_start;p!=__bss_end;++p)
+		*p=0;
 
+	new (&miniUART) BCM2835MiniUART(UART_BASE);
+	new (&mailBox) BCM2836MailBox(MBOX_BASE);
+	new (&gpio) GPIO(GPIO_BASE);
+	new (&pl011) PL011(UART0_BASE);
+	new (&kout) Output();
 	// mailbox 必须先设置时钟频率
 	// 对UART0的初始化必须包括这几个基本的步骤，即设置频率，设置GPIO接口功能，启用PL011
 	mailBox.setUARTClockRate(4000000);//4MHz
 	// 设置GPIO 14,15为ALT_0
-	gpio.selectAltFunction(14, GPIO::ALT_0);
-	gpio.selectAltFunction(15, GPIO::ALT_0);
+	gpio.selectAltFunctionNoLog(14, GPIO::ALT_0);
+	gpio.selectAltFunctionNoLog(15, GPIO::ALT_0);
 	pl011.init();
 
-	while(!pl011.readReady());
-//	test();
+	pl011.waitInput();
+	kout << INFO << "crt0 setting up environment\n";
+	kout << "enter EL = " << currentEL << "\n";
+
+	kout << INFO << "crt0 prepare to enter EL1\n";
 	if(currentEL == 3)//我们可能处于模拟器模式
 	{
 		auto scr=RegSCR_EL3::read();
@@ -101,7 +117,7 @@ void init(uint64_t currentEL)
 	// 读取当前EL
 	exceptionLevel = static_cast<ExceptionLevel>(RegCurrentEL::read().EL);
 	assert(exceptionLevel == ExceptionLevel::EL1);
-
+	kout << INFO <<"crt0 enetered EL" << static_cast<size_t>(exceptionLevel) << "\n";
 
 	RegSCTLR_EL1::make(0x30D00800).write();
 	RegSCTLR_EL1::read().dump();
@@ -111,9 +127,29 @@ void init(uint64_t currentEL)
 	vbar1.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);
 	vbar1.write();
 
+	kout << INFO << "dump symbols \n";
+	kout << "__bss_start = " << reinterpret_cast<void*>(__bss_start) << ","
+		 << "__bss_end = " << reinterpret_cast<void*>(__bss_end) << "\n";
+	kout
+		 << "__vt_begin = " << reinterpret_cast<void*>(__vt_begin) << ","
+		 << "__vt_end = " << reinterpret_cast<void*>(__vt_end)
+		 << "\n";
+	kout << "__init_ram_start = " << reinterpret_cast<void*>(__init_ram_start) << ","
+			<<"__init_ram_end = " << reinterpret_cast<void*>(__init_ram_end)
+			<< "\n";
+	kout
+		<< " DTB_START = " << DTB_START << ","
+		<< " STACK_START = " << STACK_START << ","
+		<< " CODE_START = " << CODE_START << ","
+		<< " USER_SPACE_START = " << USER_SPACE_START << ","
+		<< " DATA_START = " << DATA_START << ","
+		<< " VIDEO_RAM_START = " << VIDEO_RAM_START
+		<< "\n";
+
+	kout << INFO <<"crt0 call main\n";
 	int res = main();
 	(void)res;
-
+	kout << INFO <<"crt0 main returns with " << res << "\n";
 	asm_wfe_loop();
 }
 

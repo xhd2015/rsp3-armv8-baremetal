@@ -220,7 +220,7 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM_IS_${BUILDE_BASE_SYSTEM}/value=1
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/value=0x1000000
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/value=0xB00000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/value=D\:\\installed\\cygwin
@@ -239,6 +239,9 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/IMAGE_BASE/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/IMAGE_BASE/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/IMAGE_BASE/value=0
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/INITRAM_SIZE/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/INITRAM_SIZE/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/INITRAM_SIZE/value=0x100000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/KERNEL_OFFSET/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/KERNEL_OFFSET/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/KERNEL_OFFSET/value=0
@@ -276,8 +279,8 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/QEMU_ROOT/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/QEMU_ROOT/value=/cygdrive/d/installed/qemu-x86_64/20180412
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_SIZE/delimiter=;
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_SIZE/operation=append
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_SIZE/value=0x40000000
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_SIZE/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_SIZE/value=0x3F000000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_START/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_START/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/RAM_START/value=0

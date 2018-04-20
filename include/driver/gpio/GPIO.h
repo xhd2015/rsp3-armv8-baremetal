@@ -57,6 +57,13 @@ public:
 	AS_MACRO static void waitSignalDone() { delayCPU(150);}
 	void signalModify(uint32_t pin,PUD initPUD=P_OFF);
 	void selectAltFunction(uint32_t pin, ALT alt);
+	/**
+	 * 注意，当UART尚未初始化完成，而初始化过程中包含设置GPIO,则应当
+	 * 调用NoLog版本
+	 * @param pin
+	 * @param alt
+	 */
+	void selectAltFunctionNoLog(uint32_t pin, ALT alt);
 };
 
 #ifndef _NOT_NEED_GPIO

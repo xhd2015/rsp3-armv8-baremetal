@@ -9,10 +9,12 @@ ROOT_PATH ?=/cygdrive/e
 # 3.
 config.$(TARGET_ARCH).txt:makefile.eclipse.envs
 	kernel_address=$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))
+	gpu_mem_MB=$$(($(VIDEO_RAM_SIZE)/1024/1024))
 	(echo '##======Automatically generated==========##'
 	echo 'kernel=$(MASTERY_BINARY)'
 	echo 'kernel_address='$$kernel_address
 	echo 'arm_64bit=1'
+	echo '#gpu_mem='$${gpu_mem_MB}
 	echo 'disable_commandline_tags=1'
 	echo '# 下面三个在baremetal环境下并不是必须的，只要正确设置了GPIO即可'
 	echo '#enable_uart=1'
@@ -33,13 +35,13 @@ install : $(ROOT_PATH)/$(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
 userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
 $(MASTERY_BINARY): $(MASTERY_ELF)
 	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
-	userSpaceStart=$$(($(CODE_SIZE)))
+	userSpaceStart=$$(($(CODE_SIZE) + + $(INITRAM_SIZE)))
 	count=$$(($(USER_SPACE_SIZE)))
 	dd if=$(userSpaceBin) of=$@ seek=$$userSpaceStart bs=1c count=$$count
     
 $(MASTERY_RELOC) : $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
-	$(MAKE) RAM_START=0x40000000 $(MASTERY_ELF)
+	$(MAKE) RAM_START=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
 $(MASTERY_RELOC_BIN) : $(MASTERY_RELOC)

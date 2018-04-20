@@ -242,6 +242,18 @@ size_t gcd(size_t a,size_t b);
 size_t lcm(size_t a,size_t b);
 
 
+// memory
 
+template <class T>
+void rebase(T *start,T *end,T rebaseValue)
+{
+	T *p=start;
+	while(p<end)
+	{
+		if(*p) // 仅当不为nullptr时增加
+			*p += rebaseValue;
+		++p;
+	}
+}
 
 #endif /* INCLUDE_GENERIC_UTIL_H_ */

@@ -30,7 +30,7 @@
 #define WRITE_MEM(p,n,v) \
 		*reinterpret_cast<SizeType##n*>(p)=static_cast<SizeType##n>(v)
 
-const char * const MemoryDebugger::REG_NAME_MAP[]={
+const char *  const MemoryDebugger::REG_NAME_MAP[] __attribute__((section(".relocptr"))) ={
 		"general",
 		"vbar",
 		"currentel",
@@ -73,6 +73,7 @@ int MemoryDebugger::mainloop(const String &prompt)
 int MemoryDebugger::executeCommand(const Vector<String> & cmd)
 {
 	assert(cmd.size() > 0);
+//	kout << INFO << "MemoryDebugger execute command" << cmd[0] << "\n";
 	if(cmd[0]=="read")
 	{
 		if(cmd.size() < 2) // has default

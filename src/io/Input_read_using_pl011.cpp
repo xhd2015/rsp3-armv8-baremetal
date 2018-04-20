@@ -7,7 +7,7 @@
 
 #include <io/Input.h>
 #include <driver/uart/PL011.h>
-
+#include <generic/error.h>
 uint16_t   Input::read()
 {
 	return pl011.readDataBlocked();

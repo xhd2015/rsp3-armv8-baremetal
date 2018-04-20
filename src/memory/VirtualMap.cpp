@@ -39,6 +39,7 @@ VirtualMap::~VirtualMap()
 }
 void VirtualMap::mapL0()
 {
+	kout << INFO << "VirtuaMap mapL0\n";
 	uint64_t  basePhyPage = reinterpret_cast<uint64_t>(virtman.translateVAToPA(_l1Table))>>_D::PAGE_BITS;
 	size_t index=_startAddr.index(0);
 	for(size_t i=index;i!=_sizes[0];++i)
@@ -53,6 +54,7 @@ void VirtualMap::mapL0()
 }
 void VirtualMap::mapL1()
 {
+	kout << INFO << "VirtuaMap mapL1\n";
 	uint64_t  basePhyPage = reinterpret_cast<uint64_t>(virtman.translateVAToPA(_l2Table))>>_D::PAGE_BITS;
 	size_t index=_startAddr.index(1);
 	for(size_t i=index;i!=_sizes[1];++i)
@@ -65,6 +67,7 @@ void VirtualMap::mapL1()
 }
 void VirtualMap::mapL2()
 {
+	kout << INFO << "VirtuaMap mapL2\n";
 	uint64_t  basePhyPage = reinterpret_cast<uint64_t>(virtman.translateVAToPA(_l3Table))>>_D::PAGE_BITS;
 	size_t index=_startAddr.index(2);
 	for(size_t i=index;i!=_sizes[2];++i)
@@ -77,6 +80,7 @@ void VirtualMap::mapL2()
 }
 void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 {
+	kout << INFO << "VirtuaMap mapL3\n";
 	for(size_t i=0;i!=descr.size();++i) // 必须是4KB的整数倍
 		assert(descr[i].size() % _D::PAGE_SIZE == 0);
 	// 设置curGroup
@@ -90,9 +94,17 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 	size_t index=_startAddr.index(3);
 	for(size_t i=index;i!=_sizes[3];++i)
 	{
+		if(i%100000==0 || i==_sizes[3]-1 )
+			kout << "Setting L3Table[" << i <<"]\n";
+		// max=262143,too much
 		Descriptor4KBL3::make(_l3Table + i, 0);
 		// 仅当不是NOT_VALID,UNKNOWN的配置时，才映射，否则保留未配置状态
 		auto type=descr[curGroup].type();
+		if(i== (PERIPHBASE>>12))
+		{
+			kout << "Setting peripheral starting from [" <<i<<"]\n";
+			kout << "type = " << type <<"\n";
+		}
 //		(void)type;
 		if(type != AddressSpaceDescriptor::T_NOT_VALID && type!=AddressSpaceDescriptor::T_UNKOWN)
 		{
@@ -111,7 +123,9 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 					_l3Table[i].AttrIndex = _D::MEMORY_ATTR_NON_CACHEABLE;
 			}
 			else if(type==AddressSpaceDescriptor::T_PERIPHERAL)
+			{
 				_l3Table[i].AttrIndex = _D::MEMORY_ATTR_PERIPHERAL;
+			}
 
 			_l3Table[i].PXN = 0;
 			_l3Table[i].UXN = 0;
@@ -127,14 +141,12 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 //			(void)ap;
 			_l3Table[i].AP = ap ;// set read-only(1), or read-write(0) , and not from EL0
 //			_l3Table[i].AP = 0;
-			_l3Table[i].NS = 1; // non-secure
 			_l3Table[i].SH = 0b10; //outer-shareable
 		}
 		curGroupLeftSize -= _D::PAGE_SIZE;
 		if(curGroupLeftSize == 0)
 		{
-			while(curGroup <descr.size() && descr[curGroup].size()==0)// 略过所有size为0 的配置组
-				++curGroup;
+			while(++curGroup <descr.size() && descr[curGroup].size()==0);// 略过所有size为0 的配置组
 			if(curGroup == descr.size())
 				break;
 			curGroupLeftSize = descr[curGroup].size();
@@ -143,7 +155,9 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 }
 void VirtualMap::allocateTables()
 {
+	kout << INFO << "VirtualMap allocateTables\n";
 	auto size = _pageCount * _D::PAGE_SIZE;
+	kout << INFO << "memory needed to map = " << Hex(size) << "\n";
 	size_t pagesNeeded=0;
 	for(size_t i=0;i!=4;++i)
 	{
@@ -151,6 +165,8 @@ void VirtualMap::allocateTables()
 		pagesNeeded += itPages;
 		_sizes[i] = itPages*_D::PAGE_SIZE/_D::ENTRY_SIZE;
 	}
+	kout << INFO << "pages needed to allocate = " << Hex(pagesNeeded) <<"\n";
+	kout << INFO << "memory needed to allocate = " << Hex(pagesNeeded*_D::PAGE_SIZE) <<"\n";
 	auto p = mman.allocateAs<char*>(pagesNeeded * _D::PAGE_SIZE, _D::PAGE_SIZE);
 	assert(p);
 	std::memset(p, 0, pagesNeeded * _D::PAGE_SIZE);

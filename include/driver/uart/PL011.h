@@ -68,6 +68,7 @@ public:
 	AS_MACRO void readInterruptLevel(Level level) {setBits(reg32<UARTIFLS>(),3,5,level);}
 	AS_MACRO void enableReceiveInterrupt(bool enable) { setBit(reg32<UARTIMSC>(), 4,enable);}
 	AS_MACRO bool receiveInterrupted()const { return getBit(reg32(UARTRIS),4);}
+	void     waitInput()const;
 private:
 	// 下面三个是比较常用的，因此先将它们的地址计算出来。
 	// DEPRECATED 因为rebase的原因

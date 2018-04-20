@@ -10,7 +10,7 @@
 
 #include <def.h>
 #include <runtime_def.h>
-#include <data_structures/Vector.h>
+#include <data/Vector.h>
 #include <memory/AddressSpaceDescriptor.h>
 #include <memory/VirtualMap.h>
 #include <memory/VirtualMemoryDefinition.h>
