@@ -11,7 +11,6 @@
 #include "ForwardList_tempdecl.h"
 
 #include <memory/MemoryManager.h>
-#include <templated_impl/data/ForwardList.h>
 
 
 template<class T>
@@ -22,7 +21,7 @@ inline ForwardList<T>::ForwardList()
 }
 
 template <class T>
-ForwardList<T>::ForwardList(ForwardList &&rhs)
+ForwardList<T>::ForwardList(ForwardList<T> &&rhs)
 	:_head(rhs._head),_tail(rhs._tail)
 {
 	rhs._head = rhs._tail = nullptr;

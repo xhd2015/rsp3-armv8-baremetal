@@ -2,7 +2,7 @@
 //##====../../../include/arch/common_aarch64/gen_register_class.py ../../../include/arch/common_aarch64/gicv3_registers.py ../../../include/arch/common_aarch64/gicv3_registers.h=========##
 #ifndef _________INCLUDE_ARCH_COMMON_AARCH64_GICV3_REGISTERS_H__
 #define _________INCLUDE_ARCH_COMMON_AARCH64_GICV3_REGISTERS_H__
-
+static_assert(false,"deprecated");
 #include <arch/common_aarch64/registers_defines.h>
 
 class RegGICD_CTLR{

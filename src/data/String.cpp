@@ -73,6 +73,15 @@ size_t   String::findFirst(size_t start,const String &s)const
 	}
 	return SIZE_MAX;
 }
+size_t   String::findFirst(size_t start,char ch)const
+{
+	for(size_t i=start;i!=size();++i)
+	{
+		if((*this)[i]==ch)
+			return i;
+	}
+	return SIZE_MAX;
+}
 Vector<String> String::split(const String & s)const
 {
 	Vector<String> res;

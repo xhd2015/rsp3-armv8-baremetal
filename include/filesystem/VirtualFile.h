@@ -7,10 +7,10 @@
 
 #ifndef INCLUDE_FILESYSTEM_VIRTUALFILE_H_
 #define INCLUDE_FILESYSTEM_VIRTUALFILE_H_
-#include <data_structures/String.h>
-#include <data_structures/StringRef.h>
-#include <data_structures/Vector.h>
-#include <data_structures/VectorRef.h>
+#include <data/String.h>
+#include <data/StringRef.h>
+#include <data/Vector.h>
+#include <data/VectorRef.h>
 #include <def.h>
 #include <functional>
 // 可能是普通目录，普通文件，设备文件或者一个挂载点。

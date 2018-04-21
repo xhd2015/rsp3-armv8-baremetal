@@ -1,9 +1,14 @@
 /*
- * SDHostController.h
+ * SDDriverV3.h
  *
- *  Created on: Apr 17, 2018
+ *  Created on: Apr 21, 2018
  *      Author: 13774
  */
+
+#ifndef INCLUDE_DRIVER_SD_SDDRIVERV3_H_
+#define INCLUDE_DRIVER_SD_SDDRIVERV3_H_
+
+
 #include <io/MemBasedRegReader.h>
 #include <generic_util.h>
 #include <driver/sd/SDDefinitions.h>
@@ -242,7 +247,7 @@ public:
 	uint32_t response(size_t i=0)const{ return reg32(RESP+i*4);}
 	const char*  responseTypeString(RespType r)const;
 	// read or write
-	int  transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,const void *writeBuf=nullptr);
+	size_t  transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,const void *writeBuf=nullptr);
 
 	/**
 	 * 要求任意一个连接的卡发送RCA。
@@ -297,3 +302,6 @@ private:
 };
 
 
+
+
+#endif /* INCLUDE_DRIVER_SD_SDDRIVERV3_H_ */

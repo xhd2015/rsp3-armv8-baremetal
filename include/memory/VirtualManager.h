@@ -33,10 +33,12 @@ public:
 	 * 通过设置TCR.EPD=1, 重置所有TTBR0的缓存即可。
 	 */
 	void enableTTBR0(bool enable);
-	void updateTTBR0(Descriptor4KBL0 *l0Table);
-	void updateTTBR1(Descriptor4KBL0 *l0Table);
-	void*  translateVAToPA(const void * va);
-	uint64_t  translateVAToPA(uint64_t va);
+	void updateTTBR0(const Descriptor4KBL0 *l0Table);
+	void updateTTBR1(const Descriptor4KBL0 *l0Table);
+	// DOCME because change of PAR_EL1 does not effect the
+	//     memory system,so const applies here.
+	void*  translateVAToPA(const void * va)const;
+	uint64_t  translateVAToPA(uint64_t va)const;
 
 	AS_MACRO size_t addressBits() const {		return _addressBits;}
 	AS_MACRO size_t ttbr1Mask() const {		return _ttbr1Mask;}
@@ -48,7 +50,12 @@ public:
 	 * @return
 	 */
 	static Vector<AddressSpaceDescriptor> makeFullOrderedDescriptors(const Vector<AddressSpaceDescriptor> &config);
-
+	/**
+	 * 注意，需要设置为物理地址
+	 * @param ttbr0
+	 * @param va   虚拟地址
+	 */
+	void  setTTBR0Addr(RegTTBR0_EL1 & ttbr0,uint64_t va)const;
 private:
 	size_t          _addressBits;
 	size_t          _ttbr1Mask;

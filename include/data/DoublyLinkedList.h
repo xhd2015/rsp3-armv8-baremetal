@@ -8,7 +8,9 @@
 #ifndef INCLUDE_DATA_STRUCTURES_DOUBLYLINKEDLIST_H_
 #define INCLUDE_DATA_STRUCTURES_DOUBLYLINKEDLIST_H_
 
+// DOCME the template seperate inclusions to two spaces: declaration VS definition
 #include "DoublyLinkedList_tempdecl.h"
+#include <data/DoublyLinkedNode.h>
 
 
 template<class T>

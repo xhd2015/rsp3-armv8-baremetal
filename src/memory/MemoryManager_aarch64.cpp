@@ -78,40 +78,7 @@ bool  MemoryManager::tryDecrease(void *origin,size_t decSize)
 {
 	return false;
 }
-void* MemoryManager::reallocate(void *origin,size_t newSize,size_t oldSize)
-{
-	if(!origin)
-		return nullptr;
-	if(newSize==0)
-	{
-		deallocate(origin);
-		return nullptr;
-	}
-	if(oldSize==SIZE_MAX)
-		oldSize = getAllocatedLength(origin);
-	if(oldSize==SIZE_MAX) // still can not retrive the original size
-		return nullptr;
-	if(oldSize==newSize)
-		return origin;
-	MemoryChunk *chunk = MemoryChunk::chunkPtrOfDataPtr(origin);
-	//try to collect unallocated,must be tested
-	chunk->allocated(false);
-	chunk->mergeTrailingsUnallocated();
-	if(chunk->size() >= newSize)
-	{
-		chunk->split(newSize);
-		chunk->allocated(true);
-		return origin;
-	}else{ //need to be moved to another place , newSize > oldSize
-		chunk->allocated(true);
-		char *ptr = this->allocateAs<char*>(newSize);
-		if(!ptr) // failed
-			return nullptr;
-		std::memcpy(ptr,origin,oldSize);
-		chunk->allocated(false);
-		return ptr;
-	}
-}
+
 size_t MemoryManager::getAllocatedLength(void *origin)const
 {
 	auto ptr= MemoryChunk::chunkPtrOfDataPtr(origin);

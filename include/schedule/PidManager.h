@@ -12,16 +12,7 @@
 #include <memory/MemoryManager.h>
 #include <generic_util.h>
 #include <cstring>
-#include <runtime_def.h>
-
-// Pid不可能使用enum, 因为所有的整数值都是允许的，而enum无法枚举`所有`。
-using Pid = uint16_t;
-// pid的前面几项保留为特殊使用
-constexpr Pid PID_INVALID = 0;// PID_INVALID总是已分配的
-constexpr Pid PID_CURRENT = 1 ; // 已分配，总是指向当前进程的PID
-constexpr Pid PID_PARENT = 2;  // 表示父进程
-
-
+#include <schedule/schedule_forward.h>
 // 将PidManager从ProcessManager中，主要是考虑解耦的问题。
 class PidManager{
 public:

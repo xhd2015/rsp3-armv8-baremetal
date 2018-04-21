@@ -12,7 +12,7 @@
 #include <data/Vector.h>
 #include <generic/error.h>
 #include <generic_util.h>
-#include <arch/common_aarch64/system_common_registers.h>
+#include <arch/common_aarch64/registers/system_common_registers.h>
 
 
 #define SizeType1 uint8_t

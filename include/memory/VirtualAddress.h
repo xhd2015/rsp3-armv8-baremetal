@@ -26,6 +26,8 @@ public:
 public:
 	VirtualAddress(uint8_t addrLen=48);
 	VirtualAddress(uint64_t vaddr,uint8_t addrLen=48);
+	VirtualAddress(const VirtualAddress &va)=default;
+	VirtualAddress &operator=(const VirtualAddress &va)=default;
 
 	// which from 0-4
 	VirtualAddress& index(uint8_t which,uint32_t val);

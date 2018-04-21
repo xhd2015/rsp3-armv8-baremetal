@@ -4,7 +4,6 @@
 // provide RegDescriptor4KBL0,RegDescriptor4KBL1..., see include/arch/common_aarch64/vmsa_descriptors.py for its raw definitions
 #include <arch/common_aarch64/vmsa_descriptors.h>
 #include <generic_util.h>
-#include <kernel.h>
 #include <memory/VirtualAddress.h>
 #include <cstring>
 #include <new>

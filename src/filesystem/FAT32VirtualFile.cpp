@@ -22,15 +22,15 @@ FAT32VirtualFile::~FAT32VirtualFile()
 {
 
 }
-void         FAT32VirtualFile::readBPB(ByteReader &reader,FAT32ExtBPB &bpb)
+void         FAT32VirtualFile::readBPB(ByteReader &reader,FAT32ExtBPB &bpb,size_t sec)
 {
-	reader.read(0,&bpb, 512);
+	reader.read(sec*512,&bpb, 512);
 }
-void         FAT32VirtualFile::readFAT(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat)
+void         FAT32VirtualFile::readFAT(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,size_t sec)
 {
-	size_t offset=bpb.rsvdSecCnt*bpb.bytesPerSec;
+	size_t offset=(bpb.rsvdSecCnt+sec)*bpb.bytesPerSec;
 	size_t fatSize = bpb.uni_getFatSize() * bpb.bytesPerSec;
-	if(fat.resize(fatSize))
+	if(fat.resize(fatSize/sizeof(fat[0])))
 	{
 		if(reader.read(offset,fat.data(),fatSize)!=fatSize)
 			fat.clear();

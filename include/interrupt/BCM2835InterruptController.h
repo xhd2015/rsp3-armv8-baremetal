@@ -10,6 +10,8 @@
 #include <io/MemBasedRegReader.h>
 #include <generic/error.h>
 #include <interrupt/GICDefinitions.h>
+#include <interrupt/InterruptHandler.h>
+
 class BCM2835InterruptController
 	:public MemBasedRegReader<true>
 {
@@ -26,7 +28,8 @@ public:
 		DISABLE_IRQ_2 = 0x220,
 		DISABLE_BASIC_IRQ = 0x224
 	};
-	enum IntSource : IntID{ SRC_ARM_TIMER,SRC_ARM_MAILBOX,SRC_ARM_DOORBELL0,SRC_ARM_DOORBELL1,SRC_GPU0_HALTED,SRC_GPU1_HALTD,SRC_ILLEG_TYPE1,SRC_ILLEG_TYPE0,
+	enum IntSource : IntID{
+		SRC_ARM_TIMER,SRC_ARM_MAILBOX,SRC_ARM_DOORBELL0,SRC_ARM_DOORBELL1,SRC_GPU0_HALTED,SRC_GPU1_HALTD,SRC_ILLEG_TYPE1,SRC_ILLEG_TYPE0,
 		SRC_SYS_TIMER_FIRST=0+8, SRC_SYS_TIMER_LAST=3+8,// 4个SysTimer Int
 		SRC_AUX_INT=29 + 8,SRC_GPIO_INT_FIRST=49 + 8,SRC_GPIO_INT_LAST=52 + 8,
 		SRC_SPI_INT=54 + 8, SRC_UART_INT=57 + 8
@@ -49,11 +52,13 @@ public:
 	 * 注意，返回的irq，如果是ARM中断，就是0-8的范围，如果是GPU中断，则是GPU号+8
 	 * @return
 	 */
-	uint8_t locateInterrupt() const;
+	IntID locateInterrupt() const;
 	// disable & re-enable
-	void    deactivateInterrupt(uint8_t src);
+	void    endInterrupt(ExceptionType tp,IntID src);//DOCME 忽略掉tp
 
-	void    enableInterrupt(uint8_t src,bool en);
+	void    enableInterrupt(IntID src,bool en);
+
+	IntID  standardIntID(StandardInterruptType type)const;
 };
 
 #ifndef _NOT_NEED_BCM2835InterruptController

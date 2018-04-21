@@ -1,3 +1,47 @@
+# 2018年4月21日18:44:16
+【commit point】 完成了基本的用户程序，多进程调度，真机上测试通过。
+
+注意，在此版本中，我们暂时放弃了文件系统，SD卡的IO，参见2018年4月21日18:34:06所述的两个bug。
+
+然而，最具创造力的并不是这两个部分，因此他们可以等到将来被修复，策略就是这样的。
+# 2018年4月21日18:34:06
+【bug】 现在，在mmu启用之后，SDDriverV3不能发送CMD8(然而CMD0是正常发送的)， 错误状态是：1.没有Command Complete 2.发生Command Timeout错误 3.Present State中禁止CMD line
+
+我们能想到的修复方法： 发送CMD5试试（SDIO专用），或者将其初始化为Legacy card。
+
+【bug】 在qemu上，执行ls时，当调用用户态的内存分配函数时，发生Permission Fault,L3， 尚不清楚原因。
+
+【bugfix】 修复了之前设置虚拟内存的错误，与TLBI指令和L3的Contiguous位有关，但是目前还不清楚与哪一个有关。 具体的参考是
+该错误曾导致：即使页表的L3映射地址是A， 实际的映射结果却是B，而且能够保证使用的页表时正确的。可能与Contiguous位有关。当全部设置为0之后可行。
+
+【issue】 uart的输入中断触发条件至少是FIFO的1/8,这样做的后果就是输入会产生意想不到的延迟。因为区别不大，最好是每输入一个字符就触发一个中断，只要所有的字符都能正确接收。
+
+
+# 2018年4月21日18:31:27
+【bugfix】 修复了上一个MemoryManager中reallocate的bug，这个bug是由于newSize和oldSize的含混引起的，现在我们将其命名为newSize,oldRawSize，以表明分配后以类型大小为单位计算的数目和原始的内存大小。
+# 2018年4月20日16:36:42
+【bugfix】 修复了之前MemoryManager中reallocate存在的bug，原来reallocate对于析构和移动的情况没有考虑，现在，考虑到在C++下，必须进行资源的移动/销毁，因此增加了类型、已构造的大小两个参数来帮助重新分配。
+# 2018年4月20日15:50:00
+重构所有的代码
+中断控制器不相同，基本的功能： 禁用/启用某个中断  当中断发生时，提供IRQ信息   handler处理完IRQ后调用它的endInterrupt
+
+多层次的中断
+BCM2836提供
+
+
+
+
+InterruptHandler是与InterruptController相关的，前者通用，后者分用。
+InterruptController和InterruptHandler之间通过InterruptContext传递信息
+
+InterruptHandler应当在InterruptContext的环境下进行处理。
+
+InterruptContext是一个协议。
+
+InterruptHandler也具有层级结构
+1.通用的中断，目前我们认为架构决定了InterruptHandler
+
+
 # 2018年4月20日13:14:27
 【commit point】 虚拟内存的启用验证成功，在真机上测试通过。
 示例代码： [main_test_mmu.cpp](../src/arch/raspi3/main_test_mmu.cpp)

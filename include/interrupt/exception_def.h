@@ -33,6 +33,7 @@ enum  ExceptionClass{
 #define EXCEPTION_TYPE_IRQ 1
 #define EXCEPTION_TYPE_FIQ 2
 #define EXCEPTION_TYPE_SERROR 3
+#define EXCEPTION_TYPE_DEBUG 4
 
 #define EXCEPTION_ORIGIN_CUR_SP_EL0 0
 #define EXCEPTION_ORIGIN_CUR_SP_ELx 1
@@ -44,7 +45,8 @@ enum ExceptionType:uint64_t{
 	SYNC=EXCEPTION_TYPE_SYNC,
 	IRQ=EXCEPTION_TYPE_IRQ,
 	FIQ=EXCEPTION_TYPE_FIQ,
-	SError=EXCEPTION_TYPE_SERROR
+	SError=EXCEPTION_TYPE_SERROR,
+	DEBUG=EXCEPTION_TYPE_DEBUG
 };
 enum ExceptionOrigin:uint64_t{
 	CUR_SP_EL0=EXCEPTION_ORIGIN_CUR_SP_EL0,
@@ -52,6 +54,8 @@ enum ExceptionOrigin:uint64_t{
 	FROM_LOWER_A64=EXCEPTION_ORIGIN_FROM_LOWER_A64,
 	FROM_LOWER_A32=EXCEPTION_ORIGIN_FROM_LOWER_A32,
 };
+
+enum StandardInterruptType { PROCESS_TIMER,INPUT };
 
 // 我们期望使用的异常处理函数
 //savedRegisters[31], from X0-X30
@@ -126,5 +130,25 @@ extern char ExceptionVectorEL1[]; // 向量表的地址
 #define RESTORE_CONTEXT_AND_ERET_ASM_INSTR() \
         RESTORE_REGS_ASM_INSTR() \
         "eret \n\t"
+
+template <ExceptionType etp>
+void cpuEnableInterrupt(bool en)
+{
+	static_assert(etp!=ExceptionType::SYNC,"");
+	auto daif=RegDAIF::read();
+	switch(etp)
+	{
+	case ExceptionType::IRQ:
+		daif.I=(!en);break;
+	case ExceptionType::FIQ:
+		daif.F=(!en);break;
+	case ExceptionType::DEBUG:
+		daif.D=(!en);break;
+	case ExceptionType::SError:
+		daif.A=(!en);break;
+	}
+	daif.write();
+}
+
 
 #endif /* INCLUDE_INTERRUPT_EXCEPTION_DEF_H_ */

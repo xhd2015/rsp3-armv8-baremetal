@@ -38,9 +38,10 @@ int SDDriverV3::init()
 	status=sendCommand(Command::IDLE,0);
 	if(status!=0)
 		return status;
-	uint32_t pattern=0x1AA;
+	uint32_t pattern=1<<16|0x1AA;
 	kout << "pattern = " << Hex(pattern) << "\n";
-	status=sendCommand(Command::SEND_IF_COND,pattern);
+//	while(true) // FIXME 恢复原来的CMD8
+	status=sendCommand(Command::SEND_IF_COND,pattern,1000);
 	if(status!=0)
 		return initLegacyCard();
 	if(response()!=pattern)
@@ -179,7 +180,7 @@ int SDDriverV3::sendCommand(Command cmd,uint32_t arg,uint32_t waitMS)
 	auto rtp=static_cast<RespType>(getBits(cmd,16,20));
 	kout << INFO
 			<< "SD sending command : " << getBits(cmd,24,29) << ","
-			<< "response tpye:" << responseTypeString(rtp) << ","
+			<< "response type:" << responseTypeString(rtp) << ","
 			<< "arg1 = " << Hex(arg)
 			<< "\n";
 	if(cmdBusy())
@@ -321,7 +322,7 @@ const char*  SDDriverV3::responseTypeString(SDDriverV3::RespType r)const
 }
 
 // 技术手册3.0 page111
-int  SDDriverV3::transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,const void *writeBuf)
+size_t  SDDriverV3::transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,const void *writeBuf)
 {
 	kout << INFO << "SD "<< (readBuf?"ReadBlocks":"WriteBlocks")<< ", blockAddr=" << Hex(blockAddr) << ",num="<<num << "\n";
 	if(num==0)return 0;
@@ -369,22 +370,24 @@ int  SDDriverV3::transferBlocks(uint32_t blockAddr,size_t num,void *readBuf,cons
 		uint32_t * readPtr=reinterpret_cast<uint32_t*>(readBuf);
 		for(size_t n=0;n!=num;++n)
 		{
-			kout << INFO << "SD reading block:" << n << "\n";
+//			kout << INFO << "SD reading block:" << n << "...";
 //			if(n>0) // qemu 模拟器上似乎需要这个判断，否则失败
 			while(!bufferReadReady());
 			clearReadReady();
 			for(size_t i=0;i!= _blockSize/sizeof(*readPtr);++i)
 				*readPtr++=reg32(BUFF_DATA_PORT);
+//			kout << "finished\n";
 		}
 	}else{
 		const uint32_t *writePtr=reinterpret_cast<const uint32_t*>(writeBuf);
 		for(size_t n=0;n!=num;++n)
 		{
-			kout << INFO << "SD writing block:" << n << "\n";
+			kout << INFO << "SD writing block:" << n << "...";
 			while(!bufferWriteReady());
 			clearWriteReady();
 			for(size_t i=0;i!= _blockSize/sizeof(*writePtr);++i)
 				reg32(BUFF_DATA_PORT)=*writePtr++;
+			kout << "finished\n";
 		}
 	}
 

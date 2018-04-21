@@ -53,6 +53,7 @@ public:
 	String & append(const char *s);
 
 	size_t   findFirst(size_t start,const String &s)const;
+	size_t   findFirst(size_t start,char ch)const;
 	Vector<String> split(const String & s)const;
 
 	// split核心操作：  去除一段字符串，继续检测下一个。

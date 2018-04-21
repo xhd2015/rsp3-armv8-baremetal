@@ -86,7 +86,10 @@ void init(uint64_t currentEL)
 		hcr.RW=1; // aa64
 		hcr.VM=0; // disable virtualization
 		hcr.TGE=0; // do not trap EL1 exceptions
+		hcr.DC=0;// not default cache
 		hcr.write();
+		kout << INFO << "after hcr update\n";
+		hcr.update().dump();
 		// 在EL1/0允许访问计时器寄存器
 		auto cnthctl=RegCNTHCTL_EL2::read();
 		cnthctl.EL1PCEN=1;

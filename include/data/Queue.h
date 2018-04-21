@@ -10,7 +10,6 @@
 
 #include "Queue_tempdecl.h"
 #include <memory/MemoryManager.h>
-#include <templated_impl/data/Queue.h>
 #include <utility>
 
 template<class T>
@@ -72,10 +71,5 @@ void Queue<T>::emplacePut(Args && ... args)
 	if(_indexAdd==_len)
 		_indexAdd=0;
 }
-
-#ifndef _NOT_NEED_InputBuffer
-extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
-#endif
-
 
 #endif /* INCLUDE_DATA_STRUCTURES_QUEUE_H_ */

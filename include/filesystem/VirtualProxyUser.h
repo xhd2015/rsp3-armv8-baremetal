@@ -8,10 +8,10 @@
 #ifndef INCLUDE_FILESYSTEM_VIRTUALPROXYUSER_H_
 #define INCLUDE_FILESYSTEM_VIRTUALPROXYUSER_H_
 #include <filesystem/VirtualProxyDefinitions.h>
-#include <data_structures/VectorRef.h>
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
-#include <data_structures/StringRef.h>
+#include <data/VectorRef.h>
+#include <data/Vector.h>
+#include <data/String.h>
+#include <data/StringRef.h>
 #include <programming/define_members.h>
 
 class VirtualProxyUser{

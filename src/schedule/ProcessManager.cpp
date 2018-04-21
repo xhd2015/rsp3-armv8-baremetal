@@ -8,7 +8,7 @@
 #include <memory/MemoryManager.h>
 #include <schedule/ProcessManager.h>
 #include <asm_instructions.h>
-#include <interrupt/InterruptHandler.h>
+#include <runtime_def.h>
 
 ProcessManager::ProcessManager()
 {
@@ -25,9 +25,8 @@ ProcessManager::ProcessLink* ProcessManager::currentRunningProcess()
 
 void ProcessManager::killProcess(ProcessLink* p)
 {
-	auto oldStatus = p->data<true>().status();
-	p->data<true>().destroy();
-	changeProcessStatus(p,oldStatus,Process::DESTROYED);
+	changeProcessStatus(p,p->data<true>().status(),Process::DESTROYED);
+	p->data<true>().~Process();
 }
 
 

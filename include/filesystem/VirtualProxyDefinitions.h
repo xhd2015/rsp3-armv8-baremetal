@@ -8,8 +8,8 @@
 #ifndef INCLUDE_FILESYSTEM_VIRTUALPROXYFUNCTIONS_H_
 #define INCLUDE_FILESYSTEM_VIRTUALPROXYFUNCTIONS_H_
 #include <def.h>
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
+#include <data/Vector.h>
+#include <data/String.h>
 
 enum VirtualProxyFunction{
 	VP_NEW, // (nullptr,VP_NEW), 第一个参数被忽略

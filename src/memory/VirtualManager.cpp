@@ -102,20 +102,20 @@ void VirtualManager::enableTTBR0(bool enable)
 	if(!enable)
 		asm_tlbi_aside1(RegTTBR0_EL1::read().ASID);
 	auto tcr=RegTCR_EL1::read();
-	tcr.EPD0 = (!enable); // 产生Translation Fault中断而不是进行转换表遍历
+	tcr.EPD0 = (!enable); // 表示禁用，产生Translation Fault中断而不是进行转换表遍历
 	tcr.write();
-	asm_isb();
+	asm_tlbi_vmallel1(); // FIXME 更细粒度的控制
 }
 
-void VirtualManager::updateTTBR0(Descriptor4KBL0 *l0Table)
+void VirtualManager::updateTTBR0(const Descriptor4KBL0 *l0Table)
 {
 	kout << INFO << "VirtualManager updateTTBR0\n";
 	auto ttbr0 = RegTTBR0_EL1::make(0);
 	ttbr0.BADDR = reinterpret_cast<uint64_t>(translateVAToPA(l0Table))>>1;
 	ttbr0.write();
-	asm_isb();
+	asm_tlbi_vmallel1();//FIXME 更细粒度控制
 }
-void VirtualManager::updateTTBR1(Descriptor4KBL0 *l0Table)
+void VirtualManager::updateTTBR1(const Descriptor4KBL0 *l0Table)
 {
 	kout << INFO << "VirtualManager updateTTBR1\n";
 	auto ttbr1 = RegTTBR1_EL1::make(0);
@@ -124,7 +124,7 @@ void VirtualManager::updateTTBR1(Descriptor4KBL0 *l0Table)
 	asm_isb();
 }
 
-void*  VirtualManager::translateVAToPA(const void * va)
+void*  VirtualManager::translateVAToPA(const void * va)const
 {
 	if(va)
 	{
@@ -135,7 +135,7 @@ void*  VirtualManager::translateVAToPA(const void * va)
 	}
 	return nullptr;
 }
-uint64_t  VirtualManager::translateVAToPA(uint64_t va)
+uint64_t  VirtualManager::translateVAToPA(uint64_t va)const
 {
 	return reinterpret_cast<uint64_t>(translateVAToPA(reinterpret_cast<void*>(va)));
 }
@@ -185,4 +185,8 @@ Vector<AddressSpaceDescriptor> VirtualManager::makeFullOrderedDescriptors(const 
 	}
 
 	return std::move(res);
+}
+void  VirtualManager::setTTBR0Addr(RegTTBR0_EL1 & ttbr0,uint64_t va)const
+{
+	ttbr0.BADDR = translateVAToPA(va)>>1;
 }

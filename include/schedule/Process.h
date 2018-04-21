@@ -8,29 +8,19 @@
 #ifndef INCLUDE_SCHEDULE_PROGRESS_H_
 #define INCLUDE_SCHEDULE_PROGRESS_H_
 
-#include <data_structures/ForwardList.h>
+#include <data/ForwardList.h>
 #include <schedule/PidManager.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
 #include <arch/common_aarch64/registers/vmsa_descriptors.h>
 #include <programming/define_members.h>
+#include <schedule/schedule_forward.h>
+#include <memory/VirtualMap.h>
 
 // 提供一个统一的view
 // 系统层面的Process，不是用户层面的Process
 class Process{
 public:
-	static_assert(USER_SPACE_SIZE % 4096==0,"");
-	enum Config{
-		PAGE_SIZE = 4*KiB,
-		KERN_ARG_NUM = 4 * sizeof(uint64_t),
-		CODE_L3_INDEX = 1, CODE_L3_ENTRY_NUM= USER_SPACE_SIZE/PAGE_SIZE,
-		STACK_L3_INDEX=508, STACK_L3_ENTRY_NUM=2,
-		HEAP_L3_INDEX = 510,HEAP_L3_ENTRY_NUM = 2,
-		TABLE_ALIGNMENT = 4*KiB,
-		TABLE_SIZE = 4*KiB,
-		CODE_BASE_ALIGNMENT = 4*KiB,
-		SP_BASE_ALIGNMENT = 16, // bits[3:0]==0b0000
-		REGISTER_NUM = 31,
-	};
+	static constexpr size_t REGISTER_NUM=31;
 	enum Status{
 		CREATED_INCOMPLETE, // 在创建过程中产生某些错误，此时进程就处于这种状态
 		CREATED, // 创建成功
@@ -48,8 +38,17 @@ public:
 		SPACE_ALLCOATE_FAILED,
 	};
 
-//	__attribute__((optimize("-Wno-error=effc++")))
-	Process();
+	// 必须通过检查进程的status来获取当前的状态
+	Process(
+			uint32_t priority,
+			Process *parent,
+			size_t mapPhyPage,// 需要映射到的物理页面
+			size_t pagesNeeded,
+			size_t startVaPage,//起始虚拟地址
+			size_t codeStartPage,size_t codePages, // 所有其他的都是正常类型,代码是只读的
+			uint64_t stackTopPage,
+			size_t   addrBits
+			);
 	~Process();
 
 	// 复制当前进程， fork的实现
@@ -61,15 +60,6 @@ public:
 	Process(Process &&rhs)=delete;
 	Process& operator=(Process &&rhs)=delete;
 
-
-
-	// 建立4级页表，申请空间，映射代码到0地址处,4KB对齐
-	Error init(size_t addrBitsLen,Process *parent,uint32_t priority,size_t codeSize,size_t heapSize,size_t spSize);
-	// set ttbr0,tabelL0~tableL3, {code,heap,sp}{base,size}
-	Error setupTables(size_t codeSize,size_t heapSize,size_t spSize);
-	void destroy();
-
-
 	void saveContext(const uint64_t *savedRegisters);
 
 	// 注意：该过程保证不会发生同步异常
@@ -77,59 +67,37 @@ public:
 	// 如果savedSpEL1 为空，表示不设置
 	// 注意，初始化程序可能借助设置saedSpEL1来进入用户空间，同时设置下一次进入内核空间的栈地址
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
-
-
-	void* codeBase() const;
-	size_t codeSize() const;
-	RegELR_EL1 ELR() const;
-	void* heapBase() const;
-	size_t heapSize() const;
-	const Process* parent() const;
-	Pid pid() const;
-	uint32_t priority() const;
-	uint64_t *      registers();
-	const uint64_t* registers() const;
-	void* spBase() const;
-	RegSP_EL0 spEL0() const;
-	size_t spSize() const;
-	Status status() const;
-	void   status(Status status);
+	const Process* parent() const { return _parent;}
+	AS_MACRO Pid pid() const { return _pid;}
+	AS_MACRO uint32_t priority() const { return _priority;}
+	AS_MACRO void priority(uint32_t p) {  _priority=p;}
+	uint64_t *      registers() { return _registers;}
+	const uint64_t* registers() const { return _registers;}
+	AS_MACRO const RegSP_EL0 &spEL0() const { return _spEL0;}
+	AS_MACRO Status status() const { return _status;}
+	AS_MACRO void   status(Status status) { _status=status;}
+	AS_MACRO const RegELR_EL1& ELR() const { return _ELR;}
 	AS_MACRO RegSPSR_EL1& SPSR() { return _SPSR;}
-	const RegSPSR_EL1& SPSR() const;
-	const Descriptor4KBL0* tableL0() const;
-	Descriptor4KBL1* tableL1() const;
-	Descriptor4KBL2* tableL2() const;
-	const Descriptor4KBL3* tableL3() const;
-	const RegTTBR0_EL1& TTBR0() const;
+	AS_MACRO const RegSPSR_EL1& SPSR() const { return _SPSR;}
+	AS_MACRO const VirtualMap& vmap()const { return _vmap;}
+	AS_MACRO VirtualMap& vmap() { return _vmap;}
+	AS_MACRO const RegTTBR0_EL1& TTBR0() const { return _ttbr0;}
 
 private:
-	Pid     _pid  {PID_INVALID};
-	uint32_t     _priority {0};
-	Status       _status {Process::CREATED_INCOMPLETE};
-	Process *   _parent {nullptr};
-
+	Pid           _pid  ;
+	uint32_t     _priority;
+	Status       _status ;
+	Process *   _parent ;
 
 	// ARMv8 特有的结构
-	RegTTBR0_EL1   _ttbr0 {0};
-	RegSP_EL0   _spEL0 {0};
-	Descriptor4KBL0 * _tableL0{nullptr};
-	Descriptor4KBL1 * _tableL1{nullptr};
-	Descriptor4KBL2 * _tableL2{nullptr};
-	Descriptor4KBL3 * _tableL3{nullptr};
+	RegTTBR0_EL1    _ttbr0 ;
+	RegSP_EL0       _spEL0;
+	RegELR_EL1      _ELR ;
+	RegSPSR_EL1     _SPSR ;
 
-	void*         _codeBase{nullptr};
-	size_t        _codeSize{0};
-
-	void*         _heapBase{nullptr};
-	size_t        _heapSize{0};
-
-	void*        _spBase{nullptr};
-	size_t       _spSize{0};
-
+	VirtualMap      _vmap;
 	// 注意, _registers[0] 通常作为返回值
 	uint64_t    _registers[REGISTER_NUM];
-	RegELR_EL1  _ELR {0};
-	RegSPSR_EL1 _SPSR {0};
 };
 
 

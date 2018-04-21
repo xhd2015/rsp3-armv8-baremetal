@@ -23,7 +23,7 @@ protected:
 	using QualPointerType = std::conditional_t<is_volatile,volatile T*,T*>;
 	template <class T>
 	using QualConstPointerType = std::conditional_t<is_volatile,const volatile T*,const T*>;
-
+	// TODO 将所有的子类的函数替换为单参数，而非可变参数形式
 	template <class AddrType>
 	MemBasedRegReader(AddrType base)
 		:_base(reinterpret_cast<BaseAddrType>(base)){}

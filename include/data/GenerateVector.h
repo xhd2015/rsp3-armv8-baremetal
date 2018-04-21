@@ -358,16 +358,16 @@ bool  _ARG_NAME<T>::resizeCapacity(size_t capacity)
 {
 	if(this->_capacity == capacity)
 		return true;
-	void *newData=nullptr;
+	T *newData=nullptr;
 	if(_data)
-		newData=_GEN_VAR_MMAN.reallocate(_data, capacity * sizeof(T));
+		newData=_GEN_VAR_MMAN.reallocate(_data, capacity,_size);
 	else
-		newData=_GEN_VAR_MMAN.allocate(capacity*sizeof(T));
+		newData=_GEN_VAR_MMAN.allocateAs<T*>(capacity*sizeof(T));
 	if(!newData)
 		return false;
 
 	// update all relative fields
-	_data = reinterpret_cast<T*>(newData);
+	_data = newData;
 	this->_capacity = capacity;
 	return true;
 }

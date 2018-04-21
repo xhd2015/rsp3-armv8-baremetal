@@ -10,14 +10,12 @@
 #include <memory/MemoryManager.h>
 #include <filesystem/VirtualFile.h>
 #include <filesystem/VirutalFileSystem.h>
-#include <data_structures/Vector.h>
-#include <data_structures/VectorRef.h>
-#include <data_structures/String.h>
+#include <data/Vector.h>
+#include <data/VectorRef.h>
+#include <data/String.h>
 #include <filesystem/VirtualProxyDefinitions.h>
 #include <utility>
 #include <programming/define_members.h>
-#include <data_structures/UniversalVector.h>
-#include <data_structures/UniversalString.h>
 
 // 使用内核和用户态都能理解的数据结构。
 class VirtualProxyKernel{

@@ -2,7 +2,7 @@
 //##====../../../include/arch/common_aarch64/gen_register_class.py ../../../include/arch/common_aarch64/system_common_registers.py ../../../include/arch/common_aarch64/system_common_registers.h=========##
 #ifndef _________INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__
 #define _________INCLUDE_ARCH_COMMON_AARCH64_SYSTEM_COMMON_REGISTERS_H__
-
+static_assert(false,"deprecated");
 #include <arch/common_aarch64/registers_defines.h>
 
 class RegCurrentEL{

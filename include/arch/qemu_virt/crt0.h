@@ -9,7 +9,6 @@
 #define INCLUDE_ARCH_QEMU_VIRT_CRT0_H_
 
 #include <def.h>
-#include <interrupt/InterruptManager.h>
 
 // target EL=1
 extern "C"

@@ -1,13 +1,13 @@
 #include <interrupt/svc_call.h>
 #include <schedule/PidManager.h>
-#include <io/Output.h>
-#include <io/Input.h>
 #include <filesystem/VirtualProxyUser.h>
-#include <data_structures/Queue.h>
+#include <data/Queue.h>
+#include <runtime_def.h>
 // Read-Evaluate-Print-Loop(REPL)
 //  实现一些常见的管理命令，如ls,cd,pwd,exit等，具体参见代码
 int main()
 {
+	kout << INFO << "Process main\n";
 	new (&inputBuffer) Queue<uint16_t>(512);
 	VirtualProxyUser vp;
 	String line;
@@ -59,11 +59,16 @@ int main()
 			}else if(cmd=="reboot"){
 
 			}else if(cmd=="pid"){
-
+				kout << pid << "\n";
 			}else if(cmd=="ppid"){
 
 			}else if(cmd=="echo"){
-
+				size_t i=line.findFirst(0, ' ');
+				if(i!=SIZE_MAX)
+				{
+					kout.print(line.data()+i+1,line.size() - i -1);
+					kout << "\n";
+				}
 			}else if(cmd=="exit"){//进程退出
 				break;
 			}else{

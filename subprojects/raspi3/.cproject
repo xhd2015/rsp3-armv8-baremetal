@@ -6,6 +6,8 @@
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.Cygwin_PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -19,7 +21,7 @@
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.34137663" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.13401361" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${TOOLCHAIN_PREFIX}" valueType="string"/>
 							<option id="cdt.managedbuild.option.gnu.cross.path.485806516" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="${TOOLCHAIN_ROOT}" valueType="string"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.518247524" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.Cygwin_PE;org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.518247524" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/chap002}/Debug-aarch64" cleanBuildTarget="${USER_CLEAN}" command="${MAKE_BIN}" id="cdt.managedbuild.builder.gnu.cross.120002259" incrementalBuildTarget="${USER_ALL}" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool command="gcc" id="cdt.managedbuild.tool.gnu.cross.c.compiler.307739132" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2114724768" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
@@ -66,11 +68,13 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/arch/raspi3/main_raspi3_test_sd_read.cpp|src/arch/raspi3/readsector_experiment|src/arch/raspi3/readsector_good|src/driver/uart/XilinxUARTPS.cpp|src/driver/virtio|src/arch/raspi3/uart0_experiment|src/arch/raspi3/main_raspi3_test_interrupt.cpp|src/arch/raspi3/uart0_good|src/interrupt/InterruptManager.cpp|Debug-qemu_virt_reloc_elf|src/test|src/arch/aarch64|src/printk_qemu_virt.cpp|src/interrupt/ExceptionState.cpp|src/interrupt/exceptionCHandler_qemu_virt.cpp|Debug-qemu_virt|include/arch/aarch64|src/filesystem/VirtualFileSystem.cpp|src/arch/qemu-virt/main.cpp|src/minimal_crt/stolen_from_libgcc|misc|src/arch/qemu_virt/main_test_stp.cpp|src/io/virtio|src/io/Input_read_qemu_virt.cpp|src/arch/host|src/io/printk_user_space.cpp|src/arch/zcu102|src/memory/MemoryManager_host.cpp|src/arch/raspi3/main_raspi3_hello.cpp|src/schedule|src/io/printk_zcu102.cpp|src/io/printk_qemu_virt.cpp|Debug-host|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/interrupt/GICCPUInterface.cpp|src/io/SectorReader_host.cpp|src/interrupt/GICRedistributor.cpp|src/io/printk_host.cpp|src/arch/user_space|src/filesystem/VirtualProxyKernel.cpp|src/filesystem/FAT32VirtualFile.cpp|src/main.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/io/SectorReaderToByteReader.cpp|src/arch/qemu_virt/main_test_svc.cpp|src/io/uart/XilinxUARTPS.cpp|src/MemoryManager_host.cpp|src/interrupt/InterruptHandler.cpp|Debug-aarch64|src/filesystem/VirtualProxyUser.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/interrupt/GICDistributor.cpp|src/filesystem/VirtualFile.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/io/Input_read_user_space.cpp|src/io/VirtioSectorReader.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/raspi3/uart1.cpp|src/arch/qemu_virt|src/arch/qemu_virt/main_into_EL0.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="src/interrupt/exceptionCHandler_raspi3_old_no_intHandler.cpp|src/arch/raspi3/main_test_mmu.cpp|src/arch/raspi3/main_raspi3_test_sd_read.cpp|src/arch/raspi3/readsector_experiment|src/arch/raspi3/readsector_good|src/driver/uart/XilinxUARTPS.cpp|src/driver/virtio|src/arch/raspi3/uart0_experiment|src/arch/raspi3/main_raspi3_test_interrupt.cpp|src/arch/raspi3/uart0_good|src/interrupt/InterruptManager.cpp|Debug-qemu_virt_reloc_elf|src/test|src/arch/aarch64|src/printk_qemu_virt.cpp|src/interrupt/exceptionCHandler_qemu_virt.cpp|Debug-qemu_virt|include/arch/aarch64|src/arch/qemu-virt/main.cpp|src/minimal_crt/stolen_from_libgcc|misc|src/arch/qemu_virt/main_test_stp.cpp|src/io/virtio|src/io/Input_read_qemu_virt.cpp|src/arch/host|src/io/printk_user_space.cpp|src/arch/zcu102|src/memory/MemoryManager_host.cpp|src/arch/raspi3/main_raspi3_hello.cpp|src/io/printk_zcu102.cpp|src/io/printk_qemu_virt.cpp|Debug-host|src/arch/qemu_virt/main_virtual_memory.cpp|src/arch/qemu_virt/main_stolen_mmu.cpp|src/interrupt/GICCPUInterface.cpp|src/io/SectorReader_host.cpp|src/interrupt/GICRedistributor.cpp|src/io/printk_host.cpp|src/arch/user_space|src/main.cpp|src/arch/qemu_virt/main_verify_address_tag.cpp|src/arch/qemu_virt/main_test_svc.cpp|src/io/uart/XilinxUARTPS.cpp|src/MemoryManager_host.cpp|Debug-aarch64|src/filesystem/VirtualProxyUser.cpp|src/arch/qemu_virt/main_aarch64_instructions.cpp|src/interrupt/GICDistributor.cpp|src/arch/qemu_virt/main_test_adrp_instruction.cpp|src/io/Input_read_user_space.cpp|src/io/VirtioSectorReader.cpp|src/arch/qemu_virt/main_run_kernel_application.cpp|src/arch/raspi3/uart1.cpp|src/arch/qemu_virt|src/arch/qemu_virt/main_into_EL0.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="raspiOS_user_space;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">

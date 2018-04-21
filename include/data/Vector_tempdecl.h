@@ -44,8 +44,7 @@ public:
 	Vector(Vector<T> && vec);
 	Vector<T>& operator=(Vector<T> && vec);
 	~Vector();
-	AS_MACRO void rebase(size_t diff) { if(_data){_data=reinterpret_cast<T*>(reinterpret_cast<char*>(_data)+diff);}}
-
+	AS_MACRO void rebase(size_t diff) { _data=pointerInc(_data, diff);}
 
 	/*
 	 * 调用castMove之后，原来的数组不应当再使用
@@ -87,6 +86,7 @@ public:
 	// afte this,capacity  >= MINIMAL_CAPACITY
 	bool  resize(size_t newSize);
 	bool  ensureEnoughCapacity(size_t capacity);
+	void  removeLast();
 
 	AS_MACRO MemoryManager& memMan(){return mman;}
 

@@ -38,7 +38,7 @@ AS_MACRO void asm_wfe();
 AS_MACRO __attribute__((noreturn)) void asm_wfe_loop();
 AS_MACRO void asm_tlbi_aside1(uint16_t asid);
 AS_MACRO void asm_tlbi_allel1();
-AS_MACRO void asm_tbli_vmallel1();
+AS_MACRO void asm_tlbi_vmallel1();
 
 
 //== definitions
@@ -76,18 +76,19 @@ void asm_wfe_loop()
 // tlbi aside1, xt  xt= [ASID][RES0]
 void asm_tlbi_aside1(uint16_t asid)
 {
+	// DOCME dsb,dsb,isb这个顺序也是非常重要的
 	__asm__ __volatile__(
-			"tlbi aside1,%0 \n\t"
+			"dsb osh;tlbi aside1,%0;dsb osh;isb\n\t"
 			::"r"(static_cast<uint64_t>(asid)<<(64 - 16))
 	);
 }
 // 注意，该指令在EL1不可执行
 void asm_tlbi_allel1()
 {
-	__asm__ __volatile__("tlbi ALLE1 \n\t");
+	__asm__ __volatile__("dsb osh;tlbi ALLE1;dsb osh;isb \n\t");
 }
-void asm_tbli_vmallel1()
+void asm_tlbi_vmallel1()
 {
-	__asm__ __volatile__("tlbi  VMALLE1 \n\t");
+	__asm__ __volatile__("dsb osh;tlbi  VMALLE1;dsb osh;isb \n\t");
 }
 #endif /* INCLUDE_ASM_INSTRUCTIONS_H_ */

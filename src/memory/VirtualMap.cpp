@@ -35,7 +35,29 @@ VirtualMap::VirtualMap(size_t phyPageStart,size_t pageCount,bool global,const vo
 }
 VirtualMap::~VirtualMap()
 {
-	mman.deallocate(_l0Table);
+	if(_l0Table) // 通过_l0Table来判断
+	{
+		mman.deallocate(_l0Table);
+		_l0Table=nullptr;
+	}
+}
+
+VirtualMap::VirtualMap(const VirtualMap & map)
+	:VirtualMap(
+			reinterpret_cast<size_t>(map._phyAddr)/_D::PAGE_SIZE,
+			map._l0Table?_pageCount:0, // 0避免分配不必要的内存
+			map._global,
+			reinterpret_cast<const void*>(map._startAddr.addr()),
+			map._startAddr.addrLen()
+			)
+{
+	if(_l0Table && map._l0Table)
+	{
+		mapL0();
+		mapL1();
+		mapL2();
+		std::memcpy(_l3Table, map._l3Table,_sizes[3]*_D::PAGE_SIZE);
+	}
 }
 void VirtualMap::mapL0()
 {
@@ -78,6 +100,7 @@ void VirtualMap::mapL2()
 		_l2Table[i].S1.NextLevelTableAddr = (basePhyPage+i-index);
 	}
 }
+// FIXME 这里可以采用更高效的方式，比如只设置第一个，其他的使用复制，改变地址即可
 void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 {
 	kout << INFO << "VirtuaMap mapL3\n";
@@ -90,8 +113,11 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 	if(curGroup==descr.size())
 		return;
 	size_t curGroupLeftSize=descr[curGroup].size();
-	size_t basePage = reinterpret_cast<size_t>(_phyAddr) >> _D::PAGE_BITS;
+	size_t basePage = reinterpret_cast<size_t>(virtman.translateVAToPA(_phyAddr)) >> _D::PAGE_BITS;
 	size_t index=_startAddr.index(3);
+	kout << "start index = " << index << "\n";
+	kout << "basePhyPage = " << Hex(basePage) << "\n";
+	kout << "l3Table[0] va = " << Hex(_l3Table) << "\n";
 	for(size_t i=index;i!=_sizes[3];++i)
 	{
 		if(i%100000==0 || i==_sizes[3]-1 )
@@ -127,9 +153,13 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 				_l3Table[i].AttrIndex = _D::MEMORY_ATTR_PERIPHERAL;
 			}
 
-			_l3Table[i].PXN = 0;
-			_l3Table[i].UXN = 0;
-			_l3Table[i].Contiguous = 1;
+//			_l3Table[i].PXN = 0;
+//			_l3Table[i].UXN = 0;
+			// TESTME 真的很重要吗？ 可能tlbi才是重要的吧
+//			if(i!=_sizes[3]-1) // 最后一个 // DOCME 非常重要，最后一个必须设置为 非连续的
+//				_l3Table[i].Contiguous = 1;
+			// DOCME contiguous very important
+
 			_l3Table[i].nG = (!_global); // apply to all ASID
 //			_l3Table[i].nG=0;
 			// no AP[0], AP[2]=0:read-write 1:read-only  AP[1]= can be access from EL0
@@ -139,9 +169,11 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 			if(descr[curGroup].el0Accessiable())
 				ap|=1;
 //			(void)ap;
-			_l3Table[i].AP = ap ;// set read-only(1), or read-write(0) , and not from EL0
+			_l3Table[i].AP = ap ;// set read-only(1), or read-write(0) ,
+								// and not from EL0(0) or else(1)
 //			_l3Table[i].AP = 0;
-			_l3Table[i].SH = 0b10; //outer-shareable
+//			_l3Table[i].SH = 0b10; //outer-shareable
+			_l3Table[i].SH = 0b11;
 		}
 		curGroupLeftSize -= _D::PAGE_SIZE;
 		if(curGroupLeftSize == 0)
@@ -174,4 +206,15 @@ void VirtualMap::allocateTables()
 	_l1Table = reinterpret_cast<Descriptor4KBL1*>(_l0Table + _sizes[0]);
 	_l2Table = reinterpret_cast<Descriptor4KBL2*>(_l1Table + _sizes[1]);
 	_l3Table = reinterpret_cast<Descriptor4KBL3*>(_l2Table + _sizes[2]);
+	kout << "l0Table = " << Hex(_l0Table) << "\n";
+	kout << "l1Table = " << Hex(_l1Table) << "\n";
+	kout << "l2Table = " << Hex(_l2Table) << "\n";
+	kout << "l3Table = " << Hex(_l3Table) << "\n";
+}
+size_t   VirtualMap::size()const
+{
+	size_t sum=0;
+	for(size_t i=0;i!=arrsizeof(_sizes);++i)
+		sum+=_sizes[i];
+	return sum;
 }

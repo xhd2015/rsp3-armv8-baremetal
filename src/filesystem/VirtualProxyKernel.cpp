@@ -46,6 +46,7 @@ bool     VirtualProxyKernel::cd(VirtualProxyCdHandler handler,void *instPtr)
 size_t VirtualProxyKernel::ls(VirtualProxyLsHandler handler,void *instPtr)
 {
 	size_t count=0;
+	asm_tlbi_vmallel1();
 	auto vhandler=[handler,instPtr,&count](VirtualFile *file){
 		handler(instPtr,file->name().data(), file->name().size());
 		++count;

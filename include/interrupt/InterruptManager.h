@@ -26,6 +26,18 @@ class InterruptManager
 	  private GICCPUInterface
 {
 public:
+	static constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
+			        INT_IS_NON_SECURE_GRP1=1021,
+			        INT_LEGACY=1022,
+					INT_VIRTUAL_MAINTENCE=5,
+					INT_HYP_TIMER=26,
+					INT_VIRTUAL_TIMER=27,
+					INT_S_PHY_TIMER=29,
+				    INT_NS_PHY_TIMER=30,
+					INT_SPURIOUS=1023 // no interrupt
+					;
+	static constexpr IntID	INT_INPUT = 33; //  UART的中断
+
 	enum CPUIntBit{FIQ=6,IRQ=7,SError=8,Debug=9};
 	InterruptManager(void *gicdAddr,void *gicrAddr)
 		:GICDistributor(gicdAddr),
@@ -64,8 +76,6 @@ public:
 	volatile uint32_t & triggerConfigWord(int intGrp){return readWriteWord(GICRedistributor::icfgr0,GICDistributor::icfgr, intGrp,1);}
 	volatile uint32_t & priorityWord(int intGrp){return readWriteWord(GICRedistributor::ipriortiy0,GICDistributor::ipriority, intGrp,7);}
 
-	AS_MACRO void    enableIntID(IntID id,bool enable){ setBit(enableWord(id/32),id%32,enable);}
-
 	using GICCPUInterface::sgiTarget;
 	using GICCPUInterface::sgiSelf;
 	using GICCPUInterface::sgiTargetList;
@@ -74,6 +84,14 @@ public:
 	using GICCPUInterface::eoi;
 
 	using GICDistributor::enableGroup;
+
+	// TODO 具体实现方法 -- 等到需要在qemu上测试再做。
+	// DOCME InterruptHandler需要
+	// 标准接口
+	IntID  standardIntID(StandardInterruptType type)const;
+	void   endInterrupt(ExceptionType type,IntID id);
+	AS_MACRO void    enableInterrupt(IntID id,bool enable)
+		{ setBit(enableWord(id/32),id%32,enable);}
 
 	/**
 	 * 当在EL3时，配置在EL1不能配置的寄存器。

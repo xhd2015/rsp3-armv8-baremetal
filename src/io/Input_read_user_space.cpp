@@ -5,7 +5,7 @@
  *      Author: 13774
  */
 
-#include <data_structures/Queue.h>
+#include <runtime_def.h>
 #include <io/Input.h>
 #include <interrupt/svc_call.h>
 #include <generic_util.h>

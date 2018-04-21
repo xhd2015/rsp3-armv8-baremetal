@@ -24,8 +24,8 @@ public:
 	};
 	FAT32VirtualFile(const String&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry);
 	virtual ~FAT32VirtualFile();
-	static void               readBPB(ByteReader &reader,FAT32ExtBPB &bpb);
-	static void               readFAT(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat);
+	static void               readBPB(ByteReader &reader,FAT32ExtBPB &bpb,size_t sec);
+	static void               readFAT(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,size_t sec);
 	static FAT32VirtualFile * makeRootFile(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat);
 	virtual FileType type()const override;
 	virtual SubFileSystemType subFSType()const override;

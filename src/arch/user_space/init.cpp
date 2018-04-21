@@ -11,7 +11,10 @@
 #include <io/Output.h>
 #include <memory/VirtualAddress.h>
 #include <new>
+#include <schedule/schedule_forward.h>
+#include <runtime_def.h>
 
+// DOCME 不能使用exit作为退出名称
 extern void destroy(int errCode);
 extern int main();
 
@@ -32,18 +35,20 @@ extern uint64_t bssStart[];
 extern uint64_t bssEnd[];
 
 __attribute__((section(".text.init")))
-void init()
+void init(Pid pid)
 {
+	// ==== must be first
 	// 清空bss区
 	for(uint64_t len=bssEnd-bssStart,i=0;i!=len;++i)
 		bssStart[i]=0;
 
-	// 初始化全局mman
-	auto adjVa = reinterpret_cast<char*>(alignAhead(reinterpret_cast<uint64_t>(freeRamStart), MemoryManager::MINIMAL_ALIGNMENT));
+	::pid=pid;
 
-	new (&mman) MemoryManager(reinterpret_cast<void*>(adjVa),freeRamEnd-adjVa,true);
+	new (&mman) MemoryManager(reinterpret_cast<void*>(freeRamStart),
+			freeRamEnd-freeRamStart,true);
 	new (&kout) Output();
 
+	kout << INFO << "init, pid = " << pid << "\n";
 
 	int res=main();
 	destroy(res);

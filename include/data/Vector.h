@@ -199,14 +199,20 @@ size_t  Vector<T>::insert(size_t i,const T & t)
 	_data[i]=t;
 	return i;
 }
-
+// FIXED 调用默认的构造函数
 template <class T>
 bool  Vector<T>::resize(size_t newSize)
 {
 	size_t desiredCapacity = (newSize < MINIMAL_CAPACITY?MINIMAL_CAPACITY:newSize);
 	if(resizeCapacity(desiredCapacity))
+	{
+		if(_size < newSize) //newSize - _size大于0的情况下，需要进行默认构造
+			for(size_t i=_size;i!=newSize;++i)
+				new (_data + i) T();
 		_size=newSize;
-	return (_size==newSize && _capacity==desiredCapacity);
+		return true;
+	}
+	return false;
 }
 
 template <class T>
@@ -216,22 +222,27 @@ bool  Vector<T>::ensureEnoughCapacity(size_t capacity)
 		return resizeCapacity(capacity);
 	return true;
 }
-
+template <class T>
+void   Vector<T>::removeLast()
+{
+	if(_size>0)
+		resize(_size - 1);
+}
 template <class T>
 bool  Vector<T>::resizeCapacity(size_t capacity)
 {
 	if(this->_capacity == capacity)
 		return true;
-	void *newData=nullptr;
-	if(_data)
-		newData=mman.reallocate(_data, capacity * sizeof(T));
+	T *newData=nullptr;
+	if(_data)// 必须告诉reallocate真实的对象数目
+		newData=mman.reallocate(_data, capacity ,_size*sizeof(T));//有类型的
 	else
-		newData=mman.allocate(capacity*sizeof(T));
+		newData=mman.allocateAs<T*>(capacity*sizeof(T));
 	if(!newData)
 		return false;
 
 	// update all relative fields
-	_data = reinterpret_cast<T*>(newData);
+	_data = newData;
 	this->_capacity = capacity;
 	return true;
 }
@@ -255,7 +266,6 @@ bool  Vector<T>::adjustCapacityForOneLess()
 	if(advisedCapacity < _capacity)
 		return resizeCapacity(advisedCapacity);
 	return true;
-
 }
 
 

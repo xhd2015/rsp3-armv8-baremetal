@@ -11,6 +11,7 @@
 
 
 #include <data/forward_decl.h>
+#include <data/DoublyLinkedNode_tempdecl.h>
 #include <programming/ReturnTypeSelector.h>
 #include <functional>
 #include <programming/define_members.h>

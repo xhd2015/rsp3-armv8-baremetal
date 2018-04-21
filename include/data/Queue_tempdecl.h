@@ -12,6 +12,7 @@
 #include <def.h>
 #include <generic/error.h>
 #include <utility>
+#include <generic_util.h>
 
 /**
  * 实现一个定容量的ring，元素循环存取
@@ -30,6 +31,7 @@ public:
     Queue & operator=(Queue && rhs);
 
     ~Queue();
+    AS_MACRO void rebase(size_t diff) {_data=pointerInc(_data, diff);}
     AS_MACRO void reset(size_t len){ _curLen=len;_indexAdd=len;_indexRemove=0;}
 
     // 必须保证 empty()==false

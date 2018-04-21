@@ -8,15 +8,15 @@
 #ifndef INCLUDE_SCHEDULE_PROGRESSMANAGER_H_
 #define INCLUDE_SCHEDULE_PROGRESSMANAGER_H_
 
-#include <data_structures/DoublyLinkedList.h>
+#include <data/DoublyLinkedList.h>
 #include <schedule/Process.h>
-#include <runtime_def.h>
+#include <schedule/schedule_forward.h>
 
 class ProcessManager{
 public:
 //	enum Config{ PROCESSOR_NUM=4 };
 	using ProcessList = DoublyLinkedList<Process>;
-	using ProcessLink = ProcessList::NodeType;
+	using ProcessLink = typename ProcessList::NodeType;
 
 	ProcessManager();
 
@@ -59,15 +59,22 @@ extern ProcessManager processManager;
 template <class ... Args>
 ProcessManager::ProcessLink*   ProcessManager::createNewProcess(Args && ... initArgs)
 {
-	auto node = _statedProcessList[Process::CREATED_INCOMPLETE].insertTail();
+	auto node = _statedProcessList[Process::CREATED_INCOMPLETE]
+					.insertTail(std::forward<Args>(initArgs)...);
 	if(node)
 	{
-		int initState = node->data<true>().init(std::forward<Args>(initArgs)...);
-		(void)initState;
-		if(initState==0)
+		// _FIXME 如果node使用auto,则需要template，否则 > 解析成小于符号
+		if( node->template data<true>().status()!=Process::CREATED) // 创建错误
+		{
+			_statedProcessList[Process::CREATED_INCOMPLETE].removeTail();
+			delete node;
+		}else{
 			changeProcessStatus(node, Process::CREATED_INCOMPLETE,Process::CREATED);
+			return node;
+		}
+
 	}
-	return node;
+	return nullptr;
 }
 
 

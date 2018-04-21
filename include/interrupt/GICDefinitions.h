@@ -23,21 +23,7 @@ enum class ExceptionLevel {EL0 = 0,EL1 = 1,EL2 = 2,EL3 = 3};
 
 using IntID = uint32_t;
 
-constexpr IntID INT_IS_SECURE_GRP1=1020,//由IAR0返回
-		        INT_IS_NON_SECURE_GRP1=1021,
-		        INT_LEGACY=1022,
-				INT_VIRTUAL_MAINTENCE=5,
-				INT_HYP_TIMER=26,
-				INT_VIRTUAL_TIMER=27,
-				INT_S_PHY_TIMER=29,
-			    INT_NS_PHY_TIMER=30,
-				INT_SPURIOUS=1023, // no interrupt
-				INT_ID_IS_INVALID = 0xFFFFFFFF
-				;
-
-#ifdef TARGET_ARCH_IS_qemu_virt
-constexpr IntID		INT_INPUT = 33; //  UART的中断
-#endif
+constexpr IntID INT_ID_IS_INVALID = 0xFFFFFFFF;
 
 constexpr uint8_t INT_IDLE_PRIORITY=0xFF;
 

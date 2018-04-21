@@ -16,8 +16,12 @@
 #include <memory/VirtualMemoryDefinition.h>
 
 /**
+ * 将从phyPageStart开始的n个页面映射到虚拟地址vaAddr处
+ *
  * 我们只设置必要的项，也就是说，只考虑基地址p到p+size之间的有效映射
  * p以下，p+size以上的映射均不考虑。
+ *
+ *
  */
 class VirtualMap{
 public:
@@ -25,8 +29,13 @@ public:
 
 	VirtualMap();
 	VirtualMap(size_t phyPageStart,size_t pageCount,bool global,const void *vaAddr,size_t addrBits);
+	// TODO 完成移动构造
+	VirtualMap(VirtualMap && map);
+	const VirtualMap & operator=(VirtualMap && map);
 	~VirtualMap();
-	DELETE_COPY(VirtualMap);
+	// 实现了复制语义，只复制L3的属性，因为L0~L2都是与配置无关的，只与内存有关的
+	VirtualMap(const VirtualMap & map);
+	VirtualMap & operator=(const VirtualMap &rhs)=delete;
 
 	/**
 	 *
@@ -49,6 +58,7 @@ public:
 	void globalPages(bool v){ _global=v;}
 
 	AS_MACRO Descriptor4KBL0* l0Table()  {		return _l0Table;}
+	AS_MACRO const Descriptor4KBL0* l0Table() const {		return _l0Table;}
 	AS_MACRO void l0Table(Descriptor4KBL0* l0Table) {		_l0Table = l0Table;}
 	AS_MACRO Descriptor4KBL1* l1Table() {		return _l1Table;}
 	AS_MACRO void l1Table(Descriptor4KBL1* l1Table) {		_l1Table = l1Table;}
@@ -56,7 +66,7 @@ public:
 	AS_MACRO void l2Table(Descriptor4KBL2* l2Table) {		_l2Table = l2Table;}
 	AS_MACRO Descriptor4KBL3* l3Table()  {		return _l3Table;}
 	AS_MACRO void l3Table(Descriptor4KBL3* l3Table) {		_l3Table = l3Table;}
-
+	size_t   size()const;
 private:
 	void allocateTables();
 private:

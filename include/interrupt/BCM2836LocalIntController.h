@@ -11,6 +11,8 @@
 #include <generic/cpu.h>
 #include <interrupt/GICDefinitions.h>
 #include <generic_util.h>
+#include <interrupt/InterruptHandler.h>
+#include <interrupt/BCM2835InterruptController.h>
 /**
  *  common base = 0x4000_0000
  *
@@ -50,19 +52,36 @@ public:
 		local_timer_clear_reload=0x38, //bit31=clear int flag,bit30=reset count value to preset,not int
 		local_timer_int_route = 0x24, //timer is the only local interrupt,bit0-2= 0b000(IRQ,Core0) to ob011(IRQ,Core3) ,0b100(FIQ,core0) to 0b111(FIQ,core3)
 	};
+	static constexpr size_t INTC_INT_NUM=BCM2835InterruptController::INT_NUM;
+	static constexpr size_t INT_NUM = INTC_INT_NUM + 20;
 	// 外设1-15之间的中断在SRC_PERI_FIRST，SRC_PERI_LAST之间（但是现在没有用）
-	enum IntSource : IntID{ SRC_PHY_S_TIMER=0,SRC_PHY_NS_TIMER=1,SRC_HYP_TIMER=2,SRC_VIR_TIMER=3,SRC_MBOX_FIRST=4,SRC_MBOX_LAST=7,SRC_GPU=8,SRC_PMU=9,SRC_AXI=10,SRC_LOCAL_TIMER=11,SRC_PERI_FIRST=12,SRC_PERI_LAST=17};
-	template <class ... Args>
-	BCM2836LocalIntController(Args && ... args)
-		:MemBasedRegReader(std::forward<Args>(args)...)
+	// 来自GPU的中断应当为0开头, 来自localIntc的中断，id在INTC_INT_NUM的基础上增加
+	enum IntSource : IntID{
+		SRC_PHY_S_TIMER = 0 + INTC_INT_NUM,
+		SRC_PHY_NS_TIMER = 1 + INTC_INT_NUM,
+		SRC_HYP_TIMER = 2 + INTC_INT_NUM,
+		SRC_VIR_TIMER = 3 + INTC_INT_NUM,
+		SRC_MBOX_FIRST=4 + INTC_INT_NUM,SRC_MBOX_LAST=7+INTC_INT_NUM,
+		SRC_GPU = 8 + INTC_INT_NUM,SRC_PMU=9+INTC_INT_NUM,SRC_AXI=10+INTC_INT_NUM,
+		SRC_LOCAL_TIMER=11 + INTC_INT_NUM,
+		SRC_PERI_FIRST=12+INTC_INT_NUM,SRC_PERI_LAST=17+INTC_INT_NUM
+	};
+	using BCM2835IntSource = BCM2835InterruptController::IntSource;
+	template <class  Args>
+	BCM2836LocalIntController(Args &&  args,
+			BCM2835InterruptController &controller)
+		:MemBasedRegReader(std::forward<Args>(args)),
+		 _intc2835(&controller)
 	{}
+	void rebase(size_t diff);
 	/**
 	 *
 	 * @param cpuId
 	 * @param irq_or_fiq 0=irq, others=fiq
 	 * @return
 	 */
-	IntSource    locateInterrupt(size_t cpuId, int irq_or_fiq);
+	IntSource    locateInterruptSource(size_t cpuId, int irq_or_fiq)const;
+	IntID        locateInterrupt(size_t cpuID,int irq_or_fiq)const;
 
 	AS_MACRO void localTimerWorkEnable(bool en){ setBit(reg32(local_timer_ctrl),28,en);}
 	AS_MACRO void localTimerIntEnable(bool en){ setBit(reg32(local_timer_ctrl),29,en);}
@@ -93,7 +112,13 @@ public:
 
 	void delayMS(size_t msec)const;
 
-
+	// INTERCACE
+	IntID  standardIntID(StandardInterruptType type)const;
+	void   endInterrupt(ExceptionType type,IntID id);
+	void    enableInterrupt(IntID id,bool enable);
+	void disableAllInterrupts();
+private:
+	BCM2835InterruptController  * _intc2835;
 };
 
 #ifndef _NOT_NEED_BCM2836LocalIntController

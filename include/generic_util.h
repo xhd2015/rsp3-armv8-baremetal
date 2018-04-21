@@ -255,5 +255,15 @@ void rebase(T *start,T *end,T rebaseValue)
 		++p;
 	}
 }
+template <class T>
+T* pointerInc(T *p,size_t rebaseValue)
+{
+	return reinterpret_cast<T*>(reinterpret_cast<char*>(p)+rebaseValue);
+}
+template <class T>
+const T* pointerInc(const T *p,size_t rebaseValue)
+{
+	return reinterpret_cast<const T*>(reinterpret_cast<const char*>(p)+rebaseValue);
+}
 
 #endif /* INCLUDE_GENERIC_UTIL_H_ */
