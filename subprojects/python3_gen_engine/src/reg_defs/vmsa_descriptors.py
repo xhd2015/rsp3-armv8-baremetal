@@ -23,7 +23,7 @@ reg_defs=[
  ],  
   ["Descriptor4KBL2","uint64_t",
    [
-    ["Valid",1,   "IsTable",1,   "NS",1,   "AP",2,   "SH",2,   "AF",1,   "nG",1,   "RES0",9,   "OutputAddr,Hex",27,   "RES0",4,   "Contiguous",1,   "PXN",1,   "UXN",1,   "reserved",4,    "PBHA",4,   "ignored",1],
+    ["Valid",1,   "IsTable",1,   "AttrIndex",3,"NS",1,   "AP",2,   "SH",2,   "AF",1,   "nG",1,   "RES0",9,   "OutputAddr,Hex",27,   "RES0",4,   "Contiguous",1,   "PXN",1,   "UXN",1,   "reserved",4,    "PBHA",4,   "ignored",1],
     ["Valid",1,   "IsTable",1,   "ignored",10,   "NextLevelTableAddr,Hex",36,   "RES0",4,   "ignored",7,   "PXNTable",1,   "XNTable",1,   "APTable",2,   "NSTable",1]
   ],
    "applies",["S0.IsTable==0",""]

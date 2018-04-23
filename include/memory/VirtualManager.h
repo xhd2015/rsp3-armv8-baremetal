@@ -26,8 +26,9 @@ public:
 	 * 启用mmu，并跳转到相应的地址，设置栈指针。
 	 * @param jmpFunc  初始化完成后跳转的函数，注意，该函数的第一条指令推荐调用invalidateTTBR0，防止出现使用TTBR0的情况，因为那表明系统存在Bug。
 	 * @param newSp    调用函数使用的新的栈指针，该指针可以设置为crt0中最初设置的值
+	 * 			当设置为nullptr时，表示不设置
 	 */
-	void enableMMU(InitFunctionPtr jmpFunc,void *newSp);
+	void enableMMU(InitFunctionPtr jmpFunc,void *newSp=nullptr,bool jmpFuncSetTTBR1=true);
 	/**
 	 * 使TTBR0置为无效，该函数应当在跳转到高端地址之后调用
 	 * 通过设置TCR.EPD=1, 重置所有TTBR0的缓存即可。

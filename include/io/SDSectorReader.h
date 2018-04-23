@@ -15,7 +15,7 @@ class SDSectorReader
 {
 public:
 	SDSectorReader(SDDriverV3 & driver,size_t baseSec)
-		:_driver(driver), _baseSec(0){}
+		:_driver(driver), _baseSec(baseSec){}
 	virtual ~SDSectorReader()=default;
 
 	virtual size_t read(size_t secIndex,void *dst,size_t maxNumSec) override;

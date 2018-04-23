@@ -28,7 +28,16 @@ public:
 	using _D = VirtualMemoryDefinition;
 
 	VirtualMap();
-	VirtualMap(size_t phyPageStart,size_t pageCount,bool global,const void *vaAddr,size_t addrBits);
+	/**
+	 *
+	 * @param phyPageStart 物理地址
+	 * @param pageCount
+	 * @param global
+	 * @param vaAddr      虚拟地址， 注意：不包括高位（即TTBR选择位）
+	 * @param addrBits
+	 */
+	VirtualMap(size_t phyPageStart,size_t pageCount,
+			bool global,const void *vaAddr,size_t addrBits);
 	// TODO 完成移动构造
 	VirtualMap(VirtualMap && map);
 	const VirtualMap & operator=(VirtualMap && map);
@@ -45,7 +54,14 @@ public:
 	 */
 	void mapL0();
 	void mapL1();
+//	void mapL1(const Vector<AddressSpaceDescriptor> &descr);
 	void mapL2();
+//	void mapL2(const Vector<AddressSpaceDescriptor> &descr); // 以L2为Descriptor
+
+//	template <class Descriptor>
+//	void mapAsDescriptor(const Vector<AddressSpaceDescriptor> &descr);
+//	template <class Descriptor>
+//	void mapAsTable();
 	/**
 	 *
 	 * @param l2Table
@@ -67,6 +83,7 @@ public:
 	AS_MACRO Descriptor4KBL3* l3Table()  {		return _l3Table;}
 	AS_MACRO void l3Table(Descriptor4KBL3* l3Table) {		_l3Table = l3Table;}
 	size_t   size()const;
+	size_t   size(size_t i)const { assert(i<4);return _sizes[i];}
 private:
 	void allocateTables();
 private:

@@ -54,13 +54,17 @@ Process::Process(
 	_registers[0]=_pid;//设置启动参数
 	// 组成有序的页表映射
 	Vector<AddressSpaceDescriptor>  vec;
-	// FIXME 这里应当是cacheable
-	bool cacheable=false;
+	// _FIXME 这里应当是cacheable
+//	bool cacheable=false;
+	bool cacheable=true;
+	//start-codeStart之间 是正常可读写的
 	if(codeStart>start)
 		vec.emplaceBack(
 				reinterpret_cast<void*>(start),
-				codeStart,
+				codeStart - start,//size
 				AddressSpaceDescriptor::T_NORMAL,false,cacheable,true);
+
+	// FIXME code应当是read only的
 	vec.emplaceBack(
 			reinterpret_cast<void*>(codeStart),
 			codeSize,
@@ -69,9 +73,11 @@ Process::Process(
 			cacheable,
 			true
 			);
+	// 因为start已经算在里面了，所以 第一部分的size=codeStart-start
+	// 那么  -(codeStart-start)=-codeStart + start
 	vec.emplaceBack(
 			reinterpret_cast<void*>(codeStart+codeSize),
-			pagesNeeded*pageSize - codeStart - codeSize,
+			pagesNeeded*pageSize - codeStart - codeSize + start, // all left size
 			AddressSpaceDescriptor::T_NORMAL,
 			false,
 			cacheable,
@@ -141,9 +147,10 @@ void Process::saveContext(const uint64_t *savedRegisters)
 	this->_SPSR.update();
 	this->_spEL0.update();
 }
-void dumpFromTTBR0Addr();//FIXME
+//void dumpFromTTBR0Addr();//FIXME
 void Process::restoreContextAndExecute(void* savedSpEL1)
 {
+	kout << "\n";
 	kout << INFO << "Process restore\n";
 //	_ttbr0.dump();
 	this->_ttbr0.write();

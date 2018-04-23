@@ -235,7 +235,7 @@ bool  Vector<T>::resizeCapacity(size_t capacity)
 		return true;
 	T *newData=nullptr;
 	if(_data)// 必须告诉reallocate真实的对象数目
-		newData=mman.reallocate(_data, capacity ,_size*sizeof(T));//有类型的
+		newData=mman.reallocate(_data, capacity ,_size);//有类型的
 	else
 		newData=mman.allocateAs<T*>(capacity*sizeof(T));
 	if(!newData)

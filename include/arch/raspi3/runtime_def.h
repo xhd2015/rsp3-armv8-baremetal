@@ -24,6 +24,7 @@
 #include <data/Queue.h> // inputBuffer
 #include <memory/VirtualManager.h>
 #include <interrupt/InterruptHandler.h>
+#include <driver/sd/SDDriverV3.h>
 // 进程
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
@@ -34,5 +35,6 @@
 extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
 extern InterruptHandler<BCM2836LocalIntController>  intHandler;
 
+extern SDDriverV3 sddriver;
 
 #endif /* INCLUDE_ARCH_RASPI3_RUNTIME_H_ */

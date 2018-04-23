@@ -32,16 +32,21 @@ int SDDriverV3::init()
 	// 允许所有的中断状态，同时清除状态位
 	reg16(ERR_INT_EN)=0xFFFF;
 	reg16(NORM_INT_EN)=0xFFFF;
+	// FIXME 这里不允许产生中断
+	setBit(reg16(NORM_INT_EN),8,0);//card interrupt
 	clearNormErrInt();
-
+//#define _DELAY delayMS(1000);
+#define _DELAY
 	setSDClockFreq(400000);
 	status=sendCommand(Command::IDLE,0);
+	_DELAY
 	if(status!=0)
 		return status;
-	uint32_t pattern=1<<16|0x1AA;
+	uint32_t pattern = 0x1AA; // lower bits=echo pattern, upper 4bits for VHS
 	kout << "pattern = " << Hex(pattern) << "\n";
 //	while(true) // FIXME 恢复原来的CMD8
 	status=sendCommand(Command::SEND_IF_COND,pattern,1000);
+	_DELAY
 	if(status!=0)
 		return initLegacyCard();
 	if(response()!=pattern)
@@ -50,6 +55,7 @@ int SDDriverV3::init()
 		return 1;
 	}
 	status = powerUpSDCard();
+	_DELAY
 	if(status!=0)
 		return status;
 	if(_ocr._sdsc_or_sdhc_sdxc==1) // SDXC needs siwtch 1.8v?
@@ -61,6 +67,7 @@ int SDDriverV3::init()
 	}
 
 	status=sendCommand(Command::ALL_SEND_CID, 0);
+	_DELAY
 	if(status!=0)
 	{
 		kout << FATAL << "SD card respond CID failed\n";
@@ -212,6 +219,7 @@ int SDDriverV3::sendCommand(Command cmd,uint32_t arg,uint32_t waitMS)
 	// NOTE 这里延迟太重要了，我可以说，因为没有写这条延迟语句，我调试了10+小时
 	//      实际硬件还是太难受了
 	delayUS(1000);
+//	delayMS(1000);
 
 	// complete sequence
 	while(!lastCommandCompleted())

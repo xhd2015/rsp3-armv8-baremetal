@@ -34,6 +34,39 @@ void TEMPLATED_InterruptHandler::handle(
 		IntID         id
 		)
 {
+//	kout << INFO << "Handling interrupt\n";
+//	kout << "exception type = " ;
+//	switch(type)
+//	{
+//	case ExceptionType::IRQ:
+//		kout << "IRQ";
+//		break;
+//	case ExceptionType::SYNC:
+//		kout << "SYNC";
+//		break;
+//	default:
+//		kout << "Other";
+//		break;
+//	}
+//	kout << "\n";
+//	kout << "exception origin = ";
+//	switch(origin)
+//	{
+//	case ExceptionOrigin::CUR_SP_EL0:
+//	case ExceptionOrigin::CUR_SP_ELx:
+//		kout << "Current";
+//		break;
+//	case ExceptionOrigin::FROM_LOWER_A64:
+//		kout << "Lower";
+//		break;
+//	default:
+//		kout << "Other";
+//		break;
+//	}
+//	kout << "\n";
+//	RegELR_EL1::read().dump();
+//	RegESR_EL1::read().dump();
+//	RegFAR_EL1::read().dump();
 	if(!_allowSyncExcep)
 	{
 		kout << FATAL << "synchronous exception happened while the handler indicates that synchronous exception is not allowed.\n";
@@ -141,13 +174,15 @@ void TEMPLATED_InterruptHandler::handleInstructionAbort()
 	kout << "Instruction Abort \n";
 	auto esr=RegESR_EL1::read();
 	RegELR_EL1::read().dump();
+	RegSCTLR_EL1::read().dump();
+	RegSPSR_EL1::read().dump();
 	esr.dump();
-	// 现在我们可以处理Access Flag，只需要将AF置为1即可
 	int   farNotValid = getBits(esr.ISS,10,10);
-	kout << "farNotValid?" << farNotValid << "\n";
 	if(!farNotValid)
 	{
-		kout << INFO << "FAR = " << Hex(RegFAR_EL1::read().faultAddr) << "\n";
+		kout << "FAR = " << Hex(RegFAR_EL1::read().faultAddr) << "\n";
+	}else{
+		kout << "FAR not valid\n";
 	}
 	kout << "not processing it\n";
 	asm_wfe_loop();

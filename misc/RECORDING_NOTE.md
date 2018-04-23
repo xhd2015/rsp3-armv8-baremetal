@@ -1,3 +1,19 @@
+# 2018年4月23日12:34:19
+【commit point】【milestone】 此版本在修复了mmu启用后sd卡不能发送CMD8、Process新建错误以及Vector::resizeCapacity的bug之后，操作系统已经能够运行起来，真机上测试通过
+
+源文件参见[main_test_int_uart_sd_mmu_process_togther.cpp](../src/arch/raspi3/main_test_int_uart_sd_mmu_process_togther.cpp)
+# 2018年4月23日12:28:39
+【bugfix】 修复了2018年4月21日18:34:06的关于ls的bug，原因在于新建进程时，错误地设置了第一部分内存的大小为0x4000(实际上应当为0x3000,即栈的大小)，这样一来，第一个页的代码属性错误地设置为可读写的，而CPU应当拒绝执行可读写的数据，因为代码应当是只读的。修复方法就是size部分将codeStart改成 codeStart-start
+
+【bugfix】 修复了2018年4月21日18:34:06 mmu启用之后sd卡不能发送CMD8的情况，这不算是一个完成的修复，只能算是一个折中方法。因为我发现启用3级页表后mmu不能工作，但是如果是2级页表，则是正常的。因此我们将原来的3级页表修改成2级页表（而这证明也是必要的，因为L2恰好可以区分树莓派3的正常内存和外设内存）。
+
+【bugfix】 修复了之前与reallocate相关的bug，该bug是一个typo，在Vector中，resizeCapacity时，应当传递_size而不是_size*sizeof(T),因为自上次起参数的含义已经改变。
+# 2018年4月22日01:04:17
+经测试，bzt的sd驱动也存在相同的问题：虚拟内存映射过后不能使用。
+
+排除内存属性的问题，可能是总线的问题。
+
+CMD0能够正常发送，但是任何其他命令都不能发送，CMD8总是超时，或许可以试试CMD5.
 # 2018年4月21日18:44:16
 【commit point】 完成了基本的用户程序，多进程调度，真机上测试通过。
 
@@ -11,7 +27,8 @@
 
 【bug】 在qemu上，执行ls时，当调用用户态的内存分配函数时，发生Permission Fault,L3， 尚不清楚原因。
 
-【bugfix】 修复了之前设置虚拟内存的错误，与TLBI指令和L3的Contiguous位有关，但是目前还不清楚与哪一个有关。 具体的参考是
+【bugfix】 修复了之前设置虚拟内存的错误，与TLBI指令和L3的Contiguous位有关，但是目前还不清楚与哪一个有关。 具体的参考是 http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.den0024a/ch12s01.html
+
 该错误曾导致：即使页表的L3映射地址是A， 实际的映射结果却是B，而且能够保证使用的页表时正确的。可能与Contiguous位有关。当全部设置为0之后可行。
 
 【issue】 uart的输入中断触发条件至少是FIFO的1/8,这样做的后果就是输入会产生意想不到的延迟。因为区别不大，最好是每输入一个字符就触发一个中断，只要所有的字符都能正确接收。

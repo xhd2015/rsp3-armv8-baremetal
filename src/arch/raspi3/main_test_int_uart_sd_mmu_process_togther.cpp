@@ -22,8 +22,8 @@
 #include <filesystem/fat/FAT32EntryTable.h>
 
 // well documented definition:
-//      1.在进入EL0之前，需要启用IRQ，启用UART的receive中断
-//      2.VirtualMap和ttbr0均应当使用物理地址而不是虚拟地址
+//    测试了操作系统初始化的过程， 添加了虚拟内存，虚拟文件系统的支持
+//  注意，此版本中仍然有一些需要改进的地方，VirtualMap不应当一次性分配所有的页表。
 #define INT_AUX 29
 #define INT_UART0 57
 #define INTC_BASE        0x3F00B000
@@ -46,6 +46,7 @@ extern uint64_t __user_space_end[];
 void main_mmu_set();
 int main()
 {
+	assert(exceptionLevel == ExceptionLevel::EL1);
 	// 多层次的Controller
 	new (&intc) BCM2835InterruptController(INTC_BASE);
 	new (&localIntc) BCM2836LocalIntController(LOCAL_INTC_BASE,intc);
@@ -57,10 +58,10 @@ int main()
 	new (&inputBuffer) Queue<uint16_t>(512);
 	new (&virtman) VirtualManager();
 	new (&intHandler) InterruptHandler<BCM2836LocalIntController>(localIntc);
+	new (&sddriver) SDDriverV3(SD_BASE);
 	// 进程
 	new (&pidManager) PidManager();
 	new (&processManager) ProcessManager();
-	assert(exceptionLevel == ExceptionLevel::EL1);
 
 	// 选择GPIO使用SD卡
 	gpio.selectAltFunction(48, GPIO::ALT_3);
@@ -69,14 +70,15 @@ int main()
 	gpio.selectAltFunction(51, GPIO::ALT_3);
 	gpio.selectAltFunction(52, GPIO::ALT_3);
 	gpio.selectAltFunction(53, GPIO::ALT_3);
-	{
-//		SDDriverV3 *sd =new SDDriverV3 ( SD_BASE);
-//		sd->init();
+//	auto status = sddriver.init();
+//	assert(status==0);
+//
+//	{
 //		char buf[512];
-//		sd->transferBlocks(8192, 1, buf, nullptr);
+//		sddriver.transferBlocks(8192, 1, buf, nullptr);
 //		kout.print(buf,512);
 //		while(true);
-	}
+//	}
 
 	kout << INFO << "disable all interrupts\n";
 	localIntc.disableAllInterrupts();
@@ -102,8 +104,35 @@ int main()
 	auto flatMap = new VirtualMap(0,size/VirtualMap::_D::PAGE_SIZE,true,0,virtman.addressBits());
 	flatMap->mapL0();
 	flatMap->mapL1();
-	flatMap->mapL2();
-	flatMap->mapL3(fullConfig);
+	auto l2 = flatMap->l2Table();
+	// FIXME 这是一个workaround, 在MMU启用3及页表后发送CMD8失败，而启用二级页表正常
+	// L2下有12+9=21位是直接映射的, 0x3F00_0000 刚好从L2的 0x1f8可以开始
+	size_t periphL2Index = PERIPHBASE >> (12+9);
+	size_t periphL1Index = periphL2Index >> 9;
+	periphL2Index &= 0x1ff;
+	assert(periphL1Index<0x200);//至多9位
+	size_t linearIndex = periphL1Index*512 + periphL2Index;
+	// DOCME ATTR_NORMAL能够允许不对齐的访问
+	for(size_t i=0;i!=flatMap->size(2);++i)
+	{
+		Descriptor4KBL2::make(l2+i,0);
+		l2[i].S0.AF=1;
+//		l2[i].S0.Contiguous=0;
+//		l2[i].S0.IsTable=0;
+		if(i<linearIndex)
+			l2[i].S0.AttrIndex = VirtualManager::_D::MEMORY_ATTR_NORMAL;
+		else  //peripheral
+			l2[i].S0.AttrIndex = VirtualManager::_D::MEMORY_ATTR_PERIPHERAL;
+		l2[i].S0.NS=1;
+//		l2[i].S0.nG=0;
+		l2[i].S0.Valid=1;
+		l2[i].S0.OutputAddr=i;
+//		l2[i].S0.AP=0b00;//RW, non EL0
+		l2[i].S0.SH= 0b11;//OSH
+	}
+	(void)fullConfig;
+//	flatMap->mapL2();
+//	flatMap->mapL3(fullConfig);
 	virtman.updateTTBR0(flatMap->l0Table());
 	virtman.updateTTBR1(flatMap->l0Table());
 	kout << "calling VirtualManager enableMMU\n";
@@ -182,6 +211,7 @@ void main_mmu_set()
 	sysTimer.rebase(virtman.ttbr1Mask());
 	intHandler.rebase(virtman.ttbr1Mask());
 	inputBuffer.rebase(virtman.ttbr1Mask());
+	sddriver.rebase(virtman.ttbr1Mask());
 
 	kout << INFO << "rebase all.\n";
 	kout << INFO << "creating VirtualFileSystem\n";
@@ -190,27 +220,23 @@ void main_mmu_set()
 	new (&vfs) VirtualFileSystem();
 
 //	// 加入boot分区
-//	SDDriverV3 *sd =new SDDriverV3 ( SD_BASE+virtman.ttbr1Mask() );
-//	if(sd->init()==0)
-//	{
-//		kout << INFO << "Reading FAT\n";
-//#define FAT_SEC 0
-////#define FAT_SEC 8192
-//		size_t fat1Sec = FAT_SEC;
-//		SDSectorReader * sdreader=new SDSectorReader(*sd,fat1Sec);
-//		ByteReader     * breader = new SectorReaderToByteReader(*sdreader);
-//		FAT32ExtBPB *bpb  = new FAT32ExtBPB();
-//		FAT32EntryTable  *fat = new FAT32EntryTable();
-//		FAT32VirtualFile::readBPB(*breader, *bpb,0);
-//		kout << "bpb Signature_word = " << Hex(bpb->Signature_word) << "\n";
-//		FAT32VirtualFile::readFAT(*breader, *bpb, *fat,0);
-//		auto fatNode = FAT32VirtualFile::makeRootFile(*breader, *bpb, *fat);
-//		vfs.addRootFile(fatNode);
-//		kout << INFO << "vfs finished\n";
-//	}else{
-//		kout << WARNING << "init sd failed\n";
-//		delete sd;
-//	}
+	if(sddriver.init()==0)
+	{
+		kout << INFO << "Reading FAT\n";
+		size_t fat1Sec = 8192;
+		SDSectorReader * sdreader=new SDSectorReader(sddriver,fat1Sec);
+		ByteReader     * breader = new SectorReaderToByteReader(*sdreader);
+		FAT32ExtBPB *bpb  = new FAT32ExtBPB();
+		FAT32EntryTable  *fat = new FAT32EntryTable();
+		FAT32VirtualFile::readBPB(*breader, *bpb,0);
+		kout << "bpb Signature_word = " << Hex(bpb->Signature_word) << "\n";
+		FAT32VirtualFile::readFAT(*breader, *bpb, *fat,0);
+		auto fatNode = FAT32VirtualFile::makeRootFile(*breader, *bpb, *fat);
+		vfs.addRootFile(fatNode);
+		kout << INFO << "vfs finished\n";
+	}else{
+		kout << WARNING << "init sd failed\n";
+	}
 
 	constexpr size_t pageSize = VirtualMap::_D::PAGE_SIZE;
 	static_assert(USER_RAM_START % pageSize==0 &&
@@ -263,6 +289,7 @@ void main_mmu_set()
 //	localIntc.enableInterrupt(
 //			BCM2836LocalIntController::BCM2835IntSource::SRC_SYS_TIMER_FIRST+1,
 //			true);
+	pl011.enableFIFO(false);// 启用单字符模式
 	pl011.clearIntFlags();
 	pl011.readInterruptLevel(PL011::L_1of8); // 配置为至少一个字符就要处理
 	pl011.enableReceiveInterrupt(true);

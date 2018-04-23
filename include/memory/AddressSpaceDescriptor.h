@@ -15,9 +15,9 @@ public:
 	enum {
 		  F_TYPE=0, /*0-3 used for type*/
 		  F_TYPE_END=3,
-		  F_READ_ONLY,
-		  F_CACHEABLE,
-		  F_EL0_ACCESS
+		  F_READ_ONLY=4,
+		  F_CACHEABLE=5,
+		  F_EL0_ACCESS=6
 	};
 	// type
 	enum Type{ T_NORMAL,T_PERIPHERAL,T_UNKOWN,T_NOT_VALID};

@@ -269,6 +269,7 @@ public:
         struct {
             uint64_t  Valid:1;
             uint64_t  IsTable:1;
+            uint64_t  AttrIndex:3;
             uint64_t  NS:1;
             uint64_t  AP:2;
             uint64_t  SH:2;
@@ -336,6 +337,7 @@ public:
             kout
                 << "S0.Valid = " << S0.Valid << ", "
                 << "S0.IsTable = " << S0.IsTable << ", "
+                << "S0.AttrIndex = " << S0.AttrIndex << ", "
                 << "S0.NS = " << S0.NS << ", "
                 << "S0.AP = " << S0.AP << ", "
                 << "S0.SH = " << S0.SH << ", "

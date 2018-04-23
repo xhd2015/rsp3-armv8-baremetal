@@ -278,67 +278,67 @@ int sd_init()
 //    *GPPUDCLK1=(1<<18) | (1<<19) | (1<<20) | (1<<21);
 //    wait_cycles(150); *GPPUD=0; *GPPUDCLK1=0;
     
-    SDDriverV3  sd(0x3F300000);
-//    sd_hv = (*EMMC_SLOTISR_VER & HOST_SPEC_NUM) >> HOST_SPEC_NUM_SHIFT;
+//    SDDriverV3  sd(0x3F300000);
+    sd_hv = (*EMMC_SLOTISR_VER & HOST_SPEC_NUM) >> HOST_SPEC_NUM_SHIFT;
 //    sd_hv = sd.reg16(SDDriverV3::HOST_CTRL_VER) & 0xff;
-//    uart_puts("EMMC: GPIO set up\n");
+    uart_puts("EMMC: GPIO set up\n");
     // Reset the card.
-//    *EMMC_CONTROL0 = 0; *EMMC_CONTROL1 |= C1_SRST_HC;
+    *EMMC_CONTROL0 = 0; *EMMC_CONTROL1 |= C1_SRST_HC;
 //    sd.reg32(SDDriverV3::HOST_CTRL1)=0;
 //    setBit(sd.reg32(SDDriverV3::CLOCK_CTRL),24,1);
-//    cnt=10000; do{wait_msec(10);} while( (*EMMC_CONTROL1 & C1_SRST_HC) && cnt-- );
+    cnt=10000; do{wait_msec(10);} while( (*EMMC_CONTROL1 & C1_SRST_HC) && cnt-- );
 //    while(bitsAnySet<24>(sd.reg32(SDDriverV3::CLOCK_CTRL)));
-//    if(cnt<=0) {
-//        uart_puts("ERROR: failed to reset EMMC\n");
-//        return SD_ERROR;
-//    }
-//    uart_puts("EMMC: reset OK\n");
-//    *EMMC_CONTROL1 |= C1_CLK_INTLEN | C1_TOUNIT_MAX;
+    if(cnt<=0) {
+        uart_puts("ERROR: failed to reset EMMC\n");
+        return SD_ERROR;
+    }
+    uart_puts("EMMC: reset OK\n");
+    *EMMC_CONTROL1 |= C1_CLK_INTLEN | C1_TOUNIT_MAX;
 //    setBit(sd.reg32(SDDriverV3::CLOCK_CTRL),0,1);
 //    setBits(sd.reg32(SDDriverV3::CLOCK_CTRL),16,19,0xe);
-//    wait_msec(10);
-    sd.init();
+    wait_msec(10);
+//    sd.init();
     // Set clock to setup frequency.
-//    if((r=sd_clk(400000))) return r;
-    sd.setSDClockFreq(400000);
+    if((r=sd_clk(400000))) return r;
+//    sd.setSDClockFreq(400000);
     // ==above OK
-//    *EMMC_INT_EN   = 0xffffffff;
-//    *EMMC_INT_MASK = 0xffffffff;
+    *EMMC_INT_EN   = 0xffffffff;
+    *EMMC_INT_MASK = 0xffffffff;
 //    sd.reg16(SDDriverV3::NORM_INT_EN)=0xFFFF;
 //    sd.reg16(SDDriverV3::ERR_INT_EN)=0xFFFF;
 //    sd.clearErrInt();
 //    sd.clearNormInt();
 
-    using Command=SDDriverV3::Command;
+//    using Command=SDDriverV3::Command;
     sd_scr[0]=sd_scr[1]=sd_rca=sd_err=0;
-//    sd_cmd(CMD_GO_IDLE,0);
-//    if(sd_err) return sd_err;
-    int status=sd.sendCommand(Command::IDLE, 0);
-    if(status!=0)
-    	return SD_ERROR;
+    sd_cmd(CMD_GO_IDLE,0);
+    if(sd_err) return sd_err;
+//    int status=sd.sendCommand(Command::IDLE, 0);
+//    if(status!=0)
+//    	return SD_ERROR;
 
-//    sd_cmd(CMD_SEND_IF_COND,0x000001AA);
-//    if(sd_err) return sd_err;
-    status=sd.sendCommand(Command::SEND_IF_COND,0x1AA);
+    sd_cmd(CMD_SEND_IF_COND,0x000001AA);
+    if(sd_err) return sd_err;
+//    status=sd.sendCommand(Command::SEND_IF_COND,0x1AA);
 
-//    cnt=6; r=0; while(!(r&ACMD41_CMD_COMPLETE) && cnt--) {
-//        wait_cycles(400);
-//        r=sd_cmd(CMD_SEND_OP_COND,ACMD41_ARG_HC);
-//        uart_puts("EMMC: CMD_SEND_OP_COND returned ");
-//        if(r&ACMD41_CMD_COMPLETE)
-//            uart_puts("COMPLETE ");
-//        if(r&ACMD41_VOLTAGE)
-//            uart_puts("VOLTAGE ");
-//        if(r&ACMD41_CMD_CCS)
-//            uart_puts("CCS ");
-//        uart_hex(r>>32);
-//        uart_hex(r);
-//        uart_send('\n');
-//        if(sd_err!=static_cast<unsigned long>(SD_TIMEOUT) && sd_err!=static_cast<unsigned long>(SD_OK) ) {
-//            uart_puts("ERROR: EMMC ACMD41 returned error\n");
-//            return sd_err;
-//        }
-//    }
+    cnt=6; r=0; while(!(r&ACMD41_CMD_COMPLETE) && cnt--) {
+        wait_cycles(400);
+        r=sd_cmd(CMD_SEND_OP_COND,ACMD41_ARG_HC);
+        uart_puts("EMMC: CMD_SEND_OP_COND returned ");
+        if(r&ACMD41_CMD_COMPLETE)
+            uart_puts("COMPLETE ");
+        if(r&ACMD41_VOLTAGE)
+            uart_puts("VOLTAGE ");
+        if(r&ACMD41_CMD_CCS)
+            uart_puts("CCS ");
+        uart_hex(r>>32);
+        uart_hex(r);
+        uart_send('\n');
+        if(sd_err!=static_cast<unsigned long>(SD_TIMEOUT) && sd_err!=static_cast<unsigned long>(SD_OK) ) {
+            uart_puts("ERROR: EMMC ACMD41 returned error\n");
+            return sd_err;
+        }
+    }
 
     // buggy
 //	status=sd.sendAppCommand(Command::APP_SEND_OP_COND, 0);
@@ -347,71 +347,71 @@ int sd_init()
 //		kout << FATAL << "SD Send OP COND failed\n";
 //		return SD_ERROR;
 //	}
-	auto ocr=SDCardOperationCond::make(0);
+//	auto ocr=SDCardOperationCond::make(0);
 //	ocr.dump();
 
 //	uint32_t opcond=SDDefinitions::makeSendOpCondArg(ocr.ref(),true,true);//buggy
-	uint32_t opcond=0x51ff8000u;
-	uint32_t msWait=1000;//等待至多1s
-	uint32_t delayInterv=50;//每两次检测之间的间隔至多是50ms
-	while(true)
-	{
-		status=sd.sendAppCommand(Command::APP_SEND_OP_COND, opcond);
-		if(status!=0)
-		{
-			kout << FATAL << "SD Send OP Cond failed\n";
-			return SD_ERROR;
-		}
-		ocr=SDCardOperationCond::make(sd.response());
-		if(msWait < delayInterv || ocr._powerUpDone)
-			break;
-		msWait-=delayInterv;
-	}
-	ocr.dump();
-	if(!ocr._powerUpDone)
-	{
-		kout << FATAL << "power done failed\n";
-		return SD_ERROR;
-	}
+//	uint32_t opcond=0x51ff8000u;
+//	uint32_t msWait=1000;//等待至多1s
+//	uint32_t delayInterv=50;//每两次检测之间的间隔至多是50ms
+//	while(true)
+//	{
+//		status=sd.sendAppCommand(Command::APP_SEND_OP_COND, opcond);
+//		if(status!=0)
+//		{
+//			kout << FATAL << "SD Send OP Cond failed\n";
+//			return SD_ERROR;
+//		}
+//		ocr=SDCardOperationCond::make(sd.response());
+//		if(msWait < delayInterv || ocr._powerUpDone)
+//			break;
+//		msWait-=delayInterv;
+//	}
+//	ocr.dump();
+//	if(!ocr._powerUpDone)
+//	{
+//		kout << FATAL << "power done failed\n";
+//		return SD_ERROR;
+//	}
 
-//    if(!(r&ACMD41_CMD_COMPLETE) || !cnt ) return SD_TIMEOUT;
-//    if(!(r&ACMD41_VOLTAGE)) return SD_ERROR;
-//    if(r&ACMD41_CMD_CCS) ccs=SCR_SUPP_CCS;
-	  ccs=ocr._sdsc_or_sdhc_sdxc;
+    if(!(r&ACMD41_CMD_COMPLETE) || !cnt ) return SD_TIMEOUT;
+    if(!(r&ACMD41_VOLTAGE)) return SD_ERROR;
+    if(r&ACMD41_CMD_CCS) ccs=SCR_SUPP_CCS;
+//	  ccs=ocr._sdsc_or_sdhc_sdxc;
 	  // ===--==ABOVE good
 
 	  extern void wait_msec(unsigned int n);
 	  //
-	  kout << "his CMD_ALL_SEND_CID =" << Hex(CMD_ALL_SEND_CID) <<"\n";
-	  kout << "my ALL_SEND_CID = " << Hex(Command::ALL_SEND_CID) << "\n";
-//    sd_cmd(CMD_ALL_SEND_CID,0);
-	  sd.sendCommand(Command::ALL_SEND_CID, 0);// ==--==OJBK
-//	  wait_msec(1000);
+//	  kout << "his CMD_ALL_SEND_CID =" << Hex(CMD_ALL_SEND_CID) <<"\n";
+//	  kout << "my ALL_SEND_CID = " << Hex(Command::ALL_SEND_CID) << "\n";
+    sd_cmd(CMD_ALL_SEND_CID,0);
+//	  sd.sendCommand(Command::ALL_SEND_CID, 0);// ==--==OJBK
+	  wait_msec(1000);
 //	  auto rtemp=sd.response(0);
 //	  rtemp=sd.response(1);
 //	  rtemp=sd.response(2);
 //	  rtemp=sd.response(3);
 //	  (void)rtemp;
 
-//    sd_rca = sd_cmd(CMD_SEND_REL_ADDR,0);
-	  sd_rca = sd.getAnyRCA() ; // === OBJK
-	  assert(sd_rca);
-//    uart_puts("EMMC: CMD_SEND_REL_ADDR returned ");
-//    uart_hex(sd_rca>>32);
-//    uart_hex(sd_rca);
-//    uart_send('\n');
-//    if(sd_err) return sd_err;
+    sd_rca = sd_cmd(CMD_SEND_REL_ADDR,0);
+//	  sd_rca = sd.getAnyRCA() ; // === OBJK
+//	  assert(sd_rca);
+    uart_puts("EMMC: CMD_SEND_REL_ADDR returned ");
+    uart_hex(sd_rca>>32);
+    uart_hex(sd_rca);
+    uart_send('\n');
+    if(sd_err) return sd_err;
 //
-//    if((r=sd_clk(25000000))) return r;
-	  sd.setSDClockFreq(25000000);// ojbk
+    if((r=sd_clk(25000000))) return r;
+//	  sd.setSDClockFreq(25000000);// ojbk
 
-    kout << "his CMD7 = " << Hex(CMD_CARD_SELECT) << "\n";
-    kout << "my CMD7 = " << Hex(Command::SELECT_DESELECT_CARD) << "\n";
-//    sd_cmd(CMD_CARD_SELECT,sd_rca );
+//    kout << "his CMD7 = " << Hex(CMD_CARD_SELECT) << "\n";
+//    kout << "my CMD7 = " << Hex(Command::SELECT_DESELECT_CARD) << "\n";
+    sd_cmd(CMD_CARD_SELECT,sd_rca );
 
-    sd.sendCommand(Command::SELECT_DESELECT_CARD, sd_rca); //OJBK
-    while(!sd.lastTransferCompleted());
-	sd.completeLastTransfer();
+//    sd.sendCommand(Command::SELECT_DESELECT_CARD, sd_rca); //OJBK
+//    while(!sd.lastTransferCompleted());
+//	sd.completeLastTransfer();
 
     if(sd_status(SR_DAT_INHIBIT))
     {

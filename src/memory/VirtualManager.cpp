@@ -60,7 +60,7 @@ VirtualManager::VirtualManager()
 
 	_ttbr1Mask = upperMaskBits(tcr.T1SZ);
 }
-void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp)
+void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp,bool jmpFuncSetTTBR1)
 {
 	kout << INFO << "VirtualManager enableMMU, jmpFunc = " << reinterpret_cast<void*>(jmpFunc) << ","
 			     << "newSp = " << newSp
@@ -88,12 +88,20 @@ void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp)
 	vbar.Addr += _ttbr1Mask;
 	vbar.write();
 	kout << INFO << "jump to selected address/function\n";
+	auto spVal = reinterpret_cast<uint64_t>(newSp);
+	if(spVal)
+		spVal+=_ttbr1Mask;
+	auto pcVal = reinterpret_cast<uint64_t>(jmpFunc);
+	if(jmpFuncSetTTBR1)
+		pcVal+=_ttbr1Mask;
 	// 跳转到预定的函数处
 	__asm__ __volatile__(
+			"cbz %0,1f \n\t" // if(spVal!=0) sp=spVal;
 			"mov sp,%0 \n\t"
+			"1: \n\t"
 			"br  %1 \n\t"
-			::"r"(reinterpret_cast<uint64_t>(newSp)+_ttbr1Mask),
-			  "r"(reinterpret_cast<uint64_t>(jmpFunc)+_ttbr1Mask)
+			::"r"(spVal),
+			  "r"(pcVal)
 			  );
 }
 
@@ -121,7 +129,7 @@ void VirtualManager::updateTTBR1(const Descriptor4KBL0 *l0Table)
 	auto ttbr1 = RegTTBR1_EL1::make(0);
 	ttbr1.BADDR =reinterpret_cast<uint64_t>(translateVAToPA(l0Table))>>1;
 	ttbr1.write();
-	asm_isb();
+	asm_tlbi_vmallel1();//FIXME 更细粒度控制
 }
 
 void*  VirtualManager::translateVAToPA(const void * va)const

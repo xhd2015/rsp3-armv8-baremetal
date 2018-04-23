@@ -10,6 +10,7 @@ Output kout;
 // io
 Input kin;
 Queue<uint16_t>  inputBuffer {0};
+SDDriverV3 sddriver {0};
 
 MemoryManager mman {nullptr,0,false};
 MemAbort m_abort;

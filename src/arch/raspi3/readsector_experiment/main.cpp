@@ -26,9 +26,6 @@
 #include "uart.h"
 #include "sd.h"
 
-// get the end of bss segment from linker
-extern unsigned char _end;
-
 void test()
 {
     // set up serial console

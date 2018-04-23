@@ -71,6 +71,20 @@ int main()
 				}
 			}else if(cmd=="exit"){//进程退出
 				break;
+			}else if(cmd=="help"){
+				kout << "supported commands:\n";
+				kout << "    " << "help          -- show this message\n"
+					 << "    " << "ls            -- list files/dirs \n"
+					 << "    " << "cd  DIR       -- change working directory\n"
+					 << "    " << "pwd           -- show working directory\n"
+					 << "    " << "echo STRING   -- print whatever input\n"
+					 << "    " << "exit          -- exit this program and destroy the process\n"
+					 << "    " << "pid           -- show process id \n"
+					 << "    " << "ppid          -- show parent process id\n"
+					 << "    " << "shutdown      -- power off \n"
+					 << "    " << "reboot        -- reboot the computer\n"
+					 << "[1] Please note, this program is designed specifically for raspberry pi,the OS development details can be found at https://github.com/xhd2015/rsp3-armv8-baremetal\n"
+					 << "[2] Please note, some commands are currently not implemented but surely will soon be realized\n";
 			}else{
 				good=false;
 				kout << FATAL << "unkown command:\""<< cmd << "\"\n";

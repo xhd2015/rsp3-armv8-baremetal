@@ -51,7 +51,8 @@ $(MASTERY_RELOC_BIN) : $(MASTERY_RELOC)
 # 可以增加 -serial mon:stdio ，来redirect 第二个。 但是注意，这样输入就会有问题
 # 
 QEMU_LOADER_NO_MACHINE := -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 -device loader,cpu-num=1,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=2,addr=$(KERNEL_ADDRESS) -device loader,cpu-num=3,addr=$(KERNEL_ADDRESS) -nographic -serial mon:stdio -d int,mmu,guest_errors -D qemu_log.txt
-QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE) -machine raspi3 -sd fat32.img
+# DOCME fat32_8192_empty.img指的是，有效数据从8192扇区开始
+QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE) -machine raspi3 -sd fat32_8192_empty.img
 raspi3_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
 raspi3_run:

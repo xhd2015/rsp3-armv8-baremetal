@@ -143,6 +143,8 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 //			_l3Table[i].AttrIndex=_D::MEMORY_ATTR_NORMAL;
 			if(type==AddressSpaceDescriptor::T_NORMAL)
 			{
+				// FIXME 还原原来的设置
+//				_l3Table[i].AttrIndex = _D::MEMORY_ATTR_PERIPHERAL;
 				if(descr[curGroup].cacheable())
 					_l3Table[i].AttrIndex = _D::MEMORY_ATTR_NORMAL;
 				else
@@ -168,12 +170,12 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 				ap|=(1<<1);
 			if(descr[curGroup].el0Accessiable())
 				ap|=1;
-//			(void)ap;
+			(void)ap;
 			_l3Table[i].AP = ap ;// set read-only(1), or read-write(0) ,
 								// and not from EL0(0) or else(1)
 //			_l3Table[i].AP = 0;
-//			_l3Table[i].SH = 0b10; //outer-shareable
-			_l3Table[i].SH = 0b11;
+			_l3Table[i].SH = 0b10; //outer-shareable
+//			_l3Table[i].SH = 0b11;
 		}
 		curGroupLeftSize -= _D::PAGE_SIZE;
 		if(curGroupLeftSize == 0)
@@ -201,7 +203,9 @@ void VirtualMap::allocateTables()
 	kout << INFO << "memory needed to allocate = " << Hex(pagesNeeded*_D::PAGE_SIZE) <<"\n";
 	auto p = mman.allocateAs<char*>(pagesNeeded * _D::PAGE_SIZE, _D::PAGE_SIZE);
 	assert(p);
-	std::memset(p, 0, pagesNeeded * _D::PAGE_SIZE);
+	// bug的所在
+	// FIXME 在启用MMU之后SD不能发送CMD8，可能memset超限
+//	std::memset(p, 0, pagesNeeded * _D::PAGE_SIZE);
 	_l0Table = reinterpret_cast<Descriptor4KBL0*>(p);
 	_l1Table = reinterpret_cast<Descriptor4KBL1*>(_l0Table + _sizes[0]);
 	_l2Table = reinterpret_cast<Descriptor4KBL2*>(_l1Table + _sizes[1]);
