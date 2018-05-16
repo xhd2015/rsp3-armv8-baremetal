@@ -9,7 +9,7 @@
 #define INCLUDE_INTERRUPT_INTERRUPTMANAGER_H_
 
 #include <def.h>
-#include <runtime_def.h>
+#include <interrupt/InterruptHandler.h>
 #include <interrupt/GICDefinitions.h>
 #include <interrupt/GICDistributor.h>
 #include <interrupt/GICRedistributor.h>

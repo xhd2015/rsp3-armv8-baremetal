@@ -218,9 +218,6 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM_IS_${BUILDE_BASE_SYSTEM}/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM_IS_${BUILDE_BASE_SYSTEM}/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/BUILD_BASE_SYSTEM_IS_${BUILDE_BASE_SYSTEM}/value=1
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/delimiter=;
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CODE_SIZE/value=0xB00000
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/CYGWIN_ROOT/value=D\:\\installed\\cygwin
@@ -322,7 +319,7 @@ environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.123710
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_PREFIX/value=aarch64-elf-
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_ROOT/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_ROOT/operation=replace
-environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_ROOT/value=D\:\\installed\\gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf\\bin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/TOOLCHAIN_ROOT/value=D\:/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/UART0_BASE/delimiter=;
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/UART0_BASE/operation=append
 environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.630575794.1237103051.1230584693/UART0_BASE/value=0x3F201000

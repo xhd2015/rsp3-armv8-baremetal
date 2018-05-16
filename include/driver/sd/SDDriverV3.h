@@ -67,6 +67,7 @@ public:
 		BLOCK_COUNT=0x6,
 		ARG1 = 0x8,
 		CMD_TRANS=0xC, // used for both trans & cmd
+						// 32bits
 		TRANS_MODE=0xC, // bit0=DMAEnable
 						// bit1=BlockCountEnable
 						// bit2-3= AutoCMDEnable,00=disable,01=AutoCMD12,10=AutoCMD23

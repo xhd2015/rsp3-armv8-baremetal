@@ -9,6 +9,7 @@
 VirtualFile::VirtualFile(const String&   name)
 	:_name(name),
 	 _parent(nullptr),
+	 _previousFile(nullptr),
 	 _nextFile(nullptr),
 	 _subFile(nullptr)
 {
@@ -17,6 +18,7 @@ VirtualFile::VirtualFile(const String&   name)
 VirtualFile::~VirtualFile()
 {
 	_parent=nullptr;
+	_previousFile=nullptr;
 	_nextFile=nullptr;
 	_subFile=nullptr;
 }
@@ -44,15 +46,16 @@ bool          VirtualFile::addFile(const VectorRef<String>& path,VirtualFile *fi
 bool          VirtualFile::addFile(VirtualFile *file)
 {
 	auto p=this;
-	if(!p->_subFile)
+	if(!p->_subFile) // no _subFile
 	{
 		p->_subFile=file;
 		file->_parent=this;
 	}else{
 		p=this->_subFile;
-		while(p->_nextFile)
+		while(p->_nextFile) // find last node
 			p=p->_nextFile;
 		p->_nextFile=file;
+		file->_previousFile=p;
 		file->_parent = this;
 	}
 	return true;
@@ -74,32 +77,26 @@ VirtualFile*          VirtualFile::removeFile(const VectorRef<String> &path)
 }
 VirtualFile*          VirtualFile::removeFile(const StringRef &name)
 {
-	auto p=this->_subFile;
-	if(StringRef(p->_name)==name)
-	{
-		p->_parent=nullptr;
-		this->_subFile = p->_nextFile;
-		if(this->_subFile)
-			this->_subFile->_parent=this;
-		p->_nextFile = nullptr;
-		return p;
-	}else{
-		auto prev = p;
-		p=p->_nextFile;
-		while(p)
-		{
-			if(StringRef(p->_name) == name)
-			{
-				prev->_nextFile=p->_nextFile;
-				p->_nextFile=nullptr;
-				return p;
-			}
-			prev=p;
-			p=p->_nextFile;
-		}
-	}
-	return nullptr;
+	// may changes: this->_subFile, p,p->previous,p->next
+	// find first file whose names matches
+	auto p=findFile(name);
+	if(!p) // not found
+		return nullptr;
+	auto prev=p->_previousFile;
+	auto next=p->_nextFile;
+	// clear all p's fields
+	p->_parent=nullptr;
+	p->_nextFile=nullptr;
+	p->_previousFile=nullptr;
+	// change this,prev and next
+	if(this->_subFile==p)
+		this->_subFile=next;
+	if(prev)
+		prev->_nextFile = next;
+	if(next)
+		next->_previousFile=prev;
 
+	return p;
 }
 VirtualFile*  VirtualFile::findFile(const VectorRef<String> &path)
 {
@@ -137,13 +134,9 @@ void          VirtualFile::foreachFile(VirtualFileHandler handler)
 VirtualFile*  VirtualFile::findFile(const StringRef &name)
 {
 	auto p=this->_subFile;
-	while(p)
-	{
-		if(StringRef(p->_name) == name)
-			return p;
+	while(p && !(StringRef(p->_name)==name) )
 		p=p->_nextFile;
-	}
-	return nullptr;
+	return p;
 }
 
 String         VirtualFile::read(size_t offset,size_t maxBytes)

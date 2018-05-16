@@ -10,7 +10,7 @@
 
 #include <filesystem/fat/FAT32Entry.h>
 #include <filesystem/fat/FATDirEntry.h>
-#include <io/SectorReader.h>
+#include <io/block/SectorReader.h>
 #include <data/Vector.h>
 #include <data/String.h>
 

@@ -9,29 +9,30 @@
 #include <io/Output.h>
 #include <interrupt/InterruptManager.h>
 #include <io/Input.h>
+#include <io/char/MiniUARTCharacterReaderWriter.h>
+#include <driver/uart/BCM2835MiniUART.h>
 #include <interrupt/GICDefinitions.h>
 #include <memory/MemoryManager.h>
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
 #include <SystemFeatures.h>
-#include <io/uart/PL011.h>
+#include <driver/uart/PL011.h>
 #include <interrupt/GenericTimer.h>
 #include <interrupt/InterruptHandler.h>
 #include <memory/VirtualManager.h>
 #include <filesystem/VirutalFileSystem.h>
 #include <memory/MemoryManager.h>
-#include <data_structures/Queue.h>
+#include <data/Queue.h>
 
 ExceptionLevel exceptionLevel=ExceptionLevel::EL0;
 SecurityState securityState=SecurityState::S_NS_1S;
 
 char koutBuf[koutBufSize]={0};
 extern const char EMPTY_STR[1]={0};
-Output kout;
-
-Input kin;
-
-InterruptManager intm(nullptr,nullptr);
+BCM2835MiniUART  miniUARTDriver{nullptr};
+MiniUARTCharacterReaderWriter miniUARTReader{nullptr};
+Output kout{nullptr};
+Input kin{nullptr};
 
 MemoryManager mman(nullptr,0,false);
 MemAbort m_abort;
@@ -46,7 +47,8 @@ PL011 pl011{nullptr};
 
 GenericTimer ktimer;
 
-InterruptHandler intHandler;
+InterruptManager                   intm {nullptr,nullptr};
+InterruptHandler<InterruptManager> intHandler {&intm};
 
 VirtualManager  virtman;
 

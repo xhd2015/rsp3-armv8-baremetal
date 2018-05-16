@@ -256,6 +256,11 @@ void rebase(T *start,T *end,T rebaseValue)
 	}
 }
 template <class T>
+void  rebasePointer(T * &p,size_t diff)
+{
+	p=reinterpret_cast<T*>(reinterpret_cast<char*>(p)+diff);
+}
+template <class T>
 T* pointerInc(T *p,size_t rebaseValue)
 {
 	return reinterpret_cast<T*>(reinterpret_cast<char*>(p)+rebaseValue);

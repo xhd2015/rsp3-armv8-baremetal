@@ -17,6 +17,9 @@
 #include <new>
 #include <utility> //move
 
+// TESTME
+// UPDATE:2018年5月13日14:48:11 修改了MemoryChunk的定义，只包含Allocated和Length两个部分
+//               因此大多数功能都将重新测试。
 /**
  * 不变式:
  * headChunk不为nullptr
@@ -107,13 +110,13 @@ public:
 	 */
 	size_t getAllocatedLength(void *origin)const;
 
-	AS_MACRO const char* base() const {return _base;}
+	AS_MACRO char* base()  {return _base;}
 	AS_MACRO const size_t size() const {return _size;}
 
 private:
 	MemoryChunk *_headChunk;
 	char		*_base;
-	size_t	_size;
+	size_t	    _size;
 };
 
 // 定义一个全局的内存管理器

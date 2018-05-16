@@ -11,7 +11,7 @@
 #include <data/Vector.h>
 #include <filesystem/fat/FAT32Entry.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
-#include <io/ByteReader.h>
+#include <io/block/ByteReader.h>
 
 class FAT32EntryTable
 	:public Vector<FAT32Entry>

@@ -9,7 +9,7 @@
 #define SRC_IO_SDSECTORREADER_CPP_
 
 
-#include <io/SDSectorReader.h>
+#include <io/block/SDSectorReader.h>
 #include <generic/error.h>
 
 

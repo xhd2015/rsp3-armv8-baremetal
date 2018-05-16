@@ -10,9 +10,10 @@
 #include <asm_instructions.h>
 
 
-VirtualManager::VirtualManager()
-	:_addressBits(0),
-	 _ttbr1Mask(0)
+VirtualManager::VirtualManager(size_t addressBits)
+	:_addressBits(addressBits)
+{}
+int   VirtualManager::init()
 {
 	kout << INFO << "VirtualManager init\n";
 	// 先判断是否支持4KB映射
@@ -58,11 +59,14 @@ VirtualManager::VirtualManager()
 	tcr.write();
 	asm_isb();
 
-	_ttbr1Mask = upperMaskBits(tcr.T1SZ);
+	return 0;
 }
-void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp,bool jmpFuncSetTTBR1)
+void VirtualManager::enableMMU(void* jmpFunc,void *virtualmap,
+		void *memstart,
+		size_t memsize,void *newSp)
 {
-	kout << INFO << "VirtualManager enableMMU, jmpFunc = " << reinterpret_cast<void*>(jmpFunc) << ","
+	kout << INFO << "VirtualManager enableMMU, jmpFunc = " <<
+						reinterpret_cast<void*>(jmpFunc) << ","
 			     << "newSp = " << newSp
 				 << "\n";
 	// 启用MMU
@@ -83,25 +87,24 @@ void VirtualManager::enableMMU(InitFunctionPtr jmpFunc,void *newSp,bool jmpFuncS
 	asm_isb();
 
 	kout << INFO << "successfully enabled MMU \n";
-	// 将上下文切换到高端地址,包括中断地址，栈指针
-	auto vbar=RegVBAR_EL1::read();
-	vbar.Addr += _ttbr1Mask;
-	vbar.write();
 	kout << INFO << "jump to selected address/function\n";
-	auto spVal = reinterpret_cast<uint64_t>(newSp);
-	if(spVal)
-		spVal+=_ttbr1Mask;
-	auto pcVal = reinterpret_cast<uint64_t>(jmpFunc);
-	if(jmpFuncSetTTBR1)
-		pcVal+=_ttbr1Mask;
 	// 跳转到预定的函数处
 	__asm__ __volatile__(
 			"cbz %0,1f \n\t" // if(spVal!=0) sp=spVal;
 			"mov sp,%0 \n\t"
 			"1: \n\t"
+			"mov x0,%2 \n\t"
+			"mov x1,%3 \n\t"
+			"mov x2,%4 \n\t"
+			"mov x3,%5 \n\t"
 			"br  %1 \n\t"
-			::"r"(spVal),
-			  "r"(pcVal)
+			::"r"(newSp),
+			  "r"(jmpFunc),
+			  "r"(virtualmap),
+			  "r"(memstart),
+			  "r"(memsize),
+			  "r"(_addressBits)
+			  :"x0","x1","x2","x3"
 			  );
 }
 

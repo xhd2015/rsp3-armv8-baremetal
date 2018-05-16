@@ -1,3 +1,10 @@
 
 NoBuild
 subprojects/*/Debug
+# a seperate repository, but no commit
+misc/doc/latex
+
+# useful, but cannot be published, such as pdf version of books not permitted by original author or publisher.
+# a house for nasty
+# people guess most probably that I am do a bad thing, but they cannot prove.
+misc/external/out_of_permission_no_publish

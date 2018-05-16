@@ -7,8 +7,8 @@
 
 #include <def.h>
 #include <arch/host/SectorReaderHelper.h>
-#include <io/SectorReader.h>
-#include <kernel.h>
+#include <io/block/SectorReader.h>
+#include <runtime_def.h>
 
 SectorReaderHelper::~SectorReaderHelper()
 {

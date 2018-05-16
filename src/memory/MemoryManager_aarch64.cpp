@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <io/Output.h>
 #include <generic_util.h>
+#include <generic/error.h>
 
 MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	:
@@ -18,15 +19,16 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	 _base(reinterpret_cast<char*>(base)),
 	 _size(size)
 {
+	assert(size >= sizeof(MemoryChunk));//不足以形成一个Chunk
 	if(initChunks)
 	{
-		if(size <= sizeof(MemoryChunk))
-			_headChunk->end(true);
+		if(size <= 2*sizeof(MemoryChunk))
+			MemoryChunk::makeEndChunk(_headChunk);
 		else
 		{
 			// size需要减去1个字节，该字节用于设置end标记
-			new (_headChunk) MemoryChunk(0,false,false,size - sizeof(MemoryChunk) - 1);
-			reinterpret_cast<MemoryChunk*>(_headChunk->endPtr())->end(true); // end
+			new (_headChunk) MemoryChunk(false,size - 2*sizeof(MemoryChunk));//其中一个Chunk是首部，一个是尾部
+			MemoryChunk::makeEndChunk(reinterpret_cast<MemoryChunk*>(_headChunk->next()));
 		}
 	}
 }
@@ -59,7 +61,7 @@ void  *MemoryManager::allocate(size_t n,size_t alignment)
 void  MemoryManager::deallocate(void *p)
 {
 	auto chunkPtr= MemoryChunk::chunkPtrOfDataPtr(p);
-	if(chunkPtr && chunkPtr->validChunk() &&chunkPtr->allocated())
+	if(chunkPtr  &&chunkPtr->allocated())
 	{
 		chunkPtr->allocated(false);
 		chunkPtr->mergeTrailingsUnallocated();
@@ -82,7 +84,7 @@ bool  MemoryManager::tryDecrease(void *origin,size_t decSize)
 size_t MemoryManager::getAllocatedLength(void *origin)const
 {
 	auto ptr= MemoryChunk::chunkPtrOfDataPtr(origin);
-	if(ptr && ptr->validChunk() && ptr->allocated())
+	if(ptr && ptr->allocated())
 		return ptr->size();
 	return SIZE_MAX;
 }

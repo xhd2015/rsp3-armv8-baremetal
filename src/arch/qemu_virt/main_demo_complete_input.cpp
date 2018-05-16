@@ -8,14 +8,14 @@
 #include <memory/MemoryManager.h>
 #include <memory/VirtualManager.h>
 #include <new>
-#include <io/uart/PL011.h>
+#include <driver/uart/PL011.h>
 #include <cstring>
 #include <schedule/Process.h>
 #include <schedule/ProcessManager.h>
 #include <schedule/PidManager.h>
-#include <io/VirtioSectorReader.h>
-#include <io/virtio/VirtioBlockDriver.h>
-#include <io/SectorReaderToByteReader.h>
+#include <io/block/VirtioSectorReader.h>
+#include <driver/virtio/VirtioBlockDriver.h>
+#include <io/block/SectorReaderToByteReader.h>
 #include <filesystem/VirutalFileSystem.h>
 #include <filesystem/FAT32VirtualFile.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
@@ -23,11 +23,10 @@
 #include <memory/VirtualAddress.h>
 #include <memory/VirtualMap.h>
 #include <generic/error.h>
-#include <data_structures/Vector.h>
-#include <data_structures/String.h>
-#include <data_structures/Queue.h>
+#include <data/Vector.h>
+#include <data/String.h>
+#include <data/Queue.h>
 #include <io/Input.h>
-#include <data_structures/Queue.h>
 #include <interrupt/GICDefinitions.h>
 
 
@@ -60,16 +59,17 @@ int main()
 		kout << FATAL << "This program is designed to run at EL1\n";
 		return 1;
 	}
+	// TODO 完善初始化过程，kout等
 
 	// 初始化4个必须的组件
 	size_t ramSize = static_cast<size_t>(ramEnd - ramStart);
 	new (&mman) MemoryManager(ramStart, ramSize,true);
-    new (&intHandler) InterruptHandler();
+    new (&intHandler) InterruptHandler<InterruptManager>(&intm);
 	new (&intm) InterruptManager(
 			reinterpret_cast<char*>(GIC_DIST_BASE),
 			reinterpret_cast<char*>(GIC_REDIST_BASE));
 	new (&virtman) VirtualManager();
-	new (&kout) Output();
+	new (&kout) Output(nullptr);
 
 	// 初始化中断，但是目前屏蔽了所有的中断
 	// 依赖于 InterruptHandler
@@ -149,7 +149,7 @@ void main_mmu_set()
 	// virtman.rebase(); // virtman no rebase
 
 	new (&inputBuffer) Queue<uint16_t>(512);
-	new (&kin) Input();
+	new (&kin) Input(nullptr);
 	new (&ktimer) GenericTimer();
 	new (&pidManager) PidManager();
 	new (&processManager) ProcessManager();
@@ -175,8 +175,8 @@ void main_mmu_set()
 	auto * vioSecReader = new (m_abort) VirtioSectorReader(*vio);
 	auto * byteReader = new (m_abort) SectorReaderToByteReader(*vioSecReader);
 
-	FAT32VirtualFile::readBPB(*byteReader, bpb);
-	FAT32VirtualFile::readFAT(*byteReader, bpb, fat);
+//	FAT32VirtualFile::readBPB(*byteReader, bpb);
+//	FAT32VirtualFile::readFAT(*byteReader, bpb, fat);
 	auto fatNode = FAT32VirtualFile::makeRootFile(*byteReader, bpb, fat);
 	vfs.addRootFile(fatNode);
 

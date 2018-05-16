@@ -7,23 +7,30 @@
 
 
 #include <io/Output.h>
-
 #include <generic_util.h>
 #include <data/StringRef.h>
 #include <io/IntegerFormatter.h>
-#include <io/printk.h>
 
 size_t Output::print(const char *s,size_t len)
 {
-	return printk(s, len);
+//	return printk(s, len);
+	size_t n=0;
+	for(size_t i=0;i!=len;++i)
+		n+=_chWriter->write(s[i]);
+	return n;
 }
 size_t Output::print(const char *s)
 {
-	return printk(s);
+//	return printk(s);
+	size_t n=0;
+	while(*s)
+		n+=_chWriter->write(*s++);
+	return n;
 }
 Output & Output::operator<<(char ch)
 {
-	printk(ch);
+//	printk(ch);
+	_chWriter->write(ch);
 	return *this;
 }
 Output & Output::operator<<(uint8_t u)
@@ -57,18 +64,17 @@ Output & Output::operator<<(double d)
 }
 Output & Output::operator<<(const char *s)
 {
-	printk(s);
+	while(*s)
+		_chWriter->write(*s++);
 	return *this;
 }
 Output & Output::operator<<(size_t i)
 {
-	printk(IntegerFormatter<10>(i).format());
-	return *this;
+	return *this << IntegerFormatter<10>(i).format();
 }
 Output & Output::operator<<(const void *p)
 {
-	printk(IntegerFormatter<16>(p).format());
-	return *this;
+	return *this << IntegerFormatter<16>(p).format();
 }
 
 Output & Output::operator<<(const volatile void *p)
@@ -77,7 +83,7 @@ Output & Output::operator<<(const volatile void *p)
 }
 Output & Output::flush()
 {
-	::flush();
+	_chWriter->flush();
 	return *this;
 }
 

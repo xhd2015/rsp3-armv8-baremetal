@@ -7,11 +7,17 @@
 
 #ifndef INCLUDE_IO_OUTPUT_H_
 #define INCLUDE_IO_OUTPUT_H_
-
-#include <io/printk.h>
+#include <def.h>
+#include <io/char/CharacterWriter.h>
+#include <generic_util.h>
 
 class Output{
 public:
+	explicit Output(CharacterWriter *writer):_chWriter(writer){}
+	Output(const Output &)=delete;
+	Output & operator=(const Output &)=delete;
+	AS_MACRO void     rebase(uint64_t diff){rebasePointer(_chWriter, diff);}
+	AS_MACRO void     redirect(CharacterWriter *writer){_chWriter=writer;}
 	size_t print(const char *s,size_t len);
 	size_t print(const char *s);
 	Output & operator<<(char ch);
@@ -28,6 +34,8 @@ public:
 	Output & operator<<(const void *p);
 	Output & operator<<(const volatile void *p);
 	Output & flush();
+private:
+	CharacterWriter * _chWriter;
 };
 
 #ifndef _NOT_NEED_Output

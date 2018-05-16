@@ -99,11 +99,12 @@ extern char ExceptionVectorEL1[]; // 向量表的地址
 		"ldp x25,x26,[" __stringify(base) "],#16 \n\t" \
 		"ldp x27,x28,[" __stringify(base) "],#16 \n\t"
 
+// 最后改变sp的值
 #define RESTORE_REGS_ASM_INSTR() \
 		RESTORE_REGS_ASM_INSTR_X0_X28(sp) \
 		"ldp x29,x30,[sp],#16 \n\t"
 
-// 使用x30作为基址寄存器加载
+// 使用x30作为基址寄存器加载，并且不改变x30的值
 #define RESTORE_REGS_ASM_INSTR_X30_BASE() \
 		RESTORE_REGS_ASM_INSTR_X0_X28(x30) \
 		"ldp x29,x30,[x30]\n\t"
@@ -120,35 +121,17 @@ extern char ExceptionVectorEL1[]; // 向量表的地址
 	RESTORE_REGS_ASM_INSTR() \
 	)
 
-#define SAVE_CONTEXT_AND_CALL_ASM_INSTR(callee,type,origin) \
+#define SAVE_CONTEXT_AND_CALL_HANDLER(handler,type,origin) \
 		SAVE_REGS_ASM_INSTR() \
 		"mov x0,sp \n\t"  \
 		"mov x1," __stringify(type) "\n\t" \
 		"mov x2," __stringify(origin) "\n\t" \
-		"bl  " __stringify(callee) "\n\t"
+		"bl  " __stringify(handler) "\n\t"
 
-#define RESTORE_CONTEXT_AND_ERET_ASM_INSTR() \
+#define RESTORE_CONTEXT_AND_ERET() \
         RESTORE_REGS_ASM_INSTR() \
         "eret \n\t"
 
-template <ExceptionType etp>
-void cpuEnableInterrupt(bool en)
-{
-	static_assert(etp!=ExceptionType::SYNC,"");
-	auto daif=RegDAIF::read();
-	switch(etp)
-	{
-	case ExceptionType::IRQ:
-		daif.I=(!en);break;
-	case ExceptionType::FIQ:
-		daif.F=(!en);break;
-	case ExceptionType::DEBUG:
-		daif.D=(!en);break;
-	case ExceptionType::SError:
-		daif.A=(!en);break;
-	}
-	daif.write();
-}
-
+void cpuEnableInterrupt(ExceptionType etp,bool en);
 
 #endif /* INCLUDE_INTERRUPT_EXCEPTION_DEF_H_ */

@@ -8,7 +8,7 @@
 #ifndef INCLUDE_DRIVER_VIRTIO_VIRTIOBLOCKCONFIG_H_
 #define INCLUDE_DRIVER_VIRTIO_VIRTIOBLOCKCONFIG_H_
 #include <def.h>
-#include <driver/Output.h>
+#include <io/Output.h>
 
 /**
  * 对V1,V2都适用

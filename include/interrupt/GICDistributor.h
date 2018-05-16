@@ -14,6 +14,7 @@
 #include <utility>
 #include <generic_util.h>
 #include <interrupt/GICRedistributor.h>
+#include <generic/error.h>
 
 // we assert that we are in Non-secure,Single-security
 // we treat all registers here as volatile

@@ -10,7 +10,7 @@
 #include <filesystem/VirtualFile.h>
 #include <filesystem/fat/FAT32EntryTable.h>
 #include <filesystem/fat/FATDirEntryTable.h>
-#include <io/ByteReader.h>
+#include <io/block/ByteReader.h>
 #include <generic_util.h>
 
 class FAT32VirtualFile
@@ -60,7 +60,11 @@ private:
 	 */
 	void loadDirEntryTable();
 
-
+	/**
+	 * 递归回收子节点，兄弟节点。
+	 * 单侧回收。在两个方向上都是单向传播的。
+	 * @param file
+	 */
 	static void clearSubEntries(FAT32VirtualFile *file);
 private:
 	ByteReader          &_reader;

@@ -3,14 +3,17 @@
 /* 命名风格概述： 内存布局的区域-大写字母  不打算提供给汇编的符号-大写字母 打算提供给汇编的符号-两个下划线+小写字母 */
 MEMORY
 {
-	/* DOCME 在修改内存布局之后应当修改objcopy/dd生成文件的部分，起始地址  */
+	/* DOCME 在修改内存布局之后应当修改objcopy/dd生成文件的部分，起始地址  
+		AHEAD_CODE 作为PADDING
+	*/
     DTB (r)  : ORIGIN = RAM_START + IMAGE_BASE , LENGTH = DTB_SIZE
 	STACK (rw) : ORIGIN = RAM_START + IMAGE_BASE + DTB_SIZE , LENGTH = STACK_SIZE
-	CODE (rx) : ORIGIN = RAM_START + IMAGE_BASE + DTB_SIZE + STACK_SIZE , LENGTH = CODE_SIZE
-	INITRAM (rw) : ORIGIN = RAM_START + IMAGE_BASE + DTB_SIZE + STACK_SIZE + CODE_SIZE , LENGTH = INITRAM_SIZE
-	USER_SPACE (rw) : ORIGIN = RAM_START + IMAGE_BASE + DTB_SIZE + STACK_SIZE + CODE_SIZE + INITRAM_SIZE   , LENGTH = USER_CODE_SIZE + USER_INITRAM_SIZE
-	DATA  (rw) : ORIGIN = RAM_START + IMAGE_BASE + DTB_SIZE + STACK_SIZE + CODE_SIZE + INITRAM_SIZE + USER_CODE_SIZE + USER_INITRAM_SIZE , LENGTH = RAM_SIZE - DTB_SIZE - CODE_SIZE - STACK_SIZE - INITRAM_SIZE - USER_CODE_SIZE - USER_INITRAM_SIZE - VIDEO_RAM_SIZE
-	VIDEO_RAM (rw) : ORIGIN = RAM_SIZE - VIDEO_RAM_SIZE + RAM_START , LENGTH = VIDEO_RAM_SIZE
+	AHEAD_CODE (rw) : ORIGIN = AHEAD_CODE_START , LENGTH = AHEAD_CODE_SIZE
+	CODE (rx) : ORIGIN = CODE_START , LENGTH = CODE_SIZE 
+	INITRAM (rw) : ORIGIN = INITRAM_START, LENGTH = INITRAM_SIZE
+	USER_SPACE (rw) : ORIGIN = USER_SPACE_START , LENGTH = USER_SPACE_SIZE
+	DATA  (rw) : ORIGIN = DATA_START , LENGTH = DATA_SIZE 
+	VIDEO_RAM (rw) : ORIGIN = VIDEO_RAM_START , LENGTH = VIDEO_RAM_SIZE
 }
 /*.vtable必须位于CODE中以便加载，但是加载后必须被复制到RAM中以便重新定位(rebase)*/
 
@@ -18,16 +21,8 @@ MEMORY
 SECTIONS{
 	/* NOTE: .text.boot must be ahead of any thing*/
 	/* .text.*，比如.text._ZN9FormatterILi16EEC2Em，是类的函数放置的地方 */
-	PROVIDE(DTB_START = RAM_START);
-	PROVIDE(STACK_START = DTB_START + IMAGE_BASE + DTB_SIZE);
-	PROVIDE(CODE_START =  STACK_START + IMAGE_BASE  + STACK_SIZE);
-	PROVIDE(INITRAM_START =  CODE_START + IMAGE_BASE  + CODE_SIZE);
-	PROVIDE(USER_SPACE_START = INITRAM_START + IMAGE_BASE + INITRAM_SIZE);
-	PROVIDE(DATA_START = USER_SPACE_START + IMAGE_BASE + USER_CODE_SIZE + USER_INITRAM_SIZE);
-	PROVIDE(DATA_SIZE  = RAM_SIZE - DTB_SIZE - STACK_SIZE - CODE_SIZE - INITRAM_SIZE - USER_CODE_SIZE - USER_INITRAM_SIZE - VIDEO_RAM_SIZE);
-	PROVIDE(VIDEO_RAM_START = DATA_START + DATA_SIZE);
 	/* DOCME objcopy的结果就是将这个放在物理0地址处 */
-	.text IMAGE_BASE + RAM_START + DTB_SIZE + STACK_SIZE + KERNEL_OFFSET : {
+	.text : {
 		*(.text.boot) /* PC对齐检查 */
 	    /* *(.text.enmmu)  */  /* 启用MMU的代码必须在低1GB以内,这是为了flat map,但是通常是足够的 */
 		*(.text)
@@ -67,6 +62,12 @@ SECTIONS{
 		*(.relocptr)
 		PROVIDE(__reloc_ptr_end = . );
 	} > INITRAM
+	.ctors : {
+		KEEP(*(.ctors))
+	} > INITRAM
+	.dtors : {
+		KEEP(*(.dtors))
+	} > INITRAM
 
 	 /* .rodata.*,比如 */
 	.rodata : { 
@@ -97,16 +98,23 @@ SECTIONS{
 	} > DATA
 	
 	/* 此区中存放的是ABS下标地址 */
-    /* 其他比如.debug_line,.debug_macro,.debug_abbrev,.debug_str, .debug_loc,...,.comment,*/
+    /* 其他比如.debug_line,.debug_macro,
+    	.debug_abbrev,.debug_str, .debug_loc,...,.comment,*/
 	.freeram (NOLOAD) : {
 		PROVIDE(ramStart = .);
-		. = ABSOLUTE(RAM_SIZE - USER_CODE_SIZE - USER_INITRAM_SIZE - VIDEO_RAM_SIZE + RAM_START + IMAGE_BASE);
+		. = ABSOLUTE(RAM_SIZE - USER_CODE_SIZE - USER_INITRAM_SIZE - 
+			VIDEO_RAM_SIZE + RAM_START + IMAGE_BASE);
 		PROVIDE(ramEnd = . );
 	} > DATA
 	
 	/* 无需加载 */
+	.ahead_code (NOLOAD) : { . = . + AHEAD_CODE_SIZE ; } > AHEAD_CODE
 	.stack (NOLOAD):{ . = . + STACK_SIZE ; PROVIDE(__stack_top = . ); } > STACK
 	/* USERSPACE使用dd命令写入 */
-	.userspace (NOLOAD): { PROVIDE(__user_space_start = .); . = . + USER_CODE_SIZE + USER_INITRAM_SIZE; PROVIDE(__user_space_end = .);} > USER_SPACE
+	.userspace (NOLOAD): { 
+			PROVIDE(__user_space_start = .); 
+			. = . + USER_SPACE_SIZE; 
+			PROVIDE(__user_space_end = .);
+	} > USER_SPACE
 	.videoram (NOLOAD): {. = . + VIDEO_RAM_SIZE ;} > VIDEO_RAM
 }

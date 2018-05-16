@@ -69,9 +69,9 @@ public:
 	using BCM2835IntSource = BCM2835InterruptController::IntSource;
 	template <class  Args>
 	BCM2836LocalIntController(Args &&  args,
-			BCM2835InterruptController &controller)
+			BCM2835InterruptController * controller)
 		:MemBasedRegReader(std::forward<Args>(args)),
-		 _intc2835(&controller)
+		 _intc2835(controller)
 	{}
 	void rebase(size_t diff);
 	/**

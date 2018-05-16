@@ -1,0 +1,2 @@
+
+include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.TOOLCHAINS.defs

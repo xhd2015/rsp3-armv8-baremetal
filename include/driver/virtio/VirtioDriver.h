@@ -7,7 +7,7 @@
 
 #ifndef SRC_IO_VIRTIO_VIRTIODRIVER_H_
 #define SRC_IO_VIRTIO_VIRTIODRIVER_H_
-#include <driver/MemBasedRegReader.h>
+#include <io/MemBasedRegReader.h>
 #include <driver/virtio/VirtioQueueDescriptor.h>
 #include <driver/virtio/VirtioQueueLayout.h>
 #include <utility>

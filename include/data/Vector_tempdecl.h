@@ -30,12 +30,12 @@
 template <class T>
 class Vector{
 public:
-	enum { MINIMAL_CAPACITY = 8};
+//	enum { MINIMAL_CAPACITY = 8}; // UPDATE:2018年5月16日09:45:18 不再强制使用最小容量
 
 	using ValueType = T;
 	using SizeType = size_t;
 	Vector();
-	Vector(size_t initSize,bool setMinCapacity=true);
+	Vector(size_t initSize);
 	Vector(const std::initializer_list<T> &il);
 	Vector<T> & operator=(const std::initializer_list<T> &il)=delete;
 	Vector(const T *data,size_t n);
@@ -81,9 +81,11 @@ public:
 	//return the index, on failed,return SIZE_MAX
 	size_t  insert(size_t i,const T & t);
 
-	// this is very useful to avoid waste,because after this
-	// size==newSize,   capacity==newSize or capacity==MINIMAL_CAPACITY
-	// afte this,capacity  >= MINIMAL_CAPACITY
+	/**
+	 * 将_size和_capacity同时设置为newSize,如果增加，增加部分进行默认构造；如果减少，减少部分进行析构
+	 * @param newSize
+	 * @return
+	 */
 	bool  resize(size_t newSize);
 	bool  ensureEnoughCapacity(size_t capacity);
 	void  removeLast();
@@ -91,12 +93,18 @@ public:
 	AS_MACRO MemoryManager& memMan(){return mman;}
 
 private:
+	/**
+	 * 改变容量；如果存在已有元素减少的情况，则对这些元素进行析构。
+	 * @param capacity
+	 * @return
+	 */
 	bool  resizeCapacity(size_t capacity);
 	bool  adjustCapacityForOneMore();
-	// afte this,capacity  >= MINIMAL_CAPACITY
+	//  _size>=0
 	bool  adjustCapacityForOneLess();
 
-	AS_MACRO static size_t getIncrementalSize(size_t curSize){return (curSize==0?MINIMAL_CAPACITY:(curSize * 3 / 2));}
+	AS_MACRO static size_t getIncrementalCapacity(size_t curSize){return (curSize * 3 / 2)+1;}
+	AS_MACRO static size_t getDecrementalCapacity(size_t curSize){return (curSize>0)?(curSize-1)*2/3:0;}
 private:
 	T *_data;
 	size_t _capacity;

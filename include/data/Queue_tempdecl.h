@@ -32,6 +32,13 @@ public:
 
     ~Queue();
     AS_MACRO void rebase(size_t diff) {_data=pointerInc(_data, diff);}
+    /**
+     * 将队列长度设置为n，并且下标从0开始
+     * 注意：在调用该方法前，确保内部数据时从0~_len的范围内有效。
+     * 注意：如果队列为空(empty),则可以安全地调用reset(0)将其恢复到初始化状态，然后
+     *     获取内部指针来填充数据，最后使用reset(n)来设置数据的长度
+     * @param len
+     */
     AS_MACRO void reset(size_t len){ _curLen=len;_indexAdd=len;_indexRemove=0;}
 
     // 必须保证 empty()==false

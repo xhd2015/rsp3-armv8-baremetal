@@ -1,3 +1,6 @@
+// _MOD_NOTE 根据libprefix.a的内容，crt0.cpp永远作为主要的crt程序文件，
+//   该文件名不可更改
+// UPDATE：既然尝试减小代码体积的努力失败了，那么crt0的文件名也是可变的。
 #include <arch/qemu_virt/crt0.h>
 #include <cstring>
 #include <asm_instructions.h>
@@ -40,20 +43,31 @@ void init(uint64_t currentEL)
 	for(auto p=__bss_start;p!=__bss_end;++p)
 		*p=0;
 
+	// mini uart,经过测试，无需调用init也能输出
 	new (&miniUART) BCM2835MiniUART(UART_BASE);
+	new (&miniUARTChReaderWriter) MiniUARTCharacterReaderWriter(&miniUART);
+//	miniUART.init();
+
+	//PL011相关
 	new (&mailBox) BCM2836MailBox(MBOX_BASE);
 	new (&gpio) GPIO(GPIO_BASE);
 	new (&pl011) PL011(UART0_BASE);
-	new (&kout) Output();
-	// mailbox 必须先设置时钟频率
-	// 对UART0的初始化必须包括这几个基本的步骤，即设置频率，设置GPIO接口功能，启用PL011
+	new (&pl011ChReader) PL011CharacterReaderWriter(&pl011);
 	mailBox.setUARTClockRate(4000000);//4MHz
 	// 设置GPIO 14,15为ALT_0
 	gpio.selectAltFunctionNoLog(14, GPIO::ALT_0);
 	gpio.selectAltFunctionNoLog(15, GPIO::ALT_0);
 	pl011.init();
 
-	pl011.waitInput();
+//	new (&kout) Output(&miniUARTChReaderWriter);
+	new (&kout) Output(&pl011ChReader);
+	// DOCME
+	// 有8点相差，因为kout实际上需要的是基类部分
+	//   基类有一个虚表占据8字节
+	//   子类的布局： 子类虚表 -- 基类 -- 子类成员
+	//   因此当子类转换成基类时，需要减去偏移。
+	kout << INFO << "&pl011ChReader = " << Hex(&pl011ChReader) << "\n";
+	kout << INFO << "kout._chWriter = " << Hex(*reinterpret_cast<uint64_t*>(&kout))<<"\n";
 	kout << INFO << "crt0 setting up environment\n";
 	kout << "enter EL = " << currentEL << "\n";
 

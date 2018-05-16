@@ -5,7 +5,7 @@
  *      Author: 13774
  */
 
-#include <io/VirtioSectorReader.h>
+#include <io/block/VirtioSectorReader.h>
 VirtioSectorReader::VirtioSectorReader(VirtioBlockDriver & driver)
 	:_blkDriver(driver)
 {}

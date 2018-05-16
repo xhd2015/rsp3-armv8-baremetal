@@ -3,7 +3,7 @@
 
 
 #include <memory/MemoryManager.h>
-#include "../../../include/io/printk.h"
+#include <io/Output.h>
 
 
 void Fat32Dubugger::dumpBPBTypeInformation()

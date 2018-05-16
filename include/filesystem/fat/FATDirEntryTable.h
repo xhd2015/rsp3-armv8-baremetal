@@ -13,7 +13,7 @@
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <filesystem/fat/FAT32EntryTable.h>
 #include <data/String.h>
-#include <io/ByteReader.h>
+#include <io/block/ByteReader.h>
 
 
 class FATDirEntryTable

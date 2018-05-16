@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_IO_SDSECTORREADER_H_
 #define INCLUDE_IO_SDSECTORREADER_H_
-#include <io/SectorReader.h>
+#include <io/block/SectorReader.h>
 #include <driver/sd/SDDriverV3.h>
 
 class SDSectorReader

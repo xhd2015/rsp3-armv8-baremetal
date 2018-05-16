@@ -9,7 +9,7 @@
 #define INCLUDE_FILESYSTEM_FAT_FAT32EXTBPB_H_
 
 #include <filesystem/fat/FAT_BPB.h>
-#include <io/ByteReader.h>
+#include <io/char/CharacterReader.h>
 
 /**
  * NOTE: if you are given a raw data of an FAT header,you do not know what kind it is.Then you can safely assume that it is an FAT32 filesystem type,and use methods prefixed with uni_ (which means universal) to retrieve information from it.

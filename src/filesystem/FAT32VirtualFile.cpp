@@ -6,6 +6,7 @@
  */
 #include <filesystem/FAT32VirtualFile.h>
 #include <asm_instructions.h>
+#include <generic/error.h>
 FAT32VirtualFile::FAT32VirtualFile(const String&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry)
 	:VirtualFile(name),
 	 _reader(reader),
@@ -157,7 +158,7 @@ void FAT32VirtualFile::buildSubEntries()
 
 	// 将旧的所有子目录清空
 	clearSubEntries();
-	// TODO 增加内存不足的异常报告，参见2018年4月8日23:53:31的todo
+	// _TODO 增加内存不足的异常报告，参见2018年4月8日23:53:31的todo
 	FAT32VirtualFile * builtSubFile=nullptr;
 	FAT32VirtualFile * last=nullptr;
 	for(size_t i=0;i!=_table.size();++i)
@@ -175,16 +176,14 @@ void FAT32VirtualFile::buildSubEntries()
 					i, // index in parent
 					_table[i].getFirstClusIndex()
 			);
-			if(!it)
-			{
-				// report error
-				kout << FATAL << "no enough space \n";
-				asm_wfe_loop();
-			}
-			if(!builtSubFile)
+			reportErrorOn(it==nullptr,"no enough space \n");
+			if(!builtSubFile) //init file
 				builtSubFile=it;
 			if(last)
+			{
 				last->nextFile(it);
+				it->previousFile(last);
+			}
 			last=it;
 		}
 	}
@@ -215,7 +214,7 @@ void FAT32VirtualFile::clearSubEntries(FAT32VirtualFile *file)
 {
 	if(file)
 	{
-		auto fsub=file->VirtualFile::subFile();
+		auto fsub = file->VirtualFile::subFile();
 		auto fnext = file->VirtualFile::nextFile();
 		delete file;
 		clearSubEntries(fsub->castAsSubType<FAT32VirtualFile>());

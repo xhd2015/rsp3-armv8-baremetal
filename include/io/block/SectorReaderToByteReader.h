@@ -14,8 +14,8 @@
 #include <data/VectorRef.h>
 #include <data/String.h>
 #include <data/StringRef.h>
-#include <io/ByteReader.h>
-#include <io/SectorReader.h>
+#include <io/block/ByteReader.h>
+#include <io/block/SectorReader.h>
 #include <utility>
 
 // 将一个SectorReader转换成ByteReader

@@ -5,9 +5,9 @@
  *      Author: 13774
  */
 
-#include <io/virtio/VirtioBlockDriver.h>
+#include <driver/virtio/VirtioBlockDriver.h>
 #include <memory/MemoryManager.h>
-#include <io/virtio/VirtioBlockRequest.h>
+#include <driver/virtio/VirtioBlockRequest.h>
 #include <io/Output.h>
 #include <memory/VirtualManager.h>
 #include <generic/error.h>

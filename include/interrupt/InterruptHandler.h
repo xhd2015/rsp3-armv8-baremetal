@@ -26,7 +26,7 @@ template <class _IntManager>
 class InterruptHandler{
 public:
 	using IntManager = _IntManager;
-	InterruptHandler(IntManager & intman);
+	InterruptHandler(IntManager * intman);
 	DELETE_COPY(InterruptHandler);
 	/**
 	 * 该处理函数被exceptionCHandler调用，为了效率上的考虑，将其inline

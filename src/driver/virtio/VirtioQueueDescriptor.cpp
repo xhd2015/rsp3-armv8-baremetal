@@ -6,6 +6,6 @@
  */
 
 
-#include <io/virtio/VirtioQueueDescriptor.h>
+#include <driver/virtio/VirtioQueueDescriptor.h>
 
 

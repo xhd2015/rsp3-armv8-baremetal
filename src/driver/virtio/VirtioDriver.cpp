@@ -6,7 +6,7 @@
  */
 
 
-#include <io/virtio/VirtioDriver.h>
+#include <driver/virtio/VirtioDriver.h>
 #include <io/Output.h>
 #include <generic_util.h>
 

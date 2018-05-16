@@ -37,7 +37,7 @@ public:
 	using BaseType::append;
 
 	AS_MACRO String():BaseType(){}
-	AS_MACRO String(size_t initSize,bool setMinCapacity=true):BaseType(initSize,setMinCapacity){}
+	AS_MACRO String(size_t initSize):BaseType(initSize){}
 
 	AS_MACRO String(const char *data,size_t n):BaseType(data,n){}
 	AS_MACRO String(const String &s):BaseType(s){}

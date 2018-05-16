@@ -4,7 +4,8 @@ PYTHON3 := /usr/bin/python3
 DTC := /cygdrive/d/installed/githubs/dtc-for-win/dtc.exe
 	
 gdb_connect:
-	$(GDB_BIN) -iex 'set disassemble-next-line on' -iex 'file $(MASTERY_ELF)' -iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
+	$(GDB_BIN) -iex 'set disassemble-next-line on' -iex 'file $(MASTERY_ELF)' \
+	-iex 'target remote localhost:1234' -iex 'b *main' $(GDB_CONNECT_OPTIONS)
 	
 
 .PHONY:qemu_log
@@ -16,7 +17,10 @@ IO_IMG := fat32.img
 QEMU_NO_BIOS = -cpu cortex-a53 -smp 4 -m 1024M -nographic -serial mon:stdio  -drive file=$(IO_IMG),format=raw,if=none,index=0,id=vio0 -device virtio-blk-device,drive=vio0 -d int,mmu,guest_errors -D qemu_log.txt 
 #trace:load_file,trace:cpu_in,trace:guest_mem_before_exec,trace:guest_mem_before_trans,trace:memory_region_tb_read,trace:memory_region_ops_read
 QEMU_BIOS_NO_MACHINE = -bios $(MASTERY_BINARY) $(QEMU_NO_BIOS)
-KERNEL_ADDRESS := $(shell echo "$$(($(RAM_START) + $(DTB_SIZE) + $(STACK_SIZE)))")
+# FIXME LOADER_ADDRESS指的是载入文件的基地址，KERNEL_ADDRESS指的是首条指令地址
+LOADER_ADDRESS := $(shell echo "$$(($(RAM_START) + $(DTB_SIZE) + \
+	$(STACK_SIZE)))")
+KERNEL_ADDRESS := $(shell echo "$$(($(LOADER_ADDRESS) + $(SINGLE_GEN_SIZE)))")
 QEMU_LOADER_NO_MACHINE = -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 $(QEMU_NO_BIOS)
 
 QEMU_ARGS :=     $(QEMU_LOADER_NO_MACHINE) -machine virt,gic-version=3

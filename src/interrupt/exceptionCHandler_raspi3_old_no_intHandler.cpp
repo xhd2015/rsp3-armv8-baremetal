@@ -101,7 +101,7 @@ void exceptionCHandler(uint64_t  * savedRegs,ExceptionType type,ExceptionOrigin 
 	delayCPU(1000, 1000);
 	__asm__ __volatile__(
 		"mov sp,%0 \n\t"
-		RESTORE_CONTEXT_AND_ERET_ASM_INSTR()
+		RESTORE_CONTEXT_AND_ERET()
 		::"r"(savedRegs)
 	);
 }

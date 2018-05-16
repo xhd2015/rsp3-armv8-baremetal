@@ -47,8 +47,8 @@ public:
 	int init();
 
 	AS_MACRO void enable(bool en) { setBit(reg32(AUX_ENABLES),0,en);}
-	AS_MACRO char read()const { return static_cast<char>(reg32(IO_DATA));}
-	AS_MACRO void write(char ch){ reg32(IO_DATA)=ch;}
+	AS_MACRO char rawRead()const { return static_cast<char>(reg32(IO_DATA));}
+	AS_MACRO void rawWrite(char ch){ reg32(IO_DATA)=ch;}
 	AS_MACRO void enableReceiveInterrupt(bool en){ setBit(reg32(IER_INT_ENABLED),1,en);}
 	AS_MACRO void enableSendInterrupt(bool en){ setBit(reg32(IER_INT_ENABLED),0,en);}
 	AS_MACRO void enableReceive(bool en) { setBit(reg32(EXTRA_CONTROL),0,en);}
@@ -67,7 +67,7 @@ public:
 	 *  至少能够接受一个byte
 	 * @return
 	 */
-	AS_MACRO bool sendReady()const { return getBit(reg32(LINE_STATUS),5);}
+	AS_MACRO bool writeReady()const { return getBit(reg32(LINE_STATUS),5);}
 	AS_MACRO bool readReady()const { return getBit(reg32(LINE_STATUS),0);}
 
 	AS_MACRO IntStatus intStatus() const { return static_cast<IntStatus>(getBits(reg32(IIR_INT_IDENTITY),1,2));}

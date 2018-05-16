@@ -10,13 +10,6 @@ template <class T>
 void destruct(T t,size_t n);
 
 
-
-
-
-
-
-
-
 //=== template
 template <class T>
 void destruct(T t,size_t n)

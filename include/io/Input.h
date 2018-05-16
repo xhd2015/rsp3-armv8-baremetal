@@ -8,16 +8,21 @@
 #ifndef INCLUDE_IO_INPUT_H_
 #define INCLUDE_IO_INPUT_H_
 
-#include <array>
 #include <data/String.h>
 #include <driver/uart/PL011.h>
+#include <io/char/CharacterReader.h>
 
+/**
+ * 必须保证reader不为nullptr(因为内部没有检查)
+ */
 class Input{
 public:
 	enum Config{INPUT_BUFFER_SIZE = 512};
 
-	Input()=default;
-
+	Input(CharacterReader * reader):_chReader(reader){}
+	Input(const Input &)=delete;
+	Input & operator=(const Input &)=delete;
+	AS_MACRO void redirect(CharacterReader * reader){ _chReader=reader;}
 
 	AS_MACRO Input &operator>>(char &ch) { ch=getchar();return *this;}
 	Input &operator>>(int &d);
@@ -26,10 +31,10 @@ public:
 	String readline();
 
 	// will block
-	uint16_t   read();
-	AS_MACRO char      getchar(){return static_cast<char>(read());}
+	AS_MACRO char      getchar(){return _chReader->read();}
 
 private:
+	CharacterReader * _chReader;
 };
 
 

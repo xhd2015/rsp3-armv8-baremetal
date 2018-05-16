@@ -34,9 +34,8 @@ int main();
 #define ASM_INIT_CALLER(spsym) \
 		"ldr  x0,=" __stringify(spsym) "\n\t"	               \
 		"mov  sp,x0 \n\t"                                       \
-	    "mrs x0,CurrentEL \n\t"                                  \
-		"mov x1,#4 \n\t"                                         \
-		"udiv x0,x0,x1 \n\t" /*获取x0=EL*/                        \
+	    "mrs  x0,CurrentEL \n\t"                                  \
+		"lsr  x0,x0,#2 \n\t"             /*获取x0=EL*/                     \
 		"b   init \n\t"
 // 必须保证el > 1,因为需要访问SP_EL1
 #define ASM_ERET_FROM(el,spsr) \

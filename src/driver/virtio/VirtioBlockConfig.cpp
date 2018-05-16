@@ -6,7 +6,7 @@
  */
 
 
-#include <io/virtio/VirtioBlockConfig.h>
+#include <driver/virtio/VirtioBlockConfig.h>
 
 
 void VirtioBlockConfig::dump()const

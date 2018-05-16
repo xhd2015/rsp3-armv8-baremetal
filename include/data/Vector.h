@@ -24,14 +24,10 @@ Vector<T>::Vector()
 {}
 
 template <class T>
-Vector<T>::Vector(size_t initSize,bool setMinCapacity)
+Vector<T>::Vector(size_t initSize)
 	:
-_data(nullptr),_capacity(0),_size(0)
+_data(nullptr),_capacity(initSize),_size(0)
  {
-	if(setMinCapacity)
-		_capacity=(initSize <= MINIMAL_CAPACITY ? MINIMAL_CAPACITY : initSize);
-	else
-		_capacity=initSize;
 	if(_capacity>0)
 	{
 		_data = mman.allocateAs<T*>(_capacity*sizeof(T));
@@ -166,8 +162,7 @@ void Vector<T>::emplaceBack(Args && ... args)
 template <class T>
 void   Vector<T>::clear()
 {
-	_size = 0;
-	resizeCapacity(MINIMAL_CAPACITY);
+	resize(0);
 }
 template <class T>
 void   Vector<T>::erase(size_t i)
@@ -203,8 +198,7 @@ size_t  Vector<T>::insert(size_t i,const T & t)
 template <class T>
 bool  Vector<T>::resize(size_t newSize)
 {
-	size_t desiredCapacity = (newSize < MINIMAL_CAPACITY?MINIMAL_CAPACITY:newSize);
-	if(resizeCapacity(desiredCapacity))
+	if(resizeCapacity(newSize))
 	{
 		if(_size < newSize) //newSize - _size大于0的情况下，需要进行默认构造
 			for(size_t i=_size;i!=newSize;++i)
@@ -238,7 +232,8 @@ bool  Vector<T>::resizeCapacity(size_t capacity)
 		newData=mman.reallocate(_data, capacity ,_size);//有类型的
 	else
 		newData=mman.allocateAs<T*>(capacity*sizeof(T));
-	if(!newData)
+
+	if(capacity!=0 && !newData) // capacity=0时返回nullptr是正确的行为
 		return false;
 
 	// update all relative fields
@@ -251,19 +246,15 @@ template <class T>
 bool  Vector<T>::adjustCapacityForOneMore()
 {
 	if(_size+1 > _capacity)
-		return resizeCapacity(getIncrementalSize(_capacity));
+		return resizeCapacity(getIncrementalCapacity(_capacity));
 	return true;
 }
 
 template <class T>
 bool  Vector<T>::adjustCapacityForOneLess()
 {
-	//	getIncrementalSize(size-1)==advised  capacity
-	// advised capacity < capacity --> do it
-	size_t advisedCapacity = (_size==0?MINIMAL_CAPACITY : getIncrementalSize(_size-1) );
-	if(advisedCapacity < MINIMAL_CAPACITY)
-		advisedCapacity=MINIMAL_CAPACITY;
-	if(advisedCapacity < _capacity)
+	size_t advisedCapacity = getDecrementalCapacity(_capacity);
+	if( _size <= advisedCapacity + 1) // 如果减小1个元素之后，新的容量仍然能够容纳，就采用新的容量。
 		return resizeCapacity(advisedCapacity);
 	return true;
 }

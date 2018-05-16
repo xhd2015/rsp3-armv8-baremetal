@@ -12,14 +12,23 @@ include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_TO_ALL.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_VARIABLES.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_CXX_MACROS.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_LINKER_SYMBOLS.makefile
+# 上面的部分先引入变量，这里引入每个工程的makefile.defs
+include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/makefile.defs
 
 # 添加辅助依赖, 注意,USER_OBJS 只能在此进行修改，其他地方修改不会产生效果
+# 确切地说,USER_OBJS只能在makefile.defs文件中定义
+# $(OBJS) -- 由eclipse自动生成，包含所有的对象文件
+# $(USER_OBJS) -- 用户自己定义
+# makefile.defs是唯一一个在引用USER_OBJS作为依赖之前的引入的文件
 USER_OBJS += aux-check-link-script.o
 CLEAN-ALL-LIST += aux-check-link-script.o
 
 # 设置USER_CXX_FLAGS
-# DEPRECATED: -Wconversion
-USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-function -Wno-unused-label -Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder -save-temps -pie -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=5 -ffreestanding -fno-exceptions -fno-rtti
+# DEPRECATED: -Wconversion -pie
+USER_CXX_FLAGS += -Wno-error=invalid-offsetof -Wno-unused-function -Wno-unused-label \
+-Wno-invalid-offsetof -Wno-error=comment -Wno-error=unused-label -fsigned-char -Wreorder \
+-save-temps -nostdlib -Weffc++ -Wold-style-cast -fmessage-length=0 -fmax-errors=5 \
+-ffreestanding -fno-exceptions -fno-rtti -fno-threadsafe-statics
 USER_CXX_FLAGS_qemu_virt += -march=armv8.2-a
 USER_CXX_FLAGS_zcu102 += -march=armv8.2-a 
 USER_CXX_FLAGS_user_space += -march=armv8.2-a

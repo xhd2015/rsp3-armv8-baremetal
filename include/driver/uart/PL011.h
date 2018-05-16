@@ -60,7 +60,8 @@ public:
 	void   writeDataBlocked(char ch);
 	// 0xffff 表明失败
 	uint16_t readDataNonBlocked()const;
-	AS_MACRO bool readReady()const { return bitsNonSet<4>(reg32<UARTFR>());}// no-busy,not-empty
+	AS_MACRO bool readReady()const { return bitsNonSet<4>(reg32<UARTFR>());}
+	AS_MACRO bool writeReady()const { return bitsNonSet<5>(reg32<UARTFR>());}
 	AS_MACRO bool busy() const { return bitsAnySet<3>(reg32(UARTFR));}
 	AS_MACRO void enable(bool enable){ setBit(reg32<UARTCR>(),0,enable);}
 	AS_MACRO void enableReceive(bool enable){ setBit(reg32<UARTCR>(),9,enable);}

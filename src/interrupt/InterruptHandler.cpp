@@ -20,10 +20,10 @@
 #define TEMPLATED_InterruptHandler InterruptHandler<IntManager>
 
 TEMPLATE_InterruptHandler
-TEMPLATED_InterruptHandler::InterruptHandler(IntManager & intman)
+TEMPLATED_InterruptHandler::InterruptHandler(IntManager * intman)
 	:_allowSyncExcep(true),
 	 _nestedExceps(0),
-	 _intm(&intman)
+	 _intm(intman)
 {}
 
 TEMPLATE_InterruptHandler
@@ -232,7 +232,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		bool returnOnNewLine = getBit(savedRegisters[2],0);
 		bool blocked = getBit(savedRegisters[2],1);
 //		auto inputId = _intm->standardIntID(INPUT);
-		cpuEnableInterrupt<ExceptionType::IRQ>(false);
+		cpuEnableInterrupt(ExceptionType::IRQ,false);
 		size_t i=0;
 		while(i<maxNum)
 		{
@@ -241,9 +241,9 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 			{
 				if(blocked)
 				{
-					cpuEnableInterrupt<ExceptionType::IRQ>(true);
+					cpuEnableInterrupt(ExceptionType::IRQ,true);
 					while(inputBuffer.empty());// 原子读，不存在同步问题
-					cpuEnableInterrupt<ExceptionType::IRQ>(false);
+					cpuEnableInterrupt(ExceptionType::IRQ,false);
 				}else{
 					break; // 退出
 				}

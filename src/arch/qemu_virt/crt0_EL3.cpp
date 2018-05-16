@@ -3,9 +3,10 @@
 #include <def.h>
 #include <asm_instructions.h>
 #include <cstring>
-#include <io/uart/PL011.h>
+#include <driver/uart/PL011.h>
 #include <new>
 #include <interrupt/GICDefinitions.h>
+#include <interrupt/InterruptManager.h>
 
 // NOTE: it is required that this snippet has a unique name so that we can arrange it to head our binary by our hand.
 // and it is required that init is placed in .text.boot
@@ -21,6 +22,7 @@ ASM_INIT_CALLER(__stack_top)
 extern char __bss_start[];
 extern char __bss_end[];
 
+// TODO 重新初始化kout,kin以及相关的类
 // EL1,SPSel=1, DAIF=0b1111
 // EL3需要设置SCR
 // EL2需要设置HCR

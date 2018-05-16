@@ -25,12 +25,17 @@
 #include <memory/VirtualManager.h>
 #include <interrupt/InterruptHandler.h>
 #include <driver/sd/SDDriverV3.h>
+#include <io/char/MiniUARTCharacterReaderWriter.h>
+#include <io/char/PL011CharacterReaderWriter.h>
 // 进程
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
 // 文件系统
 #include <filesystem/VirutalFileSystem.h>
 
+//io
+extern MiniUARTCharacterReaderWriter miniUARTChReaderWriter;
+extern PL011CharacterReaderWriter    pl011ChReader;
 
 extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
 extern InterruptHandler<BCM2836LocalIntController>  intHandler;

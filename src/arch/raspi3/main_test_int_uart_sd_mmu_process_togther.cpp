@@ -303,7 +303,7 @@ void main_mmu_set()
 	// 使用任务调度切换到下一个进程
 	virtman.enableTTBR0(true);
 	processManager.changeProcessStatus(processLink, Process::RUNNING);
-	void *spEL1=reinterpret_cast<void*>(reinterpret_cast<uint64_t>(__stack_top)|virtman.ttbr1Mask());
+	void *spEL1=reinterpret_cast<void*>(reinterpret_cast<uint64_t>(__stack_top));
 	process.restoreContextAndExecute(spEL1);
 
 	// 不能返回
