@@ -19,7 +19,9 @@ MemoryManager::MemoryManager(void *base,size_t size,bool initChunks)
 	 _base(reinterpret_cast<char*>(base)),
 	 _size(size)
 {
-	assert(size >= sizeof(MemoryChunk));//不足以形成一个Chunk
+	assert(size >= sizeof(MemoryChunk)
+			&& reinterpret_cast<size_t>(base)%sizeof(MemoryChunk)==0);
+				//不足以形成一个Chunk
 	if(initChunks)
 	{
 		if(size <= 2*sizeof(MemoryChunk))

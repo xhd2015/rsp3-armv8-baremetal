@@ -39,8 +39,8 @@ uint32_t           sysTimerTick=0; // DOCME sysTimerTick表明调度的时间延
 // DOCME 这里实例化模板有点特殊，没有采用与data类似的tempdecl的方式。
 //   这是由于，在我们的系统中，这种类只需要一个。
 #include "../src/interrupt/InterruptHandler.cpp"
-InterruptHandler<BCM2836LocalIntController>  intHandler{nullptr};
 template class InterruptHandler<BCM2836LocalIntController>;
+InterruptHandler<BCM2836LocalIntController>  intHandler{nullptr};
 
 // 进程
 ProcessManager processManager;

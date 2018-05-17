@@ -187,6 +187,14 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 		}
 	}
 }
+void VirtualMap::rebaseL3(size_t basePage)
+{
+	size_t index=_startAddr.index(3);
+	for(size_t i=index;i!=_sizes[3];++i)
+	{
+		_l3Table[i].OutputAddr = basePage + i-index;
+	}
+}
 void VirtualMap::allocateTables()
 {
 	kout << INFO << "VirtualMap allocateTables\n";

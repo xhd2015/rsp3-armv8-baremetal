@@ -1,0 +1,18 @@
+
+USER_RAM_SIZE  := 0x1ff000
+USER_RAM_START := 0x1000 #不是从0开始，避免nullptr
+
+USER_STACK_SIZE := 0x3000
+USER_CODE_SIZE  := 0x20000
+USER_INITRAM_SIZE := 0x1000
+USER_BSS_SIZE   := 0x100
+USER_DATA_SIZE  := $(shell echo "$$(( $(USER_RAM_SIZE) - $(USER_STACK_SIZE) - \
+					$(USER_CODE_SIZE) - $(USER_INITRAM_SIZE) - $(USER_BSS_SIZE) ))")
+
+USER_STACK_START := $(shell echo "$$(( $(USER_RAM_START)  ))")
+USER_CODE_START  := $(shell echo "$$(( $(USER_STACK_START) + $(USER_STACK_SIZE) ))")
+USER_INITRAM_START := $(shell echo "$$(( $(USER_CODE_START) + $(USER_CODE_SIZE) ))")
+USER_BSS_START   := $(shell echo "$$(( $(USER_INITRAM_START) + $(USER_INITRAM_SIZE) \
+						))")
+USER_DATA_START  := $(shell echo "$$(( $(USER_BSS_START) + \
+					$(USER_BSS_SIZE) ))")

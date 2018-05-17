@@ -3,17 +3,18 @@
 */
 MEMORY
 {
-	STACK(rw) : ORIGIN = RAM_START , LENGTH = STACK_SIZE
-	CODE(rx) : ORIGIN = RAM_START + STACK_SIZE , LENGTH = CODE_SIZE
-	INITRAM(rw) : ORIGIN = RAM_START + STACK_SIZE + CODE_SIZE , LENGTH = INITRAM_SIZE
-	DATA (rw) : ORIGIN = RAM_START + STACK_SIZE + CODE_SIZE + INITRAM_SIZE , LENGTH = RAM_SIZE - STACK_SIZE - CODE_SIZE - INITRAM_SIZE 
+	STACK(rw) : ORIGIN = USER_STACK_START , LENGTH = USER_STACK_SIZE
+	CODE(rx) : ORIGIN = USER_CODE_START , LENGTH = USER_CODE_SIZE
+	INITRAM(rw) : ORIGIN = USER_INITRAM_START , LENGTH = USER_INITRAM_SIZE
+	BSS  (rw)  : ORIGIN = USER_BSS_START , LENGTH = USER_BSS_SIZE
+	DATA (rw) : ORIGIN = USER_DATA_START , LENGTH = USER_DATA_SIZE 
 }
 
 SECTIONS{
 	/* DOCME 为什么这里, objcopy的行为是将其放到0地址处？ 而对于其他有空隙的地方，却又是生成0的方式 
 	难道所有的NOLOAD会被略过吗？ 但是这样就与 "默认情况下LA=VA"矛盾了
 	*/
-    .text RAM_START + STACK_SIZE :{
+    .text : {
         *(.text.init)
         *(.text)
         *(.text.*)
@@ -34,7 +35,7 @@ SECTIONS{
     	*(COMMON)
     	. = ALIGN(8);
     	PROVIDE(bssEnd = .);
-    } > DATA
+    } > BSS
     
     /* 这区需要代码的手动初始化 */
     .data :  {
@@ -46,7 +47,7 @@ SECTIONS{
     .freeram  (NOLOAD) : {
     	. = ALIGN(8);
     	PROVIDE(freeRamStart = . );
-    	. = ABSOLUTE(RAM_START + RAM_SIZE); /* 到达最顶部，全部为HEAP */
+    	. = ABSOLUTE(USER_DATA_START + USER_DATA_SIZE); /* 到达最顶部，全部为HEAP */
     	PROVIDE(freeRamEnd = .);
     } > DATA
 }

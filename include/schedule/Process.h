@@ -47,7 +47,10 @@ public:
 			size_t startVaPage,//起始虚拟地址
 			size_t codeStartPage,size_t codePages, // 所有其他的都是正常类型,代码是只读的
 			uint64_t stackTopPage,
-			size_t   addrBits
+			size_t   addrBits,
+			void    *pmemStart, // 进程的内存管理起始地址
+			size_t   pmemSize,  // 大小
+			bool     pmemInitChunks  // 是否初始化
 			);
 	~Process();
 
@@ -59,6 +62,13 @@ public:
 	Process& operator=(const Process &rhs)=delete;
 	Process(Process &&rhs)=delete;
 	Process& operator=(Process &&rhs)=delete;
+
+	/**
+	 * 填充进程所需的启动参数
+	 * @param
+	 * @param ptrBase  给进程分配的内存，在用户态所处的基地址。即，内存的映射基地址
+	 */
+	void fillArguments(const Vector<String> &args,size_t ptrBase);
 
 	void saveContext(const uint64_t *savedRegisters);
 
@@ -87,7 +97,11 @@ private:
 	Pid           _pid  ;
 	uint32_t     _priority;
 	Status       _status ;
-	Process *   _parent ;
+	Process *    _parent ;
+	// 内存
+	void    *    _memory ;
+	size_t       _memsize;
+	MemoryManager  _pmman; // process memory manager
 
 	// ARMv8 特有的结构
 	RegTTBR0_EL1    _ttbr0 ;

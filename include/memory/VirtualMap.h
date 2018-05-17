@@ -69,6 +69,7 @@ public:
 	 * @param descr  descr必须
 	 */
 	void mapL3(const Vector<AddressSpaceDescriptor> &descr);
+	void rebaseL3(size_t basePage);
 
 	bool globalPages()const { return _global;}
 	void globalPages(bool v){ _global=v;}

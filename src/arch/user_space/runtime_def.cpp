@@ -10,10 +10,13 @@
 
 
 //IO
-Output      kout;
+UserSpaceCharacterReader chReader;
+UserSpaceCharacterWriter chWriter {0};
+Output      kout {nullptr};
+Input       kin {nullptr};
 char koutBuf[koutBufSize]={0};
 Queue<uint16_t> inputBuffer{512};
-Input       kin;
+
 
 // memory
 MemoryManager mman {nullptr,0,true};

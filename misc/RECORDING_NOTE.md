@@ -1,3 +1,5 @@
+# 2018年5月17日18:17:32
+【commit point】增加了Process管理已分配内存的能力，以便能够在Process内构造一个局部内存管理器，因而内核能够提前分配内存空间，向进程传递参数。
 # 2018年5月16日20:53:39
 【commit point】取消了位置无关代码(-pie)编译选项，主要的调整包括了内核的生成方式、在启用虚拟内存的临界区域跳转的代码，其他的细微调整包括：Vector改用java arraylist的增长方式，Output和Input能够不再使用全局的输出设备，而是可以通过redirect来重定向，VirtualFile增加了previous指针，增加了RAMVirtualFile类。主要源代码：[main_test_int_uart_sd_mmu_process_togther_2018_5_16_vector_vfs_promoted.cpp](../src/arch/raspi3/main_test_int_uart_sd_mmu_process_togther_2018_5_16_vector_vfs_promoted.cpp)
 
@@ -8,7 +10,7 @@
 B b;
 A *p=&b;
 (void*)p==(void*)&b?
-p==b?
+p==&b?
 
 【todo】 测试这一点
 # 2018年5月16日14:41:15

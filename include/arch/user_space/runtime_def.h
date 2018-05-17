@@ -12,11 +12,15 @@
 #include <data/Queue.h>
 #include <io/Output.h>
 #include <io/Input.h>
+#include <io/char/UserSpaceCharacterReader.h>
+#include <io/char/UserSpaceCharacterWriter.h>
 // memory
 #include <memory/MemoryManager.h>
 
 //io
 extern Queue<uint16_t> inputBuffer;
+extern UserSpaceCharacterReader chReader;
+extern UserSpaceCharacterWriter chWriter;
 
 //进程
 #include <schedule/schedule_forward.h>

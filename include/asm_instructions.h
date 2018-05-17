@@ -17,16 +17,6 @@
 // ASM instruction sym.., need sync by c++ labels, you must avoid -Werror=unused-label
 #define ASM_DEFINE_LOCAL_SYM(sym) __asm__sym__##sym: __asm__ __volatile__(__stringify(sym) ":\n\t")
 #define ASM_DEFINE_GLOBAL_SYM(sym) __asm__sym__##sym:__asm__ __volatile__(".global " __stringify(sym) " \n\t;" __stringify(sym) ":\n\t")
-#define ASM_LDR_REG(reg,val) __asm__ __volatile__("")
-#define ASM_PUSHX_REG()
-#define ASM_PUSHX()
-#define ASM_POPX_REG()
-#define ASM_POPX()
-#define ASM_PUSHW_REG()
-#define ASM_PUSHW()
-#define ASM_POPW_REG()
-#define ASM_POPW()
-#define ASM_GOTO(sym) __asm__ __volatile__("b " __stringify(sym) " \n\t")
 
 //== declarations
 AS_MACRO void asm_nop();

@@ -136,8 +136,10 @@ template <class T>
 T Vector<T>::popBack()
 {
 	assert(_size > 0);
+	auto v=std::move(_data[_size - 1]);
 	adjustCapacityForOneLess();
-	return _data[--_size];
+	--_size;
+	return std::move(v);
 }
 template <class T>
 void Vector<T>::pushBack(T t)

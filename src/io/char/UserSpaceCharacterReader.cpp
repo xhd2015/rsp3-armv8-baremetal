@@ -1,17 +1,15 @@
 /*
- * Input_user_space.cpp
+ * UserSpaceCharacterReader.cpp
  *
- *  Created on: Apr 11, 2018
+ *  Created on: May 17, 2018
  *      Author: 13774
  */
-
+#include <io/char/UserSpaceCharacterReader.h>
 #include <runtime_def.h>
-#include <io/Input.h>
 #include <interrupt/svc_call.h>
 #include <generic_util.h>
 
-// buffered read
-uint16_t   Input::read()
+char  UserSpaceCharacterReader::read()
 {
 	if(inputBuffer.empty())
 	{
@@ -32,3 +30,6 @@ uint16_t   Input::read()
 	}
 	return inputBuffer.remove();
 }
+
+
+

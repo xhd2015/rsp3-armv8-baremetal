@@ -18,21 +18,27 @@ Process::Process(
 		uint32_t priority,
 		Process *parent,
 		size_t mapPhyPage,
-		size_t pagesNeeded,
+		size_t phyPages,
 		size_t startVaPage,
 		size_t codeStartPage,size_t codePages, // 所有其他的都是正常类型,代码是只读的
 		uint64_t stackTopPage,//va
-		size_t  addrBits
+		size_t  addrBits,
+		void    *pmemStart,
+		size_t   pmemSize,
+		bool     pmemInitChunks
 		)
 	: _pid(pidManager.allocate()),
 	  _priority(priority),
 	  _status(CREATED_INCOMPLETE),
 	  _parent(parent),
+	  _memory(reinterpret_cast<void*>(mapPhyPage*VirtualMap::_D::PAGE_SIZE)),
+	  _memsize(phyPages*VirtualMap::_D::PAGE_SIZE),
+	  _pmman(pmemStart,pmemSize,pmemInitChunks),
 	  _ttbr0(RegTTBR0_EL1::make(0)), // FIXME 使用0值初始化
 	  _spEL0(RegSP_EL0::make(0)),
 	  _ELR(RegELR_EL1::make(0)),
 	  _SPSR(RegSPSR_EL1::make(0)),
-	  _vmap(mapPhyPage, pagesNeeded,
+	  _vmap(mapPhyPage, phyPages,
 			  false,
 			  reinterpret_cast<void*>(startVaPage * VirtualMap::_D::PAGE_SIZE),
 			  addrBits)
@@ -41,7 +47,7 @@ Process::Process(
 		return;
 	// 必须在范围以内
 	assert(codeStartPage>=startVaPage &&
-			codeStartPage-startVaPage<=pagesNeeded - codePages);
+			codeStartPage-startVaPage<=phyPages - codePages);
 
 	constexpr size_t pageSize=VirtualMap::_D::PAGE_SIZE;
 	auto start = startVaPage * pageSize;
@@ -77,7 +83,7 @@ Process::Process(
 	// 那么  -(codeStart-start)=-codeStart + start
 	vec.emplaceBack(
 			reinterpret_cast<void*>(codeStart+codeSize),
-			pagesNeeded*pageSize - codeStart - codeSize + start, // all left size
+			phyPages*pageSize - codeStart - codeSize + start, // all left size
 			AddressSpaceDescriptor::T_NORMAL,
 			false,
 			cacheable,
@@ -108,6 +114,7 @@ Process::~Process()
 		pidManager.deallocate(_pid);
 		_pid = PID_INVALID;
 	}
+	mman.deallocate(_memory);
 	//取出_ttbr0的asid
 	asm_tlbi_aside1(_ttbr0.ASID);
 	// 为了效率考虑，不重置指针值，因为DESTROYED可以判定这些值是否有效。
@@ -119,6 +126,9 @@ Process::Process(const Process & rhs)
 	 _priority(rhs._priority),
 	 _status(CREATED_INCOMPLETE),
 	 _parent(const_cast<decltype(_parent)>(&rhs)),
+	 _memory(mman.allocate(rhs._memsize,VirtualMap::_D::PAGE_SIZE)),
+	 _memsize(rhs._memsize),
+	 _pmman(_memory,_memsize,false),
 	 _ttbr0(rhs._ttbr0),
 	 _spEL0(rhs._spEL0),
 	 _ELR(rhs._ELR),
@@ -127,16 +137,36 @@ Process::Process(const Process & rhs)
 {
 	if(_pid == PID_INVALID)
 		return;
+	assert(_memory);//占用的内存不为空
+	std::memcpy(_memory, rhs._memory,_memsize);
+	// 改变L3层所指的页面基地址
+	_vmap.rebaseL3(reinterpret_cast<uint64_t>(_memory)/VirtualMap::_D::PAGE_SIZE);
 	// 赋值寄存器
 	// FIXME 使用高效的memcpy
 	std::memcpy(_registers, rhs._registers, sizeof(_registers));
-	_registers[0]=_pid;
 	// DOCME 将ttbr0设置为物理地址，这十分重要
 	virtman.setTTBR0Addr(_ttbr0,
 			reinterpret_cast<uint64_t>(_vmap.l0Table()));
 }
 
-
+void Process::fillArguments(const Vector<String>& args,size_t ptrBase)
+{
+	kout << INFO << "process filling arguments\n";
+	kout << INFO << "process mman base = " << Hex(_pmman.base()) << "\n";
+	kout << INFO << "process mman size = " << Hex(_pmman.size()) << "\n";
+	_registers[0]=_pid;
+	_registers[1]=args.size();
+	size_t  base = reinterpret_cast<size_t>(_memory);
+	size_t *p = _pmman.allocateAs<size_t*>(args.size() * sizeof(char*));
+	for(size_t i=0;i!=args.size();++i)
+	{
+		char * cstr = _pmman.allocateAs<char*>(args[i].size() + 1);
+		p[i] = reinterpret_cast<size_t>(cstr) - base + ptrBase;
+		cstr[args[i].size()]='\0';
+		std::memcpy(cstr, args[i].data(), args[i].size());
+	}
+	_registers[2] = reinterpret_cast<size_t>(p) - base + ptrBase;
+}
 
 void Process::saveContext(const uint64_t *savedRegisters)
 {

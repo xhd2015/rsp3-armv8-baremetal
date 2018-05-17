@@ -1,0 +1,3 @@
+
+include ${ROOT_PROJECT}/makefiles/user_space/makefile.MEMORY_LAYOUT.defs
+

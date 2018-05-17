@@ -29,6 +29,8 @@ public:
 	AS_MACRO VirtualFile * findRootFile(const VectorRef<String> &path){ return _root->findFile(path);}
 	AS_MACRO VirtualFile * findRootFile(const Vector<StringRef> &path){ return _root->findFile(path);}
 	AS_MACRO void          foreachRootFile(VirtualFile::VirtualFileHandler handler){ _root->foreachFile(handler); }
+	AS_MACRO VirtualFile * rootFile() { return _root;}
+	AS_MACRO const VirtualFile * rootFile()const { return _root;}
 private:
 	VirtualFile *_root;
 };

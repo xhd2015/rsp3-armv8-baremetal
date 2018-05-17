@@ -7,13 +7,13 @@ ifneq ($(ENVS_PRESENT),true)
 include makefile.eclipse.envs
 endif
 
+include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/makefile.defs
 # 添加导出的变量
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_TO_ALL.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_VARIABLES.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_CXX_MACROS.makefile
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_LINKER_SYMBOLS.makefile
-# 上面的部分先引入变量，这里引入每个工程的makefile.defs
-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/makefile.defs
+
 
 # 添加辅助依赖, 注意,USER_OBJS 只能在此进行修改，其他地方修改不会产生效果
 # 确切地说,USER_OBJS只能在makefile.defs文件中定义

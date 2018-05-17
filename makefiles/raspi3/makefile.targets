@@ -28,28 +28,40 @@ $(ROOT_PATH)/config.$(TARGET_ARCH).txt : config.$(TARGET_ARCH).txt
 $(ROOT_PATH)/$(MASTERY_BINARY) : $(MASTERY_BINARY)
 	cp $< $@
 install : $(ROOT_PATH)/$(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
-	
-	
 
-    
+
+define elf_to_bin
+	$(TOOLCHAIN_OBJCOPY) -O binary $1 $2
+endef
+# bin_add OF IF SEEK COUNT
+define bin_add
+	
+endef 
 userSpaceBin := $(ROOT_PROJECT)/subprojects/user_space/Debug/user_space.bin
-part1.bin: $(MASTERY_ELF)
-	$(TOOLCHAIN_OBJCOPY) -O binary $(MASTERY_ELF) $@
-	userSpaceStart=$$(($(CODE_SIZE) + + $(INITRAM_SIZE)))
-	count=$$(($(USER_SPACE_SIZE)))
-	dd if=$(userSpaceBin) of=$@ seek=$$userSpaceStart bs=1c count=$$count
-    
-part2.elf : $(MASTERY_ELF)
+# makefile接收的环境参数： CODE_PART IMAGE_BASE
+# part1使用默认参数
+part1.bin:$(MASTERY_ELF)
+	$(call elf_to_bin,$<,$@)
+
+# 2是依赖于1的，但是环境又不同
+$(MASTERY_ELF).2:$(MASTERY_ELF)
 	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
-	$(MAKE) RAM_START=0xffffff0000000000 CODE_PART=2 $(MASTERY_ELF)
+	$(MAKE) CODE_PART=2 IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
-part2.bin : part2.elf
-	$(TOOLCHAIN_OBJCOPY) -O binary $< $@
+
+# part2.bin和part2.bin_recalled之间的协作：通过$(MASTERY_ELF).2来传递依赖性
+part2.bin:$(MASTERY_ELF).2
+	$(MAKE) CODE_PART=2 IMAGE_BASE=0xffffff0000000000 part2.bin_recalled
+part2.bin_recalled:$(MASTERY_ELF).2
+	$(call elf_to_bin,  $(MASTERY_ELF).2,  part2.bin)
+	dd if=$(userSpaceBin) of=part2.bin seek=$(USER_SPACE_DD_START) \
+			bs=1c count=$(USER_SPACE_SIZE)
+
 # 使用truncate 确保第一部分是CODE_SIZE大小
 $(MASTERY_BINARY):part1.bin part2.bin
-	cp part2.bin $@
-	truncate -s $(SINGLE_GEN_SIZE) $@
+	cp part2.bin $@ &&
+	truncate -s $(SINGLE_GEN_SIZE) $@ &&
 	cat part1.bin >> $@
 
 # -cpu cortex-a53 -smp 4  -m 1024M  # 都有default值, 不能设置smp为其他值。

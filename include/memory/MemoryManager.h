@@ -110,7 +110,7 @@ public:
 	 */
 	size_t getAllocatedLength(void *origin)const;
 
-	AS_MACRO char* base()  {return _base;}
+	AS_MACRO void* base()  {return _base;}
 	AS_MACRO const size_t size() const {return _size;}
 
 private:

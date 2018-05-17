@@ -20,6 +20,7 @@
 #include <filesystem/FAT32VirtualFile.h>
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <filesystem/fat/FAT32EntryTable.h>
+#include <filesystem/RAMVirtualFile.h>
 
 
 // well documented definition:
@@ -156,7 +157,8 @@ int main()
 
 	return 0;
 }
-void main_mmu_set(VirtualMap * vmap,void *ramStart,size_t ramSize,size_t addressBits)
+void main_mmu_set(VirtualMap * vmap,void *ramStart,
+		size_t ramSize,size_t addressBits)
 {
 	new (&virtman) VirtualManager(addressBits);
 	virtman.enableTTBR0(false);
@@ -171,18 +173,18 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,size_t ramSize,size_t address
 	new (&pl011) PL011(UART0_BASE+diff);
 	new (&pl011ChReader) PL011CharacterReaderWriter(&pl011);
 	new (&kout) Output(&pl011ChReader);
+	new (&inputBuffer) Queue<uint16_t>(512);
 	new (&sysTimer) BCM2835SystemTimer(SYS_TIMER_BASE+diff);
 	new (&intHandler)
 			InterruptHandler<BCM2836LocalIntController>(&localIntc);
 
 	kout << INFO << "reconstructed all.\n";
-	kout << INFO << "creating VirtualFileSystem\n";
-
 	// 初始化虚拟文件系统
+	kout << INFO << "creating VirtualFileSystem\n";
 	new (&vfs) VirtualFileSystem();
 
+	// TODO 使用内存文件而不是这些该死的SD卡文件
 	new (&sddriver) SDDriverV3(SD_BASE + diff);
-//	// 加入boot分区
 	if(sddriver.init()==0)
 	{
 		kout << INFO << "Reading FAT\n";
@@ -200,6 +202,10 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,size_t ramSize,size_t address
 	}else{
 		kout << WARNING << "init sd failed\n";
 	}
+	kout << INFO << "adding ramfs to vfs\n";
+	auto ramroot = new RAMVirtualFile("ramfs",VirtualFile::F_DIRECTORY);
+	ramroot->addFile(new RAMVirtualFile("test",VirtualFile::F_FILE));
+	vfs.rootFile()->addFile(ramroot);
 
 	constexpr size_t pageSize = VirtualMap::_D::PAGE_SIZE;
 	static_assert(USER_RAM_START % pageSize==0 &&
@@ -225,11 +231,16 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,size_t ramSize,size_t address
 			USER_RAM_START/pageSize, // ramstart(va),in pages
 			(USER_RAM_START+USER_STACK_SIZE)/pageSize,USER_CODE_SIZE/pageSize,//code,readonly
 			(USER_RAM_START + USER_STACK_SIZE)/pageSize,//stack top
-			virtman.addressBits() // virtual address length in bits
+			virtman.addressBits(), // virtual address length in bits
+			p  + USER_DATA_START - USER_STACK_START, //从stack开始的
+			USER_DATA_SIZE,
+			true
 	);
 	Process & process = processLink->data<true>();
 	assert(processLink &&
 			process.status()!=Process::CREATED_INCOMPLETE);
+	kout << INFO << "__user_space_start = " << Hex(reinterpret_cast<uint64_t>(
+			__user_space_start)) << "\n";
 	// 将代码和initRAM复制到分配的内存空间
 	std::memcpy(p + USER_STACK_SIZE,
 			__user_space_start,USER_CODE_SIZE + USER_INITRAM_SIZE);
@@ -245,31 +256,24 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,size_t ramSize,size_t address
 		kout << Hex(codePtr[i]) << " ";
 	kout << "\n===========\n";
 
-
-	// DOCME why this?
-	// 设置LR寄存器(x30)为入口地址
-	process.registers()[30] = process.ELR().returnAddr;
-
 	// 启用输入中断和定时中断
-//	localIntc.enableInterrupt(
-//			BCM2836LocalIntController::BCM2835IntSource::SRC_SYS_TIMER_FIRST+1,
-//			true);
 	pl011.enableFIFO(false);// 启用单字符模式
 	pl011.clearIntFlags();
-	pl011.readInterruptLevel(PL011::L_1of8); // 配置为至少一个字符就要处理
 	pl011.enableReceiveInterrupt(true);
 	localIntc.enableInterrupt(
 			BCM2836LocalIntController::BCM2835IntSource::SRC_UART_INT, true);
 	localIntc.enableInterrupt(
 			BCM2836LocalIntController::BCM2835IntSource::SRC_SYS_TIMER_FIRST+1, true);
-	sysTimerTick=1000;//1000ms
-	sysTimer.addCompareValueMS(1,sysTimerTick);
+	Vector<String> args;
+	args.pushBack("shell");
+	process.fillArguments(args,USER_STACK_START);
 
 	// 使用任务调度切换到下一个进程
 	virtman.enableTTBR0(true);
 	processManager.changeProcessStatus(processLink, Process::RUNNING);
-	void *spEL1=reinterpret_cast<void*>(reinterpret_cast<uint64_t>(__stack_top));
-	process.restoreContextAndExecute(spEL1);
+	sysTimerTick=1000;//1000ms
+	sysTimer.addCompareValueMS(1,sysTimerTick);
+	process.restoreContextAndExecute(__stack_top);
 
 	// 不能返回
 	while(true);

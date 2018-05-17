@@ -6,26 +6,15 @@
  */
 
 #include <def.h>
-#include <memory/MemoryManager.h>
-#include <schedule/Process.h>
-#include <io/Output.h>
 #include <memory/VirtualAddress.h>
 #include <new>
 #include <schedule/schedule_forward.h>
 #include <runtime_def.h>
+#include <io/IntegerFormatter.h>
 
 // DOCME 不能使用exit作为退出名称
 extern void destroy(int errCode);
-extern int main();
-
-// user_space所提供的全局变量
-// 在代码中重新初始化
-//MemoryManager mman(0,0);
-//const char EMPTY_STR[1]={0};
-//
-//// prink相关的
-//char koutBuf[koutBufSize];
-//Output kout;
+extern int main(int argc,char *argv[]);
 
 extern char freeRamStart[];
 extern char freeRamEnd[];
@@ -35,7 +24,7 @@ extern uint64_t bssStart[];
 extern uint64_t bssEnd[];
 
 __attribute__((section(".text.init")))
-void init(Pid pid)
+void init(Pid pid,int argc,char *argv[])
 {
 	// ==== must be first
 	// 清空bss区
@@ -45,12 +34,22 @@ void init(Pid pid)
 	::pid=pid;
 
 	new (&mman) MemoryManager(reinterpret_cast<void*>(freeRamStart),
-			freeRamEnd-freeRamStart,true);
-	new (&kout) Output();
+			freeRamEnd-freeRamStart,false);
+	new (&chWriter) UserSpaceCharacterWriter(100);
+	new (&chReader) UserSpaceCharacterReader();
+	new (&inputBuffer) Queue<uint16_t>(512);
+	new (&kout) Output(&chWriter);
+	new (&kin)  Input(&chReader);
 
+	kout << INFO << "freeRamStart = " <<
+			Hex(reinterpret_cast<uint64_t>(freeRamStart)) << "\n";
+	kout << INFO << "freeRamSize = " <<
+			Hex(freeRamEnd - freeRamStart) << "\n";
+	if(argc>0)
+		kout << INFO << "process name = " << argv[0] << "\n";
 	kout << INFO << "init, pid = " << pid << "\n";
 
-	int res=main();
+	int res=main(argc,argv);
 	destroy(res);
 }
 

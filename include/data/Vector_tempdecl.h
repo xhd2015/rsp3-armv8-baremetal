@@ -101,6 +101,11 @@ private:
 	bool  resizeCapacity(size_t capacity);
 	bool  adjustCapacityForOneMore();
 	//  _size>=0
+	/**
+	 * 注意，在调用该函数之前，必须保证最后一个元素不再使用。
+	 * 因为该函数默认假定最后一个元素会被销毁。
+	 * @return
+	 */
 	bool  adjustCapacityForOneLess();
 
 	AS_MACRO static size_t getIncrementalCapacity(size_t curSize){return (curSize * 3 / 2)+1;}
