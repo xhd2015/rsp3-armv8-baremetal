@@ -15,13 +15,15 @@ class RAMVirtualFile:
 		public VirtualFile
 {
 public:
-	RAMVirtualFile(const String &name,FileType type);
+	RAMVirtualFile(const StringRef &name,FileType type);
 	virtual ~RAMVirtualFile();
 	virtual FileType type()const override;
 	virtual SubFileSystemType subFSType()const override;
 	virtual size_t         size()const override;
 	virtual String         read(size_t offset,size_t maxBytes)override;
 	virtual size_t         write(const StringRef & ref,size_t offset)override;
+	virtual VirtualFile*   createFile(const StringRef &name,FileType type)const override;
+	virtual VirtualFile*   copy()const override;
 private:
 	FileType   _type;
 	String     _data;

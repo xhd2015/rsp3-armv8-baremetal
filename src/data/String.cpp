@@ -7,6 +7,7 @@
 
 #include <data/String.h>
 #include <data/StringRef.h>
+#include <cstring>
 
 //#undef _ARG_DO_GENERATE
 //#define _ARG_DO_GENERATE
@@ -28,7 +29,7 @@
 //#include <data_structures/GenerateString.h>
 
 
-#include <cstring>
+
 String::String(const char *s)
 	:BaseType()
 {
@@ -48,7 +49,7 @@ String &String::operator=(const char *s)
 String & String::append(const char* s,size_t len)
 {
 	size_t left=len;
-	while(*s && left)
+	while(left && *s)
 	{
 		pushBack(*s++);
 		--left;
@@ -64,11 +65,10 @@ String & String::append(const char *s)
 }
 size_t   String::findFirst(size_t start,const String &s)const
 {
-	StringRef strRef(s);
 	for(size_t i=start;i!=size();++i)
 	{
 		auto subStr = s.subString(i, s.size());
-		if(subStr == strRef)
+		if(subStr == s)
 			return i;
 	}
 	return SIZE_MAX;
@@ -153,12 +153,13 @@ bool    String::startswith(const String &str)const
 }
 String String::subString(size_t i,size_t len)const
 {
+	if(size()==0)return std::move(String());
 	if(i>=size()) i=size()-1;
 	if(i+len >= size()) len=size()-i;
 	String s;
 	for(size_t j=0;j!=len;++j)
 		s.pushBack((*this)[j+i]);
-	return s;
+	return std::move(s);
 }
 
 

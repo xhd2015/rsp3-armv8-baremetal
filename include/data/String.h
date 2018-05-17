@@ -10,6 +10,7 @@
 
 #include <data/Vector.h>
 #include <functional>
+#include <data/StringRef.h>
 
 //#undef _ARG_DO_GENERATE
 //#define _ARG_DO_GENERATE
@@ -42,6 +43,8 @@ public:
 	AS_MACRO String(const char *data,size_t n):BaseType(data,n){}
 	AS_MACRO String(const String &s):BaseType(s){}
 	String & operator=(const String &s){BaseType::operator =(s);return *this;}
+	AS_MACRO String(const StringRef &s):BaseType(s){}
+	String & operator=(const StringRef &s) { BaseType::operator =(s);return *this;}
 	String(String &&s):BaseType(std::move(s)){}
 	String & operator=(String &&s){ BaseType::operator =(std::move(s));return *this;}
 

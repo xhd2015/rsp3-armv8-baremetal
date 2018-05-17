@@ -12,7 +12,8 @@
 // 这种分离实现可以避免：当函数体中包含了另一个依赖于此文件的文件引入时，产生的环形依赖问题
 // 另一个问题，也与环形依赖相关，可以通过forward_decl来解决。
 
-#include "Vector_tempdecl.h"
+#include <data/Vector_tempdecl.h>
+#include <data/VectorRef.h>
 
 
 template <class T>
@@ -51,38 +52,32 @@ Vector<T>::Vector( const std::initializer_list<T> &il)
 }
 template <class T>
 Vector<T>::Vector(const T *data,size_t n)
-	:Vector()
+	:Vector(n)
 {
-	if(resizeCapacity(n))
+	if(data && _data)
 	{
 		for(size_t i=0;i!=n;++i)
 			new (_data+i) T(data[i]);
-		_size = n;
 	}
 }
 template <class T>
-Vector<T>::Vector( const Vector<T> & vec)
-	:
-_data(mman.allocateAs<T*>(vec._capacity)),
-	 _capacity(0),
-	 _size(0)
+Vector<T>::Vector( const VectorRef<T> & vec)
+	: Vector(vec.size())
 {
-	if(_data)
+	if(_data && vec.data())
 	{
-		_capacity = vec._capacity;
-		_size = vec._size;
-		auto srcData=vec._data;
+		auto srcData=vec.data();
 		for(size_t i=0;i!=_size;++i)
 			new (_data+i) T(srcData[i]);
 	}
 }
 
 template <class T>
-Vector<T>& Vector<T>::operator=(const Vector<T> & vec)
+Vector<T>& Vector<T>::operator=(const VectorRef<T> & vec)
 {
-	if(resize(vec._size))
+	if(resize(vec.size()))
 	{
-		auto src=vec._data;
+		auto src=vec.data();
 		for(size_t i=0;i!=_size;++i)
 			_data[i]=src[i];
 	}

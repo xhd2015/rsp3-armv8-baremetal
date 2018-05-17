@@ -203,8 +203,8 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 		kout << WARNING << "init sd failed\n";
 	}
 	kout << INFO << "adding ramfs to vfs\n";
-	auto ramroot = new RAMVirtualFile("ramfs",VirtualFile::F_DIRECTORY);
-	ramroot->addFile(new RAMVirtualFile("test",VirtualFile::F_FILE));
+	auto ramroot = new RAMVirtualFile("ramfs",FileType::F_DIRECTORY);
+	ramroot->addFile(new RAMVirtualFile("test",FileType::F_FILE));
 	vfs.rootFile()->addFile(ramroot);
 
 	constexpr size_t pageSize = VirtualMap::_D::PAGE_SIZE;

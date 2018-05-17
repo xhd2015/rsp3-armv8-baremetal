@@ -26,6 +26,14 @@ public:
 	~VirtualProxyKernel();
 	bool             cd(VirtualProxyCdHandler handler,void *instPtr);
 	size_t           ls(VirtualProxyLsHandler handler,void *instPtr);
+	bool             currentDir(VirtualProxyCurrentDirHandler handler,void *instPtr);
+	bool             create(const StringRef &filename,FileType type);
+	bool             move(const StringRef &filename,const StringRef &newname);
+	bool             remove(const StringRef &filename);
+	bool             copy(const StringRef &filename,const StringRef &copyname);
+	bool             getContent(VirtualProxyContentHandler handler,void *instPtr,
+								const StringRef &filename);
+	bool             fileExists(const StringRef &filename);
 
 	/**
 	 * savedRegs[0] 作为insPtr

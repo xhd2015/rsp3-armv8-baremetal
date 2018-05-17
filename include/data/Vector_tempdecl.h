@@ -26,6 +26,7 @@
 #include <utility>
 #include <io/Output.h>
 #include <new>
+#include <data/VectorRef_tempdecl.h>
 
 template <class T>
 class Vector{
@@ -39,8 +40,10 @@ public:
 	Vector(const std::initializer_list<T> &il);
 	Vector<T> & operator=(const std::initializer_list<T> &il)=delete;
 	Vector(const T *data,size_t n);
-	Vector(const Vector<T> & vec);
-	Vector<T> & operator=(const Vector<T> & vec);
+	Vector(const Vector<T> & vec):Vector(VectorRef<T>(vec)){}
+	Vector<T> & operator=(const Vector<T> & vec){ return *this=VectorRef<T>(vec);}
+	Vector(const VectorRef<T> & vec);
+	Vector<T> & operator=(const VectorRef<T> & vec);
 	Vector(Vector<T> && vec);
 	Vector<T>& operator=(Vector<T> && vec);
 	~Vector();

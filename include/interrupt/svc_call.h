@@ -32,75 +32,33 @@ public:
 // ==forward declarations:svc_call
 //template 用于提供立即数，提供下面这几种prototype是为了更加高效地传递系统调用的参数
 template <SvcFunc func>
-AS_MACRO uint64_t svc_call();
-template <SvcFunc func>
-AS_MACRO uint64_t svc_call(uint64_t arg0);
-template <SvcFunc func>
-AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1);
-template <SvcFunc func>
-AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2);
-template <SvcFunc func>
-AS_MACRO uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3);
-
+AS_MACRO uint64_t svc_call(uint64_t arg0=0,uint64_t arg1=0,
+		uint64_t arg2=0,uint64_t arg3=0,uint64_t arg4=0,
+		uint64_t arg5=0,uint64_t arg6=0,uint64_t arg7=0);
 
 // ===definitions
 template <SvcFunc func>
-uint64_t svc_call()
-{
-	uint64_t res=0;
-	__asm__ __volatile__(
-						"svc %1 \n\t"
-						"str x0,%0 \n\t"
-						:"=m"(res):"i"(func):"x0");
-	return res;
-}
-template <SvcFunc func>
-uint64_t svc_call(uint64_t arg0)
-{
-	uint64_t res=0;
-	__asm__ __volatile__("mov x0, %2 \n\t"
-						"svc %1 \n\t"
-						"str x0,%0 \n\t"
-						:"=m"(res):"i"(func),"r"(arg0):"x0");
-	return res;
-}
-template <SvcFunc func>
-uint64_t svc_call(uint64_t arg0,uint64_t arg1)
-{
-	uint64_t res=0;
-	__asm__ __volatile__("mov x0, %2 \n\t"
-						"mov  x1, %3  \n\t"
-						"svc %1 \n\t"
-						"str x0,%0 \n\t"
-						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1):"x0","x1");
-	return res;
-}
-template <SvcFunc func>
-uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2)
-{
-	uint64_t res=0;
-	__asm__ __volatile__("mov x0, %2 \n\t"
-						"mov  x1, %3  \n\t"
-						"mov  x2, %4 \n\t"
-						"svc %1 \n\t"
-						"str x0,%0 \n\t"
-						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1),"r"(arg2):"x0","x1","x2");
-	return res;
-}
-template <SvcFunc func>
-uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,uint64_t arg3)
+uint64_t svc_call(uint64_t arg0,uint64_t arg1,uint64_t arg2,
+			uint64_t arg3,uint64_t arg4,uint64_t arg5,uint64_t arg6,uint64_t arg7)
 {
 	uint64_t res=0;
 	__asm__ __volatile__("mov x0, %2 \n\t"
 						"mov  x1, %3  \n\t"
 						"mov  x2, %4 \n\t"
 						"mov  x3, %5  \n\t"
+						"mov  x4, %6  \n\t"
+			 	 	 	"mov  x5, %7  \n\t"
+						"mov  x6, %8  \n\t"
+						"mov  x7, %9  \n\t"
 						"svc %1 \n\t"
 						"str x0,%0 \n\t"
-						:"=m"(res):"i"(func),"r"(arg0),"r"(arg1),"r"(arg2),"r"(arg3):"x0","x1","x2","x3");
+						:"=m"(res)
+						:"i"(func), // 立即数
+						 "r"(arg0),"r"(arg1),"r"(arg2),"r"(arg3),
+						 	 	 "r"(arg4),"r"(arg5),"r"(arg6),"r"(arg7)
+						 :"x0","x1","x2","x3","x4","x5","x6","x7");
 	return res;
 }
-
 
 
 #endif /* INCLUDE_ARCH_COMMON_AARCH64_EXCEPTION_SVC_CALL_H_ */

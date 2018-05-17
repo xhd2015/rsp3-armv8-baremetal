@@ -6,7 +6,7 @@
  */
 
 #include <filesystem/VirtualFile.h>
-VirtualFile::VirtualFile(const String&   name)
+VirtualFile::VirtualFile(const StringRef&   name)
 	:_name(name),
 	 _parent(nullptr),
 	 _previousFile(nullptr),
@@ -139,11 +139,29 @@ VirtualFile*  VirtualFile::findFile(const StringRef &name)
 	return p;
 }
 
-String         VirtualFile::read(size_t offset,size_t maxBytes)
+String VirtualFile::read(size_t offset,size_t maxBytes)
 {
 	return "";
 }
 size_t         VirtualFile::write(const StringRef & ref,size_t offset)
 {
 	return 0;
+}
+
+VirtualFile*  VirtualFile::createFile(const StringRef &name,FileType type)const
+{
+	return new VirtualFile(name);
+}
+VirtualFile*   VirtualFile::copy()const
+{
+	return new VirtualFile(name());
+}
+void   VirtualFile::destroyFileRecursively(VirtualFile *file)
+{
+	if(file)
+	{
+		destroyFileRecursively(file->subFile());
+		destroyFileRecursively(file->nextFile());
+		delete file;
+	}
 }

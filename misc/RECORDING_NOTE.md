@@ -1,3 +1,5 @@
+# 2018年5月17日23:26:04
+【commit point】shell文件管理命令--pwd,mkdir,rm,cat,cp,mv 完成。剩下：ppid，shutdown，reboot，shell。
 # 2018年5月17日18:17:32
 【commit point】增加了Process管理已分配内存的能力，以便能够在Process内构造一个局部内存管理器，因而内核能够提前分配内存空间，向进程传递参数。
 # 2018年5月16日20:53:39

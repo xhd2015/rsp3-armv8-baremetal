@@ -44,16 +44,62 @@ void Shell::execute(String &line,Vector<String> &cmd)
 					kout << " ";
 			}
 		}else if(c=="cd"){
-			assert(cmd.size()==2);
-			_exitCode = !(_vp.cd(cmd[1]));
+			if(ensureEnoughArgument(2, cmd.size(), "argument not enough"))
+			{
+				_exitCode = !(_vp.cd(cmd[1]));
+			}
 		}else if(c=="mkdir"){
+			if(ensureEnoughArgument(2, cmd.size(), "argument not enough"))
+			{
+				_exitCode = !(_vp.create(cmd[1], FileType::F_DIRECTORY));
+			}
 		}else if(c=="rm"){
-		}else if(c=="rmdir"){
+			if(ensureEnoughArgument(2, cmd.size(), "argument not enough"))
+			{
+				_exitCode = !(_vp.remove(cmd[1]));
+			}
 		}else if(c=="cat"){
+			if(ensureEnoughArgument(2, cmd.size(), "argument not enough"))
+			{
+				String content;
+				_exitCode = !_vp.getContent(cmd[1], content);
+				if(_exitCode==0)
+				{
+					kout << content;
+					if(content.size()==0 || content.last()!='\n'||content.last()!='\r')
+						kout << "\n";
+				}
+			}
 		}else if(c=="cp"){
+			if(ensureEnoughArgument(3, cmd.size(), "argument not enough"))
+			{
+				_exitCode = !(_vp.copy(cmd[1],cmd[2]));
+			}
 		}else if(c=="mv"){
+			if(ensureEnoughArgument(3, cmd.size(), "argument not enough"))
+			{
+				_exitCode = !(_vp.move(cmd[1],cmd[2]));
+			}
 		}else if(c=="pwd"){
-
+			if(ensureEnoughArgument(1, cmd.size(), "argument not enough"))
+			{
+				Vector<String> res;
+				_exitCode = !(_vp.currentDir(res));
+				if(_exitCode==0)
+				{
+					if(res.size()==0)
+						kout << "/";
+					else
+						for(size_t i=0;i!=res.size();++i)
+						{
+							kout << "/" << res[i];
+						}
+					kout << "\n";
+				}
+			}
+		}else if(c=="shell"){
+			// sys create new process
+			// pass subroutines as
 		}else if(c=="shutdown"){
 			// 关机
 		}else if(c=="reboot"){
@@ -85,8 +131,7 @@ void Shell::execute(String &line,Vector<String> &cmd)
 				 << "    " << "shutdown      -- power off \n"
 				 << "    " << "reboot        -- reboot the computer\n"
 				 << "    " << "mkdir  DIR    -- create a directory\n"
-				 << "    " << "rm     FILE   -- remove a file \n"
-				 << "    " << "rmdir  DIR    -- remove an empty directory\n"
+				 << "    " << "rm     FILE   -- remove a file or directory \n"
 				 << "    " << "cat    FILE   -- print the content of a file\n"
 				 << "    " << "cp     F1 F2  -- copy file \n"
 				 << "    " << "mv     F1 F2  -- move or change filename \n"
@@ -119,5 +164,16 @@ void Shell::execute(int argc,char *argv[])
 		}
 		execute(line, args);
 	}
+}
+
+bool Shell::ensureEnoughArgument(size_t expect,size_t real,const char *prompt)
+{
+	if(real < expect)
+	{
+		kout << FATAL << prompt << "\n";
+		_exitCode=1;
+		return false;
+	}
+	return true;
 }
 

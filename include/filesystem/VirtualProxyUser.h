@@ -20,12 +20,25 @@ public:
 	VirtualProxyUser();
 	DELETE_COPY(VirtualProxyUser);
 	~VirtualProxyUser();
-	bool                                       cd(const StringRef &name);
-	bool                                       cd(const VectorRef<String> &path);
-	Vector<String>                             ls();
+	bool                         cd(const StringRef &name);
+	bool                         cd(const VectorRef<String> &path);
+	Vector<String>               ls();
+	bool                         fileExists(const StringRef &name);
+	bool                         create(const StringRef &name,FileType type);
+	bool                         move(const StringRef &name,const StringRef &newname);
+	bool                         copy(const StringRef &name,const StringRef &copyname);
+	bool                         remove(const StringRef &name);
+	bool                         getContent(const StringRef &name,String &content);
+	bool                         getSize(const StringRef &name,size_t &size);
+	bool                         currentDir(Vector<String> & path);
+
+
 private:
 	static const char * cdHandler(VirtualProxyUser *insPtr,size_t index, size_t &len);
 	static void         lsHandler(VirtualProxyUser *insPtr,const char *s,size_t len);
+	static void         currentDirHandler(VirtualProxyUser *instPtr,size_t sum,size_t i,
+			const char *name,size_t namelen);
+	static void         contentHandler(VirtualProxyUser *instPtr,const char *data,size_t len);
 private:
 	void * _proxyKernel;
 	void * _curArgs;

@@ -13,19 +13,16 @@
 #include <data/VectorRef.h>
 #include <def.h>
 #include <functional>
+#include <filesystem/VirtualProxyDefinitions.h>
 // 可能是普通目录，普通文件，设备文件或者一个挂载点。
 class VirtualFile
 {
 public:
 	using VirtualFileHandler = std::function<void(VirtualFile *)>;
-	enum FileType:uint16_t {
-		F_NON_EXISTS,F_FILE,F_DIRECTORY,
-		F_DEVICE, F_SUB_FILE_SYSTEM,F_ROOTFS
-	};
-	enum SubFileSystemType : uint16_t {
-		FS_NONE,FS_RAMFS, FS_ROOTFS,FS_FAT12,FS_FAT16,FS_FAT32,
-	};
-	VirtualFile(const String&    name);
+	using FileType = ::FileType;
+	using SubFileSystemType = ::SubFileSystemType;
+
+	VirtualFile(const StringRef&    name);
 	VirtualFile(const VirtualFile &rhs)=delete;
 	VirtualFile & operator=(const VirtualFile &rhs)=delete;
 	/**
@@ -72,10 +69,20 @@ public:
 	virtual void           foreachFile(VirtualFileHandler handler);
 	virtual String         read(size_t offset,size_t maxBytes);
 	virtual size_t         write(const StringRef & ref,size_t offset);
+	virtual VirtualFile*   createFile(const StringRef &name,FileType type)const;
+	/**
+	 * 依据当前文件产生一个新的文件，不包括文件的链接信息
+	 * f非空
+	 * @param f
+	 * @return
+	 */
+	virtual VirtualFile*   copy()const;
+
+	static void   destroyFileRecursively(VirtualFile *file);
 
 	// setters and getters
-	AS_MACRO const String & name() const {return _name;}
-	AS_MACRO void         name(const String & name) { _name=name;}
+	AS_MACRO const StringRef  name() const {return _name;}
+	AS_MACRO void         name(const StringRef & name) { _name=name;}
 	AS_MACRO VirtualFile* parent() {		return _parent;}
 	AS_MACRO const VirtualFile* parent() const {		return _parent;}
 	AS_MACRO VirtualFile* previousFile() {		return _previousFile;}
@@ -88,6 +95,7 @@ public:
 	AS_MACRO VirtualFile* subFile() {		return _subFile;}
 	AS_MACRO const VirtualFile* subFile() const {		return _subFile;}
 	AS_MACRO void subFile(VirtualFile* subFile) {		_subFile = subFile;}
+
 private:
 	String        _name;
 	VirtualFile * _parent;

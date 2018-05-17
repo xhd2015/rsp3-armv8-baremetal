@@ -7,7 +7,7 @@
 #include <filesystem/FAT32VirtualFile.h>
 #include <asm_instructions.h>
 #include <generic/error.h>
-FAT32VirtualFile::FAT32VirtualFile(const String&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry)
+FAT32VirtualFile::FAT32VirtualFile(const StringRef&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry)
 	:VirtualFile(name),
 	 _reader(reader),
 	 _bpb(bpb),
@@ -21,7 +21,6 @@ FAT32VirtualFile::FAT32VirtualFile(const String&  name,ByteReader &reader,FAT32E
 
 FAT32VirtualFile::~FAT32VirtualFile()
 {
-
 }
 void         FAT32VirtualFile::readBPB(ByteReader &reader,FAT32ExtBPB &bpb,size_t sec)
 {
@@ -142,6 +141,16 @@ String         FAT32VirtualFile::read(size_t offset,size_t maxBytes)
 size_t         FAT32VirtualFile::write(const StringRef & ref,size_t offset)
 {
 	return 0;
+}
+VirtualFile*   FAT32VirtualFile::createFile(const StringRef &name,FileType type)const
+{
+	return nullptr;
+	if(type == F_FILE || type==F_DIRECTORY)
+	{
+//		auto f = new FAT32VirtualFile(name,_reader,_bpb,_fat,type,);
+//		return f;
+	}
+	return nullptr;
 }
 void FAT32VirtualFile::clearSubEntries()
 {

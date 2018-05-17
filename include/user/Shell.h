@@ -30,6 +30,7 @@ public:
 	 */
 	void execute(String &line,Vector<String> &cmd);
 	void execute(int argc,char *argv[]);
+	bool ensureEnoughArgument(size_t expect,size_t real,const char *prompt);
 	AS_MACRO int  exitCode()const { return _exitCode;}
 private:
 	int        _exitCode;

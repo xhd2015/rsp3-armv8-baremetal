@@ -22,7 +22,7 @@ public:
 		IS_ROOT_BIT=1,
 		SUB_ENTRIES_BUILT_BIT=2
 	};
-	FAT32VirtualFile(const String&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry);
+	FAT32VirtualFile(const StringRef&  name,ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,FileType type,size_t indexInParentTable,FAT32Entry entry);
 	virtual ~FAT32VirtualFile();
 	static void               readBPB(ByteReader &reader,FAT32ExtBPB &bpb,size_t sec);
 	static void               readFAT(ByteReader &reader,FAT32ExtBPB &bpb,FAT32EntryTable &fat,size_t sec);
@@ -41,6 +41,7 @@ public:
 	virtual void     foreachFile(VirtualFileHandler handler) override;
 	virtual String         read(size_t offset,size_t maxBytes) override;
 	virtual size_t         write(const StringRef & ref,size_t offset) override;
+	virtual VirtualFile*   createFile(const StringRef &name,FileType type)const override;
 
 	FAT32VirtualFile * subFile2(size_t i);
 	AS_MACRO bool  rootDir()const { return _flags & (1<<IS_ROOT_BIT);}
