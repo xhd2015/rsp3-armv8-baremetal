@@ -12,7 +12,7 @@
 #ifdef NDEBUG
 #define reportErrorOn(expr,msg) ((void)0)
 #else
-#define reportErrorOn(expr,msg) ((expr)?(void)0:reportError(msg))
+#define reportErrorOn(expr,msg) do{if(expr)reportError(msg);}while(false)
 #endif
 
 // STOLEN from gcc

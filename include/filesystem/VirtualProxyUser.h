@@ -34,7 +34,6 @@ public:
 
 
 private:
-	static const char * cdHandler(VirtualProxyUser *insPtr,size_t index, size_t &len);
 	static void         lsHandler(VirtualProxyUser *insPtr,const char *s,size_t len);
 	static void         currentDirHandler(VirtualProxyUser *instPtr,size_t sum,size_t i,
 			const char *name,size_t namelen);

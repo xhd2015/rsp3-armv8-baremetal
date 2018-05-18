@@ -10,7 +10,6 @@
 #include <arch/common_aarch64/registers/timer_registers.h>
 void delayUS(size_t usec)
 {
-
 	uint64_t neededCount = static_cast<uint64_t>(RegCNTFRQ_EL0::read().ClockFrq)/1000*usec/1000;
 	uint64_t initCount = RegCNTPCT_EL0::read().PhysicalCount;
 	while(RegCNTPCT_EL0::read().PhysicalCount - initCount < neededCount) // wait

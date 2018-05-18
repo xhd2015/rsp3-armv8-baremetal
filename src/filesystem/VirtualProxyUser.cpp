@@ -26,13 +26,11 @@ bool     VirtualProxyUser::cd(const StringRef &name)
 }
 bool     VirtualProxyUser::cd(const VectorRef<String> &path)
 {
-	if(_proxyKernel)
-	{
-		_curArgs = const_cast<void*>(reinterpret_cast<const void*>(&path));
-		return svc_call<SvcFunc::vfsProxy>(reinterpret_cast<uint64_t>(_proxyKernel),VP_CD,reinterpret_cast<uint64_t>(&cdHandler),reinterpret_cast<uint64_t>(this));
-	}else{
-		return false;
-	}
+	return svc_call<SvcFunc::vfsProxy>(
+			reinterpret_cast<uint64_t>(_proxyKernel),
+			VP_CD,
+			reinterpret_cast<uint64_t>(&path)
+			);
 }
 Vector<String>          VirtualProxyUser::ls()
 {
@@ -111,15 +109,6 @@ bool                         VirtualProxyUser::currentDir(Vector<String> & path)
 				reinterpret_cast<uint64_t>(&currentDirHandler),
 				reinterpret_cast<uint64_t>(this)
 			);
-}
-const char * VirtualProxyUser::cdHandler(VirtualProxyUser *insPtr,size_t index, size_t &len)
-{
-	assert(insPtr && insPtr->_curArgs);
-	auto& ref=*reinterpret_cast<VectorRef<String>*>(insPtr->_curArgs);
-	if(index >= ref.size())
-		return nullptr;
-	len = ref[index].size();
-	return ref[index].data();
 }
 void         VirtualProxyUser::lsHandler(VirtualProxyUser *insPtr,const char *s,size_t len)
 {

@@ -15,7 +15,7 @@ enum VirtualProxyFunction{
 	VP_NEW, // (nullptr,VP_NEW), 第一个参数被忽略
 
 	VP_LS,  // (insPtr, VP_LS, VectorAddr)
-	VP_CD,  // (insPtr, VP_CD, VectorRefAddr)
+	VP_CD,  // bool (insPtr, VP_CD, VectorRefAddr)
 	VP_CURRENT_DIR, // (insPtr, VP_CURRENT_DIR,VirtualProxyCurrentDirHandler,proxyUserInstPtr)
 	VP_GET_CONTENT, // (insPtr,  VP_GET_CONTENT,VirtualProxyContentHandler,proxyUserInstPtr,
 	//                   nameRef)
@@ -27,7 +27,6 @@ enum VirtualProxyFunction{
 	VP_DELETE, // (insPtr,VP_DELETE) , delete the kernel proxy
 };
 // 这些函数只能接受scalar_type
-using VirtualProxyCdHandler = const char * (*)(void *instPtr,size_t index, size_t &len);
 using VirtualProxyLsHandler = void (*)(void *instPtr,const char *s,size_t len);
 using VirtualProxyCurrentDirHandler =
 		void (*)(void *instPtr,size_t sum,size_t i,const char *name,size_t namelen);

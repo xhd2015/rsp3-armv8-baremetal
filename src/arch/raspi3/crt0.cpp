@@ -74,7 +74,7 @@ void init(uint64_t currentEL)
 	kout << "enter EL = " << currentEL << "\n";
 
 	kout << INFO << "crt0 prepare to enter EL1\n";
-	if(currentEL == 3)//我们可能处于模拟器模式
+	if(currentEL >= 3)//我们可能处于模拟器模式
 	{
 		auto scr=RegSCR_EL3::read();
 		scr.RW=1; // aa64
@@ -125,6 +125,15 @@ void init(uint64_t currentEL)
 		RegVBAR_EL2 vbar2;
 		vbar2.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);
 		vbar2.write();
+	}
+	if(currentEL>=1)
+	{
+		auto cntk = RegCNTKCTL_EL1::read();
+		cntk.EL0PTEN=1;
+		cntk.EL10PCTEN=1;//freqency
+		cntk.EL0VCTEN=1;
+		cntk.EL0VTEN=1;
+		cntk.write();
 	}
 	if(currentEL==3)
 	{

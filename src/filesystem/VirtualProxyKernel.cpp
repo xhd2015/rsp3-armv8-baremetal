@@ -7,40 +7,24 @@
 #include <filesystem/VirtualProxyKernel.h>
 #include <cstring>
 VirtualProxyKernel::VirtualProxyKernel()
-	:_curFile(nullptr)
+	:_curFile(vfs.rootFile())
 {}
 
 VirtualProxyKernel::~VirtualProxyKernel()
 {}
 
-bool     VirtualProxyKernel::cd(VirtualProxyCdHandler handler,void *instPtr)
+bool     VirtualProxyKernel::cd(const VectorRef<String> * path)
 {
-	Vector<StringRef> path;
-	size_t i=0;
-	size_t len=0;
-	while(true)
+	if(_curFile)
 	{
-		const char * s = handler(instPtr,i, len);
-		if(!s)break;
-		path.emplaceBack(s, len);
-		++i;
-	}
-	if(path.size()==0)
-		return true;
-	if(!_curFile)
-	{
-		_curFile=vfs.findRootFile(path);
-		return _curFile!=nullptr;
-	}else{
-		auto p = _curFile->findFile(path);
+		auto p = _curFile->findFile(*path);
 		if(p)
 		{
 			_curFile=p;
 			return true;
-		}else{
-			return false;
 		}
 	}
+	return false;
 }
 
 size_t VirtualProxyKernel::ls(VirtualProxyLsHandler handler,void *instPtr)
@@ -62,17 +46,21 @@ bool        VirtualProxyKernel::currentDir(VirtualProxyCurrentDirHandler handler
 {
 	size_t n=0;
 	auto p=_curFile;
-	do{
-		++n;
-		p=p->parent();
-	}while(p->parent()); //p is not root
-	p=_curFile;
-	for(size_t i=0;i!=n;++i)
+	if(p)
 	{
-		handler(instPtr,n, n-i-1,p->name().data(),p->name().size());
-		p = p->parent();
+		do{
+			++n;
+			p=p->parent();
+		}while(p && p->parent()); //p is not root
+		p=_curFile;
+		for(size_t i=0;i!=n;++i)
+		{
+			handler(instPtr,n, n-i-1,p->name().data(),p->name().size());
+			p = p->parent();
+		}
+		return true;
 	}
-	return true;
+	return false;
 }
 
 bool     VirtualProxyKernel::create(const StringRef &filename,FileType type)
@@ -157,8 +145,7 @@ uint64_t    VirtualProxyKernel::handleVFSProxySVC(uint64_t * savedRegs)
 		delete insPtr;
 		break;
 	case VP_CD:
-		return insPtr->cd(reinterpret_cast<VirtualProxyCdHandler>(args[0]),
-				reinterpret_cast<void*>(args[1]));
+		return insPtr->cd(reinterpret_cast<const VectorRef<String>*>(args[0]));
 		break;
 	case VP_LS:
 	{

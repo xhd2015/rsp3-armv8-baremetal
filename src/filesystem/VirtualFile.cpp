@@ -133,6 +133,10 @@ void          VirtualFile::foreachFile(VirtualFileHandler handler)
 }
 VirtualFile*  VirtualFile::findFile(const StringRef &name)
 {
+	if(name == "..")
+		return _parent;
+	if(name==".")
+		return this;
 	auto p=this->_subFile;
 	while(p && !(StringRef(p->_name)==name) )
 		p=p->_nextFile;

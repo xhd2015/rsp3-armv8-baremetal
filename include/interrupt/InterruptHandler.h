@@ -58,7 +58,7 @@ public:
 	void exitCurrent();
 
 	ExceptionState & currentState() { return _nestedExceps.last();}
-	const ExceptionState & current()const{return _nestedExceps.last();}
+	const ExceptionState & currentState()const{return _nestedExceps.last();}
 
 	AS_MACRO bool allowSyncException()const{return _allowSyncExcep;}
 	void          allowSyncException(bool v){_allowSyncExcep=v;}

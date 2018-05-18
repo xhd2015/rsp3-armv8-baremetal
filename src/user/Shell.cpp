@@ -9,12 +9,21 @@
 #include <schedule/schedule_forward.h>
 #include <runtime_def.h>
 #include <interrupt/svc_call.h>
+#include <generic/cpu.h>
 
 Shell::Shell()
 	:_exitCode(0),
 	 _exitRepl(false),
 	 _vp()
 {}
+
+void Shell::run(int argc,char *argv[])
+{
+	if(argc>=2)
+		execute(argc - 1, argv + 1);
+	else if(argc==1)
+		repl();
+}
 void Shell::repl()
 {
 	while(!_exitRepl)
@@ -102,13 +111,25 @@ void Shell::execute(String &line,Vector<String> &cmd)
 		}else if(c=="shell"){
 			// sys create new process
 			// pass subroutines as
-			VectorRef<String> args(cmd,cmd.size()-1,1);
+			VectorRef<String> args(cmd);
 			auto shellpid = static_cast<Pid>(
 					svc_call<SvcFunc::createShell>(reinterpret_cast<uint64_t>(&args)));
 			if(shellpid==PID_INVALID)
 				_exitCode=1;
 			else
 				kout << "created shell pid:"<<shellpid<<"\n";
+		}else if(c=="sleep"){
+			if(ensureEnoughArgument(2, cmd.size(), "argument not enough"))
+			{
+				bool failed=false;
+				size_t n=stoi(cmd[1].data(),cmd[1].size(), &failed);
+				if(!failed)
+				{
+					delayMS(n);
+				}else{
+					_exitCode=1;
+				}
+			}
 		}else if(c=="shutdown"){
 			// 关机
 		}else if(c=="reboot"){
@@ -146,6 +167,7 @@ void Shell::execute(String &line,Vector<String> &cmd)
 				 << "    " << "cp     F1 F2  -- copy file \n"
 				 << "    " << "mv     F1 F2  -- move or change filename \n"
 				 << "    " << "shell  CMD    -- execute command in new shell\n"
+				 << "    " << "sleep  MS     -- sleep current process for time in ms\n"
 				 << "[1] Please note, this program is designed specifically for raspberry pi,the OS development details can be found at https://github.com/xhd2015/rsp3-armv8-baremetal\n"
 				 << "[2] Please note, some commands are currently not implemented but surely will soon be realized\n";
 		}else{

@@ -22,6 +22,7 @@
 class Shell{
 public:
 	Shell();
+	void run(int argc,char *argv[]);
 	void repl();
 	/**
 	 * 执行命令

@@ -15,6 +15,7 @@
 #include <generic/error.h>
 #include <driver/uart/PL011.h>
 #include <data/Queue.h>
+#include <schedule/TimeRecorder.h>
 
 #define TEMPLATE_InterruptHandler template <class IntManager>
 #define TEMPLATED_InterruptHandler InterruptHandler<IntManager>
@@ -250,8 +251,10 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		size_t maxNum = savedRegisters[1];
 		bool returnOnNewLine = getBit(savedRegisters[2],0);
 		bool blocked = getBit(savedRegisters[2],1);
-//		auto inputId = _intm->standardIntID(INPUT);
-		cpuEnableInterrupt(ExceptionType::IRQ,false);
+		// 不允许系统时钟，否则会发生调度
+		localIntc.enableInterrupt(
+				_intm->standardIntID(StandardInterruptType::PROCESS_TIMER),
+				false);
 		size_t i=0;
 		while(i<maxNum)
 		{
@@ -260,9 +263,22 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 			{
 				if(blocked)
 				{
-					cpuEnableInterrupt(ExceptionType::IRQ,true);
-					while(inputBuffer.empty());// 原子读，不存在同步问题
-					cpuEnableInterrupt(ExceptionType::IRQ,false);
+					do{
+						cpuEnableInterrupt(ExceptionType::IRQ,true);
+						delayUS(100);
+						cpuEnableInterrupt(ExceptionType::IRQ,false);
+					}while(inputBuffer.empty());
+//					cpuEnableInterrupt(ExceptionType::IRQ,true);
+//					// 等待至多10s
+//					TimeRecorder<BCM2835SystemTimer> recorder(&sysTimer, 10*1000*1000);
+//					while(!recorder.timedout() && inputBuffer.empty());// 原子读，不存在同步问题
+////					do{delayUS(100);}while(inputBuffer.empty());// 不使用timedout，延迟100us
+//					cpuEnableInterrupt(ExceptionType::IRQ,false);
+					if(inputBuffer.empty()) // 仍然是空的
+					{
+						kout << WARNING << "input timedout\n";
+						break;
+					}
 				}else{
 					break; // 退出
 				}
@@ -271,6 +287,9 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 			if(returnOnNewLine && (buf[i-1]=='\n' || buf[i-1]=='\r')) // 遇到换行，并且表明换行退出
 				break;
 		}
+		localIntc.enableInterrupt(
+				_intm->standardIntID(StandardInterruptType::PROCESS_TIMER),
+				true);
 		savedRegisters[0]=i;// 返回
 		break;
 	}
@@ -336,6 +355,10 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		savedRegisters[0]=static_cast<uint64_t>(PID_INVALID);
 		break;
 	}
+	case SvcFunc::sleep:
+	{
+		break;
+	}
 	case SvcFunc::fork:
 	{
 		// fork父进程返回子进程pid，子进程返回pid=0, 如果失败，返回PID_INVALID
@@ -389,10 +412,16 @@ TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleIRQ(IntID id)
 {
 	// write here to make sure that the event come in order
-	if(id == _intm->standardIntID(PROCESS_TIMER))//el1 physical timer interrupt
+	if(id == _intm->standardIntID(StandardInterruptType::PROCESS_TIMER))//el1 physical timer interrupt
 	{
-
-	}else if(id == _intm->standardIntID(INPUT)){
+		auto reg=currentState().registers();
+		if(processManager.canSchedule())
+		{
+			exitCurrent();
+			_intm->endInterrupt(ExceptionType::IRQ,id);
+		}
+		processManager.scheduleNextProcess(reg);
+	}else if(id == _intm->standardIntID(StandardInterruptType::INPUT)){
 //		kout << INFO << "handle INPUT\n";
 		handleInputEvent();
 	}else{ // others

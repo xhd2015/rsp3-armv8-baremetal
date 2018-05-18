@@ -28,6 +28,8 @@ public:
 	AS_MACRO uint64_t  elrELx() const {return _elr_elx;}
 	AS_MACRO uint32_t  esrELx() const {return _esr_elx;}
 	AS_MACRO uint64_t  farELx() const {return _far_elx;}
+	AS_MACRO uint64_t* registers() { return _generalRegisters;}
+	AS_MACRO const uint64_t* registers() const { return _generalRegisters;}
 
 	ExceptionType       _type; // 当前中断类型
 	ExceptionOrigin     _origin; //中断源

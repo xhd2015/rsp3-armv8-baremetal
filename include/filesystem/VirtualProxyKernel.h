@@ -24,7 +24,7 @@ public:
 	VirtualProxyKernel();
 	DELETE_COPY(VirtualProxyKernel);
 	~VirtualProxyKernel();
-	bool             cd(VirtualProxyCdHandler handler,void *instPtr);
+	bool             cd(const VectorRef<String> * path);
 	size_t           ls(VirtualProxyLsHandler handler,void *instPtr);
 	bool             currentDir(VirtualProxyCurrentDirHandler handler,void *instPtr);
 	bool             create(const StringRef &filename,FileType type);

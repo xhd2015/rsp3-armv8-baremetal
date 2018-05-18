@@ -56,7 +56,7 @@ enum ExceptionOrigin:uint64_t{
 };
 enum class ExceptionLevel {EL0 = 0,EL1 = 1,EL2 = 2,EL3 = 3};
 
-enum StandardInterruptType { PROCESS_TIMER,INPUT };
+enum class StandardInterruptType { PROCESS_TIMER,INPUT };
 
 // 我们期望使用的异常处理函数
 //savedRegisters[31], from X0-X30

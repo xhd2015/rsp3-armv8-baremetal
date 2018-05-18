@@ -19,7 +19,7 @@ enum class SvcFunc{
 	killProcess,               //  void      killProcess(Pid pid, int exitStatus)
 							   //              kill进程, pid的取值有特殊含义
 	createShell,               //  Pid       createShell(const VectorRef<String> * args)
-
+	sleep,                     //  void      sleep(size_t us)
 	scheduleNext,              //  void      scheduleNext()     // 调度下一个进程，表明当前进程主动或被动放弃其执行权，转入等待状态
 	fork,                      //  Pid       fork()             // 复制当前进程，对于父进程，返回其子进程的pid，对于子进程，返回PID_CURRENT;失败返回PID_INVALID。 当前进程将作为新进程的父进程,新进程处于READY状态。
 	signal,                    //  void      signal(PidType pid, Signal sig)       // 对目标进程发送信号
