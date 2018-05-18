@@ -38,6 +38,7 @@
 //io
 extern MiniUARTCharacterReaderWriter miniUARTChReaderWriter;
 extern PL011CharacterReaderWriter    pl011ChReader;
+extern ProcessManager::ProcessLink * activeInputCatcher;//能够捕获输入的进程
 
 extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
 extern InterruptHandler<BCM2836LocalIntController>  intHandler;

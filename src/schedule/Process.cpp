@@ -16,7 +16,7 @@
 
 Process::Process(
 		uint32_t priority,
-		Process *parent,
+		ProcessLink *parent,
 		size_t mapPhyPage,
 		size_t phyPages,
 		size_t startVaPage,
@@ -41,7 +41,9 @@ Process::Process(
 	  _vmap(mapPhyPage, phyPages,
 			  false,
 			  reinterpret_cast<void*>(startVaPage * VirtualMap::_D::PAGE_SIZE),
-			  addrBits)
+			  addrBits),
+	  _catchInput(false),
+	  _inputBuffer(nullptr)
 {
 	if(_pid == PID_INVALID)
 		return;
@@ -125,7 +127,7 @@ Process::Process(const Process & rhs)
 	:_pid(pidManager.allocate()), // 这些值需要从rhs设置，其他的保留默认值
 	 _priority(rhs._priority),
 	 _status(CREATED_INCOMPLETE),
-	 _parent(const_cast<decltype(_parent)>(&rhs)),
+	 _parent(processManager.findProcess(rhs.pid())),//TESTME 正确吗
 	 _memory(mman.allocate(rhs._memsize,VirtualMap::_D::PAGE_SIZE)),
 	 _memsize(rhs._memsize),
 	 _pmman(_memory,_memsize,false),
@@ -133,7 +135,9 @@ Process::Process(const Process & rhs)
 	 _spEL0(rhs._spEL0),
 	 _ELR(rhs._ELR),
 	 _SPSR(rhs._SPSR),
-	 _vmap(rhs._vmap)
+	 _vmap(rhs._vmap),
+	 _catchInput(rhs._catchInput),
+	 _inputBuffer(rhs._inputBuffer)
 {
 	if(_pid == PID_INVALID)
 		return;
@@ -202,4 +206,24 @@ void Process::restoreContextAndExecute(void* savedSpEL1)
 		:"sp"
 	);
 
+}
+
+void Process::setArgument(size_t argc,uint64_t *args)
+{
+	constexpr size_t dim=2;
+	for(size_t i=0;i!=argc;++i)
+	{
+		switch(static_cast<Argument>(args[i*dim]))
+		{
+		case ARG_CATCH_INPUT:
+			_catchInput = static_cast<bool>(args[i*dim + 1]);
+			break;
+		case ARG_INPUT_BUFFER_PTR:
+			_inputBuffer = reinterpret_cast<Queue<uint16_t>*>(args[i*dim+1]);
+			break;
+		default:
+			kout << FATAL << "unknown process argument\n";
+			break;
+		}
+	}
 }

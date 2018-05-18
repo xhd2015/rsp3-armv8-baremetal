@@ -21,14 +21,14 @@ void *operator new[](size_t n)
 void *operator new(size_t size,MemAbort)
 {
 	auto p=mman.allocate(size);
-	if(!p)
+	if(size !=0 && !p)
 		reportError("new failed.");
 	return p;
 }
 void *operator new[](size_t size,MemAbort)
 {
 	auto p=mman.allocate(size);
-	if(!p)
+	if(size!=0 && !p)
 		reportError("new[] failed.");
 	return p;
 }

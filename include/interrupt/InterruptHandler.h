@@ -18,6 +18,7 @@
 #include <data/Vector.h>
 #include <interrupt/ExceptionState.h>
 #include <programming/define_members.h>
+#include <schedule/Process.h>
 
 /**
  * 适用于ARMv8，但是ARMv8不一定需要使用GIC中断系统，比如BCM2837使用的就是一个更加简单的模型
@@ -63,7 +64,7 @@ public:
 	AS_MACRO bool allowSyncException()const{return _allowSyncExcep;}
 	void          allowSyncException(bool v){_allowSyncExcep=v;}
 private:
-	void          schedule();
+	void          schedule(Process::Status curStatus=Process::READY);
 private:
 	bool          _allowSyncExcep; // 是否允许非同步异常的发生？
 	Vector<ExceptionState>  _nestedExceps; // size>0时表明有异常正在处理

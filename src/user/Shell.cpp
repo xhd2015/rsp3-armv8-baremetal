@@ -10,6 +10,7 @@
 #include <runtime_def.h>
 #include <interrupt/svc_call.h>
 #include <generic/cpu.h>
+#include <schedule/Process.h>
 
 Shell::Shell()
 	:_exitCode(0),
@@ -20,9 +21,24 @@ Shell::Shell()
 void Shell::run(int argc,char *argv[])
 {
 	if(argc>=2)
+	{
 		execute(argc - 1, argv + 1);
+	}
 	else if(argc==1)
+	{
+		// 将当前进程设置为输入进程
+//		svc_call<SvcFunc::setInputCatcher>(static_cast<uint64_t>(PID_CURRENT));
+		// 允许输入
+		uint64_t args[][2] = {
+				{Process::ARG_CATCH_INPUT,true},
+				{Process::ARG_INPUT_BUFFER_PTR, reinterpret_cast<uint64_t>(&inputBuffer)}
+		};
+		svc_call<SvcFunc::setProcessArgument>(
+				PID_CURRENT,
+				arrsizeof(args),
+				reinterpret_cast<uint64_t>(args));
 		repl();
+	}
 }
 void Shell::repl()
 {
@@ -108,12 +124,15 @@ void Shell::execute(String &line,Vector<String> &cmd)
 					kout << "\n";
 				}
 			}
-		}else if(c=="shell"){
-			// sys create new process
-			// pass subroutines as
+		}else if(c=="shell" || c=="bg" ){
 			VectorRef<String> args(cmd);
+			uint64_t fg_or_bg=0;
+			if(c=="bg")
+				fg_or_bg=1;
 			auto shellpid = static_cast<Pid>(
-					svc_call<SvcFunc::createShell>(reinterpret_cast<uint64_t>(&args)));
+					svc_call<SvcFunc::createShell>(
+							reinterpret_cast<uint64_t>(&args),fg_or_bg)
+					);
 			if(shellpid==PID_INVALID)
 				_exitCode=1;
 			else
@@ -167,6 +186,7 @@ void Shell::execute(String &line,Vector<String> &cmd)
 				 << "    " << "cp     F1 F2  -- copy file \n"
 				 << "    " << "mv     F1 F2  -- move or change filename \n"
 				 << "    " << "shell  CMD    -- execute command in new shell\n"
+				 << "    " << "bg     CMD    -- execute command in new shell,background \n"
 				 << "    " << "sleep  MS     -- sleep current process for time in ms\n"
 				 << "[1] Please note, this program is designed specifically for raspberry pi,the OS development details can be found at https://github.com/xhd2015/rsp3-armv8-baremetal\n"
 				 << "[2] Please note, some commands are currently not implemented but surely will soon be realized\n";

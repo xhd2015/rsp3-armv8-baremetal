@@ -16,13 +16,14 @@ class ProcessManager{
 public:
 //	enum Config{ PROCESSOR_NUM=4 };
 	using ProcessList = DoublyLinkedList<Process>;
-	using ProcessLink = typename ProcessList::NodeType;
+	using ProcessLink = ::ProcessLink;
 
 	ProcessManager();
 
 	// 如果是单核的，则某一时刻只有一个PID在运行
 	// 实际上即使是多核情况下，我们对某个核实际上只赋予一个唯一的正在运行的进程
 	ProcessLink* currentRunningProcess();
+	ProcessLink* findProcess(Pid pid);
 
 	void     killProcess(ProcessLink *p);
 
@@ -32,8 +33,14 @@ public:
 	// 如果没有任何一个进程可以调度，也就是说当前没有进程运行，就绪队列没有进程，则等待。
 	// TODO 这里不应当引入savedRegisters参数，因为并不是所有的架构都需要。
 	// 这里或许传递一个CPU保存的参数会比较好，但是，目前最简单的方法就是传递该参数。
-	void     scheduleNextProcess(uint64_t *savedRegsiers);
-	bool     canSchedule()const;
+	/**
+	 *
+	 * @param savedRegsiers
+	 * @param curStatus      改变 当前进程的状态
+	 */
+	void     scheduleNextProcess(uint64_t *savedRegsiers,Process::Status curStatus=Process::READY);
+	bool     scheduleNoReturn();
+	void     signal(Process::Signal sig,ProcessLink *src, ProcessLink *target);
 
 	template <class ... Args>
 	ProcessLink*  createNewProcess(Args && ... initArgs);

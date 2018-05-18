@@ -22,7 +22,7 @@
 #include <filesystem/fat/FAT32EntryTable.h>
 #include <filesystem/RAMVirtualFile.h>
 #include <arch/qemu_virt/crt0.h>
-
+#include <schedule/schedule_forward.h>
 
 // well documented definition:
 //    此文件是main_test_int_uart_sd_mmu_process_togther.cpp内容的改进版本
@@ -283,9 +283,10 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 //	asm_svc<SvcFunc::warmReset>();
 
 	// 使用任务调度切换到下一个进程
+	activeInputCatcher = processLink; // 捕获输入的进程设置为第一个shell进程
 	virtman.enableTTBR0(true);
 	processManager.changeProcessStatus(processLink, Process::RUNNING);
-	sysTimerTick=1000;//1000ms
+	sysTimerTick=NORM_SYS_TIMER_TICK;
 	sysTimer.addCompareValueMS(1,sysTimerTick);
 	process.restoreContextAndExecute(__stack_top);
 

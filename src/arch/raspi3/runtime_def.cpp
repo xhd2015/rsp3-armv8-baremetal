@@ -16,6 +16,7 @@ PL011           pl011 {nullptr};
 PL011CharacterReaderWriter    pl011ChReader{nullptr};
 Output kout{ nullptr };
 Input kin { nullptr };
+ProcessManager::ProcessLink * activeInputCatcher { nullptr};
 
 MemoryManager mman {nullptr,0,false};
 MemAbort m_abort;

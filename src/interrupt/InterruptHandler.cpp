@@ -246,81 +246,76 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	}
 	case SvcFunc::gets:
 	{
-		// 禁用输入中断
-		auto buf = reinterpret_cast<uint16_t*>(savedRegisters[0]);
-		size_t maxNum = savedRegisters[1];
-		bool returnOnNewLine = getBit(savedRegisters[2],0);
-		bool blocked = getBit(savedRegisters[2],1);
-		// 不允许系统时钟，否则会发生调度
-		localIntc.enableInterrupt(
-				_intm->standardIntID(StandardInterruptType::PROCESS_TIMER),
-				false);
-		size_t i=0;
-		while(i<maxNum)
+		auto cur = processManager.currentRunningProcess();
+		size_t completed = 0;//已经完成的数目
+		if(activeInputCatcher && activeInputCatcher==cur) // 仅当具有捕获权时改变缓冲区
 		{
-			// 还没有读取到maxNum个数据
-			if(inputBuffer.empty()) // 如果没有数据，启用输入中断，并等待
+			auto buff = activeInputCatcher->data<true>().inputBuffer();
+			if(buff && buff->empty()) // 为了安全，因为buff不为空时，数据可能正在被操作
 			{
-				if(blocked)
+				size_t maxNum = savedRegisters[0];
+				bool returnOnNewLine = getBit(savedRegisters[1],0);
+				bool blocked = getBit(savedRegisters[1],1);
+				while(completed<maxNum && !buff->full())
 				{
-					do{
-						cpuEnableInterrupt(ExceptionType::IRQ,true);
-						delayUS(100);
-						cpuEnableInterrupt(ExceptionType::IRQ,false);
-					}while(inputBuffer.empty());
-//					cpuEnableInterrupt(ExceptionType::IRQ,true);
-//					// 等待至多10s
-//					TimeRecorder<BCM2835SystemTimer> recorder(&sysTimer, 10*1000*1000);
-//					while(!recorder.timedout() && inputBuffer.empty());// 原子读，不存在同步问题
-////					do{delayUS(100);}while(inputBuffer.empty());// 不使用timedout，延迟100us
-//					cpuEnableInterrupt(ExceptionType::IRQ,false);
-					if(inputBuffer.empty()) // 仍然是空的
+					// 还没有读取到maxNum个数据
+					if(inputBuffer.empty()) //没有这么多数据，需要根据情况block
 					{
-						kout << WARNING << "input timedout\n";
-						break;
+						if(blocked) // 那就等待输入，将当前进程移动到BLOCK中
+						{
+							// 阻塞进程将会在handleInput中唤醒
+							processManager.changeProcessStatus(cur, Process::BLOCKED);
+							if(processManager.scheduleNoReturn())
+								savedRegisters[0]=0; // 因为schedule/BLOCK导致等待输入的字符数量为0
+							cur->data<true>().saveContext(savedRegisters);
+							schedule();
+							if(inputBuffer.empty()) // 被无意中唤醒，没有数据
+								continue;
+						}else
+							break;  // 直接退出
 					}
-				}else{
-					break; // 退出
+					auto ch=inputBuffer.remove();
+					buff->put(ch);
+					++completed;
+					if(returnOnNewLine && (ch=='\n' ||ch=='\r')) // 遇到换行，并且表明换行退出
+						break;
 				}
 			}
-			buf[i++]=inputBuffer.remove();
-			if(returnOnNewLine && (buf[i-1]=='\n' || buf[i-1]=='\r')) // 遇到换行，并且表明换行退出
-				break;
 		}
-		localIntc.enableInterrupt(
-				_intm->standardIntID(StandardInterruptType::PROCESS_TIMER),
-				true);
-		savedRegisters[0]=i;// 返回
+
+		savedRegisters[0]=completed;// 返回
 		break;
 	}
-	case SvcFunc::killProcess:
+	case SvcFunc::killProcess: // FIXME 应当包含对block进程的设置，对当前输入进程的设置
 	{
-		kout << INFO << "killing Process,";
+		kout << INFO << "kill process [ pid = ";
 		// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
 		auto pid = static_cast<Pid>(savedRegisters[0]);
 		int     status = *reinterpret_cast<int*>(savedRegisters+1);
 		(void)status;
-		if(pid == PID_CURRENT)
+		auto proc = processManager.findProcess(pid);
+		if(proc)
 		{
-			auto cur = processManager.currentRunningProcess();
-			processManager.killProcess(cur);
-			kout << "pid = " << cur->data<true>().pid() << "\n";
-			if(processManager.canSchedule())
-				   exitCurrent();
-			processManager.scheduleNextProcess(savedRegisters);
+			kout << proc->data<true>().pid() << " ]\n";
+			auto parent = proc->data<true>().parent();
+			if(proc==activeInputCatcher && parent)
+				activeInputCatcher=parent;
+			processManager.killProcess(proc);
+			schedule();
 		}
         break;
 	}
 	case SvcFunc::createShell: // shell code is somewhere in the system
 	{
 		kout << INFO << "creating shell.\n";
+		auto cur=processManager.currentRunningProcess();
 		constexpr size_t pageSize =  VirtualMap::_D::PAGE_SIZE;
 		auto p = mman.allocateAs<char*>(USER_RAM_SIZE,pageSize);
 		if(p)
 		{
 			auto processLink = processManager.createNewProcess(
 					10,//priority
-					nullptr,//parent
+					cur,//parent
 					reinterpret_cast<size_t>(p)/pageSize,//map to physical address(pa)
 					USER_RAM_SIZE/pageSize, // ramsize,in pages
 					USER_RAM_START/pageSize, // ramstart(va),in pages
@@ -339,6 +334,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 				{
 					auto &args = *reinterpret_cast<const VectorRef<String>*>(
 							savedRegisters[0]);
+					auto fg_or_bg = savedRegisters[1];
 					// 将代码和initRAM复制到分配的内存空间
 					std::memcpy(p + USER_STACK_SIZE,
 							__user_space_start,USER_CODE_SIZE + USER_INITRAM_SIZE);
@@ -346,6 +342,16 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 					processManager.changeProcessStatus(processLink, Process::READY);
 					// 进程在队列中等待调度
 					savedRegisters[0]=static_cast<uint64_t>(process.pid());
+					if(fg_or_bg==0)//foreground,重新定向，阻塞父进程
+					{
+						if(activeInputCatcher && cur!=activeInputCatcher) // 首先唤醒原进程，避免无限等待
+							processManager.signal(Process::SIG_WAKEUP,cur, activeInputCatcher);
+						activeInputCatcher = processLink;
+						schedule(Process::BLOCKED);
+					}else if(fg_or_bg==1)//background,不重新定向，不阻塞
+					{
+
+					}
 					break;//退出
 				}else{
 					processManager.killProcess(processLink);
@@ -353,6 +359,30 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 			}
 		}
 		savedRegisters[0]=static_cast<uint64_t>(PID_INVALID);
+		break;
+	}
+	case SvcFunc::setProcessArgument:
+	{
+		auto pid = static_cast<Pid>(savedRegisters[0]);
+		ProcessManager::ProcessLink * proc = processManager.findProcess(pid);
+		if(proc)
+		{
+			proc->data<true>().setArgument(savedRegisters[1],
+					reinterpret_cast<uint64_t*>(savedRegisters[2]));
+		}
+		break;
+	}
+	case SvcFunc::setInputCatcher:
+	{
+		auto pid = static_cast<Pid>(savedRegisters[0]);
+		ProcessManager::ProcessLink * proc = processManager.findProcess(pid);
+		if(proc && proc!=activeInputCatcher)
+		{
+			if(activeInputCatcher) // 首先唤醒原进程，避免无限等待
+				processManager.signal(Process::SIG_WAKEUP,
+						processManager.currentRunningProcess(), activeInputCatcher);
+			activeInputCatcher = proc;
+		}
 		break;
 	}
 	case SvcFunc::sleep:
@@ -379,10 +409,8 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	}
 	case SvcFunc::scheduleNext:
 	{
-	   if(processManager.canSchedule())
-		   exitCurrent();
-	   processManager.scheduleNextProcess(savedRegisters);
-       break;
+	    schedule();
+	    break;
 	}
 	case SvcFunc::vfsProxy:
 	{
@@ -414,13 +442,9 @@ void TEMPLATED_InterruptHandler::handleIRQ(IntID id)
 	// write here to make sure that the event come in order
 	if(id == _intm->standardIntID(StandardInterruptType::PROCESS_TIMER))//el1 physical timer interrupt
 	{
-		auto reg=currentState().registers();
-		if(processManager.canSchedule())
-		{
-			exitCurrent();
+		if(processManager.scheduleNoReturn())
 			_intm->endInterrupt(ExceptionType::IRQ,id);
-		}
-		processManager.scheduleNextProcess(reg);
+		schedule();
 	}else if(id == _intm->standardIntID(StandardInterruptType::INPUT)){
 //		kout << INFO << "handle INPUT\n";
 		handleInputEvent();
@@ -467,6 +491,11 @@ void TEMPLATED_InterruptHandler::handleInputEvent()
 		else
 			inputBuffer.put(ch);
 	}
+	// 唤醒等待程序
+	auto cur=processManager.currentRunningProcess();
+	if(cur!=activeInputCatcher)
+		processManager.signal(Process::SIG_WAKEUP,
+				cur, activeInputCatcher);
 //	_intm->enableInterrupt(_intm->standardIntID(INPUT),true); // 禁止再次输入
 //	kout << INFO << "after , inputBuffer.size() = " << inputBuffer.size() << "\n";
 //	kout << INFO << "last reading char = " << Hex(ch) << "\n";
@@ -492,4 +521,14 @@ void TEMPLATED_InterruptHandler::exitCurrent()
 	_nestedExceps.last().restore();
 	_nestedExceps.removeLast();
 	_allowSyncExcep=true;
+}
+TEMPLATE_InterruptHandler
+void TEMPLATED_InterruptHandler::schedule(Process::Status curStatus)
+{
+	auto reg=currentState().registers(); // 防止exitCurrent()后不能获取状态
+	if(processManager.scheduleNoReturn()) // 如果能调度，意味着程序不返回，因此需要提前做结束动作
+	{
+		exitCurrent();
+	}
+	processManager.scheduleNextProcess(reg,curStatus);
 }

@@ -15,6 +15,7 @@
 #include <programming/define_members.h>
 #include <schedule/schedule_forward.h>
 #include <memory/VirtualMap.h>
+#include <data/Queue.h>
 
 // 提供一个统一的view
 // 系统层面的Process，不是用户层面的Process
@@ -38,10 +39,20 @@ public:
 		SPACE_ALLCOATE_FAILED,
 	};
 
+	enum Argument{
+		ARG_CATCH_INPUT,
+		ARG_INPUT_BUFFER_PTR
+	};
+
+	enum Signal{
+		SIG_WAKEUP,
+		SIG_KILL
+	};
+
 	// 必须通过检查进程的status来获取当前的状态
 	Process(
 			uint32_t priority,
-			Process *parent,
+			ProcessLink *parent,
 			size_t mapPhyPage,// 需要映射到的物理页面
 			size_t pagesNeeded,
 			size_t startVaPage,//起始虚拟地址
@@ -77,7 +88,9 @@ public:
 	// 如果savedSpEL1 为空，表示不设置
 	// 注意，初始化程序可能借助设置saedSpEL1来进入用户空间，同时设置下一次进入内核空间的栈地址
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
-	const Process* parent() const { return _parent;}
+	void setArgument(size_t argc,uint64_t *args);
+	ProcessLink* parent() { return _parent;}
+	const ProcessLink* parent() const { return _parent;}
 	AS_MACRO Pid pid() const { return _pid;}
 	AS_MACRO uint32_t priority() const { return _priority;}
 	AS_MACRO void priority(uint32_t p) {  _priority=p;}
@@ -92,12 +105,15 @@ public:
 	AS_MACRO const VirtualMap& vmap()const { return _vmap;}
 	AS_MACRO VirtualMap& vmap() { return _vmap;}
 	AS_MACRO const RegTTBR0_EL1& TTBR0() const { return _ttbr0;}
-
+	AS_MACRO bool  catchInput() const {return _catchInput;}
+	AS_MACRO void  catchInput(bool c)  {_catchInput=c;}
+	// DOCME 为了兼容性，字符是16位的，高8位表示控制信息
+	AS_MACRO Queue<uint16_t>* inputBuffer() { return _inputBuffer;}
 private:
 	Pid           _pid  ;
 	uint32_t     _priority;
 	Status       _status ;
-	Process *    _parent ;
+	ProcessLink *  _parent ; // DOCME _parent是一个有效指针
 	// 内存
 	void    *    _memory ;
 	size_t       _memsize;
@@ -112,6 +128,13 @@ private:
 	VirtualMap      _vmap;
 	// 注意, _registers[0] 通常作为返回值
 	uint64_t    _registers[REGISTER_NUM];
+
+	// 与输入相关, _catchInput表明是否获取输入
+	//          _inputBuffer则是输入缓冲区，注意，输入总是先放到系统缓冲区，仅当_inputBuffer为空时
+	//              才从系统缓冲区移动到该缓冲区
+	bool            _catchInput;
+	Queue<uint16_t>     * _inputBuffer; // inputBuffer处于进程的内存中,这个参数需要进程创建后传递
+									// 该类是通用的。 通过svc_call<SvcFunc::setProcessArgument>()
 };
 
 
