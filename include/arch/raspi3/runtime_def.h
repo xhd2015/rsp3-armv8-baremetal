@@ -33,6 +33,8 @@
 // 文件系统
 #include <filesystem/VirutalFileSystem.h>
 
+#include <interrupt/exception_def.h>
+
 //io
 extern MiniUARTCharacterReaderWriter miniUARTChReaderWriter;
 extern PL011CharacterReaderWriter    pl011ChReader;
@@ -41,5 +43,10 @@ extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
 extern InterruptHandler<BCM2836LocalIntController>  intHandler;
 
 extern SDDriverV3 sddriver;
+
+// exception
+extern ExceptionLevel highestEL;
+extern SecurityState securityState;
+extern ExceptionLevel exceptionLevel;
 
 #endif /* INCLUDE_ARCH_RASPI3_RUNTIME_H_ */

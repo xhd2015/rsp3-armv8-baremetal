@@ -41,6 +41,7 @@ uint32_t           sysTimerTick=0; // DOCME sysTimerTick表明调度的时间延
 #include "../src/interrupt/InterruptHandler.cpp"
 template class InterruptHandler<BCM2836LocalIntController>;
 InterruptHandler<BCM2836LocalIntController>  intHandler{nullptr};
+ExceptionLevel highestEL;
 
 // 进程
 ProcessManager processManager;

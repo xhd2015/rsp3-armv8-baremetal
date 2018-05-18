@@ -7,11 +7,13 @@ MEMORY
 		AHEAD_CODE 作为PADDING
 	*/
     DTB (r)  : ORIGIN = DTB_START , LENGTH = DTB_SIZE
+    STACK_EL2_3 (rw) : ORIGIN = STACK_EL2_3_START , LENGTH = STACK_EL2_3_SIZE
 	STACK (rw) : ORIGIN = STACK_START , LENGTH = STACK_SIZE
 	AHEAD_CODE (rw) : ORIGIN = AHEAD_CODE_START , LENGTH = AHEAD_CODE_SIZE
 	CODE (rx) : ORIGIN = CODE_START , LENGTH = CODE_SIZE 
 	INITRAM (rw) : ORIGIN = INITRAM_START, LENGTH = INITRAM_SIZE
 	USER_SPACE (rw) : ORIGIN = USER_SPACE_START , LENGTH = USER_SPACE_SIZE
+	/* TODO 这里可以增加AFTER_CODE区域，以便反映真实的布局，AFTER_CODE (rw) */
 	DATA  (rw) : ORIGIN = DATA_START , LENGTH = DATA_SIZE 
 	VIDEO_RAM (rw) : ORIGIN = VIDEO_RAM_START , LENGTH = VIDEO_RAM_SIZE
 }
@@ -108,7 +110,16 @@ SECTIONS{
 	
 	/* 无需加载 */
 	.ahead_code (NOLOAD) : { . = . + AHEAD_CODE_SIZE ; } > AHEAD_CODE
-	.stack (NOLOAD):{ . = . + STACK_SIZE ; PROVIDE(__stack_top = . ); } > STACK
+	.stackel2_3 (NOLOAD) :
+		 { . = . + STACK_EL2_3_SIZE ;
+		  PROVIDE(__stack_top_el2 = . );
+		  PROVIDE(__stack_top_el3 = . );
+		  } > STACK_EL2_3
+	.stack (NOLOAD):{ 
+		. = . + STACK_SIZE ; 
+		PROVIDE(__stack_top_el1 = . );
+		PROVIDE(__stack_top = .);
+	 } > STACK
 	/* USERSPACE使用dd命令写入 */
 	.userspace (NOLOAD): { 
 			PROVIDE(__user_space_start = .); 

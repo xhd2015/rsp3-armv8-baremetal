@@ -33,6 +33,7 @@ public:
 	// TODO 这里不应当引入savedRegisters参数，因为并不是所有的架构都需要。
 	// 这里或许传递一个CPU保存的参数会比较好，但是，目前最简单的方法就是传递该参数。
 	void     scheduleNextProcess(uint64_t *savedRegsiers);
+	bool     canSchedule()const;
 
 	template <class ... Args>
 	ProcessLink*  createNewProcess(Args && ... initArgs);

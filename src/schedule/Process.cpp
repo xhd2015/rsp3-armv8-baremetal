@@ -149,7 +149,7 @@ Process::Process(const Process & rhs)
 			reinterpret_cast<uint64_t>(_vmap.l0Table()));
 }
 
-void Process::fillArguments(const Vector<String>& args,size_t ptrBase)
+void Process::fillArguments(const VectorRef<String>& args,size_t ptrBase)
 {
 	kout << INFO << "process filling arguments\n";
 	kout << INFO << "process mman base = " << Hex(_pmman.base()) << "\n";
@@ -180,8 +180,8 @@ void Process::saveContext(const uint64_t *savedRegisters)
 //void dumpFromTTBR0Addr();//FIXME
 void Process::restoreContextAndExecute(void* savedSpEL1)
 {
-	kout << "\n";
-	kout << INFO << "Process restore\n";
+//	kout << "\n";
+//	kout << INFO << "Process restore\n";
 //	_ttbr0.dump();
 	this->_ttbr0.write();
 	asm_tlbi_vmallel1(); // FIXME 可以通过判断_ttbr0更新与否来选择是否重置

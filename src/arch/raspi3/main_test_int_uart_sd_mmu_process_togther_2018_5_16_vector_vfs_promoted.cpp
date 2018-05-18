@@ -21,6 +21,7 @@
 #include <filesystem/fat/FAT32ExtBPB.h>
 #include <filesystem/fat/FAT32EntryTable.h>
 #include <filesystem/RAMVirtualFile.h>
+#include <arch/qemu_virt/crt0.h>
 
 
 // well documented definition:
@@ -48,7 +49,7 @@ extern uint64_t __user_space_end[];
 
 
 void main_mmu_set(VirtualMap * vmap,void *ramStart,
-			size_t ramSize,size_t addressBits);
+			size_t ramSize,ExceptionLevel highestEL,size_t addressBits);
 int main()
 {
 	assert(exceptionLevel == ExceptionLevel::EL1);
@@ -85,7 +86,7 @@ int main()
 //		kout.print(buf,512);
 //		while(true);
 //	}
-
+	kout << INFO << "highest EL = " << static_cast<uint64_t>(highestEL) << "\n";
 	kout << INFO << "disable all interrupts\n";
 	localIntc.disableAllInterrupts();
 	// FIXME 注意：树莓派1G的空间实际上并不全是可用的，至少有16MB不可用，因为PERIPHBASE和RAM互相覆盖了。
@@ -144,6 +145,8 @@ int main()
 //	flatMap->mapL3(fullConfig);
 	virtman.updateTTBR0(flatMap->l0Table());
 	virtman.updateTTBR1(flatMap->l0Table());
+	kout << INFO << "ExceptionVectorEL1 to high = " <<
+			Hex(reinterpret_cast<uint64_t>(TO_HIGH_ADDR(ExceptionVectorEL1)))<<"\n";
 	kout << "calling VirtualManager enableMMU\n";
 	auto diff=virtman.ttbr1Mask();
 	virtman.enableMMU(
@@ -151,6 +154,7 @@ int main()
 			pointerInc(flatMap,diff),
 			pointerInc(mman.base(),diff),
 			mman.size(),
+			highestEL,
 			pointerInc(__stack_top,diff)
 	);
 	// FIXME 这里可能存在内存泄露，因为fullConfig没有释放
@@ -158,10 +162,13 @@ int main()
 	return 0;
 }
 void main_mmu_set(VirtualMap * vmap,void *ramStart,
-		size_t ramSize,size_t addressBits)
+		size_t ramSize,ExceptionLevel highestEL,size_t addressBits)
 {
 	new (&virtman) VirtualManager(addressBits);
 	virtman.enableTTBR0(false);
+
+	// 最高异常级别
+	::highestEL = highestEL;
 	// 含有指针的实例需要重新初始化
 	// 具有base基地址的实例需要重新初始化
 	auto diff=virtman.ttbr1Mask();
@@ -180,6 +187,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 
 	kout << INFO << "reconstructed all.\n";
 	// 初始化虚拟文件系统
+	kout << INFO << "ExceptionVectorEL1 = " << Hex(ExceptionVectorEL1) << "\n";
 	kout << INFO << "creating VirtualFileSystem\n";
 	new (&vfs) VirtualFileSystem();
 
@@ -217,7 +225,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 
 	assert(reinterpret_cast<size_t>(__user_space_start)%pageSize==0);
 	assert(reinterpret_cast<size_t>(__user_space_end)%pageSize==0);
-	auto p = mman.allocateAs<char*>(USER_RAM_SIZE, pageSize); // 作为基地址
+	auto p = mman.allocateAs<char*>(USER_RAM_SIZE, pageSize); // 作为基指针
 	assert(p);
 
 	// 建立一个进程
@@ -256,9 +264,11 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 		kout << Hex(codePtr[i]) << " ";
 	kout << "\n===========\n";
 
+	// DOCME 控制台的输入与模拟选项有关，当启用两个端口时，输入会被平均分配。
 	// 启用输入中断和定时中断
 	pl011.enableFIFO(false);// 启用单字符模式
 	pl011.clearIntFlags();
+//	pl011.readInterruptLevel(PL011::L_1of8);
 	pl011.enableReceiveInterrupt(true);
 	localIntc.enableInterrupt(
 			BCM2836LocalIntController::BCM2835IntSource::SRC_UART_INT, true);
@@ -267,6 +277,10 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 	Vector<String> args;
 	args.pushBack("shell");
 	process.fillArguments(args,USER_STACK_START);
+
+
+//	// reset
+//	asm_svc<SvcFunc::warmReset>();
 
 	// 使用任务调度切换到下一个进程
 	virtman.enableTTBR0(true);

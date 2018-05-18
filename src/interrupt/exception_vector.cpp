@@ -8,7 +8,7 @@ __asm__ __volatile__(//".align  11 \n\t" // for ARM, this is lower order zero bi
 		// 每个中断项至多允许32条指令,因为每个中断处理的空间是0x80个字节，也就是128字节，每条指令4字节，因此共有32条指令
 
 
-		// **Current Exception level with SP_EL0.
+		// **Current Exception level with SP_EL0.(most preferred)
 		SAVE_CONTEXT_AND_CALL_HANDLER(exceptionCHandler,EXCEPTION_TYPE_SYNC,EXCEPTION_ORIGIN_CUR_SP_EL0)
 		". = ExceptionVectorEL1 + 0x080 \n\t"
 		SAVE_CONTEXT_AND_CALL_HANDLER(exceptionCHandler,EXCEPTION_TYPE_IRQ,EXCEPTION_ORIGIN_CUR_SP_EL0)

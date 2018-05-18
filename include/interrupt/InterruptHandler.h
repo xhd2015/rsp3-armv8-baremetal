@@ -63,6 +63,8 @@ public:
 	AS_MACRO bool allowSyncException()const{return _allowSyncExcep;}
 	void          allowSyncException(bool v){_allowSyncExcep=v;}
 private:
+	void          schedule();
+private:
 	bool          _allowSyncExcep; // 是否允许非同步异常的发生？
 	Vector<ExceptionState>  _nestedExceps; // size>0时表明有异常正在处理
 	IntManager        * _intm;

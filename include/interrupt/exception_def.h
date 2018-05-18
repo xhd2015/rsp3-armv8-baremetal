@@ -54,6 +54,7 @@ enum ExceptionOrigin:uint64_t{
 	FROM_LOWER_A64=EXCEPTION_ORIGIN_FROM_LOWER_A64,
 	FROM_LOWER_A32=EXCEPTION_ORIGIN_FROM_LOWER_A32,
 };
+enum class ExceptionLevel {EL0 = 0,EL1 = 1,EL2 = 2,EL3 = 3};
 
 enum StandardInterruptType { PROCESS_TIMER,INPUT };
 

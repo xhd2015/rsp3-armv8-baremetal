@@ -43,6 +43,8 @@ void init(uint64_t currentEL)
 	for(auto p=__bss_start;p!=__bss_end;++p)
 		*p=0;
 
+	highestEL = static_cast<ExceptionLevel>(currentEL);
+
 	// mini uart,经过测试，无需调用init也能输出
 	new (&miniUART) BCM2835MiniUART(UART_BASE);
 	new (&miniUARTChReaderWriter) MiniUARTCharacterReaderWriter(&miniUART);
@@ -78,7 +80,13 @@ void init(uint64_t currentEL)
 		scr.RW=1; // aa64
 		scr.SIF=0;//allow prefecth from non-secure
 		scr.NS=1;// non-secure
+		scr.HCE=1; //允许hvc指令
+		scr.SMD=0; //允许smc指令
 		scr.write();
+		// 设置中断向量表
+		RegVBAR_EL3 vbar3;
+		vbar3.Addr = reinterpret_cast<uint64_t>(ExceptionVectorEL1);
+		vbar3.write();
 	}
 	if(currentEL >= 2)
 	{
@@ -101,6 +109,9 @@ void init(uint64_t currentEL)
 		hcr.VM=0; // disable virtualization
 		hcr.TGE=0; // do not trap EL1 exceptions
 		hcr.DC=0;// not default cache
+		hcr.HCD=0;//enable HVC
+		hcr.TSC=0; // do not route SMC to EL2
+		hcr.TWI=0;// wfi not routed
 		hcr.write();
 		kout << INFO << "after hcr update\n";
 		hcr.update().dump();
@@ -167,7 +178,7 @@ void init(uint64_t currentEL)
 	int res = main();
 	(void)res;
 	kout << INFO <<"crt0 main returns with " << res << "\n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 
 

@@ -14,7 +14,7 @@ void abort()
 {
 	kout << FATAL << "-- ABORT -- \n";
 	kout.flush();
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 
 void resume()

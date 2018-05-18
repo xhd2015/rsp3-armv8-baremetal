@@ -22,7 +22,7 @@ ProcessManager::ProcessLink* ProcessManager::currentRunningProcess()
 {
 	return _statedProcessList[Process::RUNNING].head();
 }
-
+// FIXME killProcess应当适时清除DESTROYED的进程
 void ProcessManager::killProcess(ProcessLink* p)
 {
 	changeProcessStatus(p,p->data<true>().status(),Process::DESTROYED);
@@ -33,7 +33,6 @@ void ProcessManager::killProcess(ProcessLink* p)
 void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 {
 	auto cur = currentRunningProcess();
-
 	auto nextReady = _statedProcessList[Process::READY].head();
 
 	if(!nextReady)
@@ -50,19 +49,23 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers)
 			// 无就绪进程 --> 等待中断发生
 			// 中断发生     --> 系统处于idle状态  --> 直接调度就绪的进程
 			//                             若无就绪进程，则继续等待
-			asm_wfe_loop();
+			asm_wfi_loop();
 		}
 	}else{
-		kout << "schedule with next ready process\n";
-		intHandler.exitCurrent();// 这里是从中断而来的，不返回。
+//		kout << "schedule with next ready process\n";
 		if(cur) //需要执行切换动作
 		{
 			cur->data<true>().saveContext(savedRegsiers);
 			changeProcessStatus(cur, Process::READY);
+//			changeProcessStatus(cur, Process::DESTROYED); //FIXME READY
 		}
 		changeProcessStatus(nextReady, Process::RUNNING);
 		nextReady->data<true>().restoreContextAndExecute();
 	}
+}
+bool     ProcessManager::canSchedule()const
+{
+	return _statedProcessList[Process::READY].head()!=nullptr;
 }
 
 ProcessManager::ProcessLink*  ProcessManager::forkProcess(ProcessLink *origin)

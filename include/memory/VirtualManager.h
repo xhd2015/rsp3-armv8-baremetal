@@ -39,6 +39,7 @@ public:
 			void *virtualmap,
 			void *memstart,
 			size_t memsize,
+			ExceptionLevel highestEL,
 			void *newSp=nullptr);
 	/**
 	 * 使TTBR0置为无效，该函数应当在跳转到高端地址之后调用

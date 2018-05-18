@@ -68,7 +68,7 @@ public:
 	 * @param
 	 * @param ptrBase  给进程分配的内存，在用户态所处的基地址。即，内存的映射基地址
 	 */
-	void fillArguments(const Vector<String> &args,size_t ptrBase);
+	void fillArguments(const VectorRef<String> &args,size_t ptrBase);
 
 	void saveContext(const uint64_t *savedRegisters);
 

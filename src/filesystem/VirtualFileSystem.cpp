@@ -15,7 +15,7 @@ VirtualFileSystem::VirtualFileSystem()
 	if(!_root)
 	{
 		kout << FATAL << "VirtualFileSystem init failed\n";
-		asm_wfe_loop();
+		asm_wfi_loop();
 	}
 }
 

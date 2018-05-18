@@ -13,5 +13,5 @@
 
 void haltCPU()
 {
-	asm_wfe_loop();
+	asm_wfi_loop();
 }

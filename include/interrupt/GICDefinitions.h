@@ -19,7 +19,6 @@ enum EOIMode{
 
 
 enum class SecurityState { S_NS_2S, S_NS_1S, S_S_2S, S_S_1S};
-enum class ExceptionLevel {EL0 = 0,EL1 = 1,EL2 = 2,EL3 = 3};
 
 using IntID = uint32_t;
 
@@ -32,13 +31,6 @@ AS_MACRO T<index,Args...>& arrReg(typename T<index,Args...>::ScaleType  reg[])
 {
 	return *reinterpret_cast<T<index,Args...>*>(reg+index);
 }
-
-#ifndef _NOT_NEED_SecurityState
-extern SecurityState securityState;
-#endif
-#ifndef _NOT_NEED_ExceptionLevel
-extern ExceptionLevel exceptionLevel;
-#endif
 
 
 

@@ -70,7 +70,7 @@ void TEMPLATED_InterruptHandler::handle(
 	if(!_allowSyncExcep)
 	{
 		kout << FATAL << "synchronous exception happened while the handler indicates that synchronous exception is not allowed.\n";
-		asm_wfe_loop();
+		asm_wfi_loop();
 	}
 	_allowSyncExcep=false;// 需要保存状态
 	_nestedExceps.emplaceBack(savedRegs,type,origin);
@@ -98,7 +98,7 @@ void TEMPLATED_InterruptHandler::handle(
 	}
 	case ExceptionType::SYNC:
 	{
-		auto esr =currentState()._esr;
+		auto esr = RegESR_EL1::make(currentState().esrELx());//ELx的结构都是相同的
 		switch(esr.EC)
 		{
 		case ExceptionClass::UNDEF_INST:
@@ -124,6 +124,25 @@ void TEMPLATED_InterruptHandler::handle(
 		case ExceptionClass::SERROR_INTERRUPT:
 			handleSError();
 			break;
+		case ExceptionClass::SMC_AA64:
+		{
+			// FIXME 尚且不清楚reset的机制，这里的测试结果表明
+			//       qemu的reset只是简单地将PC的值置为RVBAR_EL3
+			//       通常而言，就是0地址，而其他寄存器值不变
+			//       应该有其他方法进行reset，但绝不是简单的跳转。
+//			__asm__ ("mrs x0,RVBAR_EL3 \n\t":::"x0");// 0
+			auto func=static_cast<SmcFunc>(lowerMaskBits(16) & esr.ISS);
+			if(func==SmcFunc::warmReset)
+				ASM_WARM_RESET(3);
+			break;
+		}
+		case ExceptionClass::HVC_AA64:
+		{
+			auto func=static_cast<HvcFunc>(lowerMaskBits(16) & esr.ISS);
+			if(func==HvcFunc::warmReset)
+				ASM_WARM_RESET(2);
+			break;
+		}
 		default:
 			unhandledException();
 			break;
@@ -166,7 +185,7 @@ void TEMPLATED_InterruptHandler::handleUndefinedInstruction()
 		kout << "va to pa is " << virtman.translateVAToPA(instr) << "\n";
 	}
 	kout << INFO << "not processing it\n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleInstructionAbort()
@@ -185,7 +204,7 @@ void TEMPLATED_InterruptHandler::handleInstructionAbort()
 		kout << "FAR not valid\n";
 	}
 	kout << "not processing it\n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 
 TEMPLATE_InterruptHandler
@@ -193,14 +212,14 @@ void TEMPLATED_InterruptHandler::handleDataAbort()
 {
 	kout << INFO << "Data Abort\n";
 	kout << INFO << "not processing \n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleSPAlignmentFault()
 {
 	kout << INFO << "SP alignment fault\n";
 	kout << INFO << "not processing it \n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 
 TEMPLATE_InterruptHandler
@@ -208,7 +227,7 @@ void TEMPLATED_InterruptHandler::handlePCAlignmentFault()
 {
 	kout << INFO << "PC alignment fault\n";
 	kout << INFO << "not processing it\n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
@@ -257,18 +276,65 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	}
 	case SvcFunc::killProcess:
 	{
-		kout << "killing Process \n";
+		kout << INFO << "killing Process,";
 		// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
 		auto pid = static_cast<Pid>(savedRegisters[0]);
 		int     status = *reinterpret_cast<int*>(savedRegisters+1);
 		(void)status;
 		if(pid == PID_CURRENT)
 		{
-			processManager.killProcess(processManager.currentRunningProcess());
+			auto cur = processManager.currentRunningProcess();
+			processManager.killProcess(cur);
+			kout << "pid = " << cur->data<true>().pid() << "\n";
+			if(processManager.canSchedule())
+				   exitCurrent();
 			processManager.scheduleNextProcess(savedRegisters);
 		}
-		asm_wfe_loop();
-         break;
+        break;
+	}
+	case SvcFunc::createShell: // shell code is somewhere in the system
+	{
+		kout << INFO << "creating shell.\n";
+		constexpr size_t pageSize =  VirtualMap::_D::PAGE_SIZE;
+		auto p = mman.allocateAs<char*>(USER_RAM_SIZE,pageSize);
+		if(p)
+		{
+			auto processLink = processManager.createNewProcess(
+					10,//priority
+					nullptr,//parent
+					reinterpret_cast<size_t>(p)/pageSize,//map to physical address(pa)
+					USER_RAM_SIZE/pageSize, // ramsize,in pages
+					USER_RAM_START/pageSize, // ramstart(va),in pages
+					(USER_RAM_START+USER_STACK_SIZE)/pageSize,USER_CODE_SIZE/pageSize,//code,readonly
+					(USER_RAM_START + USER_STACK_SIZE)/pageSize,//stack top
+					virtman.addressBits(), // virtual address length in bits
+					p  + USER_DATA_START - USER_STACK_START, //从stack开始的
+					USER_DATA_SIZE,
+					true
+			);
+			Process & process = processLink->data<true>();
+			if(processLink)
+			{
+				extern uint64_t __user_space_start[];
+				if(process.status()!=Process::CREATED_INCOMPLETE)
+				{
+					auto &args = *reinterpret_cast<const VectorRef<String>*>(
+							savedRegisters[0]);
+					// 将代码和initRAM复制到分配的内存空间
+					std::memcpy(p + USER_STACK_SIZE,
+							__user_space_start,USER_CODE_SIZE + USER_INITRAM_SIZE);
+					process.fillArguments(args,USER_STACK_START);
+					processManager.changeProcessStatus(processLink, Process::READY);
+					// 进程在队列中等待调度
+					savedRegisters[0]=static_cast<uint64_t>(process.pid());
+					break;//退出
+				}else{
+					processManager.killProcess(processLink);
+				}
+			}
+		}
+		savedRegisters[0]=static_cast<uint64_t>(PID_INVALID);
+		break;
 	}
 	case SvcFunc::fork:
 	{
@@ -290,6 +356,8 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	}
 	case SvcFunc::scheduleNext:
 	{
+	   if(processManager.canSchedule())
+		   exitCurrent();
 	   processManager.scheduleNextProcess(savedRegisters);
        break;
 	}
@@ -298,10 +366,20 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		savedRegisters[0]=VirtualProxyKernel::handleVFSProxySVC(savedRegisters);
 		break;
 	}
+	case SvcFunc::warmReset:
+	{
+		if(highestEL==ExceptionLevel::EL3)
+			asm_smc<SmcFunc::warmReset>();
+		else if(highestEL==ExceptionLevel::EL2)
+			asm_hvc<HvcFunc::warmReset>();
+		else
+			ASM_WARM_RESET(1);
+		break;
+	}
 	default:
 	{
 		kout << FATAL << "unhandled svc : " << static_cast<uint64_t>(func) << "\n";
-		asm_wfe_loop();
+		asm_wfi_loop();
 		break;
 	}
 	}
@@ -313,10 +391,7 @@ void TEMPLATED_InterruptHandler::handleIRQ(IntID id)
 	// write here to make sure that the event come in order
 	if(id == _intm->standardIntID(PROCESS_TIMER))//el1 physical timer interrupt
 	{
-//		kout << INFO << "handle process timer\n";
-//		_intm->endInterrupt(ExceptionType::IRQ,id);
-		// this no return
-	    processManager.scheduleNextProcess(currentState()._generalRegisters);
+
 	}else if(id == _intm->standardIntID(INPUT)){
 //		kout << INFO << "handle INPUT\n";
 		handleInputEvent();
@@ -377,7 +452,7 @@ TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::unhandledException()
 {
 	kout << INFO << "Currently unhandled exception\n";
-	asm_wfe_loop();
+	asm_wfi_loop();
 }
 
 TEMPLATE_InterruptHandler

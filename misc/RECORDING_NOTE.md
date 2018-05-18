@@ -1,3 +1,15 @@
+# 2018年5月18日15:36:08
+【commit point】 shell命令完成，可以创建进程。现在，能用于演示的基本程序已经完成，后面，如果需求基于演示，则不会再有大的功能变化。没有实现ppid，因为没有很大必要；没有实现shutdown，reboot，因为aarch64的reset机制仍然不是十分清楚。
+
+需要强调的是，我们在这个版本中增加了EL2，EL3的栈空间，同时ExceptionVectorEL1也能用于HVC，SMC指令，尽管最后没有用到，但是不能忽略这些努力。
+
+# 2018年5月18日09:57:40
+warm reset： 不改变调试状态
+cold_reset:  全部重置
+关于wfi_loop
+![](commits/2018-5-18_09_56_52_wfi_loop.png)
+
+进入quiescent(静止状态)。
 # 2018年5月17日23:26:04
 【commit point】shell文件管理命令--pwd,mkdir,rm,cat,cp,mv 完成。剩下：ppid，shutdown，reboot，shell。
 # 2018年5月17日18:17:32

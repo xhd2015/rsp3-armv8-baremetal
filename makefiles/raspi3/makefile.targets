@@ -46,14 +46,14 @@ part1.bin:$(MASTERY_ELF)
 # 2是依赖于1的，但是环境又不同
 $(MASTERY_ELF).2:$(MASTERY_ELF)
 	mv $(MASTERY_ELF) $(MASTERY_ELF).temp
-	$(MAKE) CODE_PART=2 IMAGE_BASE=0xffffff0000000000 $(MASTERY_ELF)
+	$(MAKE) CODE_PART=2 IMAGE_BASE=$(KERNEL_HIGH_BASE) $(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
 
-# part2.bin和part2.bin_recalled之间的协作：通过$(MASTERY_ELF).2来传递依赖性
+# part2.bin和part2.bin_recalled之间的协作：part2.bin用于检查，传递重构造的参数;part2.bin_recalled完成实际的生成
 part2.bin:$(MASTERY_ELF).2
-	$(MAKE) CODE_PART=2 IMAGE_BASE=0xffffff0000000000 part2.bin_recalled
-part2.bin_recalled:$(MASTERY_ELF).2
+	$(MAKE) CODE_PART=2 IMAGE_BASE=$(KERNEL_HIGH_BASE) part2.bin_recalled
+part2.bin_recalled:
 	$(call elf_to_bin,  $(MASTERY_ELF).2,  part2.bin)
 	dd if=$(userSpaceBin) of=part2.bin seek=$(USER_SPACE_DD_START) \
 			bs=1c count=$(USER_SPACE_SIZE)
@@ -75,13 +75,13 @@ QEMU_LOADER_NO_MACHINE := \
 -device loader,cpu-num=3,addr=$(KERNEL_ADDRESS) \
 -nographic  -d int,mmu,guest_errors -D qemu_log.txt
 
-QEMU_LOADER_NO_MACHINE_SERIAL0 := $(QEMU_LOADER_NO_MACHINE) -serial mon:stdio
-QEMU_LOADER_NO_MACHINE_SERIAL1 := $(QEMU_LOADER_NO_MACHINE) -serial null \
-	-serial mon:stdio
-QEMU_LOADER_NO_MACHINE_SERIAL01 := $(QEMU_LOADER_NO_MACHINE) -serial mon:stdio \
-	-serial mon:stdio
+# UART1 是 mini UART
+# UART0 是正常的可中断端口
+QEMU_LOADER_NO_MACHINE_SERIAL0 := $(QEMU_LOADER_NO_MACHINE) -serial mon:stdio -serial null
+QEMU_LOADER_NO_MACHINE_SERIAL1 := $(QEMU_LOADER_NO_MACHINE) -serial null -serial mon:stdio
+QEMU_LOADER_NO_MACHINE_SERIAL01 := $(QEMU_LOADER_NO_MACHINE) -serial mon:stdio -serial mon:stdio
 # DOCME fat32_8192_empty.img指的是，有效数据从8192扇区开始
-QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE_SERIAL01) -machine raspi3 -sd fat32_8192_empty.img
+QEMU_ARGS := $(QEMU_LOADER_NO_MACHINE_SERIAL0) -machine raspi3 -sd fat32_8192_empty.img
 raspi3_debug:
 	$(QEMU_AARCH64) $(QEMU_ARGS) -S -s
 raspi3_run:

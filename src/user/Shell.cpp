@@ -8,6 +8,7 @@
 #include <user/Shell.h>
 #include <schedule/schedule_forward.h>
 #include <runtime_def.h>
+#include <interrupt/svc_call.h>
 
 Shell::Shell()
 	:_exitCode(0),
@@ -31,6 +32,7 @@ void Shell::execute(String &line,Vector<String> &cmd)
 	_exitCode=0;
 	if(cmd.size()>0)
 	{
+
 		auto &c=cmd[0];
 		if(c=="ls")
 		{
@@ -100,6 +102,13 @@ void Shell::execute(String &line,Vector<String> &cmd)
 		}else if(c=="shell"){
 			// sys create new process
 			// pass subroutines as
+			VectorRef<String> args(cmd,cmd.size()-1,1);
+			auto shellpid = static_cast<Pid>(
+					svc_call<SvcFunc::createShell>(reinterpret_cast<uint64_t>(&args)));
+			if(shellpid==PID_INVALID)
+				_exitCode=1;
+			else
+				kout << "created shell pid:"<<shellpid<<"\n";
 		}else if(c=="shutdown"){
 			// 关机
 		}else if(c=="reboot"){
@@ -127,9 +136,10 @@ void Shell::execute(String &line,Vector<String> &cmd)
 				 << "    " << "echo STRING   -- print whatever input\n"
 				 << "    " << "exit          -- exit this program and destroy the process\n"
 				 << "    " << "pid           -- show process id \n"
-				 << "    " << "ppid          -- show parent process id\n"
-				 << "    " << "shutdown      -- power off \n"
-				 << "    " << "reboot        -- reboot the computer\n"
+				 // FIXME 完善ppid,shutdown,reboot等命令
+				 //<< "    " << "ppid          -- show parent process id\n"
+				 //<< "    " << "shutdown      -- power off \n"
+				 //<< "    " << "reboot        -- reboot the computer\n"
 				 << "    " << "mkdir  DIR    -- create a directory\n"
 				 << "    " << "rm     FILE   -- remove a file or directory \n"
 				 << "    " << "cat    FILE   -- print the content of a file\n"

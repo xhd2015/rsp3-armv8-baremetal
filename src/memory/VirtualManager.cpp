@@ -63,7 +63,9 @@ int   VirtualManager::init()
 }
 void VirtualManager::enableMMU(void* jmpFunc,void *virtualmap,
 		void *memstart,
-		size_t memsize,void *newSp)
+		size_t memsize,
+		ExceptionLevel highestEL,
+		void *newSp)
 {
 	kout << INFO << "VirtualManager enableMMU, jmpFunc = " <<
 						reinterpret_cast<void*>(jmpFunc) << ","
@@ -97,14 +99,16 @@ void VirtualManager::enableMMU(void* jmpFunc,void *virtualmap,
 			"mov x1,%3 \n\t"
 			"mov x2,%4 \n\t"
 			"mov x3,%5 \n\t"
+			"mov x4,%6 \n\t"
 			"br  %1 \n\t"
 			::"r"(newSp),
 			  "r"(jmpFunc),
 			  "r"(virtualmap),
 			  "r"(memstart),
 			  "r"(memsize),
+			  "r"(highestEL),
 			  "r"(_addressBits)
-			  :"x0","x1","x2","x3"
+			  :"x0","x1","x2","x3","x4"
 			  );
 }
 

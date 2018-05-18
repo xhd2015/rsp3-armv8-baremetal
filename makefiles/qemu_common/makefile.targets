@@ -18,9 +18,6 @@ QEMU_NO_BIOS = -cpu cortex-a53 -smp 4 -m 1024M -nographic -serial mon:stdio  -dr
 #trace:load_file,trace:cpu_in,trace:guest_mem_before_exec,trace:guest_mem_before_trans,trace:memory_region_tb_read,trace:memory_region_ops_read
 QEMU_BIOS_NO_MACHINE = -bios $(MASTERY_BINARY) $(QEMU_NO_BIOS)
 # FIXME LOADER_ADDRESS指的是载入文件的基地址，KERNEL_ADDRESS指的是首条指令地址
-LOADER_ADDRESS := $(shell echo "$$(($(RAM_START) + $(DTB_SIZE) + \
-	$(STACK_SIZE)))")
-KERNEL_ADDRESS := $(shell echo "$$(($(LOADER_ADDRESS) + $(SINGLE_GEN_SIZE)))")
 QEMU_LOADER_NO_MACHINE = -device loader,file=$(MASTERY_BINARY),addr=$(KERNEL_ADDRESS),cpu-num=0 $(QEMU_NO_BIOS)
 
 QEMU_ARGS :=     $(QEMU_LOADER_NO_MACHINE) -machine virt,gic-version=3

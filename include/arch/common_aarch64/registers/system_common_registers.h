@@ -4786,4 +4786,274 @@ public:
     }
 }__attribute__((packed));
 
+
+class RegRMR_EL1 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  AA64:1;
+            uint32_t  RR:1;
+            uint32_t  RES0_0:30;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegRMR_EL1& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegRMR_EL1 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegRMR_EL1 & setMandatoryFields()
+    {
+        AA64 = 0;
+        RR = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegRMR_EL1 copy()const volatile
+    {
+    	RegRMR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegRMR_EL1 copy()const
+    {
+    	RegRMR_EL1 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegRMR_EL1: ";
+            kout
+                << "AA64 = " << AA64 << ", "
+                << "RR = " << RR << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegRMR_EL1*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegRMR_EL1 make(uint32_t val)
+    {
+        RegRMR_EL1 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegRMR_EL1 read()
+    { 
+        RegRMR_EL1 res;
+        __asm__ __volatile__("mrs %0,RMR_EL1\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegRMR_EL1 & update()
+    {
+        __asm__ __volatile__("mrs %0,RMR_EL1\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr RMR_EL1,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegRMR_EL2 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  AA64:1;
+            uint32_t  RR:1;
+            uint32_t  RES0_0:30;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegRMR_EL2& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegRMR_EL2 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegRMR_EL2 & setMandatoryFields()
+    {
+        AA64 = 0;
+        RR = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegRMR_EL2 copy()const volatile
+    {
+    	RegRMR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegRMR_EL2 copy()const
+    {
+    	RegRMR_EL2 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegRMR_EL2: ";
+            kout
+                << "AA64 = " << AA64 << ", "
+                << "RR = " << RR << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegRMR_EL2*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegRMR_EL2 make(uint32_t val)
+    {
+        RegRMR_EL2 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegRMR_EL2 read()
+    { 
+        RegRMR_EL2 res;
+        __asm__ __volatile__("mrs %0,RMR_EL2\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegRMR_EL2 & update()
+    {
+        __asm__ __volatile__("mrs %0,RMR_EL2\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr RMR_EL2,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
+
+class RegRMR_EL3 
+{
+public:
+    using ScaleType=uint32_t;
+            uint32_t  AA64:1;
+            uint32_t  RR:1;
+            uint32_t  RES0_0:30;
+    AS_MACRO uint32_t  get()const 
+    {
+        return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO uint32_t  get()const volatile
+    {
+        return *reinterpret_cast<const volatile uint32_t*>(this);
+    }
+    
+    AS_MACRO RegRMR_EL3& set(uint32_t v)
+    { 
+        *reinterpret_cast<uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO volatile RegRMR_EL3 & set(uint32_t v)volatile
+    {
+        *reinterpret_cast<volatile uint32_t*>(this)=v;
+        return *this;
+    }
+    AS_MACRO RegRMR_EL3 & setMandatoryFields()
+    {
+        AA64 = 0;
+        RR = 0;
+        RES0_0 = 0;
+        return *this;
+        }
+    AS_MACRO RegRMR_EL3 copy()const volatile
+    {
+    	RegRMR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO RegRMR_EL3 copy()const
+    {
+    	RegRMR_EL3 res;
+    	res.set(this->get());
+    	return res;
+    }
+    AS_MACRO void dump()const volatile
+    {
+        kout << "RegRMR_EL3: ";
+            kout
+                << "AA64 = " << AA64 << ", "
+                << "RR = " << RR << ", "
+                << "RES0_0 = " << RES0_0 << ", "
+                << "\n";
+    }
+    AS_MACRO void dump()const
+    {
+    	reinterpret_cast<volatile const RegRMR_EL3*>(this)->dump();
+    }
+    AS_MACRO uint32_t & asuint32_t()
+    {
+    	return *reinterpret_cast<uint32_t*>(this);
+    }
+    AS_MACRO const uint32_t & asuint32_t()const
+    {
+    	return *reinterpret_cast<const uint32_t*>(this);
+    }
+    AS_MACRO static RegRMR_EL3 make(uint32_t val)
+    {
+        RegRMR_EL3 res;
+        *reinterpret_cast<uint32_t*>(&res)=val;
+        return res;
+    }
+    AS_MACRO static RegRMR_EL3 read()
+    { 
+        RegRMR_EL3 res;
+        __asm__ __volatile__("mrs %0,RMR_EL3\n\t":"=r"(res));
+        return res;
+    }
+    AS_MACRO RegRMR_EL3 & update()
+    {
+        __asm__ __volatile__("mrs %0,RMR_EL3\n\t":"=r"(*this));
+        return *this;
+    }
+    AS_MACRO void write()const
+    {
+        __asm__ __volatile__("msr RMR_EL3,%0\n\t"::"r"(*this));
+    }
+}__attribute__((packed));
+
 #endif //__INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_SYSTEM_COMMON_REGISTERS_H__
