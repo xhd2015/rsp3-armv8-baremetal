@@ -185,6 +185,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 	new (&intHandler)
 			InterruptHandler<BCM2836LocalIntController>(&localIntc);
 
+//	pl011.init();
 	kout << INFO << "reconstructed all.\n";
 	// 初始化虚拟文件系统
 	kout << INFO << "ExceptionVectorEL1 = " << Hex(ExceptionVectorEL1) << "\n";
@@ -267,6 +268,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 	// DOCME 控制台的输入与模拟选项有关，当启用两个端口时，输入会被平均分配。
 	// 启用输入中断和定时中断
 	pl011.enableFIFO(false);// 启用单字符模式
+//	pl011.enableFIFO(true);
 	pl011.clearIntFlags();
 //	pl011.readInterruptLevel(PL011::L_1of8);
 	pl011.enableReceiveInterrupt(true);

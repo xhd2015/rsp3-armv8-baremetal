@@ -22,7 +22,10 @@ public:
 
 	// 如果是单核的，则某一时刻只有一个PID在运行
 	// 实际上即使是多核情况下，我们对某个核实际上只赋予一个唯一的正在运行的进程
-	ProcessLink* currentRunningProcess();
+	AS_MACRO ProcessLink* currentRunningProcess()
+			{return _statedProcessList[Process::RUNNING].head();}
+	ProcessLink* nextReadyProcess()
+	        {return _statedProcessList[Process::READY].head();}
 	ProcessLink* findProcess(Pid pid);
 
 	void     killProcess(ProcessLink *p);
@@ -57,6 +60,8 @@ private:
 //	ForwardList<Process> _processList;
 //	ForwardNode<Process*> _statedProcessList[Process::STATUS_NUM];
 	ProcessList _statedProcessList[Process::STATUS_NUM];
+	   // FIXME 对特定CPU而言，RUNNING进程实际至多一个，因此可以仅仅使用一个变量而不是一个队列
+
 };
 
 #ifndef _NOT_NEED_ProcessManager

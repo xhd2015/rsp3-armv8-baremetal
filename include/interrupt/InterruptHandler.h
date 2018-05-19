@@ -63,6 +63,12 @@ public:
 
 	AS_MACRO bool allowSyncException()const{return _allowSyncExcep;}
 	void          allowSyncException(bool v){_allowSyncExcep=v;}
+	void          allowEvent(StandardInterruptType event,bool en) {	_intm->enableInterrupt(
+			_intm->standardIntID(event),en);}
+	/**
+	 * 通过等待那些可能出现READY状态进程的事件
+	 */
+	void          waitReadyProcess();
 private:
 	void          schedule(Process::Status curStatus=Process::READY);
 private:

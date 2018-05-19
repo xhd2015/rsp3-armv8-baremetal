@@ -233,7 +233,7 @@ void TEMPLATED_InterruptHandler::handlePCAlignmentFault()
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 {
-	auto savedRegisters=currentState()._generalRegisters;
+	auto savedRegisters=currentState().registers();
 	switch(func)
 	{
 	case SvcFunc::puts:
@@ -251,34 +251,33 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		if(activeInputCatcher && activeInputCatcher==cur) // 仅当具有捕获权时改变缓冲区
 		{
 			auto buff = activeInputCatcher->data<true>().inputBuffer();
-			if(buff && buff->empty()) // 为了安全，因为buff不为空时，数据可能正在被操作
+			if(buff && buff->empty()) // 为了安全buff必须为空，因为buff不为空时，数据可能正在被操作
 			{
 				size_t maxNum = savedRegisters[0];
-				bool returnOnNewLine = getBit(savedRegisters[1],0);
-				bool blocked = getBit(savedRegisters[1],1);
-				while(completed<maxNum && !buff->full())
+				bool   blocked = savedRegisters[1];
+				if(inputBuffer.empty())
 				{
-					// 还没有读取到maxNum个数据
-					if(inputBuffer.empty()) //没有这么多数据，需要根据情况block
+					if(blocked) // 阻塞
 					{
-						if(blocked) // 那就等待输入，将当前进程移动到BLOCK中
-						{
-							// 阻塞进程将会在handleInput中唤醒
-							processManager.changeProcessStatus(cur, Process::BLOCKED);
-							if(processManager.scheduleNoReturn())
-								savedRegisters[0]=0; // 因为schedule/BLOCK导致等待输入的字符数量为0
-							cur->data<true>().saveContext(savedRegisters);
-							schedule();
-							if(inputBuffer.empty()) // 被无意中唤醒，没有数据
-								continue;
-						}else
-							break;  // 直接退出
+						// 阻塞式gets的模型： user请求gets --> 当前没有输入 --> 设置已读取数量，进程阻塞
+						//                在某个地方，进程被唤醒 --> 返回用户态，假如第一次唤醒读取数量为0，则user再次请求gets
+						//                user第二次请求gets --> 当前已有输入 --> 返回读取的数量
+						// 阻塞进程将会在handleInput中唤醒
+						// 完全阻塞当前进程，因此当前进程的状态需要提前保存
+						processManager.changeProcessStatus(cur, Process::BLOCKED);//当前进程已经阻塞了
+						assert(processManager.scheduleNoReturn());//一定不会返回了
+						savedRegisters[0]=0;//设置阻塞进程唤醒后的返回值,需要它重新请求一次
+						cur->data<true>().saveContext(savedRegisters);
+						schedule();
 					}
-					auto ch=inputBuffer.remove();
-					buff->put(ch);
-					++completed;
-					if(returnOnNewLine && (ch=='\n' ||ch=='\r')) // 遇到换行，并且表明换行退出
-						break;
+				}else{
+					while(completed<maxNum &&
+							!inputBuffer.empty() &&
+							!buff->full()) // 读取所有
+					{
+						buff->put(inputBuffer.remove());
+						++completed;
+					}
 				}
 			}
 		}
@@ -299,7 +298,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 			kout << proc->data<true>().pid() << " ]\n";
 			auto parent = proc->data<true>().parent();
 			if(proc==activeInputCatcher && parent)
-				activeInputCatcher=parent;
+				activeInputCatcher=parent; // FIXME 在改变当前截取进程时，应当将输入刷新，然后清空
 			processManager.killProcess(proc);
 			schedule();
 		}
@@ -350,7 +349,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 						schedule(Process::BLOCKED);
 					}else if(fg_or_bg==1)//background,不重新定向，不阻塞
 					{
-
+						// 什么也不做
 					}
 					break;//退出
 				}else{
@@ -442,16 +441,28 @@ void TEMPLATED_InterruptHandler::handleIRQ(IntID id)
 	// write here to make sure that the event come in order
 	if(id == _intm->standardIntID(StandardInterruptType::PROCESS_TIMER))//el1 physical timer interrupt
 	{
-		if(processManager.scheduleNoReturn())
-			_intm->endInterrupt(ExceptionType::IRQ,id);
+		_intm->endInterrupt(ExceptionType::IRQ,id);
 		schedule();
 	}else if(id == _intm->standardIntID(StandardInterruptType::INPUT)){
 //		kout << INFO << "handle INPUT\n";
+//		_intm->enableInterrupt(id,false);
+		// DOCME 这里“提前结束”和“处理完毕再结束”两种处理逻辑对输入有很大的影响
+		//       在QEMU上，如果采用“处理完毕再结束”这种模型，则至多能接受34个字符，即多余的字符被丢弃
+		//         由此可能导致换行符没有被正确接收到。（注：单字符模式至多接受34个字符，FIFO模式可能接受50+，但是
+		//         仍然受限制。
+		//       “提前结束”这种模型能够接收更多的字符（满足一般的需求），对于输入程序的体验改善显著。
+		//     猜测原因：handleInputEvent()程序耗费一定的时间，在这段时间内，如果不提前结束中断状态，则额外的字符可能
+		//     被丢弃。但是真正的原因仍有待查询。  TODO 找出真正的原因。
+		// TESTME  尚未在真机上测试。测试方法：分别注释其中的一者，然后输入 abc..xyz * 3，如果程序没有响应，证明
+		//         重现了问题。一般而言，第二个模型出现问题的概率基本是100%，第一个基本不出现（不保证不出现）。
+		_intm->endInterrupt(ExceptionType::IRQ,id); // 提前结束
 		handleInputEvent();
+//		_intm->endInterrupt(ExceptionType::IRQ,id); // 处理完毕再结束
+//		_intm->enableInterrupt(id,true);
 	}else{ // others
 		kout << INFO << "unhandled irq id=" << id<<"\n";
+		_intm->endInterrupt(ExceptionType::IRQ,id);
 	}
-	_intm->endInterrupt(ExceptionType::IRQ,id);
 }
 
 TEMPLATE_InterruptHandler
@@ -466,17 +477,15 @@ void TEMPLATED_InterruptHandler::handleFIQ(IntID id)
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleInputEvent()
 {
-//	kout << INFO << "handle input event\n";
-//	kout << "intc.enableWord(0) = " << Hex(intc.enableWord(0)) << "\n";
-//	kout << "intc.enableWord(1) = " << Hex(intc.enableWord(1)) << "\n";
-//	kout << "intc.pendingWord(0) = " << Hex(intc.pendingWord(0)) << "\n";
-//	kout << "intc.pendingWord(1) = " << Hex(intc.pendingWord(1)) << "\n";
-	// DOCME 这里必须已经禁用了输入中断
-//	uint16_t ch;
-//		kout << "queue old size = " << inputBuffer.size() << "\n";
-//	_intm.enableIntID(INT_INPUT, false);
-//	_intm->enableInterrupt(_intm->standardIntID(INPUT),false); // 禁止再次输入
-//	kout << INFO << "after , inputBuffer.size() = " << inputBuffer.size() << "\n";
+//	TimeRecorder<BCM2835SystemTimer> r(&sysTimer,1000000);
+//	size_t n=0;
+//	while(pl011.readReady()) // 每次输入至多33个字符（包括换行）
+//	{
+//		auto ch=pl011.rawRead();
+//		kout << INFO << "reading ["<<(n++)<<"]: " << Hex(ch) << "\n";
+//		delayMS(10);
+//	}
+//	return;
 	while(pl011.readReady())
 	{
 		auto ch=pl011.rawRead();
@@ -496,10 +505,6 @@ void TEMPLATED_InterruptHandler::handleInputEvent()
 	if(cur!=activeInputCatcher)
 		processManager.signal(Process::SIG_WAKEUP,
 				cur, activeInputCatcher);
-//	_intm->enableInterrupt(_intm->standardIntID(INPUT),true); // 禁止再次输入
-//	kout << INFO << "after , inputBuffer.size() = " << inputBuffer.size() << "\n";
-//	kout << INFO << "last reading char = " << Hex(ch) << "\n";
-//	_intm->enableInterrupt(_intm->standardIntID(INPUT),true);
 }
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::handleSError()
@@ -521,6 +526,16 @@ void TEMPLATED_InterruptHandler::exitCurrent()
 	_nestedExceps.last().restore();
 	_nestedExceps.removeLast();
 	_allowSyncExcep=true;
+}
+TEMPLATE_InterruptHandler
+void         TEMPLATED_InterruptHandler::waitReadyProcess()
+{
+	allowEvent(StandardInterruptType::INPUT, true);
+	allowEvent(StandardInterruptType::PROCESS_TIMER, false);
+	cpuEnableInterrupt(ExceptionType::IRQ, true);
+	while(!processManager.nextReadyProcess()); // FIXME 会不会出现竞争条件？
+	cpuEnableInterrupt(ExceptionType::IRQ, false);
+	allowEvent(StandardInterruptType::PROCESS_TIMER, true);
 }
 TEMPLATE_InterruptHandler
 void TEMPLATED_InterruptHandler::schedule(Process::Status curStatus)

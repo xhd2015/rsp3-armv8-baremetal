@@ -18,10 +18,6 @@ ProcessManager::ProcessManager()
 	}
 }
 
-ProcessManager::ProcessLink* ProcessManager::currentRunningProcess()
-{
-	return _statedProcessList[Process::RUNNING].head();
-}
 
 ProcessManager::ProcessLink* ProcessManager::findProcess(Pid pid)
 {
@@ -40,7 +36,7 @@ ProcessManager::ProcessLink* ProcessManager::findProcess(Pid pid)
 // FIXME killProcess应当适时清除DESTROYED的进程
 void ProcessManager::killProcess(ProcessLink* p)
 {
-	auto status=p->data<true>().status();
+	auto status=p->data<true>().status();//old status
 	p->data<true>().~Process();
 	changeProcessStatus(p,status,Process::DESTROYED);
 }
@@ -50,13 +46,19 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers,Process::St
 {
 	assert(curStatus!=Process::RUNNING);
 	auto cur = currentRunningProcess();
-	auto nextReady = _statedProcessList[Process::READY].head();
+	auto next = nextReadyProcess();
 
 	// 进入idle的前提条件： RUNNING为空
 	// 无就绪进程 --> 等待中断发生 wfi
 	// 中断发生     --> 系统处于idle状态  --> 直接调度就绪的进程
 	//                             若无就绪进程，则继续等待
-	if(!nextReady)
+	// idle进程状态：没有任何就绪进程和正在运行的进程
+	//   退出idle的可能： 输入中断-->唤醒某个进程
+	//				     持续检查READY队列，直到有为止
+	//  因此，idle应当： 只允许输入中断，允许IRQ中断，等待100us，禁用IRQ中断，检查READY队列
+	//  因为ProcessManager应当是通用的，所有只允许输入中断这件事情应当由中断处理器完成。
+
+	if(!next)
 	{
 		if(cur) // 没有下一个就绪的，且有当前进程，则继续运行
 		{
@@ -67,8 +69,13 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers,Process::St
 //			kout << INFO << "schedule with idle \n";
 			// 在此情况下，为了快速响应，sysTimerTick变为10ms
 //			sysTimerTick = 10;
-			cpuEnableInterrupt(ExceptionType::IRQ, true);// FIXME 应当新建一个idle进程，真正的进程
-			asm_wfi_loop();
+
+			// idle状态
+			intHandler.waitReadyProcess();
+			// 退出idle状态
+			next = nextReadyProcess();
+			changeProcessStatus(next, Process::RUNNING);
+			next->data<true>().restoreContextAndExecute();
 		}
 	}else{
 //		kout << "schedule with next ready process\n";
@@ -77,15 +84,13 @@ void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers,Process::St
 			cur->data<true>().saveContext(savedRegsiers);
 			changeProcessStatus(cur, curStatus);
 		}
-		changeProcessStatus(nextReady, Process::RUNNING);
-		nextReady->data<true>().restoreContextAndExecute();
+		changeProcessStatus(next, Process::RUNNING);
+		next->data<true>().restoreContextAndExecute();
 	}
 }
 bool     ProcessManager::scheduleNoReturn()
 {
-	auto nextReady=_statedProcessList[Process::READY].head();
-	auto cur=currentRunningProcess();
-	return nextReady || (!cur); // nextReady设置，或者两个都不设置
+	return nextReadyProcess() || (!currentRunningProcess()); // nextReady设置，或者两个都不设置
 }
 
 void     ProcessManager::signal(Process::Signal sig,ProcessLink *src, ProcessLink *target)

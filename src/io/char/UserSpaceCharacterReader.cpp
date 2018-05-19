@@ -14,13 +14,12 @@ char  UserSpaceCharacterReader::read()
 	if(inputBuffer.empty())
 	{
 		inputBuffer.reset(0);
-		uint64_t flags = bitOnes<SvcConfig::F_BLOCKED_BIT,SvcConfig::F_RETURN_ON_NEW_LINE>();
 		while(true)
 		{
 			// 因为是BLOCKED的，返回时数据仍然不足是可能的
 			size_t n= svc_call<SvcFunc::gets>(
 							inputBuffer.capacity(),
-							flags
+							true //blocked
 							);
 			if(n>0)
 				break;

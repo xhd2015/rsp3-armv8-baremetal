@@ -38,8 +38,8 @@ int PL011::init()
 	reg32(UARTCR) = bitOnes<8,9>();// 启用8,9位 enable Send/Receive
 	// 屏蔽所有的中断
 	reg32<UARTIMSC>() = 0;//lowerMaskBits(11); // 高5位res0
-	reg32(UARTLCR_H) = bitOnes<4,5,6>();// bit5,6必须设置， 此处设置数据的长度为8位。  bit4 选择传输模式：1：FIFO mode 2：1-byte mode
-	enableFIFO(false);//禁用FIFO模式
+	reg32(UARTLCR_H) = bitOnes<5,6>();// bit5,6必须设置， 此处设置数据的长度为8位。  bit4 选择传输模式：1：FIFO mode 2：1-byte mode
+//	enableFIFO(false);//禁用FIFO模式
 //	readInterruptLevel(L_1of8); // 配置触发模式，仅当FIFO启用有效
 	enable(true);
 

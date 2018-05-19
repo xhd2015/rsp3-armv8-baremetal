@@ -14,7 +14,11 @@
 enum class SvcFunc{
 	                           // prototype:
 	puts,                      //  size_t    puts(const char *, size_t n=0)                 // 打印字符串，非缓冲模式
-	gets,                      //  size_t    gets(size_t maxNum,uint64_t flags) // flags: [0]=return on new line, [1]=blocked or not
+	gets,                      //  size_t    gets(size_t maxNum,bool blocked)
+	                           // gets的目的：读取尽量多的字符，如果没有字符，则根据条件阻塞等待
+	                           //  gets的模型： 每次读取尽可能多，如果遇到换行符，则立即返回
+							   //            如果缓冲区已经读取完毕，没有遇到换行符，且已经读取至少1个字符，则返回
+							  //             如果缓冲区为空，且要求阻塞等待，则阻塞，返回0
 	allocateBlock,             //  void*     allocateBlock(size_t size,size_t alignment)         // 一般用于分配较大的空间，如4KB的页
 	killProcess,               //  void      killProcess(Pid pid, int exitStatus)
 							   //              kill进程, pid的取值有特殊含义
@@ -44,7 +48,7 @@ enum class HvcFunc{
 
 class SvcConfig{
 public:
-	enum FLAG{	F_RETURN_ON_NEW_LINE=0,	F_BLOCKED_BIT=1};
+//	enum FLAG{	F_RETURN_ON_NEW_LINE=0,	F_BLOCKED_BIT=1}; //DEPRECATED
 };
 
 // ==forward declarations:svc_call
