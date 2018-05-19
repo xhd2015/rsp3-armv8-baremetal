@@ -43,4 +43,39 @@
 
 # Copyright
 
-In Progress
+In Progress(maybe MIT-LICENCE, but may be closed again, it now is half-open and half-closed).
+
+# Am I a Linux?
+No, make it POSIX instead.
+
+# Contributing
+- Follow some coding rules that may be laterly referenced here
+
+- Read the document that may be laterly published
+
+- Using qemu to debug some demostration program
+
+- Try to change kernel's code,rerun.
+
+- Then, git add -A && git commit && git push !
+
+# Documentation
+see [here](misc/doc), also see [external document](misc/external).
+
+# Reference
+[rsp3-armv8-baremetal](https://github.com/xhd2015/rsp3-armv8-baremetal) , the original project.
+
+[linux](https://github.com/torvalds/linux) , Linux, officially.
+
+[qemu](https://github.com/qemu/qemu) , an emulator that helps a lot.
+
+[gVisor](https://github.com/google/gvisor) ,  a user space kernel, by Google, in Go.
+
+[User Mode Linux(UML)](http://user-mode-linux.sourceforge.net) , as its name says.
+
+[x2](https://github.com/xhd2015/x2) , an ancient kernel on Bochs.
+
+[raspi3 tutorial](https://github.com/bztsrc/raspi3-tutorial), by bzt, very useful for beginners.
+
+[armv8 hello world](https://github.com/jserv/armv8-hello), hello world example for armv8,based on QEMU,useful for beginners.
+
