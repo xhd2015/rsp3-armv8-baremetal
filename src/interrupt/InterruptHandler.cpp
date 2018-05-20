@@ -290,15 +290,20 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 		kout << INFO << "kill process [ pid = ";
 		// 收回资源： 占用的内存，占用的pid，打开的文件等， 将其从进程队列中清除
 		auto pid = static_cast<Pid>(savedRegisters[0]);
-		int     status = *reinterpret_cast<int*>(savedRegisters+1);
-		(void)status;
-		auto proc = processManager.findProcess(pid);
+//		auto exitCode = static_cast<int>(savedRegisters[1]);
+		auto proc = processManager.findAliveProcess(pid);
 		if(proc)
 		{
 			kout << proc->data<true>().pid() << " ]\n";
-			auto parent = proc->data<true>().parent();
-			if(proc==activeInputCatcher && parent)
-				activeInputCatcher=parent; // FIXME 在改变当前截取进程时，应当将输入刷新，然后清空
+			if(proc==activeInputCatcher)
+			{
+				auto nextCacther =  proc->data<true>().parent();
+				if(!nextCacther)
+					nextCacther=processManager.nextReadyProcess();
+				if(!nextCacther)
+					nextCacther=processManager.nextBlockedProcess();
+				processManager.changeActiveCatcher(nextCacther);
+			}
 			processManager.killProcess(proc);
 			schedule();
 		}
@@ -317,6 +322,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 					cur,//parent
 					reinterpret_cast<size_t>(p)/pageSize,//map to physical address(pa)
 					USER_RAM_SIZE/pageSize, // ramsize,in pages
+					USER_STACK_START,
 					USER_RAM_START/pageSize, // ramstart(va),in pages
 					(USER_RAM_START+USER_STACK_SIZE)/pageSize,USER_CODE_SIZE/pageSize,//code,readonly
 					(USER_RAM_START + USER_STACK_SIZE)/pageSize,//stack top
@@ -337,7 +343,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 					// 将代码和initRAM复制到分配的内存空间
 					std::memcpy(p + USER_STACK_SIZE,
 							__user_space_start,USER_CODE_SIZE + USER_INITRAM_SIZE);
-					process.fillArguments(args,USER_STACK_START);
+					process.fillArguments(args);
 					processManager.changeProcessStatus(processLink, Process::READY);
 					// 进程在队列中等待调度
 					savedRegisters[0]=static_cast<uint64_t>(process.pid());
@@ -345,7 +351,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 					{
 						if(activeInputCatcher && cur!=activeInputCatcher) // 首先唤醒原进程，避免无限等待
 							processManager.signal(Process::SIG_WAKEUP,cur, activeInputCatcher);
-						activeInputCatcher = processLink;
+						processManager.changeActiveCatcher(processLink);
 						schedule(Process::BLOCKED);
 					}else if(fg_or_bg==1)//background,不重新定向，不阻塞
 					{
@@ -363,7 +369,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	case SvcFunc::setProcessArgument:
 	{
 		auto pid = static_cast<Pid>(savedRegisters[0]);
-		ProcessManager::ProcessLink * proc = processManager.findProcess(pid);
+		ProcessManager::ProcessLink * proc = processManager.findAliveProcess(pid);
 		if(proc)
 		{
 			proc->data<true>().setArgument(savedRegisters[1],
@@ -374,7 +380,7 @@ void TEMPLATED_InterruptHandler::handleSVC(SvcFunc func)
 	case SvcFunc::setInputCatcher:
 	{
 		auto pid = static_cast<Pid>(savedRegisters[0]);
-		ProcessManager::ProcessLink * proc = processManager.findProcess(pid);
+		auto proc = processManager.findAliveProcess(pid);
 		if(proc && proc!=activeInputCatcher)
 		{
 			if(activeInputCatcher) // 首先唤醒原进程，避免无限等待
@@ -449,7 +455,7 @@ void TEMPLATED_InterruptHandler::handleIRQ(IntID id)
 		// DOCME 这里“提前结束”和“处理完毕再结束”两种处理逻辑对输入有很大的影响
 		//       在QEMU上，如果采用“处理完毕再结束”这种模型，则至多能接受34个字符，即多余的字符被丢弃
 		//         由此可能导致换行符没有被正确接收到。（注：单字符模式至多接受34个字符，FIFO模式可能接受50+，但是
-		//         仍然受限制。
+		//         仍然受限制。）
 		//       “提前结束”这种模型能够接收更多的字符（满足一般的需求），对于输入程序的体验改善显著。
 		//     猜测原因：handleInputEvent()程序耗费一定的时间，在这段时间内，如果不提前结束中断状态，则额外的字符可能
 		//     被丢弃。但是真正的原因仍有待查询。  TODO 找出真正的原因。

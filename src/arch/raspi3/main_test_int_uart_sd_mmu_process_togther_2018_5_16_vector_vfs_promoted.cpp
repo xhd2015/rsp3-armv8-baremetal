@@ -237,6 +237,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 			nullptr,//parent
 			reinterpret_cast<size_t>(p)/pageSize,//map to physical address(pa)
 			USER_RAM_SIZE/pageSize, // ramsize,in pages
+			USER_STACK_START,       // membase
 			USER_RAM_START/pageSize, // ramstart(va),in pages
 			(USER_RAM_START+USER_STACK_SIZE)/pageSize,USER_CODE_SIZE/pageSize,//code,readonly
 			(USER_RAM_START + USER_STACK_SIZE)/pageSize,//stack top
@@ -278,7 +279,7 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 			BCM2836LocalIntController::BCM2835IntSource::SRC_SYS_TIMER_FIRST+1, true);
 	Vector<String> args;
 	args.pushBack("shell");
-	process.fillArguments(args,USER_STACK_START);
+	process.fillArguments(args);
 
 
 //	// reset

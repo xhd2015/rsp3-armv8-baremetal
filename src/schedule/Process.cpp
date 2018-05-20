@@ -19,6 +19,7 @@ Process::Process(
 		ProcessLink *parent,
 		size_t mapPhyPage,
 		size_t phyPages,
+		size_t memProcessBase,
 		size_t startVaPage,
 		size_t codeStartPage,size_t codePages, // 所有其他的都是正常类型,代码是只读的
 		uint64_t stackTopPage,//va
@@ -32,6 +33,7 @@ Process::Process(
 	  _status(CREATED_INCOMPLETE),
 	  _parent(parent),
 	  _memory(reinterpret_cast<void*>(mapPhyPage*VirtualMap::_D::PAGE_SIZE)),
+	  _memoryBase(memProcessBase),
 	  _memsize(phyPages*VirtualMap::_D::PAGE_SIZE),
 	  _pmman(pmemStart,pmemSize,pmemInitChunks),
 	  _ttbr0(RegTTBR0_EL1::make(0)), // FIXME 使用0值初始化
@@ -127,8 +129,9 @@ Process::Process(const Process & rhs)
 	:_pid(pidManager.allocate()), // 这些值需要从rhs设置，其他的保留默认值
 	 _priority(rhs._priority),
 	 _status(CREATED_INCOMPLETE),
-	 _parent(processManager.findProcess(rhs.pid())),//TESTME 正确吗
+	 _parent(processManager.findAliveProcess(rhs.pid())),//TESTME 正确吗
 	 _memory(mman.allocate(rhs._memsize,VirtualMap::_D::PAGE_SIZE)),
+	 _memoryBase(rhs._memoryBase),
 	 _memsize(rhs._memsize),
 	 _pmman(_memory,_memsize,false),
 	 _ttbr0(rhs._ttbr0),
@@ -153,23 +156,22 @@ Process::Process(const Process & rhs)
 			reinterpret_cast<uint64_t>(_vmap.l0Table()));
 }
 
-void Process::fillArguments(const VectorRef<String>& args,size_t ptrBase)
+void Process::fillArguments(const VectorRef<String>& args)
 {
 	kout << INFO << "process filling arguments\n";
 	kout << INFO << "process mman base = " << Hex(_pmman.base()) << "\n";
 	kout << INFO << "process mman size = " << Hex(_pmman.size()) << "\n";
 	_registers[0]=_pid;
 	_registers[1]=args.size();
-	size_t  base = reinterpret_cast<size_t>(_memory);
 	size_t *p = _pmman.allocateAs<size_t*>(args.size() * sizeof(char*));
 	for(size_t i=0;i!=args.size();++i)
 	{
 		char * cstr = _pmman.allocateAs<char*>(args[i].size() + 1);
-		p[i] = reinterpret_cast<size_t>(cstr) - base + ptrBase;
+		p[i] = reinterpret_cast<size_t>(convertToProcessPtr(cstr));
 		cstr[args[i].size()]='\0';
 		std::memcpy(cstr, args[i].data(), args[i].size());
 	}
-	_registers[2] = reinterpret_cast<size_t>(p) - base + ptrBase;
+	_registers[2] = reinterpret_cast<uint64_t>(convertToProcessPtr(p));
 }
 
 void Process::saveContext(const uint64_t *savedRegisters)

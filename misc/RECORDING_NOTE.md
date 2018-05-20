@@ -1,3 +1,9 @@
+# 2018年5月20日11:19:16
+【commit point】重新定义了ProcessManager的内部结构(running + readyList + blockedList + destroyedList)，新增changeActiveCatcher，确保至少有一个进程能够捕获输出。
+
+现在bg命令能够在父进程死亡后获得输入。
+# 2018年5月20日10:56:10
+reinterpret_cast的基本要求：两种类型的长度相同
 # 2018年5月20日00:05:42
 未来内核的走向： （初级阶段）
 	1.具有接受输入的能力 （yes）

@@ -263,12 +263,14 @@ void  rebasePointer(T * &p,ptrdiff_t diff)
 template <class T>
 T* pointerInc(T *p,ptrdiff_t rebaseValue)
 {
-	return reinterpret_cast<T*>(reinterpret_cast<char*>(p)+rebaseValue);
+	return p ? reinterpret_cast<T*>(reinterpret_cast<char*>(p)+rebaseValue):
+			   nullptr;
 }
 template <class T>
 const T* pointerInc(const T *p,ptrdiff_t rebaseValue)
 {
-	return reinterpret_cast<const T*>(reinterpret_cast<const char*>(p)+rebaseValue);
+	return p ? reinterpret_cast<const T*>(reinterpret_cast<const char*>(p)+rebaseValue):
+			nullptr;
 }
 
 #endif /* INCLUDE_GENERIC_UTIL_H_ */

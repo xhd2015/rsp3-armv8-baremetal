@@ -16,6 +16,7 @@
 #include <schedule/schedule_forward.h>
 #include <memory/VirtualMap.h>
 #include <data/Queue.h>
+#include <generic_util.h>
 
 // 提供一个统一的view
 // 系统层面的Process，不是用户层面的Process
@@ -54,7 +55,8 @@ public:
 			uint32_t priority,
 			ProcessLink *parent,
 			size_t mapPhyPage,// 需要映射到的物理页面
-			size_t pagesNeeded,
+			size_t phyPages,
+			size_t memProcessBase,// 分配的内存的基地址
 			size_t startVaPage,//起始虚拟地址
 			size_t codeStartPage,size_t codePages, // 所有其他的都是正常类型,代码是只读的
 			uint64_t stackTopPage,
@@ -65,10 +67,13 @@ public:
 			);
 	~Process();
 
-	// 复制当前进程， fork的实现
-	// @return CREATED_INCOMPLETE,或者CREATED的进程
-	// 由于pid等资源, 实现隐式的fork构造函数, 不允许赋值，但是允许构造
-	// fork进程之间默认是 父子关系，而不是兄弟关系
+	/**
+	 * fork的实现
+	 * fork进程之间默认是 父子关系，而不是兄弟关系
+	 * 前置条件：必须保证Process不为：CREATED_INCOMPLETE, DESTROYED
+	 * @param rhs
+	 * 返回  CREATED_INCOMPLETE,或者CREATED的进程
+	 */
 	Process(const Process & rhs);
 	Process& operator=(const Process &rhs)=delete;
 	Process(Process &&rhs)=delete;
@@ -79,7 +84,7 @@ public:
 	 * @param
 	 * @param ptrBase  给进程分配的内存，在用户态所处的基地址。即，内存的映射基地址
 	 */
-	void fillArguments(const VectorRef<String> &args,size_t ptrBase);
+	void fillArguments(const VectorRef<String> &args);
 
 	void saveContext(const uint64_t *savedRegisters);
 
@@ -89,6 +94,17 @@ public:
 	// 注意，初始化程序可能借助设置saedSpEL1来进入用户空间，同时设置下一次进入内核空间的栈地址
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
 	void setArgument(size_t argc,uint64_t *args);
+	/**
+	 * 前置条件:ptr是低端进程地址
+	 * @param ptr
+	 * @return
+	 */
+	template <class T>
+	AS_MACRO T convertToKernelPtr(T ptr)
+		{return pointerInc(ptr,reinterpret_cast<size_t>(_memory) - _memoryBase);}
+	template <class T>
+	AS_MACRO T convertToProcessPtr(T ptr)
+		{return pointerInc(ptr, - reinterpret_cast<size_t>(_memory) + _memoryBase);}
 	ProcessLink* parent() { return _parent;}
 	const ProcessLink* parent() const { return _parent;}
 	AS_MACRO Pid pid() const { return _pid;}
@@ -116,6 +132,9 @@ private:
 	ProcessLink *  _parent ; // DOCME _parent是一个有效指针
 	// 内存
 	void    *    _memory ;
+	size_t       _memoryBase ; // 在进程空间中,内核分配的_memory的基地址。一般而言
+							   // 进程将0~0x1000(1页)的地址空间标记为不可用，这是为了
+	                           // 屏蔽nullptr。
 	size_t       _memsize;
 	MemoryManager  _pmman; // process memory manager
 

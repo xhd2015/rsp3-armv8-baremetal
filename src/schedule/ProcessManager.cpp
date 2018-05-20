@@ -11,27 +11,38 @@
 #include <runtime_def.h>
 
 ProcessManager::ProcessManager()
+	:_runningProcess(nullptr),
+	 _ready(),
+	 _blocked(),
+	 _destroyed()
 {
-	for(size_t i=0;i!=arrsizeof(_statedProcessList);++i)
-	{
-		new (&_statedProcessList[i]) ProcessList();
-	}
 }
 
 
-ProcessManager::ProcessLink* ProcessManager::findProcess(Pid pid)
+ProcessManager::ProcessLink* ProcessManager::findProcess(Process::Status status,Pid pid)
 {
-	if(pid==PID_CURRENT)
-		return currentRunningProcess();
-	for(size_t i=0;i!=arrsizeof(_statedProcessList);++i)
+	auto list=processList(status);
+	if(list)
 	{
-		auto p=_statedProcessList[i].head();
+		auto p=list->head();
 		while(p && p->data<true>().pid()!=pid)
 			p=p->next();
 		if(p)
 			return p;
 	}
 	return nullptr;
+}
+ProcessManager::ProcessLink* ProcessManager::findAliveProcess(Pid pid)
+{
+	if(pid==PID_CURRENT)
+		return currentRunningProcess();
+	else if(pid==PID_PARENT || pid==PID_INVALID)
+		return nullptr;
+	auto p=findProcess(Process::READY, pid);
+	if(!p)
+		p=findProcess(Process::BLOCKED, pid);
+	return p;
+
 }
 // FIXME killProcess应当适时清除DESTROYED的进程
 void ProcessManager::killProcess(ProcessLink* p)
@@ -114,25 +125,69 @@ void     ProcessManager::signal(Process::Signal sig,ProcessLink *src, ProcessLin
 }
 ProcessManager::ProcessLink*  ProcessManager::forkProcess(ProcessLink *origin)
 {
-	// 调用 COPY构造函数,隐式fork
-	auto node = _statedProcessList[Process::Status::CREATED_INCOMPLETE].insertTail(origin->data<true>());
-	if(node && node->data<true>().status()==Process::Status::CREATED)
-	{
-		changeProcessStatus(node, Process::CREATED_INCOMPLETE,Process::CREATED);
-	}
-	return node;
+	return createNewProcess(origin->data<true>());
 }
 
 void          ProcessManager::changeProcessStatus(ProcessLink *p, Process::Status oldStatus,Process::Status newStatus)
 {
 	if(oldStatus!=newStatus)
 	{
-		_statedProcessList[oldStatus].removeNode(p);
-		_statedProcessList[newStatus].insertTail(p);
+		if(oldStatus==Process::RUNNING && p==_runningProcess) // 确认p在status描述的组
+		{
+			_runningProcess=nullptr;
+			processList(newStatus)->insertTail(p);
+		}else if(newStatus==Process::RUNNING && _runningProcess==nullptr) // 由于RUNNIG没有队列，因此必须保证runnig是空的
+		{
+			processList(oldStatus)->removeNode(p);
+			_runningProcess=p;
+		}else{
+			auto oldList=processList(oldStatus);
+			auto newList = processList(newStatus);
+			if(oldList && newList)
+			{
+				oldList->removeNode(p);
+				newList->insertTail(p);
+			}
+		}
 	}
 	p->data<true>().status(newStatus);
 }
 void          ProcessManager::changeProcessStatus(ProcessLink *p, Process::Status newStatus)
 {
 	changeProcessStatus(p, p->data<true>().status(),newStatus);
+}
+
+// TESTME
+void          ProcessManager::changeActiveCatcher(ProcessLink *newCatcher)
+{
+	// 先刷新输出,再更改
+	if(activeInputCatcher && activeInputCatcher!=newCatcher)
+	{
+		// DOCME 由于当前进程可能不是输入截获进程，因而它的inputBuffer返回的地址不一定
+		//       是正确的，所以我们将输入直接丢弃。但是正确的处理应当是将inputBuffer
+		//       转换成内核地址
+		auto &proc= activeInputCatcher->data<true>();
+		auto buf = proc.convertToKernelPtr(proc.inputBuffer());
+		if(buf)
+		{
+			while(!inputBuffer.empty() && !buf->full())
+				buf->put(inputBuffer.remove());
+			inputBuffer.reset(0); // 如果还有剩余的，直接丢弃
+		}
+	}
+	activeInputCatcher=newCatcher;
+}
+ProcessManager::ProcessList * ProcessManager::processList(Process::Status status)
+{
+	switch(status)
+	{
+	case Process::READY:
+		return &_ready;
+	case Process::BLOCKED:
+		return &_blocked;
+	case Process::DESTROYED:
+		return &_destroyed;
+	default:
+		return nullptr;
+	}
 }
