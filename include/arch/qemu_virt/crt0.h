@@ -47,25 +47,27 @@ int main();
 // 保证el=2,或者el=3, el是最高异常级别
 // 要跳转到EL1
 // 依赖于链接脚本提供的__stack_top_elx
+// 注意SP_ELx只能在EL(x+1)上访问
+// 增加一个文档说明，QEMU在这里并没有出现异常，而树莓派出现了
 #define ASM_ERET_FROM(el,spsr) \
 	  "mov x3,sp \n\t" /*x3,x4,x5分别是sp_el1,sp_el2,sp_el3的值 ，这里预先加载，后面不再使用栈*/  \
 	  "ldr x4,=__stack_top_el2 \n\t"                      \
 	  "ldr x5,=__stack_top_el3 \n\t"                      \
 	                                                      \
 	  "mov x0,#" __stringify(el) "\n\t" /*x0=el*/         \
-	  "cmp x0, #3 \n\t"        /* if(el>=3)设置sp_el3 */   \
-	  "b.lt  1f \n\t"                                    \
+	  "cmp x0, #3 \n\t"        /* if(el==3)设置sp_el3，sp_el2,sp_el1 */   \
+	  "b.ne  1f \n\t"                                    \
 	  /*"msr sp_el3,x5 \n\t"*/ /*不能访问sp_el3，但是访问sp是等价的*/   \
 	  "mov sp, x5  \n\t"                                 \
-	                                                     \
-	  "1: \n\t"               /*if(el>=2)设置sp_el2*/      \
-	  "cmp x0, #2 \n\t"                                  \
-	  "b.lt  2f \n\t"                                    \
 	  "msr sp_el2,x4 \n\t"                               \
-	                                                     \
-	  "2: \n\t"                /* 设置sp_el1 */           \
 	  "msr sp_el1,x3 \n\t"                               \
-	                          /*设置spsr,elr,然后跳转到EL1*/  \
+	  "b 2f \n\t"                             /*结束设置*/  \
+	                                                     \
+	  "1: \n\t"               /*if(el==2)设置sp_el2,sp_el1*/  \
+	  "mov sp,x4 \n\t"                                   \
+	  "msr sp_el1,x3 \n\t"                               \
+	                                                      \
+	  "2:\n\t"                 /*设置spsr,elr,然后跳转到EL1*/  \
 	  "ldr x0,=" __stringify(spsr) "\n\t"                  \
 	  "msr spsr_el" __stringify(el) ",x0 \n\t"             \
 	  "adr x0,1f \n\t"                                     \

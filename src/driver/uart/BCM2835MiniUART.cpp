@@ -9,9 +9,6 @@
 
 int BCM2835MiniUART::init()
 {
-	enable(true);
-	enableReceive(true);//reset to true
-	enableSend(true); // reset to true
 	dataSize<8>();
 
 	enableReceiveInterrupt(false);
@@ -20,5 +17,8 @@ int BCM2835MiniUART::init()
 	clearReceiveFIFO();
 	clearSendFIFO();
 	baudrate(270);    // 115200 baud
+	enable(true);
+	enableReceive(true);//reset to true
+	enableSend(true); // reset to true
 	return 0;
 }

@@ -69,6 +69,10 @@ public:
 	 * @param descr  descr必须
 	 */
 	void mapL3(const Vector<AddressSpaceDescriptor> &descr);
+	/**
+	 * 将L3所映射的物理地址页面重新定向到新的基地址。
+	 * @param basePage
+	 */
 	void rebaseL3(size_t basePage);
 
 	bool globalPages()const { return _global;}
@@ -95,7 +99,7 @@ private:
 	size_t            _sizes[4];
 
 	VirtualAddress    _startAddr;
-	const void           *  _phyAddr; //
+	const void *      _phyAddr; //
 	size_t            _pageCount;
 	bool              _global;
 

@@ -13,6 +13,8 @@ __asm__(
 ".section .text.boot \n\t"
 ".global asm_start \n\t"
 "asm_start: \n\t"
+".4byte  __load_addr_fixup \n\t" // __load_addr_fixup = 0x14000001 next 4
+								 // __load_addr_fixup = 0x14500000 +20M
 ASM_HALT_SLAVE_CPUS()
 ASM_SET_SP_SEL(1)  //使用SP_ELx
 ASM_INIT_CALLER(__stack_top)
@@ -46,9 +48,20 @@ void init(uint64_t currentEL)
 	highestEL = static_cast<ExceptionLevel>(currentEL);
 
 	// mini uart,经过测试，无需调用init也能输出
-	new (&miniUART) BCM2835MiniUART(UART_BASE);
-	new (&miniUARTChReaderWriter) MiniUARTCharacterReaderWriter(&miniUART);
+//	new (&miniUART) BCM2835MiniUART(UART_BASE);
+//	new (&miniUARTChReaderWriter) MiniUARTCharacterReaderWriter(&miniUART);
 //	miniUART.init();
+//
+//	while(true)
+//	{
+//		miniUART.rawWrite('A');
+//	}
+
+//	while(miniUART.writeReady())
+//	{
+//		miniUART.rawWrite('A');
+//	}
+
 
 	//PL011相关
 	new (&mailBox) BCM2836MailBox(MBOX_BASE);
@@ -61,8 +74,16 @@ void init(uint64_t currentEL)
 	gpio.selectAltFunctionNoLog(15, GPIO::ALT_0);
 	pl011.init();
 
+	// 暂停，等待接入
+	while(!pl011.readReady());
+	pl011.rawRead();
+
+
+
+
 //	new (&kout) Output(&miniUARTChReaderWriter);
 	new (&kout) Output(&pl011ChReader);
+
 	// DOCME
 	// 有8点相差，因为kout实际上需要的是基类部分
 	//   基类有一个虚表占据8字节
@@ -115,6 +136,19 @@ void init(uint64_t currentEL)
 		hcr.write();
 		kout << INFO << "after hcr update\n";
 		hcr.update().dump();
+//#define INTC_BASE        0x3F00B000
+//#define TIMER_BASE       0x3F00B000
+//#define LOCAL_INTC_BASE  0x40000000
+//#define TIMER_LS         0x4000001C
+//#define TIMER_MS         0x40000020
+//#define SD_BASE          0x3F300000
+//
+//		new (&intc) BCM2835InterruptController(INTC_BASE);
+//		new (&localIntc) BCM2836LocalIntController(LOCAL_INTC_BASE,&intc);
+//		new (&intHandler) InterruptHandler<BCM2836LocalIntController>(&localIntc);
+//
+//
+
 		// 在EL1/0允许访问计时器寄存器
 		auto cnthctl=RegCNTHCTL_EL2::read();
 		cnthctl.EL1PCEN=1;
@@ -128,12 +162,14 @@ void init(uint64_t currentEL)
 	}
 	if(currentEL>=1)
 	{
+//		kout << "cntkctl enable\n";
 		auto cntk = RegCNTKCTL_EL1::read();
 		cntk.EL0PTEN=1;
 		cntk.EL10PCTEN=1;//freqency
 		cntk.EL0VCTEN=1;
 		cntk.EL0VTEN=1;
 		cntk.write();
+//		kout << "cntkctl enabled.\n";
 	}
 	if(currentEL==3)
 	{

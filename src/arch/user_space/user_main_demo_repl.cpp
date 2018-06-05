@@ -14,10 +14,11 @@
 int main(int argc,char *argv[])
 {
 	// 程序分为两部分：1.接受输入   2.解析输入，分成命令名称多个参数  3.根据命令和参数执行
-	kout << INFO << "Process main\n";
+//	kout << INFO << "Process main\n";
 	Shell shell;
 	shell.run(argc,argv);
 
 	kout.flush();//将所有的输出刷新
 	return shell.exitCode();
 }
+

@@ -79,3 +79,11 @@ see [here](misc/doc), also see [external document](misc/external).
 
 [armv8 hello world](https://github.com/jserv/armv8-hello), hello world example for armv8,based on QEMU,useful for beginners.
 
+# Books
+[Beginner's Guide to Philosophy]()
+
+
+# 状态
+该工程已经停止新功能的开发，但是仍有可能收到基于已有功能的微小修改或者日志记录的增加。这是为了与文档的对应。
+
+保持活跃的开发分支在[此处](https://github.com/xhd2015/....)

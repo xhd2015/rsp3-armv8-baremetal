@@ -9,10 +9,11 @@ endif
 
 include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/makefile.defs
 # 添加导出的变量
-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_TO_ALL.makefile
-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_VARIABLES.makefile
-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_CXX_MACROS.makefile
-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_LINKER_SYMBOLS.makefile
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_TO_ALL.makefile
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_VARIABLES.makefile
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_CXX_MACROS.makefile
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_ASM_SYMBOLS.makefile
+-include $(ROOT_PROJECT)/makefiles/$(TARGET_ARCH)/EXPORT_LINKER_SYMBOLS.makefile
 
 
 # 添加辅助依赖, 注意,USER_OBJS 只能在此进行修改，其他地方修改不会产生效果
@@ -47,5 +48,8 @@ USER_LINKER_FLAGS +=  $(USER_LINKER_FLAGS_$(TARGET_ARCH)) $(USER_LINKER_FLAGS_CO
 # 设置USER_LINKER_FLAGS
 USER_LINKER_FLAGS += $(foreach sym,$(EXPORT_LINKER_SYMBOLS),-Xlinker --defsym=$(sym)=$($(sym)))
 
+
+# 设置汇编符号
+USER_ASM_SYMBOLS += $(foreach sym,$(EXPORT_ASM_SYMBOLS),-Wa,--defsym -Wa,$(sym)=$($(sym)))
 
 # OBJCOPY_FLAGS += --change-warnings --adjust-warnings

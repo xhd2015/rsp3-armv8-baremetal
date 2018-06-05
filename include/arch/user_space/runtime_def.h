@@ -18,9 +18,11 @@
 #include <memory/MemoryManager.h>
 
 //io
-extern Queue<uint16_t> inputBuffer;
 extern UserSpaceCharacterReader chReader;
 extern UserSpaceCharacterWriter chWriter;
+// 缓冲区
+enum { FORMAT_BUF_SIZE = 65};    // for max 64-bits,a NULL_CHAR
+extern char formatBuf[FORMAT_BUF_SIZE];
 
 //进程
 #include <schedule/schedule_forward.h>

@@ -66,7 +66,7 @@ public:
 	AS_MACRO void enable(bool enable){ setBit(reg32<UARTCR>(),0,enable);}
 	AS_MACRO void enableReceive(bool enable){ setBit(reg32<UARTCR>(),9,enable);}
 	AS_MACRO void enableSend(bool enable){ setBit(reg32<UARTCR>(),8,enable);}
-	AS_MACRO void readInterruptLevel(Level level) {setBits(reg32<UARTIFLS>(),3,5,level);}
+	AS_MACRO void receiveInterruptLevel(Level level) {setBits(reg32<UARTIFLS>(),3,5,level);}
 	AS_MACRO void enableReceiveInterrupt(bool enable) { setBit(reg32<UARTIMSC>(), 4,enable);}
 	AS_MACRO bool receiveInterrupted()const { return getBit(reg32(UARTRIS),4);}
 	AS_MACRO void enableFIFO(bool en){ setBit(reg32(UARTLCR_H),4,en);}

@@ -194,7 +194,11 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 
 	// TODO 使用内存文件而不是这些该死的SD卡文件
 	new (&sddriver) SDDriverV3(SD_BASE + diff);
-	if(sddriver.init()==0)
+//	if(sddriver.init()==0)
+	if(false) // 直接令sddriver初始化失败，或者，根本就不初始化
+			// FIXME sddrive在连续使用中，第一次正常初始化，后序都失败，不知为什么。
+			//       这部分我也调试了很久了，之前是正确的。现在错误了
+			//      2018年6月3日00:51:54
 	{
 		kout << INFO << "Reading FAT\n";
 		size_t fat1Sec = 8192;
@@ -214,7 +218,15 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 	kout << INFO << "adding ramfs to vfs\n";
 	auto ramroot = new RAMVirtualFile("ramfs",FileType::F_DIRECTORY);
 	ramroot->addFile(new RAMVirtualFile("test",FileType::F_FILE));
+	auto logroot = new RAMVirtualFile("log",FileType::F_DIRECTORY);
+	auto kernlog = new RAMVirtualFile("kern.log",FileType::F_FILE);
+	logroot->addFile(kernlog);
+
 	vfs.rootFile()->addFile(ramroot);
+	vfs.rootFile()->addFile(logroot);
+
+	// 内核的日志写入到内存文件中
+	new (&logWriter) RAMFileCharacterWriter(kernlog);
 
 	constexpr size_t pageSize = VirtualMap::_D::PAGE_SIZE;
 	static_assert(USER_RAM_START % pageSize==0 &&
@@ -268,13 +280,20 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 
 	// DOCME 控制台的输入与模拟选项有关，当启用两个端口时，输入会被平均分配。
 	// 启用输入中断和定时中断
-	pl011.enableFIFO(false);// 启用单字符模式
-//	pl011.enableFIFO(true);
 	pl011.clearIntFlags();
-//	pl011.readInterruptLevel(PL011::L_1of8);
+//	pl011.enableFIFO(false);// 启用单字符模式,通过
+	// DOCME 不一定非得启用单字符模式，实际上，中断只是将字符放入缓冲区中，通知睡眠进程
+	//       但是进程如果直到有字符时不一定需要中断，那么它本身可以完成这一动作。
+	pl011.enableFIFO(true);
+	pl011.receiveInterruptLevel(PL011::L_1of8);
 	pl011.enableReceiveInterrupt(true);
 	localIntc.enableInterrupt(
 			BCM2836LocalIntController::BCM2835IntSource::SRC_UART_INT, true);
+
+//	cpuEnableInterrupt(ExceptionType::IRQ, true);
+//	while(true);
+
+
 	localIntc.enableInterrupt(
 			BCM2836LocalIntController::BCM2835IntSource::SRC_SYS_TIMER_FIRST+1, true);
 	Vector<String> args;
@@ -291,6 +310,10 @@ void main_mmu_set(VirtualMap * vmap,void *ramStart,
 	processManager.changeProcessStatus(processLink, Process::RUNNING);
 	sysTimerTick=NORM_SYS_TIMER_TICK;
 	sysTimer.addCompareValueMS(1,sysTimerTick);
+
+	// change log
+	kout.redirect(&logWriter);
+	new (&terminalOut) Output(&pl011ChReader);
 	process.restoreContextAndExecute(__stack_top);
 
 	// 不能返回

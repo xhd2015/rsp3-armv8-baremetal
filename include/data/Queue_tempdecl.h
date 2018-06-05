@@ -43,6 +43,8 @@ public:
 
     // 必须保证 empty()==false
     T remove();
+    AS_MACRO T head()const{ assert(!empty());return _data[_indexRemove];}
+    AS_MACRO T tail()const{ assert(!empty());return _data[_indexAdd==0?_len-1: _indexAdd-1];}
     // 必须保证full()==false
     AS_MACRO void put(const T& t) { emplacePut(t);}
     template <class ... Args>
@@ -65,8 +67,9 @@ private:
     T *_data;
     size_t _len;
     size_t _curLen;
-    size_t _indexAdd;// 下一个加入的元素应当存放的位置， 当full()时，该值未定义
-    size_t _indexRemove; // 队列首部元素的位置，当empty()时，该值未定义
+    size_t _indexAdd;// 下一个加入的元素应当存放的位置， 当full()时，该值未定义。
+    				 // _indexAdd-1是队尾。
+    size_t _indexRemove; // 队列首部元素的位置，当empty()时，该值未定义。队首
 };
 
 

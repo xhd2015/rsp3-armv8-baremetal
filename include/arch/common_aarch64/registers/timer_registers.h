@@ -5,7 +5,7 @@
 #define __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_TIMER_REGISTERS_H__
 #include <def.h>
 #include <io/Output.h>
-#include <io/IntegerFormatter.h>
+#include <io/IntegerFormatter_forward.h>
 
 class RegCNTFRQ_EL0 
 {

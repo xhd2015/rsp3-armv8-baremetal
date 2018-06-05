@@ -8,26 +8,28 @@ ROOT_PATH ?=/cygdrive/e
 # 而在有gpu mailbox操作的情况下，不加任何一个选项，都能正常工作。
 # 2.在注释了GPIO的初始化过程后，dtoverlay=pi3-disable-bt  (optional + enable_uart=1) 不能输出
 # 3.
+# 在树莓派3中，默认load_address=kernel_address,因此当设置了kernel_address之后，第一条执行的代码实际上是
+# PART2的第一条代码，因此，在树莓派3上，这条代码应当跳转到PART1执行，代码为：b .+#20M
 config.$(TARGET_ARCH).txt:makefile.eclipse.envs
 	gpu_mem_MB=$$(($(VIDEO_RAM_SIZE)/1024/1024))
-	(echo '##======Automatically generated==========##'
-	echo 'kernel=$(MASTERY_BINARY)'
-	echo 'kernel_address='$(KERNEL_ADDRESS)
-	echo 'arm_64bit=1'
-	echo '#gpu_mem='$${gpu_mem_MB}
-	echo 'disable_commandline_tags=1'
-	echo '# 下面三个在baremetal环境下并不是必须的，只要正确设置了GPIO即可'
-	echo '#enable_uart=1'
-	echo '#dtoverlay=pi3-disable-bt'
-	echo '#dtoverlay=pi3-miniuart-bt'
-	echo '##=====THE END======##'
+	(echo '##======Automatically generated==========##' ;\
+	echo '#kernel=$(MASTERY_BINARY)' ;\
+	echo 'kernel_address='$(KERNEL_ADDRESS) ;\
+	echo 'arm_64bit=1' ;\
+	echo '#gpu_mem='$${gpu_mem_MB} ;\
+	echo 'disable_commandline_tags=1' ;\
+	echo '# 下面三个在baremetal环境下并不是必须的，只要正确设置了GPIO即可' ;\
+	echo '#enable_uart=1' ;\
+	echo '#dtoverlay=pi3-disable-bt' ;\
+	echo '#dtoverlay=pi3-miniuart-bt' ;\
+	echo '##=====THE END======##' ;\
 	) > config.$(TARGET_ARCH).txt
 
 $(ROOT_PATH)/config.$(TARGET_ARCH).txt : config.$(TARGET_ARCH).txt
 	cp $< $@
-$(ROOT_PATH)/$(MASTERY_BINARY) : $(MASTERY_BINARY)
-	cp $< $@
-install : $(ROOT_PATH)/$(MASTERY_BINARY) $(ROOT_PATH)/config.$(TARGET_ARCH).txt
+$(ROOT_PATH)/kernel8.img :FORCE 
+	cp $(MASTERY_BINARY) $@
+install : $(ROOT_PATH)/kernel8.img $(ROOT_PATH)/config.$(TARGET_ARCH).txt
 
 
 define elf_to_bin
@@ -50,7 +52,8 @@ $(MASTERY_ELF).2:$(MASTERY_ELF)
 	mv $(MASTERY_ELF) $@
 	mv $(MASTERY_ELF).temp $(MASTERY_ELF)
 
-# part2.bin和part2.bin_recalled之间的协作：part2.bin用于检查，传递重构造的参数;part2.bin_recalled完成实际的生成
+# part2.bin和part2.bin_recalled之间的协作：part2.bin用于检查，传递重构造的参数;
+# part2.bin_recalled完成实际的生成
 part2.bin:$(MASTERY_ELF).2
 	$(MAKE) CODE_PART=2 IMAGE_BASE=$(KERNEL_HIGH_BASE) part2.bin_recalled
 part2.bin_recalled:
@@ -60,8 +63,8 @@ part2.bin_recalled:
 
 # 使用truncate 确保第一部分是CODE_SIZE大小
 $(MASTERY_BINARY):part1.bin part2.bin
-	cp part2.bin $@ &&
-	truncate -s $(SINGLE_GEN_SIZE) $@ &&
+	cp part2.bin $@ && \
+	truncate -s $(SINGLE_GEN_SIZE) $@ && \
 	cat part1.bin >> $@
 
 # -cpu cortex-a53 -smp 4  -m 1024M  # 都有default值, 不能设置smp为其他值。
@@ -97,8 +100,7 @@ libprefix.a:$(OBJS)
 	$(TOOLCHAIN_AR) -d $@ src/arch/raspi3/crt0.o 
 	
 prefix.elf:libprefix.a
-	aarch64-elf-g++ $(USER_LINKER_FLAGS) -o $@ src/arch/raspi3/crt0.o \
-	 	$<
+	aarch64-elf-g++ $(USER_LINKER_FLAGS) -o $@ src/arch/raspi3/crt0.o $<
 prefix.bin:prefix.elf
 	$(TOOLCHAIN_OBJCOPY) -O binary $< $@
 

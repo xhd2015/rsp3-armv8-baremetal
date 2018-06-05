@@ -1,3 +1,51 @@
+# 2018年6月5日16:00:25
+【commit point】 新增了ps命令。
+# 2018年5月22日18:51:23
+【promote】添加了RAMFileCharacterWriter,用于将内核的输出重定向到RAM文件中。
+# 2018年5月22日14:09:27
+进程间的通信大多数情况下是父进程与子进程的通信。
+# 2018年5月21日22:05:11
+下面是一份详细的待办清单：（会持续更新）
+
+- 重构开发架构，脱离eclipse为主的模式，以makefile为主，eclipse辅助开发。
+
+- 重构构建模式，将可以独立出来的库独立出来，编写接口清单。
+
+- 提供Event事件回调函数链
+
+- 分离内核，shell的代码
+
+- 能够加载ELF文件（ABI兼容）
+
+- POSIX标准化
+
+- 移植编译器
+
+- 移植STLPORT（C++标准库）
+
+- 用户管理和权限
+
+- 网络协议栈
+
+- 编辑器
+
+- 信号量（锁机制）
+
+- 海量log信息使用虚拟文件系统（RAMVirtualFile）记录。
+
+- 终端控制，如何实现光标的控制
+
+- 轻量级进程
+
+- kernel stack per process
+
+- 内核调试
+# 2018年5月21日10:05:14
+改进：将不需要在eclipse中定义的变量移动到了makefile中。为将来的可移植性作准备。
+# 2018年5月20日14:36:56
+【bugfix】 进程在销毁后，所有子进程的父进程应当被更改。这是通过遍历进程队列完成的。
+
+【todo】 增加wait系统调用功能
 # 2018年5月20日11:19:16
 【commit point】重新定义了ProcessManager的内部结构(running + readyList + blockedList + destroyedList)，新增changeActiveCatcher，确保至少有一个进程能够捕获输出。
 

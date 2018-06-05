@@ -37,17 +37,16 @@ void init(Pid pid,int argc,char *argv[])
 			freeRamEnd-freeRamStart,false);
 	new (&chWriter) UserSpaceCharacterWriter(100);
 	new (&chReader) UserSpaceCharacterReader();
-	new (&inputBuffer) Queue<uint16_t>(512);
 	new (&kout) Output(&chWriter);
 	new (&kin)  Input(&chReader);
 
-	kout << INFO << "freeRamStart = " <<
-			Hex(reinterpret_cast<uint64_t>(freeRamStart)) << "\n";
-	kout << INFO << "freeRamSize = " <<
-			Hex(freeRamEnd - freeRamStart) << "\n";
-	if(argc>0)
-		kout << INFO << "process name = " << argv[0] << "\n";
-	kout << INFO << "init, pid = " << pid << "\n";
+//	kout << INFO << "freeRamStart = " <<
+//			Hex(reinterpret_cast<uint64_t>(freeRamStart)) << "\n";
+//	kout << INFO << "freeRamSize = " <<
+//			Hex(freeRamEnd - freeRamStart) << "\n";
+//	if(argc>0)
+//		kout << INFO << "process name = " << argv[0] << "\n";
+//	kout << INFO << "init, pid = " << pid << "\n";
 
 	int res=main(argc,argv);
 	destroy(res);

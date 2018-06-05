@@ -5,7 +5,7 @@
 #define __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_VMSA_DESCRIPTORS_H__
 #include <def.h>
 #include <io/Output.h>
-#include <io/IntegerFormatter.h>
+#include <io/IntegerFormatter_forward.h>
 
 class Descriptor4KBL0 
 {

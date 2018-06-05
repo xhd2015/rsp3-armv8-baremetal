@@ -94,6 +94,7 @@ public:
 	// 注意，初始化程序可能借助设置saedSpEL1来进入用户空间，同时设置下一次进入内核空间的栈地址
 	void restoreContextAndExecute(void *savedSpEL1 = nullptr);
 	void setArgument(size_t argc,uint64_t *args);
+
 	/**
 	 * 前置条件:ptr是低端进程地址
 	 * @param ptr
@@ -105,6 +106,7 @@ public:
 	template <class T>
 	AS_MACRO T convertToProcessPtr(T ptr)
 		{return pointerInc(ptr, - reinterpret_cast<size_t>(_memory) + _memoryBase);}
+	void         parent(ProcessLink *parent){ _parent=parent;}
 	ProcessLink* parent() { return _parent;}
 	const ProcessLink* parent() const { return _parent;}
 	AS_MACRO Pid pid() const { return _pid;}
@@ -125,11 +127,15 @@ public:
 	AS_MACRO void  catchInput(bool c)  {_catchInput=c;}
 	// DOCME 为了兼容性，字符是16位的，高8位表示控制信息
 	AS_MACRO Queue<uint16_t>* inputBuffer() { return _inputBuffer;}
+	AS_MACRO int   exitCode()const{ return _exitCode;}
+	AS_MACRO void  exitCode(int exitCode) { _exitCode=exitCode;}
+
+	static   const char * statusToString(Status s);
 private:
 	Pid           _pid  ;
 	uint32_t     _priority;
 	Status       _status ;
-	ProcessLink *  _parent ; // DOCME _parent是一个有效指针
+	ProcessLink *  _parent ;
 	// 内存
 	void    *    _memory ;
 	size_t       _memoryBase ; // 在进程空间中,内核分配的_memory的基地址。一般而言
@@ -154,6 +160,10 @@ private:
 	bool            _catchInput;
 	Queue<uint16_t>     * _inputBuffer; // inputBuffer处于进程的内存中,这个参数需要进程创建后传递
 									// 该类是通用的。 通过svc_call<SvcFunc::setProcessArgument>()
+
+	// TODO 添加进程的等待模型，即wait
+	int             _exitCode;// 退出状态
+
 };
 
 

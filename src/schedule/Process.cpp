@@ -45,7 +45,8 @@ Process::Process(
 			  reinterpret_cast<void*>(startVaPage * VirtualMap::_D::PAGE_SIZE),
 			  addrBits),
 	  _catchInput(false),
-	  _inputBuffer(nullptr)
+	  _inputBuffer(nullptr),
+	  _exitCode(0)
 {
 	if(_pid == PID_INVALID)
 		return;
@@ -121,6 +122,7 @@ Process::~Process()
 	mman.deallocate(_memory);
 	//取出_ttbr0的asid
 	asm_tlbi_aside1(_ttbr0.ASID);
+
 	// 为了效率考虑，不重置指针值，因为DESTROYED可以判定这些值是否有效。
 	_status = Process::Status::DESTROYED;
 }
@@ -140,7 +142,8 @@ Process::Process(const Process & rhs)
 	 _SPSR(rhs._SPSR),
 	 _vmap(rhs._vmap),
 	 _catchInput(rhs._catchInput),
-	 _inputBuffer(rhs._inputBuffer)
+	 _inputBuffer(rhs._inputBuffer),
+	 _exitCode(rhs._exitCode)
 {
 	if(_pid == PID_INVALID)
 		return;
@@ -227,5 +230,28 @@ void Process::setArgument(size_t argc,uint64_t *args)
 			kout << FATAL << "unknown process argument\n";
 			break;
 		}
+	}
+}
+
+const char * Process::statusToString(Status s)
+{
+	switch(s)
+	{
+	case Status::BLOCKED:
+		return "BLOCKED";
+	case Status::CREATED:
+		return "CREATED";
+	case Status::CREATED_INCOMPLETE:
+		return "CREATED_INCOMPLETE";
+	case Status::READY:
+		return "READY";
+	case Status::DESTROYED:
+		return "DESTROYED";
+	case Status::RUNNING:
+		return "RUNNING";
+	case Status::STOPPED:
+		return "STOPPED";
+	default:
+		return "";
 	}
 }

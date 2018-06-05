@@ -61,3 +61,8 @@ VirtualFile*   RAMVirtualFile::copy()const
 		typedf->_data = _data;
 	return typedf;
 }
+
+void              RAMVirtualFile::append(char ch)
+{
+	_data.pushBack(ch);
+}

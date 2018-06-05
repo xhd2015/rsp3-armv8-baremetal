@@ -2,27 +2,24 @@
 
 
 # 导出eclipse定义的环境构建变量,这些变量是初始化变量而不是最终变量
+# DOCME 最终形成的命令如下： (echo a;echo b;...)>file.txt
 .PHONY:update-makefile.eclipse.envs
 update-makefile.eclipse.envs:FORCE
-	(echo '##=======Automatically generated=========##'
-	echo '# This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment'
-	echo '# after this file included,ENVS_PRESENT will never be used.So no need to define it.'
-	echo '# ENVS_PRESENT := true'
-	echo -e $(foreach var,$(EXPORT_VARIABLES),'$(var) := $($(var))\n')
+	(echo '##=======Automatically generated=========##' ;\
+	echo '# This file is used for external build, VARIABLES below are exported from inner eclipse build enviornment' ;\
+	echo '# after this file included,ENVS_PRESENT will never be used.So no need to define it.' ;\
+	echo '# ENVS_PRESENT := true' ;\
+	echo -e $(foreach var,$(EXPORT_VARIABLES),'$(var) := $($(var))\n') ;\
 	) > makefile.eclipse.envs
 	
 .PHONY:update-cxx_macros.h
 update-cxx_macros.h:
-	(echo '//##======Automatically generated==========##'
-	echo '#ifndef CXX_MACROS_H__'
-	echo '#define CXX_MACROS_H__'
-	echo
-ifeq ($(BUILD_BASE_SYSTEM),CYGWIN)
-	echo -e '$(foreach macro,$(EXPORT_CXX_MACROS),#define $(macro)    $($(macro))\n)'
-else ifeq ($(BUILD_BASE_SYSTEM),LINUX) #linux/dash doest not need -e
-	echo -e '$(foreach macro,$(EXPORT_CXX_MACROS),#define $(macro)    $($(macro))\n)'
-endif
-	echo '#endif // CXX_MACROS_H__'
+	(echo '//##======Automatically generated==========##' ;\
+	echo '#ifndef CXX_MACROS_H__'  ;\
+	echo '#define CXX_MACROS_H__'  ;\
+	echo                           ;\
+	echo -e '$(foreach macro,$(EXPORT_CXX_MACROS),#define $(macro)    $($(macro))\n)'  ;\
+	echo '#endif // CXX_MACROS_H__'  ;\
 	) > cxx_macros.h
 
 AUX_FILES += update-cxx_macros.h update-makefile.eclipse.envs

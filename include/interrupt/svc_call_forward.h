@@ -13,12 +13,13 @@
 // `class` ， 为了避免 与全局定义的符号冲突
 enum class SvcFunc{
 	                           // prototype:
-	puts,                      //  size_t    puts(const char *, size_t n=0)                 // 打印字符串，非缓冲模式
-	gets,                      //  size_t    gets(size_t maxNum,bool blocked)
-	                           // gets的目的：读取尽量多的字符，如果没有字符，则根据条件阻塞等待
-	                           //  gets的模型： 每次读取尽可能多，如果遇到换行符，则立即返回
-							   //            如果缓冲区已经读取完毕，没有遇到换行符，且已经读取至少1个字符，则返回
-							  //             如果缓冲区为空，且要求阻塞等待，则阻塞，返回0
+	puts,                      //  size_t    puts(const char *, size_t n=0);
+	                           //  输出字符串s的n个字符串， 当n为0时，表明s是以NULL字符结尾的，
+	                           // 因此输出直到遇到NULL字符才停止
+	                           //  返回实际输出的字符个数
+	gets,                      // size_t    gets(size_t maxNum,bool block);
+                               // 读取尽量多的字符，如果没有字符，则根据条件阻塞等待
+                               // 返回实际读取的字符数量
 	allocateBlock,             //  void*     allocateBlock(size_t size,size_t alignment)         // 一般用于分配较大的空间，如4KB的页
 	killProcess,               //  void      killProcess(Pid pid, int exitStatus)
 							   //              kill进程, pid的取值有特殊含义
@@ -32,9 +33,11 @@ enum class SvcFunc{
 	setInputCatcher,           //  void      setInputCatcher(Pid pid)
 	                           //              设置捕获输入的进程  FIXME 这应当是一条特权指令
 	sleep,                     //  void      sleep(size_t us)
+	ps,                        //  void      ps();
+	                           //            显示系统进程信息
 	scheduleNext,              //  void      scheduleNext()     // 调度下一个进程，表明当前进程主动或被动放弃其执行权，转入等待状态
 	fork,                      //  Pid       fork()             // 复制当前进程，对于父进程，返回其子进程的pid，对于子进程，返回PID_CURRENT;失败返回PID_INVALID。 当前进程将作为新进程的父进程,新进程处于READY状态。
-	signal,                    //  void      signal(PidType pid, Signal sig)       // 对目标进程发送信号
+	signal,                    //  void      signal(Pid pid, Signal sig)       // 对目标进程发送信号
 	vfsProxy,                  //  Any       vfsProxy(VFSProxyKernel *instancePtr,VirtualProxyFunction subFunc,Args... additionalArgs)   // 操作VFSProxyKernel
 	warmReset,
 };

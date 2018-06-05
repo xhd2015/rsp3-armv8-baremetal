@@ -1,5 +1,5 @@
 # ONESHELL对于生成文件而言是重要的
-.ONESHELL:
+#.ONESHELL:
 
 #重新定义clean
 .PHONY:$(USER_CLEAN)

@@ -127,4 +127,7 @@ SECTIONS{
 			PROVIDE(__user_space_end = .);
 	} > USER_SPACE
 	.videoram (NOLOAD): {. = . + VIDEO_RAM_SIZE ;} > VIDEO_RAM
+	
+	/* 符号 */
+	PROVIDE(__code_offset = CODE_OFFSET );
 }

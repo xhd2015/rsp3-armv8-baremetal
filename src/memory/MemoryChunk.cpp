@@ -127,7 +127,3 @@ const MemoryChunk * MemoryChunk::chunkPtrOfDataPtr(const void *dataPtr)
 	return reinterpret_cast<const MemoryChunk*>(reinterpret_cast<const char*>(dataPtr) - sizeof(MemoryChunk));
 }
 
-void         MemoryChunk::makeEndChunk(MemoryChunk *chunk)
-{
-	*reinterpret_cast<size_t*>(chunk)=SIZE_MAX;
-}

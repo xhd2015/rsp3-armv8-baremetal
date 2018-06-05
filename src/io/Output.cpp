@@ -13,7 +13,6 @@
 
 size_t Output::print(const char *s,size_t len)
 {
-//	return printk(s, len);
 	size_t n=0;
 	for(size_t i=0;i!=len;++i)
 		n+=_chWriter->write(s[i]);
@@ -21,7 +20,6 @@ size_t Output::print(const char *s,size_t len)
 }
 size_t Output::print(const char *s)
 {
-//	return printk(s);
 	size_t n=0;
 	while(*s)
 		n+=_chWriter->write(*s++);
@@ -29,7 +27,6 @@ size_t Output::print(const char *s)
 }
 Output & Output::operator<<(char ch)
 {
-//	printk(ch);
 	_chWriter->write(ch);
 	return *this;
 }
@@ -97,8 +94,3 @@ Output & operator<<(Output &out,const StringRef& ref)
 			out << *p++;
 	return out;
 }
-
-
-// 实例化
-//template class IntegerFormatter<16>;
-//template Output & operator<<(Output & out,const IntegerFormatter<16> &);

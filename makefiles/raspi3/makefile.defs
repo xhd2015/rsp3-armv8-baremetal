@@ -2,22 +2,52 @@ include ${ROOT_PROJECT}/makefiles/aarch64_common/makefile.TOOLCHAINS.defs
 # 需要用户空间的内存布局
 include ${ROOT_PROJECT}/makefiles/user_space/makefile.MEMORY_LAYOUT.defs
 
+# 外围设备
+RAM_START            := 0
+RAM_SIZE             := 0x3F000000 #为什么不是1GB？
+PERIPHBASE           := 0x3F000000
+PERIPHSIZE           := 0x01001000
+SDRAM_BUS_ADDRESS    := 0xC0000000 #内存的总线地址
+SYS_TIMER_BASE       := 0x3F003000
+MBOX_BASE            := 0x3F00B880
+GPIO_BASE            := 0x3F200000
+UART0_BASE           := 0x3F201000 # canonical uart
+UART_BASE            := 0x3F215000 # mini uart
+
 # 默认情况下，编译第一部分代码
-CODE_PART      ?= 1
-IMAGE_BASE     ?= 0
+CODE_PART           ?= 1
+IMAGE_BASE          ?= 0
 # 代码生成包括： CODE, INITRAM,USER_SPACE
-SINGLE_GEN_SIZE      :=  $(shell echo "$$((20*1024*1024))") #20M
+# 注意：修改SINGLE_GEN_SIZE时，应当修改__load_addr_fixup_2, 
+#      计算方法是CODE_OFFSET转换成16进制后右移两位,附加在0x14XXXXXX的后面几位
+SINGLE_GEN_SIZE      :=  $(shell echo "$$((15*1024*1024))") #15M
 CODE_OFFSET          :=  $(SINGLE_GEN_SIZE)
 
+# 对内存的分配
+#  DTB              -- device tree blob,not with kernel,but load in another way     (NOLOAD)
+#  STACK_EL2_3      -- stack for EL2 & EL3  (NOLOAD)
+#  STACK            -- stack for EL1        (NOLOAD)
+#  AHEAD_CODE       -- something that ahead of code,for part2,this is 0;
+#                          for part1,this is all LOAD area of part2.
+#  CODE             -- code
+#  INITRAM          -- initial ram,including all preallocated variables
+#  USER_SPACE       -- to fill a user mode program           
+#  DATA             -- all left free heap, none of it is allocated  (NOLOAD)
+#  VIDEO_RAM        -- ram for GPU,prevent touching it              (NOLOAD)
+
 # size参数
+DTB_SIZE             :=  0x4000
 STACK_EL2_3_SIZE     :=  $(shell echo "$$((0x1000))") #4KB的整数倍
+STACK_SIZE           :=  0x100000
 AHEAD_CODE_SIZE      :=  $(shell echo "$$(( (2 - $(CODE_PART))* \
 	    $(SINGLE_GEN_SIZE) ))")
 CODE_SIZE            :=  $(shell echo "$$((10*1024*1024))")  #10M
+INITRAM_SIZE         :=  0x100000
 # PART=1时，不需要嵌入代码
-USER_SPACE_SIZE_1 := 0
-USER_SPACE_SIZE_2 := $(shell echo "$$(($(USER_CODE_SIZE) + $(USER_INITRAM_SIZE)))")
-USER_SPACE_SIZE := $(USER_SPACE_SIZE_$(CODE_PART))
+USER_SPACE_SIZE_1    := 0
+USER_SPACE_SIZE_2    := $(shell echo "$$(($(USER_CODE_SIZE) + $(USER_INITRAM_SIZE)))")
+USER_SPACE_SIZE      := $(USER_SPACE_SIZE_$(CODE_PART))
+VIDEO_RAM_SIZE       :=  0x4000000
 DATA_SIZE            :=   $(shell echo "$$(( $(RAM_SIZE) - $(DTB_SIZE) - \
 		$(STACK_EL2_3_SIZE) - $(STACK_SIZE) - $(AHEAD_CODE_SIZE) - $(CODE_SIZE) - \
 		$(INITRAM_SIZE) -\
@@ -37,8 +67,18 @@ VIDEO_RAM_START      :=  $(shell echo "$$(( $(RAM_SIZE) - $(VIDEO_RAM_SIZE) +\
 		
 #kernel
 LOADER_ADDRESS := $(AHEAD_CODE_START)
-KERNEL_ADDRESS := $(shell echo "$$(($(LOADER_ADDRESS) + $(SINGLE_GEN_SIZE)))")
+#KERNEL_ADDRESS := $(shell echo "$$(($(LOADER_ADDRESS) + $(SINGLE_GEN_SIZE)))")
+KERNEL_ADDRESS  := $(LOADER_ADDRESS)
 KERNEL_HIGH_BASE := 0xFFFFFF0000000000
+
+# fixup loader address == kernel_address
+# DOCME 树莓派3不支持内核文件的加载地址和CPU第一条指令地址分开设置，QEMU是支持的
+#       因此，为了模拟真实的情况，我们将内核加载地址设置为和CPU第一条指令地址相同，然后使用一条b 相对跳转指令
+#       能够跳转128M范围，需要注意的是，b指令是硬编码的。如下面所示
+__load_addr_fixup_1 := 0x14000001
+__load_addr_fixup_2 := 0x143c0000
+__load_addr_fixup   := $(__load_addr_fixup_$(CODE_PART))
+
 
 # 在dd命令中,user_space应当嵌入的位置
 # 因为DTB,STACK_EL2_3,STACK,AHEAD_CODE是不必加载的，真正加载的是从CODE_START开始的

@@ -53,6 +53,12 @@ public:
 	void handleSError();
 	void unhandledException();
 
+	void handleSysCallGets();
+	void handleSysCallKillProcess();
+	void handleSysCallCreateShell();
+
+	void fillInputBuffer();
+
 	/**
 	 * 可能经过几重中断，现在寄存器已经不是进入时的状态，需要还原。
 	 */

@@ -171,8 +171,8 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 			if(descr[curGroup].el0Accessiable())
 				ap|=1;
 			(void)ap;
-			_l3Table[i].AP = ap ;// set read-only(1), or read-write(0) ,
-								// and not from EL0(0) or else(1)
+			_l3Table[i].AP = ap ;// bit1: set read-only(1), or read-write(0) ,
+								//  bit0: not from EL0(0) or else(1)
 //			_l3Table[i].AP = 0;
 			_l3Table[i].SH = 0b10; //outer-shareable
 //			_l3Table[i].SH = 0b11;
@@ -180,7 +180,7 @@ void VirtualMap::mapL3(const Vector<AddressSpaceDescriptor> &descr)
 		curGroupLeftSize -= _D::PAGE_SIZE;
 		if(curGroupLeftSize == 0)
 		{
-			while(++curGroup <descr.size() && descr[curGroup].size()==0);// 略过所有size为0 的配置组
+			while(++curGroup < descr.size() && descr[curGroup].size()==0);// 略过所有size为0 的配置组
 			if(curGroup == descr.size())
 				break;
 			curGroupLeftSize = descr[curGroup].size();

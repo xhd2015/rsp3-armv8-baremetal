@@ -1,7 +1,7 @@
 
 includes=["<def.h>",  #for uint64_t
           "<io/Output.h>", #for  kout
-          "<io/IntegerFormatter.h>",#for Hex,Bin
+          "<io/IntegerFormatter_forward.h>",#for Hex,Bin
           ]
 
 

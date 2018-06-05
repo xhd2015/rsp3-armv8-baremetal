@@ -24,7 +24,7 @@ public:
 	// 如果是单核的，则某一时刻只有一个PID在运行
 	// 实际上即使是多核情况下，我们对某个核实际上只赋予一个唯一的正在运行的进程
 	AS_MACRO ProcessLink* currentRunningProcess()
-			{return _runningProcess;}
+			{return _running;}
 	AS_MACRO ProcessLink* nextReadyProcess()
 	        {return _ready.head();}
 	AS_MACRO ProcessLink* nextBlockedProcess()
@@ -44,6 +44,34 @@ public:
 	ProcessLink* findAliveProcess(Pid pid);
 
 	void     killProcess(ProcessLink *p);
+	/**
+	 * 将所有parent为originalParent的进程的父进程更改为newParent
+	 * 前置条件：originalParent不为空
+	 * @param originalParent
+	 * @param newParent
+	 */
+	void     changeProcessParent(ProcessLink *originalParent, ProcessLink *newParent);
+private:// 2 helper functions for changeProcessParent
+	/**
+	 * 前置条件 proc不为空
+	 * @param proc
+	 * @param originalParent
+	 * @param newParent
+	 */
+	AS_MACRO void   changeProcessParent(ProcessLink *proc,
+			ProcessLink *originalParent, ProcessLink *newParent)
+	{ if(proc->data<true>().parent()==originalParent)
+		 proc->data<true>().parent(newParent);
+	}
+	/**
+	 * 前置条件：list不为空，originalParent不为空
+	 * @param list
+	 * @param originalParent
+	 * @param newParent
+	 */
+	void     changeProcessParent(ProcessList *list,ProcessLink *originalParent,
+					ProcessLink *newParent);
+public:
 
 	// 必须保证该函数只能被中断处理器调用
 	// 选择一个进程进行运行，如果有当前有正在运行的进程，则将其值为READY状态
@@ -52,12 +80,17 @@ public:
 	// TODO 这里不应当引入savedRegisters参数，因为并不是所有的架构都需要。
 	// 这里或许传递一个CPU保存的参数会比较好，但是，目前最简单的方法就是传递该参数。
 	/**
-	 *
 	 * @param savedRegsiers
 	 * @param curStatus      改变 当前进程的状态
 	 */
 	void     scheduleNextProcess(uint64_t *savedRegsiers,Process::Status curStatus=Process::READY);
 	bool     scheduleNoReturn();
+	/**
+	 * 进程间发送信号
+	 * @param sig
+	 * @param src
+	 * @param target
+	 */
 	void     signal(Process::Signal sig,ProcessLink *src, ProcessLink *target);
 
 	/**
@@ -77,7 +110,7 @@ public:
 	 * 前置条件:oldStatus,newStatus对processList返回均非空
 	 *        p不为空
 	 * @param p
-	 * @param oldStatus   p当前实际所在的组，可与与p的当前状态不一致
+	 * @param oldStatus   p当前实际所在的组，可与p的当前状态不一致
 	 * @param newStatus   p的新状态
 	 */
 	void          changeProcessStatus(ProcessLink *p, Process::Status oldStatus,Process::Status newStatus);
@@ -88,14 +121,17 @@ public:
 	 */
 	void          changeProcessStatus(ProcessLink *p,Process::Status newStatus);
 	void          changeActiveCatcher(ProcessLink *newCatcher);
+	void          printProcessInformation(Output &out)const;
 private:
 	ProcessList *  processList(Process::Status status);
+	void         printPorcessInformation(Output &out,const ProcessLink *p)const;
+	void         printPorcessInformation(Output &out,const ProcessList *plist)const;
 private:
 	// 当前队列
 //	ForwardList<Process> _processList;
 //	ForwardNode<Process*> _statedProcessList[Process::STATUS_NUM];
 //	ProcessList _statedProcessList[Process::STATUS_NUM];
-	ProcessLink * _runningProcess;
+	ProcessLink * _running;
 	ProcessList _ready;
 	ProcessList _blocked;
 	ProcessList _destroyed;

@@ -11,7 +11,7 @@
 #include <runtime_def.h>
 
 ProcessManager::ProcessManager()
-	:_runningProcess(nullptr),
+	:_running(nullptr),
 	 _ready(),
 	 _blocked(),
 	 _destroyed()
@@ -48,10 +48,43 @@ ProcessManager::ProcessLink* ProcessManager::findAliveProcess(Pid pid)
 void ProcessManager::killProcess(ProcessLink* p)
 {
 	auto status=p->data<true>().status();//old status
-	p->data<true>().~Process();
-	changeProcessStatus(p,status,Process::DESTROYED);
+	if(status!=Process::DESTROYED)
+	{
+		p->data<true>().~Process(); // 调用析构函数之后，进程处于DESTROYED状态，但是进程所在的实际组没有变。
+		// DOCME
+		// 进程的所有子进程应当重置它们的父进程
+		// 有的进程可能会等待某一个特定的进程，当存在至少一个进程等待进程时，进程就应当保留退出状态
+		// 因此将进程移到DESTROYED中而不是直接销毁
+		changeProcessStatus(p,status,Process::DESTROYED);
+
+		// FIXME 采用更加高效的方式实现对parent域的改变
+		//       但是效率和复杂度之间总存在一个折中，如果
+		//       希望更高的效率，显然需要在Process中增加
+		//       一个链表记录所有的子进程，则开销更大
+		changeProcessParent(p, p->data<true>().parent());
+	}
+
 }
 
+void     ProcessManager::changeProcessParent(ProcessLink *originalParent,
+		ProcessLink *newParent)
+{
+	if(_running)
+		changeProcessParent(_running, originalParent, newParent);
+	changeProcessParent(&_ready, originalParent, newParent);
+	changeProcessParent(&_blocked, originalParent, newParent);
+}
+
+void     ProcessManager::changeProcessParent(ProcessList *list,ProcessLink *originalParent,
+				ProcessLink *newParent)
+{
+	auto p = list->head();
+	while(p)
+	{
+		changeProcessParent(p, originalParent, newParent);
+		p=p->next();
+	}
+}
 
 void     ProcessManager::scheduleNextProcess(uint64_t *savedRegsiers,Process::Status curStatus)
 {
@@ -132,14 +165,14 @@ void          ProcessManager::changeProcessStatus(ProcessLink *p, Process::Statu
 {
 	if(oldStatus!=newStatus)
 	{
-		if(oldStatus==Process::RUNNING && p==_runningProcess) // 确认p在status描述的组
+		if(oldStatus==Process::RUNNING && p==_running) // 确认p在status描述的组
 		{
-			_runningProcess=nullptr;
+			_running=nullptr;
 			processList(newStatus)->insertTail(p);
-		}else if(newStatus==Process::RUNNING && _runningProcess==nullptr) // 由于RUNNIG没有队列，因此必须保证runnig是空的
+		}else if(newStatus==Process::RUNNING && _running==nullptr) // 由于RUNNIG没有队列，因此必须保证runnig是空的
 		{
 			processList(oldStatus)->removeNode(p);
-			_runningProcess=p;
+			_running=p;
 		}else{
 			auto oldList=processList(oldStatus);
 			auto newList = processList(newStatus);
@@ -191,3 +224,30 @@ ProcessManager::ProcessList * ProcessManager::processList(Process::Status status
 		return nullptr;
 	}
 }
+
+void          ProcessManager::printProcessInformation(Output &out)const
+{
+	out << "Pid     " << "Status   \n";
+	printPorcessInformation(out,_running);
+	printPorcessInformation(out,&_ready);
+	printPorcessInformation(out,&_blocked);
+}
+
+void         ProcessManager::printPorcessInformation(Output &out,const ProcessLink *p)const
+{
+	if(p)
+	{
+		out << p->data<true>().pid() << "      " <<
+				Process::statusToString(p->data<true>().status()) << "\n";
+	}
+}
+void         ProcessManager::printPorcessInformation(Output &out,const ProcessList *plist)const
+{
+	auto p=plist->head();
+	while(p)
+	{
+		printPorcessInformation(out, p);
+		p=p->next();
+	}
+}
+

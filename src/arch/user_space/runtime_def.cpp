@@ -14,8 +14,7 @@ UserSpaceCharacterReader chReader;
 UserSpaceCharacterWriter chWriter {0};
 Output      kout {nullptr};
 Input       kin {nullptr};
-char koutBuf[koutBufSize]={0};
-Queue<uint16_t> inputBuffer{512};
+char formatBuf[FORMAT_BUF_SIZE] {0}; // 初始化为0
 
 
 // memory

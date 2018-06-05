@@ -52,7 +52,8 @@ public:
 	 * 是否是结束块
 	 * @return
 	 */
-	AS_MACRO bool         endChunk()const{return *reinterpret_cast<const size_t *>(this)==SIZE_MAX;}
+	AS_MACRO bool         endChunk()const
+		{return *reinterpret_cast<const size_t *>(this)==SIZE_MAX;}
 
 
 	MemoryChunk* findAllocable(size_t n,size_t alignment,size_t &moveOffset);
@@ -99,7 +100,8 @@ public:
 	 * 将一个Chunk设置为EndChunk
 	 * @param chunk
 	 */
-	static void          makeEndChunk(MemoryChunk *chunk);
+	AS_MACRO static void          makeEndChunk(MemoryChunk *chunk)
+			{*reinterpret_cast<size_t*>(chunk)=SIZE_MAX;}
 private:
 	size_t            _size           :SIZE_BITS; //size
 	size_t            _allocated      :ALLOCATE_BITS;//allocated

@@ -11,21 +11,21 @@
 
 char  UserSpaceCharacterReader::read()
 {
-	if(inputBuffer.empty())
+	if(_inputBuffer.empty())
 	{
-		inputBuffer.reset(0);
+		_inputBuffer.reset(0);
 		while(true)
 		{
 			// 因为是BLOCKED的，返回时数据仍然不足是可能的
 			size_t n= svc_call<SvcFunc::gets>(
-							inputBuffer.capacity(),
+							_inputBuffer.capacity(),
 							true //blocked
 							);
 			if(n>0)
 				break;
 		}
 	}
-	return inputBuffer.remove();
+	return _inputBuffer.remove();
 }
 
 

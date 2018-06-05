@@ -5,7 +5,7 @@
 #define __INCLUDE_ARCH_COMMON_AARCH64_REGISTERS_GICV3_REGISTERS_H__
 #include <def.h>
 #include <io/Output.h>
-#include <io/IntegerFormatter.h>
+#include <io/IntegerFormatter_forward.h>
 
 class RegICC_BPR_EL1_BASE 
 {

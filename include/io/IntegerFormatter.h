@@ -8,25 +8,10 @@
 #ifndef INCLUDE_INTEGERINTEGERFORMATTER_H_
 #define INCLUDE_INTEGERINTEGERFORMATTER_H_
 
-#include <def.h>
-#include <io/Output.h>
-#include <generic_util.h>
-
-template <int Base>
-class IntegerFormatter{
-public:
-	IntegerFormatter(size_t num,size_t length=sizeof(size_t));
-	IntegerFormatter(const void *p);
-	char *format()const;
-private:
-	size_t num;
-	size_t length;
-};
+#include <io/IntegerFormatter_forward.h>
+#include <runtime_def.h> //for formatBuf
 
 
-using Hex=IntegerFormatter<16>;
-using Dec=IntegerFormatter<10>;
-using Bin=IntegerFormatter<2>;
 
 template <int Base>
 Output & operator<<(Output & out,const IntegerFormatter<Base> &hf);
@@ -43,8 +28,8 @@ IntegerFormatter<Base>::IntegerFormatter(const void *p)
 template <int Base>
 char *IntegerFormatter<Base>::format()const
 {
-	itos(num, Base, koutBuf, koutBufSize);
-	return koutBuf;
+	itos(num, Base, formatBuf, FORMAT_BUF_SIZE);
+	return formatBuf;
 }
 
 template <int Base>

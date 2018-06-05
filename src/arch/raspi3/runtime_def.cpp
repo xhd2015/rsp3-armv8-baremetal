@@ -3,12 +3,13 @@
 ExceptionLevel exceptionLevel=ExceptionLevel::EL0;
 SecurityState securityState=SecurityState::S_NS_1S;
 
-char koutBuf[koutBufSize]={0};
-extern const char EMPTY_STR[1]={0};
+char formatBuf[FORMAT_BUF_SIZE] {0}; // 初始化为0
+const char EMPTY_STR[1]  {0};
 
 
 // io
 Queue<uint16_t>  inputBuffer {0};
+RAMFileCharacterWriter logWriter {nullptr};
 BCM2835MiniUART miniUART {nullptr};
 SDDriverV3 sddriver {0};
 MiniUARTCharacterReaderWriter miniUARTChReaderWriter{nullptr};
@@ -16,6 +17,7 @@ PL011           pl011 {nullptr};
 PL011CharacterReaderWriter    pl011ChReader{nullptr};
 Output kout{ nullptr };
 Input kin { nullptr };
+Output  terminalOut {nullptr};
 ProcessManager::ProcessLink * activeInputCatcher { nullptr};
 
 MemoryManager mman {nullptr,0,false};

@@ -3,6 +3,44 @@
         "*.make": "makefile",
         "*.makefile": "makefile",
         "*.json": "jsonc",
-        "ios": "cpp"
-    }
+        "ios": "cpp",
+        "cstdint": "cpp"
+    },
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "d:\\installed\\texlive-portable-full\\bin\\win32\\xelatex",
+            "args": [
+                "-synctex=1",
+                "-file-line-error",
+                "-shell-escape",
+                "-8bit",
+                "%DOC%"
+            ]
+        }, {
+            "command": "d:\\installed\\texlive-portable-full\\bin\\win32\\bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },       
+         {
+            "command": "d:\\installed\\texlive-portable-full\\bin\\win32\\xelatex",
+            "args": [
+                "-synctex=1",
+                "-file-line-error",
+                "-shell-escape",
+                "-8bit",
+                "%DOC%"
+            ]
+        },   
+        {
+            "command": "d:\\installed\\texlive-portable-full\\bin\\win32\\xelatex",
+            "args": [
+                "-synctex=1",
+                "-file-line-error",
+                "-shell-escape",
+                "-8bit",
+                "%DOC%"
+            ]
+        }
+    ]
 }

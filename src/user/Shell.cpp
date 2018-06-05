@@ -31,7 +31,8 @@ void Shell::run(int argc,char *argv[])
 		// 允许输入
 		uint64_t args[][2] = {
 				{Process::ARG_CATCH_INPUT,true},
-				{Process::ARG_INPUT_BUFFER_PTR, reinterpret_cast<uint64_t>(&inputBuffer)}
+				{Process::ARG_INPUT_BUFFER_PTR,
+						reinterpret_cast<uint64_t>(&chReader.inputBuffer())}
 		};
 		svc_call<SvcFunc::setProcessArgument>(
 				PID_CURRENT,
@@ -155,6 +156,8 @@ void Shell::execute(String &line,Vector<String> &cmd)
 
 		}else if(c=="pid"){
 			kout << pid << "\n";
+		}else if(c=="ps"){
+			svc_call<SvcFunc::ps>();
 		}else if(c=="ppid"){
 
 		}else if(c=="echo"){
@@ -176,6 +179,7 @@ void Shell::execute(String &line,Vector<String> &cmd)
 				 << "    " << "echo STRING   -- print whatever input\n"
 				 << "    " << "exit          -- exit this program and destroy the process\n"
 				 << "    " << "pid           -- show process id \n"
+				 << "    " << "ps            -- show processes \n"
 				 // FIXME 完善ppid,shutdown,reboot等命令
 				 //<< "    " << "ppid          -- show parent process id\n"
 				 //<< "    " << "shutdown      -- power off \n"
@@ -228,4 +232,19 @@ bool Shell::ensureEnoughArgument(size_t expect,size_t real,const char *prompt)
 	}
 	return true;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

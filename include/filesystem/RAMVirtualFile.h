@@ -24,6 +24,7 @@ public:
 	virtual size_t         write(const StringRef & ref,size_t offset)override;
 	virtual VirtualFile*   createFile(const StringRef &name,FileType type)const override;
 	virtual VirtualFile*   copy()const override;
+	void                   append(char ch);
 private:
 	FileType   _type;
 	String     _data;

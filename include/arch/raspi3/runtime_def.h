@@ -27,6 +27,7 @@
 #include <driver/sd/SDDriverV3.h>
 #include <io/char/MiniUARTCharacterReaderWriter.h>
 #include <io/char/PL011CharacterReaderWriter.h>
+#include <io/char/RAMFileCharacterWriter.h>
 // 进程
 #include <schedule/PidManager.h>
 #include <schedule/ProcessManager.h>
@@ -39,8 +40,15 @@
 extern MiniUARTCharacterReaderWriter miniUARTChReaderWriter;
 extern PL011CharacterReaderWriter    pl011ChReader;
 extern ProcessManager::ProcessLink * activeInputCatcher;//能够捕获输入的进程
+// 用于IntegerFormatter的缓冲区
+enum { FORMAT_BUF_SIZE = 65};    // for max 64-bits,a NULL_CHAR
+extern char formatBuf[FORMAT_BUF_SIZE];
 
+// io
 extern Queue<uint16_t>  inputBuffer;//512字节大小，通常
+extern RAMFileCharacterWriter logWriter;
+extern Output           terminalOut; // 直接向串口写数据
+
 extern InterruptHandler<BCM2836LocalIntController>  intHandler;
 
 extern SDDriverV3 sddriver;
@@ -49,5 +57,6 @@ extern SDDriverV3 sddriver;
 extern ExceptionLevel highestEL;
 extern SecurityState securityState;
 extern ExceptionLevel exceptionLevel;
+
 
 #endif /* INCLUDE_ARCH_RASPI3_RUNTIME_H_ */

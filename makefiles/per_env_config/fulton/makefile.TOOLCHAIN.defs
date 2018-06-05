@@ -1,0 +1,2 @@
+TOOLCHAIN_PREFIX := aarch64-elf-
+TOOLCHAIN_ROOT := D:/installed/gcc-linaro-7.2.1-2017.11-i686-mingw32_aarch64-elf/bin

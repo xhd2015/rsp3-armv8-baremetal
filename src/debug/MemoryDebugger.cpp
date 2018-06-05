@@ -12,6 +12,7 @@
 #include <data/Vector.h>
 #include <generic/error.h>
 #include <generic_util.h>
+#include <io/IntegerFormatter.h>
 #include <arch/common_aarch64/registers/system_common_registers.h>
 
 
